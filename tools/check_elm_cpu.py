@@ -107,6 +107,18 @@ def main():
         if args.tea_contract:
             run('compile-NativePreviewRenderer', [compiler, 'make', 'src/NativePreviewRenderer.elm', '--optimize',
                                                    '--output=' + str(output / 'NativePreviewRenderer.js')])
+            # Fixed official compiler HTML outputs for the existing HTTP roots.
+            # These are additional artifacts, not an alternate runner or policy.
+            report['httpDocuments'] = {}
+            for role, name in (('controller', 'HttpMain'), ('bar', 'HttpBar'), ('popup', 'HttpPopup')):
+                document = output / (name + '.html')
+                run('compile-html-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize',
+                                             '--output=' + str(document)])
+                if document.is_symlink() or not document.is_file():
+                    raise RuntimeError('Expected regular compiler HTML artifact: ' + name)
+                source_path = 'implementation/warlock/src/' + name + '.elm'
+                report['httpDocuments'][role] = {'path': document.name, 'sha256': sha(document),
+                    'sourcePath': source_path, 'sourceSha256': sources[source_path]}
         fixture_name = 'ReceiptStateReplay' if args.receipts else ('AuthorityTupleReplay' if args.authority else 'FeedbackContextReplay')
         harness_name = 'receipt-state' if args.receipts else ('authority-tuple' if args.authority else 'feedback-context')
         fixture = root / ('qa/' + fixture_name + '.elm')
@@ -153,7 +165,7 @@ def main():
                                        'resultSHA256': sha(output / 'standalone-mvp.json')}
         if args.tea_contract:
             typed_fixtures = ('NotificationsReplay', 'JumpListReplay',
-                              'NotificationRelevanceReplay', 'RetirementProofReplay')
+                              'NotificationRelevanceReplay', 'RetirementProofReplay', 'LocalFieldReplay')
             for filename in (*(name + '.elm' for name in typed_fixtures),
                              'NativePointerFixture.elm', 'typed-state.cjs'):
                 source = root / 'qa' / filename
@@ -206,6 +218,58 @@ def main():
             report['teaContract'] = dict(contract,
                 originalAccepted=False, nativeAccepted=False, releaseAccepted=False,
                 acceptanceLimit='Named complete-model/effect fixture only; whole original clauses require independent review and adequate positive/lifecycle coverage')
+            # The canonical local-field model accompanies the fixed typed/HTTP
+            # replays; it is not a separate caller-selected model or CLI mode.
+            source = root / 'qa/local-field-publication.qnt'
+            model = work / 'qa/local-field-publication.qnt'
+            pin_path = REPO / 'tools/quint-toolchain.json'
+            if source.is_symlink() or not source.is_file() or pin_path.is_symlink() or not pin_path.is_file():
+                raise RuntimeError('Expected regular local-field model and toolchain pin')
+            model_key = str(source.relative_to(REPO))
+            sources[model_key] = sha(source)
+            sources['tools/quint-toolchain.json'] = sha(pin_path)
+            shutil.copy2(source, model)
+            if model.is_symlink() or sha(model) != sources[model_key]:
+                raise RuntimeError('Local-field model changed during staging')
+            pin, cli = quint_toolchain()
+            if str(node) != pin['node']['path'] or sha(node) != pin['node']['sha256']:
+                raise RuntimeError('Pinned local-field model interpreter differs')
+            names = re.findall(r'^\s*run\s+(\w+)\s*=', model.read_text(), re.M)
+            original_names = ('localPaintGapPreservesDraftTest', 'staleExternalEditRejectedTest',
+                              'staleLocalButtonRejectedTest', 'retiredFieldCannotEditTest',
+                              'futureFieldCannotEditTest', 'localFifoKeepsLatestDraftTest',
+                              'currentActionStillWorksTest')
+            witnesses = ('witnessDependent', 'witnessSafeWhilePending')
+            declared_witnesses = re.findall(r'^\s*val\s+(witness\w+)\s*(?::[^=]+)?=', model.read_text(), re.M)
+            if (not names or len(names) != len(set(names)) or not set(original_names).issubset(names)
+                    or sorted(declared_witnesses) != sorted(witnesses)):
+                raise RuntimeError('Local-field original tests or positive witnesses missing/duplicated')
+            selector = '^(?:' + '|'.join(re.escape(name) for name in names) + ')$'
+            run('local-field-model-typecheck', [str(node), str(cli), 'typecheck', str(model)])
+            run('local-field-model-directed', [str(node), str(cli), 'test', str(model),
+                                              '--main=local_field_publication', '--match=' + selector,
+                                              '--backend=typescript', '--verbosity=2'])
+            if re.findall(r'\b(\d+) passing\b', (output / 'local-field-model-directed.stdout').read_text()) != [str(len(names))]:
+                raise RuntimeError('Local-field exact named test count differs')
+            run('local-field-model-safety', [str(node), str(cli), 'run', str(model),
+                                            '--main=local_field_publication', '--backend=typescript',
+                                            '--invariant=safety', '--witnesses', *witnesses,
+                                            '--max-samples=10000', '--max-steps=50', '--seed=20261101', '--verbosity=1'])
+            observed = re.findall(r'(\w+) was witnessed in (\d+) trace',
+                                  (output / 'local-field-model-safety.stdout').read_text())
+            counts = {name: int(count) for name, count in observed}
+            if len(observed) != len(witnesses) or set(counts) != set(witnesses) or any(count == 0 for count in counts.values()):
+                raise RuntimeError('Local-field positive witness missing, duplicated or zero')
+            if (source.is_symlink() or not source.is_file() or model.is_symlink() or not model.is_file()
+                    or sha(source) != sources[model_key] or sha(model) != sources[model_key]
+                    or pin_path.is_symlink() or not pin_path.is_file()
+                    or sha(pin_path) != sources['tools/quint-toolchain.json']
+                    or quint_toolchain()[0] != pin or sha(node) != pin['node']['sha256']):
+                raise RuntimeError('Local-field model or pinned toolchain changed during execution')
+            report['localFieldModel'] = {'directed': names, 'witnesses': counts, 'samples': 10000,
+                'maxSteps': 50, 'seed': 20261101, 'modelSHA256': sources[model_key],
+                'stagedModelSHA256': sha(model), 'toolchainFileSHA256': sources['tools/quint-toolchain.json'],
+                'toolchain': pin, 'nativeAccepted': False, 'originalAccepted': False}
         if args.status_scroll:
             for filename in ('StatusScrollReplay.elm', 'status-scroll.cjs', 'status-scroll.qnt', 'status-scroll_test.qnt'):
                 source = root / 'qa' / filename
@@ -317,6 +381,13 @@ def main():
         if not all(sha(Path(tool['path'])) == tool['sha256'] for tool in report['developmentTools'].values()):
             raise RuntimeError('Development interpreter changed during protected check')
         report['artifacts'] = {p.name: sha(p) for p in output.glob('*.js')}
+        if args.tea_contract:
+            for document in report['httpDocuments'].values():
+                artifact = output / document['path']
+                if (artifact.is_symlink() or not artifact.is_file()
+                        or sha(artifact) != document['sha256']):
+                    raise RuntimeError('Compiler HTML artifact changed during protected check')
+                report['artifacts'][document['path']] = document['sha256']
         report['passed'] = True
     except Exception as error:
         report['error'] = str(error)

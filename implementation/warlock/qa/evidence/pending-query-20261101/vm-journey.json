@@ -1,0 +1,5261 @@
+{
+  "schema": 1,
+  "scope": "Actual current Elm/Haskell application-only usability on Omarchy VM; not native/release/AT/IME/provider qualification",
+  "stageSha256": "6d853def68a5161b82b755dbc4669c3c1229c70387146bf3c671357de433f02a",
+  "originalDurationSeconds": 28,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "providerCleanupQualified": false,
+  "events": [
+    {
+      "kind": "exact-visible-mask",
+      "label": "applications-ready",
+      "template": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/engine-idle-20261101T172728Z/run-03-before.png",
+      "templateSha256": "6ff1e06aec45b471039a3991c739d276eed991b4ddf1072a7c1d61210f1e6b84",
+      "referenceBox": [
+        660,
+        52,
+        768,
+        75
+      ],
+      "currentBox": [
+        13,
+        14,
+        121,
+        37
+      ],
+      "comparison": "Exact binary luminance>140; translated current owned client origin",
+      "screenshot": "/home/charl/vm/omarchy/evidence/warlock-live-usability-reversal-20261101T221006Z/run-01/002-applications-ready.png"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "motion",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 26398794346,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 640,
+          "y": 400
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.30979122599819675
+      },
+      "targetBox": [
+        13,
+        28,
+        121,
+        37
+      ],
+      "validatedPayloadSha256": "6d4fde9053163f2bfdb85ecc8024d01ead263e68551311d4c23eab25d887113a"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "motion",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 26056727578,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 66,
+          "y": 31
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.24414464796427637
+      },
+      "targetBox": [
+        13,
+        28,
+        121,
+        37
+      ],
+      "validatedPayloadSha256": "972074534e3e7f71bde28b6125a7512d873a6b1dd53b8b9d862563607f2d12c4"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "press",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 25684171882,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 63,
+          "y": 31
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.28192655998282135
+      },
+      "targetBox": [
+        13,
+        28,
+        121,
+        37
+      ],
+      "validatedPayloadSha256": "e028ef4797db89579e4eaea5c54559712984214a129dc2e978f48a1d2be224a5"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "release",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 25359314081,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 63,
+          "y": 31
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.224502545024734
+      },
+      "targetBox": [
+        13,
+        28,
+        121,
+        37
+      ],
+      "validatedPayloadSha256": "8d92f66495a1427b763c40c357ab9b680a1282684fb73e212a714b191c0e9660"
+    },
+    {
+      "kind": "checked-click-completed",
+      "label": "Applications",
+      "box": [
+        13,
+        28,
+        121,
+        37
+      ]
+    },
+    {
+      "kind": "exact-visible-mask",
+      "label": "search-label-ready",
+      "template": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/engine-idle-20261101T172728Z/run-03-apps-settled.png",
+      "templateSha256": "ca5d63e49ae2ae6d72d027c44843ef72180ebf281f71ecb7a5d0639ea556c1d0",
+      "referenceBox": [
+        663,
+        205,
+        800,
+        223
+      ],
+      "currentBox": [
+        16,
+        167,
+        153,
+        185
+      ],
+      "comparison": "Exact binary luminance>140; translated current owned client origin",
+      "screenshot": "/home/charl/vm/omarchy/evidence/warlock-live-usability-reversal-20261101T221006Z/run-01/003-search-label-ready.png"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "motion",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 24694460545,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 63,
+          "y": 31
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.2449082729872316
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "473995707c0b8753e2bf205efb71e56ca06fc366465d2856ef0464067a0de422"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "motion",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 24322987415,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 298,
+          "y": 213
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.27992395404726267
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "1aba4529235b7b85197d252c0ae699ba195359a78cdd0e8748e7af42a4da7087"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "press",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 23956803283,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 295,
+          "y": 213
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.270251868001651
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "e028ef4797db89579e4eaea5c54559712984214a129dc2e978f48a1d2be224a5"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "release",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 23584865423,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 295,
+          "y": 213
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.281366492039524
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "8d92f66495a1427b763c40c357ab9b680a1282684fb73e212a714b191c0e9660"
+    },
+    {
+      "kind": "checked-click-completed",
+      "label": "Search",
+      "box": [
+        18,
+        194,
+        580,
+        235
+      ]
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "key",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 23209352792,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SW",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 295,
+          "y": 213
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.2610788809834048
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "d4502ce24a9cdf12d2c752afebe39cb6a16978508c1ba55bf3509696105a32a1"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "key",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 22727825253,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 295,
+          "y": 213
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.35942169302143157
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "7b013e72cc953cb8b0d49180bc99039932b5389fc83843697791d0d5e276951b"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "key",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 22343715793,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 295,
+          "y": 213
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.2680140180164017
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "7b013e72cc953cb8b0d49180bc99039932b5389fc83843697791d0d5e276951b"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "key",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 21928968258,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 295,
+          "y": 213
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.3065501669771038
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "4ae2b4540dec898b3cff6a6433463ae8afdb28d0578bb5981f167c41888b4d46"
+    },
+    {
+      "kind": "fresh-guard",
+      "action": "key",
+      "data": {
+        "identity": {
+          "unit": "warlock-live-usability-534f95d501554d18.scope",
+          "attempt": "warlock-live-usability-534f95d501554d18",
+          "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+          "deadline": "81408428711938",
+          "engine": {
+            "pid": 140556,
+            "birth": "8138065",
+            "ppid": 140542,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140556,
+              1
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "broker": {
+            "pid": 140542,
+            "birth": "8138052",
+            "ppid": 140533,
+            "pgid": 140542,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39446,
+            "size": 700480,
+            "namespacePids": [
+              140542
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "backend": {
+            "pid": 140533,
+            "birth": "8138049",
+            "ppid": 140427,
+            "pgid": 140533,
+            "uid": 1000,
+            "device": 58,
+            "inode": 39447,
+            "size": 24056,
+            "namespacePids": [
+              140533
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "core": [
+              "1",
+              "1"
+            ]
+          },
+          "address": "0x55fad2400650",
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "foot": {
+            "pid": 2095,
+            "birth": "6930",
+            "ppid": 930,
+            "pgid": 2095,
+            "uid": 1000,
+            "device": 31,
+            "inode": 161589,
+            "size": 503440,
+            "namespacePids": [
+              2095
+            ],
+            "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+            "core": [
+              "unlimited",
+              "unlimited"
+            ]
+          }
+        },
+        "remainingNs": 21155752935,
+        "client": {
+          "address": "0x55fad2400650",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            0,
+            0
+          ],
+          "size": [
+            1280,
+            800
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": false,
+          "monitor": 0,
+          "class": "GTK Application",
+          "title": "",
+          "initialClass": "GTK Application",
+          "initialTitle": "",
+          "pid": 140556,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 2,
+          "fullscreenClient": 2,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000039"
+        },
+        "clients": [
+          {
+            "address": "0x55fad233fd80",
+            "mapped": true,
+            "hidden": false,
+            "visible": false,
+            "acceptsInput": false,
+            "at": [
+              12,
+              38
+            ],
+            "size": [
+              621,
+              750
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "foot",
+            "title": "charl@warlock-vm:~",
+            "initialClass": "foot",
+            "initialTitle": "foot",
+            "pid": 2095,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 0,
+            "fullscreenClient": 0,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": false,
+            "grouped": [],
+            "tags": [
+              "default-opacity*",
+              "terminal*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 1,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000005"
+          },
+          {
+            "address": "0x55fad2400650",
+            "mapped": true,
+            "hidden": false,
+            "visible": true,
+            "acceptsInput": true,
+            "at": [
+              0,
+              0
+            ],
+            "size": [
+              1280,
+              800
+            ],
+            "workspace": {
+              "id": 1,
+              "name": "1"
+            },
+            "floating": false,
+            "monitor": 0,
+            "class": "GTK Application",
+            "title": "",
+            "initialClass": "GTK Application",
+            "initialTitle": "",
+            "pid": 140556,
+            "xwayland": false,
+            "pinned": false,
+            "pinFullscreened": false,
+            "fullscreen": 2,
+            "fullscreenClient": 2,
+            "fullscreenHandler": "default",
+            "allowedOverFullscreen": true,
+            "grouped": [],
+            "tags": [
+              "default-opacity*"
+            ],
+            "swallowing": "0x0",
+            "focusHistoryID": 0,
+            "inhibitingIdle": false,
+            "xdgTag": "",
+            "xdgDescription": "",
+            "contentType": "none",
+            "tearingHint": false,
+            "stableId": "18000039"
+          }
+        ],
+        "monitor": {
+          "id": 0,
+          "name": "Virtual-1",
+          "description": "Red Hat Inc. QEMU Monitor",
+          "make": "Red Hat, Inc.",
+          "model": "QEMU Monitor",
+          "serial": "",
+          "width": 1280,
+          "height": 800,
+          "physicalWidth": 320,
+          "physicalHeight": 200,
+          "refreshRate": 74.994,
+          "x": 0,
+          "y": 0,
+          "activeWorkspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "specialWorkspace": {
+            "id": 0,
+            "name": ""
+          },
+          "reserved": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "scale": 1,
+          "transform": 0,
+          "focused": true,
+          "dpmsStatus": true,
+          "vrr": false,
+          "solitary": "55fad2400650",
+          "solitaryBlockedBy": null,
+          "activelyTearing": false,
+          "tearingBlockedBy": [
+            "NOT_TORN",
+            "USER",
+            "WINDOW"
+          ],
+          "directScanoutTo": "0",
+          "directScanoutBlockedBy": [
+            "USER",
+            "SURFACE"
+          ],
+          "disabled": false,
+          "currentFormat": "XRGB8888",
+          "mirrorOf": "none",
+          "availableModes": [
+            "1280x800@74.99Hz",
+            "5120x2160@50.00Hz",
+            "4096x2160@50.00Hz",
+            "3840x2160@60.00Hz",
+            "3840x2160@59.94Hz",
+            "3840x2160@50.00Hz",
+            "1920x1440@60.00Hz",
+            "2560x1080@50.00Hz",
+            "1856x1392@59.99Hz",
+            "1792x1344@60.00Hz",
+            "2048x1152@60.00Hz",
+            "1920x1200@59.88Hz",
+            "1920x1080@60.00Hz",
+            "1920x1080@50.00Hz",
+            "1600x1200@60.00Hz",
+            "1680x1050@59.95Hz",
+            "1400x1050@59.98Hz",
+            "1280x1024@60.02Hz",
+            "1440x900@59.89Hz",
+            "1280x960@60.00Hz",
+            "1360x768@60.02Hz",
+            "1280x768@59.87Hz",
+            "1024x768@60.00Hz",
+            "800x600@60.32Hz",
+            "640x480@60.00Hz",
+            "640x480@59.94Hz"
+          ],
+          "colorManagementPreset": "srgb",
+          "sdrBrightness": 1,
+          "sdrSaturation": 1,
+          "sdrMinLuminance": 0.2,
+          "sdrMaxLuminance": 80,
+          "hardwareCursorsInUse": true
+        },
+        "layers": {
+          "Virtual-1": {
+            "levels": {
+              "0": [
+                {
+                  "address": "0x55fad1571870",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 800,
+                  "alpha": 1,
+                  "namespace": "omarchy-background",
+                  "pid": 10875
+                }
+              ],
+              "1": [],
+              "2": [
+                {
+                  "address": "0x55fad15988d0",
+                  "x": 0,
+                  "y": 0,
+                  "w": 1280,
+                  "h": 26,
+                  "alpha": 0,
+                  "namespace": "omarchy-bar",
+                  "pid": 10875
+                }
+              ],
+              "3": []
+            }
+          }
+        },
+        "cursor": {
+          "x": 295,
+          "y": 213
+        },
+        "scopeState": {
+          "known": true,
+          "properties": {
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+            "MemoryMax": "2147483648"
+          }
+        },
+        "originalDurationSeconds": 28,
+        "hostProbeSeconds": 0.3256381980027072
+      },
+      "targetBox": [
+        18,
+        194,
+        580,
+        235
+      ],
+      "validatedPayloadSha256": "2e31d65076c3b40c043ec8c756b6afee61f392083e197acfe3135b5bfc74c0ba"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "/home/charl/vm/omarchy/evidence/warlock-live-usability-reversal-20261101T221006Z/run-01/001-applications-ready.png",
+      "sha256": "6946769e272c61fb727e955e0bad68e227631a1c00b9509e8525f61557d676f5",
+      "label": "applications-ready",
+      "rootVisualReviewPending": true
+    },
+    {
+      "path": "/home/charl/vm/omarchy/evidence/warlock-live-usability-reversal-20261101T221006Z/run-01/002-applications-ready.png",
+      "sha256": "bbf9a545885f4cc82ed31ed82979d1e46361e45f29152d60a1f6edc4e6eb243e",
+      "label": "applications-ready",
+      "rootVisualReviewPending": true
+    },
+    {
+      "path": "/home/charl/vm/omarchy/evidence/warlock-live-usability-reversal-20261101T221006Z/run-01/003-search-label-ready.png",
+      "sha256": "a3898a5b7c00e3ed36409d5befec3b42267b10c0a88e2cef534b45c3d5013476",
+      "label": "search-label-ready",
+      "rootVisualReviewPending": true
+    },
+    {
+      "path": "/home/charl/vm/omarchy/evidence/warlock-live-usability-reversal-20261101T221006Z/run-01/004-positive-foot.png",
+      "sha256": "58313ebc9f33fef90aadfc6bb556f70ed96a2e3be01725f3e2a34b95f9b3b319",
+      "label": "positive-foot",
+      "rootVisualReviewPending": true
+    },
+    {
+      "path": "/home/charl/vm/omarchy/evidence/warlock-live-usability-reversal-20261101T221006Z/run-01/005-negative-footz.png",
+      "sha256": "4d7adf58ca0d4703e1a47ebe7535783a6f53f38921452c44b22d99a4111bdadf",
+      "label": "negative-footz",
+      "rootVisualReviewPending": true
+    }
+  ],
+  "completedPhysicalSequence": true,
+  "semanticVerdict": "Requires Root visual review of positive-foot and negative-footz screenshots; no automatic text/DOM semantic proof.",
+  "noBackendWindowEffectsRequested": true,
+  "physicalInputNature": "QEMU-injected guest pointer/key events, not hardwareinput qualification",
+  "guestQaLauncherPID": 140427,
+  "pinnedAllThreeProcessIdentities": {
+    "unit": "warlock-live-usability-534f95d501554d18.scope",
+    "attempt": "warlock-live-usability-534f95d501554d18",
+    "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+    "deadline": "81408428711938",
+    "engine": {
+      "pid": 140556,
+      "birth": "8138065",
+      "ppid": 140542,
+      "pgid": 140542,
+      "uid": 1000,
+      "device": 58,
+      "inode": 39446,
+      "size": 700480,
+      "namespacePids": [
+        140556,
+        1
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+      "core": [
+        "1",
+        "1"
+      ]
+    },
+    "broker": {
+      "pid": 140542,
+      "birth": "8138052",
+      "ppid": 140533,
+      "pgid": 140542,
+      "uid": 1000,
+      "device": 58,
+      "inode": 39446,
+      "size": 700480,
+      "namespacePids": [
+        140542
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+      "core": [
+        "1",
+        "1"
+      ]
+    },
+    "backend": {
+      "pid": 140533,
+      "birth": "8138049",
+      "ppid": 140427,
+      "pgid": 140533,
+      "uid": 1000,
+      "device": 58,
+      "inode": 39447,
+      "size": 24056,
+      "namespacePids": [
+        140533
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+      "core": [
+        "1",
+        "1"
+      ]
+    },
+    "address": "0x55fad2400650",
+    "at": [
+      0,
+      0
+    ],
+    "size": [
+      1280,
+      800
+    ],
+    "foot": {
+      "pid": 2095,
+      "birth": "6930",
+      "ppid": 930,
+      "pgid": 2095,
+      "uid": 1000,
+      "device": 31,
+      "inode": 161589,
+      "size": 503440,
+      "namespacePids": [
+        2095
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+      "core": [
+        "unlimited",
+        "unlimited"
+      ]
+    }
+  },
+  "lastKeyPixelObservation": {
+    "resultsRegion": [
+      18,
+      240,
+      580,
+      600
+    ],
+    "changedPixelBounds": [
+      0,
+      58,
+      562,
+      336
+    ],
+    "semanticLimit": "A pixel difference is not semantic proof of Foot/no-match or query/result synchronization; Root must inspect both complete screenshots."
+  },
+  "inputCustody": {
+    "lastAcknowledgedButtonDown": false,
+    "keyboardMode": "One checked QMP send-key per printable qcode with hold-time60ms and QEMU timed release.",
+    "keyReleaseObserved": false,
+    "atomicFocusProof": false,
+    "releaseScope": "Keyboard transitions are not independently sampled; QMP timed release and acknowledgement do not prove guest delivery. Mouse motion/down/up each retain separate fresh fences. No blind release or input retry on refusal/unknown."
+  },
+  "qmpReceiptCount": 13,
+  "guestRun": "/home/charl/warlock-live-usability-reversal-20261101T221006Z/run-01",
+  "guestTrialResult": {
+    "scope": "Actual current Elm/Haskell application-only VM usability trial; no native/release/AT/IME acceptance",
+    "originalDurationSeconds": 28,
+    "exit": 1,
+    "failure": null,
+    "forcedAtOriginalDeadlineOrRefusal": false,
+    "elapsed": 28.16143264299899,
+    "unit": "warlock-live-usability-534f95d501554d18.scope",
+    "pinnedIdentity": {
+      "unit": "warlock-live-usability-534f95d501554d18.scope",
+      "attempt": "warlock-live-usability-534f95d501554d18",
+      "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+      "deadline": "81408428711938",
+      "engine": {
+        "pid": 140556,
+        "birth": "8138065",
+        "ppid": 140542,
+        "pgid": 140542,
+        "uid": 1000,
+        "device": 58,
+        "inode": 39446,
+        "size": 700480,
+        "namespacePids": [
+          140556,
+          1
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+        "core": [
+          "1",
+          "1"
+        ]
+      },
+      "broker": {
+        "pid": 140542,
+        "birth": "8138052",
+        "ppid": 140533,
+        "pgid": 140542,
+        "uid": 1000,
+        "device": 58,
+        "inode": 39446,
+        "size": 700480,
+        "namespacePids": [
+          140542
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+        "core": [
+          "1",
+          "1"
+        ]
+      },
+      "backend": {
+        "pid": 140533,
+        "birth": "8138049",
+        "ppid": 140427,
+        "pgid": 140533,
+        "uid": 1000,
+        "device": 58,
+        "inode": 39447,
+        "size": 24056,
+        "namespacePids": [
+          140533
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-534f95d501554d18.scope",
+        "core": [
+          "1",
+          "1"
+        ]
+      },
+      "address": "0x55fad2400650",
+      "at": [
+        0,
+        0
+      ],
+      "size": [
+        1280,
+        800
+      ],
+      "foot": {
+        "pid": 2095,
+        "birth": "6930",
+        "ppid": 930,
+        "pgid": 2095,
+        "uid": 1000,
+        "device": 31,
+        "inode": 161589,
+        "size": 503440,
+        "namespacePids": [
+          2095
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+        "core": [
+          "unlimited",
+          "unlimited"
+        ]
+      }
+    },
+    "cleanup": {
+      "before": {
+        "known": false,
+        "exit": 0,
+        "properties": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "ControlGroup": "",
+          "MemoryMax": "infinity"
+        }
+      },
+      "stopExit": 5,
+      "launcherReaped": true,
+      "remaining": [],
+      "after": {
+        "known": false,
+        "exit": 0,
+        "properties": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "ControlGroup": "",
+          "MemoryMax": "infinity"
+        }
+      },
+      "scopeInventoryConfirmedEmpty": true,
+      "observedPrincipalBirthsAbsent": {
+        "engine": true,
+        "broker": true,
+        "backend": true
+      },
+      "observedGroupPathAbsent": true,
+      "originalOwnedBirthsRemain": [],
+      "idleRestore": {
+        "exit": 0,
+        "original": {
+          "enabled": true,
+          "stayAwake": false,
+          "stayAwakeStateLoaded": true,
+          "stayAwakeStatePath": "/home/charl/.local/state/omarchy/indicators/stay-awake",
+          "idle": false,
+          "inIdleCycle": true,
+          "screensaverStarted": true,
+          "screensaver": 150,
+          "lock": 300,
+          "screensaverDelay": 0,
+          "lockDelay": 150,
+          "screensaverWindows": 1,
+          "timers": {
+            "screensaver": false,
+            "lock": true,
+            "screensaverLaunchGrace": false
+          },
+          "processes": {
+            "screensaver": false,
+            "lock": false,
+            "wake": false
+          },
+          "lastEvent": "process-exit: screensaver exitCode=0 status=0",
+          "lastEventAt": "2026-11-01T22:10:08.427Z"
+        },
+        "after": {
+          "enabled": true,
+          "stayAwake": false,
+          "stayAwakeStateLoaded": true,
+          "stayAwakeStatePath": "/home/charl/.local/state/omarchy/indicators/stay-awake",
+          "idle": false,
+          "inIdleCycle": false,
+          "screensaverStarted": false,
+          "screensaver": 150,
+          "lock": 300,
+          "screensaverDelay": 0,
+          "lockDelay": 150,
+          "screensaverWindows": 0,
+          "timers": {
+            "screensaver": false,
+            "lock": false,
+            "screensaverLaunchGrace": false
+          },
+          "processes": {
+            "screensaver": false,
+            "lock": false,
+            "wake": false
+          },
+          "lastEvent": "idle-monitor: active",
+          "lastEventAt": "2026-11-01T22:10:40.653Z"
+        },
+        "exactEnabledRestored": true
+      },
+      "footAfter": {
+        "pid": 2095,
+        "birth": "6930",
+        "ppid": 930,
+        "pgid": 2095,
+        "uid": 1000,
+        "device": 31,
+        "inode": 161589,
+        "size": 503440,
+        "namespacePids": [
+          2095
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+        "core": [
+          "unlimited",
+          "unlimited"
+        ]
+      },
+      "footPreserved": true
+    },
+    "nativeOperations": [],
+    "providerCleanupQualified": false,
+    "nativeAccepted": false,
+    "releaseAccepted": false
+  }
+}

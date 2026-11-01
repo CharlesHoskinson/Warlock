@@ -1,4 +1,4 @@
-module SurfaceSnapshot exposing (Snapshot, Control, Details, enabled, decode, encode, controlIdentities, publication, lease, mode, action, queryValue, pendingQuery, fieldIdentity, details)
+module SurfaceSnapshot exposing (Snapshot, Control, Details, enabled, decode, encode, controlIdentities, publication, lease, mode, action, queryValue, pendingQuery, pendingQueryBlocked, honestPendingQuery, composingPopup, fieldIdentity, details)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -73,6 +73,28 @@ fieldIdentity (Snapshot snapshot) = if snapshot.mode=="files" then "control:file
 
 pendingQuery : String -> Snapshot -> Snapshot
 pendingQuery query ((Snapshot snapshot) as current) = Snapshot {snapshot | popup=List.map (\item -> if item.identity==fieldIdentity current then {item | label=query} else if String.startsWith "entry:" item.identity || item.identity=="files:open-path" || String.startsWith "files:collection:" item.identity || item.identity=="files:home" then {item | enabled=False} else item) snapshot.popup}
+
+pendingQueryBlocked : String -> Bool
+pendingQueryBlocked identity =
+    String.startsWith "entry:" identity
+        || String.startsWith "pin:" identity
+        || String.startsWith "unpin:" identity
+        || String.startsWith "pin-left:" identity
+        || String.startsWith "pin-right:" identity
+        || String.startsWith "jump:open:" identity
+        || identity == "control:page-previous"
+        || identity == "control:page-next"
+        || identity == "files:open-path"
+        || String.startsWith "files:collection:" identity
+        || identity == "files:home"
+
+honestPendingQuery : String -> Snapshot -> Snapshot
+honestPendingQuery query ((Snapshot snapshot) as current) =
+    Snapshot {snapshot | popup=List.map (\item -> if List.member snapshot.mode ["applications","files"] && item.identity==fieldIdentity current then {item | label=query} else if pendingQueryBlocked item.identity then {item | enabled=False} else item) snapshot.popup}
+
+composingPopup : Snapshot -> Snapshot
+composingPopup ((Snapshot snapshot) as current) =
+    Snapshot {snapshot | popup=List.map (\item -> if List.member snapshot.mode ["applications","files"] && item.identity==fieldIdentity current then item else {item | enabled=False}) snapshot.popup}
 
 enabled : Bool -> String -> Snapshot -> Bool
 enabled popup identity (Snapshot snapshot) = List.any (\control -> control.identity==identity && control.enabled) (if popup then snapshot.popup else snapshot.bar)

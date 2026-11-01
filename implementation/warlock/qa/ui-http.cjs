@@ -319,4 +319,232 @@ async function receiptNotAck(){
   report.trace.push({label:'explicit controlled host preconditions; no native issuer',topology,attached:initialGateway,wholeCommit:whole,matchingDisposition:certificate});env.close();
 }
 
-(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();
+async function pendingQueryHonestControls(){
+  const control=(id,domId,label,enabled=true)=>({id,domId,label,ariaLabel:label,detail:'',enabled});
+  const blockedIds=[
+    'jump:open:org.gnome.TextEditor',
+    'pin:org.gnome.TextEditor',
+    'unpin:org.mozilla.firefox',
+    'pin-left:org.mozilla.firefox',
+    'pin-right:org.mozilla.firefox',
+    'entry:org.gnome.TextEditor',
+    'control:page-previous',
+    'control:page-next'
+  ];
+  const safeIds=['control:close','control:refresh','control:acknowledge'];
+  const allButtons=[...safeIds,...blockedIds];
+  const appFrame=(publication,lease,query,status)=>({
+    surfaceProtocol:2,
+    publication,
+    lease,
+    mode:'applications',
+    status,
+    bar:[control('bar:applications','open-applications','Applications')],
+    popup:[
+      control('control:search','search-applications',query),
+      control('control:close','close-applications','Windows'),
+      control('control:refresh','refresh-applications','Refresh'),
+      control('control:acknowledge','acknowledge-launch','I checked; allow another launch'),
+      control('jump:open:org.gnome.TextEditor','jump-editor','Actions'),
+      control('pin:org.gnome.TextEditor','pin-editor','Pin'),
+      control('unpin:org.mozilla.firefox','unpin-firefox','Unpin'),
+      control('pin-left:org.mozilla.firefox','pin-left-firefox','Move earlier'),
+      control('pin-right:org.mozilla.firefox','pin-right-firefox','Move later'),
+      control('entry:org.gnome.TextEditor','entry-editor','Text Editor'),
+      control('control:page-previous','page-previous','Previous page'),
+      control('control:page-next','page-next','Next page')
+    ]
+  });
+  const env=harness(popupFile,'HttpPopup');await env.flush();
+  const findField=id=>walk(env.container,n=>n.attributes?.['data-surface-field']===id);
+  const findButton=id=>walk(env.container,n=>n.attributes?.['data-surface-control']===id);
+  const findStatus=()=>walk(env.container,n=>n.tagName==='P'&&n.attributes?.role==='status');
+  const findComposingRoot=()=>walk(env.container,n=>n.attributes?.['data-input-composing']!==undefined);
+  const assertButtonState=(label,id,expectDisabled)=>{
+    const btn=findButton(id);
+    check(`${label}: ${id} painted`,Boolean(btn),domWitness(env.container));
+    if(!btn)return;
+    check(`${label}: ${id} disabled=${expectDisabled}`,Boolean(btn.disabled)===expectDisabled,domWitness(btn));
+    check(`${label}: ${id} aria-disabled=${expectDisabled}`,btn.attributes['aria-disabled']===String(expectDisabled),domWitness(btn));
+    check(`${label}: ${id} click listener ${expectDisabled?'absent':'present'}`,expectDisabled?btn.listeners.click===undefined:typeof btn.listeners.click==='function',domWitness(btn));
+  };
+
+  await env.event(gateway('presentation',appFrame('1','7','','Type to search applications.')));
+  check('pending-honest initial composing=false',findComposingRoot()?.attributes['data-input-composing']==='false');
+  check('pending-honest initial status text',findStatus()?.textContent==='Type to search applications.'&&findStatus()?.attributes['aria-live']==='off',findStatus()?.textContent);
+  for(const id of allButtons)assertButtonState('pending-honest initial',id,false);
+
+  const search=findField('control:search');
+  need('pending-honest search field painted',Boolean(search)&&typeof search.listeners.input==='function'&&typeof search.listeners.compositionstart==='function'&&typeof search.listeners.compositionend==='function');
+  search.value='foot';
+  search.listeners.input({type:'input',target:search,currentTarget:search,isComposing:false,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  need('pending-honest query edit emits one POST',env.posts().length===1,env.posts().length);
+  check('pending-honest query POST envelope',equal(JSON.parse(env.posts()[0].body),{surfaceProtocol:2,kind:'surface-query',surface:'popup',publication:'1',lease:'7',id:'control:search',query:'foot'}),env.posts()[0].body);
+  env.posts()[0].respond(204);await env.flush();
+
+  check('pending-honest pending status with previous notice',findStatus()?.textContent==='Results may not match current input. Previous: Type to search applications.'&&findStatus()?.attributes['aria-live']==='off',findStatus()?.textContent);
+  check('pending-honest search field stays enabled with value foot',!findField('control:search')?.disabled&&findField('control:search')?.value==='foot');
+  for(const id of blockedIds)assertButtonState('pending-honest query unacknowledged',id,true);
+  for(const id of safeIds)assertButtonState('pending-honest query unacknowledged',id,false);
+
+  const refreshBtn=findButton('control:refresh');
+  refreshBtn.listeners.click({type:'click',target:refreshBtn,currentTarget:refreshBtn,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  need('pending-honest safe refresh reaches POST while query pending',env.posts().length===2,env.posts().length);
+  check('pending-honest safe refresh POST envelope',equal(JSON.parse(env.posts()[1].body),{surfaceProtocol:2,kind:'surface-action',surface:'popup',publication:'1',lease:'7',id:'control:refresh'}),env.posts()[1].body);
+  env.posts()[1].respond(204);await env.flush();
+  check('pending-honest refresh POST preserves pending query foot',findField('control:search')?.value==='foot');
+
+  const composingField=findField('control:search');
+  composingField.value='foot';
+  composingField.listeners.compositionstart({type:'compositionstart',target:composingField,currentTarget:composingField,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  composingField.value='foot漢';
+  composingField.listeners.input({type:'input',target:composingField,currentTarget:composingField,isComposing:true,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  check('pending-honest preedit sets data-input-composing=true',findComposingRoot()?.attributes['data-input-composing']==='true');
+  check('pending-honest preedit emits zero network POSTs',env.posts().length===2,env.posts().length);
+  check('pending-honest preedit keeps search field enabled with preedit value',!findField('control:search')?.disabled&&findField('control:search')?.value==='foot漢');
+  check('pending-honest preedit status notice',findStatus()?.textContent==='Results may not match current input. Previous: Type to search applications.');
+  for(const id of allButtons)assertButtonState('pending-honest active preedit disables all non-field buttons',id,true);
+
+  const cancelField=findField('control:search');
+  cancelField.value='foot';
+  cancelField.listeners.compositionend({type:'compositionend',target:cancelField,currentTarget:cancelField,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  check('pending-honest cancelled preedit clears data-input-composing',findComposingRoot()?.attributes['data-input-composing']==='false');
+  check('pending-honest cancelled preedit does not duplicate sent query POST',env.posts().length===2,env.posts().length);
+  check('pending-honest cancelled preedit retains unacknowledged foot',findField('control:search')?.value==='foot'&&findStatus()?.textContent==='Results may not match current input. Previous: Type to search applications.');
+  for(const id of blockedIds)assertButtonState('pending-honest post-cancel still pending',id,true);
+  for(const id of safeIds)assertButtonState('pending-honest post-cancel still pending',id,false);
+
+  await env.event(gateway('presentation',appFrame('2','7','','')));
+  need('pending-honest intermediate unacknowledged frame rebases query POST',env.posts().length===3,env.posts().length);
+  check('pending-honest intermediate rebased query POST',equal(JSON.parse(env.posts()[2].body),{surfaceProtocol:2,kind:'surface-query',surface:'popup',publication:'2',lease:'7',id:'control:search',query:'foot'}),env.posts()[2].body);
+  env.posts()[2].respond(204);await env.flush();
+  check('pending-honest empty-prior-status branch',findStatus()?.textContent==='Results may not match current input.',findStatus()?.textContent);
+  for(const id of blockedIds)assertButtonState('pending-honest intermediate unacknowledged',id,true);
+
+  await env.event(gateway('presentation',appFrame('3','7','foot','Choose a matching application.')));
+  check('pending-honest matching publication emits no duplicate query POST',env.posts().length===3,env.posts().length);
+  check('pending-honest matching publication restores authoritative status',findStatus()?.textContent==='Choose a matching application.',findStatus()?.textContent);
+  for(const id of allButtons)assertButtonState('pending-honest acknowledged',id,false);
+
+  const pinBtn=findButton('pin:org.gnome.TextEditor');
+  pinBtn.listeners.click({type:'click',target:pinBtn,currentTarget:pinBtn,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  need('pending-honest acknowledged pin click reaches POST',env.posts().length===4,env.posts().length);
+  check('pending-honest acknowledged pin POST envelope',equal(JSON.parse(env.posts()[3].body),{surfaceProtocol:2,kind:'surface-action',surface:'popup',publication:'3',lease:'7',id:'pin:org.gnome.TextEditor'}),env.posts()[3].body);
+  env.posts()[3].respond(204);await env.flush();
+
+  const ackField=findField('control:search');
+  ackField.value='foot';
+  ackField.listeners.compositionstart({type:'compositionstart',target:ackField,currentTarget:ackField,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  ackField.value='footβ';
+  ackField.listeners.input({type:'input',target:ackField,currentTarget:ackField,isComposing:true,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  for(const id of allButtons)assertButtonState('pending-honest preedit from acknowledged baseline',id,true);
+  ackField.value='foot';
+  ackField.listeners.compositionend({type:'compositionend',target:ackField,currentTarget:ackField,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  check('pending-honest cancel back to acknowledged baseline clears pending notice',findStatus()?.textContent==='Choose a matching application.'&&env.posts().length===4,findStatus()?.textContent);
+  for(const id of allButtons)assertButtonState('pending-honest restored acknowledged baseline',id,false);
+
+  const filesFrame={
+    surfaceProtocol:2,
+    publication:'4',
+    lease:'8',
+    mode:'files',
+    status:'Choose a folder.',
+    bar:[control('bar:applications','open-applications','Applications')],
+    popup:[
+      control('control:close','files-close','Close Files menu'),
+      control('files:refresh','files-refresh','Refresh Files state'),
+      control('files:home','files-home','Home'),
+      control('files:collection:documents','files-docs','Documents'),
+      control('control:files-path','files-path',''),
+      control('files:open-path','files-open','Open folder')
+    ]
+  };
+  await env.event(gateway('presentation',filesFrame));
+  const pathField=findField('control:files-path');
+  need('pending-honest files path field painted',Boolean(pathField)&&typeof pathField.listeners.input==='function');
+  pathField.value='/tmp';
+  pathField.listeners.input({type:'input',target:pathField,currentTarget:pathField,isComposing:false,stopPropagation(){},preventDefault(){}});
+  await env.flush();
+  need('pending-honest files path edit emits one POST',env.posts().length===5,env.posts().length);
+  check('pending-honest files path POST envelope',equal(JSON.parse(env.posts()[4].body),{surfaceProtocol:2,kind:'surface-query',surface:'popup',publication:'4',lease:'8',id:'control:files-path',query:'/tmp'}),env.posts()[4].body);
+  env.posts()[4].respond(204);await env.flush();
+  check('pending-honest files status notice',findStatus()?.textContent==='Results may not match current input. Previous: Choose a folder.',findStatus()?.textContent);
+  for(const id of ['files:open-path','files:home','files:collection:documents'])assertButtonState('pending-honest files pending',id,true);
+  for(const id of ['control:close','files:refresh'])assertButtonState('pending-honest files pending',id,false);
+  env.close();
+}
+
+
+async function seededPendingQueryDom(){
+  // Reproducible external inputs and literal wire/DOM oracles; no reducer projection.
+  let random=20261101;
+  for(let seed=0;seed<32;seed++){
+    random=(Math.imul(random,1664525)+1013904223)>>>0;
+    const label=`pending-sequence seed=${seed} state=${random}`;
+    const pub=9007199254750000n+BigInt(seed)*10n,lease=9007199254760000n+BigInt(seed);
+    const query=['foot','editor','λtool','terminal'][random%4]+'-'+seed;
+    const enabledIds=['entry:org.gnome.TextEditor','pin:org.gnome.TextEditor'];
+    if(random&1)enabledIds.reverse();
+    const disabledId='entry:org.example.Disabled';
+    const row=(id,enabled=true)=>({id,domId:'seed-'+id.replaceAll(':','-'),label:id,ariaLabel:id,detail:'',enabled});
+    const frame=(p,l,q,mode='applications')=>({surfaceProtocol:2,publication:String(p),lease:String(l),mode,status:'Authoritative results',bar:[row('bar:applications')],popup:[
+      {...row(mode==='files'?'control:files-path':'control:search'),label:q},row('control:close'),row('control:refresh'),...enabledIds.map(id=>row(id)),row(disabledId,false)]});
+    const env=harness(popupFile,'HttpPopup');await env.flush();
+    const field=()=>walk(env.container,n=>n.attributes?.['data-surface-field']==='control:search');
+    const button=id=>walk(env.container,n=>n.attributes?.['data-surface-control']===id);
+    const status=()=>walk(env.container,n=>n.tagName==='P'&&n.attributes?.role==='status')?.textContent;
+    const event=(node,type,extra={})=>({type,target:node,currentTarget:node,stopPropagation(){},preventDefault(){},...extra});
+    const edit=async value=>{const node=field();need(label+' input route reachable',node&&typeof node.listeners.input==='function');node.value=value;node.listeners.input(event(node,'input',{isComposing:false}));await env.flush();};
+    const states=(pending,stage)=>{
+      for(const id of [...enabledIds,disabledId]){
+        const node=button(id),disabled=pending||id===disabledId;
+        check(label+' '+stage+' exact enabled state '+id,Boolean(node)&&Boolean(node.disabled)===disabled&&node.attributes['aria-disabled']===String(disabled)&&(disabled?node.listeners.click===undefined:typeof node.listeners.click==='function'),node?domWitness(node):null);
+      }
+      const escape=button('control:close');check(label+' '+stage+' safe close remains enabled',Boolean(escape)&&!escape.disabled&&typeof escape.listeners.click==='function');
+    };
+    await env.event(gateway('presentation',frame(pub,lease,'')));
+    states(false,'initial');
+    await edit(query);
+    need(label+' one query POST',env.posts().length===1,env.posts().length);
+    check(label+' exact initial query wire',equal(JSON.parse(env.posts()[0].body),{surfaceProtocol:2,kind:'surface-query',surface:'popup',publication:String(pub),lease:String(lease),id:'control:search',query}));
+    env.posts()[0].respond(204);await env.flush();states(true,'pending');
+    await env.event(gateway('presentation',frame(pub-1n,lease,query)));
+    check(label+' stale matching query cannot acknowledge',field()?.value===query&&status()==='Results may not match current input. Previous: Authoritative results'&&env.posts().length===1);
+    states(true,'stale matching query');
+    await env.event(gateway('presentation',frame(pub+1n,lease,query)));
+    check(label+' fresh matching acknowledgment restores status without replay',field()?.value===query&&status()==='Authoritative results'&&env.posts().length===1);
+    states(false,'fresh acknowledged');
+    const selected=button(enabledIds[(random>>>8)%2]);
+    need(label+' acknowledged enabled action reachable',typeof selected?.listeners.click==='function');
+    selected.listeners.click(event(selected,'click'));await env.flush();
+    need(label+' acknowledged action emits one POST',env.posts().length===2,env.posts().length);
+    check(label+' exact acknowledged action wire',equal(JSON.parse(env.posts()[1].body),{surfaceProtocol:2,kind:'surface-action',surface:'popup',publication:String(pub+1n),lease:String(lease),id:enabledIds[(random>>>8)%2]}));
+    env.posts()[1].respond(204);await env.flush();
+    let input=field();input.listeners.compositionstart(event(input,'compositionstart'));await env.flush();
+    input=field();input.value=query+'漢';input.listeners.input(event(input,'input',{isComposing:true}));await env.flush();
+    check(label+' IME preedit has no transport send',field()?.value===query+'漢'&&env.posts().length===2);
+    for(const id of [...enabledIds,disabledId,'control:close','control:refresh']){const node=button(id);check(label+' IME blocks '+id,Boolean(node)&&node.disabled&&node.listeners.click===undefined);}
+    input=field();input.value=query;input.listeners.compositionend(event(input,'compositionend'));await env.flush();
+    check(label+' IME cancel restores acknowledged draft without POST',field()?.value===query&&status()==='Authoritative results'&&env.posts().length===2);
+    states(false,'IME cancelled');
+    await edit(query+'x');need(label+' next draft query sends once',env.posts().length===3);env.posts()[2].respond(204);await env.flush();
+    const changedScope=seed%2===0;
+    await env.event(gateway('presentation',frame(pub+2n,changedScope?lease+1n:lease,'',changedScope?'applications':'files')));
+    const newField=walk(env.container,n=>n.attributes?.['data-surface-field']===(changedScope?'control:search':'control:files-path'));
+    check(label+' '+(changedScope?'new lease':'new field scope')+' discards old pending draft',newField?.value===''&&status()==='Authoritative results'&&env.posts().length===3);
+    states(false,'retired draft');
+    report.trace.push({campaign:'pending-query-sequence',seed,state:random,publication:String(pub),lease:String(lease),query,enabledIds,disabledId,retirement:changedScope?'new-lease':'new-field-scope',scope:'Controlled generated Elm DOM/HTTP only; no native or physical IME proof'});
+    env.close();
+  }
+}
+
+(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();await pendingQueryHonestControls();await seededPendingQueryDom();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();

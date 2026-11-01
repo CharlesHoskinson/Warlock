@@ -136,6 +136,9 @@ def main():
                           'implementation/warlock/qa/JumpListReplay.elm',
                           'implementation/warlock/qa/NotificationRelevanceReplay.elm',
                           'implementation/warlock/qa/RetirementProofReplay.elm',
+                          'implementation/warlock/qa/LocalFieldReplay.elm',
+                          'implementation/warlock/qa/local-field-publication.qnt',
+                          'tools/quint-toolchain.json',
                           'implementation/warlock/qa/NativePointerFixture.elm',
                           'implementation/warlock/qa/typed-state.cjs'})
     if packet['arguments'] == ['--status-scroll']:

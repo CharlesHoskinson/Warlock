@@ -1,4 +1,4 @@
-module SurfaceRenderer exposing (enabled, Snapshot, decode, encode, controlIdentities, controlDomId, publication, lease, mode, view, viewBarWithStatusScroll, viewWithPreview, action, queryValue, pendingQuery, fieldIdentity)
+module SurfaceRenderer exposing (enabled, Snapshot, decode, encode, controlIdentities, controlDomId, publication, lease, mode, view, viewBarWithStatusScroll, viewWithPreview, viewWithPreviewPending, action, queryValue, pendingQuery, pendingQueryBlocked, honestPendingQuery, composingPopup, fieldIdentity)
 
 import Html exposing (Html, button, div, h1, input, label, p, span, text)
 import Html.Attributes exposing (attribute, class, disabled, for, hidden, id, style, title, type_, value, placeholder)
@@ -46,6 +46,15 @@ queryValue = SurfaceSnapshot.queryValue
 pendingQuery : String -> Snapshot -> Snapshot
 pendingQuery = SurfaceSnapshot.pendingQuery
 
+pendingQueryBlocked : String -> Bool
+pendingQueryBlocked = SurfaceSnapshot.pendingQueryBlocked
+
+honestPendingQuery : String -> Snapshot -> Snapshot
+honestPendingQuery = SurfaceSnapshot.honestPendingQuery
+
+composingPopup : Snapshot -> Snapshot
+composingPopup = SurfaceSnapshot.composingPopup
+
 fieldIdentity : Snapshot -> String
 fieldIdentity = SurfaceSnapshot.fieldIdentity
 
@@ -72,16 +81,19 @@ controlDomId _ rawDomId =
     escapeControlDomId rawDomId
 
 view : Bool -> (E.Value -> msg) -> Snapshot -> Html msg
-view popup send current = viewInternal (\_ -> Preview.Hidden) Nothing popup send current
+view popup send current = viewInternal (\_ -> Preview.Hidden) False Nothing popup send current
 
 viewBarWithStatusScroll : Maybe String -> (E.Value -> msg) -> Snapshot -> Html msg
-viewBarWithStatusScroll statusScrollDomId send current = viewInternal (\_ -> Preview.Hidden) statusScrollDomId False send current
+viewBarWithStatusScroll statusScrollDomId send current = viewInternal (\_ -> Preview.Hidden) False statusScrollDomId False send current
 
 viewWithPreview : (String -> Preview.Visual) -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
-viewWithPreview preview popup send current = viewInternal preview Nothing popup send current
+viewWithPreview preview popup send current = viewInternal preview False Nothing popup send current
 
-viewInternal : (String -> Preview.Visual) -> Maybe String -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
-viewInternal preview statusScrollDomId popup send current =
+viewWithPreviewPending : (String -> Preview.Visual) -> Bool -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
+viewWithPreviewPending preview pending popup send current = viewInternal preview pending Nothing popup send current
+
+viewInternal : (String -> Preview.Visual) -> Bool -> Maybe String -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
+viewInternal preview pending statusScrollDomId popup send current =
     let snapshot = SurfaceSnapshot.details current
         -- Statically and injectively exclude StatusScroll.reservedDomPrefix from
         -- every rendered control/description/caption DOM ID independent of snapshot
@@ -142,7 +154,8 @@ viewInternal preview statusScrollDomId popup send current =
                         in div ([class "overview-workspace",attribute "role" "group",attribute "aria-labelledby" (mapControlDomId first.domId)] ++ SurfaceTheme.overviewWorkspaceStyles snapshot.appearance) (List.map control (first::members)) :: overviewRows (List.drop (List.length members) rest)
                     else control first :: overviewRows rest
         statusIdle = String.isEmpty snapshot.status || snapshot.status=="Ready"
-    in if popup then div ([attribute "data-motion" snapshot.motion,attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),attribute "data-effects" (if snapshot.appearance.effectsOff then "off" else "on"),attribute "data-reduced-transparency" (if snapshot.appearance.reducedTransparency then "true" else "false"),class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] ++ SurfaceTheme.popupRootStyles snapshot.appearance snapshot.motion) [h1 (SurfaceTheme.popupHeadingStyles snapshot.appearance) [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="jump" then "Application actions" else if snapshot.mode=="files" then "Files" else if snapshot.mode=="system" then "System" else if snapshot.mode=="notifications" then "Notifications" else if snapshot.mode=="settings" then "Settings" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p ([attribute "role" "status",attribute "aria-live" "off"] ++ SurfaceTheme.popupStatusStyles snapshot.appearance snapshot.status) [text snapshot.status],(if snapshot.mode=="overview" then div ([class "surface-controls",attribute "role" "group"] ++ SurfaceTheme.popupControlsStyles snapshot.mode) (overviewRows snapshot.popup) else if snapshot.mode=="switcher" then div ([class "surface-controls",attribute "role" "group",attribute "aria-label" "Window switcher controls"] ++ SurfaceTheme.popupControlsStyles snapshot.mode) [Keyed.node "div" ([attribute "role" "listbox",attribute "aria-label" "Switch windows",attribute "aria-multiselectable" "false"] ++ SurfaceTheme.switcherListboxStyles snapshot.appearance) (snapshot.popup |> List.filter (\item -> String.startsWith "switcher:family:" item.identity) |> List.map (\item -> ("control:" ++ item.identity,control item))),Keyed.node "div" ([attribute "role" "group",attribute "aria-label" "Window switcher actions"] ++ SurfaceTheme.switcherActionsStyles) (snapshot.popup |> List.filter (\item -> not (String.startsWith "switcher:family:" item.identity)) |> List.map (\item -> ("control:" ++ item.identity,control item)))] else Keyed.node "div" ([class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] ++ SurfaceTheme.popupControlsStyles snapshot.mode) (List.concatMap keyedControl snapshot.popup))]
+        displayedStatus = if pending then "Results may not match current input." ++ (if String.isEmpty snapshot.status then "" else " Previous: " ++ snapshot.status) else snapshot.status
+    in if popup then div ([attribute "data-motion" snapshot.motion,attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),attribute "data-effects" (if snapshot.appearance.effectsOff then "off" else "on"),attribute "data-reduced-transparency" (if snapshot.appearance.reducedTransparency then "true" else "false"),class "surface-popup",attribute "data-mode" snapshot.mode,attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] ++ SurfaceTheme.popupRootStyles snapshot.appearance snapshot.motion) [h1 (SurfaceTheme.popupHeadingStyles snapshot.appearance) [text (if snapshot.mode=="applications" then "Applications" else if snapshot.mode=="overview" then "Task View" else if snapshot.mode=="switcher" then "Switch windows" else if snapshot.mode=="snap" then "Snap window" else if snapshot.mode=="jump" then "Application actions" else if snapshot.mode=="files" then "Files" else if snapshot.mode=="system" then "System" else if snapshot.mode=="notifications" then "Notifications" else if snapshot.mode=="settings" then "Settings" else if snapshot.mode=="menu" then "Window actions" else "Choose a window")],p ([attribute "role" "status",attribute "aria-live" "off"] ++ SurfaceTheme.popupStatusStyles snapshot.appearance snapshot.status) [text displayedStatus],(if snapshot.mode=="overview" then div ([class "surface-controls",attribute "role" "group"] ++ SurfaceTheme.popupControlsStyles snapshot.mode) (overviewRows snapshot.popup) else if snapshot.mode=="switcher" then div ([class "surface-controls",attribute "role" "group",attribute "aria-label" "Window switcher controls"] ++ SurfaceTheme.popupControlsStyles snapshot.mode) [Keyed.node "div" ([attribute "role" "listbox",attribute "aria-label" "Switch windows",attribute "aria-multiselectable" "false"] ++ SurfaceTheme.switcherListboxStyles snapshot.appearance) (snapshot.popup |> List.filter (\item -> String.startsWith "switcher:family:" item.identity) |> List.map (\item -> ("control:" ++ item.identity,control item))),Keyed.node "div" ([attribute "role" "group",attribute "aria-label" "Window switcher actions"] ++ SurfaceTheme.switcherActionsStyles) (snapshot.popup |> List.filter (\item -> not (String.startsWith "switcher:family:" item.identity)) |> List.map (\item -> ("control:" ++ item.identity,control item)))] else Keyed.node "div" ([class "surface-controls",attribute "role" (if snapshot.mode=="menu" then "menu" else "group")] ++ SurfaceTheme.popupControlsStyles snapshot.mode) (List.concatMap keyedControl snapshot.popup))]
        else Keyed.node "div" ([attribute "data-motion" snapshot.motion,attribute "data-theme" (Settings.themeName snapshot.appearance.theme),attribute "data-text-scale" (String.fromInt snapshot.appearance.textScale),attribute "data-effects" (if snapshot.appearance.effectsOff then "off" else "on"),attribute "data-reduced-transparency" (if snapshot.appearance.reducedTransparency then "true" else "false"),class "surface-bar",attribute "data-publication" (UInt64.string snapshot.publication),attribute "data-lease" (UInt64.string snapshot.lease)] ++ SurfaceTheme.barRootStyles snapshot.appearance snapshot.motion)
             [("actions",Keyed.node "div" ([class "surface-actions",attribute "role" "toolbar",attribute "aria-label" "Warlock taskbar"] ++ SurfaceTheme.barActionsStyles) (List.map (\item -> ("control:" ++ item.identity,control item)) snapshot.bar))
              ,("status",span ([class (if statusIdle then "surface-status surface-status-idle" else "surface-status"),attribute "role" "status",attribute "aria-live" "off",attribute "aria-atomic" "true",attribute "aria-label" snapshot.status,title snapshot.status] ++ SurfaceTheme.barStatusStyles snapshot.appearance statusIdle snapshot.status) [span (statusScrollIdAttrs ++ (if statusIdle then [] else [attribute "tabindex" "0"]) ++ SurfaceTheme.barStatusInnerStyles snapshot.appearance snapshot.motion) [text snapshot.status]])]

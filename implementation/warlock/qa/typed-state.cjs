@@ -1,8 +1,8 @@
 'use strict';
-// QA-only draft. Root compiles each actual Elm worker and supplies the three
+// QA-only draft. Root compiles each actual Elm worker and supplies the five
 // exact compiled JS paths. No compiler, model, GUI, VM, or native execution is
 // performed by this author. Not an original-EARS acceptance by itself.
-// Usage: node typed-state.cjs /abs/NotificationsReplay.js /abs/JumpListReplay.js /abs/NotificationRelevanceReplay.js /abs/RetirementProofReplay.js /abs/report.json
+// Usage: node typed-state.cjs /abs/NotificationsReplay.js /abs/JumpListReplay.js /abs/NotificationRelevanceReplay.js /abs/RetirementProofReplay.js /abs/LocalFieldReplay.js /abs/report.json
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
@@ -56,6 +56,39 @@ const manifests = Object.freeze({
     'correlatedTrackingReleaseSucceedsAndPreventsReplay',
     'owningRouteAnnounceEmitsReconciliationReadyAndRetainsTypedProof',
     'owningRouteCorrelatedReleaseClearsUnresolvedUnknown',
+  ]),
+  LocalFieldReplay: Object.freeze([
+    'repeatedReversionRetainsPendingWithoutDispatch',
+    'preeditAdvanceFirstTwoEditsDispatched',
+    'preeditAdvanceHoldsDraft',
+    'preeditEndMatchingAdvancedPublicationSettles',
+    'reversionFirstQueryActuallyDispatched',
+    'reversionToPublishedValueRetainsLatestIntent',
+    'reversionSurvivesDelayedEarlierResult',
+    'reversionMatchingLatestValueIsVisible',
+    'unrelatedOldValueKeepsFirstPending',
+    'reversionAfterUnrelatedPublicationRetainsIntent',
+    'lateFirstAfterUnrelatedPublicationStillRetriesLatest',
+    'localPaintGapPreservesDraft',
+    'localFifoKeepsLatestValue',
+    'refreshPreservesUnacknowledgedDraft',
+    'matchingObservationAcknowledgesDraft',
+    'staleExternalQueryStillRejected',
+    'futureLocalQueryRejected',
+    'zeroPublicationRejected',
+    'oldLeaseLocalQueryRejected',
+    'newLeaseRetiresPriorDraft',
+    'replacedFieldRejectsOldLocalQuery',
+    'boundedLocalQueryRejected',
+    'sameLeaseLocalPreeditHeld',
+    'sameLeaseLocalCommitUsesCurrentScope',
+    'staleExternalCompositionStillRejected',
+    'staleButtonStillRejected',
+    'pendingBlocksPinJumpUnpinAndPagingTransitions',
+    'pendingAllowsSafeEscapeAndRefreshTransitions',
+    'composingBlocksAllNonFieldButtonsInTransition',
+    'honestOverlayDisablesExactBlockedSet',
+    'composingOverlayDisablesEveryNonFieldControl',
   ]),
 });
 function assert(ok, why) { if (!ok) throw new Error(why); }
@@ -124,8 +157,8 @@ async function observe(name, filename, messages) {
 }
 
 async function main() {
-  assert(process.argv.length === 7 && process.argv.slice(2).every(path.isAbsolute), 'expected four absolute worker paths and an absolute report path');
-  const names = ['NotificationsReplay','JumpListReplay','NotificationRelevanceReplay','RetirementProofReplay'];
+  assert(process.argv.length === 8 && process.argv.slice(2).every(path.isAbsolute), 'expected five absolute worker paths and an absolute report path');
+  const names = ['NotificationsReplay','JumpListReplay','NotificationRelevanceReplay','RetirementProofReplay','LocalFieldReplay'];
   const fixtures = [];
   for (let i = 0; i < names.length; i++) {
     const messages = [];
@@ -136,8 +169,8 @@ async function main() {
   }
   const checks = fixtures.flatMap(fixture => fixture.checks.map(row => ({fixture: fixture.name, ...row})));
   const failures = fixtures.flatMap(fixture => fixture.failures.map(reason => ({fixture: fixture.name, reason})));
-  const passed = fixtures.length === 4 && fixtures.every(fixture => fixture.passed === true) && checks.length > 0 && checks.every(row => row.passed === true) && failures.length === 0;
-  fs.writeFileSync(process.argv[6], JSON.stringify({ schema: 1, scope: 'compiled Elm worker controls only; not native or whole-EARS acceptance',
+  const passed = fixtures.length === 5 && fixtures.every(fixture => fixture.passed === true) && checks.length > 0 && checks.every(row => row.passed === true) && failures.length === 0;
+  fs.writeFileSync(process.argv[7], JSON.stringify({ schema: 1, scope: 'compiled Elm worker controls only; not native or whole-EARS acceptance',
     runnerSha256: hash(fs.readFileSync(__filename)), fixtures, checks, failures, passed }, null, 2) + '\n');
   if (!passed) process.exitCode = 1;
 }

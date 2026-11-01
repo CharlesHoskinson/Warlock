@@ -51,7 +51,12 @@ main = Browser.element
     }
 
 view : Model -> Html.Html Msg
-view model = div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.visual snapshot identity model.previews) True LocalAction (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
+view model =
+    let overlay snapshot =
+            snapshot
+                |> (\current -> model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.honestPendingQuery query current) |> Maybe.withDefault current)
+                |> (if isComposing model then SurfaceRenderer.composingPopup else identity)
+    in div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreviewPending (\identity -> Preview.visual snapshot identity model.previews) (model.pendingQuery/=Nothing || isComposing model) True LocalAction (overlay snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
 
 update : Msg -> Model -> (Model,Cmd Msg)
 update message model =
@@ -78,7 +83,16 @@ transition message model =
             let kind=D.decodeValue (D.field "kind" D.string) value |> Result.withDefault ""
                 sendQuery query wire current =
                     let key=Presentation.current current.presentation |> Maybe.map (\snapshot -> (query,SurfaceRenderer.publication snapshot,SurfaceRenderer.lease snapshot))
-                        unchanged=Presentation.current current.presentation |> Maybe.andThen SurfaceRenderer.queryValue |> (==) (Just query)
+                        -- Matching the old label cannot settle a newer local edit
+                        -- while an issued query can still enter that same scope.
+                        -- A newer accepted publication makes older query scopes
+                        -- stale at the sole controller; HTTP delivery does not.
+                        unsettledHere = case (current.pendingQuery,current.lastQuery,Presentation.current current.presentation) of
+                            (Nothing,_,_) -> False
+                            (_,Nothing,_) -> False
+                            (_,Just (_,shown,token),Just snapshot) -> SurfaceRenderer.lease snapshot/=token || UInt64.compare (SurfaceRenderer.publication snapshot) shown/=GT
+                            _ -> True
+                        unchanged=not unsettledHere && (Presentation.current current.presentation |> Maybe.andThen SurfaceRenderer.queryValue |> (==) (Just query))
                         duplicate=key/=Nothing && key==current.lastQuery
                     in ({current | pendingQuery=if unchanged then Nothing else Just query,lastQuery=key},if unchanged || duplicate then [] else [Dispatch wire])
                 before = {baseline=model.pendingQuery |> Maybe.withDefault (Presentation.current model.presentation |> Maybe.andThen SurfaceRenderer.queryValue |> Maybe.withDefault ""),before=model.pendingQuery}
@@ -98,7 +112,7 @@ transition message model =
                             ({model | composition=if isComposing model then model.composition else Preediting before,pendingQuery=Just query},[])
                         else sendQuery query wire model
                     Nothing -> (model,[])
-            else if isComposing model || (model.pendingQuery/=Nothing && (D.decodeValue (D.field "id" D.string) value |> Result.map (\identity -> String.startsWith "entry:" identity || identity=="files:open-path" || identity=="files:home" || String.startsWith "files:collection:" identity) |> Result.withDefault False)) then (model,[])
+            else if isComposing model || (model.pendingQuery/=Nothing && (D.decodeValue (D.field "id" D.string) value |> Result.map SurfaceRenderer.pendingQueryBlocked |> Result.withDefault False)) then (model,[])
             else (model,Presentation.dispatch True value model.presentation |> Maybe.map (Dispatch >> List.singleton) |> Maybe.withDefault [])
         Present raw ->
             let acceptedPresentation = Presentation.accept raw model.presentation

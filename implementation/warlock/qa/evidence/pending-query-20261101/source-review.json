@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "reviewedAtUTC": "2026-11-01T22:11:46.656606+00:00",
+  "reviewer": "elm-tests / root/elm_regression",
+  "requirement": "ELM-UI-005",
+  "selectedScenario": "search-race",
+  "disposition": "source-clear-for-protected-component-verification",
+  "componentSourceClear": true,
+  "originalAccepted": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "reviewerExecutedQA": false,
+  "sourceReview": {
+    "patchSHA256": "a127e308565a29627a4489c054334372fb2c4267d4a5cf02e2e9fa9b35aa79a9",
+    "preimageSHA256": "ebb12fa83349dcfbdc4e7f67f63daf3738d25f25960d6541c0f432abacad85b1",
+    "currentSourceSHA256": "9761aa5d5679574fbee43a57b81e48fed0b76c63d80543ee99804432c6cddf6a",
+    "sourcePatchAppliedExactlyAsReviewed": true,
+    "alternative": "a127 full alternative to narrow7793; do not stack.",
+    "finding": "No new P1/P2 source blocker found. sendQuery keeps a same-scope reverse edit pending and dispatches its exact query; repeating that latest key suppresses duplicate dispatch without clearing pending. A newer accepted same-lease authoritative match can settle changed preedit without redundant query.",
+    "authorityBasis": [
+      "Popup90-97 uses opaque UInt64 comparison and existing strict exact-key duplicate logic. lastQuery is a dedupe key, not a receipt or proof a request was sent.",
+      "Presentation.localEdit72-80 rebases only owned field callbacks from positive nonfuture publication in same lease; external action/query publication admission remains exact.",
+      "Surface.resolveBase555/559/575 validates exact current publication and lease before Desktop.SearchQuery. Desktop1366-1368 changes query atomically; SurfaceController34-59 publishes changed state. An earlier query scope cannot later overwrite genuinely newer accepted authority through this route.",
+      "No changes to decoder schemas, query bounds, native grants, publication/lease/binding/action guards, HTTP204 semantics or mutation replay. Pending/composition UI controls retain prior strict admission."
+    ]
+  },
+  "modelReview": {
+    "path": "implementation/warlock/qa/local-field-publication.qnt",
+    "sha256": "b4f416acc1ad90dcfc2f14de113127d97414ea3f025e3574f04615a16dde598d",
+    "authoredCandidate": ".warlock-contributor/engine-pid1-drafts/terra-q-front-preedit-a127-cancel.qnt",
+    "canonicalEqualsCandidate": true,
+    "namedTests": 51,
+    "previous50Preserved": true,
+    "correction": "Old79547 endPreedit always restored baseline. b4f4 lines84-88 retains baseline only when prior pending exists and remains unmatched; otherwise draft=acceptedText. That matches source cancellation clearing pending overlay and showing current Presentation value.",
+    "newCase": "cancelledPreeditWithoutPriorPendingShowsNewAuthorityTest",
+    "newCaseSequence": "init -> beginPreedit -> localEdit3 -> acceptOtherFrame2/pub2 -> endPreedit -> paint; asserts composingfalse/pendingfalse/draft2/shown2/acceptedText2.",
+    "verdict": "Previously reported cancellation/source-correspondence gap is resolved; no remaining blocker found in this bounded model review.",
+    "limits": [
+      "Finite text/counter abstraction; no fullUInt64, real DOM/native IME or physical paint proof.",
+      "Effects count dependent/safe activations, not query Dispatch wires or native effects.",
+      "Same-field publication and actual producer causality remain source premises; arbitrary injected authority changes are not producer-reachability evidence.",
+      "Guarded beginPreedit assumes no nested duplicate composition-start; actual platform/IME sequence remains separately observed."
+    ]
+  },
+  "qaReview": {
+    "fixture": "implementation/warlock/qa/LocalFieldReplay.elm",
+    "fixtureSHA256": "66db4f416d3c76c6cfde2246260bd6c0ad0b03a4b899154caa43197178865c92",
+    "manifest": "implementation/warlock/qa/typed-state.cjs",
+    "manifestSHA256": "5731d925b94c6b96c6b26cd363298d71ea9a1ed4d71b7f590561dc606337b7ec",
+    "exactManifestMatches31FixtureNames": true,
+    "newFourControls": [
+      "repeatedReversionRetainsPendingWithoutDispatch",
+      "preeditAdvanceFirstTwoEditsDispatched",
+      "preeditAdvanceHoldsDraft",
+      "preeditEndMatchingAdvancedPublicationSettles"
+    ],
+    "sevenReversionControlsRetained": [
+      "reversionFirstQueryActuallyDispatched",
+      "reversionToPublishedValueRetainsLatestIntent",
+      "reversionSurvivesDelayedEarlierResult",
+      "reversionMatchingLatestValueIsVisible",
+      "unrelatedOldValueKeepsFirstPending",
+      "reversionAfterUnrelatedPublicationRetainsIntent",
+      "lateFirstAfterUnrelatedPublicationStillRetriesLatest"
+    ],
+    "finding": "Actual Popup.transition fixtures assert exact sole c/b query wires, repeated-key pending with exactempty effects, retained preedit draft across newer accepted matching publication, intermediate noDispatch, and settled composition-end exactempty effects/currentc.",
+    "scopeLimit": "Intermediate Present verifies two descriptions and noDispatch, but not both preview-description payloads. This is focused regression coverage, not fullModel/everyEffect/nativeIME acceptance.",
+    "actualIgnoredDrafts": {
+      ".warlock-contributor/engine-pid1-drafts/terra-vm-preedit-advance-2200.patch": "72f41d2338f2f29eaaf2c3683059dacb9d863db7daf95e5551c0cad9c953dd23",
+      ".warlock-contributor/engine-pid1-drafts/terra-vm-preedit-manifest-2200.patch": "632cda8c09d24b672d8aa6cee536010ab0535775f885948b5d1eeacdc3e11d8f"
+    },
+    "metadataCorrection": "Sol oldmetadata44f6 cited obsoletebc4c/649 and3controls. Actual draft72f/632 adds4; adopted canonical66db/5731 hashes above are the reviewed bytes. Author freeze/metadata refresh requested through authenticated AgentBus."
+  },
+  "failedEvidence": {
+    "path": ".warlock-contributor/elm-cpu-1793570694812502430/report.json",
+    "sha256": "23f014a73879cc40d1d5de7eeeae800968a8441514486c7d4a36ff7ee8429747",
+    "passed": false,
+    "scope": "Retained unchanged-production RED on ebb12fa8 with seven reversion controls; source review does not replace it."
+  },
+  "protectedCampaign": "Root reported40631 running with132inputs,51named cases and10k50stepsseed20261101 with2witnesses. Reviewer did not execute or establish terminal outcome; execution results must be bound separately.",
+  "hashes": {
+    "implementation/warlock/src/Popup.elm": "9761aa5d5679574fbee43a57b81e48fed0b76c63d80543ee99804432c6cddf6a",
+    "implementation/warlock/src/Presentation.elm": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+    "implementation/warlock/src/Surface.elm": "91d38d818e40523cd395d3622633676149c42b8b9b0be3a40223a13bdf45d9ca",
+    "implementation/warlock/src/Desktop.elm": "91223c94074f8ff908b2ed66f52e8025c8afcb78a977d4a5f3daf44df8ce7af4",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/UiHttp.elm": "3a649f51ff0f783a19fa8bb427bdc0ebb7b3eb7473428044d88a54f78b9da419",
+    "implementation/warlock/qa/LocalFieldReplay.elm": "66db4f416d3c76c6cfde2246260bd6c0ad0b03a4b899154caa43197178865c92",
+    "implementation/warlock/qa/typed-state.cjs": "5731d925b94c6b96c6b26cd363298d71ea9a1ed4d71b7f590561dc606337b7ec",
+    "implementation/warlock/qa/local-field-publication.qnt": "b4f416acc1ad90dcfc2f14de113127d97414ea3f025e3574f04615a16dde598d",
+    ".warlock-contributor/engine-pid1-drafts/sol-popup-reverse-edit-preedit-2200.patch": "a127e308565a29627a4489c054334372fb2c4267d4a5cf02e2e9fa9b35aa79a9",
+    ".warlock-contributor/engine-pid1-drafts/terra-q-front-preedit-a127-cancel.qnt": "b4f416acc1ad90dcfc2f14de113127d97414ea3f025e3574f04615a16dde598d",
+    ".warlock-contributor/engine-pid1-drafts/terra-vm-preedit-advance-2200.patch": "72f41d2338f2f29eaaf2c3683059dacb9d863db7daf95e5551c0cad9c953dd23",
+    ".warlock-contributor/engine-pid1-drafts/terra-vm-preedit-manifest-2200.patch": "632cda8c09d24b672d8aa6cee536010ab0535775f885948b5d1eeacdc3e11d8f"
+  },
+  "blockers": [],
+  "remainingOriginalObligations": [
+    "This review covers reverse-edit/preedit component source, not wholeUI005.",
+    "Current query/catalog-generation binding and frozen matching/ranking policy need original source-bound observations.",
+    "search-no-match: query/message reachable without launch; search-unavailable: keyboard retry without automatic launch.",
+    "search-race: old refresh during query changes never dispatches stale generation/selection through actual owning route.",
+    "search-removed: vanished selected identity before Enter never launches replacement; selection reconciles.",
+    "search-refused: query/focus retained with accessible refusal and retry.",
+    "Applicable original named native, keyboard, assistive-technology fixtures, exact identities/source hashes and real IME event order remain required. VM/component results alone are not native/AT/IME/release acceptance."
+  ],
+  "mutations": [
+    "Only this uniquely claimed ignored JSON; no canonical source/test/model/tool/evidence edits."
+  ],
+  "nextAction": "Root finish serialized source-bound compiler/replay/model verification, retain RED and stop histories, then independently qualify separately authorized guarded GUI component observation."
+}

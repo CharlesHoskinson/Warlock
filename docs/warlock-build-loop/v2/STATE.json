@@ -1,41 +1,42 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T21:21:52.032093+00:00",
+  "updatedUTC": "2026-11-01T22:13:20.507665+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "tea005-validated-interop",
+    "id": "ui005-live-query-refresh",
     "requirements": [
-      "ELM-TEA-005"
+      "ELM-UI-005"
     ],
     "scenarios": [
-      "tea-narrow-interop"
+      "search-race"
     ],
     "paths": [
       "implementation/warlock/src/Main.elm",
-      "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/DesktopPolicy.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/SurfaceController.elm",
       "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/SurfaceSnapshot.elm",
       "implementation/warlock/src/HttpMain.elm",
       "implementation/warlock/src/HttpBar.elm",
       "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/src/NativePreviewRenderer.elm",
-      "implementation/warlock/src/UiHttp.elm",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc",
-      "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
-      "implementation/warlock/qa/ui-http.cjs"
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/qa/ui-http.cjs",
+      "implementation/warlock/qa/LocalFieldReplay.elm",
+      "implementation/warlock/qa/typed-state.cjs",
+      "implementation/warlock/qa/local-field-publication.qnt"
     ],
-    "before": "Current Elm/Haskell adapter is implemented and component-qualified, but the complete original narrow-interop clauses and exact adopted Native.receiveGateway binding boundary plus simultaneous GET/POST no-replay histories lack a current independently reviewed whole-original verdict. Latest actual Omarchy Apps click failed without a proved source cause; that failure remains separately preserved.",
-    "after": "The current actual adapter uses validated Haskell transport and approved host integrations, keeps GPU resource/per-frame ownership outside Elm messages, and modern commands/subscriptions. Real binding/closed-profile reader and adversarial delivery-interleaving controls match independent literal expectations; qualification and original verdict remain scoped separately from native acceptance.",
+    "before": "The latest immutable frontend passes pure component checks, but the current built product has not been exercised after integration through real Omarchy input; authoritative final query/catalog correlation and usable refresh/recovery remain unobserved on the current app-only Haskell host.",
+    "after": "The actual current built Elm/Haskell app is exercised in an owned bounded Omarchy session. Real input changes query and refreshes while visible feedback, query preservation and current-generation dispatch eligibility are observed. Repair actual demonstrated source failures; retain exact source/artifacts, input acknowledgements, screenshots and cleanup limits.",
     "verification": [
-      "Root-only protected Haskell ui-origin actual socket reader/profile/admission controls with fresh owned per-fixture deadlines; protected six-root Elm +complete policy/every-effect replay and actual compiled HTTP interleavings/independent boundary literals with deterministic seeds and exact source hashes. Source-bound complete adapter/GPU/per-frame/modern API audit and immutable independent review against every original005clause; no native/provider/AT/IME/hardware/release inference."
+      "Reuse current independently qualified frontend tuple889e and unchanged Haskell binaries only after source/artifact review; stage current optimized Http HTML with preimages and dependency inventory. Root-only owned native-on-VM input journey with fresh PID/birth/cgroup/window/lock/Foot/current geometry/original chosen deadline fences before each event, parsed QMP acknowledgements, unique per-attempt receipts and reviewed screenshots. Component/usability observations only until exact original source-bound native/keyboard/AT obligations and independent review pass; never infer protected native/release acceptance."
     ]
   },
   "nextSlices": [
@@ -2242,31 +2243,34 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "status-scroll",
+    "id": "tea005-validated-interop",
     "requirements": [
-      "ELM-UI-007"
+      "ELM-TEA-005"
     ],
     "scenarios": [
-      "restore-pending",
-      "restore-unknown"
+      "tea-narrow-interop"
     ],
     "paths": [
+      "implementation/warlock/src/Main.elm",
       "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/HttpMain.elm",
       "implementation/warlock/src/HttpBar.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/src/SurfaceTheme.elm",
-      "implementation/warlock/src/StatusScroll.elm",
-      "implementation/warlock/qa/feedback-context-browser.mjs",
-      "implementation/warlock/qa/StatusScrollReplay.elm",
-      "implementation/warlock/qa/status-scroll.cjs",
-      "implementation/warlock/qa/status-scroll.qnt",
-      "implementation/warlock/qa/status-scroll_test.qnt",
-      "implementation/warlock/src/HttpPopup.elm"
+      "implementation/warlock/src/HttpPopup.elm",
+      "implementation/warlock/src/NativePreviewRenderer.elm",
+      "implementation/warlock/src/UiHttp.elm",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc",
+      "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
+      "implementation/warlock/qa/ui-http.cjs"
     ],
-    "before": "A keyboard-scrollable Unknown status retains scrollTop when new pending feedback replaces its text; the new prefix can be hidden. Generic polite mirrored bars also conflict with the single scoped announcer.",
-    "after": "Fresh feedback reveals its opening text while the same status preserves scroll and all current input/focus/draft context. One current scoped Announcement channel owns speech; visible mirror feedback remains readable and passive.",
+    "before": "Current Elm/Haskell adapter is implemented and component-qualified, but the complete original narrow-interop clauses and exact adopted Native.receiveGateway binding boundary plus simultaneous GET/POST no-replay histories lack a current independently reviewed whole-original verdict. Latest actual Omarchy Apps click failed without a proved source cause; that failure remains separately preserved.",
+    "after": "The current actual adapter uses validated Haskell transport and approved host integrations, keeps GPU resource/per-frame ownership outside Elm messages, and modern commands/subscriptions. Real binding/closed-profile reader and adversarial delivery-interleaving controls match independent literal expectations; qualification and original verdict remain scoped separately from native acceptance.",
     "verification": [
-      "Protected owning Elm roots, current source-bound sequence/fuzz, actual compiled browser621px100/200percent scroll/focus/recovery and single scoped announcement checks; meaningful Quint correspondence. Native keyboard/AT/original whole UI007 remain explicit until observed."
+      "Root-only protected Haskell ui-origin actual socket reader/profile/admission controls with fresh owned per-fixture deadlines; protected six-root Elm +complete policy/every-effect replay and actual compiled HTTP interleavings/independent boundary literals with deterministic seeds and exact source hashes. Source-bound complete adapter/GPU/per-frame/modern API audit and immutable independent review against every original005clause; no native/provider/AT/IME/hardware/release inference."
     ]
   },
   "lastNativeObservation": {
@@ -3655,7 +3659,17 @@
       "uxPerformanceTerraHigh": 1,
       "rootOnlyProtectedExecution": true,
       "resumption": "Resume same authenticated persistent identities only after eligible terminal prior log and matching CLI absence. Finished/queued jobs are not counted active. Preserve scope memory limits and main desktop."
-    }
+    },
+    "latestProcessCensus": {
+      "observedUTC": "2026-11-01T22:13:20.526244+00:00",
+      "count": 15,
+      "duplicates": [],
+      "absent": []
+    },
+    "continuityReceipts": [
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/live-continuity-codex-launches.json",
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/live-continuity-gemini-launches.json"
+    ]
   },
   "currentGoalTelemetry": {
     "status": "active",
@@ -3690,7 +3704,7 @@
     "acceptedScenarios": 41,
     "behaviorChange": "No production behavior change in this boundary QA/acceptance wave; actual adapter verified on immutable source."
   },
-  "nextConcreteAction": "Publish accepted005/support custody handoff with exact independently reviewed same-owner receipts. Resume existing participant histories for actual pending-query/recovery GUI and typed-domain source fixes without resetting stopped timers; integrate production-source patch then proportional tests/current HTML and actual guarded Omarchy journey. Maintain15roles, original242/417/deadlines/failed/native/provider/AT/IME/hardware/release obligations.",
+  "nextConcreteAction": "Publish current qualified pending-query source/evidence with independent source review; retain backend exit1 and original UI005 remaining observations. Implement retained-query transport recovery/loading and persistent Haskell ownership next, continue 15-role bounded sessions and live Omarchy testing.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4017,7 +4031,7 @@
       "previousHistoryPreserved": true
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/tea005-validated-interop.json",
+  "activeContributorRecord": ".warlock-contributor/ui005-live-query-refresh.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -4067,24 +4081,7 @@
     "participantRecord": ".warlock-contributor/tea005-validated-interop.json",
     "originalStopHistoriesPreserved": true
   },
-  "activeVerificationPhase": {
-    "originalRequirement": "ELM-TEA-005",
-    "originalScenario": "tea-narrow-interop",
-    "status": "GREEN; independently whole original accepted",
-    "haskellReport": ".warlock-contributor/haskell-cpu-1793566187860125681/report.json",
-    "elmReport": ".warlock-contributor/elm-cpu-1793567061690853540/report.json",
-    "supportRepairReport": ".warlock-contributor/registry-cpu-1793566908137002341/report.json",
-    "haskellSuites": 10,
-    "originChecks": 6431,
-    "models": 273,
-    "elmOptimizedRoots": 7,
-    "httpChecks": 5262,
-    "typedChecks": 87,
-    "completeHistories": 58,
-    "nativeAccepted": false,
-    "releaseAccepted": false,
-    "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c"
-  },
+  "activeVerificationPhase": "Pending query source qualified; actual foot/footz VM journey observed; backend bound exit1 retained; independent component integration pending.",
   "threadNamespaceGuardCheckpoint": {
     "source": "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs",
     "protectedReport": ".warlock-contributor/haskell-cpu-1793538664658280462/report.json",
@@ -4291,24 +4288,46 @@
           "Current GUI query/persistent MVP/native/AT/IME/hardware/provider/release obligations remain separately open."
         ],
         "replan": "Finish original005 verdict into nextwindow and integrate actual visible pending-query/recovery source, remaining001typed operation domains; keep15roles and real Omarchy testing without deadline/evidence weakening."
+      },
+      {
+        "startedUTC": "2026-11-01T21:11:37.655841+00:00",
+        "endedUTC": "2026-11-01T22:11:37.655841+00:00",
+        "reportedUTC": "2026-11-01T22:13:20.507665+00:00",
+        "wholeRequirementsAccepted": 17,
+        "acceptedScenarios": 41,
+        "newWholeRequirementIds": [
+          "ELM-TEA-005"
+        ],
+        "newWholeEarsClosures": 1,
+        "newAcceptedScenarios": [
+          "ELM-TEA-005/tea-narrow-interop"
+        ],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Independent original005 accepted21:14:17 on immutable45ba; published112c.",
+          "Actual pending-query/reversal source implemented and protected GREEN; guarded live Foot/no-match GUI observed."
+        ],
+        "blockingClosureGaps": [
+          "Complete original UI005 ranking/current-generation search race, unavailable/retry, removed-before-Enter, refusal/focus, native keyboard and IME obligations.",
+          "Execute physical refresh/recovery journey and current query reversion in live GUI; bounded foot/footz trial does not establish either.",
+          "Resolve actual backend diagnostic exit1 at unchanged28-second bound and complete a separately designed persistent Haskell host lifecycle.",
+          "Native/provider/AT/IME/hardware latency/resource/release acceptance and full original242/417 remain open."
+        ],
+        "replan": "Publish current qualified pending-query source/evidence with independent source review; retain backend exit1 and original UI005 remaining observations. Implement retained-query transport recovery/loading and persistent Haskell ownership next, continue 15-role bounded sessions and live Omarchy testing."
       }
     ],
-    "currentWindowStartedUTC": "2026-11-01T21:11:37.655841+00:00",
-    "nextReportDueUTC": "2026-11-01T22:11:37.655841+00:00",
+    "currentWindowStartedUTC": "2026-11-01T22:11:37.655841+00:00",
+    "nextReportDueUTC": "2026-11-01T23:11:37.655841+00:00",
     "currentWindowProgress": {
-      "observedUTC": "2026-11-01T21:21:52.032093+00:00",
-      "windowStartedUTC": "2026-11-01T21:11:37.655841+00:00",
+      "observedUTC": "2026-11-01T22:13:20.507665+00:00",
+      "windowStartedUTC": "2026-11-01T22:11:37.655841+00:00",
       "wholeRequirementsAccepted": 17,
       "acceptedScenarios": 41,
-      "newWholeRequirementIds": [
-        "ELM-TEA-005"
-      ],
-      "newWholeEarsClosures": 1,
-      "newAcceptedScenarios": [
-        "ELM-TEA-005/tea-narrow-interop"
-      ],
-      "independentVerdictUTC": "2026-11-01T21:14:17.462667+00:00",
-      "counting": "Whole original independent acceptance only; no new product behavior from QA wave. Hour ended21:11 had0closures; currentwindow remains open."
+      "newWholeRequirementIds": [],
+      "newWholeEarsClosures": 0,
+      "newAcceptedScenarios": [],
+      "counting": "Only complete independently accepted original EARS; current GUI wave partial."
     }
   },
   "ui005CurrentStackCheckpoint": {
@@ -4385,39 +4404,23 @@
     "acceptanceBoundary": "No transfer from compile/model/replay/VM to protected native, hardware, AT/IME or release acceptance; preserve original deadlines."
   },
   "liveUsability20261101Current": {
-    "observedUTC": "2026-11-01T20:42:56.701590+00:00",
-    "hostEvidenceRoot": "/home/charl/vm/omarchy/evidence/warlock-live-usability-20261101T200813Z",
-    "buildReport": ".warlock-contributor/haskell-cpu-1793563087632544622/report.json",
-    "sourceRevision": "889e9458d1707c456f5bb6e9af560383b066229e",
-    "haskellInputsUnchanged": 217,
-    "attempt01": {
-      "result": "Failed before input; one not-dispatched motion receipt. Exact failed guard predicate not retained; top-bar overlap only a source/geometry hypothesis.",
-      "originalDurationSeconds": 28
-    },
-    "attempt02": {
-      "result": "Current real Elm GUI renders, four QMP pointer acknowledgements, launcher/search did not appear; no typing/refresh performed.",
-      "report": "attempt-02/run-01/host-journey-result.json",
-      "reportSHA256": "89f2cb5ee89a6acb0fd0094e7e44c6ec3ea17187ac1a89c317ff81633749712d",
-      "originalDurationSeconds": 28,
-      "exit": -9,
-      "failure": "Pinned live attempt guard failed: FileNotFoundError",
-      "elapsedSeconds": 28.08102590899216,
-      "cleanup": "Report observes owned scope/principal births absent, Foot2095/birth6930 preserved and original idle enabled flag restored; provider cleanup remains unqualified.",
-      "rootVisualReview": "Viewed006: Applications connected; Window controls unavailable; misleading Choose a window heading, no Search UI."
-    },
-    "nativeAccepted": false,
-    "releaseAccepted": false,
-    "providerCleanupQualified": false,
-    "nativeOperations": [],
-    "workflowCustodyObservation": "UI005 current participant classified Root-owned dirty STATE as protected foreign at start; Root subsequently updated its own STATE. Checker rejects changed hash. Independent same-owner provenance review retained under .warlock-contributor/evidence/foreign-reconciliations/ui005-state-support-provenance-review-20261101.json; existing foreign API does not support same-owner correction. No history/checker bypass or false adoption.",
-    "newReadOnlyVisualDiagnosis": {
-      "observedUTC": "2026-11-01T21:21:52.032093+00:00",
-      "screenshot": "attempt-02/run-01/001-applications-ready.png",
-      "rootViewed": true,
-      "finding": "Popup heading/status already rendered while Applications toolbar remains entirely white. Readiness helper masked popup text rather than actual bar button; accepted readiness is insufficient.",
-      "limits": "Exact dispatch-time bar paint/input delivery not observed; no sole root cause or successful replacement journey claimed.",
-      "nextAction": "Actual button-painted readiness + safe interior above horizontal scrollbar, unchanged28D and all per-event ownership/focus/lock/geometry/Foot fences before fresh distinct trial."
-    }
+    "stage": "/home/charl/vm/omarchy/evidence/warlock-live-usability-reversal-20261101T221006Z/stage.json",
+    "stageSHA256": "6d853def68a5161b82b755dbc4669c3c1229c70387146bf3c671357de433f02a",
+    "hostDriverSHA256": "395327b67fd4da51d7ade127c2d852e595e37de238d5c4391f767ff1280d3c7f",
+    "guestControllerSHA256": "c0018a324e9ae81dc1144d12413831252d173b6d1429fba8e3baa010264a523c",
+    "journey": "implementation/warlock/qa/evidence/pending-query-20261101/vm-journey.json",
+    "completedPhysicalSequence": true,
+    "acknowledgedGuardedInputs": 13,
+    "rootVisualObservation": "Reviewed both retained images: foot shows Foot/Foot Server/Foot Client results and retained focused query; footz shows retained query plus No matching applications. Change your search or Refresh.",
+    "positiveImage": "implementation/warlock/qa/evidence/pending-query-20261101/positive-foot.png",
+    "negativeImage": "implementation/warlock/qa/evidence/pending-query-20261101/negative-footz.png",
+    "durationSeconds": 28,
+    "guestBackendExit": 1,
+    "guestBackendPassed": false,
+    "guestElapsedSeconds": 28.16143264299899,
+    "catalogScope": "63 regular desktop files; eight symlinked LibreOffice entries skipped in existing snapshot path.",
+    "cleanupObservation": "Launcher reaped; recorded owned births/scope absent and original Foot2095/birth6930 preserved; idle enabled state restored. Existing controller treats some read errors as absent, so this is not strong provider/resource cleanup qualification.",
+    "inputLimit": "QEMU-injected pointer and timed printable keys; no independent keyboard key-up or atomic-focus proof, native application launch, physical IME or AT observation."
   },
   "teaNarrowInteropAcceptance": {
     "requirements": [
@@ -4438,5 +4441,6 @@
     "wholeRequirementsAccepted": 17,
     "acceptedScenarios": 41,
     "behaviorChange": "No production behavior change in this boundary QA/acceptance wave; actual adapter verified on immutable source."
-  }
+  },
+  "ui005PendingQueryComponent": "docs/warlock-build-loop/v2/pending-query-component-20261101.json"
 }
