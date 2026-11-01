@@ -224,9 +224,20 @@ Unknown new paths and unrelated drift still fail. `handoff` supplies the exact
 `recordIdentitySha256` and sidecar location even when a changed foreign path makes
 the check red.
 
-Prepare an untracked Git-ignored `.warlock-contributor/` scratch JSON array containing one entry per changed foreign
-path, with exactly `path`, `sourceRecordSnapshot`, `reviewFile`, and a nonempty
-`reason`. Include all currently changed protected paths in one atomic batch;
+Prepare a fresh exact owner census while the participant index is locked:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py --json owner-census
+```
+
+This writes a content-addressed ignored snapshot containing the participant
+index bytes and every indexed record's exact bytes. It refuses an incomplete or
+unindexed participant inventory, including unclassified JSON entries outside
+the evidence directory. Prepare an untracked Git-ignored
+`.warlock-contributor/` scratch JSON array containing one entry per changed foreign
+path, with exactly `path`, `sourceRecordPath`, `ownerCensusSnapshot`,
+`sourceRecordSnapshot`, `reviewFile`, and a nonempty `reason`. Include all
+currently changed protected paths in one atomic batch;
 partial batches do not write anything. Snapshot a genuinely owning participant
 record under `.warlock-contributor/evidence/foreign-reconciliation-snapshots/`;
 it must declare ownership and bind the new hash in its latest applicable source snapshot (base, chronological extensions and iterations). Historical claims or earlier source hashes cannot authorize a new transition. Retain an independent JSON review
@@ -235,8 +246,10 @@ under `.warlock-contributor/evidence/foreign-reconciliations/`, naming:
 - `schema: 1`, `scope: "foreign-provenance-only"`, `scenarioAcceptance: false`,
   and `independent: true`;
 - the exact `recordIdentitySha256`, `recordPath`, `path`, `previousSha256`,
-  `currentSha256`, `sourceRecordSnapshot`, `sourceRecordSnapshotSha256`,
-  `sourceOwner`, `reason`, and a `reviewer` distinct from both owners.
+  `currentSha256`, `sourceRecordPath`, `ownerCensusSnapshot`,
+  `ownerCensusSnapshotSha256`, `sourceRecordSnapshot`,
+  `sourceRecordSnapshotSha256`, `sourceOwner`, `reason`, and a `reviewer`
+  distinct from both owners.
 
 These are local reviewed provenance assertions, not authenticated identity or
 product acceptance. Do not fabricate the owner snapshot or independent review.
@@ -249,7 +262,13 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py \
 ```
 
 The command takes the participant lock and atomically appends a hash-chained
-sidecar. Its lookup uses immutable participant fields; its full review identity
+sidecar. New event-schema-2 entries bind the source snapshot bytes to one exact
+path and identity in the frozen, digest-checked participant index; the census
+must still match the complete current inventory when the batch is appended.
+Every selected/adopted path spelling in the census must be canonical, and any
+stale or competing record claim makes ownership ambiguous and fails closed.
+Earlier schema-1 events remain readable as legacy provenance and are not
+retroactively upgraded to this stronger proof. Its lookup uses immutable participant fields; its full review identity
 still binds the captured foreign/adopted custody. A retained custody baseline and
 exact extension prefix must match current custody after replaying only explicitly
 appended extension adoptions. Thus a later unrelated adoption keeps prior history
