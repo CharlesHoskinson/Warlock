@@ -268,3 +268,8 @@ explicitly rejects them.
 - `backend.stdout` (`backendResultJson`) is intended to record `callbacks >= 1` (initial topology presentation-only commit triggering `application-attached` once, followed by user commits) and `operations >= 1` (`CatalogRead` / `PinsWrite`), with `"nativeAccepted":false,"releaseAccepted":false`.
 - `backendExitCode` is expected to remain `1` (`"passed":false`) because `Warlock.Ui.WebKit` honestly reports `EngineResult False False` until WebKit filter-store callback retirement and provider confinement are independently qualified.
 - `lingering-procs.txt` should be empty after `warlock-ui-backend` exits, and `omarchy-shell idle status` must match its pre-run state.
+
+
+### Dynamic-only GHC guest
+
+The verified Omarchy GHC9.6.7 package provides dynamic Prelude interfaces. Build its pinned local dependency closure and runtime with `--enable-shared --disable-library-vanilla --enable-executable-dynamic`; retain the offline project, build tree and store. Record resolved Haskell DSO hashes as well as executable hashes: repairing Native changed the shared library while both executable hashes stayed identical. No system upgrade is needed. The current owner refuses the incompatible PID-for-children namespace before GTK; preserve that refusal and the original deadline while preparing the separate owned engine process.

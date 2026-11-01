@@ -2,7 +2,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- WebKitGTK 6 boundary; no page loads before its role filter is installed.
 module Warlock.Ui.WebKit
-  (runWebKit, runWebKitWithCustody, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
+  (runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
 
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, catch, mask_, mask, onException, try, finally, bracket, toException)
 import Control.Concurrent (threadDelay)
@@ -25,6 +25,7 @@ import Warlock.Ui.Owner (UiEndpoints(..), TrustedOwnerEvent, EngineResult(..))
 import Warlock.Ui.Policy (Origin, Role(..), navigationAllowed, resourceAllowed, resourceFilter, documentUri)
 import Warlock.Ui.Mvp (MvpViews(..), SurfaceLease, parseProjectionLease, attachMvpWindow, stepMvpWindow, mvpCloseRequested, retireMvpWindow)
 import qualified Warlock.Protocol.StrictJson as J
+import Warlock.Ui.ThreadNamespace (requireThreadCompatibleNamespace)
 import Warlock.Ui.WebKitABI (gValueSize, gValueAlignment, enumValueOffset)
 import Warlock.Ui.EngineCustody (Custody, stopCustody, cleanupIssues, productionCleanupFacts, CleanupFacts(..), Setup(..), NamespaceExit(..), OwnerIdentity(..))
 
@@ -368,8 +369,14 @@ runWebKit = runWebKitInternal Nothing
 runWebKitWithCustody :: Custody -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO EngineResult
 runWebKitWithCustody custody = runWebKitInternal (Just custody)
 
+-- A task whose child PID namespace differs from its own cannot create threads
+-- on Linux. GTK may create threads during initialization, before it can report
+-- a recoverable error. Inspect the calling thread, and refuse when the procfs
+-- identities cannot be observed as well as when they differ.
+
 runWebKitInternal :: Maybe Custody -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO EngineResult
 runWebKitInternal custody endpoints ownerEvent = mask $ \restore -> do
+  requireThreadCompatibleNamespace
   checkEnvironment
   ok <- gtkInit
   unless (ok /= 0) (ioError (userError "GTK initialization failed"))

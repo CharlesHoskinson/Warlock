@@ -1,11 +1,12 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE OverloadedStrings #-}
--- Real GObject signal lifecycle through the production connector. No GTK
--- display, namespace, WebKit page, original-scenario or GUI acceptance.
+-- Real GObject signal lifecycle and isolated namespace guard controls. No GTK
+-- display, WebKit page, original-scenario or GUI acceptance.
 module Main (main) where
 
-import Control.Exception (SomeException, try, finally)
+import Control.Exception (IOException, SomeException, displayException, try, finally)
+import Control.Concurrent (threadDelay)
 import Control.Monad (forM_, unless)
 import Data.IORef
 import qualified Data.Text as T
@@ -15,7 +16,15 @@ import Warlock.Ui.Mvp (leaseScope, leaseRevision, leasePublication, leaseToken, 
 import Foreign.C.String (CString, withCString)
 import Foreign.C.Types (CInt(..))
 import Foreign.Ptr (FunPtr, Ptr, castFunPtr, freeHaskellFunPtr, nullPtr)
-import Warlock.Ui.WebKit (connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch)
+import System.Exit (ExitCode(..))
+import System.IO (hFlush, stdout)
+import System.IO.Error (ioeGetErrorString)
+import System.Posix.Process (ProcessStatus(..), exitImmediately, forkProcess, getProcessStatus)
+import System.Posix.Signals (sigKILL, signalProcess)
+import Warlock.Capture.Process.Bootstrap (deadlineAfter, remainingMicros)
+import Warlock.Ui.EngineCustody (startCustody, stopCustody, abandonCustody)
+import Warlock.Ui.PrivateNetwork (enterPrivateNetwork)
+import Warlock.Ui.WebKit (connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
 
 data Object
 type Notify = Ptr Object -> Ptr () -> Ptr () -> IO ()
@@ -236,8 +245,50 @@ contextOwnership = do
  worked <- readIORef entered
  check "default context ownership is recursive" worked
 
+-- Actual thread/PID-for-children guard; no GTK initialization. The mismatched
+-- namespace is confined to an owned fork child and its real custody bracket.
+namespaceCompatibility :: IO ()
+namespaceCompatibility = do
+ requireThreadCompatibleNamespace
+ deadline <- deadlineAfter 5000000 >>= either (ioError . userError . show) pure
+ pid <- forkProcess $ do
+  outcome <- try $ do
+   enterPrivateNetwork
+   requireThreadCompatibleNamespace
+   custody <- startCustody (remainingMicros deadline)
+   flip finally (abandonCustody custody) $ do
+    refused <- try requireThreadCompatibleNamespace :: IO (Either IOException ())
+    check "PID-for-children mismatch refused before GTK" $ case refused of
+     Left problem -> ioeGetErrorString problem == "GTK thread PID namespace incompatible or unavailable"
+     Right () -> False
+    clean <- stopCustody (remainingMicros deadline) custody
+    check "mismatch fixture custody normally retired" clean
+  case outcome of
+   Right () -> exitImmediately ExitSuccess
+   Left (problem :: SomeException) -> do
+    putStrLn ("namespace compatibility child failure: " ++ displayException problem)
+    hFlush stdout
+    exitImmediately (ExitFailure 1)
+ let await = do
+      status <- getProcessStatus False False pid
+      case status of
+       Just value -> pure (Just value)
+       Nothing -> do
+        remaining <- remainingMicros deadline
+        if remaining <= 0 then pure Nothing else threadDelay (min remaining 1000) >> await
+ status <- await
+ case status of
+  Just (Exited ExitSuccess) -> pure ()
+  Just _ -> ioError (userError "namespace compatibility child failed")
+  Nothing -> do
+   -- Only this owned direct child is signalled; forced cleanup is a failure.
+   signalProcess sigKILL pid
+   _ <- getProcessStatus True False pid
+   ioError (userError "namespace compatibility child exceeded original deadline")
+
 main :: IO ()
 main = do
+ namespaceCompatibility
  -- Reproducible, bounded sequence variation, including repeated toggles.
  forM_ [0..63] normalSequence
  delayedNotify

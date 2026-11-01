@@ -1325,15 +1325,31 @@
       "owner": "Native host lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "architecture-024",
           "oracle": "navigation or capability access is denied",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "docs/warlock-build-loop/v2/arc024-capability-scenario-acceptance-20261101.json",
+              "sha256": "dea9b1cb5d3a5e18cd15271846ae1105dac17621e669187250da806e00e9fe73",
+              "scope": "Original OR-capability scenario only: actual privileged bridge denial; no navigation/resource engine decision claim",
+              "sourceRevision": "eb2178293bb7e3962d7251c8e4a0ce5ffc3def21",
+              "reviewer": {
+                "name": "reviewer",
+                "independent": true,
+                "disposition": "accepted"
+              }
+            }
+          ],
+          "missingObservation": ""
         }
+      ],
+      "missingWholeRequirementObservations": [
+        "Input-to-Use/Ignore navigation decision-boundary bridge trace",
+        "Resource-filter/response decision-boundary bridge trace"
       ]
     },
     {
@@ -17243,5 +17259,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T10:39:32.165213+00:00"
+  "updatedUTC": "2026-11-01T12:30:32.940180+00:00"
 }

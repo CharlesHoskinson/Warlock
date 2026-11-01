@@ -129,6 +129,31 @@ Open the [live test drive](https://charleshoskinson.github.io/Warlock/test-drive
 
 ### Architecture
 
+Current authored production uses Elm and Haskell. Elm owns every GUI element and ordinary interaction policy. Haskell owns the local HTTP boundary, authenticated transport, backend and reviewed native integration. WebKitGTK, GTK and Hyprland are separately inventoried system libraries.
+
+```mermaid
+flowchart LR
+  subgraph private["Private UI network"]
+    main["HttpMain · Elm state and effects"]
+    views["HttpBar / HttpPopup · Elm GUI"]
+    owner["Haskell UI owner · role origins and admission"]
+    main --> owner
+    views --> owner
+  end
+  owner <-->|"Authenticated inherited endpoint"| backend["Haskell backend"]
+  backend --> catalog["Installed application catalog"]
+  backend --> pins["Durable pin store"]
+  owner --> webkit["GTK / WebKitGTK system libraries"]
+```
+
+The controlled bridge runs real catalog and pin traffic. Its current source passes all seven selected runtime suites and 6,425 origin checks. The standalone Omarchy app still exits before presenting its window; native window operations remain unavailable. See the [source-bound component observation](implementation/warlock/qa/evidence/ui-origin-20261101/component-observation.json) and [Omarchy trial instructions](docs/warlock/how-to/run-omarchy-mvp.md) for the verified scope and retained failures.
+
+The original `architecture-024` capability-denial scenario is [independently accepted on actual bridge evidence](docs/warlock-build-loop/v2/arc024-capability-scenario-acceptance-20261101.json). Whole ARC024 remains partial for navigation and resource decision integration. The ledger contains 39 accepted scenarios on their recorded source tuples; whole-requirement acceptance remains 15 of 242, with all 417 scenarios preserved.
+
+#### Archived host design
+
+The following diagram and walkthrough describe the preserved prototype. Its authored C/C++ host, JavaScript adapters and Python services remain historical reference paths. Current development follows the Elm/Haskell architecture above.
+
 ```mermaid
 flowchart TB
   subgraph L_gui["Elm interface"]
@@ -181,7 +206,7 @@ flowchart TB
 
 [Explore the interactive architecture](https://charleshoskinson.github.io/Warlock/architecture/)
 
-Follow one click. When you click the taskbar button of a window that is not focused, Bar checks the click against what it shows and passes it through its JavaScript adapter to the native host. The host routes it to Main, which turns it into an activation request and marks it pending. The host records the request and hands it to the Python adapter, which asks the Hyprland plugin to focus the window. The plugin focuses it inside Hyprland, checks the result and reports back along the same path. Main settles the request, and the taskbar shows the window as active once Hyprland's next window report arrives.
+In the archived prototype, follow one click. When you click the taskbar button of a window that is not focused, Bar checks the click against what it shows and passes it through its JavaScript adapter to the native host. The host routes it to Main, which turns it into an activation request and marks it pending. The host records the request and hands it to the Python adapter, which asks the Hyprland plugin to focus the window. The plugin focuses it inside Hyprland, checks the result and reports back along the same path. Main settles the request, and the taskbar shows the window as active once Hyprland's next window report arrives.
 
 **Elm interface.** Main coordinates desktop interaction from a hidden controller document. Bar renders each display's taskbar, and Popup renders the shared menus and panels. Popup manages the window preview thumbnails, and a headless Elm worker inside the native host applies the preview policy.
 

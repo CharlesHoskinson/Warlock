@@ -10,7 +10,7 @@ flag vm-security
 
 library
   hs-source-dirs: src
-  exposed-modules: Warlock.Bootstrap, Warlock.Backend, Warlock.Backend.Catalog, Warlock.Backend.PinStore, Warlock.Ui.Http, Warlock.Ui.Owner, Warlock.Ui.Native, Warlock.Ui.Config, Warlock.Ui.Policy, Warlock.Ui.PrivateNetwork, Warlock.Ui.Display
+  exposed-modules: Warlock.Bootstrap, Warlock.Backend, Warlock.Backend.Catalog, Warlock.Backend.PinStore, Warlock.Ui.Http, Warlock.Ui.Owner, Warlock.Ui.Native, Warlock.Ui.Config, Warlock.Ui.Policy, Warlock.Ui.PrivateNetwork, Warlock.Ui.Display, Warlock.Ui.ThreadNamespace
   other-modules: Warlock.Bootstrap.Aggregate, Warlock.Bootstrap.CurrentSessions, Warlock.Bootstrap.ScopedPeer, Warlock.Bootstrap.SocketOwner, Warlock.Bootstrap.CredentialScopeGuard, Warlock.Backend.Store
   build-depends: base >=4.18 && <5, bytestring, text, containers, network ==3.2.0.0, unix, process ==1.6.19.0, directory, filepath, cryptohash-sha256 ==0.11.102.1, warlock-held-document-proposal, warlock-process-custody, warlock-protocol
   cc-options: -D_GNU_SOURCE

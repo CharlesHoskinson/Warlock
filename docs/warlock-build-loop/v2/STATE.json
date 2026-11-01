@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T12:04:40.872626+00:00",
+  "updatedUTC": "2026-11-01T13:50:51.490912+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -78,7 +78,8 @@
       "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
       "implementation/warlock/src/Surface.elm",
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/qa/feedback-context-browser.mjs"
+      "implementation/warlock/qa/feedback-context-browser.mjs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs"
     ],
     "before": "The catalog/pins application bridge is runnable but no production private UI HTTP/WebKit owner loads the packaged Elm roots or enforces their origin and CSP.",
     "after": "A Haskell UI owner serves pinned generated Elm roots on isolated role origins, connects their Elm-owned HTTP transport to whole authenticated backend frames, and denies unapproved routes, origins, navigation and capabilities with exact CSP. Engine execution-negative obligations remain explicit until observed.",
@@ -3517,16 +3518,15 @@
       "doctor": "six checks healthy; lead credential valid13.8hours, existing arbiterPID1116694; no service/key changes"
     },
     "liveCensusReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json",
-    "lastLivenessUTC": "2026-11-01T11:45:04.541593+00:00",
-    "actualWorkerCensus": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json"
+    "lastLivenessUTC": "2026-11-01T13:17:55.596078+00:00",
+    "actualWorkerCensus": "/home/charl/.local/state/warlock-team/20261031-agentbus/census-1315-20261101.json"
   },
   "currentGoalTelemetry": {
-    "observedUTC": "2026-11-01T04:17:58.314662+00:00",
     "status": "active",
-    "tokensUsed": 10103251,
-    "timeUsedSeconds": 22391,
-    "tokenBudget": null,
-    "scope": "Host cumulative telemetry; component/native/original acceptance separate"
+    "tokensUsed": 18154352,
+    "timeUsedSeconds": 55445,
+    "budget": "unbudgeted",
+    "observedUTC": "2026-11-01T13:34:51.847813+00:00"
   },
   "currentOriginalClosure": {
     "requirements": [
@@ -3546,26 +3546,15 @@
     "administrative": false,
     "nativeExecution": false,
     "guiAcceptance": false,
-    "releaseAcceptance": false
+    "releaseAcceptance": false,
+    "wholeRequirementsAccepted": 15
   },
-  "nextConcreteAction": "Publish coherent current tested bridge source; independently adjudicate literal ARC024 bridge clauses with immutable source and matching receipts; preserve guest run02 early StreamEOF/noGUI and select next mandatory source behavior under stop rules.",
+  "nextConcreteAction": "Review/integrate broker-to-execPID1 engine RPC, narrow pinned spawn/FD facade and explicit model correspondence; preserve selected native owner identity, one reaper, original absolute deadline, no replay and separate cleanup facts; then actual bounded Omarchy window trial.",
   "currentNamedScenarioClosure": {
-    "requirement": "ELM-DEL-010",
-    "scenarios": [
-      "delivery-010",
-      "peer-wrong-session",
-      "peer-approved-session"
-    ],
-    "namedScenariosAccepted": true,
-    "requirementAccepted": false,
-    "status": "partial",
-    "missingObservations": [
-      "Required actual cross-user credential trace remains missing: common mode exercises same-user senders and real retired sessions. newuidmap/newgidmap absent; single graphical authorization attempt timed out, no package installed or repeated prompt."
-    ],
-    "acceptance": "docs/warlock-build-loop/v2/persistent-auth-acceptance-20261101.json",
-    "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
-    "nativeExecution": false,
-    "releaseAcceptance": false
+    "recordedAccepted": 39,
+    "baselineTotal": 417,
+    "newScenario": "architecture-024",
+    "scope": "Source-bound original scenario verdict; whole ARC024 remains partial; no native/release transfer"
   },
   "concurrentIntegration": {
     "checkedUTC": "2026-11-01T01:24:22.660340+00:00",
@@ -3739,5 +3728,34 @@
       "forcedAtOriginalDeadline": false,
       "nativeAccepted": false
     }
+  },
+  "latestOriginalScenarioVerdict": {
+    "atUTC": "2026-11-01T12:30:32.940180+00:00",
+    "requirement": "ELM-ARC-024",
+    "scenario": "architecture-024",
+    "scenarioAccepted": true,
+    "wholeRequirementAccepted": false,
+    "scope": "Actual immutable authenticated capability-denial bridge, originalORbranch",
+    "sourceRevision": "eb2178293bb7e3962d7251c8e4a0ce5ffc3def21",
+    "evidence": "docs/warlock-build-loop/v2/arc024-capability-scenario-acceptance-20261101.json",
+    "participantRecord": ".warlock-contributor/arc024-bridge-verdict.json",
+    "oldNativeStartupRecordPreserved": ".warlock-contributor/ui-origin.json"
+  },
+  "activeVerificationPhase": {
+    "originalRequirement": "ELM-DEL-014",
+    "originalScenario": "delivery-014",
+    "scope": "Existing independently source-reviewed VM-only real-engine execution sensitivity/productionCSP observers. NativeMVP startup investigation ended with retainedrun02noGUI/StreamEOF. No timer reset from source-only QA witness changes.",
+    "positiveControl": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-positive-01",
+    "positiveOutcome": "PASS actual5ordinaryworldsignals,1remoteCorrectMimeRequest,1.8599s,exit0,within15soriginaldeadline",
+    "negativeProbe": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-negative-01",
+    "negativeOutcome": "Exit1 before childreceipt, zeroobservedtags. No CSPacceptance. QA-only earlystartupwitness repair assignedportable."
+  },
+  "threadNamespaceGuardCheckpoint": {
+    "source": "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs",
+    "protectedReport": ".warlock-contributor/haskell-cpu-1793538664658280462/report.json",
+    "allSevenRuntimeSuitesPassed": true,
+    "actualGuestEvidence": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-negative-05-guard/producer/producer.json",
+    "scope": "Controlled pre-GTK refusal only; no product GUI/native/CSP acceptance",
+    "lastProductionProgressUTC": "2026-11-01T13:10:31.857275+00:00"
   }
 }
