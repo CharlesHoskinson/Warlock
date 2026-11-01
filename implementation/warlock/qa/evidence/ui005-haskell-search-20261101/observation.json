@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-01T18:18:26.444444+00:00",
+  "requirement": "ELM-UI-005",
+  "scenario": "search-no-match",
+  "oracle": "no-match message and query remain reachable without launch",
+  "originalVerification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "disposition": "partial",
+  "scope": "Owned Haskell/WebKit app-only native-on-VM physical pointer/keyboard and independently captured rendered Elm observation; not protected native campaign or native/AT/IME/release acceptance.",
+  "sourceRevision": "3f88ed9b498cf07d7c944cdcb3cb27163358b310",
+  "sourceHashes": {
+    "implementation/warlock/src/Main.elm": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+    "implementation/warlock/src/Surface.elm": "c1a34f50b3b1da96f732d63fe9fb9f0e7022735881385ed5419aca8e76796ccb",
+    "implementation/warlock/src/HttpPopup.elm": "4185692e3613f2bc52eefa896e3c0d57cd796afe090a0a994877d27a52cff354",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "57b150fd2b9652049141a911d75126d1e88452cc14b57462104e327067e5dce6"
+  },
+  "qualifiedDependencyPacket": "implementation/warlock/qa/evidence/engine-idle-20261101/source-freeze.json",
+  "protectedReport": "implementation/warlock/qa/evidence/engine-idle-20261101/protected-report.json",
+  "guestArtifactInventory": "implementation/warlock/qa/evidence/engine-idle-20261101/guest-artifacts.json",
+  "vm": {
+    "rawEvidenceDirectory": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/engine-idle-20261101T172728Z",
+    "run": "run-08",
+    "enginePid": 114722,
+    "engineBirth": "6617935",
+    "namespacePids": [
+      114722,
+      1
+    ],
+    "scope": "warlock-mvp-app-a6300858141f.scope",
+    "originalDurationSeconds": 28,
+    "nativeOperations": [],
+    "result": {
+      "scope": "Actual Haskell/WebKit app-only native-on-VM diagnostic; not protected campaign/native shell/EARS acceptance",
+      "exit": 1,
+      "failure": null,
+      "forcedAtOriginalDeadline": false,
+      "elapsed": 28.303267768002115,
+      "unit": "warlock-mvp-app-a6300858141f.scope",
+      "observedOwnedPIDs": [
+        114705,
+        114712,
+        114722,
+        114738,
+        114766,
+        114767,
+        114768,
+        114771,
+        114774,
+        114777,
+        114778,
+        114779,
+        114780,
+        114783,
+        114786,
+        114789,
+        114790,
+        114791,
+        114792,
+        114795,
+        114796,
+        114797
+      ],
+      "observedMappedWindow": true,
+      "screenshots": [
+        {
+          "name": "live-00.png",
+          "exit": 0,
+          "at": 66180.047955644
+        },
+        {
+          "name": "live-01.png",
+          "exit": 0,
+          "at": 66183.173763333
+        },
+        {
+          "name": "live-02.png",
+          "exit": 0,
+          "at": 66186.298592556
+        },
+        {
+          "name": "live-03.png",
+          "exit": 0,
+          "at": 66189.515897854
+        },
+        {
+          "name": "live-04.png",
+          "exit": 0,
+          "at": 66192.692377881
+        },
+        {
+          "name": "live-05.png",
+          "exit": 0,
+          "at": 66195.872986756
+        },
+        {
+          "name": "live-06.png",
+          "exit": 0,
+          "at": 66199.059635019
+        },
+        {
+          "name": "live-07.png",
+          "exit": 0,
+          "at": 66202.228148512
+        }
+      ],
+      "physicalInputs": [],
+      "finalScopeState": {
+        "queryExit": 0,
+        "properties": {
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "Result": "success",
+          "ControlGroup": ""
+        },
+        "membershipKnown": false
+      },
+      "providerCleanupQualified": false,
+      "nativeAccepted": false,
+      "releaseAccepted": false
+    },
+    "backend": {
+      "schema": 1,
+      "passed": false,
+      "cleanup": true,
+      "callbacks": 10,
+      "operations": 2,
+      "auth": "Just (FrameObserved CredentialDelivered)",
+      "credentialRows": 30,
+      "selectedPid": 114712,
+      "nativeAccepted": false,
+      "releaseAccepted": false
+    }
+  },
+  "observed": {
+    "physicalSequence": "Current owned PID/birth/lineage/cgroup/active-window/geometry/monitor/lock/Foot/D fences; current translated visible control masks; separate physical motion/press/release opens Applications, clicks Search, types qvxz9 using five distinct per-key-fenced QMP keys. No Enter/launch action.",
+    "visibleQuery": "qvxz9",
+    "visibleMessage": "No matching applications. Change your search or Refresh.",
+    "queryImage": "query.png",
+    "queryImageSha256": "9ed3d02bd0b360afbfb9073eca6b9b83d8a190bfd7c851d766e0357c0094d84e",
+    "imageInspectedByRoot": true,
+    "noLaunchScope": "No launch action in recorded physical input. Source query path and app-only command surface are supporting evidence; counters and process snapshots alone are not universal no-execution proof.",
+    "acceptedFinalQueryCorrelation": "NOT independently captured. Popup pendingQuery may overlay the authoritative projection, so the screenshot alone does not prove final controller-query/catalog-generation causation.",
+    "performanceClaim": false,
+    "performanceLimit": "Three-second settle, SSH/QMP overhead and coarse captures are QA setup; no latency/frame-pacing distribution or hardware performance acceptance."
+  },
+  "preservation": {
+    "footPid": 2095,
+    "beforeBirth": "6930",
+    "afterBirth": "6930",
+    "observedOwnedPidBirthsRemainingAfter": [],
+    "idleRestorationExit": 0,
+    "providerCleanupQualified": false,
+    "finalScopeMembershipKnown": false
+  },
+  "rawHashes": {
+    "physical-journey-08.py": "b5c7a33f1576a29593d6da09b59f8be1b71909756df59ce093851f861ac9b94d",
+    "physical-journey-08-result.json": "c93796e08dc08461a74c475182dec78f3e909d52be50045b47105c86441b0f37",
+    "manual-physical-08.py": "f43e59593d8f839c206c169ae098e46d2ea0be8d843589b2f36623ff8c929397",
+    "physical-inputs-through-run-08.jsonl": "6d05b5f9b6fded4da406339d286375af3f7c73c104209239283e0e27b06185d4",
+    "receipt-name-repair.json": "7affd7236fc2c34f5f31f3b3a25998a944ea3d21587f0926d53aa959909364f8",
+    "run-08/controller-state.json": "1fe40b32ace13b3d38eb605a473b2729c769bf7de3e73fdd2615286cc33f5e65",
+    "run-08/observations.json": "59270e7e3ce319004e2a2f9d0b24a722bdaec22c57fe8e68fc392ce4ad094742",
+    "run-08/backend.stdout": "2eca178c24b2de68b7d65785c8bac46cb695ef9060314a226b59ba1481b841be",
+    "run-08/preservation-before.json": "7da2c3b2187b6179493151d29ad59aec96a48ea4f73362e5296e38e5cbd544ed",
+    "run-08/preservation-after.json": "11456c91b62ccaa8b16eb602d5b00f0eeea2cb18ffe0ee2f3c4b1ae6e7b64a42",
+    "run-08/idle-restoration.json": "6e936c28ecb60fb3d09e92bef522142dd3aec90a7945b55105aca6a0c9e9fad8"
+  },
+  "retainedFailures": "Runs02-07 retain expired-D, early-mapping, pixel-template/geometry and inert-click observations; these do not establish a product allocation defect. The QA result filename collision was repaired by separating the run08 result and restoring historical bytes against published hashes; receipt-name-repair.json documents it.",
+  "missingObservations": [
+    "Correlated authoritative final-query/catalog-generation receipt paired with independent visible outcome",
+    "Required original protected native, keyboard and assistive-technology acceptance for replacement source; IME where applicable",
+    "Provider/callback/backing retirement, native effects, latency/hardware/resource and release acceptance"
+  ],
+  "historicalWholeRequirements": 15,
+  "historicalAcceptedScenarios": 39,
+  "originalAccepted": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false
+}

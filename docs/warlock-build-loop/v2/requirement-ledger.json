@@ -9477,7 +9477,18 @@
         "hostSHA256": "e0a2f0464b090f77c744c7fe7fc8e356a9d0f1ce2ad8a648040379dd2f7c0558",
         "historicalScenarioLimits": "Earlier race/removed/no-match/unavailable remain original tuple observations, independently reused for unaffected relevant clauses. No claim that delayed old reply/current Editor dispatch was rerun on current host. See independent-whole-review.md."
       },
-      "acceptanceLimits": "Earlier race/removed/no-match/unavailable remain original tuple observations, independently reused for unaffected relevant clauses. No claim that delayed old reply/current Editor dispatch was rerun on current host. See independent-whole-review.md. No universal schedules/catalogs, IME, audible/braille, renderer fix or release acceptance."
+      "acceptanceLimits": "Earlier race/removed/no-match/unavailable remain original tuple observations, independently reused for unaffected relevant clauses. No claim that delayed old reply/current Editor dispatch was rerun on current host. See independent-whole-review.md. No universal schedules/catalogs, IME, audible/braille, renderer fix or release acceptance.",
+      "currentStackObservations": [
+        {
+          "sourceRevision": "3f88ed9b498cf07d7c944cdcb3cb27163358b310",
+          "scenario": "search-no-match",
+          "disposition": "partial",
+          "path": "implementation/warlock/qa/evidence/ui005-haskell-search-20261101/observation.json",
+          "sha256": "b5b54774d38374e5412b9e4ed8a19d577d93e734921689f52a9ba807ebb5ee68",
+          "scope": "Current Haskell/Elm app-only native-on-VM physical search snapshot; historical whole acceptance remains on its original tuple. Final accepted-query correlation and native/AT/IME/provider/performance acceptance remain.",
+          "independentReview": "implementation/warlock/qa/evidence/ui005-haskell-search-20261101/independent-review.json"
+        }
+      ]
     },
     {
       "id": "ELM-UI-006",
@@ -17272,5 +17283,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T17:45:53.145576+00:00"
+  "updatedUTC": "2026-11-01T18:25:15.938169+00:00"
 }

@@ -1,62 +1,30 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T17:45:53.145576+00:00",
+  "updatedUTC": "2026-11-01T18:28:56.767423+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "engine-pid1-ownership",
+    "id": "ui005-haskell-search",
     "requirements": [
-      "ELM-ARC-002"
+      "ELM-UI-005"
     ],
     "scenarios": [
-      "ownership-presentation"
+      "search-no-match"
     ],
     "paths": [
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineSpawn.hsc",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCredentials.hsc",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineAdapter.hs",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
-      "implementation/warlock/haskell/runtime/ui/Main.hs",
-      "implementation/warlock/haskell/runtime/runtime.cabal",
-      "implementation/warlock/haskell/runtime/test-ui-engine/Main.hs",
-      "implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs",
-      "implementation/warlock/haskell/runtime/formal/ui-engine-rpc.qnt",
-      "implementation/warlock/haskell/runtime/formal/ui-engine-rpc_test.qnt",
-      "implementation/warlock/haskell/runtime/formal/ui-engine-topology.qnt",
-      "implementation/warlock/haskell/runtime/formal/ui-engine-topology_test.qnt",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
-      "implementation/warlock/tools/haskell_build.py",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs",
-      "implementation/warlock/haskell/protocol/protocol.cabal",
-      "implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs",
-      "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
-      "implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs",
-      "implementation/warlock/haskell/runtime/test-ui-engine-exec/Main.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
-      "implementation/warlock/haskell/runtime/test-ui-display/Main.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
-      "implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs",
-      "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime.qnt",
-      "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime_test.qnt"
+      "implementation/warlock/src/Main.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/HttpPopup.elm",
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc"
     ],
-    "before": "The current selected UI owner refuses GTK startup because its child PID namespace differs; no actual Warlock window is created.",
-    "after": "Run the three actual Elm GUI roots inside an owned Haskell engine process with a compatible PID namespace; the authenticated broker keeps native authority and original deadline. Observe an app-only window before any original-scenario acceptance.",
+    "before": "The current Haskell/Elm MVP physically opens Applications, but current physical search input and no-match/query retention have not been observed. Bounded QA input attempts have timing/geometry limits, not a demonstrated search defect.",
+    "after": "A user opens Applications, physically focuses search and types a nonmatching query; the current compiled Elm query and no-match message remain visible without launching. Repair actual source if the observed route fails, preserving Haskell native authority and all original obligations.",
     "verification": [
-      "Protected source/model/property checks of actual engine RPC and one-owner fork/exec credentials/deadline/FD/lifecycle; bounded root-owned Omarchy window observation with owned process identities and original deadlines. Native effects, AT/IME, complete cleanup and release acceptance remain independent."
+      "Protected current-source Elm/Haskell checks proportionate to actual fixes; actual owned app-only Omarchy physical search observation under unchanged original28s trial D, with retained query/no-match and no launch, fresh PID/birth/scope/geometry fences. VM component results do not replace native/keyboard/AT/IME/release acceptance."
     ]
   },
   "nextSlices": [
@@ -3482,13 +3450,14 @@
       "gemini-site": "Elm website source and visual review",
       "gemini-gui": "Elm beta GUI source and visual review",
       "gemini-omarchy": "Physical app-only VM journey planning",
-      "sol-docs": "GPT-6.1 Sol HIGH recurring cross-thread advisor"
+      "sol-docs": "GPT-6.1 Sol HIGH recurring cross-thread advisor",
+      "terra-browser": "Recurring UX/performance owner: smoothness/latency acceptance criteria and implementation review"
     },
     "externalProcessReceipts": ".warlock-contributor/ui-stream-model-launch.json",
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-ARC-002 / ownership-presentation; owned engine rendered real Elm MVP, idle lifetime fix under verification",
+    "currentSlice": "ELM-UI-005 / search-no-match; current replacement route, historical original verdict preserved",
     "currentProcessObservation": "14 actual external worker CLIs confirmed2026-11-01T17:04:40Z:10Terra,3GeminiArgon,1SolHIGH; no duplicates. Bounded turns, not permanent liveness.",
     "lastHealthObservation": {
       "observedUTC": "2026-11-01T16:58:00Z",
@@ -3508,7 +3477,7 @@
       "writes": "Exact-claimed distinct ignored advisor drafts only; no production input mutation.",
       "requiredByUser": true
     },
-    "requestedExternalWorkerCount": 14,
+    "requestedExternalWorkerCount": 15,
     "advisorLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/sol-advisor-launch.json",
     "historicalRoles": {
       "lead": "Integration and sole protected compile/model/process/native executor",
@@ -3524,7 +3493,24 @@
     },
     "currentLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/idle-delivery-1700-launches.json",
     "nextReconciliationUTC": "2026-11-01T17:25:00Z",
-    "solAdvisorReconciliationUTC": "2026-11-01T17:29:00Z"
+    "solAdvisorReconciliationUTC": "2026-11-01T17:29:00Z",
+    "uxPerformanceOwner": {
+      "name": "ux-performance",
+      "identity": "terra-browser",
+      "session": "01a1947b-90de-77f3-a397-9f25730af6e0",
+      "model": "gpt-6.1-terra",
+      "reasoning": "high",
+      "role": "Recurring smoothness, UX and latency acceptance-criteria owner across all work threads",
+      "requestedExternalOrdinal": 15,
+      "canonicalCriteria": "docs/warlock-build-loop/v2/UX-PERFORMANCE-ACCEPTANCE.md",
+      "cutoff": "2026-11-01T18:29:00Z",
+      "launcherPid": 2342454,
+      "priorTerminalLog": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-browser-20261031-182128.log",
+      "log": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/ux-performance-1802-launcher.log",
+      "prompt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-1802.txt",
+      "continuity": "Include each census andboundedresumption; actualCLIabsence+eligibleterminallog before same-session resume; rootsolecoordinator/protectedexecutor."
+    },
+    "uxPerformanceLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-launch.json"
   },
   "currentGoalTelemetry": {
     "status": "active",
@@ -3554,7 +3540,7 @@
     "releaseAcceptance": false,
     "wholeRequirementsAccepted": 15
   },
-  "nextConcreteAction": "End this bounded idle investigation with verified source and retained GUI/input limits; take current Haskell/Elm physical search into original UI005/search-no-match slice.",
+  "nextConcreteAction": "Implement complete-model/every-effect deterministic owning-route fixture for original TEA002; audit TEA001 typed lifecycle/authority separately, then TEA005 interop. Exact compiler/replay/independent boundary evidence per original; native qualified separately, no acceptance shortcuts.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -3693,9 +3679,66 @@
       },
       "record": ".warlock-contributor/ui-origin.json",
       "disposition": "Investigation ended at45minute trigger with actualremainingruntimeorigin and privateSDKloader failures retained; wholeARC024/DEL014unaccepted; prepdiagnostics source handedoff, no source/timer reset."
+    },
+    {
+      "slice": {
+        "id": "engine-pid1-ownership",
+        "requirements": [
+          "ELM-ARC-002"
+        ],
+        "scenarios": [
+          "ownership-presentation"
+        ],
+        "paths": [
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineSpawn.hsc",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCredentials.hsc",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineAdapter.hs",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+          "implementation/warlock/haskell/runtime/ui/Main.hs",
+          "implementation/warlock/haskell/runtime/runtime.cabal",
+          "implementation/warlock/haskell/runtime/test-ui-engine/Main.hs",
+          "implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs",
+          "implementation/warlock/haskell/runtime/formal/ui-engine-rpc.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-engine-rpc_test.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-engine-topology.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-engine-topology_test.qnt",
+          "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
+          "implementation/warlock/tools/haskell_build.py",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs",
+          "implementation/warlock/haskell/protocol/protocol.cabal",
+          "implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs",
+          "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
+          "implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs",
+          "implementation/warlock/haskell/runtime/test-ui-engine-exec/Main.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
+          "implementation/warlock/haskell/runtime/test-ui-display/Main.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+          "implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs",
+          "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime.qnt",
+          "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime_test.qnt"
+        ],
+        "before": "The current selected UI owner refuses GTK startup because its child PID namespace differs; no actual Warlock window is created.",
+        "after": "Run the three actual Elm GUI roots inside an owned Haskell engine process with a compatible PID namespace; the authenticated broker keeps native authority and original deadline. Observe an app-only window before any original-scenario acceptance.",
+        "verification": [
+          "Protected source/model/property checks of actual engine RPC and one-owner fork/exec credentials/deadline/FD/lifecycle; bounded root-owned Omarchy window observation with owned process identities and original deadlines. Native effects, AT/IME, complete cleanup and release acceptance remain independent."
+        ]
+      },
+      "record": ".warlock-contributor/engine-pid1.json",
+      "boundedEnd": "Published3f88ed9b498cf07d7c944cdcb3cb27163358b310; verified idle and physical Applications component observation. ARC002 stillpartial; originaltimer andfailures retained.",
+      "evidence": "implementation/warlock/qa/evidence/engine-idle-20261101/component-observation.json"
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/engine-pid1.json",
+  "activeContributorRecord": ".warlock-contributor/ui005-haskell-search.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -3800,5 +3843,97 @@
       "negativeProbe": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-negative-01",
       "negativeOutcome": "Exit1 before childreceipt, zeroobservedtags. No CSPacceptance. QA-only earlystartupwitness repair assignedportable."
     }
-  ]
+  ],
+  "earsDeliveryTarget": {
+    "requestedByUser": true,
+    "enabled": true,
+    "fullGoalUnchanged": true,
+    "targetWholeEarsPerHour": {
+      "minimumPlanningTarget": 2,
+      "aim": 3
+    },
+    "windowStartedUTC": "2026-11-01T18:11:37.655841+00:00",
+    "reportingIntervalMinutes": 60,
+    "baseline": {
+      "observedUTC": "2026-11-01T18:11:37.655841+00:00",
+      "ledgerSha256": "9e9982dabecf0120aece6224d1773f5ac88aa37238ea8868e511ac07c6950870",
+      "totalRequirements": 242,
+      "totalScenarios": 417,
+      "acceptedWholeRequirementIds": [
+        "ELM-ARC-003",
+        "ELM-ARC-004",
+        "ELM-ARC-005",
+        "ELM-ARC-007",
+        "ELM-DEL-011",
+        "ELM-DEL-015",
+        "ELM-REV-005",
+        "ELM-REV-007",
+        "ELM-TEA-003",
+        "ELM-UI-005",
+        "ELM-UX-004",
+        "ELM-UX-005",
+        "ELM-UX-008",
+        "ELM-UX-009",
+        "ELM-UX-029"
+      ],
+      "acceptedScenarios": [
+        "ELM-ARC-003/architecture-003",
+        "ELM-ARC-004/architecture-004",
+        "ELM-ARC-004/decoder-native-to-elm",
+        "ELM-ARC-005/architecture-005",
+        "ELM-ARC-007/architecture-007",
+        "ELM-ARC-007/receipt-pending",
+        "ELM-ARC-007/receipt-committed",
+        "ELM-ARC-007/receipt-refused",
+        "ELM-ARC-007/receipt-cancelled",
+        "ELM-ARC-024/architecture-024",
+        "ELM-DEL-010/delivery-010",
+        "ELM-DEL-010/peer-wrong-session",
+        "ELM-DEL-010/peer-approved-session",
+        "ELM-DEL-011/delivery-011",
+        "ELM-DEL-011/arbitrary-path-denied",
+        "ELM-DEL-015/delivery-015",
+        "ELM-DEL-015/invalid-settings",
+        "ELM-DEL-015/interrupted-settings",
+        "ELM-DEL-015/migration-failure",
+        "ELM-REV-005/requirement-ownership",
+        "ELM-REV-007/revision-007",
+        "ELM-TEA-003/tea-effects",
+        "ELM-UI-004/taskbar-zero",
+        "ELM-UI-004/taskbar-inactive",
+        "ELM-UI-004/taskbar-minimized",
+        "ELM-UI-004/taskbar-active",
+        "ELM-UI-004/taskbar-group",
+        "ELM-UI-004/taskbar-refusal",
+        "ELM-UI-005/search-no-match",
+        "ELM-UI-005/search-unavailable",
+        "ELM-UI-005/search-race",
+        "ELM-UI-005/search-removed",
+        "ELM-UI-005/search-refused",
+        "ELM-UX-004/ux-004",
+        "ELM-UX-005/ux-005",
+        "ELM-UX-008/ux-008",
+        "ELM-UX-009/ux-009",
+        "ELM-UX-029/launcher-accepted",
+        "ELM-UX-029/launcher-refused"
+      ]
+    },
+    "counting": "Unique whole original requirements newly accepted after all original scenarios and verification obligations are met, with immutable actual source/evidence and independent accepted review. Report scenario verdicts and current-stack whole requalifications separately; do not inflate net-new closure counts.",
+    "onMiss": "Report actual count and concrete gaps; reprioritize the next complete original requirement under existing WIP/QA/readiness gates. Do not weaken evidence, reset stopped investigations, fabricate closure or pause full goal.",
+    "acceptanceBoundary": "All242requirements/417scenarios/deadlines/failed/native/AT/IME/hardware/resource/release obligations remain. Performance/UX criteria apply through existing workflow.",
+    "nextCompleteCandidateQueue": [
+      "ELM-TEA-002/tea-pure-update",
+      "ELM-TEA-001/tea-typed-model",
+      "ELM-TEA-005/tea-narrow-interop"
+    ]
+  },
+  "ui005CurrentStackCheckpoint": {
+    "record": ".warlock-contributor/ui005-haskell-search.json",
+    "disposition": "partial",
+    "observation": "implementation/warlock/qa/evidence/ui005-haskell-search-20261101/observation.json",
+    "review": "implementation/warlock/qa/evidence/ui005-haskell-search-20261101/independent-review.json",
+    "originalWholeAccepted": false,
+    "nativeAccepted": false,
+    "remaining": "Final authoritativequery/cataloggenerationcorrelation; nativeATIME/provider/performance/release. HistoricalUI005wholeverdictunchanged."
+  }
 }

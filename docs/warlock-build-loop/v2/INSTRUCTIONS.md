@@ -66,6 +66,29 @@ Use [quint-llm-kit](https://github.com/quint-co/quint-llm-kit) for behavioral mo
 5. **Record the result.** Add the source revision, immutable evidence reference/hash, exact oracle, evidence scope, missing observations and reviewer disposition to the scenario row. Close a scenario only when its own obligations pass, and a requirement only when all applicable scenarios and verification obligations pass. Source changes invalidate only relevant evidence, not every unrelated accepted scenario.
 6. **Commit the actual delta and continue.** Publish owned changes in a normal batch under existing authorization. No separate publication-receipt commit, no copied QA trees, no new public version counters. Retain failed reports locally and commit the minimal auditable report/evidence needed by the claim. Do not discard evidence required for reproducibility.
 
+## Hourly EARS delivery target
+
+User instruction, November 1: target two to three whole original EARS closures
+per hour. Aim for three and plan for at least two, selecting complete user-visible
+requirements whose actual implementation and original verification can finish.
+Keep the full 242-requirement / 417-scenario goal and existing WIP limits.
+
+Record hourly actuals against the baseline in `STATE.earsDeliveryTarget`.
+Count a whole requirement only after every applicable original scenario and
+verification obligation is met, with immutable source-bound evidence and an
+independent accepted review. Report scenario verdicts, partial observations and
+whole current-stack requalifications separately. Requalifying a previously
+accepted original does not increase the net-new whole count. Builds, commits,
+models, setup and documentation are not EARS closures.
+
+Root and the Sol advisor keep the next complete requirements ready; the UX and
+performance owner supplies the relevant criteria. If the target is missed,
+report the actual count and exact missing observations, then reprioritize concrete
+implementation or original acceptance work. Preserve all original deadlines,
+failed evidence, native/AT/IME/hardware/resource/release obligations and stopped
+histories. Do not weaken acceptance, manufacture progress, add a new approval
+council or pause the active goal to satisfy a throughput target.
+
 ## Standing integration and Omarchy trial cadence
 
 User authorization reaffirmed October 28, 2026: merge integrated work regularly to GitHub, keep the README current, and deploy to Omarchy when possible for hands-on testing. This remains part of every loop continuation while the user is away; being AFK is not a pause request.
@@ -166,6 +189,30 @@ assignments or completed turns. Keep canonical STATE/HANDOFF and the team brief
 current. Preserve keys, the single coordinator, exact path ownership and all
 original source/evidence boundaries. A bounded turn ending does not remove this
 recurring role from the active goal.
+
+## Recurring UX and performance owner
+
+User instruction, November 1: keep an additional 15th external agent responsible
+for smoothness, UX and latency across the work threads. This specialist owns and
+maintains `UX-PERFORMANCE-ACCEPTANCE.md`, with measurable interaction, visual
+feedback, startup, frame pacing and whole-process resource criteria. Use the
+original frozen workload budgets and QA022/023, REN022 and REV020/021 obligations;
+preserve existing numeric limits, deadlines and evidence. Distinguish binding
+criteria, proposed targets and unmeasured results explicitly.
+
+Include cold/warm state, hardware/output metadata, p50/p95/p99, raw samples,
+sample counts, instrumentation overhead, stress/soak conditions and regressions.
+Renderer, HTTP or queue receipts are separate from independent presentation.
+Software VM results do not certify native hardware, high-refresh, AT/IME or
+release performance. Missing required data is not a pass.
+
+Keep this owner in every census and bounded resumption, using the recorded
+`terra-browser` identity/session with role `ux-performance`. Root remains sole
+coordinator and protected executor; the specialist sets criteria, reviews actual
+work and prioritizes concrete fixes through the existing contributor and QA
+workflow. The ten base Terra agents, five Quint roles, three Gemini agents and
+Sol HIGH advisor remain in the loop. Revalidate prior process/terminal state
+before resuming; preserve keys and avoid duplicate sessions or coordinators.
 
 ## Muse regulation and recovery
 
