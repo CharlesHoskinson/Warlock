@@ -10,6 +10,8 @@ Warlock is an Elm desktop shell for Omarchy, bringing a Windows-style taskbar an
 
 The test drive is the quickest way to try Warlock: the real compiled Elm interface on a simulated Omarchy desktop, right in your browser. Contributors build the native shell from source against matching Hyprland components, and a packaged Omarchy install is on the roadmap.
 
+The current Elm/Haskell native host is still under development. The website and browser test drive are available; a persistent Warlock desktop on Omarchy has not yet met native or release acceptance. The [delivery ledger](docs/warlock-build-loop/v2/requirement-ledger.json) preserves all 242 requirements and 417 scenarios, including 15 historical whole-requirement verdicts with their original source and verification scope. Component checks and isolated VM runs do not extend those verdicts to the current host.
+
 ![The Warlock desktop in the test drive: taskbar across the top and Task View open over the workspace](docs/warlock-brand/readme/test-drive-task-view.png)
 
 Open an application and Warlock's portal brings it in: a ring of red ember fragments ignites, expands and resolves into the new window.
@@ -76,7 +78,7 @@ Open a window's context menu for actions such as moving or arranging it. Dialogs
 
 ## Features
 
-Checked items work in the desktop build. In the test drive, clicks, searches and settings run the same Elm code, and a simulated desktop answers in place of Hyprland and your applications.
+Checked items describe implemented interface paths; they do not certify the current Elm/Haskell native host. In the test drive, clicks, searches and settings run compiled Elm, and a simulated desktop answers in place of Hyprland and your applications.
 
 ### Taskbar and applications
 
