@@ -33,23 +33,65 @@ class ReconciliationTests(unittest.TestCase):
         self.identity = policy.record_identity(self.record, self.record_path)
         self.sidecar = policy.reconciliation_path(self.repo, dict(self.record, _recordPath=self.record_path))
         self.counter = 0
+        self.owner_records = {}
 
     def transition(self, name, reviewer='independent-reviewer', previous=None):
         self.counter += 1
         current = fixtures.digest(self.repo / name)
+        source_record_path = self.owner_records.get(name)
+        if source_record_path is None:
+            source_record_path = '.warlock-contributor/model-owner-%d.json' % self.counter
+            self.owner_records[name] = source_record_path
+            source_record = {
+                'schema': 1, 'owner': 'separate-model-owner',
+                'slice': {'id': 'foreign-model', 'requirements': ['ELM-ARC-012'],
+                          'scenarios': ['cancel-before-commit'], 'paths': [name]},
+                'baseline': self.record['baseline'], 'startedUTC': '2026-01-01T00:00:00+00:00',
+                'sourceHashes': {name: current}, 'foreignDirty': {},
+                'adoptedDirty': {'paths': []}, 'iterations': []}
+        else:
+            source_record = json.loads((self.repo/source_record_path).read_text())
+            source_record['sourceHashes'][name] = current
+        self.fixture.write(source_record_path, source_record)
+        index_path = self.repo/'.warlock-contributor/participant-index.json'
+        index = json.loads(index_path.read_text())
+        index['records'][source_record_path] = policy.participant_entry(
+            source_record, fixtures.digest(self.repo/source_record_path))
+        payload = {'schema': 1, 'records': dict(sorted(index['records'].items()))}
+        index = dict(payload, indexSha256=policy.json_sha256(payload))
+        self.fixture.write('.warlock-contributor/participant-index.json', index)
         snap = '.warlock-contributor/evidence/foreign-reconciliation-snapshots/owner-%d.json' % self.counter
-        self.fixture.write(snap, {'owner': 'separate-model-owner', 'slice': {'paths': [name]},
-                                 'foreignDirty': {}, 'sourceHashes': {name: current}})
+        self.fixture.write(snap, source_record)
         review = '.warlock-contributor/evidence/foreign-reconciliations/review-%d.json' % self.counter
         reason = 'Preserve the separate model owner and reconcile reviewed bytes'
         self.fixture.write(review, dict(schema=1, scope='foreign-provenance-only', scenarioAcceptance=False,
             recordIdentitySha256=self.identity, recordPath=self.record_path, path=name,
             previousSha256=previous or self.record['foreignDirty'].get(name), currentSha256=current,
             sourceRecordSnapshot=snap, sourceRecordSnapshotSha256=fixtures.digest(self.repo / snap),
-            sourceOwner='separate-model-owner', reason=reason, reviewer=reviewer, independent=True))
-        return dict(path=name, sourceRecordSnapshot=snap, reviewFile=review, reason=reason)
+            sourceOwner='separate-model-owner', sourceRecordPath=source_record_path,
+            ownerCensusSnapshot='pending', ownerCensusSnapshotSha256='pending',
+            reason=reason, reviewer=reviewer, independent=True))
+        return dict(path=name, sourceRecordPath=source_record_path, ownerCensusSnapshot='pending',
+                    sourceRecordSnapshot=snap, reviewFile=review, reason=reason)
+
+    def prepare_transitions(self, transitions):
+        if not transitions or any(not isinstance(entry, dict) or 'sourceRecordPath' not in entry
+                                  for entry in transitions):
+            return transitions
+        census = json.loads(self.cli('--record', self.record_path, 'owner-census').stdout)
+        census_path = census['ownerCensusSnapshot']
+        for entry in transitions:
+            if not isinstance(entry, dict) or 'reviewFile' not in entry:
+                continue
+            entry['ownerCensusSnapshot'] = census_path
+            review = json.loads((self.repo/entry['reviewFile']).read_text())
+            review['ownerCensusSnapshot'] = census_path
+            review['ownerCensusSnapshotSha256'] = census['ownerCensusSnapshotSha256']
+            self.fixture.write(entry['reviewFile'], review)
+        return transitions
 
     def reconcile(self, transitions, ok=True):
+        self.prepare_transitions(transitions)
         self.fixture.write('.warlock-contributor/transitions.json', transitions)
         return self.cli('reconcile-foreign', '--transition-file', '.warlock-contributor/transitions.json', ok=ok)
 
@@ -85,9 +127,10 @@ class ReconciliationTests(unittest.TestCase):
         payload = {'schema': index['schema'], 'records': index['records']}
         index['indexSha256'] = policy.json_sha256(payload)
         index_path.write_text(json.dumps(index, indent=2)+'\n')
-        before_index = index_path.read_bytes()
         self.change([self.names[0]])
-        self.reconcile([self.transition(self.names[0])])
+        transitions = self.prepare_transitions([self.transition(self.names[0])])
+        before_index = index_path.read_bytes()
+        self.reconcile(transitions)
         self.assertEqual(record_bytes, self.record_file.read_bytes())
         self.assertEqual(before_index, index_path.read_bytes())
         self.cli('check')
@@ -107,6 +150,32 @@ class ReconciliationTests(unittest.TestCase):
         self.change([self.names[0]], 'unreviewed third model')
         self.cli('check', ok=False)
         self.assertEqual(self.original, self.record_file.read_bytes())
+
+    def test_replay_rejects_forged_noop_transition(self):
+        self.change([self.names[0]])
+        self.reconcile([self.transition(self.names[0])])
+        data = json.loads(self.sidecar.read_text())
+        first = data['events'][0]
+        review_path = '.warlock-contributor/evidence/foreign-reconciliations/review-noop.json'
+        review = json.loads((self.repo/first['reviewFile']).read_text())
+        review['previousSha256'] = first['toSha256']
+        review['currentSha256'] = first['toSha256']
+        self.fixture.write(review_path, review)
+        no_op = dict(first, fromSha256=first['toSha256'],
+                     previousEventSha256=first['eventSha256'], reviewFile=review_path,
+                     reviewFileSha256=fixtures.digest(self.repo/review_path))
+        no_op['eventSha256'] = policy.json_sha256(
+            {key: value for key, value in no_op.items() if key != 'eventSha256'})
+        data['events'].append(no_op)
+        self.fixture.write(str(self.sidecar.relative_to(self.repo)), data)
+        output = self.cli('check', ok=False)
+        self.assertIn('changed source hash', output.stdout)
+
+    def test_owner_census_refuses_unclassified_scratch_json(self):
+        malformed = self.repo/'.warlock-contributor/unclassified-participant.json'
+        malformed.write_text('{broken json')
+        output = self.cli('owner-census', ok=False)
+        self.assertIn('unclassified JSON paths', output.stdout)
 
     def test_partial_batch_or_unrelated_drift_writes_nothing(self):
         self.change()
@@ -187,6 +256,122 @@ class ReconciliationTests(unittest.TestCase):
         self.reconcile([entry], ok=False)
         self.assertFalse(self.sidecar.exists())
 
+    def test_event_census_must_be_intact_and_bind_unique_nonself_owner(self):
+        self.change([self.names[0]])
+        entry = self.prepare_transitions([self.transition(self.names[0])])[0]
+        census_path = self.repo/entry['ownerCensusSnapshot']
+        census_bytes = census_path.read_bytes()
+        census = json.loads(census_bytes)
+        census['participantIndexSha256'] = '0' * 64
+        self.fixture.write(entry['ownerCensusSnapshot'], census)
+        self.fixture.write('.warlock-contributor/transitions.json', [entry])
+        self.cli('reconcile-foreign', '--transition-file', '.warlock-contributor/transitions.json', ok=False)
+        self.assertFalse(self.sidecar.exists())
+        census_path.write_bytes(census_bytes)
+
+        entry = self.transition(self.names[0])
+        source_record_path = entry['sourceRecordPath']
+        source_record = json.loads((self.repo/source_record_path).read_text())
+        duplicate = dict(source_record, owner='second-model-owner',
+                         startedUTC='2026-01-01T00:00:01+00:00')
+        duplicate_path = '.warlock-contributor/model-owner-duplicate.json'
+        self.fixture.write(duplicate_path, duplicate)
+        index_path = self.repo/'.warlock-contributor/participant-index.json'
+        index = json.loads(index_path.read_text())
+        index['records'][duplicate_path] = policy.participant_entry(
+            duplicate, fixtures.digest(self.repo/duplicate_path))
+        payload = {'schema': 1, 'records': dict(sorted(index['records'].items()))}
+        self.fixture.write('.warlock-contributor/participant-index.json',
+                           dict(payload, indexSha256=policy.json_sha256(payload)))
+        self.reconcile([entry], ok=False)
+        self.assertFalse(self.sidecar.exists())
+
+    def test_source_owner_cannot_alias_target_owner(self):
+        self.change([self.names[0]])
+        entry = self.transition(self.names[0])
+        source_record_path = entry['sourceRecordPath']
+        source_record = json.loads((self.repo/source_record_path).read_text())
+        source_record['owner'] = self.record['owner']
+        self.fixture.write(source_record_path, source_record)
+        self.fixture.write(entry['sourceRecordSnapshot'], source_record)
+        index_path = self.repo/'.warlock-contributor/participant-index.json'
+        index = json.loads(index_path.read_text())
+        index['records'][source_record_path] = policy.participant_entry(
+            source_record, fixtures.digest(self.repo/source_record_path))
+        payload = {'schema': 1, 'records': dict(sorted(index['records'].items()))}
+        self.fixture.write('.warlock-contributor/participant-index.json',
+                           dict(payload, indexSha256=policy.json_sha256(payload)))
+        review = json.loads((self.repo/entry['reviewFile']).read_text())
+        review['sourceOwner'] = self.record['owner']
+        review['sourceRecordSnapshotSha256'] = fixtures.digest(self.repo/entry['sourceRecordSnapshot'])
+        self.fixture.write(entry['reviewFile'], review)
+        self.reconcile([entry], ok=False)
+        self.assertFalse(self.sidecar.exists())
+
+    def test_legacy_event_cannot_follow_schema2_and_boolean_version_is_invalid(self):
+        self.change([self.names[0]])
+        self.reconcile([self.transition(self.names[0])])
+        clean = self.sidecar.read_bytes()
+        data = json.loads(clean)
+        first = data['events'][0]
+        legacy = dict(first)
+        for field in ('eventSchema', 'sourceRecordPath', 'ownerCensusSnapshot',
+                      'ownerCensusSnapshotSha256', 'eventSha256'):
+            legacy.pop(field, None)
+        legacy['fromSha256'] = first['toSha256']
+        legacy['previousEventSha256'] = first['eventSha256']
+        legacy['eventSha256'] = policy.json_sha256(legacy)
+        data['events'].append(legacy)
+        self.fixture.write(str(self.sidecar.relative_to(self.repo)), data)
+        self.cli('check', ok=False)
+
+        data = json.loads(clean)
+        data['events'][0]['eventSchema'] = True
+        data['events'][0]['eventSha256'] = policy.json_sha256(
+            {key: value for key, value in data['events'][0].items() if key != 'eventSha256'})
+        self.fixture.write(str(self.sidecar.relative_to(self.repo)), data)
+        self.cli('check', ok=False)
+
+    def test_stale_duplicate_and_noncanonical_claimants_fail_closed(self):
+        self.change([self.names[0]])
+        entry = self.transition(self.names[0])
+        source = json.loads((self.repo/entry['sourceRecordPath']).read_text())
+        duplicate = dict(source, owner='second-model-owner',
+                         startedUTC='2026-01-01T00:00:02+00:00',
+                         sourceHashes={self.names[0]: 'f'*64})
+        duplicate_path = '.warlock-contributor/model-owner-stale.json'
+        self.fixture.write(duplicate_path, duplicate)
+        index_path = self.repo/'.warlock-contributor/participant-index.json'
+        index = json.loads(index_path.read_text())
+        index['records'][duplicate_path] = policy.participant_entry(
+            duplicate, fixtures.digest(self.repo/duplicate_path))
+        payload = {'schema': 1, 'records': dict(sorted(index['records'].items()))}
+        self.fixture.write('.warlock-contributor/participant-index.json',
+                           dict(payload, indexSha256=policy.json_sha256(payload)))
+        self.reconcile([entry], ok=False)
+        self.assertFalse(self.sidecar.exists())
+
+    def test_noncanonical_alias_claim_fails_closed(self):
+        self.change([self.names[0]])
+        entry = self.transition(self.names[0])
+        source = json.loads((self.repo/entry['sourceRecordPath']).read_text())
+        alternate = self.names[0].replace('/qa/', '//qa/')
+        duplicate = dict(source, owner='second-model-owner',
+                          startedUTC='2026-01-01T00:00:02+00:00')
+        duplicate['slice']['paths'] = [alternate]
+        duplicate['sourceHashes'] = {alternate: fixtures.digest(self.repo/self.names[0])}
+        duplicate_path = '.warlock-contributor/model-owner-alias.json'
+        self.fixture.write(duplicate_path, duplicate)
+        index_path = self.repo/'.warlock-contributor/participant-index.json'
+        index = json.loads(index_path.read_text())
+        index['records'][duplicate_path] = policy.participant_entry(
+            duplicate, fixtures.digest(self.repo/duplicate_path))
+        payload = {'schema': 1, 'records': dict(sorted(index['records'].items()))}
+        self.fixture.write('.warlock-contributor/participant-index.json',
+                           dict(payload, indexSha256=policy.json_sha256(payload)))
+        self.reconcile([entry], ok=False)
+        self.assertFalse(self.sidecar.exists())
+
     def test_review_or_sidecar_symlink_is_never_followed(self):
         self.change([self.names[0]])
         entry = self.transition(self.names[0])
@@ -199,7 +384,8 @@ class ReconciliationTests(unittest.TestCase):
         self.sidecar.parent.mkdir(parents=True, exist_ok=True)
         target = self.fixture.write('.warlock-contributor/untouched.json', {'untouched': True})
         before = target.read_bytes(); self.sidecar.symlink_to(target)
-        self.reconcile([entry], ok=False)
+        self.fixture.write('.warlock-contributor/transitions.json', [entry])
+        self.cli('reconcile-foreign', '--transition-file', '.warlock-contributor/transitions.json', ok=False)
         self.assertEqual(before, target.read_bytes())
 
     def test_unrelated_dirty_adoption_keeps_reconciliation_and_custody_checks(self):
@@ -286,7 +472,8 @@ class ReconciliationTests(unittest.TestCase):
         record = json.loads((self.repo/record_path).read_text())
         self.assertIn(name, record['foreignDirty'])
         self.fixture.write('.warlock-contributor/transitions.json',
-                           [dict(path=name, sourceRecordSnapshot='unused', reviewFile='unused', reason='review')])
+                           [dict(path=name, sourceRecordPath='unused', ownerCensusSnapshot='unused',
+                                 sourceRecordSnapshot='unused', reviewFile='unused', reason='review')])
         output = self.cli('--record', record_path, 'reconcile-foreign',
                           '--transition-file', '.warlock-contributor/transitions.json', ok=False)
         self.assertIn('selected or adopted', output.stdout)
@@ -336,7 +523,7 @@ class ReconciliationTests(unittest.TestCase):
 
     def test_reconciliation_holds_sidecar_directory_across_validation_and_commit(self):
         self.change([self.names[0]])
-        entry = self.transition(self.names[0])
+        entry = self.prepare_transitions([self.transition(self.names[0])])[0]
         self.fixture.write('.warlock-contributor/transitions.json', [entry])
         record = dict(self.record, _recordPath=self.record_path)
         reqs, state = policy.context(self.repo)
@@ -402,8 +589,10 @@ class ReconciliationTests(unittest.TestCase):
         self.record_path = new_path
         self.record_file = self.repo/new_path
         self.identity = policy.record_identity(self.record, new_path)
+        self.cli('--record', new_path, 'index-participants')
         self.change([self.names[0]])
-        self.fixture.write('.warlock-contributor/transitions.json', [self.transition(self.names[0])])
+        transitions = self.prepare_transitions([self.transition(self.names[0])])
+        self.fixture.write('.warlock-contributor/transitions.json', transitions)
         self.cli('--record', new_path, 'reconcile-foreign', '--transition-file', '.warlock-contributor/transitions.json')
         self.cli('--record', new_path, 'check')
         self.cli('--record', new_path, 'handoff')

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Offline contribution checks and explicit plugin regressions; no GUI acceptance/builds."""
 import argparse
+import base64
 import fcntl
 import os
 import datetime as dt
@@ -250,10 +251,31 @@ def latest_recorded_source_hash(record, name):
     return latest
 
 
+def canonical_source_path(root, name):
+    """Return a safe repository-relative POSIX spelling or fail closed."""
+    if not isinstance(name, str) or not name or '\\' in name:
+        raise ValueError('Owned source path must use a canonical POSIX spelling')
+    parsed = pathlib.PurePosixPath(name)
+    if (parsed.is_absolute() or parsed.as_posix() != name
+            or any(part in ('', '.', '..') for part in parsed.parts)):
+        raise ValueError('Owned source path must use a canonical POSIX spelling: ' + name)
+    safe(root, name)
+    return parsed.as_posix()
+
+
 def validate_reconciliation_event(root, record, identity, event, previous_events, errors):
     required = ('path', 'fromSha256', 'toSha256', 'sourceRecordSnapshot', 'sourceRecordSnapshotSha256',
                 'reviewFile', 'reviewFileSha256', 'reason', 'reviewer', 'sourceOwner', 'atUTC',
                 'previousEventSha256', 'eventSha256')
+    version = event.get('eventSchema', 1) if isinstance(event, dict) else None
+    if isinstance(event, dict) and 'eventSchema' in event and type(version) is not int:
+        errors.append('Foreign reconciliation event schema must be an integer')
+        return None
+    if version == 2:
+        required += ('sourceRecordPath', 'ownerCensusSnapshot', 'ownerCensusSnapshotSha256')
+    elif version != 1:
+        errors.append('Foreign reconciliation event has an unsupported schema')
+        return None
     if not isinstance(event, dict) or any(key not in event for key in required):
         errors.append('Foreign reconciliation event has an incomplete schema')
         return None
@@ -297,6 +319,8 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
     if not isinstance(new, str) or re.fullmatch(r'[0-9a-f]{64}', new) is None:
         errors.append('Foreign reconciliation target must be a regular-file SHA-256: ' + name)
         return None
+    if old == new:
+        errors.append('Foreign reconciliation event must record a changed source hash: ' + name)
 
     snapshot_path = event.get('sourceRecordSnapshot')
     review_path = event.get('reviewFile')
@@ -317,6 +341,32 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
     if snapshot_hash != event.get('sourceRecordSnapshotSha256') or not isinstance(snapshot, dict):
         errors.append('Foreign reconciliation owner snapshot hash differs')
         return None
+    source_record_path = None
+    census_path = None
+    census_hash = None
+    if version == 2:
+        try:
+            if canonical_source_path(root, name) != name:
+                raise ValueError('Reconciled path is not canonical')
+        except ValueError as exc:
+            errors.append('Foreign reconciliation path is not canonical: ' + str(exc))
+            return None
+        source_record_path = event.get('sourceRecordPath')
+        census_path = event.get('ownerCensusSnapshot')
+        census_hash = event.get('ownerCensusSnapshotSha256')
+        try:
+            census, actual_census_hash, census_records = decode_owner_census(root, census_path)
+            snapshot_raw = regular_bytes(snapshot_file)
+            if actual_census_hash != census_hash:
+                raise ValueError('Owner census snapshot hash differs')
+            if source_record_path not in census_records:
+                raise ValueError('Source record path is not in the frozen participant index')
+            source_raw, census_record = census_records[source_record_path]
+            if source_raw != snapshot_raw or census_record != snapshot:
+                raise ValueError('Source record snapshot does not match the exact indexed record bytes')
+        except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
+            errors.append('Foreign reconciliation source owner is not bound to the exact indexed record: ' + str(exc))
+            return None
     source_owner = snapshot.get('owner')
     source_paths = set(snapshot.get('slice', {}).get('paths', []))
     source_paths.update(snapshot.get('adoptedDirty', {}).get('paths', []))
@@ -326,6 +376,31 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
         errors.append('Foreign reconciliation source owner differs from its frozen record')
     if new != latest_recorded_source_hash(snapshot, name):
         errors.append('Frozen owner record current binding does not pin the reconciled source hash: ' + name)
+    if version == 2:
+        if (not isinstance(source_owner, str) or not source_owner.strip()
+                or source_owner.strip().casefold() == str(record.get('owner', '')).strip().casefold()):
+            errors.append('Foreign source owner must differ from the target participant owner')
+        census_claimants = []
+        for candidate_path, (_, candidate_record) in census_records.items():
+            selected_paths = candidate_record.get('slice', {}).get('paths', [])
+            adopted_paths = candidate_record.get('adoptedDirty', {}).get('paths', [])
+            foreign_paths = candidate_record.get('foreignDirty', {})
+            if (not isinstance(selected_paths, list) or not isinstance(adopted_paths, list)
+                    or not isinstance(foreign_paths, dict)):
+                errors.append('Owner census participant has invalid path ownership fields')
+                continue
+            try:
+                selected_canonical = {canonical_source_path(root, item) for item in selected_paths}
+                adopted_canonical = {canonical_source_path(root, item) for item in adopted_paths}
+                foreign_canonical = {canonical_source_path(root, item) for item in foreign_paths}
+            except ValueError as exc:
+                errors.append('Owner census contains a noncanonical source path: ' + str(exc))
+                continue
+            if (name in selected_canonical | adopted_canonical) and name not in foreign_canonical:
+                census_claimants.append((candidate_path, latest_recorded_source_hash(candidate_record, name)))
+        if (len(census_claimants) != 1 or census_claimants[0][0] != source_record_path
+                or census_claimants[0][1] != new):
+            errors.append('Owner census does not establish one unique current owner with the exact source hash')
     if review_hash != event.get('reviewFileSha256') or not isinstance(review, dict):
         errors.append('Foreign reconciliation review artifact hash differs')
         return None
@@ -344,6 +419,10 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
         'sourceOwner': source_owner,
         'reason': event.get('reason'),
     }
+    if version == 2:
+        expected_review.update(sourceRecordPath=source_record_path,
+                               ownerCensusSnapshot=census_path,
+                               ownerCensusSnapshotSha256=census_hash)
     if any(review.get(key) != value for key, value in expected_review.items()):
         errors.append('Independent review does not cover this exact foreign-path transition')
     if not isinstance(reviewer, str) or not reviewer.strip() or review.get('independent') is not True:
@@ -420,7 +499,13 @@ def foreign_reconciliations(root, record, override=None, check_current=True):
         return {}, ['Foreign reconciliation custody differs without an authorized extension'], None
     result = {}
     prior = []
+    saw_schema2 = False
     for event in data['events']:
+        version = event.get('eventSchema', 1) if isinstance(event, dict) else None
+        if saw_schema2 and version != 2:
+            errors.append('Foreign reconciliation event schema cannot downgrade after schema 2')
+        if version == 2 and type(version) is int:
+            saw_schema2 = True
         value = validate_reconciliation_event(root, original_record, identity, event, prior, errors)
         if value is not None:
             result[event['path']] = value
@@ -456,8 +541,10 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
         raise ValueError('Transition file must contain a nonempty array')
     names = []
     for item in transitions:
-        if not isinstance(item, dict) or set(item) != {'path', 'sourceRecordSnapshot', 'reviewFile', 'reason'}:
-            raise ValueError('Transition needs exact path, sourceRecordSnapshot, reviewFile and reason')
+        if not isinstance(item, dict) or set(item) != {
+                'path', 'sourceRecordPath', 'ownerCensusSnapshot',
+                'sourceRecordSnapshot', 'reviewFile', 'reason'}:
+            raise ValueError('Transition needs exact path, sourceRecordPath, ownerCensusSnapshot, sourceRecordSnapshot, reviewFile and reason')
         name = item['path']
         if not isinstance(name, str) or name not in record.get('foreignDirty', {}):
             raise ValueError('Only captured protected foreign paths may be reconciled')
@@ -487,8 +574,10 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
         if before == after:
             raise ValueError('Foreign path matches its captured fingerprint; no reconciliation is needed')
         snapshot_path, review_path = item['sourceRecordSnapshot'], item['reviewFile']
+        census_path = item['ownerCensusSnapshot']
         for value, prefix in ((snapshot_path, '.warlock-contributor/evidence/foreign-reconciliation-snapshots/'),
-                              (review_path, '.warlock-contributor/evidence/foreign-reconciliations/')):
+                              (review_path, '.warlock-contributor/evidence/foreign-reconciliations/'),
+                              (census_path, '.warlock-contributor/evidence/foreign-owner-censuses/')):
             if not isinstance(value, str) or not value.startswith(prefix):
                 raise ValueError('Evidence must be stored under ' + prefix)
             evidence = safe(root, value)
@@ -498,8 +587,18 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
                 raise ValueError('Reconciliation evidence must remain in ignored scratch')
         snapshot, snapshot_sha = json_snapshot(safe(root, snapshot_path))
         review, review_sha = json_snapshot(safe(root, review_path))
-        event = dict(path=name, fromSha256=before, toSha256=after,
+        census, census_sha, census_records = decode_owner_census(root, census_path)
+        verify_current_owner_census(root, census)
+        source_record_path = item['sourceRecordPath']
+        if source_record_path not in census_records:
+            raise ValueError('Source record path is not present in the frozen participant index')
+        source_raw, _ = census_records[source_record_path]
+        if source_raw != regular_bytes(safe(root, snapshot_path)):
+            raise ValueError('Source record snapshot differs from the exact indexed record bytes')
+        event = dict(eventSchema=2, path=name, fromSha256=before, toSha256=after,
                      sourceRecordSnapshot=snapshot_path, sourceRecordSnapshotSha256=snapshot_sha,
+                     sourceRecordPath=source_record_path,
+                     ownerCensusSnapshot=census_path, ownerCensusSnapshotSha256=census_sha,
                      reviewFile=review_path, reviewFileSha256=review_sha,
                      reason=item['reason'], reviewer=review.get('reviewer') if isinstance(review, dict) else None,
                      sourceOwner=snapshot.get('owner') if isinstance(snapshot, dict) else None,
@@ -1227,6 +1326,94 @@ def participant_entry(record, source_sha256=None):
             'baseline': identity['baseline'], 'startedUTC': identity['startedUTC'],
             'requirements': identity['requirements'], 'scenarios': identity['scenarios'],
             'recordSha256': record_sha256}
+
+
+def owner_census_bytes(root):
+    """Capture the exact participant index and every indexed record byte."""
+    index_raw = regular_bytes(root / PARTICIPANT_INDEX)
+    index = json.loads(index_raw)
+    if not isinstance(index, dict) or index.get('schema') != 1 or not isinstance(index.get('records'), dict):
+        raise ValueError('Participant index has an unsupported shape')
+    payload = {'schema': 1, 'records': index['records']}
+    if index.get('indexSha256') != json_sha256(payload):
+        raise ValueError('Participant index digest does not match its contents')
+    records = []
+    for name in sorted(index['records']):
+        location_error = participant_index_path_error(name)
+        if location_error:
+            raise ValueError(location_error)
+        raw = regular_bytes(safe(root, name))
+        record = json.loads(raw)
+        entry = participant_entry(record, hashlib.sha256(raw).hexdigest())
+        if entry != index['records'][name]:
+            raise ValueError('Participant record differs from exact index binding: ' + name)
+        records.append({'path': name, 'recordSha256': entry['recordSha256'],
+                        'recordBase64': base64.b64encode(raw).decode('ascii')})
+    return {'schema': 1, 'participantIndexPath': PARTICIPANT_INDEX,
+            'participantIndexSha256': hashlib.sha256(index_raw).hexdigest(),
+            'participantIndexBase64': base64.b64encode(index_raw).decode('ascii'),
+            'records': records}
+
+
+def decode_owner_census(root, relative_path):
+    if not isinstance(relative_path, str) or not relative_path.startswith(
+            '.warlock-contributor/evidence/foreign-owner-censuses/'):
+        raise ValueError('Foreign reconciliation needs a frozen owner census')
+    census, census_sha = json_snapshot(safe(root, relative_path))
+    if not isinstance(census, dict) or census.get('schema') != 1:
+        raise ValueError('Owner census has an unsupported shape')
+    if census.get('participantIndexPath') != PARTICIPANT_INDEX:
+        raise ValueError('Owner census names an unsupported participant index')
+    try:
+        index_raw = base64.b64decode(census['participantIndexBase64'], validate=True)
+        index = json.loads(index_raw)
+    except (KeyError, ValueError, TypeError, json.JSONDecodeError) as exc:
+        raise ValueError('Owner census participant index bytes are invalid') from exc
+    if hashlib.sha256(index_raw).hexdigest() != census.get('participantIndexSha256'):
+        raise ValueError('Owner census participant index hash differs')
+    if (not isinstance(index, dict) or index.get('schema') != 1
+            or not isinstance(index.get('records'), dict)
+            or index.get('indexSha256') != json_sha256({'schema': 1, 'records': index['records']})):
+        raise ValueError('Owner census participant index is invalid')
+    supplied = census.get('records')
+    if not isinstance(supplied, list) or len(supplied) != len(index['records']):
+        raise ValueError('Owner census does not contain every indexed participant')
+    by_path = {}
+    for item in supplied:
+        if not isinstance(item, dict) or set(item) != {'path', 'recordSha256', 'recordBase64'}:
+            raise ValueError('Owner census participant entry is invalid')
+        name = item['path']
+        if not isinstance(name, str) or name in by_path or name not in index['records']:
+            raise ValueError('Owner census participant paths are duplicate or unindexed')
+        location_error = participant_index_path_error(name)
+        if location_error:
+            raise ValueError(location_error)
+        try:
+            raw = base64.b64decode(item['recordBase64'], validate=True)
+            record = json.loads(raw)
+        except (ValueError, TypeError, json.JSONDecodeError) as exc:
+            raise ValueError('Owner census record bytes are invalid: ' + name) from exc
+        entry = participant_entry(record, hashlib.sha256(raw).hexdigest())
+        if item['recordSha256'] != entry['recordSha256'] or index['records'][name] != entry:
+            raise ValueError('Owner census record differs from indexed identity or bytes: ' + name)
+        by_path[name] = (raw, record)
+    if set(by_path) != set(index['records']):
+        raise ValueError('Owner census participant path set differs from its index')
+    return census, census_sha, by_path
+
+
+def verify_current_owner_census(root, census):
+    """Require event-time evidence to match the locked, current inventory."""
+    inventory = participant_inventory(root)
+    if inventory['errors']:
+        raise ValueError('Participant inventory is incomplete: ' + '; '.join(inventory['errors']))
+    if inventory['warnings']:
+        raise ValueError('Participant inventory has unclassified JSON paths: ' + ', '.join(inventory['warnings']))
+    if set(inventory['records']) != {item['path'] for item in census.get('records', [])}:
+        raise ValueError('Owner census omits an inventoried participant-shaped record')
+    current = owner_census_bytes(root)
+    if current != census:
+        raise ValueError('Owner census is stale; capture a new census under the participant lock')
 
 
 def participant_inventory(root):
@@ -2107,6 +2294,7 @@ def main():
     subs.add_parser('doctor')
     subs.add_parser('self-test', help='Run plugin regression tests in isolated fixtures; no GUI campaigns')
     subs.add_parser('index-participants', help='Freeze the complete local participant path/identity inventory without editing participant records')
+    subs.add_parser('owner-census', help='Freeze exact indexed participant record bytes for reviewed foreign ownership provenance')
     preview = subs.add_parser('preflight', help='Read-only saved-plan and prospective-record checks; no ownership or writes')
     preview.add_argument('--slice-file', required=True)
     subs.add_parser('handoff')
@@ -2186,7 +2374,7 @@ def main():
             record = json.loads(regular_bytes_at(lock_parent, path.name)) if lock_parent is not None else read(path)
             record['_recordPath'] = args.record
             return record
-        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'index-participants'):
+        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'index-participants', 'owner-census'):
             records_parent, records_name = open_parent(safe(root, '.warlock-contributor/.records.lock'), create=True)
             records_lock = os.fdopen(os.open(records_name, os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_CLOEXEC,
                                              0o600, dir_fd=records_parent), 'w')
@@ -2200,7 +2388,7 @@ def main():
             history_inventory = participant_inventory(root)
             if history_inventory['errors']:
                 raise ValueError('Participant history inventory is incomplete: ' + '; '.join(history_inventory['errors']))
-            if (args.command not in ('start', 'index-participants')
+            if (args.command not in ('start', 'index-participants', 'owner-census')
                     and args.record not in history_inventory['records']):
                 raise ValueError('Existing participant record is absent from the inventoried .warlock-contributor history; run index-participants after reviewing its exact legacy path.')
             lock_path = safe(root, args.record + '.lock')
@@ -2218,6 +2406,31 @@ def main():
                           recordPaths=sorted(history_inventory['records']),
                           historyWarnings=history_inventory['warnings'],
                           recordsSha256=digest(safe(root, PARTICIPANT_INDEX)))
+        elif args.command == 'owner-census':
+            if set(history_inventory['records']) != set(history_inventory['entries']):
+                raise ValueError('Owner census requires the participant index to cover every discovered participant record')
+            if history_inventory['warnings']:
+                raise ValueError('Owner census requires an inventory without unclassified JSON paths: ' +
+                                 ', '.join(history_inventory['warnings']))
+            census = owner_census_bytes(root)
+            body = (json.dumps(census, indent=2) + '\n').encode('utf-8')
+            census_sha = hashlib.sha256(body).hexdigest()
+            relative = '.warlock-contributor/evidence/foreign-owner-censuses/' + census_sha + '.json'
+            if git_run(root, 'check-ignore', '-q', '--', relative).returncode != 0:
+                raise ValueError('Owner census must remain in Git-ignored evidence scratch')
+            target = safe(root, relative)
+            if target.exists():
+                if regular_bytes(target) != body:
+                    raise ValueError('Content-addressed owner census path contains different bytes')
+            else:
+                census_parent, _ = open_parent(target, create=True)
+                try:
+                    write_record(target, census, exclusive=True, parent_fd=census_parent)
+                finally:
+                    os.close(census_parent)
+            result.update(ownerCensusSnapshot=relative, ownerCensusSnapshotSha256=census_sha,
+                          participantIndexSha256=census['participantIndexSha256'],
+                          participantCount=len(census['records']), scenarioAcceptanceInferred=False)
         elif args.command == 'capabilities':
             result.update(capabilities(root, reqs))
         elif args.command == 'remaining':
