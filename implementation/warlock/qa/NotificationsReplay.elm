@@ -26,7 +26,8 @@ result =
         (opened,_)=dispatch Desktop.OpenNotifications ready
         request=opened.notificationsExpected |> Maybe.withDefault UInt64.zero
         (read,readEffects)=Desktop.update (Desktop.Incoming (loaded request (snapshot "1" "1" "live"))) opened
-        choice=read.notifications.snapshot |> Maybe.andThen (\current -> List.head current.entries |> Maybe.map (\row -> Notifications.target current row "invoke" "open"))
+        choice=read.notifications.snapshot |> Maybe.andThen (\current -> List.head current.entries |> Maybe.map (\row -> Notifications.target current row Notifications.Invoke "open"))
+        dismissChoice=read.notifications.snapshot |> Maybe.andThen (\current -> List.head current.entries |> Maybe.map (\row -> Notifications.target current row Notifications.Dismiss ""))
         action model=choice |> Maybe.map (\target -> dispatch (\stamp -> Desktop.NotificationAction stamp target) model) |> Maybe.withDefault (model,[])
         (pending,effects)=action read
         effectRequest=pending.notifications.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
@@ -38,6 +39,7 @@ result =
         reused=native (update (snapshot "3" "2" "live")) expired
         (_,oldQueued)=action reused
         unknown=native (outcome effectRequest "Unknown" (snapshot "2" "1" "unknown")) pending
+        refused=native (outcome effectRequest "Refused" (snapshot "2" "1" "live")) pending
         (_,unknownRepeat)=action unknown
         (refreshing,refreshEffects)=dispatch Desktop.RefreshNotifications unknown
         reconciled=native (loaded (refreshing.notificationsExpected |> Maybe.withDefault UInt64.zero) (snapshot "2" "1" "unknown")) refreshing
@@ -52,12 +54,22 @@ result =
         effect e=case e of
             Desktop.Send wire -> D.decodeValue (D.field "kind" D.string) wire==Ok "notification-effect"
             _ -> False
+        entryStates = [("live",Notifications.EntryLive),("expired",Notifications.EntryExpired),("invoked",Notifications.EntryInvoked),("dismissed",Notifications.EntryDismissed),("closed",Notifications.EntryClosed),("disconnected",Notifications.EntryDisconnected),("unknown",Notifications.EntryUnknown),("unavailable",Notifications.EntryUnavailable)]
+        decodedState state = D.decodeValue Notifications.decoder (snapshot "3" "1" state) |> Result.map (.entries >> List.head >> Maybe.map .state)
         checked name value=(name,E.bool value)
         checks=[checked "notificationOpenerIntegrated" (D.decodeValue (D.field "bar" (D.list (D.field "id" D.string))) frame |> Result.map (List.member "bar:notifications") |> Result.withDefault False)
             ,checked "centerModeAcceptedByProductionRenderer" (SurfaceRenderer.decode frame |> Result.map (SurfaceRenderer.mode >> (==) "notifications") |> Result.withDefault False)
             ,checked "openingReadFocusMatchesActualControl" (List.any (\e -> case e of
                 Desktop.Focus target -> Surface.controls read |> List.any (\c -> c.id=="control:close" && c.domId==target)
                 _ -> False) readEffects)
+            ,checked "allEntryStatesDecodeAndPreserveWireNames" (List.all (\(wire,typed) -> decodedState wire==Ok (Just typed) && Notifications.entryStateName typed==wire) entryStates)
+            ,checked "invalidEntryStateRefused" (Result.toMaybe (decodedState "invented")==Nothing)
+            ,checked "invokeIdentityAndWireUnchanged" (choice |> Maybe.map (\target -> Notifications.identity target=="notification:9:1:invoke:open" && D.decodeValue (D.field "verb" D.string) (Notifications.encodeIntent target)==Ok "invoke") |> Maybe.withDefault False)
+            ,checked "dismissIdentityAndWireUnchanged" (dismissChoice |> Maybe.map (\target -> Notifications.identity target=="notification:9:1:dismiss:" && D.decodeValue (D.field "verb" D.string) (Notifications.encodeIntent target)==Ok "dismiss") |> Maybe.withDefault False)
+            ,checked "dispatchedOutcomeTyped" (committed.notifications.outcome |> Maybe.map (\outcomeValue -> outcomeValue.status==Notifications.OutcomeDispatched) |> Maybe.withDefault False)
+            ,checked "refusedOutcomeTyped" (refused.notifications.outcome |> Maybe.map (\outcomeValue -> outcomeValue.status==Notifications.OutcomeRefused) |> Maybe.withDefault False)
+            ,checked "invalidOutcomePreservesPending" (pending.notifications.snapshot |> Maybe.map (\current -> Notifications.receive effectRequest "invented" current pending.notifications==pending.notifications) |> Maybe.withDefault False)
+            ,checked "unknownOutcomeTypedAndPending" (unknown.notifications.outcome |> Maybe.map (\outcomeValue -> outcomeValue.status==Notifications.OutcomeUnknown) |> Maybe.withDefault False)
             ,checked "oneExplicitAction" (List.length (List.filter effect effects)==1)
             ,checked "pendingCannotRepeat" (List.isEmpty duplicate)
             ,checked "dispatchedCannotRepeat" (List.isEmpty afterCommit)

@@ -1,9 +1,11 @@
-module JumpList exposing (Model, Snapshot, Action, Intent, initial, decoder, intent, supported, propose, observe, reconcile, receive, disconnect)
+module JumpList exposing (Model, Snapshot, Action, ActionKind(..), Intent, initial, decoder, intent, supported, propose, observe, reconcile, receive, disconnect)
 import Json.Decode as D
 import Json.Encode as E
 import UInt64 exposing (Counter)
 
-type alias Action = { id : String, label : String, kind : String }
+type ActionKind = DesktopAction | RecentAction
+
+type alias Action = { id : String, label : String, kind : ActionKind }
 type alias Snapshot = { service : Counter, revision : Counter, entry : String, name : String, available : Bool, reason : String, actions : List Action }
 type alias Intent = { service : Counter, revision : Counter, entry : String, action : String }
 type alias Model = { snapshot : Maybe Snapshot, pending : Maybe { request : Counter, intent : Intent }, spent : List Intent, notice : String }
@@ -12,13 +14,27 @@ initial = {snapshot=Nothing,pending=Nothing,spent=[],notice="Reading application
 strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Jump list fields")
 positive = UInt64.decoder |> D.andThen (\value -> if value==UInt64.zero then D.fail "Jump list identity" else D.succeed value)
 bounded limit nonempty = D.string |> D.andThen (\value -> if String.length value<=limit && (not nonempty || not (String.isEmpty value)) && not (String.any (\c -> Char.toCode c<32 || Char.toCode c==127) value) then D.succeed value else D.fail "Jump list text")
-actionDecoder = strict ["id","label","kind"] (D.map3 Action (D.field "id" (bounded 256 True)) (D.field "label" (bounded 512 True)) (D.field "kind" (D.string |> D.andThen (\value -> if List.member value ["desktop","recent"] then D.succeed value else D.fail "Unsupported action kind"))))
+actionKindDecoder : D.Decoder ActionKind
+actionKindDecoder =
+    D.string |> D.andThen (\value ->
+        case value of
+            "desktop" -> D.succeed DesktopAction
+            "recent" -> D.succeed RecentAction
+            _ -> D.fail "Unsupported action kind")
+
+actionKindName : ActionKind -> String
+actionKindName kind =
+    case kind of
+        DesktopAction -> "desktop"
+        RecentAction -> "recent"
+
+actionDecoder = strict ["id","label","kind"] (D.map3 Action (D.field "id" (bounded 256 True)) (D.field "label" (bounded 512 True)) (D.field "kind" actionKindDecoder))
 decoder : D.Decoder Snapshot
 decoder = strict ["service","revision","entry","name","available","reason","actions"] (D.map7 Snapshot (D.field "service" positive) (D.field "revision" positive) (D.field "entry" (bounded 256 True)) (D.field "name" (bounded 512 False)) (D.field "available" D.bool) (D.field "reason" (bounded 128 False)) (D.field "actions" (D.list actionDecoder)))
     |> D.andThen (\snapshot ->
         let keys=List.map .id snapshot.actions
             unique=List.foldl (\key seen -> if List.member key seen then seen else key::seen) [] keys
-        in if List.length keys>44 || List.length keys/=List.length unique || (not snapshot.available && not (List.isEmpty keys)) || List.any (\row -> not (String.startsWith (row.kind++":") row.id)) snapshot.actions then D.fail "Jump list actions" else D.succeed snapshot)
+        in if List.length keys>44 || List.length keys/=List.length unique || (not snapshot.available && not (List.isEmpty keys)) || List.any (\row -> not (String.startsWith (actionKindName row.kind++":") row.id)) snapshot.actions then D.fail "Jump list actions" else D.succeed snapshot)
 intent snapshot action = {service=snapshot.service,revision=snapshot.revision,entry=snapshot.entry,action=action}
 supported value model = model.pending==Nothing && not (List.member value model.spent) && (model.snapshot |> Maybe.map (\snapshot -> snapshot.available && snapshot.service==value.service && snapshot.revision==value.revision && snapshot.entry==value.entry && List.any (\row -> row.id==value.action) snapshot.actions) |> Maybe.withDefault False)
 propose request value model =

@@ -149,6 +149,35 @@ def main():
             report['standaloneMvp'] = {'checks': len(replay_result['checks']), 'seed': replay_result.get('seed'),
                                        'resultSHA256': sha(output / 'standalone-mvp.json')}
         if args.tea_contract:
+            typed_fixtures = ('NotificationsReplay', 'JumpListReplay',
+                              'NotificationRelevanceReplay', 'RetirementProofReplay')
+            for filename in (*(name + '.elm' for name in typed_fixtures),
+                             'NativePointerFixture.elm', 'typed-state.cjs'):
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Typed lifecycle/operation/retirement fixture is required')
+                sources[str(source.relative_to(REPO))] = sha(source)
+                shutil.copy2(source, work / 'qa' / filename)
+                if sha(work / 'qa' / filename) != sources[str(source.relative_to(REPO))]:
+                    raise RuntimeError('Typed-state input changed during staging')
+            for name in typed_fixtures:
+                run('compile-' + name, [compiler, 'make', 'qa/' + name + '.elm', '--optimize',
+                                        '--output=' + str(output / (name + '.js'))])
+            run('typed-state', [str(node), 'qa/typed-state.cjs',
+                                *[str(output / (name + '.js')) for name in typed_fixtures],
+                                str(output / 'typed-state.json')])
+            typed = json.loads((output / 'typed-state.json').read_text())
+            if (typed.get('passed') is not True
+                    or [row.get('name') for row in typed.get('fixtures', [])] != list(typed_fixtures)
+                    or any(row.get('passed') is not True or row.get('sha256') != sha(output / (name + '.js'))
+                           for name, row in zip(typed_fixtures, typed.get('fixtures', [])))
+                    or typed.get('runnerSha256') != sha(work / 'qa/typed-state.cjs')
+                    or not typed.get('checks') or typed.get('failures')
+                    or any(row.get('passed') is not True for row in typed['checks'])):
+                raise RuntimeError('Typed-state lifecycle/operation/proof controls incomplete or failed')
+            report['typedState'] = {'fixtures': list(typed_fixtures), 'checks': len(typed['checks']),
+                                     'resultSHA256': sha(output / 'typed-state.json'),
+                                     'nativeAccepted': False, 'originalAccepted': False}
             for filename in ('TeaContractReplay.elm', 'tea-contract.cjs', 'tea-contract-cases.cjs'):
                 source = root / 'qa' / filename
                 if source.is_symlink() or not source.is_file():

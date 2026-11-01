@@ -20,10 +20,12 @@ serial root = D.decodeValue (D.at ["announcement","sequence"] UInt64.decoder) (O
 scope id = E.object [("id",E.string id),("generation",E.string "1")]
 topology = E.object [("viewProtocol",E.int 1),("kind",E.string "view-topology"),("revision",E.string "1"),("views",E.list scope ["1","2"])]
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
+-- Synthetic native idle JSON is fixture input, not observed native authority.
+idle = E.object [("protocolVersion",E.int 3),("kind",E.string "pointer-ownership"),("ownershipProtocol",E.int 1),("binding",bound),("requestId",E.string "1"),("serial",E.string "1"),("state",E.string "idle"),("owner",E.null)]
 entry id state = E.object [("id",E.string id),("incarnation",E.string id),("producer",E.string ":1.7"),("app",E.string "Calendar"),("summary",E.string ("Meeting "++id)),("body",E.string "Details"),("state",E.string state),("actions",E.list identity (if state=="live" then [E.object [("key",E.string "open"),("label",E.string "Open meeting")]] else [])),("urgency",E.int 1)]
 snapshot revision rows = E.object [("service",E.string "9"),("revision",E.string revision),("available",E.bool True),("reason",E.string ""),("entries",E.list identity rows)]
 update revision rows = E.object [("protocolVersion",E.int 3),("kind",E.string "notification-update"),("binding",bound),("snapshot",snapshot revision rows)]
-start = Outputs.update (Outputs.Topology topology) Outputs.initial |> Tuple.first |> step (Desktop.Incoming attached) |> step (Desktop.Incoming (update "1" [entry "1" "live",entry "2" "live"])) |> scoped Desktop.OpenNotifications
+start = Outputs.update (Outputs.Topology topology) Outputs.initial |> Tuple.first |> step (Desktop.Incoming attached) |> step (Desktop.Incoming idle) |> step (Desktop.Incoming (update "1" [entry "1" "live",entry "2" "live"])) |> scoped Desktop.OpenNotifications
 ready = step (Desktop.Incoming (E.object [("protocolVersion",E.int 3),("kind",E.string "notification-snapshot"),("binding",bound),("requestId",E.string ((current start).notificationsExpected |> Maybe.map UInt64.string |> Maybe.withDefault "0")),("snapshot",snapshot "1" [entry "1" "live",entry "2" "live"])])) start
 focusAction id root =
     let frame=field "frame" (Outputs.frame root)
@@ -35,7 +37,7 @@ expired = step (Desktop.Incoming expiredRaw) focused
 repeated = step (Desktop.Incoming expiredRaw) expired
 unrelated = step (Desktop.Incoming (update "2" [entry "1" "live",entry "2" "expired"])) focused
 lateFocused = renderer "1" (focusAction "notification:9:1:invoke:open" (step (Desktop.Incoming expiredRaw) ready)) (step (Desktop.Incoming expiredRaw) ready)
-target = {service=counter "9",id=counter "1",incarnation=counter "1",producer=":1.7",verb="invoke",action="open"}
+target = {service=counter "9",id=counter "1",incarnation=counter "1",producer=":1.7",verb=Notifications.Invoke,action="open"}
 pending = scoped (\stamp -> Desktop.NotificationAction stamp target) focused
 pendingExpired = step (Desktop.Incoming expiredRaw) pending
 request root = (current root).notifications.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
@@ -58,7 +60,8 @@ result =
         (_,expiryEffects)=Outputs.update (Outputs.Interaction (Desktop.Incoming expiredRaw)) focused
         (_,refusalEffects)=Outputs.update (Outputs.Interaction (Desktop.Incoming refusal)) pendingExpired
         foreign=E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "2")]
-        checks=[("MatchedFocusedExpiryPolite",serial expired==counter "1" && D.decodeValue (D.at ["announcement","interrupt"] D.bool) (Outputs.frame expired)==Ok False)
+        checks=[("CurrentIdleSetupOpensNotifications",(current start).notificationsOpen && (current ready).notifications.snapshot/=Nothing && (current ready).pointer.observation/=Nothing)
+            ,("MatchedFocusedExpiryPolite",serial expired==counter "1" && D.decodeValue (D.at ["announcement","interrupt"] D.bool) (Outputs.frame expired)==Ok False)
             ,("PassiveFocusCreatesNoAnnouncement",serial focused==UInt64.zero && Notifications.focusedIdentity (current focused).notifications==Just id)
             ,("IrrelevantExpirySilent",serial unrelated==UInt64.zero)
             ,("RepeatedExpirySilent",serial repeated==serial expired)

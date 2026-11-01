@@ -13,7 +13,8 @@ counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefa
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
 native raw model = NativePointerFixture.incoming raw model |> Tuple.first
 row id label kind=E.object [("id",E.string id),("label",E.string label),("kind",E.string kind)]
-snapshot revision entry=E.object [("service",E.string "9"),("revision",E.string revision),("entry",E.string entry),("name",E.string "Warlock Editor"),("available",E.bool True),("reason",E.string ""),("actions",E.list identity [row "desktop:Alpha" "New document" "desktop",row "desktop:Beta" "Private window" "desktop",row "recent:owned" "Open Warlock recent document" "recent"])]
+snapshotWith actions revision entry=E.object [("service",E.string "9"),("revision",E.string revision),("entry",E.string entry),("name",E.string "Warlock Editor"),("available",E.bool True),("reason",E.string ""),("actions",E.list identity actions)]
+snapshot revision entry=snapshotWith [row "desktop:Alpha" "New document" "desktop",row "desktop:Beta" "Private window" "desktop",row "recent:owned" "Open Warlock recent document" "recent"] revision entry
 loaded request value=E.object [("protocolVersion",E.int 3),("kind",E.string "jump-list-snapshot"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]
 outcome request status value=E.object [("protocolVersion",E.int 3),("kind",E.string "jump-list-outcome"),("binding",bound),("requestId",E.string (UInt64.string request)),("status",E.string status),("snapshot",value)]
 dispatch build model=Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (build stamp) model) |> Maybe.withDefault (model,[])
@@ -47,7 +48,11 @@ result=
         old=Desktop.capture read |> Maybe.map (\stamp -> Desktop.update (Desktop.JumpAction stamp target) submitted |> Tuple.second) |> Maybe.withDefault []
         frame=Surface.packet (counter "1") (counter "1") read
         check name value=(name,E.bool value)
-        checks=[check "LauncherHasBoundedKeyboardJumpOpener" (List.any (\c -> c.id=="jump:open:warlock-editor") (Surface.controls projected))
+        checks=[check "TypedActionKindsAndWireStrings" (D.decodeValue JumpList.decoder (snapshot "1" "warlock-editor") |> Result.map (\value -> List.map .kind value.actions==[JumpList.DesktopAction,JumpList.DesktopAction,JumpList.RecentAction]) |> Result.withDefault False)
+            ,check "UnknownActionKindRejected" (D.decodeValue JumpList.decoder (snapshotWith [row "desktop:Alpha" "New document" "other"] "1" "warlock-editor") |> Result.map (always False) |> Result.withDefault True)
+            ,check "CrossKindPrefixRejected" (List.all (\(identity,kind) -> D.decodeValue JumpList.decoder (snapshotWith [row identity "Action" kind] "1" "warlock-editor") |> Result.map (always False) |> Result.withDefault True) [("desktop:Alpha","recent"),("recent:owned","desktop")])
+            ,check "ActionKindDescriptionsPreserved" (List.any (\c -> c.id=="jump:action:desktop:Alpha" && c.detail=="Application action") (Surface.controls read) && List.any (\c -> c.id=="jump:action:recent:owned" && c.detail=="Recent file") (Surface.controls read))
+            ,check "LauncherHasBoundedKeyboardJumpOpener" (List.any (\c -> c.id=="jump:open:warlock-editor") (Surface.controls projected))
             ,check "OriginalTwoDeclaredActionsShown" (List.all (\id -> List.any (\c -> c.id=="jump:action:"++id && c.enabled) (Surface.controls read)) ["desktop:Alpha","desktop:Beta"])
             ,check "UnsupportedActionsAbsent" (not (List.any (\c -> String.contains "Unsupported" c.label) (Surface.controls read)))
             ,check "OnlyOwnedRecentActionShown" (List.any (\c -> c.id=="jump:action:recent:owned") (Surface.controls read) && not (List.any (\c -> c.id=="jump:action:recent:foreign") (Surface.controls read)))

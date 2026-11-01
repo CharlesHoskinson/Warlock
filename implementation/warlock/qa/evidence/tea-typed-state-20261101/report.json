@@ -1,0 +1,551 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "Elm compiler and pure production projection only",
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-682da7795bb748c1961ee41b44ca9ca5.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "compiler-version",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "--version"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "node-version",
+      "argv": [
+        "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+        "--version"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-Main",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/Main.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-Bar",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/Bar.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/Bar.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-Popup",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/Popup.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/Popup.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-HttpMain",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/HttpMain.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/HttpMain.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-HttpBar",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/HttpBar.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/HttpBar.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-HttpPopup",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/HttpPopup.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/HttpPopup.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-feedback-context",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "qa/FeedbackContextReplay.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/feedback-context.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "feedback-context",
+      "argv": [
+        "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+        "qa/feedback-context.cjs",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/feedback-context.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/feedback-context.json"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-ui-http-replay",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "qa/UiHttpReplay.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/UiHttpReplay.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "ui-http",
+      "argv": [
+        "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+        "qa/ui-http.cjs",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/HttpMain.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/HttpBar.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/HttpPopup.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/UiHttpReplay.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/ui-http.json"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-NotificationsReplay",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "qa/NotificationsReplay.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/NotificationsReplay.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-JumpListReplay",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "qa/JumpListReplay.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/JumpListReplay.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-NotificationRelevanceReplay",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "qa/NotificationRelevanceReplay.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/NotificationRelevanceReplay.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-RetirementProofReplay",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "qa/RetirementProofReplay.elm",
+        "--optimize",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/RetirementProofReplay.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "typed-state",
+      "argv": [
+        "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+        "qa/typed-state.cjs",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/NotificationsReplay.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/JumpListReplay.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/NotificationRelevanceReplay.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/RetirementProofReplay.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/typed-state.json"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-tea-contract",
+      "argv": [
+        "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "qa/TeaContractReplay.elm",
+        "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/tea-contract.js"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "tea-contract",
+      "argv": [
+        "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+        "qa/tea-contract.cjs",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/tea-contract.js",
+        "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793561026384253514/work/qa/tea-contract-cases.cjs"
+      ],
+      "exit": 0
+    }
+  ],
+  "developmentTools": {
+    "python": {
+      "path": "/usr/bin/python3.14",
+      "sha256": "6afce98b1e5ce89dc1c5dfca9672276a9486bc318855c7554cbe6da62d073e10"
+    },
+    "node": {
+      "path": "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+      "sha256": "e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb"
+    }
+  },
+  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+  "sources": {
+    "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+    "implementation/warlock/src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+    "implementation/warlock/src/Announcement.elm": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
+    "implementation/warlock/src/AnnouncementMessage.elm": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075",
+    "implementation/warlock/src/Bar.elm": "aa3cd927c33f9624364b8ba04bc3ceb31c3a13541b6fd1044c9f7ac978d871b7",
+    "implementation/warlock/src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+    "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "implementation/warlock/src/CapturedAction.elm": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+    "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+    "implementation/warlock/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "implementation/warlock/src/Desktop.elm": "91223c94074f8ff908b2ed66f52e8025c8afcb78a977d4a5f3daf44df8ce7af4",
+    "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+    "implementation/warlock/src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+    "implementation/warlock/src/Files.elm": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7",
+    "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+    "implementation/warlock/src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+    "implementation/warlock/src/HttpBar.elm": "74d4b6b80267e9b22065b2087ee2b5318a3ce1fe346e1897c99ced6031183af8",
+    "implementation/warlock/src/HttpMain.elm": "58a3b1f274bc69b053ca31ece17bcd6b65a593d5722ba65a7728b3d22471d5a9",
+    "implementation/warlock/src/HttpPopup.elm": "4185692e3613f2bc52eefa896e3c0d57cd796afe090a0a994877d27a52cff354",
+    "implementation/warlock/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "implementation/warlock/src/JumpList.elm": "2ef6dbc9738771b1e13c8d42feb70c0905be8651d791a43199264b32883de195",
+    "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+    "implementation/warlock/src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "implementation/warlock/src/Main.elm": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+    "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+    "implementation/warlock/src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "implementation/warlock/src/Motion.elm": "e101862bae874426f0cf9aaf02340c6582abdeea21dec38c32003da7f94e8a69",
+    "implementation/warlock/src/MotionPreferences.elm": "d3130d74c3172cb1808df38efd7a2cc267ba5ae346b564544661d3d539f5c560",
+    "implementation/warlock/src/NativeActorRetirement.elm": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6",
+    "implementation/warlock/src/NativeFamilyPreviewSource.elm": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321",
+    "implementation/warlock/src/NativeFamilyPreviewSourceReplay.elm": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99",
+    "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+    "implementation/warlock/src/NativePreviewAdmission.elm": "ef5c5aa26edbbdd745bacdb29b0b2e60265bb27ded3f82516adb6562656f5a20",
+    "implementation/warlock/src/NativePreviewDetachment.elm": "39fe1ece48568a5a264d7b018df41322bab97f73cbe0f55a92559ecccb25a47a",
+    "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+    "implementation/warlock/src/NativePreviewProposalIngress.elm": "b3fc80b316a9b0f90e107c65f35cb0e136a9ae4acce441e3fdf2b69d4994285d",
+    "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+    "implementation/warlock/src/NativePreviewRealmReplay.elm": "7d68ebb6703608184c20fa17f261d553119bf1ccf637274b41d1c1ebfb22e621",
+    "implementation/warlock/src/NativePreviewReceiver.elm": "4f9625067fbd6f5e1027524dadedfb318779d2963a16fe14e06ccdbf0a92fb92",
+    "implementation/warlock/src/NativePreviewReceiverReplay.elm": "27ec8515727b39be545b1d19f83bf4d25c42848ae9654c2f00e563f25b43f2b9",
+    "implementation/warlock/src/NativePreviewRenderer.elm": "91c7bf75e3a73dcc389765196138bc38bee089be7263851c80cd5782fedbc0e3",
+    "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+    "implementation/warlock/src/NativePreviewSourceReplay.elm": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8",
+    "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+    "implementation/warlock/src/NativePreviewVisualReplay.elm": "d15bc279a0cbb0af0aa0fa0f85f72f4c3608ffee73a4d68567477d1769c341c6",
+    "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "implementation/warlock/src/Notifications.elm": "e61311c370fc0367844deb21a9ba3274a64f41faabe19bec6743af71685e2201",
+    "implementation/warlock/src/OutcomeAnnouncements.elm": "e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb",
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/OutputReplay.elm": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+    "implementation/warlock/src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "implementation/warlock/src/OverviewRecovery.elm": "df247594319b088baa321ac9b5d4b5f2daeec5780298178ca0724f7ec17d8e0e",
+    "implementation/warlock/src/Pins.elm": "c44da7aa32a193fc998d4efc39af25067998adc37d67da6d0c5b834f073635a4",
+    "implementation/warlock/src/PointerOwnership.elm": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3",
+    "implementation/warlock/src/Popup.elm": "fb24afed07ee6396633efb987b3202e57e0dfe52642a8150987e75648c944c58",
+    "implementation/warlock/src/Presentation.elm": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+    "implementation/warlock/src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "implementation/warlock/src/PreviewCatalogReplay.elm": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129",
+    "implementation/warlock/src/PreviewFeedbackReplay.elm": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34",
+    "implementation/warlock/src/PreviewIdentity.elm": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+    "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+    "implementation/warlock/src/PreviewMetadataReplay.elm": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f",
+    "implementation/warlock/src/PreviewPaintGate.elm": "29336cc6d6b21c3d32fd4967911bb189c42b1569ed877ffe79555ed30a7c7d82",
+    "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+    "implementation/warlock/src/PreviewPresenterReplay.elm": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+    "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+    "implementation/warlock/src/Protocol/Authority.elm": "bbf82ae6a176ed3be480df9c03af1c5f9f627357e8e9f4b24d030c08c97dad8b",
+    "implementation/warlock/src/Protocol/Session.elm": "8b765d5a2b6c0946413f7d7b4c48bac371681ab22c2c533977733a334a30ca4a",
+    "implementation/warlock/src/Protocol/Wire.elm": "b4bea849f17402b7007f4697f544b0dc0fd255bec1c3c38888c318741030d61c",
+    "implementation/warlock/src/Provider.elm": "2ef450a364d23d334e2ba7dfafdc56bbf51649dfb8f2e9f2e0ab1ca600157727",
+    "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+    "implementation/warlock/src/ReconciliationFrame.elm": "5f9480ab13609f26a3f57f37431e9eb29c658b1c009b463321e0f277d37b8ac5",
+    "implementation/warlock/src/ReconciliationTracking.elm": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+    "implementation/warlock/src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "implementation/warlock/src/RetainedLegacyPresenterReplay.elm": "f5f7bc30d5efda6629a1de4b11e13ebf25d9be80bbd8573dff9d7d0916375845",
+    "implementation/warlock/src/RetainedPreviewPresenter.elm": "3446188256b8422ff79fc177c46871a8dc102f4f06522584e252216727f3c4a8",
+    "implementation/warlock/src/RetainedPreviewPresenterReplay.elm": "1405187825a060cb5003b66b7bf235802323fe6db2d32af6ddb04d1708577175",
+    "implementation/warlock/src/ScopedPreviewPresenterReplay.elm": "203f2b74ce723fc3c39208ff91dffde947fbdbaaf7cf1d233b606ac427ba7a05",
+    "implementation/warlock/src/SearchFold.elm": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241",
+    "implementation/warlock/src/Settings.elm": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c",
+    "implementation/warlock/src/SharedRecoveryReplay.elm": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+    "implementation/warlock/src/Shell.elm": "6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094",
+    "implementation/warlock/src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+    "implementation/warlock/src/ShortcutPreferences.elm": "d8c1a63f199612161e078e0f6c7f75cbbfa190953e19325e50169debc425dcec",
+    "implementation/warlock/src/Shortcuts.elm": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7",
+    "implementation/warlock/src/Snap.elm": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e",
+    "implementation/warlock/src/StatusScroll.elm": "9348a397d03cd7671faad4407fa0951f8765f4c72ccf98913db3ed35857ba034",
+    "implementation/warlock/src/Surface.elm": "91d38d818e40523cd395d3622633676149c42b8b9b0be3a40223a13bdf45d9ca",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/SurfaceRenderer.elm": "d6cc2985db97749633af2ab33748e98fbc5d482e08fb0e333e3ea6576ae9dd98",
+    "implementation/warlock/src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+    "implementation/warlock/src/SurfaceSnapshot.elm": "58298ea43fffba3da6bcc64f1456b47bcde3607d476ef99465be0c98c2b433d7",
+    "implementation/warlock/src/SurfaceTheme.elm": "be9d20b763275987d0706ec6edadea3853162bb28731a3da642b50fce0529d4c",
+    "implementation/warlock/src/Switcher.elm": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061",
+    "implementation/warlock/src/SystemMenu.elm": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054",
+    "implementation/warlock/src/TaskView.elm": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+    "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+    "implementation/warlock/src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/TaskbarShellReplay.elm": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+    "implementation/warlock/src/Transfer.elm": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+    "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "implementation/warlock/src/UiHttp.elm": "3a649f51ff0f783a19fa8bb427bdc0ebb7b3eb7473428044d88a54f78b9da419",
+    "implementation/warlock/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+    "implementation/warlock/src/WorkspaceInventory.elm": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+    "implementation/warlock/src/WorkspaceNavigation.elm": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+    "implementation/warlock/elm.json": "8b4b79f249439797039cfb923bb99d0025d27913e50f097e1cd1da8f03c4ca63",
+    "implementation/warlock/qa/FeedbackContextReplay.elm": "c98bb05441461e28c011c0e56e0ef6990abeda7c1dbe2ef1950dba5949e62d4f",
+    "implementation/warlock/qa/feedback-context.cjs": "7fff0511c7e1aca4a40a145a74ca191b00f5f2df0798c06422e7bd51118c0710",
+    "implementation/warlock/qa/UiHttpReplay.elm": "0af3b61497dbca730b10b9bb720692d8ba1f88b039efd3eb87517be29cce44e6",
+    "implementation/warlock/qa/ui-http.cjs": "8ec7289e83fe7cadc9e2b238766255aa56ebb06e3f97cec86a238a4d82a285f3",
+    "implementation/warlock/qa/NotificationsReplay.elm": "d962a8d60b34201ae138afbfb0ff0e8ed9cb3a131a8b4cafecb74267dff7408f",
+    "implementation/warlock/qa/JumpListReplay.elm": "6dae1096939db836ef3fea537df661a94b7267a8ad39297a14e980909925bff2",
+    "implementation/warlock/qa/NotificationRelevanceReplay.elm": "de99c29c7d40cd8cf253e54e9e960519745aab39df054465df85502c8d980466",
+    "implementation/warlock/qa/RetirementProofReplay.elm": "eebc71f1f8c13b1baaa882c74a52cd42d5980edc0277053f7f5c9a080466c66b",
+    "implementation/warlock/qa/NativePointerFixture.elm": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124",
+    "implementation/warlock/qa/typed-state.cjs": "cf6e8b17ce0095b15251ef82a0719af39f22e165211d8ea289d86ce029c30576",
+    "implementation/warlock/qa/TeaContractReplay.elm": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+    "implementation/warlock/qa/tea-contract.cjs": "15597108de923405823578f89f2c667988f8602f12ddb68f449c365bb17319b8",
+    "implementation/warlock/qa/tea-contract-cases.cjs": "ab9d3f43d5bbe5b8588274e839d1530e145a68f92d651056a3a694b4735e7b59"
+  },
+  "httpDependencies": {
+    "manifestSHA256": "ac6870371db068344a02e99ab40a45207b393d91d05cfd94e7b0cc54f4bd8f68",
+    "packages": [
+      {
+        "name": "elm/http",
+        "version": "2.0.0",
+        "archiveSHA256": "26840f4bc05cc144fd19d8c54e5c6492b067a1842e8957b026d93712c62842fe",
+        "sourceFiles": {
+          ".gitignore": "82eb49c9bfa70dce625c1f54575b410de6d420ba29c7acb0d8ad79144dec1f95",
+          "LICENSE": "541b5012a07b7793dd7fe4683216a87ff7ce2520a35de5a9fda1cbecf8b3af6b",
+          "README.md": "1964ea432f4cff7740f3aa08f513b2466250cc0bf49625af199cebcd75359b0c",
+          "elm.json": "a52cb6d3d4ee83e6eb9c883e28380bda8e25d640fd04b6c3316398ed3951d65b",
+          "rate-limit.md": "054df63afa309559479a4d0daeb5ceb20e5417103e32057d1f6d8ec50b9ae466",
+          "src/Elm/Kernel/Http.js": "0cc54240d870127251fe6f2d76bf7ec0db1701d9dacbd893d79109af3580fce6",
+          "src/Elm/Kernel/Http.server.js": "014637cc6a5b20391af1f65609da5a37b1366da2b82ed21d4f2dc5a9dc1a2f4f",
+          "src/Http.elm": "791023f4674eedb81e09d4509b5b642006f216b076480b4dac76ce49ea065009"
+        }
+      },
+      {
+        "name": "elm/bytes",
+        "version": "1.0.8",
+        "archiveSHA256": "66b1616707d62d97814b2e71d1337691ddce1a87180f18a3f38e8a6161f1d1a0",
+        "sourceFiles": {
+          ".gitignore": "325ca3f598f8c501370dc6b3ddcb74e16150cc0ae6d3991dd080a616309dc868",
+          "LICENSE": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+          "README.md": "76fd693b9fd4b3e9fb42160d5e3905fb921c8e2168f1c29b018137ba69ec4908",
+          "elm.json": "3e1ed5a8d9f91a44d273a84900258d637c63ba90a4662c4603d75f2cedb266c9",
+          "src/Bytes/Decode.elm": "0081a9ec6a859589b689aad1cd1cb401d8f89f6b71f7dd26a243bcf6cc1a6a4d",
+          "src/Bytes/Encode.elm": "fbad353e50263bc3e8d0a563fad68ab919df0bfd249bf66697031dca033a8607",
+          "src/Bytes.elm": "3a40eb753082a46a555d8169cb87c551f1a10e48876592c69a25a5e5ccf3bd41",
+          "src/Elm/Kernel/Bytes.js": "94ae3e965f180d7677777b74afc55ef74875b37e4fe32c655686481fa8586ab7"
+        }
+      },
+      {
+        "name": "elm/file",
+        "version": "1.0.5",
+        "archiveSHA256": "aa63d8cc91e6aad709c7951d965a52933038ffd68cb534c61873ffbbfac4df97",
+        "sourceFiles": {
+          ".gitignore": "82eb49c9bfa70dce625c1f54575b410de6d420ba29c7acb0d8ad79144dec1f95",
+          "LICENSE": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+          "README.md": "88412a6ee13b593312306bad49e6aee534179e883d37541f2f48e9b25aba1be4",
+          "elm.json": "5d4cf2de2834ee996025dc82d9291e83c42c3752ebc63ddb5923014e9e724438",
+          "examples/DragAndDrop.elm": "c8c37706dcce1f26afd876b214ca6fbbc4e3d1683029bf9a6f3de5885d2cf96c",
+          "examples/DragAndDropWithImagePreview.elm": "fed8453b5bda80952e443e651d42595e1dd46c6cae6778699089f13097d6e688",
+          "examples/README.md": "f9a2e274bc7f477eeefdb7f0c24b7a426ee36f98ac43d764adae188acf24c2c7",
+          "examples/SelectFiles.elm": "4b33cdacf34ae0da1ffd111493f1c970927372851175969fd269dd9461acde14",
+          "examples/SelectFilesWithProgress.elm": "d260d5774f02f73c5958c3aa66485a80170f90c3a3b10546b49b66e965370031",
+          "examples/SelectFilesWithProgressAndCancellation.elm": "972ade48cf4ad07d2ab82e887562be7cc483ec14bc70f0d8884fc045e9b9c8aa",
+          "examples/elm.json": "970e03f2cbc2bfa413ae997d11ff020e9b4549119d48f8593783169f1d9f15df",
+          "src/Elm/Kernel/File.js": "b77a131b0841566318c42fc8e952ca06129b5abeccf8cc3c1950e5f966e4d792",
+          "src/File/Download.elm": "9516bec7c52dd9aba7d781410af88a63cd9e36cc3a07cd0d8d843870049f342a",
+          "src/File/Select.elm": "c7d40566987ed90ab8735c16f2d6c1eb813c73e78aaa4fde18fff331e35f4a5d",
+          "src/File.elm": "87e2d28653ec162f589d5fec45ec9d0aa0f4a040aa9d58419ac56ed15519dbd6"
+        }
+      }
+    ]
+  },
+  "typedState": {
+    "fixtures": [
+      "NotificationsReplay",
+      "JumpListReplay",
+      "NotificationRelevanceReplay",
+      "RetirementProofReplay"
+    ],
+    "checks": 87,
+    "resultSHA256": "9266cc86af009c2d0113927c32c88df5fca77012f0b23339333b6a29d916e9e3",
+    "nativeAccepted": false,
+    "originalAccepted": false
+  },
+  "teaContract": {
+    "schema": 1,
+    "scope": "QA compiled owning-route replay; not native or whole-EARS acceptance",
+    "originalFixtureSha256": "9ab8c194562a3ac7648e0130e15122adf19bdcf47c3c6b6f874270d360ecadf6",
+    "instrumentedFixtureSha256": "2061481549bee5504b4c2b67f2372839c25435ede8c3f4746fd414e7d01e17ad",
+    "oracleSha256": "ab9d3f43d5bbe5b8588274e839d1530e145a68f92d651056a3a694b4735e7b59",
+    "runnerSha256": "15597108de923405823578f89f2c667988f8602f12ddb68f449c365bb17319b8",
+    "fixtureElmSha256": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+    "marker": "TEA_CONTRACT_OBSERVE_V1",
+    "patchOffset": 7279,
+    "patchInsertedBytes": 85,
+    "reversiblePatch": true,
+    "coverageDeclaration": {
+      "complete": false,
+      "missing": [
+        "whole-frontend-contract-review"
+      ],
+      "note": "Component inputs only; full original TEA-002 coverage and debug-artifact qualification remain open.",
+      "supported": [
+        "outer-bridge-refusal",
+        "topology-initial-positive",
+        "topology-stale",
+        "uint64-revision-boundaries",
+        "catalog-pending",
+        "mismatched-batch-disposition",
+        "mismatched-catalog-receipt",
+        "catalog-matched-read",
+        "catalog-preflight-refusal-no-replay",
+        "catalog-disconnect-late-receipt",
+        "pin-pending-mutation",
+        "pin-refused-mutation-receipt",
+        "pin-saved-receipt",
+        "pin-unknown-reservation-no-replay",
+        "pin-unknown-read-reconciliation",
+        "window-pending-mutation",
+        "window-committed-receipt",
+        "window-refused-mutation-receipt",
+        "disconnect-unknown-no-replay",
+        "rebind",
+        "exact-reachable-delay",
+        "pending-preference-finite-status",
+        "pending-preference-positive-outcomes",
+        "pending-settings-ux-feedback"
+      ]
+    },
+    "wholeTeaStatus": "NOT_ASSESSED",
+    "cases": [
+      "empty-topology-publishes-complete-frame",
+      "topology-full-width-9007199254740993",
+      "topology-maximum-then-overflow",
+      "one-view-topology-assigns-owner",
+      "pending-catalog-disposition-mismatch-scope",
+      "pending-catalog-disposition-mismatch-revision",
+      "pending-catalog-disposition-mismatch-publication",
+      "pending-catalog-disposition-mismatch-lease",
+      "pending-catalog-disposition-mismatch-binding",
+      "pending-catalog-disposition-mismatch-wire",
+      "pending-catalog-mismatched-domain-receipt",
+      "catalog-preflight-refusal-no-replay",
+      "catalog-matched-read-then-stale-receipt",
+      "catalog-pending-disconnect-rejects-late-receipt",
+      "outer-not-object",
+      "outer-missing-version",
+      "outer-version-string",
+      "outer-wrong-version",
+      "outer-unknown-kind",
+      "outer-missing-payload",
+      "outer-extra-field",
+      "topology-zero-revision",
+      "topology-leading-zero",
+      "topology-counter-overflow",
+      "topology-negative-counter",
+      "topology-numeric-counter",
+      "pin-wrong-request-retains-pending",
+      "pin-refused-retains-observed-order",
+      "pin-unknown-retains-reservation-no-replay",
+      "pin-saved-receipt-confirms-exact-new-order",
+      "pin-unknown-then-correlated-refused",
+      "pin-unknown-then-correlated-saved",
+      "catalog-rebind-new-frontend-no-old-replay",
+      "pin-pending-invalid-status-Stored",
+      "pin-pending-invalid-status-Bogus",
+      "pin-pending-invalid-status-saved",
+      "pin-pending-invalid-status-empty",
+      "window-minimize-committed-duplicate-and-stale",
+      "window-minimize-refused-duplicate-and-stale",
+      "window-pending-disconnect-rebind-historical-receipt",
+      "launch-delay-exact-timeout-and-stale-token",
+      "launch-delay-stale-after-matching-submitted",
+      "settings-pending-malformed-status-noop-then-unknown-and-refused",
+      "settings-pending-malformed-status-noop-then-saved",
+      "motion-pending-malformed-status-noop-then-unknown-and-refused",
+      "motion-pending-malformed-status-noop-then-saved-syncs-profile",
+      "shortcut-pending-malformed-status-noop-then-unknown-and-refused",
+      "shortcut-pending-malformed-status-noop-then-stored",
+      "shortcut-pending-malformed-status-noop-then-saved",
+      "ux-pending-settings-malformed-unsupported-name",
+      "ux-pending-settings-malformed-wrong-case",
+      "ux-pending-settings-malformed-empty-status",
+      "ux-pending-settings-malformed-wrong-domain-stored",
+      "ux-pending-settings-malformed-null-status",
+      "ux-pending-settings-malformed-numeric-status",
+      "ux-pending-settings-malformed-missing-status",
+      "ux-pending-settings-malformed-extra-field",
+      "ux-pending-settings-valid-unknown-is-distinct"
+    ],
+    "transitions": 134,
+    "preludes": 31,
+    "runsPerCase": 2,
+    "passed": true,
+    "originalAccepted": false,
+    "nativeAccepted": false,
+    "releaseAccepted": false,
+    "acceptanceLimit": "Named complete-model/effect fixture only; whole original clauses require independent review and adequate positive/lifecycle coverage"
+  },
+  "artifacts": {
+    "HttpMain.js": "ef8f4aa61ad5683820e8a56a4818cafad29ef57d751033f6f02f322fe53c12de",
+    "tea-contract.js": "9ab8c194562a3ac7648e0130e15122adf19bdcf47c3c6b6f874270d360ecadf6",
+    "Main.js": "c825ef5af009478abf818b57df3bcaf09d7d9ee8b1798c2455ce737196671708",
+    "NotificationRelevanceReplay.js": "a20f60b4a1eb995dcf9ad43c44c49f72839bee62458e89b47e3f324020d668ba",
+    "Popup.js": "3aeb35c15c3f28bab81f63d6527df2080eeea111a1e68e013c9efea034abafca",
+    "HttpBar.js": "661f044c8458ffcbc03ca83c1536c5ff5574f854912757ebeb8b5ee75c84600d",
+    "feedback-context.js": "0482b18d5d24522f2a9c0d647440c2f7e765bf385a5fe149f4d9a133d7f03616",
+    "JumpListReplay.js": "dcb8466b2ac0dd789d5f7baf5704a0a1ed3cd2f9bfe7878a1e795f6243b68445",
+    "Bar.js": "3409c3b5f87750260ec235f2306d8af25c83cdf4aa223ebf38c3820c2991bce9",
+    "HttpPopup.js": "e57e092336ef90a8771cfac613ff73024d18dff28ab04ac42e2d71ccc825cdbf",
+    "NotificationsReplay.js": "77e7aad000d37a20323999990a9b7d2e411eee73959e60c9ca02c2bf92730a8e",
+    "UiHttpReplay.js": "769c6b1343b2e6850a84cd31484e036242f263556e0fb4a204311ba0285ad85b",
+    "RetirementProofReplay.js": "09112d155335d34aba8786e230b36ba450e0825ba78f731754d311e5d7a98240"
+  }
+}

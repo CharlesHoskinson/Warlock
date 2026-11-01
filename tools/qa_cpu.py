@@ -131,7 +131,13 @@ def main():
                           'implementation/warlock/qa/tea-contract.cjs',
                           'implementation/warlock/qa/tea-contract-cases.cjs',
                           'implementation/warlock/qa/FeedbackContextReplay.elm',
-                          'implementation/warlock/qa/feedback-context.cjs'})
+                          'implementation/warlock/qa/feedback-context.cjs',
+                          'implementation/warlock/qa/NotificationsReplay.elm',
+                          'implementation/warlock/qa/JumpListReplay.elm',
+                          'implementation/warlock/qa/NotificationRelevanceReplay.elm',
+                          'implementation/warlock/qa/RetirementProofReplay.elm',
+                          'implementation/warlock/qa/NativePointerFixture.elm',
+                          'implementation/warlock/qa/typed-state.cjs'})
     if packet['arguments'] == ['--status-scroll']:
         mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
                           'implementation/warlock/qa/StatusScrollReplay.elm', 'implementation/warlock/qa/status-scroll.cjs',

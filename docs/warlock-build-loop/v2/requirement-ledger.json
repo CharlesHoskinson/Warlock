@@ -6030,14 +6030,21 @@
       "owner": "Native host lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "tea-typed-model",
           "oracle": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/tea-typed-state-20261101/component-observation.json",
+              "sha256": "602b1065fda198d57807f0fddb7d229520e449caff3bb2abd02f7b69a63bbc14",
+              "scope": "Six optimized Elm entry points,87typed controls and58complete Model/effect literal histories134tested31setup/twice; controlled pure bridge fixtures, not native or whole original acceptance.",
+              "disposition": "partial"
+            }
+          ],
+          "missingObservation": "Remaining whole frontend retained lifecycle/receipt/operation custom-type and single-authority/observation-vs-desired inventory, actual remaining finite source fields and independent original immutable source acceptance. Native behavior separately qualified."
         }
       ]
     },
@@ -6061,9 +6068,15 @@
               "sha256": "2ca77a7f6f3e9e4466fbc4d63c4e1e1e325128048bc999388304ec0f8a03ad5d",
               "scope": "Protected CPU compiler and complete actual DesktopPolicy model/effect literal replay;32named histories/64tested transitions/6excluded setup preludes/two fresh runs. Component observation only.",
               "disposition": "partial"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/tea-typed-state-20261101/component-observation.json",
+              "sha256": "602b1065fda198d57807f0fddb7d229520e449caff3bb2abd02f7b69a63bbc14",
+              "scope": "Six optimized Elm entry points,87typed controls and58complete Model/effect literal histories134tested31setup/twice; controlled pure bridge fixtures, not native or whole original acceptance.",
+              "disposition": "partial"
             }
           ],
-          "missingObservation": "Complete actual window pending/Committed/Refused, disconnect Unknown/no replay, rebind and exact reachable Delay fixtures; whole reducer/source/type authority inventory and independent immutable original acceptance. Native behavior remains separately qualified."
+          "missingObservation": "Full original reducer/effect/determinism clause adjudication and independent acceptance of an immutable tested source tuple; named replay and compiler evidence is now present. Native behavior separately qualified."
         }
       ]
     },
@@ -17290,5 +17303,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T19:04:46.641799+00:00"
+  "updatedUTC": "2026-11-01T19:27:47.026644+00:00"
 }

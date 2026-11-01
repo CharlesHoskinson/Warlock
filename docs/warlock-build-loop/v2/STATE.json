@@ -31,7 +31,18 @@
       "implementation/warlock/src/HttpPopup.elm",
       "implementation/warlock/qa/TeaContractReplay.elm",
       "implementation/warlock/qa/tea-contract.cjs",
-      "implementation/warlock/qa/tea-contract-cases.cjs"
+      "implementation/warlock/qa/tea-contract-cases.cjs",
+      "implementation/warlock/src/Notifications.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "implementation/warlock/src/JumpList.elm",
+      "implementation/warlock/src/ReconciliationFrame.elm",
+      "implementation/warlock/qa/NotificationsReplay.elm",
+      "implementation/warlock/qa/JumpListReplay.elm",
+      "implementation/warlock/qa/NativePointerFixture.elm",
+      "implementation/warlock/qa/RetirementProofReplay.elm",
+      "implementation/warlock/qa/typed-state.cjs",
+      "implementation/warlock/qa/NotificationRelevanceReplay.elm"
     ],
     "before": "Current Elm owning routes compile and selected replays pass, but complete semantic Model and every typed effect have not been checked against independent literal domain expectations; no whole TEA001/002 acceptance is established.",
     "after": "The actual Elm frontend typed lifecycle/receipt/operation models and pure reducers satisfy the complete original TEA001/002 contracts. Identical sanitized histories yield identical complete models and effects, with independently expected literal state/effect outcomes; native behavior stays separately qualified.",
@@ -3467,7 +3478,7 @@
     },
     "externalProcessReceipts": [
       "/home/charl/.local/state/warlock-team/20261031-agentbus/tea-positive-1900-launches.json",
-      "/home/charl/.local/state/warlock-team/20261031-agentbus/gemini-tea-positive-1900-launches.json",
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/gemini-tea-final-1924-launches.json",
       "/home/charl/.local/state/warlock-team/20261031-agentbus/sol-advisor-launch.json",
       "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-launch.json"
     ],
@@ -3475,37 +3486,16 @@
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
     "currentSlice": "ELM-TEA-001 tea-typed-model + ELM-TEA-002 tea-pure-update; complete owning-route model/effect fixture and independent whole-contract audit",
-    "currentProcessObservation": "15 actual external worker CLIs confirmed 2026-11-01T19:01:45.742107+00:00:10 base Terra,3 Gemini Argon HIGH,1 Sol6.1HIGH advisor,1 TerraHIGH UX/performance owner; no duplicates. Bounded turns only.",
+    "currentProcessObservation": "15 actual owned worker CLIs at 2026-11-01T19:28:33.440634+00:00; duplicates 0; absent []. Bounded liveness, not permanent.",
     "lastHealthObservation": {
       "observedUTC": "2026-11-01T18:57:22Z",
       "doctor": "All six checks passed: existing verifier/auth, valid unrevoked lead, broker, clock and arbiterPID1116694 reused."
     },
     "liveCensusReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json",
-    "lastLivenessUTC": "2026-11-01T19:01:45.742107+00:00",
+    "lastLivenessUTC": "2026-11-01T19:28:33.440634+00:00",
     "actualWorkerCensus": {
-      "observedUTC": "2026-11-01T19:01:45.742107+00:00",
+      "observedUTC": "2026-11-01T19:28:33.440634+00:00",
       "workers": [
-        {
-          "name": "gemini-gui",
-          "pid": 2401372,
-          "cli": "agy",
-          "model": "gemini-4-argon-high",
-          "explicitSkipPermissions": true
-        },
-        {
-          "name": "gemini-site",
-          "pid": 2401374,
-          "cli": "agy",
-          "model": "gemini-4-argon-high",
-          "explicitSkipPermissions": true
-        },
-        {
-          "name": "gemini-omarchy",
-          "pid": 2401376,
-          "cli": "agy",
-          "model": "gemini-4-argon-high",
-          "explicitSkipPermissions": true
-        },
         {
           "name": "sol-advisor",
           "pid": 2402092,
@@ -3589,6 +3579,27 @@
           "cli": "codex",
           "model": "gpt-6.1-terra",
           "explicitSkipPermissions": false
+        },
+        {
+          "name": "gemini-omarchy",
+          "pid": 2439816,
+          "cli": "agy",
+          "model": "gemini-4-argon-high",
+          "explicitSkipPermissions": true
+        },
+        {
+          "name": "gemini-site",
+          "pid": 2439818,
+          "cli": "agy",
+          "model": "gemini-4-argon-high",
+          "explicitSkipPermissions": true
+        },
+        {
+          "name": "gemini-gui",
+          "pid": 2439820,
+          "cli": "agy",
+          "model": "gemini-4-argon-high",
+          "explicitSkipPermissions": true
         }
       ],
       "count": 15,
@@ -3670,7 +3681,7 @@
     "releaseAcceptance": false,
     "wholeRequirementsAccepted": 15
   },
-  "nextConcreteAction": "Complete original TEA001/002: source-literal actual pending preference malformed-status regression, missing window receipt/disconnect/rebind/exact Delay fixture coverage, and retained finite ADT source repairs; Root executes proportional protected checks then independently adjudicates whole originals. Current component PASS is partial.",
+  "nextConcreteAction": "Freeze and commit current fully qualified Elm ADT/policy tuple; independent original TEA002 pure reducer/effect/determinism adjudication on full immutable commit. Continue remaining TEA001 actual finite operand/authority repairs without adding native gates to pure-language verification. Goal242/417 active.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4080,7 +4091,34 @@
       "ELM-TEA-002/tea-pure-update",
       "ELM-TEA-001/tea-typed-model",
       "ELM-TEA-005/tea-narrow-interop"
-    ]
+    ],
+    "hourlyActuals": [
+      {
+        "startedUTC": "2026-11-01T18:11:37.655841+00:00",
+        "endedUTC": "2026-11-01T19:11:37.655841+00:00",
+        "reportedUTC": "2026-11-01T19:12:28.233117+00:00",
+        "ledgerSHA256": "51e2e42a3e6785a7b56d08519b5c8d86f6ee04e2bef137fdfa9c97dcdda04aec",
+        "wholeRequirementsAccepted": 15,
+        "acceptedScenarios": 39,
+        "newWholeRequirementIds": [],
+        "newWholeEarsClosures": 0,
+        "newAcceptedScenarios": [],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Published873d9c51809f594d2c615c2dfd6877e0d2fa8333: strict finite save-status boundary and complete actual policy replay; protected six optimized roots,32histories64tested transitions and6excluded setup preludes passed with independent component review.",
+          "Current uncommitted source wave converts notification state/verb/outcome, JumpList action kind and retirement proof fields to ADTs; complete window receipt/rebind/Delay literals integrated but not yet qualified."
+        ],
+        "blockingClosureGaps": [
+          "Pending preference malformed-status and positive controls from reachable actual policy state",
+          "Complete new window operation, Unknown/rebind and exact Delay cases await protected qualification",
+          "Whole typed-state and single-authority review, retained finite source fields and original immutable independent acceptance"
+        ],
+        "replan": "Concentrate existing workers on actual missing literal fixtures and typed-state regressions; Root executes current source wave and independently adjudicates full TEA001/002. No evidence weakening or count inflation."
+      }
+    ],
+    "currentWindowStartedUTC": "2026-11-01T19:11:37.655841+00:00",
+    "nextReportDueUTC": "2026-11-01T20:11:37.655841+00:00"
   },
   "ui005CurrentStackCheckpoint": {
     "record": ".warlock-contributor/ui005-haskell-search.json",
@@ -4092,25 +4130,45 @@
     "remaining": "Final authoritativequery/cataloggenerationcorrelation; nativeATIME/provider/performance/release. HistoricalUI005wholeverdictunchanged."
   },
   "teaContractComponentObservation": {
-    "observedUTC": "2026-11-01T19:03:40.080729+00:00",
-    "evidence": "implementation/warlock/qa/evidence/tea-contract-20261101/observation.json",
-    "reportSHA256": "2cce6038d59e0759e48ef37eba1434a25a54982837167f86a1aff8b69eb297d4",
+    "observedUTC": "2026-11-01T19:28:33.458334+00:00",
+    "evidence": "implementation/warlock/qa/evidence/tea-typed-state-20261101/component-observation.json",
+    "reportSHA256": "6e2124772c3a7f831633994ca963fa1536c88a3caa07827daece247f85b22e5d",
     "optimizedRoots": 6,
-    "cases": 32,
-    "transitions": 64,
-    "excludedSetupPreludes": 6,
+    "optimizedTypedWorkers": 4,
+    "typedChecks": 87,
+    "cases": 58,
+    "transitions": 134,
+    "excludedSetupPreludes": 31,
     "runsPerCase": 2,
     "wholeAccepted": false,
     "missing": [
-      "window-pending-mutation",
-      "window-committed-receipt",
-      "window-refused-mutation-receipt",
-      "disconnect-unknown-no-replay",
-      "rebind",
-      "exact-reachable-delay",
-      "Reachable pending motion/shortcut/settings malformed-status production regression",
-      "Whole frontend custom-type/authority audit and retained finite String state conversion",
-      "Independent whole original requirement adjudication with immutable source commit"
+      "Independent wholeTEA002 original-clause adjudication on immutable source commit",
+      "WholeTEA001 retained finite lifecycle/receipt/operation and authority inventory; remaining concrete source fields outside current migration",
+      "Native behavior, AT/IME, hardware resources/latency/provider cleanup/release separately qualified"
     ]
-  }
+  },
+  "teaContractComponentObservationHistory": [
+    {
+      "observedUTC": "2026-11-01T19:03:40.080729+00:00",
+      "evidence": "implementation/warlock/qa/evidence/tea-contract-20261101/observation.json",
+      "reportSHA256": "2cce6038d59e0759e48ef37eba1434a25a54982837167f86a1aff8b69eb297d4",
+      "optimizedRoots": 6,
+      "cases": 32,
+      "transitions": 64,
+      "excludedSetupPreludes": 6,
+      "runsPerCase": 2,
+      "wholeAccepted": false,
+      "missing": [
+        "window-pending-mutation",
+        "window-committed-receipt",
+        "window-refused-mutation-receipt",
+        "disconnect-unknown-no-replay",
+        "rebind",
+        "exact-reachable-delay",
+        "Reachable pending motion/shortcut/settings malformed-status production regression",
+        "Whole frontend custom-type/authority audit and retained finite String state conversion",
+        "Independent whole original requirement adjudication with immutable source commit"
+      ]
+    }
+  ]
 }

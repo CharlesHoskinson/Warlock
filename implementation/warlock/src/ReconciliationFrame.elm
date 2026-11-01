@@ -1,4 +1,4 @@
-module ReconciliationFrame exposing (Context, Record, Proof, Observation, Release, Expected, Frame(..), proofDecoder, recordDecoder, contextDecoder, expectedDecoder, decodeUnknown, decodeReleased)
+module ReconciliationFrame exposing (Context, Record, ProofKind(..), RetirementOperation(..), GrantState(..), Proof, Observation, Release, Expected, Frame(..), proofKindName, retirementOperationName, grantStateName, proofDecoder, recordDecoder, contextDecoder, expectedDecoder, decodeUnknown, decodeReleased)
 
 import Binding exposing (Binding)
 import Effects
@@ -7,7 +7,10 @@ import UInt64 exposing (Counter)
 
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
 type alias Record = { schema : Int, effectProtocol : Int, binding : Binding, intent : Effects.Intent, status : Effects.Status }
-type alias Proof = { protocolVersion : Int, kind : String, retirementProtocol : Int, operation : String, binding : Binding, requestId : Counter, queriedBinding : Binding, sequence : Counter, grantState : String }
+type ProofKind = BindingRetirement
+type RetirementOperation = Observe | Retire
+type GrantState = Retired
+type alias Proof = { protocolVersion : Int, kind : ProofKind, retirementProtocol : Int, operation : RetirementOperation, binding : Binding, requestId : Counter, queriedBinding : Binding, sequence : Counter, grantState : GrantState }
 type alias Observation = { actionRequestId : Counter, geometryRequestId : Counter, actionContext : Context, geometryContext : Context }
 type alias Release = { id : String, proof : Proof, observation : Observation }
 type alias Expected = { currentBinding : Binding, record : Record, proofRequestId : Counter, actionRequestId : Counter, geometryRequestId : Counter, actionContext : Context, geometryContext : Context }
@@ -26,14 +29,33 @@ recordDecoder = strict ["schema","effectProtocol","binding","intent","status"]
         let operationMatches = if record.effectProtocol==1 then List.member record.intent.operation [Effects.Minimize,Effects.Restore,Effects.Activate] else Effects.protocol record.intent.operation==2
         in if Binding.matchesContext record.intent.context.lifetime record.intent.context.epoch record.binding && operationMatches then D.succeed record else D.fail "Record authority or operation/protocol mismatch")
 
+proofKindName : ProofKind -> String
+proofKindName kind = case kind of
+    BindingRetirement -> "binding-retirement"
+
+retirementOperationName : RetirementOperation -> String
+retirementOperationName operation = case operation of
+    Observe -> "observe"
+    Retire -> "retire"
+
+grantStateName : GrantState -> String
+grantStateName grantState = case grantState of
+    Retired -> "Retired"
+
+retirementOperationDecoder : D.Decoder RetirementOperation
+retirementOperationDecoder = D.string |> D.andThen (\v -> case v of
+    "observe" -> D.succeed Observe
+    "retire" -> D.succeed Retire
+    _ -> D.fail "Retirement operation")
+
 proofDecoder : D.Decoder Proof
 proofDecoder = strict ["protocolVersion","kind","retirementProtocol","operation","binding","requestId","queriedBinding","sequence","grantState"]
-    (D.map8 (\version kind protocol operation binding request queried sequence -> Proof version kind protocol operation binding request queried sequence "Retired")
-        (D.field "protocolVersion" (exactInt 3)) (D.field "kind" (exactString "binding-retirement"))
+    (D.map8 (\version kind protocol operation binding request queried sequence -> Proof version kind protocol operation binding request queried sequence Retired)
+        (D.field "protocolVersion" (exactInt 3)) (D.field "kind" (exactString "binding-retirement" |> D.map (\_ -> BindingRetirement)))
         (D.field "retirementProtocol" (exactInt 1))
-        (D.field "operation" (D.string |> D.andThen (\v -> if List.member v ["observe","retire"] then D.succeed v else D.fail "Retirement operation")))
+        (D.field "operation" retirementOperationDecoder)
         (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "queriedBinding" Binding.decoder) (D.field "sequence" positive))
-    |> D.andThen (\proof -> D.field "grantState" (exactString "Retired") |> D.map (\_ -> proof))
+    |> D.andThen (\proof -> D.field "grantState" (exactString "Retired" |> D.map (\_ -> Retired)) |> D.map (\grantState -> { proof | grantState = grantState }))
 observationDecoder = strict ["actionRequestId","geometryRequestId","actionContext","geometryContext"]
     (D.map4 Observation (D.field "actionRequestId" positive) (D.field "geometryRequestId" positive) (D.field "actionContext" contextDecoder) (D.field "geometryContext" contextDecoder))
 releaseIdDecoder = D.string |> D.andThen (\value -> if String.length value==64 && List.all (\c -> (c>='0' && c<='9') || (c>='a' && c<='f')) (String.toList value) then D.succeed value else D.fail "Release ID must be64lowerhex")
