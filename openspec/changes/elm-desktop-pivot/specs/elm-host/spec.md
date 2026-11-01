@@ -14,7 +14,7 @@ The Elm desktop SHALL record the deployed compositor, plugin, shell, compiler an
 
 ### Requirement: ELM-ARC-002
 
-The Elm desktop SHALL assign DOM presentation and all GUI elements to Elm, backend and native host integration to Haskell, and application-window effects to one native authority.
+The Elm desktop SHALL assign DOM presentation and all GUI elements to Elm, Wayland surface lifetime and backend/native host integration to Haskell, and application-window effects to one Haskell-owned native authority.
 
 #### Scenario: ELM-ARC-002 architecture-002
 
