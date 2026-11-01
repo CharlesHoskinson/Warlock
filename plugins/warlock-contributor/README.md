@@ -123,6 +123,48 @@ Selected dirty files produce an explicit ownership advisory: without a genuine
 ownership assertion, `start` protects them as foreign drafts. A successful
 preview does not reserve paths; `start` reads current state again.
 
+Before a new record is created, `preflight` and `start` inspect indexed and
+legacy participant records under `.warlock-contributor/` for the same exact
+original requirement/scenario. `index-participants` freezes the discovered path,
+immutable identity and full record-byte digest without editing participant
+records. The index is refreshed after successful `start`, `record`, and `extend`
+writes. Legacy nested records remain discoverable; new records must be direct
+`.json` children. A move is reconciled only when old and new paths have a
+one-to-one match on exact indexed record bytes. Identity-only legacy indexes
+cannot prove mutable history and fail closed until their provenance is reviewed
+and migrated explicitly. Inventory is limited to `.warlock-contributor/`; a
+repository-wide census or historical backup review is needed before claiming
+that no older participant record existed elsewhere. The 2026-11-01 checkout
+census found 101 participant records under that root and no outside-root
+signatures in the searched checkout; this is evidence about that checkout, not
+all historical clones or backups.
+If a prior matching record has reached its two-iteration or 45-minute stop,
+preflight reports its path, digest, stop reason and original identity; `start`
+refuses a fresh timer. Resume that record or select a different mandatory
+scenario. Only a real meaningful-progress entry in that same existing record
+clears its current stop; starting a fresh record cannot clear it. A missing,
+corrupt, byte-changed, or identity-changed indexed record
+blocks new starts because its scenario history cannot be reconstructed. Unrelated malformed
+scratch JSON remains a warning after the index exists; before initial indexing,
+unreadable JSON prevents claiming a complete inventory. The prior record is
+never edited by the index operation. One `.records.lock` serializes all
+participant writers, including starts and no-progress observations. This is
+cooperative local coordination, not a defense against same-user writers that
+ignore the lock.
+
+For an existing checkout, create the ignored path index without rewriting
+participant records:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py --json index-participants
+```
+
+The index covers participant records under `.warlock-contributor/`. New starts
+outside that directory are refused so later starts share one inventoried root.
+Do not treat an identity-only index from an older plugin version as verified
+history: preserve it, collect old record and backup provenance, and review the
+migration before establishing exact-byte bindings.
+
 Both `preflight` and `start` reject a `planSchema=1` packet whose copied original
 given/when/then or verification differs from the frozen selection. Regenerate a
 plan after changing its selected scenarios. Bare slice files still work because
@@ -164,6 +206,60 @@ and `report` expose the extension history. For adopted edits, use
 `verify-plan --selected` to consider verification of the newly declared bytes.
 Choose a new record for another behavior rather than extending scope indefinitely.
 
+For a source path already declared by the slice but lacking an explicit top-level ownership assertion,
+`extend --path EXACT --adopt-dirty EXACT --ownership-note TEXT --reason TEXT`
+can explicitly assert ownership of its exact latest recorded bytes (including a dependency extension or iteration binding). Run this separately from new
+path extensions. Current bytes must equal the latest applicable source binding and, if the path
+is captured as foreign, its protected foreign hash; the command cannot override unexplained drift. It appends an
+`ownershipAdoptions` event with the exact source hash and prior/next custody and retains the prior custody in that event without
+changing the slice, source baseline, start, iterations or progress. It does not
+adopt the separate foreign model merely because that model was reconciled.
+
+### Reviewed changes by a separate foreign owner
+
+`reconcile-foreign` recognizes reviewed changes to paths already captured in
+`foreignDirty`. It does not adopt files, edit the participant record, append an
+iteration, reset a timer, accept evidence, or permit staging a foreign path.
+Unknown new paths and unrelated drift still fail. `handoff` supplies the exact
+`recordIdentitySha256` and sidecar location even when a changed foreign path makes
+the check red.
+
+Prepare an untracked Git-ignored `.warlock-contributor/` scratch JSON array containing one entry per changed foreign
+path, with exactly `path`, `sourceRecordSnapshot`, `reviewFile`, and a nonempty
+`reason`. Include all currently changed protected paths in one atomic batch;
+partial batches do not write anything. Snapshot a genuinely owning participant
+record under `.warlock-contributor/evidence/foreign-reconciliation-snapshots/`;
+it must declare ownership and bind the new hash in its latest applicable source snapshot (base, chronological extensions and iterations). Historical claims or earlier source hashes cannot authorize a new transition. Retain an independent JSON review
+under `.warlock-contributor/evidence/foreign-reconciliations/`, naming:
+
+- `schema: 1`, `scope: "foreign-provenance-only"`, `scenarioAcceptance: false`,
+  and `independent: true`;
+- the exact `recordIdentitySha256`, `recordPath`, `path`, `previousSha256`,
+  `currentSha256`, `sourceRecordSnapshot`, `sourceRecordSnapshotSha256`,
+  `sourceOwner`, `reason`, and a `reviewer` distinct from both owners.
+
+These are local reviewed provenance assertions, not authenticated identity or
+product acceptance. Do not fabricate the owner snapshot or independent review.
+Then invoke the reviewed repository copy:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py \
+  --record .warlock-contributor/selected.json reconcile-foreign \
+  --transition-file .warlock-contributor/transitions.json
+```
+
+The command takes the participant lock and atomically appends a hash-chained
+sidecar. Its lookup uses immutable participant fields; its full review identity
+still binds the captured foreign/adopted custody. A retained custody baseline and
+exact extension prefix must match current custody after replaying only explicitly
+appended extension adoptions. Thus a later unrelated adoption keeps prior history
+reachable, while arbitrary custody edits still fail closed. All historical snapshot/review hashes remain checked; only the latest
+reviewed hash per path is compared with current bytes. A subsequent owner change
+requires a new exact transition/review and retains the earlier event. Changing a
+participant's identity or corrupting retained evidence fails closed. The original
+`foreignDirty` pins, selected ownership, claims and STOP history remain intact.
+
+
 `claim` prints a record-compatible observation packet with the selected original
 oracle, verification obligations, current hashes for every declared source and
 SHA-256 hashes of real evidence files. Supply the actual evidence scope,
@@ -203,7 +299,7 @@ commit and remain explicitly noncurrent after relevant source changes. This
 does not verify evidence contents, reviewer honesty, native/AT behavior or the
 actual core/plugin/toolchain tuple.
 
-`start` uses `STATE.activeSlice`; it does not select the next feature. The default local record is `.warlock-contributor/slice.json`; Git must ignore `.warlock-contributor/` before `start` (this repository supplies the ignore). On a new development checkout add that narrow ignore or choose an already-ignored `--record` location. Record updates are serialized with a POSIX lock and written atomically. Global `--repo`, `--record`, and `--json` precede the subcommand. For resumed own drafts, explicitly list each declared dirty path with repeatable `start --adopt-dirty <path>` and supply `--ownership-note`; undeclared and unadopted foreign drafts stay protected. See `--help` and [contract.json](references/contract.json). Zero exit means structural compliance; 1 is a structural policy violation and 2 invalid/unavailable inputs. Explicit loop checks and repository contributor instructions remain required even when no host hook runs.
+`start` uses `STATE.activeSlice`; it does not select the next feature. The default local record is `.warlock-contributor/slice.json`; Git must ignore `.warlock-contributor/` before `start` (this repository supplies the ignore). On a new development checkout add that narrow ignore. New `--record` paths must be direct `.json` children such as `.warlock-contributor/worker.json`; indexed legacy nested records can still be resumed. Run `index-participants` once to inventory the existing paths before beginning work. Record updates are serialized with a POSIX lock and written atomically. Global `--repo`, `--record`, and `--json` precede the subcommand. For resumed own drafts, explicitly list each declared dirty path with repeatable `start --adopt-dirty <path>` and supply `--ownership-note`; undeclared and unadopted foreign drafts stay protected. See `--help` and [contract.json](references/contract.json). Zero exit means structural compliance; 1 is a structural policy violation and 2 invalid/unavailable inputs. Explicit loop checks and repository contributor instructions remain required even when no host hook runs.
 
 ## Choose proportional verification
 
@@ -222,6 +318,14 @@ local equivalent. Inspect the runner, arguments, source tuple and prerequisites
 before using a suggestion. This command executes nothing; candidate native modes
 are not complete original-scenario coverage. AT/IME, hardware and other original
 verification obligations remain in the observation packet.
+
+For ELM-UX-006/`ux-006`, the affected preview presenter, projection and taskbar
+sources suggest `check-search.py --preview-states`. The plan uses the repository's
+`window-integration-qa/qa_run.py` and supplies that directory on `PYTHONPATH` for
+the current protected launcher imports. The original isolated native recording
+remains a separate required observation; `unplannedOriginalObservations` names
+it explicitly, and the planner does not suggest the historical native wrapper.
+A passing CPU replay is not UX-006 or release acceptance.
 
 Handwritten surface adapters, `shell.css`, `SurfaceController.elm` and `Popup.elm`
 use the shell/view routes. UI-008 `overflow-first-last` suggests the existing
@@ -244,7 +348,10 @@ without meaningful progress, elapsed seconds since the recorded baseline, trigge
 reasons and an explicit next action. At two iterations or 45 minutes, end expansion
 of that investigation and select another bounded mandatory slice. This remains an
 advisory about contributor records; it does not measure feature delivery or block
-independent work. The required loop checks expose these fields on every continuation.
+independent work on other scenarios. Cross-record start continuity and the
+participant index prevent hiding the trigger by creating another record for the
+same exact original scenario. The
+required loop checks expose these fields on every continuation.
 
 New iterations use progress policy 6: each original requirement/scenario/disposition
 counts once across the record. Rewording scope or missing observations, changing
@@ -349,3 +456,31 @@ a draft is not represented as a tested commit. Missing records fail. Stale evide
 returns a nonzero exit and retains the structural findings in the note. Historical
 claims remain visible with their hashes marked noncurrent. `--markdown` and
 `--json` are mutually exclusive. Use `review` separately for staged contents.
+
+
+### Reconciliation filesystem boundary
+
+Reads walk directory descriptors with `O_NOFOLLOW`; JSON and its digest come from
+one regular-file descriptor, and detected in-place changes refuse the read.
+Participant locks/reads and atomic writes use directory-relative operations.
+Reconciliation holds the sidecar parent from reading its prior state through
+validation and replacement, checking the prior sidecar digest before commit.
+Creating an absent sidecar never overwrites a concurrently created entry.
+A concurrent ancestor-to-symlink swap cannot redirect a read or replacement into
+that symlink's target. If an already-open owned directory is renamed, the write
+remains confined to that held directory object; a later check refuses the now
+redirected pathname. This is object-bound I/O, not an immutable checkout or an
+OS security boundary against a same-user process that independently overwrites
+files or ignores advisory locks. Source/evidence hashes must still be rechecked
+at the actual consuming gate; reconciliation never authorizes a native action.
+
+
+Existing-sidecar concurrency limit: the prior digest comparison and subsequent
+`renameat` replacement are separate kernel operations, not atomic compare-and-swap.
+A same-user writer ignoring the participant lock can replace that final directory
+entry between them; descriptor anchoring prevents pathname escape but cannot
+preserve that competing version automatically. Treat this as a residual blocker
+for any stronger claim of conflict-safe integration against uncooperative writers.
+The current draft is not a secure integration certificate. An immutable,
+no-replace generation protocol would be a separate reviewed change if that stronger
+conflict contract is required; no silent weakening or automatic retry is permitted.
