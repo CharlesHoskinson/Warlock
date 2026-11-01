@@ -1,0 +1,477 @@
+{
+  "schema": 1,
+  "scope": "116 added compiled-HttpPopup cancellation DOM/XHR observations; all prior7177 exact check objects preserved and passing. Full raw evidence retained at rawPath/hash.",
+  "rawPath": ".warlock-contributor/elm-cpu-1793573310617008258/ui-http.json",
+  "rawSHA256": "33ef0a295262c7feb0046a5a87c2bbf36ce400a62b3ed5233a3cac21235682b4",
+  "rawPassed": true,
+  "rawCheckCount": 7293,
+  "preservedPriorCheckCount": 7177,
+  "selectedCheckCount": 116,
+  "checks": [
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "cancel initial search focusable",
+      "passed": true
+    },
+    {
+      "name": "cancel input listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel input listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel same one POST while f in flight",
+      "passed": true
+    },
+    {
+      "name": "cancel same first exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel same empty P1 starts in FIFO",
+      "passed": true
+    },
+    {
+      "name": "cancel same reverse exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel same prelude has painted pending empty",
+      "passed": true
+    },
+    {
+      "name": "cancel same prelude entry:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel same prelude pin:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel same prelude control:close disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel same prelude control:refresh disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel same prelude same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "cancel start listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel same preedit value and marker",
+      "passed": true
+    },
+    {
+      "name": "cancel same composing entry:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel same composing pin:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel same composing control:close disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel same composing control:refresh disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel same composing same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "cancel end listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel same keeps latest empty and pending notice",
+      "passed": true
+    },
+    {
+      "name": "cancel same no duplicate exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel same pending entry:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel same pending pin:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel same pending control:close disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel same pending control:refresh disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel same pending same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "cancel same rebase queued behind in-flight exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel same delayed f does not replace latest empty",
+      "passed": true
+    },
+    {
+      "name": "cancel same current-scope rebase dispatched",
+      "passed": true
+    },
+    {
+      "name": "cancel same rebase exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel same required nonsimple header",
+      "passed": true
+    },
+    {
+      "name": "cancel same fixed original HTTP timeout",
+      "passed": true
+    },
+    {
+      "name": "cancel same local relative route",
+      "passed": true
+    },
+    {
+      "name": "cancel same required nonsimple header",
+      "passed": true
+    },
+    {
+      "name": "cancel same fixed original HTTP timeout",
+      "passed": true
+    },
+    {
+      "name": "cancel same local relative route",
+      "passed": true
+    },
+    {
+      "name": "cancel same required nonsimple header",
+      "passed": true
+    },
+    {
+      "name": "cancel same fixed original HTTP timeout",
+      "passed": true
+    },
+    {
+      "name": "cancel same local relative route",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "cancel same matching projection restores current display",
+      "passed": true
+    },
+    {
+      "name": "cancel same settled exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel same settled entry:org.example.Foot disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel same settled pin:org.example.Foot disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel same settled control:close disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel same settled control:refresh disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel same settled same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "cancel initial search focusable",
+      "passed": true
+    },
+    {
+      "name": "cancel input listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel input listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel lag first action only while queued",
+      "passed": true
+    },
+    {
+      "name": "cancel lag b P1 is in flight",
+      "passed": true
+    },
+    {
+      "name": "cancel lag setup exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel lag prelude has painted pending b",
+      "passed": true
+    },
+    {
+      "name": "cancel lag prelude entry:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel lag prelude pin:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel lag prelude control:close disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel lag prelude control:refresh disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel lag prelude same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "cancel start listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel lag composing entry:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel lag composing pin:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel lag composing control:close disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel lag composing control:refresh disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel lag composing same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "cancel lag presentation leaves preedit visible",
+      "passed": true
+    },
+    {
+      "name": "cancel end listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel lag restores retained b not stale baseline a",
+      "passed": true
+    },
+    {
+      "name": "cancel lag rebase queued exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel lag pending entry:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel lag pending pin:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel lag pending control:close disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel lag pending control:refresh disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel lag pending same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "cancel lag b P2 starts after old b completion",
+      "passed": true
+    },
+    {
+      "name": "cancel lag retained intent exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel lag required nonsimple header",
+      "passed": true
+    },
+    {
+      "name": "cancel lag fixed original HTTP timeout",
+      "passed": true
+    },
+    {
+      "name": "cancel lag local relative route",
+      "passed": true
+    },
+    {
+      "name": "cancel lag required nonsimple header",
+      "passed": true
+    },
+    {
+      "name": "cancel lag fixed original HTTP timeout",
+      "passed": true
+    },
+    {
+      "name": "cancel lag local relative route",
+      "passed": true
+    },
+    {
+      "name": "cancel lag required nonsimple header",
+      "passed": true
+    },
+    {
+      "name": "cancel lag fixed original HTTP timeout",
+      "passed": true
+    },
+    {
+      "name": "cancel lag local relative route",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "cancel lag latest value visible after matching frame",
+      "passed": true
+    },
+    {
+      "name": "cancel lag settled exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel lag settled entry:org.example.Foot disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel lag settled pin:org.example.Foot disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel lag settled control:close disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel lag settled control:refresh disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel lag settled same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "cancel initial search focusable",
+      "passed": true
+    },
+    {
+      "name": "cancel start listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel clean composing entry:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel clean composing pin:org.example.Foot disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel clean composing control:close disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel clean composing control:refresh disabled true",
+      "passed": true
+    },
+    {
+      "name": "cancel clean composing same focused test-double field",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "cancel end listener exists",
+      "passed": true
+    },
+    {
+      "name": "cancel clean reveals current value without query",
+      "passed": true
+    },
+    {
+      "name": "cancel clean exact FIFO wires",
+      "passed": true
+    },
+    {
+      "name": "cancel clean settled entry:org.example.Foot disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel clean settled pin:org.example.Foot disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel clean settled control:close disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel clean settled control:refresh disabled false",
+      "passed": true
+    },
+    {
+      "name": "cancel clean settled same focused test-double field",
+      "passed": true
+    }
+  ],
+  "failures": []
+}

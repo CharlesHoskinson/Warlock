@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-01T23:12:56.129300+00:00",
+  "requirement": "ELM-UI-005",
+  "scenario": "search-race",
+  "disposition": "partial",
+  "baseCommit": "a30ad9e9fa669e7b5d8af2f8fd8d58bc19313f70",
+  "sourceHashes": {
+    "implementation/warlock/src/Popup.elm": "a9f188f9130aea7ab050abb02530cf8e633235c810dc991685e2065ff8a6bcae",
+    "implementation/warlock/qa/LocalFieldReplay.elm": "d70d23bcdb9f460f24cf3b176afc1584f3c96a978f270685dd1943ab88ec78e3",
+    "implementation/warlock/qa/typed-state.cjs": "eb348e9e13d15a3b0d02b0995e9c1fd591edea3ccf6707be446f056328f24e78",
+    "implementation/warlock/qa/local-field-publication.qnt": "3c102fe49d68bf8ca33afaa0a1fb774404ecb1577a692a45907d72f78cb0bdfc",
+    "implementation/warlock/qa/ui-http.cjs": "cd25171ab960023eeb0da0df25cbe29ef1cbc3a604ad59281c9cbec880f60c14"
+  },
+  "behavior": "Composition cancel restores the retained pending intent, not an older painted baseline. It rebuilds the current-scoped query and reuses existing settlement/deduplication; no-prior cancellation emits no query.",
+  "verification": {
+    "protectedReport": "implementation/warlock/qa/evidence/cancel-query-20261101/report.json",
+    "reviewedInputs": 132,
+    "compiledJavascriptRoots": 7,
+    "compiledHtmlDocuments": 3,
+    "httpDomChecks": 7293,
+    "priorHttpDomChecksPreserved": 7177,
+    "addedHttpDomChecks": 116,
+    "typedChecks": 130,
+    "localFieldChecks": 43,
+    "newTypedChecks": 12,
+    "completePolicyHistories": 58,
+    "quintNamedRuns": 57,
+    "priorModelNamesPreserved": 51,
+    "quintSamples": 10000,
+    "quintMaxSteps": 50,
+    "quintSeed": 20261101,
+    "witnesses": {
+      "witnessDependent": 4221,
+      "witnessSafeWhilePending": 1916
+    },
+    "desiredSpecQualifiedBeforeImplementation": {
+      "path": ".warlock-contributor/elm-cpu-1793572860268497217/report.json",
+      "sha256": "fc1a3066b583c56712a48b65fed4217c4ad65d3d70dd11f20f029547805fc874"
+    },
+    "retainedRed": {
+      "path": "implementation/warlock/qa/evidence/cancel-query-20261101/red-typed-observations.json",
+      "failures": 4
+    },
+    "independentReview": "implementation/warlock/qa/evidence/cancel-query-20261101/source-review.json",
+    "selectionLimit": "Selected observation files explicitly retain full raw report paths/hashes. They do not impersonate full reports; raw files remain unchanged."
+  },
+  "liveOmarchy": {
+    "stage": "/home/charl/vm/omarchy/evidence/warlock-live-usability-cancel-refresh-20261101T225310Z/stage.json",
+    "stageSHA256": "2c8eee85796aa2fe372e7e6c02cf809fc30463d49af3ce7c9c65148d4b352f33",
+    "hostDriverSHA256": "bbc47b28d084b954218f7b7aa0c781e02ba7edeb5b069e5c2e2318b7b45a3124",
+    "guestControllerSHA256": "c0018a324e9ae81dc1144d12413831252d173b6d1429fba8e3baa010264a523c",
+    "journey": "implementation/warlock/qa/evidence/cancel-query-20261101/vm-journey.json",
+    "completedPhysicalSequence": true,
+    "acknowledgedGuardedInputs": 17,
+    "rootViewedImages": [
+      "implementation/warlock/qa/evidence/cancel-query-20261101/positive-foot.png",
+      "implementation/warlock/qa/evidence/cancel-query-20261101/negative-footz.png",
+      "implementation/warlock/qa/evidence/cancel-query-20261101/after-refresh-footz.png"
+    ],
+    "visualObservation": "Current tiled product shows Foot results for foot, no-match for footz, and retains footz/no-match after acknowledged Refresh pointer inputs.",
+    "physicalRefreshLimit": "No correlated catalog generation/backend receipt follows from the click or unchanged visible results.",
+    "physicalImeObserved": false,
+    "originalDurationSeconds": 28,
+    "guestExit": -9,
+    "guestElapsedSeconds": 27.877718457006267,
+    "forced": true,
+    "failure": "RuntimeError: Pinned live attempt guard failed: AssertionError",
+    "failureLimit": "Pinned live guard assertion near the original deadline is preserved; exact failed predicate/cause is not observed. This is a failed lifecycle trial, not a normal backend exit or native acceptance.",
+    "cleanupObservation": "Owned launcher reaped and scope/principal births recorded absent, original Foot preserved and idle restored. Existing read-error/absence limitations remain; provider proof is not established."
+  },
+  "team": {
+    "run": "warlock-20261031-setup",
+    "externalRoles": 15,
+    "actualCensusUTC": "2026-11-01T23:16:49.080550+00:00",
+    "actualLiveCount": 15,
+    "duplicates": [],
+    "quintKitRoles": 5,
+    "censusHistory": [
+      {
+        "observedUTC": "2026-11-01T23:12:56.162654+00:00",
+        "count": 3
+      },
+      {
+        "observedUTC": "2026-11-01T23:16:49.080550+00:00",
+        "count": 15
+      }
+    ],
+    "sourceWorkerBudgetSeconds": 3600,
+    "sourceWorkerCutoffMinutes": 56
+  },
+  "wholeOriginalAccepted": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "providerCleanupQualified": false,
+  "remaining": [
+    "Physical IME/cancel and browser focus/caret/AT evidence; controlled DOM focus markers are test doubles only.",
+    "Full original UI005 generation/ranking/removed-before-Enter/unavailable/refusal and original native obligations.",
+    "Named diagnosis of the retained pinned-live-guard failure; do not weaken guards or lengthen original deadlines.",
+    "Original001 coherent typed-domain integration, actual persistent Haskell lifetime/window operations/provider/hardware/resource/release gates."
+  ],
+  "evidenceHashes": {
+    "implementation/warlock/qa/evidence/cancel-query-20261101/after-refresh-footz.png": "120ab65ed784767de3459091e6025bade07b439ff4ec56468aae47159104ea81",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/dom-cancel-observations.json": "620d980577f4e79ca6f55850bca09e64032c71083e44c1349803ea167e3f309f",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/local-field-model-directed.stdout": "46eb376ebce06e3ab33a00fad7b375f89fe5115753575b1c027025df5e4248c7",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/local-field-model-safety.stdout": "b82997eeaf3e9801f6e9cabf306c5a05ef5710a4660306335e69f725ec427852",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/negative-footz.png": "23c8a41afcaa2dc056da452fffbee8b2bf0fd0077d3bb60384a5d764780077c1",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/positive-foot.png": "96244014425175e5076beeb8519f995189a28b72b7df42909fcc674dd904cc77",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/red-typed-observations.json": "856821476b8d3857633f7850cba3c0be1b4c707af51233957859745a932e89be",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/report.json": "8901d7f98c4825dfa8d68c85dfd1febc9e6a471b961613164487a61c159e5a31",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/review-packet.json": "e19ea3d873c87e6a95d49a788eacfb31008167f784827746727a22a48106eb43",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/source-review.json": "c68fa92ea59ed78b757644bc9ad4898981d4b953848161f5fb3c594d817003ab",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/typed-observations.json": "e6ff9ef5bf2baacd6ea7551a1a6003169da1d093d78d2c06e79fcc2233e9024c",
+    "implementation/warlock/qa/evidence/cancel-query-20261101/vm-journey.json": "0d4feade1806c7457eb0c6a7d87fc0558f7a247c1ce3d834a5db0453cf3290b7"
+  }
+}

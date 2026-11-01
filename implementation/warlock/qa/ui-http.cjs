@@ -671,4 +671,96 @@ async function httpPopupRetainedQueryOnFailure(){
   noFieldEnv.close();
 }
 
-(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();await pendingQueryHonestControls();await seededPendingQueryDom();await httpPopupRetainedQueryOnFailure();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();
+
+// Actual compiled HttpPopup through the existing controlled DOM/XHR harness.
+// Synthetic input/presentations and Node.focus markers are component evidence,
+// not browser activeElement, physical IME, producer receipt, or native evidence.
+async function cancellationPendingControls(){
+  const row=(id,domId,label)=>({id,domId,label,ariaLabel:label,detail:'',enabled:true});
+  const frame=(publication,query)=>({surfaceProtocol:2,publication,lease:'7',mode:'applications',status:'Authoritative results',bar:[],popup:[
+    row('control:search','cancel-search',query),row('control:close','cancel-close','Close'),
+    row('control:refresh','cancel-refresh','Refresh'),row('entry:org.example.Foot','cancel-entry','Foot'),
+    row('pin:org.example.Foot','cancel-pin','Pin')]});
+  const wire=(publication,query)=>({surfaceProtocol:2,kind:'surface-query',surface:'popup',publication,lease:'7',id:'control:search',query});
+  const field=env=>walk(env.container,n=>n.attributes?.['data-surface-field']==='control:search');
+  const button=(env,id)=>walk(env.container,n=>n.attributes?.['data-surface-control']===id);
+  const composing=env=>walk(env.container,n=>n.attributes?.['data-input-composing']!==undefined)?.attributes['data-input-composing'];
+  const status=env=>walk(env.container,n=>n.tagName==='P'&&n.attributes?.role==='status')?.textContent;
+  const event=(node,type,extra={})=>({type,target:node,currentTarget:node,stopPropagation(){},preventDefault(){},...extra});
+  const edit=async(env,value)=>{const node=field(env);need('cancel input listener exists',Boolean(node)&&typeof node.listeners.input==='function');node.value=value;node.listeners.input(event(node,'input',{isComposing:false}));await env.flush();};
+  const start=async(env,value)=>{const node=field(env);need('cancel start listener exists',Boolean(node)&&typeof node.listeners.compositionstart==='function');node.value=value;node.listeners.compositionstart(event(node,'compositionstart'));await env.flush();};
+  const preedit=async(env,value)=>{const node=field(env);node.value=value;node.listeners.input(event(node,'input',{isComposing:true}));await env.flush();};
+  const end=async(env,value)=>{const node=field(env);need('cancel end listener exists',Boolean(node)&&typeof node.listeners.compositionend==='function');node.value=value;node.listeners.compositionend(event(node,'compositionend'));await env.flush();};
+  const focusRetained=(env,node,label)=>check(label+' same focused test-double field',field(env)===node&&node.focused===true&&node.focusCount===1);
+  const checkActions=(env,label,composingNow,pending)=>{
+    for(const id of ['entry:org.example.Foot','pin:org.example.Foot','control:close','control:refresh']){
+      const node=button(env,id),blocked=composingNow||(pending&&(id.startsWith('entry:')||id.startsWith('pin:')));
+      check(label+' '+id+' disabled '+blocked,Boolean(node)&&Boolean(node.disabled)===blocked&&node.attributes['aria-disabled']===String(blocked)&&(blocked?node.listeners.click===undefined:typeof node.listeners.click==='function'),node?domWitness(node):null);
+    }
+  };
+  const posts=(env,expected,label)=>{
+    check(label+' exact FIFO wires',env.posts().length===expected.length&&env.posts().every((request,index)=>request.url==='/actions'&&equal(JSON.parse(request.body),expected[index])),env.posts().map(r=>r.body));
+  };
+  const open=async()=>{const env=harness(popupFile,'HttpPopup');await env.flush();await env.event(gateway('presentation',frame('1','')));const node=field(env);need('cancel initial search focusable',Boolean(node)&&typeof node.focus==='function');node.focus();return [env,node];};
+
+  // f/P1 then empty/P1; the first HTTP completion releases the queued empty.
+  // During composition cancel does not duplicate empty; an injected f/P2
+  // requires a fresh empty/P2 action only after the old empty POST completes.
+  {
+    const [env,node]=await open();await edit(env,'f');await edit(env,'');
+    need('cancel same one POST while f in flight',env.posts().length===1,env.posts().length);
+    posts(env,[wire('1','f')],'cancel same first');env.posts()[0].respond(204);await env.flush();
+    need('cancel same empty P1 starts in FIFO',env.posts().length===2,env.posts().length);
+    posts(env,[wire('1','f'),wire('1','')],'cancel same reverse');
+    check('cancel same prelude has painted pending empty',field(env)?.value===''&&status(env)==='Results may not match current input. Previous: Authoritative results');checkActions(env,'cancel same prelude',false,true);focusRetained(env,node,'cancel same prelude');
+    await start(env,'');await preedit(env,'x');
+    check('cancel same preedit value and marker',field(env)?.value==='x'&&composing(env)==='true');checkActions(env,'cancel same composing',true,true);focusRetained(env,node,'cancel same composing');
+    await end(env,'');
+    check('cancel same keeps latest empty and pending notice',field(env)?.value===''&&composing(env)==='false'&&status(env)==='Results may not match current input. Previous: Authoritative results');
+    posts(env,[wire('1','f'),wire('1','')],'cancel same no duplicate');checkActions(env,'cancel same pending',false,true);focusRetained(env,node,'cancel same pending');
+    await env.event(gateway('presentation',frame('2','f')));
+    posts(env,[wire('1','f'),wire('1','')],'cancel same rebase queued behind in-flight');
+    check('cancel same delayed f does not replace latest empty',field(env)?.value===''&&status(env)==='Results may not match current input. Previous: Authoritative results');
+    env.posts()[1].respond(204);await env.flush();
+    need('cancel same current-scope rebase dispatched',env.posts().length===3,env.posts().length);
+    posts(env,[wire('1','f'),wire('1',''),wire('2','')],'cancel same rebase');
+    for(const request of env.posts())headerCheck('cancel same',request);
+    await env.event(gateway('presentation',frame('3','')));env.posts()[2].respond(204);await env.flush();
+    check('cancel same matching projection restores current display',field(env)?.value===''&&status(env)==='Authoritative results'&&composing(env)==='false');
+    posts(env,[wire('1','f'),wire('1',''),wire('2','')],'cancel same settled');checkActions(env,'cancel same settled',false,false);focusRetained(env,node,'cancel same settled');env.close();
+  }
+  // Painted stale DOM may start composition at a although pending intent is b.
+  // The b/P1 POST remains in flight while the earlier a/P1 projection arrives.
+  {
+    const [env,node]=await open();await edit(env,'a');await edit(env,'b');
+    need('cancel lag first action only while queued',env.posts().length===1,env.posts().length);env.posts()[0].respond(204);await env.flush();
+    need('cancel lag b P1 is in flight',env.posts().length===2,env.posts().length);
+    posts(env,[wire('1','a'),wire('1','b')],'cancel lag setup');
+    check('cancel lag prelude has painted pending b',field(env)?.value==='b'&&status(env)==='Results may not match current input. Previous: Authoritative results');checkActions(env,'cancel lag prelude',false,true);focusRetained(env,node,'cancel lag prelude');
+    // Controlled old painted value: model already holds b; no input event is sent.
+    await start(env,'a');await preedit(env,'ax');checkActions(env,'cancel lag composing',true,true);focusRetained(env,node,'cancel lag composing');
+    await env.event(gateway('presentation',frame('2','a')));
+    check('cancel lag presentation leaves preedit visible',field(env)?.value==='ax'&&composing(env)==='true');
+    await end(env,'a');
+    check('cancel lag restores retained b not stale baseline a',field(env)?.value==='b'&&composing(env)==='false'&&status(env)==='Results may not match current input. Previous: Authoritative results');
+    posts(env,[wire('1','a'),wire('1','b')],'cancel lag rebase queued');checkActions(env,'cancel lag pending',false,true);focusRetained(env,node,'cancel lag pending');
+    env.posts()[1].respond(204);await env.flush();
+    need('cancel lag b P2 starts after old b completion',env.posts().length===3,env.posts().length);
+    posts(env,[wire('1','a'),wire('1','b'),wire('2','b')],'cancel lag retained intent');
+    for(const request of env.posts())headerCheck('cancel lag',request);
+    await env.event(gateway('presentation',frame('3','b')));env.posts()[2].respond(204);await env.flush();
+    check('cancel lag latest value visible after matching frame',field(env)?.value==='b'&&status(env)==='Authoritative results');
+    posts(env,[wire('1','a'),wire('1','b'),wire('2','b')],'cancel lag settled');checkActions(env,'cancel lag settled',false,false);focusRetained(env,node,'cancel lag settled');env.close();
+  }
+  // No prior intent: cancellation accepts the intervening current display and
+  // produces no query. The P2 presentation is a controlled injected input.
+  {
+    const [env,node]=await open();await start(env,'');await preedit(env,'x');
+    checkActions(env,'cancel clean composing',true,false);focusRetained(env,node,'cancel clean composing');
+    await env.event(gateway('presentation',frame('2','a')));await end(env,'');
+    check('cancel clean reveals current value without query',field(env)?.value==='a'&&composing(env)==='false'&&status(env)==='Authoritative results');
+    posts(env,[],'cancel clean');checkActions(env,'cancel clean settled',false,false);focusRetained(env,node,'cancel clean settled');env.close();
+  }
+}
+
+(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();await pendingQueryHonestControls();await seededPendingQueryDom();await httpPopupRetainedQueryOnFailure();await cancellationPendingControls();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();

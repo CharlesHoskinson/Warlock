@@ -1,0 +1,211 @@
+{
+  "schema": 1,
+  "kind": "independent-component-source-and-report-review",
+  "reviewer": "elm-tests",
+  "recordedAt": "2026-11-01T23:06:24.457115+00:00",
+  "disposition": "accepted-for-component-integration",
+  "requirement": "ELM-UI-005",
+  "wholeRequirementAccepted": false,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "blockers": [],
+  "scope": "Independent source and retained Root protected-report review. Reviewer did not execute compilers, tests, models, browser, VM, GUI or native probes. Root executed the retained campaigns. This is not a whole original EARS disposition.",
+  "baseGitRevision": "a30ad9e9fa669e7b5d8af2f8fd8d58bc19313f70",
+  "currentSourceHashes": {
+    "implementation/warlock/src/Popup.elm": "a9f188f9130aea7ab050abb02530cf8e633235c810dc991685e2065ff8a6bcae",
+    "implementation/warlock/src/HttpPopup.elm": "e814d56f212765154436c1ab01cc2657b669a6d5d68f5c6d2180ccb64c9eeeb3",
+    "implementation/warlock/qa/LocalFieldReplay.elm": "d70d23bcdb9f460f24cf3b176afc1584f3c96a978f270685dd1943ab88ec78e3",
+    "implementation/warlock/qa/typed-state.cjs": "eb348e9e13d15a3b0d02b0995e9c1fd591edea3ccf6707be446f056328f24e78",
+    "implementation/warlock/qa/local-field-publication.qnt": "3c102fe49d68bf8ca33afaa0a1fb774404ecb1577a692a45907d72f78cb0bdfc",
+    "implementation/warlock/qa/ui-http.cjs": "cd25171ab960023eeb0da0df25cbe29ef1cbc3a604ad59281c9cbec880f60c14"
+  },
+  "priorSourceReview": {
+    "path": ".warlock-contributor/engine-pid1-drafts/ui005-cancel-pending-independent-source-review-2240.json",
+    "sha256": "12ced1186fb5f941b8f62f8eadc3ec6ceabb3b99111e3e4f9bcfa65a4618601e",
+    "unchanged": true
+  },
+  "sourceFinding": "Popup.elm108-118 restores retained held.before through current Presentation.query, then ordinary sendQuery settlement/deduplication. It never substitutes stale DOM baseline or end-event wire. Field/lifetime/UInt64 guards, authority, transport and nonfield guards remain intact.",
+  "expectedEffects": {
+    "samePublicationUnresolvedCancel": "retain prior pending intent; no duplicate Dispatch",
+    "newerPublicationMismatchingPrior": "one newly scoped Dispatch of retained prior, subject to ordinary FIFO delivery",
+    "newerPublicationMatchingPrior": "settle without Dispatch",
+    "noPriorPendingCancel": "Idle and pending Nothing; zero effect; preserve lastQuery",
+    "invalidPriorWireFallback": "retain pending prior, Idle, no effect; no fabricated acknowledgment. Existing safe close/refresh availability remains as projected."
+  },
+  "qualificationSequence": [
+    {
+      "runPath": ".warlock-contributor/elm-cpu-1793572860268497217",
+      "reportSHA256": "fc1a3066b583c56712a48b65fed4217c4ad65d3d70dd11f20f029547805fc874",
+      "passed": true,
+      "commands": 27,
+      "nonzeroCommands": [],
+      "reportedInputCount": 125,
+      "typed-state.json": {
+        "sha256": "88832a241f2e38a37437609c06cfbdcb8a790a69ef6adc7b6f51478ccd8b82b9",
+        "checks": 118,
+        "failures": 0,
+        "passed": true
+      },
+      "ui-http.json": {
+        "sha256": "51fce33e5e967b48201736644a35c6913fd7ed6a2b6d7a1d65992add2fd94e2e",
+        "checks": 7177,
+        "failures": 0,
+        "passed": true
+      }
+    },
+    {
+      "runPath": ".warlock-contributor/elm-cpu-1793573007233772837",
+      "reportSHA256": "b1e0b389ea0ff80e6c618268c7258835a4937aab3aa5ca0e9d5378067eaf2cbe",
+      "passed": false,
+      "commands": 22,
+      "nonzeroCommands": [
+        "typed-state"
+      ],
+      "reportedInputCount": 120,
+      "typed-state.json": {
+        "sha256": "c6e3891f70d60ecd2e7ddb732156b035085370aef77dfc585d5b1d3a0a22234b",
+        "checks": 130,
+        "failures": 4,
+        "passed": false
+      },
+      "ui-http.json": {
+        "sha256": "51fce33e5e967b48201736644a35c6913fd7ed6a2b6d7a1d65992add2fd94e2e",
+        "checks": 7177,
+        "failures": 0,
+        "passed": true
+      }
+    },
+    {
+      "runPath": ".warlock-contributor/elm-cpu-1793573087547800894",
+      "reportSHA256": "ed0a27d3b35291c4ddf5d55a260838a232053faa8143a006c5cf48647d297cd2",
+      "passed": true,
+      "commands": 27,
+      "nonzeroCommands": [],
+      "reportedInputCount": 125,
+      "typed-state.json": {
+        "sha256": "de454a9592d92e5790388f4edab84ef0957886b0dfdd00ee525a4955c5cc30cb",
+        "checks": 130,
+        "failures": 0,
+        "passed": true
+      },
+      "ui-http.json": {
+        "sha256": "a563ddb8b316b04b9cbeeb5b6c4f555c0e27390a5bf41816af0c080ca5bdcfd3",
+        "checks": 7177,
+        "failures": 0,
+        "passed": true
+      }
+    },
+    {
+      "runPath": ".warlock-contributor/elm-cpu-1793573310617008258",
+      "reportSHA256": "8901d7f98c4825dfa8d68c85dfd1febc9e6a471b961613164487a61c159e5a31",
+      "passed": true,
+      "commands": 27,
+      "nonzeroCommands": [],
+      "reportedInputCount": 125,
+      "typed-state.json": {
+        "sha256": "99e821caa6d46a7b8e4ff80255b947b0411c03b6a16ea46da5a2a0aeb504bbff",
+        "checks": 130,
+        "failures": 0,
+        "passed": true
+      },
+      "ui-http.json": {
+        "sha256": "33ef0a295262c7feb0046a5a87c2bbf36ce400a62b3ed5233a3cac21235682b4",
+        "checks": 7293,
+        "failures": 0,
+        "passed": true
+      }
+    }
+  ],
+  "redWitnesses": [
+    {
+      "fixture": "LocalFieldReplay",
+      "reason": "check is not true: cancelAdvancedRestoresAndRebasesPriorIntent"
+    },
+    {
+      "fixture": "LocalFieldReplay",
+      "reason": "check is not true: cancelDifferentBaselineDispatchesRetainedIntent"
+    },
+    {
+      "fixture": "LocalFieldReplay",
+      "reason": "check is not true: cancelSameScopeLaterOldResultRebases"
+    },
+    {
+      "fixture": "LocalFieldReplay",
+      "reason": "check is not true: cancelSameScopeRetainsPendingWithoutReplay"
+    }
+  ],
+  "redGreenCausality": "Typed RED uses old Popup9761aa5d and new d70d23bc fixture/eb348e9e manifest; four named query-state/effect assertions fail. Source GREEN changes the production Popup to a9f188f9 without changing that fixture/manifest. Five report inputs absent after RED are later TEA/model stages not reached due typed-state failure; they are not claimed to have run in RED. Desired57-test spec was separately qualified first, intentionally before source correction.",
+  "finalHashVerification": {
+    "allReportedCurrentInputsMatched": 125,
+    "allReportedCompiledArtifactsMatched": 18,
+    "allCommandsExitZero": 27,
+    "typedControls": 130,
+    "localFieldControls": 43,
+    "httpDomControls": 7293,
+    "prior7177CheckObjectsPreservedExactly": true,
+    "newCancellationDomControls": 116,
+    "allNewChecksTrue": true,
+    "compiledHttpPopupSHA256": "beddd5cbdc1e47a2734201e5ba4819697603f89203edba7c5a1554030347baf5",
+    "compiledHttpPopupHtmlSHA256": "bcc0f9da9152531c9b81aca49f624145f46d0b46feafa3f3e07db8f2aa7c5c78",
+    "typedResultSHA256": "99e821caa6d46a7b8e4ff80255b947b0411c03b6a16ea46da5a2a0aeb504bbff",
+    "httpDomResultSHA256": "33ef0a295262c7feb0046a5a87c2bbf36ce400a62b3ed5233a3cac21235682b4"
+  },
+  "model": {
+    "path": "implementation/warlock/qa/local-field-publication.qnt",
+    "sha256": "3c102fe49d68bf8ca33afaa0a1fb774404ecb1577a692a45907d72f78cb0bdfc",
+    "directedNames": 57,
+    "uniqueNames": 57,
+    "allPrior51NamesPreserved": true,
+    "samples": 10000,
+    "maxSteps": 50,
+    "seed": 20261101,
+    "witnesses": {
+      "witnessDependent": 4221,
+      "witnessSafeWhilePending": 1916
+    },
+    "toolVersion": "0.33.0",
+    "directedLogSHA256": "46eb376ebce06e3ab33a00fad7b375f89fe5115753575b1c027025df5e4248c7",
+    "safetyLogSHA256": "b82997eeaf3e9801f6e9cabf306c5a05ef5710a4660306335e69f725ec427852",
+    "limits": "Finite abstract text/publication/lease domains and active valid field premise; bounded exploration, not exhaustive proof or physical IME evidence. priorText is distinct from DOM baseline; repeated composition-start mirrors current source, not a platform IME qualification."
+  },
+  "otherRetainedComponentCoverage": {
+    "completeModelHistories": 58,
+    "testedTransitions": 134,
+    "setupTransitions": 31,
+    "runsPerCase": 2,
+    "scope": "Existing exact-state/effect histories remain passing; this cancellation review does not reinterpret their historical whole-contract scope notes."
+  },
+  "domDeltaReview": {
+    "patchPath": ".warlock-contributor/engine-pid1-drafts/terra-vm-ui-http-cancel-2241.patch",
+    "patchSHA256": "da342fe736dfa1f02d04976323ef7dc516a5539123a105052224533e98736624",
+    "preimage": "da32ed550a2afeaa062367ab4cf366e985fe469bf43f223a0301b3da4725933a",
+    "postimage": "cd25171ab960023eeb0da0df25cbe29ef1cbc3a604ad59281c9cbec880f60c14",
+    "verdict": "clear",
+    "detail": "Three actual compiled HttpPopup histories use controlled DOM/XHR: same-scope f-to-empty reversal, stale painted a with retained pending b and newer publication, and no-prior cancellation. They flush before composition, assert painted pending preconditions, exact /actions FIFO wires/headers/no duplicate, disabled query-dependent controls and safe controls, matching settlement and retained test-double node/focus marker. HTTP204 only releases transport queue and is not a producer acknowledgment.",
+    "limits": "Controlled injected P2/P3 frames, synthetic composition/input and Node.focused/focusCount are not actual producer admission, browser activeElement/selection, physical IME, native focus, AT or latency evidence."
+  },
+  "authenticatedPeerReferences": {
+    "inboxPath": "/home/charl/.local/state/warlock-team/20261031-agentbus/continuation-inbox-2248.jsonl",
+    "inboxSHA256": "3092aa51222f95bfb1a11f7c45a27dda90450a4362182b7d940e4f7911a55131",
+    "messages": [
+      {
+        "id": "01M6CMM5HFA64V1Q8JJHJTCMFP",
+        "scope": "UX source review of exact da342 v2 prelude checks, no execution"
+      },
+      {
+        "id": "01M6CMP62BE5X4A9V5HFF7RE9B",
+        "scope": "q-http independent exact da342 review, controlled FIFO and explicit limits"
+      },
+      {
+        "id": "01M6CMPC5N2R9F33PY8WF9HXM4",
+        "scope": "author freeze da342 -> cd251, prior7177 retained, no worker execution"
+      }
+    ]
+  },
+  "liveObservationSeparate": {
+    "authority": "Root-reported live MVP observation, not independently executed/adjudicated by this reviewer",
+    "detail": "17 QMP inputs foot/footz/RefreshRoot and three images viewed; guest guard Assertion at27.877 seconds forced exit -9. This receipt does not call that normal completion or infer IME, catalog receipt, native or release acceptance."
+  },
+  "evidencePackaging": "Raw reports and full observations remain retained locally at their bound paths/hashes. A selected canonical file containing43LocalField and116newDOM checks must retain rawRun path/hash/total counts and must not be described as the full7293-check raw artifact.",
+  "remaining": "Whole original UI005 remains partial. Applicable original search-no-match/unavailable/race/removed/refused obligations, frozen ranking/current generation, native keyboard/focus/provider, actual physical IME, AT and release observations remain open. Source window effects are not qualified by these fixtures. Root-reported17/242 and41/417 counts unchanged; original deadlines, failed evidence and HOSTSTOP2 preserved."
+}

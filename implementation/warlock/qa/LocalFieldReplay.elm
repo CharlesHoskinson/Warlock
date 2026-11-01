@@ -98,6 +98,35 @@ result =
         preeditChanged=local "1" "7" "surface-preedit" "control:search" "c" preeditStarted
         (preeditAdvanced,preeditAdvancedEffects)=Popup.transition (Popup.Present (richFrame "2" "7" "c")) preeditChanged
         (preeditEnded,preeditEndEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-end" "control:search" "c")) preeditAdvanced
+        -- Cancellation must restore a pre-composition local intent without
+        -- duplicating an outstanding request in the same publication.
+        (cancelSameStart,cancelSameStartEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-start" "control:search" "")) reversionLatest
+        (cancelSamePreedit,cancelSamePreeditEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-preedit" "control:search" "x")) cancelSameStart
+        (cancelSameEnd,cancelSameEndEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-end" "control:search" "")) cancelSamePreedit
+        (cancelSameLater,cancelSameLaterEffects)=Popup.transition (Popup.Present (richFrame "2" "7" "f")) cancelSameEnd
+        (cancelSameSettled,cancelSameSettledEffects)=Popup.transition (Popup.Present (richFrame "3" "7" "")) cancelSameLater
+        -- The earlier a/P1 can advance the authority while b/P1 is pending.
+        (cancelAheadA,cancelAheadAEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-query" "control:search" "a")) richInitial
+        (cancelAheadB,cancelAheadBEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-query" "control:search" "b")) cancelAheadA
+        (cancelAheadStart,cancelAheadStartEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-start" "control:search" "b")) cancelAheadB
+        (cancelAheadPreedit,cancelAheadPreeditEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-preedit" "control:search" "bx")) cancelAheadStart
+        (cancelAheadFrame,cancelAheadFrameEffects)=Popup.transition (Popup.Present (richFrame "2" "7" "a")) cancelAheadPreedit
+        (cancelAheadEnd,cancelAheadEndEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-end" "control:search" "b")) cancelAheadFrame
+        (cancelAheadSettled,cancelAheadSettledEffects)=Popup.transition (Popup.Present (richFrame "3" "7" "b")) cancelAheadEnd
+        -- A same-lease stale DOM can start composition at a baseline that
+        -- differs from the retained b intent. Cancellation must send b,
+        -- not the composition-end value a, under the current publication.
+        (cancelDifferentStart,cancelDifferentStartEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-start" "control:search" "a")) cancelAheadB
+        (cancelDifferentPreedit,cancelDifferentPreeditEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-preedit" "control:search" "ax")) cancelDifferentStart
+        (cancelDifferentFrame,cancelDifferentFrameEffects)=Popup.transition (Popup.Present (richFrame "2" "7" "a")) cancelDifferentPreedit
+        (cancelDifferentEnd,cancelDifferentEndEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-end" "control:search" "a")) cancelDifferentFrame
+        (cancelDifferentSettled,cancelDifferentSettledEffects)=Popup.transition (Popup.Present (richFrame "3" "7" "b")) cancelDifferentEnd
+        -- With no prior local request, cancel reveals the current authority.
+        -- The new publication here is a directed external presentation.
+        (cancelCleanStart,cancelCleanStartEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-start" "control:search" "")) richInitial
+        (cancelCleanPreedit,cancelCleanPreeditEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-preedit" "control:search" "x")) cancelCleanStart
+        (cancelCleanFrame,cancelCleanFrameEffects)=Popup.transition (Popup.Present (richFrame "2" "7" "a")) cancelCleanPreedit
+        (cancelCleanEnd,cancelCleanEndEffects)=Popup.transition (Popup.LocalAction (event "1" "7" "surface-composition-end" "control:search" "")) cancelCleanFrame
         richPending=local "1" "7" "surface-query" "control:search" "foot" richInitial
         richComposing=richPending |> local "1" "7" "surface-composition-start" "control:search" "foot" |> local "1" "7" "surface-preedit" "control:search" "foot漢"
         decodedRich=SurfaceSnapshot.decode (richFrame "1" "7" "") |> Result.toMaybe
@@ -112,6 +141,18 @@ result =
                ,("preeditAdvanceFirstTwoEditsDispatched",List.length preeditFirstEffects==1 && hasQuery "1" "7" "c" preeditFirstEffects && List.length preeditSecondEffects==1 && hasQuery "1" "7" "b" preeditSecondEffects)
                ,("preeditAdvanceHoldsDraft",preeditAdvanced.composition/=Popup.Idle && preeditAdvanced.pendingQuery==Just "c" && List.length preeditAdvancedEffects==2 && hasNoDispatch preeditAdvancedEffects)
                ,("preeditEndMatchingAdvancedPublicationSettles",preeditEnded.composition==Popup.Idle && preeditEnded.pendingQuery==Nothing && List.isEmpty preeditEndEffects && (Presentation.current preeditEnded.presentation |> Maybe.andThen SurfaceSnapshot.queryValue)==Just "c")
+               ,("cancelSameScopeSetupAndPreedit",reversionLatest.pendingQuery==Just "" && reversionLatest.lastQuery==Just ("",counter "1",counter "7") && hasQuery "1" "7" "" reversionLatestEffects && cancelSameStart.composition/=Popup.Idle && cancelSamePreedit.composition/=Popup.Idle && cancelSamePreedit.pendingQuery==Just "x" && List.isEmpty cancelSameStartEffects && List.isEmpty cancelSamePreeditEffects)
+               ,("cancelSameScopeRetainsPendingWithoutReplay",cancelSameEnd.composition==Popup.Idle && cancelSameEnd.pendingQuery==Just "" && cancelSameEnd.lastQuery==Just ("",counter "1",counter "7") && List.isEmpty cancelSameEndEffects)
+               ,("cancelSameScopeLaterOldResultRebases",cancelSameLater.pendingQuery==Just "" && cancelSameLater.lastQuery==Just ("",counter "2",counter "7") && List.length cancelSameLaterEffects==3 && hasQuery "2" "7" "" cancelSameLaterEffects)
+               ,("cancelSameScopeLatestProjectionSettles",cancelSameSettled.pendingQuery==Nothing && (Presentation.current cancelSameSettled.presentation |> Maybe.andThen SurfaceSnapshot.queryValue)==Just "" && List.length cancelSameSettledEffects==2 && hasNoDispatch cancelSameSettledEffects)
+               ,("cancelAdvancedSetupHasTwoExactRequests",List.length cancelAheadAEffects==1 && hasQuery "1" "7" "a" cancelAheadAEffects && List.length cancelAheadBEffects==1 && hasQuery "1" "7" "b" cancelAheadBEffects && List.isEmpty cancelAheadStartEffects && List.isEmpty cancelAheadPreeditEffects)
+               ,("cancelAdvancedPresentationHoldsPreedit",cancelAheadFrame.composition/=Popup.Idle && cancelAheadFrame.pendingQuery==Just "bx" && List.length cancelAheadFrameEffects==2 && hasNoDispatch cancelAheadFrameEffects)
+               ,("cancelAdvancedRestoresAndRebasesPriorIntent",cancelAheadEnd.composition==Popup.Idle && cancelAheadEnd.pendingQuery==Just "b" && cancelAheadEnd.lastQuery==Just ("b",counter "2",counter "7") && List.length cancelAheadEndEffects==1 && hasQuery "2" "7" "b" cancelAheadEndEffects)
+               ,("cancelAdvancedMatchingProjectionSettles",cancelAheadSettled.pendingQuery==Nothing && (Presentation.current cancelAheadSettled.presentation |> Maybe.andThen SurfaceSnapshot.queryValue)==Just "b" && List.length cancelAheadSettledEffects==2 && hasNoDispatch cancelAheadSettledEffects)
+               ,("cancelDifferentBaselineSetupHoldsPriorIntent",cancelAheadB.pendingQuery==Just "b" && cancelDifferentStart.composition/=Popup.Idle && cancelDifferentPreedit.pendingQuery==Just "ax" && List.isEmpty cancelDifferentStartEffects && List.isEmpty cancelDifferentPreeditEffects && cancelDifferentFrame.composition/=Popup.Idle && List.length cancelDifferentFrameEffects==2 && hasNoDispatch cancelDifferentFrameEffects)
+               ,("cancelDifferentBaselineDispatchesRetainedIntent",cancelDifferentEnd.composition==Popup.Idle && cancelDifferentEnd.pendingQuery==Just "b" && cancelDifferentEnd.lastQuery==Just ("b",counter "2",counter "7") && List.length cancelDifferentEndEffects==1 && hasQuery "2" "7" "b" cancelDifferentEndEffects)
+               ,("cancelDifferentBaselineMatchingProjectionSettles",cancelDifferentSettled.pendingQuery==Nothing && (Presentation.current cancelDifferentSettled.presentation |> Maybe.andThen SurfaceSnapshot.queryValue)==Just "b" && List.length cancelDifferentSettledEffects==2 && hasNoDispatch cancelDifferentSettledEffects)
+               ,("cancelWithoutPriorPendingRevealsNewAuthority",List.isEmpty cancelCleanStartEffects && List.isEmpty cancelCleanPreeditEffects && cancelCleanFrame.composition/=Popup.Idle && List.length cancelCleanFrameEffects==2 && hasNoDispatch cancelCleanFrameEffects && cancelCleanEnd.composition==Popup.Idle && cancelCleanEnd.pendingQuery==Nothing && cancelCleanEnd.lastQuery==Nothing && (Presentation.current cancelCleanEnd.presentation |> Maybe.andThen SurfaceSnapshot.queryValue)==Just "a" && List.isEmpty cancelCleanEndEffects)
                ,("localPaintGapPreservesDraft",edited.pendingQuery==Just "edi" && edited.lastQuery==Just ("edi",counter "2",counter "1"))
                ,("localFifoKeepsLatestValue",continued.pendingQuery==Just "editor")
                ,("refreshPreservesUnacknowledgedDraft",refreshed.pendingQuery==Just "editor" && refreshed.lastQuery==Just ("editor",counter "3",counter "1"))

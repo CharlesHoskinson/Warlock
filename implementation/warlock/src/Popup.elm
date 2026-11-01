@@ -106,7 +106,16 @@ transition message model =
                                 Idle -> (model,[])
                                 Preediting held ->
                                     if query==held.baseline then
-                                        ({model | composition=Idle,pendingQuery=held.before |> Maybe.andThen (\prior -> if (Presentation.current model.presentation |> Maybe.andThen SurfaceRenderer.queryValue)==Just prior then Nothing else Just prior)},[])
+                                        case held.before of
+                                            Nothing -> ({model | composition=Idle,pendingQuery=Nothing},[])
+                                            Just prior ->
+                                                -- The DOM baseline can differ from the retained
+                                                -- intent. Rebuild its current scoped wire and
+                                                -- reuse the ordinary settlement/dedupe rule.
+                                                let restored = {model | composition=Idle,pendingQuery=Just prior}
+                                                in Presentation.query prior restored.presentation
+                                                    |> Maybe.map (\priorWire -> sendQuery prior priorWire restored)
+                                                    |> Maybe.withDefault (restored,[])
                                     else sendQuery query wire {model | composition=Idle}
                         else if kind=="surface-preedit" || isComposing model then
                             ({model | composition=if isComposing model then model.composition else Preediting before,pendingQuery=Just query},[])
