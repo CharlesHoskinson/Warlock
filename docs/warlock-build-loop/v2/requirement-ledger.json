@@ -385,8 +385,8 @@
       "capability": "elm-native-bridge",
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "partial",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "architecture-007",
@@ -410,6 +410,45 @@
               "acceptanceRecord": {
                 "path": "docs/warlock-build-loop/v2/receipt-status-acceptance-20261030.json",
                 "sha256": "b4b8a66fe4e04815e92220bf37e8e4736af6ed8a8a2aed87fb81c2e87f42b0b7"
+              }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-state-20261031/report.json",
+              "sha256": "62d9962ac69aa81b8f4669f192ee3a55e54eac9e6041d2e227306b105f9c3770",
+              "scope": "Whole original ARC007 on all five exact original scenarios through current actual Elm desktop/menu/receipt routes, using the original expressly permitted bridge evidence. This does not transfer to native cancellation/retirement or the Haskell protocol port.",
+              "sourceRevision": "01ad95b87c7550c8179fd13e907625a5a9b57cb4",
+              "sourceHashes": {
+                "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+                "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+                "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+                "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+                "implementation/warlock/qa/receipt-lifecycle.qnt": "b9fe529d8832552f155cbec1174cc95d0aa5d94138ba86a6ae109cbc32f20cc0",
+                "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+                "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+                "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+                "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+                "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+                "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+                "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+                "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+                "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+                "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+                "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+                "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+                "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+              },
+              "independentReview": {
+                "name": "reviewer",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "docs/warlock-build-loop/v2/receipt-state-review-20261031.json",
+                  "sha256": "b689d50453e3da515dfdd013415dfb8a94d8fa3053ace34f464c97b49db1181e"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json",
+                "sha256": "a0316e165a64d3c4eb1bf2fe110b74a129d230c5d8fa1262bd72d07f2c1b184e"
               }
             }
           ],
@@ -438,6 +477,45 @@
                 "path": "docs/warlock-build-loop/v2/receipt-status-acceptance-20261030.json",
                 "sha256": "b4b8a66fe4e04815e92220bf37e8e4736af6ed8a8a2aed87fb81c2e87f42b0b7"
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-state-20261031/report.json",
+              "sha256": "62d9962ac69aa81b8f4669f192ee3a55e54eac9e6041d2e227306b105f9c3770",
+              "scope": "Whole original ARC007 on all five exact original scenarios through current actual Elm desktop/menu/receipt routes, using the original expressly permitted bridge evidence. This does not transfer to native cancellation/retirement or the Haskell protocol port.",
+              "sourceRevision": "01ad95b87c7550c8179fd13e907625a5a9b57cb4",
+              "sourceHashes": {
+                "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+                "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+                "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+                "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+                "implementation/warlock/qa/receipt-lifecycle.qnt": "b9fe529d8832552f155cbec1174cc95d0aa5d94138ba86a6ae109cbc32f20cc0",
+                "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+                "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+                "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+                "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+                "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+                "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+                "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+                "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+                "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+                "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+                "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+                "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+                "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+              },
+              "independentReview": {
+                "name": "reviewer",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "docs/warlock-build-loop/v2/receipt-state-review-20261031.json",
+                  "sha256": "b689d50453e3da515dfdd013415dfb8a94d8fa3053ace34f464c97b49db1181e"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json",
+                "sha256": "a0316e165a64d3c4eb1bf2fe110b74a129d230c5d8fa1262bd72d07f2c1b184e"
+              }
             }
           ],
           "missingObservation": ""
@@ -464,6 +542,45 @@
               "acceptanceRecord": {
                 "path": "docs/warlock-build-loop/v2/receipt-committed-acceptance-20261030.json",
                 "sha256": "569ac090e13e2aa42ec1465eea0b695a764f9450b62c716fba7d0fedd9793ad2"
+              }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-state-20261031/report.json",
+              "sha256": "62d9962ac69aa81b8f4669f192ee3a55e54eac9e6041d2e227306b105f9c3770",
+              "scope": "Whole original ARC007 on all five exact original scenarios through current actual Elm desktop/menu/receipt routes, using the original expressly permitted bridge evidence. This does not transfer to native cancellation/retirement or the Haskell protocol port.",
+              "sourceRevision": "01ad95b87c7550c8179fd13e907625a5a9b57cb4",
+              "sourceHashes": {
+                "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+                "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+                "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+                "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+                "implementation/warlock/qa/receipt-lifecycle.qnt": "b9fe529d8832552f155cbec1174cc95d0aa5d94138ba86a6ae109cbc32f20cc0",
+                "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+                "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+                "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+                "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+                "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+                "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+                "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+                "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+                "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+                "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+                "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+                "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+                "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+              },
+              "independentReview": {
+                "name": "reviewer",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "docs/warlock-build-loop/v2/receipt-state-review-20261031.json",
+                  "sha256": "b689d50453e3da515dfdd013415dfb8a94d8fa3053ace34f464c97b49db1181e"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json",
+                "sha256": "a0316e165a64d3c4eb1bf2fe110b74a129d230c5d8fa1262bd72d07f2c1b184e"
               }
             }
           ],
@@ -492,6 +609,45 @@
                 "path": "docs/warlock-build-loop/v2/receipt-status-acceptance-20261030.json",
                 "sha256": "b4b8a66fe4e04815e92220bf37e8e4736af6ed8a8a2aed87fb81c2e87f42b0b7"
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-state-20261031/report.json",
+              "sha256": "62d9962ac69aa81b8f4669f192ee3a55e54eac9e6041d2e227306b105f9c3770",
+              "scope": "Whole original ARC007 on all five exact original scenarios through current actual Elm desktop/menu/receipt routes, using the original expressly permitted bridge evidence. This does not transfer to native cancellation/retirement or the Haskell protocol port.",
+              "sourceRevision": "01ad95b87c7550c8179fd13e907625a5a9b57cb4",
+              "sourceHashes": {
+                "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+                "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+                "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+                "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+                "implementation/warlock/qa/receipt-lifecycle.qnt": "b9fe529d8832552f155cbec1174cc95d0aa5d94138ba86a6ae109cbc32f20cc0",
+                "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+                "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+                "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+                "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+                "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+                "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+                "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+                "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+                "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+                "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+                "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+                "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+                "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+              },
+              "independentReview": {
+                "name": "reviewer",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "docs/warlock-build-loop/v2/receipt-state-review-20261031.json",
+                  "sha256": "b689d50453e3da515dfdd013415dfb8a94d8fa3053ace34f464c97b49db1181e"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json",
+                "sha256": "a0316e165a64d3c4eb1bf2fe110b74a129d230c5d8fa1262bd72d07f2c1b184e"
+              }
             }
           ],
           "missingObservation": ""
@@ -499,11 +655,85 @@
         {
           "name": "receipt-cancelled",
           "oracle": "the correlated request has exactly state Cancelled and no other request changes",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-state-20261031/report.json",
+              "sha256": "62d9962ac69aa81b8f4669f192ee3a55e54eac9e6041d2e227306b105f9c3770",
+              "scope": "Whole original ARC007 on all five exact original scenarios through current actual Elm desktop/menu/receipt routes, using the original expressly permitted bridge evidence. This does not transfer to native cancellation/retirement or the Haskell protocol port.",
+              "sourceRevision": "01ad95b87c7550c8179fd13e907625a5a9b57cb4",
+              "sourceHashes": {
+                "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+                "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+                "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+                "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+                "implementation/warlock/qa/receipt-lifecycle.qnt": "b9fe529d8832552f155cbec1174cc95d0aa5d94138ba86a6ae109cbc32f20cc0",
+                "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+                "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+                "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+                "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+                "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+                "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+                "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+                "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+                "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+                "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+                "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+                "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+                "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+              },
+              "independentReview": {
+                "name": "reviewer",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "docs/warlock-build-loop/v2/receipt-state-review-20261031.json",
+                  "sha256": "b689d50453e3da515dfdd013415dfb8a94d8fa3053ace34f464c97b49db1181e"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json",
+                "sha256": "a0316e165a64d3c4eb1bf2fe110b74a129d230c5d8fa1262bd72d07f2c1b184e"
+              }
+            }
+          ],
+          "missingObservation": ""
         }
-      ]
+      ],
+      "acceptanceHistory": [
+        {
+          "recordedUTC": "2026-10-31T23:58:16.047484+00:00",
+          "previousStatus": "partial",
+          "previousRequirementAccepted": false,
+          "note": "Prior evidence remains in every scenario; fresh complete current-source proof closes all five originals."
+        }
+      ],
+      "sourceRevision": "01ad95b87c7550c8179fd13e907625a5a9b57cb4",
+      "acceptanceRecord": {
+        "path": "docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json",
+        "sha256": "a0316e165a64d3c4eb1bf2fe110b74a129d230c5d8fa1262bd72d07f2c1b184e"
+      },
+      "acceptanceScope": "Whole original ARC007 on all five exact original scenarios through current actual Elm desktop/menu/receipt routes, using the original expressly permitted bridge evidence. This does not transfer to native cancellation/retirement or the Haskell protocol port.",
+      "sourceHashes": {
+        "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+        "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+        "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+        "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+        "implementation/warlock/qa/receipt-lifecycle.qnt": "b9fe529d8832552f155cbec1174cc95d0aa5d94138ba86a6ae109cbc32f20cc0",
+        "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+        "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+        "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+        "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+        "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+        "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+        "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+        "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+        "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+        "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+        "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+        "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+        "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+      }
     },
     {
       "id": "ELM-ARC-008",

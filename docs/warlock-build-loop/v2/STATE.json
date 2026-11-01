@@ -1,31 +1,52 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-10-31T23:15:45.686328+00:00",
+  "updatedUTC": "2026-10-31T23:58:16.047484+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "registry-admission-ownership",
+    "id": "receipt-cancelled-correlation",
     "requirements": [
-      "ELM-REV-005"
+      "ELM-ARC-007"
     ],
     "scenarios": [
-      "requirement-ownership"
+      "architecture-007",
+      "receipt-pending",
+      "receipt-committed",
+      "receipt-refused",
+      "receipt-cancelled"
     ],
     "paths": [
-      "implementation/warlock/qa/check-registry-admission.py"
+      "implementation/warlock/src/NativeOutcome.elm",
+      "implementation/warlock/src/ReceiptRouter.elm",
+      "implementation/warlock/qa/ReceiptStateReplay.elm",
+      "implementation/warlock/qa/receipt-state.cjs",
+      "implementation/warlock/qa/receipt-lifecycle.qnt",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/TaskbarShell.elm",
+      "implementation/warlock/src/Menu.elm",
+      "implementation/warlock/src/MenuBridge.elm",
+      "implementation/warlock/src/Binding.elm",
+      "implementation/warlock/src/UInt64.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/NativeProvider.elm",
+      "implementation/warlock/src/ActionProjection.elm",
+      "implementation/warlock/src/GeometryProjection.elm"
     ],
-    "before": "REV005 is unadjudicated. Actual contributor admission pins registry bytes but has no explicit live task/traceability mapping check; missing-mapping admission must be tested with complete positive controls before any fix.",
-    "after": "Original registry/task/traceability bijection and independent nonempty role assignments are enforced before participant admission writes; unchanged original REV005 closes only after direct positive/negative transaction evidence and independent review. This is development workflow behavior, not a GUI feature.",
+    "before": "The live Elm effect-outcome gates reject Cancelled despite the receipt model supporting it. Haskell protocol preparation is separate and does not supply native effect proof.",
+    "after": "The actual desktop routes a correctly correlated Cancelled receipt to its request, preserves other requests, and retains five distinct states including Unknown after unproven disconnect. Whole ARC007 closes only on all original bridge fixtures and independent source-bound review; native acceptance stays open.",
     "verification": [
-      "Root protected actual contributor start in isolated Git fixtures with exact frozen inputs, independent242/417 and task/trace mapping cross-check, missing/duplicate/foreign/mismatch cases, no participant/directory mutation on refusal, meaningful seeded variants and retained RED; full immutable checker+fixture+registry source tuple and independent original EARS verdict."
+      "Root protected actual desktop source route, all five original ARC007 scenarios with independent matching bridge receipts; full-width authority, two-request isolation, changed binding/intent/protocol rejection, duplicate/late/drop/recovery no replay, meaningful seeded sequence properties and matching receipt lifecycle model. Compile actual Elm entries. Preserve RED and native obligations."
     ],
     "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/registry-admission.json",
-    "currentOutcome": "Whole original REV005 and requirement-ownership accepted on20df98fefb509ca935d34dc044d0e6664d17a45e; administrative gate repair."
+    "participantRecord": ".warlock-contributor/receipt-state-integration.json",
+    "outcome": "Whole original ARC007 accepted on current Elm bridge source; real Cancelled gate fix, no native/port/release transfer."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2492,6 +2513,26 @@
       "owner": "root-launcher-refused",
       "participantRecord": ".warlock-contributor/launcher-refused-painted-feedback.json",
       "outcome": "COMPLETE original launcher-refused and wholeUX029 accepted independently on observedtuple;26nativechecks/actualpaint/no duplicate/no recipient plusunchanged10compiledreplay. Commit6069df416 containsledger/evidence; prioracceptedscenario unchanged. Contributor summary records externalverdict without accepted-claim scaffold; ledger remains acceptance authority."
+    },
+    {
+      "id": "registry-admission-ownership",
+      "requirements": [
+        "ELM-REV-005"
+      ],
+      "scenarios": [
+        "requirement-ownership"
+      ],
+      "paths": [
+        "implementation/warlock/qa/check-registry-admission.py"
+      ],
+      "before": "REV005 is unadjudicated. Actual contributor admission pins registry bytes but has no explicit live task/traceability mapping check; missing-mapping admission must be tested with complete positive controls before any fix.",
+      "after": "Original registry/task/traceability bijection and independent nonempty role assignments are enforced before participant admission writes; unchanged original REV005 closes only after direct positive/negative transaction evidence and independent review. This is development workflow behavior, not a GUI feature.",
+      "verification": [
+        "Root protected actual contributor start in isolated Git fixtures with exact frozen inputs, independent242/417 and task/trace mapping cross-check, missing/duplicate/foreign/mismatch cases, no participant/directory mutation on refusal, meaningful seeded variants and retained RED; full immutable checker+fixture+registry source tuple and independent original EARS verdict."
+      ],
+      "owner": "root-agentbus",
+      "participantRecord": ".warlock-contributor/registry-admission.json",
+      "currentOutcome": "Whole original REV005 and requirement-ownership accepted on20df98fefb509ca935d34dc044d0e6664d17a45e; administrative gate repair."
     }
   ],
   "lastCompletedBoundedSlice": {
@@ -3192,15 +3233,15 @@
       "formal": "Private late-cancel model passed typechecks/init, 34 positively selected named tests and 1000x40 safety sampling with seed 20261030",
       "limits": "No authenticated native issuer, real certificate/retirement, filesystem durability, full implementation correspondence or original/native acceptance inferred"
     },
-    "independentNextAction": "Implement and qualify concrete Haskell durable custody IO over the corrected pure owner; no replay or native ACK authority from stored model metadata.",
+    "independentNextAction": "Implement owned persistent authenticated Haskell session delivery and an explicit reviewed bridge to existing Elm policy; use current pinned package controls, preserve HOSTSTOP2 and empty native operations until genuine qualification.",
     "currentHostReconciliation": {
-      "atUTC": "2026-10-31T22:10:20.859751+00:00",
+      "atUTC": "2026-10-31T23:58:16.047484+00:00",
       "host": "WSL /home/charl/code/Warlock",
-      "mode": "scoped-existing-Elm-implementation",
+      "mode": "scoped-existing-Elm-receipt-and-Haskell-package-development",
       "independentReadiness": "docs/warlock-build-loop/v2/readiness-review-20261031.json",
-      "finalImplementationScope": "Existing Elm Applications feedback projection only; not general native/Haskell integration readiness",
+      "finalImplementationScope": "Existing Elm receipt correlation verified on original bridge oracle; current Haskell package source/build/test development qualified. Genuine native effects, persistent GUI composition and original native acceptance remain gated.",
       "nativeOperations": "empty until genuine issuer/admission/effect/certificate qualification",
-      "haskellToolchainReady": false,
+      "haskellToolchainReady": true,
       "nativeRuntimeReady": false,
       "originalMuseRuntimePresent": false,
       "originalGraphAndExternalWikiPresent": false,
@@ -3208,9 +3249,11 @@
       "protectedCpuEquivalent": "tools/qa_cpu.py",
       "preparationBuildReport": ".warlock-contributor/elm-cpu-1793484391252381177/report.json",
       "sourceWipLimit": 1,
-      "nativeWipLimit": 1
+      "nativeWipLimit": 1,
+      "haskellReadiness": "docs/warlock-build-loop/v2/haskell-toolchain-readiness-20261031.json",
+      "latestIndependentReview": "docs/warlock-build-loop/v2/receipt-state-review-20261031.json"
     },
-    "finalImplementationAuthorizationScope": "Existing Elm view slice accepted by independent readiness review only; general Haskell/native product integration still in preparation."
+    "finalImplementationAuthorizationScope": "Existing Elm receipt correlation verified on original bridge oracle; current Haskell package source/build/test development qualified. Genuine native effects, persistent GUI composition and original native acceptance remain gated."
   },
   "agentBusCurrentTeam": {
     "run": "warlock-20261031-setup",
@@ -3218,39 +3261,47 @@
     "rootCoordinator": "lead",
     "roles": {
       "lead": "integration and serialized protected checks",
-      "reviewer": "independent readiness and source review",
-      "elm-impl": "contributor admission checker source",
-      "elm-tests": "actual isolated admission regression",
+      "reviewer": "independent original acceptance and current Haskell package readiness",
+      "elm-impl": "live Elm Cancelled decoder/router fix",
+      "elm-tests": "independent actual desktop correlation regression",
       "terra-browser": "registry/task/trace format audit",
       "sol-docs": "admission reference",
       "terra-contracts": "shared plugin fixture compatibility and test source audit",
       "haiku-originals": "literal original administrative oracle",
       "muse": "bounded EARS continuity observation",
-      "terra-artifacts": "fixed runner and artifact closure"
+      "terra-artifacts": "offline Haskell builder/wrapper/dependency preparation"
     },
-    "externalProcessReceipts": ".warlock-contributor/rev005-external-launch-receipts.json",
+    "externalProcessReceipts": ".warlock-contributor/haskell-external-launch-receipts.json",
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-REV-005 requirement-ownership"
+    "currentSlice": "ELM-ARC-007 five receipt scenarios; Haskell package readiness support",
+    "currentProcessObservation": "All assigned source/audit jobs and protected checks reached terminal results; root continues the active host goal. No worker count is inferred from identities."
   },
   "currentGoalTelemetry": {
-    "observedUTC": "2026-10-31T22:33:43Z",
+    "observedUTC": "2026-10-31T23:58:16.047484+00:00",
     "status": "active",
-    "recordedTokensUsed": 1198418,
-    "elapsedSeconds": 1858,
+    "recordedTokensUsed": 3210609,
+    "elapsedSeconds": 6722,
     "remainingTokenBudget": null,
     "cost": "unavailable",
-    "scope": "Current host goal telemetry; not a daily usage figure or feature count"
+    "scope": "Current host goal telemetry sampled during this batch, not a daily usage figure or feature count"
   },
   "currentOriginalClosure": {
-    "requirement": "ELM-REV-005",
-    "scenario": "requirement-ownership",
+    "requirement": "ELM-ARC-007",
+    "scenarios": [
+      "architecture-007",
+      "receipt-pending",
+      "receipt-committed",
+      "receipt-refused",
+      "receipt-cancelled"
+    ],
     "accepted": true,
-    "acceptance": "docs/warlock-build-loop/v2/registry-admission-acceptance-20261031.json",
-    "administrative": true,
+    "acceptance": "docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json",
+    "administrative": false,
     "nativeExecution": false,
+    "haskellPortAcceptance": false,
     "releaseAcceptance": false
   },
-  "nextConcreteAction": "Requalify pinned GHC9.6.7/Cabal capability on this host and continue actual Haskell backend receipt/cancellation integration against an original EARS, preserving HOSTSTOP2 and native gates."
+  "nextConcreteAction": "Implement owned persistent authenticated Haskell session delivery and an explicit reviewed bridge to existing Elm policy; use current pinned package controls, preserve HOSTSTOP2 and empty native operations until genuine qualification."
 }

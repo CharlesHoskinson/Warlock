@@ -148,7 +148,7 @@ flowchart TB
     g_hyprland["Hyprland on Omarchy<br/><small>Aquamarine, XWayland</small>"]
   end
   subgraph L_library["Haskell packages (standalone libraries)"]
-    g_haskell["elf-observation, held-document,<br/>process-custody, protocol, runtime<br/><small>Haskell</small>"]
+    g_haskell["elf-observation, held-document,<br/>process-custody, protocol, runtime,<br/>native-authority<br/><small>Haskell</small>"]
   end
   subgraph L_external["Applications and desktop services"]
     g_services["Applications and<br/>desktop services"]
@@ -205,7 +205,7 @@ Main coordinates desktop interaction, Bar renders the taskbar for an output, and
 
 Today's desktop build runs on the C/C++ host and the Python adapter shown above. Haskell is where Warlock's backend goes next: Elm owns everything you see and touch, and Haskell takes the parts that touch the system, namely supervising processes, preparing the interface's verified HTML, checking the dependencies of the binaries Warlock ships, and speaking a checked protocol with authenticated peers. Strong types, explicit effects and pure functions make those boundaries precise and testable.
 
-Five packages in `implementation/warlock/haskell` already do those jobs as libraries, and the roadmap connects them into the persistent Haskell runtime the desktop runs on.
+Six packages in `implementation/warlock/haskell` provide the current library components, and the roadmap connects them into the persistent Haskell runtime the desktop runs on.
 
 - `elf-observation` parses captured GNU `readelf` output and resolves declared dependency graphs.
 - `held-document` reads identity-checked file snapshots and prepares HTML with verified content and script and style hashes.
@@ -251,10 +251,13 @@ Original ARC005 authority-tuple serialization is [accepted on its permitted brid
 
 The contributor checker now [blocks incomplete requirement mappings before admission](docs/warlock/reference/requirement-admission.md). Original REV005 is accepted on actual positive/negative admission evidence; this is administrative verification.
 
-The standalone Haskell packages use GHC 9.6.7 and installed dependencies. Follow the build and check instructions for [elf-observation](implementation/warlock/haskell/elf-observation/README.md), [held-document](implementation/warlock/haskell/held-document/README.md), and [process-custody](implementation/warlock/haskell/process-custody/README.md).
+The current private GHC 9.6.7/Cabal 3.12.1.0 SDK now passes the offline production build and all 24 controlled Haskell suites (36 fixture invocations). [The source-bound preparation record](docs/warlock-build-loop/v2/haskell-toolchain-readiness-20261031.json) retains dependency revisions, plans and the initial resolver failure. The runtime remains a one-frame bootstrap; persistent desktop/native integration and original native acceptance remain open. Historical package instructions remain available for [elf-observation](implementation/warlock/haskell/elf-observation/README.md), [held-document](implementation/warlock/haskell/held-document/README.md), and [process-custody](implementation/warlock/haskell/process-custody/README.md).
 
 Run the checks for the components you change using their instructions and the [verification guide](docs/warlock/how-to/verify-selected-change.md). See the [contribution guide](CONTRIBUTING.md) for the workflow.
 
 ## License
 
 Warlock is licensed under the [Apache License 2.0](LICENSE).
+
+
+Original ARC007 is now [accepted on all five receipt scenarios](docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json). A valid correlated `Cancelled` outcome now reaches the existing cancellation state instead of remaining Pending; only its matching local reservations retire. The actual desktop-route regression passes 2,451 assertions with80 matching bridge receipts. [The receipt reference](docs/warlock/reference/receipt-states.md) separates this verified behavior from native cancellation, the Haskell protocol port and release obligations.

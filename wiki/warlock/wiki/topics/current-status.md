@@ -5,8 +5,8 @@ updated: 2026-10-31
 tags: [warlock, architecture, evidence]
 category: topic
 volatility: hot
-sources: [raw/notes/2026-10-29-shortcut-draft-production-baseline.md, raw/notes/2026-10-29-knowledge-space-and-delivery-observation.md]
-summary: "Whole ARC004 is accepted on bounded bridge evidence; architecture and native first-use work remain open."
+sources: [raw/notes/2026-10-29-shortcut-draft-production-baseline.md, raw/notes/2026-10-29-knowledge-space-and-delivery-observation.md, raw/notes/2026-10-31-receipt-states.md]
+summary: "ARC007 closes on current Elm bridge evidence; Haskell package checks are restored, while persistent native desktop and release work remain open."
 ---
 
 # Current status
@@ -41,8 +41,13 @@ The [current canonical draft evidence](../../../../implementation/warlock/qa/evi
 
 The full goal is active with authenticated AgentBus coordination. Existing Elm Applications feedback is now implemented to retain current action states and older recovery alongside the search query/guidance. Pure component qualification passed, but direct screenshot review found a narrow-bar text clipping defect missed by container geometry checks; the renderer and prefix regression were corrected and final201 browser checks plus direct screenshots confirm the prefix is visible. Consult [current slice evidence](../../../../docs/warlock-build-loop/v2/applications-window-feedback-20261031.json) and [independent review](../../../../docs/warlock-build-loop/v2/applications-feedback-review-20261031.json) for the current source-bound verdict. Original UI007 remains partial, not closed. Historical acceptances above retain their own source tuples and do not transfer to the replacement native backend.
 
-This WSL host has no original Muse/Graphify/external wiki runtime, GHC/Cabal toolchain or DRM render node. The versioned living wiki is maintained here; unavailable external update/eval/lint commands are recorded rather than reported as passing. Current native/Haskell runtime readiness and original native/AT/IME/resource/release acceptance remain unestablished. The old two-probe host stop remains in force; no renamed retry or main-session change was performed.
+This WSL host has no original Muse/Graphify/external wiki runtime or DRM render node. The private pinned GHC/Cabal toolchain and current controlled package checks were restored as recorded below. The versioned living wiki is maintained here; unavailable external update/eval/lint commands are recorded rather than reported as passing. Current native/Haskell runtime readiness and original native/AT/IME/resource/release acceptance remain unestablished. The old two-probe host stop remains in force; no renamed retry or main-session change was performed.
 
 Whole original ARC005 / architecture-005 is now accepted on source `d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4` using its literal native-or-bridge verification. The [acceptance](../../../../docs/warlock-build-loop/v2/authority-tuple-acceptance-20261031.json) retains all7field mappings, matching bridge receipts, source/artifact hashes and independent disposition. Native execution, the unintegrated Haskell peer port, UI007 native/keyboard/AT and release remain separate.
 
 Whole original REV005 / requirement-ownership is accepted on source `20df98fefb509ca935d34dc044d0e6664d17a45e`: actual admission now blocks missing or inconsistent registry/task/trace mappings before participant writes. [The canonical verdict](../../../../docs/warlock-build-loop/v2/registry-admission-acceptance-20261031.json) is administrative. Remaining Haskell toolchain/runtime and original GUI/native/AT/release obligations are not closed by it.
+
+
+Whole original ARC007 and all five scenarios are now [accepted on current Elm bridge evidence](../../../../docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json). Valid Cancelled outcomes reach existing cancellation state and retire only the matching local reservations. The current immutable tuple passes 2,451 assertions/80matching receipts,14 distinct named model tests and10,000 sampled 50-step traces with seven positive witnesses. The [dated observation](../../raw/notes/2026-10-31-receipt-states.md) preserves the failed baselines and exact scope; native issuer/physical retirement/ARC012/new protocol port/release remain open.
+
+[Current Haskell package readiness](../../../../docs/warlock-build-loop/v2/haskell-toolchain-readiness-20261031.json) is separately accepted: private GHC 9.6.7/Cabal 3.12.1.0 SDK, actual six-package production build and all 24 controlled suites/36 normal invocations. The bootstrap remains one-frame. Next connect owned persistent authenticated Haskell session delivery through an explicit reviewed bridge to existing Elm policy; do not advertise native operations before actual qualification or repeat HOSTSTOP2.
