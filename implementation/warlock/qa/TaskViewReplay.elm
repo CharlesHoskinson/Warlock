@@ -54,6 +54,33 @@ mutations effects = List.filter (\effect -> case effect of
     Desktop.WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect"
     _ -> False) effects
 
+windowEffectWires effects = effects |> List.filterMap (\effect -> case effect of
+    Desktop.Send wire -> if D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect" then Just wire else Nothing
+    Desktop.WindowEffect (Shell.Send wire) -> if D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect" then Just wire else Nothing
+    _ -> Nothing)
+
+wireKinds effects = effects |> List.filterMap (\effect -> case effect of
+    Desktop.Send wire -> D.decodeValue (D.field "kind" D.string) wire |> Result.toMaybe
+    Desktop.WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire |> Result.toMaybe
+    _ -> Nothing)
+
+matchesRestoreIntent expected wire =
+    let field path decoder = D.decodeValue (D.at path decoder) wire |> Result.toMaybe
+        currentBinding = D.decodeValue (D.field "binding" Binding.decoder) wire |> Result.toMaybe
+    in (D.decodeValue (D.field "protocolVersion" D.int) wire |> Result.toMaybe) == Just 3
+        && (D.decodeValue (D.field "effectProtocol" D.int) wire |> Result.toMaybe) == Just 1
+        && currentBinding == binding
+        && field ["intent","request"] UInt64.decoder == Just expected.request
+        && field ["intent","generation"] UInt64.decoder == Just expected.generation
+        && field ["intent","incarnation"] UInt64.decoder == Just expected.incarnation
+        && field ["intent","operation"] D.string == Just "restore"
+        && field ["intent","context","lifetime"] UInt64.decoder == Just expected.context.lifetime
+        && field ["intent","context","epoch"] UInt64.decoder == Just expected.context.epoch
+        && field ["intent","context","output"] UInt64.decoder == Just expected.context.output
+        && field ["intent","context","revision"] UInt64.decoder == Just expected.context.revision
+
+statusText model = D.decodeValue (D.field "status" D.string) (Surface.packet one one model) |> Result.withDefault ""
+
 outcome status intent =
     binding |> Maybe.map (\b -> E.object [("protocolVersion",E.int 3),("kind",E.string "effect-outcome"),("effectProtocol",E.int 1),("binding",Binding.encode b),("intent",Effects.encodeIntent intent),("status",E.string status),("reason",E.string "implicit-transfer-required"),("revision",E.string "1"),("outputGeneration",E.string "1")]) |> Maybe.withDefault E.null
 receiveOutcome status model =
@@ -166,12 +193,34 @@ result =
         recoveryChosen=scoped (\stamp -> Desktop.OverviewChoose stamp two) recoveryFiltered |> Tuple.first
         recoveryIssued=apply (incoming (projection (recoveryChosen.windows.shell.expected |> Maybe.withDefault UInt64.zero) restorableRows)) recoveryChosen
         recoveryPending=Tuple.first recoveryIssued
+        recoveryPendingDuplicate=Shell.capture recoveryPending.windows.shell |> Maybe.map (\stamp -> apply (Desktop.Window (TaskbarShell.Native (Shell.Act stamp Effects.Restore two))) recoveryPending) |> Maybe.withDefault (recoveryPending,[])
         refused=receiveOutcome "Refused" recoveryPending
         restored=refreshAfterOutcome (Tuple.first refused)
         restoredModel=Tuple.first restored
+        competingUnknownIntent=recoveryPending.windows.shell.effects.transaction |> Maybe.map (\t -> let intent=t.intent in {intent | request=counter "99",generation=counter "99",incarnation=one,operation=Effects.Activate})
+        competingUnknown=competingUnknownIntent |> Maybe.map (\intent -> apply (Desktop.Window (TaskbarShell.Native (Shell.RecoveredUnknown 1 intent))) (Tuple.first refused)) |> Maybe.withDefault (Tuple.first refused,[])
+        competingUnknownRead=refreshAfterOutcome (Tuple.first competingUnknown)
+        competingUnknownModel=Tuple.first competingUnknownRead
         repeated=receiveOutcome "Refused" restoredModel
         committed=receiveOutcome "Committed" recoveryPending |> Tuple.first |> refreshAfterOutcome
-        unknown=receiveOutcome "Unknown" recoveryPending |> Tuple.first |> refreshAfterOutcome
+        unknownOutcome=receiveOutcome "Unknown" recoveryPending
+        unknownOutcomeModel=Tuple.first unknownOutcome
+        unknownRead=apply (Desktop.Window (TaskbarShell.Native Shell.Refresh)) unknownOutcomeModel
+        unknownReadModel=Tuple.first unknownRead
+        unknownStale=apply (incoming (projection (counter "99") restorableRows)) unknownReadModel
+        unknown=refreshAfterOutcome (Tuple.first unknownStale)
+        unknownReopened=scoped Desktop.OpenOverview (Tuple.first unknown)
+        unknownReopenedModel=Tuple.first unknownReopened
+        unknownRepeatedOpen=scoped Desktop.OpenOverview unknownReopenedModel
+        unknownRepeatedOpenModel=Tuple.first unknownRepeatedOpen
+        unknownReadState=Tuple.first unknown
+        unknownReadWindows=unknownReadState.windows
+        unknownReadShell=unknownReadWindows.shell
+        missingScene=Scene.decode (E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [window "1" "Editor" True])]) |> Result.toMaybe |> Maybe.map (\s -> {context=context,scene=s})
+        unknownReadEffects=unknownReadShell.effects
+        unknownMissingFresh={unknownReadState | windows={unknownReadWindows | shell={unknownReadShell | effects={unknownReadEffects | observed=missingScene},geometry=Maybe.map (\g -> {g | windows=[geometryWindow one "1"]}) unknownReadShell.geometry}}}
+        unknownMissing=scoped Desktop.OpenOverview unknownMissingFresh
+        unknownMissingModel=Tuple.first unknownMissing
         foreign=recoveryPending.windows.shell.effects.transaction |> Maybe.map (\t -> apply (incoming (outcome "Refused" (let original=t.intent in {original | incarnation=counter "99"}))) recoveryPending) |> Maybe.withDefault (recoveryPending,[])
         busy=Tuple.first refused
         otherInterface=refreshAfterOutcome {busy | open=True}
@@ -185,10 +234,30 @@ result =
         missingWindow=apply (incoming (projectionAt (busy.windows.shell.expected |> Maybe.withDefault UInt64.zero) "2" [window "1" "Editor" True])) retiredGeometry
         recoveryChecks=[("matchedRefusalWaitsForFreshRead",not (Tuple.first refused).overview && (Tuple.first refused).windows.shell.expected/=Nothing && List.isEmpty (mutations (Tuple.second refused))),
             ("exactRefusalRestoresFilteredOverview",restoredModel.overview && restoredModel.overviewWorkspace==Just "2" && List.isEmpty (mutations (Tuple.second restored))),
+            ("differentUnknownDuringRefusedReadDoesNotResumeOldOrigin",not competingUnknownModel.overview && List.isEmpty (focuses (Tuple.second competingUnknownRead)) && (competingUnknownModel.windows.shell.effects.transaction |> Maybe.map (\t -> t.status==Effects.Unknown && competingUnknownIntent==Just t.intent) |> Maybe.withDefault False)),
             ("restoredEligibleFamilyGetsCurrentFocus",focuses (Tuple.second restored)==[Desktop.key restoredModel "overview:family:2"]),
             ("duplicateRefusalCannotReopenOrReplay",Tuple.first repeated==restoredModel && List.isEmpty (Tuple.second repeated)),
+            ("emittedRestoreCarriesExactFullIntentKey",case (recoveryPending.windows.shell.effects.transaction,windowEffectWires (Tuple.second recoveryIssued)) of
+                (Just transaction,[wire]) -> matchesRestoreIntent transaction.intent wire
+                _ -> False),
+            ("pendingRestoreShowsCorrelatedLabel",String.contains "Restore: applying to Files" (Surface.windowNotice recoveryPending) && not (String.contains "completed" (String.toLower (statusText recoveryPending)))),
+            ("pendingDuplicateDispatchIsSuppressed",(Tuple.first recoveryPendingDuplicate).windows.shell.effects.transaction==recoveryPending.windows.shell.effects.transaction && (Tuple.first recoveryPendingDuplicate).windows.shell.effects.unresolved==recoveryPending.windows.shell.effects.unresolved && (Tuple.first recoveryPendingDuplicate).windows.shell.effects.request==recoveryPending.windows.shell.effects.request && (Tuple.first recoveryPendingDuplicate).windows.shell.effects.generation==recoveryPending.windows.shell.effects.generation && List.isEmpty (mutations (Tuple.second recoveryPendingDuplicate))),
+            ("refusedRestoreShowsCorrelatedLabel",String.contains "Restore: refused for Files" (Surface.windowNotice (Tuple.first refused))),
             ("committedChoiceStaysClosed",not (Tuple.first committed).overview && List.isEmpty (mutations (Tuple.second committed))),
             ("unknownChoiceStaysClosedWithoutReplay",not (Tuple.first unknown).overview && List.isEmpty (mutations (Tuple.second unknown))),
+            ("unknownRestoreShowsCorrelatedLabel",String.contains "Restore: not confirmed for Files" (Surface.windowNotice unknownOutcomeModel)),
+            ("unknownRefreshUsesReadOnlyWireKinds",List.member "projection-request" (wireKinds (Tuple.second unknownRead)) && List.all ((/=) "window-effect") (wireKinds (Tuple.second unknownRead)) && List.isEmpty (windowEffectWires (Tuple.second unknownRead))),
+            ("staleUnknownProjectionCannotSettleOrReplay",Tuple.first unknownStale==unknownReadModel && List.isEmpty (mutations (Tuple.second unknownStale)) && windowEffectWires (Tuple.second unknownStale)==[]),
+            ("unknownReservationPersistsAcrossFreshRead",case (Tuple.first unknown).windows.shell.effects.transaction of
+                Just transaction -> transaction.status==Effects.Unknown && List.member transaction (Tuple.first unknown).windows.shell.effects.unresolved && List.isEmpty (windowEffectWires (Tuple.second unknown))
+                Nothing -> False),
+            ("unknownReadRecoveryReopensExactWorkspaceWithoutReplay",unknownReopenedModel.overview && unknownReopenedModel.overviewWorkspace==Just "2" && focuses (Tuple.second unknownReopened)==[Desktop.key unknownReopenedModel "overview:workspace:2"] && String.contains "not confirmed for Files" (Surface.windowNotice unknownReopenedModel) && List.isEmpty (mutations (Tuple.second unknownReopened))),
+            ("unknownReadRecoveryRepeatedOpenPreservesWorkspaceAndFocus",unknownRepeatedOpenModel.overview && unknownRepeatedOpenModel.overviewWorkspace==Just "2" && unknownRepeatedOpen== (unknownReopenedModel,[]) ),
+            ("unknownReadRecoveryFallsBackToAllWhenWorkspaceDisappears",unknownMissingModel.overview && unknownMissingModel.overviewWorkspace==Nothing && focuses (Tuple.second unknownMissing)==[Desktop.key unknownMissingModel "overview:all"] && List.isEmpty (mutations (Tuple.second unknownMissing))),
+            ("unknownMissingWorkspaceOverviewOpened",unknownMissingModel.overview),
+            ("unknownMissingWorkspaceSelectionCleared",unknownMissingModel.overviewWorkspace==Nothing),
+            ("unknownMissingWorkspaceFocusTargetsAll",focuses (Tuple.second unknownMissing)==[Desktop.key unknownMissingModel "overview:all"]),
+            ("unknownMissingWorkspaceNoMutation",List.isEmpty (mutations (Tuple.second unknownMissing))),
             ("foreignIntentCannotReturn",Tuple.first foreign==recoveryPending && List.isEmpty (Tuple.second foreign)),
             ("anotherInterfaceCancelsReturn",not (Tuple.first otherInterface).overview && not (Tuple.first dismissedOther).overview && List.isEmpty (mutations (Tuple.second otherInterface))),
             ("replacementAuthorityCannotReturn",not (Tuple.first replaced).overview && List.isEmpty (mutations (Tuple.second replaced))),

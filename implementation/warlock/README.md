@@ -1108,3 +1108,22 @@ acceptance remain open; the normal host gate stays disabled. See the
 [protocol reference](../../docs/warlock/reference/cancellation-protocol.md).
 
 The current Elm/Haskell preparation route includes a [controlled Haskell bootstrap](haskell/runtime/README.md). Strict package/test compilation and six actual credential cases pass; the one-frame route is not the persistent GUI backend or original/release acceptance.
+
+## Task View restore feedback
+
+Restore Pending, Refused and Unknown feedback carries the current window label.
+For Unknown, reopening Task View returns to the saved workspace only while the
+retained binding and complete action intent still match. If the workspace
+vanished it falls back to All. Refused recovery returns only while the same
+intent remains the current Refused transaction. Repeated open preserves the
+selection. These transitions do not replay the mutation. The protected Elm
+route/browser evidence and the actual `Desktop.update` replay are recorded in
+[`qa/evidence/ui007-restore-context-20261101/README.md`](qa/evidence/ui007-restore-context-20261101/README.md).
+
+That focused report covers 78 Elm Task View replay assertions and 16 Chromium
+component checks. Quint separately checks the feedback projection and the
+bounded recovery context, including explicit faulty-transition tests. These
+checks do not establish native
+compositor behavior, physical keyboard focus, actual assistive-technology
+announcements, or independent original EARS acceptance. See the
+[Diátaxis explanation](../../docs/warlock/explanation/action-feedback-priority.md).

@@ -1,0 +1,141 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      liveRegion: Polite,
+      overviewOpen: true,
+      rendered: OverviewGuidance,
+      status: Ready,
+      unresolvedPending: false,
+      unresolvedUnknown: false,
+      workspaceNotice: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      liveRegion: Polite,
+      overviewOpen: true,
+      rendered: OverviewGuidance,
+      status: Cancelled,
+      unresolvedPending: false,
+      unresolvedUnknown: false,
+      workspaceNotice: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      liveRegion: Polite,
+      overviewOpen: true,
+      rendered: CombinedFeedback,
+      status: Pending,
+      unresolvedPending: true,
+      unresolvedUnknown: false,
+      workspaceNotice: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      liveRegion: Off,
+      overviewOpen: false,
+      rendered: Empty,
+      status: Pending,
+      unresolvedPending: true,
+      unresolvedUnknown: false,
+      workspaceNotice: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      liveRegion: Polite,
+      overviewOpen: true,
+      rendered: CombinedFeedback,
+      status: Refused,
+      unresolvedPending: false,
+      unresolvedUnknown: false,
+      workspaceNotice: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      liveRegion: Polite,
+      overviewOpen: true,
+      rendered: CombinedFeedback,
+      status: Pending,
+      unresolvedPending: true,
+      unresolvedUnknown: false,
+      workspaceNotice: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      liveRegion: Polite,
+      overviewOpen: true,
+      rendered: OverviewGuidance,
+      status: Committed,
+      unresolvedPending: false,
+      unresolvedUnknown: false,
+      workspaceNotice: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      liveRegion: Polite,
+      overviewOpen: true,
+      rendered: CombinedFeedback,
+      status: Pending,
+      unresolvedPending: true,
+      unresolvedUnknown: false,
+      workspaceNotice: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      liveRegion: Polite,
+      overviewOpen: true,
+      rendered: CombinedFeedback,
+      status: Unknown,
+      unresolvedPending: false,
+      unresolvedUnknown: true,
+      workspaceNotice: true
+    }
+}
+
+[ok] No violation found (245ms at 4082 traces/second).
+Trace length statistics: max=9, min=9, average=9.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+pendingScenarioWitness was witnessed in 721 trace(s) out of 1000 explored (72.10%)
+pendingNoWorkspaceWitness was witnessed in 710 trace(s) out of 1000 explored (71.00%)
+refusedScenarioWitness was witnessed in 713 trace(s) out of 1000 explored (71.30%)
+unknownScenarioWitness was witnessed in 722 trace(s) out of 1000 explored (72.20%)
+committedScenarioWitness was witnessed in 712 trace(s) out of 1000 explored (71.20%)
+cancelledScenarioWitness was witnessed in 702 trace(s) out of 1000 explored (70.20%)
+closedOverviewWitness was witnessed in 693 trace(s) out of 1000 explored (69.30%)
+Use --seed=0xcb2c --backend=typescript to reproduce.
