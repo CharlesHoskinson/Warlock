@@ -3681,7 +3681,7 @@
     "releaseAcceptance": false,
     "wholeRequirementsAccepted": 15
   },
-  "nextConcreteAction": "Freeze and commit current fully qualified Elm ADT/policy tuple; independent original TEA002 pure reducer/effect/determinism adjudication on full immutable commit. Continue remaining TEA001 actual finite operand/authority repairs without adding native gates to pure-language verification. Goal242/417 active.",
+  "nextConcreteAction": "Advance remaining whole TEA001 under the same active contributor record: bounded actual retained finite operation/observation repairs (SystemMenu permission/capability, Snap.Region operand, captured surface/trigger) and independent observation-vs-desired single-authority audit; proportional protected checks, then original immutable review. TEA002 accepted only on889e9458d1707c456f5bb6e9af560383b066229e; native/AT/IME/hardware/resource/provider/release remain.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4118,7 +4118,22 @@
       }
     ],
     "currentWindowStartedUTC": "2026-11-01T19:11:37.655841+00:00",
-    "nextReportDueUTC": "2026-11-01T20:11:37.655841+00:00"
+    "nextReportDueUTC": "2026-11-01T20:11:37.655841+00:00",
+    "currentWindowProgress": {
+      "observedUTC": "2026-11-01T19:34:33.443537+00:00",
+      "windowStartedUTC": "2026-11-01T19:11:37.655841+00:00",
+      "wholeRequirementsAccepted": 16,
+      "acceptedScenarios": 40,
+      "newWholeRequirementIds": [
+        "ELM-TEA-002"
+      ],
+      "newWholeEarsClosures": 1,
+      "newAcceptedScenarios": [
+        "ELM-TEA-002/tea-pure-update"
+      ],
+      "firstWindowMissPreserved": true,
+      "counting": "Immutable source-bound independent original acceptance only. Current window not ended; final hourly actuals due20:11:37UTC."
+    }
   },
   "ui005CurrentStackCheckpoint": {
     "record": ".warlock-contributor/ui005-haskell-search.json",
@@ -4170,5 +4185,17 @@
         "Independent whole original requirement adjudication with immutable source commit"
       ]
     }
-  ]
+  ],
+  "teaPureUpdateAcceptance": {
+    "acceptedUTC": "2026-11-01T19:34:33.443537+00:00",
+    "requirement": "ELM-TEA-002",
+    "scenario": "tea-pure-update",
+    "sourceRevision": "889e9458d1707c456f5bb6e9af560383b066229e",
+    "acceptance": "docs/warlock-build-loop/v2/tea-pure-update-acceptance-20261101.json",
+    "review": "docs/warlock-build-loop/v2/tea-pure-update-review-20261101.json",
+    "wholeRequirementAccepted": true,
+    "nativeAccepted": false,
+    "tea001Accepted": false,
+    "releaseAccepted": false
+  }
 }

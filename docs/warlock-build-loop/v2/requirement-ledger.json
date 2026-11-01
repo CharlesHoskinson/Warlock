@@ -6055,13 +6055,13 @@
       "capability": "elm-host",
       "owner": "Native host lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "partial",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "tea-pure-update",
           "oracle": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred",
-          "status": "partial",
+          "status": "accepted",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/tea-contract-20261101/observation.json",
@@ -6074,11 +6074,64 @@
               "sha256": "602b1065fda198d57807f0fddb7d229520e449caff3bb2abd02f7b69a63bbc14",
               "scope": "Six optimized Elm entry points,87typed controls and58complete Model/effect literal histories134tested31setup/twice; controlled pure bridge fixtures, not native or whole original acceptance.",
               "disposition": "partial"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/tea-pure-update-acceptance-20261101.json",
+              "sha256": "75ac4cf79032cedbc5ee7ccd475f7fe1410d2e93536d8d30b25c34183d6a52da",
+              "scope": "Whole original ELM-TEA-002 tea-pure-update on the immutable actual Elm frontend: pure Model/Msg reducers and typed effect descriptions across six production roots; identical sanitized histories reproduce complete models/effects and match independent named literal domain fixtures. Native behavior, TEA001 and release remain separately qualified.",
+              "disposition": "accepted"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/tea-pure-update-review-20261101.json",
+              "sha256": "ee4dede96564c729603b2423ec9a3bcfca80740439b8ee4ca705f690627104c6",
+              "scope": "Whole original ELM-TEA-002 tea-pure-update on the immutable actual Elm frontend: pure Model/Msg reducers and typed effect descriptions across six production roots; identical sanitized histories reproduce complete models/effects and match independent named literal domain fixtures. Native behavior, TEA001 and release remain separately qualified.",
+              "disposition": "accepted"
             }
           ],
-          "missingObservation": "Full original reducer/effect/determinism clause adjudication and independent acceptance of an immutable tested source tuple; named replay and compiler evidence is now present. Native behavior separately qualified."
+          "missingObservation": "None for original pure-update contract on accepted immutable source. Native behavior, TEA001 and release remain separate.",
+          "sourceRevision": "889e9458d1707c456f5bb6e9af560383b066229e",
+          "sourceHashes": {
+            "implementation/warlock/src/Main.elm": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+            "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+            "implementation/warlock/src/Desktop.elm": "91223c94074f8ff908b2ed66f52e8025c8afcb78a977d4a5f3daf44df8ce7af4",
+            "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+            "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+            "implementation/warlock/src/Shell.elm": "6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094",
+            "implementation/warlock/src/Bar.elm": "aa3cd927c33f9624364b8ba04bc3ceb31c3a13541b6fd1044c9f7ac978d871b7",
+            "implementation/warlock/src/Popup.elm": "fb24afed07ee6396633efb987b3202e57e0dfe52642a8150987e75648c944c58",
+            "implementation/warlock/src/HttpMain.elm": "58a3b1f274bc69b053ca31ece17bcd6b65a593d5722ba65a7728b3d22471d5a9",
+            "implementation/warlock/src/HttpBar.elm": "74d4b6b80267e9b22065b2087ee2b5318a3ce1fe346e1897c99ced6031183af8",
+            "implementation/warlock/src/HttpPopup.elm": "4185692e3613f2bc52eefa896e3c0d57cd796afe090a0a994877d27a52cff354",
+            "implementation/warlock/qa/TeaContractReplay.elm": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+            "implementation/warlock/qa/tea-contract.cjs": "15597108de923405823578f89f2c667988f8602f12ddb68f449c365bb17319b8",
+            "implementation/warlock/qa/tea-contract-cases.cjs": "ab9d3f43d5bbe5b8588274e839d1530e145a68f92d651056a3a694b4735e7b59",
+            "implementation/warlock/src/Notifications.elm": "e61311c370fc0367844deb21a9ba3274a64f41faabe19bec6743af71685e2201",
+            "implementation/warlock/src/Surface.elm": "91d38d818e40523cd395d3622633676149c42b8b9b0be3a40223a13bdf45d9ca",
+            "implementation/warlock/src/OutcomeAnnouncements.elm": "e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb",
+            "implementation/warlock/src/JumpList.elm": "2ef6dbc9738771b1e13c8d42feb70c0905be8651d791a43199264b32883de195",
+            "implementation/warlock/src/ReconciliationFrame.elm": "5f9480ab13609f26a3f57f37431e9eb29c658b1c009b463321e0f277d37b8ac5",
+            "implementation/warlock/qa/NotificationsReplay.elm": "d962a8d60b34201ae138afbfb0ff0e8ed9cb3a131a8b4cafecb74267dff7408f",
+            "implementation/warlock/qa/JumpListReplay.elm": "6dae1096939db836ef3fea537df661a94b7267a8ad39297a14e980909925bff2",
+            "implementation/warlock/qa/NativePointerFixture.elm": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124",
+            "implementation/warlock/qa/RetirementProofReplay.elm": "eebc71f1f8c13b1baaa882c74a52cd42d5980edc0277053f7f5c9a080466c66b",
+            "implementation/warlock/qa/typed-state.cjs": "cf6e8b17ce0095b15251ef82a0719af39f22e165211d8ea289d86ce029c30576",
+            "implementation/warlock/qa/NotificationRelevanceReplay.elm": "de99c29c7d40cd8cf253e54e9e960519745aab39df054465df85502c8d980466"
+          },
+          "reviewer": {
+            "name": "elm-tests /root/elm_regression",
+            "independent": true,
+            "disposition": "accepted"
+          },
+          "sourceTuple": {
+            "sourceRevision": "889e9458d1707c456f5bb6e9af560383b066229e",
+            "core": "Actual Main/Bar/Popup/HttpMain/HttpBar/HttpPopup Elm reducers and DesktopPolicy/OutputController owning route; controlled sanitized JSON histories, no native issuer or compositor loaded.",
+            "plugin": "No native plugin loaded. Native/GPU ABI, physical presentation, AT/IME and release acceptance remain separate.",
+            "toolchain": "Pinned Elm0.19.2 compiler c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948; Node24.22.1 e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb; exact129-input packet4a81b6c15239ba9f888166ddce65fdef4ce6122adf7a8f0aeb255eb0eaf46113. All129 regular committed blobs independently matched."
+          }
         }
-      ]
+      ],
+      "sourceRevision": "889e9458d1707c456f5bb6e9af560383b066229e",
+      "acceptance": "docs/warlock-build-loop/v2/tea-pure-update-acceptance-20261101.json"
     },
     {
       "id": "ELM-TEA-003",
@@ -17303,5 +17356,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T19:27:47.026644+00:00"
+  "updatedUTC": "2026-11-01T19:34:33.443537+00:00"
 }

@@ -1,0 +1,403 @@
+{
+  "schema": 1,
+  "reviewedAtUTC": "2026-11-01T19:32:06.115399+00:00",
+  "reviewer": {
+    "agent": "elm-tests",
+    "task": "/root/elm_regression",
+    "role": "independent acceptance reviewer for active TEA-002 changes and literal fixture campaign",
+    "authRun": "warlock-20261031-setup"
+  },
+  "requirement": "ELM-TEA-002",
+  "scenario": "tea-pure-update",
+  "disposition": "accepted",
+  "requirementAccepted": true,
+  "scenarioAccepted": true,
+  "scope": "Whole original ELM-TEA-002 only, for the immutable tested source and named sanitized-history fixture; no native, TEA-001 or release acceptance.",
+  "sourceRevision": "889e9458d1707c456f5bb6e9af560383b066229e",
+  "sourceRevisionStatus": "All 129 packet06 inputs independently verified as tracked regular Git blobs at this full immutable commit; every SHA-256 equals packet06 and current bytes.",
+  "original": {
+    "id": "ELM-TEA-002",
+    "capability": "elm-host",
+    "phase": "P2",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Elm frontend SHALL implement state transitions as pure Model and Msg reducers with typed effect descriptions, and SHALL reproduce identical models and effects for identical sanitized message histories.",
+    "task": "Implement deterministic reducers and replay fixtures.",
+    "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+    "legacyEvidence": "docs/elm-roadmap/ELM-PRACTICES.md; official Elm corpus",
+    "scenarios": [
+      {
+        "name": "tea-pure-update",
+        "given": "a pinned Elm model and named domain fixture",
+        "when": "the pure-update boundary and replay campaign execute",
+        "then": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred"
+      }
+    ],
+    "source": "docs/elm-roadmap/coordinator-requirements.json",
+    "status": "proposed",
+    "taskId": "P2-ELM-TEA-002",
+    "accountableOwnerRole": "Native host lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "originalInspection": {
+    "path": ".warlock-contributor/evidence/tea002-original-inspect.json",
+    "sha256": "7bafdc2e23777e307482f41d34035860cbc854e68c74b0cf8cc9fc3fe37a4575"
+  },
+  "originalRegister": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff",
+    "originalClauseAndScenarioMatchInspection": true,
+    "requirementCount": 242,
+    "scenarioCount": 417
+  },
+  "inputBinding": {
+    "packet": {
+      "path": ".warlock-contributor/evidence/tea-contract-review-06.json",
+      "sha256": "4a81b6c15239ba9f888166ddce65fdef4ce6122adf7a8f0aeb255eb0eaf46113"
+    },
+    "trackedRegularBlobs": 129,
+    "reportSourceHashesVerified": 122,
+    "mismatches": [],
+    "gitVerification": "git ls-tree at full sourceRevision yielded129/129 tracked regular100644/100755 blobs; git cat-file bytes SHA256 matched each packet06 input and current file, with zero mismatches. Full exact expected129 hash mapping is retained in packet06, not duplicated here."
+  },
+  "protectedEvidence": {
+    "report": {
+      "path": ".warlock-contributor/elm-cpu-1793561026384253514/report.json",
+      "sha256": "6e2124772c3a7f831633994ca963fa1536c88a3caa07827daece247f85b22e5d"
+    },
+    "passed": true,
+    "commands": [
+      {
+        "name": "compiler-version",
+        "exit": 0
+      },
+      {
+        "name": "node-version",
+        "exit": 0
+      },
+      {
+        "name": "compile-Main",
+        "exit": 0
+      },
+      {
+        "name": "compile-Bar",
+        "exit": 0
+      },
+      {
+        "name": "compile-Popup",
+        "exit": 0
+      },
+      {
+        "name": "compile-HttpMain",
+        "exit": 0
+      },
+      {
+        "name": "compile-HttpBar",
+        "exit": 0
+      },
+      {
+        "name": "compile-HttpPopup",
+        "exit": 0
+      },
+      {
+        "name": "compile-feedback-context",
+        "exit": 0
+      },
+      {
+        "name": "feedback-context",
+        "exit": 0
+      },
+      {
+        "name": "compile-ui-http-replay",
+        "exit": 0
+      },
+      {
+        "name": "ui-http",
+        "exit": 0
+      },
+      {
+        "name": "compile-NotificationsReplay",
+        "exit": 0
+      },
+      {
+        "name": "compile-JumpListReplay",
+        "exit": 0
+      },
+      {
+        "name": "compile-NotificationRelevanceReplay",
+        "exit": 0
+      },
+      {
+        "name": "compile-RetirementProofReplay",
+        "exit": 0
+      },
+      {
+        "name": "typed-state",
+        "exit": 0
+      },
+      {
+        "name": "compile-tea-contract",
+        "exit": 0
+      },
+      {
+        "name": "tea-contract",
+        "exit": 0
+      }
+    ],
+    "commandCount": 19,
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "developmentTools": {
+      "python": {
+        "path": "/usr/bin/python3.14",
+        "sha256": "6afce98b1e5ce89dc1c5dfca9672276a9486bc318855c7554cbe6da62d073e10"
+      },
+      "node": {
+        "path": "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+        "sha256": "e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb"
+      }
+    },
+    "optimizedProductionRoots": [
+      "Main",
+      "Bar",
+      "Popup",
+      "HttpMain",
+      "HttpBar",
+      "HttpPopup"
+    ],
+    "typedControls": {
+      "fixtures": [
+        "NotificationsReplay",
+        "JumpListReplay",
+        "NotificationRelevanceReplay",
+        "RetirementProofReplay"
+      ],
+      "checks": 87,
+      "resultSHA256": "9266cc86af009c2d0113927c32c88df5fca77012f0b23339333b6a29d916e9e3",
+      "nativeAccepted": false,
+      "originalAccepted": false
+    },
+    "fixture": {
+      "schema": 1,
+      "originalFixtureSha256": "9ab8c194562a3ac7648e0130e15122adf19bdcf47c3c6b6f874270d360ecadf6",
+      "instrumentedFixtureSha256": "2061481549bee5504b4c2b67f2372839c25435ede8c3f4746fd414e7d01e17ad",
+      "oracleSha256": "ab9d3f43d5bbe5b8588274e839d1530e145a68f92d651056a3a694b4735e7b59",
+      "runnerSha256": "15597108de923405823578f89f2c667988f8602f12ddb68f449c365bb17319b8",
+      "fixtureElmSha256": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+      "marker": "TEA_CONTRACT_OBSERVE_V1",
+      "patchOffset": 7279,
+      "patchInsertedBytes": 85,
+      "reversiblePatch": true,
+      "transitions": 134,
+      "preludes": 31,
+      "runsPerCase": 2,
+      "passed": true,
+      "histories": 58,
+      "reportReference": "teaContract object of exact protected report; raw complete58 names/coverage declaration retained unchanged there.",
+      "remainingCoverageDeclarationAtExecution": [
+        "whole-frontend-contract-review"
+      ]
+    },
+    "artifacts": [
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/HttpMain.js",
+        "bytes": 1069181,
+        "sha256": "ef8f4aa61ad5683820e8a56a4818cafad29ef57d751033f6f02f322fe53c12de"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/tea-contract.js",
+        "bytes": 1089607,
+        "sha256": "9ab8c194562a3ac7648e0130e15122adf19bdcf47c3c6b6f874270d360ecadf6"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/Main.js",
+        "bytes": 1038641,
+        "sha256": "c825ef5af009478abf818b57df3bcaf09d7d9ee8b1798c2455ce737196671708"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/NotificationRelevanceReplay.js",
+        "bytes": 1003621,
+        "sha256": "a20f60b4a1eb995dcf9ad43c44c49f72839bee62458e89b47e3f324020d668ba"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/Popup.js",
+        "bytes": 481331,
+        "sha256": "3aeb35c15c3f28bab81f63d6527df2080eeea111a1e68e013c9efea034abafca"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/HttpBar.js",
+        "bytes": 279418,
+        "sha256": "661f044c8458ffcbc03ca83c1536c5ff5574f854912757ebeb8b5ee75c84600d"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/feedback-context.js",
+        "bytes": 862848,
+        "sha256": "0482b18d5d24522f2a9c0d647440c2f7e765bf385a5fe149f4d9a133d7f03616"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/JumpListReplay.js",
+        "bytes": 861742,
+        "sha256": "dcb8466b2ac0dd789d5f7baf5704a0a1ed3cd2f9bfe7878a1e795f6243b68445"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/Bar.js",
+        "bytes": 244557,
+        "sha256": "3409c3b5f87750260ec235f2306d8af25c83cdf4aa223ebf38c3820c2991bce9"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/HttpPopup.js",
+        "bytes": 506503,
+        "sha256": "e57e092336ef90a8771cfac613ff73024d18dff28ab04ac42e2d71ccc825cdbf"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/NotificationsReplay.js",
+        "bytes": 862338,
+        "sha256": "77e7aad000d37a20323999990a9b7d2e411eee73959e60c9ca02c2bf92730a8e"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/UiHttpReplay.js",
+        "bytes": 1031085,
+        "sha256": "769c6b1343b2e6850a84cd31484e036242f263556e0fb4a204311ba0285ad85b"
+      },
+      {
+        "path": ".warlock-contributor/elm-cpu-1793561026384253514/RetirementProofReplay.js",
+        "bytes": 938834,
+        "sha256": "09112d155335d34aba8786e230b36ba450e0825ba78f731754d311e5d7a98240"
+      }
+    ]
+  },
+  "observerQualification": {
+    "method": "Independent read-only reconstruction of the exact byte insertion and source/hash inspection; no JS, Elm, model or native execution by reviewer.",
+    "originalFixtureSHA256": "9ab8c194562a3ac7648e0130e15122adf19bdcf47c3c6b6f874270d360ecadf6",
+    "instrumentedFixtureSHA256": "2061481549bee5504b4c2b67f2372839c25435ede8c3f4746fd414e7d01e17ad",
+    "marker": "TEA_CONTRACT_OBSERVE_V1",
+    "markerOccurrences": 1,
+    "offset": 7279,
+    "insertedUTF8Bytes": 85,
+    "exactlyReversible": true,
+    "captureBeforeTextFormatting": true,
+    "valueScope": "Entire DesktopPolicy.Model plus complete List Policy.Effect; constructor tags, list cells, tuple fields, opaque values and all JSON data fields preserved. Unsupported values fail closed.",
+    "oracle": "Separate source-authored initial/GIVEN literal trees, guarded explicit leaf changes and independently assembled effects; not captured reducer output, hashes alone, selected projections or Debug text.",
+    "comparison": "Deep structural equality of full constructor/model/effect values, including each Publish JSON value. Every retained embedded wire string is exact, not normalized; arbitrary equivalent-JSON byte-order invariance is not claimed.",
+    "freshRunsPerHistory": 2
+  },
+  "sourceReview": {
+    "roots": [
+      {
+        "root": "Main.elm",
+        "reducer": "DesktopPolicy.update:55-66 -> OutputController.update/register -> SurfaceController/Desktop.update",
+        "effects": "DesktopPolicy.Effect = Publish Json.Encode.Value | Delay Float Desktop.Msg; Main.interpret:15-19 only converts descriptions to ports/timers; root:24-26 batches them."
+      },
+      {
+        "root": "Bar.elm",
+        "reducer": "Bar.step:47-101 returns complete Model and List Effect; presentation/announcement/cache/status-scroll changes remain pure values.",
+        "effects": "Effect = Dispatch Json.Encode.Value | ResetStatusViewport StatusScroll.Epoch String; root:155-169 interprets ports and local Browser.Dom task via localEffect:122-129."
+      },
+      {
+        "root": "Popup.elm",
+        "reducer": "Popup.transition:65-145 returns complete Model and List Effect, including presentation/query/composition/preview state; no port or Browser.Dom effect executes inside transition.",
+        "effects": "Effect = Dispatch Json.Encode.Value | PreviewCommand Json.Encode.Value | PaintRequest Json.Encode.Value; update:56-63 interprets descriptions."
+      },
+      {
+        "root": "HttpMain.elm",
+        "reducer": "PolicyMessage and transport Msg cases:36-50 compose the same pure DesktopPolicy reducer with UiHttp Model/Msg state. TransportLost enters the pure policy; no synthetic native receipt or replay.",
+        "effects": "effects:20-34 interprets typed Publish/Delay; UiHttp returns typed Cmd Msg descriptions for actual HTTP/cancel/timer runtime. Effect execution belongs to Elm runtime."
+      },
+      {
+        "root": "HttpBar.elm",
+        "reducer": "View:19-30 uses Bar.step; Transport:32-50 uses UiHttp.update and typed admitted gateway cases.",
+        "effects": "Dispatch descriptions enqueue through UiHttp; ResetStatusViewport delegates Bar.localEffect; typed validated focus is interpreted as Browser.Dom Cmd. No alternate state policy."
+      },
+      {
+        "root": "HttpPopup.elm",
+        "reducer": "View:30-44 uses Popup.transition, with explicit unsupported-preview refusal; Transport:45-68 composes UiHttp and Popup messages.",
+        "effects": "Typed Popup effects are selected or fail closed; UiHttp produces Cmd Msg descriptions; exact admitted focus maps through SurfaceRenderer.controlDomId while composition gate remains."
+      }
+    ],
+    "domainReducers": "Desktop.update and nested domain Model/Msg reducers; SurfaceController.update and OutputController.update/register compose immutable values and finite typed effect constructors. Their compiler-checked outputs contain descriptions; interpreters are at roots/UiHttp runtime boundary.",
+    "purityFinding": "No impurity or hidden state read found in selected transition path. Cmd/Task/port/HTTP/browser effects are typed descriptions executed by Elm runtime; actual completion re-enters via Msg. Identical sanitized inputs and initial Model therefore determine identical model/effect values.",
+    "sourceHashes": {
+      "implementation/warlock/src/Bar.elm": "aa3cd927c33f9624364b8ba04bc3ceb31c3a13541b6fd1044c9f7ac978d871b7",
+      "implementation/warlock/src/Desktop.elm": "91223c94074f8ff908b2ed66f52e8025c8afcb78a977d4a5f3daf44df8ce7af4",
+      "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+      "implementation/warlock/src/HttpBar.elm": "74d4b6b80267e9b22065b2087ee2b5318a3ce1fe346e1897c99ced6031183af8",
+      "implementation/warlock/src/HttpMain.elm": "58a3b1f274bc69b053ca31ece17bcd6b65a593d5722ba65a7728b3d22471d5a9",
+      "implementation/warlock/src/HttpPopup.elm": "4185692e3613f2bc52eefa896e3c0d57cd796afe090a0a994877d27a52cff354",
+      "implementation/warlock/src/Main.elm": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+      "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+      "implementation/warlock/src/Popup.elm": "fb24afed07ee6396633efb987b3202e57e0dfe52642a8150987e75648c944c58",
+      "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+      "implementation/warlock/src/UiHttp.elm": "3a649f51ff0f783a19fa8bb427bdc0ebb7b3eb7473428044d88a54f78b9da419"
+    }
+  },
+  "clauseFindings": [
+    {
+      "clause": "State transitions as pure Model and Msg reducers with typed effect descriptions",
+      "status": "satisfied",
+      "basis": "Source inventory across six runnable roots and shared domain reducers plus optimized compiler checks; pure descriptions separate from interpreters."
+    },
+    {
+      "clause": "Reproduce identical models and effects for identical sanitized message histories",
+      "status": "satisfied",
+      "basis": "58 independent named literal histories, 134 tested transitions, 31 explicit setup preludes, two fresh worker/VM runs each. Complete tuple equality against independent expected literals and repeat equality; actual emitted opaque Delay messages are retained then delivered, not synthesized."
+    },
+    {
+      "clause": "Pinned Elm model and named domain fixture: exact models and effect descriptions match, no native acceptance inferred",
+      "status": "satisfied",
+      "basis": "Independent literal initial/GIVEN state and every-effect validation through actual DesktopPolicy->OutputController path, including positive reads/mutations, malformed/stale/refused inputs, Pending/Committed/Refused/Unknown, disconnect, reconciliation, rebind, preferences and exact reachable Delay tokens; complete initial and final setup state/effects checked."
+    },
+    {
+      "clause": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately",
+      "status": "satisfied",
+      "basis": "All 19 protected commands exit0, six optimized production roots, 87 exact typed controls, complete model/effect replay; exact129 input Git blob bindings, artifacts, tools and observer qualified; report native/release flags remain false."
+    }
+  ],
+  "historicalEvidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/tea-contract-20261101/observation.json",
+      "sha256": "2ca77a7f6f3e9e4466fbc4d63c4e1e1e325128048bc999388304ec0f8a03ad5d",
+      "classification": "preserved historical 32-case partial evidence; not current packet06 acceptance basis"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/tea-contract-20261101/report.json",
+      "sha256": "2cce6038d59e0759e48ef37eba1434a25a54982837167f86a1aff8b69eb297d4",
+      "classification": "preserved historical 32-case partial evidence; not current packet06 acceptance basis"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/tea-contract-20261101/independent-review.json",
+      "sha256": "a5e20aa1ef92146abc286d2b2d53ecf586fa4f91b54aba3749811314808e75f7",
+      "classification": "preserved historical 32-case partial evidence; not current packet06 acceptance basis"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/tea-contract-20261101/review-packet.json",
+      "sha256": "c9d404a72b7140212e2714e30ee05d6c286de0d3778f5d4352bec3dc0f997720",
+      "classification": "preserved historical 32-case partial evidence; not current packet06 acceptance basis"
+    }
+  ],
+  "historicalCorrection": "Canonical tea-contract-20261101 files at this commit remain original 32-case partial observations and review. Their old missing-observation statements and uncommitted-source status are preserved, not represented as current 58-case/134-transition evidence. This independent review binds current packet06 and report explicitly. The current fixture coverageDeclaration missing whole-frontend-contract-review is discharged by this review; raw fixture/report flags remain unmodified.",
+  "limits": [
+    "Acceptance is source-bound to this immutable source and the named original pure-update fixture; not a proof of every arbitrary message/JSON permutation or native effect.",
+    "Native GUI, WebKit/runtime presentation, actual input/focus, AT/IME, Haskell process/issuer and release acceptance remain separately qualified, as the original requirement explicitly permits.",
+    "ELM-TEA-001 finite-type completeness and any remaining separate requirements are not accepted or inferred from this TEA-002 disposition.",
+    "QA observer uses a non-optimized debug worker only; production six roots were optimized and contain no observer.",
+    "Thirty-one setup preludes assert their full final model/effects and literal timer count, but their intermediate setup transitions are not included in the 134 tested-transition count.",
+    "The complete future input space is not exhaustively enumerated; language/source purity supports deterministic transition semantics, while fixtures independently establish exact outcomes for named sanitized histories.",
+    "Root must persist/link this current source-bound review and report in canonical delivery records; preserved older partial records are historical, not the acceptance basis."
+  ],
+  "nativeAcceptance": false,
+  "tea001Accepted": false,
+  "releaseAccepted": false,
+  "blockers": [],
+  "reviewerExecutedQA": false,
+  "reviewerMutations": [
+    "Only this uniquely named ignored review JSON; no product, test, tool, model, evidence corpus, ledger or canonical evidence rewrite."
+  ],
+  "readOnlyVerification": [
+    "Original literal requirement/scenario comparison at immutable commit",
+    "All129 regular Git blob modes/object IDs/bytes/SHA256",
+    "All122 report source hashes and13 compiled artifact hashes",
+    "Protected report/packet/typed-state result hashes and19exit statuses",
+    "Observer byte reconstruction/hash binding and literal fixture source review",
+    "Six root/pure reducer/effect interpreter source review"
+  ],
+  "nextAction": "Root integrate this accepted TEA-002 disposition with its exact current report/packet/source commit in canonical ledger, handoff and wiki; preserve historical partial evidence and continue remaining original requirements."
+}
