@@ -617,6 +617,240 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
                 foreignOwnershipRetained=True, scenarioAcceptanceInferred=False)
 
 
+
+# Exact initial support scope. Product, tools, arbitrary docs and foreign-owner
+# reconciliation are deliberately outside this operation.
+SUPPORT_CUSTODY_PATHS = frozenset((STATE, 'docs/HANDOFF.md',
+    'wiki/warlock/log.md', 'wiki/warlock/wiki/topics/current-status.md'))
+SUPPORT_EVIDENCE = '.warlock-contributor/evidence/support-custody/'
+
+
+def support_sidecar(root, record):
+    return safe(root, str(reconciliation_path(root, record).relative_to(root))
+                .replace('/foreign-reconciliations/', '/support-reconciliations/'))
+
+
+def support_live_claims(owner, run):
+    """Read existing authenticated CLI state, never create/renew/release a claim.
+
+    Trust is the user's installed AgentBus CLI and assigned identity/run, just as
+    ordinary AgentBus coordination. These claims are advisory, not FS isolation.
+    No caller-selected verifier, private DB, service API or key parsing.
+    """
+    if not isinstance(run, str) or run != os.environ.get('AGENTBUS_RUN'):
+        raise ValueError('Support proof run differs from assigned AgentBus run')
+    entry = pathlib.Path.home() / '.local/bin/agentbus'
+    target = entry.resolve(strict=True)
+    status = target.stat()
+    if (not stat.S_ISREG(status.st_mode) or status.st_uid != os.getuid()
+            or status.st_mode & 0o022):
+        raise ValueError('AgentBus CLI must be an owned non-writable-by-others regular file')
+    before = digest(target)
+    env = {k: v for k, v in os.environ.items()
+           if not k.startswith('PYTHON') and k not in ('AGENTBUS_SRC', 'AGENTBUS_HOME')}
+    result = subprocess.run([str(target), '--run', run, '--as', owner,
+                             'claims', '--mine', '--all'],
+                            capture_output=True, env=env, timeout=20)
+    if result.returncode or len(result.stdout) > 262144 or digest(target) != before:
+        raise ValueError('Authenticated AgentBus claims observation failed')
+    # CLI emits one public JSON row per line; never retain other resources or
+    # stderr, credentials or identity files. Reject ambiguity instead of guessing.
+    rows = [json.loads(line) for line in result.stdout.splitlines() if line.strip()]
+    if any(not isinstance(row, dict) for row in rows):
+        raise ValueError('Malformed AgentBus claims rows')
+    return rows
+
+
+def support_proof_rows(root, proof, owner, at):
+    if (type(proof.get('schema')) is not int or proof['schema'] != 1 or proof.get('owner') != owner
+            or not isinstance(proof.get('run'), str)
+            or not isinstance(proof.get('claims'), list) or not proof['claims']):
+        raise ValueError('Invalid frozen same-owner claim proof')
+    observed = dt.datetime.fromisoformat(proof['observedUTC'])
+    if observed.tzinfo is None or observed > at:
+        raise ValueError('Claim proof observation is invalid or in the future')
+    rows = {}
+    for row in proof['claims']:
+        resource = row.get('resource', '') if isinstance(row, dict) else ''
+        name = resource.removeprefix('file:' + str(root) + '/')
+        if (resource != 'file:' + str(root / name) or name not in SUPPORT_CUSTODY_PATHS
+                or name in rows or row.get('holder') != owner
+                or not isinstance(row.get('holder_did'), str)
+                or not re.fullmatch(r'did:key:z[1-9A-HJ-NP-Za-km-z]+', row['holder_did'])):
+            raise ValueError('Claim proof does not bind one exact same-owner support resource')
+        lease = dt.datetime.fromisoformat(row['lease_end'])
+        if lease.tzinfo is None or lease <= at:
+            raise ValueError('Frozen claim was not current at transition time')
+        rows[name] = row
+    return rows
+
+
+def support_reconciliations(root, record, override=None, check_current=True):
+    path = support_sidecar(root, record)
+    if override is None and not path.exists():
+        return {}, [], None
+    try:
+        data = read(path) if override is None else override
+        # Reuse strict existing baseline/prefix replay without submitting these
+        # same-owner events to, or weakening, foreign-owner event validation.
+        blank = dict(data, events=[])
+        _, custody_errors, _ = foreign_reconciliations(root, record, override=blank,
+                                                       check_current=False)
+        if custody_errors:
+            raise ValueError('; '.join(custody_errors))
+        identity = data['recordIdentitySha256']
+        result, previous = {}, None
+        for event in data['events']:
+            body = {k: v for k, v in event.items() if k != 'eventSha256'}
+            if event.get('eventSha256') != json_sha256(body) or event.get('previousEventSha256') != previous:
+                raise ValueError('Support event hash chain differs')
+            previous = event['eventSha256']
+            name = event['path']
+            if (name not in SUPPORT_CUSTODY_PATHS or name not in record['foreignDirty']
+                    or name in record['slice']['paths']
+                    or name in record.get('adoptedDirty', {}).get('paths', [])):
+                raise ValueError('Support event cannot change source/adoption ownership')
+            if event['fromSha256'] != result.get(name, data['custodyBaseline']['foreignDirty'][name]):
+                raise ValueError('Support transition does not continue frozen hash history')
+            if (not re.fullmatch(r'[0-9a-f]{64}', event['toSha256'])
+                    or event['toSha256'] == event['fromSha256']):
+                raise ValueError('Support transition requires changed regular-file bytes')
+            evidence = {}
+            for key in ('recordSnapshot', 'currentSnapshot', 'claimProof', 'reviewFile'):
+                value = event[key]
+                if (not isinstance(value, str) or not value.startswith(SUPPORT_EVIDENCE)
+                        or git_run(root, 'check-ignore', '-q', '--', value).returncode):
+                    raise ValueError('Support evidence must remain in exact ignored evidence scope')
+                raw = regular_bytes(safe(root, value))
+                if hashlib.sha256(raw).hexdigest() != event[key + 'Sha256']:
+                    raise ValueError('Support snapshot or review bytes changed')
+                evidence[key] = raw
+            snapshot = json.loads(evidence['recordSnapshot'])
+            snapshot['_recordPath'] = record['_recordPath']
+            _, snapshot_errors, _ = foreign_reconciliations(root, snapshot, override=blank,
+                                                            check_current=False)
+            if snapshot_errors or snapshot.get('owner') != record['owner']:
+                raise ValueError('Frozen participant snapshot custody differs')
+            if hashlib.sha256(evidence['currentSnapshot']).hexdigest() != event['toSha256']:
+                raise ValueError('Frozen current support bytes differ')
+            at = dt.datetime.fromisoformat(event['atUTC'])
+            proof = json.loads(evidence['claimProof'])
+            rows = support_proof_rows(root, proof, record['owner'], at)
+            if name not in rows:
+                raise ValueError('Claim proof does not cover support path')
+            review = json.loads(evidence['reviewFile'])
+            expected = dict(schema=1, disposition='accepted', scope='same-owner-support-provenance-only',
+                independent=True, scenarioAcceptance=False,
+                recordIdentitySha256=identity, recordPath=record['_recordPath'],
+                path=name, previousSha256=event['fromSha256'], currentSha256=event['toSha256'],
+                sourceOwner=record['owner'], reason=event['reason'])
+            for key in ('recordSnapshot', 'currentSnapshot', 'claimProof'):
+                expected[key] = event[key]
+                expected[key + 'Sha256'] = event[key + 'Sha256']
+            if (type(review.get('schema')) is not int or review.get('schema') != 1
+                    or review.get('independent') is not True or review.get('scenarioAcceptance') is not False
+                    or not event['reason'].strip() or any(review.get(k) != v for k, v in expected.items())
+                    or not isinstance(review.get('reviewer'), str) or not review['reviewer'].strip()
+                    or review['reviewer'].strip().casefold() == str(record['owner']).strip().casefold()):
+                raise ValueError('Independent review does not bind exact same-owner transition')
+            result[name] = event['toSha256']
+        errors = []
+        if check_current:
+            errors = ['Reconciled support path changed: ' + n for n, h in result.items()
+                      if fingerprint(root, n) != h]
+        return result, errors, data
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+        return {}, ['Support reconciliation: ' + str(exc)], None
+
+
+def protected_reconciliations(root, record):
+    foreign, errors, data = foreign_reconciliations(root, record)
+    support, support_errors, _ = support_reconciliations(root, record)
+    errors += support_errors
+    if set(foreign) & set(support):
+        errors.append('A support path cannot also carry foreign-owner reconciliation')
+    return dict(foreign, **support), errors, data
+
+
+def reconcile_support(root, record, reqs, state, args):
+    """Append reviewed same-owner support provenance; never mutate the record."""
+    if (not args.transition_file.startswith('.warlock-contributor/')
+            or git_run(root, 'check-ignore', '-q', '--', args.transition_file).returncode):
+        raise ValueError('Support transition must be Git-ignored scratch')
+    entries = read(safe(root, args.transition_file))
+    fields = {'path', 'recordSnapshot', 'currentSnapshot', 'claimProof', 'reviewFile', 'reason'}
+    if (not isinstance(entries, list) or not entries
+            or any(not isinstance(x, dict) or set(x) != fields for x in entries)):
+        raise ValueError('Support transition requires exact snapshot/proof/review fields')
+    names = [x['path'] for x in entries]
+    if len(set(names)) != len(names) or any(n not in SUPPORT_CUSTODY_PATHS for n in names):
+        raise ValueError('Only unique fixed allowed support docs may be reconciled')
+    sidecar = support_sidecar(root, record)
+    parent, leaf = open_parent(sidecar, create=True)
+    try:
+        try:
+            raw = regular_bytes_at(parent, leaf)
+            data, before = json.loads(raw), hashlib.sha256(raw).hexdigest()
+        except FileNotFoundError:
+            data, before = empty_reconciliation(record), 'absent'
+        existing, errors, _ = support_reconciliations(root, record, override=data,
+                                                    check_current=False)
+        if errors:
+            raise ValueError('; '.join(errors))
+        base_errors, _ = validate(root, record, reqs, state)
+        allowed = {prefix + n for n in names for prefix in
+                   ('Protected foreign-dirty path changed: ', 'Reconciled support path changed: ')}
+        if any(error not in allowed for error in base_errors):
+            raise ValueError('Resolve unrelated participant findings before support reconciliation: '
+                             + '; '.join(error for error in base_errors if error not in allowed))
+        original_record = regular_bytes(safe(root, record['_recordPath']))
+        candidate = dict(data, events=list(data['events']))
+        proofs = {}
+        for item in entries:
+            name = item['path']
+            event = dict(item, fromSha256=existing.get(name, record['foreignDirty'].get(name)),
+                         toSha256=fingerprint(root, name), atUTC=now(),
+                         previousEventSha256=candidate['events'][-1]['eventSha256'] if candidate['events'] else None)
+            for key in ('recordSnapshot', 'currentSnapshot', 'claimProof', 'reviewFile'):
+                event[key + 'Sha256'] = digest(safe(root, item[key]))
+            if regular_bytes(safe(root, item['recordSnapshot'])) != original_record:
+                raise ValueError('Support record snapshot must match exact current participant bytes')
+            proofs[item['claimProof']] = read(safe(root, item['claimProof']))
+            event['eventSha256'] = json_sha256(event)
+            candidate['events'].append(event)
+        overlay, errors, _ = support_reconciliations(root, record, override=candidate)
+        if errors:
+            raise ValueError('; '.join(errors))
+        for proof in proofs.values():
+            frozen = support_proof_rows(root, proof, record['owner'], dt.datetime.now(dt.timezone.utc))
+            live = support_live_claims(record['owner'], proof['run'])
+            for name in names:
+                if name not in frozen:
+                    continue
+                row = frozen[name]
+                matching = [x for x in live if x.get('resource') == row['resource']]
+                if (len(matching) != 1 or any(matching[0].get(k) != row[k]
+                        for k in ('resource', 'holder', 'holder_did'))
+                        or dt.datetime.fromisoformat(matching[0]['lease_end'])
+                           <= dt.datetime.now(dt.timezone.utc) + dt.timedelta(seconds=5)):
+                    raise ValueError('Same-owner support claim is not currently confirmed by AgentBus')
+        # Re-read all four frozen artifacts (including review/proof), historical
+        # chain and current support bytes after the potentially slow live probe.
+        # A pre-probe digest is not a post-probe provenance receipt.
+        overlay, errors, _ = support_reconciliations(root, record, override=candidate)
+        if errors:
+            raise ValueError('; '.join(errors))
+        if (regular_bytes(safe(root, record['_recordPath'])) != original_record
+                or any(fingerprint(root, n) != overlay[n] for n in names)):
+            raise ValueError('Record or support bytes changed before atomic reconciliation')
+        write_record(sidecar, candidate, parent_fd=parent, expected_sha=before)
+        return dict(record=record['_recordPath'], sidecar=str(sidecar.relative_to(root)),
+                    supportPaths=names, participantBytesUnchanged=True,
+                    foreignOwnershipRetained=True, scenarioAcceptanceInferred=False)
+    finally:
+        os.close(parent)
+
+
 def discover_repo():
     for parent in (pathlib.Path.cwd(), *pathlib.Path.cwd().parents):
         if (parent / BASE).is_file() and (parent / STATE).is_file():
@@ -975,7 +1209,7 @@ def extend_paths(root, record, reqs, state, args):
     if any(n in snapshot and n not in adopted for n in requested):
         raise ValueError('New dirty dependencies require explicit --adopt-dirty and ownership note')
     # Check foreign custody before any adoption; an overwritten draft cannot be repaired here.
-    reconciled, reconciliation_errors, _ = foreign_reconciliations(root, record)
+    reconciled, reconciliation_errors, _ = protected_reconciliations(root, record)
     if reconciliation_errors or any(fingerprint(root, n) != reconciled.get(n, h) for n, h in record['foreignDirty'].items()):
         raise ValueError('Protected foreign-dirty path changed; extension cannot override custody')
     if selected_adoption:
@@ -2053,6 +2287,7 @@ def remaining_markdown(packet):
 def review(root, record, reqs, state, includes):
     """Read-only staging review; explicit support paths do not override foreign ownership."""
     packet = handoff(root, record, reqs, state)
+    support_overlay, support_errors, _ = support_reconciliations(root, record)
     allowed = set(record['slice']['paths'])
     for name in includes:
         path = safe(root, name)
@@ -2068,9 +2303,7 @@ def review(root, record, reqs, state, includes):
     for name in git(root, 'diff', '--cached', '--no-renames', '--name-only', '-z', '--').decode().split('\0'):
         if not name:
             continue
-        if name in record['foreignDirty']:
-            packet['errors'].append('Staged protected foreign path: ' + name)
-        elif name not in allowed:
+        if name not in record['foreignDirty'] and name not in allowed:
             packet['errors'].append('Staged path needs explicit contribution scope (--include for owned support files): ' + name)
         path = safe(root, name)
         entries = git(root, 'ls-files', '--stage', '-z', '--', ':(literal)' + name).split(b'\0')
@@ -2084,6 +2317,10 @@ def review(root, record, reqs, state, includes):
                 raise ValueError('Staged path must be a resolved regular file: ' + name)
             index_hash = hashlib.sha256(git(root, 'cat-file', 'blob', blob)).hexdigest()
         current_hash = digest(path)
+        if name in record['foreignDirty'] and not (
+                name in includes and name in SUPPORT_CUSTODY_PATHS and not support_errors
+                and support_overlay.get(name) == current_hash == index_hash):
+            packet['errors'].append('Staged protected foreign path: ' + name)
         matches = index_hash == current_hash
         if not matches:
             packet['errors'].append('Staged bytes differ from current source/evidence: ' + name)
@@ -2202,7 +2439,7 @@ def validate(root, record, reqs, state):
         errors.append('Extension history does not cover declared source paths')
     if not record.get('explicitSliceOverride') and s['id'] != state['activeSlice']['id']:
         errors.append('Live selected slice changed; restart deliberately or explicitly select a slice')
-    reconciled, reconciliation_errors, _ = foreign_reconciliations(root, record)
+    reconciled, reconciliation_errors, _ = protected_reconciliations(root, record)
     errors.extend(reconciliation_errors)
     for name, old in record['foreignDirty'].items():
         if fingerprint(root, name) != reconciled.get(name, old):
@@ -2300,6 +2537,8 @@ def main():
     subs.add_parser('handoff')
     reconciliation = subs.add_parser('reconcile-foreign', help='Append reviewed foreign provenance without adopting files or changing participant history')
     reconciliation.add_argument('--transition-file', required=True, help='Ignored scratch JSON array of exact reviewed foreign-path transitions')
+    support = subs.add_parser('reconcile-support', help='Append independently reviewed same-owner support-doc provenance without changing participant history')
+    support.add_argument('--transition-file', required=True)
     extension = subs.add_parser('extend', help='Add dependencies to the same owned slice without resetting its history or timer')
     extension.add_argument('--path', action='append', required=True)
     extension.add_argument('--reason', required=True)
@@ -2374,7 +2613,7 @@ def main():
             record = json.loads(regular_bytes_at(lock_parent, path.name)) if lock_parent is not None else read(path)
             record['_recordPath'] = args.record
             return record
-        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'index-participants', 'owner-census'):
+        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'reconcile-support', 'index-participants', 'owner-census'):
             records_parent, records_name = open_parent(safe(root, '.warlock-contributor/.records.lock'), create=True)
             records_lock = os.fdopen(os.open(records_name, os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_CLOEXEC,
                                              0o600, dir_fd=records_parent), 'w')
@@ -2444,10 +2683,12 @@ def main():
             result.update(planSchema=1, slice=s, originals=slice_originals(s, reqs))
         elif args.command == 'preflight':
             result.update(preflight(root, args.record, args.slice_file, reqs))
-        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan', 'extend', 'reconcile-foreign'):
+        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan', 'extend', 'reconcile-foreign', 'reconcile-support'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
-            if args.command == 'reconcile-foreign':
+            if args.command == 'reconcile-support':
+                result.update(reconcile_support(root, read_target(), reqs, state, args))
+            elif args.command == 'reconcile-foreign':
                 result.update(reconcile_foreign(root, read_target(), reqs, state, args))
             elif args.command == 'extend':
                 record = read_target()

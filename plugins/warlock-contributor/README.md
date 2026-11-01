@@ -531,3 +531,25 @@ resulting index binds the exact manifest bytes in its digest. This classifies
 provenance; it neither adopts source drafts nor resets progress or accepts EARS.
 Use `--json` and save command output beneath `.warlock-contributor/evidence/`
 so captured status text is not confused with another participant record.
+
+
+### Same-owner canonical support updates
+
+If `start` captured the accountable owner's already-dirty canonical support docs as
+foreign, later updates need exact provenance; do not overwrite participant pins or
+pretend a second owner exists. `reconcile-support --transition-file <ignored-json>`
+recognizes only HANDOFF, v2 STATE, wiki log and current-status. It requires frozen
+participant/current-file snapshots, current authenticated assigned-run AgentBus
+claims and an independent accepted review of each exact transition. Evidence lives
+under `.warlock-contributor/evidence/support-custody/`; the separate sidecar retains
+the original record, source ownership, timer and stopped histories unchanged.
+
+Transition entries contain `path`, `recordSnapshot`, `currentSnapshot`, `claimProof`,
+`reviewFile` and `reason`. The review binds their hashes, previous/current support
+hashes, participant identity, same owner, accepted disposition and provenance-only
+scope. The command rechecks the live claim and all evidence before its atomic write.
+Existing foreign-owner reconciliation and product adoption rules remain unchanged.
+For publication, explicitly pass `review --include <exact-support-path>`; its
+accepted current receipt must match both working and staged bytes. Source, tools,
+arbitrary docs and genuine foreign drafts cannot use this exception. Provenance
+recognition is neither production progress nor scenario acceptance.

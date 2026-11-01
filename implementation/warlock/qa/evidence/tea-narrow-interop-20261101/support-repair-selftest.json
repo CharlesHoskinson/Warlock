@@ -1,0 +1,26 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "1a68fd3ae2c1e959c4c981b3fa145837908b0fae027b05c3347166639eba0c2f",
+  "selfTestSchema": 1,
+  "executionPerformed": true,
+  "acceptanceInferred": false,
+  "scope": "Plugin contribution-policy regressions; no GUI build, native/AT oracle or client installation.",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/home/charl/code/Warlock/plugins/warlock-contributor/qa",
+    "-t",
+    "/home/charl/code/Warlock/plugins/warlock-contributor/qa",
+    "-p",
+    "test_*.py"
+  ],
+  "returnCode": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"1a68fd3ae2c1e959c4c981b3fa145837908b0fae027b05c3347166639eba0c2f\",\n  \"ok\": false,\n  \"errors\": [\n    \"Continuation requires a participant slice record; run start first\"\n  ]\n}\n{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"1a68fd3ae2c1e959c4c981b3fa145837908b0fae027b05c3347166639eba0c2f\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"record\": \".warlock-contributor/slice.json\",\n  \"progress\": {\n    \"iterationsWithoutProgress\": 0,\n    \"lastRecordedProgressUTC\": \"2026-11-01T21:02:33.750645+00:00\",\n    \"secondsSinceRecordedProgress\": 0,\n    \"limits\": {\n      \"iterations\": 2,\n      \"seconds\": 2700\n    },\n    \"investigationNeedsChange\": false,\n    \"reasons\": [],\n    \"action\": \"Continue the selected behavior with proportional verification.\",\n    \"basis\": \"Participant record; unrecorded work and oracle truth are not inferred.\"\n  },\n  \"ok\": true\n}\n",
+  "stderr": ".....................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 277 tests in 87.728s\n\nOK\n",
+  "errors": [],
+  "ok": true
+}

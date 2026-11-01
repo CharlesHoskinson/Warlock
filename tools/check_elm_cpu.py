@@ -104,6 +104,9 @@ def main():
         if not args.authority:
             for name in ['Main', 'Bar', 'Popup', 'HttpMain', 'HttpBar', 'HttpPopup']:
                 run('compile-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize', '--output=' + str(output / (name + '.js'))])
+        if args.tea_contract:
+            run('compile-NativePreviewRenderer', [compiler, 'make', 'src/NativePreviewRenderer.elm', '--optimize',
+                                                   '--output=' + str(output / 'NativePreviewRenderer.js')])
         fixture_name = 'ReceiptStateReplay' if args.receipts else ('AuthorityTupleReplay' if args.authority else 'FeedbackContextReplay')
         harness_name = 'receipt-state' if args.receipts else ('authority-tuple' if args.authority else 'feedback-context')
         fixture = root / ('qa/' + fixture_name + '.elm')

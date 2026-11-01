@@ -253,6 +253,53 @@ async function failures(){
   }
 }
 
+// Controlled XHR interleavings: same compiled UiHttp and DesktopPolicy entry.
+// Seeds determine literal wire IDs only; they do not model native provenance.
+async function eventDuringDelivery(){
+  const seedBase=20261101;
+  for(let seed=0;seed<8;seed++)for(const renderer of [false,true]){
+    const id=seedBase+seed,label=`event-during-delivery/${renderer?'renderer':'controller'}/${id}`;
+    const first={seed:id,sequence:0},second={seed:id,sequence:1};
+    // A role-valid unmatched disposition reaches the real policy without
+    // creating a domain publication. A malformed native envelope legitimately
+    // publishes refusal feedback; that is not an HTTP replay.
+    const allowed=renderer ? gateway('presentation',{controlled:true,seed:id})
+      : gateway('view-disposition',{viewProtocol:1,kind:'batch-disposition',disposition:'admitted',scope:{id:'1',generation:'1'},revision:'1',publication:'1',lease:'1',binding,batch:'{}'});
+    const hostile=[
+      ['malformed','{'],
+      ['foreign-role',JSON.stringify(gateway(renderer?'native-event':'presentation',{seed:id}))],
+      ['extra-field',JSON.stringify({...allowed,extra:true})],
+      ['wrong-version',JSON.stringify({...allowed,bridgeProtocol:2})]
+    ];
+    for(const [kind,wire] of hostile){
+      const env=await worker(renderer);
+      await enqueue(env,first);await enqueue(env,second);
+      need(label+'/'+kind+' one exact active POST',env.posts().length===1&&equal(JSON.parse(env.posts()[0].body),first));
+      env.get().respond(200,wire);await env.flush();
+      check(label+'/'+kind+' rejects and poisons',env.latest().event?.kind==='lost'&&typeof env.latest().problem==='string',env.latest());
+      check(label+'/'+kind+' cancels active POST',env.posts()[0].aborted);
+      const before=env.requests.length;
+      env.posts()[0].respond(204,'',true);await env.flush();
+      await enqueue(env,{seed:id,sequence:2});await env.tick(10000);
+      check(label+'/'+kind+' late completion never sends queued or new action',env.requests.length===before&&env.posts().length===1,env.requests.map(x=>x.url));
+      env.close();
+    }
+    const good=await worker(renderer);
+    await enqueue(good,first);await enqueue(good,second);
+    need(label+'/valid one active POST',good.posts().length===1&&equal(JSON.parse(good.posts()[0].body),first));
+    need(label+'/valid unmatched disposition precondition',good.latest().pendingBatches===0);
+    await good.event(allowed);
+    check(label+'/valid matching role delivered during active POST',good.latest().event?.kind==='incoming'&&equal(good.latest().event.value,allowed)&&good.latest().problem===null&&good.posts().length===1,good.latest());
+    check(label+'/valid preserves no pending domain batch',good.latest().pendingBatches===0,good.latest());
+    good.posts()[0].respond(204);await good.flush();
+    need(label+'/valid queued successor actually sent',good.posts().length===2);
+    check(label+'/valid FIFO retains exact successor',equal(JSON.parse(good.posts()[1].body),second));
+    good.posts()[1].respond(204);await good.flush();
+    check(label+'/valid delivery drains without replay',good.posts().length===2&&good.latest().problem===null&&good.latest().event===null,good.latest());
+    good.close();
+  }
+}
+
 async function receiptNotAck(){
   const env=await worker(false);
   await env.event(gateway('view-topology',topology));
@@ -272,4 +319,4 @@ async function receiptNotAck(){
   report.trace.push({label:'explicit controlled host preconditions; no native issuer',topology,attached:initialGateway,wholeCommit:whole,matchingDisposition:certificate});env.close();
 }
 
-(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await receiptNotAck();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();
+(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();

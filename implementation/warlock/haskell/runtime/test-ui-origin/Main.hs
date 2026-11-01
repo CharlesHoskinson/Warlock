@@ -4,7 +4,7 @@
 -- inferred from HTTP headers. Root alone executes this selected test image.
 module Main (main) where
 
-import Control.Exception (IOException,SomeException,bracket,finally,try)
+import Control.Exception (IOException,SomeException,bracket,finally,mask,onException,try)
 import Control.Concurrent (forkFinally,newEmptyMVar,putMVar,takeMVar,threadDelay,tryReadMVar)
 import Control.Monad (forM,forM_,unless,when)
 import qualified Crypto.Hash.SHA256 as SHA
@@ -30,8 +30,9 @@ import System.Posix.Signals (sigKILL,signalProcess)
 import System.Posix.Types (Fd(..))
 import System.Process (readProcessWithExitCode)
 import System.Timeout (timeout)
+import System.IO.Error (ioeGetErrorString)
 import Text.Read (readMaybe)
-import Warlock.Capture.Process.Bootstrap (deadlineAfter)
+import Warlock.Capture.Process.Bootstrap (deadlineAfter,remainingMicros)
 import qualified Warlock.Protocol.Desktop as Desktop
 import qualified Warlock.Protocol.Framing as Framing
 import qualified Warlock.Protocol.Identity as Identity
@@ -538,12 +539,106 @@ adoptionBlockingRegression budget storage = do
    check budget "blocking-adoption child receives exact gateway and retires normally" (status == Just (Exited ExitSuccess))
   ) `finally` cleanup
 
+-- Source-bound TEA005 preparation: exercise the actual public Native reader
+-- on a fresh owned Unix socket per case.  These are synthetic application
+-- gateway messages; a connected peer and validated JSON are not native
+-- authority, a compositor action, or a controller-queue observation.
+-- The fixture's five-second deadline is local to each fresh child and is not
+-- a replacement or renewal of any original native campaign deadline.
+nativeGatewayAdmissionRegression :: IORef Int -> IO ()
+nativeGatewayAdmissionRegression budget = do
+ one <- must (Identity.parseCounter False "1")
+ bound <- must (Identity.binding one one one)
+ let valid = "{\"bridgeProtocol\":1,\"kind\":\"native-event\",\"payload\":{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"nativeOperations\":[]}}"
+     foreignBinding = "{\"bridgeProtocol\":1,\"kind\":\"native-event\",\"payload\":{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"2\"},\"nativeOperations\":[]}}"
+     nativeOperations = "{\"bridgeProtocol\":1,\"kind\":\"native-event\",\"payload\":{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"nativeOperations\":[\"activate\"]}}"
+     cases = [("foreign binding refused",foreignBinding,Just "foreign native gateway binding"),
+              ("fresh matching peer after foreign binding",valid,Nothing),
+              ("native operation refused",nativeOperations,Just "unsupported version or kind"),
+              ("fresh matching peer after native operation",valid,Nothing)]
+ forM_ cases $ \(label,raw,expectedError) -> mask $ \restore -> do
+  framed <- must (Framing.desktopGatewayPrefix raw)
+  owner <- getProcessID
+  (peer,endpoint) <- S.socketPair S.AF_UNIX S.Stream S.defaultProtocol
+  let closePair = S.close endpoint `finally` S.close peer
+  (started,deadline) <- (do
+   S.withFdSocket endpoint $ \fd ->
+    when (fd == 0) (ioError (userError "expected separately owned endpoint"))
+   S.withFdSocket peer $ \fd -> setFdOption (Fd fd) NonBlockingRead True
+   start <- getMonotonicTimeNSec
+   endDeadline <- deadlineAfter 5000000 >>= must
+   pure (start,endDeadline)) `onException` closePair
+  let end = toInteger started + 5000000000
+      workEnd = end - 500000000 -- fixture-only cleanup reserve, no deadline renewal
+  pid <- (forkProcess $ restore $ do
+   S.close peer
+   result <- try $ do
+    S.withFdSocket endpoint $ \fd -> do
+     _ <- dupTo (Fd fd) (Fd 0)
+     pure ()
+    S.close endpoint
+    native <- Native.adoptNative bound deadline
+    unless (Native.nativePeerPid native == fromIntegral owner)
+      (ioError (userError "gateway fixture peer PID mismatch"))
+    observed <- try (Native.receiveGateway native) :: IO (Either IOException B.ByteString)
+    case (expectedError,observed) of
+     (Nothing,Right bytes) | bytes==raw -> pure ()
+     (Just reason,Left problem) | ioeGetErrorString problem==reason -> pure ()
+     _ -> ioError (userError "unexpected gateway admission")
+    closed <- Native.retireNative native
+    afterRetirement <- remainingMicros deadline
+    unless (closed && afterRetirement > 0) (ioError (userError "gateway fixture retirement uncertain or late"))
+   case result of
+    Right () -> exitImmediately ExitSuccess
+    Left (problem :: SomeException) -> C.putStrLn (C.pack (label ++ ": " ++ show problem)) >> exitImmediately (ExitFailure 1)
+   ) `onException` closePair
+  reaped <- newIORef False
+  endpointClosed <- newIORef False
+  let closeEndpoint = do
+       done <- readIORef endpointClosed
+       unless done (S.close endpoint >> writeIORef endpointClosed True)
+      awaitExit cutoff = do
+       before <- getMonotonicTimeNSec
+       if toInteger before >= cutoff then pure Nothing else do
+        status <- getProcessStatus False False pid
+        after <- getMonotonicTimeNSec
+        case status of
+         Just value | toInteger after < cutoff -> writeIORef reaped True >> pure (Just value)
+         Just _ -> writeIORef reaped True >> pure Nothing
+         Nothing -> do
+          let micros = (cutoff - toInteger after) `div` 1000
+          if micros > 0 then threadDelay (fromInteger (min 10000 micros)) >> awaitExit cutoff else pure Nothing
+      cleanup = (do
+       done <- readIORef reaped
+       unless done $ do
+        status <- getProcessStatus False False pid
+        case status of
+         Just _ -> writeIORef reaped True
+         Nothing -> do
+          signalProcess sigKILL pid
+          retired <- awaitExit end
+          unless (retired /= Nothing) (ioError (userError "gateway child cleanup unconfirmed"))
+       ) `finally` (closeEndpoint `finally` S.close peer)
+  (restore $ do
+    closeEndpoint
+    left <- remainingMicros deadline
+    now <- getMonotonicTimeNSec
+    let beforeReserve = max 0 ((workEnd - toInteger now) `div` 1000)
+        sendBudget = min (toInteger left) beforeReserve
+    unless (sendBudget > 0) (ioError (userError "gateway fixture deadline expired"))
+    sent <- timeout (fromInteger sendBudget) (N.sendAll peer framed >> S.shutdown peer S.ShutdownSend)
+    unless (sent == Just ()) (ioError (userError "gateway fixture send unconfirmed"))
+    status <- awaitExit workEnd
+    check budget ("actual adopted gateway: " ++ label) (status == Just (Exited ExitSuccess))
+   ) `finally` cleanup
+
 parent :: FilePath -> IO ()
 parent storage = do
  names <- listDirectory storage
  unless (null names) (ioError (userError "fresh private QA storage required"))
  budget <- newIORef 0
  adoptionBlockingRegression budget storage
+ nativeGatewayAdmissionRegression budget
  policyCorpus budget storage
  httpCorpus budget storage
  manifestPath <- getEnv "WARLOCK_UI_ORIGIN_MANIFEST"

@@ -1,0 +1,3356 @@
+{
+  "schema": 1,
+  "scope": "compiled Elm worker controls only; not native or whole-EARS acceptance",
+  "runnerSha256": "cf6e8b17ce0095b15251ef82a0719af39f22e165211d8ea289d86ce029c30576",
+  "fixtures": [
+    {
+      "name": "NotificationsReplay",
+      "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793567061690853540/NotificationsReplay.js",
+      "sha256": "77e7aad000d37a20323999990a9b7d2e411eee73959e60c9ca02c2bf92730a8e",
+      "checks": [
+        {
+          "name": "allControlsHaveNames",
+          "passed": true
+        },
+        {
+          "name": "allEntryStatesDecodeAndPreserveWireNames",
+          "passed": true
+        },
+        {
+          "name": "centerModeAcceptedByProductionRenderer",
+          "passed": true
+        },
+        {
+          "name": "dismissIdentityAndWireUnchanged",
+          "passed": true
+        },
+        {
+          "name": "dispatchedCannotRepeat",
+          "passed": true
+        },
+        {
+          "name": "dispatchedOutcomeTyped",
+          "passed": true
+        },
+        {
+          "name": "expiredChoiceIsInert",
+          "passed": true
+        },
+        {
+          "name": "expiryRemovesActionsAndKeepsHistory",
+          "passed": true
+        },
+        {
+          "name": "explicitReadReconcilesRetiredUnknownWithoutEffect",
+          "passed": true
+        },
+        {
+          "name": "incomingExpiryNeverMovesFocus",
+          "passed": true
+        },
+        {
+          "name": "invalidEntryStateRefused",
+          "passed": true
+        },
+        {
+          "name": "invalidOutcomePreservesPending",
+          "passed": true
+        },
+        {
+          "name": "invokeIdentityAndWireUnchanged",
+          "passed": true
+        },
+        {
+          "name": "notificationOpenerIntegrated",
+          "passed": true
+        },
+        {
+          "name": "olderObservationCannotReviveTarget",
+          "passed": true
+        },
+        {
+          "name": "oneExplicitAction",
+          "passed": true
+        },
+        {
+          "name": "openingReadFocusMatchesActualControl",
+          "passed": true
+        },
+        {
+          "name": "pendingCannotRepeat",
+          "passed": true
+        },
+        {
+          "name": "refusedOutcomeTyped",
+          "passed": true
+        },
+        {
+          "name": "reusedIdRejectsOldIncarnation",
+          "passed": true
+        },
+        {
+          "name": "staleViewCannotSubmit",
+          "passed": true
+        },
+        {
+          "name": "unknownCannotReplay",
+          "passed": true
+        },
+        {
+          "name": "unknownOutcomeTypedAndPending",
+          "passed": true
+        },
+        {
+          "name": "wrongReceiptCannotSettle",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "payload": {
+        "checks": {
+          "notificationOpenerIntegrated": true,
+          "centerModeAcceptedByProductionRenderer": true,
+          "openingReadFocusMatchesActualControl": true,
+          "allEntryStatesDecodeAndPreserveWireNames": true,
+          "invalidEntryStateRefused": true,
+          "invokeIdentityAndWireUnchanged": true,
+          "dismissIdentityAndWireUnchanged": true,
+          "dispatchedOutcomeTyped": true,
+          "refusedOutcomeTyped": true,
+          "invalidOutcomePreservesPending": true,
+          "unknownOutcomeTypedAndPending": true,
+          "oneExplicitAction": true,
+          "pendingCannotRepeat": true,
+          "dispatchedCannotRepeat": true,
+          "expiryRemovesActionsAndKeepsHistory": true,
+          "expiredChoiceIsInert": true,
+          "reusedIdRejectsOldIncarnation": true,
+          "unknownCannotReplay": true,
+          "explicitReadReconcilesRetiredUnknownWithoutEffect": true,
+          "staleViewCannotSubmit": true,
+          "wrongReceiptCannotSettle": true,
+          "olderObservationCannotReviveTarget": true,
+          "incomingExpiryNeverMovesFocus": true,
+          "allControlsHaveNames": true
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "1",
+          "lease": "1",
+          "mode": "notifications",
+          "status": "1 live notifications. Actions apply only to the current notification.",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+              "label": "Notifications · 1",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:close",
+              "label": "Close notifications",
+              "ariaLabel": "Close notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notifications:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:refresh",
+              "label": "Refresh notifications",
+              "ariaLabel": "Refresh notifications",
+              "detail": "Read current targets; no action is repeated",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notifications:dnd",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:dnd",
+              "label": "Do not disturb for this session",
+              "ariaLabel": "Do not disturb for this session",
+              "detail": "Off",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notifications:critical-interrupt",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:critical-interrupt",
+              "label": "Allow critical notification interruptions for this session",
+              "ariaLabel": "Allow critical notification interruptions for this session",
+              "detail": "Off · New notifications are polite",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notification:9:1:summary",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notification:9:1:summary",
+              "label": "Calendar: Meeting soon",
+              "ariaLabel": "Calendar: Meeting soon",
+              "detail": "Live",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "notification:9:1:body",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notification:9:1:body",
+              "label": "Bring your notes",
+              "ariaLabel": "Bring your notes",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "notification:9:1:invoke:open",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notification:9:1:invoke:open",
+              "label": "Open meeting",
+              "ariaLabel": "Open meeting",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notification:9:1:dismiss:",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notification:9:1:dismiss:",
+              "label": "Dismiss notification",
+              "ariaLabel": "Dismiss notification",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "expiredFrame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "2",
+          "lease": "1",
+          "mode": "notifications",
+          "status": "No live notifications. Previous notifications remain in history.",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:close",
+              "label": "Close notifications",
+              "ariaLabel": "Close notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notifications:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:refresh",
+              "label": "Refresh notifications",
+              "ariaLabel": "Refresh notifications",
+              "detail": "Read current targets; no action is repeated",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notifications:dnd",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:dnd",
+              "label": "Do not disturb for this session",
+              "ariaLabel": "Do not disturb for this session",
+              "detail": "Off",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notifications:critical-interrupt",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:critical-interrupt",
+              "label": "Allow critical notification interruptions for this session",
+              "ariaLabel": "Allow critical notification interruptions for this session",
+              "detail": "Off · New notifications are polite",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "notification:9:1:summary",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notification:9:1:summary",
+              "label": "Calendar: Meeting soon",
+              "ariaLabel": "Calendar: Meeting soon",
+              "detail": "History · expired",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "notification:9:1:body",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notification:9:1:body",
+              "label": "Bring your notes",
+              "ariaLabel": "Bring your notes",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "JumpListReplay",
+      "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793567061690853540/JumpListReplay.js",
+      "sha256": "dcb8466b2ac0dd789d5f7baf5704a0a1ed3cd2f9bfe7878a1e795f6243b68445",
+      "checks": [
+        {
+          "name": "ActionKindDescriptionsPreserved",
+          "passed": true
+        },
+        {
+          "name": "AllActionsNamed",
+          "passed": true
+        },
+        {
+          "name": "CloseReturnsToLauncherWithoutLaunch",
+          "passed": true
+        },
+        {
+          "name": "CrossKindPrefixRejected",
+          "passed": true
+        },
+        {
+          "name": "ForeignApplicationCannotSettleReceipt",
+          "passed": true
+        },
+        {
+          "name": "ForeignApplicationReadCannotReplaceOpenList",
+          "passed": true
+        },
+        {
+          "name": "ForeignRecentNeverDispatches",
+          "passed": true
+        },
+        {
+          "name": "LauncherHasBoundedKeyboardJumpOpener",
+          "passed": true
+        },
+        {
+          "name": "NativeRendererAcceptsJumpMode",
+          "passed": true
+        },
+        {
+          "name": "OneExplicitDesktopAction",
+          "passed": true
+        },
+        {
+          "name": "OnlyOwnedRecentActionShown",
+          "passed": true
+        },
+        {
+          "name": "OriginalTwoDeclaredActionsShown",
+          "passed": true
+        },
+        {
+          "name": "OtherPopupRetiresList",
+          "passed": true
+        },
+        {
+          "name": "OwnedRecentDispatchesOnce",
+          "passed": true
+        },
+        {
+          "name": "PopupClosesBeforeLaunch",
+          "passed": true
+        },
+        {
+          "name": "RefreshOnlyReads",
+          "passed": true
+        },
+        {
+          "name": "StaleViewCannotSubmit",
+          "passed": true
+        },
+        {
+          "name": "SubmissionNeverClaimsApplicationReady",
+          "passed": true
+        },
+        {
+          "name": "TypedActionKindsAndWireStrings",
+          "passed": true
+        },
+        {
+          "name": "UnknownActionKindRejected",
+          "passed": true
+        },
+        {
+          "name": "UnknownPersistsWithoutReplay",
+          "passed": true
+        },
+        {
+          "name": "UnsupportedActionNeverDispatches",
+          "passed": true
+        },
+        {
+          "name": "UnsupportedActionsAbsent",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "payload": {
+        "checks": {
+          "TypedActionKindsAndWireStrings": true,
+          "UnknownActionKindRejected": true,
+          "CrossKindPrefixRejected": true,
+          "ActionKindDescriptionsPreserved": true,
+          "LauncherHasBoundedKeyboardJumpOpener": true,
+          "OriginalTwoDeclaredActionsShown": true,
+          "UnsupportedActionsAbsent": true,
+          "OnlyOwnedRecentActionShown": true,
+          "ForeignRecentNeverDispatches": true,
+          "UnsupportedActionNeverDispatches": true,
+          "OneExplicitDesktopAction": true,
+          "OwnedRecentDispatchesOnce": true,
+          "PopupClosesBeforeLaunch": true,
+          "SubmissionNeverClaimsApplicationReady": true,
+          "UnknownPersistsWithoutReplay": true,
+          "ForeignApplicationCannotSettleReceipt": true,
+          "ForeignApplicationReadCannotReplaceOpenList": true,
+          "RefreshOnlyReads": true,
+          "CloseReturnsToLauncherWithoutLaunch": true,
+          "OtherPopupRetiresList": true,
+          "StaleViewCannotSubmit": true,
+          "NativeRendererAcceptsJumpMode": true,
+          "AllActionsNamed": true
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "1",
+          "lease": "1",
+          "mode": "jump",
+          "status": "Choose an application action or recent file.",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:close",
+              "label": "Close application actions",
+              "ariaLabel": "Close application actions",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:refresh",
+              "label": "Refresh application actions",
+              "ariaLabel": "Refresh application actions",
+              "detail": "Read actions; never repeat a request",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:title:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:title:state",
+              "label": "Actions for Warlock Editor",
+              "ariaLabel": "Actions for Warlock Editor",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "control:new-instance:warlock-editor",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:new-instance",
+              "label": "New instance",
+              "ariaLabel": "Open new instance of Warlock Editor",
+              "detail": "Warlock Editor",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:desktop:Alpha",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Alpha",
+              "label": "New document",
+              "ariaLabel": "New document",
+              "detail": "Application action",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:desktop:Beta",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Beta",
+              "label": "Private window",
+              "ariaLabel": "Private window",
+              "detail": "Application action",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:recent:owned",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:recent:owned",
+              "label": "Open Warlock recent document",
+              "ariaLabel": "Open Warlock recent document",
+              "detail": "Recent file",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "pendingFrame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "2",
+          "lease": "1",
+          "mode": "jump",
+          "status": "Application action: waiting for native submission…",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:close",
+              "label": "Close application actions",
+              "ariaLabel": "Close application actions",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:refresh",
+              "label": "Refresh application actions",
+              "ariaLabel": "Refresh application actions",
+              "detail": "Read actions; never repeat a request",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:title:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:title:state",
+              "label": "Actions for Warlock Editor",
+              "ariaLabel": "Actions for Warlock Editor",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "control:new-instance:warlock-editor",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:new-instance",
+              "label": "New instance",
+              "ariaLabel": "Open new instance of Warlock Editor",
+              "detail": "Warlock Editor",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:desktop:Alpha",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Alpha",
+              "label": "New document",
+              "ariaLabel": "New document",
+              "detail": "Application action",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:desktop:Beta",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Beta",
+              "label": "Private window",
+              "ariaLabel": "Private window",
+              "detail": "Application action",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:recent:owned",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:recent:owned",
+              "label": "Open Warlock recent document",
+              "ariaLabel": "Open Warlock recent document",
+              "detail": "Recent file",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ]
+        },
+        "unknownFrame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "3",
+          "lease": "1",
+          "mode": "jump",
+          "status": "Application action: not confirmed. Refresh only reads actions; this request will not be repeated.",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:close",
+              "label": "Close application actions",
+              "ariaLabel": "Close application actions",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:refresh",
+              "label": "Refresh application actions",
+              "ariaLabel": "Refresh application actions",
+              "detail": "Read actions; never repeat a request",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:title:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:title:state",
+              "label": "Actions for Warlock Editor",
+              "ariaLabel": "Actions for Warlock Editor",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "control:new-instance:warlock-editor",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:new-instance",
+              "label": "New instance",
+              "ariaLabel": "Open new instance of Warlock Editor",
+              "detail": "Warlock Editor",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:desktop:Alpha",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Alpha",
+              "label": "New document",
+              "ariaLabel": "New document",
+              "detail": "Application action",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:desktop:Beta",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Beta",
+              "label": "Private window",
+              "ariaLabel": "Private window",
+              "detail": "Application action",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "jump:action:recent:owned",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:recent:owned",
+              "label": "Open Warlock recent document",
+              "ariaLabel": "Open Warlock recent document",
+              "detail": "Recent file",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "NotificationRelevanceReplay",
+      "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793567061690853540/NotificationRelevanceReplay.js",
+      "sha256": "a20f60b4a1eb995dcf9ad43c44c49f72839bee62458e89b47e3f324020d668ba",
+      "checks": [
+        {
+          "name": "CurrentIdleSetupOpensNotifications",
+          "passed": true
+        },
+        {
+          "name": "DndSuppressesExpiryAndRefusal",
+          "passed": true
+        },
+        {
+          "name": "ExactNativeExpiryReasonWithoutIntermediateObservation",
+          "passed": true
+        },
+        {
+          "name": "ExpiryAndRefusalDoNotRequestFocus",
+          "passed": true
+        },
+        {
+          "name": "FocusedUnavailableNodeIsNotActionable",
+          "passed": true
+        },
+        {
+          "name": "ForeignOutputCannotSupplyFocus",
+          "passed": true
+        },
+        {
+          "name": "ForeignRefusalCannotSettle",
+          "passed": true
+        },
+        {
+          "name": "IrrelevantExpirySilent",
+          "passed": true
+        },
+        {
+          "name": "LateFocusCannotReplayExpiry",
+          "passed": true
+        },
+        {
+          "name": "LeavingRetiredControlReleasesPlaceholder",
+          "passed": true
+        },
+        {
+          "name": "MatchedExpiredActionRefusalPolite",
+          "passed": true
+        },
+        {
+          "name": "MatchedFocusedExpiryPolite",
+          "passed": true
+        },
+        {
+          "name": "PassiveFocusCreatesNoAnnouncement",
+          "passed": true
+        },
+        {
+          "name": "PendingActionRetainsFocusWithoutAuthority",
+          "passed": true
+        },
+        {
+          "name": "RefusalRetainsExactRequestAndTarget",
+          "passed": true
+        },
+        {
+          "name": "RepeatedExpirySilent",
+          "passed": true
+        },
+        {
+          "name": "RepeatedMatchedRefusalSilent",
+          "passed": true
+        },
+        {
+          "name": "ReplacementCannotLosePendingExpiryIdentity",
+          "passed": true
+        },
+        {
+          "name": "StalePublicationCannotSupplyFocus",
+          "passed": true
+        },
+        {
+          "name": "UserInvokedExpiryRelevant",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "payload": {
+        "checks": {
+          "CurrentIdleSetupOpensNotifications": true,
+          "MatchedFocusedExpiryPolite": true,
+          "PassiveFocusCreatesNoAnnouncement": true,
+          "IrrelevantExpirySilent": true,
+          "RepeatedExpirySilent": true,
+          "LateFocusCannotReplayExpiry": true,
+          "FocusedUnavailableNodeIsNotActionable": true,
+          "PendingActionRetainsFocusWithoutAuthority": true,
+          "UserInvokedExpiryRelevant": true,
+          "MatchedExpiredActionRefusalPolite": true,
+          "RefusalRetainsExactRequestAndTarget": true,
+          "ReplacementCannotLosePendingExpiryIdentity": true,
+          "ExactNativeExpiryReasonWithoutIntermediateObservation": true,
+          "RepeatedMatchedRefusalSilent": true,
+          "ForeignRefusalCannotSettle": true,
+          "ExpiryAndRefusalDoNotRequestFocus": true,
+          "DndSuppressesExpiryAndRefusal": true,
+          "LeavingRetiredControlReleasesPlaceholder": true,
+          "ForeignOutputCannotSupplyFocus": true,
+          "StalePublicationCannotSupplyFocus": true
+        },
+        "readyFrame": {
+          "viewProtocol": 1,
+          "kind": "view-frame",
+          "revision": "1",
+          "views": [
+            {
+              "id": "1",
+              "generation": "1"
+            },
+            {
+              "id": "2",
+              "generation": "1"
+            }
+          ],
+          "focusOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "popupOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "frame": {
+            "surfaceProtocol": 2,
+            "keyboardParent": true,
+            "motion": "reduced",
+            "appearance": {
+              "theme": "night",
+              "textScale": 100,
+              "effectsOff": false,
+              "reducedTransparency": false
+            },
+            "publication": "8",
+            "lease": "1",
+            "mode": "notifications",
+            "status": "2 live notifications. Actions apply only to the current notification.",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:overview",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:control:overview-opener",
+                "label": "Task View",
+                "ariaLabel": "Open Task View",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:switcher",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:control:switcher-opener",
+                "label": "Switch windows",
+                "ariaLabel": "Open window switcher",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:notifications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:opener",
+                "label": "Notifications · 2",
+                "ariaLabel": "Open notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:files",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:files:opener",
+                "label": "Files",
+                "ariaLabel": "Open Files menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:system",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:system:opener",
+                "label": "System",
+                "ariaLabel": "Open system menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:settings",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:settings:opener",
+                "label": "Settings",
+                "ariaLabel": "Open settings",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:close",
+                "label": "Close notifications",
+                "ariaLabel": "Close notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:refresh",
+                "label": "Refresh notifications",
+                "ariaLabel": "Refresh notifications",
+                "detail": "Read current targets; no action is repeated",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:dnd",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:dnd",
+                "label": "Do not disturb for this session",
+                "ariaLabel": "Do not disturb for this session",
+                "detail": "Off",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:critical-interrupt",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:critical-interrupt",
+                "label": "Allow critical notification interruptions for this session",
+                "ariaLabel": "Allow critical notification interruptions for this session",
+                "detail": "Off · New notifications are polite",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:1:summary",
+                "label": "Calendar: Meeting 1",
+                "ariaLabel": "Calendar: Meeting 1",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:1:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:1:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:1:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:2:summary",
+                "label": "Calendar: Meeting 2",
+                "ariaLabel": "Calendar: Meeting 2",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:2:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:2:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:2:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ]
+          },
+          "announcer": {
+            "scope": {
+              "id": "1",
+              "generation": "1"
+            },
+            "surface": "popup"
+          },
+          "announcement": null
+        },
+        "focusedFrame": {
+          "viewProtocol": 1,
+          "kind": "view-frame",
+          "revision": "1",
+          "views": [
+            {
+              "id": "1",
+              "generation": "1"
+            },
+            {
+              "id": "2",
+              "generation": "1"
+            }
+          ],
+          "focusOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "popupOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "frame": {
+            "surfaceProtocol": 2,
+            "keyboardParent": true,
+            "motion": "reduced",
+            "appearance": {
+              "theme": "night",
+              "textScale": 100,
+              "effectsOff": false,
+              "reducedTransparency": false
+            },
+            "publication": "9",
+            "lease": "1",
+            "mode": "notifications",
+            "status": "2 live notifications. Actions apply only to the current notification.",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:overview",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:control:overview-opener",
+                "label": "Task View",
+                "ariaLabel": "Open Task View",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:switcher",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:control:switcher-opener",
+                "label": "Switch windows",
+                "ariaLabel": "Open window switcher",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:notifications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:opener",
+                "label": "Notifications · 2",
+                "ariaLabel": "Open notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:files",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:files:opener",
+                "label": "Files",
+                "ariaLabel": "Open Files menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:system",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:system:opener",
+                "label": "System",
+                "ariaLabel": "Open system menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:settings",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:settings:opener",
+                "label": "Settings",
+                "ariaLabel": "Open settings",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:close",
+                "label": "Close notifications",
+                "ariaLabel": "Close notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:refresh",
+                "label": "Refresh notifications",
+                "ariaLabel": "Refresh notifications",
+                "detail": "Read current targets; no action is repeated",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:dnd",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:dnd",
+                "label": "Do not disturb for this session",
+                "ariaLabel": "Do not disturb for this session",
+                "detail": "Off",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:critical-interrupt",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notifications:critical-interrupt",
+                "label": "Allow critical notification interruptions for this session",
+                "ariaLabel": "Allow critical notification interruptions for this session",
+                "detail": "Off · New notifications are polite",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:1:summary",
+                "label": "Calendar: Meeting 1",
+                "ariaLabel": "Calendar: Meeting 1",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:1:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:1:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:1:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:2:summary",
+                "label": "Calendar: Meeting 2",
+                "ariaLabel": "Calendar: Meeting 2",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:2:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:2:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:7:notification:9:2:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ]
+          },
+          "announcer": {
+            "scope": {
+              "id": "1",
+              "generation": "1"
+            },
+            "surface": "popup"
+          },
+          "announcement": null
+        },
+        "pendingFrame": {
+          "viewProtocol": 1,
+          "kind": "view-frame",
+          "revision": "1",
+          "views": [
+            {
+              "id": "1",
+              "generation": "1"
+            },
+            {
+              "id": "2",
+              "generation": "1"
+            }
+          ],
+          "focusOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "popupOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "frame": {
+            "surfaceProtocol": 2,
+            "keyboardParent": true,
+            "motion": "reduced",
+            "appearance": {
+              "theme": "night",
+              "textScale": 100,
+              "effectsOff": false,
+              "reducedTransparency": false
+            },
+            "publication": "10",
+            "lease": "1",
+            "mode": "notifications",
+            "status": "Sending notification action…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:overview",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:overview-opener",
+                "label": "Task View",
+                "ariaLabel": "Open Task View",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:switcher",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:switcher-opener",
+                "label": "Switch windows",
+                "ariaLabel": "Open window switcher",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:notifications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:opener",
+                "label": "Notifications · 2",
+                "ariaLabel": "Open notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:files",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:files:opener",
+                "label": "Files",
+                "ariaLabel": "Open Files menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:system",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:system:opener",
+                "label": "System",
+                "ariaLabel": "Open system menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:settings",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:opener",
+                "label": "Settings",
+                "ariaLabel": "Open settings",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:close",
+                "label": "Close notifications",
+                "ariaLabel": "Close notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:refresh",
+                "label": "Refresh notifications",
+                "ariaLabel": "Refresh notifications",
+                "detail": "Read current targets; no action is repeated",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:dnd",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:dnd",
+                "label": "Do not disturb for this session",
+                "ariaLabel": "Do not disturb for this session",
+                "detail": "Off",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:critical-interrupt",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:critical-interrupt",
+                "label": "Allow critical notification interruptions for this session",
+                "ariaLabel": "Allow critical notification interruptions for this session",
+                "detail": "Off · New notifications are polite",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:summary",
+                "label": "Calendar: Meeting 1",
+                "ariaLabel": "Calendar: Meeting 1",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": true
+              },
+              {
+                "id": "notification:9:1:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:2:summary",
+                "label": "Calendar: Meeting 2",
+                "ariaLabel": "Calendar: Meeting 2",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:2:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:2:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:2:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              }
+            ]
+          },
+          "announcer": {
+            "scope": {
+              "id": "1",
+              "generation": "1"
+            },
+            "surface": "popup"
+          },
+          "announcement": null
+        },
+        "expiredFrame": {
+          "viewProtocol": 1,
+          "kind": "view-frame",
+          "revision": "1",
+          "views": [
+            {
+              "id": "1",
+              "generation": "1"
+            },
+            {
+              "id": "2",
+              "generation": "1"
+            }
+          ],
+          "focusOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "popupOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "frame": {
+            "surfaceProtocol": 2,
+            "keyboardParent": true,
+            "motion": "reduced",
+            "appearance": {
+              "theme": "night",
+              "textScale": 100,
+              "effectsOff": false,
+              "reducedTransparency": false
+            },
+            "publication": "10",
+            "lease": "1",
+            "mode": "notifications",
+            "status": "1 live notifications. Actions apply only to the current notification.",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:overview",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:overview-opener",
+                "label": "Task View",
+                "ariaLabel": "Open Task View",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:switcher",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:switcher-opener",
+                "label": "Switch windows",
+                "ariaLabel": "Open window switcher",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:notifications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:opener",
+                "label": "Notifications · 1",
+                "ariaLabel": "Open notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:files",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:files:opener",
+                "label": "Files",
+                "ariaLabel": "Open Files menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:system",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:system:opener",
+                "label": "System",
+                "ariaLabel": "Open system menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:settings",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:opener",
+                "label": "Settings",
+                "ariaLabel": "Open settings",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:close",
+                "label": "Close notifications",
+                "ariaLabel": "Close notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:refresh",
+                "label": "Refresh notifications",
+                "ariaLabel": "Refresh notifications",
+                "detail": "Read current targets; no action is repeated",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:dnd",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:dnd",
+                "label": "Do not disturb for this session",
+                "ariaLabel": "Do not disturb for this session",
+                "detail": "Off",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:critical-interrupt",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:critical-interrupt",
+                "label": "Allow critical notification interruptions for this session",
+                "ariaLabel": "Allow critical notification interruptions for this session",
+                "detail": "Off · New notifications are polite",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:summary",
+                "label": "Calendar: Meeting 1",
+                "ariaLabel": "Calendar: Meeting 1",
+                "detail": "History · expired",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting; unavailable",
+                "detail": "expired · Action unavailable",
+                "enabled": false,
+                "focusOnly": true
+              },
+              {
+                "id": "notification:9:2:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:2:summary",
+                "label": "Calendar: Meeting 2",
+                "ariaLabel": "Calendar: Meeting 2",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:2:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:2:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:2:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ]
+          },
+          "announcer": {
+            "scope": {
+              "id": "1",
+              "generation": "1"
+            },
+            "surface": "popup"
+          },
+          "announcement": {
+            "interrupt": false,
+            "sequence": "1",
+            "correlation": "{\"outcome\":\"notification-expiration\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"service\":\"9\",\"revision\":\"2\",\"incarnations\":[\"1\"]}}",
+            "text": "Calendar: Meeting 1 expired. Its actions are unavailable. Refresh notifications for current history."
+          }
+        },
+        "pendingExpiredFrame": {
+          "viewProtocol": 1,
+          "kind": "view-frame",
+          "revision": "1",
+          "views": [
+            {
+              "id": "1",
+              "generation": "1"
+            },
+            {
+              "id": "2",
+              "generation": "1"
+            }
+          ],
+          "focusOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "popupOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "frame": {
+            "surfaceProtocol": 2,
+            "keyboardParent": true,
+            "motion": "reduced",
+            "appearance": {
+              "theme": "night",
+              "textScale": 100,
+              "effectsOff": false,
+              "reducedTransparency": false
+            },
+            "publication": "11",
+            "lease": "1",
+            "mode": "notifications",
+            "status": "Sending notification action…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:overview",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:control:overview-opener",
+                "label": "Task View",
+                "ariaLabel": "Open Task View",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:switcher",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:control:switcher-opener",
+                "label": "Switch windows",
+                "ariaLabel": "Open window switcher",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:notifications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notifications:opener",
+                "label": "Notifications · 1",
+                "ariaLabel": "Open notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:files",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:files:opener",
+                "label": "Files",
+                "ariaLabel": "Open Files menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:system",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:system:opener",
+                "label": "System",
+                "ariaLabel": "Open system menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:settings",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:settings:opener",
+                "label": "Settings",
+                "ariaLabel": "Open settings",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notifications:close",
+                "label": "Close notifications",
+                "ariaLabel": "Close notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notifications:refresh",
+                "label": "Refresh notifications",
+                "ariaLabel": "Refresh notifications",
+                "detail": "Read current targets; no action is repeated",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:dnd",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notifications:dnd",
+                "label": "Do not disturb for this session",
+                "ariaLabel": "Do not disturb for this session",
+                "detail": "Off",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:critical-interrupt",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notifications:critical-interrupt",
+                "label": "Allow critical notification interruptions for this session",
+                "ariaLabel": "Allow critical notification interruptions for this session",
+                "detail": "Off · New notifications are polite",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notification:9:1:summary",
+                "label": "Calendar: Meeting 1",
+                "ariaLabel": "Calendar: Meeting 1",
+                "detail": "History · expired",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notification:9:1:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notification:9:1:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting; unavailable",
+                "detail": "expired · Action unavailable",
+                "enabled": false,
+                "focusOnly": true
+              },
+              {
+                "id": "notification:9:2:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notification:9:2:summary",
+                "label": "Calendar: Meeting 2",
+                "ariaLabel": "Calendar: Meeting 2",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notification:9:2:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notification:9:2:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:9:notification:9:2:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              }
+            ]
+          },
+          "announcer": {
+            "scope": {
+              "id": "1",
+              "generation": "1"
+            },
+            "surface": "popup"
+          },
+          "announcement": {
+            "interrupt": false,
+            "sequence": "1",
+            "correlation": "{\"outcome\":\"notification-expiration\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"service\":\"9\",\"revision\":\"2\",\"incarnations\":[\"1\"]}}",
+            "text": "Calendar: Meeting 1 expired. Its actions are unavailable. Refresh notifications for current history."
+          }
+        },
+        "refusedFrame": {
+          "viewProtocol": 1,
+          "kind": "view-frame",
+          "revision": "1",
+          "views": [
+            {
+              "id": "1",
+              "generation": "1"
+            },
+            {
+              "id": "2",
+              "generation": "1"
+            }
+          ],
+          "focusOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "popupOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "frame": {
+            "surfaceProtocol": 2,
+            "keyboardParent": true,
+            "motion": "reduced",
+            "appearance": {
+              "theme": "night",
+              "textScale": 100,
+              "effectsOff": false,
+              "reducedTransparency": false
+            },
+            "publication": "12",
+            "lease": "1",
+            "mode": "notifications",
+            "status": "Notification action refused. The target expired or changed; choose a current notification.",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:overview",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:overview-opener",
+                "label": "Task View",
+                "ariaLabel": "Open Task View",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:switcher",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:switcher-opener",
+                "label": "Switch windows",
+                "ariaLabel": "Open window switcher",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:notifications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:opener",
+                "label": "Notifications · 1",
+                "ariaLabel": "Open notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:files",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:files:opener",
+                "label": "Files",
+                "ariaLabel": "Open Files menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:system",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:system:opener",
+                "label": "System",
+                "ariaLabel": "Open system menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:settings",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:opener",
+                "label": "Settings",
+                "ariaLabel": "Open settings",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:close",
+                "label": "Close notifications",
+                "ariaLabel": "Close notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:refresh",
+                "label": "Refresh notifications",
+                "ariaLabel": "Refresh notifications",
+                "detail": "Read current targets; no action is repeated",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:dnd",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:dnd",
+                "label": "Do not disturb for this session",
+                "ariaLabel": "Do not disturb for this session",
+                "detail": "Off",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:critical-interrupt",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:critical-interrupt",
+                "label": "Allow critical notification interruptions for this session",
+                "ariaLabel": "Allow critical notification interruptions for this session",
+                "detail": "Off · New notifications are polite",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:1:summary",
+                "label": "Calendar: Meeting 1",
+                "ariaLabel": "Calendar: Meeting 1",
+                "detail": "History · expired",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:1:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:1:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting; unavailable",
+                "detail": "expired · Action unavailable",
+                "enabled": false,
+                "focusOnly": true
+              },
+              {
+                "id": "notification:9:2:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:summary",
+                "label": "Calendar: Meeting 2",
+                "ariaLabel": "Calendar: Meeting 2",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ]
+          },
+          "announcer": {
+            "scope": {
+              "id": "1",
+              "generation": "1"
+            },
+            "surface": "popup"
+          },
+          "announcement": {
+            "interrupt": false,
+            "sequence": "2",
+            "correlation": "{\"outcome\":\"notification-expired-action-refused\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"request\":\"6\",\"target\":{\"service\":\"9\",\"id\":\"1\",\"incarnation\":\"1\",\"producer\":\":1.7\",\"action\":\"open\",\"verb\":\"invoke\"}}}",
+            "text": "Notification action refused because the target expired. Refresh notifications, then choose a current notification."
+          }
+        },
+        "clearedFrame": {
+          "viewProtocol": 1,
+          "kind": "view-frame",
+          "revision": "1",
+          "views": [
+            {
+              "id": "1",
+              "generation": "1"
+            },
+            {
+              "id": "2",
+              "generation": "1"
+            }
+          ],
+          "focusOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "popupOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "frame": {
+            "surfaceProtocol": 2,
+            "keyboardParent": true,
+            "motion": "reduced",
+            "appearance": {
+              "theme": "night",
+              "textScale": 100,
+              "effectsOff": false,
+              "reducedTransparency": false
+            },
+            "publication": "13",
+            "lease": "1",
+            "mode": "notifications",
+            "status": "Notification action refused. The target expired or changed; choose a current notification.",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:overview",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:overview-opener",
+                "label": "Task View",
+                "ariaLabel": "Open Task View",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:switcher",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:switcher-opener",
+                "label": "Switch windows",
+                "ariaLabel": "Open window switcher",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:notifications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:opener",
+                "label": "Notifications · 1",
+                "ariaLabel": "Open notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:files",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:files:opener",
+                "label": "Files",
+                "ariaLabel": "Open Files menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:system",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:system:opener",
+                "label": "System",
+                "ariaLabel": "Open system menu",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:settings",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:opener",
+                "label": "Settings",
+                "ariaLabel": "Open settings",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:close",
+                "label": "Close notifications",
+                "ariaLabel": "Close notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:refresh",
+                "label": "Refresh notifications",
+                "ariaLabel": "Refresh notifications",
+                "detail": "Read current targets; no action is repeated",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:dnd",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:dnd",
+                "label": "Do not disturb for this session",
+                "ariaLabel": "Do not disturb for this session",
+                "detail": "Off",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notifications:critical-interrupt",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:critical-interrupt",
+                "label": "Allow critical notification interruptions for this session",
+                "ariaLabel": "Allow critical notification interruptions for this session",
+                "detail": "Off · New notifications are polite",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:1:summary",
+                "label": "Calendar: Meeting 1",
+                "ariaLabel": "Calendar: Meeting 1",
+                "detail": "History · expired",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:1:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:1:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:summary",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:summary",
+                "label": "Calendar: Meeting 2",
+                "ariaLabel": "Calendar: Meeting 2",
+                "detail": "Live",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:body",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:body",
+                "label": "Details",
+                "ariaLabel": "Details",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:invoke:open",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:invoke:open",
+                "label": "Open meeting",
+                "ariaLabel": "Open meeting",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "notification:9:2:dismiss:",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:dismiss:",
+                "label": "Dismiss notification",
+                "ariaLabel": "Dismiss notification",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ]
+          },
+          "announcer": {
+            "scope": {
+              "id": "1",
+              "generation": "1"
+            },
+            "surface": "popup"
+          },
+          "announcement": {
+            "interrupt": false,
+            "sequence": "2",
+            "correlation": "{\"outcome\":\"notification-expired-action-refused\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"request\":\"6\",\"target\":{\"service\":\"9\",\"id\":\"1\",\"incarnation\":\"1\",\"producer\":\":1.7\",\"action\":\"open\",\"verb\":\"invoke\"}}}",
+            "text": "Notification action refused because the target expired. Refresh notifications, then choose a current notification."
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "RetirementProofReplay",
+      "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793567061690853540/RetirementProofReplay.js",
+      "sha256": "09112d155335d34aba8786e230b36ba450e0825ba78f731754d311e5d7a98240",
+      "checks": [
+        {
+          "name": "changedOperationInReleaseProofRefused",
+          "passed": true
+        },
+        {
+          "name": "correlatedTrackingReleaseSucceedsAndPreventsReplay",
+          "passed": true
+        },
+        {
+          "name": "extraFieldRefused",
+          "passed": true
+        },
+        {
+          "name": "foreignBindingUnknownRefused",
+          "passed": true
+        },
+        {
+          "name": "invalidOperationRefused",
+          "passed": true
+        },
+        {
+          "name": "legacyUncertainOriginBlocksRelease",
+          "passed": true
+        },
+        {
+          "name": "mismatchedObservationRequestOrOutputRefused",
+          "passed": true
+        },
+        {
+          "name": "missingFieldRefused",
+          "passed": true
+        },
+        {
+          "name": "observeProofDecodesTypedConstructorsAndNames",
+          "passed": true
+        },
+        {
+          "name": "owningRouteAnnounceEmitsReconciliationReadyAndRetainsTypedProof",
+          "passed": true
+        },
+        {
+          "name": "owningRouteCorrelatedReleaseClearsUnresolvedUnknown",
+          "passed": true
+        },
+        {
+          "name": "prematureReleaseWithoutBothObservationsRefused",
+          "passed": true
+        },
+        {
+          "name": "recordBindingContextMismatchRefused",
+          "passed": true
+        },
+        {
+          "name": "retireProofDecodesTypedConstructorsAndNames",
+          "passed": true
+        },
+        {
+          "name": "uncorrelatedAnnouncementRefused",
+          "passed": true
+        },
+        {
+          "name": "wrongGrantStateRefused",
+          "passed": true
+        },
+        {
+          "name": "wrongKindRefused",
+          "passed": true
+        },
+        {
+          "name": "wrongProtocolVersionRefused",
+          "passed": true
+        },
+        {
+          "name": "wrongRetirementProtocolRefused",
+          "passed": true
+        },
+        {
+          "name": "zeroCounterRefused",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "payload": {
+        "checks": {
+          "observeProofDecodesTypedConstructorsAndNames": true,
+          "retireProofDecodesTypedConstructorsAndNames": true,
+          "wrongKindRefused": true,
+          "wrongGrantStateRefused": true,
+          "wrongProtocolVersionRefused": true,
+          "wrongRetirementProtocolRefused": true,
+          "extraFieldRefused": true,
+          "missingFieldRefused": true,
+          "invalidOperationRefused": true,
+          "zeroCounterRefused": true,
+          "foreignBindingUnknownRefused": true,
+          "recordBindingContextMismatchRefused": true,
+          "uncorrelatedAnnouncementRefused": true,
+          "prematureReleaseWithoutBothObservationsRefused": true,
+          "changedOperationInReleaseProofRefused": true,
+          "mismatchedObservationRequestOrOutputRefused": true,
+          "legacyUncertainOriginBlocksRelease": true,
+          "correlatedTrackingReleaseSucceedsAndPreventsReplay": true,
+          "owningRouteAnnounceEmitsReconciliationReadyAndRetainsTypedProof": true,
+          "owningRouteCorrelatedReleaseClearsUnresolvedUnknown": true
+        },
+        "observeProofRaw": {
+          "protocolVersion": 3,
+          "kind": "binding-retirement",
+          "retirementProtocol": 1,
+          "operation": "observe",
+          "binding": {
+            "lifetime": "9007199254741001",
+            "session": "9007199254741201",
+            "frontend": "9007199254741102"
+          },
+          "requestId": "9007199254741801",
+          "queriedBinding": {
+            "lifetime": "9007199254741001",
+            "session": "9007199254741201",
+            "frontend": "9007199254741101"
+          },
+          "sequence": "1",
+          "grantState": "Retired"
+        },
+        "retireProofRaw": {
+          "protocolVersion": 3,
+          "kind": "binding-retirement",
+          "retirementProtocol": 1,
+          "operation": "retire",
+          "binding": {
+            "lifetime": "9007199254741001",
+            "session": "9007199254741201",
+            "frontend": "9007199254741102"
+          },
+          "requestId": "9007199254741801",
+          "queriedBinding": {
+            "lifetime": "9007199254741001",
+            "session": "9007199254741201",
+            "frontend": "9007199254741101"
+          },
+          "sequence": "1",
+          "grantState": "Retired"
+        },
+        "validReleaseRaw": {
+          "protocolVersion": 3,
+          "kind": "host-reservation-released",
+          "binding": {
+            "lifetime": "9007199254741001",
+            "session": "9007199254741201",
+            "frontend": "9007199254741102"
+          },
+          "record": {
+            "schema": 2,
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "9007199254741001",
+              "session": "9007199254741201",
+              "frontend": "9007199254741101"
+            },
+            "intent": {
+              "request": "9007199254741501",
+              "generation": "9007199254741601",
+              "incarnation": "9007199254741701",
+              "operation": "activate",
+              "context": {
+                "lifetime": "9007199254741001",
+                "epoch": "9007199254741101",
+                "output": "9007199254741301",
+                "revision": "9007199254741401"
+              }
+            },
+            "status": "Unknown"
+          },
+          "release": {
+            "id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "proof": {
+              "protocolVersion": 3,
+              "kind": "binding-retirement",
+              "retirementProtocol": 1,
+              "operation": "retire",
+              "binding": {
+                "lifetime": "9007199254741001",
+                "session": "9007199254741201",
+                "frontend": "9007199254741102"
+              },
+              "requestId": "9007199254741801",
+              "queriedBinding": {
+                "lifetime": "9007199254741001",
+                "session": "9007199254741201",
+                "frontend": "9007199254741101"
+              },
+              "sequence": "1",
+              "grantState": "Retired"
+            },
+            "observation": {
+              "actionRequestId": "4",
+              "geometryRequestId": "5",
+              "actionContext": {
+                "lifetime": "9007199254741001",
+                "epoch": "9007199254741102",
+                "output": "9007199254741301",
+                "revision": "11"
+              },
+              "geometryContext": {
+                "lifetime": "9007199254741001",
+                "epoch": "9007199254741102",
+                "output": "9007199254741301",
+                "revision": "11"
+              }
+            }
+          }
+        },
+        "mutatedOpReleaseRaw": {
+          "protocolVersion": 3,
+          "kind": "host-reservation-released",
+          "binding": {
+            "lifetime": "9007199254741001",
+            "session": "9007199254741201",
+            "frontend": "9007199254741102"
+          },
+          "record": {
+            "schema": 2,
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "9007199254741001",
+              "session": "9007199254741201",
+              "frontend": "9007199254741101"
+            },
+            "intent": {
+              "request": "9007199254741501",
+              "generation": "9007199254741601",
+              "incarnation": "9007199254741701",
+              "operation": "activate",
+              "context": {
+                "lifetime": "9007199254741001",
+                "epoch": "9007199254741101",
+                "output": "9007199254741301",
+                "revision": "9007199254741401"
+              }
+            },
+            "status": "Unknown"
+          },
+          "release": {
+            "id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "proof": {
+              "protocolVersion": 3,
+              "kind": "binding-retirement",
+              "retirementProtocol": 1,
+              "operation": "observe",
+              "binding": {
+                "lifetime": "9007199254741001",
+                "session": "9007199254741201",
+                "frontend": "9007199254741102"
+              },
+              "requestId": "9007199254741801",
+              "queriedBinding": {
+                "lifetime": "9007199254741001",
+                "session": "9007199254741201",
+                "frontend": "9007199254741101"
+              },
+              "sequence": "1",
+              "grantState": "Retired"
+            },
+            "observation": {
+              "actionRequestId": "4",
+              "geometryRequestId": "5",
+              "actionContext": {
+                "lifetime": "9007199254741001",
+                "epoch": "9007199254741102",
+                "output": "9007199254741301",
+                "revision": "11"
+              },
+              "geometryContext": {
+                "lifetime": "9007199254741001",
+                "epoch": "9007199254741102",
+                "output": "9007199254741301",
+                "revision": "11"
+              }
+            }
+          }
+        }
+      },
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "fixture": "NotificationsReplay",
+      "name": "allControlsHaveNames",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "allEntryStatesDecodeAndPreserveWireNames",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "centerModeAcceptedByProductionRenderer",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "dismissIdentityAndWireUnchanged",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "dispatchedCannotRepeat",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "dispatchedOutcomeTyped",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "expiredChoiceIsInert",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "expiryRemovesActionsAndKeepsHistory",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "explicitReadReconcilesRetiredUnknownWithoutEffect",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "incomingExpiryNeverMovesFocus",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "invalidEntryStateRefused",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "invalidOutcomePreservesPending",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "invokeIdentityAndWireUnchanged",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "notificationOpenerIntegrated",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "olderObservationCannotReviveTarget",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "oneExplicitAction",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "openingReadFocusMatchesActualControl",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "pendingCannotRepeat",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "refusedOutcomeTyped",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "reusedIdRejectsOldIncarnation",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "staleViewCannotSubmit",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "unknownCannotReplay",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "unknownOutcomeTypedAndPending",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationsReplay",
+      "name": "wrongReceiptCannotSettle",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "ActionKindDescriptionsPreserved",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "AllActionsNamed",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "CloseReturnsToLauncherWithoutLaunch",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "CrossKindPrefixRejected",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "ForeignApplicationCannotSettleReceipt",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "ForeignApplicationReadCannotReplaceOpenList",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "ForeignRecentNeverDispatches",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "LauncherHasBoundedKeyboardJumpOpener",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "NativeRendererAcceptsJumpMode",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "OneExplicitDesktopAction",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "OnlyOwnedRecentActionShown",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "OriginalTwoDeclaredActionsShown",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "OtherPopupRetiresList",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "OwnedRecentDispatchesOnce",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "PopupClosesBeforeLaunch",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "RefreshOnlyReads",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "StaleViewCannotSubmit",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "SubmissionNeverClaimsApplicationReady",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "TypedActionKindsAndWireStrings",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "UnknownActionKindRejected",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "UnknownPersistsWithoutReplay",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "UnsupportedActionNeverDispatches",
+      "passed": true
+    },
+    {
+      "fixture": "JumpListReplay",
+      "name": "UnsupportedActionsAbsent",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "CurrentIdleSetupOpensNotifications",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "DndSuppressesExpiryAndRefusal",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "ExactNativeExpiryReasonWithoutIntermediateObservation",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "ExpiryAndRefusalDoNotRequestFocus",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "FocusedUnavailableNodeIsNotActionable",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "ForeignOutputCannotSupplyFocus",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "ForeignRefusalCannotSettle",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "IrrelevantExpirySilent",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "LateFocusCannotReplayExpiry",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "LeavingRetiredControlReleasesPlaceholder",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "MatchedExpiredActionRefusalPolite",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "MatchedFocusedExpiryPolite",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "PassiveFocusCreatesNoAnnouncement",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "PendingActionRetainsFocusWithoutAuthority",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "RefusalRetainsExactRequestAndTarget",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "RepeatedExpirySilent",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "RepeatedMatchedRefusalSilent",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "ReplacementCannotLosePendingExpiryIdentity",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "StalePublicationCannotSupplyFocus",
+      "passed": true
+    },
+    {
+      "fixture": "NotificationRelevanceReplay",
+      "name": "UserInvokedExpiryRelevant",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "changedOperationInReleaseProofRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "correlatedTrackingReleaseSucceedsAndPreventsReplay",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "extraFieldRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "foreignBindingUnknownRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "invalidOperationRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "legacyUncertainOriginBlocksRelease",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "mismatchedObservationRequestOrOutputRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "missingFieldRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "observeProofDecodesTypedConstructorsAndNames",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "owningRouteAnnounceEmitsReconciliationReadyAndRetainsTypedProof",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "owningRouteCorrelatedReleaseClearsUnresolvedUnknown",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "prematureReleaseWithoutBothObservationsRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "recordBindingContextMismatchRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "retireProofDecodesTypedConstructorsAndNames",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "uncorrelatedAnnouncementRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "wrongGrantStateRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "wrongKindRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "wrongProtocolVersionRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "wrongRetirementProtocolRefused",
+      "passed": true
+    },
+    {
+      "fixture": "RetirementProofReplay",
+      "name": "zeroCounterRefused",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

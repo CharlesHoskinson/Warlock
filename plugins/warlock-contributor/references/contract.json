@@ -27,7 +27,8 @@
     "capabilities",
     "preflight",
     "reconcile-foreign",
-    "index-participants"
+    "index-participants",
+    "reconcile-support"
   ],
   "exitCodes": {
     "0": "structural checks pass (advisories may remain)",
@@ -112,7 +113,14 @@
   "verifyPlan": "Read-only proportional verification suggestions for changed declared sources since the last record; --selected plans all declared paths before edits. Returns existing runner paths/hashes, protected command argv, explicit unmapped/support changes, original obligations and stale-evidence findings. Never executes QA, certifies runner scope, infers current native tuple or accepts scenarios. No changes means no default rerun. Missing runners have no executable command; missing protected launcher requires a reviewed equivalent, never raw execution. --record preserves indexed legacy locations for continuation; new starts require a direct JSON child of .warlock-contributor/. SurfaceController.elm and Popup.elm use the shell/view route. ELM-UI-008 overflow-resize selects the existing --popup-reflow CPU/native mode, including changed host/surface units; deduplicated targets retain all trigger paths. Other selected behavior retains its existing mode.",
   "progressStatus": "check/status/handoff/report/verify-plan include structured participant-record progress: iterations without meaningful progress, last progress baseline, elapsed seconds, exact 2-iteration/2700-second trigger reasons and slice-change action. This is self-attested progress, not measured GUI delivery. A trigger remains advisory and never globally blocks independent work or bypasses safety. Existing no-progress warnings remain.",
   "stopContinuity": {
-    "commands": ["index-participants", "owner-census", "preflight", "start", "record", "extend"],
+    "commands": [
+      "index-participants",
+      "owner-census",
+      "preflight",
+      "start",
+      "record",
+      "extend"
+    ],
     "scope": "Exact requirement/scenario pairs from frozen originals in indexed and legacy participant records under .warlock-contributor/; legacy nested records remain discoverable and new records must be direct children",
     "behavior": "When a prior matching participant record has reached its 2-iteration or 2700-second no-progress stop, preflight reports its path, digest, owner, scenario identity and stop reason; start refuses a new record that would reset that scenario timer. Only a meaningful-progress entry in that same existing record clears its current stop.",
     "independentScenarios": "A different original scenario remains startable.",
@@ -148,5 +156,18 @@
     "filesystem": "O_NOFOLLOW directory traversal and regular-file descriptor reads, one read for JSON/hash, held sidecar directory through validation/replacement; renamed owned directory remains object-bound and later pathname checks fail closed",
     "concurrencyLimit": "Prior existing-sidecar digest check and rename are not atomic CAS against writers ignoring advisory locks; descriptor anchoring prevents path escape but does not guarantee preservation of a competing final-entry replacement. No secure integration certificate."
   },
-  "selectedPathAdoption": "extend may explicitly assert ownership of already-declared exact latest-bound source (base/extension/iteration), also matching protected foreign hash if present, with --adopt-dirty/note; append ownershipAdoptions without slice/source baseline/timer/iteration reset; unexplained drift refuses"
+  "selectedPathAdoption": "extend may explicitly assert ownership of already-declared exact latest-bound source (base/extension/iteration), also matching protected foreign hash if present, with --adopt-dirty/note; append ownershipAdoptions without slice/source baseline/timer/iteration reset; unexplained drift refuses",
+  "sameOwnerSupportCustody": {
+    "command": "reconcile-support --transition-file IGNORED_JSON",
+    "scope": [
+      "docs/HANDOFF.md",
+      "docs/warlock-build-loop/v2/STATE.json",
+      "wiki/warlock/log.md",
+      "wiki/warlock/wiki/topics/current-status.md"
+    ],
+    "meaning": "Recognize independently reviewed same-owner support updates in a separate hash-chained sidecar. Preserve exact participant/source/adoption/foreign baselines, original start, iterations, stop histories and progress. Existing foreign-owner reconciliation is unchanged.",
+    "evidence": "Exact current participant/support snapshots, authenticated live assigned-run AgentBus claims and independent accepted same-owner provenance review; no selected product/tool/arbitrary path or genuine foreign adoption. Recheck evidence after live probe before atomic append.",
+    "publication": "Only explicit review --include of fixed support path with valid current accepted same-owner overlay and identical approved/working/staged bytes. Other foreign/source paths remain refused.",
+    "acceptance": "Support provenance only; no product/scenario/native/release acceptance or progress."
+  }
 }
