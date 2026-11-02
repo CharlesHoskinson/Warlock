@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "scope": "compiled UiHttp pure component only; no native, GUI, AT, IME, performance or original acceptance",
+  "requiredCount": 14,
+  "outputWindowMs": 25,
+  "passed": true,
+  "result": {
+    "name": "UiHttpFailureReplay",
+    "sha256": "50614a894cac652fefd2f09a62e3b5361adcb7341e44271ea1242a99d69893a6",
+    "passed": true,
+    "checks": [
+      {
+        "name": "initial-no-problem",
+        "passed": true
+      },
+      {
+        "name": "empty-poll-then-valid-presentation",
+        "passed": true
+      },
+      {
+        "name": "successful-post-does-not-fail",
+        "passed": true
+      },
+      {
+        "name": "poll-timeout-first-failure",
+        "passed": true
+      },
+      {
+        "name": "post-timeout-unconfirmed",
+        "passed": true
+      },
+      {
+        "name": "malformed-json",
+        "passed": true
+      },
+      {
+        "name": "malformed-gateway",
+        "passed": true
+      },
+      {
+        "name": "wrong-renderer-kind",
+        "passed": true
+      },
+      {
+        "name": "unexpected-post-body",
+        "passed": true
+      },
+      {
+        "name": "event-bound",
+        "passed": true
+      },
+      {
+        "name": "queue-17-capacity",
+        "passed": true
+      },
+      {
+        "name": "encoded-action-byte-bound",
+        "passed": true
+      },
+      {
+        "name": "explicit-stop-first-reason",
+        "passed": true
+      },
+      {
+        "name": "empty-explicit-stop-remains-stopped",
+        "passed": true
+      }
+    ],
+    "payload": {
+      "checks": [
+        {
+          "name": "initial-no-problem",
+          "passed": true
+        },
+        {
+          "name": "empty-poll-then-valid-presentation",
+          "passed": true
+        },
+        {
+          "name": "successful-post-does-not-fail",
+          "passed": true
+        },
+        {
+          "name": "poll-timeout-first-failure",
+          "passed": true
+        },
+        {
+          "name": "post-timeout-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "malformed-json",
+          "passed": true
+        },
+        {
+          "name": "malformed-gateway",
+          "passed": true
+        },
+        {
+          "name": "wrong-renderer-kind",
+          "passed": true
+        },
+        {
+          "name": "unexpected-post-body",
+          "passed": true
+        },
+        {
+          "name": "event-bound",
+          "passed": true
+        },
+        {
+          "name": "queue-17-capacity",
+          "passed": true
+        },
+        {
+          "name": "encoded-action-byte-bound",
+          "passed": true
+        },
+        {
+          "name": "explicit-stop-first-reason",
+          "passed": true
+        },
+        {
+          "name": "empty-explicit-stop-remains-stopped",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "runnerPathSha256AtReport": "5c1297cadaeecb34a49a1e3de90ea57e78dc40a535cfb51b50d38b36e9d3fc28",
+  "sourceReplaySha256Expected": "d3dab516f45f00d3e2f4fad71901e2204718b4f4ec8a0c5eac9661bc47cebc70",
+  "sourceBinding": "External protected profile must attest complete source closure and executed runner/artifact; self-read and declared hash are not execution provenance",
+  "originalAccepted": false,
+  "nativeAccepted": false
+}

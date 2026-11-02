@@ -1,4 +1,4 @@
-module GeometryProjection exposing (Capabilities, Context, Mode(..), Snapshot, Window, capabilitiesDecoder, decode, decodeLegacy, window, modeName, canExitFullscreen)
+module GeometryProjection exposing (Capabilities, Capability(..), capabilityName, Context, Mode(..), Snapshot, Window, capabilitiesDecoder, decode, decodeLegacy, window, modeName, canExitFullscreen)
 
 import Binding
 import Char
@@ -8,8 +8,32 @@ import UInt64 exposing (Counter)
 import WorkspaceInventory
 
 type Mode = Ordinary | Maximized | Fullscreen
+
+-- Negotiated capabilities are observations, not authority to dispatch.
+type Capability = CanMaximize | CanRestoreGeometry | CanSnap | CanTransferWorkspace | CanPin | CanUnpin | CanExitFullscreen
+
+capabilityName : Capability -> String
+capabilityName capability = case capability of
+    CanMaximize -> "maximize"
+    CanRestoreGeometry -> "restore-geometry"
+    CanSnap -> "snap"
+    CanTransferWorkspace -> "transfer-workspace"
+    CanPin -> "pin"
+    CanUnpin -> "unpin"
+    CanExitFullscreen -> "exit-fullscreen"
+
+capabilityDecoder : D.Decoder Capability
+capabilityDecoder = D.string |> D.andThen (\value -> case value of
+    "maximize" -> D.succeed CanMaximize
+    "restore-geometry" -> D.succeed CanRestoreGeometry
+    "snap" -> D.succeed CanSnap
+    "transfer-workspace" -> D.succeed CanTransferWorkspace
+    "pin" -> D.succeed CanPin
+    "unpin" -> D.succeed CanUnpin
+    "exit-fullscreen" -> D.succeed CanExitFullscreen
+    _ -> D.fail "Geometry capabilities")
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
-type alias Capabilities = { effects : Bool, operations : List String }
+type alias Capabilities = { effects : Bool, operations : List Capability }
 type alias Window =
     { incarnation : Counter, owner : Maybe Counter, workspace : Maybe String, workspaceGeneration : Maybe Counter
     , monitor : Maybe Counter, outputOwnershipGeneration : Maybe Counter, workAreaRevision : Maybe Counter
@@ -42,8 +66,8 @@ workspace = D.string |> D.andThen (\value ->
 capabilitiesDecoder = strict ["observe","effects","effectProtocol","operations","placementCapacity","canonicalScene"]
     (D.map6 (\_ effects _ operations _ _ -> {effects=effects,operations=operations})
         (exact "observe" D.bool True) (D.field "effects" D.bool) (exact "effectProtocol" D.int 2)
-        (D.field "operations" (D.list D.string)) (exact "placementCapacity" D.int 256) (exact "canonicalScene" D.bool False))
-    |> D.andThen (\caps -> if List.length caps.operations<=7 && List.all (\op -> List.member op ["maximize","restore-geometry","snap","transfer-workspace","pin","unpin","exit-fullscreen"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
+        (D.field "operations" (D.list capabilityDecoder)) (exact "placementCapacity" D.int 256) (exact "canonicalScene" D.bool False))
+    |> D.andThen (\caps -> if List.length caps.operations<=7 && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
 windowDecoder protocol =
     let identities = D.map8 (\inc owner ws wg mon og wr wa -> {inc=inc,owner=owner,ws=ws,wg=wg,mon=mon,og=og,wr=wr,wa=wa})
             (D.field "incarnation" positive) (D.field "owner" (D.nullable positive)) (D.field "workspace" (D.nullable workspace))
@@ -77,8 +101,8 @@ validRows caps blocked rows =
                     Just _ -> walk [] row.incarnation
                 sizeValid=row.sizePolicy |> Maybe.map (\p -> GeometrySizePolicy.coherent p row.workArea row.constrainedSize row.fixedSize && (not row.eligible || GeometrySizePolicy.supported p) && (not row.maximize || GeometrySizePolicy.permits True p) && (not row.restoreGeometry || GeometrySizePolicy.permits False p)) |> Maybe.withDefault True
                 capabilityModes=(not row.maximize || (row.eligible && row.nativeMode==Ordinary)) && (not row.restoreGeometry || (row.eligible && row.nativeMode==Maximized && row.placementKnown))
-                pinValid=row.pin |> Maybe.map (\pin -> not pin.eligible || (not blocked && row.workspace/=Nothing && row.floating && row.owner==Nothing && not row.grouped && not row.minimized && row.nativeMode==row.clientMode && row.nativeMode/=Fullscreen && List.member "pin" caps.operations && List.member "unpin" caps.operations)) |> Maybe.withDefault True
-            in pinValid && paired && eligible && ownership && sizeValid && capabilityModes && (not row.maximize || List.member "maximize" caps.operations) && (not row.restoreGeometry || List.member "restore-geometry" caps.operations)
+                pinValid=row.pin |> Maybe.map (\pin -> not pin.eligible || (not blocked && row.workspace/=Nothing && row.floating && row.owner==Nothing && not row.grouped && not row.minimized && row.nativeMode==row.clientMode && row.nativeMode/=Fullscreen && List.member CanPin caps.operations && List.member CanUnpin caps.operations)) |> Maybe.withDefault True
+            in pinValid && paired && eligible && ownership && sizeValid && capabilityModes && (not row.maximize || List.member CanMaximize caps.operations) && (not row.restoreGeometry || List.member CanRestoreGeometry caps.operations)
         walk visited id = if List.member id visited then False else case List.filter (\row -> row.incarnation==id) rows |> List.head of
             Nothing -> False
             Just row -> case row.owner of

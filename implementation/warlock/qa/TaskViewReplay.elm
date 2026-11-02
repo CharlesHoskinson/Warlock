@@ -141,7 +141,7 @@ result =
         cancelWindows=restorableBase.windows
         cancelShell=cancelWindows.shell
         cancelEffects=cancelShell.effects
-        cancelCaps=Just {effects=True,operations=["transfer-workspace"]}
+        cancelCaps=Just {effects=True,operations=[Geometry.CanTransferWorkspace]}
         cancelOrigin={restorableBase | overview=True,overviewWorkspace=Just "2",overviewTransfer=Just two,workspaceInventory=transferInventory,windows={cancelWindows | shell={cancelShell | geometryCaps=cancelCaps}}}
         cancelTransfer=scoped Desktop.CancelOverviewTransfer cancelOrigin
         cancelModel=Tuple.first cancelTransfer

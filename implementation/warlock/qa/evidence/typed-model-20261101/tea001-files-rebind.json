@@ -1,0 +1,917 @@
+{
+  "schema": 1,
+  "scope": "Files reconnect component; no whole-original/native/GUI/provider/AT/IME/performance/release acceptance",
+  "settleWindowMs": 25,
+  "runnerPathSha256AtReport": "94469fd4a43262b57d4114afae255c589f7e53f4a93e222ee61002609efbef4b",
+  "executedRunnerProvenance": "External protected launcher must bind executed bytes; self-read is path-at-report-time only",
+  "result": {
+    "name": "SolFilesRebind2214",
+    "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/SolFilesRebind2214.js",
+    "sha256": "394031bed6aec7d8e12fc8e884b3ad996757a7f9497338276da6ecc67b3ede4f",
+    "checks": [
+      {
+        "name": "binding-seed-0/given-bindings-are-valid-and-distinct",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/given-a-read-complete-child-and-request",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/one-a-open-exact-wire-and-complete-awaiting",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/a-unknown-complete-child-with-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/disconnect-retires-old-reservation-honestly",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/unemitted-disconnect-does-not-invent-unknown",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/explicit-reconnect-only-restarts-backend",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/reattach-checks-all-read-effects-no-files-mutation",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/new-binding-idle-real-decoder-has-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/new-binding-read-complete-child-no-spent-authority",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/refresh-exact-read-only-wire",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/duplicate-refresh-preserves-entire-desktop-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/refresh-reply-complete-child-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/fresh-explicit-open-is-new-current-scope-intent",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/old-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/old-binding-current-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/fresh-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/old-binding-read-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/unsolicited-old-attachment-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/fresh-unknown-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/fresh-opened-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-0/fresh-refusal-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/given-bindings-are-valid-and-distinct",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/given-a-read-complete-child-and-request",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/one-a-open-exact-wire-and-complete-awaiting",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/a-unknown-complete-child-with-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/disconnect-retires-old-reservation-honestly",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/unemitted-disconnect-does-not-invent-unknown",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/explicit-reconnect-only-restarts-backend",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/reattach-checks-all-read-effects-no-files-mutation",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/new-binding-idle-real-decoder-has-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/new-binding-read-complete-child-no-spent-authority",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/refresh-exact-read-only-wire",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/duplicate-refresh-preserves-entire-desktop-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/refresh-reply-complete-child-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/fresh-explicit-open-is-new-current-scope-intent",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/old-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/old-binding-current-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/fresh-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/old-binding-read-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/unsolicited-old-attachment-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/fresh-unknown-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/fresh-opened-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-1/fresh-refusal-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/given-bindings-are-valid-and-distinct",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/given-a-read-complete-child-and-request",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/one-a-open-exact-wire-and-complete-awaiting",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/a-unknown-complete-child-with-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/disconnect-retires-old-reservation-honestly",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/unemitted-disconnect-does-not-invent-unknown",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/explicit-reconnect-only-restarts-backend",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/reattach-checks-all-read-effects-no-files-mutation",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/new-binding-idle-real-decoder-has-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/new-binding-read-complete-child-no-spent-authority",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/refresh-exact-read-only-wire",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/duplicate-refresh-preserves-entire-desktop-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/refresh-reply-complete-child-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/fresh-explicit-open-is-new-current-scope-intent",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/old-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/old-binding-current-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/fresh-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/old-binding-read-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/unsolicited-old-attachment-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/fresh-unknown-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/fresh-opened-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-2/fresh-refusal-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/given-bindings-are-valid-and-distinct",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/given-a-read-complete-child-and-request",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/one-a-open-exact-wire-and-complete-awaiting",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/a-unknown-complete-child-with-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/disconnect-retires-old-reservation-honestly",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/unemitted-disconnect-does-not-invent-unknown",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/explicit-reconnect-only-restarts-backend",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/reattach-checks-all-read-effects-no-files-mutation",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/new-binding-idle-real-decoder-has-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/new-binding-read-complete-child-no-spent-authority",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/refresh-exact-read-only-wire",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/duplicate-refresh-preserves-entire-desktop-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/refresh-reply-complete-child-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/fresh-explicit-open-is-new-current-scope-intent",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/old-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/old-binding-current-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/fresh-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/old-binding-read-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/unsolicited-old-attachment-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/fresh-unknown-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/fresh-opened-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-3/fresh-refusal-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/given-bindings-are-valid-and-distinct",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/given-a-read-complete-child-and-request",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/one-a-open-exact-wire-and-complete-awaiting",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/a-unknown-complete-child-with-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/disconnect-retires-old-reservation-honestly",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/unemitted-disconnect-does-not-invent-unknown",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/explicit-reconnect-only-restarts-backend",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/reattach-checks-all-read-effects-no-files-mutation",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/new-binding-idle-real-decoder-has-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/new-binding-read-complete-child-no-spent-authority",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/refresh-exact-read-only-wire",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/duplicate-refresh-preserves-entire-desktop-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/refresh-reply-complete-child-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/fresh-explicit-open-is-new-current-scope-intent",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/old-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/old-binding-current-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/fresh-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/old-binding-read-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/unsolicited-old-attachment-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/fresh-unknown-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/fresh-opened-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-4/fresh-refusal-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/given-bindings-are-valid-and-distinct",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/given-a-read-complete-child-and-request",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/one-a-open-exact-wire-and-complete-awaiting",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/a-unknown-complete-child-with-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/disconnect-retires-old-reservation-honestly",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/unemitted-disconnect-does-not-invent-unknown",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/explicit-reconnect-only-restarts-backend",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/reattach-checks-all-read-effects-no-files-mutation",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/new-binding-idle-real-decoder-has-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/new-binding-read-complete-child-no-spent-authority",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/refresh-exact-read-only-wire",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/duplicate-refresh-preserves-entire-desktop-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/refresh-reply-complete-child-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/fresh-explicit-open-is-new-current-scope-intent",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/old-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/old-binding-current-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/fresh-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/old-binding-read-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/unsolicited-old-attachment-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/fresh-unknown-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/fresh-opened-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-5/fresh-refusal-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/given-bindings-are-valid-and-distinct",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/given-a-read-complete-child-and-request",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/one-a-open-exact-wire-and-complete-awaiting",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/a-unknown-complete-child-with-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/disconnect-retires-old-reservation-honestly",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/unemitted-disconnect-does-not-invent-unknown",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/explicit-reconnect-only-restarts-backend",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/reattach-checks-all-read-effects-no-files-mutation",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/new-binding-idle-real-decoder-has-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/new-binding-read-complete-child-no-spent-authority",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/refresh-exact-read-only-wire",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/duplicate-refresh-preserves-entire-desktop-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/refresh-reply-complete-child-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/fresh-explicit-open-is-new-current-scope-intent",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/old-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/old-binding-current-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/fresh-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/old-binding-read-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/unsolicited-old-attachment-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/fresh-unknown-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/fresh-opened-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-6/fresh-refusal-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/given-bindings-are-valid-and-distinct",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/given-a-read-complete-child-and-request",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/one-a-open-exact-wire-and-complete-awaiting",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/a-unknown-complete-child-with-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/disconnect-retires-old-reservation-honestly",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/unemitted-disconnect-does-not-invent-unknown",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/explicit-reconnect-only-restarts-backend",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/reattach-checks-all-read-effects-no-files-mutation",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/new-binding-idle-real-decoder-has-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/new-binding-read-complete-child-no-spent-authority",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/refresh-exact-read-only-wire",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/duplicate-refresh-preserves-entire-desktop-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/refresh-reply-complete-child-no-effect",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/fresh-explicit-open-is-new-current-scope-intent",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/old-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/old-binding-current-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/fresh-binding-old-request-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/old-binding-read-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/unsolicited-old-attachment-preserves-entire-desktop",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/fresh-unknown-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/fresh-opened-positive-complete-child-and-zero-effects",
+        "passed": true
+      },
+      {
+        "name": "binding-seed-7/fresh-refusal-positive-complete-child-and-zero-effects",
+        "passed": true
+      }
+    ],
+    "payload": {
+      "schema": 1,
+      "scope": "Actual pure Desktop/Shell/Files binding reconnect component; no transport/native/whole-original acceptance",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "checks": {
+        "binding-seed-0/given-bindings-are-valid-and-distinct": true,
+        "binding-seed-0/given-a-read-complete-child-and-request": true,
+        "binding-seed-0/one-a-open-exact-wire-and-complete-awaiting": true,
+        "binding-seed-0/a-unknown-complete-child-with-no-effect": true,
+        "binding-seed-0/disconnect-retires-old-reservation-honestly": true,
+        "binding-seed-0/unemitted-disconnect-does-not-invent-unknown": true,
+        "binding-seed-0/explicit-reconnect-only-restarts-backend": true,
+        "binding-seed-0/reattach-checks-all-read-effects-no-files-mutation": true,
+        "binding-seed-0/new-binding-idle-real-decoder-has-no-effect": true,
+        "binding-seed-0/new-binding-read-complete-child-no-spent-authority": true,
+        "binding-seed-0/refresh-exact-read-only-wire": true,
+        "binding-seed-0/duplicate-refresh-preserves-entire-desktop-no-effect": true,
+        "binding-seed-0/refresh-reply-complete-child-no-effect": true,
+        "binding-seed-0/fresh-explicit-open-is-new-current-scope-intent": true,
+        "binding-seed-0/old-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-0/old-binding-current-request-preserves-entire-desktop": true,
+        "binding-seed-0/fresh-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-0/old-binding-read-preserves-entire-desktop": true,
+        "binding-seed-0/unsolicited-old-attachment-preserves-entire-desktop": true,
+        "binding-seed-0/fresh-unknown-complete-child-and-zero-effects": true,
+        "binding-seed-0/fresh-opened-positive-complete-child-and-zero-effects": true,
+        "binding-seed-0/fresh-refusal-positive-complete-child-and-zero-effects": true,
+        "binding-seed-1/given-bindings-are-valid-and-distinct": true,
+        "binding-seed-1/given-a-read-complete-child-and-request": true,
+        "binding-seed-1/one-a-open-exact-wire-and-complete-awaiting": true,
+        "binding-seed-1/a-unknown-complete-child-with-no-effect": true,
+        "binding-seed-1/disconnect-retires-old-reservation-honestly": true,
+        "binding-seed-1/unemitted-disconnect-does-not-invent-unknown": true,
+        "binding-seed-1/explicit-reconnect-only-restarts-backend": true,
+        "binding-seed-1/reattach-checks-all-read-effects-no-files-mutation": true,
+        "binding-seed-1/new-binding-idle-real-decoder-has-no-effect": true,
+        "binding-seed-1/new-binding-read-complete-child-no-spent-authority": true,
+        "binding-seed-1/refresh-exact-read-only-wire": true,
+        "binding-seed-1/duplicate-refresh-preserves-entire-desktop-no-effect": true,
+        "binding-seed-1/refresh-reply-complete-child-no-effect": true,
+        "binding-seed-1/fresh-explicit-open-is-new-current-scope-intent": true,
+        "binding-seed-1/old-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-1/old-binding-current-request-preserves-entire-desktop": true,
+        "binding-seed-1/fresh-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-1/old-binding-read-preserves-entire-desktop": true,
+        "binding-seed-1/unsolicited-old-attachment-preserves-entire-desktop": true,
+        "binding-seed-1/fresh-unknown-complete-child-and-zero-effects": true,
+        "binding-seed-1/fresh-opened-positive-complete-child-and-zero-effects": true,
+        "binding-seed-1/fresh-refusal-positive-complete-child-and-zero-effects": true,
+        "binding-seed-2/given-bindings-are-valid-and-distinct": true,
+        "binding-seed-2/given-a-read-complete-child-and-request": true,
+        "binding-seed-2/one-a-open-exact-wire-and-complete-awaiting": true,
+        "binding-seed-2/a-unknown-complete-child-with-no-effect": true,
+        "binding-seed-2/disconnect-retires-old-reservation-honestly": true,
+        "binding-seed-2/unemitted-disconnect-does-not-invent-unknown": true,
+        "binding-seed-2/explicit-reconnect-only-restarts-backend": true,
+        "binding-seed-2/reattach-checks-all-read-effects-no-files-mutation": true,
+        "binding-seed-2/new-binding-idle-real-decoder-has-no-effect": true,
+        "binding-seed-2/new-binding-read-complete-child-no-spent-authority": true,
+        "binding-seed-2/refresh-exact-read-only-wire": true,
+        "binding-seed-2/duplicate-refresh-preserves-entire-desktop-no-effect": true,
+        "binding-seed-2/refresh-reply-complete-child-no-effect": true,
+        "binding-seed-2/fresh-explicit-open-is-new-current-scope-intent": true,
+        "binding-seed-2/old-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-2/old-binding-current-request-preserves-entire-desktop": true,
+        "binding-seed-2/fresh-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-2/old-binding-read-preserves-entire-desktop": true,
+        "binding-seed-2/unsolicited-old-attachment-preserves-entire-desktop": true,
+        "binding-seed-2/fresh-unknown-complete-child-and-zero-effects": true,
+        "binding-seed-2/fresh-opened-positive-complete-child-and-zero-effects": true,
+        "binding-seed-2/fresh-refusal-positive-complete-child-and-zero-effects": true,
+        "binding-seed-3/given-bindings-are-valid-and-distinct": true,
+        "binding-seed-3/given-a-read-complete-child-and-request": true,
+        "binding-seed-3/one-a-open-exact-wire-and-complete-awaiting": true,
+        "binding-seed-3/a-unknown-complete-child-with-no-effect": true,
+        "binding-seed-3/disconnect-retires-old-reservation-honestly": true,
+        "binding-seed-3/unemitted-disconnect-does-not-invent-unknown": true,
+        "binding-seed-3/explicit-reconnect-only-restarts-backend": true,
+        "binding-seed-3/reattach-checks-all-read-effects-no-files-mutation": true,
+        "binding-seed-3/new-binding-idle-real-decoder-has-no-effect": true,
+        "binding-seed-3/new-binding-read-complete-child-no-spent-authority": true,
+        "binding-seed-3/refresh-exact-read-only-wire": true,
+        "binding-seed-3/duplicate-refresh-preserves-entire-desktop-no-effect": true,
+        "binding-seed-3/refresh-reply-complete-child-no-effect": true,
+        "binding-seed-3/fresh-explicit-open-is-new-current-scope-intent": true,
+        "binding-seed-3/old-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-3/old-binding-current-request-preserves-entire-desktop": true,
+        "binding-seed-3/fresh-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-3/old-binding-read-preserves-entire-desktop": true,
+        "binding-seed-3/unsolicited-old-attachment-preserves-entire-desktop": true,
+        "binding-seed-3/fresh-unknown-complete-child-and-zero-effects": true,
+        "binding-seed-3/fresh-opened-positive-complete-child-and-zero-effects": true,
+        "binding-seed-3/fresh-refusal-positive-complete-child-and-zero-effects": true,
+        "binding-seed-4/given-bindings-are-valid-and-distinct": true,
+        "binding-seed-4/given-a-read-complete-child-and-request": true,
+        "binding-seed-4/one-a-open-exact-wire-and-complete-awaiting": true,
+        "binding-seed-4/a-unknown-complete-child-with-no-effect": true,
+        "binding-seed-4/disconnect-retires-old-reservation-honestly": true,
+        "binding-seed-4/unemitted-disconnect-does-not-invent-unknown": true,
+        "binding-seed-4/explicit-reconnect-only-restarts-backend": true,
+        "binding-seed-4/reattach-checks-all-read-effects-no-files-mutation": true,
+        "binding-seed-4/new-binding-idle-real-decoder-has-no-effect": true,
+        "binding-seed-4/new-binding-read-complete-child-no-spent-authority": true,
+        "binding-seed-4/refresh-exact-read-only-wire": true,
+        "binding-seed-4/duplicate-refresh-preserves-entire-desktop-no-effect": true,
+        "binding-seed-4/refresh-reply-complete-child-no-effect": true,
+        "binding-seed-4/fresh-explicit-open-is-new-current-scope-intent": true,
+        "binding-seed-4/old-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-4/old-binding-current-request-preserves-entire-desktop": true,
+        "binding-seed-4/fresh-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-4/old-binding-read-preserves-entire-desktop": true,
+        "binding-seed-4/unsolicited-old-attachment-preserves-entire-desktop": true,
+        "binding-seed-4/fresh-unknown-complete-child-and-zero-effects": true,
+        "binding-seed-4/fresh-opened-positive-complete-child-and-zero-effects": true,
+        "binding-seed-4/fresh-refusal-positive-complete-child-and-zero-effects": true,
+        "binding-seed-5/given-bindings-are-valid-and-distinct": true,
+        "binding-seed-5/given-a-read-complete-child-and-request": true,
+        "binding-seed-5/one-a-open-exact-wire-and-complete-awaiting": true,
+        "binding-seed-5/a-unknown-complete-child-with-no-effect": true,
+        "binding-seed-5/disconnect-retires-old-reservation-honestly": true,
+        "binding-seed-5/unemitted-disconnect-does-not-invent-unknown": true,
+        "binding-seed-5/explicit-reconnect-only-restarts-backend": true,
+        "binding-seed-5/reattach-checks-all-read-effects-no-files-mutation": true,
+        "binding-seed-5/new-binding-idle-real-decoder-has-no-effect": true,
+        "binding-seed-5/new-binding-read-complete-child-no-spent-authority": true,
+        "binding-seed-5/refresh-exact-read-only-wire": true,
+        "binding-seed-5/duplicate-refresh-preserves-entire-desktop-no-effect": true,
+        "binding-seed-5/refresh-reply-complete-child-no-effect": true,
+        "binding-seed-5/fresh-explicit-open-is-new-current-scope-intent": true,
+        "binding-seed-5/old-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-5/old-binding-current-request-preserves-entire-desktop": true,
+        "binding-seed-5/fresh-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-5/old-binding-read-preserves-entire-desktop": true,
+        "binding-seed-5/unsolicited-old-attachment-preserves-entire-desktop": true,
+        "binding-seed-5/fresh-unknown-complete-child-and-zero-effects": true,
+        "binding-seed-5/fresh-opened-positive-complete-child-and-zero-effects": true,
+        "binding-seed-5/fresh-refusal-positive-complete-child-and-zero-effects": true,
+        "binding-seed-6/given-bindings-are-valid-and-distinct": true,
+        "binding-seed-6/given-a-read-complete-child-and-request": true,
+        "binding-seed-6/one-a-open-exact-wire-and-complete-awaiting": true,
+        "binding-seed-6/a-unknown-complete-child-with-no-effect": true,
+        "binding-seed-6/disconnect-retires-old-reservation-honestly": true,
+        "binding-seed-6/unemitted-disconnect-does-not-invent-unknown": true,
+        "binding-seed-6/explicit-reconnect-only-restarts-backend": true,
+        "binding-seed-6/reattach-checks-all-read-effects-no-files-mutation": true,
+        "binding-seed-6/new-binding-idle-real-decoder-has-no-effect": true,
+        "binding-seed-6/new-binding-read-complete-child-no-spent-authority": true,
+        "binding-seed-6/refresh-exact-read-only-wire": true,
+        "binding-seed-6/duplicate-refresh-preserves-entire-desktop-no-effect": true,
+        "binding-seed-6/refresh-reply-complete-child-no-effect": true,
+        "binding-seed-6/fresh-explicit-open-is-new-current-scope-intent": true,
+        "binding-seed-6/old-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-6/old-binding-current-request-preserves-entire-desktop": true,
+        "binding-seed-6/fresh-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-6/old-binding-read-preserves-entire-desktop": true,
+        "binding-seed-6/unsolicited-old-attachment-preserves-entire-desktop": true,
+        "binding-seed-6/fresh-unknown-complete-child-and-zero-effects": true,
+        "binding-seed-6/fresh-opened-positive-complete-child-and-zero-effects": true,
+        "binding-seed-6/fresh-refusal-positive-complete-child-and-zero-effects": true,
+        "binding-seed-7/given-bindings-are-valid-and-distinct": true,
+        "binding-seed-7/given-a-read-complete-child-and-request": true,
+        "binding-seed-7/one-a-open-exact-wire-and-complete-awaiting": true,
+        "binding-seed-7/a-unknown-complete-child-with-no-effect": true,
+        "binding-seed-7/disconnect-retires-old-reservation-honestly": true,
+        "binding-seed-7/unemitted-disconnect-does-not-invent-unknown": true,
+        "binding-seed-7/explicit-reconnect-only-restarts-backend": true,
+        "binding-seed-7/reattach-checks-all-read-effects-no-files-mutation": true,
+        "binding-seed-7/new-binding-idle-real-decoder-has-no-effect": true,
+        "binding-seed-7/new-binding-read-complete-child-no-spent-authority": true,
+        "binding-seed-7/refresh-exact-read-only-wire": true,
+        "binding-seed-7/duplicate-refresh-preserves-entire-desktop-no-effect": true,
+        "binding-seed-7/refresh-reply-complete-child-no-effect": true,
+        "binding-seed-7/fresh-explicit-open-is-new-current-scope-intent": true,
+        "binding-seed-7/old-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-7/old-binding-current-request-preserves-entire-desktop": true,
+        "binding-seed-7/fresh-binding-old-request-preserves-entire-desktop": true,
+        "binding-seed-7/old-binding-read-preserves-entire-desktop": true,
+        "binding-seed-7/unsolicited-old-attachment-preserves-entire-desktop": true,
+        "binding-seed-7/fresh-unknown-complete-child-and-zero-effects": true,
+        "binding-seed-7/fresh-opened-positive-complete-child-and-zero-effects": true,
+        "binding-seed-7/fresh-refusal-positive-complete-child-and-zero-effects": true
+      },
+      "requiredCheckCount": 176,
+      "originalAccepted": false,
+      "nativeAccepted": false
+    },
+    "passed": true
+  },
+  "passed": true,
+  "originalAccepted": false,
+  "nativeAccepted": false
+}

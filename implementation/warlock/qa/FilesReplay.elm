@@ -41,6 +41,29 @@ result =
         wrongLocation=native (outcome request "Opened" (snapshot "2" "coll:videos")) pending
         disconnected=native (E.object [("protocolVersion",E.int 3),("kind",E.string "host-disconnected")]) pending
         wrong=native (outcome (counter "999") "Opened" (snapshot "2" "coll:images")) pending
+        (extraBinding,extraBindingEffects)=NativePointerFixture.incoming (E.object [("protocolVersion",E.int 3),("kind",E.string "host-disconnected"),("binding",bound)]) read
+        -- Independent literal complete domain expectations, including unchanged
+        -- peer, target, spent reservation and draft; not a reducer-derived oracle.
+        literalPeer : Files.Peer
+        literalPeer={pid=counter "20",start=counter "40",instance="owned1",target="home",visible=True}
+        literalSnapshot : Files.Snapshot
+        literalSnapshot={service=counter "9",revision=counter "1",available=True,reason="",peer=Just literalPeer}
+        literalIntent : Files.Intent
+        literalIntent={service=counter "9",revision=counter "1",target="coll:images"}
+        awaiting : Files.Model
+        awaiting={snapshot=Just literalSnapshot,draft="",pending=Just {request=counter "6",intent=literalIntent,confirmation=Files.Awaiting},spent=[literalIntent],notice="Files: waiting for the requested location…"}
+        unconfirmed : Files.Model
+        unconfirmed={snapshot=Just literalSnapshot,draft="",pending=Just {request=counter "6",intent=literalIntent,confirmation=Files.Unconfirmed},spent=[literalIntent],notice="Files: opening not confirmed. Refresh only reads state; this request will not be repeated."}
+        unknownDuplicate=native (outcome request "Unknown" (snapshot "1" "home")) unknown
+        wrongAfterUnknown=native (outcome (counter "999") "Refused" (snapshot "1" "home")) unknown
+        lateRefused=native (outcome request "Refused" (snapshot "1" "home")) unknown
+        refusedExpected : Files.Model
+        refusedExpected={snapshot=Just literalSnapshot,draft="",pending=Nothing,spent=[literalIntent],notice="Files: request refused. Refresh before choosing again."}
+        lateOpened=native (outcome request "Opened" (snapshot "2" "coll:images")) unknown
+        openedPeer : Files.Peer
+        openedPeer={pid=counter "20",start=counter "40",instance="owned1",target="coll:images",visible=True}
+        openedExpected : Files.Model
+        openedExpected={snapshot=Just {service=counter "9",revision=counter "2",available=True,reason="",peer=Just openedPeer},draft="",pending=Nothing,spent=[literalIntent],notice="Files: requested location opened."}
         (edited,editEffects)=dispatch (\stamp -> Desktop.EditFilesPath stamp "/tmp/Documents") read
         (folder,folderEffects)=dispatch Desktop.OpenFilesPath edited
         (invalid,_)=dispatch (\stamp -> Desktop.EditFilesPath stamp "$(touch injected)") read
@@ -64,6 +87,14 @@ result =
                 _ -> False) effects))
             ,checked "ObservedOutcomeSettles" (opened.files.pending==Nothing && String.contains "opened" opened.files.notice)
             ,checked "UnknownRemainsVisibleAndCannotReplay" (unknown.files.pending/=Nothing && String.contains "not confirmed" unknown.files.notice && List.isEmpty unknownRepeat)
+            ,checked "AwaitingCompleteLiteralState" (pending.files==awaiting)
+            ,checked "UnknownCompleteLiteralState" (unknown.files==unconfirmed)
+            ,checked "DuplicateUnknownPreservesFullState" (unknownDuplicate==unknown)
+            ,checked "MismatchedRefusalPreservesFullState" (wrongAfterUnknown==unknown)
+            ,checked "LateCorrelatedRefusalPreservesReservationHistory" (lateRefused.files==refusedExpected)
+            ,checked "LateVerifiedOpenHasCompleteLiteralState" (lateOpened.files==openedExpected)
+            ,checked "WrongPeerBecomesUnconfirmed" (wrongPeer.files.pending |> Maybe.map (.confirmation >> (==) Files.Unconfirmed) |> Maybe.withDefault False)
+            ,checked "WrongLocationBecomesUnconfirmed" (wrongLocation.files.pending |> Maybe.map (.confirmation >> (==) Files.Unconfirmed) |> Maybe.withDefault False)
             ,checked "RefreshNeverOpens" (not (List.any effect refreshEffects))
             ,checked "ChangedReadReconcilesWithoutReplay" (reconciled.files.pending==Nothing && List.isEmpty repeat)
             ,checked "ReplacementCannotBeReportedAsReused" (wrongPeer.files.pending/=Nothing && String.contains "not confirmed" wrongPeer.files.notice)
@@ -76,7 +107,8 @@ result =
             ,checked "CloseHasNoNavigationEffect" (not closed.filesOpen && not (List.any effect closeEffects))
             ,checked "AnotherPopupRetiresFiles" (not other.filesOpen && other.systemMenuOpen && other.files==read.files)
             ,checked "FolderFieldHasScopedAcknowledgment" (Presentation.editQuery field presentation/=Nothing && (Tuple.first typed).files.draft=="/tmp/Other" && List.isEmpty (Tuple.second typed))
-            ,checked "DetachedSessionRetiresFiles" (not (native (E.object [("protocolVersion",E.int 3),("kind",E.string "host-disconnected"),("binding",bound)]) read).filesOpen)
+            ,checked "DetachedSessionRetiresFiles" (not (native (E.object [("protocolVersion",E.int 3),("kind",E.string "host-disconnected")]) read).filesOpen)
+            ,checked "MalformedDisconnectBindingRetainsFiles" (extraBinding.files==read.files && extraBinding.filesOpen==read.filesOpen && extraBinding.windows.shell.decoderRefusal==Just "Native envelope rejected: malformed fields." && List.isEmpty extraBindingEffects)
             ,checked "AllControlsNamed" (List.all (\c -> not (String.isEmpty c.ariaLabel)) (Surface.controls read))]
     in E.object [("checks",E.object checks),("frame",originalFrame),("pathFrame",frame),("pendingFrame",Surface.packet (counter "3") (counter "1") {read | files=pending.files})]
 main = Platform.worker {init=\() -> ((),outgoing result),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}

@@ -2056,7 +2056,7 @@ function buildPreferenceSeeds(c) {
     { path: dpath('presentation'), before: just(counter('9')), after: just(counter('11')) },
     { path: dpath('request'), before: counter('6'), after: counter('7') },
     { path: dpath('motion', 'preferences', 'draft'), before: { $: 'System' }, after: { $: 'Full' } },
-    { path: dpath('motion', 'preferences', 'pending'), before: none(), after: just({ request: counter('7'), revision: counter('1'), override: { $: 'Full' } }) },
+    { path: dpath('motion', 'preferences', 'pending'), before: none(), after: just({ request: counter('7'), revision: counter('1'), override: { $: 'Full' }, state: { $: 'Awaiting' } }) },
     { path: dpath('motion', 'preferences', 'notice'), before: 'Motion preference loaded.', after: 'Saving motion preference…' },
   ]);
   const motionPrelude = basePrelude.concat([
@@ -2068,6 +2068,7 @@ function buildPreferenceSeeds(c) {
   const motionUnknownState = patch(motionPendingState, [
     { path: ['controller', 'a', 'controller', 'a', 'publication'], before: counter('11'), after: counter('12') },
     { path: dpath('presentation'), before: just(counter('11')), after: just(counter('12')) },
+    { path: dpath('motion', 'preferences', 'pending'), before: just({ request: counter('7'), revision: counter('1'), override: { $: 'Full' }, state: { $: 'Awaiting' } }), after: just({ request: counter('7'), revision: counter('1'), override: { $: 'Full' }, state: { $: 'Unconfirmed' } }) },
     { path: dpath('motion', 'preferences', 'notice'), before: 'Saving motion preference…', after: motionUnknownNotice },
   ]);
   const motionUnknownCommit = settingsCommit({
@@ -2082,7 +2083,7 @@ function buildPreferenceSeeds(c) {
   const motionRefusedState = patch(motionUnknownState, [
     { path: ['controller', 'a', 'controller', 'a', 'publication'], before: counter('12'), after: counter('13') },
     { path: dpath('presentation'), before: just(counter('12')), after: just(counter('13')) },
-    { path: dpath('motion', 'preferences', 'pending'), before: just({ request: counter('7'), revision: counter('1'), override: { $: 'Full' } }), after: none() },
+    { path: dpath('motion', 'preferences', 'pending'), before: just({ request: counter('7'), revision: counter('1'), override: { $: 'Full' }, state: { $: 'Unconfirmed' } }), after: none() },
     { path: dpath('motion', 'preferences', 'notice'), before: motionUnknownNotice, after: motionRefusedNotice },
   ]);
   const motionRefusedCommit = settingsCommit({
@@ -2130,7 +2131,7 @@ function buildPreferenceSeeds(c) {
     { path: dpath('presentation'), before: just(counter('11')), after: just(counter('13')) },
     { path: dpath('request'), before: counter('7'), after: counter('8') },
     { path: dpath('motion', 'preferences', 'snapshot'), before: just({ revision: counter('1'), override: { $: 'System' } }), after: just({ revision: counter('2'), override: { $: 'Full' } }) },
-    { path: dpath('motion', 'preferences', 'pending'), before: just({ request: counter('7'), revision: counter('1'), override: { $: 'Full' } }), after: none() },
+    { path: dpath('motion', 'preferences', 'pending'), before: just({ request: counter('7'), revision: counter('1'), override: { $: 'Full' }, state: { $: 'Awaiting' } }), after: none() },
     { path: dpath('motion', 'preferences', 'notice'), before: 'Saving motion preference…', after: 'Motion preference saved.' },
     { path: dpath('motion', 'pending'), before: none(), after: just({ binding, request: counter('8'), profile: { $: 'Full' } }) },
   ]);
@@ -2175,7 +2176,7 @@ function buildPreferenceSeeds(c) {
     { path: dpath('presentation'), before: just(counter('9')), after: just(counter('11')) },
     { path: dpath('request'), before: counter('6'), after: counter('7') },
     { path: dpath('shortcutPreferences', 'draft'), before: baseShortcutChoicesModel, after: desiredShortcutChoicesModel },
-    { path: dpath('shortcutPreferences', 'pending'), before: none(), after: just({ request: counter('7'), choices: desiredShortcutChoicesModel }) },
+    { path: dpath('shortcutPreferences', 'pending'), before: none(), after: just({ request: counter('7'), choices: desiredShortcutChoicesModel, confirmation: { $: 'Awaiting' } }) },
     { path: dpath('shortcutPreferences', 'notice'), before: loadedShortcutNotice, after: 'Saving and applying shortcut choices…' },
   ]);
   const shortcutPrelude = basePrelude.concat([
@@ -2187,6 +2188,7 @@ function buildPreferenceSeeds(c) {
   const shortcutUnknownState = patch(shortcutPendingState, [
     { path: ['controller', 'a', 'controller', 'a', 'publication'], before: counter('11'), after: counter('12') },
     { path: dpath('presentation'), before: just(counter('11')), after: just(counter('12')) },
+    { path: dpath('shortcutPreferences', 'pending'), before: just({ request: counter('7'), choices: desiredShortcutChoicesModel, confirmation: { $: 'Awaiting' } }), after: just({ request: counter('7'), choices: desiredShortcutChoicesModel, confirmation: { $: 'Unconfirmed' } }) },
     { path: dpath('shortcutPreferences', 'notice'), before: 'Saving and applying shortcut choices…', after: shortcutUnknownNotice },
   ]);
   const shortcutUnknownCommit = settingsCommit({
@@ -2201,7 +2203,7 @@ function buildPreferenceSeeds(c) {
   const shortcutRefusedState = patch(shortcutUnknownState, [
     { path: ['controller', 'a', 'controller', 'a', 'publication'], before: counter('12'), after: counter('13') },
     { path: dpath('presentation'), before: just(counter('12')), after: just(counter('13')) },
-    { path: dpath('shortcutPreferences', 'pending'), before: just({ request: counter('7'), choices: desiredShortcutChoicesModel }), after: none() },
+    { path: dpath('shortcutPreferences', 'pending'), before: just({ request: counter('7'), choices: desiredShortcutChoicesModel, confirmation: { $: 'Unconfirmed' } }), after: none() },
     { path: dpath('shortcutPreferences', 'notice'), before: shortcutUnknownNotice, after: shortcutRefusedNotice },
   ]);
   const shortcutRefusedCommit = settingsCommit({
@@ -2218,7 +2220,7 @@ function buildPreferenceSeeds(c) {
     { path: ['controller', 'a', 'controller', 'a', 'publication'], before: counter('11'), after: counter('12') },
     { path: dpath('presentation'), before: just(counter('11')), after: just(counter('12')) },
     { path: dpath('shortcutPreferences', 'snapshot'), before: just({ schema: 1, revision: counter('1'), choices: baseShortcutChoicesModel }), after: just({ schema: 1, revision: counter('2'), choices: desiredShortcutChoicesModel }) },
-    { path: dpath('shortcutPreferences', 'pending'), before: just({ request: counter('7'), choices: desiredShortcutChoicesModel }), after: none() },
+    { path: dpath('shortcutPreferences', 'pending'), before: just({ request: counter('7'), choices: desiredShortcutChoicesModel, confirmation: { $: 'Awaiting' } }), after: none() },
     { path: dpath('shortcutPreferences', 'notice'), before: 'Saving and applying shortcut choices…', after: shortcutStoredNotice },
   ]);
   const shortcutStoredCommit = settingsCommit({
@@ -2237,7 +2239,7 @@ function buildPreferenceSeeds(c) {
     { path: dpath('presentation'), before: just(counter('11')), after: just(counter('12')) },
     { path: dpath('shortcutPreferences', 'snapshot'), before: just({ schema: 1, revision: counter('1'), choices: baseShortcutChoicesModel }), after: just({ schema: 1, revision: counter('2'), choices: desiredShortcutChoicesModel }) },
     { path: dpath('shortcutPreferences', 'inventory'), before: just(inventoryModel(baseShortcutInventoryWire)), after: just(inventoryModel(appliedShortcutInventoryWire)) },
-    { path: dpath('shortcutPreferences', 'pending'), before: just({ request: counter('7'), choices: desiredShortcutChoicesModel }), after: none() },
+    { path: dpath('shortcutPreferences', 'pending'), before: just({ request: counter('7'), choices: desiredShortcutChoicesModel, confirmation: { $: 'Awaiting' } }), after: none() },
     { path: dpath('shortcutPreferences', 'notice'), before: 'Saving and applying shortcut choices…', after: shortcutSavedNotice },
   ]);
   const shortcutSavedCommit = settingsCommit({
@@ -2399,8 +2401,21 @@ function buildPreferenceReceiptCases(c) {
         // 'Stored' is invalid for MotionPreferences; pre-d6fa51ec this mutated motion.preferences.notice.
         { input: motionOutcome('7', 'Stored', null), expected: { state: copy(m.given), effects: copy(NIL) } },
         { input: motionOutcome('7', 'bogus', null), expected: { state: copy(m.given), effects: copy(NIL) } },
+        { input: motionOutcome('7', null, null), expected: { state: copy(m.given), effects: copy(NIL) } },
+        { input: { kind: 'incoming', value: { bridgeProtocol: 1, kind: 'native-event', payload: { protocolVersion: 3, kind: 'motion-preferences-outcome', binding: copy(wireBinding), requestId: '7', snapshot: null } } }, expected: { state: copy(m.given), effects: copy(NIL) } },
+        { input: motionOutcome('99', 'Refused', null), expected: { state: copy(m.given), effects: copy(NIL) } },
         { input: motionOutcome('7', 'Unknown', null), expected: copy(m.unknown) },
+        { input: motionOutcome('7', 'Unknown', null), expected: { state: copy(m.unknown.state), effects: copy(NIL) } },
         { input: { kind: 'incoming', value: viewAction('popup', '12', '1', 'settings:motion:save') }, expected: { state: copy(m.unknown.state), effects: copy(NIL) } },
+        { input: motionOutcome('7', 'Refused', null), expected: copy(m.refused) },
+      ],
+    },
+    {
+      name: 'motion-pending-stale-saved-unconfirmed-then-refused',
+      steps: [
+        copy(reset), preludeStep(m),
+        { input: motionOutcome('7', 'Saved', { schema: 1, revision: '1', override: 'full' }), expected: copy(m.unknown) },
+        { input: motionOutcome('7', 'Saved', { schema: 1, revision: '1', override: 'full' }), expected: { state: copy(m.unknown.state), effects: copy(NIL) } },
         { input: motionOutcome('7', 'Refused', null), expected: copy(m.refused) },
       ],
     },
@@ -2543,6 +2558,73 @@ function buildPreferenceFeedbackCases(c) {
 }
 
 
+// Independently authored detached-policy host-motion cases. These are full
+// literal Policy.Model and ordered Policy.Effect expectations, not captured
+// reducer output. Detached Shell prevents native profile writes, and no batch
+// is registered because these updates contain no native requests.
+function buildMotionSourceCases() {
+  const counter = text => ({ $: 'Counter', a: text });
+  const just = value => ({ $: 'Just', a: value });
+  const desktopPath = ['controller', 'a', 'controller', 'a', 'desktop'];
+  const state = (serial, profile, source, generation) => literalPatches(initial, [
+    { path: ['controller','a','controller','a','publication'], before: zero(), after: counter(generation) },
+    { path: desktopPath.concat(['presentation']), before: just(zero()), after: just(counter(generation)) },
+    { path: desktopPath.concat(['motion','observation']), before: none(), after: just({ serial: counter(serial), profile: { $: profile }, source: { $: source } }) },
+  ]);
+  const commit = generation => ({
+    viewProtocol: 1, kind: 'view-commit', projection: {
+      viewProtocol: 1, kind: 'view-frame', revision: '0', views: [], focusOwner: null, popupOwner: null,
+      frame: {
+        surfaceProtocol: 2, keyboardParent: true, motion: 'reduced',
+        appearance: { theme: 'night', textScale: 100, effectsOff: false, reducedTransparency: false },
+        publication: generation, lease: '0', mode: 'closed', status: 'Connecting…',
+        bar: [
+          { id: 'bar:reconnect', domId: 'reconnect', label: 'Reconnect', ariaLabel: 'Reconnect to the window system', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:overview', domId: 'applications:detached:' + generation + ':control:overview-opener', label: 'Task View', ariaLabel: 'Open Task View', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:switcher', domId: 'applications:detached:' + generation + ':control:switcher-opener', label: 'Switch windows', ariaLabel: 'Open window switcher', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:notifications', domId: 'applications:detached:' + generation + ':notifications:opener', label: 'Notifications', ariaLabel: 'Open notifications', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:files', domId: 'applications:detached:' + generation + ':files:opener', label: 'Files', ariaLabel: 'Open Files menu', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:system', domId: 'applications:detached:' + generation + ':system:opener', label: 'System', ariaLabel: 'Open system menu', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:settings', domId: 'applications:detached:' + generation + ':settings:opener', label: 'Settings', ariaLabel: 'Open settings', detail: '', enabled: false, focusOnly: false },
+        ], popup: [],
+      }, announcer: null, announcement: null,
+    }, requests: [], focus: [],
+  });
+  const published = generation => ({ $: '::', a: { $: 'Publish', a: { $: 0, a: commit(generation) } }, b: empty() });
+  const raw = (source, serial, profile) => ({ kind: 'incoming', value: {
+    bridgeProtocol: 1, kind: 'native-event', payload: {
+      protocolVersion: 3, kind: 'host-motion-preference', serial, profile, source,
+    },
+  } });
+  const missing = { kind: 'incoming', value: { bridgeProtocol: 1, kind: 'native-event', payload: {
+    protocolVersion: 3, kind: 'host-motion-preference', serial: '2', profile: 'full',
+  } } };
+  const reset = { input: { kind: 'reset' }, expected: { state: cloneLiteral(initial), effects: cloneLiteral(NIL) } };
+  const portal = state('1','Reduced','Portal','1');
+  const gtk = state('2','Full','Gtk','2');
+  const max = state('18446744073709551615','Full','Gtk','1');
+  const unchanged = model => ({ state: cloneLiteral(model), effects: cloneLiteral(NIL) });
+  return [
+    { name: 'motion-source-portal-gtk-stale-invalid-complete-policy', steps: [
+      cloneLiteral(reset),
+      { input: raw('portal','1','reduced'), expected: { state: portal, effects: published('1') } },
+      { input: raw('gtk','1','full'), expected: unchanged(portal) },
+      { input: raw('GTK','2','full'), expected: unchanged(portal) },
+      { input: raw('other','2','full'), expected: unchanged(portal) },
+      { input: raw(null,'2','full'), expected: unchanged(portal) },
+      { input: missing, expected: unchanged(portal) },
+      { input: raw('gtk','2','full'), expected: { state: gtk, effects: published('2') } },
+      { input: raw('portal','1','reduced'), expected: unchanged(gtk) },
+    ] },
+    { name: 'motion-source-gtk-uint64-max-stale-complete-policy', steps: [
+      cloneLiteral(reset),
+      { input: raw('gtk','18446744073709551615','full'), expected: { state: max, effects: published('1') } },
+      { input: raw('portal','18446744073709551615','reduced'), expected: unchanged(max) },
+      { input: raw('portal','18446744073709551616','reduced'), expected: unchanged(max) },
+    ] },
+  ];
+}
+
 // Independent source-literal factories below never inspect reducer output.
 let additionalCases = [];
 const additionalResult = buildAdditionalCases({ baseCases, materialize, cloneLiteral,
@@ -2554,6 +2636,6 @@ const preferenceContext = { cloneLiteral, literalPatches, initial, topologyChang
   oneViewChanges, oneScope, oneScopeJson, binding, bindingJson, host, empty, none, zero, NIL };
 const preferenceFeedback = buildPreferenceFeedbackCases({ ...preferenceContext,
   pendingSettings: buildPreferenceSeeds(preferenceContext).pendingSettings });
-additionalCases = additionalResult.cases.concat(preferenceFeedback);
+additionalCases = additionalResult.cases.concat(preferenceFeedback, buildMotionSourceCases());
 const cases = Object.freeze(baseCases.concat(pinCases, additionalCases));
 module.exports = { schema: 1, coverage, cases, materialize };

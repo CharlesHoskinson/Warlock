@@ -494,6 +494,10 @@ def foreign_reconciliations(root, record, override=None, check_current=True):
         expected_adopted = event.get('adoptedDirtyAfter')
         for name in event.get('paths', []):
             expected_foreign.pop(name, None)
+    try:
+        expected_selected.difference_update(declaration_corrections(root, record))
+    except (ValueError, OSError, KeyError, TypeError, AttributeError) as exc:
+        return {}, ['Invalid declaration correction: ' + str(exc)], None
     if (record.get('foreignDirty') != expected_foreign or record.get('adoptedDirty', {}) != expected_adopted
             or set(record.get('slice', {}).get('paths', [])) != expected_selected):
         return {}, ['Foreign reconciliation custody differs without an authorized extension'], None
@@ -1032,6 +1036,141 @@ def context(root):
     return reqs, read(safe(root, STATE))
 
 
+
+# Correct only this observed root-tool prefixing mistake, never a source drop.
+SUPPORT_GHOSTS = { 'implementation/warlock/tools/' + name: 'tools/' + name
+                  for name in ('check_elm_cpu.py', 'qa_cpu.py') }
+CORRECTION_EVIDENCE = '.warlock-contributor/evidence/declaration-corrections/'
+
+
+def correction_history_extends(previous, current):
+    """Normal record may only add its existing historical-claim metadata."""
+    if len(current) < len(previous):
+        return False
+    for old, new in zip(previous, current):
+        copied = json.loads(json.dumps(new))
+        for old_claim, new_claim in zip(old.get('claims', []), copied.get('claims', [])):
+            for flag in ('historicalAfterSourceChange', 'historicalAfterSliceExtension'):
+                if flag not in old_claim and new_claim.get(flag) is True:
+                    new_claim.pop(flag)
+        if json_sha256(old) != json_sha256(copied):
+            return False
+    return True
+
+
+def validate_support_ghost(root, record, name):
+    if name not in SUPPORT_GHOSTS:
+        raise ValueError('Correction is restricted to the two mistaken root-tool declarations')
+    ghost = safe(root, name)
+    if os.path.lexists(ghost) or git(root, 'ls-files', '--', ':(literal)' + name).strip():
+        raise ValueError('Correction cannot remove an existing or tracked path: ' + name)
+    if git(root, 'log', '--all', '-1', '--format=%H', '--', ':(literal)' + name).strip():
+        raise ValueError('Correction cannot remove a path with Git history: ' + name)
+    if (name in record.get('sourceHashes', {}) or name in record.get('foreignDirty', {})
+            or name in record.get('adoptedDirty', {}).get('paths', [])):
+        raise ValueError('Correction cannot remove initial, foreign or adopted custody: ' + name)
+    introductions = [e for e in record.get('pathExtensions', []) if name in e.get('sourceHashes', {})]
+    if (len(introductions) != 1 or introductions[0]['sourceHashes'][name] is not None
+            or name in introductions[0].get('adoptedDirty', {}).get('paths', [])):
+        raise ValueError('Correction requires one null, unadopted extension fingerprint: ' + name)
+    for item in record.get('iterations', []):
+        if name in item.get('sourceHashes', {}) and item['sourceHashes'][name] is not None:
+            raise ValueError('Correction cannot remove a historically hashed source: ' + name)
+        if any(name in claim.get('sourceHashes', {}) for claim in item.get('claims', [])):
+            raise ValueError('Correction cannot remove a source ever bound by a claim: ' + name)
+    actual = safe(root, SUPPORT_GHOSTS[name])
+    if (actual.is_symlink() or not actual.is_file()
+            or not git(root, 'ls-files', '--', ':(literal)' + SUPPORT_GHOSTS[name]).strip()):
+        raise ValueError('Root support counterpart must be a tracked regular file: ' + name)
+
+
+def declaration_corrections(root, record):
+    corrected, previous = set(), None
+    events = record.get('declarationCorrections', [])
+    for index, event in enumerate(events):
+        body = {k: v for k, v in event.items() if k != 'eventSha256'}
+        if (type(event.get('schema')) is not int or event['schema'] != 1
+                or event.get('eventSha256') != json_sha256(body)
+                or event.get('previousEventSha256') != previous):
+            raise ValueError('Declaration correction hash chain differs')
+        previous = event['eventSha256']
+        name = event['recordSnapshot']
+        if (not isinstance(name, str) or not name.startswith(CORRECTION_EVIDENCE)
+                or git_run(root, 'check-ignore', '-q', '--', name).returncode):
+            raise ValueError('Correction snapshot must remain in exact ignored evidence scope')
+        raw = regular_bytes(safe(root, name))
+        if hashlib.sha256(raw).hexdigest() != event['recordSnapshotSha256']:
+            raise ValueError('Declaration correction snapshot bytes changed')
+        snapshot = json.loads(raw)
+        position = event['afterIteration']
+        if (type(position) is not int or position != len(snapshot.get('iterations', []))
+                or position > len(record.get('iterations', []))
+                or snapshot.get('declarationCorrections', []) != events[:index]
+                or snapshot.get('pathExtensions', []) != record.get('pathExtensions', [])[:len(snapshot.get('pathExtensions', []))]
+                or not correction_history_extends(snapshot.get('iterations', []), record.get('iterations', []))):
+            raise ValueError('Declaration correction cannot rewrite participant history')
+        # These fields are immutable; custody changes remain governed separately
+        # by the existing exact extension/adoption/reconciliation replay.
+        current_identity = dict(record, foreignDirty=snapshot.get('foreignDirty'), adoptedDirty=snapshot.get('adoptedDirty'))
+        if record_identity(snapshot, record['_recordPath']) != record_identity(current_identity, record['_recordPath']):
+            raise ValueError('Declaration correction changed immutable participant identity')
+        dt.datetime.fromisoformat(event['atUTC'])
+        names = event['ghostPaths']
+        if (not isinstance(names, list) or not names or len(set(names)) != len(names)
+                or corrected.intersection(names) or not set(names) <= set(snapshot['slice']['paths'])
+                or not isinstance(event.get('reason'), str) or not event['reason'].strip()
+                or not isinstance(event.get('supportOwnershipNote'), str) or not event['supportOwnershipNote'].strip()):
+            raise ValueError('Correction requires exact fresh ghost paths and separate support ownership note')
+        expected_support = {SUPPORT_GHOSTS[n] for n in names if n in SUPPORT_GHOSTS}
+        observed = event.get('observedSupportSha256', {})
+        if set(observed) != expected_support or any(not isinstance(h, str) or not re.fullmatch(r'[0-9a-f]{64}', h) for h in observed.values()):
+            raise ValueError('Correction must record exact root support fingerprints')
+        for ghost in names:
+            validate_support_ghost(root, snapshot, ghost)
+            validate_support_ghost(root, record, ghost)
+        corrected.update(names)
+    return corrected
+
+
+def correct_support_ghosts(root, record, reqs, state, args):
+    names = args.correct_support_ghost
+    if (not names or len(set(names)) != len(names) or args.adopt_dirty
+            or not args.reason.strip() or not args.ownership_note or not args.ownership_note.strip()):
+        raise ValueError('Correction needs exact ghost paths, reason and separate support ownership note; no adoption')
+    prior = declaration_corrections(root, record)
+    if prior.intersection(names) or not set(names) <= set(record['slice']['paths']):
+        raise ValueError('Correction must name currently selected, never-corrected ghosts')
+    for name in names:
+        validate_support_ghost(root, record, name)
+    snapshot_path = args.record_snapshot
+    if (not isinstance(snapshot_path, str) or not snapshot_path.startswith(CORRECTION_EVIDENCE)
+            or git_run(root, 'check-ignore', '-q', '--', snapshot_path).returncode):
+        raise ValueError('Archive exact before-record bytes in ignored declaration-corrections evidence first')
+    original = regular_bytes(safe(root, record['_recordPath']))
+    archived = regular_bytes(safe(root, snapshot_path))
+    if archived != original:
+        raise ValueError('Correction snapshot must match exact current participant bytes')
+    base_errors, _ = validate(root, record, reqs, state)
+    if base_errors:
+        raise ValueError('Resolve unrelated participant findings before correction: ' + '; '.join(base_errors))
+    events = record.get('declarationCorrections', [])
+    event = dict(schema=1, atUTC=now(), afterIteration=len(record['iterations']),
+                 ghostPaths=names, reason=args.reason, supportOwnershipNote=args.ownership_note,
+                 recordSnapshot=snapshot_path, recordSnapshotSha256=hashlib.sha256(original).hexdigest(),
+                 observedSupportSha256={SUPPORT_GHOSTS[n]: digest(safe(root, SUPPORT_GHOSTS[n])) for n in names},
+                 previousEventSha256=events[-1]['eventSha256'] if events else None)
+    event['eventSha256'] = json_sha256(event)
+    record.setdefault('declarationCorrections', []).append(event)
+    record['slice']['paths'] = [name for name in record['slice']['paths'] if name not in names]
+    errors, warnings = validate(root, record, reqs, state)
+    if errors:
+        raise ValueError('Cannot correct declarations: ' + '; '.join(errors))
+    if regular_bytes(safe(root, record['_recordPath'])) != original:
+        raise ValueError('Participant bytes changed before declaration correction')
+    return {'declarationCorrection': event, 'slice': record['slice'], 'warnings': warnings,
+            'progress': progress_status(record), 'rootSupportOwnershipGranted': False}
+
+
 def normalize_slice(root, s, reqs):
     s = dict(s)
     for k in ('id', 'before', 'after'):
@@ -1053,6 +1192,8 @@ def normalize_slice(root, s, reqs):
     for name in paths:
         safe(root, name)  # Reject absolute/escaping inputs before adding the product prefix.
         name = str(pathlib.Path(name))
+        if name.startswith('tools/'):
+            raise ValueError('Root tools are support files, not product paths; use separately owned review --include, not product normalization: ' + name)
         name = name if name.startswith('implementation/warlock/') else 'implementation/warlock/' + name
         p = safe(root, name)
         if not name.startswith('implementation/warlock/') or name.endswith('/') or p.is_dir():
@@ -1193,6 +1334,10 @@ def extension_baseline(record, previous, position):
 
 def extend_paths(root, record, reqs, state, args):
     """Explicitly add dependencies to the same behavior, retaining its delivery history."""
+    if getattr(args, 'correct_support_ghost', None):
+        return correct_support_ghosts(root, record, reqs, state, args)
+    if getattr(args, 'record_snapshot', None):
+        raise ValueError('--record-snapshot is only for exact support ghost correction')
     if not args.reason.strip():
         raise ValueError('Extension requires a concrete --reason')
     old = normalize_slice(root, record['slice'], reqs)
@@ -2413,6 +2558,7 @@ def validate(root, record, reqs, state):
         errors.append('Dirty adoption exceeds declared product paths')
     if record.get('baseline') != EXPECTED:
         errors.append('Record baseline differs')
+    corrections = declaration_corrections(root, record)
     extensions = record.get('pathExtensions', [])
     known_paths = set(record['sourceHashes'])
     last_position = 0
@@ -2424,7 +2570,7 @@ def validate(root, record, reqs, state):
         hashes = extension.get('sourceHashes')
         if not isinstance(hashes, dict) or not hashes or known_paths.intersection(hashes):
             raise ValueError('Extension must identify unique new source paths')
-        if any(n not in s['paths'] or (h is not None and (not isinstance(h, str) or len(h) != 64)) for n, h in hashes.items()):
+        if any((n not in s['paths'] and n not in corrections) or (h is not None and (not isinstance(h, str) or len(h) != 64)) for n, h in hashes.items()):
             raise ValueError('Invalid extension source baseline')
         if not isinstance(extension.get('reason'), str) or not extension['reason'].strip():
             raise ValueError('Extension needs its reason')
@@ -2435,7 +2581,7 @@ def validate(root, record, reqs, state):
         if adoption['paths'] and (not isinstance(adoption.get('ownershipNote'), str) or not adoption['ownershipNote'].strip()):
             raise ValueError('Extension dirty adoption needs ownership note')
         known_paths.update(hashes)
-    if extensions and known_paths != set(s['paths']):
+    if extensions and known_paths - corrections != set(s['paths']):
         errors.append('Extension history does not cover declared source paths')
     if not record.get('explicitSliceOverride') and s['id'] != state['activeSlice']['id']:
         errors.append('Live selected slice changed; restart deliberately or explicitly select a slice')
@@ -2540,7 +2686,10 @@ def main():
     support = subs.add_parser('reconcile-support', help='Append independently reviewed same-owner support-doc provenance without changing participant history')
     support.add_argument('--transition-file', required=True)
     extension = subs.add_parser('extend', help='Add dependencies to the same owned slice without resetting its history or timer')
-    extension.add_argument('--path', action='append', required=True)
+    extension_paths = extension.add_mutually_exclusive_group(required=True)
+    extension_paths.add_argument('--path', action='append')
+    extension_paths.add_argument('--correct-support-ghost', action='append', help='Correct only a never-created mistaken root-tool declaration; does not own that tool')
+    extension.add_argument('--record-snapshot', help='Exact ignored before-record snapshot for support ghost correction only')
     extension.add_argument('--reason', required=True)
     extension.add_argument('--adopt-dirty', action='append', default=[], metavar='PATH')
     extension.add_argument('--ownership-note')

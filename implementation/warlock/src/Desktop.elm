@@ -1,6 +1,7 @@
 module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities, menuApplication, newInstanceAvailable, applicationPageSize, applicationPageCount)
 
 import Menu
+import GeometryProjection
 import ActionProjection as Scene
 import Switcher
 import Pins
@@ -134,6 +135,12 @@ saveReceiptName status = case status of
     ReceiptRefused -> "Refused"
     ReceiptUnknown -> "Unknown"
 
+motionSaveReceipt : SaveReceipt -> MotionPreferences.ReceiptStatus
+motionSaveReceipt status = case status of
+    ReceiptSaved -> MotionPreferences.Saved
+    ReceiptRefused -> MotionPreferences.Refused
+    ReceiptUnknown -> MotionPreferences.Unknown
+
 shortcutSaveReceiptDecoder : D.Decoder ShortcutSaveReceipt
 shortcutSaveReceiptDecoder = D.string |> D.andThen (\raw -> case raw of
     "Saved" -> D.succeed ShortcutSaved
@@ -247,7 +254,7 @@ overviewTransferAvailable : Model -> Counter -> Bool
 overviewTransferAvailable model root =
     model.overview && model.choice==Nothing && Shell.available model.windows.shell && not (WorkspaceNavigation.blocked model.workspaceNavigation)
         && not (MenuBridge.blockedFor root model.windows.shell model.windows.menus)
-        && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "transfer-workspace" caps.operations) |> Maybe.withDefault False)
+        && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member GeometryProjection.CanTransferWorkspace caps.operations) |> Maybe.withDefault False)
         && (taskViewGroups model |> Maybe.withDefault [] |> List.filter (\group -> model.overviewWorkspace==Nothing || model.overviewWorkspace==Just group.identity)
             |> List.concatMap .windows |> List.any (\family -> family.root==root && family.available))
 
@@ -776,7 +783,7 @@ updateAvailable message model =
                 _ -> (model,[])
         ApplySnap stamp ->
             if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell)
-                || not (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "snap" caps.operations) |> Maybe.withDefault False) then (model,[]) else
+                || not (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member GeometryProjection.CanSnap caps.operations) |> Maybe.withDefault False) then (model,[]) else
             case (model.snap,model.windows.shell.geometry) of
                 (Just choice,Just geometry) ->
                     if not (Snap.valid geometry choice) then (model,[]) else
@@ -922,7 +929,7 @@ updateAvailable message model =
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
                             let motion=model.motion
-                                preference=MotionPreferences.receive receipt.request (saveReceiptName receipt.status) receipt.snapshot motion.preferences
+                                preference=MotionPreferences.receive receipt.request (motionSaveReceipt receipt.status) receipt.snapshot motion.preferences
                             in if preference==motion.preferences then (model,[]) else (advance {model | motion={motion | preferences=preference}},[])
                 Ok "host-motion-preference" ->
                     case D.decodeValue Motion.decoder raw of

@@ -32,6 +32,17 @@ result=
         wanted=preferences "2" chosen.shortcutPreferences.draft
         saved=native (receipt "shortcut-preferences-outcome" expected "Saved" (P.encode wanted) (inventory "alternate")) saving
         unknown=native (receipt "shortcut-preferences-outcome" expected "Unknown" E.null (inventory "keep")) saving
+        (repeatUnknown,repeatUnknownEffects)=NativePointerFixture.incoming (receipt "shortcut-preferences-outcome" expected "Unknown" E.null (inventory "keep")) unknown
+        (lateSaved,lateSavedEffects)=NativePointerFixture.incoming (receipt "shortcut-preferences-outcome" expected "Saved" (P.encode wanted) (inventory "alternate")) unknown
+        (lateRefused,lateRefusedEffects)=NativePointerFixture.incoming (receipt "shortcut-preferences-outcome" expected "Refused" E.null (inventory "keep")) unknown
+        (unverifiedStored,unverifiedStoredEffects)=NativePointerFixture.incoming (receipt "shortcut-preferences-outcome" expected "Stored" E.null (inventory "keep")) saving
+        (savingRefresh,_)=dispatch Desktop.RefreshShortcutChoices saving
+        unsettledRead=native (receipt "shortcut-preferences" (savingRefresh.shortcutExpected |> Maybe.withDefault UInt64.zero) "" (P.encode (preferences "1" P.defaults)) (inventory "keep")) savingRefresh
+        (unavailableAwaiting,unavailableAwaitingEffects)=NativePointerFixture.incoming (receipt "shortcut-preferences" (savingRefresh.shortcutExpected |> Maybe.withDefault UInt64.zero) "" E.null (inventory "keep")) savingRefresh
+        (unavailableUnknown,unavailableUnknownEffects)=NativePointerFixture.incoming (receipt "shortcut-preferences" (refreshing.shortcutExpected |> Maybe.withDefault UInt64.zero) "" E.null (inventory "keep")) refreshing
+        newerRead=native (receipt "shortcut-preferences" (savingRefresh.shortcutExpected |> Maybe.withDefault UInt64.zero) "" (P.encode (preferences "2" P.defaults)) (inventory "keep")) savingRefresh
+        (staleRefresh,_)=dispatch Desktop.RefreshShortcutChoices newerRead
+        (staleRead,staleReadEffects)=NativePointerFixture.incoming (receipt "shortcut-preferences" (staleRefresh.shortcutExpected |> Maybe.withDefault UInt64.zero) "" (P.encode (preferences "1" P.defaults)) (inventory "keep")) staleRefresh
         (unknownDuplicate,unknownEffects)=dispatch Desktop.SaveShortcutChoices unknown
         (refreshing,refreshEffects)=dispatch Desktop.RefreshShortcutChoices unknown
         reconciled=native (receipt "shortcut-preferences" (refreshing.shortcutExpected |> Maybe.withDefault UInt64.zero) "" (P.encode wanted) (inventory "alternate")) refreshing
@@ -52,6 +63,17 @@ result=
             ,checked "oneGuardedPreferenceWrite" (List.length (List.filter write effects)==1)
             ,checked "pendingCannotRepeat" (duplicate==saving && List.isEmpty duplicateEffects)
             ,checked "unknownCannotRepeat" (unknownDuplicate==unknown && List.isEmpty unknownEffects && unknown.shortcutPreferences.pending/=Nothing)
+            ,checked "savingRetainsTypedAwaiting" ((saving.shortcutPreferences.pending |> Maybe.map .confirmation)==Just P.Awaiting)
+            ,checked "unknownRetainsTypedUnconfirmed" ((unknown.shortcutPreferences.pending |> Maybe.map .confirmation)==Just P.Unconfirmed && (unknown.shortcutPreferences.pending |> Maybe.map (\p -> (p.request,p.choices)))==(saving.shortcutPreferences.pending |> Maybe.map (\p -> (p.request,p.choices))))
+            ,checked "duplicateUnknownNoStateOrEffect" (repeatUnknown==unknown && List.isEmpty repeatUnknownEffects)
+            ,checked "unverifiedSavedIsUnconfirmed" ((optimistic.shortcutPreferences.pending |> Maybe.map .confirmation)==Just P.Unconfirmed)
+            ,checked "unverifiedStoredIsUnconfirmed" ((unverifiedStored.shortcutPreferences.pending |> Maybe.map .confirmation)==Just P.Unconfirmed && List.isEmpty unverifiedStoredEffects)
+            ,checked "unsettledReadIsUnconfirmed" ((unsettledRead.shortcutPreferences.pending |> Maybe.map .confirmation)==Just P.Unconfirmed && unsettledRead.shortcutPreferences.snapshot==read.shortcutPreferences.snapshot)
+            ,checked "unavailableReadPreservesAwaiting" ((unavailableAwaiting.shortcutPreferences.pending |> Maybe.map .confirmation)==Just P.Awaiting && unavailableAwaiting.shortcutPreferences.snapshot==saving.shortcutPreferences.snapshot && unavailableAwaiting.shortcutPreferences.inventory==Nothing && List.isEmpty unavailableAwaitingEffects)
+            ,checked "unavailableReadPreservesUnconfirmed" ((unavailableUnknown.shortcutPreferences.pending |> Maybe.map .confirmation)==Just P.Unconfirmed && unavailableUnknown.shortcutPreferences.snapshot==unknown.shortcutPreferences.snapshot && unavailableUnknown.shortcutPreferences.inventory==Nothing && List.isEmpty unavailableUnknownEffects)
+            ,checked "staleReadPreservesPreferenceModel" (staleRead.shortcutPreferences==newerRead.shortcutPreferences && List.isEmpty staleReadEffects)
+            ,checked "lateSavedSettlesWithoutWrite" (lateSaved.shortcutPreferences.pending==Nothing && lateSaved.shortcutPreferences.snapshot==Just wanted && List.isEmpty lateSavedEffects)
+            ,checked "lateRefusalSettlesWithoutWrite" (lateRefused.shortcutPreferences.pending==Nothing && lateRefused.shortcutPreferences.snapshot==saving.shortcutPreferences.snapshot && List.isEmpty lateRefusedEffects)
             ,checked "unknownRefreshOnlyReads" (List.length refreshEffects==1 && not (List.any write refreshEffects))
             ,checked "readReconcilesActualStoredAndNativeState" (reconciled.shortcutPreferences.pending==Nothing && reconciled.shortcutPreferences.snapshot==Just wanted)
             ,checked "savedRequiresActualChosenNativeState" (saved.shortcutPreferences.pending==Nothing && optimistic.shortcutPreferences.pending/=Nothing)

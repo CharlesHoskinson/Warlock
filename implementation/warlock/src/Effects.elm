@@ -201,6 +201,19 @@ protocol operation = case operation of
 blocked : Counter -> Counter -> Model -> Bool
 blocked lifetime incarnation model = List.any (\t -> t.intent.context.lifetime==lifetime && t.intent.incarnation==incarnation && List.member t.status [Pending,Unknown]) model.unresolved
 
+geometryCapability : Operation -> Maybe GeometryProjection.Capability
+geometryCapability operation = case operation of
+    Maximize -> Just GeometryProjection.CanMaximize
+    RestoreGeometry -> Just GeometryProjection.CanRestoreGeometry
+    SnapPlacement _ -> Just GeometryProjection.CanSnap
+    TransferWorkspace _ -> Just GeometryProjection.CanTransferWorkspace
+    Pin -> Just GeometryProjection.CanPin
+    Unpin -> Just GeometryProjection.CanUnpin
+    ExitFullscreen -> Just GeometryProjection.CanExitFullscreen
+    Minimize -> Nothing
+    Restore -> Nothing
+    Activate -> Nothing
+
 beginGeometry : GeometryProjection.Capabilities -> GeometryProjection.Snapshot -> Operation -> Counter -> Model -> (Model, Maybe E.Value, Maybe String)
 beginGeometry caps observed operation incarnation model =
     let refuse reason=(model,Nothing,Just reason)
@@ -209,7 +222,7 @@ beginGeometry caps observed operation incarnation model =
         (Just window,Just request,Just generation) ->
             if not model.connected || not legacyReady || pending model || blocked observed.context.lifetime incarnation model then refuse "Unresolved or disconnected native operation"
             else if List.length model.unresolved>=64 then refuse "Unresolved operation capacity"
-            else if protocol operation/=2 || not caps.effects || not (List.member (operationName operation) caps.operations) then refuse "Geometry operation not negotiated"
+            else if protocol operation/=2 || not caps.effects || not (geometryCapability operation |> Maybe.map (\capability -> List.member capability caps.operations) |> Maybe.withDefault False) then refuse "Geometry operation not negotiated"
             else if observed.blocked || (case operation of
                 Pin -> not (window.pin |> Maybe.map .eligible |> Maybe.withDefault False)
                 Unpin -> not (window.pin |> Maybe.map .eligible |> Maybe.withDefault False)

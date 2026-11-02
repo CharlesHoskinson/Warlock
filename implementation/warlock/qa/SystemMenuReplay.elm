@@ -14,6 +14,43 @@ bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend"
 native raw model = NativePointerFixture.incoming raw model |> Tuple.first
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
 snapshot revision percent = E.object [("service",E.string "9"),("revision",E.string revision),("volume",E.object [("percent",E.int percent),("muted",E.bool False),("label",E.string "Warlock private audio")]),("network",E.null),("power",E.object [("suspend",E.string "yes"),("reboot",E.string "yes"),("poweroff",E.string "no")]),("session",E.object [("name",E.string "Warlock private session"),("state",E.string "active"),("locked",E.bool False)])]
+permissionSnapshot permission capability = E.object
+    [("service",E.string "9"),("revision",E.string "1"),("volume",E.null)
+    ,("network",E.object [("enabled",E.bool True),("state",E.string "activated"),("permission",E.string permission)])
+    ,("power",E.object [("suspend",E.string capability),("reboot",E.string capability),("poweroff",E.string capability)])
+    ,("session",E.null)]
+permissionCase permission capability operation expectedOperation allowed =
+    case D.decodeValue SystemMenu.decoder (permissionSnapshot permission capability) of
+        Err _ -> False
+        Ok current ->
+            let before=SystemMenu.observe current SystemMenu.initial
+                target=SystemMenu.intent current operation 0
+                (after,wire)=SystemMenu.propose (counter "777") target before
+            in if allowed then
+                after.pending==Just {request=counter "777",intent=target,receipt=SystemMenu.AwaitingReceipt}
+                    && (wire |> Maybe.map (D.decodeValue (D.map2 Tuple.pair (D.field "operation" D.string) (D.field "value" D.int))) |> Maybe.withDefault (Err (D.Failure "missing operation" E.null)))==Ok (expectedOperation,0)
+               else after==before && wire==Nothing
+sessionSnapshot rawState = E.object
+    [("service",E.string "9"),("revision",E.string "1"),("volume",E.null),("network",E.null),("power",E.null)
+    ,("session",E.object [("name",E.string "Warlock private session"),("state",rawState),("locked",E.bool False)])]
+sessionCase rawState expectedState allowed =
+    case D.decodeValue SystemMenu.decoder (sessionSnapshot (E.string rawState)) of
+        Err _ -> False
+        Ok actual ->
+            let expected={service=counter "9",revision=counter "1",volume=Nothing,network=Nothing,power=Nothing,session=Just {name="Warlock private session",state=expectedState,locked=False}}
+                given={snapshot=Just expected,pending=Nothing,spent=[],notice="Current system state. Unavailable controls cannot be changed."}
+                target={service=counter "9",revision=counter "1",operation=SystemMenu.Logout,value=0}
+                expectedAfter=if allowed then {given | pending=Just {request=counter "777",intent=target,receipt=SystemMenu.AwaitingReceipt},spent=[target],notice="Log out: waiting for native result…"} else given
+                expectedWire=if allowed then Just (E.object [("service",E.string "9"),("revision",E.string "1"),("operation",E.string "session-logout"),("value",E.int 0)]) else Nothing
+                observed=SystemMenu.observe actual SystemMenu.initial
+                (after,wire)=SystemMenu.propose (counter "777") target observed
+            in actual==expected && observed==given && SystemMenu.supported target observed==allowed && after==expectedAfter && Maybe.map (E.encode 0) wire==Maybe.map (E.encode 0) expectedWire
+sessionLabelCase rawState model =
+    case D.decodeValue SystemMenu.decoder (sessionSnapshot (E.string rawState)) of
+        Err _ -> False
+        Ok actual ->
+            List.any (\control -> control.id=="system:session:state" && control.label=="Session Warlock private session · "++rawState++"; unlocked")
+                (Surface.controls {model | systemMenu=SystemMenu.observe actual SystemMenu.initial})
 loaded request value = E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-snapshot"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]
 outcome request status value = E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-outcome"),("binding",bound),("requestId",E.string (UInt64.string request)),("status",E.string status),("snapshot",value)]
 dispatch build model = Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (build stamp) model) |> Maybe.withDefault (model,[])
@@ -49,7 +86,15 @@ result =
         (otherPopup,_)=dispatch Desktop.OpenNotifications read
         frame=Surface.packet (counter "1") (counter "1") read
         checked name value=(name,E.bool value)
-        checks=[checked "systemMenuOpenerIntegrated" (D.decodeValue (D.field "bar" (D.list (D.field "id" D.string))) frame |> Result.map (List.member "bar:system") |> Result.withDefault False)
+        checks=[checked "sessionClosingClassifiedAndLogoutDenied" (sessionCase "closing" SystemMenu.SessionClosing False)
+            ,checked "otherSessionTextLabelAndLogoutPreserved" (List.all (\raw -> sessionCase raw (SystemMenu.OtherSessionState raw) True && sessionLabelCase raw read) ["","active","online","Closing","closing ","native:observed",String.repeat 32 "s"])
+            ,checked "sessionStateBoundsAndTypeRefused" (List.all (\raw -> Result.toMaybe (D.decodeValue SystemMenu.decoder (sessionSnapshot raw))==Nothing) [E.string (String.repeat 33 "s"),E.string "active\n",E.int 0,E.null,E.bool True])
+            ,checked "networkPermissionsPreserveAdmission" (List.all (\(permission,allowed) -> permissionCase permission "yes" SystemMenu.Network "network-enable" allowed) [("yes",True),("no",False),("auth",True)])
+            ,checked "powerCapabilitiesPreserveAdmission" (List.all (\(capability,allowed) -> List.all (\(operation,wire) -> permissionCase "yes" capability operation wire allowed) [(SystemMenu.Suspend,"suspend"),(SystemMenu.Reboot,"reboot"),(SystemMenu.PowerOff,"poweroff")]) [("yes",True),("no",False),("na",False),("challenge",True)])
+            ,checked "foreignNetworkCapabilityRefused" (Result.toMaybe (D.decodeValue SystemMenu.decoder (permissionSnapshot "challenge" "yes"))==Nothing)
+            ,checked "foreignPowerPermissionRefused" (Result.toMaybe (D.decodeValue SystemMenu.decoder (permissionSnapshot "yes" "auth"))==Nothing)
+            ,checked "powerCapabilityLabelsPreserved" (List.any (\c -> c.label=="Power · suspend available, restart available, shutdown unavailable") (Surface.controls read))
+            ,checked "systemMenuOpenerIntegrated" (D.decodeValue (D.field "bar" (D.list (D.field "id" D.string))) frame |> Result.map (List.member "bar:system") |> Result.withDefault False)
             ,checked "menuModeAcceptedByProductionRenderer" (SurfaceRenderer.decode frame |> Result.map (SurfaceRenderer.mode >> (==) "system") |> Result.withDefault False)
             ,checked "openingReadFocusMatchesCloseControl" (List.any (\e -> case e of
                 Desktop.Focus target -> Surface.controls read |> List.any (\c -> c.id=="control:close" && c.domId==target)

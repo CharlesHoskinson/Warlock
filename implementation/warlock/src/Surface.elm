@@ -151,14 +151,14 @@ controls model =
                         Just current -> state "volume" ("Volume "++String.fromInt current.percent++"%"++(if current.muted then "; muted" else "; unmuted")++" · "++current.label) :: (List.map (\percent -> change SystemMenu.Volume percent ("Set volume "++String.fromInt percent++"%")) [0,25,50,75,100]) ++ [change SystemMenu.Mute (if current.muted then 0 else 1) (if current.muted then "Unmute" else "Mute")]
                     network=case snapshot.network of
                         Nothing -> [state "network" "Network unavailable"]
-                        Just current -> [state "network" ("Network "++(if current.enabled then "enabled" else "disabled")++" · "++current.state++(if current.permission=="no" then "; changes unavailable" else "")),change SystemMenu.Network (if current.enabled then 0 else 1) (if current.enabled then "Disable networking" else "Enable networking")]
-                    capability value=if value=="yes" then "available" else if value=="challenge" then "authorization required" else "unavailable"
+                        Just current -> [state "network" ("Network "++(if current.enabled then "enabled" else "disabled")++" · "++current.state++(if current.permission==SystemMenu.NetworkNo then "; changes unavailable" else "")),change SystemMenu.Network (if current.enabled then 0 else 1) (if current.enabled then "Disable networking" else "Enable networking")]
+                    capability = SystemMenu.powerCapabilityLabel
                     power=case snapshot.power of
                         Nothing -> [state "power" "Power controls unavailable"]
                         Just current -> [state "power" ("Power · suspend "++capability current.suspend++", restart "++capability current.reboot++", shutdown "++capability current.poweroff),change SystemMenu.Suspend 0 "Suspend",change SystemMenu.Reboot 0 "Restart",change SystemMenu.PowerOff 0 "Shut down"]
                     session=case snapshot.session of
                         Nothing -> [state "session" "Session controls unavailable"]
-                        Just current -> [state "session" ("Session "++current.name++" · "++current.state++(if current.locked then "; locked" else "; unlocked")),change SystemMenu.Lock 0 "Lock session",change SystemMenu.Logout 0 "Log out"]
+                        Just current -> [state "session" ("Session "++current.name++" · "++SystemMenu.sessionStateName current.state++(if current.locked then "; locked" else "; unlocked")),change SystemMenu.Lock 0 "Lock session",change SystemMenu.Logout 0 "Log out"]
                 in volume++network++power++session
             confirmation=case model.systemMenuConfirmation of
                 Nothing -> []
@@ -242,7 +242,7 @@ controls model =
                 let scoped message=Desktop.capture model |> Maybe.map message
                     ready=Shell.available model.windows.shell
                     placement=Snap.proposal choice
-                    applyReady=ready && model.choice==Nothing && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "snap" caps.operations) |> Maybe.withDefault False) && placement/=Nothing
+                    applyReady=ready && model.choice==Nothing && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member GeometryProjection.CanSnap caps.operations) |> Maybe.withDefault False) && placement/=Nothing
                     applyLabel=if applyReady then "Snap to "++String.toLower (Snap.name choice.selected) else "Snapping unavailable"
                     regionControl region=
                         let identity="snap:region:"++Snap.identity region

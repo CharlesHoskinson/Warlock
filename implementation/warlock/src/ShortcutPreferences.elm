@@ -1,15 +1,17 @@
-module ShortcutPreferences exposing (Choice(..), Choices, Row, Inventory, Snapshot, Model, initial, defaults, decoder, inventoryDecoder, name, label, choices, row, edit, observe, writable, ready, changed, propose, receive, encode)
+module ShortcutPreferences exposing (Choice(..), Confirmation(..), Choices, Row, Inventory, Snapshot, Model, initial, defaults, decoder, inventoryDecoder, name, label, choices, row, edit, observe, writable, ready, changed, propose, receive, encode)
 
 import Json.Decode as D
 import Json.Encode as E
 import UInt64 exposing (Counter)
 
 type Choice = Undecided | Keep | Default | Alternate
+-- Awaiting: no outcome receipt and no admitted nonsettling read; failed reads leave it unchanged.
+type Confirmation = Awaiting | Unconfirmed
 type alias Choices = { applications : Choice, system : Choice, notifications : Choice }
 type alias Row = { defaultChord : String, alternateChord : String, defaultAvailable : Bool, alternateAvailable : Bool, active : Choice }
 type alias Inventory = { fingerprint : String, applications : Row, system : Row, notifications : Row }
 type alias Snapshot = { schema : Int, revision : Counter, choices : Choices }
-type alias Model = { snapshot : Maybe Snapshot, inventory : Maybe Inventory, draft : Choices, pending : Maybe {request : Counter, choices : Choices}, conflicts : List String, notice : String }
+type alias Model = { snapshot : Maybe Snapshot, inventory : Maybe Inventory, draft : Choices, pending : Maybe {request : Counter, choices : Choices, confirmation : Confirmation}, conflicts : List String, notice : String }
 defaults = {applications=Undecided,system=Undecided,notifications=Undecided}
 initial = {snapshot=Nothing,inventory=Nothing,draft=defaults,pending=Nothing,conflicts=[],notice="Loading shortcut choices…"}
 strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Shortcut fields")
@@ -89,7 +91,7 @@ observe snapshot inventory model =
                     ((List.member route model.conflicts && not (choices route draft==choices route current.choices && choices route draft==(row route native).active)) ||
                      (model.snapshot |> Maybe.map (\old -> choices route old.choices/=choices route current.choices && choices route draft/=choices route current.choices) |> Maybe.withDefault False))
                 conflicts = List.filter conflict ["applications","system","notifications"]
-                nextPending = if settled then Nothing else model.pending
+                nextPending = if settled then Nothing else Maybe.map (\pending -> {pending | confirmation=Unconfirmed}) model.pending
                 notice =
                     if settled then "Shortcut choices confirmed saved and active. No action was repeated."
                     else if nextPending/=Nothing then "Shortcut application not confirmed. Your choices are preserved; refresh only reads stored choices and live bindings."
@@ -101,7 +103,7 @@ observe snapshot inventory model =
 propose request model = case (model.snapshot,model.inventory) of
     (Just current,Just native) ->
         if not (ready model && changed model) then (model,Nothing) else
-            ({model | pending=Just {request=request,choices=model.draft},notice="Saving and applying shortcut choices…"},Just (E.object [("preferences",encode {current | choices=model.draft}),("fingerprint",E.string native.fingerprint)]))
+            ({model | pending=Just {request=request,choices=model.draft,confirmation=Awaiting},notice="Saving and applying shortcut choices…"},Just (E.object [("preferences",encode {current | choices=model.draft}),("fingerprint",E.string native.fingerprint)]))
     _ -> (model,Nothing)
 receive request status snapshot inventory model = case model.pending of
     Nothing -> model
@@ -112,4 +114,4 @@ receive request status snapshot inventory model = case model.pending of
         else if status=="Stored" && (snapshot |> Maybe.map (\current -> current.choices==pending.choices && (model.snapshot |> Maybe.map (\old -> UInt64.compare current.revision old.revision/=LT) |> Maybe.withDefault False)) |> Maybe.withDefault False) then
             {model | snapshot=snapshot,inventory=inventory,pending=Nothing,conflicts=if inventory |> Maybe.map (liveMatches pending.choices) |> Maybe.withDefault False then [] else model.conflicts,notice="Choices saved, but live bindings changed. Refresh and choose a free shortcut before applying."}
         else if status=="Refused" then {model | pending=Nothing,notice="Shortcut choices refused. Bindings or stored choices changed; refresh and choose again."}
-        else {model | notice="Shortcut application not confirmed. Refresh reads stored choices and live bindings; this action will not be repeated."}
+        else {model | pending=Just {pending | confirmation=Unconfirmed},notice="Shortcut application not confirmed. Refresh reads stored choices and live bindings; this action will not be repeated."}

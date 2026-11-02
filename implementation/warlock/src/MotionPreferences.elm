@@ -1,12 +1,14 @@
-module MotionPreferences exposing (Override(..), Snapshot, Model, initial, decoder, encode, observe, edit, writable, propose, receive, selected, label)
+module MotionPreferences exposing (Override(..), ReceiptStatus(..), PendingState(..), Snapshot, Model, initial, decoder, encode, observe, edit, writable, propose, receive, selected, label)
 
 import Json.Decode as D
 import Json.Encode as E
 import UInt64 exposing (Counter)
 
 type Override = System | Reduce | Full
+type ReceiptStatus = Saved | Refused | Unknown
+type PendingState = Awaiting | Unconfirmed
 type alias Snapshot = { revision : Counter, override : Override }
-type alias Model = { snapshot : Maybe Snapshot, draft : Override, pending : Maybe { request : Counter, revision : Counter, override : Override }, notice : String }
+type alias Model = { snapshot : Maybe Snapshot, draft : Override, pending : Maybe { request : Counter, revision : Counter, override : Override, state : PendingState }, notice : String }
 
 initial : Model
 initial = {snapshot=Nothing,draft=System,pending=Nothing,notice="Reading motion preference…"}
@@ -57,14 +59,14 @@ propose request model = case model.snapshot of
     Nothing -> (model,Nothing)
     Just current ->
         if request==UInt64.zero || not (writable model) || current.override==model.draft then (model,Nothing)
-        else ({model | pending=Just {request=request,revision=current.revision,override=model.draft},notice="Saving motion preference…"},Just (encode {current | override=model.draft}))
+        else ({model | pending=Just {request=request,revision=current.revision,override=model.draft,state=Awaiting},notice="Saving motion preference…"},Just (encode {current | override=model.draft}))
 
-receive : Counter -> String -> Maybe Snapshot -> Model -> Model
+receive : Counter -> ReceiptStatus -> Maybe Snapshot -> Model -> Model
 receive request status snapshot model = case model.pending of
     Nothing -> model
     Just pending ->
         if request/=pending.request then model
-        else if status=="Saved" && (snapshot |> Maybe.map (\s -> s.override==pending.override && UInt64.compare s.revision pending.revision==GT) |> Maybe.withDefault False) then
+        else if status==Saved && (snapshot |> Maybe.map (\s -> s.override==pending.override && UInt64.compare s.revision pending.revision==GT) |> Maybe.withDefault False) then
             {model | snapshot=snapshot,pending=Nothing,notice="Motion preference saved."}
-        else if status=="Refused" then {model | pending=Nothing,notice="Motion preference refused. Refresh, then choose again."}
-        else {model | notice="Motion preference save not confirmed. Refresh to read stored values; this write will not be repeated."}
+        else if status==Refused then {model | pending=Nothing,notice="Motion preference refused. Refresh, then choose again."}
+        else {model | pending=Just {pending | state=Unconfirmed},notice="Motion preference save not confirmed. Refresh to read stored values; this write will not be repeated."}

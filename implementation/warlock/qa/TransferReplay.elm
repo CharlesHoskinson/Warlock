@@ -2,6 +2,7 @@ port module TransferReplay exposing (main)
 
 import Binding
 import Desktop
+import GeometryProjection as Geometry
 import Effects
 import Json.Decode as D
 import Json.Encode as E
@@ -24,7 +25,7 @@ receipt intent status = E.object [("kind",E.string "receipt"),("effectProtocol",
 result binding =
     let initial=Fixture.readyFor binding
         baseShell=initial.windows.shell
-        caps={effects=True,operations=["maximize","restore-geometry","snap","transfer-workspace"]}
+        caps={effects=True,operations=[Geometry.CanMaximize,Geometry.CanRestoreGeometry,Geometry.CanSnap,Geometry.CanTransferWorkspace]}
         shell={baseShell|geometryCaps=Just caps}
         base=withShell shell initial
         geometry=Fixture.geometryFor binding
@@ -46,7 +47,7 @@ result binding =
         ordinary=Surface.controls opened
         destinations=Surface.controls chooser
         duplicate=Effects.beginGeometry caps geometry (Effects.TransferWorkspace p) one begun
-        unnegotiated=Effects.beginGeometry {caps|operations=["snap"]} geometry (Effects.TransferWorkspace p) one shell.effects
+        unnegotiated=Effects.beginGeometry {caps|operations=[Geometry.CanSnap]} geometry (Effects.TransferWorkspace p) one shell.effects
         invalid=Transfer.propose geometry one "-99"
         cancelledNoEffect=not (List.any (\e -> case e of
             Desktop.WindowEffect (Shell.Send w) -> D.decodeValue (D.field "kind" D.string) w==Ok "window-effect"

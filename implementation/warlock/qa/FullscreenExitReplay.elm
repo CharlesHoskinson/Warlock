@@ -18,7 +18,7 @@ import UInt64
 
 port outgoing : E.Value -> Cmd msg
 
-caps = { effects=True, operations=["maximize","restore-geometry","snap","transfer-workspace","pin","unpin","exit-fullscreen"] }
+caps = { effects=True, operations=[Geometry.CanMaximize,Geometry.CanRestoreGeometry,Geometry.CanSnap,Geometry.CanTransferWorkspace,Geometry.CanPin,Geometry.CanUnpin,Geometry.CanExitFullscreen] }
 geometryFor bound =
     let old=Fixture.geometryFor bound
     in {old|windows=List.map (\row -> {row|nativeMode=Geometry.Fullscreen,clientMode=Geometry.Fullscreen,eligible=False,maximize=False,restoreGeometry=False,placementKnown=False,pin=Just {pinned=False,eligible=False}}) old.windows}
@@ -66,15 +66,19 @@ checksFor bound =
         receipt status=allocated.transaction |> Maybe.map (\t -> E.object [("kind",E.string "receipt"),("effectProtocol",E.int 2),("intent",Effects.encodeIntent t.intent),("status",E.string status)]) |> Maybe.withDefault E.null
         (unknown,_,_)=Effects.apply (receipt "Unknown") allocated
         (committed,_,_)=Effects.apply (receipt "Committed") allocated
-        noExit={caps|operations=List.filter ((/=) "exit-fullscreen") caps.operations}
+        noExit={caps|operations=List.filter ((/=) Geometry.CanExitFullscreen) caps.operations}
         mode selected={observed|windows=List.map (\w -> {w|nativeMode=selected,clientMode=selected}) observed.windows}
         blocked={observed|blocked=True}
         parented={observed|windows=List.map (\w -> {w|owner=Just (Fixture.counter "2")}) observed.windows}
         fullItems=menuItems bound caps observed
         allows items=List.any (\item -> item.label=="Exit fullscreen" && item.enabled) items
-        capWire=E.object [("observe",E.bool True),("effects",E.bool True),("effectProtocol",E.int 2),("operations",E.list E.string caps.operations),("placementCapacity",E.int 256),("canonicalScene",E.bool False)]
+        capWire=E.object [("observe",E.bool True),("effects",E.bool True),("effectProtocol",E.int 2),("operations",E.list (E.string << Geometry.capabilityName) caps.operations),("placementCapacity",E.int 256),("canonicalScene",E.bool False)]
     in E.object (List.map (\(name,passed) -> (name,E.bool passed))
         [ ("sevenOperationsDecode",D.decodeValue Geometry.capabilitiesDecoder capWire==Ok caps)
+        , ("capabilityNamesPreserveOrder",List.map Geometry.capabilityName caps.operations==["maximize","restore-geometry","snap","transfer-workspace","pin","unpin","exit-fullscreen"])
+        , ("duplicateCapabilityRejected",let duplicate=E.object [("observe",E.bool True),("effects",E.bool True),("effectProtocol",E.int 2),("operations",E.list E.string ["snap","snap"]),("placementCapacity",E.int 256),("canonicalScene",E.bool False)] in D.decodeValue Geometry.capabilitiesDecoder duplicate |> Result.toMaybe |> (==) Nothing)
+        , ("unknownCapabilityRejected",let unknownCapability=E.object [("observe",E.bool True),("effects",E.bool True),("effectProtocol",E.int 2),("operations",E.list E.string ["future-operation"]),("placementCapacity",E.int 256),("canonicalScene",E.bool False)] in D.decodeValue Geometry.capabilitiesDecoder unknownCapability |> Result.toMaybe |> (==) Nothing)
+        , ("effectsFlagMismatchRejected",let mismatch=E.object [("observe",E.bool True),("effects",E.bool False),("effectProtocol",E.int 2),("operations",E.list E.string ["snap"]),("placementCapacity",E.int 256),("canonicalScene",E.bool False)] in D.decodeValue Geometry.capabilitiesDecoder mismatch |> Result.toMaybe |> (==) Nothing)
         , ("fullscreenMenuEnabled",allows fullItems)
         , ("ordinaryHasNoExit",not (allows (menuItems bound caps (mode Geometry.Ordinary))))
         , ("maxHasNoExit",not (allows (menuItems bound caps (mode Geometry.Maximized))))

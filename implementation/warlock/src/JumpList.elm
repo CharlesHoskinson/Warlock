@@ -1,4 +1,4 @@
-module JumpList exposing (Model, Snapshot, Action, ActionKind(..), Intent, initial, decoder, intent, supported, propose, observe, reconcile, receive, disconnect)
+module JumpList exposing (Model, Snapshot, Action, ActionKind(..), Intent, Confirmation(..), initial, decoder, intent, supported, propose, observe, reconcile, receive, disconnect)
 import Json.Decode as D
 import Json.Encode as E
 import UInt64 exposing (Counter)
@@ -8,7 +8,8 @@ type ActionKind = DesktopAction | RecentAction
 type alias Action = { id : String, label : String, kind : ActionKind }
 type alias Snapshot = { service : Counter, revision : Counter, entry : String, name : String, available : Bool, reason : String, actions : List Action }
 type alias Intent = { service : Counter, revision : Counter, entry : String, action : String }
-type alias Model = { snapshot : Maybe Snapshot, pending : Maybe { request : Counter, intent : Intent }, spent : List Intent, notice : String }
+type Confirmation = Awaiting | Unconfirmed
+type alias Model = { snapshot : Maybe Snapshot, pending : Maybe { request : Counter, intent : Intent, confirmation : Confirmation }, spent : List Intent, notice : String }
 initial : Model
 initial = {snapshot=Nothing,pending=Nothing,spent=[],notice="Reading application actions…"}
 strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Jump list fields")
@@ -39,7 +40,7 @@ intent snapshot action = {service=snapshot.service,revision=snapshot.revision,en
 supported value model = model.pending==Nothing && not (List.member value model.spent) && (model.snapshot |> Maybe.map (\snapshot -> snapshot.available && snapshot.service==value.service && snapshot.revision==value.revision && snapshot.entry==value.entry && List.any (\row -> row.id==value.action) snapshot.actions) |> Maybe.withDefault False)
 propose request value model =
     if request==UInt64.zero || not (supported value model) then (model,Nothing) else
-        ({model | pending=Just {request=request,intent=value},spent=List.take 128 (value::model.spent),notice="Application action: waiting for native submission…"},Just (E.object [("service",E.string (UInt64.string value.service)),("revision",E.string (UInt64.string value.revision)),("entry",E.string value.entry),("action",E.string value.action)]))
+        ({model | pending=Just {request=request,intent=value,confirmation=Awaiting},spent=List.take 128 (value::model.spent),notice="Application action: waiting for native submission…"},Just (E.object [("service",E.string (UInt64.string value.service)),("revision",E.string (UInt64.string value.revision)),("entry",E.string value.entry),("action",E.string value.action)]))
 observe snapshot model =
     let admitted=model.snapshot |> Maybe.map (\old -> snapshot.service==old.service && (UInt64.compare snapshot.revision old.revision==GT || snapshot==old)) |> Maybe.withDefault True
     in if not admitted then model else {model | snapshot=Just snapshot,notice=if model.pending/=Nothing then model.notice else if snapshot.available then (if String.isEmpty snapshot.reason then "Choose an application action or recent file." else snapshot.reason) else snapshot.reason}
@@ -48,7 +49,7 @@ receive request status snapshot model = case model.pending of
     Just pending ->
         if request/=pending.request || snapshot.service/=pending.intent.service || snapshot.entry/=pending.intent.entry || not (List.member status ["Submitted","Refused","Unknown"]) then model else
         let next=observe snapshot model
-        in if next.snapshot/=Just snapshot then model else {next | pending=if status=="Unknown" then model.pending else Nothing,notice=if status=="Submitted" then "Application action: submitted to the native launcher." else if status=="Refused" then "Application action: refused or no longer available. Refresh before choosing again." else "Application action: not confirmed. Refresh only reads actions; this request will not be repeated."}
+        in if next.snapshot/=Just snapshot then model else {next | pending=if status=="Unknown" then Just {pending | confirmation=Unconfirmed} else Nothing,notice=if status=="Submitted" then "Application action: submitted to the native launcher." else if status=="Refused" then "Application action: refused or no longer available. Refresh before choosing again." else "Application action: not confirmed. Refresh only reads actions; this request will not be repeated."}
 reconcile snapshot model =
     let next=observe snapshot model
     in case next.pending of

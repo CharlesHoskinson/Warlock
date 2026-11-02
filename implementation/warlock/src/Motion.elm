@@ -1,4 +1,4 @@
-module Motion exposing (Model, Profile(..), Observation, Receipt, initial, name, desired, observe, rebind, propose, receive, ready, decoder, receiptDecoder, request, notice)
+module Motion exposing (Model, Profile(..), Source(..), Observation, Receipt, initial, name, desired, observe, rebind, propose, receive, ready, decoder, receiptDecoder, request, notice)
 
 import Binding
 import MotionPreferences
@@ -7,7 +7,8 @@ import Json.Encode as E
 import UInt64 exposing (Counter)
 
 type Profile = Reduced | Full
-type alias Observation = { serial : Counter, profile : Profile, source : String }
+type Source = Portal | Gtk
+type alias Observation = { serial : Counter, profile : Profile, source : Source }
 type alias Pending = { binding : Binding.Binding, request : Counter, profile : Profile }
 type alias Receipt = Pending
 type alias Model = { preferences : MotionPreferences.Model, observation : Maybe Observation, pending : Maybe Pending, applied : Maybe { binding : Binding.Binding, profile : Profile } }
@@ -40,9 +41,15 @@ profileDecoder = D.string |> D.andThen (\v -> case v of
     "full" -> D.succeed Full
     _ -> D.fail "Motion profile")
 
+sourceDecoder : D.Decoder Source
+sourceDecoder = D.string |> D.andThen (\value -> case value of
+    "portal" -> D.succeed Portal
+    "gtk" -> D.succeed Gtk
+    _ -> D.fail "Motion source")
+
 decoder : D.Decoder Observation
 decoder = strict ["protocolVersion","kind","serial","profile","source"]
-    (D.map5 (\_ _ serial profile source -> {serial=serial,profile=profile,source=source}) version (kind "host-motion-preference") (D.field "serial" positive) (D.field "profile" profileDecoder) (D.field "source" D.string |> D.andThen (\v -> if List.member v ["portal","gtk"] then D.succeed v else D.fail "Motion source")))
+    (D.map5 (\_ _ serial profile source -> {serial=serial,profile=profile,source=source}) version (kind "host-motion-preference") (D.field "serial" positive) (D.field "profile" profileDecoder) (D.field "source" sourceDecoder))
 
 receiptDecoder : D.Decoder Receipt
 receiptDecoder = strict ["protocolVersion","kind","binding","requestId","profile"]

@@ -16,6 +16,8 @@ import sys
 import time
 
 REPO = Path(__file__).resolve().parents[1]
+# Exact previously exercised case names plus selected source-bound Motion cases.
+TEA001_POLICY_CASES = frozenset(['empty-topology-publishes-complete-frame', 'topology-full-width-9007199254740993', 'topology-maximum-then-overflow', 'one-view-topology-assigns-owner', 'pending-catalog-disposition-mismatch-scope', 'pending-catalog-disposition-mismatch-revision', 'pending-catalog-disposition-mismatch-publication', 'pending-catalog-disposition-mismatch-lease', 'pending-catalog-disposition-mismatch-binding', 'pending-catalog-disposition-mismatch-wire', 'pending-catalog-mismatched-domain-receipt', 'catalog-preflight-refusal-no-replay', 'catalog-matched-read-then-stale-receipt', 'catalog-pending-disconnect-rejects-late-receipt', 'outer-not-object', 'outer-missing-version', 'outer-version-string', 'outer-wrong-version', 'outer-unknown-kind', 'outer-missing-payload', 'outer-extra-field', 'topology-zero-revision', 'topology-leading-zero', 'topology-counter-overflow', 'topology-negative-counter', 'topology-numeric-counter', 'pin-wrong-request-retains-pending', 'pin-refused-retains-observed-order', 'pin-unknown-retains-reservation-no-replay', 'pin-saved-receipt-confirms-exact-new-order', 'pin-unknown-then-correlated-refused', 'pin-unknown-then-correlated-saved', 'catalog-rebind-new-frontend-no-old-replay', 'pin-pending-invalid-status-Stored', 'pin-pending-invalid-status-Bogus', 'pin-pending-invalid-status-saved', 'pin-pending-invalid-status-empty', 'window-minimize-committed-duplicate-and-stale', 'window-minimize-refused-duplicate-and-stale', 'window-pending-disconnect-rebind-historical-receipt', 'launch-delay-exact-timeout-and-stale-token', 'launch-delay-stale-after-matching-submitted', 'settings-pending-malformed-status-noop-then-unknown-and-refused', 'settings-pending-malformed-status-noop-then-saved', 'motion-pending-malformed-status-noop-then-unknown-and-refused', 'motion-pending-malformed-status-noop-then-saved-syncs-profile', 'shortcut-pending-malformed-status-noop-then-unknown-and-refused', 'shortcut-pending-malformed-status-noop-then-stored', 'shortcut-pending-malformed-status-noop-then-saved', 'ux-pending-settings-malformed-unsupported-name', 'ux-pending-settings-malformed-wrong-case', 'ux-pending-settings-malformed-empty-status', 'ux-pending-settings-malformed-wrong-domain-stored', 'ux-pending-settings-malformed-null-status', 'ux-pending-settings-malformed-numeric-status', 'ux-pending-settings-malformed-missing-status', 'ux-pending-settings-malformed-extra-field', 'ux-pending-settings-valid-unknown-is-distinct', 'motion-pending-stale-saved-unconfirmed-then-refused', 'motion-source-portal-gtk-stale-invalid-complete-policy', 'motion-source-gtk-uint64-max-stale-complete-policy'])
 sys.path.insert(0, str(REPO / 'window-integration-qa'))
 from qa_launch import require_qa_scope, runtime_base
 
@@ -71,6 +73,8 @@ def main():
     work = output / 'work'
     work.mkdir()
     shutil.copytree(root / 'src', work / 'src')
+    staged_tea_sources = {}
+    selected_artifacts = {}
     shutil.copytree(held / pinned['elmHome'], output / 'elm-home')
     from elm_http_dependencies import stage as stage_http_dependencies
     report['httpDependencies'] = stage_http_dependencies(output / 'elm-home')
@@ -78,6 +82,7 @@ def main():
     config['source-directories'] = ['src', 'qa']
     (work / 'qa').mkdir()
     (work / 'elm.json').write_text(json.dumps(config))
+    staged_elm_manifest_sha = sha(work / 'elm.json')
     env = dict(os.environ, ELM_HOME=str(output / 'elm-home'))
     if args.receipts or args.status_scroll or args.tea_contract:
         for key in ('NODE_OPTIONS', 'NODE_PATH', 'FORCE_COLOR'):
@@ -193,6 +198,125 @@ def main():
             report['typedState'] = {'fixtures': list(typed_fixtures), 'checks': len(typed['checks']),
                                      'resultSHA256': sha(output / 'typed-state.json'),
                                      'nativeAccepted': False, 'originalAccepted': False}
+            # Fixed TEA001 core workers. Existing 7 JS / 3 HTML roots,
+            # typed-state, complete policy and local model continue unchanged.
+            extra_workers = (
+                'FilesReplay', 'SolFilesRebind2214',
+                'SystemMenuReplay', 'SolSystemMenuIntegratedReplay2114',
+                'MotionReplay', 'LiveMotionReplay', 'MotionReadRecoveryReplay',
+                'UiHttpFailureReplay',
+                'ShortcutPreferencesReplay', 'ShortcutDraftProperties',
+                'SnapReplay', 'GeometryCapabilitySequences', 'TransferReplay',
+                'AnnouncementReplay', 'TaskViewReplay', 'PinMaxReplay',
+                'FullscreenExitReplay',
+            )
+            extra_runners = (
+                'files-typed-state.cjs', 'sol-files-rebind-result-2214.cjs',
+                'system-menu-typed-state.cjs', 'motion-typed-state.cjs',
+                'motion-read-recovery.cjs', 'tea001-extra-typed.cjs',
+                'shortcut-draft-strict.cjs',
+                'ui-http-failure-typed.cjs',
+            )
+            for filename in (*(worker + '.elm' for worker in extra_workers), *extra_runners):
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Fixed TEA001 worker/runner missing: ' + filename)
+                key = str(source.relative_to(REPO))
+                digest = sha(source)
+                sources[key] = digest
+                staged = work / 'qa' / filename
+                shutil.copy2(source, staged)
+                if staged.is_symlink() or not staged.is_file() or sha(staged) != digest:
+                    raise RuntimeError('TEA001 staged input mismatch: ' + filename)
+                staged_tea_sources[key] = digest
+            for worker in extra_workers:
+                compiled = output / (worker + '.js')
+                run('compile-tea001-' + worker,
+                    [compiler, 'make', 'qa/' + worker + '.elm', '--optimize', '--output=' + str(compiled)])
+                if compiled.is_symlink() or not compiled.is_file() or compiled.stat().st_size == 0:
+                    raise RuntimeError('TEA001 compiled worker missing: ' + worker)
+                selected_artifacts[worker] = sha(compiled)
+
+            def run_fixed_component(label, runner, workers, counts):
+                result_path = output / (label + '.json')
+                if result_path.exists() or result_path.is_symlink():
+                    raise RuntimeError('TEA001 output already exists: ' + label)
+                args = [str(node), 'qa/' + runner]
+                args.extend(str(output / (worker + '.js')) for worker in workers)
+                args.append(str(result_path))
+                run(label, args)
+                if result_path.is_symlink() or not result_path.is_file():
+                    raise RuntimeError('TEA001 result missing: ' + label)
+                result = json.loads(result_path.read_text())
+                rows = result.get('fixtures')
+                if rows is None and len(workers) == 1:
+                    rows = [result.get('result')]
+                if (result.get('passed') is not True or not isinstance(rows, list)
+                        or len(rows) != len(workers)
+                        or ('failures' in result and result['failures'] != [])
+                        or (label in ('tea001-motion', 'tea001-extra-typed')
+                            and result.get('failures') != [])
+                        or [row.get('name') for row in rows] != list(workers)):
+                    raise RuntimeError('TEA001 result identity/integrity failed: ' + label)
+                for worker, count, row in zip(workers, counts, rows):
+                    checks = row.get('checks')
+                    if (row.get('passed') is not True or row.get('sha256') != selected_artifacts[worker]
+                            or not isinstance(checks, list) or len(checks) != count
+                            or any(check.get('passed') is not True for check in checks)
+                            or len({check.get('name') for check in checks}) != count):
+                        raise RuntimeError('TEA001 exact worker witness failed: ' + worker)
+                recorded_runner = result.get('runnerSha256', result.get('runnerPathSha256AtReport'))
+                if recorded_runner != staged_tea_sources['implementation/warlock/qa/' + runner]:
+                    raise RuntimeError('TEA001 runner changed: ' + runner)
+                if (label == 'tea001-http-failure'
+                        and result.get('sourceReplaySha256Expected')
+                        != staged_tea_sources['implementation/warlock/qa/UiHttpFailureReplay.elm']):
+                    raise RuntimeError('TEA001 UiHttp failure fixture pin mismatch')
+                report.setdefault('tea001Workers', {})[label] = {
+                    'fixtures': list(workers), 'counts': list(counts),
+                    'resultSHA256': sha(result_path), 'nativeAccepted': False,
+                    'originalAccepted': False}
+
+            run_fixed_component('tea001-files', 'files-typed-state.cjs', ('FilesReplay',), (31,))
+            run_fixed_component('tea001-http-failure', 'ui-http-failure-typed.cjs',
+                                ('UiHttpFailureReplay',), (14,))
+            run_fixed_component('tea001-files-rebind', 'sol-files-rebind-result-2214.cjs',
+                                ('SolFilesRebind2214',), (176,))
+            run_fixed_component('tea001-system-menu', 'system-menu-typed-state.cjs',
+                                ('SystemMenuReplay', 'SolSystemMenuIntegratedReplay2114'), (28, 650))
+            run_fixed_component('tea001-motion', 'motion-typed-state.cjs',
+                                ('MotionReplay', 'LiveMotionReplay'), (18, 31))
+            # Fixed selected geometry/shortcut suite; runner carries exact
+            # per-fixture names and reports them, never a dynamic all-values pass.
+            extra_names = ('ShortcutPreferencesReplay', 'SnapReplay', 'GeometryCapabilitySequences',
+                           'TransferReplay', 'AnnouncementReplay', 'TaskViewReplay',
+                           'PinMaxReplay', 'FullscreenExitReplay')
+            extra_counts = (26, 45, 16, 16, 12, 78, 28, 17)
+            run_fixed_component('tea001-extra-typed', 'tea001-extra-typed.cjs', extra_names, extra_counts)
+            run('tea001-motion-recovery', [str(node), 'qa/motion-read-recovery.cjs',
+                                           str(output / 'MotionReadRecoveryReplay.js')])
+            recovery = json.loads((output / 'tea001-motion-recovery.stdout').read_text())
+            if (recovery.get('cases') != 16 or recovery.get('checksPerCase') != 8
+                    or recovery.get('failures') != []):
+                raise RuntimeError('TEA001 motion read recovery incomplete')
+            report['tea001MotionRecovery'] = {'cases': 16, 'checksPerCase': 8,
+                'resultSHA256': sha(output / 'tea001-motion-recovery.stdout')}
+            run('tea001-shortcut-properties', [str(node), 'qa/shortcut-draft-strict.cjs',
+                                                str(output / 'ShortcutDraftProperties.js')])
+            properties = json.loads((output / 'tea001-shortcut-properties.stdout').read_text())
+            if (properties.get('seed') != 0x5eeda405 or properties.get('algorithm') != 'xorshift32'
+                    or properties.get('sequences') != 200 or properties.get('failureCount') != 0
+                    or properties.get('failures') != []
+                    or properties.get('hashes') != {
+                        'harness': sha(work / 'qa/shortcut-draft-strict.cjs'),
+                        'artifact': selected_artifacts['ShortcutDraftProperties'],
+                        'fixture': sha(work / 'qa/ShortcutDraftProperties.elm'),
+                        'preferences': sha(work / 'src/ShortcutPreferences.elm'),
+                        'counter': sha(work / 'src/UInt64.elm'),
+                        'elmManifest': staged_elm_manifest_sha}):
+                raise RuntimeError('TEA001 seeded shortcut properties incomplete')
+            report['tea001ShortcutProperties'] = {'seed': 0x5eeda405, 'sequences': 200,
+                'resultSHA256': sha(output / 'tea001-shortcut-properties.stdout')}
             for filename in ('TeaContractReplay.elm', 'tea-contract.cjs', 'tea-contract-cases.cjs'):
                 source = root / 'qa' / filename
                 if source.is_symlink() or not source.is_file():
@@ -210,10 +334,15 @@ def main():
                                  str(work / 'qa/tea-contract-cases.cjs')])
             contract = json.loads((output / 'tea-contract.stdout').read_text())
             if (contract.get('passed') is not True or contract.get('reversiblePatch') is not True
-                    or not contract.get('cases') or contract.get('transitions', 0) <= 0
+                    or not isinstance(contract.get('cases'), list)
+                    or len(contract['cases']) != len(TEA001_POLICY_CASES)
+                    or set(contract['cases']) != TEA001_POLICY_CASES
+                    or contract.get('transitions', 0) < 134 or contract.get('preludes', 0) < 31
                     or contract.get('runsPerCase') != 2
                     or contract.get('originalFixtureSha256') != sha(output / 'tea-contract.js')
-                    or contract.get('oracleSha256') != sha(work / 'qa/tea-contract-cases.cjs')):
+                    or contract.get('oracleSha256') != sha(work / 'qa/tea-contract-cases.cjs')
+                    or contract.get('runnerSha256') != sha(work / 'qa/tea-contract.cjs')
+                    or contract.get('fixtureElmSha256') != sha(work / 'qa/TeaContractReplay.elm')):
                 raise RuntimeError('Complete-model replay receipt incomplete or mismatched')
             report['teaContract'] = dict(contract,
                 originalAccepted=False, nativeAccepted=False, releaseAccepted=False,
@@ -376,6 +505,29 @@ def main():
                                             '--dev', '/dev', '--proc', '/proc', '--tmpfs', '/run/user',
                                             '--tmpfs', '/tmp', '--', sys.executable, '-B',
                                             str(REPO / 'tools/check_feedback_browser.py'), str(output)])
+        if args.tea_contract:
+            if (work / 'elm.json').is_symlink() or sha(work / 'elm.json') != staged_elm_manifest_sha:
+                raise RuntimeError('Staged Elm manifest changed during execution')
+            report['stagedElmManifestSHA256'] = staged_elm_manifest_sha
+            for key, digest in staged_tea_sources.items():
+                staged = work / 'qa' / Path(key).name
+                if staged.is_symlink() or not staged.is_file() or sha(staged) != digest:
+                    raise RuntimeError('TEA001 staged input changed during execution: ' + key)
+            for worker, digest in selected_artifacts.items():
+                artifact = output / (worker + '.js')
+                if artifact.is_symlink() or not artifact.is_file() or sha(artifact) != digest:
+                    raise RuntimeError('TEA001 compiled worker changed during execution: ' + worker)
+            for key, digest in sources.items():
+                qa_prefix = 'implementation/warlock/qa/'
+                if key.startswith(qa_prefix):
+                    staged_qa = work / 'qa' / key[len(qa_prefix):]
+                    if staged_qa.is_symlink() or not staged_qa.is_file() or sha(staged_qa) != digest:
+                        raise RuntimeError('Staged QA input changed: ' + key)
+                prefix = 'implementation/warlock/src/'
+                if key.startswith(prefix):
+                    staged = work / 'src' / key[len(prefix):]
+                    if staged.is_symlink() or not staged.is_file() or sha(staged) != digest:
+                        raise RuntimeError('Staged Elm source changed: ' + key)
         if not all(sha(REPO / p) == digest for p, digest in sources.items()):
             raise RuntimeError('Source changed during protected check')
         if not all(sha(Path(tool['path'])) == tool['sha256'] for tool in report['developmentTools'].values()):

@@ -22,7 +22,7 @@ import UInt64
 port outgoing : E.Value -> Cmd msg
 
 counter = SnapReplay.counter
-caps = {effects=True,operations=["maximize","restore-geometry","snap","transfer-workspace","pin","unpin"]}
+caps = {effects=True,operations=[Geometry.CanMaximize,Geometry.CanRestoreGeometry,Geometry.CanSnap,Geometry.CanTransferWorkspace,Geometry.CanPin,Geometry.CanUnpin]}
 geometry binding pinned revision =
     let original=SnapReplay.geometryFor binding
         row=List.head original.windows
@@ -137,7 +137,7 @@ result binding =
             ,("LegacyMissingPinNeverGrantsAction",refused (Effects.beginGeometry caps missing Effects.Pin (counter "1") ready.windows.shell.effects))
             ,("FullscreenPinIsRefused",refused (Effects.beginGeometry caps fullscreen Effects.Pin (counter "1") ready.windows.shell.effects))
             ,("UnpinPreservesTypedMaxObservation",not (refused unpin) && ((geometry binding True "2").windows |> List.all (\row -> row.nativeMode==Geometry.Maximized)))
-            ,("NoPinWithoutNegotiatedCapability",refused (Effects.beginGeometry {effects=True,operations=["maximize","restore-geometry"]} observed Effects.Pin (counter "1") ready.windows.shell.effects))
+            ,("NoPinWithoutNegotiatedCapability",refused (Effects.beginGeometry {effects=True,operations=[Geometry.CanMaximize,Geometry.CanRestoreGeometry]} observed Effects.Pin (counter "1") ready.windows.shell.effects))
             ,("ReorderedCompleteFactsIssuePreparedPin",preparedIssued (preparedResult binding "reorder"))
             ,("ObservedUnpinnedCheckboxIsUnchecked",checkedValue (surfaceFrame "10" ready)==Just False)
             ,("PendingCheckboxNeverShowsDesiredPin",checkedValue (surfaceFrame "11" pending)==Just False)

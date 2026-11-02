@@ -9,12 +9,38 @@ import Task
 -- Only compiled roots select these roles. Flags and wire data cannot select a
 -- destination or privileged source. Each root runs on its own trusted origin.
 type Role = Controller | Renderer
+
+-- Transport lifecycle classification is retained independently of the exact
+-- user-facing notice. Explicit stops keep their supplied text byte-for-byte.
+type Failure
+    = EventTransportUnavailable
+    | EventTooLarge
+    | EventInvalidJson
+    | EventSourceRejected
+    | EventGatewayMismatch
+    | DeliveryUnconfirmed
+    | DeliveryUnexpected
+    | CapacityExceeded
+    | ExplicitStop String
+
+failureText : Failure -> String
+failureText failure =
+    case failure of
+        EventTransportUnavailable -> "UI event transport unavailable. Actions were not retried."
+        EventTooLarge -> "UI event exceeds the bounded profile."
+        EventInvalidJson -> "UI event is not valid JSON."
+        EventSourceRejected -> "UI event source is not allowed for this role."
+        EventGatewayMismatch -> "UI event does not match the recorded gateway."
+        DeliveryUnconfirmed -> "UI delivery is unconfirmed. The action will not be repeated."
+        DeliveryUnexpected -> "Unexpected UI delivery response."
+        CapacityExceeded -> "UI transport capacity exceeded. No action was retried."
+        ExplicitStop reason -> reason
 type Model = Model
     { role : Role
     , pending : List E.Value
     , active : Maybe E.Value
     , polling : Bool
-    , failed : Maybe String
+    , failed : Maybe Failure
     }
 type Msg = Poll | Polled (Result Http.Error String) | Posted (Result Http.Error String)
 type Event = Incoming D.Value | Lost String
@@ -29,9 +55,9 @@ start : Role -> (Model,Cmd Msg)
 start role = (Model {role=role,pending=[],active=Nothing,polling=True,failed=Nothing},poll)
 
 problem : Model -> Maybe String
-problem (Model model) = model.failed
+problem (Model model) = Maybe.map failureText model.failed
 
-reject : String -> Model -> Model
+reject : Failure -> Model -> Model
 reject reason ((Model model) as current) =
     if model.failed/=Nothing then current else Model {model | failed=Just reason}
 
@@ -68,20 +94,20 @@ post role value = Http.request
     {method="POST",headers=headers,url=if role==Controller then "/commit" else "/actions"
     ,body=Http.jsonBody value,expect=Http.expectStringResponse Posted (response False),timeout=Just 5000,tracker=Just "warlock-ui-post"}
 
-failed : String -> Model -> (Model,Cmd Msg,Maybe Event)
+failed : Failure -> Model -> (Model,Cmd Msg,Maybe Event)
 failed reason model =
     if problem model/=Nothing then (model,Cmd.none,Nothing) else
-        (reject reason model,Cmd.batch [Http.cancel "warlock-ui-events",Http.cancel "warlock-ui-post"],Just (Lost reason))
+        (reject reason model,Cmd.batch [Http.cancel "warlock-ui-events",Http.cancel "warlock-ui-post"],Just (Lost (failureText reason)))
 
 stop : String -> Model -> (Model,Cmd Msg,Maybe Event)
-stop = failed
+stop reason = failed (ExplicitStop reason)
 
 enqueue : E.Value -> Model -> (Model,Cmd Msg,Maybe Event)
 enqueue value ((Model model) as current) =
     if model.failed/=Nothing then (current,Cmd.none,Nothing) else
     let limit=if model.role==Controller then 131072 else 8192
         retained=List.length model.pending+(if model.active==Nothing then 0 else 1)
-    in if not (fits limit (E.encode 0 value)) || retained>=16 then failed "UI transport capacity exceeded. No action was retried." current else
+    in if not (fits limit (E.encode 0 value)) || retained>=16 then failed CapacityExceeded current else
         case model.active of
             Nothing -> (Model {model | active=Just value},post model.role value,Nothing)
             Just _ -> (Model {model | pending=model.pending++[value]},Cmd.none,Nothing)
@@ -106,22 +132,22 @@ update message ((Model model) as current) =
     if model.failed/=Nothing then (current,Cmd.none,Nothing) else
     case message of
         Poll -> if model.polling then (current,Cmd.none,Nothing) else (Model {model | polling=True},poll,Nothing)
-        Polled (Err _) -> failed "UI event transport unavailable. Actions were not retried." current
+        Polled (Err _) -> failed EventTransportUnavailable current
         Polled (Ok text) ->
             if String.isEmpty text then (Model {model | polling=False},Process.sleep 100 |> Task.perform (\_ -> Poll),Nothing)
-            else if not (fits 1048704 text) then failed "UI event exceeds the bounded profile." current
+            else if not (fits 1048704 text) then failed EventTooLarge current
             else case D.decodeString D.value text |> Result.toMaybe of
-                Nothing -> failed "UI event is not valid JSON." current
+                Nothing -> failed EventInvalidJson current
                 Just value ->
                     case gateway value of
                         Just (kind,_) ->
-                            if allowed model.role kind then (current,poll,Just (Incoming value)) else failed "UI event source is not allowed for this role." current
-                        Nothing -> failed "UI event does not match the recorded gateway." current
-        Posted (Err _) -> failed "UI delivery is unconfirmed. The action will not be repeated." current
+                            if allowed model.role kind then (current,poll,Just (Incoming value)) else failed EventSourceRejected current
+                        Nothing -> failed EventGatewayMismatch current
+        Posted (Err _) -> failed DeliveryUnconfirmed current
         Posted (Ok text) ->
             -- Delivery completion only permits the next queued HTTP request.
             -- It never enters Desktop as a presentation/native acknowledgement.
-            if not (String.isEmpty text) then failed "Unexpected UI delivery response." current else
+            if not (String.isEmpty text) then failed DeliveryUnexpected current else
             case model.pending of
                 [] -> (Model {model | active=Nothing},Cmd.none,Nothing)
                 next::rest -> (Model {model | active=Just next,pending=rest},post model.role next,Nothing)

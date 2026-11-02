@@ -38,6 +38,29 @@ result=
         (unknownPopup,_)=dispatch (\stamp -> Desktop.OpenJumpList stamp "warlock-editor") unknown
         (_,repeat)=dispatch (\stamp -> Desktop.JumpAction stamp target) unknownPopup
         foreign=native (outcome request "Submitted" (snapshot "2" "foreign")) pending
+        -- Source-literal complete domain expectations, including unchanged
+        -- observed actions and spent identity; never copied from reducer output.
+        literalActions : List JumpList.Action
+        literalActions=[{id="desktop:Alpha",label="New document",kind=JumpList.DesktopAction},{id="desktop:Beta",label="Private window",kind=JumpList.DesktopAction},{id="recent:owned",label="Open Warlock recent document",kind=JumpList.RecentAction}]
+        snapshot1 : JumpList.Snapshot
+        snapshot1={service=counter "9",revision=counter "1",entry="warlock-editor",name="Warlock Editor",available=True,reason="",actions=literalActions}
+        snapshot2 : JumpList.Snapshot
+        snapshot2={service=counter "9",revision=counter "2",entry="warlock-editor",name="Warlock Editor",available=True,reason="",actions=literalActions}
+        literalIntent : JumpList.Intent
+        literalIntent={service=counter "9",revision=counter "1",entry="warlock-editor",action="desktop:Alpha"}
+        awaiting : JumpList.Model
+        awaiting={snapshot=Just snapshot1,pending=Just {request=counter "7",intent=literalIntent,confirmation=JumpList.Awaiting},spent=[literalIntent],notice="Application action: waiting for native submission…"}
+        unconfirmed : JumpList.Model
+        unconfirmed={snapshot=Just snapshot1,pending=Just {request=counter "7",intent=literalIntent,confirmation=JumpList.Unconfirmed},spent=[literalIntent],notice="Application action: not confirmed. Refresh only reads actions; this request will not be repeated."}
+        submittedExpected : JumpList.Model
+        submittedExpected={snapshot=Just snapshot2,pending=Nothing,spent=[literalIntent],notice="Application action: submitted to the native launcher."}
+        refusedExpected : JumpList.Model
+        refusedExpected={snapshot=Just snapshot1,pending=Nothing,spent=[literalIntent],notice="Application action: refused or no longer available. Refresh before choosing again."}
+        (lateSubmitted,lateSubmittedEffects)=NativePointerFixture.incoming (outcome request "Submitted" (snapshot "2" "warlock-editor")) unknown
+        (lateRefused,lateRefusedEffects)=NativePointerFixture.incoming (outcome request "Refused" (snapshot "1" "warlock-editor")) unknown
+        (duplicateUnknown,duplicateUnknownEffects)=NativePointerFixture.incoming (outcome request "Unknown" (snapshot "1" "warlock-editor")) unknown
+        (foreignAfterUnknown,foreignAfterUnknownEffects)=NativePointerFixture.incoming (outcome request "Submitted" (snapshot "2" "foreign")) unknown
+        (wrongRequestAfterUnknown,wrongRequestAfterUnknownEffects)=NativePointerFixture.incoming (outcome (counter "999") "Refused" (snapshot "1" "warlock-editor")) unknown
         (_,unsupported)=dispatch (\stamp -> Desktop.JumpAction stamp (JumpList.intent current "desktop:Unsupported")) read
         (_,recentForeign)=dispatch (\stamp -> Desktop.JumpAction stamp (JumpList.intent current "recent:foreign")) read
         (recent,recentEffects)=dispatch (\stamp -> Desktop.JumpAction stamp (JumpList.intent current "recent:owned")) read
@@ -63,6 +86,13 @@ result=
             ,check "PopupClosesBeforeLaunch" (pending.jumpEntry==Nothing)
             ,check "SubmissionNeverClaimsApplicationReady" (submitted.jumpList.pending==Nothing && String.contains "submitted" submitted.jumpList.notice)
             ,check "UnknownPersistsWithoutReplay" (unknown.jumpList.pending/=Nothing && String.contains "not confirmed" unknown.jumpList.notice && List.isEmpty repeat)
+            ,check "AwaitingCompleteLiteralState" (pending.jumpList==awaiting)
+            ,check "UnknownCompleteLiteralState" (unknown.jumpList==unconfirmed)
+            ,check "DuplicateUnknownPreservesFullDesktop" (duplicateUnknown==unknown && List.isEmpty duplicateUnknownEffects)
+            ,check "ForeignAfterUnknownPreservesFullDesktop" (foreignAfterUnknown==unknown && List.isEmpty foreignAfterUnknownEffects)
+            ,check "WrongRequestAfterUnknownPreservesFullDesktop" (wrongRequestAfterUnknown==unknown && List.isEmpty wrongRequestAfterUnknownEffects)
+            ,check "LateSubmittedCompleteLiteralState" (lateSubmitted.jumpList==submittedExpected && List.isEmpty lateSubmittedEffects)
+            ,check "LateRefusedCompleteLiteralState" (lateRefused.jumpList==refusedExpected && List.isEmpty lateRefusedEffects)
             ,check "ForeignApplicationCannotSettleReceipt" (foreign==pending)
             ,check "ForeignApplicationReadCannotReplaceOpenList" (wrongRead==refreshing)
             ,check "RefreshOnlyReads" (not (List.any effect refreshEffects))

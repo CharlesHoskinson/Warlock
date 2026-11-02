@@ -41,6 +41,9 @@ result binding =
         (repeat,repeated)=dispatch Desktop.SaveMotionPreference saving
         malformed=native (outcome saving "Saved" (snapshot "1" Preference.Reduce)) saving |> Tuple.first
         wrong=native (outcome saving "Saved" (snapshot "2" Preference.Full)) saving |> Tuple.first
+        invalidStatus statusValue = E.object [("protocolVersion",E.int 3),("kind",E.string "motion-preferences-outcome"),("binding",Fixture.bound),("requestId",E.string (UInt64.string (saving.motion.preferences.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero))),("status",statusValue),("snapshot",snapshot "2" Preference.Reduce)]
+        missingStatus = E.object [("protocolVersion",E.int 3),("kind",E.string "motion-preferences-outcome"),("binding",Fixture.bound),("requestId",E.string (UInt64.string (saving.motion.preferences.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero))),("snapshot",snapshot "2" Preference.Reduce)]
+        rejectsStatus raw = let (next,effects)=native raw saving in next==saving && List.isEmpty effects
         (saved,apply)=native (outcome saving "Saved" (snapshot "2" Preference.Reduce)) saving
         reduced=ack saved |> Tuple.first
         changed=native (source "2" "full") reduced
@@ -48,6 +51,10 @@ result binding =
         reconciled=native (loaded refreshing (snapshot "2" Preference.Reduce)) refreshing |> Tuple.first
         unknown=native (outcome saving "Unknown" E.null) saving |> Tuple.first
         (_,unknownWrites)=dispatch Desktop.SaveMotionPreference unknown
+        repeatedUnknown=native (outcome unknown "Unknown" E.null) unknown
+        (refusedAfterUnknown,refusedAfterUnknownEffects)=native (outcome unknown "Refused" E.null) unknown
+        (savedAfterUnknown,savedAfterUnknownEffects)=native (outcome unknown "Saved" (snapshot "2" Preference.Reduce)) unknown
+        duplicateSavedAfterUnknown=native (outcome unknown "Saved" (snapshot "2" Preference.Reduce)) savedAfterUnknown
         refused=native (outcome saving "Refused" (snapshot "2" Preference.Full)) saving |> Tuple.first
         resetDraft=edit Preference.System reduced |> Tuple.first
         resetSaving=dispatch Desktop.SaveMotionPreference resetDraft |> Tuple.first
@@ -69,6 +76,14 @@ result binding =
             ,("pendingWriteCannotRepeat",repeat==saving && List.isEmpty repeated)
             ,("sameRevisionCannotConfirmSave",Motion.desired malformed.motion==Motion.Full && malformed.motion.preferences.pending/=Nothing)
             ,("wrongValueCannotConfirmSave",Motion.desired wrong.motion==Motion.Full && wrong.motion.preferences.pending/=Nothing)
+            ,("newWriteRetainsAwaitingState",(saving.motion.preferences.pending |> Maybe.map .state)==Just Preference.Awaiting)
+            ,("unknownRetainsRequestButMarksUnconfirmed",(unknown.motion.preferences.pending |> Maybe.map .state)==Just Preference.Unconfirmed && (unknown.motion.preferences.pending |> Maybe.map (\p -> (p.request,p.revision,p.override)))==(saving.motion.preferences.pending |> Maybe.map (\p -> (p.request,p.revision,p.override))) && unknown.motion.preferences.snapshot==saving.motion.preferences.snapshot && List.isEmpty unknownWrites)
+            ,("duplicateUnknownCannotReplay",Tuple.first repeatedUnknown==unknown && List.isEmpty (Tuple.second repeatedUnknown))
+            ,("refusedAfterUnknownClearsPendingWithoutReplay",refusedAfterUnknown.motion.preferences.pending==Nothing && refusedAfterUnknown.motion.preferences.snapshot==saving.motion.preferences.snapshot && List.isEmpty refusedAfterUnknownEffects)
+            ,("lateSavedAfterUnknownAppliesOnce",savedAfterUnknown.motion.preferences.pending==Nothing && savedAfterUnknown.motion.preferences.snapshot==Just {revision=counter "2",override=Preference.Reduce} && kinds savedAfterUnknownEffects==["motion-profile-set"])
+            ,("duplicateLateSavedCannotReplay",Tuple.first duplicateSavedAfterUnknown==savedAfterUnknown && List.isEmpty (Tuple.second duplicateSavedAfterUnknown))
+            ,("invalidReceiptStatusCannotMutateOrEmit",List.all rejectsStatus [invalidStatus (E.string ""),invalidStatus (E.string "saved"),invalidStatus (E.string "Stored"),invalidStatus (E.string "Other"),invalidStatus E.null,missingStatus])
+            ,("typedReceiptRejectsForeignRequest",Preference.receive (counter "999") Preference.Saved (Just {revision=counter "2",override=Preference.Reduce}) saving.motion.preferences==saving.motion.preferences)
             ,("confirmedSaveConfiguresOneNativeProfile",kinds apply==["motion-profile-set"] && Motion.desired saved.motion==Motion.Reduced)
             ,("saveWaitsForNativeAcknowledgement",not (Motion.ready saved.windows.shell.binding saved.motion) && Motion.ready reduced.windows.shell.binding reduced.motion)
             ,("explicitOverrideWinsOverSystem",Motion.desired (Tuple.first changed).motion==Motion.Reduced && List.isEmpty (Tuple.second changed))

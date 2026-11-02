@@ -1,0 +1,4198 @@
+{
+  "schema": 1,
+  "scope": "compiled SystemMenu component checks only; not EARS/native/GUI/AT/IME/provider/performance acceptance",
+  "settleWindowMs": 25,
+  "runnerPathSha256AtReport": "5bc6f3c784bbd5a6dc80a9e8c40bfc37975b2bbdd4bc853dc288e9cda5c5e158",
+  "executedRunnerProvenance": "External protected launcher must bind executed runner bytes; self-read is not execution provenance",
+  "fixtures": [
+    {
+      "name": "SystemMenuReplay",
+      "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/SystemMenuReplay.js",
+      "sha256": "606b36fdf45f38c36de8981b68bdda237ec6f3eff8cdbcea6c45d4f3ba5bbb4a",
+      "checks": [
+        {
+          "name": "sessionClosingClassifiedAndLogoutDenied",
+          "passed": true
+        },
+        {
+          "name": "otherSessionTextLabelAndLogoutPreserved",
+          "passed": true
+        },
+        {
+          "name": "sessionStateBoundsAndTypeRefused",
+          "passed": true
+        },
+        {
+          "name": "networkPermissionsPreserveAdmission",
+          "passed": true
+        },
+        {
+          "name": "powerCapabilitiesPreserveAdmission",
+          "passed": true
+        },
+        {
+          "name": "foreignNetworkCapabilityRefused",
+          "passed": true
+        },
+        {
+          "name": "foreignPowerPermissionRefused",
+          "passed": true
+        },
+        {
+          "name": "powerCapabilityLabelsPreserved",
+          "passed": true
+        },
+        {
+          "name": "systemMenuOpenerIntegrated",
+          "passed": true
+        },
+        {
+          "name": "menuModeAcceptedByProductionRenderer",
+          "passed": true
+        },
+        {
+          "name": "openingReadFocusMatchesCloseControl",
+          "passed": true
+        },
+        {
+          "name": "originalUnavailableNetworkShown",
+          "passed": true
+        },
+        {
+          "name": "remainingStateObserved",
+          "passed": true
+        },
+        {
+          "name": "oneExplicitVolumeChange",
+          "passed": true
+        },
+        {
+          "name": "pendingCannotRepeat",
+          "passed": true
+        },
+        {
+          "name": "committedCannotRepeatOldRevision",
+          "passed": true
+        },
+        {
+          "name": "unknownCannotReplay",
+          "passed": true
+        },
+        {
+          "name": "readReconcilesChangedStateWithoutEffect",
+          "passed": true
+        },
+        {
+          "name": "unavailableNeverSubmits",
+          "passed": true
+        },
+        {
+          "name": "restartRequiresUIConfirmation",
+          "passed": true
+        },
+        {
+          "name": "cancelHasNoNativeEffect",
+          "passed": true
+        },
+        {
+          "name": "confirmedRestartSubmitsOnce",
+          "passed": true
+        },
+        {
+          "name": "directConfirmationCannotBypassPrompt",
+          "passed": true
+        },
+        {
+          "name": "wrongReceiptCannotSettle",
+          "passed": true
+        },
+        {
+          "name": "staleViewCannotSubmit",
+          "passed": true
+        },
+        {
+          "name": "closingFocusesOpenerWithoutNativeEffect",
+          "passed": true
+        },
+        {
+          "name": "anotherPopupRetiresSystemWithoutLosingNativeState",
+          "passed": true
+        },
+        {
+          "name": "allControlsHaveNames",
+          "passed": true
+        }
+      ],
+      "payload": {
+        "checks": {
+          "sessionClosingClassifiedAndLogoutDenied": true,
+          "otherSessionTextLabelAndLogoutPreserved": true,
+          "sessionStateBoundsAndTypeRefused": true,
+          "networkPermissionsPreserveAdmission": true,
+          "powerCapabilitiesPreserveAdmission": true,
+          "foreignNetworkCapabilityRefused": true,
+          "foreignPowerPermissionRefused": true,
+          "powerCapabilityLabelsPreserved": true,
+          "systemMenuOpenerIntegrated": true,
+          "menuModeAcceptedByProductionRenderer": true,
+          "openingReadFocusMatchesCloseControl": true,
+          "originalUnavailableNetworkShown": true,
+          "remainingStateObserved": true,
+          "oneExplicitVolumeChange": true,
+          "pendingCannotRepeat": true,
+          "committedCannotRepeatOldRevision": true,
+          "unknownCannotReplay": true,
+          "readReconcilesChangedStateWithoutEffect": true,
+          "unavailableNeverSubmits": true,
+          "restartRequiresUIConfirmation": true,
+          "cancelHasNoNativeEffect": true,
+          "confirmedRestartSubmitsOnce": true,
+          "directConfirmationCannotBypassPrompt": true,
+          "wrongReceiptCannotSettle": true,
+          "staleViewCannotSubmit": true,
+          "closingFocusesOpenerWithoutNativeEffect": true,
+          "anotherPopupRetiresSystemWithoutLosingNativeState": true,
+          "allControlsHaveNames": true
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "1",
+          "lease": "1",
+          "mode": "system",
+          "status": "Current system state. Unavailable controls cannot be changed.",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:close",
+              "label": "Close system menu",
+              "ariaLabel": "Close system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:refresh",
+              "label": "Refresh system state",
+              "ariaLabel": "Refresh system state",
+              "detail": "Read current state; never repeat a change",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume:state",
+              "label": "Volume 100%; unmuted · Warlock private audio",
+              "ariaLabel": "Volume 100%; unmuted · Warlock private audio",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:0",
+              "label": "Set volume 0%",
+              "ariaLabel": "Set volume 0%",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:25",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:25",
+              "label": "Set volume 25%",
+              "ariaLabel": "Set volume 25%",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:50",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:50",
+              "label": "Set volume 50%",
+              "ariaLabel": "Set volume 50%",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:75",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:75",
+              "label": "Set volume 75%",
+              "ariaLabel": "Set volume 75%",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:100",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-set:100",
+              "label": "Set volume 100%",
+              "ariaLabel": "Set volume 100%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-mute:1",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:volume-mute:1",
+              "label": "Mute",
+              "ariaLabel": "Mute",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:network:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:network:state",
+              "label": "Network unavailable",
+              "ariaLabel": "Network unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:power:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:power:state",
+              "label": "Power · suspend available, restart available, shutdown unavailable",
+              "ariaLabel": "Power · suspend available, restart available, shutdown unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:suspend:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:suspend:0",
+              "label": "Suspend",
+              "ariaLabel": "Suspend",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:reboot:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:reboot:0",
+              "label": "Restart",
+              "ariaLabel": "Restart",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:poweroff:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:poweroff:0",
+              "label": "Shut down",
+              "ariaLabel": "Shut down",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:session:state",
+              "label": "Session Warlock private session · active; unlocked",
+              "ariaLabel": "Session Warlock private session · active; unlocked",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session-lock:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:session-lock:0",
+              "label": "Lock session",
+              "ariaLabel": "Lock session",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session-logout:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:session-logout:0",
+              "label": "Log out",
+              "ariaLabel": "Log out",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "confirmFrame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "2",
+          "lease": "1",
+          "mode": "system",
+          "status": "Confirm or cancel the requested system change.",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:close",
+              "label": "Close system menu",
+              "ariaLabel": "Close system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:refresh",
+              "label": "Refresh system state",
+              "ariaLabel": "Refresh system state",
+              "detail": "Read current state; never repeat a change",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume:state",
+              "label": "Volume 100%; unmuted · Warlock private audio",
+              "ariaLabel": "Volume 100%; unmuted · Warlock private audio",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:0",
+              "label": "Set volume 0%",
+              "ariaLabel": "Set volume 0%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:25",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:25",
+              "label": "Set volume 25%",
+              "ariaLabel": "Set volume 25%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:50",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:50",
+              "label": "Set volume 50%",
+              "ariaLabel": "Set volume 50%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:75",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:75",
+              "label": "Set volume 75%",
+              "ariaLabel": "Set volume 75%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:100",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:100",
+              "label": "Set volume 100%",
+              "ariaLabel": "Set volume 100%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-mute:1",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-mute:1",
+              "label": "Mute",
+              "ariaLabel": "Mute",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:network:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:network:state",
+              "label": "Network unavailable",
+              "ariaLabel": "Network unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:power:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:power:state",
+              "label": "Power · suspend available, restart available, shutdown unavailable",
+              "ariaLabel": "Power · suspend available, restart available, shutdown unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:suspend:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:suspend:0",
+              "label": "Suspend",
+              "ariaLabel": "Suspend",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:reboot:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:reboot:0",
+              "label": "Restart",
+              "ariaLabel": "Restart",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:poweroff:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:poweroff:0",
+              "label": "Shut down",
+              "ariaLabel": "Shut down",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session:state",
+              "label": "Session Warlock private session · active; unlocked",
+              "ariaLabel": "Session Warlock private session · active; unlocked",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session-lock:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session-lock:0",
+              "label": "Lock session",
+              "ariaLabel": "Lock session",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session-logout:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session-logout:0",
+              "label": "Log out",
+              "ariaLabel": "Log out",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:confirmation:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:confirmation:state",
+              "label": "Confirm Restart? Unsaved work or active connections may be affected.",
+              "ariaLabel": "Confirm Restart? Unsaved work or active connections may be affected.",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:cancel",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:cancel",
+              "label": "Cancel system change",
+              "ariaLabel": "Cancel system change",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:confirm",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:confirm",
+              "label": "Confirm Restart",
+              "ariaLabel": "Confirm Restart",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "pendingFrame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "3",
+          "lease": "1",
+          "mode": "system",
+          "status": "Volume: waiting for native result…",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:close",
+              "label": "Close system menu",
+              "ariaLabel": "Close system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:refresh",
+              "label": "Refresh system state",
+              "ariaLabel": "Refresh system state",
+              "detail": "Read current state; never repeat a change",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume:state",
+              "label": "Volume 100%; unmuted · Warlock private audio",
+              "ariaLabel": "Volume 100%; unmuted · Warlock private audio",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:0",
+              "label": "Set volume 0%",
+              "ariaLabel": "Set volume 0%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:25",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:25",
+              "label": "Set volume 25%",
+              "ariaLabel": "Set volume 25%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:50",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:50",
+              "label": "Set volume 50%",
+              "ariaLabel": "Set volume 50%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:75",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:75",
+              "label": "Set volume 75%",
+              "ariaLabel": "Set volume 75%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-set:100",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-set:100",
+              "label": "Set volume 100%",
+              "ariaLabel": "Set volume 100%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:volume-mute:1",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:volume-mute:1",
+              "label": "Mute",
+              "ariaLabel": "Mute",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:network:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:network:state",
+              "label": "Network unavailable",
+              "ariaLabel": "Network unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:power:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:power:state",
+              "label": "Power · suspend available, restart available, shutdown unavailable",
+              "ariaLabel": "Power · suspend available, restart available, shutdown unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:suspend:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:suspend:0",
+              "label": "Suspend",
+              "ariaLabel": "Suspend",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:reboot:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:reboot:0",
+              "label": "Restart",
+              "ariaLabel": "Restart",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:poweroff:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:poweroff:0",
+              "label": "Shut down",
+              "ariaLabel": "Shut down",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session:state",
+              "label": "Session Warlock private session · active; unlocked",
+              "ariaLabel": "Session Warlock private session · active; unlocked",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session-lock:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session-lock:0",
+              "label": "Lock session",
+              "ariaLabel": "Lock session",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "system:session-logout:0",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:session-logout:0",
+              "label": "Log out",
+              "ariaLabel": "Log out",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "SolSystemMenuIntegratedReplay2114",
+      "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/SolSystemMenuIntegratedReplay2114.js",
+      "sha256": "b9003f958be1d07872e6d828d7e29135cdca04e3f99d9acce70839540338df16",
+      "checks": [
+        {
+          "name": "seed-0/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-0/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-0/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-0/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-0/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-0/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-0/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-0/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-0/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-0/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-0/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-0/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-0/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-0/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-0/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-0/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-0/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-0/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-0/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-1/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-1/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-1/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-1/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-1/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-1/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-1/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-1/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-1/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-1/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-1/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-1/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-1/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-1/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-1/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-1/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-1/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-1/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-1/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-2/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-2/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-2/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-2/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-2/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-2/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-2/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-2/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-2/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-2/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-2/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-2/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-2/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-2/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-2/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-2/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-2/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-2/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-2/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-3/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-3/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-3/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-3/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-3/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-3/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-3/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-3/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-3/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-3/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-3/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-3/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-3/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-3/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-3/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-3/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-3/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-3/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-3/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-4/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-4/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-4/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-4/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-4/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-4/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-4/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-4/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-4/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-4/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-4/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-4/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-4/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-4/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-4/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-4/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-4/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-4/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-4/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-5/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-5/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-5/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-5/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-5/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-5/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-5/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-5/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-5/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-5/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-5/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-5/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-5/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-5/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-5/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-5/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-5/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-5/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-5/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-6/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-6/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-6/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-6/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-6/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-6/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-6/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-6/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-6/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-6/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-6/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-6/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-6/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-6/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-6/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-6/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-6/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-6/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-6/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-7/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-7/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-7/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-7/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-7/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-7/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-7/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-7/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-7/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-7/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-7/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-7/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-7/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-7/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-7/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-7/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-7/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-7/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-7/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-8/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-8/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-8/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-8/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-8/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-8/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-8/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-8/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-8/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-8/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-8/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-8/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-8/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-8/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-8/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-8/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-8/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-8/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-8/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-9/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-9/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-9/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-9/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-9/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-9/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-9/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-9/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-9/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-9/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-9/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-9/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-9/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-9/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-9/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-9/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-9/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-9/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-9/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-10/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-10/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-10/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-10/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-10/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-10/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-10/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-10/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-10/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-10/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-10/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-10/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-10/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-10/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-10/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-10/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-10/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-10/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-10/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-11/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-11/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-11/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-11/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-11/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-11/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-11/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-11/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-11/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-11/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-11/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-11/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-11/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-11/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-11/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-11/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-11/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-11/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-11/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-12/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-12/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-12/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-12/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-12/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-12/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-12/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-12/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-12/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-12/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-12/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-12/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-12/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-12/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-12/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-12/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-12/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-12/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-12/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-13/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-13/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-13/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-13/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-13/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-13/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-13/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-13/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-13/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-13/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-13/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-13/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-13/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-13/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-13/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-13/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-13/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-13/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-13/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-14/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-14/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-14/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-14/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-14/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-14/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-14/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-14/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-14/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-14/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-14/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-14/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-14/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-14/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-14/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-14/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-14/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-14/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-14/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-15/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-15/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-15/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-15/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-15/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-15/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-15/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-15/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-15/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-15/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-15/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-15/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-15/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-15/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-15/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-15/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-15/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-15/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-15/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-16/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-16/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-16/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-16/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-16/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-16/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-16/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-16/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-16/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-16/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-16/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-16/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-16/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-16/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-16/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-16/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-16/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-16/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-16/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-17/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-17/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-17/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-17/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-17/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-17/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-17/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-17/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-17/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-17/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-17/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-17/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-17/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-17/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-17/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-17/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-17/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-17/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-17/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-18/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-18/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-18/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-18/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-18/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-18/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-18/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-18/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-18/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-18/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-18/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-18/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-18/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-18/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-18/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-18/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-18/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-18/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-18/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-19/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-19/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-19/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-19/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-19/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-19/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-19/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-19/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-19/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-19/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-19/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-19/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-19/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-19/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-19/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-19/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-19/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-19/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-19/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-20/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-20/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-20/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-20/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-20/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-20/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-20/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-20/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-20/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-20/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-20/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-20/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-20/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-20/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-20/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-20/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-20/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-20/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-20/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-21/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-21/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-21/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-21/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-21/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-21/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-21/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-21/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-21/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-21/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-21/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-21/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-21/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-21/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-21/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-21/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-21/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-21/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-21/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-22/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-22/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-22/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-22/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-22/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-22/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-22/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-22/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-22/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-22/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-22/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-22/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-22/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-22/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-22/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-22/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-22/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-22/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-22/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-23/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-23/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-23/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-23/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-23/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-23/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-23/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-23/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-23/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-23/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-23/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-23/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-23/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-23/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-23/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-23/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-23/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-23/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-23/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-24/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-24/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-24/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-24/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-24/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-24/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-24/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-24/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-24/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-24/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-24/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-24/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-24/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-24/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-24/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-24/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-24/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-24/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-24/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-25/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-25/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-25/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-25/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-25/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-25/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-25/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-25/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-25/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-25/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-25/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-25/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-25/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-25/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-25/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-25/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-25/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-25/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-25/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-26/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-26/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-26/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-26/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-26/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-26/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-26/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-26/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-26/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-26/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-26/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-26/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-26/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-26/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-26/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-26/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-26/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-26/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-26/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-27/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-27/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-27/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-27/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-27/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-27/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-27/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-27/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-27/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-27/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-27/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-27/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-27/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-27/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-27/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-27/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-27/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-27/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-27/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-28/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-28/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-28/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-28/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-28/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-28/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-28/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-28/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-28/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-28/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-28/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-28/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-28/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-28/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-28/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-28/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-28/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-28/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-28/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-29/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-29/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-29/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-29/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-29/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-29/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-29/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-29/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-29/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-29/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-29/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-29/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-29/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-29/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-29/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-29/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-29/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-29/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-29/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-30/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-30/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-30/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-30/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-30/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-30/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-30/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-30/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-30/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-30/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-30/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-30/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-30/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-30/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-30/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-30/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-30/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-30/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-30/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "seed-31/given-complete-domain",
+          "passed": true
+        },
+        {
+          "name": "seed-31/positive-proposal-complete-domain-and-wire",
+          "passed": true
+        },
+        {
+          "name": "seed-31/pending-duplicate-no-effect",
+          "passed": true
+        },
+        {
+          "name": "seed-31/unknown-retains-complete-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-31/unknown-duplicate-stable",
+          "passed": true
+        },
+        {
+          "name": "seed-31/unknown-cannot-repeat",
+          "passed": true
+        },
+        {
+          "name": "seed-31/foreign-request-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-31/foreign-service-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-31/invalid-status-preserves-complete-state",
+          "passed": true
+        },
+        {
+          "name": "seed-31/late-committed-settles",
+          "passed": true
+        },
+        {
+          "name": "seed-31/late-submitted-settles-without-invented-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-31/late-refused-retains-spent-intent",
+          "passed": true
+        },
+        {
+          "name": "seed-31/same-revision-read-keeps-unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "seed-31/observation-preserves-typed-reservation",
+          "passed": true
+        },
+        {
+          "name": "seed-31/older-outcome-after-new-observation-is-stale",
+          "passed": true
+        },
+        {
+          "name": "seed-31/newer-read-settles-without-replay",
+          "passed": true
+        },
+        {
+          "name": "seed-31/old-intent-cannot-be-replayed-after-read",
+          "passed": true
+        },
+        {
+          "name": "seed-31/fresh-explicit-intent-can-follow-new-observation",
+          "passed": true
+        },
+        {
+          "name": "seed-31/full-width-request-preserved",
+          "passed": true
+        },
+        {
+          "name": "desktop/given-counter-and-complete-child-pinned",
+          "passed": true
+        },
+        {
+          "name": "desktop/given-proposal-full-ordered-effect",
+          "passed": true
+        },
+        {
+          "name": "desktop/unknown-full-model-and-every-effect",
+          "passed": true
+        },
+        {
+          "name": "desktop/duplicate-unknown-full-model-no-effect",
+          "passed": true
+        },
+        {
+          "name": "desktop/unknown-no-replay-full-model",
+          "passed": true
+        },
+        {
+          "name": "desktop/late-refused-full-model-and-every-effect",
+          "passed": true
+        },
+        {
+          "name": "desktop/late-submitted-full-model-and-every-effect",
+          "passed": true
+        },
+        {
+          "name": "desktop/wrong-request-preserves-full-model",
+          "passed": true
+        },
+        {
+          "name": "desktop/foreign-binding-preserves-full-model",
+          "passed": true
+        },
+        {
+          "name": "desktop/foreign-service-preserves-full-model",
+          "passed": true
+        },
+        {
+          "name": "desktop/malformed-status-preserves-full-model",
+          "passed": true
+        },
+        {
+          "name": "desktop/null-status-preserves-full-model",
+          "passed": true
+        },
+        {
+          "name": "desktop/refresh-full-model-and-exact-read-effect",
+          "passed": true
+        },
+        {
+          "name": "desktop/matching-newer-read-full-model-no-replay",
+          "passed": true
+        },
+        {
+          "name": "capability/network-yes-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/network-no-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/network-auth-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-suspend-yes-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-reboot-yes-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-poweroff-yes-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-suspend-no-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-reboot-no-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-poweroff-no-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-suspend-na-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-reboot-na-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-poweroff-na-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-suspend-challenge-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-reboot-challenge-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/power-poweroff-challenge-complete-model-wire",
+          "passed": true
+        },
+        {
+          "name": "capability/network-cross-domain-rejected",
+          "passed": true
+        },
+        {
+          "name": "capability/power-cross-domain-rejected",
+          "passed": true
+        },
+        {
+          "name": "session/closing-complete-model-no-wire",
+          "passed": true
+        },
+        {
+          "name": "session/active-complete-model-and-wire",
+          "passed": true
+        },
+        {
+          "name": "session/online-complete-model-and-wire",
+          "passed": true
+        },
+        {
+          "name": "session/open-text-complete-model-and-wire",
+          "passed": true
+        },
+        {
+          "name": "session/empty-complete-model-and-wire",
+          "passed": true
+        },
+        {
+          "name": "session/case-sensitive-complete-model-and-wire",
+          "passed": true
+        },
+        {
+          "name": "session/near-closing-complete-model-and-wire",
+          "passed": true
+        },
+        {
+          "name": "session/maximum-text-complete-model-and-wire",
+          "passed": true
+        },
+        {
+          "name": "session/overlong-text-rejected",
+          "passed": true
+        },
+        {
+          "name": "session/control-text-rejected",
+          "passed": true
+        },
+        {
+          "name": "session/non-string-rejected",
+          "passed": true
+        }
+      ],
+      "payload": {
+        "schema": 1,
+        "scope": "Full SystemMenu domain models/wire; complete Desktop GIVEN-relative models and every ordered effect; synthetic native arrangement only",
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "checks": {
+          "seed-0/given-complete-domain": true,
+          "seed-0/positive-proposal-complete-domain-and-wire": true,
+          "seed-0/pending-duplicate-no-effect": true,
+          "seed-0/unknown-retains-complete-reservation": true,
+          "seed-0/unknown-duplicate-stable": true,
+          "seed-0/unknown-cannot-repeat": true,
+          "seed-0/foreign-request-preserves-complete-state": true,
+          "seed-0/foreign-service-preserves-complete-state": true,
+          "seed-0/invalid-status-preserves-complete-state": true,
+          "seed-0/late-committed-settles": true,
+          "seed-0/late-submitted-settles-without-invented-observation": true,
+          "seed-0/late-refused-retains-spent-intent": true,
+          "seed-0/same-revision-read-keeps-unconfirmed": true,
+          "seed-0/observation-preserves-typed-reservation": true,
+          "seed-0/older-outcome-after-new-observation-is-stale": true,
+          "seed-0/newer-read-settles-without-replay": true,
+          "seed-0/old-intent-cannot-be-replayed-after-read": true,
+          "seed-0/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-0/full-width-request-preserved": true,
+          "seed-1/given-complete-domain": true,
+          "seed-1/positive-proposal-complete-domain-and-wire": true,
+          "seed-1/pending-duplicate-no-effect": true,
+          "seed-1/unknown-retains-complete-reservation": true,
+          "seed-1/unknown-duplicate-stable": true,
+          "seed-1/unknown-cannot-repeat": true,
+          "seed-1/foreign-request-preserves-complete-state": true,
+          "seed-1/foreign-service-preserves-complete-state": true,
+          "seed-1/invalid-status-preserves-complete-state": true,
+          "seed-1/late-committed-settles": true,
+          "seed-1/late-submitted-settles-without-invented-observation": true,
+          "seed-1/late-refused-retains-spent-intent": true,
+          "seed-1/same-revision-read-keeps-unconfirmed": true,
+          "seed-1/observation-preserves-typed-reservation": true,
+          "seed-1/older-outcome-after-new-observation-is-stale": true,
+          "seed-1/newer-read-settles-without-replay": true,
+          "seed-1/old-intent-cannot-be-replayed-after-read": true,
+          "seed-1/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-1/full-width-request-preserved": true,
+          "seed-2/given-complete-domain": true,
+          "seed-2/positive-proposal-complete-domain-and-wire": true,
+          "seed-2/pending-duplicate-no-effect": true,
+          "seed-2/unknown-retains-complete-reservation": true,
+          "seed-2/unknown-duplicate-stable": true,
+          "seed-2/unknown-cannot-repeat": true,
+          "seed-2/foreign-request-preserves-complete-state": true,
+          "seed-2/foreign-service-preserves-complete-state": true,
+          "seed-2/invalid-status-preserves-complete-state": true,
+          "seed-2/late-committed-settles": true,
+          "seed-2/late-submitted-settles-without-invented-observation": true,
+          "seed-2/late-refused-retains-spent-intent": true,
+          "seed-2/same-revision-read-keeps-unconfirmed": true,
+          "seed-2/observation-preserves-typed-reservation": true,
+          "seed-2/older-outcome-after-new-observation-is-stale": true,
+          "seed-2/newer-read-settles-without-replay": true,
+          "seed-2/old-intent-cannot-be-replayed-after-read": true,
+          "seed-2/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-2/full-width-request-preserved": true,
+          "seed-3/given-complete-domain": true,
+          "seed-3/positive-proposal-complete-domain-and-wire": true,
+          "seed-3/pending-duplicate-no-effect": true,
+          "seed-3/unknown-retains-complete-reservation": true,
+          "seed-3/unknown-duplicate-stable": true,
+          "seed-3/unknown-cannot-repeat": true,
+          "seed-3/foreign-request-preserves-complete-state": true,
+          "seed-3/foreign-service-preserves-complete-state": true,
+          "seed-3/invalid-status-preserves-complete-state": true,
+          "seed-3/late-committed-settles": true,
+          "seed-3/late-submitted-settles-without-invented-observation": true,
+          "seed-3/late-refused-retains-spent-intent": true,
+          "seed-3/same-revision-read-keeps-unconfirmed": true,
+          "seed-3/observation-preserves-typed-reservation": true,
+          "seed-3/older-outcome-after-new-observation-is-stale": true,
+          "seed-3/newer-read-settles-without-replay": true,
+          "seed-3/old-intent-cannot-be-replayed-after-read": true,
+          "seed-3/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-3/full-width-request-preserved": true,
+          "seed-4/given-complete-domain": true,
+          "seed-4/positive-proposal-complete-domain-and-wire": true,
+          "seed-4/pending-duplicate-no-effect": true,
+          "seed-4/unknown-retains-complete-reservation": true,
+          "seed-4/unknown-duplicate-stable": true,
+          "seed-4/unknown-cannot-repeat": true,
+          "seed-4/foreign-request-preserves-complete-state": true,
+          "seed-4/foreign-service-preserves-complete-state": true,
+          "seed-4/invalid-status-preserves-complete-state": true,
+          "seed-4/late-committed-settles": true,
+          "seed-4/late-submitted-settles-without-invented-observation": true,
+          "seed-4/late-refused-retains-spent-intent": true,
+          "seed-4/same-revision-read-keeps-unconfirmed": true,
+          "seed-4/observation-preserves-typed-reservation": true,
+          "seed-4/older-outcome-after-new-observation-is-stale": true,
+          "seed-4/newer-read-settles-without-replay": true,
+          "seed-4/old-intent-cannot-be-replayed-after-read": true,
+          "seed-4/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-4/full-width-request-preserved": true,
+          "seed-5/given-complete-domain": true,
+          "seed-5/positive-proposal-complete-domain-and-wire": true,
+          "seed-5/pending-duplicate-no-effect": true,
+          "seed-5/unknown-retains-complete-reservation": true,
+          "seed-5/unknown-duplicate-stable": true,
+          "seed-5/unknown-cannot-repeat": true,
+          "seed-5/foreign-request-preserves-complete-state": true,
+          "seed-5/foreign-service-preserves-complete-state": true,
+          "seed-5/invalid-status-preserves-complete-state": true,
+          "seed-5/late-committed-settles": true,
+          "seed-5/late-submitted-settles-without-invented-observation": true,
+          "seed-5/late-refused-retains-spent-intent": true,
+          "seed-5/same-revision-read-keeps-unconfirmed": true,
+          "seed-5/observation-preserves-typed-reservation": true,
+          "seed-5/older-outcome-after-new-observation-is-stale": true,
+          "seed-5/newer-read-settles-without-replay": true,
+          "seed-5/old-intent-cannot-be-replayed-after-read": true,
+          "seed-5/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-5/full-width-request-preserved": true,
+          "seed-6/given-complete-domain": true,
+          "seed-6/positive-proposal-complete-domain-and-wire": true,
+          "seed-6/pending-duplicate-no-effect": true,
+          "seed-6/unknown-retains-complete-reservation": true,
+          "seed-6/unknown-duplicate-stable": true,
+          "seed-6/unknown-cannot-repeat": true,
+          "seed-6/foreign-request-preserves-complete-state": true,
+          "seed-6/foreign-service-preserves-complete-state": true,
+          "seed-6/invalid-status-preserves-complete-state": true,
+          "seed-6/late-committed-settles": true,
+          "seed-6/late-submitted-settles-without-invented-observation": true,
+          "seed-6/late-refused-retains-spent-intent": true,
+          "seed-6/same-revision-read-keeps-unconfirmed": true,
+          "seed-6/observation-preserves-typed-reservation": true,
+          "seed-6/older-outcome-after-new-observation-is-stale": true,
+          "seed-6/newer-read-settles-without-replay": true,
+          "seed-6/old-intent-cannot-be-replayed-after-read": true,
+          "seed-6/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-6/full-width-request-preserved": true,
+          "seed-7/given-complete-domain": true,
+          "seed-7/positive-proposal-complete-domain-and-wire": true,
+          "seed-7/pending-duplicate-no-effect": true,
+          "seed-7/unknown-retains-complete-reservation": true,
+          "seed-7/unknown-duplicate-stable": true,
+          "seed-7/unknown-cannot-repeat": true,
+          "seed-7/foreign-request-preserves-complete-state": true,
+          "seed-7/foreign-service-preserves-complete-state": true,
+          "seed-7/invalid-status-preserves-complete-state": true,
+          "seed-7/late-committed-settles": true,
+          "seed-7/late-submitted-settles-without-invented-observation": true,
+          "seed-7/late-refused-retains-spent-intent": true,
+          "seed-7/same-revision-read-keeps-unconfirmed": true,
+          "seed-7/observation-preserves-typed-reservation": true,
+          "seed-7/older-outcome-after-new-observation-is-stale": true,
+          "seed-7/newer-read-settles-without-replay": true,
+          "seed-7/old-intent-cannot-be-replayed-after-read": true,
+          "seed-7/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-7/full-width-request-preserved": true,
+          "seed-8/given-complete-domain": true,
+          "seed-8/positive-proposal-complete-domain-and-wire": true,
+          "seed-8/pending-duplicate-no-effect": true,
+          "seed-8/unknown-retains-complete-reservation": true,
+          "seed-8/unknown-duplicate-stable": true,
+          "seed-8/unknown-cannot-repeat": true,
+          "seed-8/foreign-request-preserves-complete-state": true,
+          "seed-8/foreign-service-preserves-complete-state": true,
+          "seed-8/invalid-status-preserves-complete-state": true,
+          "seed-8/late-committed-settles": true,
+          "seed-8/late-submitted-settles-without-invented-observation": true,
+          "seed-8/late-refused-retains-spent-intent": true,
+          "seed-8/same-revision-read-keeps-unconfirmed": true,
+          "seed-8/observation-preserves-typed-reservation": true,
+          "seed-8/older-outcome-after-new-observation-is-stale": true,
+          "seed-8/newer-read-settles-without-replay": true,
+          "seed-8/old-intent-cannot-be-replayed-after-read": true,
+          "seed-8/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-8/full-width-request-preserved": true,
+          "seed-9/given-complete-domain": true,
+          "seed-9/positive-proposal-complete-domain-and-wire": true,
+          "seed-9/pending-duplicate-no-effect": true,
+          "seed-9/unknown-retains-complete-reservation": true,
+          "seed-9/unknown-duplicate-stable": true,
+          "seed-9/unknown-cannot-repeat": true,
+          "seed-9/foreign-request-preserves-complete-state": true,
+          "seed-9/foreign-service-preserves-complete-state": true,
+          "seed-9/invalid-status-preserves-complete-state": true,
+          "seed-9/late-committed-settles": true,
+          "seed-9/late-submitted-settles-without-invented-observation": true,
+          "seed-9/late-refused-retains-spent-intent": true,
+          "seed-9/same-revision-read-keeps-unconfirmed": true,
+          "seed-9/observation-preserves-typed-reservation": true,
+          "seed-9/older-outcome-after-new-observation-is-stale": true,
+          "seed-9/newer-read-settles-without-replay": true,
+          "seed-9/old-intent-cannot-be-replayed-after-read": true,
+          "seed-9/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-9/full-width-request-preserved": true,
+          "seed-10/given-complete-domain": true,
+          "seed-10/positive-proposal-complete-domain-and-wire": true,
+          "seed-10/pending-duplicate-no-effect": true,
+          "seed-10/unknown-retains-complete-reservation": true,
+          "seed-10/unknown-duplicate-stable": true,
+          "seed-10/unknown-cannot-repeat": true,
+          "seed-10/foreign-request-preserves-complete-state": true,
+          "seed-10/foreign-service-preserves-complete-state": true,
+          "seed-10/invalid-status-preserves-complete-state": true,
+          "seed-10/late-committed-settles": true,
+          "seed-10/late-submitted-settles-without-invented-observation": true,
+          "seed-10/late-refused-retains-spent-intent": true,
+          "seed-10/same-revision-read-keeps-unconfirmed": true,
+          "seed-10/observation-preserves-typed-reservation": true,
+          "seed-10/older-outcome-after-new-observation-is-stale": true,
+          "seed-10/newer-read-settles-without-replay": true,
+          "seed-10/old-intent-cannot-be-replayed-after-read": true,
+          "seed-10/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-10/full-width-request-preserved": true,
+          "seed-11/given-complete-domain": true,
+          "seed-11/positive-proposal-complete-domain-and-wire": true,
+          "seed-11/pending-duplicate-no-effect": true,
+          "seed-11/unknown-retains-complete-reservation": true,
+          "seed-11/unknown-duplicate-stable": true,
+          "seed-11/unknown-cannot-repeat": true,
+          "seed-11/foreign-request-preserves-complete-state": true,
+          "seed-11/foreign-service-preserves-complete-state": true,
+          "seed-11/invalid-status-preserves-complete-state": true,
+          "seed-11/late-committed-settles": true,
+          "seed-11/late-submitted-settles-without-invented-observation": true,
+          "seed-11/late-refused-retains-spent-intent": true,
+          "seed-11/same-revision-read-keeps-unconfirmed": true,
+          "seed-11/observation-preserves-typed-reservation": true,
+          "seed-11/older-outcome-after-new-observation-is-stale": true,
+          "seed-11/newer-read-settles-without-replay": true,
+          "seed-11/old-intent-cannot-be-replayed-after-read": true,
+          "seed-11/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-11/full-width-request-preserved": true,
+          "seed-12/given-complete-domain": true,
+          "seed-12/positive-proposal-complete-domain-and-wire": true,
+          "seed-12/pending-duplicate-no-effect": true,
+          "seed-12/unknown-retains-complete-reservation": true,
+          "seed-12/unknown-duplicate-stable": true,
+          "seed-12/unknown-cannot-repeat": true,
+          "seed-12/foreign-request-preserves-complete-state": true,
+          "seed-12/foreign-service-preserves-complete-state": true,
+          "seed-12/invalid-status-preserves-complete-state": true,
+          "seed-12/late-committed-settles": true,
+          "seed-12/late-submitted-settles-without-invented-observation": true,
+          "seed-12/late-refused-retains-spent-intent": true,
+          "seed-12/same-revision-read-keeps-unconfirmed": true,
+          "seed-12/observation-preserves-typed-reservation": true,
+          "seed-12/older-outcome-after-new-observation-is-stale": true,
+          "seed-12/newer-read-settles-without-replay": true,
+          "seed-12/old-intent-cannot-be-replayed-after-read": true,
+          "seed-12/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-12/full-width-request-preserved": true,
+          "seed-13/given-complete-domain": true,
+          "seed-13/positive-proposal-complete-domain-and-wire": true,
+          "seed-13/pending-duplicate-no-effect": true,
+          "seed-13/unknown-retains-complete-reservation": true,
+          "seed-13/unknown-duplicate-stable": true,
+          "seed-13/unknown-cannot-repeat": true,
+          "seed-13/foreign-request-preserves-complete-state": true,
+          "seed-13/foreign-service-preserves-complete-state": true,
+          "seed-13/invalid-status-preserves-complete-state": true,
+          "seed-13/late-committed-settles": true,
+          "seed-13/late-submitted-settles-without-invented-observation": true,
+          "seed-13/late-refused-retains-spent-intent": true,
+          "seed-13/same-revision-read-keeps-unconfirmed": true,
+          "seed-13/observation-preserves-typed-reservation": true,
+          "seed-13/older-outcome-after-new-observation-is-stale": true,
+          "seed-13/newer-read-settles-without-replay": true,
+          "seed-13/old-intent-cannot-be-replayed-after-read": true,
+          "seed-13/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-13/full-width-request-preserved": true,
+          "seed-14/given-complete-domain": true,
+          "seed-14/positive-proposal-complete-domain-and-wire": true,
+          "seed-14/pending-duplicate-no-effect": true,
+          "seed-14/unknown-retains-complete-reservation": true,
+          "seed-14/unknown-duplicate-stable": true,
+          "seed-14/unknown-cannot-repeat": true,
+          "seed-14/foreign-request-preserves-complete-state": true,
+          "seed-14/foreign-service-preserves-complete-state": true,
+          "seed-14/invalid-status-preserves-complete-state": true,
+          "seed-14/late-committed-settles": true,
+          "seed-14/late-submitted-settles-without-invented-observation": true,
+          "seed-14/late-refused-retains-spent-intent": true,
+          "seed-14/same-revision-read-keeps-unconfirmed": true,
+          "seed-14/observation-preserves-typed-reservation": true,
+          "seed-14/older-outcome-after-new-observation-is-stale": true,
+          "seed-14/newer-read-settles-without-replay": true,
+          "seed-14/old-intent-cannot-be-replayed-after-read": true,
+          "seed-14/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-14/full-width-request-preserved": true,
+          "seed-15/given-complete-domain": true,
+          "seed-15/positive-proposal-complete-domain-and-wire": true,
+          "seed-15/pending-duplicate-no-effect": true,
+          "seed-15/unknown-retains-complete-reservation": true,
+          "seed-15/unknown-duplicate-stable": true,
+          "seed-15/unknown-cannot-repeat": true,
+          "seed-15/foreign-request-preserves-complete-state": true,
+          "seed-15/foreign-service-preserves-complete-state": true,
+          "seed-15/invalid-status-preserves-complete-state": true,
+          "seed-15/late-committed-settles": true,
+          "seed-15/late-submitted-settles-without-invented-observation": true,
+          "seed-15/late-refused-retains-spent-intent": true,
+          "seed-15/same-revision-read-keeps-unconfirmed": true,
+          "seed-15/observation-preserves-typed-reservation": true,
+          "seed-15/older-outcome-after-new-observation-is-stale": true,
+          "seed-15/newer-read-settles-without-replay": true,
+          "seed-15/old-intent-cannot-be-replayed-after-read": true,
+          "seed-15/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-15/full-width-request-preserved": true,
+          "seed-16/given-complete-domain": true,
+          "seed-16/positive-proposal-complete-domain-and-wire": true,
+          "seed-16/pending-duplicate-no-effect": true,
+          "seed-16/unknown-retains-complete-reservation": true,
+          "seed-16/unknown-duplicate-stable": true,
+          "seed-16/unknown-cannot-repeat": true,
+          "seed-16/foreign-request-preserves-complete-state": true,
+          "seed-16/foreign-service-preserves-complete-state": true,
+          "seed-16/invalid-status-preserves-complete-state": true,
+          "seed-16/late-committed-settles": true,
+          "seed-16/late-submitted-settles-without-invented-observation": true,
+          "seed-16/late-refused-retains-spent-intent": true,
+          "seed-16/same-revision-read-keeps-unconfirmed": true,
+          "seed-16/observation-preserves-typed-reservation": true,
+          "seed-16/older-outcome-after-new-observation-is-stale": true,
+          "seed-16/newer-read-settles-without-replay": true,
+          "seed-16/old-intent-cannot-be-replayed-after-read": true,
+          "seed-16/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-16/full-width-request-preserved": true,
+          "seed-17/given-complete-domain": true,
+          "seed-17/positive-proposal-complete-domain-and-wire": true,
+          "seed-17/pending-duplicate-no-effect": true,
+          "seed-17/unknown-retains-complete-reservation": true,
+          "seed-17/unknown-duplicate-stable": true,
+          "seed-17/unknown-cannot-repeat": true,
+          "seed-17/foreign-request-preserves-complete-state": true,
+          "seed-17/foreign-service-preserves-complete-state": true,
+          "seed-17/invalid-status-preserves-complete-state": true,
+          "seed-17/late-committed-settles": true,
+          "seed-17/late-submitted-settles-without-invented-observation": true,
+          "seed-17/late-refused-retains-spent-intent": true,
+          "seed-17/same-revision-read-keeps-unconfirmed": true,
+          "seed-17/observation-preserves-typed-reservation": true,
+          "seed-17/older-outcome-after-new-observation-is-stale": true,
+          "seed-17/newer-read-settles-without-replay": true,
+          "seed-17/old-intent-cannot-be-replayed-after-read": true,
+          "seed-17/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-17/full-width-request-preserved": true,
+          "seed-18/given-complete-domain": true,
+          "seed-18/positive-proposal-complete-domain-and-wire": true,
+          "seed-18/pending-duplicate-no-effect": true,
+          "seed-18/unknown-retains-complete-reservation": true,
+          "seed-18/unknown-duplicate-stable": true,
+          "seed-18/unknown-cannot-repeat": true,
+          "seed-18/foreign-request-preserves-complete-state": true,
+          "seed-18/foreign-service-preserves-complete-state": true,
+          "seed-18/invalid-status-preserves-complete-state": true,
+          "seed-18/late-committed-settles": true,
+          "seed-18/late-submitted-settles-without-invented-observation": true,
+          "seed-18/late-refused-retains-spent-intent": true,
+          "seed-18/same-revision-read-keeps-unconfirmed": true,
+          "seed-18/observation-preserves-typed-reservation": true,
+          "seed-18/older-outcome-after-new-observation-is-stale": true,
+          "seed-18/newer-read-settles-without-replay": true,
+          "seed-18/old-intent-cannot-be-replayed-after-read": true,
+          "seed-18/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-18/full-width-request-preserved": true,
+          "seed-19/given-complete-domain": true,
+          "seed-19/positive-proposal-complete-domain-and-wire": true,
+          "seed-19/pending-duplicate-no-effect": true,
+          "seed-19/unknown-retains-complete-reservation": true,
+          "seed-19/unknown-duplicate-stable": true,
+          "seed-19/unknown-cannot-repeat": true,
+          "seed-19/foreign-request-preserves-complete-state": true,
+          "seed-19/foreign-service-preserves-complete-state": true,
+          "seed-19/invalid-status-preserves-complete-state": true,
+          "seed-19/late-committed-settles": true,
+          "seed-19/late-submitted-settles-without-invented-observation": true,
+          "seed-19/late-refused-retains-spent-intent": true,
+          "seed-19/same-revision-read-keeps-unconfirmed": true,
+          "seed-19/observation-preserves-typed-reservation": true,
+          "seed-19/older-outcome-after-new-observation-is-stale": true,
+          "seed-19/newer-read-settles-without-replay": true,
+          "seed-19/old-intent-cannot-be-replayed-after-read": true,
+          "seed-19/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-19/full-width-request-preserved": true,
+          "seed-20/given-complete-domain": true,
+          "seed-20/positive-proposal-complete-domain-and-wire": true,
+          "seed-20/pending-duplicate-no-effect": true,
+          "seed-20/unknown-retains-complete-reservation": true,
+          "seed-20/unknown-duplicate-stable": true,
+          "seed-20/unknown-cannot-repeat": true,
+          "seed-20/foreign-request-preserves-complete-state": true,
+          "seed-20/foreign-service-preserves-complete-state": true,
+          "seed-20/invalid-status-preserves-complete-state": true,
+          "seed-20/late-committed-settles": true,
+          "seed-20/late-submitted-settles-without-invented-observation": true,
+          "seed-20/late-refused-retains-spent-intent": true,
+          "seed-20/same-revision-read-keeps-unconfirmed": true,
+          "seed-20/observation-preserves-typed-reservation": true,
+          "seed-20/older-outcome-after-new-observation-is-stale": true,
+          "seed-20/newer-read-settles-without-replay": true,
+          "seed-20/old-intent-cannot-be-replayed-after-read": true,
+          "seed-20/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-20/full-width-request-preserved": true,
+          "seed-21/given-complete-domain": true,
+          "seed-21/positive-proposal-complete-domain-and-wire": true,
+          "seed-21/pending-duplicate-no-effect": true,
+          "seed-21/unknown-retains-complete-reservation": true,
+          "seed-21/unknown-duplicate-stable": true,
+          "seed-21/unknown-cannot-repeat": true,
+          "seed-21/foreign-request-preserves-complete-state": true,
+          "seed-21/foreign-service-preserves-complete-state": true,
+          "seed-21/invalid-status-preserves-complete-state": true,
+          "seed-21/late-committed-settles": true,
+          "seed-21/late-submitted-settles-without-invented-observation": true,
+          "seed-21/late-refused-retains-spent-intent": true,
+          "seed-21/same-revision-read-keeps-unconfirmed": true,
+          "seed-21/observation-preserves-typed-reservation": true,
+          "seed-21/older-outcome-after-new-observation-is-stale": true,
+          "seed-21/newer-read-settles-without-replay": true,
+          "seed-21/old-intent-cannot-be-replayed-after-read": true,
+          "seed-21/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-21/full-width-request-preserved": true,
+          "seed-22/given-complete-domain": true,
+          "seed-22/positive-proposal-complete-domain-and-wire": true,
+          "seed-22/pending-duplicate-no-effect": true,
+          "seed-22/unknown-retains-complete-reservation": true,
+          "seed-22/unknown-duplicate-stable": true,
+          "seed-22/unknown-cannot-repeat": true,
+          "seed-22/foreign-request-preserves-complete-state": true,
+          "seed-22/foreign-service-preserves-complete-state": true,
+          "seed-22/invalid-status-preserves-complete-state": true,
+          "seed-22/late-committed-settles": true,
+          "seed-22/late-submitted-settles-without-invented-observation": true,
+          "seed-22/late-refused-retains-spent-intent": true,
+          "seed-22/same-revision-read-keeps-unconfirmed": true,
+          "seed-22/observation-preserves-typed-reservation": true,
+          "seed-22/older-outcome-after-new-observation-is-stale": true,
+          "seed-22/newer-read-settles-without-replay": true,
+          "seed-22/old-intent-cannot-be-replayed-after-read": true,
+          "seed-22/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-22/full-width-request-preserved": true,
+          "seed-23/given-complete-domain": true,
+          "seed-23/positive-proposal-complete-domain-and-wire": true,
+          "seed-23/pending-duplicate-no-effect": true,
+          "seed-23/unknown-retains-complete-reservation": true,
+          "seed-23/unknown-duplicate-stable": true,
+          "seed-23/unknown-cannot-repeat": true,
+          "seed-23/foreign-request-preserves-complete-state": true,
+          "seed-23/foreign-service-preserves-complete-state": true,
+          "seed-23/invalid-status-preserves-complete-state": true,
+          "seed-23/late-committed-settles": true,
+          "seed-23/late-submitted-settles-without-invented-observation": true,
+          "seed-23/late-refused-retains-spent-intent": true,
+          "seed-23/same-revision-read-keeps-unconfirmed": true,
+          "seed-23/observation-preserves-typed-reservation": true,
+          "seed-23/older-outcome-after-new-observation-is-stale": true,
+          "seed-23/newer-read-settles-without-replay": true,
+          "seed-23/old-intent-cannot-be-replayed-after-read": true,
+          "seed-23/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-23/full-width-request-preserved": true,
+          "seed-24/given-complete-domain": true,
+          "seed-24/positive-proposal-complete-domain-and-wire": true,
+          "seed-24/pending-duplicate-no-effect": true,
+          "seed-24/unknown-retains-complete-reservation": true,
+          "seed-24/unknown-duplicate-stable": true,
+          "seed-24/unknown-cannot-repeat": true,
+          "seed-24/foreign-request-preserves-complete-state": true,
+          "seed-24/foreign-service-preserves-complete-state": true,
+          "seed-24/invalid-status-preserves-complete-state": true,
+          "seed-24/late-committed-settles": true,
+          "seed-24/late-submitted-settles-without-invented-observation": true,
+          "seed-24/late-refused-retains-spent-intent": true,
+          "seed-24/same-revision-read-keeps-unconfirmed": true,
+          "seed-24/observation-preserves-typed-reservation": true,
+          "seed-24/older-outcome-after-new-observation-is-stale": true,
+          "seed-24/newer-read-settles-without-replay": true,
+          "seed-24/old-intent-cannot-be-replayed-after-read": true,
+          "seed-24/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-24/full-width-request-preserved": true,
+          "seed-25/given-complete-domain": true,
+          "seed-25/positive-proposal-complete-domain-and-wire": true,
+          "seed-25/pending-duplicate-no-effect": true,
+          "seed-25/unknown-retains-complete-reservation": true,
+          "seed-25/unknown-duplicate-stable": true,
+          "seed-25/unknown-cannot-repeat": true,
+          "seed-25/foreign-request-preserves-complete-state": true,
+          "seed-25/foreign-service-preserves-complete-state": true,
+          "seed-25/invalid-status-preserves-complete-state": true,
+          "seed-25/late-committed-settles": true,
+          "seed-25/late-submitted-settles-without-invented-observation": true,
+          "seed-25/late-refused-retains-spent-intent": true,
+          "seed-25/same-revision-read-keeps-unconfirmed": true,
+          "seed-25/observation-preserves-typed-reservation": true,
+          "seed-25/older-outcome-after-new-observation-is-stale": true,
+          "seed-25/newer-read-settles-without-replay": true,
+          "seed-25/old-intent-cannot-be-replayed-after-read": true,
+          "seed-25/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-25/full-width-request-preserved": true,
+          "seed-26/given-complete-domain": true,
+          "seed-26/positive-proposal-complete-domain-and-wire": true,
+          "seed-26/pending-duplicate-no-effect": true,
+          "seed-26/unknown-retains-complete-reservation": true,
+          "seed-26/unknown-duplicate-stable": true,
+          "seed-26/unknown-cannot-repeat": true,
+          "seed-26/foreign-request-preserves-complete-state": true,
+          "seed-26/foreign-service-preserves-complete-state": true,
+          "seed-26/invalid-status-preserves-complete-state": true,
+          "seed-26/late-committed-settles": true,
+          "seed-26/late-submitted-settles-without-invented-observation": true,
+          "seed-26/late-refused-retains-spent-intent": true,
+          "seed-26/same-revision-read-keeps-unconfirmed": true,
+          "seed-26/observation-preserves-typed-reservation": true,
+          "seed-26/older-outcome-after-new-observation-is-stale": true,
+          "seed-26/newer-read-settles-without-replay": true,
+          "seed-26/old-intent-cannot-be-replayed-after-read": true,
+          "seed-26/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-26/full-width-request-preserved": true,
+          "seed-27/given-complete-domain": true,
+          "seed-27/positive-proposal-complete-domain-and-wire": true,
+          "seed-27/pending-duplicate-no-effect": true,
+          "seed-27/unknown-retains-complete-reservation": true,
+          "seed-27/unknown-duplicate-stable": true,
+          "seed-27/unknown-cannot-repeat": true,
+          "seed-27/foreign-request-preserves-complete-state": true,
+          "seed-27/foreign-service-preserves-complete-state": true,
+          "seed-27/invalid-status-preserves-complete-state": true,
+          "seed-27/late-committed-settles": true,
+          "seed-27/late-submitted-settles-without-invented-observation": true,
+          "seed-27/late-refused-retains-spent-intent": true,
+          "seed-27/same-revision-read-keeps-unconfirmed": true,
+          "seed-27/observation-preserves-typed-reservation": true,
+          "seed-27/older-outcome-after-new-observation-is-stale": true,
+          "seed-27/newer-read-settles-without-replay": true,
+          "seed-27/old-intent-cannot-be-replayed-after-read": true,
+          "seed-27/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-27/full-width-request-preserved": true,
+          "seed-28/given-complete-domain": true,
+          "seed-28/positive-proposal-complete-domain-and-wire": true,
+          "seed-28/pending-duplicate-no-effect": true,
+          "seed-28/unknown-retains-complete-reservation": true,
+          "seed-28/unknown-duplicate-stable": true,
+          "seed-28/unknown-cannot-repeat": true,
+          "seed-28/foreign-request-preserves-complete-state": true,
+          "seed-28/foreign-service-preserves-complete-state": true,
+          "seed-28/invalid-status-preserves-complete-state": true,
+          "seed-28/late-committed-settles": true,
+          "seed-28/late-submitted-settles-without-invented-observation": true,
+          "seed-28/late-refused-retains-spent-intent": true,
+          "seed-28/same-revision-read-keeps-unconfirmed": true,
+          "seed-28/observation-preserves-typed-reservation": true,
+          "seed-28/older-outcome-after-new-observation-is-stale": true,
+          "seed-28/newer-read-settles-without-replay": true,
+          "seed-28/old-intent-cannot-be-replayed-after-read": true,
+          "seed-28/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-28/full-width-request-preserved": true,
+          "seed-29/given-complete-domain": true,
+          "seed-29/positive-proposal-complete-domain-and-wire": true,
+          "seed-29/pending-duplicate-no-effect": true,
+          "seed-29/unknown-retains-complete-reservation": true,
+          "seed-29/unknown-duplicate-stable": true,
+          "seed-29/unknown-cannot-repeat": true,
+          "seed-29/foreign-request-preserves-complete-state": true,
+          "seed-29/foreign-service-preserves-complete-state": true,
+          "seed-29/invalid-status-preserves-complete-state": true,
+          "seed-29/late-committed-settles": true,
+          "seed-29/late-submitted-settles-without-invented-observation": true,
+          "seed-29/late-refused-retains-spent-intent": true,
+          "seed-29/same-revision-read-keeps-unconfirmed": true,
+          "seed-29/observation-preserves-typed-reservation": true,
+          "seed-29/older-outcome-after-new-observation-is-stale": true,
+          "seed-29/newer-read-settles-without-replay": true,
+          "seed-29/old-intent-cannot-be-replayed-after-read": true,
+          "seed-29/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-29/full-width-request-preserved": true,
+          "seed-30/given-complete-domain": true,
+          "seed-30/positive-proposal-complete-domain-and-wire": true,
+          "seed-30/pending-duplicate-no-effect": true,
+          "seed-30/unknown-retains-complete-reservation": true,
+          "seed-30/unknown-duplicate-stable": true,
+          "seed-30/unknown-cannot-repeat": true,
+          "seed-30/foreign-request-preserves-complete-state": true,
+          "seed-30/foreign-service-preserves-complete-state": true,
+          "seed-30/invalid-status-preserves-complete-state": true,
+          "seed-30/late-committed-settles": true,
+          "seed-30/late-submitted-settles-without-invented-observation": true,
+          "seed-30/late-refused-retains-spent-intent": true,
+          "seed-30/same-revision-read-keeps-unconfirmed": true,
+          "seed-30/observation-preserves-typed-reservation": true,
+          "seed-30/older-outcome-after-new-observation-is-stale": true,
+          "seed-30/newer-read-settles-without-replay": true,
+          "seed-30/old-intent-cannot-be-replayed-after-read": true,
+          "seed-30/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-30/full-width-request-preserved": true,
+          "seed-31/given-complete-domain": true,
+          "seed-31/positive-proposal-complete-domain-and-wire": true,
+          "seed-31/pending-duplicate-no-effect": true,
+          "seed-31/unknown-retains-complete-reservation": true,
+          "seed-31/unknown-duplicate-stable": true,
+          "seed-31/unknown-cannot-repeat": true,
+          "seed-31/foreign-request-preserves-complete-state": true,
+          "seed-31/foreign-service-preserves-complete-state": true,
+          "seed-31/invalid-status-preserves-complete-state": true,
+          "seed-31/late-committed-settles": true,
+          "seed-31/late-submitted-settles-without-invented-observation": true,
+          "seed-31/late-refused-retains-spent-intent": true,
+          "seed-31/same-revision-read-keeps-unconfirmed": true,
+          "seed-31/observation-preserves-typed-reservation": true,
+          "seed-31/older-outcome-after-new-observation-is-stale": true,
+          "seed-31/newer-read-settles-without-replay": true,
+          "seed-31/old-intent-cannot-be-replayed-after-read": true,
+          "seed-31/fresh-explicit-intent-can-follow-new-observation": true,
+          "seed-31/full-width-request-preserved": true,
+          "desktop/given-counter-and-complete-child-pinned": true,
+          "desktop/given-proposal-full-ordered-effect": true,
+          "desktop/unknown-full-model-and-every-effect": true,
+          "desktop/duplicate-unknown-full-model-no-effect": true,
+          "desktop/unknown-no-replay-full-model": true,
+          "desktop/late-refused-full-model-and-every-effect": true,
+          "desktop/late-submitted-full-model-and-every-effect": true,
+          "desktop/wrong-request-preserves-full-model": true,
+          "desktop/foreign-binding-preserves-full-model": true,
+          "desktop/foreign-service-preserves-full-model": true,
+          "desktop/malformed-status-preserves-full-model": true,
+          "desktop/null-status-preserves-full-model": true,
+          "desktop/refresh-full-model-and-exact-read-effect": true,
+          "desktop/matching-newer-read-full-model-no-replay": true,
+          "capability/network-yes-complete-model-wire": true,
+          "capability/network-no-complete-model-wire": true,
+          "capability/network-auth-complete-model-wire": true,
+          "capability/power-suspend-yes-complete-model-wire": true,
+          "capability/power-reboot-yes-complete-model-wire": true,
+          "capability/power-poweroff-yes-complete-model-wire": true,
+          "capability/power-suspend-no-complete-model-wire": true,
+          "capability/power-reboot-no-complete-model-wire": true,
+          "capability/power-poweroff-no-complete-model-wire": true,
+          "capability/power-suspend-na-complete-model-wire": true,
+          "capability/power-reboot-na-complete-model-wire": true,
+          "capability/power-poweroff-na-complete-model-wire": true,
+          "capability/power-suspend-challenge-complete-model-wire": true,
+          "capability/power-reboot-challenge-complete-model-wire": true,
+          "capability/power-poweroff-challenge-complete-model-wire": true,
+          "capability/network-cross-domain-rejected": true,
+          "capability/power-cross-domain-rejected": true,
+          "session/closing-complete-model-no-wire": true,
+          "session/active-complete-model-and-wire": true,
+          "session/online-complete-model-and-wire": true,
+          "session/open-text-complete-model-and-wire": true,
+          "session/empty-complete-model-and-wire": true,
+          "session/case-sensitive-complete-model-and-wire": true,
+          "session/near-closing-complete-model-and-wire": true,
+          "session/maximum-text-complete-model-and-wire": true,
+          "session/overlong-text-rejected": true,
+          "session/control-text-rejected": true,
+          "session/non-string-rejected": true
+        },
+        "checkCount": 650,
+        "requiredCheckCount": 650,
+        "originalAccepted": false,
+        "nativeAccepted": false
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "originalAccepted": false,
+  "nativeAccepted": false
+}

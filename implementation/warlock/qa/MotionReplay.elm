@@ -15,7 +15,8 @@ import UInt64
 
 port outgoing : E.Value -> Cmd msg
 
-observation serial profile = E.object [("protocolVersion",E.int 3),("kind",E.string "host-motion-preference"),("serial",E.string serial),("profile",E.string profile),("source",E.string "gtk")]
+observationFrom origin serial profile = E.object [("protocolVersion",E.int 3),("kind",E.string "host-motion-preference"),("serial",E.string serial),("profile",E.string profile),("source",E.string origin)]
+observation serial profile = observationFrom "gtk" serial profile
 native raw = Desktop.update (Desktop.Incoming raw)
 wire effects = List.filterMap (\effect -> case effect of
     Desktop.Send value -> Just value
@@ -41,8 +42,18 @@ result binding =
         frame=Surface.packet (Fixture.counter "1") (Fixture.counter "1") reduced
         decoded=SurfaceRenderer.decode frame
         malformed=E.object [("protocolVersion",E.int 3),("kind",E.string "host-motion-preference"),("serial",E.string "4"),("profile",E.string "fast"),("source",E.string "gtk")]
+        (portalState,portalEffects)=native (observationFrom "portal" "2" "full") reduced
+        (gtkState,gtkEffects)=native (observationFrom "gtk" "2" "full") reduced
+        stalePortal=native (observationFrom "gtk" "1" "reduced") portalState
+        invalidSource origin=E.object [("protocolVersion",E.int 3),("kind",E.string "host-motion-preference"),("serial",E.string "2"),("profile",E.string "full"),("source",origin)]
+        missingSource=E.object [("protocolVersion",E.int 3),("kind",E.string "host-motion-preference"),("serial",E.string "2"),("profile",E.string "full")]
+        rejected raw=let (next,effects)=native raw reduced in next==reduced && List.isEmpty effects
         checks=
-            [("preferenceProducesOneProfileConfiguration",List.length (wire commands)==1 && first.motion.pending/=Nothing)
+            [("portalAndGtkRetainTypedOrigin",(portalState.motion.observation |> Maybe.map .source)==Just Motion.Portal && (gtkState.motion.observation |> Maybe.map .source)==Just Motion.Gtk)
+            ,("bothOriginsProduceSameNativeProfileRequest",Motion.desired portalState.motion==Motion.Full && Motion.desired gtkState.motion==Motion.Full && List.length (wire portalEffects)==1 && List.map (E.encode 0) (wire portalEffects)==List.map (E.encode 0) (wire gtkEffects))
+            ,("staleSourceCannotReplaceNewerObservation",Tuple.first stalePortal==portalState && List.isEmpty (Tuple.second stalePortal))
+            ,("invalidSourcesRejectedWithoutStateOrEffects",List.all rejected [invalidSource (E.string ""),invalidSource (E.string "GTK"),invalidSource (E.string "other"),invalidSource E.null,missingSource])
+            ,("preferenceProducesOneProfileConfiguration",List.length (wire commands)==1 && first.motion.pending/=Nothing)
             ,("configurationHasNoWindowEffect",List.all (\v -> D.decodeValue (D.field "kind" D.string) v==Ok "motion-profile-set") (wire commands))
             ,("awaitAcknowledgementBeforeGesture",not (Motion.ready first.windows.shell.binding first.motion) && Tuple.first blocked==first && List.isEmpty (Tuple.second blocked))
             ,("wrongRequestCannotApplyProfile",wrong.motion==first.motion)

@@ -1,0 +1,1095 @@
+{
+  "schema": 1,
+  "scope": "compiled Elm worker controls only; not native or whole-EARS acceptance",
+  "runnerSha256": "960a71375f01a679caf76917866a78d5bbcbe9cbc54a94c0c29bfb6ebd7383c9",
+  "fixtures": [
+    {
+      "name": "MotionReplay",
+      "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/MotionReplay.js",
+      "sha256": "76c2533d4eb0bf0a5c50fa4115f7f58c8a1a2b09f145af7376576ed28adfab80",
+      "checks": [
+        {
+          "name": "awaitAcknowledgementBeforeGesture",
+          "passed": true
+        },
+        {
+          "name": "bothOriginsProduceSameNativeProfileRequest",
+          "passed": true
+        },
+        {
+          "name": "changedPreferenceUsesOneConfiguration",
+          "passed": true
+        },
+        {
+          "name": "configurationHasNoWindowEffect",
+          "passed": true
+        },
+        {
+          "name": "disconnectRetiresProfileReceipt",
+          "passed": true
+        },
+        {
+          "name": "duplicateAcknowledgementHasNoCommands",
+          "passed": true
+        },
+        {
+          "name": "invalidSourcesRejectedWithoutStateOrEffects",
+          "passed": true
+        },
+        {
+          "name": "malformedProfileRejected",
+          "passed": true
+        },
+        {
+          "name": "matchingAcknowledgementAppliesProfile",
+          "passed": true
+        },
+        {
+          "name": "nativePreferenceSurvivesBindingRetirement",
+          "passed": true
+        },
+        {
+          "name": "newPreferenceWaitsForExistingConfiguration",
+          "passed": true
+        },
+        {
+          "name": "oldAcknowledgementConfiguresLatestPreferenceOnce",
+          "passed": true
+        },
+        {
+          "name": "portalAndGtkRetainTypedOrigin",
+          "passed": true
+        },
+        {
+          "name": "preferenceProducesOneProfileConfiguration",
+          "passed": true
+        },
+        {
+          "name": "staleObservationCannotChangeProfile",
+          "passed": true
+        },
+        {
+          "name": "staleSourceCannotReplaceNewerObservation",
+          "passed": true
+        },
+        {
+          "name": "surfaceCarriesTypedProfile",
+          "passed": true
+        },
+        {
+          "name": "wrongRequestCannotApplyProfile",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "payload": {
+        "checks": {
+          "portalAndGtkRetainTypedOrigin": true,
+          "bothOriginsProduceSameNativeProfileRequest": true,
+          "staleSourceCannotReplaceNewerObservation": true,
+          "invalidSourcesRejectedWithoutStateOrEffects": true,
+          "preferenceProducesOneProfileConfiguration": true,
+          "configurationHasNoWindowEffect": true,
+          "awaitAcknowledgementBeforeGesture": true,
+          "wrongRequestCannotApplyProfile": true,
+          "matchingAcknowledgementAppliesProfile": true,
+          "duplicateAcknowledgementHasNoCommands": true,
+          "staleObservationCannotChangeProfile": true,
+          "changedPreferenceUsesOneConfiguration": true,
+          "newPreferenceWaitsForExistingConfiguration": true,
+          "oldAcknowledgementConfiguresLatestPreferenceOnce": true,
+          "disconnectRetiresProfileReceipt": true,
+          "nativePreferenceSurvivesBindingRetirement": true,
+          "malformedProfileRejected": true,
+          "surfaceCarriesTypedProfile": true
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "1",
+          "lease": "1",
+          "mode": "closed",
+          "status": "Connected",
+          "bar": [
+            {
+              "id": "bar:group:application:documents",
+              "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+              "label": "Document",
+              "ariaLabel": "Minimize Document; Active",
+              "detail": "Active",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:4:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": []
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "LiveMotionReplay",
+      "file": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/LiveMotionReplay.js",
+      "sha256": "b5c22a781998683c1b53bd410bd4ee3fb421ee76d57b31bc22eff319e05ef65c",
+      "checks": [
+        {
+          "name": "confirmedSaveConfiguresOneNativeProfile",
+          "passed": true
+        },
+        {
+          "name": "controlsExposeAllThreeChoices",
+          "passed": true
+        },
+        {
+          "name": "disablingNeverReplaysWindowEffect",
+          "passed": true
+        },
+        {
+          "name": "draftDoesNotChangeEffectiveProfile",
+          "passed": true
+        },
+        {
+          "name": "duplicateLateSavedCannotReplay",
+          "passed": true
+        },
+        {
+          "name": "duplicateUnknownCannotReplay",
+          "passed": true
+        },
+        {
+          "name": "explicitOverrideWinsOverSystem",
+          "passed": true
+        },
+        {
+          "name": "fixtureReallyHasPendingWindowEffect",
+          "passed": true
+        },
+        {
+          "name": "followSystemLoadsFullProfile",
+          "passed": true
+        },
+        {
+          "name": "initialReadUsesThirdSharedRequest",
+          "passed": true
+        },
+        {
+          "name": "invalidReceiptStatusCannotMutateOrEmit",
+          "passed": true
+        },
+        {
+          "name": "lateSavedAfterUnknownAppliesOnce",
+          "passed": true
+        },
+        {
+          "name": "liveSourcePreservesWholeWindowTransaction",
+          "passed": true
+        },
+        {
+          "name": "newWriteRetainsAwaitingState",
+          "passed": true
+        },
+        {
+          "name": "pendingWriteCannotRepeat",
+          "passed": true
+        },
+        {
+          "name": "readReconcilesStoredOverride",
+          "passed": true
+        },
+        {
+          "name": "refreshOnlyReadsUnknownWrite",
+          "passed": true
+        },
+        {
+          "name": "refusalDoesNotApplyProposedOverride",
+          "passed": true
+        },
+        {
+          "name": "refusedAfterUnknownClearsPendingWithoutReplay",
+          "passed": true
+        },
+        {
+          "name": "resetRestoresCurrentSystemProfile",
+          "passed": true
+        },
+        {
+          "name": "restartLoadsSavedOverrideBeforeSystemObservation",
+          "passed": true
+        },
+        {
+          "name": "retiredBindingCannotReceiveLatePreferenceSave",
+          "passed": true
+        },
+        {
+          "name": "sameRevisionCannotConfirmSave",
+          "passed": true
+        },
+        {
+          "name": "saveUsesOnePreferenceWrite",
+          "passed": true
+        },
+        {
+          "name": "saveWaitsForNativeAcknowledgement",
+          "passed": true
+        },
+        {
+          "name": "settingsFrameAcceptedByActualRenderer",
+          "passed": true
+        },
+        {
+          "name": "typedReceiptRejectsForeignRequest",
+          "passed": true
+        },
+        {
+          "name": "unknownPreservesPriorProfileAndNoReplay",
+          "passed": true
+        },
+        {
+          "name": "unknownRetainsRequestButMarksUnconfirmed",
+          "passed": true
+        },
+        {
+          "name": "unsupportedStorageRemainsRecoverableInSettings",
+          "passed": true
+        },
+        {
+          "name": "wrongValueCannotConfirmSave",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "payload": {
+        "checks": {
+          "initialReadUsesThirdSharedRequest": true,
+          "followSystemLoadsFullProfile": true,
+          "draftDoesNotChangeEffectiveProfile": true,
+          "saveUsesOnePreferenceWrite": true,
+          "pendingWriteCannotRepeat": true,
+          "sameRevisionCannotConfirmSave": true,
+          "wrongValueCannotConfirmSave": true,
+          "newWriteRetainsAwaitingState": true,
+          "unknownRetainsRequestButMarksUnconfirmed": true,
+          "duplicateUnknownCannotReplay": true,
+          "refusedAfterUnknownClearsPendingWithoutReplay": true,
+          "lateSavedAfterUnknownAppliesOnce": true,
+          "duplicateLateSavedCannotReplay": true,
+          "invalidReceiptStatusCannotMutateOrEmit": true,
+          "typedReceiptRejectsForeignRequest": true,
+          "confirmedSaveConfiguresOneNativeProfile": true,
+          "saveWaitsForNativeAcknowledgement": true,
+          "explicitOverrideWinsOverSystem": true,
+          "unknownPreservesPriorProfileAndNoReplay": true,
+          "refreshOnlyReadsUnknownWrite": true,
+          "readReconcilesStoredOverride": true,
+          "refusalDoesNotApplyProposedOverride": true,
+          "resetRestoresCurrentSystemProfile": true,
+          "disablingNeverReplaysWindowEffect": true,
+          "restartLoadsSavedOverrideBeforeSystemObservation": true,
+          "unsupportedStorageRemainsRecoverableInSettings": true,
+          "fixtureReallyHasPendingWindowEffect": true,
+          "liveSourcePreservesWholeWindowTransaction": true,
+          "retiredBindingCannotReceiveLatePreferenceSave": true,
+          "controlsExposeAllThreeChoices": true,
+          "settingsFrameAcceptedByActualRenderer": true
+        },
+        "settingsFrame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "8",
+          "lease": "1",
+          "mode": "settings",
+          "status": "Loading settings… · Loading shortcut choices…",
+          "bar": [
+            {
+              "id": "bar:group:application:documents",
+              "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+              "label": "Document",
+              "ariaLabel": "Minimize Document; Active",
+              "detail": "Active",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:close",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:close",
+              "label": "Close settings",
+              "ariaLabel": "Close settings",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:help",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:help",
+              "label": "Dismiss help",
+              "ariaLabel": "Dismiss help",
+              "detail": "Expanded",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:help:text:keyboard",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:help:text:keyboard",
+              "label": "Keyboard navigation",
+              "ariaLabel": "Keyboard navigation",
+              "detail": "Tab and Shift+Tab move focus. Arrows move through lists; Home/End reach endpoints. Enter chooses; Escape closes.",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:help:text:preferences",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:help:text:preferences",
+              "label": "Keeping your preferences",
+              "ariaLabel": "Keeping your preferences",
+              "detail": "Save applies appearance preferences. Motion has its own Save. Dismissing help keeps unsaved edits.",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:help:text:recovery",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:help:text:recovery",
+              "label": "When an action is not confirmed",
+              "ariaLabel": "When an action is not confirmed",
+              "detail": "Pending is waiting; Refused did not proceed; Unknown is unconfirmed. Refresh reads state without repeating an action.",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:effects-off",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:effects-off",
+              "label": "Disable soft effects",
+              "ariaLabel": "Disable soft effects",
+              "detail": "Off",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:reduced-transparency",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:reduced-transparency",
+              "label": "Reduce transparency",
+              "ariaLabel": "Reduce transparency",
+              "detail": "Off",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:motion",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion",
+              "label": "Reduced motion: instant transitions · Reduced motion",
+              "ariaLabel": "Reduced motion: instant transitions · Reduced motion",
+              "detail": "Motion preference saved.",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:motion:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:system",
+              "label": "Follow system",
+              "ariaLabel": "Follow system",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:motion:reduced",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:reduced",
+              "label": "Reduced motion",
+              "ariaLabel": "Reduced motion",
+              "detail": "Selected",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:motion:full",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:full",
+              "label": "Full motion",
+              "ariaLabel": "Full motion",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:motion:save",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:save",
+              "label": "Save motion preference",
+              "ariaLabel": "Save motion preference",
+              "detail": "Apply and keep across restart",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:motion:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:motion:refresh",
+              "label": "Refresh motion preference",
+              "ariaLabel": "Refresh motion preference",
+              "detail": "Read stored preference; no write is repeated",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:theme:night",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:theme:night",
+              "label": "Night theme",
+              "ariaLabel": "Night theme",
+              "detail": "Selected",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:theme:dawn",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:theme:dawn",
+              "label": "Dawn theme",
+              "ariaLabel": "Dawn theme",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:theme:high-contrast",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:theme:high-contrast",
+              "label": "High contrast theme",
+              "ariaLabel": "High contrast theme",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:scale:100",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:scale:100",
+              "label": "Text size 100%",
+              "ariaLabel": "Text size 100%",
+              "detail": "Selected",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:scale:125",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:scale:125",
+              "label": "Text size 125%",
+              "ariaLabel": "Text size 125%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:scale:150",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:scale:150",
+              "label": "Text size 150%",
+              "ariaLabel": "Text size 150%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:scale:200",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:scale:200",
+              "label": "Text size 200%",
+              "ariaLabel": "Text size 200%",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:save",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:save",
+              "label": "Save settings",
+              "ariaLabel": "Save settings",
+              "detail": "Apply and keep across restart",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:refresh",
+              "label": "Refresh settings",
+              "ariaLabel": "Refresh settings",
+              "detail": "Read stored values; discard unsaved changes",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:notice:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:notice:state",
+              "label": "Loading shortcut choices…",
+              "ariaLabel": "Loading shortcut choices…",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:applications:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:applications:state",
+              "label": "Apps menu: live bindings unavailable",
+              "ariaLabel": "Apps menu: live bindings unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:applications:keep",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:applications:keep",
+              "label": "Keep existing shortcut for Apps menu",
+              "ariaLabel": "Keep existing shortcut for Apps menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:applications:default",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:applications:default",
+              "label": "Use Apps menu default",
+              "ariaLabel": "Use Apps menu default",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:applications:default:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:applications:default:state",
+              "label": "Default unavailable",
+              "ariaLabel": "Default unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:applications:alternate",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:applications:alternate",
+              "label": "Use Apps menu alternative",
+              "ariaLabel": "Use Apps menu alternative",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:applications:alternate:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:applications:alternate:state",
+              "label": "Alternative unavailable",
+              "ariaLabel": "Alternative unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:system:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:system:state",
+              "label": "System menu: live bindings unavailable",
+              "ariaLabel": "System menu: live bindings unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:system:keep",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:system:keep",
+              "label": "Keep existing shortcut for System menu",
+              "ariaLabel": "Keep existing shortcut for System menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:system:default",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:system:default",
+              "label": "Use System menu default",
+              "ariaLabel": "Use System menu default",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:system:default:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:system:default:state",
+              "label": "Default unavailable",
+              "ariaLabel": "Default unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:system:alternate",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:system:alternate",
+              "label": "Use System menu alternative",
+              "ariaLabel": "Use System menu alternative",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:system:alternate:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:system:alternate:state",
+              "label": "Alternative unavailable",
+              "ariaLabel": "Alternative unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:notifications:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:notifications:state",
+              "label": "Notification history: live bindings unavailable",
+              "ariaLabel": "Notification history: live bindings unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:notifications:keep",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:notifications:keep",
+              "label": "Keep existing shortcut for Notification history",
+              "ariaLabel": "Keep existing shortcut for Notification history",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:notifications:default",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:notifications:default",
+              "label": "Use Notification history default",
+              "ariaLabel": "Use Notification history default",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:notifications:default:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:notifications:default:state",
+              "label": "Default unavailable",
+              "ariaLabel": "Default unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:notifications:alternate",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:notifications:alternate",
+              "label": "Use Notification history alternative",
+              "ariaLabel": "Use Notification history alternative",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:notifications:alternate:state",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:notifications:alternate:state",
+              "label": "Alternative unavailable",
+              "ariaLabel": "Alternative unavailable",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:save",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:save",
+              "label": "Save shortcut choices",
+              "ariaLabel": "Save shortcut choices",
+              "detail": "Apply only the free chosen chords; preserve existing bindings",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "settings:shortcuts:refresh",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:shortcuts:refresh",
+              "label": "Refresh shortcut choices",
+              "ariaLabel": "Refresh shortcut choices",
+              "detail": "Read stored choices and live bindings without repeating an action",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ]
+        }
+      },
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "fixture": "MotionReplay",
+      "name": "awaitAcknowledgementBeforeGesture",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "bothOriginsProduceSameNativeProfileRequest",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "changedPreferenceUsesOneConfiguration",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "configurationHasNoWindowEffect",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "disconnectRetiresProfileReceipt",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "duplicateAcknowledgementHasNoCommands",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "invalidSourcesRejectedWithoutStateOrEffects",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "malformedProfileRejected",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "matchingAcknowledgementAppliesProfile",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "nativePreferenceSurvivesBindingRetirement",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "newPreferenceWaitsForExistingConfiguration",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "oldAcknowledgementConfiguresLatestPreferenceOnce",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "portalAndGtkRetainTypedOrigin",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "preferenceProducesOneProfileConfiguration",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "staleObservationCannotChangeProfile",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "staleSourceCannotReplaceNewerObservation",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "surfaceCarriesTypedProfile",
+      "passed": true
+    },
+    {
+      "fixture": "MotionReplay",
+      "name": "wrongRequestCannotApplyProfile",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "confirmedSaveConfiguresOneNativeProfile",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "controlsExposeAllThreeChoices",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "disablingNeverReplaysWindowEffect",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "draftDoesNotChangeEffectiveProfile",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "duplicateLateSavedCannotReplay",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "duplicateUnknownCannotReplay",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "explicitOverrideWinsOverSystem",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "fixtureReallyHasPendingWindowEffect",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "followSystemLoadsFullProfile",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "initialReadUsesThirdSharedRequest",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "invalidReceiptStatusCannotMutateOrEmit",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "lateSavedAfterUnknownAppliesOnce",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "liveSourcePreservesWholeWindowTransaction",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "newWriteRetainsAwaitingState",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "pendingWriteCannotRepeat",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "readReconcilesStoredOverride",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "refreshOnlyReadsUnknownWrite",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "refusalDoesNotApplyProposedOverride",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "refusedAfterUnknownClearsPendingWithoutReplay",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "resetRestoresCurrentSystemProfile",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "restartLoadsSavedOverrideBeforeSystemObservation",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "retiredBindingCannotReceiveLatePreferenceSave",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "sameRevisionCannotConfirmSave",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "saveUsesOnePreferenceWrite",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "saveWaitsForNativeAcknowledgement",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "settingsFrameAcceptedByActualRenderer",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "typedReceiptRejectsForeignRequest",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "unknownPreservesPriorProfileAndNoReplay",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "unknownRetainsRequestButMarksUnconfirmed",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "unsupportedStorageRemainsRecoverableInSettings",
+      "passed": true
+    },
+    {
+      "fixture": "LiveMotionReplay",
+      "name": "wrongValueCannotConfirmSave",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

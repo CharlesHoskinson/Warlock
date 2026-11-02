@@ -1,4 +1,4 @@
-module Files exposing (Model, Snapshot, Peer, Intent, initial, collections, decoder, observe, reconcile, edit, intent, supported, propose, receive, disconnect)
+module Files exposing (Model, Snapshot, Peer, Intent, Confirmation(..), initial, collections, decoder, observe, reconcile, edit, intent, supported, propose, receive, disconnect)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -7,7 +7,8 @@ import UInt64 exposing (Counter)
 type alias Peer = { pid : Counter, start : Counter, instance : String, target : String, visible : Bool }
 type alias Snapshot = { service : Counter, revision : Counter, available : Bool, reason : String, peer : Maybe Peer }
 type alias Intent = { service : Counter, revision : Counter, target : String }
-type alias Model = { snapshot : Maybe Snapshot, draft : String, pending : Maybe { request : Counter, intent : Intent }, spent : List Intent, notice : String }
+type Confirmation = Awaiting | Unconfirmed
+type alias Model = { snapshot : Maybe Snapshot, draft : String, pending : Maybe { request : Counter, intent : Intent, confirmation : Confirmation }, spent : List Intent, notice : String }
 
 initial : Model
 initial = {snapshot=Nothing,draft="",pending=Nothing,spent=[],notice="Loading Files…"}
@@ -47,7 +48,7 @@ supported value model = model.pending==Nothing && validTarget value.target && no
 propose : Counter -> Intent -> Model -> (Model,Maybe E.Value)
 propose request value model =
     if request==UInt64.zero || not (supported value model) then (model,Nothing) else
-        ({model | pending=Just {request=request,intent=value},spent=List.take 128 (value::model.spent),notice="Files: waiting for the requested location…"},Just (E.object [("service",E.string (UInt64.string value.service)),("revision",E.string (UInt64.string value.revision)),("target",E.string value.target)]))
+        ({model | pending=Just {request=request,intent=value,confirmation=Awaiting},spent=List.take 128 (value::model.spent),notice="Files: waiting for the requested location…"},Just (E.object [("service",E.string (UInt64.string value.service)),("revision",E.string (UInt64.string value.revision)),("target",E.string value.target)]))
 
 receive : Counter -> String -> Snapshot -> Model -> Model
 receive request status snapshot model = case model.pending of
@@ -62,7 +63,7 @@ receive request status snapshot model = case model.pending of
             locationMatches=snapshot.peer |> Maybe.map (\peer -> if String.startsWith "~" (String.trim pending.intent.target) then String.startsWith "/" peer.target else peer.target==normalize pending.intent.target) |> Maybe.withDefault False
             opened=snapshot.available && samePeer && locationMatches && UInt64.compare snapshot.revision pending.intent.revision==GT && (snapshot.peer |> Maybe.map .visible |> Maybe.withDefault False)
             notice=if status=="Opened" && opened then "Files: requested location opened." else if status=="Refused" then "Files: request refused. Refresh before choosing again." else "Files: opening not confirmed. Refresh only reads state; this request will not be repeated."
-        in if next.snapshot/=Just snapshot then model else {next | pending=if status=="Refused" || (status=="Opened" && opened) then Nothing else model.pending,notice=notice}
+        in if next.snapshot/=Just snapshot then model else {next | pending=if status=="Refused" || (status=="Opened" && opened) then Nothing else Just {pending | confirmation=Unconfirmed},notice=notice}
 
 reconcile : Snapshot -> Model -> Model
 reconcile snapshot model =

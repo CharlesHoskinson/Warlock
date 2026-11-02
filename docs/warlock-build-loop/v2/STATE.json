@@ -1,19 +1,21 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T23:12:56.129300+00:00",
+  "updatedUTC": "2026-11-01T23:59:47.294118+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "ui005-live-query-refresh",
+    "id": "tea-model-effects",
     "requirements": [
-      "ELM-UI-005"
+      "ELM-TEA-002",
+      "ELM-TEA-001"
     ],
     "scenarios": [
-      "search-race"
+      "tea-pure-update",
+      "tea-typed-model"
     ],
     "paths": [
       "implementation/warlock/src/Main.elm",
@@ -21,22 +23,70 @@
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/OutputController.elm",
       "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/Bar.elm",
       "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/SurfaceSnapshot.elm",
       "implementation/warlock/src/HttpMain.elm",
       "implementation/warlock/src/HttpBar.elm",
       "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/qa/ui-http.cjs",
-      "implementation/warlock/qa/LocalFieldReplay.elm",
+      "implementation/warlock/qa/TeaContractReplay.elm",
+      "implementation/warlock/qa/tea-contract.cjs",
+      "implementation/warlock/qa/tea-contract-cases.cjs",
+      "implementation/warlock/src/Notifications.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "implementation/warlock/src/JumpList.elm",
+      "implementation/warlock/src/ReconciliationFrame.elm",
+      "implementation/warlock/qa/NotificationsReplay.elm",
+      "implementation/warlock/qa/JumpListReplay.elm",
+      "implementation/warlock/qa/NativePointerFixture.elm",
+      "implementation/warlock/qa/RetirementProofReplay.elm",
       "implementation/warlock/qa/typed-state.cjs",
-      "implementation/warlock/qa/local-field-publication.qnt"
+      "implementation/warlock/qa/NotificationRelevanceReplay.elm",
+      "implementation/warlock/qa/AnnouncementReplay.elm",
+      "implementation/warlock/qa/FilesReplay.elm",
+      "implementation/warlock/qa/FullscreenExitReplay.elm",
+      "implementation/warlock/qa/GeometryCapabilitySequences.elm",
+      "implementation/warlock/qa/LiveMotionReplay.elm",
+      "implementation/warlock/qa/LocalFieldReplay.elm",
+      "implementation/warlock/qa/MotionReadRecoveryReplay.elm",
+      "implementation/warlock/qa/MotionReplay.elm",
+      "implementation/warlock/qa/PinMaxReplay.elm",
+      "implementation/warlock/qa/ShortcutDraftProperties.elm",
+      "implementation/warlock/qa/ShortcutPreferencesReplay.elm",
+      "implementation/warlock/qa/SnapReplay.elm",
+      "implementation/warlock/qa/SolFilesRebind2214.elm",
+      "implementation/warlock/qa/SolSystemMenuIntegratedReplay2114.elm",
+      "implementation/warlock/qa/SystemMenuReplay.elm",
+      "implementation/warlock/qa/TaskViewReplay.elm",
+      "implementation/warlock/qa/TransferReplay.elm",
+      "implementation/warlock/qa/UiHttpFailureReplay.elm",
+      "implementation/warlock/qa/check-shortcut-draft.py",
+      "implementation/warlock/qa/files-typed-state.cjs",
+      "implementation/warlock/qa/local-field-publication.qnt",
+      "implementation/warlock/qa/motion-read-recovery.cjs",
+      "implementation/warlock/qa/motion-typed-state.cjs",
+      "implementation/warlock/qa/shortcut-draft-strict.cjs",
+      "implementation/warlock/qa/sol-files-rebind-result-2214.cjs",
+      "implementation/warlock/qa/system-menu-typed-state.cjs",
+      "implementation/warlock/qa/tea001-extra-typed.cjs",
+      "implementation/warlock/qa/ui-http-failure-typed.cjs",
+      "implementation/warlock/qa/ui-http.cjs",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/Files.elm",
+      "implementation/warlock/src/GeometryProjection.elm",
+      "implementation/warlock/src/Motion.elm",
+      "implementation/warlock/src/MotionPreferences.elm",
+      "implementation/warlock/src/Provider.elm",
+      "implementation/warlock/src/ShortcutPreferences.elm",
+      "implementation/warlock/src/Snap.elm",
+      "implementation/warlock/src/SystemMenu.elm",
+      "implementation/warlock/src/UiHttp.elm"
     ],
-    "before": "The latest immutable frontend passes pure component checks, but the current built product has not been exercised after integration through real Omarchy input; authoritative final query/catalog correlation and usable refresh/recovery remain unobserved on the current app-only Haskell host.",
-    "after": "The actual current built Elm/Haskell app is exercised in an owned bounded Omarchy session. Real input changes query and refreshes while visible feedback, query preservation and current-generation dispatch eligibility are observed. Repair actual demonstrated source failures; retain exact source/artifacts, input acknowledgements, screenshots and cleanup limits.",
+    "before": "Current Elm owning routes compile and selected replays pass, but complete semantic Model and every typed effect have not been checked against independent literal domain expectations; no whole TEA001/002 acceptance is established.",
+    "after": "The actual Elm frontend typed lifecycle/receipt/operation models and pure reducers satisfy the complete original TEA001/002 contracts. Identical sanitized histories yield identical complete models and effects, with independently expected literal state/effect outcomes; native behavior stays separately qualified.",
     "verification": [
-      "Reuse current independently qualified frontend tuple889e and unchanged Haskell binaries only after source/artifact review; stage current optimized Http HTML with preimages and dependency inventory. Root-only owned native-on-VM input journey with fresh PID/birth/cgroup/window/lock/Foot/current geometry/original chosen deadline fences before each event, parsed QMP acknowledgements, unique per-attempt receipts and reviewed screenshots. Component/usability observations only until exact original source-bound native/keyboard/AT obligations and independent review pass; never infer protected native/release acceptance."
+      "Pinned six-root compiler/type checks, actual DesktopPolicy owning-route complete-model/every-effect deterministic histories plus independent literal fixture outcomes and source-bound type/authority separation audit; retain failures and independently adjudicate each whole original EARS, no filtered-model shortcut or inferred native acceptance."
     ]
   },
   "nextSlices": [
@@ -2243,34 +2293,35 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "tea005-validated-interop",
+    "id": "ui005-live-query-refresh",
     "requirements": [
-      "ELM-TEA-005"
+      "ELM-UI-005"
     ],
     "scenarios": [
-      "tea-narrow-interop"
+      "search-race"
     ],
     "paths": [
       "implementation/warlock/src/Main.elm",
-      "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/DesktopPolicy.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/SurfaceController.elm",
       "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/SurfaceSnapshot.elm",
       "implementation/warlock/src/HttpMain.elm",
       "implementation/warlock/src/HttpBar.elm",
       "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/src/NativePreviewRenderer.elm",
-      "implementation/warlock/src/UiHttp.elm",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc",
-      "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
-      "implementation/warlock/qa/ui-http.cjs"
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/qa/ui-http.cjs",
+      "implementation/warlock/qa/LocalFieldReplay.elm",
+      "implementation/warlock/qa/typed-state.cjs",
+      "implementation/warlock/qa/local-field-publication.qnt"
     ],
-    "before": "Current Elm/Haskell adapter is implemented and component-qualified, but the complete original narrow-interop clauses and exact adopted Native.receiveGateway binding boundary plus simultaneous GET/POST no-replay histories lack a current independently reviewed whole-original verdict. Latest actual Omarchy Apps click failed without a proved source cause; that failure remains separately preserved.",
-    "after": "The current actual adapter uses validated Haskell transport and approved host integrations, keeps GPU resource/per-frame ownership outside Elm messages, and modern commands/subscriptions. Real binding/closed-profile reader and adversarial delivery-interleaving controls match independent literal expectations; qualification and original verdict remain scoped separately from native acceptance.",
+    "before": "The latest immutable frontend passes pure component checks, but the current built product has not been exercised after integration through real Omarchy input; authoritative final query/catalog correlation and usable refresh/recovery remain unobserved on the current app-only Haskell host.",
+    "after": "The actual current built Elm/Haskell app is exercised in an owned bounded Omarchy session. Real input changes query and refreshes while visible feedback, query preservation and current-generation dispatch eligibility are observed. Repair actual demonstrated source failures; retain exact source/artifacts, input acknowledgements, screenshots and cleanup limits.",
     "verification": [
-      "Root-only protected Haskell ui-origin actual socket reader/profile/admission controls with fresh owned per-fixture deadlines; protected six-root Elm +complete policy/every-effect replay and actual compiled HTTP interleavings/independent boundary literals with deterministic seeds and exact source hashes. Source-bound complete adapter/GPU/per-frame/modern API audit and immutable independent review against every original005clause; no native/provider/AT/IME/hardware/release inference."
+      "Reuse current independently qualified frontend tuple889e and unchanged Haskell binaries only after source/artifact review; stage current optimized Http HTML with preimages and dependency inventory. Root-only owned native-on-VM input journey with fresh PID/birth/cgroup/window/lock/Foot/current geometry/original chosen deadline fences before each event, parsed QMP acknowledgements, unique per-attempt receipts and reviewed screenshots. Component/usability observations only until exact original source-bound native/keyboard/AT obligations and independent review pass; never infer protected native/release acceptance."
     ]
   },
   "lastNativeObservation": {
@@ -3309,6 +3360,13 @@
       "to": "private-ui-origin",
       "reason": "UI007 actual core source delivered in425ad4e411cadec68f04214cf7eb5a763a382763 with component evidence; end broader native qualification. Select existing original ARC024/DEL014 record for concrete inherited-fd nonblocking source repair, preserving its original04:41 start and08:41 last progress and stop history. No timer reset from this selection.",
       "missingObservation": "UI007 native keyboard/AT/whole acceptance; standalone guest run01 no window,5s authenticated transport TimedOut, cause not established."
+    },
+    {
+      "atUTC": "2026-11-01T23:59:47.294118+00:00",
+      "previousSlice": "ui005-live-query-refresh",
+      "selectedSlice": "tea-model-effects",
+      "record": ".warlock-contributor/tea-model-effects.json",
+      "reason": "Resume same18:30 record for actual coherent typed-domain source after distinct UI005 source wave; two real production-fix records and full protected GREEN. No timer reset."
     }
   ],
   "museRegulator": {
@@ -3706,7 +3764,7 @@
     "acceptedScenarios": 41,
     "behaviorChange": "No production behavior change in this boundary QA/acceptance wave; actual adapter verified on immutable source."
   },
-  "nextConcreteAction": "Publish current cancellation source/evidence, then resume SAME tea-model-effects original18:30 record, declare coherent001domain/fixed-profile paths, apply actual source and record legitimate production progress while preserving historical claims/timer. Diagnose named VM guard failure without weakening fences; keep15roles and real Omarchy trials.",
+  "nextConcreteAction": "Commit actual typed-domain source and retained evidence, then independently verify immutable fullcommit against all three original TEA001 clauses; record whole acceptance only if accepted. Fresh current Omarchy MVP follows with unchanged deadlines and named guard diagnosis.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4033,7 +4091,7 @@
       "previousHistoryPreserved": true
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/ui005-live-query-refresh.json",
+  "activeContributorRecord": ".warlock-contributor/tea-model-effects.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -4474,5 +4532,16 @@
   },
   "ui005PendingQueryComponent": "docs/warlock-build-loop/v2/pending-query-component-20261101.json",
   "ui005RetainedQueryComponent": "docs/warlock-build-loop/v2/retained-query-component-20261101.json",
-  "ui005CancellationComponent": "docs/warlock-build-loop/v2/cancel-query-component-20261101.json"
+  "ui005CancellationComponent": "docs/warlock-build-loop/v2/cancel-query-component-20261101.json",
+  "teaTypedModelCurrentObservation": {
+    "observedUTC": "2026-11-01T23:59:47.294118+00:00",
+    "componentReceipt": "docs/warlock-build-loop/v2/typed-model-component-20261101.json",
+    "disposition": "partial-pending-immutable-independent-verdict",
+    "sourceReview": "implementation/warlock/qa/evidence/typed-model-20261101/source-review.json",
+    "protectedReport": "implementation/warlock/qa/evidence/typed-model-20261101/report.json",
+    "sourceClauseGaps": [],
+    "immutableOriginalVerdictPending": true,
+    "nativeAccepted": false,
+    "releaseAccepted": false
+  }
 }

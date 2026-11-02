@@ -30,10 +30,13 @@ state model = E.object
     , ("inventory", maybe (\i -> E.object [("fingerprint",E.string i.fingerprint), ("active",choices (P.Choices i.applications.active i.system.active i.notifications.active)), ("applicationsDefaultAvailable",E.bool i.applications.defaultAvailable)]) model.inventory)
     , ("draft", choices model.draft)
     , ("conflicts", E.list E.string model.conflicts)
-    , ("pending", maybe (\p -> E.object [("request",E.string (UInt64.string p.request)),("choices",choices p.choices)]) model.pending)
+    , ("pending", maybe (\p -> E.object [("request",E.string (UInt64.string p.request)),("choices",choices p.choices),("confirmation",E.string (case p.confirmation of
+        P.Awaiting -> "awaiting"
+        P.Unconfirmed -> "unconfirmed"))]) model.pending)
     , ("notice", E.string model.notice), ("ready",E.bool (P.ready model)), ("changed",E.bool (P.changed model)) ]
 
 sameConflict a b = List.sort a == List.sort b
+unconfirmedPending pending = Maybe.map (\p -> {p | confirmation=P.Unconfirmed}) pending
 check name condition = (name, E.object [("expected", E.bool True), ("actual", E.bool condition)])
 step revision finalRevision request op model =
     let
@@ -82,13 +85,13 @@ step revision finalRevision request op model =
             "valid" -> [check "valid inventory restores readiness when no pending or conflicts" (P.ready next && next.draft == model.draft)]
             "save" -> [check "explicit valid save emits proposal and pending" (proposal /= Nothing && next.pending /= Nothing && next.draft == model.draft)]
             "blocked-save" -> [check "blocked save emits no proposal and preserves state" (proposal == Nothing && next == model)]
-            "newer-pending" -> [check "newer pending read retains intent and creates route conflicts" (next.pending == model.pending && next.pending /= Nothing && next.draft == model.draft && sameConflict next.conflicts ["applications","system"])]
+            "newer-pending" -> [check "newer pending read retains intent and creates route conflicts" (next.pending == unconfirmedPending model.pending && next.pending /= Nothing && next.draft == model.draft && sameConflict next.conflicts ["applications","system"])]
             "stale-stored" -> [check "late Stored cannot roll back newer basis or release pending" (next.snapshot == model.snapshot && next.inventory == model.inventory && next.pending == model.pending && sameConflict next.conflicts model.conflicts)]
             "stale-saved" -> [check "late Saved cannot roll back newer basis or release pending" (next.snapshot == model.snapshot && next.inventory == model.inventory && next.pending == model.pending && sameConflict next.conflicts model.conflicts)]
             "stored-only" -> [check "definite stored completion preserves unresolved native conflicts" (next.pending == Nothing && next.draft == model.draft && sameConflict next.conflicts ["applications","system"] && not (P.ready next))]
-            "unknown" -> [check "unknown preserves pending and draft" (next.pending == model.pending && next.draft == model.draft)]
+            "unknown" -> [check "unknown preserves pending and draft" (next.pending == unconfirmedPending model.pending && next.draft == model.draft)]
             "foreign" -> [check "foreign receipt preserves entire state" (next == model)]
-            "mismatch" -> [check "stored match with native mismatch remains pending" (next.pending == model.pending && next.pending /= Nothing && next.draft == model.draft)]
+            "mismatch" -> [check "stored match with native mismatch remains pending" (next.pending == unconfirmedPending model.pending && next.pending /= Nothing && next.draft == model.draft)]
             "match" -> [check "exact stored and native match settles pending" (model.pending /= Nothing && next.pending == Nothing && next.draft == model.draft)]
             "receipt" -> [check "matching saved receipt settles pending" (model.pending /= Nothing && next.pending == Nothing && next.draft == model.draft)]
             _ -> [check "recognized event" False]

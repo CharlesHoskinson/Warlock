@@ -3,6 +3,8 @@
 import argparse,hashlib,json,os,resource,shutil,subprocess,sys,time,traceback
 from pathlib import Path
 R=Path(__file__).resolve().parents[3];P=R/'implementation/warlock';H=R/'implementation/warlock-preview-provider-v143';B=Path('/home/charles/.local/state/warlock-team/20261028/native-rebuild');NODE=Path('/home/charles/.local/share/mise/installs/node/26.12.0/bin/node')
+
+SHORTCUT_PREFERENCES_CHECKS=frozenset(['actualRendererAcceptsShortcutControls', 'defaultConflictCannotBeChosen', 'freeAlternateIsExplicit', 'undecidedCannotSubmit', 'oneGuardedPreferenceWrite', 'pendingCannotRepeat', 'unknownCannotRepeat', 'unknownRefreshOnlyReads', 'readReconcilesActualStoredAndNativeState', 'savedRequiresActualChosenNativeState', 'foreignReceiptCannotCommit', 'staleControlCannotEdit', 'hostRestartRestoresStoredChoiceWithoutEffects', 'renderedDefaultConflictDisabled', 'helpRemainsAvailable', 'savingRetainsTypedAwaiting', 'unknownRetainsTypedUnconfirmed', 'duplicateUnknownNoStateOrEffect', 'unverifiedSavedIsUnconfirmed', 'unverifiedStoredIsUnconfirmed', 'unsettledReadIsUnconfirmed', 'unavailableReadPreservesAwaiting', 'unavailableReadPreservesUnconfirmed', 'staleReadPreservesPreferenceModel', 'lateSavedSettlesWithoutWrite', 'lateRefusalSettlesWithoutWrite'])
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def checked(p,h):
  raw=Path(p).read_bytes()
@@ -53,10 +55,13 @@ def main():
    legacyRunner=out/'run-legacy.cjs';legacyRunner.write_text((P/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.ShortcutPreferencesReplay'));legacyDest=out/'legacy-replay.json';run('run-legacy',[NODE,legacyRunner,legacy,legacyDest],w,env)
    legacyResult=json.loads(legacyDest.read_text());report['legacyResult']=legacyResult
    legacyChecks=legacyResult.get('checks',{})
-   if len(legacyChecks)!=15 or any(v is not True for v in legacyChecks.values()):raise RuntimeError('Existing production replay regression')
+   if not isinstance(legacyChecks,dict):raise RuntimeError('Shortcut production replay checks must be an object')
+   missing=sorted(SHORTCUT_PREFERENCES_CHECKS-set(legacyChecks));extra=sorted(set(legacyChecks)-SHORTCUT_PREFERENCES_CHECKS);failed=sorted(k for k,v in legacyChecks.items() if v is not True)
+   report['shortcutReplayManifest']={'expected':sorted(SHORTCUT_PREFERENCES_CHECKS),'missing':missing,'extra':extra,'failed':failed}
+   if missing or extra or failed:raise RuntimeError('Exact 26-check shortcut production replay regression')
    properties=out/'draft-properties.js';run('compile-properties',[compiler,'make','qa/ShortcutDraftProperties.elm','--optimize','--output='+str(properties)],w,env)
    propertyRaw=run('run-properties',[NODE,P/'qa/shortcut-draft-contracts.cjs',properties],w,env);propertiesResult=json.loads(propertyRaw);report['properties']=propertiesResult
-   if propertiesResult['sequences']!=200 or propertiesResult['failures']:raise RuntimeError('Seeded production properties failed')
+   if propertiesResult.get('seed')!=0x5eeda405 or propertiesResult.get('algorithm')!='xorshift32' or propertiesResult.get('sequences')!=200 or propertiesResult.get('failures')!=[]:raise RuntimeError('Seeded production properties failed or manifest changed')
   check(sources);check(held)
   if {str(q) for q in (P/'src').glob('*.elm')}!={q for q in sources if q.startswith(str(P/'src')+'/')}:raise RuntimeError('Source inventory changed')
   if not checks or failures:raise RuntimeError('Production draft contracts fail; baseline retained')

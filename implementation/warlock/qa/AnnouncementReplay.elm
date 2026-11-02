@@ -3,6 +3,7 @@ port module AnnouncementReplay exposing (main)
 import Binding
 import Catalog
 import Desktop
+import GeometryProjection as Geometry
 import Effects
 import Json.Decode as D
 import Json.Encode as E
@@ -63,7 +64,7 @@ transferResult =
         Nothing -> E.null
         Just owner ->
             let geometry=Fixture.geometryFor owner
-                caps={effects=True,operations=["transfer-workspace"]}
+                caps={effects=True,operations=[Geometry.CanTransferWorkspace]}
                 (pending,_,_)=Effects.beginGeometry caps geometry (Effects.TransferWorkspace {source="1",sourceGeneration=Fixture.counter "4",destination="2"}) one base.windows.shell.effects
                 intent=pending.transaction |> Maybe.map .intent
                 refused=intent |> Maybe.map (\i -> Effects.apply (E.object [("kind",E.string "receipt"),("effectProtocol",E.int 2),("intent",Effects.encodeIntent i),("status",E.string "Refused")]) pending |> (\(next,_,_)->next)) |> Maybe.withDefault pending

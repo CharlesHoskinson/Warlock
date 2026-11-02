@@ -28,7 +28,7 @@ readyFor binding =
     let model=Desktop.initial |> native attached |> native projection
         windows=model.windows
         shell=windows.shell
-    in {model|windows={windows|shell={shell|geometry=Just (geometryFor binding),geometryCaps=Just {effects=True,operations=["maximize","restore-geometry"]}}}}
+    in {model|windows={windows|shell={shell|geometry=Just (geometryFor binding),geometryCaps=Just {effects=True,operations=[Geometry.CanMaximize,Geometry.CanRestoreGeometry]}}}}
 proposal model = model.snap |> Maybe.andThen Snap.proposal
 mutation effect = case effect of
     Desktop.WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect"
@@ -53,7 +53,7 @@ resultFor binding =
         closed=Desktop.capture opened |> Maybe.map (\stamp -> Desktop.update (Desktop.CloseSnap stamp) opened |> Tuple.first) |> Maybe.withDefault opened
         controls=Surface.controls opened
         disabledAction=E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-action"),("surface",E.string "popup"),("publication",E.string "1"),("lease",E.string "1"),("id",E.string "snap:apply")]
-        caps={effects=True,operations=["maximize","restore-geometry","snap"]}
+        caps={effects=True,operations=[Geometry.CanMaximize,Geometry.CanRestoreGeometry,Geometry.CanSnap]}
         placement=Snap.open geometry (counter "1") |> Maybe.andThen Snap.proposal
         begun=placement |> Maybe.map (\value -> Effects.beginGeometry caps geometry (Effects.SnapPlacement value) (counter "1") ready.windows.shell.effects) |> Maybe.withDefault (ready.windows.shell.effects,Nothing,Just "No fixture proposal")
         (allocated,wire,error)=begun
@@ -72,9 +72,147 @@ resultFor binding =
         issuedIntent=issued.effects.transaction |> Maybe.map .intent
         nativeReceipt intent = E.object [("protocolVersion",E.int 3),("kind",E.string "effect-outcome"),("effectProtocol",E.int 2),("binding",bound),("intent",Effects.encodeIntent intent),("status",E.string "Committed"),("reason",E.string "applied"),("revision",E.string "2"),("outputGeneration",E.string "1")]
         settled=issuedIntent |> Maybe.map (nativeReceipt >> Shell.Incoming >> (\message -> Shell.update message issued |> Tuple.first)) |> Maybe.withDefault issued
-        altered=issuedIntent |> Maybe.map (\intent -> {intent|operation=Effects.SnapPlacement {region="right-half",geometry=[320.5,30,400.5,601],monitor=UInt64.zero,outputOwnershipGeneration=counter "2",workAreaRevision=counter "3",workspaceGeneration=counter "4",context=geometry.context}})
+        altered=issuedIntent |> Maybe.map (\intent -> {intent|operation=Effects.SnapPlacement {region=Snap.RightHalf,geometry=[320.5,30,400.5,601],monitor=UInt64.zero,outputOwnershipGeneration=counter "2",workAreaRevision=counter "3",workspaceGeneration=counter "4",context=geometry.context}})
         rejected=altered |> Maybe.map (nativeReceipt >> Shell.Incoming >> (\message -> Shell.update message issued |> Tuple.first)) |> Maybe.withDefault issued
-        checks=[("actualDesktopOpensSnap",Surface.mode opened=="snap" && opened.snap/=Nothing),
+        -- Literal expectations are independent of Snap.identity and the reducer.
+        expectedRegions =
+            [ (Snap.LeftHalf,"left-half",[-80,30,400.5,601])
+            , (Snap.RightHalf,"right-half",[320.5,30,400.5,601])
+            , (Snap.TopLeft,"top-left",[-80,30,400.5,300.5])
+            , (Snap.TopRight,"top-right",[320.5,30,400.5,300.5])
+            , (Snap.BottomLeft,"bottom-left",[-80,330.5,400.5,300.5])
+            , (Snap.BottomRight,"bottom-right",[320.5,330.5,400.5,300.5])
+            ]
+        literalPlacement regionText rectangle outputGeneration = E.object
+            [("region",E.string regionText),("geometry",E.list E.float rectangle)
+            ,("monitor",E.string "0"),("outputOwnershipGeneration",E.string outputGeneration)
+            ,("workAreaRevision",E.string "3"),("workspaceGeneration",E.string "4")]
+        candidateFor selectedRegion = Snap.open geometry (counter "1")
+            |> Maybe.andThen (Snap.select geometry selectedRegion)
+            |> Maybe.andThen Snap.proposal
+        exactRegion (selectedRegion,regionText,rectangle) =
+            candidateFor selectedRegion |> Maybe.map (\candidate ->
+                let expected=literalPlacement regionText rectangle "2"
+                    (next,requestWire,problem)=Effects.beginGeometry caps geometry (Effects.SnapPlacement candidate) (counter "1") ready.windows.shell.effects
+                    sent=requestWire |> Maybe.map (\payload ->
+                        D.decodeValue (D.at ["intent","placement","region"] D.string) payload==Ok regionText
+                        && (D.decodeValue (D.field "intent" Effects.intentDecoder) payload |> Result.map (\intent -> intent.operation==Effects.SnapPlacement candidate) |> Result.withDefault False)) |> Maybe.withDefault False
+                in candidate.region==selectedRegion && candidate.geometry==rectangle
+                    && Snap.matches geometry (counter "1") candidate
+                    && E.encode 0 (Snap.encodeProposal candidate)==E.encode 0 expected
+                    && D.decodeValue (Snap.proposalDecoder geometry.context) expected==Ok candidate
+                    && problem==Nothing && sent && next.transaction/=Nothing) |> Maybe.withDefault False
+        unknownRegion=literalPlacement "middle" [-80,30,400.5,601] "2"
+        badRectangle=literalPlacement "left-half" [-80,30,0,601] "2"
+        zeroGeneration=literalPlacement "left-half" [-80,30,400.5,601] "0"
+        extraPlacement=E.object [("region",E.string "left-half"),("geometry",E.list E.float [-80,30,400.5,601]),("monitor",E.string "0"),("outputOwnershipGeneration",E.string "2"),("workAreaRevision",E.string "3"),("workspaceGeneration",E.string "4"),("extra",E.bool True)]
+        refusedPlacement raw = D.decodeValue (Snap.proposalDecoder geometry.context) raw |> Result.toMaybe |> (==) Nothing
+        -- Literal geometry and wire identities are authored independently of
+        -- Snap.identity/proposal. Selection passes through Desktop.update.
+        regionCases =
+            [ (Snap.LeftHalf, "left-half", [-80,30,400.5,601])
+            , (Snap.RightHalf, "right-half", [320.5,30,400.5,601])
+            , (Snap.TopLeft, "top-left", [-80,30,400.5,300.5])
+            , (Snap.TopRight, "top-right", [320.5,30,400.5,300.5])
+            , (Snap.BottomLeft, "bottom-left", [-80,330.5,400.5,300.5])
+            , (Snap.BottomRight, "bottom-right", [320.5,330.5,400.5,300.5])
+            ]
+        choose region =
+            Desktop.capture opened
+                |> Maybe.map (\stamp -> Desktop.update (Desktop.SelectSnap stamp region) opened)
+        expectedRegion (region, expectedName, expectedGeometry) =
+            choose region |> Maybe.map (\(model,effects) ->
+                let selected = proposal model
+                    encoded = selected |> Maybe.map Snap.encodeProposal
+                in List.isEmpty effects
+                    && (selected |> Maybe.map .geometry) == Just expectedGeometry
+                    && (encoded |> Maybe.andThen (D.decodeValue (D.field "region" D.string) >> Result.toMaybe)) == Just expectedName
+                    && (encoded |> Maybe.andThen (D.decodeValue (Snap.proposalDecoder geometry.context) >> Result.toMaybe)) == selected
+                    && (selected |> Maybe.map (Snap.matches geometry (counter "1"))) == Just True
+                ) |> Maybe.withDefault False
+        -- Fixed reproducible seeds exercise positive and negative translations.
+        -- Translation preserves shape; its oracle is independent of Snap.
+        offsets = List.map (\seed ->
+            (toFloat (modBy 419 (seed*37+11)-209),toFloat (modBy 431 (seed*73+19)-215)))
+            [0,1,17,91,2026,65535]
+        translation (dx,dy) (region,_,expectedGeometry) =
+            let shiftedWindow = {window|workArea=Just [-80+dx,30+dy,801,601]}
+                shifted = {geometry|windows=[shiftedWindow]}
+                translated = Snap.open shifted (counter "1")
+                    |> Maybe.andThen (Snap.select shifted region)
+                    |> Maybe.andThen Snap.proposal
+                expected = case expectedGeometry of
+                    [x,y,w,h] -> [x+dx,y+dy,w,h]
+                    _ -> []
+            in (translated |> Maybe.map .geometry) == Just expected
+        maxCounter = counter "18446744073709551615"
+        maxWindow = {window|monitor=Just maxCounter,outputOwnershipGeneration=Just maxCounter,workAreaRevision=Just maxCounter,workspaceGeneration=Just maxCounter}
+        maxGeometry = {geometry|windows=[maxWindow]}
+        maxProposal = Snap.open maxGeometry (counter "1") |> Maybe.andThen Snap.proposal
+        maxWire = maxProposal |> Maybe.map Snap.encodeProposal
+        maxFields = ["monitor","outputOwnershipGeneration","workAreaRevision","workspaceGeneration"]
+        maxFieldsExact = List.all (\field -> (maxWire |> Maybe.andThen (D.decodeValue (D.field field D.string) >> Result.toMaybe)) == Just "18446744073709551615") maxFields
+        placementObject fields = E.object fields
+        wireFields =
+            [("region",E.string "left-half"),("geometry",E.list E.float [-80,30,400.5,601])
+            ,("monitor",E.string "0"),("outputOwnershipGeneration",E.string "2")
+            ,("workAreaRevision",E.string "3"),("workspaceGeneration",E.string "4")]
+        accepted fields = D.decodeValue (Snap.proposalDecoder geometry.context) (placementObject fields) |> Result.toMaybe
+        replace key value = List.map (\(field,old) -> if field==key then (field,value) else (field,old)) wireFields
+        badFields =
+            [ replace "region" (E.string "LEFT-HALF")
+            , replace "region" (E.string "left-half ")
+            , replace "geometry" (E.list E.float [-80,30,0,601])
+            , replace "geometry" (E.list E.float [-80,30,400.5])
+            , replace "workAreaRevision" (E.string "0")
+            , replace "outputOwnershipGeneration" (E.string "18446744073709551616")
+            , replace "workspaceGeneration" (E.string "04")
+            , wireFields ++ [("unexpected",E.bool True)]
+            , List.filter (Tuple.first >> (/=) "monitor") wireFields
+            ]
+        foreignBinding = D.decodeValue Binding.decoder
+            (E.object [("lifetime",E.string "1"),("session",E.string "2"),("frontend",E.string "1")])
+            |> Result.toMaybe
+        foreignGeometry = foreignBinding |> Maybe.map (\other -> {geometry|binding=other})
+        wrongContext = {geometry|context={context|epoch=counter "2"}}
+        wrongMonitor = {geometry|windows=[{window|monitor=Just (counter "1")}]}
+        wrongWorkspace = {geometry|windows=[{window|workspaceGeneration=Just (counter "5")}]}
+        wrongTarget = counter "2"
+        exhausted = {allocated|request=maxCounter}
+        exhaustedGeneration = {allocated|generation=maxCounter}
+        beginUsing model = placement |> Maybe.map (\p -> Effects.beginGeometry caps geometry (Effects.SnapPlacement p) (counter "1") model)
+        recoveredIssued = currentIntent |> Maybe.andThen (\intent -> Effects.recoverUnknown 2 intent allocated |> Result.toMaybe)
+        refusedReceipt intent = E.object [("protocolVersion",E.int 3),("kind",E.string "effect-outcome"),("effectProtocol",E.int 2),("binding",bound),("intent",Effects.encodeIntent intent),("status",E.string "Refused"),("reason",E.string "refused"),("revision",E.string "2"),("outputGeneration",E.string "1")]
+        refusal = issuedIntent |> Maybe.map (refusedReceipt >> Shell.Incoming >> (\message -> Shell.update message issued |> Tuple.first))
+        regionChecks =
+            [ ("allSixDesktopSelectionsHaveLiteralGeometryWireAndRoundTrip",List.all expectedRegion regionCases)
+            , ("seededTranslationKeepsSixGeometryRelations",List.all (\offset -> List.all (translation offset) regionCases) offsets)
+            , ("fullWidthCountersRoundTripExactly",maxFieldsExact && (maxWire |> Maybe.andThen (D.decodeValue (Snap.proposalDecoder maxGeometry.context) >> Result.toMaybe)) == maxProposal)
+            , ("malformedPlacementFieldsRefused",accepted wireFields /= Nothing && List.all (accepted >> (==) Nothing) badFields)
+            , ("changedBindingInvalidatesRetainedChooser",case (foreignGeometry,opened.snap) of
+                (Just changedBinding,Just originalChoice) -> not (Snap.valid changedBinding originalChoice)
+                _ -> False)
+            , ("epochMonitorWorkspaceAndTargetChangesInvalidateExactProposal",placement |> Maybe.map (\p -> not (Snap.matches wrongContext (counter "1") p) && not (Snap.matches wrongMonitor (counter "1") p) && not (Snap.matches wrongWorkspace (counter "1") p) && not (Snap.matches geometry wrongTarget p)) |> Maybe.withDefault False)
+            , ("allocatorRejectsMaxRequestWithoutMutation",case beginUsing exhausted of
+                Just (next,sent,err) -> next==exhausted && sent==Nothing && err==Just "Missing geometry target or exhausted identity"
+                Nothing -> False)
+            , ("allocatorRejectsMaxGenerationWithoutMutation",case beginUsing exhaustedGeneration of
+                Just (next,sent,err) -> next==exhaustedGeneration && sent==Nothing && err==Just "Missing geometry target or exhausted identity"
+                Nothing -> False)
+            , ("recoveredUnknownBlocksExactSnapReplay",case recoveredIssued of
+                Just model ->
+                    case beginUsing model of
+                        Just (next,sent,err) -> next==model && sent==Nothing && err==Just "Unresolved or disconnected native operation"
+                        Nothing -> False
+                Nothing -> False)
+            , ("exactRefusalIsTerminalWithoutClaimingPlacement",refusal |> Maybe.map (\model -> model.effects.transaction |> Maybe.map (\tx -> tx.status==Effects.Refused && Just tx.intent==issuedIntent) |> Maybe.withDefault False) |> Maybe.withDefault False)
+            ]
+        baseChecks=[("sixRegionsExactGeometryWireAndProductionIntent",List.all exactRegion expectedRegions),
+            ("unsupportedRegionRefused",refusedPlacement unknownRegion),
+            ("invalidRectangleRefused",refusedPlacement badRectangle),
+            ("zeroAuthorityGenerationRefused",refusedPlacement zeroGeneration),
+            ("extraPlacementFieldRefused",refusedPlacement extraPlacement),
+            ("actualDesktopOpensSnap",Surface.mode opened=="snap" && opened.snap/=Nothing),
             ("leftHalfUsesNativeWorkArea",(proposal opened |> Maybe.map .geometry)==Just [-80,30,400.5,601]),
             ("rightHalfCompletesOddWidth",(proposal (Tuple.first right) |> Maybe.map .geometry)==Just [320.5,30,400.5,601]),
             ("selectionHasNoNativeEffects",List.isEmpty (Tuple.second right)),
@@ -104,6 +242,7 @@ resultFor binding =
             ("shellCorrelatesSnapCommittedReceipt",settled.effects.transaction |> Maybe.map (\transaction -> transaction.status==Effects.Committed) |> Maybe.withDefault False),
             ("sameIdsDifferentPlacementCannotSettle",rejected==issued),
             ("closeRetiresPreview",Surface.mode closed=="closed")]
+        checks=baseChecks ++ regionChecks
     in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) checks)),("frame",Surface.packet (counter "1") (counter "1") opened),
         ("scope",E.string "Actual Desktop/Surface policy with typed geometry fixture; native geometry decoding, placement authority and original isolated recordings remain required.")]
 
