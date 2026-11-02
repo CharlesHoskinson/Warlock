@@ -1,7 +1,7 @@
 /* Apache-2.0. Warlock home page: the desktop first, then the features, then the design language. */
 @layer components {
   body.wl-landing-page { background:var(--wl-sys-color-canvas); }
-  body.wl-landing-page .wl-doc-header {
+  body.wl-landing-page .wl-doc-header, .wl-home-root .wl-doc-header {
     position:sticky; top:0; z-index:20; border-bottom-color:color-mix(in srgb, var(--wl-sys-color-text) 10%, transparent);
     background:color-mix(in srgb, var(--wl-sys-color-surface) 72%, transparent); backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%);
   }
@@ -64,5 +64,300 @@
     .wl-hero, html[data-theme="dawn"] .wl-hero { background:Canvas; }
     .wl-hero-shot img, .wl-feature-shot img { border-color:CanvasText; box-shadow:none; }
     .wl-feature-link::after { background:LinkText; forced-color-adjust:none; }
+  }
+}
+
+/* Extracted CSS-free SiteMain & SiteBetaStatus layout, focus, contrast, and responsive rules */
+@layer tokens {
+  .wl-home-root {
+    --wl-sys-space-0: 0px; --wl-sys-space-2: 2px; --wl-sys-space-4: 4px; --wl-sys-space-6: 6px;
+    --wl-sys-space-8: 8px; --wl-sys-space-12: 12px; --wl-sys-space-16: 16px; --wl-sys-space-20: 20px;
+    --wl-sys-space-24: 24px; --wl-sys-space-32: 32px; --wl-sys-space-40: 40px; --wl-sys-space-48: 48px; --wl-sys-space-64: 64px;
+    --wl-sys-radius-none: 0px; --wl-sys-radius-micro: 2px; --wl-sys-radius-small: 4px; --wl-sys-radius-control: 6px;
+    --wl-sys-radius-card: 8px; --wl-sys-radius-window: 8px; --wl-sys-radius-surface: 12px; --wl-sys-radius-showcase: 16px; --wl-sys-radius-pill: 999px;
+    --wl-sys-motion-instant: 0ms; --wl-sys-motion-press-in: 60ms; --wl-sys-motion-state: 90ms; --wl-sys-motion-soft-enter: 120ms; --wl-sys-motion-soft-exit: 60ms;
+    --wl-sys-font-body: Inter, sans-serif; --wl-sys-font-display: 'Space Grotesk', sans-serif; --wl-sys-font-code: 'JetBrains Mono', monospace;
+  }
+  .wl-home-root, .wl-home-root[data-theme="night"] {
+    --wl-sys-color-canvas: #100E0E; --wl-sys-color-surface-recessed: #141112; --wl-sys-color-surface: #191516;
+    --wl-sys-color-surface-raised: #221D1E; --wl-sys-color-surface-hover: #2C2627; --wl-sys-color-surface-pressed: #383032;
+    --wl-sys-color-surface-selected: #331C1E; --wl-sys-color-surface-selected-hover: #3A252A; --wl-sys-color-surface-selected-pressed: #423035;
+    --wl-sys-color-text: #F6EFE8; --wl-sys-color-text-secondary: #BDB2AF; --wl-sys-color-brand-text: #FCA399;
+    --wl-sys-color-action-fill: #B02026; --wl-sys-color-action-fill-hover: #C4262D; --wl-sys-color-action-fill-pressed: #961A20; --wl-sys-color-on-action: #FFF8F5;
+    --wl-sys-color-border-essential: #9E9290; --wl-sys-color-window-edge-unfocused: #707078; --wl-sys-color-window-edge-focused: #F6EFE8;
+    --wl-sys-color-focus: #8EC8FF; --wl-sys-color-info: #8EC8FF; --wl-sys-color-positive: #6EE0B8; --wl-sys-color-warning: #F2C172; --wl-sys-color-danger: #FF9EB0;
+    --wl-sys-color-shadow: #000000; --wl-sys-color-focus-gap: #191516; --wl-sys-color-window-guard: #100E0E;
+    --wl-sys-shadow-flush: none; --wl-sys-shadow-rest: 0px 2px 4px 0px rgb(0 0 0 / 0.28), 0px 6px 16px 0px rgb(0 0 0 / 0.2);
+  }
+  .wl-home-root[data-theme="dawn"] {
+    --wl-sys-color-canvas: #F6F1EA; --wl-sys-color-surface-recessed: #EFE9E0; --wl-sys-color-surface: #FFFDF9;
+    --wl-sys-color-surface-raised: #FFFFFF; --wl-sys-color-surface-hover: #EDE6DC; --wl-sys-color-surface-pressed: #E3DBD0;
+    --wl-sys-color-surface-selected: #FCE8E4; --wl-sys-color-surface-selected-hover: #F4E3DF; --wl-sys-color-surface-selected-pressed: #ECDAD5;
+    --wl-sys-color-text: #181314; --wl-sys-color-text-secondary: #5C5250; --wl-sys-color-brand-text: #A11D22;
+    --wl-sys-color-action-fill: #A11D22; --wl-sys-color-action-fill-hover: #8A181D; --wl-sys-color-action-fill-pressed: #751418; --wl-sys-color-on-action: #FFFDF9;
+    --wl-sys-color-border-essential: #706562; --wl-sys-color-window-edge-unfocused: #706562; --wl-sys-color-window-edge-focused: #181314;
+    --wl-sys-color-focus: #14539A; --wl-sys-color-info: #14539A; --wl-sys-color-positive: #0E634C; --wl-sys-color-warning: #7D4E0A; --wl-sys-color-danger: #9B1B3B;
+    --wl-sys-color-shadow: #000000; --wl-sys-color-focus-gap: #FFFDF9; --wl-sys-color-window-guard: #F6F1EA;
+    --wl-sys-shadow-flush: none; --wl-sys-shadow-rest: 0px 2px 4px 0px rgb(0 0 0 / 0.16), 0px 6px 16px 0px rgb(0 0 0 / 0.12);
+  }
+  .wl-home-root[data-theme="high-contrast"] {
+    --wl-sys-color-canvas: #000000; --wl-sys-color-surface-recessed: #000000; --wl-sys-color-surface: #000000;
+    --wl-sys-color-surface-raised: #000000; --wl-sys-color-surface-hover: #000000; --wl-sys-color-surface-pressed: #000000;
+    --wl-sys-color-surface-selected: #000000; --wl-sys-color-surface-selected-hover: #000000; --wl-sys-color-surface-selected-pressed: #000000;
+    --wl-sys-color-text: #FFFFFF; --wl-sys-color-text-secondary: #FFFFFF; --wl-sys-color-brand-text: #FFB3AC;
+    --wl-sys-color-action-fill: #FFFFFF; --wl-sys-color-action-fill-hover: #FFFFFF; --wl-sys-color-action-fill-pressed: #FFFFFF; --wl-sys-color-on-action: #000000;
+    --wl-sys-color-border-essential: #FFFFFF; --wl-sys-color-window-edge-unfocused: #767676; --wl-sys-color-window-edge-focused: #FFFFFF;
+    --wl-sys-color-focus: #00FFFF; --wl-sys-color-info: #9ED0FF; --wl-sys-color-positive: #9CF5C4; --wl-sys-color-warning: #FFE08A; --wl-sys-color-danger: #FFB3C1;
+    --wl-sys-color-shadow: transparent; --wl-sys-color-focus-gap: #000000; --wl-sys-color-window-guard: #000000;
+    --wl-sys-shadow-flush: none; --wl-sys-shadow-rest: none;
+  }
+}
+
+@layer base {
+  .wl-home-root {
+    min-height: 100vh;
+    overflow-x: clip;
+    color: var(--wl-sys-color-text, #F6EFE8);
+    background: var(--wl-sys-color-canvas, #100E0E);
+    font-family: var(--wl-sys-font-body, Inter, sans-serif);
+    line-height: 1.5;
+  }
+  .wl-home-root :where(*, *::before, *::after) { box-sizing: border-box; }
+  .wl-home-root :where(h1, h2, h3, h4, p, ul, ol, dl, dd, pre) { margin: 0; }
+  .wl-home-root :is(code, kbd, pre) { font-family: var(--wl-sys-font-code, 'JetBrains Mono', monospace); }
+  .wl-home-root .wl-doc-card h3 { margin-bottom: 8px; }
+  .wl-home-root img { max-width: 100%; height: auto; }
+  .wl-home-root a { color: inherit; text-underline-offset: 0.18em; }
+  .wl-home-root :where(button) { font: inherit; }
+  .wl-home-root :focus-visible {
+    outline: 2px solid var(--wl-sys-color-focus, #8EC8FF);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 2px var(--wl-sys-color-focus-gap, #191516);
+  }
+}
+
+@layer components {
+  .wl-home-root[data-theme="dawn"] .wl-hero {
+    background: linear-gradient(90deg, var(--wl-sys-color-canvas) 0%, color-mix(in srgb, var(--wl-sys-color-canvas) 70%, transparent) 42%, transparent 75%),
+                url("../../test-drive/stage/assets/wallpaper-dawn.svg") center/cover no-repeat, var(--wl-sys-color-canvas);
+  }
+  .wl-home-root[data-theme="high-contrast"] .wl-hero,
+  html[data-theme="high-contrast"] .wl-hero {
+    background: var(--wl-sys-color-canvas, #000000);
+  }
+  .wl-home-root[data-theme="high-contrast"] .wl-hero-actions .wl-doc-button:not(.wl-doc-button-primary),
+  html[data-theme="high-contrast"] .wl-hero-actions .wl-doc-button:not(.wl-doc-button-primary) {
+    background: var(--wl-sys-color-surface, #000000);
+    border-color: var(--wl-sys-color-border-essential, #FFFFFF);
+    color: var(--wl-sys-color-text, #FFFFFF);
+  }
+  .wl-home-header { gap: 12px 20px; justify-content: space-between; }
+  .wl-home-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .wl-home-mobile-actions { display: none; align-items: center; gap: 8px; margin-left: auto; }
+  .wl-home-drawer { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px; flex: 1 1 auto; justify-content: flex-end; min-width: 0; }
+  .wl-home-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; min-width: 0; }
+  .wl-home-nav a { padding: 4px 2px; overflow-wrap: anywhere; }
+  .wl-home-appearance, .wl-home-tabs, .wl-home-step-group, .wl-home-actions-row, .wl-home-badges {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0;
+  }
+  .wl-home-chip { text-decoration: none; font-size: 0.875rem; min-height: 2.25rem; padding: 6px 12px; }
+  .wl-home-chip.is-pressed {
+    background: var(--wl-sys-color-surface-selected, #331C1E);
+    border-color: var(--wl-sys-color-brand-text, #FCA399);
+    box-shadow: inset 0 -3px 0 0 var(--wl-sys-color-brand-text, #FCA399);
+    font-weight: 700;
+  }
+  .wl-home-scope-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+  .wl-home-walkthrough-card { margin-top: 20px; gap: 18px; }
+  .wl-beta-header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .wl-beta-ledger {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 12px;
+  }
+  .wl-beta-metric {
+    padding: 14px 16px;
+    border-radius: var(--wl-sys-radius-surface, 12px);
+    background: var(--wl-sys-color-surface-recessed, #141112);
+    border: 1px solid var(--wl-sys-color-border-essential, #9E9290);
+    display: grid;
+    align-content: start;
+    gap: 4px;
+  }
+  .wl-beta-metric-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--wl-sys-color-brand-text, #FCA399);
+  }
+  .wl-beta-metric-value {
+    font-family: var(--wl-sys-font-display, 'Space Grotesk', sans-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    font-variant-numeric: tabular-nums;
+    color: var(--wl-sys-color-text, #F6EFE8);
+  }
+  .wl-beta-metric-detail {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--wl-sys-color-text-secondary, #BDB2AF);
+  }
+  .wl-home-walkthrough {
+    margin: 2px 0 0;
+    padding-inline-start: 1.25rem;
+    display: grid;
+    gap: 8px;
+    color: var(--wl-sys-color-text-secondary, #BDB2AF);
+    font-size: 0.9375rem;
+  }
+  .wl-home-walkthrough strong { color: var(--wl-sys-color-text, #F6EFE8); }
+  .wl-beta-explorer {
+    padding-top: 16px;
+    border-top: 1px solid color-mix(in srgb, var(--wl-sys-color-text, #F6EFE8) 12%, transparent);
+    display: grid;
+    gap: 16px;
+  }
+  .wl-beta-filter-bar { margin-bottom: 0; padding-bottom: 12px; }
+  .wl-beta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 14px;
+  }
+  .wl-beta-card {
+    padding: 16px;
+    border-radius: var(--wl-sys-radius-surface, 12px);
+    background: var(--wl-sys-color-surface-recessed, #141112);
+    border: 1px solid var(--wl-sys-color-border-essential, #9E9290);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wl-beta-card.tier-accepted { border-inline-start: 3px solid var(--wl-sys-color-positive, #6EE0B8); }
+  .wl-beta-card.tier-runtime { border-inline-start: 3px solid var(--wl-sys-color-info, #8EC8FF); }
+  .wl-beta-card.tier-open { border-inline-start: 3px solid var(--wl-sys-color-warning, #F2C172); }
+  .wl-beta-card-link { margin-top: auto; padding-top: 4px; font-size: 0.875rem; }
+  .wl-beta-card-title { font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--wl-sys-color-text, #F6EFE8); }
+  .wl-beta-card-body { font-size: 0.875rem; line-height: 1.55; color: var(--wl-sys-color-text-secondary, #BDB2AF); }
+  .wl-beta-code {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: var(--wl-sys-color-surface, #191516);
+    border: 1px solid var(--wl-sys-color-border-essential, #9E9290);
+    color: var(--wl-sys-color-text, #F6EFE8);
+  }
+  .wl-tier-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: var(--wl-sys-color-surface, #191516);
+    border: 1px solid currentColor;
+  }
+  .wl-tier-badge.is-accepted { color: var(--wl-sys-color-positive, #6EE0B8); }
+  .wl-tier-badge.is-runtime { color: var(--wl-sys-color-info, #8EC8FF); }
+  .wl-tier-badge.is-open { color: var(--wl-sys-color-warning, #F2C172); }
+  .wl-home-card-stack { display: grid; align-content: start; gap: 10px; min-width: 0; overflow-wrap: anywhere; }
+  .wl-home-detail { font-size: 0.875rem; color: var(--wl-sys-color-text-secondary, #BDB2AF); margin: 0; }
+  .wl-home-workbench { display: grid; gap: 24px; }
+  .wl-home-workbench-bar, .wl-home-filter-bar {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+    padding-bottom: 16px; margin-bottom: 24px; border-bottom: 1px solid color-mix(in srgb, var(--wl-sys-color-text, #F6EFE8) 12%, transparent);
+  }
+  .wl-home-workbench .wl-home-workbench-bar { margin-bottom: 0; }
+  .wl-home-split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(20px, 3vw, 40px); align-items: start; min-width: 0; }
+  .wl-home-specimen-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); margin-top: 24px; }
+  .wl-home-kbd { padding: 2px 8px; border-radius: 6px; border: 1px solid var(--wl-sys-color-border-essential, #9E9290); font-size: 0.75rem; }
+  .wl-home-dl { display: grid; gap: 10px; margin: 4px 0; padding: 12px; border-radius: 8px; background: var(--wl-sys-color-surface-recessed, #141112); border: 1px solid color-mix(in srgb, var(--wl-sys-color-text, #F6EFE8) 10%, transparent); }
+  .wl-home-dl dt { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--wl-sys-color-brand-text, #FCA399); }
+  .wl-home-dl dd { margin: 2px 0 0; font-size: 0.9rem; color: var(--wl-sys-color-text-secondary, #BDB2AF); }
+  .wl-home-window {
+    padding: 16px; border-radius: var(--wl-sys-radius-window, 8px);
+    background: var(--wl-sys-color-surface-recessed, #141112);
+    border: 2px solid var(--wl-sys-color-window-edge-unfocused, #707078);
+    display: grid; gap: 8px;
+  }
+  .wl-home-window.is-focused { border-color: var(--wl-sys-color-window-edge-focused, #F6EFE8); }
+  .wl-home-window.is-candidate { outline: 2px dashed var(--wl-sys-color-focus, #8EC8FF); outline-offset: 4px; }
+  .wl-home-pill { padding: 4px 10px; border-radius: 999px; border: 1px solid var(--wl-sys-color-border-essential, #9E9290); font-size: 0.8125rem; font-weight: 600; }
+  .wl-home-pill.is-active { background: var(--wl-sys-color-action-fill, #B02026); color: var(--wl-sys-color-on-action, #FFF8F5); border-color: var(--wl-sys-color-on-action, #FFF8F5); }
+  .wl-home-directory {
+    margin-top: 32px; padding-top: 28px; border-top: 1px solid color-mix(in srgb, var(--wl-sys-color-text, #F6EFE8) 12%, transparent);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 24px;
+  }
+  .wl-home-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: 0.9rem; }
+  .wl-home-footer { align-items: center; }
+  .wl-mvp-quickstart {
+    padding-top: 16px;
+    border-top: 1px solid color-mix(in srgb, var(--wl-sys-color-text, #F6EFE8) 12%, transparent);
+    display: grid;
+    gap: 14px;
+  }
+  .wl-mvp-panel {
+    padding: 16px;
+    border-radius: var(--wl-sys-radius-surface, 12px);
+    background: var(--wl-sys-color-surface-recessed, #141112);
+    border: 1px solid var(--wl-sys-color-border-essential, #9E9290);
+  }
+  .wl-mvp-code {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 12px 14px;
+    border-radius: var(--wl-sys-radius-control, 6px);
+    background: var(--wl-sys-color-surface, #191516);
+    border: 1px solid var(--wl-sys-color-border-essential, #9E9290);
+    color: var(--wl-sys-color-text, #F6EFE8);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    white-space: pre;
+  }
+
+  @media (max-width: 960px) {
+    .wl-home-root[data-theme="dawn"] .wl-hero {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--wl-sys-color-canvas) 30%, transparent), var(--wl-sys-color-canvas) 92%),
+                  url("../../test-drive/stage/assets/wallpaper-dawn.svg") center/cover no-repeat, var(--wl-sys-color-canvas);
+    }
+    .wl-home-root[data-theme="high-contrast"] .wl-hero,
+    html[data-theme="high-contrast"] .wl-hero {
+      background: var(--wl-sys-color-canvas, #000000);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .wl-home-bar { width: 100%; justify-content: space-between; }
+    .wl-home-mobile-actions { display: inline-flex; }
+    .wl-home-root[data-nav-open="false"] .wl-home-drawer { display: none; }
+    .wl-home-root[data-nav-open="true"] .wl-home-drawer {
+      display: grid; width: 100%; justify-content: stretch; gap: 14px;
+      padding-top: 12px; border-top: 1px solid var(--wl-sys-color-border-essential, #9E9290);
+    }
+    .wl-home-split { grid-template-columns: minmax(0, 1fr); }
+  }
+}
+
+@layer states {
+  .wl-home-chip.is-pressed:hover { background: var(--wl-sys-color-surface-selected-hover, #3A252A); }
+  .wl-home-chip.is-pressed:active { background: var(--wl-sys-color-surface-selected-pressed, #423035); }
+  a.wl-doc-card { text-decoration: none; transition: background var(--wl-sys-motion-state, 90ms) ease, border-color var(--wl-sys-motion-state, 90ms) ease, box-shadow var(--wl-sys-motion-state, 90ms) ease; }
+  a.wl-doc-card:hover { background: var(--wl-sys-color-surface-hover, #2C2627); border-color: var(--wl-sys-color-brand-text, #FCA399); box-shadow: var(--wl-sys-shadow-rest, none); }
+  a.wl-doc-card:active { background: var(--wl-sys-color-surface-pressed, #383032); }
+}
+
+@layer accessibility {
+  .wl-home-root[data-motion="reduced"] *, .wl-home-root[data-motion="reduced"] *::before, .wl-home-root[data-motion="reduced"] *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+  .wl-home-root[data-motion="reduced"] .wl-hero-shot img { transform: none; }
+  @media (forced-colors: active) {
+    .wl-home-chip.is-pressed { outline: 2px solid Highlight; outline-offset: -2px; text-decoration: underline; }
+    .wl-home-window.is-focused, a.wl-doc-card:hover { border-color: Highlight; }
+    .wl-beta-metric, .wl-beta-card, .wl-tier-badge, .wl-mvp-panel, .wl-mvp-code { border-color: CanvasText; }
   }
 }

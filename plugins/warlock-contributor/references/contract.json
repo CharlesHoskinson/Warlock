@@ -146,7 +146,7 @@
   ],
   "foreignProvenanceReconciliation": {
     "command": "reconcile-foreign --transition-file PATH",
-    "scope": "Only already captured foreignDirty paths; source ownership and participant history never change",
+    "scope": "Captured foreignDirty paths or explicit independently reviewed later foreign introductions; source ownership and participant history never change",
     "evidence": "New event-schema-2 entries bind an exact source record path and bytes to a frozen digest-checked participant index census. Exactly one selected/adopted claimant must bind the changed current hash; stale, competing, noncanonical, self-owned or no-op transitions fail closed. An independent exact-transition JSON review is retained in ignored scratch. Schema-1 events remain readable as legacy history without retroactive census proof, but cannot follow schema-2 events.",
     "atomicity": "All proposed paths validated under participant lock before atomic hash-chained sidecar write; unrelated drift refuses",
     "acceptance": "No scenario acceptance, native admission, iteration or meaningful-progress reset",
@@ -154,7 +154,8 @@
     "ownerBinding": "Latest applicable base/chronological extension/iteration source binding; historical claims and superseded hashes do not authorize transitions",
     "input": "Untracked Git-ignored .warlock-contributor/ transition file with path, sourceRecordPath, ownerCensusSnapshot, sourceRecordSnapshot, reviewFile and reason",
     "filesystem": "O_NOFOLLOW directory traversal and regular-file descriptor reads, one read for JSON/hash, held sidecar directory through validation/replacement; renamed owned directory remains object-bound and later pathname checks fail closed",
-    "concurrencyLimit": "Prior existing-sidecar digest check and rename are not atomic CAS against writers ignoring advisory locks; descriptor anchoring prevents path escape but does not guarantee preservation of a competing final-entry replacement. No secure integration certificate."
+    "concurrencyLimit": "Prior existing-sidecar digest check and rename are not atomic CAS against writers ignoring advisory locks; descriptor anchoring prevents path escape but does not guarantee preservation of a competing final-entry replacement. No secure integration certificate.",
+    "introduction": "Optional introduceForeign:true creates eventSchema3 only for candidate implementation input absent from selected/adopted/captured/introduced ownership and actually dirty later. Baseline is regular Git blob or absent at original full sourceRevision; exact accepted independent review additionally binds introducedForeign:true and baselineRevision. Existing exact unique indexed owner/current hash/census requirements remain; introduced paths are never staged or adopted."
   },
   "selectedPathAdoption": "extend may explicitly assert ownership of already-declared exact latest-bound source (base/extension/iteration), also matching protected foreign hash if present, with --adopt-dirty/note; append ownershipAdoptions without slice/source baseline/timer/iteration reset; unexplained drift refuses",
   "sameOwnerSupportCustody": {

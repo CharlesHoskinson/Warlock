@@ -111,7 +111,7 @@ def main():
     haskell = runner == REPO / 'tools/check_haskell_cpu.py'
     tea = runner == REPO / 'tools/check_tea_cpu.py'
     allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend']] if haskell else
-               ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract']])))
+               ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract'], ['--subscriptions']])))
     if (not registry and not haskell and not tea and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
@@ -124,7 +124,13 @@ def main():
         mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs'})
     if packet['arguments'] == ['--standalone-mvp']:
         mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
+                          'implementation/warlock/qa/NativePointerFixture.elm',
                           'implementation/warlock/qa/StandaloneMvpReplay.elm', 'implementation/warlock/qa/standalone-mvp.cjs'})
+    if packet['arguments'] == ['--subscriptions']:
+        mandatory.update('implementation/warlock/qa/' + name for name in (
+            'TeaPopupSubscriptionsReplay.elm', 'TeaBarSubscriptionsReplay.elm',
+            'TeaAdmissionSubscriptionsReplay.elm', 'TeaRendererSubscriptionsReplay.elm',
+            'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs'))
     if packet['arguments'] == ['--tea-contract']:
         mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
                           'implementation/warlock/qa/TeaContractReplay.elm',
@@ -182,7 +188,7 @@ def main():
                           'implementation/warlock/qa/receipt-state.cjs',
                           'implementation/warlock/qa/receipt-lifecycle.qnt',
                           'implementation/warlock/qa/receipt-lifecycle_test.qnt', 'tools/quint-toolchain.json'])
-    elif fixture.exists():
+    elif fixture.exists() and packet['arguments'] != ['--subscriptions']:
         mandatory.update(['implementation/warlock/qa/FeedbackContextReplay.elm',
                           'implementation/warlock/qa/feedback-context.cjs'])
     if packet['arguments'] == ['--browser']:

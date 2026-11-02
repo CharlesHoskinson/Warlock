@@ -31,3 +31,5 @@ Latest whole frontend verdict: [TEA003 effect/decoder acceptance](../../docs/war
 
 
 Latest complete original verdicts: [ARC003 and DEL011](../../docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json), with [actual stream observation](raw/notes/2026-11-01-desktop-application-stream.md). The next target is private UI HTTP/WebKit ownership and persistent lifecycle; no native GUI or release verdict follows.
+
+Current implementation: [private UI origin boundary](../../docs/warlock/reference/private-ui-origin.md), with [source/evidence observation](raw/notes/2026-11-01-private-ui-origin-source.md). ARC024/DEL014 remain open; source readiness and compiler success are not engine or whole-EARS acceptance.

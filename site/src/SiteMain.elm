@@ -933,6 +933,34 @@ viewHero =
 -- HONEST SCOPE & DELIVERY STATUS
 
 
+type alias ReadinessTierSpec =
+    { modifier : String
+    , kicker : String
+    , summary : String
+    }
+
+
+readinessTiers : List ReadinessTierSpec
+readinessTiers =
+    [ { modifier = "is-simulated"
+      , kicker = "Browser simulated"
+      , summary = "Simulated stage & fixture interiors only; never native session proof"
+      }
+    , { modifier = "is-component"
+      , kicker = "Component + Quint"
+      , summary = "Isolated Elm contracts & Quint models; ELM-UI-007 slice active"
+      }
+    , { modifier = "is-historical"
+      , kicker = "15 / 242 requirements"
+      , summary = "15 historical source-scoped accepted; 242 requirement register retained"
+      }
+    , { modifier = "is-open-gate"
+      , kicker = "Native MVP & release OPEN"
+      , summary = "417 scenario obligations · ARC-024, DEL-014 & native AT gates OPEN"
+      }
+    ]
+
+
 viewScopeSection : Html msg
 viewScopeSection =
     Html.section
@@ -946,8 +974,22 @@ viewScopeSection =
             , Html.p []
                 [ Html.text "Warlock keeps simulated browser demonstrations, CPU contract checks, Quint formal models, and native compositor acceptance strictly separate. Header appearance buttons above preview Lacquer tokens on this page only." ]
             ]
+        , Html.ul
+            [ Attr.class "wl-home-readiness-strip"
+            , Attr.attribute "aria-label" "Four-tier verification and readiness summary"
+            ]
+            (List.map viewReadinessTier readinessTiers)
         , Html.div [ Attr.class "wl-doc-grid wl-home-scope-grid" ]
             (List.map viewScopeCard scopeCards)
+        ]
+
+
+viewReadinessTier : ReadinessTierSpec -> Html msg
+viewReadinessTier tier =
+    Html.li
+        [ Attr.class ("wl-home-readiness-item " ++ tier.modifier) ]
+        [ Html.span [ Attr.class "wl-home-readiness-kicker" ] [ Html.text tier.kicker ]
+        , Html.span [ Attr.class "wl-home-readiness-value" ] [ Html.text tier.summary ]
         ]
 
 
@@ -1025,6 +1067,7 @@ viewWorkbenchSection currentModel =
                     [ Html.div [ Attr.class "wl-home-badges" ]
                         [ Html.span [ Attr.class "wl-doc-eyebrow" ] [ Html.text activeSpec.label ]
                         , Html.kbd [ Attr.class "wl-home-kbd" ] [ Html.text activeSpec.chord ]
+                        , Html.span [ Attr.class "wl-home-meta-badge" ] [ Html.text "Browser CTA launches simulated fixture" ]
                         ]
                     , Html.h3 [] [ Html.text activeSpec.heading ]
                     , Html.p [] [ Html.text activeSpec.summary ]
@@ -1034,7 +1077,7 @@ viewWorkbenchSection currentModel =
                             , Html.dd [] [ Html.text activeSpec.elmAuthority ]
                             ]
                         , Html.div []
-                            [ Html.dt [] [ Html.text "Haskell / compositor observations" ]
+                            [ Html.dt [] [ Html.text "Target Haskell / Hyprland contract" ]
                             , Html.dd [] [ Html.text activeSpec.hostObservation ]
                             ]
                         ]
@@ -1043,7 +1086,7 @@ viewWorkbenchSection currentModel =
                             [ Attr.class "wl-doc-button wl-doc-button-primary"
                             , Attr.href activeSpec.scenarioHref
                             ]
-                            [ Html.text (activeSpec.scenarioCta ++ " (simulated)") ]
+                            [ Html.text (activeSpec.scenarioCta ++ " (simulated stage)") ]
                         , Html.a
                             [ Attr.class "wl-doc-button"
                             , Attr.href activeSpec.specHref
@@ -1344,7 +1387,9 @@ viewOutcomeLabCard currentSample =
             [ Attr.class "wl-home-window is-focused"
             , Attr.attribute "aria-live" "polite"
             ]
-            [ Html.p [] [ Html.strong [] [ Html.text statusTitle ] ]
+            [ Html.div [ Attr.class "wl-home-meta-badge" ]
+                [ Html.text "Model preview · Component checks active; native ELM-UI-007 keyboard/AT gate OPEN" ]
+            , Html.p [] [ Html.strong [] [ Html.text statusTitle ] ]
             , Html.p [ Attr.class "wl-home-detail" ] [ Html.text statusExplanation ]
             , Html.a [ Attr.class "wl-feature-link", Attr.href statusHref ]
                 [ Html.text "Inspect status & recovery behavior" ]
@@ -1513,6 +1558,42 @@ supplementalCss =
     box-shadow: inset 0 -3px 0 0 var(--wl-sys-color-brand-text, #FCA399);
     font-weight: 700;
   }
+  .wl-home-readiness-strip {
+    list-style: none; padding: 0; margin: 0 0 20px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 10px;
+  }
+  .wl-home-readiness-item {
+    max-width: none; min-width: 0; padding: 10px 12px; border-radius: var(--wl-sys-radius-control, 6px);
+    background: var(--wl-sys-color-surface-recessed, #141112);
+    border: 1px solid var(--wl-sys-color-border-essential, #9E9290);
+    border-inline-start-width: 3px;
+    display: grid; align-content: start; gap: 4px; overflow-wrap: anywhere;
+  }
+  .wl-home-readiness-item.is-simulated { border-style: dashed; border-inline-start-style: solid; border-inline-start-color: var(--wl-sys-color-info, #8EC8FF); }
+  .wl-home-readiness-item.is-component { border-style: dashed; border-inline-start-style: solid; border-inline-start-color: var(--wl-sys-color-brand-text, #FCA399); }
+  .wl-home-readiness-item.is-historical { border-inline-start-color: var(--wl-sys-color-positive, #6ED6AC); }
+  .wl-home-readiness-item.is-open-gate { border-inline-start-width: 4px; border-inline-start-color: var(--wl-sys-color-warning, #F3C26E); }
+  .wl-home-readiness-kicker {
+    font-family: var(--wl-sys-font-code, monospace); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.05em; text-transform: uppercase; color: var(--wl-sys-color-text, #F6EFE8);
+  }
+  .wl-home-readiness-value { font-size: 0.8125rem; line-height: 1.4; color: var(--wl-sys-color-text-secondary, #BDB2AF); }
+  .wl-home-meta-badge {
+    display: inline-flex; align-items: center; width: fit-content; max-width: 100%; min-width: 0;
+    padding: 3px 9px; border-radius: var(--wl-sys-radius-control, 6px);
+    border: 1px dashed var(--wl-sys-color-border-essential, #9E9290);
+    background: var(--wl-sys-color-surface-recessed, #141112);
+    color: var(--wl-sys-color-text, #F6EFE8);
+    font-family: var(--wl-sys-font-code, monospace); font-size: 0.75rem; line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .wl-home-window .wl-home-meta-badge { background: var(--wl-sys-color-surface, #1C1819); }
+  .wl-home-root :where(.wl-doc-button, .wl-home-chip, .wl-feature-link, .wl-home-pill, .wl-home-kbd, .wl-home-meta-badge, .wl-home-dl, .wl-home-dl > div, .wl-home-dl dt, .wl-home-dl dd, .wl-home-window) {
+    min-width: 0; max-width: 100%; overflow-wrap: anywhere;
+  }
+  .wl-home-root .wl-doc-button { white-space: normal; text-align: center; }
+  .wl-home-root .wl-feature-link::after { flex: 0 0 auto; }
+  .wl-home-window p { margin: 0; }
   .wl-home-scope-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
   .wl-home-card-stack { display: grid; align-content: start; gap: 10px; min-width: 0; overflow-wrap: anywhere; }
   .wl-home-detail { font-size: 0.875rem; color: var(--wl-sys-color-text-secondary, #BDB2AF); margin: 0; }
@@ -1575,6 +1656,8 @@ supplementalCss =
   @media (forced-colors: active) {
     .wl-home-chip.is-pressed { outline: 2px solid Highlight; outline-offset: -2px; text-decoration: underline; }
     .wl-home-window.is-focused { border-color: Highlight; }
+    .wl-home-readiness-item, .wl-home-meta-badge { border-color: CanvasText; }
+    .wl-home-readiness-item.is-open-gate { border-inline-start-color: Highlight; }
   }
 }
 """

@@ -561,6 +561,16 @@ async function httpPopupRetainedQueryOnFailure(){
   const findWrapper=root=>walk(root,n=>n.attributes?.['data-transport-stopped']==='true');
   const hasInteractiveSurface=root=>walk(root,n=>n.attributes?.['data-surface-field']!==undefined||n.attributes?.['data-surface-control']!==undefined)!==null;
 
+  // Bar negative: a failed poll reports the stopped view without promising
+  // a reload will recreate the owning presentation or replay an action.
+  const barFailure=harness(barFile,'HttpBar');await barFailure.flush();
+  barFailure.get().fail('error');await barFailure.flush();
+  const barAlert=findAlert(barFailure.container);
+  check('bar poll failure reports stopped state without reconnection promise',barAlert?.textContent==='UI event transport unavailable. Actions were not retried. This view has stopped.',barAlert?.textContent);
+  const barRequests=barFailure.requests.length;await barFailure.tick(10000);
+  check('bar stopped poll does not reconnect or emit an action',barFailure.requests.length===barRequests&&barFailure.posts().length===0);
+  barFailure.close();
+
   // 1. Positive live query + matching acknowledgement, then GET failure retains confirmed query read-only.
   const confirmedEnv=harness(popupFile,'HttpPopup');await confirmedEnv.flush();
   await confirmedEnv.event(gateway('presentation',appFrame('1','7','')));
@@ -578,7 +588,7 @@ async function httpPopupRetainedQueryOnFailure(){
   const confirmedAlert=findAlert(confirmedEnv.container);
   const confirmedInput=findRetainedInput(confirmedEnv.container);
   const confirmedLabel=findRetainedLabel(confirmedEnv.container);
-  check('retained-query confirmed GET failure alert text',confirmedAlert?.textContent==='UI event transport unavailable. Actions were not retried. Restart this view to reconnect.',confirmedAlert?.textContent);
+  check('retained-query confirmed GET failure alert text',confirmedAlert?.textContent==='UI event transport unavailable. Actions were not retried. This view has stopped.',confirmedAlert?.textContent);
   check('retained-query confirmed GET failure removes interactive surface controls',!hasInteractiveSurface(confirmedEnv.container)&&Boolean(findWrapper(confirmedEnv.container)));
   check('retained-query confirmed GET failure renders read-only confirmed input',Boolean(confirmedInput)&&confirmedInput.type==='text'&&confirmedInput.readOnly===true&&confirmedInput.value==='foot'&&confirmedInput.attributes['aria-readonly']==='true'&&confirmedInput.attributes['aria-label']==='Last confirmed search query (read-only)'&&confirmedInput.attributes['data-retained-surface-field']==='control:search'&&confirmedInput.attributes['data-retained-query-state']==='confirmed'&&Object.keys(confirmedInput.listeners).length===0,confirmedInput?domWitness(confirmedInput):null);
   check('retained-query confirmed GET failure pairs label htmlFor',confirmedLabel?.textContent==='Last confirmed search query (read-only)');
@@ -587,7 +597,7 @@ async function httpPopupRetainedQueryOnFailure(){
   check('retained-query confirmed GET failure never auto-reconnects',confirmedEnv.requests.length===confirmedReqCount&&confirmedEnv.posts().length===1);
   confirmedEnv.close();
 
-  // 2. Unconfirmed draft query retained read-only on POST error/timeout/500 + explicit view-restart recovery without auto-replay.
+  // 2. Unconfirmed draft retained read-only on POST failure; synthetic new-view frame below does not prove real restart recovery.
   for(const failure of ['error','timeout','status500']){
     const draftText='foot-draft-'+failure;
     const loss=harness(popupFile,'HttpPopup');await loss.flush();
@@ -602,7 +612,7 @@ async function httpPopupRetainedQueryOnFailure(){
     const activeGet=loss.gets().at(-1);
     if(failure==='status500')loss.posts()[0].respond(500,'');else loss.posts()[0].fail(failure);
     await loss.flush();
-    const expectedAlert=failure==='status500'?'UI delivery is unconfirmed. The action will not be repeated. Restart this view to reconnect.':'UI delivery is unconfirmed. The action will not be repeated. Restart this view to reconnect.';
+    const expectedAlert=failure==='status500'?'UI delivery is unconfirmed. The action will not be repeated. This view has stopped.':'UI delivery is unconfirmed. The action will not be repeated. This view has stopped.';
     const alertNode=findAlert(loss.container);
     const retained=findRetainedInput(loss.container);
     const labelNode=findRetainedLabel(loss.container);
@@ -622,13 +632,13 @@ async function httpPopupRetainedQueryOnFailure(){
       check('retained-query recovery restart starts clean with zero auto-replay POSTs',restarted.gets().length===1&&restarted.posts().length===0&&findAlert(restarted.container)===null&&findRetainedInput(restarted.container)===null);
       await restarted.event(gateway('presentation',appFrame('6','10','')));
       const freshField=walk(restarted.container,n=>n.attributes?.['data-surface-field']==='control:search');
-      need('retained-query recovery fresh view paints interactive search field',Boolean(freshField)&&!freshField.readOnly&&freshField.value==='');
+      need('retained-query synthetic fresh presentation paints interactive search field',Boolean(freshField)&&!freshField.readOnly&&freshField.value==='');
       freshField.value=copiedDraft;
       freshField.listeners.input(event(freshField,'input',{isComposing:false}));await restarted.flush();
       need('retained-query recovery re-entered draft dispatches once on new lease/publication',restarted.posts().length===1&&equal(JSON.parse(restarted.posts()[0].body),{surfaceProtocol:2,kind:'surface-query',surface:'popup',publication:'6',lease:'10',id:'control:search',query:copiedDraft}));
       restarted.posts()[0].respond(204);await restarted.flush();
       await restarted.event(gateway('presentation',appFrame('7','10',copiedDraft)));
-      check('retained-query recovery settles cleanly on restarted view',walk(restarted.container,n=>n.attributes?.['data-surface-field']==='control:search')?.value===copiedDraft&&findAlert(restarted.container)===null&&findRetainedInput(restarted.container)===null);
+      check('retained-query synthetic fresh presentation settles after re-entry',walk(restarted.container,n=>n.attributes?.['data-surface-field']==='control:search')?.value===copiedDraft&&findAlert(restarted.container)===null&&findRetainedInput(restarted.container)===null);
       restarted.close();
     }else{
       loss.close();
@@ -763,4 +773,153 @@ async function cancellationPendingControls(){
   }
 }
 
-(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();await pendingQueryHonestControls();await seededPendingQueryDom();await httpPopupRetainedQueryOnFailure();await cancellationPendingControls();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();
+async function betaUsabilityControlsAndLoading(){
+  const row=(id,domId,label,detail='',enabled=true,ariaLabel=label)=>({id,domId,label,ariaLabel,detail,enabled});
+  const barEnv=harness(barFile,'HttpBar');await barEnv.flush();
+  const barWaiting=walk(barEnv.container,n=>n.attributes?.['data-bar-state']==='waiting');
+  check('HttpBar pre-frame loading state is polite, unclipped for shell.css, uses CSS system colors, and invents no theme or controls',Boolean(barWaiting)&&barWaiting.attributes.role==='status'&&barWaiting.attributes['aria-live']==='polite'&&barWaiting.textContent==='Waiting for desktop state…'&&barWaiting.style['position']==='static'&&barWaiting.style['clip-path']==='none'&&barWaiting.style['color-scheme']==='light dark'&&barWaiting.style['background-color']==='Canvas'&&barWaiting.style['color']==='CanvasText'&&!walk(barEnv.container,n=>(n.className??'').includes('surface-bar'))&&!walk(barEnv.container,n=>n.attributes?.['data-theme']!==undefined)&&!walk(barEnv.container,n=>n.attributes?.['data-surface-control']!==undefined),barWaiting?.style);
+  const appOnlyBarFrame={
+    surfaceProtocol:2,publication:'1',lease:'0',mode:'closed',status:'Applications connected. Window controls unavailable.',
+    bar:[
+      row('bar:applications','open-apps','Applications','',true),
+      row('bar:overview','control-disabled-reason-open-overview','Task View','',false),
+      row('bar:switcher','open-switcher','Switch windows','',false),
+      row('bar:notifications','open-notifications','Notifications','',false),
+      row('bar:files','open-files','Files','',false),
+      row('bar:system','open-system','System','',false),
+      row('bar:settings','open-settings','Settings','',false),
+      row('bar:pin:sample.desktop','pin-sample','Sample','Pinned · Opening unavailable in this session',false,'Open Sample'),
+      row('bar:pin:missing.desktop','pin-missing','missing.desktop','Unavailable application: ',false,'Unavailable application: missing.desktop')
+    ],
+    popup:[]
+  };
+  await barEnv.event(gateway('presentation',appOnlyBarFrame));
+  check('HttpBar replaces pre-frame waiting status on first authoritative frame',!walk(barEnv.container,n=>n.attributes?.['data-bar-state']==='waiting')&&walk(barEnv.container,n=>n.className==='surface-bar')?.attributes['data-surface-loading']==='false');
+  for(const [id,expectedReason]of [
+    ['bar:overview','Window controls are unavailable in this session.'],
+    ['bar:switcher','Window controls are unavailable in this session.'],
+    ['bar:notifications','Desktop utilities are unavailable in this session.'],
+    ['bar:files','Desktop utilities are unavailable in this session.'],
+    ['bar:system','Desktop utilities are unavailable in this session.'],
+    ['bar:settings','Desktop utilities are unavailable in this session.'],
+    ['bar:pin:sample.desktop','Pinned · Opening unavailable in this session'],
+    ['bar:pin:missing.desktop','Unavailable application: not in current catalog.']
+  ]){
+    const btn=walk(barEnv.container,n=>n.attributes?.['data-surface-control']===id);
+    const refId=btn?.attributes?.['aria-describedby']??'';
+    const descNode=refId?walk(barEnv.container,n=>(n.id??n.attributes?.id)===refId):null;
+    check(`HttpBar ${id} exposes truthful non-colliding disabled reason`,Boolean(btn)&&btn.disabled===true&&btn.attributes['data-disabled-reason']===expectedReason&&btn.title===expectedReason&&Boolean(descNode)&&descNode!==btn&&descNode.hidden===true&&descNode.textContent===expectedReason);
+  }
+  await barEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'2',lease:'0',mode:'closed',status:'Connecting…',
+    bar:[row('bar:reconnect','reconnect','Reconnect','',false,'Reconnect to the window system'),row('bar:overview','conn-overview','Task View','',false),row('bar:pin:sample.desktop','conn-pin','Sample','Pinned launcher',false,'Open Sample')],
+    popup:[]
+  }));
+  check('HttpBar Connecting state distinguishes initial connection and never leaks Pinned launcher as disabled reason',walk(barEnv.container,n=>n.className==='surface-bar')?.attributes['data-surface-loading']==='true'&&walk(barEnv.container,n=>n.attributes?.['data-surface-control']==='bar:reconnect')?.attributes['data-disabled-reason']==='Connecting to the window system…'&&walk(barEnv.container,n=>n.attributes?.['data-surface-control']==='bar:pin:sample.desktop')?.attributes['data-disabled-reason']==='Unavailable while disconnected from the window system.');
+  await barEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'3',lease:'0',mode:'closed',status:'Reconnecting…',
+    bar:[row('bar:reconnect','reconnect','Reconnect','',false,'Reconnect to the window system'),row('bar:overview','rec-overview','Task View','',false),row('bar:settings','rec-settings','Settings','',false)],
+    popup:[]
+  }));
+  check('HttpBar reconnect state reports disconnected reasons rather than app-only',walk(barEnv.container,n=>n.className==='surface-bar')?.attributes['data-surface-loading']==='true'&&walk(barEnv.container,n=>n.attributes?.['data-surface-control']==='bar:reconnect')?.attributes['data-disabled-reason']==='Reconnecting to the window system…'&&walk(barEnv.container,n=>n.attributes?.['data-surface-control']==='bar:overview')?.attributes['data-disabled-reason']==='Unavailable while disconnected from the window system.'&&walk(barEnv.container,n=>n.attributes?.['data-surface-control']==='bar:settings')?.attributes['data-disabled-reason']==='Unavailable while disconnected from the window system.');
+  await barEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'4',lease:'0',mode:'closed',status:'Workspace switch not confirmed. Refresh workspace status.',
+    bar:[row('bar:workspace-refresh','ws-refresh','Refresh workspace status','Observation only',true),row('bar:applications','ws-apps','Applications','',false),row('bar:overview','ws-overview','Task View','',true),row('bar:switcher','ws-switcher','Switch windows','',false),row('bar:settings','ws-settings','Settings','',false)],
+    popup:[]
+  }));
+  check('HttpBar workspace-blocked state reports workspace status and never claims app-only',['bar:applications','bar:switcher','bar:settings'].every(id=>walk(barEnv.container,n=>n.attributes?.['data-surface-control']===id)?.attributes['data-disabled-reason']==='Workspace switch not confirmed. Refresh workspace status.'));
+  await barEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'5',lease:'0',mode:'closed',status:'Opening application…',
+    bar:[row('bar:pin:sample.desktop','full-pin','Sample','Pinned launcher',false,'Open Sample'),row('bar:applications','full-apps','Applications','',true),row('bar:overview','full-overview','Task View','',true),row('bar:switcher','full-switcher','Switch windows','',true),row('bar:settings','full-settings','Settings','',true)],
+    popup:[]
+  }));
+  check('HttpBar full-session Launch.Pending uses authoritative Opening application status on disabled bar:pin rather than Pinned launcher',walk(barEnv.container,n=>n.className==='surface-bar')?.attributes['data-surface-loading']==='true'&&walk(barEnv.container,n=>n.attributes?.['data-surface-control']==='bar:pin:sample.desktop')?.attributes['data-disabled-reason']==='Opening application…');
+  barEnv.get().fail('error');await barEnv.flush();
+  const barAlert=walk(barEnv.container,n=>n.attributes?.role==='alert');
+  check('HttpBar stopped transport alert applies neutral CSS system colors and truthful stopped copy without inventing data-theme',Boolean(barAlert)&&barAlert.textContent==='UI event transport unavailable. Actions were not retried. This view has stopped.'&&barAlert.style['color-scheme']==='light dark'&&barAlert.style['background-color']==='Canvas'&&barAlert.style['color']==='CanvasText'&&!walk(barEnv.container,n=>n.attributes?.['data-theme']!==undefined));
+  barEnv.close();
+
+  const popEnv=harness(popupFile,'HttpPopup');await popEnv.flush();
+  const popWaiting=walk(popEnv.container,n=>n.attributes?.['data-popup-state']==='waiting');
+  const popWaitingStatus=popWaiting?walk(popWaiting,n=>n.tagName==='P'&&n.attributes?.role==='status'):null;
+  check('HttpPopup pre-frame loading state is polite, uses CSS system colors, and invents no theme or controls',Boolean(popWaiting)&&popWaiting.style['color-scheme']==='light dark'&&popWaiting.style['background-color']==='Canvas'&&popWaiting.style['color']==='CanvasText'&&Boolean(popWaitingStatus)&&popWaitingStatus.attributes['aria-live']==='polite'&&popWaitingStatus.textContent==='Waiting for desktop state…'&&!walk(popEnv.container,n=>(n.className??'').includes('surface-popup'))&&!walk(popEnv.container,n=>n.attributes?.['data-theme']!==undefined)&&!walk(popEnv.container,n=>n.attributes?.['data-surface-control']!==undefined));
+  await popEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'1',lease:'1',mode:'applications',status:'Minimize: not confirmed for Foot. Check your windows; Refresh only reads status. · Loading applications…',
+    bar:[row('bar:applications','open-apps','Applications','',true)],
+    popup:[row('control:search','launcher-search','','',true,'Search applications'),row('control:close','close-apps','Close applications','',true,'Close applications and return to windows'),row('control:refresh','refresh-apps','Refresh','',true,'Refresh applications')]
+  }));
+  const loadingRoot=walk(popEnv.container,n=>n.className==='surface-popup');
+  const loadingStatus=walk(popEnv.container,n=>n.tagName==='P'&&n.attributes?.role==='status');
+  const loadingRefresh=walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='control:refresh');
+  check('HttpPopup marks composite retained-Unknown + catalog loading state and refresh tooltip',loadingRoot?.attributes['data-surface-loading']==='true'&&loadingStatus?.attributes['aria-busy']==='true'&&loadingRefresh?.title==='Catalog request in progress; Refresh requests a fresh catalog snapshot');
+
+  await popEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'2',lease:'1',mode:'applications',status:'Minimize: not confirmed for Evil · Loading applications…. Check your windows; Refresh only reads status. · Type to search applications.',
+    bar:[row('bar:applications','open-apps','Applications','',true)],
+    popup:[
+      row('control:search','launcher-search','','',true,'Search applications'),
+      row('control:close','close-apps','Close applications','',true,'Close applications and return to windows'),
+      row('control:refresh','refresh-apps','Refresh','',true,'Refresh applications'),
+      row('control:page-range','page-range','Items 1–24 of 30','30 matching applications · 2 pinned',false,'Application and pin actions page'),
+      row('pin-left:sample.desktop','pin-left-sample','Move Sample left','Pin order',false,'Move Sample left'),
+      row('entry:sample.desktop','entry-sample','Open Sample','Opening unavailable in this session',false,'Open Sample')
+    ]
+  }));
+  const idleRoot=walk(popEnv.container,n=>n.className==='surface-popup');
+  const idleStatus=walk(popEnv.container,n=>n.tagName==='P'&&n.attributes?.role==='status');
+  const idleRefresh=walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='control:refresh');
+  const pageRange=walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='control:page-range');
+  const idlePinLeft=walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='pin-left:sample.desktop');
+  const disabledEntry=walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='entry:sample.desktop');
+  const entryRef=disabledEntry?.attributes?.['aria-describedby']??'';
+  const entryDesc=entryRef?walk(popEnv.container,n=>(n.id??n.attributes?.id)===entryRef):null;
+  check('HttpPopup rejects forged window-title loading substring, keeps page-range and writable pin-left free of false reasons, and links disabled entry detail',idleRoot?.attributes['data-surface-loading']==='false'&&idleStatus?.attributes['aria-busy']==='false'&&!idleRefresh?.title&&pageRange?.attributes?.['data-disabled-reason']===undefined&&!pageRange?.title&&idlePinLeft?.attributes?.['data-disabled-reason']===undefined&&!idlePinLeft?.title&&Boolean(disabledEntry)&&entryRef!==''&&Boolean(entryDesc)&&entryDesc.hidden===true&&entryDesc.textContent==='Opening unavailable in this session');
+
+  const searchInput=walk(popEnv.container,n=>n.attributes?.['data-surface-field']==='control:search');
+  searchInput.value='sam';
+  searchInput.listeners.input({type:'input',target:searchInput,currentTarget:searchInput,isComposing:false,stopPropagation(){},preventDefault(){}});
+  await popEnv.flush();
+  popEnv.posts()[0].respond(204);await popEnv.flush();
+  check('HttpPopup pending query composes pending-input notice with authoritative app-only detail without inferring causes on boundary pin-left',walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='entry:sample.desktop')?.attributes['data-disabled-reason']==='Disabled until current input is confirmed. · Opening unavailable in this session'&&walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='pin-left:sample.desktop')?.attributes['data-disabled-reason']==='Disabled until current input is confirmed.');
+
+  await popEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'3',lease:'2',mode:'applications',status:'Minimize: not confirmed for Foot. Check your windows; Refresh only reads status. · The launch could not be confirmed. Check your windows before opening it again.',
+    bar:[row('bar:applications','open-apps','Applications','',true)],
+    popup:[
+      row('control:search','launcher-search','sam','',true,'Search applications'),
+      row('control:close','close-apps','Close applications','',true,'Close applications and return to windows'),
+      row('control:refresh','refresh-apps','Refresh','',true,'Refresh applications'),
+      row('control:acknowledge','ack-launch','I checked; allow another launch','',true),
+      row('entry:sample.desktop','entry-full-unknown','Open Sample','',false,'Open Sample')
+    ]
+  }));
+  check('HttpPopup full-session persisted Launch.Unknown extracts exact launch Unknown clause for disabled entry with empty detail',walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='entry:sample.desktop')?.attributes['data-disabled-reason']==='The launch could not be confirmed. Check your windows before opening it again.');
+
+  await popEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'4',lease:'3',mode:'settings',status:'Settings ready.',
+    bar:[row('bar:applications','open-apps','Applications','',true)],
+    popup:[
+      row('control:close','settings-close','Close settings','',true),
+      row('settings:motion','settings-motion-description-motion-refresh','Motion: Reduced','Stored motion preference applied.',false),
+      row('settings:motion:refresh','motion-refresh','Refresh motion preference','Read stored preference; no write is repeated',true)
+    ]
+  }));
+  const motionRow=walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='settings:motion');
+  const motionRefresh=walk(popEnv.container,n=>n.attributes?.['data-surface-control']==='settings:motion:refresh');
+  const motionRef=motionRefresh?.attributes?.['aria-describedby']??'';
+  const motionDesc=motionRef?walk(popEnv.container,n=>(n.id??n.attributes?.id)===motionRef):null;
+  check('HttpPopup links settings:motion:refresh to non-colliding motion notice description while keeping passive settings:motion free of disabled-reason',motionRow?.attributes?.['data-disabled-reason']===undefined&&Boolean(motionRefresh)&&motionRef!==''&&motionRef!=='settings-motion-description-motion-refresh'&&Boolean(motionDesc)&&motionDesc.hidden===true&&motionDesc.textContent==='Motion: Reduced · Stored motion preference applied.');
+
+  await popEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'5',lease:'4',mode:'applications',status:'Choose a matching application.',
+    bar:[row('bar:applications','open-apps','Applications','',true)],
+    popup:[row('control:search','launcher-search','sam','',true,'Search applications'),row('control:close','close-apps','Close applications','',true,'Close applications and return to windows')]
+  }));
+  popEnv.get().fail('error');await popEnv.flush();
+  const stoppedWrap=walk(popEnv.container,n=>n.attributes?.['data-transport-stopped']==='true');
+  const retainedInput=walk(popEnv.container,n=>n.id==='http-popup-retained-query');
+  check('HttpPopup stopped transport wrapper and read-only retained query use neutral CSS system colors and truthful stopped copy without inventing data-theme',Boolean(stoppedWrap)&&walk(popEnv.container,n=>n.attributes?.role==='alert')?.textContent==='UI event transport unavailable. Actions were not retried. This view has stopped.'&&stoppedWrap.style['color-scheme']==='light dark'&&stoppedWrap.style['background-color']==='Canvas'&&Boolean(retainedInput)&&retainedInput.style['background-color']==='Field'&&retainedInput.style['color']==='FieldText'&&!walk(popEnv.container,n=>n.attributes?.['data-theme']!==undefined));
+  popEnv.close();
+}
+
+(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();await pendingQueryHonestControls();await seededPendingQueryDom();await httpPopupRetainedQueryOnFailure();await cancellationPendingControls();await betaUsabilityControlsAndLoading();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();

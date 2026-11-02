@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "scope": "Additional bounded report inspection; earlier forensic review remains byte-preserved",
+  "reportTimeline": [
+    {
+      "path": ".warlock-contributor/elm-cpu-1793600491304350476/report.json",
+      "sha256": "57691e52ff5c8ff46b229ab7cda247ac57de007204b6b727f0edcc9207127e4d",
+      "lastWriteUTC": "2026-11-02T06:21:39.208574+00:00",
+      "passed": true,
+      "errorFirstLine": "None"
+    },
+    {
+      "path": ".warlock-contributor/elm-cpu-1793600699418313071/report.json",
+      "sha256": "759b9b87e56dc1ff1529c62b32db98fd1fa6c70bd582eb74e59237c652f080b6",
+      "lastWriteUTC": "2026-11-02T06:25:05.230764+00:00",
+      "passed": false,
+      "errorFirstLine": "tea-subscriptions: tea-subscriptions: Error: popup-overlay-and-paint-gate-subscriptions/7 (popup-present): full state/subscriptions/effects differ from independent literal oracle"
+    },
+    {
+      "path": ".warlock-contributor/elm-cpu-1793601253810435797/report.json",
+      "sha256": "e55748f6a85e57036474fb3d971763b278dfd1e8c3699090c69271db92d0b4d4",
+      "lastWriteUTC": "2026-11-02T06:34:19.844419+00:00",
+      "passed": false,
+      "errorFirstLine": "tea-subscriptions: tea-subscriptions: Error: Main must be compiled with --optimize"
+    },
+    {
+      "path": ".warlock-contributor/elm-cpu-1793601812055152083/report.json",
+      "sha256": "81bae15fe77e72d3d41507315d9dbcd62ef489d5dc2d8f3f55e2208800f7adbd",
+      "lastWriteUTC": "2026-11-02T06:43:38.007576+00:00",
+      "passed": false,
+      "errorFirstLine": "tea-subscriptions: tea-subscriptions: Error: HttpBar must render sticky unconfirmed-delivery alert"
+    },
+    {
+      "path": ".warlock-contributor/registry-cpu-1793603074330227737/plugin-self-test.stdout",
+      "sha256": "6e332b80115e8dff38dd897694f916c11baacffa776819fe309bd91511fd0029",
+      "lastWriteUTC": "2026-11-02T07:06:21.671443+00:00",
+      "passed": false,
+      "errorFirstLine": "['Plugin regression suite failed']"
+    }
+  ],
+  "finding": "The last subscription report was already terminal FAILED at06:43:38Z (HttpBar sticky-unconfirmed alert assertion). CURRENT-CONTINUATION at06:44:42Z still called r4/session91368 ACTUALLYRUNNING and pointed its report field at the previous r3 failure. An unconsumed outer handle may explain intention wording, but the actual artifact was terminal; checkpoint must record both handle-consumption and report states separately. Registry test failure artifact was written07:06:21Z, before the reported goal blocked07:10:09Z. Correlation does not independently establish the exact goal-update reason.",
+  "remainingActualWork": "Preserve and repair the HttpBar component failure and consume/reconcile any stale handle; the two plugin fixture repairs do not establish subscription success. UiHttp source helper was declared, not a shipped production fix.",
+  "executionPerformed": false,
+  "nativeAcceptance": false
+}

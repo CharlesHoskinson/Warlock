@@ -8,6 +8,7 @@ import Json.Decode as D
 import Popup
 import Presentation
 import SurfaceRenderer
+import SurfaceTheme
 import Task
 import UiHttp
 
@@ -75,8 +76,8 @@ retainedField popup =
                 let fieldId = SurfaceRenderer.fieldIdentity snapshot
                     noun = if SurfaceRenderer.mode snapshot=="files" then "folder path" else "search query"
                     renderField stateTag fieldLabel retained =
-                        [ label [for "http-popup-retained-query"] [text fieldLabel]
-                        , input [id "http-popup-retained-query",type_ "text",readonly True,value retained,attribute "aria-readonly" "true",attribute "aria-label" fieldLabel,attribute "data-retained-surface-field" fieldId,attribute "data-retained-query-state" stateTag] []
+                        [ label (for "http-popup-retained-query" :: SurfaceTheme.retainedQueryLabelStyles) [text fieldLabel]
+                        , input ([id "http-popup-retained-query",type_ "text",readonly True,value retained,attribute "aria-readonly" "true",attribute "aria-label" fieldLabel,attribute "data-retained-surface-field" fieldId,attribute "data-retained-query-state" stateTag] ++ SurfaceTheme.retainedQueryInputStyles) []
                         ]
                 in case (popup.pendingQuery,SurfaceRenderer.queryValue snapshot) of
                     (Just draft,_) ->
@@ -93,10 +94,10 @@ view model =
     case UiHttp.problem model.http of
         Nothing -> Html.map View (Popup.view model.popup)
         Just reason ->
-            let alert = div [attribute "role" "alert"] [text (reason++" Restart this view to reconnect.")]
+            let alert = div (attribute "role" "alert" :: SurfaceTheme.transportAlertStyles True) [text (reason++" This view has stopped.")]
             in case retainedField model.popup of
                 [] -> alert
-                retained -> div [attribute "data-transport-stopped" "true"] (alert :: retained)
+                retained -> div (attribute "data-transport-stopped" "true" :: SurfaceTheme.transportStoppedRootStyles) (alert :: retained)
 
 main : Program () Model Msg
 main = Browser.element

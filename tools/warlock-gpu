@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+export HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false
+script=$(readlink -f -- "$0")
+exec /home/charl/.local/share/uv/tools/pixelrag/bin/python "$(dirname "$script")/warlock_gpu.py" "$@"

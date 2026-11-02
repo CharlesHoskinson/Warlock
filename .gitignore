@@ -6,3 +6,6 @@
 
 # Bytecode caches from running the site tools
 /site/**/__pycache__/
+
+# New interpreter caches are local; existing archived tracked artifacts stay tracked.
+__pycache__/

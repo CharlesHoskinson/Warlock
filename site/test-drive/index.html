@@ -19,14 +19,14 @@
 <div id="startup" class="desktop-startup" role="status">Starting the real Elm interface…</div>
 </main>
 <nav class="desktop-tools" aria-label="Desktop controls">
-<span class="simulation-label">Simulated desktop · client content is a fixture</span>
+<span class="simulation-label">Simulated desktop · 16 browser fixtures (not native runtime)</span>
 <a href="../index.html">Leave desktop</a>
 <button type="button" id="help-button" aria-expanded="false" aria-controls="help">Help</button>
 <button type="button" id="shortcuts-button" aria-expanded="false" aria-controls="shortcuts">Shortcuts</button>
 <button type="button" id="tour-button">Tour</button>
 <button type="button" id="reset-button">Reset</button>
 </nav>
-<section id="help" class="desktop-panel" hidden aria-labelledby="help-title"><h2 id="help-title">Try Warlock</h2><p>The taskbar opens Warlock surfaces. Client windows are simulated fixtures; they do not run applications or browse the web.</p><p>Use Shortcuts for alternatives to keys intercepted by your system. Reset returns the desktop to its initial state.</p><a href="../get-started/index.html">Get started</a> · <a href="../get-started/licenses/index.html">Licenses and attribution</a></section>
+<section id="help" class="desktop-panel" hidden aria-labelledby="help-title"><h2 id="help-title">Try Warlock</h2><p>The taskbar and popup run the real compiled Elm shell across 16 seeded browser scenarios. Client windows and host replies are simulated browser fixtures; they do not launch local apps, browse the web, or claim native Omarchy / Hyprland acceptance (19 of 242 whole requirements and 42 of 417 scenarios currently hold source-bound historical acceptance in the Elm and Haskell runtime).</p><p>Use Shortcuts for alternatives to keys intercepted by your system. Reset returns the desktop to its initial state.</p><a href="../get-started/index.html#runtime-status">Runtime status &amp; Get started</a> · <a href="../architecture/index.html#production-boundary">Elm + Haskell boundary</a> · <a href="../get-started/licenses/index.html">Licenses and attribution</a></section>
 <section id="shortcuts" class="desktop-panel" hidden aria-labelledby="shortcuts-title"><h2 id="shortcuts-title">Shortcuts</h2><p>Some shortcuts are captured by your browser or operating system. Use the taskbar controls as an in-page alternative.</p><p>Super + Alt + Space opens Applications. Super + 1–9 activates taskbar applications; add Shift to launch or Alt for application actions. Use the controls below when the system intercepts a chord.</p><div id="legend"></div></section>
 <div id="tour" class="desktop-tour"></div>
 </body></html>

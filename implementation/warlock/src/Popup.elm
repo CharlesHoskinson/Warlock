@@ -1,8 +1,8 @@
-port module Popup exposing (main, Model, Msg(..), Composition(..), Effect(..), initial, update, transition, view)
+port module Popup exposing (main, Model, Msg(..), Composition(..), Effect(..), Subscription(..), initial, subscriptionPlan, subscriptions, update, transition, view)
 
 import Browser
 import Announcement
-import Html exposing (div, text)
+import Html exposing (div, p, text)
 import Html.Attributes exposing (attribute)
 import Json.Decode as D
 import Json.Encode as E
@@ -11,6 +11,7 @@ import NativePreviewRealm as Realm
 import Presentation
 import PreviewPaintGate
 import SurfaceRenderer
+import SurfaceTheme
 import UInt64
 
 port presentation : (D.Value -> msg) -> Sub msg
@@ -34,6 +35,20 @@ type Composition = Idle | Preediting { baseline : String, before : Maybe String 
 
 -- Pure effect descriptions are shared by the statically selected transports.
 type Effect = Dispatch E.Value | PreviewCommand E.Value | PaintRequest E.Value
+
+type Subscription
+    = PresentationChannel
+    | AnnouncementsChannel
+    | RequestActionChannel
+    | NativePreviewsChannel
+    | PreviewPaintedChannel
+    | NativePreviewGrantsChannel
+    | NativePreviewQuarantineChannel
+    | NativePreviewClosedChannel
+    | NativePreviewIssuedChannel
+    | NativePreviewRetryChannel
+    | NativePreviewRetirementChannel
+
 type alias Model = { announcements : Announcement.Model, presentation : Presentation.Model, previews : Preview.Model, paintGate : PreviewPaintGate.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
 
 initial : Model
@@ -42,10 +57,90 @@ initial = {announcements=Announcement.initial,presentation=Presentation.initial,
 isComposing : Model -> Bool
 isComposing model = model.composition/=Idle
 
+subscriptionPlan : Model -> List Subscription
+subscriptionPlan model =
+    let
+        snapshot =
+            Presentation.current model.presentation
+
+        hasAcceptedSnapshot =
+            snapshot /= Nothing
+
+        visibleOverlayConsumer =
+            snapshot |> Maybe.map (\shown -> SurfaceRenderer.mode shown /= "closed") |> Maybe.withDefault False
+
+        visiblePreviewConsumer =
+            snapshot |> Maybe.map (\shown -> SurfaceRenderer.mode shown == "picker") |> Maybe.withDefault False
+
+        previewActive =
+            visiblePreviewConsumer || Preview.hasRetainedControlOrTransactions model.previews
+
+        paintPending =
+            PreviewPaintGate.hasPending model.paintGate
+
+        activeIngress =
+            Preview.hasActiveIngress model.previews
+    in
+    [ Just PresentationChannel
+    , if hasAcceptedSnapshot then Just AnnouncementsChannel else Nothing
+    , if visibleOverlayConsumer then Just RequestActionChannel else Nothing
+    , if previewActive then Just NativePreviewsChannel else Nothing
+    , if paintPending then Just PreviewPaintedChannel else Nothing
+    , Just NativePreviewGrantsChannel
+    , Just NativePreviewQuarantineChannel
+    , Just NativePreviewClosedChannel
+    , if activeIngress then Just NativePreviewIssuedChannel else Nothing
+    , if activeIngress then Just NativePreviewRetryChannel else Nothing
+    , Just NativePreviewRetirementChannel
+    ]
+        |> List.filterMap identity
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.batch
+        (List.map
+            (\channel ->
+                case channel of
+                    PresentationChannel ->
+                        presentation Present
+
+                    AnnouncementsChannel ->
+                        announcements Announce
+
+                    RequestActionChannel ->
+                        requestAction Action
+
+                    NativePreviewsChannel ->
+                        nativePreviews NativePreview
+
+                    PreviewPaintedChannel ->
+                        previewPainted PreviewPainted
+
+                    NativePreviewGrantsChannel ->
+                        nativePreviewGrants NativeGrant
+
+                    NativePreviewQuarantineChannel ->
+                        nativePreviewQuarantine NativeQuarantine
+
+                    NativePreviewClosedChannel ->
+                        nativePreviewClosed NativeClosed
+
+                    NativePreviewIssuedChannel ->
+                        nativePreviewIssued NativeIssued
+
+                    NativePreviewRetryChannel ->
+                        nativePreviewRetry NativeRetry
+
+                    NativePreviewRetirementChannel ->
+                        nativePreviewRetirement NativeRetirement
+            )
+            (subscriptionPlan model)
+        )
+
 main : Program () Model Msg
 main = Browser.element
     { init=\_ -> (initial,Cmd.none)
-    , subscriptions=\_ -> Sub.batch [announcements Announce,presentation Present,requestAction Action,nativePreviews NativePreview,previewPainted PreviewPainted,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry,nativePreviewRetirement NativeRetirement]
+    , subscriptions=subscriptions
     , view=view
     , update=update
     }
@@ -56,7 +151,11 @@ view model =
             snapshot
                 |> (\current -> model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.honestPendingQuery query current) |> Maybe.withDefault current)
                 |> (if isComposing model then SurfaceRenderer.composingPopup else identity)
-    in div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreviewPending (\identity -> Preview.visual snapshot identity model.previews) (model.pendingQuery/=Nothing || isComposing model) True LocalAction (overlay snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
+    in case Presentation.current model.presentation of
+        Just snapshot ->
+            div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [SurfaceRenderer.viewWithPreviewPending (\identity -> Preview.visual snapshot identity model.previews) (model.pendingQuery/=Nothing || isComposing model) True LocalAction (overlay snapshot),Announcement.view model.announcements]
+        Nothing ->
+            div ([attribute "data-input-composing" (if isComposing model then "true" else "false"),attribute "data-popup-state" "waiting"] ++ SurfaceTheme.preFramePopupStyles) [p ([attribute "role" "status",attribute "aria-live" "polite",attribute "aria-atomic" "true"] ++ SurfaceTheme.preFramePopupStatusStyles) [text "Waiting for desktop state…"]]
 
 update : Msg -> Model -> (Model,Cmd Msg)
 update message model =

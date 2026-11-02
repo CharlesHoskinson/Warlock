@@ -4,7 +4,8 @@ import argparse, asyncio, json, sys, threading, tempfile
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from playwright.async_api import async_playwright
+try: from playwright.async_api import async_playwright
+except ImportError: async_playwright=None
 
 SCENARIOS='taskbar launcher switcher task-view transfer picker preview-states snap notifications settings files system window-menu confirmation application-actions status-recovery'.split()
 # Each probe drives the relevant Elm control, then demands an admitted change.
@@ -30,10 +31,36 @@ def evaluate_result(scenario, status, mode, world_changed, announcements_ok=True
  if not announcements_ok:return 'wrong announcement ownership'
  return None
 
+def evaluate_architecture_probe(probe):
+ if not probe.get('hasProductionBoundary'): return 'missing #production-boundary on /architecture/'
+ if not probe.get('mentionsElmAndHaskell'): return 'missing Elm and Haskell production boundary disclosure'
+ if not probe.get('mentionsNoPythonShip'): return 'missing no-Python-runtime shipping disclosure'
+ if not probe.get('tocLinksBoundary'): return 'missing TOC link to #production-boundary on /architecture/'
+ return None
+
+def evaluate_homepage_probe(probe):
+ if probe.get('inlineStyles', 1) != 0 or probe.get('styleAttrs', 1) != 0: return 'homepage DOM is not CSS-free'
+ if not probe.get('honestCounts'): return 'missing 19/242 or 42/417 partial-runtime honesty'
+ if not probe.get('walkthroughPresent'): return 'missing #beta-walkthrough inside #scope'
+ if not probe.get('tierExplorerOk'): return 'pure-Elm #wl-beta-tier-filter boundary explorer failed'
+ if not probe.get('mvpQuickstartOk'): return 'pure-Elm #wl-mvp-quickstart reproducible track switcher failed'
+ if not probe.get('workbenchKeyboardOk'): return 'workbench tablist keyboard focus failed'
+ if not probe.get('mobileEscapeReturnOk'): return 'homepage mobile menu Escape did not return focus to toggle'
+ if not probe.get('elmThreeThemeCycleOk'): return 'homepage Elm theme controls did not reach high-contrast'
+ if not probe.get('getStartedStatusOk'): return 'get-started #runtime-status honesty banner failed'
+ if not probe.get('componentsSpecimenOk'): return 'components #specimen-boundary honesty banner failed'
+ if not probe.get('architectureBoundaryOk'): return 'architecture #production-boundary disclosure failed'
+ if not probe.get('routeSearchOk'): return 'routes.json search keyword check failed'
+ if not probe.get('offlineOk', True): return 'unexpected external network request during homepage/docs check'
+ return None
+
 def browser_failed(results):
  return any(r['result'] != 'PASS' for r in results)
 
 async def main():
+ global async_playwright
+ if async_playwright is None:
+  from playwright.async_api import async_playwright
  ap=argparse.ArgumentParser();ap.add_argument('--root',default='.');ap.add_argument('--browser',choices=['chromium','firefox','webkit','all'],default='all');ap.add_argument('--cdp',default='');ap.add_argument('--output');a=ap.parse_args()
  root=Path(a.root).resolve(); tmp=tempfile.TemporaryDirectory();(Path(tmp.name)/'Warlock').symlink_to(root)
  server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=tmp.name));threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/Warlock/'
@@ -381,7 +408,121 @@ async def main():
     await check('refusal announcement ownership',announcement)
     await check('effects interruption and rapid creation',effects)
     await check('stale receipts and pending reset',stale)
+    async def homepage_and_docs():
+     err_start=len(errors)
+     await page.set_viewport_size({'width':1440,'height':900})
+     await page.goto(base+'index.html',wait_until='load',timeout=20000)
+     await page.locator('.wl-home-root').wait_for(state='visible',timeout=10000)
+     dom=await page.evaluate('''() => {
+      const r=document.querySelector('.wl-home-root');
+      const txt=r ? r.innerText : '';
+      return {
+       inlineStyles:r ? r.querySelectorAll('style').length : 1,
+       styleAttrs:r ? r.querySelectorAll('[style]').length + (r.hasAttribute('style')?1:0) : 1,
+       honestCounts:(txt.includes('19 of 242') || txt.includes('19 / 242')) && (txt.includes('42 of 417') || txt.includes('42 / 417')) && txt.includes('selectedOperationSucceeded'),
+       walkthroughPresent:Boolean(document.querySelector('#scope #beta-walkthrough li'))
+      };
+     }''')
+     rows_all=await page.locator('.wl-beta-boundary-row').count()
+     card_links=await page.locator('.wl-beta-boundary-row a.wl-beta-card-link').count()
+     all_filter=page.locator('#wl-tier-filter-all'); await all_filter.focus()
+     await all_filter.evaluate("e => e.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true,cancelable:true,isComposing:true,keyCode:229}))")
+     tier_ime_ignored=(await all_filter.get_attribute('aria-pressed'))=='true'
+     await page.keyboard.press('ArrowRight')
+     await page.wait_for_function("() => document.activeElement?.id==='wl-tier-filter-accepted' && document.activeElement.getAttribute('aria-pressed')==='true'",timeout=5000)
+     rows_accepted=await page.locator('.wl-beta-boundary-row').count()
+     open_filter=page.locator('#wl-tier-filter-open'); await open_filter.click()
+     open_pressed=await open_filter.get_attribute('aria-pressed')
+     rows_open=await page.locator('.wl-beta-boundary-row').count()
+     await all_filter.click()
+     all_pressed=await all_filter.get_attribute('aria-pressed')
+     rows_restored=await page.locator('.wl-beta-boundary-row').count()
+     tier_ok=(rows_all==6 and card_links==6 and tier_ime_ignored and rows_accepted==2 and rows_open==2 and rows_restored==6 and open_pressed=='true' and all_pressed=='true')
+     mvp_browser=page.locator('#wl-mvp-tab-browser'); await mvp_browser.focus()
+     await mvp_browser.evaluate("e => e.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true,cancelable:true,isComposing:true,keyCode:229}))")
+     mvp_ime_ignored=(await mvp_browser.get_attribute('aria-selected'))=='true'
+     await page.keyboard.press('End')
+     await page.wait_for_function("() => document.activeElement?.id==='wl-mvp-tab-omarchy' && document.activeElement.getAttribute('aria-selected')==='true'",timeout=5000)
+     await page.keyboard.press('Home')
+     await page.wait_for_function("() => document.activeElement?.id==='wl-mvp-tab-browser' && document.activeElement.getAttribute('aria-selected')==='true'",timeout=5000)
+     await page.keyboard.press('ArrowRight')
+     await page.wait_for_function("() => document.activeElement?.id==='wl-mvp-tab-cpu' && document.activeElement.getAttribute('aria-selected')==='true'",timeout=5000)
+     mvp_cpu_txt=await page.locator('#wl-mvp-track-panel').inner_text()
+     mvp_race_ok=await page.evaluate('''async () => {
+      const b=document.getElementById('wl-mvp-tab-browser'), o=document.getElementById('wl-mvp-tab-omarchy');
+      if (!b || !o) return false;
+      b.click();
+      await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+      b.focus();
+      b.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true,cancelable:true}));
+      o.click();
+      await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+      return document.activeElement?.id === 'wl-mvp-tab-omarchy' && o.getAttribute('aria-selected') === 'true' && b.getAttribute('aria-selected') === 'false';
+     }''')
+     mvp_omarchy_txt=await page.locator('#wl-mvp-track-panel').inner_text()
+     mvp_ok=(mvp_ime_ignored and bool(mvp_race_ok) and 'qa_cpu.py --review' in mvp_cpu_txt and '10 focused ui-origin suites' in mvp_cpu_txt and '--custody' in mvp_cpu_txt and '--backend' in mvp_cpu_txt and '6e6ad828c' in mvp_cpu_txt and 'retained failed batch' in mvp_cpu_txt and 'ELM-TEA-004' in mvp_cpu_txt and 'separate historical source-bound reports' in mvp_cpu_txt and 'run-omarchy-mvp.md' in mvp_omarchy_txt and 'selectedOperationSucceeded = false' in mvp_omarchy_txt)
+     tab1=page.locator('#wl-tab-taskbar'); await tab1.focus()
+     await tab1.evaluate("e => e.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true,cancelable:true,isComposing:true,keyCode:229}))")
+     ime_ignored=(await tab1.get_attribute('aria-selected'))=='true'
+     await page.keyboard.press('ArrowRight')
+     await page.wait_for_function("() => document.activeElement?.id==='wl-tab-launcher' && document.activeElement.getAttribute('aria-selected')==='true'",timeout=5000)
+     await page.set_viewport_size({'width':320,'height':640})
+     toggle=page.locator('#wl-home-nav-toggle'); await toggle.click()
+     await page.locator('#wl-home-nav-drawer a').first.focus()
+     await page.keyboard.press('Escape')
+     await page.wait_for_function("() => document.activeElement?.id==='wl-home-nav-toggle' && document.querySelector('.wl-home-root')?.getAttribute('data-nav-open')==='false'",timeout=5000)
+     home_esc_ok=await page.evaluate("document.activeElement?.id==='wl-home-nav-toggle'")
+     await page.set_viewport_size({'width':1440,'height':900})
+     await page.locator('.wl-home-appearance button',has_text='Dawn').click()
+     t1=await page.locator('.wl-home-root').get_attribute('data-theme')
+     await page.locator('.wl-home-appearance button',has_text='High contrast').click()
+     t2=await page.locator('.wl-home-root').get_attribute('data-theme')
+     await page.locator('.wl-home-appearance button',has_text='Night').click()
+     t3=await page.locator('.wl-home-root').get_attribute('data-theme')
+     await page.goto(base+'get-started/index.html',wait_until='load',timeout=15000)
+     gs_ok=await page.evaluate('''() => {
+      const s=document.getElementById('runtime-status'), m=document.getElementById('mvp-repro');
+      const t=s ? s.innerText : '', mt=m ? m.innerText : '';
+      return Boolean(s) && Boolean(m) && t.includes('19 of 242') && t.includes('42 of 417') && t.includes('twoClosed = 0') && t.includes('6e6ad828c') && t.includes('retained failed batch') && t.includes('ELM-TEA-004') && t.includes('selectedOperationSucceeded') && mt.includes('check-site.py --root site') && mt.includes('qa_cpu.py --review') && mt.includes('10 focused ui-origin suites') && mt.includes('--backend') && mt.includes('separate historical source-bound reports') && mt.includes('run-omarchy-mvp.md') && Boolean(document.querySelector('.wl-doc-toc a[href="#runtime-status"]')) && Boolean(document.querySelector('.wl-doc-toc a[href="#mvp-repro"]'));
+     }''')
+     await page.goto(base+'components/index.html',wait_until='load',timeout=15000)
+     comp_ok=await page.evaluate('''() => {
+      const s=document.getElementById('specimen-boundary');
+      const t=s ? s.innerText : '';
+      return Boolean(s) && t.includes('19 of 242') && t.includes('42 of 417') && t.includes('16-scenario simulated browser stage') && Boolean(document.querySelector('.wl-doc-toc a[href="#specimen-boundary"]'));
+     }''')
+     await page.goto(base+'architecture/index.html',wait_until='load',timeout=15000)
+     arch_probe=await page.evaluate('''() => {
+      const b=document.getElementById('production-boundary');
+      const t=b ? b.innerText : '';
+      return {
+       hasProductionBoundary:Boolean(b),
+       mentionsElmAndHaskell:t.includes('Elm and Haskell only'),
+       mentionsNoPythonShip:t.includes('no Python runtime may ship'),
+       tocLinksBoundary:Boolean(document.querySelector('.wl-doc-toc a[href="#production-boundary"]'))
+      };
+     }''')
+     await page.goto(base+'search/index.html',wait_until='load',timeout=15000)
+     q=page.locator('input[data-search]')
+     for kw in ('haskell','elm-del-010','elm-arc-002','elm-tea-004','reproducible'):
+      await q.fill(kw)
+      await page.wait_for_function("() => (document.querySelector('[data-search-results]')?.querySelectorAll('a').length || 0) >= 1",timeout=5000)
+     err=evaluate_homepage_probe({
+      **dom,
+      'tierExplorerOk':tier_ok,
+      'mvpQuickstartOk':mvp_ok,
+      'workbenchKeyboardOk':ime_ignored,
+      'mobileEscapeReturnOk':bool(home_esc_ok),
+      'elmThreeThemeCycleOk':(t1,t2,t3)==('dawn','high-contrast','night'),
+      'getStartedStatusOk':bool(gs_ok),
+      'componentsSpecimenOk':bool(comp_ok),
+      'architectureBoundaryOk':evaluate_architecture_probe(arch_probe) is None,
+      'routeSearchOk':True,
+      'offlineOk':len(errors)==err_start
+     })
+     if err: raise AssertionError(err)
     await check('sustained controller request batches',batches)
+    await check('homepage CSS-free honesty and doc usability',homepage_and_docs)
     await ctx.close()
    except Exception as e:results.append({'browser':name,'case':'browser startup','result':'NOT RUN' if ("Executable doesn't exist" in str(e) or 'Host system is missing dependencies' in str(e) or 'error while loading shared libraries' in str(e)) else 'FAIL','detail':str(e)})
    finally:

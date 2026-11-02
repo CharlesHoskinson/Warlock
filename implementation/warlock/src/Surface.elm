@@ -311,7 +311,8 @@ controls model =
             entryControl entry =
                 let choice = if ready then Launch.select (Catalog.id entry.identity) model.launch |> Maybe.map Desktop.Start else Nothing
                     label="Open "++entry.name
-                in {id="entry:" ++ Catalog.id entry.identity,domId=Desktop.key model ("entry:" ++ Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail="",enabled=choice/=Nothing,message=choice}
+                    detail = if model.windows.shell.applicationOnly then "Opening unavailable in this session" else ""
+                in {id="entry:" ++ Catalog.id entry.identity,domId=Desktop.key model ("entry:" ++ Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail=detail,enabled=choice/=Nothing,message=choice}
             pinIds = Desktop.pinIdentities model
             pinAction suffix name label detail allowed message = {id=suffix,domId=Desktop.key model suffix,label=displayLabel label,ariaLabel=actionName label name,detail=detail,enabled=Pins.writable model.pins && allowed,message=if Pins.writable model.pins && allowed then scoped message else Nothing}
             pinFirst = entries |> List.head |> Maybe.andThen (\entry -> if List.member (Catalog.id entry.identity) pinIds then Nothing else Just (pinAction ("pin:" ++ Catalog.id entry.identity) entry.name ("Pin " ++ entry.name) "Add to taskbar" True (\stamp -> Desktop.TogglePin stamp (Catalog.id entry.identity)))) |> Maybe.map List.singleton |> Maybe.withDefault []
@@ -321,7 +322,7 @@ controls model =
                    ,pinAction ("pin-left:" ++ identity) label ("Move " ++ label ++ " left") "Pin order" (index>0) (\stamp -> Desktop.MovePin stamp identity -1)
                    ,pinAction ("pin-right:" ++ identity) label ("Move " ++ label ++ " right") "Pin order" (index<List.length pinIds-1) (\stamp -> Desktop.MovePin stamp identity 1)]
             acknowledge = Launch.uncertain model.launch |> Maybe.map (\token -> {id="control:acknowledge",domId=Desktop.key model "control:acknowledge",label="I checked; allow another launch",ariaLabel="I checked; allow another launch",detail="",enabled=True,message=Just (Desktop.Acknowledge token)}) |> Maybe.map List.singleton |> Maybe.withDefault []
-            jump=entries |> List.head |> Maybe.map (\entry -> let label="Actions for "++entry.name in {id="jump:open:"++Catalog.id entry.identity,domId=Desktop.key model ("jump:open:"++Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail="Application actions and recent files",enabled=not model.windows.shell.applicationOnly,message=if model.windows.shell.applicationOnly then Nothing else scoped (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity))}) |> Maybe.map List.singleton |> Maybe.withDefault []
+            jump=entries |> List.head |> Maybe.map (\entry -> let label="Actions for "++entry.name in {id="jump:open:"++Catalog.id entry.identity,domId=Desktop.key model ("jump:open:"++Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail=if model.windows.shell.applicationOnly then "Application actions unavailable in this session" else "Application actions and recent files",enabled=not model.windows.shell.applicationOnly,message=if model.windows.shell.applicationOnly then Nothing else scoped (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity))}) |> Maybe.map List.singleton |> Maybe.withDefault []
             prefix=jump++pinFirst++List.concat (List.indexedMap pinRows pinIds)
             prefixCount=List.length prefix
             bodyCount=prefixCount+List.length entries
@@ -341,7 +342,7 @@ controls model =
                 ,navigation "control:page-previous" "Previous page" (page>0) (-1)
                 ,navigation "control:page-next" "Next page" (page<pages-1) 1]
         in [ {id="control:search",domId="launcher-search",label=model.query,ariaLabel="Search applications",detail="",enabled=True,message=scoped (\stamp -> Desktop.SearchQuery stamp model.query)}
-           , {id="control:close",domId=Desktop.key model "control:close",label="Windows",ariaLabel="Close applications and return to windows",detail="",enabled=True,message=scoped Desktop.CloseApplications}
+           , {id="control:close",domId=Desktop.key model "control:close",label="Close applications",ariaLabel="Close applications and return to windows",detail="",enabled=True,message=scoped Desktop.CloseApplications}
            , {id="control:refresh",domId=Desktop.key model "control:refresh",label="Refresh",ariaLabel="Refresh applications",detail="",enabled=True,message=scoped Desktop.RefreshApplications}
            ] ++ acknowledge ++ paging ++ visiblePrefix ++ visibleEntries
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then
@@ -416,7 +417,7 @@ barControls model =
                     else disabled "Ambiguous application identity: "
                 Nothing ->
                     if entry==Nothing then disabled "Unavailable application: " else if not (List.isEmpty (Desktop.pinGroups identity model)) then disabled "Ambiguous application identity: " else
-                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName ("Open " ++ label) label,detail="Pinned launcher",enabled=choice/=Nothing,message=choice}
+                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName ("Open " ++ label) label,detail=if model.windows.shell.applicationOnly then "Pinned · Opening unavailable in this session" else "Pinned launcher",enabled=choice/=Nothing,message=choice}
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
@@ -480,7 +481,7 @@ contextNotice model =
         "Refused" -> "Launch refused. Refresh applications and choose again."
         _ -> if model.catalogFailure/=Nothing then
                 if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then reservationReason else "Applications were not opened. Choose Applications again."
-            else if model.open then (if model.expected/=Nothing then "Loading applications…" else if model.applications==Nothing then "Application list unavailable. Refresh to try again." else if model.applications |> Maybe.map (Catalog.search model.query >> List.isEmpty) |> Maybe.withDefault False then "No matching applications. Change your search or Refresh." else if String.isEmpty (String.trim model.query) then "Type to search applications." else "Choose a matching application.") else windowNotice model
+            else if model.open then (if model.expected/=Nothing then "Loading applications…" else if model.applications==Nothing then "Application list unavailable. Refresh to try again." else if model.applications |> Maybe.map (Catalog.search model.query >> List.isEmpty) |> Maybe.withDefault False then "No matching applications. Change your search or Refresh." else if String.isEmpty (String.trim model.query) then "Type to search applications." else if model.windows.shell.applicationOnly then "Matching applications are shown, but opening is unavailable in this session." else "Choose a matching application.") else windowNotice model
 
 windowNotice : Desktop.Model -> String
 windowNotice model =

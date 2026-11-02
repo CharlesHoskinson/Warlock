@@ -1,4 +1,4 @@
-module NativePreviewReceiver exposing (Model, init, receive, view, action, inspect)
+module NativePreviewReceiver exposing (Model, init, acceptsSnapshots, receive, view, action, inspect)
 
 import Html exposing (Html, text)
 import Json.Decode as D
@@ -29,6 +29,11 @@ init : D.Value -> Model
 init flags = case D.decodeValue grantDecoder flags of
     Ok grant -> Receiver grant grant.floor Nothing False
     Err _ -> Inert
+
+acceptsSnapshots : Model -> Bool
+acceptsSnapshots model = case model of
+    Receiver _ _ _ False -> True
+    _ -> False
 
 type alias Packet = { domain : Realm.Domain, lease : Counter, sequence : Counter, raw : D.Value }
 

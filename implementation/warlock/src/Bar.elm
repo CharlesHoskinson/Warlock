@@ -1,14 +1,16 @@
-port module Bar exposing (main, Model, Msg(..), Effect(..), initial, initialWithScroll, step, transition, localEffect, statusDomId, view)
+port module Bar exposing (main, Model, Msg(..), Effect(..), Subscription(..), initial, initialWithScroll, step, transition, localEffect, statusDomId, subscriptionPlan, subscriptions, view)
 
 import Announcement
 import Browser
 import Browser.Dom
 import Html exposing (div, text)
+import Html.Attributes exposing (attribute)
 import Json.Decode as D
 import Json.Encode as E
 import Presentation
 import StatusScroll
 import SurfaceRenderer
+import SurfaceTheme
 import Task
 
 port presentation : (D.Value -> msg) -> Sub msg
@@ -26,6 +28,11 @@ type Msg
 type Effect
     = Dispatch E.Value
     | ResetStatusViewport StatusScroll.Epoch String
+
+type Subscription
+    = PresentationChannel
+    | RequestActionChannel
+    | AnnouncementsChannel
 
 type alias Model =
     { presentation : Presentation.Model
@@ -133,6 +140,44 @@ statusDomId model =
     Presentation.current model.presentation
         |> Maybe.andThen (\snapshot -> StatusScroll.domIdForSnapshot snapshot model.statusScroll)
 
+subscriptionPlan : Model -> List Subscription
+subscriptionPlan model =
+    if Presentation.current model.presentation /= Nothing then
+        [ PresentationChannel, RequestActionChannel, AnnouncementsChannel ]
+
+    else
+        [ PresentationChannel ]
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.batch
+        (List.map
+            (\channel ->
+                case channel of
+                    PresentationChannel ->
+                        presentation Present
+
+                    RequestActionChannel ->
+                        requestAction Action
+
+                    AnnouncementsChannel ->
+                        announcements Announce
+            )
+            (subscriptionPlan model)
+        )
+
+waitingView : Html.Html Msg
+waitingView =
+    div
+        ([ attribute "data-bar-state" "waiting"
+         , attribute "role" "status"
+         , attribute "aria-live" "polite"
+         , attribute "aria-atomic" "true"
+         ]
+            ++ SurfaceTheme.preFrameBarStyles
+        )
+        [ text "Waiting for desktop state…" ]
+
 view : Model -> Html.Html Msg
 view model =
     Presentation.current model.presentation
@@ -143,14 +188,14 @@ view model =
                     , Announcement.view model.announcements
                     ]
             )
-        |> Maybe.withDefault (text "")
+        |> Maybe.withDefault waitingView
 
 -- A display owns only a presentation cache and local viewport state. It cannot run Desktop.update.
 main : Program () Model Msg
 main =
     Browser.element
         { init = \_ -> ( initial, Cmd.none )
-        , subscriptions = \_ -> Sub.batch [ presentation Present, requestAction Action, announcements Announce ]
+        , subscriptions = subscriptions
         , view = view
         , update =
             \message model ->

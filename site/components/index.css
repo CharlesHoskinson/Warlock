@@ -1,12 +1,23 @@
 @layer components {
-  .component-nav { display: grid; gap: var(--wl-sys-space-8); padding-block: var(--wl-sys-space-16); }
+  .component-nav { display: grid; gap: var(--wl-sys-space-8); margin-top: var(--wl-sys-space-8); padding-block: var(--wl-sys-space-12) var(--wl-sys-space-8); padding-inline-start: var(--wl-sys-space-12); border-top: 1px solid var(--wl-sys-color-border-essential); }
   .component-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--wl-sys-space-16); padding: 0; list-style: none; }
   .component-grid li { border: 1px solid var(--wl-sys-color-border-essential); border-radius: var(--wl-sys-radius-card); background: var(--wl-sys-color-surface); padding: var(--wl-sys-space-20); }
   .component-grid li[hidden] { display: none; }
   .component-grid h2 { margin-top: 0; }
-  .component-evidence { display: grid; gap: var(--wl-sys-space-24); }
-  .component-evidence figure { margin: 0; }
+  .component-evidence { display: grid; gap: var(--wl-sys-space-24); margin-block: var(--wl-sys-space-16); }
+  .component-evidence figure { margin: 0; padding: var(--wl-sys-space-16); border: 1px solid var(--wl-sys-color-border-essential); border-radius: var(--wl-sys-radius-card); background: var(--wl-sys-color-surface); }
   .component-evidence img { display: block; max-width: 100%; height: auto; border: 1px solid var(--wl-sys-color-border-essential); }
   .component-evidence figcaption { margin-top: var(--wl-sys-space-8); color: var(--wl-sys-color-text-secondary); }
+  .wl-specimen-frame { margin-block: var(--wl-sys-space-16); }
+  .wl-specimen-frame button[data-embed-toggle] { min-height: 2.5rem; padding: 8px 16px; font-weight: 600; background: var(--wl-sys-color-action-fill); color: var(--wl-sys-color-on-action); border-color: var(--wl-sys-color-on-action); }
+  [data-theme="dawn"] .wl-specimen-frame button[data-embed-toggle] { border-color: var(--wl-sys-color-brand-text); }
+  .wl-specimen-frame button[data-embed-toggle][aria-expanded="true"] { background: var(--wl-sys-color-surface-selected); color: var(--wl-sys-color-text); border-color: var(--wl-sys-color-border-essential); }
   .wl-specimen-frame iframe { display: block; width: 100%; height: 40rem; max-height: 75vh; border: 1px solid var(--wl-sys-color-border-essential); margin-top: var(--wl-sys-space-16); }
+}
+@layer accessibility {
+  @media (forced-colors: active) {
+    .component-evidence figure, .component-grid li { border-color: CanvasText; background: Canvas; color: CanvasText; }
+    .wl-specimen-frame button[data-embed-toggle] { background: ButtonFace; color: ButtonText; border-color: ButtonText; }
+    .wl-doc-nav [aria-current="page"] { border-inline-start-color: Highlight; }
+  }
 }

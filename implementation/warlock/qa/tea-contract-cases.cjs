@@ -568,7 +568,7 @@ function buildPinCases(c) {
     const p = prefix(presentation);
     const controls = [
       row('control:search', 'launcher-search', '', 'Search applications', '', true),
-      row('control:close', p + 'control:close', 'Windows', 'Close applications and return to windows', '', true),
+      row('control:close', p + 'control:close', 'Close applications', 'Close applications and return to windows', '', true),
       row('control:refresh', p + 'control:refresh', 'Refresh', 'Refresh applications', '', true),
     ];
     for (let i = 0; i < order.length; i++) {
@@ -1020,7 +1020,7 @@ function buildLaunchDeadlineCases(c) {
     if (state === 'closed') return [];
     const rows = [
       row('control:search', 'launcher-search', '', 'Search applications', '', true),
-      row('control:close', prefix(p) + 'control:close', 'Windows', 'Close applications and return to windows', '', true),
+      row('control:close', prefix(p) + 'control:close', 'Close applications', 'Close applications and return to windows', '', true),
       row('control:refresh', prefix(p) + 'control:refresh', 'Refresh', 'Refresh applications', '', true),
     ];
     if (state === 'unknown') rows.push(row('control:acknowledge', prefix(p) + 'control:acknowledge',

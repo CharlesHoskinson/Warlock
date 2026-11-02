@@ -82,6 +82,8 @@ def main():
         work.mkdir(mode=0o700)
         shutil.copytree(ROOT / 'implementation/warlock/src', work / 'src')
         shutil.copytree(held / compiler_pin['elmHome'], home)
+        from elm_http_dependencies import stage as stage_http_dependencies
+        report['httpDependencies'] = stage_http_dependencies(home)
         (work / 'qa').mkdir()
         config = json.loads((ROOT / 'implementation/warlock/elm.json').read_text())
         config['source-directories'] = ['src', 'qa']

@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "reviewer": "reviewer",
+  "observedUTC": "2026-11-02T14:42:35.928640+00:00",
+  "scope": "Read-only orchestration forensics; no worker, coordinator, service, build, model, VM or native execution",
+  "findings": [
+    {
+      "id": "F1",
+      "statement": "Latest recorded worker wave was bounded, not an ongoing overnight development loop. Terminal counts are {'exit 0': 11, 'exit 124': 3, 'exit 3': 1}; last log write07:20:27Z. Log mtime records a write, not a precise execution event timestamp."
+    },
+    {
+      "id": "F2",
+      "statement": "Root reports goal blocked at07:10:09Z; child goal tool returns null, so blocked status/reason is not independently retrievable here. That reported transition preceded the final bounded worker endings."
+    },
+    {
+      "id": "F3",
+      "statement": "CURRENT-CONTINUATION was last written06:44:42Z and still says ACTIVE/session91368 running. At14:25 the recorded census is empty. A stale intention document does not establish continuous work or current job liveness."
+    },
+    {
+      "id": "F4",
+      "statement": "Current AgentBus doctor passes verifier/key mode/credential/broker/arbiter/clock checks; broker1883 and verifier18990 listen, idp/arbiter services active. This establishes current health, not historical service uptime."
+    },
+    {
+      "id": "F5",
+      "statement": "Protected registry self-test ran300 tests with two assertion failures; actual retained stderr identifies incorrect test CLI scope and noncanonical adoption argument. These are internally repairable; no external dependency failure is established."
+    },
+    {
+      "id": "F6",
+      "statement": "Launch/resume helpers finish after bounded turns and rely on the lead for renewal. Census is a snapshot writer. memwatch monitors memory, not goal/work liveness. No automatic liveness recovery appears in these inspected mechanisms. Lead launcher lacks a singleton lease/lock; role resume uses a check-then-launch SID scan without an atomic per-role launch reservation."
+    }
+  ],
+  "causalAssessment": {
+    "supported": "The team wave reached terminal states while the continuation record remained stale and the lead goal was reported blocked. Manual bounded orchestration had no independent continuation/recovery path. Internal test failures were repairable and should not have been treated as a reason for indefinite external blockage.",
+    "notEstablished": [
+      "Exact reason the lead marked the goal blocked; no private CLI transcript was read.",
+      "Historical AgentBus outage or memory-pressure kill; no supporting historical observation obtained.",
+      "Continuous development after07:20Z or until14:25Z."
+    ]
+  },
+  "workerTerminalObservations": [
+    {
+      "name": "terra-engine",
+      "cutoffUTC": "2026-11-02T07:15:12.348534+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:15:20.683968+00:00",
+      "terminalLogSha256": "30282f4737aa143f56f2710c9db787e65e78f0a1be23ff506f138ca5c6e1cb42",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-engine-resume-20261102T061722Z-SOim4a.log"
+    },
+    {
+      "name": "terra-graph",
+      "cutoffUTC": "2026-11-02T07:15:27.348534+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:15:33.315966+00:00",
+      "terminalLogSha256": "48a13438e7e6950518e8213947f89f5b1433c062e71e9bc637d216e3f9a740e1",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-graph-resume-20261102T061723Z-0nUAmo.log"
+    },
+    {
+      "name": "terra-portable",
+      "cutoffUTC": "2026-11-02T07:15:42.348534+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:15:52.971962+00:00",
+      "terminalLogSha256": "46749e136dd363874448d4248fab85f9a9bd289aa3f854facf7d30d75c0be5dc",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-portable-resume-20261102T061724Z-sOH9I2.log"
+    },
+    {
+      "name": "terra-q-front",
+      "cutoffUTC": "2026-11-02T07:15:57.348534+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:16:52.471951+00:00",
+      "terminalLogSha256": "3c962a92f1d5a9899a7184ead1f7c3cb9552be4984ead3d8287ef34de99713f9",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-q-front-resume-20261102T061724Z-DWIGgm.log"
+    },
+    {
+      "name": "terra-q-http",
+      "cutoffUTC": "2026-11-02T07:09:59.836359+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:10:11.624016+00:00",
+      "terminalLogSha256": "4c7518fff83cd86a0695fc36abdf902a3c7558f86926daaef9b46f4e014c1cf4",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-q-http-resume-20261102T061209Z-LVI5qG.log"
+    },
+    {
+      "name": "terra-q-lifetime",
+      "cutoffUTC": "2026-11-02T07:16:27.348534+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:16:40.695954+00:00",
+      "terminalLogSha256": "d24081933e6b31ce35b1484726c95911360c6d2432930109a1cee471f8c08e64",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-q-lifetime-resume-20261102T061725Z-lkl4jW.log"
+    },
+    {
+      "name": "terra-q-network",
+      "cutoffUTC": "2026-11-02T07:16:42.348534+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:16:51.191952+00:00",
+      "terminalLogSha256": "3ae44b39623954621145f99a783bfec6f0a1166a02d56c5eb55c69ddde14354d",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-q-network-resume-20261102T061725Z-ZuABG3.log"
+    },
+    {
+      "name": "terra-q-origin",
+      "cutoffUTC": "2026-11-02T07:16:57.348534+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:17:06.563949+00:00",
+      "terminalLogSha256": "500ace1715c59e62eb743b6a997f57f951701d52e6fd48a16bb5d9db5dd0d1fd",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-q-origin-resume-20261102T061726Z-KwLNNh.log"
+    },
+    {
+      "name": "terra-security",
+      "cutoffUTC": "2026-11-02T07:17:12.348534+00:00",
+      "terminal": "exit 124",
+      "terminalLogLastWriteUTC": "2026-11-02T07:17:27.123945+00:00",
+      "terminalLogSha256": "d76eb23872df73a8094c806c2e792cdf420ea5279b83c3c7483355a3f9fce56b",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-security-resume-20261102T061727Z-8Ooe5H.log"
+    },
+    {
+      "name": "terra-vm",
+      "cutoffUTC": "2026-11-02T07:17:27.348534+00:00",
+      "terminal": "exit 124",
+      "terminalLogLastWriteUTC": "2026-11-02T07:17:27.747945+00:00",
+      "terminalLogSha256": "87cbce25b8a32d0a7a7f86f1dbdfb5f6884b72b6b314c48d703117d16730ccb6",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-vm-resume-20261102T061727Z-31XC3a.log"
+    },
+    {
+      "name": "sol-advisor",
+      "cutoffUTC": "2026-11-02T07:17:42.348534+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:17:22.703946+00:00",
+      "terminalLogSha256": "5c8abf725891c38589ac68a5c8329618dcd0d72a1fd822baa481ce501100e429",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/sol-advisor-20261102T061728Z-1yVIF0.log"
+    },
+    {
+      "name": "ux-performance",
+      "cutoffUTC": "2026-11-02T07:17:57.348534+00:00",
+      "terminal": "exit 124",
+      "terminalLogLastWriteUTC": "2026-11-02T07:17:28.867945+00:00",
+      "terminalLogSha256": "030453951192bb4e882cd57f25c183bd2c9c806b67c237bea979893b295eba38",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/ux-performance-20261102T061728Z-gDvjcS.log"
+    },
+    {
+      "name": "gemini-gui",
+      "cutoffUTC": "2026-11-02T06:40:27.624301+00:00",
+      "terminal": "exit 3",
+      "terminalLogLastWriteUTC": "2026-11-02T06:41:04.540332+00:00",
+      "terminalLogSha256": "564fc6308c0efc308b8964575f96475930a71c434054c6af6098ce2ddd2d94fc",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/gemini-gui-20261102T054237Z-RGBPfo.log"
+    },
+    {
+      "name": "gemini-omarchy",
+      "cutoffUTC": "2026-11-02T07:20:58.068312+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:17:58.859938+00:00",
+      "terminalLogSha256": "bba51a8b85046e287d68255257c9c6e19f867fe7a0d4258c64b2b0b15b74aca4",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/gemini-omarchy-20261102T062248Z-6rhz5i.log"
+    },
+    {
+      "name": "gemini-site",
+      "cutoffUTC": "2026-11-02T07:21:18.068312+00:00",
+      "terminal": "exit 0",
+      "terminalLogLastWriteUTC": "2026-11-02T07:20:27.871908+00:00",
+      "terminalLogSha256": "814b8181404d8f166b42804d51ddd726cdbca82502688d98f7a3efdca53ea9fa",
+      "logPathOutsideRepository": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/gemini-site-20261102T062249Z-oez9wu.log"
+    }
+  ],
+  "artifactHashes": {
+    ".warlock-contributor/registry-cpu-1793603074330227737/report.json": "0ab36739bc8c70f50fa553a16a6dedeb8486d74ac4bd3cc51fbcc92266d04fc8",
+    ".warlock-contributor/registry-cpu-1793603074330227737/plugin-self-test.stdout": "6e332b80115e8dff38dd897694f916c11baacffa776819fe309bd91511fd0029"
+  },
+  "outsideArtifactHashes": {
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/CURRENT-CONTINUATION.json": "ac69fcd0fbc7cf10cb9d92611c262cafeed836eb7e8f1a46486d829d9e9cffe1",
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json": "d8996b252f929c5a1c4cfcb9d7125355c3ae6a5a0e8521f83c8b09bc8fd1e42e",
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/live-continuity-codex-launches.json": "ccef7011e6a1ffc3cfbb66933c5e452c2da6252336393663feeeff30bdb67654",
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/live-continuity-gemini-launches.json": "863cefb83f3fd07fdc42f33f4f466c5d1539926233611cd92004e43efd87a3b1",
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/tools/launch-lead.sh": "c40d90e316c831bd64d5ee329d327d27e613121b3c58da15c5a018578e45b133",
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/tools/resume-terra.sh": "3c0ebad99bc7544031dd16c87fb0639a50bd2c69e04becae2a2ed8e3c7371b92",
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/tools/run-agent.sh": "bac3499fa85217bb49e4c88683d6137c62c7c9c7bf31924a2df8d146752cbffe",
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/tools/census-owned-workers.py": "60e13b4d3a99d7f57c18cbc226eb2275659c935b7e12136d57c262899ffb97f9",
+    "/home/charl/.local/state/warlock-team/20261031-agentbus/tools/memwatch.sh": "0e0a88a0f2bf25d25c4a601e5ccbd7bebbe263f30dddea62f14dae2a94cf6be8"
+  },
+  "repairProposal": {
+    "immediate": [
+      "Apply only reviewed two-fixture correction; root runs the protected suite and preserves failed report.",
+      "Consume pending protected handles and reconcile actual job terminal state before replacing ACTIVE checkpoint.",
+      "Continue repairing internal source/test/workflow errors under the active goal; reserve blocked for an actual external dependency after applicable repeated-blocker rules."
+    ],
+    "durable": [
+      "Checkpoint structured actual goal status, terminal protected-job receipt, worker census freshness and next concrete action atomically after each job and before any lead yield. Never persist an intention as running without a live handle observation.",
+      "Use a read-only periodic continuity probe to detect stale/mismatched state and signal the existing lead continuation channel. It must never spawn a coordinator/worker, mint credentials, alter goal/claims, rerun QA or mutate source. Scheduling/integration is not installed by this proposal.",
+      "Before any future authorized launch, use one canonical run-level coordinator lock and atomic per-role launch reservations covering identity, session, PID/birth and terminal/drain evidence; existing keys and scopes are reused only after live validity checks. A duplicate candidate is refused, not replaced.",
+      "Keep source/QA gates unchanged. A failed check queues internal repair and retains evidence; it does not produce acceptance or silent gate bypass."
+    ]
+  },
+  "proposalInstalled": false,
+  "testExecutionPerformed": false,
+  "scenarioAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "workerTerminalCounts": {
+    "exit 0": 11,
+    "exit 124": 3,
+    "exit 3": 1
+  }
+}

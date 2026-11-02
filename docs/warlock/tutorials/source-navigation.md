@@ -15,7 +15,18 @@ warlock-ctx stats
 warlock-ctx q 'OutputController SurfaceRenderer snapshot' --budget 1500
 ```
 
-A different checkout does not automatically have this tool. If it is unavailable, use bounded `rg` and direct source reads. Follow the [repository graph rules](../../../AGENTS.md): at most two graph calls per question, then at most three bounded source windows. Check stale warnings. Elm/Quint entries are lexical; some C macros and JavaScript are only partially extracted. Inferred edges are not executed-call or correctness evidence.
+A different checkout does not automatically have this tool. The current wrappers are versioned at `tools/warlock-ctx` and `tools/warlock-gpu`; this host also has user-local symlinks. If unavailable, use bounded `rg` and direct source reads. Follow the [repository graph rules](../../../AGENTS.md): at most two graph calls per question, then at most three bounded source windows. Check stale warnings. The current bounded index covers Elm/Haskell and all242requirements/417scenarios; declarations and associations are lexical. Inferred edges are not executed-call or correctness evidence.
+
+Root can build local semantic embeddings on the RTX5090 using the existing private PyTorch environment:
+
+```sh
+warlock-ctx update
+warlock-ctx eval
+warlock-gpu index
+warlock-gpu --budget 1500 hq 'Which requirement denies remote navigation?'
+```
+
+The model is `BAAI/bge-small-en-v1.5`, pinned at revision `5c38ec7c405ec4b44b94cc5a9bb96e735b38267a`, with verified local weights/tokenizer hashes under `~/.local/share/warlock-graph/gpu/`. Inference runs offline. CUDA produces embeddings and semantic seeds; Graphify traversal remains CPU work. Sandboxed workers whose GPU access is denied can consume the same index with `warlock-gpu --device cpu --budget 1500 hq 'question'`, using read-only cache access and two Torch CPU threads. No daemon or relaxed sandbox is required. Source additions/edits, graph changes, helper changes and model changes require a fresh index; failures are explicit. Serial root ownership still applies to index updates. The dated verification receipt in that cache is development-tool evidence, never original scenario or native acceptance.
 
 ## 3. Read the actual boundary
 

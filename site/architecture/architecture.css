@@ -1,6 +1,6 @@
 @layer components {
   .architecture-announcement {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
-  .architecture-intro {max-width: 70ch}
+  .architecture-intro, #production-boundary {max-width: 72ch}
   .architecture-panel {background:var(--wl-sys-color-surface);border:1px solid var(--wl-sys-color-border-essential);border-radius:var(--wl-sys-radius-card);padding:1.25rem;margin-block:1.5rem}
   .architecture-controls {display:flex;flex-wrap:wrap;align-items:end;gap:.75rem}
   .architecture-controls label {display:grid;gap:.35rem}

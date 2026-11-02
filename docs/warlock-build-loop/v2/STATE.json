@@ -1,52 +1,50 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-02T05:49:30.923984+00:00",
+  "updatedUTC": "2026-11-02T14:47:32.305808+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "engine-pid1-ownership",
+    "id": "tea-subscriptions-visible-beta",
     "requirements": [
-      "ELM-ARC-002"
+      "ELM-TEA-004"
     ],
     "scenarios": [
-      "ownership-presentation"
+      "tea-subscriptions"
     ],
     "paths": [
-      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs",
-      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs",
-      "implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs",
-      "implementation/warlock/haskell/process-custody/process-custody.cabal",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs",
-      "implementation/warlock/haskell/process-custody/test/DeadlineStop.hs",
-      "implementation/warlock/haskell/process-custody/test/PersistentControls.hs",
-      "implementation/warlock/haskell/protocol/protocol.cabal",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
-      "implementation/warlock/haskell/protocol/test/OwnerControls.hs",
-      "implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs",
-      "implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs",
-      "implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs",
-      "implementation/warlock/haskell/process-custody/README.md",
-      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
-      "implementation/warlock/haskell/runtime/test-ui/Main.hs"
+      "implementation/warlock/qa/StandaloneMvpReplay.elm",
+      "implementation/warlock/qa/TeaAdmissionSubscriptionsReplay.elm",
+      "implementation/warlock/qa/TeaBarSubscriptionsReplay.elm",
+      "implementation/warlock/qa/TeaPopupSubscriptionsReplay.elm",
+      "implementation/warlock/qa/TeaRendererSubscriptionsReplay.elm",
+      "implementation/warlock/qa/preview-description-browser.mjs",
+      "implementation/warlock/qa/standalone-mvp.cjs",
+      "implementation/warlock/qa/tea-contract-cases.cjs",
+      "implementation/warlock/qa/tea-subscriptions-cases.cjs",
+      "implementation/warlock/qa/tea-subscriptions.cjs",
+      "implementation/warlock/qa/ui-http.cjs",
+      "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/HttpBar.elm",
+      "implementation/warlock/src/HttpPopup.elm",
+      "implementation/warlock/src/NativePreviewAdmission.elm",
+      "implementation/warlock/src/NativePreviewReceiver.elm",
+      "implementation/warlock/src/NativePreviewRenderer.elm",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/PreviewPaintGate.elm",
+      "implementation/warlock/src/PreviewPresenter.elm",
+      "implementation/warlock/src/RetainedPreviewPresenter.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/src/SurfaceTheme.elm"
     ],
-    "before": "The selected application still has bounded-conversation lifetime and incomplete current native authority/lifetime cleanup proof.",
-    "after": "Introduce retained persistent process ownership, lexical frame/action budgets and callback-safe endpoint retirement; qualify actual lifecycle before wiring the persistent application.",
+    "before": "Bar and Popup subscribe regardless of visible/active demand; Popup paint gate drops actual protocol3 object proposals, and beta explanations obscure unavailable appOnly actions.",
+    "after": "Derive recurring demand from visible consumers and retained transactions; preserve ordered revocation and scoped paint proposals even while closed, with truthful visible beta state feedback.",
     "verification": [
-      "Root protected actual production/test compile, existing formal checks, all36behavioral suites, original25owner controls plus32seed real public frame/batch lifecycle sequences and actual socket callback-drain/once-only close. Live/native/application wiring remains separate."
+      "Protected actual optimized roots and literal model/effect/subscription boundary fixtures, synchronous/delayed callbacks, current-source Omarchy visible journey. Complete HTTP wrapper model/effect AST remains mandatory before wholeTEA004 verdict; native qualified separately."
     ]
   },
   "nextSlices": [
@@ -3781,7 +3779,7 @@
     "acceptedScenarios": 42,
     "behaviorChange": "Retain typed confirmation/receipt phases for Files, application actions, shortcuts, motion preferences and system controls; preserve Unknown reservations without replay. Typed geometry capabilities, snap regions, motion source and transport failures preserve existing boundary wire and labels. SessionClosing explicitly denies Logout; other bounded observed text is preserved."
   },
-  "nextConcreteAction": "Publish actual component source/evidence, then integrate frozen beta7Elm0233/QA0510 and run proportional compiled/bridge + current Omarchy journey. Whole TEA004 requires remaining complete HTTP wrapper model/effect fixtures.",
+  "nextConcreteAction": "Continue remotely from docs/warlock-build-loop/v2/remote-handoff-20261102/README.md; all source/proposals preserved, no automatic local team restart. Finish UiHttp/full HTTP effects, subscription runtime verification and matching Omarchy trial.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4159,9 +4157,55 @@
           "Protected345input36suite104command pass; identical actual old/new source RED1/GREEN0, isolated fault controls;14named and10k40step samples with explicit uniformzero coverage and separate1guidedpositive; fresh217source Omarchy17input live trial still exits1 with cleanupUnknown."
         ]
       }
+    },
+    {
+      "atUTC": "2026-11-02T06:06:00.379947+00:00",
+      "slice": {
+        "id": "engine-pid1-ownership",
+        "requirements": [
+          "ELM-ARC-002"
+        ],
+        "scenarios": [
+          "ownership-presentation"
+        ],
+        "paths": [
+          "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs",
+          "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs",
+          "implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs",
+          "implementation/warlock/haskell/process-custody/process-custody.cabal",
+          "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
+          "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs",
+          "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs",
+          "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs",
+          "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs",
+          "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs",
+          "implementation/warlock/haskell/process-custody/test/DeadlineStop.hs",
+          "implementation/warlock/haskell/process-custody/test/PersistentControls.hs",
+          "implementation/warlock/haskell/protocol/protocol.cabal",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+          "implementation/warlock/haskell/protocol/test/OwnerControls.hs",
+          "implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs",
+          "implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs",
+          "implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs",
+          "implementation/warlock/haskell/process-custody/README.md",
+          "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+          "implementation/warlock/haskell/runtime/test-ui/Main.hs"
+        ],
+        "before": "The selected application still has bounded-conversation lifetime and incomplete current native authority/lifetime cleanup proof.",
+        "after": "Introduce retained persistent process ownership, lexical frame/action budgets and callback-safe endpoint retirement; qualify actual lifecycle before wiring the persistent application.",
+        "verification": [
+          "Root protected actual production/test compile, existing formal checks, all36behavioral suites, original25owner controls plus32seed real public frame/batch lifecycle sequences and actual socket callback-drain/once-only close. Live/native/application wiring remains separate."
+        ]
+      },
+      "outcome": "Persistent custody foundation published6e6ad828c; component verified, fullARC002original remains incomplete, no acceptedcountincrease."
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/engine-pid1.json",
+  "activeContributorRecord": ".warlock-contributor/tea-subscriptions-root.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -4211,7 +4255,7 @@
     "participantRecord": ".warlock-contributor/tea-model-effects.json",
     "originalStopHistoriesPreserved": true
   },
-  "activeVerificationPhase": "r19 focused backend/frontend passed and terminal consumed; publish verified component before next actual beta GUI integration",
+  "activeVerificationPhase": "MVP639 PASS; subscription runtime still fails stopped-alert assertion; contributor workflow repaired and protected suite passes. Remote WIP handoff; no live development workers.",
   "threadNamespaceGuardCheckpoint": {
     "source": "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs",
     "protectedReport": ".warlock-contributor/haskell-cpu-1793538664658280462/report.json",
@@ -4855,6 +4899,18 @@
       "scope": "Actual compiled Main to selected Haskell CLI on private host component fixture; no rendered GUI or native/release acceptance."
     },
     "wholeEarsAdded": 0,
+    "nativeAccepted": false,
+    "releaseAccepted": false
+  },
+  "remoteHandoff": {
+    "status": "work-in-progress publication requested by user for remote continuation",
+    "path": "docs/warlock-build-loop/v2/remote-handoff-20261102/README.md",
+    "archive": "docs/warlock-build-loop/v2/remote-handoff-20261102/engineering-work.tar.gz",
+    "archiveSHA256": "224df4b74e6d3e0ec08df1e4a59aa4ed112a3017119e7864ec8f52f0489ab717",
+    "engineeringFiles": 3425,
+    "externalWorkersLive": 0,
+    "goalStatusObserved": "blocked",
+    "noBackgroundDevelopmentLoop": true,
     "nativeAccepted": false,
     "releaseAccepted": false
   }

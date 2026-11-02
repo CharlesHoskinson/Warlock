@@ -263,6 +263,35 @@ def canonical_source_path(root, name):
     return parsed.as_posix()
 
 
+def introduced_foreign_paths(data):
+    return {e.get('path') for e in (data or {}).get('events', [])
+            if isinstance(e, dict) and type(e.get('eventSchema')) is int
+            and e['eventSchema'] == 3 and isinstance(e.get('path'), str)}
+
+
+def introduced_foreign_baseline(root, record, name):
+    """Read immutable clean-or-absent start bytes, never adopt current source."""
+    canonical_source_path(root, name)
+    if (not name.startswith('implementation/warlock/')
+            or name.startswith('implementation/warlock/qa/evidence/')):
+        raise ValueError('New foreign custody is limited to candidate implementation inputs')
+    revision = record.get('sourceRevision')
+    if not isinstance(revision, str) or re.fullmatch(r'[0-9a-f]{40}', revision) is None:
+        raise ValueError('New foreign custody requires the full original sourceRevision')
+    resolved = git_run(root, 'rev-parse', '--verify', '--end-of-options', revision + '^{commit}')
+    if resolved.returncode or resolved.stdout.decode().strip() != revision:
+        raise ValueError('New foreign custody baseline is not the original immutable commit')
+    tree = git(root, '--literal-pathspecs', 'ls-tree', '-z', revision, '--', name)
+    if not tree:
+        return None
+    entry = tree.rstrip(b'\0').split(b'\t', 1)
+    metadata = entry[0].split()
+    if (len(entry) != 2 or entry[1] != name.encode() or len(metadata) != 3
+            or metadata[0] not in (b'100644', b'100755') or metadata[1] != b'blob'):
+        raise ValueError('New foreign custody baseline must be a regular Git blob or absent')
+    return hashlib.sha256(git(root, 'cat-file', 'blob', metadata[2].decode())).hexdigest()
+
+
 def validate_reconciliation_event(root, record, identity, event, previous_events, errors):
     required = ('path', 'fromSha256', 'toSha256', 'sourceRecordSnapshot', 'sourceRecordSnapshotSha256',
                 'reviewFile', 'reviewFileSha256', 'reason', 'reviewer', 'sourceOwner', 'atUTC',
@@ -271,11 +300,13 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
     if isinstance(event, dict) and 'eventSchema' in event and type(version) is not int:
         errors.append('Foreign reconciliation event schema must be an integer')
         return None
-    if version == 2:
+    if version in (2, 3):
         required += ('sourceRecordPath', 'ownerCensusSnapshot', 'ownerCensusSnapshotSha256')
     elif version != 1:
         errors.append('Foreign reconciliation event has an unsupported schema')
         return None
+    if version == 3:
+        required += ('baselineRevision',)
     if not isinstance(event, dict) or any(key not in event for key in required):
         errors.append('Foreign reconciliation event has an incomplete schema')
         return None
@@ -292,8 +323,14 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
     if event.get('previousEventSha256') != previous_hash:
         errors.append('Foreign reconciliation event chain is broken')
     name = event.get('path')
-    if not isinstance(name, str) or name not in record.get('foreignDirty', {}):
+    captured = name in record.get('foreignDirty', {}) if isinstance(name, str) else False
+    introduced_before = any(isinstance(prior, dict) and prior.get('eventSchema') == 3
+                            and prior.get('path') == name for prior in previous_events)
+    if not isinstance(name, str) or (not captured and version != 3 and not introduced_before):
         errors.append('Foreign reconciliation path is invalid')
+        return None
+    if version == 3 and (captured or introduced_before):
+        errors.append('New foreign introduction must not replace existing custody')
         return None
     try:
         safe(root, name)
@@ -310,6 +347,14 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
         expected = record['foreignDirty'][name]
     else:
         expected = None
+    if version == 3:
+        try:
+            if event['baselineRevision'] != record.get('sourceRevision'):
+                raise ValueError('New foreign baseline revision differs from original participant')
+            expected = introduced_foreign_baseline(root, record, name)
+        except (ValueError, OSError) as exc:
+            errors.append('Invalid new foreign baseline: ' + str(exc))
+            return None
     for prior in previous_events:
         if prior.get('path') == name:
             expected = prior.get('toSha256')
@@ -344,7 +389,7 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
     source_record_path = None
     census_path = None
     census_hash = None
-    if version == 2:
+    if version in (2, 3):
         try:
             if canonical_source_path(root, name) != name:
                 raise ValueError('Reconciled path is not canonical')
@@ -376,7 +421,7 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
         errors.append('Foreign reconciliation source owner differs from its frozen record')
     if new != latest_recorded_source_hash(snapshot, name):
         errors.append('Frozen owner record current binding does not pin the reconciled source hash: ' + name)
-    if version == 2:
+    if version in (2, 3):
         if (not isinstance(source_owner, str) or not source_owner.strip()
                 or source_owner.strip().casefold() == str(record.get('owner', '')).strip().casefold()):
             errors.append('Foreign source owner must differ from the target participant owner')
@@ -419,10 +464,16 @@ def validate_reconciliation_event(root, record, identity, event, previous_events
         'sourceOwner': source_owner,
         'reason': event.get('reason'),
     }
-    if version == 2:
+    if version in (2, 3):
         expected_review.update(sourceRecordPath=source_record_path,
                                ownerCensusSnapshot=census_path,
                                ownerCensusSnapshotSha256=census_hash)
+    if version == 3:
+        expected_review.update(introducedForeign=True, baselineRevision=event['baselineRevision'])
+    if not captured and (review.get('disposition') != 'accepted'
+            or type(review.get('schema')) is not int or review.get('scenarioAcceptance') is not False
+            or (version == 3 and review.get('introducedForeign') is not True)):
+        errors.append('New foreign custody requires an accepted exact independent provenance review')
     if any(review.get(key) != value for key, value in expected_review.items()):
         errors.append('Independent review does not cover this exact foreign-path transition')
     if not isinstance(reviewer, str) or not reviewer.strip() or review.get('independent') is not True:
@@ -506,17 +557,21 @@ def foreign_reconciliations(root, record, override=None, check_current=True):
     saw_schema2 = False
     for event in data['events']:
         version = event.get('eventSchema', 1) if isinstance(event, dict) else None
-        if saw_schema2 and version != 2:
+        if saw_schema2 and version not in (2, 3):
             errors.append('Foreign reconciliation event schema cannot downgrade after schema 2')
-        if version == 2 and type(version) is int:
+        if version in (2, 3) and type(version) is int:
             saw_schema2 = True
         value = validate_reconciliation_event(root, original_record, identity, event, prior, errors)
         if value is not None:
             result[event['path']] = value
         prior.append(event)
+    introduced = introduced_foreign_paths(data)
+    if introduced & (set(record.get('slice', {}).get('paths', []))
+                     | set(record.get('adoptedDirty', {}).get('paths', []))):
+        errors.append('Introduced foreign custody cannot become selected or adopted ownership')
     if check_current:
         for name, expected in result.items():
-            if name in record.get('foreignDirty', {}) and fingerprint(root, name) != expected:
+            if (name in record.get('foreignDirty', {}) or name in introduced) and fingerprint(root, name) != expected:
                 errors.append('Reconciled foreign path changed: ' + name)
     return result, errors, data
 
@@ -544,14 +599,24 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
     if not isinstance(transitions, list) or not transitions:
         raise ValueError('Transition file must contain a nonempty array')
     names = []
+    introduced = introduced_foreign_paths(prior_data)
+    fields = {'path', 'sourceRecordPath', 'ownerCensusSnapshot',
+              'sourceRecordSnapshot', 'reviewFile', 'reason'}
     for item in transitions:
-        if not isinstance(item, dict) or set(item) != {
-                'path', 'sourceRecordPath', 'ownerCensusSnapshot',
-                'sourceRecordSnapshot', 'reviewFile', 'reason'}:
+        if (not isinstance(item, dict) or set(item) not in (fields, fields | {'introduceForeign'})
+                or ('introduceForeign' in item and item['introduceForeign'] is not True)):
             raise ValueError('Transition needs exact path, sourceRecordPath, ownerCensusSnapshot, sourceRecordSnapshot, reviewFile and reason')
         name = item['path']
-        if not isinstance(name, str) or name not in record.get('foreignDirty', {}):
-            raise ValueError('Only captured protected foreign paths may be reconciled')
+        if not isinstance(name, str):
+            raise ValueError('Reconciliation path must be a canonical string')
+        if item.get('introduceForeign') is True:
+            if name in record.get('foreignDirty', {}) or name in introduced:
+                raise ValueError('New foreign introduction cannot replace existing custody')
+            introduced_foreign_baseline(root, record, name)
+            if name not in dirty_names(root):
+                raise ValueError('New foreign introduction requires an actual later dirty path')
+        elif not isinstance(name, str) or (name not in record.get('foreignDirty', {}) and name not in introduced):
+            raise ValueError('Only captured or explicitly introduced foreign paths may be reconciled')
         if name in names or name in record['slice']['paths'] or name in record.get('adoptedDirty', {}).get('paths', []):
             raise ValueError('Duplicate, selected or adopted reconciliation path')
         safe(root, name)
@@ -563,7 +628,8 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
         raise ValueError('; '.join(errors))
     base_errors, _ = validate(root, record, reqs, state)
     allowed = {prefix + name for name in names for prefix in
-               ('Protected foreign-dirty path changed: ', 'Reconciled foreign path changed: ')}
+               ('Protected foreign-dirty path changed: ', 'Reconciled foreign path changed: ',
+                'Unowned or archival implementation change: ')}
     unrelated = [error for error in base_errors if error not in allowed]
     if unrelated:
         raise ValueError('Reconcile only after unrelated participant-check findings are resolved: ' + '; '.join(unrelated))
@@ -571,7 +637,8 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
     candidate = dict(data, events=list(data['events']))
     for item in transitions:
         name = item['path']
-        before = existing.get(name, record['foreignDirty'][name])
+        before = (introduced_foreign_baseline(root, record, name) if item.get('introduceForeign') is True
+                  else existing.get(name, record['foreignDirty'].get(name)))
         after = fingerprint(root, name)
         if after is None or re.fullmatch(r'[0-9a-f]{64}', after) is None:
             raise ValueError('Only an existing regular file with a SHA-256 may be reconciled')
@@ -607,6 +674,8 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
                      reason=item['reason'], reviewer=review.get('reviewer') if isinstance(review, dict) else None,
                      sourceOwner=snapshot.get('owner') if isinstance(snapshot, dict) else None,
                      atUTC=now(), previousEventSha256=candidate['events'][-1]['eventSha256'] if candidate['events'] else None)
+        if item.get('introduceForeign') is True:
+            event.update(eventSchema=3, baselineRevision=record['sourceRevision'])
         event['eventSha256'] = json_sha256(event)
         candidate['events'].append(event)
     reconciled, errors, _ = foreign_reconciliations(root, record, override=candidate)
@@ -1454,6 +1523,7 @@ def handoff(root, record, reqs, state):
     errors, warnings = validate(root, record, reqs, state)
     s = normalize_slice(root, record['slice'], reqs)
     _, _, foreign_data = foreign_reconciliations(root, record)
+    introduced = introduced_foreign_paths(foreign_data)
     retained_identity = foreign_data['recordIdentitySha256'] if foreign_data else record_identity(record, record.get('_recordPath', '.warlock-contributor/slice.json'))
     iterations = record.get('iterations', [])
     last = iterations[-1] if iterations else None
@@ -1486,7 +1556,7 @@ def handoff(root, record, reqs, state):
         'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip(),
         'sourceHashes': current,
         'changedSinceLastRecord': [n for n in current if current[n] != previous.get(n)],
-        'protectedForeignPaths': sorted(record['foreignDirty']),
+        'protectedForeignPaths': sorted(set(record['foreignDirty']) | introduced),
         'recordIdentitySha256': retained_identity,
         'foreignReconciliationSidecar': str(reconciliation_path(root, record).relative_to(root)),
         'pathExtensions': record.get('pathExtensions', []),
@@ -1713,7 +1783,9 @@ def owner_census_bytes(root):
     index = json.loads(index_raw)
     if not isinstance(index, dict) or index.get('schema') != 1 or not isinstance(index.get('records'), dict):
         raise ValueError('Participant index has an unsupported shape')
-    payload = {'schema': 1, 'records': index['records']}
+    if 'bootstrapClassifications' in index and index['bootstrapClassifications'] is None:
+        raise ValueError('Owner census index has an empty bootstrap classification binding')
+    payload = participant_index_payload(index['records'], index.get('bootstrapClassifications'))
     if index.get('indexSha256') != json_sha256(payload):
         raise ValueError('Participant index digest does not match its contents')
     records = []
@@ -1752,7 +1824,9 @@ def decode_owner_census(root, relative_path):
         raise ValueError('Owner census participant index hash differs')
     if (not isinstance(index, dict) or index.get('schema') != 1
             or not isinstance(index.get('records'), dict)
-            or index.get('indexSha256') != json_sha256({'schema': 1, 'records': index['records']})):
+            or ('bootstrapClassifications' in index and index['bootstrapClassifications'] is None)
+            or index.get('indexSha256') != json_sha256(participant_index_payload(
+                index['records'], index.get('bootstrapClassifications')))):
         raise ValueError('Owner census participant index is invalid')
     supplied = census.get('records')
     if not isinstance(supplied, list) or len(supplied) != len(index['records']):
@@ -2433,6 +2507,8 @@ def review(root, record, reqs, state, includes):
     """Read-only staging review; explicit support paths do not override foreign ownership."""
     packet = handoff(root, record, reqs, state)
     support_overlay, support_errors, _ = support_reconciliations(root, record)
+    _, _, foreign_data = foreign_reconciliations(root, record)
+    protected_foreign = set(record['foreignDirty']) | introduced_foreign_paths(foreign_data)
     allowed = set(record['slice']['paths'])
     for name in includes:
         path = safe(root, name)
@@ -2448,7 +2524,7 @@ def review(root, record, reqs, state, includes):
     for name in git(root, 'diff', '--cached', '--no-renames', '--name-only', '-z', '--').decode().split('\0'):
         if not name:
             continue
-        if name not in record['foreignDirty'] and name not in allowed:
+        if name not in protected_foreign and name not in allowed:
             packet['errors'].append('Staged path needs explicit contribution scope (--include for owned support files): ' + name)
         path = safe(root, name)
         entries = git(root, 'ls-files', '--stage', '-z', '--', ':(literal)' + name).split(b'\0')
@@ -2462,7 +2538,7 @@ def review(root, record, reqs, state, includes):
                 raise ValueError('Staged path must be a resolved regular file: ' + name)
             index_hash = hashlib.sha256(git(root, 'cat-file', 'blob', blob)).hexdigest()
         current_hash = digest(path)
-        if name in record['foreignDirty'] and not (
+        if name in protected_foreign and not (
                 name in includes and name in SUPPORT_CUSTODY_PATHS and not support_errors
                 and support_overlay.get(name) == current_hash == index_hash):
             packet['errors'].append('Staged protected foreign path: ' + name)
@@ -2591,7 +2667,7 @@ def validate(root, record, reqs, state):
         if fingerprint(root, name) != reconciled.get(name, old):
             errors.append('Protected foreign-dirty path changed: ' + name)
     for name in dirty_names(root):
-        if name in record['foreignDirty'] or name in s['paths'] or name.startswith(('plugins/warlock-contributor/', '.warlock-contributor/', 'docs/', 'implementation/warlock/qa/evidence/')):
+        if name in record['foreignDirty'] or name in reconciled or name in s['paths'] or name.startswith(('plugins/warlock-contributor/', '.warlock-contributor/', 'docs/', 'implementation/warlock/qa/evidence/')):
             continue
         if name.startswith('implementation/'):
             errors.append('Unowned or archival implementation change: ' + name)

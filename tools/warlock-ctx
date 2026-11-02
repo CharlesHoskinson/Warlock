@@ -1,0 +1,3 @@
+#!/bin/sh
+# Graphify's installed interpreter supplies its own Graphify and NetworkX.
+exec /home/charl/.local/share/uv/tools/graphifyy/bin/python -B "$(dirname "$(readlink -f "$0")")/warlock_ctx.py" "$@"

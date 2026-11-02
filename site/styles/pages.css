@@ -24,5 +24,14 @@
 .t02-state-selected { background:var(--wl-sys-color-surface-selected); border-inline-start:4px solid var(--wl-sys-color-brand-text); }
 .t02-state-disabled { color:var(--wl-sys-color-text-secondary); opacity:1; }
 .t02-state-danger { color:var(--wl-sys-color-danger); border-color:var(--wl-sys-color-danger); }
+.t02-swatch-canvas { background:var(--wl-sys-color-canvas); color:var(--wl-sys-color-text); }
+.t02-swatch-surface { background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
+.t02-swatch-surface-raised { background:var(--wl-sys-color-surface-raised); color:var(--wl-sys-color-text); }
+.t02-swatch-surface-selected { background:var(--wl-sys-color-surface-selected); color:var(--wl-sys-color-text); }
+.t02-swatch-action-fill { background:var(--wl-sys-color-action-fill); color:var(--wl-sys-color-on-action); }
+.t02-swatch-focus { background:var(--wl-sys-color-focus); color:var(--wl-sys-color-canvas); }
+.t02-swatch-positive { background:var(--wl-sys-color-positive); color:var(--wl-sys-color-canvas); }
+.t02-swatch-warning { background:var(--wl-sys-color-warning); color:var(--wl-sys-color-canvas); }
+.t02-swatch-danger { background:var(--wl-sys-color-danger); color:var(--wl-sys-color-canvas); }
 }
-@layer accessibility { @media(forced-colors:active) { .t02-state { color:CanvasText; background:Canvas; border-color:CanvasText; } .t02-state-selected { border-inline-start:4px solid Highlight; } } }
+@layer accessibility { @media(forced-colors:active) { .t02-state, .t02-swatches>div { color:CanvasText; background:Canvas; border-color:CanvasText; } .t02-state-selected { border-inline-start:4px solid Highlight; } } }

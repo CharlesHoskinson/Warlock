@@ -71,6 +71,32 @@ try{
  const accepted=packet({kind:'fallback'},collision);await send(accepted);const receiptCount=await evaluate('previewReceipts.length');
  await evaluate('receiveVisual('+JSON.stringify(accepted)+')');await until('previewReceipts.length==='+String(receiptCount+1));
  check('Repeated exact projection keeps the same focused description',JSON.stringify(await describe())===JSON.stringify(before));
+ const appOnlyAxFrame={...frame,publication:'995',lease:'2',mode:'applications',status:'Type to search applications.',bar:[],popup:[
+  {id:'control:search',domId:'app-only-search',label:'',ariaLabel:'Search applications',detail:'',enabled:true},
+  {id:'control:close',domId:'app-only-close',label:'Close applications',ariaLabel:'Close applications and return to windows',detail:'',enabled:true},
+  {id:'entry:sample.desktop',domId:'control-disabled-reason-app-only-entry',label:'Open Sample',ariaLabel:'Open Sample',detail:'Opening unavailable in this session',enabled:false}
+ ]};
+ function appOnlyPacket(visual,surface=appOnlyAxFrame){return {channelProtocol:1,kind:'native-preview-projection',binding,receiverEpoch:'1',rendererLease:'1',visualSequence:String(++sequence),visual:{visualProtocol:1,kind:'native-preview-visual',binding,receiverEpoch:'1',surface,previews:surface.popup.map(row=>({identity:row.id,visual:row.id==='entry:sample.desktop'?visual:{kind:'hidden'}}))}};}
+ async function describeDisabledEntry(){const {nodes}=await call('Accessibility.getFullAXTree');return nodes.filter(node=>!node.ignored&&node.name?.value==='Open Sample'&&node.role?.value==='button').map(node=>({name:node.name.value,description:node.description?.value||''}));}
+ await send(appOnlyPacket({kind:'fallback'}));
+ const entryBothAx=await describeDisabledEntry();
+ check('Disabled launcher entry with aria-label and detail exposes both preview and disabled reason in AX tree',entryBothAx.length===1&&entryBothAx[0].description.includes('Preview unavailable')&&entryBothAx[0].description.includes('Opening unavailable in this session')&&await evaluate(`(()=>{const b=document.querySelector('[data-surface-control="entry:sample.desktop"]'),ids=(b?.getAttribute('aria-describedby')||'').trim().split(' ').filter(Boolean);return ids.length===2&&!ids.includes('control-disabled-reason-app-only-entry')&&ids.every(id=>document.querySelectorAll('[id="'+id+'"]').length===1);})()`),entryBothAx);
+ await send(appOnlyPacket({kind:'hidden'},{...appOnlyAxFrame,publication:'996'}));
+ const entryOnlyAx=await describeDisabledEntry();
+ check('Disabled launcher entry with aria-label and nonempty detail exposes disabled reason via aria-describedby when preview is hidden',entryOnlyAx.length===1&&entryOnlyAx[0].description==='Opening unavailable in this session',entryOnlyAx);
+ const settingsFrame={...frame,publication:'997',lease:'2',mode:'settings',status:'Settings',bar:[],popup:[
+  {id:'control:close',domId:'settings-close',label:'Close settings',ariaLabel:'Close settings',detail:'',enabled:true},
+  {id:'settings:motion',domId:'settings-motion-description-motion-refresh',label:'Motion: Reduced',ariaLabel:'Motion: Reduced',detail:'Stored motion preference applied.',enabled:false},
+  {id:'settings:motion:refresh',domId:'motion-refresh',label:'Refresh motion preference',ariaLabel:'Refresh motion preference',detail:'Read stored preference; no write is repeated',enabled:true}
+ ]};
+ function settingsPacket(visual,surface=settingsFrame){return {channelProtocol:1,kind:'native-preview-projection',binding,receiverEpoch:'1',rendererLease:'1',visualSequence:String(++sequence),visual:{visualProtocol:1,kind:'native-preview-visual',binding,receiverEpoch:'1',surface,previews:surface.popup.map(row=>({identity:row.id,visual:row.id==='settings:motion:refresh'?visual:{kind:'hidden'}}))}};}
+ async function describeSettingsRefresh(){const {nodes}=await call('Accessibility.getFullAXTree');return nodes.filter(node=>!node.ignored&&node.name?.value==='Refresh motion preference'&&node.role?.value==='button').map(node=>({name:node.name.value,description:node.description?.value||''}));}
+ await send(settingsPacket({kind:'fallback'}));
+ const bothAx=await describeSettingsRefresh();
+ check('Settings motion refresh composes preview and motion descriptions without ID collision',bothAx.length===1&&bothAx[0].description.includes('Preview unavailable')&&bothAx[0].description.includes('Motion: Reduced · Stored motion preference applied.')&&await evaluate(`(()=>{const b=document.querySelector('[data-surface-control="settings:motion:refresh"]'),ids=(b?.getAttribute('aria-describedby')||'').trim().split(' ').filter(Boolean);return ids.length===2&&!ids.includes('settings-motion-description-motion-refresh')&&ids.every(id=>document.querySelectorAll('[id="'+id+'"]').length===1);})()`),bothAx);
+ await send(settingsPacket({kind:'hidden'},{...settingsFrame,publication:'998'}));
+ const motionOnlyAx=await describeSettingsRefresh();
+ check('Settings motion refresh retains motion notice description when preview is hidden',motionOnlyAx.length===1&&motionOnlyAx[0].description==='Motion: Reduced · Stored motion preference applied.',motionOnlyAx);
  const closed={...frame,publication:'999',mode:'closed',popup:[]};await send(packet({kind:'hidden'},closed));
  check('Retired picker exports no stale descriptions or controls',await evaluate('document.querySelectorAll(".preview-description,[data-surface-control]").length===0'));
  check('Component inspection submits no window effects',await evaluate('nativePackets.length===0'));

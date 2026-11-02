@@ -1,4 +1,4 @@
-port module NativePreviewAdmission exposing (main)
+port module NativePreviewAdmission exposing (main, Msg(..), Subscription(..), subscriptionPlan, subscriptions)
 
 import Browser
 import Html exposing (text)
@@ -13,11 +13,39 @@ port requestAction : (D.Value -> msg) -> Sub msg
 port actions : E.Value -> Cmd msg
 
 type Msg = Present D.Value | Action E.Value
+type Subscription = PresentationChannel | RequestActionChannel
+
+subscriptionPlan : Presentation.Model -> List Subscription
+subscriptionPlan model =
+    case Presentation.current model of
+        Just snapshot ->
+            if SurfaceRenderer.mode snapshot /= "closed" then
+                [ PresentationChannel, RequestActionChannel ]
+            else
+                [ PresentationChannel ]
+
+        Nothing ->
+            [ PresentationChannel ]
+
+subscriptions : Presentation.Model -> Sub Msg
+subscriptions model =
+    Sub.batch
+        (List.map
+            (\channel ->
+                case channel of
+                    PresentationChannel ->
+                        presentation Present
+
+                    RequestActionChannel ->
+                        requestAction Action
+            )
+            (subscriptionPlan model)
+        )
 
 main : Program () Presentation.Model Msg
 main = Browser.element
     { init = \_ -> (Presentation.initial, Cmd.none)
-    , subscriptions = \_ -> Sub.batch [presentation Present, requestAction Action]
+    , subscriptions = subscriptions
     , view = \model -> Presentation.current model
         |> Maybe.map (SurfaceRenderer.view True Action)
         |> Maybe.withDefault (text "")

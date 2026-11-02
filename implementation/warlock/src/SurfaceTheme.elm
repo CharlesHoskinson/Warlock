@@ -14,12 +14,19 @@ module SurfaceTheme exposing
     , popupHeadingStyles
     , popupRootStyles
     , popupStatusStyles
+    , preFrameBarStyles
+    , preFramePopupStatusStyles
+    , preFramePopupStyles
+    , retainedQueryInputStyles
+    , retainedQueryLabelStyles
     , searchFieldStyles
     , searchLabelStyles
     , settingsSaveCaptionStyles
     , settingsSaveGroupStyles
     , switcherActionsStyles
     , switcherListboxStyles
+    , transportAlertStyles
+    , transportStoppedRootStyles
     )
 
 import Html exposing (Html, span, text)
@@ -1189,7 +1196,13 @@ popupControlStyles spec palette =
          else
             "1px"
         )
-    , style "scroll-margin-block" "8px"
+    , style "scroll-margin-block"
+        (if isPickerOrMenu then
+            "8px"
+
+         else
+            "10px"
+        )
     ]
         ++ gridSpanAttrs
         ++ layoutAttrs
@@ -1246,6 +1259,16 @@ controlLabelStyles isPopup surfaceMode controlIdentity =
         , style "white-space" "normal"
         , style "overflow-wrap" "anywhere"
         , style "line-height" "1.3"
+        ]
+
+    else if String.startsWith "settings:help:text:" controlIdentity || String.endsWith ":summary" controlIdentity || String.endsWith ":state" controlIdentity then
+        [ style "display" "block"
+        , style "width" "100%"
+        , style "min-width" "0"
+        , style "font-weight" "600"
+        , style "line-height" "1.35"
+        , style "white-space" "normal"
+        , style "overflow-wrap" "anywhere"
         ]
 
     else
@@ -1308,7 +1331,7 @@ controlDetailStyles spec detailText =
         , style "white-space" "nowrap"
         ]
 
-    else
+    else if spec.surfaceMode == "menu" then
         [ style "display" "block"
         , style "width" "100%"
         , style "min-width" "0"
@@ -1317,6 +1340,19 @@ controlDetailStyles spec detailText =
         , style "font-size" "0.8125em"
         , style "font-weight" "400"
         , style "line-height" "1.25"
+        , style "white-space" "normal"
+        , style "overflow-wrap" "anywhere"
+        ]
+
+    else
+        [ style "display" "block"
+        , style "width" "100%"
+        , style "min-width" "0"
+        , style "margin-top" "3px"
+        , style "color" detailColor
+        , style "font-size" "0.8125em"
+        , style "font-weight" "400"
+        , style "line-height" "1.35"
         , style "white-space" "normal"
         , style "overflow-wrap" "anywhere"
         ]
@@ -1376,7 +1412,7 @@ notificationTextStyles appearance =
     in
     [ style "box-sizing" "border-box"
     , style "margin" "4px 3px"
-    , style "padding" "8px 10px"
+    , style "padding" "9px 12px"
     , style "background-color" palette.surfaceRecessed
     , style "color" palette.textPrimary
     , style "border-top" (borderWidth ++ " solid " ++ palette.borderSubtle)
@@ -1384,6 +1420,7 @@ notificationTextStyles appearance =
     , style "border-bottom" (borderWidth ++ " solid " ++ palette.borderSubtle)
     , style "border-left" ("3px solid " ++ palette.borderEssential)
     , style "border-radius" "6px"
+    , style "line-height" "1.4"
     , style "opacity" "1"
     , style "white-space" "normal"
     , style "overflow-wrap" "anywhere"
@@ -1482,4 +1519,148 @@ switcherActionsStyles =
     , style "display" "flex"
     , style "flex-direction" "column"
     , style "gap" "6px"
+    ]
+
+
+-- Pre-frame and stopped-transport styles intentionally use W3C CSS Color 4
+-- UA/OS system colors (Canvas/CanvasText/Field/FieldText/GrayText) with
+-- color-scheme: light dark rather than Settings.defaults palette values, so no
+-- unreceived theme preference is fabricated while Bar.waitingView remains
+-- unclipped under shell.css (.bar [role=status]) and standalone HTTP compiler
+-- documents avoid raw white/serif defaults.
+
+
+preFrameBarStyles : List (Html.Attribute msg)
+preFrameBarStyles =
+    [ style "color-scheme" "light dark"
+    , style "position" "static"
+    , style "clip-path" "none"
+    , style "display" "flex"
+    , style "align-items" "center"
+    , style "box-sizing" "border-box"
+    , style "width" "100%"
+    , style "height" "100%"
+    , style "min-height" "48px"
+    , style "margin" "0"
+    , style "padding" "0 12px"
+    , style "background-color" "Canvas"
+    , style "color" "CanvasText"
+    , style "font-family" "system-ui, sans-serif"
+    , style "font-size" "14px"
+    , style "line-height" "1.35"
+    , style "overflow" "hidden"
+    , style "text-overflow" "ellipsis"
+    , style "white-space" "nowrap"
+    ]
+
+
+preFramePopupStyles : List (Html.Attribute msg)
+preFramePopupStyles =
+    [ style "color-scheme" "light dark"
+    , style "box-sizing" "border-box"
+    , style "width" "100%"
+    , style "min-height" "100vh"
+    , style "margin" "0"
+    , style "padding" "12px 14px"
+    , style "background-color" "Canvas"
+    , style "color" "CanvasText"
+    , style "font-family" "system-ui, sans-serif"
+    , style "font-size" "15px"
+    , style "line-height" "1.4"
+    ]
+
+
+preFramePopupStatusStyles : List (Html.Attribute msg)
+preFramePopupStatusStyles =
+    [ style "box-sizing" "border-box"
+    , style "margin" "0"
+    , style "padding" "8px 10px"
+    , style "border" "1px solid GrayText"
+    , style "border-radius" "6px"
+    , style "white-space" "normal"
+    , style "overflow-wrap" "anywhere"
+    ]
+
+
+transportAlertStyles : Bool -> List (Html.Attribute msg)
+transportAlertStyles isPopup =
+    if isPopup then
+        [ style "color-scheme" "light dark"
+        , style "box-sizing" "border-box"
+        , style "width" "100%"
+        , style "margin" "0"
+        , style "padding" "10px 12px"
+        , style "background-color" "Canvas"
+        , style "color" "CanvasText"
+        , style "border" "1px solid GrayText"
+        , style "border-radius" "6px"
+        , style "font-family" "system-ui, sans-serif"
+        , style "font-size" "14px"
+        , style "line-height" "1.4"
+        , style "white-space" "normal"
+        , style "overflow-wrap" "anywhere"
+        ]
+
+    else
+        [ style "color-scheme" "light dark"
+        , style "display" "flex"
+        , style "align-items" "center"
+        , style "box-sizing" "border-box"
+        , style "width" "100%"
+        , style "min-height" "48px"
+        , style "margin" "0"
+        , style "padding" "6px 12px"
+        , style "background-color" "Canvas"
+        , style "color" "CanvasText"
+        , style "border-bottom" "1px solid GrayText"
+        , style "font-family" "system-ui, sans-serif"
+        , style "font-size" "14px"
+        , style "line-height" "1.35"
+        , style "overflow" "hidden"
+        , style "text-overflow" "ellipsis"
+        , style "white-space" "nowrap"
+        ]
+
+
+transportStoppedRootStyles : List (Html.Attribute msg)
+transportStoppedRootStyles =
+    [ style "color-scheme" "light dark"
+    , style "box-sizing" "border-box"
+    , style "display" "flex"
+    , style "flex-direction" "column"
+    , style "gap" "8px"
+    , style "width" "100%"
+    , style "min-height" "100vh"
+    , style "margin" "0"
+    , style "padding" "12px 14px"
+    , style "background-color" "Canvas"
+    , style "color" "CanvasText"
+    , style "font-family" "system-ui, sans-serif"
+    , style "font-size" "14px"
+    , style "line-height" "1.4"
+    ]
+
+
+retainedQueryLabelStyles : List (Html.Attribute msg)
+retainedQueryLabelStyles =
+    [ style "display" "block"
+    , style "margin" "4px 0 0 0"
+    , style "font-weight" "600"
+    , style "line-height" "1.35"
+    , style "white-space" "normal"
+    , style "overflow-wrap" "anywhere"
+    ]
+
+
+retainedQueryInputStyles : List (Html.Attribute msg)
+retainedQueryInputStyles =
+    [ style "box-sizing" "border-box"
+    , style "width" "100%"
+    , style "margin" "0"
+    , style "padding" "8px 10px"
+    , style "background-color" "Field"
+    , style "color" "FieldText"
+    , style "border" "1px solid GrayText"
+    , style "border-radius" "6px"
+    , style "font" "inherit"
     ]

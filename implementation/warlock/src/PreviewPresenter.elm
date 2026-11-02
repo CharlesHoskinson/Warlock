@@ -1,4 +1,4 @@
-module PreviewPresenter exposing (Model, initial, present, receive, image, visual, observe, metadata, enrollment, feedback, enrollRealm, receiveRealm, realmStatus, closeRealm, quarantineRealm, retireLegacy)
+module PreviewPresenter exposing (Model, initial, hasRetainedControlOrTransactions, present, receive, image, visual, observe, metadata, enrollment, feedback, enrollRealm, receiveRealm, realmStatus, closeRealm, quarantineRealm, retireLegacy)
 
 import Dict exposing (Dict)
 import Html exposing (Html, span, text)
@@ -32,6 +32,14 @@ type alias Output = { identity : String, commands : List Preview.Command }
 
 initial : Model
 initial = Model Dict.empty Nothing Retirement.empty emptyScoped
+
+hasRetainedControlOrTransactions : Model -> Bool
+hasRetainedControlOrTransactions (Model entries catalog ledger scoped) =
+    not (Dict.isEmpty entries)
+        || catalog /= Nothing
+        || ledger /= Retirement.empty
+        || (scoped.grant /= Nothing && not scoped.closed)
+        || not (Dict.isEmpty scoped.completed)
 
 enrollRealm : Realm.Grant -> Model -> Maybe Model
 enrollRealm grant ((Model entries catalog ledger scoped) as prior) =

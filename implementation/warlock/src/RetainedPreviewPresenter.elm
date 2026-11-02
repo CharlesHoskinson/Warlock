@@ -1,4 +1,4 @@
-module RetainedPreviewPresenter exposing (Model, initial, present, receive, receiveRealm, image, visual, visuals, observe, metadata, enrollment, feedback, enrollRealm, closeRealm, quarantineRealm, retireLegacy, realmStatus, issued, retry)
+module RetainedPreviewPresenter exposing (Model, initial, hasActiveIngress, hasRetainedControlOrTransactions, present, receive, receiveRealm, image, visual, visuals, observe, metadata, enrollment, feedback, enrollRealm, closeRealm, quarantineRealm, retireLegacy, realmStatus, issued, retry)
 
 import Html exposing (Html)
 import Json.Decode as D
@@ -20,6 +20,15 @@ type Model = Model Preview.Model (Maybe Realm.Grant) (Maybe Ingress.Model) (List
 
 initial : Model
 initial = Model Preview.initial Nothing Nothing []
+
+hasActiveIngress : Model -> Bool
+hasActiveIngress (Model _ _ ingress deferred) =
+    not (List.isEmpty deferred)
+        || (ingress |> Maybe.map (Ingress.pending >> List.isEmpty >> not) |> Maybe.withDefault False)
+
+hasRetainedControlOrTransactions : Model -> Bool
+hasRetainedControlOrTransactions ((Model policy _ _ _) as model) =
+    Preview.hasRetainedControlOrTransactions policy || hasActiveIngress model
 
 emptyOutput : Maybe Realm.Grant -> E.Value
 emptyOutput grant = grant |> Maybe.map (\g -> Realm.commands g.domain (E.list identity [])) |> Maybe.withDefault (E.list identity [])

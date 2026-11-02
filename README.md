@@ -24,6 +24,8 @@ Open an application and Warlock's portal brings it in: a ring of red ember fragm
 
 ![Warlock's portal opening a Browser window in the test drive: a ring of red ember fragments expands as the new window is revealed](docs/warlock-brand/readme/portal.gif)
 
+The [November 2 remote handoff](docs/warlock-build-loop/v2/remote-handoff-20261102/README.md) includes the current beta GUI, website and tooling work, all archived engineering proposals, verification failures and stall findings. The MVP passes 639 component assertions; subscription runtime verification remains incomplete. No background development team is currently running.
+
 ## Why Warlock
 
 Hyprland is a fast tiling compositor, and Omarchy makes it a pleasure to drive from the keyboard. Warlock adds the desktop layer around it: a taskbar that groups windows by application, a launcher, an Alt-Tab switcher, Task View across workspaces, window previews, a snap chooser, notification history, Settings, Files and a system menu. Warlock's own surfaces share one Elm interface, one design language and the same keyboard navigation, and Files opens in Omarchy's file explorer.

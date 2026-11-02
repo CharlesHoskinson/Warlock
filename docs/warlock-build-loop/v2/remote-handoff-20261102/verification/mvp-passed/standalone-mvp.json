@@ -1,0 +1,2570 @@
+{
+  "schema": 1,
+  "seed": 20261101,
+  "checks": [
+    {
+      "name": "attach preserves app-only/no-native 0",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 0",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 0",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 0",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 0",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 0",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 0",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 0",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 0",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 0",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 0",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 0",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 0",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 0",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 0",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 0",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 0",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 0",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 0",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 1",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 1",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 1",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 1",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 1",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 1",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 1",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 1",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 1",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 1",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 1",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 1",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 1",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 1",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 1",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 1",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 1",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 1",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 1",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 2",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 2",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 2",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 2",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 2",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 2",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 2",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 2",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 2",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 2",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 2",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 2",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 2",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 2",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 2",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 2",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 2",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 2",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 2",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 3",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 3",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 3",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 3",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 3",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 3",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 3",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 3",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 3",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 3",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 3",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 3",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 3",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 3",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 3",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 3",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 3",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 3",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 3",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 4",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 4",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 4",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 4",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 4",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 4",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 4",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 4",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 4",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 4",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 4",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 4",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 4",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 4",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 4",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 4",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 4",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 4",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 4",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 5",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 5",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 5",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 5",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 5",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 5",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 5",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 5",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 5",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 5",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 5",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 5",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 5",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 5",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 5",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 5",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 5",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 5",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 5",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 6",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 6",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 6",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 6",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 6",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 6",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 6",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 6",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 6",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 6",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 6",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 6",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 6",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 6",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 6",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 6",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 6",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 6",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 6",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 7",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 7",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 7",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 7",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 7",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 7",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 7",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 7",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 7",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 7",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 7",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 7",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 7",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 7",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 7",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 7",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 7",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 7",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 7",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 8",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 8",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 8",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 8",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 8",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 8",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 8",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 8",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 8",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 8",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 8",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 8",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 8",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 8",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 8",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 8",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 8",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 8",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 8",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 9",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 9",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 9",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 9",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 9",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 9",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 9",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 9",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 9",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 9",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 9",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 9",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 9",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 9",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 9",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 9",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 9",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 9",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 9",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 10",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 10",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 10",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 10",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 10",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 10",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 10",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 10",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 10",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 10",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 10",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 10",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 10",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 10",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 10",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 10",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 10",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 10",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 10",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 11",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 11",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 11",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 11",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 11",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 11",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 11",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 11",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 11",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 11",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 11",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 11",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 11",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 11",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 11",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 11",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 11",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 11",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 11",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 12",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 12",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 12",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 12",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 12",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 12",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 12",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 12",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 12",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 12",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 12",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 12",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 12",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 12",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 12",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 12",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 12",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 12",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 12",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 13",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 13",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 13",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 13",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 13",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 13",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 13",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 13",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 13",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 13",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 13",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 13",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 13",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 13",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 13",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 13",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 13",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 13",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 13",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 14",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 14",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 14",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 14",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 14",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 14",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 14",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 14",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 14",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 14",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 14",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 14",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 14",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 14",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 14",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 14",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 14",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 14",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 14",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 15",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 15",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 15",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 15",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 15",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 15",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 15",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 15",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 15",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 15",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 15",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 15",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 15",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 15",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 15",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 15",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 15",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 15",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 15",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 16",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 16",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 16",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 16",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 16",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 16",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 16",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 16",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 16",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 16",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 16",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 16",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 16",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 16",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 16",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 16",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 16",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 16",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 16",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 17",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 17",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 17",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 17",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 17",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 17",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 17",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 17",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 17",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 17",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 17",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 17",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 17",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 17",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 17",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 17",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 17",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 17",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 17",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 18",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 18",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 18",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 18",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 18",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 18",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 18",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 18",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 18",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 18",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 18",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 18",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 18",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 18",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 18",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 18",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 18",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 18",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 18",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 19",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 19",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 19",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 19",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 19",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 19",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 19",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 19",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 19",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 19",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 19",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 19",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 19",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 19",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 19",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 19",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 19",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 19",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 19",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 20",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 20",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 20",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 20",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 20",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 20",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 20",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 20",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 20",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 20",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 20",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 20",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 20",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 20",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 20",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 20",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 20",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 20",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 20",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 21",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 21",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 21",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 21",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 21",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 21",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 21",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 21",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 21",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 21",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 21",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 21",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 21",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 21",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 21",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 21",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 21",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 21",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 21",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 22",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 22",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 22",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 22",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 22",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 22",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 22",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 22",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 22",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 22",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 22",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 22",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 22",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 22",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 22",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 22",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 22",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 22",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 22",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 23",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 23",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 23",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 23",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 23",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 23",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 23",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 23",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 23",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 23",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 23",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 23",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 23",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 23",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 23",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 23",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 23",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 23",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 23",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 24",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 24",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 24",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 24",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 24",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 24",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 24",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 24",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 24",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 24",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 24",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 24",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 24",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 24",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 24",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 24",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 24",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 24",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 24",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 25",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 25",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 25",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 25",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 25",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 25",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 25",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 25",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 25",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 25",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 25",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 25",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 25",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 25",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 25",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 25",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 25",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 25",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 25",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 26",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 26",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 26",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 26",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 26",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 26",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 26",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 26",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 26",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 26",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 26",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 26",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 26",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 26",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 26",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 26",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 26",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 26",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 26",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 27",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 27",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 27",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 27",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 27",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 27",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 27",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 27",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 27",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 27",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 27",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 27",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 27",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 27",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 27",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 27",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 27",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 27",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 27",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 28",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 28",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 28",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 28",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 28",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 28",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 28",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 28",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 28",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 28",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 28",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 28",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 28",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 28",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 28",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 28",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 28",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 28",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 28",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 29",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 29",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 29",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 29",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 29",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 29",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 29",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 29",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 29",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 29",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 29",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 29",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 29",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 29",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 29",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 29",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 29",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 29",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 29",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 30",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 30",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 30",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 30",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 30",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 30",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 30",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 30",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 30",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 30",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 30",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 30",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 30",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 30",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 30",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 30",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 30",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 30",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 30",
+      "passed": true
+    },
+    {
+      "name": "attach preserves app-only/no-native 31",
+      "passed": true
+    },
+    {
+      "name": "application control enabled; unsupported utilities disabled 31",
+      "passed": true
+    },
+    {
+      "name": "refresh cannot request native work 31",
+      "passed": true
+    },
+    {
+      "name": "supersede cannot request native work 31",
+      "passed": true
+    },
+    {
+      "name": "geometry cannot request native work 31",
+      "passed": true
+    },
+    {
+      "name": "actual Desktop catalog route 31",
+      "passed": true
+    },
+    {
+      "name": "foreign receipt rejected 31",
+      "passed": true
+    },
+    {
+      "name": "current catalog response no native request 31",
+      "passed": true
+    },
+    {
+      "name": "catalog exposes pin and truthful app-only unavailable launch/jump details 31",
+      "passed": true
+    },
+    {
+      "name": "app-only matching query reports opening unavailable without native requests 31",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled entry Surface.resolve is rejected and emits zero requests while preserving query and reservation 31",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled jump Surface.resolve is rejected and emits zero requests while preserving query and reservation 31",
+      "passed": true
+    },
+    {
+      "name": "app-only entry context Surface.resolve is rejected and emits zero requests while preserving query and reservation 31",
+      "passed": true
+    },
+    {
+      "name": "app-only non-matching query reports no matching applications 31",
+      "passed": true
+    },
+    {
+      "name": "close applications has honest label and accessible name 31",
+      "passed": true
+    },
+    {
+      "name": "future-publication close action cannot dismiss applications 31",
+      "passed": true
+    },
+    {
+      "name": "checked publication advances to 2 while applications stay open 31",
+      "passed": true
+    },
+    {
+      "name": "stale prior-publication close action cannot dismiss applications 31",
+      "passed": true
+    },
+    {
+      "name": "current close action dismisses without native request 31",
+      "passed": true
+    },
+    {
+      "name": "invalid attachment version",
+      "passed": true
+    },
+    {
+      "name": "invalid attachment extra",
+      "passed": true
+    },
+    {
+      "name": "invalid attachment operations",
+      "passed": true
+    },
+    {
+      "name": "invalid attachment missing binding",
+      "passed": true
+    },
+    {
+      "name": "invalid attachment zero",
+      "passed": true
+    },
+    {
+      "name": "invalid attachment rounded number",
+      "passed": true
+    },
+    {
+      "name": "late catalog after disconnect cannot replay",
+      "passed": true
+    },
+    {
+      "name": "old binding cannot reattach",
+      "passed": true
+    },
+    {
+      "name": "fresh binding reconnects without native work",
+      "passed": true
+    },
+    {
+      "name": "reachable Desktop.initial negative control has Connecting status and disabled bar:reconnect",
+      "passed": true
+    },
+    {
+      "name": "app-only pinned taskbar button explains opening unavailable and first pin-left is boundary-disabled while Pins writable",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled bar:pin Surface.resolve is rejected and emits zero requests while preserving query and reservation",
+      "passed": true
+    },
+    {
+      "name": "app-only disabled bar:pin context Surface.resolve is rejected and emits zero requests while preserving query and reservation",
+      "passed": true
+    },
+    {
+      "name": "reachable Pins.Pending negative control emits Saving pin order status and disables pin actions",
+      "passed": true
+    },
+    {
+      "name": "reachable disconnected negative control exposes reconnect, retires cached pin controls, and keeps Applications unavailable guidance",
+      "passed": true
+    },
+    {
+      "name": "reachable Reconnecting negative control disables reconnect, reports Shell reconnecting state, and retains Applications unavailable guidance",
+      "passed": true
+    },
+    {
+      "name": "legacy native attach retains original reads",
+      "passed": true
+    },
+    {
+      "name": "legacy binding keeps utility admission unchanged and reconciling disables overview/switcher with Updating window information",
+      "passed": true
+    },
+    {
+      "name": "full-session Shell.Ready match retains ordinary guidance and enables entry, jump, bar:pin, overview, and switcher",
+      "passed": true
+    },
+    {
+      "name": "non-vacuity positive control 1: full-session jump:open surface-action resolves and emits jump-list-request",
+      "passed": true
+    },
+    {
+      "name": "non-vacuity positive control 2: full-session popup entry surface-context resolves and emits jump-list-request",
+      "passed": true
+    },
+    {
+      "name": "non-vacuity positive control 3: full-session bar:pin surface-context resolves and emits jump-list-request",
+      "passed": true
+    },
+    {
+      "name": "non-vacuity positive control 4: full-session entry surface-action resolves, emits exactly one application-launch, and disables entry with Opening application status",
+      "passed": true
+    },
+    {
+      "name": "full-session Launch.Pending negative control rejects duplicate entry surface-action at Surface.resolve with zero extra requests",
+      "passed": true
+    },
+    {
+      "name": "full-session Launch.Pending negative control refuses duplicate bar:pin launch at Launch.start with zero extra requests",
+      "passed": true
+    },
+    {
+      "name": "non-vacuity positive control 5: full-session bar:pin surface-action resolves and emits exactly one application-launch",
+      "passed": true
+    },
+    {
+      "name": "first topology yields presentation-only commit",
+      "passed": true
+    },
+    {
+      "name": "actual HttpMain policy accepts scoped attach",
+      "passed": true
+    },
+    {
+      "name": "actual policy topology emits no native requests",
+      "passed": true
+    },
+    {
+      "name": "actual policy action emits catalog request",
+      "passed": true
+    },
+    {
+      "name": "renderer gateway cannot claim attachment",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "sourceHashes": {
+    "replay": "5d81733ccf5968729859477990f57b79b00c80adf78051c16793430bd7148758",
+    "harness": "8b8056964e616fea592a95c81f5baef63855def42cddd6d053298266818f8b45"
+  },
+  "nativeAcceptance": false,
+  "guiAcceptance": false,
+  "passed": true
+}

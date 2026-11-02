@@ -50,6 +50,7 @@ def main():
     modes.add_argument('--standalone-mvp', action='store_true', help='Fixed actual standalone MVP replay and six production roots')
     modes.add_argument('--status-scroll', action='store_true', help='Fixed UI007 status scroll replay and model')
     modes.add_argument('--tea-contract', action='store_true', help='Original TEA001/002 complete-model and typed-effect component fixture')
+    modes.add_argument('--subscriptions', action='store_true', help='Fixed eight-root subscription component replay; original coverage remains incomplete')
     args = parser.parse_args()
     scope = require_qa_scope()
     runtime_base()
@@ -84,7 +85,7 @@ def main():
     (work / 'elm.json').write_text(json.dumps(config))
     staged_elm_manifest_sha = sha(work / 'elm.json')
     env = dict(os.environ, ELM_HOME=str(output / 'elm-home'))
-    if args.receipts or args.status_scroll or args.tea_contract:
+    if args.receipts or args.status_scroll or args.tea_contract or args.subscriptions:
         for key in ('NODE_OPTIONS', 'NODE_PATH', 'FORCE_COLOR'):
             env.pop(key, None)
         env['NO_COLOR'] = '1'
@@ -109,9 +110,14 @@ def main():
         if not args.authority:
             for name in ['Main', 'Bar', 'Popup', 'HttpMain', 'HttpBar', 'HttpPopup']:
                 run('compile-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize', '--output=' + str(output / (name + '.js'))])
+        if args.subscriptions:
+            for name in ('NativePreviewAdmission', 'NativePreviewRenderer'):
+                run('compile-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize',
+                                       '--output=' + str(output / (name + '.js'))])
         if args.tea_contract:
             run('compile-NativePreviewRenderer', [compiler, 'make', 'src/NativePreviewRenderer.elm', '--optimize',
                                                    '--output=' + str(output / 'NativePreviewRenderer.js')])
+        if args.tea_contract or args.standalone_mvp or args.subscriptions:
             # Fixed official compiler HTML outputs for the existing HTTP roots.
             # These are additional artifacts, not an alternate runner or policy.
             report['httpDocuments'] = {}
@@ -128,7 +134,7 @@ def main():
         harness_name = 'receipt-state' if args.receipts else ('authority-tuple' if args.authority else 'feedback-context')
         fixture = root / ('qa/' + fixture_name + '.elm')
         harness = root / ('qa/' + harness_name + '.cjs')
-        if fixture.exists():
+        if fixture.exists() and not args.subscriptions:
             if any(source.is_symlink() or not source.is_file() for source in (fixture, harness)):
                 raise RuntimeError('Expected regular replay and harness')
             for source in [fixture, harness]:
@@ -139,7 +145,7 @@ def main():
                 run(harness_name, [str(node), 'qa/' + harness_name + '.cjs', str(output / (harness_name + '.js')), str(output / (harness_name + '.json'))])
         elif args.authority or args.receipts or args.standalone_mvp or args.status_scroll or args.tea_contract:
             raise RuntimeError('Original scenario fixture is required')
-        if not (args.authority or args.receipts or args.browser):
+        if not (args.authority or args.receipts or args.browser or args.subscriptions):
             for filename in ('UiHttpReplay.elm', 'ui-http.cjs'):
                 source = root / 'qa' / filename
                 if source.is_symlink() or not source.is_file():
@@ -151,8 +157,76 @@ def main():
             run('ui-http', [str(node), 'qa/ui-http.cjs', *[str(output / (name + '.js'))
                            for name in ('HttpMain', 'HttpBar', 'HttpPopup', 'UiHttpReplay')],
                            str(output / 'ui-http.json')])
+        if args.subscriptions:
+            roots = ('Main', 'Bar', 'Popup', 'HttpMain', 'HttpBar', 'HttpPopup',
+                     'NativePreviewAdmission', 'NativePreviewRenderer')
+            workers = {'popup': 'TeaPopupSubscriptionsReplay', 'bar': 'TeaBarSubscriptionsReplay',
+                       'admission': 'TeaAdmissionSubscriptionsReplay', 'renderer': 'TeaRendererSubscriptionsReplay'}
+            qa_files = tuple(name + '.elm' for name in workers.values()) + ('tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs')
+            # Keep the harness's optional three-parent SiteMain probe inside a fresh owned tree.
+            subscription_qa = output / 'subscription-source' / 'implementation/warlock/qa'
+            subscription_qa.mkdir(parents=True)
+            for filename in qa_files:
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Required subscription QA input missing: ' + filename)
+                key = str(source.relative_to(REPO))
+                sources[key] = staged_tea_sources[key] = sha(source)
+                shutil.copy2(source, work / 'qa' / filename)
+                shutil.copy2(source, subscription_qa / filename)
+            for name in workers.values():
+                # Debug.log exposes the actual tuple before formatting; never optimize these disjoint workers.
+                run('compile-' + name, [compiler, 'make', 'qa/' + name + '.elm',
+                                       '--output=' + str(output / (name + '.js'))])
+            selected_artifacts.update({name: sha(output / (name + '.js')) for name in (*roots, *workers.values())})
+            result_path = output / 'tea-subscriptions.json'
+            run('tea-subscriptions', [str(node), str(subscription_qa / 'tea-subscriptions.cjs'), '--workers',
+                                     *[str(output / (name + '.js')) for name in workers.values()], '--roots',
+                                     *[str(output / (name + '.js')) for name in roots], '--out', str(result_path)])
+            summary = json.loads(result_path.read_text())
+            expected_cases = [
+                {'name': 'bar-consumer-subscriptions', 'worker': 'bar'},
+                {'name': 'popup-overlay-and-paint-gate-subscriptions', 'worker': 'popup'},
+                {'name': 'popup-realm-ingress-and-closed-revocation', 'worker': 'popup'},
+                {'name': 'popup-realm-close-while-closed-preserves-retirement-ledger', 'worker': 'popup'},
+                {'name': 'admission-consumer-subscriptions', 'worker': 'admission'},
+                {'name': 'renderer-grant-and-poison-subscriptions', 'worker': 'renderer'}]
+            coverage = summary.get('coverageDeclaration', {})
+            if (summary.get('schema') != 2 or summary.get('passed') is not True
+                    or summary.get('requirement') != 'ELM-TEA-004' or summary.get('scenario') != 'tea-subscriptions'
+                    or summary.get('marker') != 'TEA_SUBSCRIPTIONS_OBSERVE_V1'
+                    or summary.get('cases') != expected_cases or summary.get('runsPerCase') != 2
+                    or type(summary.get('transitions')) is not int or summary['transitions'] <= 0
+                    or summary.get('optimizedRootsVerified') is not True
+                    or summary.get('optimizedRootHashes') != {name: selected_artifacts[name] for name in roots}
+                    or summary.get('oracleSha256') != sha(work / 'qa/tea-subscriptions-cases.cjs')
+                    or summary.get('runnerSha256') != sha(work / 'qa/tea-subscriptions.cjs')
+                    or set(summary.get('workers', {})) != set(workers)
+                    or coverage.get('complete') is not False or not coverage.get('missing')
+                    or summary.get('nativeAccepted') is not False or summary.get('releaseAccepted') is not False):
+                raise RuntimeError('Subscription component result incomplete, changed or overclaimed')
+            for key, name in workers.items():
+                observed = summary['workers'][key]
+                if (observed.get('moduleName') != name
+                        or observed.get('fixtureElmSha256') != sha(work / 'qa' / (name + '.elm'))
+                        or observed.get('originalFixtureSha256') != selected_artifacts[name]
+                        or observed.get('reversiblePatch') is not True
+                        or not re.fullmatch(r'[0-9a-f]{64}', observed.get('instrumentedFixtureSha256', ''))
+                        or type(observed.get('patchOffset')) is not int or observed['patchOffset'] < 0
+                        or type(observed.get('patchInsertedBytes')) is not int or observed['patchInsertedBytes'] <= 0):
+                    raise RuntimeError('Subscription worker observation/hash binding differs: ' + key)
+            report['scope'] = 'Eight optimized production roots and four disjoint debug subscription workers; component evidence only'
+            report['subscriptions'] = dict(summary, resultPath=result_path.name, resultSHA256=sha(result_path))
+            report['compiledSubscriptionRoots'] = list(roots)
+            report['wholeTea004Accepted'] = False
+            report['subscriptionQaStage'] = {'path': str(subscription_qa.relative_to(output)),
+                                               'hashes': {name: sha(subscription_qa / name) for name in qa_files}}
+            report['subscriptionLimits'] = [
+                'coverage.complete=false retained; HTTP wrapper Model/effect AST gaps remain in the raw coverage declaration',
+                'SiteMain static inventory is not executed or qualified by this eight-root profile; raw nine-root wording is not acceptance',
+                'No live native host ordering, GUI, provider, AT/IME or release acceptance']
         if args.standalone_mvp:
-            for filename in ('StandaloneMvpReplay.elm', 'standalone-mvp.cjs'):
+            for filename in ('NativePointerFixture.elm', 'StandaloneMvpReplay.elm', 'standalone-mvp.cjs'):
                 source = root / 'qa' / filename
                 if source.is_symlink() or not source.is_file():
                     raise RuntimeError('Standalone MVP fixture is required')
@@ -505,7 +579,13 @@ def main():
                                             '--dev', '/dev', '--proc', '/proc', '--tmpfs', '/run/user',
                                             '--tmpfs', '/tmp', '--', sys.executable, '-B',
                                             str(REPO / 'tools/check_feedback_browser.py'), str(output)])
-        if args.tea_contract:
+        if args.subscriptions:
+            for filename in qa_files:
+                staged = subscription_qa / filename
+                if (staged.is_symlink() or not staged.is_file()
+                        or sha(staged) != sources['implementation/warlock/qa/' + filename]):
+                    raise RuntimeError('Subscription harness/source stage changed: ' + filename)
+        if args.tea_contract or args.subscriptions:
             if (work / 'elm.json').is_symlink() or sha(work / 'elm.json') != staged_elm_manifest_sha:
                 raise RuntimeError('Staged Elm manifest changed during execution')
             report['stagedElmManifestSHA256'] = staged_elm_manifest_sha
@@ -533,7 +613,7 @@ def main():
         if not all(sha(Path(tool['path'])) == tool['sha256'] for tool in report['developmentTools'].values()):
             raise RuntimeError('Development interpreter changed during protected check')
         report['artifacts'] = {p.name: sha(p) for p in output.glob('*.js')}
-        if args.tea_contract:
+        if args.tea_contract or args.standalone_mvp or args.subscriptions:
             for document in report['httpDocuments'].values():
                 artifact = output / document['path']
                 if (artifact.is_symlink() or not artifact.is_file()

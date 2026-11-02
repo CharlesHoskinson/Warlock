@@ -7,6 +7,7 @@ import Html exposing (div, text)
 import Html.Attributes exposing (attribute)
 import Presentation
 import SurfaceRenderer
+import SurfaceTheme
 import Task
 import UiHttp
 
@@ -57,7 +58,7 @@ view : Model -> Html.Html Msg
 view model =
     case UiHttp.problem model.http of
         Nothing -> Html.map View (Bar.view model.bar)
-        Just reason -> div [attribute "role" "alert"] [text (reason++" Restart this view to reconnect.")]
+        Just reason -> div (attribute "role" "alert" :: SurfaceTheme.transportAlertStyles False) [text (reason++" This view has stopped.")]
 
 main : Program () Model Msg
 main = Browser.element

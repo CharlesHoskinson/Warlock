@@ -1,0 +1,28 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "0ceccf16649ebeaf09ea95e1e03c312eb930c0c37a4ed4eaa2488db9db0769fc",
+  "selfTestSchema": 1,
+  "executionPerformed": true,
+  "acceptanceInferred": false,
+  "scope": "Plugin contribution-policy regressions; no GUI build, native/AT oracle or client installation.",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/home/charl/code/Warlock/plugins/warlock-contributor/qa",
+    "-t",
+    "/home/charl/code/Warlock/plugins/warlock-contributor/qa",
+    "-p",
+    "test_*.py"
+  ],
+  "returnCode": 1,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"0ceccf16649ebeaf09ea95e1e03c312eb930c0c37a4ed4eaa2488db9db0769fc\",\n  \"ok\": false,\n  \"errors\": [\n    \"Continuation requires a participant slice record; run start first\"\n  ]\n}\n{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"0ceccf16649ebeaf09ea95e1e03c312eb930c0c37a4ed4eaa2488db9db0769fc\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"record\": \".warlock-contributor/slice.json\",\n  \"progress\": {\n    \"iterationsWithoutProgress\": 0,\n    \"lastRecordedProgressUTC\": \"2026-11-02T07:05:34.575344+00:00\",\n    \"secondsSinceRecordedProgress\": 0,\n    \"limits\": {\n      \"iterations\": 2,\n      \"seconds\": 2700\n    },\n    \"investigationNeedsChange\": false,\n    \"reasons\": [],\n    \"action\": \"Continue the selected behavior with proportional verification.\",\n    \"basis\": \"Participant record; unrecorded work and oracle truth are not inferred.\"\n  },\n  \"ok\": true\n}\n",
+  "stderr": ".............................................................................F..F...........................................................................................................................................................................................................................\n======================================================================\nFAIL: test_bootstrap_bound_owner_census_and_introduction_use_exact_index_payload (test_foreign_introduction.ForeignIntroductionTests.test_bootstrap_bound_owner_census_and_introduction_use_exact_index_payload)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/charl/code/Warlock/plugins/warlock-contributor/qa/test_foreign_introduction.py\", line 206, in test_bootstrap_bound_owner_census_and_introduction_use_exact_index_payload\n    self.cli('check', ok=False)\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/charl/code/Warlock/plugins/warlock-contributor/qa/test_warlock.py\", line 87, in cli\n    self.assertNotEqual(proc.returncode, 0, proc.stdout+'\\n'+proc.stderr)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 0 == 0 : {\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"0ceccf16649ebeaf09ea95e1e03c312eb930c0c37a4ed4eaa2488db9db0769fc\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"record\": \".warlock-contributor/slice.json\",\n  \"progress\": {\n    \"iterationsWithoutProgress\": 0,\n    \"lastRecordedProgressUTC\": \"2026-11-02T07:05:07.648284+00:00\",\n    \"secondsSinceRecordedProgress\": 0,\n    \"limits\": {\n      \"iterations\": 2,\n      \"seconds\": 2700\n    },\n    \"investigationNeedsChange\": false,\n    \"reasons\": [],\n    \"action\": \"Continue the selected behavior with proportional verification.\",\n    \"basis\": \"Participant record; unrecorded work and oracle truth are not inferred.\"\n  },\n  \"ok\": true\n}\n\n\n\n======================================================================\nFAIL: test_later_transition_keeps_intro_and_never_permits_adoption (test_foreign_introduction.ForeignIntroductionTests.test_later_transition_keeps_intro_and_never_permits_adoption)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/charl/code/Warlock/plugins/warlock-contributor/qa/test_foreign_introduction.py\", line 151, in test_later_transition_keeps_intro_and_never_permits_adoption\n    self.assertIn('Introduced foreign custody', result.stdout)\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'Introduced foreign custody' not found in '{\\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\\n  \"checkerSha256\": \"0ceccf16649ebeaf09ea95e1e03c312eb930c0c37a4ed4eaa2488db9db0769fc\",\\n  \"ok\": false,\\n  \"errors\": [\\n    \"Dirty adoption is restricted to exact new product paths\"\\n  ]\\n}\\n'\n\n----------------------------------------------------------------------\nRan 300 tests in 103.760s\n\nFAILED (failures=2)\n",
+  "errors": [
+    "Plugin regression suite failed"
+  ],
+  "ok": false
+}

@@ -217,6 +217,21 @@ adopt the separate foreign model merely because that model was reconciled.
 
 ### Reviewed changes by a separate foreign owner
 
+For a candidate input that was clean or absent at this participant's start and
+became dirty later under a different indexed owner, the same transition may add
+`introduceForeign: true`. This explicit event-schema-3 introduction binds
+`fromSha256` to the regular Git blob (or absence) at the target record's full
+immutable `sourceRevision`. The independent review additionally needs
+`disposition: "accepted"`, `introducedForeign: true`, and `baselineRevision`.
+The existing exact current owner-record/census/hash checks still apply. Selected,
+adopted, already captured, ambiguous, stale, archival or nonregular inputs refuse.
+Introduced paths live only in the hash-chained sidecar: the original
+`foreignDirty`, source baseline, record bytes, start and iterations stay unchanged.
+They remain protected from staging even with `--include` and cannot be adopted by
+`extend`. Later byte transitions use the ordinary six-field schema-2 form; unknown
+unintroduced paths still fail. This is provenance only, never source ownership or
+original acceptance.
+
 `reconcile-foreign` recognizes reviewed changes to paths already captured in
 `foreignDirty`. It does not adopt files, edit the participant record, append an
 iteration, reset a timer, accept evidence, or permit staging a foreign path.
