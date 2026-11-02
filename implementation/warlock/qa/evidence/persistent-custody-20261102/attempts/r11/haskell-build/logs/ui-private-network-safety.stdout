@@ -1,0 +1,19 @@
+[ok] No violation found (27359ms at 3655 traces/second).
+Witnesses:
+witnessCapture was witnessed in 33385 trace(s) out of 100000 explored (33.38%)
+witnessRetirement was witnessed in 33385 trace(s) out of 100000 explored (33.38%)
+witnessPeerClosed was witnessed in 995 trace(s) out of 100000 explored (1.00%)
+witnessIsolation was witnessed in 8235 trace(s) out of 100000 explored (8.24%)
+witnessAdopted was witnessed in 4083 trace(s) out of 100000 explored (4.08%)
+witnessVerified was witnessed in 524 trace(s) out of 100000 explored (0.52%)
+witnessRunning was witnessed in 27 trace(s) out of 100000 explored (0.03%)
+witnessSent was witnessed in 5 trace(s) out of 100000 explored (0.01%)
+witnessFailed was witnessed in 10583 trace(s) out of 100000 explored (10.58%)
+witnessStopped was witnessed in 100000 trace(s) out of 100000 explored (100.00%)
+witnessExpired was witnessed in 100000 trace(s) out of 100000 explored (100.00%)
+witnessRevoked was witnessed in 100000 trace(s) out of 100000 explored (100.00%)
+witnessProcDenied was witnessed in 1065 trace(s) out of 100000 explored (1.06%)
+witnessSameNamespace was witnessed in 1039 trace(s) out of 100000 explored (1.04%)
+witnessSelectionRetired was witnessed in 1199 trace(s) out of 100000 explored (1.20%)
+witnessBindingRetired was witnessed in 1158 trace(s) out of 100000 explored (1.16%)
+Use --seed=0x17996af --backend=typescript to reproduce.

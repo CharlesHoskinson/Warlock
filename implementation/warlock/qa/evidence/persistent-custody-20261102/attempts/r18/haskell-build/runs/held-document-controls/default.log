@@ -1,0 +1,13 @@
+document exact immutable bytes: PASS
+script digest: PASS
+style digest: PASS
+wrong hash no bytes: PASS
+FIFO after probe fails without reopening FIFO: PASS
+positive append witness and size mismatch: PASS
+3 to 4 positive write witness and refusal: PASS
+close error prevents successful bytes: PASS
+synchronous exception yields no bytes: PASS
+async exception yields no success: PASS
+async exception closes owned descriptor: PASS
+same bytes replacement inode refused: PASS
+symlink replacement refused: PASS

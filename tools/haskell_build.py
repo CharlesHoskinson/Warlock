@@ -19,7 +19,7 @@ DEPENDENCIES = ROOT / 'tools/haskell-dependencies.json'
 WRAPPER = ROOT / 'tools/haskell_test_wrapper.py'
 SUITES = {
     'warlock-held-document-proposal': ['held-document-controls', 'held-executable-controls'],
-    'warlock-process-custody': ['internal-controls', 'public-controls', 'selected-fd-controls', 'deadline-stop-controls', 'bootstrap-facade-controls'],
+    'warlock-process-custody': ['internal-controls', 'public-controls', 'selected-fd-controls', 'deadline-stop-controls', 'persistent-exit-race-controls', 'bootstrap-facade-controls'],
     'warlock-protocol': ['boundary-controls', 'ingress-controls', 'owner-sequences', 'credential-guard-controls', 'desktop-boundary-controls'],
     'warlock-elf-observation-proposal': ['elf-cases'],
     'warlock-runtime': ['current-session-oracles', 'persistent-bootstrap-controls', 'ui-backend-controls', 'ui-origin-controls', 'ui-engine-controls', 'ui-private-network-controls', 'ui-display-controls', 'ui-mvp-controls', 'ui-webkit-controls', 'ui-engine-protocol-controls', 'ui-engine-exec-controls', 'ui-engine-broker-controls'],
@@ -370,11 +370,14 @@ def build(sdk, output, env, profile='common'):
         return models_only(output, env)
     if profile == 'site':
         return site_only(output, env)
-    if profile not in ('common', 'auth', 'ui-origin'):
+    if profile not in ('common', 'auth', 'ui-origin', 'custody', 'backend'):
         raise RuntimeError('Unknown fixed Haskell verification profile')
     sdk, output = Path(sdk).resolve(), Path(output).resolve()
     result = {'schema': 1, 'passed': False, 'profile': profile, 'commands': [], 'suites': {},
               'nativeAccepted': False, 'releaseAccepted': False}
+    if profile in ('custody', 'backend'):
+        result['modelExecution'] = {'executed': False,
+                                    'scope': 'Focused fixture feedback only; use separately retained source-bound formal evidence'}
     work = output / 'haskell-build'
     try:
         work.mkdir(mode=0o700)  # no reuse of previous artifacts
@@ -472,10 +475,18 @@ def build(sdk, output, env, profile='common'):
         fixtures = (FIXTURES if profile == 'common' else
                     ({'warlock-ui-backend': FIXTURES['warlock-ui-backend'], 'ui-stream-child': FIXTURES['ui-stream-child']} if profile == 'ui-origin'
                      else {'credential-peer-child': FIXTURES['credential-peer-child']}))
+        if profile == 'custody':
+            targets = ['warlock-process-custody:test:deadline-stop-controls', 'warlock-process-custody:test:persistent-exit-race-controls', 'warlock-protocol:test:ingress-controls']
+            fixtures = {'graceful-stop-child': FIXTURES['graceful-stop-child']}
+        if profile == 'backend':
+            targets = ['warlock-runtime:test:ui-backend-controls']
+            fixtures = {'warlock-ui-backend': FIXTURES['warlock-ui-backend'], 'ui-stream-child': FIXTURES['ui-stream-child']}
         required(command('test-build', 'build', targets + list(fixtures.values()), test=True), 'test build')
         required(command('test-freeze', 'freeze', [], test=True), 'test freeze')
         # Authentication changes repeat the existing registration claim for
         # each frame; qualify its unchanged invariants before behavioral tests.
+        # The explicit custody feedback profile runs only its fixed fixture suites
+        # and makes no new model claim; the ordinary full profiles stay unchanged.
         from check_elm_cpu import quint_toolchain
         model_pin, model_cli = quint_toolchain()
         node = Path(model_pin['node']['path'])
@@ -484,7 +495,7 @@ def build(sdk, output, env, profile='common'):
         model_env = dict(build_env, NO_COLOR='1')
         for key in ('NODE_OPTIONS', 'NODE_PATH', 'FORCE_COLOR'):
             model_env.pop(key, None)
-        if profile != 'ui-origin':
+        if profile not in ('ui-origin', 'custody', 'backend'):
             model = 'runtime/formal/current_registration.qnt'
             tests = 'runtime/formal/current_registration_test.qnt'
             selected_tests = re.findall(r'^\s*run\s+(\w+)\s*=', (copy / tests).read_text(), re.MULTILINE)
@@ -603,7 +614,7 @@ def build(sdk, output, env, profile='common'):
             result['uiWebkitRpath'] = {'path': ui_lib, 'fixture': target, 'inspectorPin': readelf_pin,
                                        'scope': 'ELF dynamic tag only; loader execution remains a runtime test'}
         frontend = None
-        if profile in ('common', 'ui-origin'):
+        if profile in ('common', 'ui-origin', 'backend'):
             from ui_backend_frontend import prepare as prepare_frontend
             frontend, result['uiFrontend'] = prepare_frontend(ROOT, work, build_env, run, digest)
         dispatches = {}
@@ -621,7 +632,7 @@ def build(sdk, output, env, profile='common'):
         dispatch_path = work / 'dispatch-all.json'
         dispatch_path.write_text(json.dumps({'suites': dispatches}, indent=2) + '\n')
         test_env = dict(build_env, WARLOCK_HASKELL_DISPATCH=str(dispatch_path))
-        info = command('test-all' if profile == 'common' else ('test-ui-origin' if profile == 'ui-origin' else 'test-public-auth'), 'test',
+        info = command('test-all' if profile == 'common' else ('test-ui-origin' if profile == 'ui-origin' else ('test-custody' if profile == 'custody' else ('test-backend' if profile == 'backend' else 'test-public-auth'))), 'test',
                        (['all'] if profile == 'common' else targets) + ['--keep-going', '--test-show-details=direct', '--test-wrapper=' + str(WRAPPER)],
                        test=True, timeout=900, extra_env=test_env)
         result['testCommandExit'] = info['exit']

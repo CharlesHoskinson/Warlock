@@ -130,6 +130,50 @@ array _ = Left "startup array required"
 positive :: Json -> Either Text Counter
 positive value = string value >>= failure . parseCounter False
 
+-- Single production authority for desktop request semantics. The bounded runner uses it;
+-- a future persistent runner can share it; admission/deadline
+-- ownership stays with the caller and no wire input chooses a callback.
+applyDesktopRequest
+ :: Binding -> Catalog -> PinStore -> IORef Int
+ -> IORef (Maybe (Counter,D.PinSnapshot,D.DesktopReply))
+ -> (D.DesktopReply -> IO ()) -> D.DesktopRequest -> IO ()
+applyDesktopRequest bound catalog pins operations lastWrite sendReply request = case D.requestKind request of
+  D.CatalogRead -> do
+   modifyIORef' operations (+1)
+   actual <- readCatalog catalog
+   preferences <- either (const Nothing) Just <$> readPins pins
+   case actual of
+    Left _ -> do
+     construct (D.catalogReply bound (D.requestId request) Nothing preferences) >>= sendReply
+    Right (snapshot,_) -> do
+     -- Check complete envelope including preferences. Overflow exposes
+     -- explicit unavailable, never a truncated subset of the catalog.
+     case D.catalogReply bound (D.requestId request) (Just snapshot) preferences of
+      Left _ -> do
+       construct (D.catalogReply bound (D.requestId request) Nothing preferences) >>= sendReply
+      Right reply -> sendReply reply
+  D.PinsWrite -> case D.pinProposal request of
+   Nothing -> ioError (userError "checked pin proposal missing")
+   Just proposal -> do
+    previous <- readIORef lastWrite
+    case previous of
+     Just (identity,old,reply) | D.requestId request==identity && old==proposal -> sendReply reply
+     Just (identity,_,_) | D.requestId request<=identity -> construct (D.pinsReply bound (D.requestId request) D.PinRefused Nothing) >>= sendReply
+     _ -> do
+      -- Reserve an unconfirmed disposition before any store mutation.
+      unknown <- construct (D.pinsReply bound (D.requestId request) D.PinUnknown Nothing)
+      writeIORef lastWrite (Just (D.requestId request,proposal,unknown))
+      modifyIORef' operations (+1)
+      -- A cold backend validates additions against actual current catalog
+      -- data as well; no preceding read/cache in this session is required.
+      known <- either (const Set.empty) snd <$> readCatalog catalog
+      (status,snapshot) <- savePins pins known proposal
+      reply <- construct (D.pinsReply bound (D.requestId request) status snapshot)
+      writeIORef lastWrite (Just (D.requestId request,proposal,reply))
+      sendReply reply
+ where
+  construct = either (ioError . userError . T.unpack) pure
+
 runBackend :: BackendConfig -> IO BackendResult
 runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled) = mask $ \restore -> do
  catalog <- newCatalog roots locale (lifetime bound)
@@ -153,40 +197,7 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
       sent <- sendCredentialIngress ingress
       unless (sent==Right ()) (ioError (userError "backend reply delivery unconfirmed"))
      construct = either (ioError . userError . T.unpack) pure
-     handle request = case D.requestKind request of
-      D.CatalogRead -> do
-       modifyIORef' operations (+1)
-       actual <- readCatalog catalog
-       preferences <- either (const Nothing) Just <$> readPins pins
-       case actual of
-        Left _ -> do
-         construct (D.catalogReply bound (D.requestId request) Nothing preferences) >>= sendReply
-        Right (snapshot,_) -> do
-         -- Check complete envelope including preferences. Overflow exposes
-         -- explicit unavailable, never a truncated subset of the catalog.
-         case D.catalogReply bound (D.requestId request) (Just snapshot) preferences of
-          Left _ -> do
-           construct (D.catalogReply bound (D.requestId request) Nothing preferences) >>= sendReply
-          Right reply -> sendReply reply
-      D.PinsWrite -> case D.pinProposal request of
-       Nothing -> ioError (userError "checked pin proposal missing")
-       Just proposal -> do
-        previous <- readIORef lastWrite
-        case previous of
-         Just (identity,old,reply) | D.requestId request==identity && old==proposal -> sendReply reply
-         Just (identity,_,_) | D.requestId request<=identity -> construct (D.pinsReply bound (D.requestId request) D.PinRefused Nothing) >>= sendReply
-         _ -> do
-          -- Reserve an unconfirmed disposition before any store mutation.
-          unknown <- construct (D.pinsReply bound (D.requestId request) D.PinUnknown Nothing)
-          writeIORef lastWrite (Just (D.requestId request,proposal,unknown))
-          modifyIORef' operations (+1)
-          -- A cold backend validates additions against actual current catalog
-          -- data as well; no preceding read/cache in this session is required.
-          known <- either (const Set.empty) snd <$> readCatalog catalog
-          (status,snapshot) <- savePins pins known proposal
-          reply <- construct (D.pinsReply bound (D.requestId request) status snapshot)
-          writeIORef lastWrite (Just (D.requestId request,proposal,reply))
-          sendReply reply
+     handle = applyDesktopRequest bound catalog pins operations lastWrite sendReply
      handler checked = case checkedDesktopCommit checked of
       Nothing -> ioError (userError "native profile reached desktop actor")
       Just commit -> do

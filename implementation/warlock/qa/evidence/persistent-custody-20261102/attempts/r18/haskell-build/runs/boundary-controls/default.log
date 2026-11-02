@@ -1,0 +1,20 @@
+PASS client and server valid controls reach real handler
+PASS positive handler exactly three times
+PASS v2 server positive reaches typed data routing
+PASS nonnumeric version is malformed schema
+PASS all malformed client inputs refused
+PASS native duplicate key refused
+PASS native unsupported refused
+PASS foreign current binding refused
+PASS real SHA checked history accepted
+PASS v2 real SHA lookup client/server and wrong digest
+PASS only six valid dispatches
+PASS rejection reasons retained and typed
+PASS bounded reason history
+PASS retired gate refuses future valid input
+PASS admitted callback remains owned while retirement blocks new calls
+PASS retirement waits for callback accounting
+PASS ThreadKilled rethrown after retirement accounting
+PASS handler failure recorded and rethrown after accounting
+PASS all64 slots owned and new work refused during drain
+PASS all64 callbacks settle before retirement

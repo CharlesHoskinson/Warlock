@@ -6,9 +6,10 @@
 #include <signal.h>
 #include <sys/types.h>
 #include <fcntl.h>
+#include <sys/pidfd.h>
 -- Linux-specific source proposal: independent process/library review required.
 module Warlock.Capture.Process.Internal
- (Tool(..),ToolError(..),Captured(..),Owner,OwnerStatus(..),newOwner,status,runTool,runFixture,runFixturePinned,runFixturePinnedObserved,runFixturePinnedFDsObserved,runFixturePinnedFDsObservedHook,runFixturePinnedFDsObservedUntil,ToolObservation(..),runFixtureWithHook, selectedFixture, selectedTicketFixture, SelectedSpawn, HeldExecutable, SelectedResult(..), Session, selectedHeld, selectedHeldNoInput, awaitLeader, requestGracefulStop, runSelected, AdmissionDeadline, deadlineAfter, deadlineAbsoluteNs, deadlineFromAbsoluteNs, deadlineFromAbsoluteNsAt, remainingMicros, runSelectedUntil, runSelectedDetailed, SelectedOutcome(..), Containment(..), SessionObservation(..), observeSession, runSelectedFixtureHook) where
+ (Tool(..),ToolError(..),Captured(..),Owner,OwnerStatus(..),newOwner,status,runTool,runFixture,runFixturePinned,runFixturePinnedObserved,runFixturePinnedFDsObserved,runFixturePinnedFDsObservedHook,runFixturePinnedFDsObservedUntil,ToolObservation(..),runFixtureWithHook, selectedFixture, selectedTicketFixture, SelectedSpawn, HeldExecutable, SelectedResult(..), Session, selectedHeld, selectedHeldNoInput, awaitLeader, requestGracefulStop, runSelected, AdmissionDeadline, deadlineAfter, capAdmissionDeadline, deadlineAbsoluteNs, deadlineFromAbsoluteNs, deadlineFromAbsoluteNsAt, remainingMicros, runSelectedUntil, runSelectedDetailed, SelectedOutcome(..), Containment(..), SessionObservation(..), observeSession, runSelectedFixtureHook, SessionScope, newSessionScope, closeSessionScope, drainSessionScope, inScope, observeChild, leaderExited, ReaderResult, spawnReader, startupAction, c_getpgid, c_kill, c_pidfd_open, c_pidfd_send_signal, pidfdNonblockFlags) where
 import Control.Concurrent (MVar, ThreadId, forkFinally, killThread, newEmptyMVar, newMVar, putMVar, readMVar, threadDelay, withMVar)
 import Control.Exception (IOException, SomeAsyncException, SomeException, bracket, fromException, mask, mask_, onException, try, throwIO, toException)
 import qualified Data.Text as T
@@ -48,6 +49,11 @@ foreign import ccall unsafe "pipe2" c_pipe2 :: Ptr CInt -> CInt -> IO CInt
 foreign import ccall unsafe "waitid" c_waitid :: CInt -> CUInt -> Ptr () -> CInt -> IO CInt
 foreign import ccall unsafe "getpgid" c_getpgid :: CInt -> IO CInt
 foreign import ccall unsafe "kill" c_kill :: CInt -> CInt -> IO CInt
+foreign import ccall unsafe "pidfd_open" c_pidfd_open :: CInt -> CUInt -> IO CInt
+foreign import ccall unsafe "pidfd_send_signal" c_pidfd_send_signal :: CInt -> CInt -> Ptr () -> CUInt -> IO CInt
+
+pidfdNonblockFlags :: CUInt
+pidfdNonblockFlags = #{const PIDFD_NONBLOCK}
 
 data Tool = Pactree FilePath | Readelf FilePath deriving (Eq,Show)
 data ToolError = ToolHashMismatch | BadArguments | SpawnOrIO | TimedOut | OutputLimit | Unsuccessful Int | CleanupUncertain | OwnerBusy | OutputUnavailable | SessionClosed | TransferUnavailable | StopAlreadyAttempted deriving (Eq,Show)
@@ -60,6 +66,10 @@ deadlineAfter micros
  | otherwise = do
   now <- getMonotonicTimeNSec
   pure (Right (AdmissionDeadline (toInteger now + toInteger micros * 1000)))
+-- Package-internal intersection so an owner-issued per-request budget always
+-- honors any stricter existing authority/request/stop AdmissionDeadline.
+capAdmissionDeadline :: AdmissionDeadline -> AdmissionDeadline -> AdmissionDeadline
+capAdmissionDeadline (AdmissionDeadline a) (AdmissionDeadline b) = AdmissionDeadline (min a b)
 remainingMicros :: AdmissionDeadline -> IO Int
 remainingMicros (AdmissionDeadline end) = do
  now <- getMonotonicTimeNSec

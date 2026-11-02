@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "reviewedUTC": "2026-11-02T05:51:12.873552+00:00",
+  "kind": "independent-source-component-publication-review",
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "no-source-blocker-for-component-publication"
+  },
+  "disposition": "no-source-blocker-for-component-publication",
+  "sourcePublicationBlockerFound": false,
+  "sourceHashes": {
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs": "1393f348fb2cdfd42cdf29fbdf16c2c026c11abb616ccfd1c42ebdbd9283a2ff",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": "176f1f5190726f057da3692d944f4e2635e6a392670d3cbeca1e1b9456056370",
+    "implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs": "48f267138b521d91b263c699fc995bb28e3fe908bc8e7694580300aa172e5dc1",
+    "implementation/warlock/haskell/process-custody/process-custody.cabal": "45c21dc95a43da4e9e43697e10cb31e87f840b9d89ddbdfc55e8935688284692",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": "a75f346d1bf0d5cb03843ef5d1d497f24f7490d41d10a894c5a4e79af81a2447",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs": "d1162d1206d0d0107a3f771c58cfc28af46b1d1b4a042634d767253cec64a5e2",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs": "c8496170eabfe8f5e3383c3cb0860630499b19052c0b5179a1a4fc7f8f7d9d8f",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs": "3f42fb3b628a0c3f93f138373f26bef28fad9d304415c37563c414a01ff4a2c7",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": "de3cfc758f9ee41e3d66c917853e5e7fe9c4476acff2db4a3f36cf366a83edb6",
+    "implementation/warlock/haskell/process-custody/test/DeadlineStop.hs": "f5d66cf0b7412fedc4d0e951c2c25cf49648c968688ae884dcd29b704e3be24f",
+    "implementation/warlock/haskell/process-custody/test/PersistentControls.hs": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "2e031c7410aff909bef5cca13d1c02d4d6b943ad48227d4ca9a6c98f74d5d555",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "85d91c8decf35f042c72783138df9faaad432607159d163e298a6ada0990db20",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": "30cd41b3dad28cc980e48cdcb9b77e7c511cae4c3881440dd7bc0360bfb7d16c",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "277cdca0b629c5f13369891950e5ab51cde9589616a42cccfa12bb2ca0442f0a",
+    "implementation/warlock/haskell/protocol/test/OwnerControls.hs": "7757bf34257e90bf56d3c5baea54f24c28beea8a2da9820e5b04aee40d41cb3c",
+    "implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808",
+    "implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs": "d631fe70075d0c8cdbd8190509d4447b68c970bac5144aeba60690480198ce1a",
+    "implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs": "7342c6c4c38082373095e79d66c4f9dd18223173894c21aa081246cc5feed2ab",
+    "implementation/warlock/haskell/process-custody/README.md": "cdca392be058d884733e7e9d3f9241b47991247d6b7c7fb94c24895b541553da",
+    "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "f63550d4b9538b13afbd8a875554b56b7e3a5ece95ee1a7e76a7c3a17b795425",
+    "implementation/warlock/haskell/runtime/test-ui/Main.hs": "f522408fc45e2077c41cdf262cc438f4ee9ae7afc000a316da94974ed36d3e61"
+  },
+  "rootToolHashes": {
+    "tools/qa_cpu.py": "aa7de7eec926b2009238a176343e7316c5c451a53b541e4f07ac1f84bad954cc",
+    "tools/check_haskell_cpu.py": "c99d02304f73c850051e1f204b31cebe471343f7b7b2899a3e5e9dc47fb0640a",
+    "tools/haskell_build.py": "04f3dec82bc7968e6dac2beefcb595f24d9b08b61833262f5fb8279cfd452c72",
+    "tools/haskell_test_wrapper.py": "87f01feefecb5759811db1cf2762d1c0b85f5156896f8637fe2f86892edb03ff"
+  },
+  "sourceScope": "Exact26 current implementation files plus4 Root tools bound. Bounded actual source review of owned-handle reap, callback-drain ingress, persistent/held foundation and fixed feedback/fixture changes; not an exhaustive audit of all2349 new persistent-module lines.",
+  "sourceFindings": [
+    {
+      "area": "owned handle probe/natural wait",
+      "finding": "Failed or mismatched proc metadata never authorizes a numeric-PID or pidfd signal. Fallback uses only existing sole owned ProcessHandle; positive before-D exit result returns without signal. Optional wait after nonblocking Nothing uses same immutable StopD and remains unconfirmed without before-D owned exit. Verified-live signal path remains separate; callbacks/wake/observation have drained before containment."
+    },
+    {
+      "area": "async and deadline result",
+      "finding": "No fallback deadline is minted or renewed; afterProbe/afterWait reject late success. Parent async exceptions remain caught/deferred by containment then rethrown after cleanup. Completed reader-worker exceptions map to OutputUnavailable, not Captured success; nested worker async is not promoted by outer-only asyncErrors into parent async."
+    },
+    {
+      "area": "callback retirement",
+      "finding": "retireIngress retains Stopped owner/channel and retires same gate. Draining callback causes no close; later same-owner call may close only after G.Retired. Unknown close stays unknown and no new owner/replay is created. OwnerControls checks real callback bytes, no new work, endpointOpen/Draining1 before completion, then exactly-one close/EOF."
+    },
+    {
+      "area": "real child regression",
+      "finding": "ExitRaceControls stimulates actual child self-exit between first live probe and metadata through owned marker removal. It retains same latched StopD and verifies actual LeaderReaped/PersistentRetired/Available/PidfdClosed with zero killhook in raced case, plus ordinary verified-live positive. Seeded lifecycle32 cases includes13 real owned-handle natural-wait positives."
+    },
+    {
+      "area": "fixed feedback source",
+      "finding": "custody/backend modes remain fixed whitelisted profiles under unchanged isolation, full input closure, core1/sharedlock/SDK/system guards. Backend profile compiles productionall, solebackend suite+both pinnedfixtures+compiledElm frontend; models omitted explicitly. Defaultcommon model paths preserved. Final-only100ms fixture sleep changes scheduling only; every whole frame/order/header split/callback/hash/reply check remains. Test-ui adds static progress diagnostics only."
+    }
+  ],
+  "beforeHookDeadlineSamplingLimitation": {
+    "source": "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs",
+    "sites": [
+      {
+        "sample": "leftProbe <- remainingMicros dl",
+        "hook": "persistent-before-owned-handle-probe",
+        "operation": "timeout leftProbe (getProcessExitCode ph)"
+      },
+      {
+        "sample": "leftWait <- remainingMicros dl",
+        "hook": "persistent-owned-handle-awaiting-natural-exit",
+        "operation": "timeout leftWait (waitForProcess ph)"
+      }
+    ],
+    "finding": "Budgets are sampled BEFORE these hooks then reused afterward. A deliberately blocking test hook can consume D and extend elapsed relative wait beyond original D. Final afterProbe/afterWait checks still reject clean in-budget receipt. Public production facade supplies no-op hook; no newly observed live failure from this limitation.",
+    "narrowImprovement": "If claiming strict no-entry-after-D for injected stalls, resample remaining original D after hook before probe/wait. No new approval gate or behavior rerun solely for explanatory comment."
+  },
+  "evidenceReview": {
+    "r17": {
+      "report": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793595862530226693/report.json",
+      "sha256": "40289dca81bfc4715aa290c59590d80d205b91233e8369dcdf1848802b6cb796",
+      "profile": "custody",
+      "passed": true,
+      "suites": 3,
+      "commands": 9,
+      "normalUnforced": true,
+      "modelExecution": false,
+      "ownerControls": 25,
+      "seedCases": 32,
+      "ownedNaturalWaitPositiveCases": 13,
+      "directExitRaceCases": 2,
+      "scope": "Three focused component suites, not full regression."
+    },
+    "r18": {
+      "report": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793596183827850062/report.json",
+      "sha256": "b89ee3cff21e48eaa74d735da301254a6f2efc779d436f99acbc86ffcc5fb671",
+      "profile": "common",
+      "passed": false,
+      "suites": 37,
+      "passedSuites": 36,
+      "failedSuite": "warlock-runtime:test:ui-backend-controls",
+      "retainedFailure": {
+        "passed": false,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793596183827850062/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-backend/build/warlock-ui-backend/warlock-ui-backend",
+              "2096",
+              "1929274",
+              "6598904",
+              "762b403691d0a1400428818039f33ba97d4f1eac0913fa780831f9852ed60c55",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793596183827850062/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/ui-stream-child/build/ui-stream-child/ui-stream-child",
+              "2096",
+              "1927674",
+              "3490320",
+              "8c63499ae07dff098fdd83678fb698a87e0e19832f7faf4227c7f69b4de3f0db",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793596183827850062/haskell-build/runs/ui-backend-controls/storage"
+            ],
+            "exit": -9,
+            "timeout": true,
+            "forcedCleanup": true,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793596183827850062/haskell-build/runs/ui-backend-controls/default.log"
+          }
+        ]
+      },
+      "scope": "Full attempt remains failed at original180s backend timeout; no retroactive37-pass claim."
+    },
+    "r19": {
+      "report": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793598177491817141/report.json",
+      "sha256": "5adc87ba4739a85c5254923c31bbe0b752bc17cb9192f0aec39ab5942c428de8",
+      "statusAtAssignment": "Root-designated live; no pass inferred from intermediate snapshot.",
+      "terminalConfirmation": "Root subsequently confirmed outer session68042 consumed with exit0; reviewer then inspected completed report,8commands/sole-suite receipt and frontend report.",
+      "profile": "backend",
+      "passed": true,
+      "commands": 8,
+      "suites": 1,
+      "normalUnforced": true,
+      "modelExecution": false,
+      "runtimeChecks": 161,
+      "runtimeGeneratedCases": 32,
+      "frontendReport": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793598177491817141/haskell-build/runs/ui-backend-controls/storage/frontend-report.json",
+      "frontendSha256": "3c26a28050f70fc386acd90eb9441068975330c9415eff52f6f9efae65ebcbb0",
+      "frontendChecks": 8010,
+      "frontendFailures": [],
+      "sessions": 40,
+      "wholeFrames": 401,
+      "presentationBatchLimit": 16,
+      "originalSessionDeadlineNs": "5000000000",
+      "scope": "Fresh focused frontend/backend result only; no universal full37-suite aggregate pass, model rerun or physicalGUI claim."
+    },
+    "r18ToR19ChangedInputs": [
+      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+      "implementation/warlock/haskell/runtime/test-ui/Main.hs",
+      "tools/check_haskell_cpu.py",
+      "tools/haskell_build.py",
+      "tools/qa_cpu.py"
+    ],
+    "r18ToR19ProductionPolicyChanged": false,
+    "r17CommentDelta": {
+      "path": "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs",
+      "testedSha256": "27f97a8803025a7014b3410c8e5cb79c84d19675e90c377ac285c8c78a4eab9a",
+      "currentSha256": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e",
+      "diff": "--- \n+++ \n@@ -2027,5 +2027,5 @@\n           -- Kernel exit can remove exe metadata before waitpid is ready.\n           -- Wait only on the original owned handle, without signalling; a\n-          -- still-live/mismatched child cannot turn this into a clean receipt.\n+          -- Only an actual owned-handle exit before D confirms retirement.\n           leftWait <- remainingMicros dl\n           when (leftWait <= 0) $\n",
+      "semanticChange": false,
+      "finding": "Exact tested boundary retained. No new behavioral run required solely for comment."
+    }
+  },
+  "componentDescriptorSnapshot": {
+    "path": "docs/warlock-build-loop/v2/persistent-custody-component-20261102.json",
+    "sha256": "d6be33c60c2e92840ce3230911c9baed071446d14ddfa056c24614c538078b50",
+    "sourceHashesCount": 26,
+    "hashMismatches": {},
+    "finding": "Root reconciled previously reported3 stale entries before this final snapshot; this independent review does not mutate descriptor/history."
+  },
+  "evidenceLogHashes": {
+    "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793595862530226693/haskell-build/runs/deadline-stop-controls/default.log": "fc2c9c4be4e144131ab29939afa5418b6b9cbafe267e7c98466fc48b8eacf9bf",
+    "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793595862530226693/haskell-build/runs/persistent-exit-race-controls/default.log": "831ceec23b86cabb4144b2d1e84e3a262cb7ba965a5d7d9414ee1bd1e2d9a74a",
+    "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793595862530226693/haskell-build/runs/ingress-controls/default.log": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+    "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793596183827850062/haskell-build/runs/ui-backend-controls/default.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793598177491817141/haskell-build/runs/ui-backend-controls/default.log": "2f335629f6f2b22c9a38445b64ce8b1b1f9c979d91c2cedfdac38095f2db97dd"
+  },
+  "remainingObservations": [
+    "Component source publication has no concrete blocker found in this bounded review. Later held bootstrap/Backend persistent wiring overlays are excluded; application persistent wiring remains unfinished.",
+    "Current source is hash-bound here; no full immutable new source commit adjudication was requested or performed for this component.",
+    "Actual current Omarchy persistent MVP, original ownership-presentation EARS, provider/callback/backing cleanup, physical/resource/ATIME/hardware/release obligations remain separate.",
+    "R17/r18/r19 are separate evidence tuples. Focused profile omits models/other suites; r18 remains failed. Final100ms producer sleep is grace, never invented ACK or drain proof."
+  ],
+  "wholeEarsAccepted": false,
+  "originalRequirementAccepted": false,
+  "scenarioAcceptance": false,
+  "nativeAccepted": false,
+  "providerCleanupAccepted": false,
+  "guiAccepted": false,
+  "atImeAccepted": false,
+  "hardwareAccepted": false,
+  "releaseAccepted": false,
+  "originalRequirements": 242,
+  "originalScenarios": 417,
+  "reviewerExecution": {
+    "tests": false,
+    "compiler": false,
+    "models": false,
+    "VM": false,
+    "native": false,
+    "canonicalEdits": false,
+    "method": "Read-only source/diff/report/log/hash inspection; only assigned ignored review authored. Forbidden auth/foreigntea protected runners not read."
+  }
+}

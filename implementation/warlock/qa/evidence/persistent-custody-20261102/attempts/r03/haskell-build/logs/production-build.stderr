@@ -1,0 +1,42 @@
+Warning: Specifying an absolute path to the project file is deprecated. Use
+--project-dir to set the project's directory.
+Warning: No remote package servers have been specified. Usually you would have
+one specified in the config file.
+
+src/Crypto/Hash/SHA256.hs:144:19: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+144 | copyCtx dst src = memcpy (castPtr dst) (castPtr src) (fromIntegral sizeCtx)
+    |                   ^^^^^^
+
+src/Crypto/Hash/SHA256.hs:336:53: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+336 |                    withByteStringPtr t' $ \tptr' -> memcpy p tptr' 32
+    |                                                     ^^^^^^
+configure: WARNING: unrecognized options: --with-compiler
+configure: WARNING: unrecognized options: --with-compiler
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:1608:31: error: [GHC-83865]
+    • Couldn't match type ‘[Char]’ with ‘Text’
+      Expected: Text
+        Actual: String
+    • In the second argument of ‘O.failUnsettled’, namely ‘reason’
+      In a stmt of a 'do' block: O.failUnsettled rawOwner reason
+      In the expression:
+        do let reason = ...
+               bReasons = ...
+           O.pendingRecordIssue pending reason
+           O.failUnsettled rawOwner reason
+           modifyMVar_ phaseVar (const (pure (PhaseQuarantined bReasons)))
+           ....
+     |
+1608 |      O.failUnsettled rawOwner reason
+     |                               ^^^^^^
+Error: [Cabal-7125]
+Failed to build warlock-process-custody-0.1.0.0 (which is required by exe:warlock-ui-owner from warlock-runtime-0.1.0.0, exe:warlock-ui-backend from warlock-runtime-0.1.0.0 and others).
+

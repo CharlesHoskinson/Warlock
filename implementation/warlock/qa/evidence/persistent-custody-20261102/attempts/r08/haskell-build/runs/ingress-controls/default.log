@@ -1,0 +1,11 @@
+PASS prepare failure leaves caller socket live
+PASS interruption before publication retains caller ownership
+PASS interruption after publication retains shell custody
+PASS reserved control is bounded and sent first
+PASS accepted once and independent repeat offer remains caller-owned
+PASS split and coalesced frames route and close
+PASS checked v2 server reaches same owner callback
+PASS retirement retains queued bytes without replay
+PASS callback async preserves gate and endpoint cleanup
+PASS blocked receive async preserves independent cleanup
+ingress-controls: user error (retirement preserves in-flight gate separately)

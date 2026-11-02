@@ -110,7 +110,7 @@ def main():
     registry = runner == REPO / 'tools/check_registry_cpu.py'
     haskell = runner == REPO / 'tools/check_haskell_cpu.py'
     tea = runner == REPO / 'tools/check_tea_cpu.py'
-    allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site']] if haskell else
+    allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract']])))
     if (not registry and not haskell and not tea and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')

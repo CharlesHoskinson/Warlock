@@ -1,0 +1,15 @@
+[ok] No violation found (81103ms at 123 traces/second).
+Witnesses:
+witnessReserved was witnessed in 7468 trace(s) out of 10000 explored (74.68%)
+witnessBuilt was witnessed in 4283 trace(s) out of 10000 explored (42.83%)
+witnessLive was witnessed in 2260 trace(s) out of 10000 explored (22.60%)
+witnessChecked was witnessed in 10 trace(s) out of 10000 explored (0.10%)
+witnessClaim was witnessed in 6 trace(s) out of 10000 explored (0.06%)
+witnessDelivered was witnessed in 6 trace(s) out of 10000 explored (0.06%)
+witnessRetired was witnessed in 10000 trace(s) out of 10000 explored (100.00%)
+witnessReaped was witnessed in 2260 trace(s) out of 10000 explored (22.60%)
+witnessExhausted was witnessed in 3501 trace(s) out of 10000 explored (35.01%)
+witnessRefused was witnessed in 10000 trace(s) out of 10000 explored (100.00%)
+witnessMixed was witnessed in 3405 trace(s) out of 10000 explored (34.05%)
+witnessMultipleFrames was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+Use --seed=0x13528a7 --backend=typescript to reproduce.

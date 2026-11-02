@@ -1,0 +1,10 @@
+[ok] No violation found (7951ms at 1258 traces/second).
+Witnesses:
+witnessRequestResponse was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+witnessOwnerEvent was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+witnessStaleView was witnessed in 1 trace(s) out of 10000 explored (0.01%)
+witnessDeadline was witnessed in 10000 trace(s) out of 10000 explored (100.00%)
+witnessCallback was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+witnessPoison was witnessed in 10000 trace(s) out of 10000 explored (100.00%)
+witnessCleanup was witnessed in 10000 trace(s) out of 10000 explored (100.00%)
+Use --seed=0x13d9820 --backend=typescript to reproduce.

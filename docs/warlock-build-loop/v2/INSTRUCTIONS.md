@@ -89,6 +89,30 @@ failed evidence, native/AT/IME/hardware/resource/release obligations and stopped
 histories. Do not weaken acceptance, manufacture progress, add a new approval
 council or pause the active goal to satisfy a throughput target.
 
+## Live usability cadence
+
+User instruction, November 1: usability must be checked regularly in the actual
+built product. After each integrated user-visible slice, exercise the applicable
+current Elm/Haskell build in the available Omarchy environment using real input
+and inspect the rendered result. During sustained implementation, run a bounded
+live MVP journey at least hourly when the test environment is usable. Record the
+exact built source, input route, visible behavior, failures and next fix. Compile,
+model and replay results alone do not establish a usable product.
+
+Keep all fifteen authenticated roles active through bounded reconciliation and
+resumption: ten base Terra workers (five using Quint Kit), three Gemini workers,
+the Sol HIGH advisor and the UX/performance owner. Root retains sole integration
+and protected compiler/model/native/VM execution while workers continue assigned
+source, QA, EARS, UX and MVP work in parallel.
+
+Use the existing preservation, ownership, readiness and protected execution rules.
+Retain every original deadline and failed attempt; never lengthen an old trial to
+make it pass. A stock Omarchy VM run is native-on-VM component evidence, separate
+from protected native, hardware, AT/IME and release acceptance. Match acceptance
+to each original requirement; this cadence adds no universal native gate to pure
+language or source-contract verification. If a live journey is unavailable,
+record its actual blocker and prioritize the implementation needed to run it.
+
 ## Standing integration and Omarchy trial cadence
 
 User authorization reaffirmed October 28, 2026: merge integrated work regularly to GitHub, keep the README current, and deploy to Omarchy when possible for hands-on testing. This remains part of every loop continuation while the user is away; being AFK is not a pause request.

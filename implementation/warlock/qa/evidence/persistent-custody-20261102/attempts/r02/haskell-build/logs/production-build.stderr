@@ -1,0 +1,149 @@
+Warning: Specifying an absolute path to the project file is deprecated. Use
+--project-dir to set the project's directory.
+Warning: No remote package servers have been specified. Usually you would have
+one specified in the config file.
+
+src/Crypto/Hash/SHA256.hs:144:19: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+144 | copyCtx dst src = memcpy (castPtr dst) (castPtr src) (fromIntegral sizeCtx)
+    |                   ^^^^^^
+
+src/Crypto/Hash/SHA256.hs:336:53: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+336 |                    withByteStringPtr t' $ \tptr' -> memcpy p tptr' 32
+    |                                                     ^^^^^^
+configure: WARNING: unrecognized options: --with-compiler
+configure: WARNING: unrecognized options: --with-compiler
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:1293:33: error: [GHC-83865]
+    • Couldn't match expected type: Either
+                                      SomeException (Maybe (Either ToolError ()))
+                  with actual type: Maybe a0
+    • In the pattern: Nothing
+      In the pattern: Right Nothing
+      In a case alternative:
+          Right Nothing
+            -> retireStartupOrLatchedStop
+                 pending child (Just obs) scope wakeGate outTid outRes outH errTid
+                 errRes errH ph pid TimedOut
+     |
+1293 |                           Right Nothing -> retireStartupOrLatchedStop pending child (Just obs) scope wakeGate outTid outRes outH errTid errRes errH ph pid TimedOut
+     |                                 ^^^^^^^
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:1294:34: error: [GHC-83865]
+    • Couldn't match expected type: Either
+                                      SomeException (Maybe (Either ToolError ()))
+                  with actual type: Maybe (Either ToolError b0)
+    • In the pattern: Just (Left err)
+      In the pattern: Right (Just (Left err))
+      In a case alternative:
+          Right (Just (Left err))
+            -> retireStartupOrLatchedStop
+                 pending child (Just obs) scope wakeGate outTid outRes outH errTid
+                 errRes errH ph pid err
+     |
+1294 |                           Right (Just (Left err)) -> retireStartupOrLatchedStop pending child (Just obs) scope wakeGate outTid outRes outH errTid errRes errH ph pid err
+     |                                  ^^^^^^^^^^^^^^^
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:1295:34: error: [GHC-83865]
+    • Couldn't match expected type: Either
+                                      SomeException (Maybe (Either ToolError ()))
+                  with actual type: Maybe (Either a1 ())
+    • In the pattern: Just (Right ())
+      In the pattern: Right (Just (Right ()))
+      In a case alternative:
+          Right (Just (Right ()))
+            | afterReady == 0
+            -> retireStartupOrLatchedStop
+                 pending child (Just obs) scope wakeGate outTid outRes outH errTid
+                 errRes errH ph pid TimedOut
+     |
+1295 |                           Right (Just (Right ())) | afterReady == 0 ->
+     |                                  ^^^^^^^^^^^^^^^
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:1297:34: error: [GHC-83865]
+    • Couldn't match expected type: Either
+                                      SomeException (Maybe (Either ToolError ()))
+                  with actual type: Maybe (Either a2 ())
+    • In the pattern: Just (Right ())
+      In the pattern: Right (Just (Right ()))
+      In a case alternative:
+          Right (Just (Right ()))
+            -> do let active = ...
+                  pubDecision <- modifyMVar phaseVar $ \ _ -> ...
+                  case pubDecision of
+                    PublishPreStopped stopDlRes
+                      -> retireLatchedStartupStop
+                           pending stopDlRes obs child scope wakeGate outTid outRes outH
+                           errTid errRes errH ph pid
+                    PublishLive -> ...
+     |
+1297 |                           Right (Just (Right ())) -> do
+     |                                  ^^^^^^^^^^^^^^^
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:1608:31: error: [GHC-83865]
+    • Couldn't match type ‘[Char]’ with ‘Text’
+      Expected: Text
+        Actual: String
+    • In the second argument of ‘O.failUnsettled’, namely ‘reason’
+      In a stmt of a 'do' block: O.failUnsettled rawOwner reason
+      In the expression:
+        do let reason = ...
+               bReasons = ...
+           O.pendingRecordIssue pending reason
+           O.failUnsettled rawOwner reason
+           modifyMVar_ phaseVar (const (pure (PhaseQuarantined bReasons)))
+           ....
+     |
+1608 |      O.failUnsettled rawOwner reason
+     |                               ^^^^^^
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:1609:58: error: [GHC-83865]
+    • Couldn't match type ‘[Char]’ with ‘Text’
+      Expected: [Text]
+        Actual: [String]
+    • In the first argument of ‘PhaseQuarantined’, namely ‘bReasons’
+      In the first argument of ‘pure’, namely
+        ‘(PhaseQuarantined bReasons)’
+      In the first argument of ‘const’, namely
+        ‘(pure (PhaseQuarantined bReasons))’
+     |
+1609 |      modifyMVar_ phaseVar (const (pure (PhaseQuarantined bReasons)))
+     |                                                          ^^^^^^^^
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:1612:56: error: [GHC-83865]
+    • Couldn't match type ‘[Char]’ with ‘Text’
+      Expected: [Text]
+        Actual: [String]
+    • In the second argument of ‘ExitUncertain’, namely ‘bReasons’
+      In the first argument of ‘Left’, namely
+        ‘(ExitUncertain CleanupUncertain bReasons)’
+      In the first argument of ‘pure’, namely
+        ‘(Left (ExitUncertain CleanupUncertain bReasons))’
+     |
+1612 |       [] -> pure (Left (ExitUncertain CleanupUncertain bReasons))
+     |                                                        ^^^^^^^^
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:2349:36: error: [GHC-83865]
+    • Couldn't match type ‘SomeException’ with ‘ToolError’
+      Expected: Either
+                  SomeException
+                  (Maybe
+                     (Either ToolError B.ByteString, Either ToolError B.ByteString))
+        Actual: Either SomeException (Maybe (ReaderResult, ReaderResult))
+    • In the third argument of ‘either’, namely ‘captured’
+      In the expression: either (const Nothing) id captured
+      In the first argument of ‘pure’, namely
+        ‘(either (const Nothing) id captured, allFailures, deferredAsync)’
+     |
+2349 |    pure (either (const Nothing) id captured, allFailures, deferredAsync)
+     |                                    ^^^^^^^^
+Error: [Cabal-7125]
+Failed to build warlock-process-custody-0.1.0.0 (which is required by exe:warlock-ui-owner from warlock-runtime-0.1.0.0, exe:warlock-ui-backend from warlock-runtime-0.1.0.0 and others).
+

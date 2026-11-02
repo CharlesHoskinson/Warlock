@@ -1,0 +1,26 @@
+PASS prepare failure leaves caller socket live
+PASS interruption before publication retains caller ownership
+PASS interruption after publication retains shell custody
+PASS reserved control is bounded and sent first
+PASS accepted once and independent repeat offer remains caller-owned
+PASS split and coalesced frames route and close
+PASS checked v2 server reaches same owner callback
+PASS retirement retains queued bytes without replay
+PASS callback async preserves gate and endpoint cleanup
+PASS blocked receive async preserves independent cleanup
+PASS retirement retains endpoint until admitted callback drains
+PASS retirement refuses new work while callback drains
+PASS admitted callback uses retained endpoint before same-owner close
+PASS retired gate never admits a replacement callback
+PASS same-owner retirement closes drained endpoint exactly once
+PASS post-Live async retains caller shell
+PASS setup failure and confirmed close remain inspectable
+PASS uncertain setup and close retained once
+PASS cleanup async wins after synchronous setup failure
+PASS original async wins over cleanup sync
+PASS retirement defers while activation uses socket
+PASS one close after activation lease
+PASS setup async rethrown after retained state and close
+PASS async sender remains blocked during publication handoff
+PASS setup completion never strands activation lease
+PASS unclaimed close remains reachable after interrupted retirement

@@ -1,0 +1,3370 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-02T05:48:42.558652+00:00",
+  "scope": "Preserved measured preparation/compiler/component failures and focused fix evidence. r18 full37 retained36PASS/bridge180sFAIL; r19 focused actualfrontend/backend PASS after only fixture pacing/diagnostics andfixedrunnerprofile changes. No combined full-batch claim or original/native/release acceptance.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "reviewSHA256": "6c75a686e45b60b310d90d6f24f60aec743217b3d246a9afeefe18d300b82f4e",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793590868360173756",
+      "passed": false,
+      "error": "production build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r01/review.json",
+          "sha256": "6c75a686e45b60b310d90d6f24f60aec743217b3d246a9afeefe18d300b82f4e",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r01/report.json",
+          "sha256": "c613a4a590f7e09998cd48ed69dce21fb9dfbd0090644a42a7ce433d885ccf43",
+          "bytes": 92705
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r01/haskell-build/result.json",
+          "sha256": "600ade4b2ed7b89e423c9b386477cf83d33108c60f31dbd530dcd24d7570234a",
+          "bytes": 41285
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r01/haskell-build/source-hashes.json",
+          "sha256": "779c0aae0fc0cfcdd62792c66d983fdc92f171c10536802a19b28e2b45f099c2",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r01/haskell-build/logs/production-build.stderr",
+          "sha256": "ef1bca204277ac5d9401938e56c486a9540ee2bc11cc34afa617426ef767eaef",
+          "bytes": 1667
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "reviewSHA256": "7be243f90cb6f5d16bf8ce510e181e7b4823c23c08677cdf85ae62608bd7eb0e",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793590907237672603",
+      "passed": false,
+      "error": "production build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r02/review.json",
+          "sha256": "7be243f90cb6f5d16bf8ce510e181e7b4823c23c08677cdf85ae62608bd7eb0e",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r02/report.json",
+          "sha256": "b9b0116d75d06c10152b880e17e727fa608980014eb95d48dae97a70712bb582",
+          "bytes": 92705
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r02/haskell-build/result.json",
+          "sha256": "91829a6d138f6f93dec0bffce4e6ddd6a07da0eb19bfa81ccab5b9a6c5a1a7cb",
+          "bytes": 41285
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r02/haskell-build/source-hashes.json",
+          "sha256": "e75ad07f3784b1daf090420838980e94373409040fb81b634742139a0cf573dc",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r02/haskell-build/logs/production-build.stderr",
+          "sha256": "e3cbe79fb1a2953fecb0537532662ea3691eb461befa7b64912d3d9888457a7e",
+          "bytes": 7353
+        }
+      ]
+    },
+    {
+      "attempt": 3,
+      "reviewSHA256": "e4c6bbd5e798a8425517e8342086a6f6f3eebe49eb8981b9e9097bbff2c08c89",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793590988566681903",
+      "passed": false,
+      "error": "production build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r03/review.json",
+          "sha256": "e4c6bbd5e798a8425517e8342086a6f6f3eebe49eb8981b9e9097bbff2c08c89",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r03/report.json",
+          "sha256": "b31b0ced2d4bb7f862cc32dd3bf6054d383a789fa6cf6b9b73a632c0c38bf790",
+          "bytes": 92705
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r03/haskell-build/result.json",
+          "sha256": "2a5e39a32c9eeb76b0fd3455b41a877bc1a3430406c2d7787da5dabacf3c52fc",
+          "bytes": 41285
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r03/haskell-build/source-hashes.json",
+          "sha256": "6edb261d3473dfde5183910644a2d904dbb0c82f19b110c54bf13410fe7a824b",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r03/haskell-build/logs/production-build.stderr",
+          "sha256": "b7f0f42db014e9a9d1ced5d06388d117a3635d451ca8e323158057fafe55abd0",
+          "bytes": 2022
+        }
+      ]
+    },
+    {
+      "attempt": 4,
+      "reviewSHA256": "88d046ec7fddc9541483166b27030872e818f4b583686915cbb6c0629760c820",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793591022283859495",
+      "passed": false,
+      "error": "production build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r04/review.json",
+          "sha256": "88d046ec7fddc9541483166b27030872e818f4b583686915cbb6c0629760c820",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r04/report.json",
+          "sha256": "92a68b2038640b3f9bba99a064dfc2605636fd418160935e137dc2fb1bd71360",
+          "bytes": 92705
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r04/haskell-build/result.json",
+          "sha256": "471144fcb9053657a215dab61d0a34389bc5fc9bf41aadeb47bff633704980ab",
+          "bytes": 41285
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r04/haskell-build/source-hashes.json",
+          "sha256": "b335dd794e7a58dad77a7f6e7e71c0f83cb3c606dc5181831f3ecda73ac1bf6e",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r04/haskell-build/logs/production-build.stderr",
+          "sha256": "4d5e577f2ffadec2b288d44c4768b50bbe9381ca05bda041eb71f9083ab5270c",
+          "bytes": 2252
+        }
+      ]
+    },
+    {
+      "attempt": 5,
+      "reviewSHA256": "3130d6ae1f2081dbadc4d9431d22b6d661e1024299fcc544002c24f6612ee7ef",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793591059330584740",
+      "passed": false,
+      "error": "test build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r05/review.json",
+          "sha256": "3130d6ae1f2081dbadc4d9431d22b6d661e1024299fcc544002c24f6612ee7ef",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r05/report.json",
+          "sha256": "ba2dbf120df99274d92a4935aa2435c7562ff2e9cdd6a762aab9c504a75cef08",
+          "bytes": 98172
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r05/haskell-build/result.json",
+          "sha256": "6f0c22c33a3985d9784003c216a4c9ac1a1f5fe529b015418d390908a3618c82",
+          "bytes": 46578
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r05/haskell-build/source-hashes.json",
+          "sha256": "68992b435f7ec6edca94599ecce3afc88d2657febfde7b0cdea4df3ceee97190",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r05/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r05/haskell-build/logs/test-build.stderr",
+          "sha256": "146ff6f666b40533aadd7cac3217bfb807e19fff4a24e1b1cfa8808bd33005fc",
+          "bytes": 1564
+        }
+      ]
+    },
+    {
+      "attempt": 6,
+      "reviewSHA256": "615f089dd16a69c530d1b6e86c4e7a0c651f0ef65168ff0438ba184930de7062",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793591187037259771",
+      "passed": false,
+      "error": "test build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r06/review.json",
+          "sha256": "615f089dd16a69c530d1b6e86c4e7a0c651f0ef65168ff0438ba184930de7062",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r06/report.json",
+          "sha256": "1ae15998776caf01024edcc0e15c678e60aa05fe0f0465a5f87b2d40ec0e4995",
+          "bytes": 98172
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r06/haskell-build/result.json",
+          "sha256": "f80467260373f15ec2b8718e3c7b77d5d64e7ee27811d6758e61476d61cb1aa8",
+          "bytes": 46578
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r06/haskell-build/source-hashes.json",
+          "sha256": "65359da58496cffd44e925dcfc31f68283d9d21533a2467dba45cba12c06cc60",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r06/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r06/haskell-build/logs/test-build.stderr",
+          "sha256": "2893e709aa91d6ab893da658a8087a0f20b1c1d0f47e3d39c2f51208aa95934e",
+          "bytes": 1645
+        }
+      ]
+    },
+    {
+      "attempt": 7,
+      "reviewSHA256": "05cf9347f518ccfd72e48a564e82cce9eff714faa3d0fffc75ae7d2da7e080d0",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793591294065654741",
+      "passed": false,
+      "error": "test build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r07/review.json",
+          "sha256": "05cf9347f518ccfd72e48a564e82cce9eff714faa3d0fffc75ae7d2da7e080d0",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r07/report.json",
+          "sha256": "18384cd868ebbae2ad1646a7890c9387f9ffd60b14c7293c2d4437c4d4df6ee3",
+          "bytes": 98172
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r07/haskell-build/result.json",
+          "sha256": "e2fcdec1cb3ebeb853e2630e3bffcca8fe340d62a489eac124751b749fa7b347",
+          "bytes": 46578
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r07/haskell-build/source-hashes.json",
+          "sha256": "5b1925b9c7c4ad1f7bb32065361cb9e3e85a6d121e1fd5d29e63fb8963fe3245",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r07/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r07/haskell-build/logs/test-build.stderr",
+          "sha256": "9916a660b5e4f3f365189bc5ab57a2fae90b145f7b6a9daccd894e59278d5dcb",
+          "bytes": 2767
+        }
+      ]
+    },
+    {
+      "attempt": 8,
+      "reviewSHA256": "cfc58dc54e6b49fbfd38a4bdd2a16792a1dbc1ac2f068cc1a74c3a8523c01c09",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793591423400365174",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/review.json",
+          "sha256": "cfc58dc54e6b49fbfd38a4bdd2a16792a1dbc1ac2f068cc1a74c3a8523c01c09",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/report.json",
+          "sha256": "8810ab0b3e7a0bb8ca38ef1e38db9f048d4f9857a5e5a563e201234c03937d2a",
+          "bytes": 372519
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/result.json",
+          "sha256": "24f599a5446d1125ce2cf1ebf164a2a21f0c03a43fdae57da914a49a701ba55a",
+          "bytes": 310241
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/source-hashes.json",
+          "sha256": "a581865e6cbf30dcfba89c3f086f4281d5dfcd4a95fbdf1482317083c5fa17e3",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/test-all.stderr",
+          "sha256": "f24e3fe69d0d3514dd736674383071e46f8c6ead241ed8594c2577fc13b43087",
+          "bytes": 329
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "c9cde18e1f6ec7ce829e1c4ee1ad04cd90c27c069bc34dd08c6face256abd59f",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "1d3d719534812224c9e4828200ae4eb1a4d584f8a1024c55f2ce6fc7773c6f64",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e1f56fe4043e98629f16c41409bf419ffcb84bb88fd135ebe48c7a9fa732c59b",
+          "bytes": 626
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-private-network-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-model-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-guidedRetirementStep.stdout",
+          "sha256": "bfd0f781b8a8ed34cdc649754035f7aef28b75aef4963218f16efbba10573618",
+          "bytes": 208
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-guidedLeaderExitStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/registration-conversation.stdout",
+          "sha256": "c51bf63db888d01ae786cfbd376c9ca804dcf87806990887714bd91cd2b30cd2",
+          "bytes": 428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/origin-model-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/origin-model-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-model-safety.stdout",
+          "sha256": "c1d3b816eb2225ed4bc0fa000f8b27ea65373276e22140c55e43f33c4a922346",
+          "bytes": 581
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-rpc-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/registration-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-model-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-private-network-directed.stdout",
+          "sha256": "10800881e99222ae278b4e22bffe72a71c15d05d3967565192fb31ffc408b5c7",
+          "bytes": 899
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-frontend-delivery-safety-initRenderer.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-model-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-http-admission-directed.stdout",
+          "sha256": "ae1fe580d59efe7483f5561a13f97fa32c199e7973c957d03c62bb93d1dc039d",
+          "bytes": 2068
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-http-admission-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/registration-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-guidedIdleStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-rpc-guidedConversationStep.stdout",
+          "sha256": "512c276cf10718e2b6b756810404068aca0cb36237689f4d77e1a5699a548caa",
+          "bytes": 449
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-http-admission-safety.stdout",
+          "sha256": "6544bdea7980113e365729ea72bed42de6ac8a4dda7c82f9789fdeb3a4f26ee3",
+          "bytes": 489
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-frontend-delivery-safety-initRenderer.stdout",
+          "sha256": "0d02bd6ebcfd4be9a94615b42dbd74d5b902a5acc402164cc1052be831be8fbe",
+          "bytes": 430
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-guidedCleanStep.stdout",
+          "sha256": "710c7c843755c2e7f02e2dab9fdba556bf12a8463cfb9dee4c49e83ec7b9a80f",
+          "bytes": 385
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-safety.stdout",
+          "sha256": "0036599222390063b3e31becee7e70a4ccbfe655732fb873e2ce64b3a1fdc498",
+          "bytes": 861
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-lifetime-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-guidedRetirementStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-guidedExternalStep.stdout",
+          "sha256": "b5b3621c50196199b1d4690b8596d8cdd2b22c8ddf0f6b0e9df767bccb87d7fc",
+          "bytes": 211
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-private-network-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/registration-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-lifetime-directed.stdout",
+          "sha256": "9b44604b1694e3752b96312250fc760882942ae2cfdbf3ba74b0f327685b36f0",
+          "bytes": 1437
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-guidedPartialTimeoutStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-rpc-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-lifetime-guided-clean.stdout",
+          "sha256": "d562db877e0fdee561092dbd5788d0c570f8cfd36660e1db0c6d8a5b9aefc826",
+          "bytes": 200
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/origin-model-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-model-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-frontend-delivery-safety-initController.stdout",
+          "sha256": "b259edafbf48badf3ce579af5398ffaae6e100c86c496af4a6b1afdaab57d75b",
+          "bytes": 428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/origin-model-directed.stdout",
+          "sha256": "f0e8645f905c81d16633dc2a6fbff6df35ef69138f3641b1669c81fe73fda543",
+          "bytes": 1340
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-guidedPartialTimeoutStep.stdout",
+          "sha256": "e99f9210f13a05ba5166bd12ce10b83390773335d441e657534e0b12b5db34c0",
+          "bytes": 209
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/origin-model-safety.stdout",
+          "sha256": "4fd464a1d4f8903a07567670f9baccda92d7528695fe09015a9ebd283be9e8cc",
+          "bytes": 710
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-standalone-bootstrap-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/origin-model-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-lifetime-safety.stdout",
+          "sha256": "6202b6b822346d8da9b8179f362a410e5951402661280ebe230f4331ddde12a9",
+          "bytes": 819
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/registration-directed.stdout",
+          "sha256": "e116cde9fa9d9ddface6e62a1fb38603ad9d6780ec5214fbdfcab22658b018bc",
+          "bytes": 1186
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-lifetime-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-standalone-bootstrap-safety.stdout",
+          "sha256": "310e937bf7bb1610c5ecf0ba0ee31bd5f26690a4cce92639cb16db20a1dbbe74",
+          "bytes": 507
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-frontend-delivery-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-directed.stdout",
+          "sha256": "15d359ee02be0b3fa7cd7f797fc34805b017261c6369ec32f6de9f1731f03ab6",
+          "bytes": 1493
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-frontend-delivery-directed.stdout",
+          "sha256": "390027927ed47123fba11dd1c0b214fb0c31d34ff9734d62b99dd8e5d80ff24c",
+          "bytes": 1742
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-model-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-guidedLeaderExitStep.stdout",
+          "sha256": "20f7d80aedaec48db6fa20ff63896626f7e66929c2f004578c02cb1a14fdc33e",
+          "bytes": 206
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/registration-safety.stdout",
+          "sha256": "4b6e14b3e9cb2199fdad5d36c2eee9c1afcd285aaf5b2ba6958959f47c669f4a",
+          "bytes": 1038
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-safety.stdout",
+          "sha256": "990ab3944d10a8101a55e90466dd7fdb7972c2a062519d60697def808786c043",
+          "bytes": 528
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-guidedUnknownCallbackStep.stdout",
+          "sha256": "9f0443b8484c8fdc56edd32507d5fb4c12efd96ec7566a08eaee894ee3be3ded",
+          "bytes": 212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-rpc-safety.stdout",
+          "sha256": "9ce8438ff7f5547be41e907e377f88628bc86c9a34b4c0f6927916dba982a241",
+          "bytes": 666
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-model-directed.stdout",
+          "sha256": "92ba5f91fd217dbf31ce51b03f6337eb7995b10aa73f1df66ff3252edef10bac",
+          "bytes": 609
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-model-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-http-admission-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-standalone-bootstrap-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/registration-conversation.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-rpc-guidedConversationStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-guidedExternalStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/origin-model-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/origin-model-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-lifetime-guided-clean.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-guidedCleanStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/desktop-idle-lifetime-guidedIdleStep.stdout",
+          "sha256": "164f85cbfde6eb3c5b44a951c8acce8ee802d4993c5e76054607a96b125bf03c",
+          "bytes": 302
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-guidedUnknownCallbackStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-topology-directed.stdout",
+          "sha256": "f1306b3bfd47fe6d645aece0690f45f13f55335f1dbb5ed237e20b4c1829046e",
+          "bytes": 1668
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/registration-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-standalone-bootstrap-directed.stdout",
+          "sha256": "9172dfc8eee1f9c868c75072e840e8ed0207a106e39066c095b0e5f8a1b37d19",
+          "bytes": 1301
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-frontend-delivery-safety-initController.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-private-network-safety.stdout",
+          "sha256": "2849fbad7c17cff1508e1cd7cba9a3a5afa728e387390aca659048d10124d184",
+          "bytes": 1397
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r08/haskell-build/logs/ui-engine-rpc-directed.stdout",
+          "sha256": "ad965473c74242bcfca78b6bb205aa5813187505ff3b5c17399863074f2e8c51",
+          "bytes": 956
+        }
+      ]
+    },
+    {
+      "attempt": 9,
+      "reviewSHA256": "0720041fbe848276297c14479f3750c1db5bb99c25310e629d8e93e704233de1",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793592328291658971",
+      "passed": false,
+      "error": "test build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r09/review.json",
+          "sha256": "0720041fbe848276297c14479f3750c1db5bb99c25310e629d8e93e704233de1",
+          "bytes": 47763
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r09/report.json",
+          "sha256": "9a104f9015db8eb852969bc607cb826f7d7ffc4f1b292552166eb4d94fd504dc",
+          "bytes": 98172
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r09/haskell-build/result.json",
+          "sha256": "addef5ea98adf4df678a518046189a363ae1e6e409a8ed18ff14bfd8a860129e",
+          "bytes": 46578
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r09/haskell-build/source-hashes.json",
+          "sha256": "d4b64b00451176054084e3c46aea866f3a86f27e9d87b96569bf276019422d4b",
+          "bytes": 25048
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r09/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r09/haskell-build/logs/test-build.stderr",
+          "sha256": "051bbd72699d89e1f23636feca49956d96cea0a290184eb8cf93b7af8d09fe3c",
+          "bytes": 1506
+        }
+      ]
+    },
+    {
+      "attempt": 10,
+      "reviewSHA256": "fae4470fe281b1bce569a16f89b2b81106af904bbcc553adf85dc6367b45e836",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793592603811918331",
+      "passed": false,
+      "error": "test build failed; see retained logs",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r10/review.json",
+          "sha256": "fae4470fe281b1bce569a16f89b2b81106af904bbcc553adf85dc6367b45e836",
+          "bytes": 48063
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r10/report.json",
+          "sha256": "3a9b5146013df679cad8e4916c1f5c55a1fa213b12f64c29ad9d5edeac58a01e",
+          "bytes": 98714
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r10/haskell-build/result.json",
+          "sha256": "3c3cc54c91d8f90b92c951d58d84fe6aa4348dfd0f3e482d6dea657dfa2cc04d",
+          "bytes": 46816
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r10/haskell-build/source-hashes.json",
+          "sha256": "a89de8848f97005c49bd57c63b627710c2873bb05c7585bc4bc784d0e1b77739",
+          "bytes": 25282
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r10/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r10/haskell-build/logs/test-build.stderr",
+          "sha256": "f82f4ea5bf6cb8ca66b1f7ed799c0857c8315d395b307c6adf410749cf39fb03",
+          "bytes": 1567
+        }
+      ]
+    },
+    {
+      "attempt": 11,
+      "reviewSHA256": "1213d709703686a3c65b18b16e4da8a1ae5c65ed36c08726b307f0b5fc2ac06c",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793592742372322362",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/review.json",
+          "sha256": "1213d709703686a3c65b18b16e4da8a1ae5c65ed36c08726b307f0b5fc2ac06c",
+          "bytes": 48063
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/report.json",
+          "sha256": "0578389d8a0c9f967521988969dcc3745609a4c888e62804870d4c15b916a3a8",
+          "bytes": 373073
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/result.json",
+          "sha256": "473b66d179de67bcd162d220b6615b49e61ba45dd26d80587b4791e2479c11c1",
+          "bytes": 310491
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/source-hashes.json",
+          "sha256": "98fd655a23750104b932244a4f7f4d08a52429f04ada5c0855c7474084ae2b11",
+          "bytes": 25282
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/test-all.stderr",
+          "sha256": "a194235497bf0e9e9a937d11e592ac04a629e281dc10f35d6c1c8ed489e0af77",
+          "bytes": 342
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "2eea5f68d28c8e3fd1c143f99b199f0a6bdb26390aa96056b37637933d1d5efc",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "b298d8ba15960fceb56acedf9d3dba0db0f7410fa9e4df9dc10cfcc4c4cdcb0d",
+          "bytes": 94
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "248e061a2473f029fc4eab287b0e91afbcdaea160d0711f1083b7e9501d4f8f1",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+          "bytes": 1428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-private-network-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-model-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-guidedRetirementStep.stdout",
+          "sha256": "5260117f1971c13aa1536512ffc38540fb8a0500b7f3b8642b43c9e8f90f3eb8",
+          "bytes": 208
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-guidedLeaderExitStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/registration-conversation.stdout",
+          "sha256": "4ff05f5ef041c2b8b946747def1941df7c5757cbf2615285682cc25c28b9c5ef",
+          "bytes": 428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/origin-model-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/origin-model-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-model-safety.stdout",
+          "sha256": "75c562165f0918c22be5782ea6fb86320316d54c0c80da22d40baba074e92656",
+          "bytes": 581
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-rpc-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/registration-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-model-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-private-network-directed.stdout",
+          "sha256": "1d68c75206e3aeca13d9539c85dcd5db6eb2f601e96c75eee0e92d75823d209e",
+          "bytes": 899
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-frontend-delivery-safety-initRenderer.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-model-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-http-admission-directed.stdout",
+          "sha256": "867821ddfe2b72a25e421ec856362049c9f1aa196ab2bc61840b5df29c776b41",
+          "bytes": 2068
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-http-admission-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/registration-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-guidedIdleStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-rpc-guidedConversationStep.stdout",
+          "sha256": "50e0a843fea7d400f9708321894867a178b21c0049fee24aa075c42ad8f4ea08",
+          "bytes": 449
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-http-admission-safety.stdout",
+          "sha256": "9747c09b352f6e6128041e829c20a0b6f82f420f900b952da894e2ebc3177a90",
+          "bytes": 489
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-frontend-delivery-safety-initRenderer.stdout",
+          "sha256": "f38cea8a4a22708b1993031c08b4fccb4091baf9651b27c5f8d554af1d38deef",
+          "bytes": 430
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-guidedCleanStep.stdout",
+          "sha256": "ee17bae80144f9bca8893157fb0fc59152a11749877690d4986ea8418575fa50",
+          "bytes": 385
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-safety.stdout",
+          "sha256": "705c6faaa6665fdc438f74686f966d5b631d3f240a993f39ee62b1fd054195d4",
+          "bytes": 861
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-lifetime-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-guidedRetirementStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-guidedExternalStep.stdout",
+          "sha256": "365b2031ed32e0ba7a10ac5b78acd4db117909a8bf396ddf77fc55a8ae28747b",
+          "bytes": 211
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-private-network-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/registration-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-lifetime-directed.stdout",
+          "sha256": "374bdcd0d3787b7c3cc26d8014236f70df0fe4e257e7048880bea81f5c203a71",
+          "bytes": 1437
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-guidedPartialTimeoutStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-rpc-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-lifetime-guided-clean.stdout",
+          "sha256": "18683de0839c11ab167f20f6294d7fd4af767185b142eb377512b659b0635781",
+          "bytes": 200
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/origin-model-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-model-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-frontend-delivery-safety-initController.stdout",
+          "sha256": "2be454b2a3b5cf465c4b2bb938fb0784d5e33c06af0501e6d4a2bd196880a598",
+          "bytes": 428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/origin-model-directed.stdout",
+          "sha256": "902e1c5b6861eeed78b166128a39fe2fe494be5f0c2aee4581e122e07fcf88b3",
+          "bytes": 1340
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-guidedPartialTimeoutStep.stdout",
+          "sha256": "7742fb1e2d25dd81cdebef6c84f33d4a0ac0ba311ec93284f3c6dbb865e7dc77",
+          "bytes": 209
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/origin-model-safety.stdout",
+          "sha256": "8b918b4971ff922ae3b3d9586803fd24841368275f4078e4613321ca4578349d",
+          "bytes": 710
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-standalone-bootstrap-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/origin-model-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-lifetime-safety.stdout",
+          "sha256": "447e5db5d63c0212d73ee1978812a01c9a5dde16a7bbffcde625e52548bbeb4a",
+          "bytes": 819
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/registration-directed.stdout",
+          "sha256": "1482fefdeeb576a035a6b05cd005e82e5e6d9b3c4781c74ee64691e189e07c87",
+          "bytes": 1186
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-lifetime-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-standalone-bootstrap-safety.stdout",
+          "sha256": "f84aee70b318ab86c789c734f2f2726a9a1590d95ea4aef5a4899f36305923c2",
+          "bytes": 507
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-frontend-delivery-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-directed.stdout",
+          "sha256": "666ca59ce89fea9c7df3d6f5d68cd57b8c178d17edded8f4602939c8469c42f6",
+          "bytes": 1493
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-frontend-delivery-directed.stdout",
+          "sha256": "d1f4f3a1e24a09156f78d29ccb70fb32e31119b78c3a46f46a83a5643e10d0df",
+          "bytes": 1742
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-model-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-guidedLeaderExitStep.stdout",
+          "sha256": "1bc61d545718f3d2c26593801528a8edeb7cf428df857d51597700a0e0892754",
+          "bytes": 206
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/registration-safety.stdout",
+          "sha256": "e31981c5b8438386d133c75c0f9dc890de5ac19b8cc9b428ebe5ed99cbf91f15",
+          "bytes": 1038
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-safety.stdout",
+          "sha256": "d090df5c350e1c16578337a817c8052b1aa04c7ce0a61855e84c71f3625b29cd",
+          "bytes": 528
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-guidedUnknownCallbackStep.stdout",
+          "sha256": "f37eeefca97f54244024a07cf047bfcc839fee36a190b044c1bb4faaa5ea6dc3",
+          "bytes": 212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-rpc-safety.stdout",
+          "sha256": "0a7c093fc1cc6c180e3f4e6597927dd41589ca021ee6f039c04ee28c7b486707",
+          "bytes": 666
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-model-directed.stdout",
+          "sha256": "6023cffee0db596c2a95421d662cdc328afaa9b53c37c2907dbff6db48b0c5fd",
+          "bytes": 609
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-model-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-http-admission-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-standalone-bootstrap-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/registration-conversation.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-rpc-guidedConversationStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-guidedExternalStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/origin-model-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/origin-model-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-lifetime-guided-clean.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-guidedCleanStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/desktop-idle-lifetime-guidedIdleStep.stdout",
+          "sha256": "485b9380bb5bd46c25bf2bf50476656a2260ab153364a80aacf4336a8a040bd9",
+          "bytes": 302
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-guidedUnknownCallbackStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-topology-directed.stdout",
+          "sha256": "7fa3997dda29e3fc5e3862eace3c201b0583314377c7179d8490a357c13ed903",
+          "bytes": 1668
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/registration-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-standalone-bootstrap-directed.stdout",
+          "sha256": "8b764bd34af4d8d5a015c25728f1d00073109101f062b0b28f0fba6c128c6a9c",
+          "bytes": 1301
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-frontend-delivery-safety-initController.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-private-network-safety.stdout",
+          "sha256": "d29f0a3a7203785fe9c33bb7dd309edd7001f3ba91595b845d958b797a9d872d",
+          "bytes": 1397
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r11/haskell-build/logs/ui-engine-rpc-directed.stdout",
+          "sha256": "f94a5d15304a0f5623acc9d55eaf7dd9cc31b0710e7a9fc71302fa367f53f101",
+          "bytes": 956
+        }
+      ]
+    },
+    {
+      "attempt": 12,
+      "reviewSHA256": "6282b06537fd421ddb98b7f1c908f93e028d328b53b83bf52f6781ea92eb571e",
+      "profileArguments": [
+        "--custody"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793593689227658044",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/review.json",
+          "sha256": "6282b06537fd421ddb98b7f1c908f93e028d328b53b83bf52f6781ea92eb571e",
+          "bytes": 48065
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/report.json",
+          "sha256": "1197cb168f69944bdca6317ed3a2493933579dc1242a9fd16ad09f01e50ebeb5",
+          "bytes": 107214
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/result.json",
+          "sha256": "a8dfa39b4f1eab56c4310581ec24912bcb084726bfcd14eda3192bb13b12d585",
+          "bytes": 54973
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/source-hashes.json",
+          "sha256": "e0cbe6b29871627e4a28ca008c247d5a183872f2fcaec0dba598153de1cdba85",
+          "bytes": 25282
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/logs/test-custody.stderr",
+          "sha256": "a194235497bf0e9e9a937d11e592ac04a629e281dc10f35d6c1c8ed489e0af77",
+          "bytes": 342
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "215e38a6e606fb0c176afb4790d4ea88f6ea740e736cf5704f00b75a0b289ba6",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "7ecb82b284a35e81e83c2fb5c53b84c1840f06d2eee738ba44862ad9fc9d7764",
+          "bytes": 125
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "7f206630e00b8e4b921795281f5c7622d20372b6c5575e859f12f761808c359a",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r12/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+          "bytes": 1428
+        }
+      ]
+    },
+    {
+      "attempt": 13,
+      "reviewSHA256": "1a26b2bbd928894aa3003da4a62ebcb6d4da84dddcd66334cc29af42e3caf231",
+      "profileArguments": [
+        "--custody"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793594582485834707",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/review.json",
+          "sha256": "1a26b2bbd928894aa3003da4a62ebcb6d4da84dddcd66334cc29af42e3caf231",
+          "bytes": 48212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/report.json",
+          "sha256": "8eed435ab88bc70938d28ac1ec4fff0ad7bf92b8f85f02ea0d307b7e5243e03e",
+          "bytes": 110339
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/result.json",
+          "sha256": "51dad96963e07acda01e2595ef2bac4f25a58df0ff9aefdc0de4bfc09411efd8",
+          "bytes": 57849
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/source-hashes.json",
+          "sha256": "ab3b88510d7e066721fe1f9b2a7ff8214d7106b4bb7a85e14bbbfa904aabf965",
+          "bytes": 25396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/logs/test-custody.stderr",
+          "sha256": "0276cb1f2dd9503de08b644b6e417132ac36207920aaa0a4c9fe6b3a9a869ba8",
+          "bytes": 432
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "36116c94cf9506c37433663047beb5d62eba9de14c3869f5a420a33d2c7d9432",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "7ecb82b284a35e81e83c2fb5c53b84c1840f06d2eee738ba44862ad9fc9d7764",
+          "bytes": 125
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "f5eb531efff0b012da28ebb11f5752986b4cb19ec75012ac3c67d850879c1526",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+          "bytes": 1428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/runs/persistent-exit-race-controls/results.json",
+          "sha256": "5d6a8acc4de5c77a30c881ba247f7b7638c28953939c152abd768a1c334d096d",
+          "bytes": 512
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r13/haskell-build/runs/persistent-exit-race-controls/default.log",
+          "sha256": "e8b29115735e690643b7046489876e9ca1ab6d21d7bf85be56d95c51b1113efd",
+          "bytes": 4115
+        }
+      ]
+    },
+    {
+      "attempt": 14,
+      "reviewSHA256": "d902d83d487ffce0e396db4bf85010bbdace7e4376ff98101477db1182442167",
+      "profileArguments": [
+        "--custody"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793594825378100932",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/review.json",
+          "sha256": "d902d83d487ffce0e396db4bf85010bbdace7e4376ff98101477db1182442167",
+          "bytes": 48212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/report.json",
+          "sha256": "e768894db7d4473cdcdb920fc4d22821de19e9343410b38128d51d50ae1596c0",
+          "bytes": 110338
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/result.json",
+          "sha256": "8d1be31cd5388048dc11cbc67ee1d8a34cc2a7bf54900559381b2ad59e717f96",
+          "bytes": 57848
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/source-hashes.json",
+          "sha256": "11594d791f58a477ac47bafe503d5882564ed1e695655f63860764342e6f6cd1",
+          "bytes": 25396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/logs/test-custody.stderr",
+          "sha256": "a194235497bf0e9e9a937d11e592ac04a629e281dc10f35d6c1c8ed489e0af77",
+          "bytes": 342
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "6fa3b0c74c819d3018794715cb50942b5e2c21d233ee10663e73559cc27279b6",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "d34d17ce97e5b92e48edea6da0f24a91b1c73e24f1be3ce807e29afecc49da3c",
+          "bytes": 234
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "f514ea74cbef1e0bb9083ff35641cb049572c8f393f5c398b640f3f810bc065d",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+          "bytes": 1428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/runs/persistent-exit-race-controls/results.json",
+          "sha256": "d5b766e21aab34569ddb3b41787314c07a78144b6844b53c4a5430e2a334b823",
+          "bytes": 512
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r14/haskell-build/runs/persistent-exit-race-controls/default.log",
+          "sha256": "15530dfee695845ab95b883e67e7643425f0dad8ae2e7d00ad8dbec95111eb95",
+          "bytes": 3901
+        }
+      ]
+    },
+    {
+      "attempt": 15,
+      "reviewSHA256": "4f2f1d73090852dadd6217c9332f512b6ecf77fce59a3129af53ff2350d70099",
+      "profileArguments": [
+        "--custody"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793595300794182784",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/review.json",
+          "sha256": "4f2f1d73090852dadd6217c9332f512b6ecf77fce59a3129af53ff2350d70099",
+          "bytes": 48212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/report.json",
+          "sha256": "9cfe404fd9e5f9183801f044d97b7108f9c6c66ac2570c7ba4e813e3d7e8de2f",
+          "bytes": 110338
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/result.json",
+          "sha256": "0850ea700ff85a79c0a8383215cd626837059ac43559421b107a4337e5a75414",
+          "bytes": 57848
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/source-hashes.json",
+          "sha256": "047598c86cb7f9c18e9c62162595745a0daca19a6499634bd7295c32d4f8bc8f",
+          "bytes": 25396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/logs/test-custody.stderr",
+          "sha256": "a194235497bf0e9e9a937d11e592ac04a629e281dc10f35d6c1c8ed489e0af77",
+          "bytes": 342
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "4e2f292035107688b9e00593c08655eb28dece5542ef9f39ba34a7b46445caf7",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "7ecb82b284a35e81e83c2fb5c53b84c1840f06d2eee738ba44862ad9fc9d7764",
+          "bytes": 125
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "d0f12f3e4f2474cfaff1c969d260fb40c3678ca4da53c05fbe45cc5e5d2d4a26",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+          "bytes": 1428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/runs/persistent-exit-race-controls/results.json",
+          "sha256": "e3ec940310e182aaebf233ab7e8569d5bcefe43d3c636544517b90b0ee135edc",
+          "bytes": 512
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r15/haskell-build/runs/persistent-exit-race-controls/default.log",
+          "sha256": "43ce3d471232da85ff8480eed7ae648a221d4de6cc9e318fa583fc3c0e78e237",
+          "bytes": 3901
+        }
+      ]
+    },
+    {
+      "attempt": 16,
+      "reviewSHA256": "060df9cdb09663af84c21a91d6542c0fce5067c82f98c7ec308b9596e2ef6187",
+      "profileArguments": [
+        "--custody"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793595536877178205",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/review.json",
+          "sha256": "060df9cdb09663af84c21a91d6542c0fce5067c82f98c7ec308b9596e2ef6187",
+          "bytes": 48212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/report.json",
+          "sha256": "17c70dc78a6a7c48fa0e273146fe6fc3cef90a1604ee9f0717c78ee6f71bdd6b",
+          "bytes": 110338
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/result.json",
+          "sha256": "5e7ddd75033fe6aa2f639a57529e452ad29e5955db693eefabeb00e1eb41a628",
+          "bytes": 57848
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/source-hashes.json",
+          "sha256": "dca6b79a5d75a0b447fc485ef5991a682af6f07c5f304736a045a5083b778969",
+          "bytes": 25396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/logs/test-custody.stderr",
+          "sha256": "a194235497bf0e9e9a937d11e592ac04a629e281dc10f35d6c1c8ed489e0af77",
+          "bytes": 342
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "36ea146e872c6c24e85c28b3e45e1def4414a99fc59dbb20b8a00c4a6b4b8152",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "de416be21aa9c6d1781eb5e4f9ff167683fee3634f421ad5957c5a216fce51a7",
+          "bytes": 845
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "f8c36b5a6d151f673180988cf748768652f85664ca114fea8d3279bb280e98b7",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+          "bytes": 1428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/runs/persistent-exit-race-controls/results.json",
+          "sha256": "64ec669af4a61478e39f5241ed6e82ae07ae4fade8493a5d101fec47f9bdcfdb",
+          "bytes": 512
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r16/haskell-build/runs/persistent-exit-race-controls/default.log",
+          "sha256": "76ea0d4bae82e5c65a9f61c9a3fec995944a1d47746777b4791459203e2dfb51",
+          "bytes": 3901
+        }
+      ]
+    },
+    {
+      "attempt": 17,
+      "reviewSHA256": "29a3b5f581c7543f8fb75f62f110695f21c1c6bdae12b40f72bee32a020e4a12",
+      "profileArguments": [
+        "--custody"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793595862530226693",
+      "passed": true,
+      "error": null,
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/review.json",
+          "sha256": "29a3b5f581c7543f8fb75f62f110695f21c1c6bdae12b40f72bee32a020e4a12",
+          "bytes": 48212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/report.json",
+          "sha256": "40289dca81bfc4715aa290c59590d80d205b91233e8369dcdf1848802b6cb796",
+          "bytes": 110262
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/result.json",
+          "sha256": "4867a5c7847d3b388468ac2ef4928b91c1a6ade7fcfc970bc3138f31bbf7e193",
+          "bytes": 57846
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/source-hashes.json",
+          "sha256": "ea352e02759c883f659598e87b845133f79edbd7c3844aa81a73c1618914b171",
+          "bytes": 25396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/logs/test-custody.stderr",
+          "sha256": "aae3de532ef7de4d0ccf40af1bfb7b445d7aa451d6c873f54818c89682fa7d15",
+          "bytes": 238
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "a18b2b0f5055b9b92d176165c30f5deaef83641f060f788387b0f08a290ac627",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "fc2c9c4be4e144131ab29939afa5418b6b9cbafe267e7c98466fc48b8eacf9bf",
+          "bytes": 2067
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "0f3a20438c76ac88c8ed4480d69cecfb0318bcf191cc15f27f8acc16fa89f078",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+          "bytes": 1428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/runs/persistent-exit-race-controls/results.json",
+          "sha256": "db488e8757b4a053c3effa510eb43b00bd40c16135d114ac460e1185c0a58959",
+          "bytes": 512
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r17/haskell-build/runs/persistent-exit-race-controls/default.log",
+          "sha256": "831ceec23b86cabb4144b2d1e84e3a262cb7ba965a5d7d9414ee1bd1e2d9a74a",
+          "bytes": 3901
+        }
+      ]
+    },
+    {
+      "attempt": 18,
+      "reviewSHA256": "918cf24db68d4542ce01a22170a75221896df73455087db1c0da00feb0c07d1c",
+      "profileArguments": [
+        "--build"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793596183827850062",
+      "passed": false,
+      "error": "37suites completed:36PASS; ui-backend-controls default hit existing180s timeout, forced-9; no broad pass",
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/review.json",
+          "sha256": "918cf24db68d4542ce01a22170a75221896df73455087db1c0da00feb0c07d1c",
+          "bytes": 48210
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/report.json",
+          "sha256": "b89ee3cff21e48eaa74d735da301254a6f2efc779d436f99acbc86ffcc5fb671",
+          "bytes": 376126
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/result.json",
+          "sha256": "adba09d4e621e1884cb43309bc8f2bb83fec04a2351b106d72bf3b345c578f34",
+          "bytes": 313297
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/source-hashes.json",
+          "sha256": "14570997ddda8ebcf814626d78d7b02bb59258a5d102c51cb047314c54285fe1",
+          "bytes": 25396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-webkit-dynamic-tags.stdout",
+          "sha256": "799a0b29d9a08a8e230dac1b0644628fda51ef3f7890a052e9b72bc5f2515a48",
+          "bytes": 2057
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-16.stdout",
+          "sha256": "0bf1fb05db3d63db8d0d1d76411ac55dcd31bc1138cf8b96dac4b0a439252ba7",
+          "bytes": 223
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-private-network-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-webkit-dynamic-tags.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-model-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-guidedRetirementStep.stdout",
+          "sha256": "2d46fafdcc792b4382f5b66c4cbbf9aee8c539e04f2d9159292838c6578e649d",
+          "bytes": 208
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-guidedLeaderExitStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/registration-conversation.stdout",
+          "sha256": "cd78f4a9e1ef143dfbc2ffcf4bbe6c5d62d960d6b5f3329d3351b83760bd7bdd",
+          "bytes": 428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/origin-model-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-0.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-14.stdout",
+          "sha256": "fb0e1cb548cfdd1a7b4bb6683319b93d37dfacdde54a58707b4ce559c7e295e2",
+          "bytes": 235
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/origin-model-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-standalone-bootstrap-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-6.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-9.stdout",
+          "sha256": "b40b600760d11e829f2eb4e6af6f49d87b6f369d73c74c73687306113104f1c5",
+          "bytes": 215
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-compile-HttpBar.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-model-safety.stdout",
+          "sha256": "30e669b3a5761135a1cc790ea7dc744e54f32a11cec3c917131388c3cb22f3a7",
+          "bytes": 581
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-8.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-private-network-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-20.stdout",
+          "sha256": "67e66c866a1b2da8f83a9df2fbf55ecbcd95be245726f54c4c2550bb4e26192c",
+          "bytes": 223
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/test-freeze.stdout",
+          "sha256": "9ad49056ffb6b8cef1495d034564256cc6b3c6db4cbcbfa56a346fb6f91e821c",
+          "bytes": 138
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-standalone-bootstrap-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/registration-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-model-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-36.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-1.stdout",
+          "sha256": "3d0f22c4a57332620376d4a061c2db971f611d478a885f32d9f0c82049bf5070",
+          "bytes": 253
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-private-network-directed.stdout",
+          "sha256": "5ab516978fbd2c5e06c4c3142baf54d34589d4a9743e5c86e55451b11ee37e6c",
+          "bytes": 899
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-36.stdout",
+          "sha256": "15e8167f3c2537dcb3ea7e9765e509f823519fb75f31ad53d05a2fc53f5b8ef2",
+          "bytes": 238
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-40.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-compile-main.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-safety-initRenderer.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-model-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-14.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-30.stdout",
+          "sha256": "3e21fcd9bf2283a3526907af2cafa7e6e987211c67fee4c4dddee9debe6493d7",
+          "bytes": 232
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-37.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/test-build.stdout",
+          "sha256": "932081cf89261b31809101056454f88159229058f4195c8b7aea50ecfe91acba",
+          "bytes": 156638
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-34.stdout",
+          "sha256": "a66d704baa94eaf49ac234ee52108a892e6a3be7eec6f40f36af2326c21de70a",
+          "bytes": 235
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-http-admission-directed.stdout",
+          "sha256": "867821ddfe2b72a25e421ec856362049c9f1aa196ab2bc61840b5df29c776b41",
+          "bytes": 2068
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-27.stdout",
+          "sha256": "adcb8ceb175c488b2dd66525bc4cc8ed6cd2683d36114e2291206c436da15605",
+          "bytes": 247
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-http-admission-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/registration-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-19.stdout",
+          "sha256": "4d5128e4eb85d05f94958350b5049a1c02acebf8d878ffa37d0de8835568d2c1",
+          "bytes": 247
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-12.stdout",
+          "sha256": "348f24eba18f294a72fa5c11eedd65e8741fbcf3e38f35c00474ba92e68625f8",
+          "bytes": 242
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-23.stdout",
+          "sha256": "9ccef03328b840fcb6bb7019407f3f5d5370dbb626659b8a92f749f490540095",
+          "bytes": 247
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-21.stdout",
+          "sha256": "8af4751cfecd64ff7221ef655c2a6122b9445b2bfc0ecb5963f730bd9e0f1e95",
+          "bytes": 211
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-6.stdout",
+          "sha256": "c720ac781a8fe3a4617faefd000f2b42891f6d7427b2724ac030e9c7fee38e91",
+          "bytes": 261
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-24.stdout",
+          "sha256": "97784c6a155bd384b00e4299d58b8bbc387277a6b3aa82554a06d60190c7fba7",
+          "bytes": 235
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-guidedIdleStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-compile-main.stdout",
+          "sha256": "7d80e330f3178a6a180484f920f02e4a0859d2820dbda95b30e5fc9a591211ff",
+          "bytes": 1284
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-8.stdout",
+          "sha256": "46896a489f88b267b72347a4da33eb0334ecc703e4f38db12e18239fe49acc1a",
+          "bytes": 218
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-3.stdout",
+          "sha256": "36bc72b46d7baf708d88d909b8c1b30990a1873769e0506556f384e0469e66a0",
+          "bytes": 219
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-guidedConversationStep.stdout",
+          "sha256": "2b861c552744c5d914327a83a91b97fac2fbfaf45d3b8ce452b7a9677a3e58ce",
+          "bytes": 449
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-4.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-compile-HttpPopup.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-4.stdout",
+          "sha256": "a2b686a3a9e57986052fb438efb7484208d8a69820d20d46d06fe99eaabc3904",
+          "bytes": 234
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-43.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-http-admission-safety.stdout",
+          "sha256": "25eb4d21584b6a53132c12b0c5041d0da94ed6dbd4970eaa455470009195f94e",
+          "bytes": 489
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-10.stdout",
+          "sha256": "382b825cc8e5b4446cc631eec0068112b2b19498a46e68c942c47c78494fef08",
+          "bytes": 212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-safety-initRenderer.stdout",
+          "sha256": "916cfb429bbd120aa8b281ddf98f6e54eb84b1614c8309d1a680f6c66c541440",
+          "bytes": 430
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-23.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-http-admission-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-guidedCleanStep.stdout",
+          "sha256": "7777f1a2df82c83616e736e840b98a616da8ebe2e83dde112094eb2b7f826ea4",
+          "bytes": 385
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-5.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-safety.stdout",
+          "sha256": "5d541dc9a7fbb92c6589edc0c70edbbcc18abe9e6b550a8d153700874162d3df",
+          "bytes": 861
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-guidedRetirementStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/test-all.stderr",
+          "sha256": "b8c83d4f4128362d3e42337bcfcc8105f0ad523ac85bc42168af7c82be05020d",
+          "bytes": 331
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-http-admission-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-42.stdout",
+          "sha256": "f8afac64c2398d370a4bfc6e6cb0c8ae5c9bb5a794b47adaebed52d452d6073c",
+          "bytes": 220
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-guidedExternalStep.stdout",
+          "sha256": "06c9eed6f2676b933605f7ef6207ac672add13f736cbfb2dc5c7a0e30e843bea",
+          "bytes": 211
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-1.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-32.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-private-network-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-15.stdout",
+          "sha256": "2ecaea3d18d27c231b93cf75a184dbb3ed638a2efdf4616153fb2d814ccd298f",
+          "bytes": 253
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/registration-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-directed.stdout",
+          "sha256": "80c21418c15085fd5120d94aaf58a93d0db0d164891d88ae58fb46282da13c9b",
+          "bytes": 1437
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-24.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-guidedPartialTimeoutStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-guided-clean.stdout",
+          "sha256": "ef72683288aa675de6a8a81300b238f718437913bc7e38f5bedb912e9361860c",
+          "bytes": 200
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-7.stdout",
+          "sha256": "3d885004efdfb8297d805ed89804f1bcc79b28419d933e86a879b8e878a23338",
+          "bytes": 249
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/origin-model-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-33.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-27.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-18.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/test-freeze.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-38.stdout",
+          "sha256": "b285ed69b2d80226bd92317607af999f916c29fe69944436d7e2b329688f1c93",
+          "bytes": 225
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-19.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-http-admission-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-32.stdout",
+          "sha256": "a960f38a03dda653d67cc03d818faec23495ccb76118f030a155361637661461",
+          "bytes": 247
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-model-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-standalone-bootstrap-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-safety-initController.stdout",
+          "sha256": "c0957b96e7f9b308d42a9601f9ee879dab413ca16d1991ef7dc189ea3902b59d",
+          "bytes": 428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-29.stdout",
+          "sha256": "7db059091e5b5a38239edeb3eedaf60c8fe2a25126e32a217415969fb04a4c55",
+          "bytes": 232
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-37.stdout",
+          "sha256": "0b5fc2be7b46ac97358a75779719eff5e3171e7307629fc771dabb87af86b439",
+          "bytes": 213
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/origin-model-directed.stdout",
+          "sha256": "f0e8645f905c81d16633dc2a6fbff6df35ef69138f3641b1669c81fe73fda543",
+          "bytes": 1340
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-guidedPartialTimeoutStep.stdout",
+          "sha256": "bdc579e2c21834f3fa6195489e969289f70f7fb4fa3ab1d2f68d69b09629c0a3",
+          "bytes": 209
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/test-all.stdout",
+          "sha256": "9aaf4ab1ce8185e48e21ff64759f2877e22835f2886725a55e07d372509d54a4",
+          "bytes": 32616
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-42.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-17.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-10.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-18.stdout",
+          "sha256": "874e9ad2b093252a08a76729d2e2129d91de344b8fd233b46ed3555e3325d2cd",
+          "bytes": 220
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-compile-HttpPopup.stdout",
+          "sha256": "bd37e6541539e98ec4902f6465686fb1cb0a13a4ca188a53c9d142f8ffce15f1",
+          "bytes": 373
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/origin-model-safety.stdout",
+          "sha256": "432e91cc5ffb8c180cf36268b8764b5644dd27e6d2cc82ce9b22abf9f25b277c",
+          "bytes": 710
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-11.stdout",
+          "sha256": "693a074d07d0582c48357036f69cee2823373b2ab44391c5073c80758802044c",
+          "bytes": 242
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-35.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-33.stdout",
+          "sha256": "ecd3f0eda41e51fce4c07f35a5f42fad3b14f12aa47b0339e284b6721d601f3e",
+          "bytes": 256
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-standalone-bootstrap-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/origin-model-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-16.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-safety.stdout",
+          "sha256": "a50737d698b1c783facbc5eb9f7eab6c3d8e9217e594b9f3a695dd2d368d5be9",
+          "bytes": 819
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-35.stdout",
+          "sha256": "96d7dfe800e694bda76f4bd17c6497e8eff35b7654403c1050b31d38d9fc6cfd",
+          "bytes": 253
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-43.stdout",
+          "sha256": "db6823e6dde353ed128e72e7135b3d72021352e4b6bd86f7b2789b734e19a6a1",
+          "bytes": 211
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-38.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/production-freeze.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-22.stdout",
+          "sha256": "bdf80db9700266baff0410ad1c12de70670c2af2951f560bdc446cb7474a6154",
+          "bytes": 220
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-15.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-30.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/registration-directed.stdout",
+          "sha256": "1482fefdeeb576a035a6b05cd005e82e5e6d9b3c4781c74ee64691e189e07c87",
+          "bytes": 1186
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-standalone-bootstrap-safety.stdout",
+          "sha256": "205a10256ce867a50f04e9c4f3103d3c9ed8d71f4e97a05ec4a6d00753d732ca",
+          "bytes": 507
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-12.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-17.stdout",
+          "sha256": "ee64103d760c2240b2129c392e1938fc46723c3db5169a5ec3e9d886a3bddae7",
+          "bytes": 220
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-compile-HttpMain.stdout",
+          "sha256": "11ec2c4b70502f25d881ac28947766fa793efca4e55f9cfbede8bccb38bc5529",
+          "bytes": 212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-directed.stdout",
+          "sha256": "f20fd7e1c3340f8b9b8c821ae83443535cfe2b3fd5790cd55436ea91743e4278",
+          "bytes": 1493
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-directed.stdout",
+          "sha256": "149c40430615e2757825d04db343a65372a4b92b0ed6ac801b9f69512a02c06c",
+          "bytes": 1742
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-28.stdout",
+          "sha256": "392a8c2cedfa8934e1f052f00cb96583a2afeeb985024d9ec99710852a3facea",
+          "bytes": 259
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-model-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-guidedLeaderExitStep.stdout",
+          "sha256": "e846b787cbf74aa1f41e6b3b28bc233fc3a6547605e52dcce376507f38ec971a",
+          "bytes": 206
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/registration-safety.stdout",
+          "sha256": "5df745aba0a2d68c164937a136170b8c058307588b9dd342758afe2c36c66762",
+          "bytes": 1038
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-safety.stdout",
+          "sha256": "0864d425de86d4ba7ce3272fd7098ab74bb90b75c168d90ce20f393adb7d9574",
+          "bytes": 528
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-21.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-31.stdout",
+          "sha256": "6393582074ef25336491a0d97124dbe8cd0750575d8c5ab6b4dfcb1ad5a198c1",
+          "bytes": 223
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-31.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-28.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-26.stdout",
+          "sha256": "25d68a78e4e1bb334501f0ea4aa7b32ba26f2a87c2635fd24a59f7c34cb96494",
+          "bytes": 259
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-34.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-guidedUnknownCallbackStep.stdout",
+          "sha256": "b0a6ad137fc9847c6aaaa7dab8b04715c7a2a04d5dfd6fc5219f1b0177bf320b",
+          "bytes": 212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/production-freeze.stdout",
+          "sha256": "90c78c30057d0b72cb669413d871540e99645579e924ae68b1b57080a61b8b82",
+          "bytes": 139
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-safety.stdout",
+          "sha256": "853914f0fa557c3fad9cef3a14616028592cd10339aa8d2f4dfb9998ec2fc965",
+          "bytes": 666
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-2.stdout",
+          "sha256": "efd2c0dde8408186d30b086cb0d073f3359dd332a55d1c757052d7f01794e893",
+          "bytes": 225
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-26.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-http-admission-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-model-directed.stdout",
+          "sha256": "6023cffee0db596c2a95421d662cdc328afaa9b53c37c2907dbff6db48b0c5fd",
+          "bytes": 609
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-model-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-11.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-http-admission-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-39.stdout",
+          "sha256": "f725eb2edcc72bad110e1c66f91bfc8e68f2bc227a180bcea2d00573e1042fbb",
+          "bytes": 231
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-standalone-bootstrap-safety.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/production-build.stdout",
+          "sha256": "6e8fd801018d8fe333bc55f1d57231e6307222cbdb41b07d063371f25d2c8e73",
+          "bytes": 71001
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/registration-conversation.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-private-network-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-guidedConversationStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-13.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-2.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-guidedExternalStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/origin-model-test-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-13.stdout",
+          "sha256": "91be078caf244f37d5900ddcba70f30886c926c915180957e47a01e3315e49e8",
+          "bytes": 210
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/origin-model-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-guided-clean.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-compile-HttpMain.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-5.stdout",
+          "sha256": "bccc28d729ca1e3f24d73aa7b6b887c78f01e17197f7800cf15621ed556485f1",
+          "bytes": 240
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-guidedCleanStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-44.stdout",
+          "sha256": "79398288789a6a3148da76b2a437d8ed094a91e0eeff7dcc6dc8e5695e602999",
+          "bytes": 214
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/desktop-idle-lifetime-guidedIdleStep.stdout",
+          "sha256": "89ff3ae73e191a1c7e2174742c19ee8da2a284ef1f6cc74d48e21b36b15e6728",
+          "bytes": 302
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-9.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-41.stdout",
+          "sha256": "30ea1e1c9b714488a57dc470522c8d2b133eb413d013be89e07cd79cd67a7cc8",
+          "bytes": 229
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-private-network-typecheck.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-private-network-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-compile-HttpBar.stdout",
+          "sha256": "f37a7df888147177d7181f6856508b6b849410041598e16aefacb89a89a0c7d9",
+          "bytes": 308
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-0.stdout",
+          "sha256": "8e3ca9a37b7026ae154ea07f5ece8ab21ab3aba09b774b65df96b08d2041cd4d",
+          "bytes": 247
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-20.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-40.stdout",
+          "sha256": "b2c111527f729d6aaefc6a36ab9d44c363873d19db857204311017cd835912e4",
+          "bytes": 240
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-guidedUnknownCallbackStep.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-standalone-bootstrap-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-topology-directed.stdout",
+          "sha256": "7fa3997dda29e3fc5e3862eace3c201b0583314377c7179d8490a357c13ed903",
+          "bytes": 1668
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/registration-directed.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-22.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-25.stdout",
+          "sha256": "35e99e115faa1dec1d781ccaad9d60bffa02c302f091b6d30b17fc299ed51034",
+          "bytes": 241
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-44.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-standalone-bootstrap-directed.stdout",
+          "sha256": "b5b3dd20fd71061f7fe9ac394169ebf5e234d869408c4142bcd4a9371eb8ca27",
+          "bytes": 1301
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-39.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-41.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-frontend-delivery-safety-initController.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-29.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-25.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-private-network-safety.stdout",
+          "sha256": "fdeb666a7f018510336b7c0f5d96589a97d34b10cfb34f66f56bc23d745b113f",
+          "bytes": 1397
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-3.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/list-bin-7.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-rpc-directed.stdout",
+          "sha256": "f94a5d15304a0f5623acc9d55eaf7dd9cc31b0710e7a9fc71302fa367f53f101",
+          "bytes": 956
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/logs/ui-engine-lifetime-test-typecheck.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-origin-controls/results.json",
+          "sha256": "043b1af7adcdf300e5d0a53129338dd792ded3a3cd470d2b2ae1622ceb66871f",
+          "bytes": 394
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-origin-controls/default.log",
+          "sha256": "d28405cc92b3691ef98b5ed1c4d75656dacf890a7902c70218f6360dc6ecd872",
+          "bytes": 1056
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/independent-admission-shape/results.json",
+          "sha256": "7ca35e0299ea56844ab1ed193420ecb14444f247ef61ac148ade6869983b51d3",
+          "bytes": 412
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/independent-admission-shape/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/held-executable-controls/results.json",
+          "sha256": "b638859237b5cb8154ba6100bb7782ad4c09c11aa099cfc100ca630da9abd85d",
+          "bytes": 518
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/held-executable-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/independent-pairstore/results.json",
+          "sha256": "c8128427ff0d9c61c8b38776930511b90b6f1c5ef6685a263918c7afbdff9c16",
+          "bytes": 5513
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/elf-cases/results.json",
+          "sha256": "97138743ffa066598984c80646b4054c3b53f1a79e0c37875947ef6b27031032",
+          "bytes": 248
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/elf-cases/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-backend-controls/results.json",
+          "sha256": "889a2875b20ce0442286a688d1b29532ee5a03ca39e4110cb0715ba504893db3",
+          "bytes": 1088
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-backend-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-private-network-controls/results.json",
+          "sha256": "c556d32c0af898741135cbf81718a2e9ba0340b280a6a7dfe508d78df0b60016",
+          "bytes": 266
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-private-network-controls/default.log",
+          "sha256": "9532c5d12608d6d3418dc7852a1406d2a569f842ef3c2b1b791befdfd80e75e4",
+          "bytes": 6684
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-engine-exec-controls/results.json",
+          "sha256": "36fdb5f75ad3e7ed83e2d4e716225eed12df1a2da1e95e4c1e8cfa731b761852",
+          "bytes": 262
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-engine-exec-controls/default.log",
+          "sha256": "2de8165f0593ecb19ddea24f1ffc236f26803419f7cf9620e3cc338da5331223",
+          "bytes": 450
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/pair-store-sequences/results.json",
+          "sha256": "ebc248d18d4d588b98b372d4256612ecd97cd6c8adeb13da4e0f844af9eed589",
+          "bytes": 398
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/pair-store-sequences/default.log",
+          "sha256": "2421806992eeb3ed48ae4b03e19703bc57c8c1869d33263b46e3ca239aab4cb3",
+          "bytes": 3252
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/bootstrap-facade-controls/results.json",
+          "sha256": "632084f027b3f4d0cb6e18e8cbbc1a7803884b8b412805c206f3a9141574428c",
+          "bytes": 529
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/bootstrap-facade-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/host-guard-controls/results.json",
+          "sha256": "20c91810e12e1b4e2c871cd548317a3974826d2d9ee6e293a2c5584e572a06c1",
+          "bytes": 396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/host-guard-controls/default.log",
+          "sha256": "6f0d73896cd288ab880005c7c285a14c05838bf9d4d55413ac5b15a35756fb54",
+          "bytes": 39
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/desktop-boundary-controls/results.json",
+          "sha256": "d6d324791124ccc077dad21efd8d862a40bcb3af8d0d6f82db4f52c276c9bc2c",
+          "bytes": 264
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/desktop-boundary-controls/default.log",
+          "sha256": "be19975e9cabc29ddb2e684986bb600faf994b042d9b048d51611a9283a91b5d",
+          "bytes": 160
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/held-document-controls/results.json",
+          "sha256": "254adf7b3e1bb0b03da8a34b88d84ad2d0b12a3f68fc91f6f6daaedec1a74bae",
+          "bytes": 261
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/held-document-controls/default.log",
+          "sha256": "48ba0cce0b21ae1b1730b5c7eacabbdec55e3efc4b30b17b6d8f5129ffc0a70f",
+          "bytes": 501
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/deadline-stop-controls/results.json",
+          "sha256": "68e5a812dd1efe8023fc69a95314b28bea3e2a91a58443e3f7a0d9d18430b1b3",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/deadline-stop-controls/default.log",
+          "sha256": "801f2687b39a546e2ac95e378d015d66f7f62c5480f762270a5afdb8cf017287",
+          "bytes": 2068
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/durable-storage-controls/results.json",
+          "sha256": "6eb8057a6d6c91ccc829fd47db36ee6a718155d4ceea6bf5c35e53a1c6bf3fec",
+          "bytes": 406
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/durable-storage-controls/default.log",
+          "sha256": "bc114944de646bf8805de68a813ddec68194409388d4fa0dcbe9782de4746437",
+          "bytes": 44
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/pair-store-smoke/results.json",
+          "sha256": "ad2165b9ca596c3d6b30df8c343d9cade9fcbb138d5947485cdb3fe0366cde30",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/pair-store-smoke/default.log",
+          "sha256": "01c1c63cbd74a9ced2cfebfebf769290252091736dbc66cd5876e20c3a618c83",
+          "bytes": 298
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ingress-controls/results.json",
+          "sha256": "c5a919f56534a33c9a2bf69187fc93415893c33e20f8a35f7b5090361dfd57bc",
+          "bytes": 390
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ingress-controls/default.log",
+          "sha256": "e30de68949513b159de16181b7a25af0344a0b17986f5edff17469ea7819a22d",
+          "bytes": 1428
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/independent-lifetime-owner/results.json",
+          "sha256": "209a2d3663e832fd102e92693bc2c475b5ed10e19d4ce3816f81c60d32438bc6",
+          "bytes": 410
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/independent-lifetime-owner/default.log",
+          "sha256": "6f3f4282fec69cd5a95e9eb283f2f156a0b78b20071023b3dd86551c18647b69",
+          "bytes": 51
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-display-controls/results.json",
+          "sha256": "890f5dc34b301c83da458b7b22a82e84808409ed2d5581b2a3457afb078a071d",
+          "bytes": 258
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-display-controls/default.log",
+          "sha256": "35e83d0d9b0498307905999f72c675f0760a4a4fbc67d0a08a296317e0490679",
+          "bytes": 7812
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/public-controls/results.json",
+          "sha256": "724ef84921e73d821b72369dc2ea58440b691761a8f60a8a43f2ed883b8e9d14",
+          "bytes": 254
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/public-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-engine-protocol-controls/results.json",
+          "sha256": "3788014d9696ed9658197821cf0f67ef021cf8b4ffeccae256721e380fa102f7",
+          "bytes": 266
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-engine-protocol-controls/default.log",
+          "sha256": "bafa84036675a42e2e6114030f0b1d0b7c110a50153dadfa4255d59ac69f08ac",
+          "bytes": 205
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/selection-admission-controls/results.json",
+          "sha256": "915f38ff73283a22b903e8692990a3f413b629fdde7992086e31199e753aa519",
+          "bytes": 414
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/selection-admission-controls/default.log",
+          "sha256": "33ca98caecc8333a73e8cbb29ba088ae0d1a995d75b7992c43beaf06066ee99d",
+          "bytes": 47
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/native-cancellation-controls/results.json",
+          "sha256": "6ca29dc78435ebb2594205845bd7aae1e48ab7093481e53b1912daeee6271c7d",
+          "bytes": 267
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/native-cancellation-controls/default.log",
+          "sha256": "70c867f919a3e3f3ec3ab7b54a2ccf7937e7c6d27543e01466b34c53b8aa4685",
+          "bytes": 30
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-mvp-controls/results.json",
+          "sha256": "03ed3a5713e9a85ca1f10807f2335ebc26310000b160d4f043840095457fcd59",
+          "bytes": 730
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-mvp-controls/default.log",
+          "sha256": "49ae5d625cff6774d9154dbf35e0627b85d958a1587bf2372b542a91cd17b268",
+          "bytes": 48
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/selected-fd-controls/results.json",
+          "sha256": "134e7cce39d55f7881cd75647ed9f4e26824ea5ce2710a04388511a94bbdf85f",
+          "bytes": 497
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/selected-fd-controls/default.log",
+          "sha256": "d6d110bd572144afdb0bb2a64a2b69e53ce1906bfab98bf8d257cb0d4d4a0d46",
+          "bytes": 505
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/child-directory-controls/results.json",
+          "sha256": "8ea5923f218b1c1122c84ed2be351e4b07fe4a5c488e0a82fa08d8bf1ec427b2",
+          "bytes": 406
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/child-directory-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-webkit-controls/results.json",
+          "sha256": "1533e7b54f06525986283a927675085b32baa38628036657076523826a36fd32",
+          "bytes": 257
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-webkit-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-engine-controls/results.json",
+          "sha256": "ac614fdae7018921cb8fb743ad15d0ebdecd3983dc6233bb50f842ac3eebba1b",
+          "bytes": 257
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-engine-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/persistent-exit-race-controls/results.json",
+          "sha256": "243aa8be85ee62d61b4c2d25d4a6be30a42170e604e093299995030f794aa877",
+          "bytes": 512
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/persistent-exit-race-controls/default.log",
+          "sha256": "0014f0a694b2e3d4e500a1955d246b94a25baf3fffeda1e20539abca786cbb14",
+          "bytes": 3907
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/slot-store-controls/results.json",
+          "sha256": "7f727964eda0c4d399ce5c0019b90ec49e5e6b978b56a5fead759e8364efefb0",
+          "bytes": 396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/slot-store-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-engine-broker-controls/results.json",
+          "sha256": "f802abb33e7e51cab3816caa3a07caaf753e830d1f64c3dc1c7d1851e9b58069",
+          "bytes": 264
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/ui-engine-broker-controls/default.log",
+          "sha256": "f2bb2caf9f9e64d14baab2ce513c7150e8600207e5ddae800ebce69cb95fe620",
+          "bytes": 83
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/owner-sequences/results.json",
+          "sha256": "9b66bcdb02dd22ce9449ed8ad38fc99cb899e06246dc01318bde27383e34cbe1",
+          "bytes": 254
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/owner-sequences/default.log",
+          "sha256": "004dcacf3ce9f5a31d54cf832360065d1e86a6403a37b79ae3f5cda2d3439502",
+          "bytes": 78
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/current-session-oracles/results.json",
+          "sha256": "c940fe6f6dc97f7964a5f4d292391143f493cde75dc6e5e5885a2b9ae84aab68",
+          "bytes": 626
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/current-session-oracles/default.log",
+          "sha256": "d1673cb0024c0c39bb59a63e9cadfd605e4aeb98b17714136e3e25e3ff4a1a4b",
+          "bytes": 4280
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/internal-controls/results.json",
+          "sha256": "7704c2c0f11f2bdce0bc96dfff8bae740ab53659d23fe765e8f5e7d90706c228",
+          "bytes": 482
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/internal-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/boundary-controls/results.json",
+          "sha256": "b53313f366d7506786eb378c66ba34d3a37146de0fd7be2dcbc3f25906dd91fc",
+          "bytes": 256
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/boundary-controls/default.log",
+          "sha256": "4e1f67b30cd7d6e43b8287d5c6f6037afc0a1b3e6a9d52080ed2b343ce3224ca",
+          "bytes": 913
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/credential-guard-controls/results.json",
+          "sha256": "1e689aeb4a0bc2490acbc158ec66e2806d6f9e7a194724c65188240d54934bb6",
+          "bytes": 399
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/credential-guard-controls/default.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/persistent-bootstrap-controls/results.json",
+          "sha256": "521dd20c690661b0aefbed81ccba099ca213c1d642cec3958cd22511bac62c4e",
+          "bytes": 648
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/haskell-build/runs/persistent-bootstrap-controls/default.log",
+          "sha256": "1f9f54370a2307e9dac1c3588b7d458ee74a4c8d8c85aab8648fabbae2c50f7b",
+          "bytes": 69560
+        }
+      ]
+    },
+    {
+      "attempt": 19,
+      "reviewSHA256": "d761af56619b4f053d433b1fcf42be61c70ebaa049d38e3a38a18a89d2059f24",
+      "profileArguments": [
+        "--backend"
+      ],
+      "rawDirectory": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793598177491817141",
+      "passed": true,
+      "error": null,
+      "retainedFiles": [
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/review.json",
+          "sha256": "d761af56619b4f053d433b1fcf42be61c70ebaa049d38e3a38a18a89d2059f24",
+          "bytes": 48212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/report.json",
+          "sha256": "5adc87ba4739a85c5254923c31bbe0b752bc17cb9192f0aec39ab5942c428de8",
+          "bytes": 179794
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/result.json",
+          "sha256": "68678e4253529b01e05f4ff6cea60e8462a63240476efc4da043152a5e742ae9",
+          "bytes": 124863
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/source-hashes.json",
+          "sha256": "ddfdb4bd449cd81595e097b435f79ae423a4e55fe32cd82e528441682d79014e",
+          "bytes": 25396
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/runs/ui-backend-controls/default.log",
+          "sha256": "2f335629f6f2b22c9a38445b64ce8b1b1f9c979d91c2cedfdac38095f2db97dd",
+          "bytes": 472
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/runs/ui-backend-controls/storage/frontend-report.json",
+          "sha256": "3c26a28050f70fc386acd90eb9441068975330c9415eff52f6f9efae65ebcbb0",
+          "bytes": 7174315
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/list-bin-0.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/production-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/test-backend.stderr",
+          "sha256": "aae3de532ef7de4d0ccf40af1bfb7b445d7aa451d6c873f54818c89682fa7d15",
+          "bytes": 238
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/ui-compile-HttpBar.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/test-freeze.stdout",
+          "sha256": "e62cd1392484230d65e305e3447041300281aaf16f6bd2dce07e016bdd8bef23",
+          "bytes": 138
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/list-bin-1.stdout",
+          "sha256": "cc2950979b4257d1d217bdac46056f44d074d4671242ba2234c73e3a94f1d21f",
+          "bytes": 220
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/ui-compile-main.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/test-build.stdout",
+          "sha256": "abdd60bd6d7a3e582974921157888919cb9a324f4d8733f252c5a7e0f90108f3",
+          "bytes": 55272
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/ui-compile-main.stdout",
+          "sha256": "009a30afb283b1acd8c03f859aabe9f1be6084d9b9618a13e64d13fb6a920b8a",
+          "bytes": 1284
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/ui-compile-HttpPopup.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/list-bin-1.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/test-freeze.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/ui-compile-HttpPopup.stdout",
+          "sha256": "40b0e538379e036ed1c0be095709fa2bdc9bf1e1f516d78404f0c44e04babfc4",
+          "bytes": 373
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/test-build.stderr",
+          "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+          "bytes": 1133
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/production-freeze.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/ui-compile-HttpMain.stdout",
+          "sha256": "0e6943537de15094784bd5171102b341dc84a279d9d6e1956b62a3af26f10b76",
+          "bytes": 212
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/production-freeze.stdout",
+          "sha256": "fb794f2be06b23f4ea98abfac79d988e5e4ffb582da406bd8d9803da485932cb",
+          "bytes": 139
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/list-bin-2.stdout",
+          "sha256": "3ff90f39782e9c1797ab960a2512456dcd28f71f87fd7e4acd8571cc19828357",
+          "bytes": 211
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/production-build.stdout",
+          "sha256": "8d34a5ecce41ddbb31635e0002b615b1e1bfc5c84a1219d3bfc33f1b893ab2b0",
+          "bytes": 71001
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/test-backend.stdout",
+          "sha256": "2b125971ec0effb6ba5c74b052994bb39ddc29b1e25f5c12f55201e64cfb39fa",
+          "bytes": 4648
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/list-bin-2.stderr",
+          "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+          "bytes": 122
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/ui-compile-HttpMain.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/ui-compile-HttpBar.stdout",
+          "sha256": "fbd43a881a725b0101c3ab49327881fd4ffb162839c7f247fba530400fd7b129",
+          "bytes": 308
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/haskell-build/logs/list-bin-0.stdout",
+          "sha256": "f23b4788c8ef3d6a1abd45a66dd19a70096b5c8352e3ba56d991860c68e8a1a1",
+          "bytes": 223
+        }
+      ]
+    }
+  ],
+  "wholeEarsAdded": 0,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "nextAction": "Publish verified custody component, then integrate current beta Elm GUI/0510QA and actual Omarchy test; complete TEA004 separate missing HTTP model/effect obligations.",
+  "independentSourceReview": {
+    "path": "implementation/warlock/qa/evidence/persistent-custody-20261102/independent-source-review.json",
+    "sha256": "421a6526ed0c4b07c7bc0b047cc20aa466712a3b5a7ebd8dd0ab0f341931e423",
+    "agentBusHandoff": "01M6DD05J0A98YJH1GCH7XAJVW",
+    "scope": "Independently reviewed exact26implementation/4tools and retained measured reports; no component source blocker, no wholeoriginal/native/release verdict."
+  }
+}

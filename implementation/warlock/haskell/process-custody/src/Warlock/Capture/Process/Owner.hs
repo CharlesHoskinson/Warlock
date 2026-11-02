@@ -1,12 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 -- Scoped private custody; never exports a raw ProcessHandle or retry authority.
 module Warlock.Capture.Process.Owner
- ( Owner, OwnerStatus(..), Child, newOwner, begin, abortBegin, publish, quarantine, failUnsettled, settle, status, retainPipe, retainReader, retainBorrow, releaseBorrows, retainTransfer, clearTransfers, retainTicket, clearTickets, retainCore, clearCore, closeRetainedCore, recordStartupFailure, startupFailures, Pending, PendingFD(..), FDIdentity(..), newPending, retainPending, ownerPending, pendingRecordFD, pendingIdentityFD, pendingMarkFD, pendingTransferFD, clearPending, pendingRecordPid, pendingRecordHandle, pendingSnapshot, pendingStart, pendingRecordIssue, NativePhase(..), pendingNativeRecord, pendingNativeMark, pendingNativeTakeFreeable, pendingNativeSnapshot, pendingIssues, childHandle, newChild, childPid, setPid, readers, pipes ) where
-import Control.Concurrent (MVar, ThreadId, modifyMVar, modifyMVar_, newMVar, readMVar)
+ ( Owner, OwnerStatus(..), Child, newOwner, begin, abortBegin, tryAbortUnborrowed, retainHeldBorrow, tryReleaseRetainedHeld, tryAbortHeldNoInput, tryAbortHeldWithCore, tryAbortHeldNotAcquired, tryAbortHeldNoInputBefore, tryAbortHeldWithCoreBefore, tryAbortHeldNotAcquiredBefore, publish, quarantine, failUnsettled, settle, status, retainPipe, retainReader, retainBorrow, releaseBorrows, retainTransfer, clearTransfers, retainTicket, clearTickets, retainCore, clearCore, closeRetainedCore, recordStartupFailure, startupFailures, Pending, PendingFD(..), FDIdentity(..), newPending, retainPending, ownerPending, pendingRecordFD, pendingIdentityFD, pendingMarkFD, pendingTransferFD, clearPending, pendingRecordPid, pendingRecordHandle, pendingSnapshot, pendingStart, pendingRecordIssue, NativePhase(..), pendingNativeRecord, pendingNativeMark, pendingNativeTakeFreeable, pendingNativeSnapshot, pendingIssues, childHandle, newChild, childPid, setPid, readers, pipes ) where
+import Control.Concurrent (MVar, ThreadId, modifyMVar, modifyMVar_, newMVar, putMVar, readMVar, tryTakeMVar)
 import Data.IORef (IORef, newIORef, readIORef, writeIORef, atomicModifyIORef')
 import Data.Text (Text)
-import Control.Exception (SomeException)
-import Warlock.Capture.Process.Transfer.Internal (CoreTransfer, TransferError, closeCoreTransfer)
+import Control.Exception (SomeException, mask_, onException, try, throwIO, uninterruptibleMask_)
+import Warlock.Platform.Executable (HeldBorrow, tryReleaseHeld, tryHeldBorrowNotAcquired)
+import GHC.Clock (getMonotonicTimeNSec)
+import Warlock.Capture.Process.Transfer.Internal (CoreTransfer, TransferError, closeCoreTransfer, tryCoreClosedMatches)
 import System.IO (Handle)
 import Foreign.Ptr (Ptr)
 import Warlock.Capture.Process.Transfer (TransferTicket)
@@ -19,7 +21,9 @@ data FDIdentity = FDIdentity Integer Integer deriving (Eq,Show)
 data PendingFD = PendingOpen Fd (Maybe FDIdentity) | PendingClosed Fd (Maybe FDIdentity) | PendingUncertain Fd (Maybe FDIdentity) | PendingHandle Fd Handle (Maybe FDIdentity) deriving (Eq,Show)
 data NativePhase = NativeAllocated | NativeInitialized | NativeDestroyed | NativeUncertain | NativeFreed deriving (Eq,Show)
 data Pending = Pending (IORef [PendingFD]) (IORef (Maybe ProcessID)) (IORef (Maybe ProcessHandle)) (IORef Bool) (IORef [String]) (IORef [(Ptr (),Ptr (),NativePhase)])
-data Owner = Owner (MVar State) (IORef [IO ()]) (IORef [Handle]) (IORef [TransferTicket]) (IORef (Maybe CoreTransfer)) (IORef [(SomeException, Maybe SomeException)]) (IORef (Maybe Pending))
+data HeldReceipt = HeldReceiptPending | HeldReceiptConfirmed | HeldReceiptUnknown
+data BorrowRef = LegacyBorrow (IO ()) | RetainedHeld HeldBorrow (IORef HeldReceipt)
+data Owner = Owner (MVar State) (IORef [BorrowRef]) (IORef [Handle]) (IORef [TransferTicket]) (IORef (Maybe CoreTransfer)) (IORef [(SomeException, Maybe SomeException)]) (IORef (Maybe Pending))
 data Child = Child { childHandle :: ProcessHandle, childPidRef :: IORef (Maybe ProcessID), pipeRef :: IORef [Handle], readerRef :: IORef [(ThreadId,IO ())] }
 newOwner :: IO Owner
 newOwner = Owner <$> newMVar Idle <*> newIORef [] <*> newIORef [] <*> newIORef [] <*> newIORef Nothing <*> newIORef [] <*> newIORef Nothing
@@ -27,6 +31,142 @@ begin :: Owner -> IO Bool
 begin (Owner m _ _ _ _ _ _) = modifyMVar m $ \s -> case s of Idle -> pure (Beginning,True); _ -> pure (s,False)
 abortBegin :: Owner -> IO ()
 abortBegin (Owner m _ _ _ _ _ _) = modifyMVar_ m $ \s -> case s of Beginning -> pure Idle; _ -> pure s
+-- Only for the fresh PersistentOwner startup path, after the acquisition
+-- returns proven-unborrowed and before input preparation or spawn. That path
+-- is the sole writer of this private raw Owner and its Pending references;
+-- the stop requester uses the separate phase/gate and never mutates these refs.
+-- This is NOT a general concurrent snapshot API. An occupied state lock or
+-- any unexpected retained evidence refuses without dropping the owner/pending.
+tryAbortUnborrowed :: Owner -> Pending -> IO Bool
+tryAbortUnborrowed (Owner gate borrows transfers tickets core failures slot) expected = mask_ $ do
+ state <- tryTakeMVar gate
+ case state of
+  Nothing -> pure False
+  Just held -> do
+   let restoreState = putMVar gate held
+   clean <- (case held of
+    Beginning -> do
+     registered <- readIORef slot
+     bs <- readIORef borrows
+     ts <- readIORef transfers
+     ks <- readIORef tickets
+     cs <- readIORef core
+     fs <- readIORef failures
+     case (registered, expected) of
+      (Just (Pending f p h started issues native), Pending ef _ _ _ _ _)
+       | f == ef -> do
+        fdValues <- readIORef f
+        pidValue <- readIORef p
+        handleValue <- readIORef h
+        began <- readIORef started
+        issueValues <- readIORef issues
+        nativeValues <- readIORef native
+        let emptyMaybe Nothing = True
+            emptyMaybe _ = False
+        pure (null bs && null ts && null ks && emptyMaybe cs && null fs
+          && null fdValues && emptyMaybe pidValue && emptyMaybe handleValue
+          && not began && null issueValues && null nativeValues)
+      _ -> pure False
+    _ -> pure False) `onException` restoreState
+   if clean then do
+    -- No other raw-Owner writer exists in this pre-spawn branch. The masked
+    -- two writes therefore form the only checked beginning-to-idle receipt.
+    writeIORef slot Nothing `onException` restoreState
+    putMVar gate Idle
+    pure True
+   else restoreState >> pure False
+
+-- The caller holds phase then stop gate, checked this owner's original D,
+-- and is the sole raw writer. No action or descriptor close is invoked here.
+-- The core variant additionally requires the exact retained core and ticket
+-- to share a confirmed Closed (Core matching-token) transfer state.
+tryAbortHeldNoInput :: Owner -> Pending -> IO Bool
+tryAbortHeldNoInput = tryAbortHeld False False Nothing
+
+tryAbortHeldWithCore :: Owner -> Pending -> IO Bool
+tryAbortHeldWithCore = tryAbortHeld True False Nothing
+
+-- Only a terminal NotAcquired from the exact retained preowned HeldBorrow
+-- can authorize a no-borrow raw abort. New/Activating/busy/Unknown refuse.
+tryAbortHeldNotAcquired :: Owner -> Pending -> IO Bool
+tryAbortHeldNotAcquired = tryAbortHeld False True Nothing
+
+-- Internal callers pass the exact already-selected same-owner absolute D in
+-- monotonic nanoseconds. These fixed metadata checks invoke no supplied action.
+tryAbortHeldNoInputBefore :: Integer -> Owner -> Pending -> IO Bool
+tryAbortHeldNoInputBefore end = tryAbortHeld False False (Just end)
+
+tryAbortHeldWithCoreBefore :: Integer -> Owner -> Pending -> IO Bool
+tryAbortHeldWithCoreBefore end = tryAbortHeld True False (Just end)
+
+tryAbortHeldNotAcquiredBefore :: Integer -> Owner -> Pending -> IO Bool
+tryAbortHeldNotAcquiredBefore end = tryAbortHeld False True (Just end)
+
+tryAbortHeld :: Bool -> Bool -> Maybe Integer -> Owner -> Pending -> IO Bool
+tryAbortHeld requireCore requireNotAcquired limit (Owner gate borrows transfers tickets core failures slot) expected = mask_ $ do
+ state <- tryTakeMVar gate
+ case state of
+  Nothing -> pure False
+  Just held -> do
+   let restoreState = putMVar gate held
+   (clean, savedBorrows, savedTickets, savedCore) <- (case held of
+    Beginning -> do
+     registered <- readIORef slot
+     bs <- readIORef borrows
+     ts <- readIORef transfers
+     ks <- readIORef tickets
+     cs <- readIORef core
+     fs <- readIORef failures
+     coreOk <- case (requireCore, cs, ks) of
+      (False, Nothing, []) -> pure True
+      (True, Just retainedCore, [retainedTicket]) -> do
+       coreClosed <- tryCoreClosedMatches retainedCore retainedTicket
+       pure (coreClosed == Just True)
+      _ -> pure False
+     case (registered, expected, bs) of
+      (Just (Pending f p h started issues native), Pending ef _ _ _ _ _,
+       [RetainedHeld capability receipt]) | f == ef -> do
+        settled <- readIORef receipt
+        noBorrow <- if requireNotAcquired then tryHeldBorrowNotAcquired capability else pure False
+        fdValues <- readIORef f
+        pidValue <- readIORef p
+        handleValue <- readIORef h
+        began <- readIORef started
+        issueValues <- readIORef issues
+        nativeValues <- readIORef native
+        let emptyMaybe Nothing = True; emptyMaybe _ = False
+            released = case settled of
+             HeldReceiptConfirmed -> not requireNotAcquired
+             HeldReceiptPending -> requireNotAcquired && noBorrow
+             HeldReceiptUnknown -> False
+        pure (coreOk && released && null ts && null fs && null fdValues &&
+         emptyMaybe pidValue && emptyMaybe handleValue && not began &&
+         null issueValues && null nativeValues, bs, ks, cs)
+      _ -> pure (False,bs,ks,cs)
+    _ -> pure (False,[],[],Nothing)) `onException` restoreState
+   if not clean then restoreState >> pure False else do
+    let inTime = case limit of
+         Nothing -> pure True
+         Just end -> (< end) . toInteger <$> getMonotonicTimeNSec
+        rollback = uninterruptibleMask_ $ do
+         writeIORef borrows savedBorrows
+         writeIORef tickets savedTickets
+         writeIORef core savedCore
+         writeIORef slot (Just expected)
+         putMVar gate (Poisoned Nothing ["held-abort-finalization-unconfirmed"])
+    before <- inTime `onException` restoreState
+    if not before then restoreState >> pure False else do
+     outcome <- try (do
+      writeIORef borrows []
+      writeIORef tickets []
+      writeIORef core Nothing
+      writeIORef slot Nothing
+      inTime) :: IO (Either SomeException Bool)
+     case outcome of
+      Left err -> rollback >> throwIO err
+      Right False -> rollback >> pure False
+      Right True -> putMVar gate Idle >> pure True
+
 newChild :: ProcessHandle -> IO Child
 newChild h = Child h <$> newIORef Nothing <*> newIORef [] <*> newIORef []
 publish :: Owner -> Child -> IO ()
@@ -62,11 +202,55 @@ readers = readIORef . readerRef
 retainBorrow :: Owner -> IO () -> IO ()
 retainBorrow (Owner _ refs _ _ _ _ _) action = do
  previous <- readIORef refs
- writeIORef refs (action:previous)
+ writeIORef refs (LegacyBorrow action:previous)
+
+-- Only the persistent sole startup writer stores the opaque HeldBorrow returned
+-- by its selected acquisition. Neither operation nor receipt comes from a caller
+-- boolean or a supplied callback. Legacy selected-tool callers remain unchanged.
+retainHeldBorrow :: Owner -> HeldBorrow -> IO ()
+retainHeldBorrow (Owner _ refs _ _ _ _ _) capability = mask_ $ do
+ receipt <- newIORef HeldReceiptPending
+ previous <- readIORef refs
+ writeIORef refs (RetainedHeld capability receipt:previous)
+
+-- Caller holds the same owner's nonblocking stop gate and checked original D.
+-- Nothing is definite no-commit, False/exception sticky Unknown, True confirms
+-- this exact retained capability. Never call an arbitrary closure under a gate.
+tryReleaseRetainedHeld :: Owner -> IO (Maybe Bool)
+tryReleaseRetainedHeld (Owner _ refs _ _ _ _ _) = mask_ $ do
+ saved <- readIORef refs
+ case saved of
+  [RetainedHeld capability receipt] -> do
+   state <- readIORef receipt
+   case state of
+    HeldReceiptConfirmed -> pure (Just True)
+    HeldReceiptUnknown -> pure (Just False)
+    HeldReceiptPending -> do
+     outcome <- try (tryReleaseHeld capability) :: IO (Either SomeException (Maybe Bool))
+     case outcome of
+      Left err -> writeIORef receipt HeldReceiptUnknown >> throwIO err
+      Right Nothing -> pure Nothing
+      Right (Just False) -> writeIORef receipt HeldReceiptUnknown >> pure (Just False)
+      Right (Just True) -> writeIORef receipt HeldReceiptConfirmed >> pure (Just True)
+  _ -> pure (Just False)
+
 releaseBorrows :: Owner -> IO ()
 releaseBorrows (Owner _ refs _ _ _ _ _) = do
  actions <- readIORef refs
- sequence_ actions
+ let release action = case action of
+      LegacyBorrow legacy -> legacy
+      RetainedHeld capability receipt -> do
+       state <- readIORef receipt
+       case state of
+        HeldReceiptConfirmed -> pure ()
+        HeldReceiptUnknown -> ioError (userError "retained held borrow uncertain")
+        HeldReceiptPending -> do
+         result <- tryReleaseHeld capability
+         case result of
+          Just True -> writeIORef receipt HeldReceiptConfirmed
+          Just False -> writeIORef receipt HeldReceiptUnknown >> ioError (userError "retained held borrow uncertain")
+          Nothing -> ioError (userError "retained held borrow busy")
+ mapM_ release actions
  writeIORef refs []
 
 retainTransfer :: Owner -> Handle -> IO ()

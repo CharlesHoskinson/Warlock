@@ -3,7 +3,7 @@
 -- Source-only owned endpoint; adoption is not bootstrap or peer authentication.
 module Warlock.Transport.Channel
   ( Channel, Direction(..), Priority(..), ChannelError(..), CloseResult(..)
-  , CloseState(..), channelState, channelFlagsVerified, newConfiguredChannel, newConfiguredChannelWith, receive, receiveWith, receiveWithStart, receiveRawDeadline, receiveRawDeadlineWithStart, CredentialFrameError(..), receiveCredentialFrame, receiveCredentialFrameAfterIdle, enqueue, sendNext, closeChannel, retainedFrames ) where
+  , CloseState(..), channelState, channelFlagsVerified, newConfiguredChannel, newConfiguredChannelWith, receive, receiveWith, receiveWithStart, receiveRawDeadline, receiveRawDeadlineWithStart, CredentialFrameError(..), FrameDeadline, frameDeadlineNs, receiveCredentialFrame, receiveCredentialFrameAfterIdle, receiveCredentialFrameWithOwnedFrameGuard, enqueue, sendNext, sendNextPersistent, closeChannel, retainedFrames ) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, evaluate, mask, uninterruptibleMask_, try, finally, onException)
 import System.Timeout (timeout)
@@ -22,7 +22,7 @@ import Warlock.Protocol.CredentialGuard (CredentialGuard(..))
 
 data Direction = ClientInbound | ServerInbound deriving (Eq,Show)
 data Priority = Ordinary | Control deriving (Eq,Show)
-data ChannelError = Closed | Busy | QueueFull | EmptyQueue | TimedOut | StreamEOF | FrameFault FrameError | InvalidPayload Text | IOErrorClosed deriving (Eq,Show)
+data ChannelError = Closed | Busy | QueueFull | EmptyQueue | TimedOut | StreamEOF | FrameFault FrameError | InvalidPayload Text | IOErrorClosed | OutputUncertain deriving (Eq,Show)
 data CloseResult = ClosedNow | AlreadyClosed | CloseFailed | CloseInProgress deriving (Eq,Show)
 data CloseState = Open | Closing | Confirmed | Uncertain deriving (Eq,Show)
 data State = State CloseState (Maybe B.ByteString) (Maybe B.ByteString) Bool
@@ -111,29 +111,52 @@ receiveRawDeadlineWithStart started channel@(Channel profile sock direction stat
 
 -- The credential reader is retained by the ingress owner.  It borrows the
 -- channel socket only under the same read gate as the legacy receive path.
+-- Only Channel constructs the absolute per-frame deadline.
+newtype FrameDeadline = FrameDeadline Integer deriving (Eq,Show)
+frameDeadlineNs :: FrameDeadline -> Integer
+frameDeadlineNs (FrameDeadline value) = value
+
 data CredentialFrameError refusal = CredentialTransport ChannelError | CredentialAncillary P.CredentialError
  | CredentialPeer refusal | CredentialChanged deriving (Eq,Show)
 
 receiveCredentialFrame :: forall refusal. P.CredentialReader -> CredentialGuard refusal -> Channel
  -> IO (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))
-receiveCredentialFrame = receiveCredentialFrameWithIdle Nothing
+receiveCredentialFrame reader guard channel = fmap unwrapFrameDeadline (receiveCredentialFrameWithIdle Nothing Nothing Nothing (pure ()) reader (const guard) channel)
 
 -- Desktop inter-frame scheduling only. Readiness consumes no bytes/ancillary
 -- data and confers no trust. Keep the same exclusive reader through the wait
 -- and unchanged frame receive, bounded by the caller's original absolute D.
 receiveCredentialFrameAfterIdle :: Integer -> P.CredentialReader -> CredentialGuard refusal -> Channel
  -> IO (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))
-receiveCredentialFrameAfterIdle deadline = receiveCredentialFrameWithIdle (Just deadline)
+receiveCredentialFrameAfterIdle deadline reader guard channel = fmap unwrapFrameDeadline (receiveCredentialFrameWithIdle (Just deadline) Nothing Nothing (pure ()) reader (const guard) channel)
 
-receiveCredentialFrameWithIdle :: forall refusal. Maybe Integer -> P.CredentialReader -> CredentialGuard refusal -> Channel
- -> IO (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))
-receiveCredentialFrameWithIdle idleDeadline reader guard channel@(Channel profile sock direction state readGate _ _) = mask $ \restore -> do
+-- Private application route. Nothing skips idle for the unchanged first frame;
+-- the Just wait blocks without starting/restarting an action/frame deadline.
+receiveCredentialFrameWithOwnedFrameGuard :: Bool -> IO Bool -> IO () -> P.CredentialReader -> (FrameDeadline -> CredentialGuard refusal) -> Channel
+ -> IO (Either (CredentialFrameError refusal) (B.ByteString,FrameDeadline,P.PeerCredential))
+receiveCredentialFrameWithOwnedFrameGuard afterDelivered ownerWait onFragment =
+ receiveCredentialFrameWithIdle Nothing (Just (if afterDelivered then ownerWait else pure True)) (Just ownerWait) onFragment
+
+unwrapFrameDeadline :: Either e (B.ByteString,FrameDeadline,P.PeerCredential) -> Either e (B.ByteString,Integer,P.PeerCredential)
+unwrapFrameDeadline = fmap (\(bytes,deadline,credential) -> (bytes,frameDeadlineNs deadline,credential))
+
+receiveCredentialFrameWithIdle :: forall refusal. Maybe Integer -> Maybe (IO Bool) -> Maybe (IO Bool) -> IO () -> P.CredentialReader -> (FrameDeadline -> CredentialGuard refusal) -> Channel
+ -> IO (Either (CredentialFrameError refusal) (B.ByteString,FrameDeadline,P.PeerCredential))
+receiveCredentialFrameWithIdle idleDeadline ownedWait nestedWait onFragment reader guardFor channel@(Channel profile sock direction state readGate _ _) = mask $ \restore -> do
  acquired <- tryTakeMVar readGate
  case acquired of
   Nothing -> pure (Left (CredentialTransport Busy))
-  Just () -> (restore scheduled `onException` cleanupNoThrow channel) `finally` putMVar readGate ()
+  Just () -> (restore scheduled `onException` case ownedWait of
+    Nothing -> cleanupNoThrow channel
+    Just _ -> pure ()) `finally` putMVar readGate ()
  where
-  scheduled = case idleDeadline of
+  scheduled = case ownedWait of
+   Just waitOwned | profile /= desktopProfile -> pure (Left (CredentialTransport Busy))
+                  | otherwise -> do
+       ready <- waitOwned
+       if ready then run else pure (Left (CredentialTransport Closed))
+   Nothing -> scheduledDiagnostic
+  scheduledDiagnostic = case idleDeadline of
    Nothing -> run
    Just original | profile /= desktopProfile -> pure (Left (CredentialTransport Busy))
                  | otherwise -> do
@@ -144,11 +167,11 @@ receiveCredentialFrameWithIdle idleDeadline reader guard channel@(Channel profil
        if closed then pure (Left (CredentialTransport Closed)) else do
         outcome <- try (timeout (fromInteger (min (toInteger (maxBound :: Int)) ((left + 999) `div` 1000)))
           (S.withFdSocket sock (threadWaitRead . fromIntegral) >> run))
-          :: IO (Either SomeException (Maybe (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))))
+          :: IO (Either SomeException (Maybe (Either (CredentialFrameError refusal) (B.ByteString,FrameDeadline,P.PeerCredential))))
         ended <- getMonotonicTimeNSec
         case outcome of
          Left err -> do
-          failure <- (handleException channel err :: IO (Either ChannelError ()))
+          failure <- (handleReadException err :: IO (Either ChannelError ()))
           pure (either (Left . CredentialTransport) (const (Left (CredentialTransport IOErrorClosed))) failure)
          _ | toInteger ended >= original -> failFrame (CredentialTransport TimedOut)
          Right Nothing -> failFrame (CredentialTransport TimedOut)
@@ -162,12 +185,21 @@ receiveCredentialFrameWithIdle idleDeadline reader guard channel@(Channel profil
     result <- try (timeout 5000000 (frame deadline)) :: IO (Either SomeException (Maybe (Either (CredentialFrameError refusal) (B.ByteString,P.PeerCredential))))
     end <- getMonotonicTimeNSec
     case result of
-     Left err -> do failure <- (handleException channel err :: IO (Either ChannelError ())); pure (either (Left . CredentialTransport) (const (Left (CredentialTransport IOErrorClosed))) failure)
+     Left err -> do failure <- (handleReadException err :: IO (Either ChannelError ())); pure (either (Left . CredentialTransport) (const (Left (CredentialTransport IOErrorClosed))) failure)
      Right _ | toInteger end >= deadline -> failFrame (CredentialTransport TimedOut)
      Right Nothing -> failFrame (CredentialTransport TimedOut)
      Right (Just (Left err)) -> failFrame err
-     Right (Just (Right (bytes,credential))) -> pure (Right (bytes,deadline,credential))
-  failFrame err = do _ <- closeChannel channel; pure (Left err)
+     Right (Just (Right (bytes,credential))) -> pure (Right (bytes,FrameDeadline deadline,credential))
+  -- The persistent caller holds a socket pin. It closes only after releasing
+  -- the pin; a same-thread frame error must not self-quarantine.
+  failFrame err = case ownedWait of
+   Just _ -> pure (Left err)
+   Nothing -> do _ <- closeChannel channel; pure (Left err)
+  handleReadException err = case ownedWait of
+   Nothing -> handleException channel err
+   Just _ -> case fromException err :: Maybe SomeAsyncException of
+    Just _ -> throwIO err
+    Nothing -> pure (Left IOErrorClosed)
   frame deadline = do
    header <- pieces deadline 4 Nothing [] (FrameFault TruncatedHeader)
    case header of
@@ -182,12 +214,17 @@ receiveCredentialFrameWithIdle idleDeadline reader guard channel@(Channel profil
    | otherwise = do
       now <- getMonotonicTimeNSec
       if toInteger now >= deadline then pure (Left (CredentialTransport TimedOut)) else do
-       result <- P.receiveCredentialChunk reader sock (min remaining 65536)
+       result <- case nestedWait of
+        Nothing -> P.receiveCredentialChunk reader sock (min remaining 65536)
+        Just ownerWait -> P.receiveCredentialChunkWithWait reader sock (min remaining 65536) (Just (do
+         ready <- ownerWait
+         if ready then pure () else ioError (userError "owned frame wait stopped")))
        case result of
         Left err -> pure (Left (CredentialAncillary err))
         Right P.EndOfStream -> pure (Left (CredentialTransport (if null chunks && first == Nothing && eofFault == FrameFault TruncatedHeader then StreamEOF else eofFault)))
         Right (P.CredentialChunk bytes credential) -> do
-         approved <- checkFragment guard credential
+         if B.null bytes then pure () else onFragment
+         approved <- checkFragment (guardFor (FrameDeadline deadline)) credential
          case approved of
           Left err -> pure (Left (CredentialPeer err))
           Right () | B.null bytes || B.length bytes > remaining -> pure (Left (CredentialTransport (FrameFault eofFaultFrame)))
@@ -297,3 +334,62 @@ sendNext channel@(Channel _ sock _ state _ writeGate _) = withGate writeGate $ (
           pure (Right ())
         Right Nothing -> closeChannel channel >> pure (Left TimedOut)
         Left e -> handleException channel e) `onException` cleanupNoThrow channel
+
+-- Application-only write seam, called only under the shared socket pin. The
+-- supplied immutable absolute D is trusted local authority, not wire input.
+-- `starting` marks the pin uncertain before sendAll can register/write;
+-- `finished` clears it only after sendAll returns, including its nested wait.
+-- A timeout/fault/close after entry never proves how many bytes were sent.
+sendNextPersistent :: Integer -> IO () -> IO () -> IO () -> IO () -> Channel -> IO (Either ChannelError ())
+sendNextPersistent absoluteD starting beforeSend afterWrite finished (Channel _ sock _ state _ writeGate _) = withGate writeGate $ do
+  choice <- withMVar state $ \(State status ordinary control lastControl) -> pure $
+    if status /= Open then Left Closed else case (control,ordinary,lastControl) of
+      (Just bytes,_,False) -> Right (Control,bytes)
+      (Just bytes,Nothing,_) -> Right (Control,bytes)
+      (_,Just bytes,_) -> Right (Ordinary,bytes)
+      _ -> Left EmptyQueue
+  case choice of
+    Left err -> pure (Left err)
+    Right (priority,bytes) -> mask $ \restore -> do
+      before <- toInteger <$> getMonotonicTimeNSec
+      if before >= absoluteD then pure (Left TimedOut) else do
+       let sendD = min absoluteD (before + 5000000000)
+           budget = fromInteger ((sendD - before + 999) `div` 1000)
+       starting
+       -- Covers the test hook, state check and all network waits under ONE D.
+       -- Any exception after marking started poisons before the pin can drop.
+       (do
+        sent <- try (restore (timeout budget $ do
+          beforeSend
+          closed <- isClosed state
+          now <- toInteger <$> getMonotonicTimeNSec
+          if closed then pure (Left Closed)
+          else if now >= sendD then pure (Left TimedOut)
+          else N.sendAll sock bytes >> pure (Right ()))) :: IO (Either SomeException (Maybe (Either ChannelError ())))
+        case sent of
+         Left ex -> do
+          poisonOutput
+          case fromException ex :: Maybe SomeAsyncException of
+           Just _ -> throwIO ex
+           Nothing -> pure (Left OutputUncertain)
+         Right Nothing -> poisonOutput >> pure (Left OutputUncertain)
+         Right (Just (Left beforeWrite)) -> finished >> pure (Left beforeWrite)
+         Right (Just (Right ())) -> do
+          -- Same-package test hook; product route supplies pure (). If it
+          -- fails, the frame may already be visible and must not be retried.
+          afterWrite
+          classified <- modifyMVar state $ \(State status ordinary control lastControl) -> do
+           after <- toInteger <$> getMonotonicTimeNSec
+           if status /= Open || after >= sendD
+            then pure (State Uncertain ordinary control lastControl,Left OutputUncertain)
+            else pure (case priority of
+             Control -> (State Open ordinary Nothing True,Right ())
+             Ordinary -> (State Open Nothing control False,Right ()))
+          -- No interruptible work remains between classification and release.
+          finished
+          pure classified) `onException` poisonOutput
+ where
+  -- Poison before returning/rethrowing: no retained queued frame can be sent
+  -- again by either persistent or diagnostic entry points.
+  poisonOutput = uninterruptibleMask_ $ modifyMVar_ state $ \(State _ ordinary control lastControl) ->
+   pure (State Uncertain ordinary control lastControl)

@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-02T05:49:30.923984+00:00",
+  "status": "verified component source and focused frontend/backend regression; no whole original or native acceptance",
+  "requirements": [
+    "ELM-ARC-002"
+  ],
+  "scenarios": [
+    "ownership-presentation"
+  ],
+  "baseCommit": "a327c8f7fe63e40a8b3b21bd558c47429ade4c6d",
+  "sourceHashes": {
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs": "1393f348fb2cdfd42cdf29fbdf16c2c026c11abb616ccfd1c42ebdbd9283a2ff",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": "176f1f5190726f057da3692d944f4e2635e6a392670d3cbeca1e1b9456056370",
+    "implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs": "48f267138b521d91b263c699fc995bb28e3fe908bc8e7694580300aa172e5dc1",
+    "implementation/warlock/haskell/process-custody/process-custody.cabal": "45c21dc95a43da4e9e43697e10cb31e87f840b9d89ddbdfc55e8935688284692",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": "a75f346d1bf0d5cb03843ef5d1d497f24f7490d41d10a894c5a4e79af81a2447",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs": "d1162d1206d0d0107a3f771c58cfc28af46b1d1b4a042634d767253cec64a5e2",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs": "c8496170eabfe8f5e3383c3cb0860630499b19052c0b5179a1a4fc7f8f7d9d8f",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs": "3f42fb3b628a0c3f93f138373f26bef28fad9d304415c37563c414a01ff4a2c7",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": "de3cfc758f9ee41e3d66c917853e5e7fe9c4476acff2db4a3f36cf366a83edb6",
+    "implementation/warlock/haskell/process-custody/test/DeadlineStop.hs": "f5d66cf0b7412fedc4d0e951c2c25cf49648c968688ae884dcd29b704e3be24f",
+    "implementation/warlock/haskell/process-custody/test/PersistentControls.hs": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "2e031c7410aff909bef5cca13d1c02d4d6b943ad48227d4ca9a6c98f74d5d555",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "85d91c8decf35f042c72783138df9faaad432607159d163e298a6ada0990db20",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": "30cd41b3dad28cc980e48cdcb9b77e7c511cae4c3881440dd7bc0360bfb7d16c",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "277cdca0b629c5f13369891950e5ab51cde9589616a42cccfa12bb2ca0442f0a",
+    "implementation/warlock/haskell/protocol/test/OwnerControls.hs": "7757bf34257e90bf56d3c5baea54f24c28beea8a2da9820e5b04aee40d41cb3c",
+    "implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808",
+    "implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs": "d631fe70075d0c8cdbd8190509d4447b68c970bac5144aeba60690480198ce1a",
+    "implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs": "7342c6c4c38082373095e79d66c4f9dd18223173894c21aa081246cc5feed2ab",
+    "implementation/warlock/haskell/process-custody/README.md": "cdca392be058d884733e7e9d3f9241b47991247d6b7c7fb94c24895b541553da",
+    "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "f63550d4b9538b13afbd8a875554b56b7e3a5ece95ee1a7e76a7c3a17b795425",
+    "implementation/warlock/haskell/runtime/test-ui/Main.hs": "f522408fc45e2077c41cdf262cc438f4ee9ae7afc000a316da94974ed36d3e61"
+  },
+  "actualBehavior": "Persistent process custody and per-frame/action admission, credential-context ingress/pinned outbound and callback-drain-before-close; shared catalog/pin handler extracted without changing request policy. Application persistent wiring remains incomplete.",
+  "verification": {
+    "completed": "r8 production/test compilation and formal stage completed;35/36suites passed including original25owner controls. r11 production/test/formal completed and35/36suites passed; strengthened ingress actual bytes/refusework/drain/closeonce/EOF checks passed.",
+    "retainedFailure": "All compiler/r8ingress/r11frame/r12seed/r13deterministicRED/r14-16remainingstop failures remain retained. R17focusedallGREEN; r18overallfailedbackenddefault180stimeout. No previous failure is retroactively promoted.",
+    "current": "r19 focused actual compiledfrontend/backend PASS, outer protected session68042 consumed exit0, unchanged180s limit. r18 full36other suite passes retained; no claim the failed r18 batch passed.",
+    "review": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/review.json",
+    "reviewSHA256": "d761af56619b4f053d433b1fcf42be61c70ebaa049d38e3a38a18a89d2059f24",
+    "protectedReport": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/report.json",
+    "focusedRunnerReview": "01M6D87D6SVNQJK0JC7X15YREY source-only independent review, no guard/forwarding blocker",
+    "ownedExitRace": {
+      "before": ".warlock-contributor/haskell-cpu-1793594582485834707/report.json",
+      "beforeReviewSHA256": "1a26b2bbd928894aa3003da4a62ebcb6d4da84dddcd66334cc29af42e3caf231",
+      "beforeObserved": "ordinary live child PASS; forced naturalexit beforemetadata FAIL leader-reap quarantine, pidfd knownopen,1.989742s originalStopDremaining, zerokillhook",
+      "after": ".warlock-contributor/haskell-cpu-1793594825378100932/report.json",
+      "afterReviewSHA256": "d902d83d487ffce0e396db4bf85010bbdace7e4376ff98101477db1182442167",
+      "afterObserved": "both direct real child cases PASS, naturalexit returnsLeaderReaped/PersistentRetired/rawAvailable/PidfdClosed, zerokillhook andsameD"
+    },
+    "focusedPass": {
+      "reviewSHA256": "29a3b5f581c7543f8fb75f62f110695f21c1c6bdae12b40f72bee32a020e4a12",
+      "report": ".warlock-contributor/haskell-cpu-1793595862530226693/report.json",
+      "suites": 3,
+      "allUnforcedExit0": true,
+      "originalOwnerControls": 25,
+      "generatedSeeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "actualOwnedHandleWaitPositiveCases": 13,
+      "directExitRaceCases": 2,
+      "scope": "Real owned child/socket component evidence; no formal/native/wholeoriginal acceptance from focused profile"
+    },
+    "fullRegression": {
+      "reviewSHA256": "918cf24db68d4542ce01a22170a75221896df73455087db1c0da00feb0c07d1c",
+      "report": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r18/report.json",
+      "suites": 37,
+      "passedSuites": 36,
+      "failedSuite": "warlock-runtime:test:ui-backend-controls",
+      "mode": "default",
+      "exit": -9,
+      "timeout": true,
+      "forcedCleanup": true,
+      "originalWrapperSeconds": 180,
+      "sourceChangedDuringExecution": false
+    },
+    "descriptorRefresh": {
+      "previousDescriptorHashMismatches": [
+        {
+          "path": "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs",
+          "previousDescriptorHash": "59f238f22623c3ee03d1f459582b292ccafa3839c18051f65ee2416813225f71",
+          "actualCurrentHash": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e"
+        },
+        {
+          "path": "implementation/warlock/haskell/process-custody/test/PersistentControls.hs",
+          "previousDescriptorHash": "700bd29123a3af353756a43b1a31736509d025e502b3989421e0d101392fb806",
+          "actualCurrentHash": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f"
+        },
+        {
+          "path": "implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs",
+          "previousDescriptorHash": "471bfae0f9498c0817998747d57871aeda50781d9ab296e83bd2d12c0eb5d0a9",
+          "actualCurrentHash": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808"
+        }
+      ],
+      "scope": "Correct current descriptor only; raw old reports remain byte-preserved. r17 production difference to current is explanatory comment only; r18 binds current production bytes."
+    },
+    "backendFocusedPass": {
+      "report": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/report.json",
+      "reviewSHA256": "d761af56619b4f053d433b1fcf42be61c70ebaa049d38e3a38a18a89d2059f24",
+      "suites": 1,
+      "haskellAssertions": 161,
+      "generatedHostileFrames": 32,
+      "frontendAssertions": 8010,
+      "realBackendSessions": 40,
+      "completeCommittedFrames": 401,
+      "executedCompleteFrames": 401,
+      "maximumPresentationBatch": 16,
+      "sessionDeadlineNanoseconds": "5000000000",
+      "wrapperDeadlineSeconds": 180,
+      "timeout": false,
+      "forcedCleanup": false,
+      "exit": 0,
+      "modelsExecuted": false,
+      "changedInputsFromR18": [
+        "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+        "implementation/warlock/haskell/runtime/test-ui/Main.hs",
+        "tools/check_haskell_cpu.py",
+        "tools/haskell_build.py",
+        "tools/qa_cpu.py"
+      ],
+      "unchangedProductionAndElmInputs": true,
+      "scope": "Actual compiled Main to selected Haskell CLI on private host component fixture; no rendered GUI or native/release acceptance."
+    }
+  },
+  "recordedTotals": {
+    "requirements": 19,
+    "scenarios": 42,
+    "originalRequirements": 242,
+    "originalScenarios": 417
+  },
+  "wholeEarsAdded": 0,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "nextAction": "Publish actual component source/evidence, then integrate frozen beta7Elm0233/QA0510 and run proportional compiled/bridge + current Omarchy journey. Whole TEA004 requires remaining complete HTTP wrapper model/effect fixtures.",
+  "evidenceIndex": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts-index.json",
+  "remainingObservations": [
+    "Persistent public APIs are implemented and tested; application persistent backend/retained-root wiring remains incomplete.",
+    "No new original EARS adjudication: totals19/242 and42/417 remain.",
+    "Default production hooks are pure; private blocking test hooks can consume previously sampled wait budgets, with post-check refusing clean receipt. No strict injected-stall deadline-entry proof claimed.",
+    "Current beta GUI and Omarchy usability need source integration and fresh observation."
+  ]
+}

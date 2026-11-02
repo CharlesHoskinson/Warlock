@@ -3,7 +3,7 @@
 module Warlock.Transport.PeerCredentials
   ( CredentialReader, ReaderStatus(..), DescriptorState(..), PeerCredential(..)
   , CredentialError(..), CredentialChunk(..), newCredentialReader
-  , credentialReaderStatus, quarantineEvidence, readerExceptions, enablePassCredentials, receiveCredentialChunk
+  , credentialReaderStatus, quarantineEvidence, readerExceptions, enablePassCredentials, receiveCredentialChunk, receiveCredentialChunkWithWait
 #ifdef WARLOCK_CREDENTIAL_TESTING
   , newCredentialReaderWithCloseForTest, newCredentialReaderWithHooksForTest, preferExceptionForTest, scanForTest
 #endif
@@ -120,7 +120,12 @@ retireLedger r ptr = go 0 [] where
       case result of Left e -> go (i+1) (e:failures); Right _ -> go (i+1) failures
 
 receiveCredentialChunk :: CredentialReader -> Socket.Socket -> Int -> IO (Either CredentialError CredentialChunk)
-receiveCredentialChunk r socket requested
+receiveCredentialChunk r socket requested = receiveCredentialChunkWithWait r socket requested Nothing
+
+-- Private persistent route supplies a counted, owner-waking fd wait. The
+-- diagnostic route keeps its exact original threadWaitRead behavior.
+receiveCredentialChunkWithWait :: CredentialReader -> Socket.Socket -> Int -> Maybe (IO ()) -> IO (Either CredentialError CredentialChunk)
+receiveCredentialChunkWithWait r socket requested ownedWait
   | requested <= 0 || requested > maxChunk = pure (Left InvalidLimit)
   | otherwise = withMVar (lock r) $ \_ -> Socket.withFdSocket socket loop
   where
@@ -176,7 +181,7 @@ receiveCredentialChunk r socket requested
                               bytes <- B.packCStringLen (castPtr payload, fromIntegral n)
                               pure (Just (Right (CredentialChunk bytes credential))))
           `onException` (do withForeignPtr (ledgerMemory r) $ \ledger -> do slots <- ledgerStates ledger; writeIORef (state r) (ReaderQuarantined slots True))
-        case attempt of Nothing -> restore (threadWaitRead (fromIntegral fd)) >> loop fd; Just value -> pure value
+        case attempt of Nothing -> restore (maybe (threadWaitRead (fromIntegral fd)) id ownedWait) >> loop fd; Just value -> pure value
     eofResult parsed = case parsed of
       Left MissingCredential -> Right EndOfStream
       Left failure -> Left failure

@@ -1,0 +1,12 @@
+[ok] No violation found (4242ms at 2357 traces/second).
+Witnesses:
+witnessReady was witnessed in 2862 trace(s) out of 10000 explored (28.62%)
+witnessRefused was witnessed in 7138 trace(s) out of 10000 explored (71.38%)
+witnessExternal was witnessed in 1180 trace(s) out of 10000 explored (11.80%)
+witnessExit was witnessed in 2862 trace(s) out of 10000 explored (28.62%)
+witnessCallbackRetired was witnessed in 70 trace(s) out of 10000 explored (0.70%)
+witnessClean was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+witnessQuarantine was witnessed in 10000 trace(s) out of 10000 explored (100.00%)
+witnessDeadline was witnessed in 2862 trace(s) out of 10000 explored (28.62%)
+witnessPartialAsync was witnessed in 63 trace(s) out of 10000 explored (0.63%)
+Use --seed=0x13e1ff2 --backend=typescript to reproduce.

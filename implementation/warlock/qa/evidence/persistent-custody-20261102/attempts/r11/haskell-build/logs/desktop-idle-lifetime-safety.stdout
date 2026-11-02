@@ -1,0 +1,8 @@
+[ok] No violation found (9437ms at 1060 traces/second).
+Witnesses:
+witnessIdleBeyondFrameBudget was witnessed in 1 trace(s) out of 10000 explored (0.01%)
+witnessSecondDelivery was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+witnessExitWaiting was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+witnessRetireWaiting was witnessed in 1 trace(s) out of 10000 explored (0.01%)
+witnessPartialTimeout was witnessed in 257 trace(s) out of 10000 explored (2.57%)
+Use --seed=0x1584ff5 --backend=typescript to reproduce.

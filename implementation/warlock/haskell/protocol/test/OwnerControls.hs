@@ -160,18 +160,41 @@ main = do
  callbackEntered <- newEmptyMVar
  callbackRelease <- newEmptyMVar
  callbackDone <- newEmptyMVar
- drainingOwner <- newIngressOwner bindingValue FromElm (\_ -> putMVar callbackEntered () >> takeMVar callbackRelease) noopServer
+ drainCloseCalls <- newIORef (0 :: Int)
+ drainCallbackCalls <- newIORef (0 :: Int)
+ drainingOwner <- newIngressOwnerWithHooks bindingValue FromElm
+  (\_ -> do
+   modifyIORef' drainCallbackCalls (+1)
+   putMVar callbackEntered ()
+   takeMVar callbackRelease
+   N.sendAll drainSock "callback-drained")
+  noopServer F.configureSocketFlags
+  (\socket -> modifyIORef' drainCloseCalls (+1) >> S.close socket)
  _ <- transferSocket drainingOwner drainSock
  _ <- activateIngress drainingOwner
  N.sendAll drainPeer frame
  void $ forkIO $ mask $ \restore -> do result <- try (restore (receiveIngress drainingOwner)) :: IO (Either SomeException IngressResult); putMVar callbackDone result
  takeMVar callbackEntered
  draining <- retireIngress drainingOwner
- check "retirement preserves in-flight gate separately" (gate draining==G.Draining 1 && endpoint draining==Just EndpointConfirmed && phase draining==OwnerRetiring)
+ closesWhileDraining <- readIORef drainCloseCalls
+ check "retirement retains endpoint until admitted callback drains" (gate draining==G.Draining 1 && endpoint draining==Just EndpointOpen && phase draining==OwnerRetiring && closesWhileDraining==0)
+ refusedWhileDraining <- receiveIngress drainingOwner
+ refusedWrite <- enqueueIngress drainingOwner Ordinary "not-enqueued"
+ check "retirement refuses new work while callback drains" (refusedWhileDraining==TransportFailure Busy && refusedWrite==Left Closed)
  putMVar callbackRelease ()
  callbackFinished <- takeMVar callbackDone
+ callbackBytes <- readExactTest drainPeer (B.length "callback-drained")
  drained <- ingressStatus drainingOwner
- check "callback drains before owner retirement" (case callbackFinished of Right Delivered -> gate drained==G.Retired && phase drained==OwnerRetired; _ -> False)
+ drainedCallbackCount <- readIORef drainCallbackCalls
+ closesBeforeRetire <- readIORef drainCloseCalls
+ check "admitted callback uses retained endpoint before same-owner close" (case callbackFinished of Right Delivered -> callbackBytes=="callback-drained" && drainedCallbackCount==1 && gate drained==G.Retired && endpoint drained==Just EndpointOpen && phase drained==OwnerRetiring && closesBeforeRetire==0; _ -> False)
+ refusedAfterDrain <- receiveIngress drainingOwner
+ check "retired gate never admits a replacement callback" (refusedAfterDrain==NotLive)
+ settledDrain <- retireIngress drainingOwner
+ repeatedDrain <- retireIngress drainingOwner
+ closesAfterRetire <- readIORef drainCloseCalls
+ drainedEOF <- N.recv drainPeer 1
+ check "same-owner retirement closes drained endpoint exactly once" (gate settledDrain==G.Retired && phase settledDrain==OwnerRetired && endpoint settledDrain==Just EndpointConfirmed && repeatedDrain==settledDrain && closesAfterRetire==1 && B.null drainedEOF)
  S.close drainPeer
  -- Post-publication interruption leaves Live in the retained caller shell.
  (publishedSock,publishedPeer) <- S.socketPair S.AF_UNIX S.Stream S.defaultProtocol

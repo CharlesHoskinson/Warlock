@@ -1,0 +1,11 @@
+[ok] No violation found (4110ms at 2433 traces/second).
+Witnesses:
+witnessCommit was witnessed in 18 trace(s) out of 10000 explored (0.18%)
+witnessBar was witnessed in 52 trace(s) out of 10000 explored (0.52%)
+witnessPopup was witnessed in 63 trace(s) out of 10000 explored (0.63%)
+witnessTopology was witnessed in 55 trace(s) out of 10000 explored (0.55%)
+witnessNative was witnessed in 50 trace(s) out of 10000 explored (0.50%)
+witnessUnknown was witnessed in 540 trace(s) out of 10000 explored (5.40%)
+witnessRetired was witnessed in 1990 trace(s) out of 10000 explored (19.90%)
+witnessFocus was witnessed in 82 trace(s) out of 10000 explored (0.82%)
+Use --seed=0x1392925 --backend=typescript to reproduce.

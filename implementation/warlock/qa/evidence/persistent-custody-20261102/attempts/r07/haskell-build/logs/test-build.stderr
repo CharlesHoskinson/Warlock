@@ -1,0 +1,58 @@
+Warning: Specifying an absolute path to the project file is deprecated. Use
+--project-dir to set the project's directory.
+Warning: No remote package servers have been specified. Usually you would have
+one specified in the config file.
+
+src/Crypto/Hash/SHA256.hs:144:19: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+144 | copyCtx dst src = memcpy (castPtr dst) (castPtr src) (fromIntegral sizeCtx)
+    |                   ^^^^^^
+
+src/Crypto/Hash/SHA256.hs:336:53: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+336 |                    withByteStringPtr t' $ \tptr' -> memcpy p tptr' 32
+    |                                                     ^^^^^^
+configure: WARNING: unrecognized options: --with-compiler
+configure: WARNING: unrecognized options: --with-compiler
+
+test/PersistentControls.hs:242:6: error: [GHC-81995] [-Wunused-do-bind, Werror=unused-do-bind]
+    A do-notation statement discarded a result of type
+      ‘ghc-prim:GHC.Types.Any’
+    Suggested fix:
+      Suppress this warning by saying ‘_ <- takeMVar neverVar’
+    |
+242 |      takeMVar neverVar
+    |      ^^^^^^^^^^^^^^^^^
+
+test/PersistentControls.hs:287:6: error: [GHC-81995] [-Wunused-do-bind, Werror=unused-do-bind]
+    A do-notation statement discarded a result of type
+      ‘ghc-prim:GHC.Types.Any’
+    Suggested fix:
+      Suppress this warning by saying ‘_ <- takeMVar expHoldVerify’
+    |
+287 |      takeMVar expHoldVerify
+    |      ^^^^^^^^^^^^^^^^^^^^^^
+
+test/PersistentControls.hs:404:79: error: [GHC-18042] [-Wtype-defaults, Werror=type-defaults]
+    • Defaulting the type variable ‘a0’ to type ‘String’ in the following constraints
+        (Data.String.IsString a0)
+          arising from the literal ‘"dup"’
+          at test/PersistentControls.hs:404:79-83
+        (Eq a0)
+          arising from a use of ‘==’ at test/PersistentControls.hs:407:19-20
+    • In the first argument of ‘Right’, namely ‘"dup"’
+      In the first argument of ‘pure’, namely ‘(Right "dup")’
+      In the fourth argument of ‘enterLiveFrameAction’, namely
+        ‘(pure (Right "dup"))’
+    |
+404 |      secondTry <- enterLiveFrameAction adm actionLong actionLong (pure (Right "dup"))
+    |                                                                               ^^^^^
+Error: [Cabal-7125]
+Failed to build test:deadline-stop-controls from warlock-process-custody-0.1.0.0.
+

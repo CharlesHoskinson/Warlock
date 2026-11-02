@@ -3,9 +3,12 @@ module Main (main) where
 import Control.Concurrent (forkIO, newEmptyMVar, putMVar, takeMVar, threadDelay)
 import Control.Monad (unless)
 import Data.IORef (newIORef, readIORef, writeIORef)
+import Foreign.StablePtr (StablePtr)
 import System.Directory (doesFileExist, getTemporaryDirectory, removeFile)
 import System.Environment (getArgs)
 import System.IO (IOMode(ReadMode), hClose, openFile, openTempFile)
+import PersistentControls (runPersistentControlsWithRegistry)
+import Warlock.Capture.Process.Persistent (PersistentOwner, PersistentStatus(..), persistentStatus)
 import Warlock.Capture.Process.Internal
 
 check :: String -> Bool -> IO ()
@@ -93,4 +96,14 @@ main = do
    closingState <- status closingOwner
    check "owner settles after inflight scope drain" (closingState == Available)
    removeFile closingMarker
+   -- Outer IORef + unreleased GHC RTS StablePtr pre-registers every test owner
+   -- before acquisition/spawn across both normal and exceptional control flow;
+   -- process exit is not itself an owned reap, event-manager, or pipe/pidfd receipt.
+   outerRegistry <- newIORef ([] :: [(PersistentOwner, StablePtr PersistentOwner)])
+   runPersistentControlsWithRegistry outerRegistry child
+   outerEntries <- readIORef outerRegistry
+   outerStatuses <- mapM (persistentStatus . fst) outerEntries
+   let outerQuarantined = length [() | PersistentQuarantined _ <- outerStatuses]
+   check "outer registry retains original 25 and generated 32 owners (15 quarantined) through suite exit"
+    (length outerEntries == 57 && outerQuarantined == 15)
   _ -> ioError (userError "expected child executable path")

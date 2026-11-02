@@ -19,6 +19,7 @@ import System.Directory (createDirectory,listDirectory)
 import System.Environment (getArgs,getEnv)
 import System.Exit (ExitCode(..))
 import System.FilePath ((</>),takeDirectory,isAbsolute)
+import System.IO (BufferMode(LineBuffering),hSetBuffering,stdout)
 import System.Posix.Files (createLink,createSymbolicLink,deviceID,fileID,fileMode,fileSize,getSymbolicLinkStatus,isRegularFile,linkCount,setFileMode)
 import System.Posix.IO (OpenMode(ReadWrite),closeFd,creat,defaultFileFlags,openFd)
 import System.Posix.Types (Fd(..))
@@ -75,6 +76,7 @@ pinImage path = do
 
 main :: IO ()
 main = do
+  hSetBuffering stdout LineBuffering
   args <- getArgs
   (backend,backendPins,child,childPins,root) <- case args of
     [b,bd,bi,bs,bh,c,cd,ci,cs,ch,r] -> pure (b,[bd,bi,bs,bh],c,[cd,ci,cs,ch],r)
@@ -86,6 +88,8 @@ main = do
   let check label good = do
         modifyIORef' count (+1)
         unless good (ioError (userError label))
+        current <- readIORef count
+        if current `mod` 50==0 then putStrLn ("ui-backend-controls checks completed: "++show current) else pure ()
       make label = fresh (root </> label)
   beforeRoot <- listDirectory root
   check "root supplied fresh private test directory" (null beforeRoot)
@@ -324,7 +328,9 @@ main = do
       selectedManifest=root </> "frontend-selected.json"
       frontendReport=root </> "frontend-report.json"
   writePrivate selectedManifest (encoded (obj [("backend",imageJson backend backendPins),("ui",imageJson child childPins),("config",frontendConfig)]))
+  putStrLn "ui-backend-controls: entering actual compiled Elm and selected production backend"
   (frontendCode,frontendOut,frontendErr) <- readProcessWithExitCode node [harness,mainJs,selectedManifest,root </> "actual-main",frontendReport] ""
+  putStrLn "ui-backend-controls: actual frontend/backend invocation returned"
   writePrivate (root </> "frontend.stdout") (C.pack frontendOut)
   writePrivate (root </> "frontend.stderr") (C.pack frontendErr)
   reportBytes <- B.readFile frontendReport

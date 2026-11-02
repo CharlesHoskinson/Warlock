@@ -92,16 +92,19 @@ main = do
   h <- fdToHandle (Fd 0)
   hSetBinaryMode h True
   hSetBuffering h NoBuffering
-  replies <- fmap concat $ forM steps $ \(Step wire count expectRefusal) -> do
+  replies <- fmap concat $ forM (zip steps [length steps-1,length steps-2..0 :: Int]) $ \(Step wire count expectRefusal,remainingSteps) -> do
     let framed=wireFrame wire; (first,rest)=B.splitAt 3 framed
     B.hPut h first
     B.hPut h rest
     results <- mapM (const (readFrame h)) [1..count]
     if expectRefusal then refusal h else pure ()
     -- No invented ACK exists for presentation-only commits. Keep the selected
-    -- producer alive briefly; the independent caller checks the real callback
-    -- receipt instead of treating this liveness interval as an acknowledgement.
-    if count==0 && not expectRefusal then threadDelay 100000 else pure ()
+    -- producer alive briefly after its final unanswered frame. While more
+    -- frames follow, sending them already keeps the producer alive; sleeping
+    -- after each frame only spends the caller's unchanged deadline. The
+    -- independent caller still checks every real callback receipt; this final
+    -- liveness interval is not an acknowledgement or evidence of draining.
+    if remainingSteps==0 && count==0 && not expectRefusal then threadDelay 100000 else pure ()
     pure results
   fd <- openFd output WriteOnly defaultFileFlags {creat=Just 0o600,exclusive=True}
   result <- fdToHandle fd `catch` (\err -> closeFd fd >> ioError (err :: IOException))

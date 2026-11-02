@@ -1,0 +1,41 @@
+Warning: Specifying an absolute path to the project file is deprecated. Use
+--project-dir to set the project's directory.
+Warning: No remote package servers have been specified. Usually you would have
+one specified in the config file.
+
+src/Crypto/Hash/SHA256.hs:144:19: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+144 | copyCtx dst src = memcpy (castPtr dst) (castPtr src) (fromIntegral sizeCtx)
+    |                   ^^^^^^
+
+src/Crypto/Hash/SHA256.hs:336:53: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+336 |                    withByteStringPtr t' $ \tptr' -> memcpy p tptr' 32
+    |                                                     ^^^^^^
+configure: WARNING: unrecognized options: --with-compiler
+configure: WARNING: unrecognized options: --with-compiler
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:953:34: error: [GHC-63397] [-Wname-shadowing, Werror=name-shadowing]
+    This binding for ‘env’ shadows the existing binding
+      imported from ‘System.Process’ at src/Warlock/Capture/Process/Persistent/Internal.hs:84:24-40
+      (and originally defined in ‘process-1.6.19.0:System.Process.Common’)
+    |
+953 | persistentHeld lease args ticket env
+    |                                  ^^^
+
+src/Warlock/Capture/Process/Persistent/Internal.hs:958:34: error: [GHC-63397] [-Wname-shadowing, Werror=name-shadowing]
+    This binding for ‘env’ shadows the existing binding
+      imported from ‘System.Process’ at src/Warlock/Capture/Process/Persistent/Internal.hs:84:24-40
+      (and originally defined in ‘process-1.6.19.0:System.Process.Common’)
+    |
+958 | persistentHeldNoInput lease args env
+    |                                  ^^^
+Error: [Cabal-7125]
+Failed to build warlock-process-custody-0.1.0.0 (which is required by exe:warlock-ui-owner from warlock-runtime-0.1.0.0, exe:warlock-ui-backend from warlock-runtime-0.1.0.0 and others).
+

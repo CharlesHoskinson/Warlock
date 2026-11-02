@@ -1,0 +1,12 @@
+[ok] No violation found (8150ms at 1227 traces/second).
+Witnesses:
+witnessMismatch was witnessed in 4856 trace(s) out of 10000 explored (48.56%)
+witnessVisibleUnqualifiedCleanup was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+witnessExitLateCallback was witnessed in 2 trace(s) out of 10000 explored (0.02%)
+witnessExternalSurvives was witnessed in 2 trace(s) out of 10000 explored (0.02%)
+witnessDeathBeforeRegistration was witnessed in 659 trace(s) out of 10000 explored (6.59%)
+witnessLeakedWriter was witnessed in 215 trace(s) out of 10000 explored (2.15%)
+witnessUnknownQuarantine was witnessed in 3 trace(s) out of 10000 explored (0.03%)
+witnessDeadline was witnessed in 10000 trace(s) out of 10000 explored (100.00%)
+witnessClean was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+Use --seed=0x1562fc2 --backend=typescript to reproduce.

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-02T03:11:36.498172+00:00",
+  "updatedUTC": "2026-11-02T05:49:30.923984+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -16,23 +16,37 @@
       "ownership-presentation"
     ],
     "paths": [
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
-      "implementation/warlock/qa/store-retirement/AcquisitionFailureControls.hs",
-      "implementation/warlock/qa/store-retirement/AcquisitionFailureMain.hs",
-      "implementation/warlock/qa/store-retirement/Main.hs",
-      "implementation/warlock/qa/store-retirement/README.md",
-      "implementation/warlock/qa/store-retirement/StoreRetirement.overlay.patch",
-      "implementation/warlock/qa/store-retirement/store-retirement-guided.qnt",
-      "implementation/warlock/qa/store-retirement/store-retirement.qnt",
-      "implementation/warlock/qa/store-retirement/store-retirement_test.qnt",
-      "implementation/warlock/qa/store-retirement/warlock-store-retirement-qa.cabal"
+      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs",
+      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs",
+      "implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs",
+      "implementation/warlock/haskell/process-custody/process-custody.cabal",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs",
+      "implementation/warlock/haskell/process-custody/test/DeadlineStop.hs",
+      "implementation/warlock/haskell/process-custody/test/PersistentControls.hs",
+      "implementation/warlock/haskell/protocol/protocol.cabal",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "implementation/warlock/haskell/protocol/test/OwnerControls.hs",
+      "implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs",
+      "implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs",
+      "implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs",
+      "implementation/warlock/haskell/process-custody/README.md",
+      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+      "implementation/warlock/haskell/runtime/test-ui/Main.hs"
     ],
-    "before": "A resource could be acquired before its owner record was published; an ambiguous acquisition failure could leave an empty record list and false clean retirement.",
-    "after": "Actual production preregisters Acquiring, distinguishes explicit no-resource receipts, retains uncertainty and seals new work; settled-only APIs never start or retry physical close.",
+    "before": "The selected application still has bounded-conversation lifetime and incomplete current native authority/lifetime cleanup proof.",
+    "after": "Introduce retained persistent process ownership, lexical frame/action budgets and callback-safe endpoint retirement; qualify actual lifecycle before wiring the persistent application.",
     "verification": [
-      "Protected345input36suite104command pass; identical actual old/new source RED1/GREEN0, isolated fault controls;14named and10k40step samples with explicit uniformzero coverage and separate1guidedpositive; fresh217source Omarchy17input live trial still exits1 with cleanupUnknown."
+      "Root protected actual production/test compile, existing formal checks, all36behavioral suites, original25owner controls plus32seed real public frame/batch lifecycle sequences and actual socket callback-drain/once-only close. Live/native/application wiring remains separate."
     ]
   },
   "nextSlices": [
@@ -3767,7 +3781,7 @@
     "acceptedScenarios": 42,
     "behaviorChange": "Retain typed confirmation/receipt phases for Files, application actions, shortcuts, motion preferences and system controls; preserve Unknown reservations without replay. Typed geometry capabilities, snap regions, motion source and transport failures preserve existing boundary wire and labels. SessionClosing explicitly denies Logout; other bounded observed text is preserved."
   },
-  "nextConcreteAction": "Publish actual verified Store foundation and stop expanding this completed investigation. Integrate smallest reviewed v17 persistent custody/request production source with direct lifecycle controls, exact preimages and originalStopD. Keep provider/native flags false until genuine evidence; preserve concurrent website/GUI work.",
+  "nextConcreteAction": "Publish actual component source/evidence, then integrate frozen beta7Elm0233/QA0510 and run proportional compiled/bridge + current Omarchy journey. Whole TEA004 requires remaining complete HTTP wrapper model/effect fixtures.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4113,6 +4127,38 @@
       "disposition": "45-minutes without production fix/original verdict; current actual Apps click-to-search journey failed; do not extend this investigation or reset timers.",
       "stoppedObservation": ".warlock-contributor/evidence/ui005-live-query-refresh-stopped-2049.json",
       "previousHistoryPreserved": true
+    },
+    {
+      "observedUTC": "2026-11-02T04:14:32.940438+00:00",
+      "reason": "Same original ARC002 record dependency advances from published Store foundation to persistent process/ingress source; original record history/timer preserved.",
+      "slice": {
+        "id": "engine-pid1-ownership",
+        "requirements": [
+          "ELM-ARC-002"
+        ],
+        "scenarios": [
+          "ownership-presentation"
+        ],
+        "paths": [
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
+          "implementation/warlock/qa/store-retirement/AcquisitionFailureControls.hs",
+          "implementation/warlock/qa/store-retirement/AcquisitionFailureMain.hs",
+          "implementation/warlock/qa/store-retirement/Main.hs",
+          "implementation/warlock/qa/store-retirement/README.md",
+          "implementation/warlock/qa/store-retirement/StoreRetirement.overlay.patch",
+          "implementation/warlock/qa/store-retirement/store-retirement-guided.qnt",
+          "implementation/warlock/qa/store-retirement/store-retirement.qnt",
+          "implementation/warlock/qa/store-retirement/store-retirement_test.qnt",
+          "implementation/warlock/qa/store-retirement/warlock-store-retirement-qa.cabal"
+        ],
+        "before": "A resource could be acquired before its owner record was published; an ambiguous acquisition failure could leave an empty record list and false clean retirement.",
+        "after": "Actual production preregisters Acquiring, distinguishes explicit no-resource receipts, retains uncertainty and seals new work; settled-only APIs never start or retry physical close.",
+        "verification": [
+          "Protected345input36suite104command pass; identical actual old/new source RED1/GREEN0, isolated fault controls;14named and10k40step samples with explicit uniformzero coverage and separate1guidedpositive; fresh217source Omarchy17input live trial still exits1 with cleanupUnknown."
+        ]
+      }
     }
   ],
   "activeContributorRecord": ".warlock-contributor/engine-pid1.json",
@@ -4165,7 +4211,7 @@
     "participantRecord": ".warlock-contributor/tea-model-effects.json",
     "originalStopHistoriesPreserved": true
   },
-  "activeVerificationPhase": "Cancellation source and7293DOM/130typed/57model qualified; live17input visual observation retained with forced pinned-guard failure, not lifecycle/native success.",
+  "activeVerificationPhase": "r19 focused backend/frontend passed and terminal consumed; publish verified component before next actual beta GUI integration",
   "threadNamespaceGuardCheckpoint": {
     "source": "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs",
     "protectedReport": ".warlock-contributor/haskell-cpu-1793538664658280462/report.json",
@@ -4219,6 +4265,11 @@
       "retainedFailure": ".warlock-contributor/haskell-cpu-1793552951595244964/report.json",
       "retainedFailureDetail": "Nine suites inclnewidleSCM and273named modelcases pass; productionCLIcontrolledchild retired beforefinalframe consumption, leaving3/4callbacks EndpointChanged. Testfix movesexistingsinglecatalogrequest7 into4thfinalframe andawaitsmatchingauthenticatedresponse; unchanged4frames1operationoriginal5sD.",
       "observation": "implementation/warlock/qa/evidence/engine-idle-20261101/component-observation.json"
+    },
+    {
+      "observedUTC": "2026-11-02T04:14:32.940438+00:00",
+      "previousLiteral": "Cancellation source and7293DOM/130typed/57model qualified; live17input visual observation retained with forced pinned-guard failure, not lifecycle/native success.",
+      "reason": "Reconcile stale old cancellation/guard phase with actual integrated source and current protected process."
     }
   ],
   "earsDeliveryTarget": {
@@ -4299,9 +4350,8 @@
     "onMiss": "Report actual count and concrete gaps; reprioritize the next complete original requirement under existing WIP/QA/readiness gates. Do not weaken evidence, reset stopped investigations, fabricate closure or pause full goal.",
     "acceptanceBoundary": "All242requirements/417scenarios/deadlines/failed/native/AT/IME/hardware/resource/release obligations remain. Performance/UX criteria apply through existing workflow.",
     "nextCompleteCandidateQueue": [
-      "ELM-TEA-002/tea-pure-update",
-      "ELM-TEA-001/tea-typed-model",
-      "ELM-TEA-005/tea-narrow-interop"
+      "ELM-TEA-004/tea-subscriptions",
+      "ELM-ARC-002/ownership-presentation"
     ],
     "hourlyActuals": [
       {
@@ -4492,19 +4542,84 @@
           "No whole original/native/ATIME/hardware/resource/release closure from Store component checks."
         ],
         "replan": "Publish verified Store foundation; next actual persistent custody/request source integration and current Omarchy testing, keep15roles and all original obligations."
+      },
+      {
+        "startedUTC": "2026-11-02T02:11:37.655841+00:00",
+        "endedUTC": "2026-11-02T03:11:37.655841+00:00",
+        "reportedUTC": "2026-11-02T04:14:32.940438+00:00",
+        "ledgerSHA256": "d2877ac05fc8a57858483594ce646ff4e97c28951d8f1665a4e936887fd06bca",
+        "wholeRequirementsAccepted": 19,
+        "acceptedScenarios": 42,
+        "newWholeRequirementIds": [],
+        "newWholeEarsClosures": 0,
+        "newAcceptedScenarios": [],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Published actual Store acquisition/retirement fix a327c8f7f;36component suites and real old/new fault controls passed.",
+          "Current Omarchy17input search/refresh sequence completed; selected childexit1 and strict cleanup unconfirmed remain."
+        ],
+        "blockingClosureGaps": [
+          "Actual persistent application Root acquisition/retirement and trusted request wiring remain under implementation.",
+          "No whole/native/provider/AT/IME/hardware/resource/release closure inferred from component checks."
+        ],
+        "replan": "Finish current actual custody regression/property qualification; integrate concrete persistent application wiring and a complete source-contract EARS with truthful current GUI usability tests."
+      },
+      {
+        "startedUTC": "2026-11-02T03:11:37.655841+00:00",
+        "endedUTC": "2026-11-02T04:11:37.655841+00:00",
+        "reportedUTC": "2026-11-02T04:14:32.940438+00:00",
+        "ledgerSHA256": "d2877ac05fc8a57858483594ce646ff4e97c28951d8f1665a4e936887fd06bca",
+        "wholeRequirementsAccepted": 19,
+        "acceptedScenarios": 42,
+        "newWholeRequirementIds": [],
+        "newWholeEarsClosures": 0,
+        "newAcceptedScenarios": [],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Applied actual persistent custody/credential transport and shared request handler; fixed real compiler diagnostics under unchanged warning policy.",
+          "Protected r8 production+test compilation and retained formal stage completed;35/36suites passed including25owner persistent controls; old ingress immediate-close expectation failed.",
+          "Added stronger real socket drain/once-only-close regression and32seed public lifecycle controls; active qualification is not acceptance."
+        ],
+        "blockingClosureGaps": [
+          "Actual persistent application Root acquisition/retirement and trusted request wiring remain under implementation.",
+          "No whole/native/provider/AT/IME/hardware/resource/release closure inferred from component checks."
+        ],
+        "replan": "Finish current actual custody regression/property qualification; integrate concrete persistent application wiring and a complete source-contract EARS with truthful current GUI usability tests."
+      },
+      {
+        "startedUTC": "2026-11-02T04:11:37.655841+00:00",
+        "endedUTC": "2026-11-02T05:11:37.655841+00:00",
+        "reportedUTC": "2026-11-02T05:27:10.200200+00:00",
+        "wholeRequirementsAccepted": 19,
+        "acceptedScenarios": 42,
+        "newWholeRequirementIds": [],
+        "newWholeEarsClosures": 0,
+        "newAcceptedScenarios": [],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Actual deterministic child-exit race oldRED/newGREEN and13observedboundednaturalexitwaitpositives.",
+          "Original25ownercontrols plus32real seeded lifecycle cases and26socketingress checks pass focusedguardedverification."
+        ],
+        "blockingClosureGaps": [
+          "FullapplicationpersistentBackend/resolverwiringandoriginalpresentation/effectproof remain incomplete.",
+          "Newfullregressionbridge timeout later observed; no wholeEARSclaimedfromcomponentprogress."
+        ],
+        "replan": "Diagnose bridge timeout, publish testedcore source, then implement/adjudicatecompleteTEA004 with real all-root/full-state/effect boundaries and currentGUI tests."
       }
     ],
-    "currentWindowStartedUTC": "2026-11-02T02:11:37.655841+00:00",
-    "nextReportDueUTC": "2026-11-02T03:11:37.655841+00:00",
+    "currentWindowStartedUTC": "2026-11-02T05:11:37.655841+00:00",
+    "nextReportDueUTC": "2026-11-02T06:11:37.655841+00:00",
     "currentWindowProgress": {
-      "observedUTC": "2026-11-02T03:11:36.498172+00:00",
-      "windowStartedUTC": "2026-11-02T02:11:37.655841+00:00",
+      "observedUTC": "2026-11-02T05:27:10.200200+00:00",
+      "windowStartedUTC": "2026-11-02T05:11:37.655841+00:00",
       "wholeRequirementsAccepted": 19,
       "acceptedScenarios": 42,
       "newWholeRequirementIds": [],
       "newWholeEarsClosures": 0,
-      "newAcceptedScenarios": [],
-      "counting": "Store component implementation/build/model/live observations are not whole original EARS closures."
+      "newAcceptedScenarios": []
     }
   },
   "ui005CurrentStackCheckpoint": {
@@ -4708,5 +4823,39 @@
     "originalRequirements": 242,
     "originalScenarios": 417
   },
-  "storeRetirementComponent": "docs/warlock-build-loop/v2/store-retirement-component-20261102.json"
+  "storeRetirementComponent": "docs/warlock-build-loop/v2/store-retirement-component-20261102.json",
+  "persistentCustodyIntegration": {
+    "component": "docs/warlock-build-loop/v2/persistent-custody-component-20261102.json",
+    "status": "verified component source and focused frontend/backend regression; no whole original or native acceptance",
+    "verification": {
+      "report": "implementation/warlock/qa/evidence/persistent-custody-20261102/attempts/r19/report.json",
+      "reviewSHA256": "d761af56619b4f053d433b1fcf42be61c70ebaa049d38e3a38a18a89d2059f24",
+      "suites": 1,
+      "haskellAssertions": 161,
+      "generatedHostileFrames": 32,
+      "frontendAssertions": 8010,
+      "realBackendSessions": 40,
+      "completeCommittedFrames": 401,
+      "executedCompleteFrames": 401,
+      "maximumPresentationBatch": 16,
+      "sessionDeadlineNanoseconds": "5000000000",
+      "wrapperDeadlineSeconds": 180,
+      "timeout": false,
+      "forcedCleanup": false,
+      "exit": 0,
+      "modelsExecuted": false,
+      "changedInputsFromR18": [
+        "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+        "implementation/warlock/haskell/runtime/test-ui/Main.hs",
+        "tools/check_haskell_cpu.py",
+        "tools/haskell_build.py",
+        "tools/qa_cpu.py"
+      ],
+      "unchangedProductionAndElmInputs": true,
+      "scope": "Actual compiled Main to selected Haskell CLI on private host component fixture; no rendered GUI or native/release acceptance."
+    },
+    "wholeEarsAdded": 0,
+    "nativeAccepted": false,
+    "releaseAccepted": false
+  }
 }

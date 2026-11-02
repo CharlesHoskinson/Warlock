@@ -4,7 +4,7 @@
 module Warlock.Capture.Process.Transfer.Internal
  (TransferTicket, CoreTransfer, OwnerToken, TransferDisposition(..), TransferError(..),
   newTransferTicket, closeCallerTransfer, transferDisposition, newOwnerToken,
-  claimTransfer, claimTransferWhen, coreHandle, coreCloseDiagnostic, closeCoreTransfer, fixtureTicketWithClose) where
+  claimTransfer, claimTransferWhen, coreHandle, coreCloseDiagnostic, closeCoreTransfer, tryCoreClosedMatches, fixtureTicketWithClose) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException, SomeAsyncException, fromException, mask, try, throwIO, uninterruptibleMask_)
 import Data.Unique (Unique, newUnique)
@@ -47,6 +47,18 @@ coreHandle (CoreTransfer (TransferTicket m) token) = withMVar m $ \s -> pure $ c
  CoreLive h _ owner | owner == token -> Right h
  _ -> Left WrongOwner
 -- Only the matching retained core capability can inspect its close diagnostic.
+-- Read-only exact retained ownership check; Nothing means the same ticket
+-- gate is busy. It does not close, retry or turn uncertain into a receipt.
+tryCoreClosedMatches :: CoreTransfer -> TransferTicket -> IO (Maybe Bool)
+tryCoreClosedMatches (CoreTransfer (TransferTicket coreGate) token) (TransferTicket ticketGate)
+ | coreGate /= ticketGate = pure (Just False)
+ | otherwise = do
+    snapshot <- tryReadMVar coreGate
+    pure $ case snapshot of
+     Nothing -> Nothing
+     Just (Closed (Core owner)) -> Just (owner == token)
+     Just _ -> Just False
+
 coreCloseDiagnostic :: CoreTransfer -> IO (Maybe SomeException)
 coreCloseDiagnostic (CoreTransfer (TransferTicket m) token) = withMVar m $ \s -> pure $ case s of
  Uncertain _ (Core owner) _ cause | owner == token -> cause

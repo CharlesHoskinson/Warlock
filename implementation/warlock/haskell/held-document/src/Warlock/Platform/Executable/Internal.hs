@@ -2,7 +2,7 @@
 module Warlock.Platform.Executable.Internal
  (ExecutableLease, HeldExecutable, LeaseRole(..), LeaseState(..), LeaseError(..)
  ,newExecutableLease, acquireExecutableLease, acquireExecutableLeaseWithHooks, issueReadyExecutable, retireExecutableLease
- ,executableLeaseState, borrowHeld, retireHeld) where
+ ,executableLeaseState, HeldBorrow, prepareHeldBorrow, activateHeldBorrowWhile, tryHeldBorrowNotAcquired, tryReleaseHeld, releaseHeldBorrow, borrowHeld, borrowHeldInterruptible, borrowHeldWhile, retireHeld) where
 
 import Control.Concurrent.MVar
 import Control.Exception (SomeException, SomeAsyncException, fromException, mask, onException, throwIO, try, uninterruptibleMask_)
@@ -18,8 +18,11 @@ data LeaseError = LeaseBusy | LeaseClosed | LeaseCloseUncertain deriving (Eq,Sho
 data Slot = Empty | Building | Pending Fd | Ready Fd Resolution LeaseRole | Closing Fd | Closed | Moved HeldExecutable | Unknown Fd
 newtype ExecutableLease = ExecutableLease (MVar Slot)
 data HeldState = Live Integer | HeldClosing | HeldClosed | HeldUnknown
+data BorrowRelease = BorrowNew | BorrowActivating | BorrowNotAcquired | BorrowPending | BorrowReleased | BorrowUnknown
 -- Exactly one package-private owner; no external constructor from an FD.
 data HeldExecutable = HeldExecutable Fd (MVar HeldState)
+-- Opaque per-acquisition release state; constructor never leaves this module.
+data HeldBorrow = HeldBorrow Fd (MVar BorrowRelease) (MVar HeldState)
 
 -- No syscall, callback, or external action is run inside these state operations.
 transition :: MVar a -> (a -> (a,b)) -> IO b
@@ -125,17 +128,172 @@ issueReadyExecutable (ExecutableLease gate) = mask $ \_ -> do
   _ -> (s,Nothing)
 
 borrowHeld :: HeldExecutable -> IO (Either LeaseError (FilePath,IO ()))
-borrowHeld held@(HeldExecutable (Fd fd) gate) = mask $ \_ -> do
- released <- newMVar False
+borrowHeld held = mask $ \_ -> do
+ result <- borrowHeldInterruptible held
+ case result of
+  Left err -> pure (Left err)
+  Right (path,_,release) -> pure (Right (path,release)) `onException` release
+
+-- Adds an interruptible release action that blocks on the state MVar under
+-- normal mask (interruptible by System.Timeout.timeout while contended) and
+-- commits Live (n-1) + released=True atomically once acquired, restoring
+-- released=False without mutating Live n if interrupted while waiting.
+-- Both routes share exactly one sticky release implementation. Acquisition
+-- callbacks run only while the held-state gate is full, never under that gate.
+-- Only the internal acquisition can construct this exact per-borrow capability.
+-- The normal legacy operation and the nonblocking operation share its one state.
+releaseHeldNow :: HeldBorrow -> IO Bool
+releaseHeldNow (HeldBorrow _ released gate) = mask $ \_ -> do
+ state <- takeMVar released
+ case state of
+  BorrowReleased -> putMVar released BorrowReleased >> pure True
+  BorrowUnknown -> putMVar released BorrowUnknown >> pure False
+  BorrowNew -> putMVar released BorrowNew >> pure False
+  BorrowActivating -> putMVar released BorrowActivating >> pure False
+  BorrowNotAcquired -> putMVar released BorrowNotAcquired >> pure False
+  BorrowPending -> do
+   ownerState <- takeMVar gate `onException` putMVar released BorrowPending
+   uninterruptibleMask_ $ case ownerState of
+    Live n | n > 0 -> do
+     putMVar gate (Live (n - 1))
+     putMVar released BorrowReleased
+     pure True
+    _ -> do
+     putMVar gate HeldUnknown
+     putMVar released BorrowUnknown
+     pure False
+
+-- Legacy cleanup only. This can block; it must never be invoked while holding
+-- the owner stop gate or treated as bounded by a timeout.
+releaseHeldBorrow :: HeldBorrow -> IO ()
+releaseHeldBorrow capability = uninterruptibleMask_ (releaseHeldNow capability >> pure ())
+
+-- Owner may call this while it holds its own stop gate and has checked its
+-- original deadline. Nothing means this release attempt made no decrement;
+-- an in-flight activation may still commit, so Nothing is not a no-borrow
+-- receipt. Just False is sticky uncertainty; Just True is only this exact
+-- capability's release receipt.
+tryReleaseHeld :: HeldBorrow -> IO (Maybe Bool)
+tryReleaseHeld (HeldBorrow _ released gate) = mask $ \_ -> do
+ claim <- tryTakeMVar released
+ case claim of
+  Nothing -> pure Nothing
+  Just BorrowReleased -> putMVar released BorrowReleased >> pure (Just True)
+  Just BorrowUnknown -> putMVar released BorrowUnknown >> pure (Just False)
+  Just BorrowNew -> putMVar released BorrowNew >> pure Nothing
+  Just BorrowActivating -> putMVar released BorrowActivating >> pure Nothing
+  Just BorrowNotAcquired -> putMVar released BorrowNotAcquired >> pure Nothing
+  Just BorrowPending -> do
+   ownerState <- tryTakeMVar gate `onException` putMVar released BorrowPending
+   case ownerState of
+    Nothing -> putMVar released BorrowPending >> pure Nothing
+    Just state -> uninterruptibleMask_ $ case state of
+     Live n | n > 0 -> do
+      putMVar gate (Live (n - 1))
+      putMVar released BorrowReleased
+      pure (Just True)
+     _ -> do
+      putMVar gate HeldUnknown
+      putMVar released BorrowUnknown
+      pure (Just False)
+
+-- Allocate the unique owner-retainable capability BEFORE any borrow count
+-- changes. Owner must retain it before calling activateHeldBorrowWhile.
+prepareHeldBorrow :: HeldExecutable -> IO HeldBorrow
+prepareHeldBorrow (HeldExecutable fd gate) = HeldBorrow fd <$> newMVar BorrowNew <*> pure gate
+
+-- True is a terminal receipt for this exact capability: activation returned
+-- without acquiring. Busy, new, in-flight, successful and uncertain are False.
+tryHeldBorrowNotAcquired :: HeldBorrow -> IO Bool
+tryHeldBorrowNotAcquired (HeldBorrow _ released _) = do
+ state <- tryReadMVar released
+ pure $ case state of Just BorrowNotAcquired -> True; _ -> False
+
+-- Single-use acquisition for an already owner-retained capability. All
+-- cancellation observations and waits occur outside held/release locks.
+-- A thrown exception retains the capability; no cleanup or no-borrow receipt
+-- is inferred. The owner still rechecks its original start/stop before spawn.
+activateHeldBorrowWhile :: HeldBorrow -> IO Bool -> IO () -> IO (Maybe (Either LeaseError FilePath))
+activateHeldBorrowWhile (HeldBorrow (Fd fd) released gate) cancelled pause = mask $ \_ -> do
  pid <- getProcessID
- let release = uninterruptibleMask_ $ modifyMVar_ released $ \done ->
-      if done then pure True else case held of
-       HeldExecutable _ owner -> do
-        modifyMVar_ owner $ \s -> case s of Live n | n > 0 -> pure (Live (n-1)); _ -> pure HeldUnknown
-        pure True
+ let path = "/proc/" ++ show pid ++ "/fd/" ++ show fd
+ started <- tryTakeMVar released
+ case started of
+  Nothing -> pure (Just (Left LeaseBusy))
+  Just BorrowNew -> do
+   putMVar released BorrowActivating
+   let markStopped = do
+        state <- tryTakeMVar released
+        case state of
+         Just BorrowActivating -> putMVar released BorrowNotAcquired >> pure Nothing
+         Just other -> putMVar released other >> pure (Just (Left LeaseBusy))
+         Nothing -> pure (Just (Left LeaseBusy))
+       loop = do
+        stopped <- cancelled
+        if stopped then markStopped else do
+         state <- tryTakeMVar released
+         case state of
+          Nothing -> pause >> loop
+          Just BorrowActivating -> do
+           slot <- tryTakeMVar gate `onException` putMVar released BorrowActivating
+           case slot of
+            Nothing -> putMVar released BorrowActivating >> pause >> loop
+            Just heldState -> uninterruptibleMask_ $ case heldState of
+             Live n -> do
+              putMVar gate (Live (n+1))
+              putMVar released BorrowPending
+              pure (Just (Right path))
+             _ -> do
+              putMVar gate heldState
+              putMVar released BorrowNotAcquired
+              pure (Just (Left LeaseClosed))
+          Just other -> putMVar released other >> pure (Just (Left LeaseBusy))
+   loop
+  Just other -> putMVar released other >> pure (Just (Left LeaseBusy))
+
+borrowHeldWith :: (MVar HeldState -> IO (Maybe Bool)) -> HeldExecutable
+ -> IO (Maybe (Either LeaseError (FilePath,IO Bool,IO (),HeldBorrow)))
+borrowHeldWith acquire (HeldExecutable (Fd fd) gate) = mask $ \_ -> do
+ released <- newMVar BorrowPending
+ pid <- getProcessID
+ let capability = HeldBorrow (Fd fd) released gate
+     releaseNow = releaseHeldNow capability
+     release = releaseHeldBorrow capability
      path = "/proc/" ++ show pid ++ "/fd/" ++ show fd
- accepted <- transition gate $ \s -> case s of Live n -> (Live (n+1),True); _ -> (s,False)
- if not accepted then pure (Left LeaseClosed) else pure (Right (path,release)) `onException` release
+ accepted <- acquire gate
+ case accepted of
+  Nothing -> pure Nothing
+  Just False -> pure (Just (Left LeaseClosed))
+  Just True -> pure (Just (Right (path,releaseNow,release,capability))) `onException` release
+
+borrowHeldInterruptible :: HeldExecutable -> IO (Either LeaseError (FilePath,IO Bool,IO ()))
+borrowHeldInterruptible held = mask $ \_ -> do
+ result <- borrowHeldWith (\gate -> Just <$> transition gate (\s -> case s of
+  Live n -> (Live (n+1),True); _ -> (s,False))) held
+ case result of
+  Just (Left err) -> pure (Left err)
+  Just (Right (path,releaseNow,release,_)) -> pure (Right (path,releaseNow,release))
+  Nothing -> pure (Left LeaseClosed)
+
+-- Nothing proves this invocation did not increment the held borrow count.
+-- Caller stays masked until the returned release capability is retained.
+-- cancelled/pause are trusted non-authoritative scheduler observations: the
+-- owning caller rechecks the same original start and stop state before spawn.
+borrowHeldWhile :: HeldExecutable -> IO Bool -> IO ()
+ -> IO (Maybe (Either LeaseError (FilePath,IO Bool,IO (),HeldBorrow)))
+borrowHeldWhile held cancelled pause = borrowHeldWith acquire held
+ where
+  acquire gate = mask $ \_ -> let
+   loop = do
+    stopped <- cancelled
+    if stopped then pure Nothing else do
+     slot <- tryTakeMVar gate
+     case slot of
+      Nothing -> pause >> loop
+      Just st -> case st of
+       Live n -> putMVar gate (Live (n+1)) >> pure (Just True)
+       _ -> putMVar gate st >> pure (Just False)
+   in loop
 
 retireHeld :: HeldExecutable -> IO (Either LeaseError ())
 retireHeld (HeldExecutable fd gate) = mask $ \_ -> do

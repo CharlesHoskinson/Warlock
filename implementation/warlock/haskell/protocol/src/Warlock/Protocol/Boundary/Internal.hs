@@ -1,8 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 -- Internal owner integration only. A validated envelope is not a native grant.
 module Warlock.Protocol.Boundary.Internal
- (Direction(..), Reason(..), Envelope, Gate, GateStatus(..), newGate,
-  decodeFor, decodeForWith, newGateWith, foldEnvelope, dispatch, dispatchUntil, retire, gateStatus, rejectionReasons) where
+ (Direction(..), Reason(..), Envelope, Gate, GateT, GateStatus(..), newGate,
+  decodeFor, decodeForWith, newGateWith, newGateWithContext, foldEnvelope, dispatch, dispatchUntil, dispatchUntilContext, retire, gateStatus, rejectionReasons) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException,evaluate,mask,uninterruptibleMask_,throwIO,try)
 import GHC.Clock (getMonotonicTimeNSec)
@@ -21,14 +21,19 @@ data Reason = BadUtf8 | TooLarge | BadNul | TooDeep | DuplicateField | Malformed
 data Envelope = Client C.CheckedClient | Server C.CheckedServer deriving (Eq,Show)
 data GateStatus = Live !Int | Draining !Int | Retired deriving (Eq,Show)
 data State = State { status :: !GateStatus, reasons :: ![Reason] }
-data Gate = Gate CodecProfile Binding (Envelope -> IO ()) (MVar State)
+data GateT ctx = Gate CodecProfile Binding (ctx -> Envelope -> IO ()) (MVar State)
+type Gate = GateT ()
 
 -- This function is NOT exposed in the public library. The existing trusted
 -- owner must provide its live authenticated binding and own callback lifecycle.
 newGate :: Binding -> (Envelope -> IO ()) -> IO Gate
 newGate = newGateWith nativeProfile
 newGateWith :: CodecProfile -> Binding -> (Envelope -> IO ()) -> IO Gate
-newGateWith profile owner action = Gate profile owner action <$> newMVar (State (Live 0) [])
+newGateWith profile owner action = newGateWithContext profile owner (\() envelope -> action envelope)
+-- Internal construction fixes the typed owner callback once; dispatch cannot
+-- replace it, and the binding/decoder/status remain the same single Gate.
+newGateWithContext :: CodecProfile -> Binding -> (ctx -> Envelope -> IO ()) -> IO (GateT ctx)
+newGateWithContext profile owner action = Gate profile owner action <$> newMVar (State (Live 0) [])
 record :: Reason -> State -> State
 record reason s =
  let bounded = take 128 (reason : reasons s)
@@ -84,14 +89,18 @@ decodeFor expected direction raw = do
   codecReason message = if "positional key mismatch" `T.isInfixOf` message then BadDigest else BadSchema
 
 dispatch :: Gate -> Direction -> B.ByteString -> IO (Either Reason ())
-dispatch gate direction raw = dispatchWithDeadline Nothing gate direction raw
+dispatch gate direction raw = dispatchWithDeadline Nothing () gate direction raw
 
 -- Only the transport owner supplies this original monotonic frame deadline.
 dispatchUntil :: Gate -> Direction -> B.ByteString -> Integer -> IO (Either Reason ())
-dispatchUntil gate direction raw deadline = dispatchWithDeadline (Just deadline) gate direction raw
+dispatchUntil gate direction raw deadline = dispatchWithDeadline (Just deadline) () gate direction raw
+-- ctx is supplied by the owning lexical scope; the callback is fixed at
+-- construction, and has no per-frame replacement path.
+dispatchUntilContext :: GateT ctx -> ctx -> Direction -> B.ByteString -> Integer -> IO (Either Reason ())
+dispatchUntilContext gate context direction raw deadline = dispatchWithDeadline (Just deadline) context gate direction raw
 
-dispatchWithDeadline :: Maybe Integer -> Gate -> Direction -> B.ByteString -> IO (Either Reason ())
-dispatchWithDeadline deadline (Gate profile owner action state) direction raw = mask $ \restore -> do
+dispatchWithDeadline :: Maybe Integer -> ctx -> GateT ctx -> Direction -> B.ByteString -> IO (Either Reason ())
+dispatchWithDeadline deadline context (Gate profile owner action state) direction raw = mask $ \restore -> do
  decoded <- restore (evaluate (decodeForWith profile owner direction raw))
  case decoded of
   Left reason -> do
@@ -111,7 +120,7 @@ dispatchWithDeadline deadline (Gate profile owner action state) direction raw = 
    case admitted of
     Left reason -> pure (Left reason)
     Right () -> do
-     result <- try (restore (action envelope)) :: IO (Either SomeException ())
+     result <- try (restore (action context envelope)) :: IO (Either SomeException ())
      uninterruptibleMask_ $ modifyMVar_ state $ \s -> do
       let next = case status s of
             Live n -> Live (n-1)
@@ -123,13 +132,13 @@ dispatchWithDeadline deadline (Gate profile owner action state) direction raw = 
      either throwIO (const (pure (Right ()))) result
 -- Existing admitted callbacks complete under caller-owned threads. No hidden
 -- workers are created. Retired means none in flight; Draining is not retired.
-retire :: Gate -> IO GateStatus
+retire :: GateT ctx -> IO GateStatus
 retire (Gate _ _ _ state) = modifyMVar state $ \s ->
  let next = case status s of Live 0 -> Retired; Live n -> Draining n; other -> other
  in publishWith (s {status=next}) next
-gateStatus :: Gate -> IO GateStatus
+gateStatus :: GateT ctx -> IO GateStatus
 gateStatus (Gate _ _ _ state) = status <$> readMVar state
-rejectionReasons :: Gate -> IO [Reason]
+rejectionReasons :: GateT ctx -> IO [Reason]
 rejectionReasons (Gate _ _ _ state) = reverse . reasons <$> readMVar state
 
 -- Validate the complete application commit before the gate may invoke a

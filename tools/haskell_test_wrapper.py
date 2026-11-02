@@ -13,7 +13,7 @@ MODES = ('positive', 'busy', 'inventory', 'malformed', 'stale', 'stale-claim',
          'view-fields', 'foreign', 'wrong-thread', 'expiry', 'reserved-cut',
          'pending-sync-cut', 'submitted-cut')
 CHILD = {'internal-controls': 'custody-child', 'selected-fd-controls': 'selected-fd-child',
-         'deadline-stop-controls': 'graceful-stop-child', 'current-session-oracles': 'credential-peer-child',
+         'deadline-stop-controls': 'graceful-stop-child', 'persistent-exit-race-controls': 'graceful-stop-child', 'current-session-oracles': 'credential-peer-child',
          'persistent-bootstrap-controls': 'credential-peer-child'}
 COPY = {'held-executable-controls': 'custody-child', 'bootstrap-facade-controls': 'bootstrap-facade-child'}
 FIXTURES = {'ingress-controls', 'credential-guard-controls'}

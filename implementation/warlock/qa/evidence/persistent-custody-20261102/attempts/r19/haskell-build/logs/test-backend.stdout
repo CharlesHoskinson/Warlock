@@ -1,0 +1,97 @@
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - cryptohash-sha256-0.11.102.1 (lib) (configuration changed)
+ - hsc2hs-0.68.10 (exe:hsc2hs) (configuration changed)
+ - warlock-held-document-proposal-0.1.0.0 (lib) (configuration changed)
+ - network-3.2.0.0 (lib:network) (configuration changed)
+ - warlock-process-custody-0.1.0.0 (lib) (configuration changed)
+ - warlock-protocol-0.1.0.0 (lib) (configuration changed)
+ - warlock-runtime-0.1.0.0 (lib) (configuration changed)
+ - warlock-runtime-0.1.0.0 (test:ui-backend-controls) (configuration changed)
+Configuring executable 'hsc2hs' for hsc2hs-0.68.10...
+Configuring library for cryptohash-sha256-0.11.102.1...
+Preprocessing executable 'hsc2hs' for hsc2hs-0.68.10...
+Preprocessing library for cryptohash-sha256-0.11.102.1...
+Building library for cryptohash-sha256-0.11.102.1...
+Building executable 'hsc2hs' for hsc2hs-0.68.10...
+Configuring library for warlock-held-document-proposal-0.1.0.0...
+Configuring network-3.2.0.0...
+Preprocessing library for warlock-held-document-proposal-0.1.0.0...
+Building library for warlock-held-document-proposal-0.1.0.0...
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for gcc... /usr/bin/gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether /usr/bin/gcc accepts -g... yes
+checking for /usr/bin/gcc option to enable C11 features... none needed
+checking for an ANSI C-conforming const... yes
+checking for stdio.h... yes
+checking for stdlib.h... Configuring library for warlock-process-custody-0.1.0.0...
+yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for limits.h... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for fcntl.h... yes
+checking for sys/uio.h... yes
+checking for sys/socket.h... yes
+checking for netinet/in.h... yes
+checking for netinet/tcp.h... yes
+checking for sys/un.h... yes
+checking for arpa/inet.h... yes
+checking for netdb.h... yes
+checking for net/if.h... yes
+checking for netioapi.h... no
+checking for struct ucred... yes
+checking for gai_strerror... Preprocessing library for warlock-process-custody-0.1.0.0...
+Building library for warlock-process-custody-0.1.0.0...
+yes
+checking for gethostent... yes
+checking for accept4... yes
+checking for getpeereid... no
+checking for /usr/bin/gcc options needed to detect all undeclared functions... none needed
+checking whether AI_ADDRCONFIG is declared... yes
+checking whether AI_ALL is declared... yes
+checking whether AI_NUMERICSERV is declared... yes
+checking whether AI_V4MAPPED is declared... yes
+checking whether IPV6_V6ONLY is declared... yes
+checking whether IPPROTO_IP is declared... yes
+checking whether IPPROTO_TCP is declared... yes
+checking whether IPPROTO_IPV6 is declared... yes
+checking whether SO_PEERCRED is declared... yes
+checking for struct msghdr.msg_control... yes
+checking for struct msghdr.msg_accrights... no
+checking for struct sockaddr.sa_len... no
+configure: creating ./network.buildinfo
+configure: creating ./config.status
+config.status: creating include/HsNetworkConfig.h
+config.status: include/HsNetworkConfig.h is unchanged
+Preprocessing library for network-3.2.0.0...
+Building library for network-3.2.0.0...
+Configuring library for warlock-protocol-0.1.0.0...
+Preprocessing library for warlock-protocol-0.1.0.0...
+Building library for warlock-protocol-0.1.0.0...
+Configuring library for warlock-runtime-0.1.0.0...
+Preprocessing library for warlock-runtime-0.1.0.0...
+Building library for warlock-runtime-0.1.0.0...
+Configuring test suite 'ui-backend-controls' for warlock-runtime-0.1.0.0...
+Preprocessing test suite 'ui-backend-controls' for warlock-runtime-0.1.0.0...
+Building test suite 'ui-backend-controls' for warlock-runtime-0.1.0.0...
+Running 1 test suites...
+Test suite ui-backend-controls: RUNNING...
+Test suite ui-backend-controls: PASS
+Test suite logged to:
+/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793598177491817141/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-backend-controls/test/warlock-runtime-0.1.0.0-ui-backend-controls.log
+1 of 1 test suites (1 of 1 test cases) passed.
