@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-02T01:39:05.629898+00:00",
+  "updatedUTC": "2026-11-02T01:48:11.515592+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -41,7 +41,7 @@
       "implementation/warlock/README.md"
     ],
     "before": "Original production peer authentication and three historical scenarios were qualified, but required real cross-user credential evidence was missing.",
-    "after": "Actual full15case guest run now rejects a same selected PID after measured UID0-to1 transition, with exact ForeignUser before another policy callback. Source and immutable evidence await independent original adjudication.",
+    "after": "OriginalDEL010 independently accepted on actual immutable source02b0aba0b: all15controls and required cross-user trace passed. Historical scenario tuples and failed scans remain preserved. Next actual persistent runtime source batch.",
     "verification": [
       "Root protected production-library linked Haskell multi-frame/EOF/refusal/retirement controls with distinct full request identities and meaningful seeded fragmentation/order cases; real kernel cross-user UID trace, same-user current and retired/replayed lifetime traces, callback canaries and owned cleanup. Preserve original5s budgets, strict buildall/testall and model correspondence; no synthetic UID original acceptance, no native effect/GUI/release transfer."
     ]
@@ -3778,7 +3778,7 @@
     "acceptedScenarios": 42,
     "behaviorChange": "Retain typed confirmation/receipt phases for Files, application actions, shortcuts, motion preferences and system controls; preserve Unknown reservations without replay. Typed geometry capabilities, snap regions, motion source and transport failures preserve existing boundary wire and labels. SessionClosing explicitly denies Logout; other bounded observed text is preserved."
   },
-  "nextConcreteAction": "Commit actual DEL010 QA/source and cross-user evidence; independently adjudicate the immutable original. Then integrate concrete persistent Haskell Backend/startup-borrow/deadline source. Preserve native/provider fences and failed histories.",
+  "nextConcreteAction": "Integrate and compile the smallest independently source-reviewed actual persistent-runtime foundation, using exact canonical preimages and meaningful lifecycle controls. Do not integrate known unsafe Backend custody/stop gaps or flip provider/native false fences. Continue15roles and current Omarchy MVP cadence.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4485,14 +4485,21 @@
     "currentWindowStartedUTC": "2026-11-02T01:11:37.655841+00:00",
     "nextReportDueUTC": "2026-11-02T02:11:37.655841+00:00",
     "currentWindowProgress": {
-      "observedUTC": "2026-11-02T01:39:05.629898+00:00",
+      "observedUTC": "2026-11-02T01:48:11.515592+00:00",
       "windowStartedUTC": "2026-11-02T01:11:37.655841+00:00",
-      "wholeRequirementsAccepted": 18,
+      "wholeRequirementsAccepted": 19,
       "acceptedScenarios": 42,
-      "newWholeRequirementIds": [],
-      "newWholeEarsClosures": 0,
+      "newWholeRequirementIds": [
+        "ELM-DEL-010"
+      ],
+      "newWholeEarsClosures": 1,
       "newAcceptedScenarios": [],
-      "counting": "Only independently accepted whole original EARS; actual15case cross-user component awaits immutable review."
+      "counting": "One net-new whole original requirement; its3scenarios requalified, not new scenario closures.",
+      "currentStackScenarioRequalifications": [
+        "ELM-DEL-010/delivery-010",
+        "ELM-DEL-010/peer-wrong-session",
+        "ELM-DEL-010/peer-approved-session"
+      ]
     }
   },
   "ui005CurrentStackCheckpoint": {
@@ -4666,5 +4673,34 @@
     "nativeAccepted": false,
     "releaseAccepted": false
   },
-  "persistentAuthCrossUser": "docs/warlock-build-loop/v2/persistent-auth-cross-user-20261102.json"
+  "persistentAuthCrossUser": "docs/warlock-build-loop/v2/persistent-auth-cross-user-20261102.json",
+  "persistentAuthWholeAcceptance": {
+    "requirements": [
+      "ELM-DEL-010"
+    ],
+    "scenarios": [
+      "delivery-010",
+      "peer-wrong-session",
+      "peer-approved-session"
+    ],
+    "accepted": true,
+    "wholeEARS": true,
+    "acceptance": {
+      "path": "docs/warlock-build-loop/v2/persistent-auth-cross-user-acceptance-20261102.json",
+      "sha256": "05a4a9ddaa3eced4250cda714e581b609578cc8407d7cbda8808114adb7f897d"
+    },
+    "independentReview": {
+      "path": "docs/warlock-build-loop/v2/persistent-auth-cross-user-review-20261102.json",
+      "sha256": "a4591a2ba343cdf782518920ed6c8ac5697467e5315adfb055e5a50cfbb82aea"
+    },
+    "sourceRevision": "02b0aba0b128a184177dc166450c5302b017c50e",
+    "nativeAccepted": false,
+    "releaseAccepted": false
+  },
+  "currentRecordedTotals": {
+    "requirements": 19,
+    "scenarios": 42,
+    "originalRequirements": 242,
+    "originalScenarios": 417
+  }
 }

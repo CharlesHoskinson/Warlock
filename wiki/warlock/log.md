@@ -372,3 +372,10 @@ The executed guardian omitted the qa.slice parent in its independent negative cg
 Counts remain18/242whole and42/417scenarios pending immutable independent originalDEL010 adjudication. Preserve prior367a three-scenario verdicts and every missing/failed history. The00:11–01:11UTC hour closed0whole EARS, below2/aim3. Next commit/adjudicate this actual original obligation, then integrate real persistent runtime source. All15roles/fiveQuintKit, main desktop and native/AT/IME/hardware/resource/release obligations remain.
 
 [Source-bound evidence](../../docs/warlock-build-loop/v2/persistent-auth-cross-user-20261102.json).
+
+
+### 2026-11-02 01:48UTC — wholeDEL010 original closure
+
+Whole original **ELM-DEL-010** is independently accepted on immutable source02b0aba0b128a184177dc166450c5302b017c50e. All217source inputs and44evidencefiles/report are regular Git blobs with exact hashes. Actual cross-user verification closes the old remaining obligation; its3already-accepted scenarios are current-stack requalifications, so totals are **19/242requirements and42/417scenarios**. Original367a acceptance, missing/failed/stopped histories and original5s budgets remain intact. The old guardian negative scan stays unqualified; the corrected supplemental scan proves current-time absence only. No accepted contributor claim, native GUI/provider/AT/IME/hardware/resource or release acceptance is asserted. Current01:11–02:11UTC window has1whole closure so far, below planning2/aim3. Next apply/compile the smallest reviewed persistent-runtime production foundation; preserve the original full goal and15role loop.
+
+[Acceptance](../../docs/warlock-build-loop/v2/persistent-auth-cross-user-acceptance-20261102.json).

@@ -6,10 +6,14 @@ tags: [warlock, architecture, evidence]
 category: topic
 volatility: hot
 sources: [raw/notes/2026-10-29-shortcut-draft-production-baseline.md, raw/notes/2026-10-29-knowledge-space-and-delivery-observation.md, raw/notes/2026-10-31-receipt-states.md]
-summary: "18 whole original requirements/42scenarios accepted; actual DEL010 cross-user trace passes, pending immutable review. Persistent runtime/native/release remain open."
+summary: "19 whole original requirements/42scenarios accepted; DEL010 closes on actual cross-user evidence. Persistent runtime/native/release remain open."
 ---
 
 # Current status
+
+As of November2 01:48UTC: **19/242 whole requirements and42/417scenarios accepted**. [WholeDEL010](../../../../docs/warlock-build-loop/v2/persistent-auth-cross-user-acceptance-20261102.json) closes its missing actual cross-user verification on217immutable source inputs and15kernel credential cases; the3scenarios were already accepted and are requalified without double counting. Native GUI/provider/AT/IME/hardware/resource/release remain open. Next actual persistent-runtime source integration;15roles continue.
+
+## Previous dated observations (retained)
 
 As of November2 01:38UTC: **18/242 whole requirements and42/417scenarios accepted**. Actual current Haskell authentication passes15cases including measured samePID UID0-to1 refusal; [component evidence](../../../../docs/warlock-build-loop/v2/persistent-auth-cross-user-20261102.json) awaits immutable independent original adjudication. The old guardian negative scan had the wrong parent path; the separately retained correct-path current scan passes positive/negative controls without repairing old history. Native GUI/provider/AT/IME/hardware/resource/release remain open;15roles continue.
 
