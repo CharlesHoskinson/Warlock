@@ -45,3 +45,40 @@ The two failing workflow fixtures are now repaired and verified. Sanitized foren
 2. Finish the subscription runtime replay and retain both old failures and new source-bound results.
 3. Rebuild the matching runtime and exercise the current GUI on Omarchy; inspect screenshots and real inputs.
 4. Install and verify durable liveness supervision before arming another unattended run. Do not restart the local team simply because this handoff was cloned.
+
+## Original team launcher sources
+
+`agentbus-team-tools.tar.gz` preserves 15 original custom launcher and supervision scripts; `agentbus-team-tools.json` records hashes and a nonsecret environment template. This is source preservation, not an installation. Historical absolute paths, session IDs and model assumptions must be configured for the remote host. Credentials, private keys, active leases and model transcripts are deliberately absent. Never start a duplicate coordinator or reuse an expired identity claim.
+
+## Tested lead continuity guard
+
+The actual implementation is now `tools/warlock_continuity.py`, with 14 mocked-queue tests run through the protected registry campaign alongside all 300 contributor tests. See `verification/continuity-recovery/`. The original forensic probe remains an archived proposal; this executable guard adds the existing-thread wake route.
+
+The guard checks every 60 seconds in `--watch` mode. A stale checkpoint (five minutes) or a running checkpoint referencing an actual terminal report triggers `codex queue --thread EXACT_UUID --message FIXED_HEALTH_PROMPT --resume -C REPO`. It never starts `codex exec`, creates a new thread, launches workers, changes goal status, changes identities or bypasses QA. It has a singleton lock, explicit authorization expiry, persisted five-minute retry cooldown and private configuration. Initial `passed:false` build reports are not mistaken for terminal failures. Explicit paused/completed observations suppress wakes. Transient invalid checkpoint writes do not kill the watch loop. Codex can return zero while warning that resume failed: this is recorded as unconfirmed and one-shot mode exits 4, never as a verified restart.
+
+**No watcher, worker or timer is running as part of this handoff.** Default mode is `handoff`; the remote operator must explicitly configure unattended operation when ready. Arming is not an acceptance claim. Establish a successful wake round trip and fresh lead checkpoint before leaving another unattended run. Queue acceptance alone does not prove the lead resumed.
+
+A safe disarmed check, which cannot queue anything:
+
+```sh
+install -m 600 docs/warlock-build-loop/v2/remote-handoff-20261102/continuity-handoff.example.json /tmp/warlock-continuity.json
+python3 -B tools/warlock_continuity.py --config /tmp/warlock-continuity.json --once
+```
+
+For a future unattended run, use a private local JSON file with these fields (replace every placeholder):
+
+```json
+{
+  "schema": 1,
+  "mode": "unattended",
+  "expiresUTC": "<explicit UTC expiry with timezone>",
+  "thread": "<exact existing session UUID>",
+  "repo": "/absolute/path/to/Warlock",
+  "checkpoint": "/absolute/path/to/CURRENT-CONTINUATION.json",
+  "codex": "/absolute/path/to/codex"
+}
+```
+
+Set mode 0600, then run `python3 -B tools/warlock_continuity.py --config /absolute/private/config.json --watch` independently of the lead. Keep it disarmed for manual work, paused/completed goals, external blockers and remote handoffs. Stop it with Ctrl-C or switch its private configuration to `handoff`; do not publish credentials or local configuration.
+
+When recording QA state, clear an old report reference before starting a new job. Record actual report completion separately from whether the outer tool handle has been consumed. Never rewrite a terminal failed report as running, successful or accepted. Internal test/tooling failures are repair tasks; they are not sufficient grounds for declaring an external blocker.

@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "scope": "Actual existing-thread wake integration; new devtool and mocked tests only",
+  "patchSha256": "c74a377a289ee245832837a980f00845bdf425996416432f6d372b76dab27525",
+  "patchPath": ".warlock-contributor/engine-pid1-drafts/continuity-wake-20261102/continuity-wake.patch",
+  "newFiles": {
+    "tools/warlock_continuity.py": "2c0705b7c45d9cfbf30248ccdbcf1905f083c5adef2d7284f881b44d6454430a",
+    "tools/test_warlock_continuity.py": "5a60d31be53766c9e44276e22ecd9192650104acfaa92f0c50b74cf6e2bbed0c"
+  },
+  "testMethods": 10,
+  "testsExecutedByReviewer": false,
+  "installed": false,
+  "armed": false,
+  "watcherStarted": false,
+  "defaultMode": "handoff",
+  "configuration": "Private owned mode0600 local ignored/outside-Git JSON only; exact schema1 allowed fields schema,mode,expiresUTC,thread,repo,checkpoint,codex. No secrets. Canonical UUID and timezone expiry mandatory only for unattended. Use an actual codex executable absolute path. Keep config/lock/state local; never commit them.",
+  "onceArgv": [
+    "python3",
+    "tools/warlock_continuity.py",
+    "--config",
+    "/ABSOLUTE/LOCAL/IGNORED/config.json",
+    "--once"
+  ],
+  "watchArgv": [
+    "python3",
+    "tools/warlock_continuity.py",
+    "--config",
+    "/ABSOLUTE/LOCAL/IGNORED/config.json",
+    "--watch"
+  ],
+  "watchIntervalSeconds": 60,
+  "cooldownSeconds": 300,
+  "queueTimeoutSeconds": 20,
+  "testCommandForRootOnly": "python3 -B -m unittest discover -s tools -p test_warlock_continuity.py -v",
+  "safety": [
+    "No exec/new coordinator/new worker/new identity, goal mutation, source change or QA dispatch.",
+    "Only exact configured existing thread receives the fixed recovery-health prompt through codex queue --resume, argv without shell. Prompt explicitly refuses human handoff/paused/completed/actual external blockers and directs verification before authorized internal repair.",
+    "Exclusive nonblocking flock held for entire watcher; second watcher refuses before any queue call.",
+    "Private atomic persisted pre-dispatch attempt reservation limits repeated warnings, failures, timeouts and process crashes.",
+    "Any warning including exit0 is unconfirmed; every attempt retains status wake-unconfirmed and restartVerified false. Clean exit0 means only queueAccepted, never actual running or restart.",
+    "Default handoff/expired never queue. Config loaded on every tick and rechecked before cooldown reservation."
+  ],
+  "coverage": [
+    "handoff default without checkpoint access",
+    "expiry",
+    "fresh300s",
+    "stale301s exact fixed argv",
+    "fresh checkpoint with actual terminal report",
+    "persistent cooldown on timeout",
+    "warning exit0 and nonzero refusal",
+    "singleton",
+    "invalid UUID/private mode",
+    "expiry during observation"
+  ],
+  "limitations": [
+    "Installation and scheduling are intentionally not performed; user is working remotely and current handoff stays disarmed.",
+    "Queue acceptance is not proof of actual agent continuation. Existing goal and human instructions remain authoritative.",
+    "Must be explicitly armed later under existing user authorization with an exact thread, expiration and ignored private config."
+  ]
+}

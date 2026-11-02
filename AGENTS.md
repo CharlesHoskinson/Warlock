@@ -93,6 +93,21 @@ RTX 5080 acceleration, and a living LLM Wiki journal. On this host:
 
 ## Muse EARS regulation and continuity
 
+For an unattended run, a collection of bounded worker turns is not a durable
+development loop. Run `tools/warlock_continuity.py` independently of the lead,
+with a private, explicitly expiring unattended configuration and a verified
+existing-thread wake route. Establish a fresh lead checkpoint after a wake
+before reporting that recovery works. Keep the guard disarmed for manual work,
+remote handoff, paused/completed goals and actual external blockers. It never
+starts a new coordinator or relaxes source ownership, authentication or QA.
+
+Clear the previous report reference when starting a new QA job. Distinguish an
+actual terminal report from an unconsumed outer tool handle. Internal test and
+tooling failures require repair or a concrete handoff; they are not external
+blockers. Preserve failed evidence and investigation stops. See
+`docs/warlock-build-loop/v2/remote-handoff-20261102/README.md` for the tested guard
+and the November 2 stall findings.
+
 Charles appointed Muse as regulator, with an independent user timer checking every
 20 minutes. The machine-local runtime is
 `/home/charles/.local/state/warlock-team/20261028/muse-supervision/`;

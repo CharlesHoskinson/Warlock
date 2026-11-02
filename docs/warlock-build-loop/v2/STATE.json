@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-02T14:47:32.305808+00:00",
+  "updatedUTC": "2026-11-02T15:12:27.360004+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -60,7 +60,7 @@
   "releaseAccepted": false,
   "oldTrackerIsCurrent": false,
   "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Current root goal active, armed explicitly 2026-10-31 for complete original requirements; no native/release completion inferred.",
+  "hostGoal": "Observed blocked; remote handoff requested. No live local development loop. Original242/417 objective remains incomplete.",
   "previousSlice": {
     "id": "offline-reproducibility",
     "requirements": [
@@ -3551,7 +3551,7 @@
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
     "currentSlice": "Original005 accepted17/41; next actual source implementation: pending-query/recovery UX and remaining001typed domains. Root retains sole protected execution.",
-    "currentProcessObservation": "15 actual owned external CLIs at 2026-11-01T21:21:52.050561+00:00; no duplicate or absent role. Bounded same-session rotations, no keys/coordinator duplication.",
+    "currentProcessObservation": "Remote handoff: zero external workers observed; no local worker restart authorized by this publication.",
     "lastHealthObservation": {
       "observedUTC": "2026-11-01T20:42:56.701590+00:00",
       "doctor": "All six checks passed; valid unrevoked lead credential, existing broker/verifier, arbiterPID1116694 reused. No new coordinator or keys."
@@ -3744,7 +3744,10 @@
       "/home/charl/.local/state/warlock-team/20261031-agentbus/live-continuity-gemini-launches.json"
     ],
     "sourceWorkerBudgetSeconds": 3600,
-    "sourceWorkerCutoffMinutes": 56
+    "sourceWorkerCutoffMinutes": 56,
+    "currentOperationalMode": "remote-handoff",
+    "liveWorkerCount": 0,
+    "operationalObservationUTC": "2026-11-02T15:12:27.360004+00:00"
   },
   "currentGoalTelemetry": {
     "status": "active",
@@ -4912,6 +4915,16 @@
     "goalStatusObserved": "blocked",
     "noBackgroundDevelopmentLoop": true,
     "nativeAccepted": false,
-    "releaseAccepted": false
+    "releaseAccepted": false,
+    "continuityRecovery": {
+      "tool": "tools/warlock_continuity.py",
+      "tests": 14,
+      "contributorTests": 300,
+      "protectedReport": "docs/warlock-build-loop/v2/remote-handoff-20261102/verification/continuity-recovery/report.json",
+      "installedInSource": true,
+      "armed": false,
+      "wakeRoute": "existing-thread codex queue --resume, never new coordinator",
+      "restartVerified": false
+    }
   }
 }

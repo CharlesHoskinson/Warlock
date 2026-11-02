@@ -54,6 +54,8 @@ def main():
         if args.self_test:
             run('plugin-self-test', [sys.executable, '-B', str(ROOT / 'plugins/warlock-contributor/scripts/warlock.py'),
                                      '--repo', str(ROOT), '--json', 'self-test'])
+            run('continuity-self-test', [sys.executable, '-B', '-m', 'unittest', 'discover',
+                                         '-s', 'tools', '-p', 'test_warlock_continuity.py', '-v'])
         if not all(sha(ROOT / name) == digest for name, digest in sources.items()):
             raise RuntimeError('Reviewed source inputs changed during verification')
         if not all(sha(Path(row['path'])) == row['sha256'] for row in report['tools'].values()):

@@ -40,6 +40,7 @@ def registry_inputs(root, self_test=False):
              'docs/elm-roadmap/TRACEABILITY.md', 'openspec/changes/elm-desktop-pivot/tasks.md',
              'docs/warlock-build-loop/v2/STATE.json', 'docs/warlock-build-loop/v2/requirement-ledger.json'}
     if self_test:
+        names.update({'tools/warlock_continuity.py', 'tools/test_warlock_continuity.py'})
         names.update(str(path.relative_to(root)) for path in (root / 'plugins/warlock-contributor').rglob('*')
                      if path.is_file() and '__pycache__' not in path.parts and path.suffix != '.pyc')
         names.update(['docs/warlock-build-loop/v2/loop.py', 'implementation/elm-build-loop-v1/loop.py',

@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "scope": "Original custom launcher/supervision source only; machine-local credentials, prompts and model logs excluded. These contain historical host paths/session references; configure and review before use.",
+  "archive": "agentbus-team-tools.tar.gz",
+  "sha256": "362ba54f804161a2f86c60294c570dc284b0890713151e9e7c97bb6b22b94638",
+  "files": [
+    {
+      "path": "agentbus-team-tools/capped.sh",
+      "sha256": "c77b1d026ca1a2367e53b12a461d552df4be0dbc40a697cc39b183297dc10c8c",
+      "bytes": 1093
+    },
+    {
+      "path": "agentbus-team-tools/census-owned-workers.py",
+      "sha256": "60e13b4d3a99d7f57c18cbc226eb2275659c935b7e12136d57c262899ffb97f9",
+      "bytes": 3229
+    },
+    {
+      "path": "agentbus-team-tools/gemini-gated.sh",
+      "sha256": "dd6940fcb257f4d257b812176cf504459984b2490193a0b60038ba7a709d65e3",
+      "bytes": 992
+    },
+    {
+      "path": "agentbus-team-tools/launch-lead.sh",
+      "sha256": "c40d90e316c831bd64d5ee329d327d27e613121b3c58da15c5a018578e45b133",
+      "bytes": 2161
+    },
+    {
+      "path": "agentbus-team-tools/memwatch.sh",
+      "sha256": "0e0a88a0f2bf25d25c4a601e5ccbd7bebbe263f30dddea62f14dae2a94cf6be8",
+      "bytes": 3036
+    },
+    {
+      "path": "agentbus-team-tools/persona.sh",
+      "sha256": "d7fd9d81fdb9dbd3cdc13460fe9641d037cc1da22d8f5c42c771f7d0156de4ac",
+      "bytes": 942
+    },
+    {
+      "path": "agentbus-team-tools/resume-sol-advisor.sh",
+      "sha256": "3bc3235a9683a6f7130134a7c75ae74ee114d08d73821ea7d00e60f35bf82285",
+      "bytes": 901
+    },
+    {
+      "path": "agentbus-team-tools/resume-terra.sh",
+      "sha256": "3c0ebad99bc7544031dd16c87fb0639a50bd2c69e04becae2a2ed8e3c7371b92",
+      "bytes": 1777
+    },
+    {
+      "path": "agentbus-team-tools/resume-ux-performance.sh",
+      "sha256": "e0a4bbd3cc5c65da77bc23e138aa4ac268ac538677057fb18be1f6968f34ba21",
+      "bytes": 1469
+    },
+    {
+      "path": "agentbus-team-tools/run-agent.sh",
+      "sha256": "bac3499fa85217bb49e4c88683d6137c62c7c9c7bf31924a2df8d146752cbffe",
+      "bytes": 6486
+    },
+    {
+      "path": "agentbus-team-tools/run-gemini-before-session-settings.py",
+      "sha256": "31cd681acf6fb6d48c0648f900d13a7db2594584aeba022770eb1c5193eb5500",
+      "bytes": 5228
+    },
+    {
+      "path": "agentbus-team-tools/run-gemini.py",
+      "sha256": "7dec0e50e9280d60b1e6b990743d4ece7bb64cf2568b923f6c66341e7be4c4e9",
+      "bytes": 5531
+    },
+    {
+      "path": "agentbus-team-tools/run-graph-worker.sh",
+      "sha256": "f38bab762206b84ae3f62f2b17b3538c448e408eeb83c8cb037eaa95268e9a37",
+      "bytes": 707
+    },
+    {
+      "path": "agentbus-team-tools/scrape.py",
+      "sha256": "c182616ff6f4b3b1a3bb64a5c60999ea9cffddf0eae44d8cace181a0de82dbdc",
+      "bytes": 2188
+    },
+    {
+      "path": "agentbus-team-tools/shoot.sh",
+      "sha256": "41787b4262982fde240881ef7ebe63173d3bc8b914f1b300d27346bea34b87ea",
+      "bytes": 789
+    }
+  ],
+  "excludedPotentialCredentialFiles": [],
+  "teamEnvironmentExample": {
+    "TEAM_RUN": "warlock-remote-development",
+    "TEAM_RD": "/absolute/private/team-state",
+    "TEAM_WT": "/absolute/Warlock",
+    "TEAM_CAP_DEFAULT": "3G",
+    "TEAM_CAP_GEMINI": "18G",
+    "TEAM_TURN_TIMEOUT": "3600"
+  },
+  "credentialsIncluded": false,
+  "servicesStarted": false
+}

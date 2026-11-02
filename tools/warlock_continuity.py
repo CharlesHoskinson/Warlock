@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""Queue attention to one existing thread; never start a development coordinator."""
+import argparse
+from contextlib import contextmanager
+from datetime import datetime, timezone
+import fcntl
+import json
+import os
+from pathlib import Path
+import stat
+import subprocess
+import tempfile
+import time
+import uuid
+
+PROMPT = (
+    "Warlock continuity health check for this existing thread. First verify the actual goal, "
+    "current human instructions/handoff, service health, authenticated identities, live jobs, "
+    "claims and process births. Never resume a paused/completed goal, override a human handoff, "
+    "or resume an actual external-blocked goal. If the existing unattended authorization remains "
+    "valid, repair internal failures and continue authorized work. Preserve source ownership, "
+    "all QA/readiness gates, deadlines, failed evidence and native acceptance limits. Maintain "
+    "the authorized 15 roles only after checking existing workers and coordinator ownership; "
+    "never duplicate coordinators, identities or workers. Reconcile actual terminal reports and "
+    "unconsumed handles, then refresh the continuation checkpoint. This queued message does not "
+    "establish that development restarted or that any check passed."
+)
+
+
+def read_json(path):
+    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_CLOEXEC)
+    with os.fdopen(fd, "r") as source:
+        info = os.fstat(source.fileno())
+        if not stat.S_ISREG(info.st_mode) or info.st_size > 1048576:
+            raise ValueError("Expected bounded regular JSON file")
+        return json.load(source), info
+
+
+def config_path(value):
+    path = Path(value)
+    if not path.is_absolute():
+        raise ValueError("Config path must be absolute")
+    return path.parent.resolve(strict=True) / path.name
+
+
+@contextmanager
+def singleton(path):
+    fd = os.open(str(path) + ".lock", os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW | os.O_CLOEXEC, 0o600)
+    try:
+        info = os.fstat(fd)
+        if (not stat.S_ISREG(info.st_mode) or info.st_uid != os.getuid()
+                or info.st_nlink != 1 or info.st_mode & 0o077):
+            raise ValueError("Unsafe continuity lock")
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        yield
+    finally:
+        os.close(fd)
+
+
+def load_config(path):
+    data, info = read_json(path)
+    if info.st_uid != os.getuid() or info.st_mode & 0o077:
+        raise ValueError("Config must be private and owned by current user")
+    fields = {"schema", "mode", "expiresUTC", "thread", "repo", "checkpoint", "codex"}
+    if not isinstance(data, dict) or set(data) - fields or type(data.get("schema")) is not int or data["schema"] != 1:
+        raise ValueError("Invalid continuity config")
+    mode = data.get("mode", "handoff")
+    if mode not in ("handoff", "unattended"):
+        raise ValueError("Invalid continuity mode")
+    if mode == "handoff":
+        return data, None
+    for key in ("repo", "checkpoint", "codex"):
+        if not isinstance(data.get(key), str) or not Path(data[key]).is_absolute():
+            raise ValueError("Expected absolute " + key)
+    if (not Path(data["repo"]).is_dir() or not Path(data["codex"]).is_file()
+            or not os.access(data["codex"], os.X_OK)):
+        raise ValueError("Repository or Codex executable unavailable")
+    if not isinstance(data.get("thread"), str) or not isinstance(data.get("expiresUTC"), str):
+        raise ValueError("Explicit thread UUID and expiry required")
+    if str(uuid.UUID(data["thread"])) != data["thread"]:
+        raise ValueError("Thread must be a canonical UUID")
+    expires = datetime.fromisoformat(data["expiresUTC"].replace("Z", "+00:00"))
+    if expires.tzinfo is None:
+        raise ValueError("Expiry must specify a timezone")
+    return data, expires.timestamp()
+
+
+def persist(path, data):
+    fd, temporary = tempfile.mkstemp(prefix=path.name + ".", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w") as target:
+            json.dump(data, target, sort_keys=True)
+            target.write("\n")
+            target.flush()
+            os.fsync(target.fileno())
+        os.replace(temporary, path)
+        directory = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY | os.O_CLOEXEC)
+        try:
+            os.fsync(directory)
+        finally:
+            os.close(directory)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def tick(path, clock=time.time, runner=subprocess.run):
+    """Caller must hold singleton(path) across each tick and queue attempt."""
+    now = clock()
+    config, expires = load_config(path)
+    result = {"observedUTC": datetime.fromtimestamp(now, timezone.utc).isoformat(),
+              "restartVerified": False, "queueAttempted": False}
+    if config.get("mode", "handoff") == "handoff" or expires <= now:
+        return dict(result, status="disarmed" if expires is None else "expired")
+    checkpoint, info = read_json(config["checkpoint"])
+    if not isinstance(checkpoint, dict) or info.st_mtime > now:
+        raise ValueError("Invalid or future checkpoint")
+    if checkpoint.get("goalStatus") in ("paused", "complete"):
+        return dict(result, status="goal-quiescent")
+    reason = "stale-checkpoint" if now - info.st_mtime > 300 else None
+    active = checkpoint.get("activeVerification", {})
+    if isinstance(active, dict) and "running" in str(active.get("status", "")).lower():
+        report = active.get("report")
+        if isinstance(report, str):
+            candidate = (Path(config["repo"]) / report).resolve()
+            if candidate.is_relative_to(Path(config["repo"]).resolve()) and candidate.is_file():
+                actual, _ = read_json(candidate)
+                # Haskell writes passed:false BEFORE its build starts. Only a
+                # positive pass or an explicit failure is a terminal receipt.
+                if isinstance(actual, dict) and (actual.get("passed") is True or
+                        (actual.get("passed") is False and isinstance(actual.get("error"), str)
+                         and actual["error"].strip())):
+                    reason = "running-checkpoint-has-terminal-report"
+    if reason is None:
+        return dict(result, status="fresh")
+    state_path = Path(str(path) + ".state.json")
+    try:
+        state, _ = read_json(state_path)
+        last = state["lastAttemptEpoch"]
+        if type(last) not in (int, float) or last < 0:
+            raise ValueError("Invalid cooldown state")
+        if now - last < 300:
+            return dict(result, status="cooldown", reason=reason)
+    except FileNotFoundError:
+        pass
+    # Recheck the exact private config after observations, then reserve before dispatch.
+    if load_config(path) != (config, expires) or clock() >= expires:
+        return dict(result, status="config-changed-or-expired")
+    persist(state_path, {"lastAttemptEpoch": now, "reason": reason})
+    result.update(queueAttempted=True, status="wake-unconfirmed", reason=reason)
+    argv = [config["codex"], "queue", "--thread", config["thread"], "--message", PROMPT,
+            "--resume", "-C", config["repo"]]
+    try:
+        child = runner(argv, cwd=config["repo"], capture_output=True, text=True, timeout=20, check=False)
+        warning = "warn" in (child.stdout + child.stderr).lower()
+        result.update(queueExitCode=child.returncode, warningObserved=warning,
+                      queueAccepted=child.returncode == 0 and not warning)
+    except (subprocess.TimeoutExpired, OSError) as failure:
+        result.update(queueAccepted=False, queueFailure=type(failure).__name__)
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", required=True)
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--once", action="store_true")
+    modes.add_argument("--watch", action="store_true", help="Check every 60 seconds")
+    args = parser.parse_args()
+    try:
+        path = config_path(args.config)
+        with singleton(path):
+            while True:
+                try:
+                    result = tick(path)
+                    code = 4 if result.get("queueAttempted") and not result.get("queueAccepted") else 0
+                except (OSError, ValueError, KeyError, TypeError) as failure:
+                    result = {"status": "invalid-state", "errorType": type(failure).__name__,
+                              "queueAttempted": False, "restartVerified": False}
+                    code = 2
+                print(json.dumps(result, sort_keys=True), flush=True)
+                if not args.watch:
+                    return code
+                time.sleep(60)
+    except KeyboardInterrupt:
+        return 0
+    except BlockingIOError:
+        print(json.dumps({"status": "duplicate-watcher-refused", "queueAttempted": False}))
+        return 3
+    except (OSError, ValueError, KeyError, TypeError) as failure:
+        print(json.dumps({"status": "invalid-state", "errorType": type(failure).__name__,
+                          "queueAttempted": False, "restartVerified": False}))
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
