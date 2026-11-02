@@ -1,0 +1,552 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-02T03:08:30.818152+00:00",
+  "requirement": "ELM-ARC-002",
+  "scenario": "ownership-presentation",
+  "disposition": "implemented-and-component-verified-original-partial",
+  "sourceRevisionBeforeDelta": "05dc05572817d9821132ef6e29100efe8046f418",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6"
+  },
+  "qaSourceHashes": {
+    "implementation/warlock/qa/store-retirement/AcquisitionFailureMain.hs": "ddc5bf0a20620cb86cbaa168038cccfcd9fdb26c39b6e4fdb19fd1aad0ae0f46",
+    "implementation/warlock/qa/store-retirement/warlock-store-retirement-qa.cabal": "5f56dc4bad299044c7634964cb7e4db87c7bd9928c0865ac8c67f86a12f3a8a9",
+    "implementation/warlock/qa/store-retirement/store-retirement-guided.qnt": "0330d9588b101055ec57eda98939a42b806c429749556eea21a800f988670eb3",
+    "implementation/warlock/qa/store-retirement/Main.hs": "9674a247dd6757cc270cf04e5f4b62ce8396da961ad9a45e8d6e5dbe538cff18",
+    "implementation/warlock/qa/store-retirement/store-retirement_test.qnt": "cce5e8a483f0400d83138bf16d1aa53c10cabcd8a28471d2d84016c9271a7331",
+    "implementation/warlock/qa/store-retirement/StoreRetirement.overlay.patch": "b8f3b4215181fa6ca710e07871b4bf90f865df30dda72db67cf8fd89257e0d8a",
+    "implementation/warlock/qa/store-retirement/store-retirement.qnt": "df8f506d7935b5d189bcb1aab46976bd2316065b374bf9bdab9e44914082d904",
+    "implementation/warlock/qa/store-retirement/AcquisitionFailureControls.hs": "103ba3c8fe2cc862f236ab37a8ad1a709500bb336ba06ceae16ade969a7bba82"
+  },
+  "behavior": "Catalog/pin acquisition is registered before it can acquire resources; generic acquisition/publication failure remains uncertain and poisons new work instead of falsely certifying clean retirement. Same-owner settled-only APIs observe and seal without closing or replaying.",
+  "host": {
+    "report": {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/host-report.json",
+      "sha256": "e705a040272ba504666381847bf83433f81ed9f3c5da5583cfe40ca03a4b3a08"
+    },
+    "inputs": 345,
+    "suites": 36,
+    "commands": 104,
+    "passed": true,
+    "allCommandsNormal": true
+  },
+  "directWitness": {
+    "oldActualExit": 1,
+    "oldRetirement": true,
+    "oldRetainedRecords": 0,
+    "newActualExit": 0,
+    "newRetirement": false,
+    "newRetainedRecords": 1,
+    "acquisitionCounter": 1,
+    "releaseCalls": 0,
+    "bodyCalls": 0,
+    "scope": "Same exact fragment on actual old/new tracked functions; simulated unit acquisition event, not real descriptor cleanup."
+  },
+  "faultControls": {
+    "passed": true,
+    "knownNegativeOpenatActual": true,
+    "publicationFaults": true,
+    "closeUncertaintyNotRetried": true,
+    "shippingQAExports": false
+  },
+  "model": {
+    "namedTraces": 14,
+    "uniformSamples": 10000,
+    "uniformMaxSteps": 40,
+    "seed": 20261101,
+    "noCounterexampleObserved": true,
+    "uniformWitnessCounts": {
+      "witnessTwoClosed": 0,
+      "witnessBusy": 1883,
+      "witnessUnknown": 7,
+      "witnessUnconfirmedAcquire": 639
+    },
+    "initialQualificationPassed": false,
+    "initialQualificationFailure": "Required uniform positive witnessTwoClosed coverage was zero; original failed report retained unchanged.",
+    "guidedPositiveTraces": 1,
+    "guidedMaxSteps": 20,
+    "guidedWitnessTwoClosed": 1,
+    "guidedUsesExistingActionsOnly": true,
+    "aggregateScope": "Named cases, bounded sampled safety and separate positive reachability only; no exhaustive, scheduler, physical-FD, StopD or legacy-force-retirement proof."
+  },
+  "guestBuild": {
+    "inputs": 217,
+    "exit": 0,
+    "ownerSHA256": "f469a122f0e2bbfc33f5236f0dc2bdd6dfe26111e6f1c7bf27ec9955f90406dd",
+    "backendSHA256": "f001ffd68785cce5461a9d00e9768c1f57ae473016ff91add5362262d16ffd37"
+  },
+  "live": {
+    "completedPhysicalSequence": true,
+    "qmpAcknowledgedReceipts": 17,
+    "rootViewedScreenshots": [
+      "004-positive-foot.png",
+      "005-negative-footz.png",
+      "006-after-refresh-footz.png"
+    ],
+    "visibleObservations": [
+      "foot shows Foot/Foot Server/Foot Client matching rows",
+      "footz shows no matching applications",
+      "footz remains after guarded Refresh click"
+    ],
+    "actualExit": 1,
+    "forced": false,
+    "elapsedSeconds": 27.935889928994584,
+    "originalLimitSeconds": 28,
+    "backendFailureStages": [
+      "selectedOperationSucceeded"
+    ],
+    "backendSelectedError": {
+      "code": "unsuccessful",
+      "exitCode": 1
+    },
+    "controllerCleanupError": "FileNotFoundError",
+    "scopeInventoryConfirmedEmpty": false,
+    "knownPrincipalBirthsRemain": [],
+    "knownPrincipalBirthsUnknown": [],
+    "footPreserved": true,
+    "idleRestored": true,
+    "providerCleanupQualified": false
+  },
+  "independentComponentReview": {
+    "path": "docs/warlock-build-loop/v2/store-retirement-review-20261102.json",
+    "sha256": "26a6d9d9d5031dac8e1bd3efe90f3b46f5aa76879629aa226a8dbf926e3a4371"
+  },
+  "wholeOriginalRequirementAccepted": false,
+  "recordedTotals": {
+    "requirements": 19,
+    "scenarios": 42,
+    "originalRequirements": 242,
+    "originalScenarios": 417
+  },
+  "remaining": [
+    "Actual persistent Backend/trusted-pump and preowned lifetime/StopD integration.",
+    "Selected UI child exit1 and strict retired-cgroup cleanup uncertainty; no flag relaxation.",
+    "Full original ARC002 surface/provider/callback/window-authority observations and native/AT/IME/hardware/resource/release acceptance."
+  ],
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/guided-positive.stderr",
+      "sha256": "27052517724ce49410997231f923274176dae5ccb0eab3af87d5d1a6731b1cef"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/guided-positive.stdout",
+      "sha256": "d7cda80a53565923759c947977bea39f183a469372e0f4e5f20a08d616b1d429"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/guided-typecheck.stderr",
+      "sha256": "a5d4d920f81d70068f460baf1a8a31a63c61de9c068d1e4f6ff838cc45f24218"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/guided-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-build.stderr",
+      "sha256": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-build.stdout",
+      "sha256": "382531ea2ab6ff901c115afb3a101ea0549d6089188a83b7191fa06db638ae22"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-execute.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-execute.stdout",
+      "sha256": "08253beb1bfb5ffd2f79c13a83f0822b9d0f60284e8e9d43e9c28f8e4d02dc72"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-ldd.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-ldd.stdout",
+      "sha256": "ba06ef151360aa4a29fe3721191b7f0dfc9925628e257cf1bb243c6f29a65287"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-list-bin.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-list-bin.stdout",
+      "sha256": "e330c32bebb80260733ec6dc51b8ca9a840c4afbc6747bc20bf078326fc1dbd4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-readelf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/full-readelf.stdout",
+      "sha256": "a800c6832e7207e057657043df41ddb06bd7361cb837567dc369f94e76171102"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-build.stderr",
+      "sha256": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-build.stdout",
+      "sha256": "9f88d7792a3cf7f09d009ae6d1d1da08b227bd247533bc7665721b896e3e99bb"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-execute.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-execute.stdout",
+      "sha256": "e19f405ddcdfbdb687cef21a207ac58b1a037cd77087dcced284c70f711f8fbf"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-ldd.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-ldd.stdout",
+      "sha256": "6805e6f24f39616da7a7e32849e69b7eaca5f46ccc19ae768c95880902768736"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-list-bin.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-list-bin.stdout",
+      "sha256": "3a4ba11490d39a47471e8a797c6482a2ef3647f7156871caf18c91017f5dd7be"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-readelf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/green-readelf.stdout",
+      "sha256": "ce9f123e366416446f1fb79598fcf2f584ccb23415a0fe23dc49afb330635efd"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-build.stderr",
+      "sha256": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-build.stdout",
+      "sha256": "4f45057074681598e8e7b5f6ef60047b95f6cce32009a28b0997009be22c6d8a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-execute.stderr",
+      "sha256": "54be346e76d988ea9ca89db50fad05e9e98a04611864e5fd832829ae9f0e4bdd"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-execute.stdout",
+      "sha256": "bceb60bc961e82e15eb949c9348a22d32bdfa28b798e08e47f92928744ac98e6"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-ldd.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-ldd.stdout",
+      "sha256": "ba64fce792bb297d3f8d307c60d9e772ca2aba76e88e227c5245e0c59febce81"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-list-bin.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-list-bin.stdout",
+      "sha256": "4e9be9e116578f0f43752b1c84ccb9a66ed58e2b32f9c94cb6446695e95cdc23"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-readelf.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/red-readelf.stdout",
+      "sha256": "1e0255278a1310ef5725bff1c0fca89354feaf0715fb87cb4af5654acb991d9c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/logs/versions.stdout",
+      "sha256": "19663218290ae889764fb259dc991e0c53d0f392c0dd85a9b245604de0638fe3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/model-launch.stderr",
+      "sha256": "3752d0d80b88c2c47ae68429c951863d5ad0d6bf8f429a251e51c1f38efab0b9"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/model-launch.stdout",
+      "sha256": "4d03aab1b6d51ce4ccc223a0c954af7a8c3bfea913a5358d6ff1275e2d299f0e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/model-post-inputs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/model-post-inputs.stdout",
+      "sha256": "4fee9e43d860f0db7d89c26ad8799c3676d829d3d8a775854e4db100a80dfcba"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/model-toolchain.json",
+      "sha256": "c5d50bfa9cc30f2d6500b8d1b623f668b070ad8e3e98bc732afd28874b18b12c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/qa-manifest.json",
+      "sha256": "c73504f1804bb48204d0e9b906abc5d67ac6c9a460f7c12fbbdcf430e991b4b3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/qa-source.tar.gz",
+      "sha256": "5a076e8fe307aa6760706775aa2265ead2f6efc331b8600fb9ab42094a62931f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/run-store-controls.py",
+      "sha256": "c0df14682da4bd25446cb74f4912113e61ca7bc9faac03e00c0d9bf05a312b5c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/run-store-model.py",
+      "sha256": "abd5b309e70a9dbcfd94f689628605c9b91953482ec0ebe29f63ad5ef22282d3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/stage-qa.py",
+      "sha256": "36b9bbad08b2784ef971eb090b72d23f0b9138c8a4cb4aee0664e06ba0893a45"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/store-controls-report.json",
+      "sha256": "ccd4871db0aeffa805fd13d6b62609ebab96d5cd22fe77c7da716222d836e2c7"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/store-model-manifest.json",
+      "sha256": "c96e6ed77321ddcf0b08328c54640c98763d57e29136e2059af6e6ed580cbfc9"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/directed.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/directed.stdout",
+      "sha256": "9a9a6ce63e419a2c683031d0881c34d884f08f99e936cb80cc661930842e9d69"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/node-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/node-version.stdout",
+      "sha256": "249baf635bb43877fcb9422efa1a4904b702d0ddf14d3949b7cd0950d5229c81"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/quint-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/quint-version.stdout",
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/report.json",
+      "sha256": "d42c39fa4181b90aaa7eaa08cfd7cf37b487d1a408470b40baea8bdabee8e15a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/safety.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/safety.stdout",
+      "sha256": "bc5f4e441fd497c1c6e0fadc9e819ff47ee90d3ccbb4ea03487237ce8de1b49a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/test-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/test-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/uniform-model-attempt/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/controls/verify-model-inputs.py",
+      "sha256": "2c123482df74f62e548f06ca1a0aa420961bfaa15dd6bca987f0f2fdb44946ca"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/build-engine.sh",
+      "sha256": "b8e7ef1a51a673864faf4532f255932ba3df0b9ecf2c31bbeea811ecb304e5b3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/build.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/guest-artifacts.json",
+      "sha256": "2d4d7cdd03d865a5570dee836e9a6202c29af819def9470ee41ec32f79eca4d1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/guest-build.stderr",
+      "sha256": "2b86897cdad752b87814bbdce217641685d76c7d8231322c4419fe48deb95d64"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/guest-build.stdout",
+      "sha256": "c6207ae87e6557016dab6dc39c34abb67c4caf95353cfbd954e90c6d10487c4a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/run-build.sh",
+      "sha256": "556871284a9884cb8f9e881a2f992aaa5417a6e81f4df8bc31db81d9af3a3912"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/source-manifest.json",
+      "sha256": "c0e8c34bd2afacc586e6427761d0b2dc3eb9a1e6663997153214f131e0b6ae2e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/source-stage-receipt.json",
+      "sha256": "0c3947b36b37feb8b4c6f2492da15016199b7ea00f24b4b803b91c256a189e57"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/verify-artifacts.py",
+      "sha256": "22cdedeb5c0459e2cfd54714b29ea63f94ac6c2fc1bf09ad5ff198cf45fa3fca"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/verify.stderr",
+      "sha256": "532652ca6c512eeac461e5d3a866f70719bde0a7ad739f5d96957052318f585f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/guest-build/verify.stdout",
+      "sha256": "54d7c7eaaa30b7c9f82b5f607852aea09b78862d8e9b0b8601447e46f2f98c52"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/host-checks.tar.gz",
+      "sha256": "2dd08128ed3cf64e7122e431137c6b085b98b12749bfac93cdc57da43493fe49"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/host-input-review.json",
+      "sha256": "cc4f1e912c72547a89907f9ae231e24b11a29284a4cbe7f0c0528229eebdb830"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/host-report.json",
+      "sha256": "e705a040272ba504666381847bf83433f81ed9f3c5da5583cfe40ca03a4b3a08"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/004-positive-foot.png",
+      "sha256": "39df783f826e8b9ca31378b183f96abbd578b4402adff7ab5fca7281acd490a7"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/005-negative-footz.png",
+      "sha256": "46fcac36bf4a24f46c1eb43f1b598920138f7c266d42b5948af32d200e2e76f8"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/006-after-refresh-footz.png",
+      "sha256": "834a58fdb50b997402ea20db651a0317035ac026ca3714725dbef1de719deb8a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/backend.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/backend.stdout",
+      "sha256": "6967e22f332f02f44c91f02717c1ce1492a257355b6589e1b1c67e57bf6c6c75"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/guest-controller.py",
+      "sha256": "e03c56dcaff8c4794ed046dd9a0d9665ba72b1f119d245a4890cba48af7409e3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/host-driver.exit",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/host-driver.py",
+      "sha256": "51b73872536c6369e6587df83556b3a03377f523a3b8344ce52b1c32b74e6960"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/host-journey-result.json",
+      "sha256": "28f791a0afe8fe911d4710b99d35c3cd5556117ec6ea8e8cc7ae5f74ebbc6cf0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/physical-expected.json",
+      "sha256": "4748e4486a171b240238f1392078ae66c85bd7c6f476a8ab750f87979e076a36"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0001-motion.json",
+      "sha256": "94d31d1394c52adf1a5722ddb2acf3874f0649f6190d3b75d6ab1894f4570619"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0002-motion.json",
+      "sha256": "7f7040daeff835fe73340cab16da916ad282f5768ad08074142193cf6e84e143"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0003-press.json",
+      "sha256": "ca2666b23fa9655e9e716380a994c7d545c550f152cca6f9390f381e80d77efa"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0004-release.json",
+      "sha256": "d1b609df9a7cd56e1b590d462e86df7912154c76772a2d66e837c34c6332224a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0005-motion.json",
+      "sha256": "82af108e0909ac50a79626df1ec6ccb2adf3d8a684d7778e16374be14e92ef96"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0006-motion.json",
+      "sha256": "4e7b87ecff9e494f43d7274b349fb5c59bed1de41ef8bfcbdfc66bca7c0b0e88"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0007-press.json",
+      "sha256": "34f0f1d6f1b40246b09a2b9e31047b7c232773a05585da271c1422a5c9178c5a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0008-release.json",
+      "sha256": "b9760160b04fffa66689b532a683b72915db176e527651a27092aeaad21f7bdd"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0009-key.json",
+      "sha256": "c88eacc7f2b607ba96e6dccb1c1f9e675189a5043de08b9ac6ecce1c2d4bc42a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0010-key.json",
+      "sha256": "1caec026123167544f5f137fa55c7f98877eb52f27e6b7d2d45546bb0c4c7dec"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0011-key.json",
+      "sha256": "4343359bb49b967af2087b1212dfe33ecaa319db2c7a3b8fe029a630f0879501"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0012-key.json",
+      "sha256": "44019dcb26b60d03137b149f2523d7a322902e853bf3239840f3e69afdc358cd"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0013-key.json",
+      "sha256": "8383f181f3e17fabcd0c8efdc31931fd2efcf9c687747f7ebacf1288fcf05a24"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0014-motion.json",
+      "sha256": "088627b62182ddca88d82d5ca860dfbc8893cc04a69b7f480aaac97b88e9dfe8"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0015-motion.json",
+      "sha256": "350febb791ee6dc1306a067c33baca7dfc36f28a9403772ad38cc98e20826c59"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0016-press.json",
+      "sha256": "4450ac50b13ac1da0048f30a39ddc4be9b5a0ec6ea71125d8e7f9e8722543cfb"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/qmp-receipts/warlock-live-usability-e446831c5fba4bd5-0017-release.json",
+      "sha256": "455ab82bf97e57da8349acb609fd787da00a64b7a415fafef92916c31a5f40ef"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/stage.json",
+      "sha256": "74c19633cb5916df51c4263cb72bf7ccdba59ad43a9cb682c49012f6bf55abe7"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/store-retirement-20261102/live/trial-result.json",
+      "sha256": "d691df590b1e39041b6e073a648958ee43a7da89ca3949101b11727302eb6721"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+
+  store_retirement_test
+    ok twoNestedSuccessThenSeal passed 1 test(s)
+    ok explicitNegativeReceiptIsSettled passed 1 test(s)
+    ok genericAcquireExceptionNeverLooksClean passed 1 test(s)
+    ok publicationFailureAfterRetainNeverLooksClean passed 1 test(s)
+    ok rawAcquirePublicationFailureCannotLookClean passed 1 test(s)
+    ok openRequiresRetainedValue passed 1 test(s)
+    ok genericExceptionIsNotNegativeReceipt passed 1 test(s)
+    ok busyProbeDoesNotSealOrCallClose passed 1 test(s)
+    ok openResourcePreventsSettledSeal passed 1 test(s)
+    ok uncertainCloseNeverRetried passed 1 test(s)
+    ok oneClosedOneUncertainCannotSealClean passed 1 test(s)
+    ok scanExceptionSealsAndRethrows passed 1 test(s)
+    ok afterSuccessfulCloseCannotReclose passed 1 test(s)
+    ok emptyOwnerCanSeal passed 1 test(s)
+
+  14 passing (15ms)

@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "canonicalModels": {
+    "implementation/warlock/qa/store-retirement/store-retirement.qnt": {
+      "sha256": "df8f506d7935b5d189bcb1aab46976bd2316065b374bf9bdab9e44914082d904",
+      "draftSHA256": "57840622e7bb2b8b678b5dca825d3739d841eca95f21399e252e182789558554",
+      "localName": "store-retirement.qnt"
+    },
+    "implementation/warlock/qa/store-retirement/store-retirement_test.qnt": {
+      "sha256": "cce5e8a483f0400d83138bf16d1aa53c10cabcd8a28471d2d84016c9271a7331",
+      "draftSHA256": "2d6abc78f0bd75071c86616bb780bba78246c944ba79ab07b686a2435a5b4d4d",
+      "localName": "store-retirement_test.qnt"
+    }
+  },
+  "productionStoreSHA256": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+  "expectedDirected": 14,
+  "witnesses": [
+    "witnessTwoClosed",
+    "witnessBusy",
+    "witnessUnknown",
+    "witnessUnconfirmedAcquire"
+  ],
+  "backend": "typescript",
+  "samples": 10000,
+  "maxSteps": 40,
+  "seed": 20261101,
+  "scope": "Two single-use abstract slots with independent possibleOwned oracle; not physical close, scheduler, legacy force-retirement or native acceptance",
+  "sourceReview": "q-network exact003 peer review at01:59:41 + Root source review; all actions update sole record, closed finite enums, nontrivial no-false-clean/at-most-once properties, major paths in14namedtraces and4aggregatewitnesses.",
+  "nativeAccepted": false,
+  "releaseAccepted": false
+}

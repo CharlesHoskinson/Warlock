@@ -1,0 +1,53 @@
+{
+  "hostEvidence": "/home/charl/vm/omarchy/evidence/warlock-live-usability-store-retirement-20261102T024700Z",
+  "guestRoot": "/home/charl/warlock-live-usability-store-retirement-20261102T024700Z",
+  "report": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793584659077966251/report.json",
+  "reportSHA256": "e705a040272ba504666381847bf83433f81ed9f3c5da5583cfe40ca03a4b3a08",
+  "guestOwnerSHA256": "f469a122f0e2bbfc33f5236f0dc2bdd6dfe26111e6f1c7bf27ec9955f90406dd",
+  "guestBackendSHA256": "f001ffd68785cce5461a9d00e9768c1f57ae473016ff91add5362262d16ffd37",
+  "html": {
+    "controller": {
+      "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793584659077966251/haskell-build/frontend/HttpMain.html",
+      "sha256": "0ee9224e7fd6ff89aca2bbe4553e1e7f463525fd6028e52edd580419652d57a9",
+      "sourcePath": "implementation/warlock/src/HttpMain.elm",
+      "sourceSha256": "58a3b1f274bc69b053ca31ece17bcd6b65a593d5722ba65a7728b3d22471d5a9"
+    },
+    "bar": {
+      "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793584659077966251/haskell-build/frontend/HttpBar.html",
+      "sha256": "494b9f376aadc48d07fe8e63578816a2359b9ba112204a3ed84dedc077f08d85",
+      "sourcePath": "implementation/warlock/src/HttpBar.elm",
+      "sourceSha256": "74d4b6b80267e9b22065b2087ee2b5318a3ce1fe346e1897c99ced6031183af8"
+    },
+    "popup": {
+      "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793584659077966251/haskell-build/frontend/HttpPopup.html",
+      "sha256": "c5f2f7d85982341dc48f5b0ae811ab1ab916c6f97a7e49746c5eb53063486985",
+      "sourcePath": "implementation/warlock/src/HttpPopup.elm",
+      "sourceSha256": "e814d56f212765154436c1ab01cc2657b669a6d5d68f5c6d2180ccb64c9eeeb3"
+    }
+  },
+  "stagedHelperSHA256": {
+    "terra-vm-qmp-receipts-1902.py": "6e048bdbf3050ab7cef5a92f6875b29de4e3c56240555a3fb40ff43a6c576250",
+    "terra-vm-qmp-receipts-checks-1907.py": "b49d73c380ee550286f9c13b9598b595db6355b45757c1e9c0afab620b33aac3",
+    "qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+  },
+  "scope": "Native-on-VM usability staging, not native/release acceptance",
+  "originalTrialDurationSeconds": 28,
+  "priorStage": "/home/charl/vm/omarchy/evidence/warlock-live-usability-backend-diagnostics-20261102T003107Z/stage.json",
+  "qualification": "Actual Store acquisition/settled-retirement production3file change; protected345input common36suite104command pass, exact217source guest dynamic build, fresh3ElmHTML from samequalifiedhostprofile. All old native/provider/ATIME/hardware/release/StopD limits remain. Original28s physicalApps/Search/Refresh journey; no new window effects.",
+  "guestControllerSHA256": "e03c56dcaff8c4794ed046dd9a0d9665ba72b1f119d245a4890cba48af7409e3",
+  "hostDriverSHA256": "51b73872536c6369e6587df83556b3a03377f523a3b8344ce52b1c32b74e6960",
+  "guestHelperSHA256": "61d9a84a4a41037fcf6464fa56153c9b2ec26986be676d2f84fb21d9ff14c2c5",
+  "currentQualifiedHaskellInputs": 217,
+  "guestBuildRoot": "/home/charl/warlock-store-runtime-build-20261102T023304Z",
+  "guestBuildEvidence": "/home/charl/vm/omarchy/evidence/warlock-store-runtime-build-20261102T023304Z",
+  "guestBuildArtifactManifestSHA256": "2d4d7cdd03d865a5570dee836e9a6202c29af819def9470ee41ec32f79eca4d1",
+  "sourceRecord": ".warlock-contributor/engine-pid1.json",
+  "workingSourceHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d"
+  },
+  "sourceRevisionBeforeDirtySource": "05dc05572817d9821132ef6e29100efe8046f418",
+  "freshElmDocumentsBoundByHostReport": true
+}

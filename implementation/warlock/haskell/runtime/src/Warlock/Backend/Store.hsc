@@ -2,7 +2,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Native-selected fixed-root IO. No bridge value is a path or descriptor.
 module Warlock.Backend.Store
- (DirectoryPin(..),StoreOwner,newStoreOwner,runOwned,retireStoreOwner,
+ (DirectoryPin(..),StoreOwner,newStoreOwner,runOwned,retireStoreOwner,retireStoreOwnerIfSettled,
   withPinnedDirectory,withChildDirectory,listNames,entryDirectory,directoryStamp,readRegular,withPinLock,
   replacePins,readStartupFile) where
 #define _GNU_SOURCE 1
@@ -13,7 +13,7 @@ module Warlock.Backend.Store
 #include <unistd.h>
 #include <stdio.h>
 import Control.Concurrent.MVar
-import Control.Exception (SomeException,SomeAsyncException,fromException,mask,mask_,throwIO,try)
+import Control.Exception (IOException,SomeException,SomeAsyncException,fromException,mask,mask_,onException,throwIO,try)
 import Control.Monad (unless,when)
 import Data.Bits ((.|.),(.&.))
 import qualified Data.ByteString as B
@@ -21,7 +21,7 @@ import qualified Data.ByteString.Char8 as C
 import Data.IORef
 import Data.Int (Int64)
 import Data.Word (Word32,Word64)
-import Foreign.C.Error (throwErrnoIfMinus1,throwErrnoIfMinus1_)
+import Foreign.C.Error (getErrno,errnoToIOError,throwErrnoIfMinus1,throwErrnoIfMinus1_)
 import Foreign.C.String (CString)
 import Foreign.C.Types (CInt(..),CSize(..))
 import Foreign.Marshal.Alloc (allocaBytes)
@@ -48,7 +48,10 @@ foreign import ccall safe "renameat" c_renameat :: CInt -> CString -> CInt -> CS
 foreign import ccall safe "unlinkat" c_unlinkat :: CInt -> CString -> CInt -> IO CInt
 
 data DirectoryPin = DirectoryPin {directoryPath :: FilePath,directoryDevice :: Integer,directoryInode :: Integer} deriving (Eq,Show)
-data CloseState = Open | Closing | Closed | Uncertain deriving Eq
+data CloseState = Acquiring | Open | Closing | Closed | Uncertain deriving Eq
+-- Only an explicit negative acquisition receipt may mean no resource exists.
+-- An exception from generic acquisition is never such a receipt.
+data Acquisition a = Acquired a | NotAcquired IOException
 data Resource = Resource (IORef CloseState) (IO ())
 data StoreOwner = StoreOwner (MVar Bool) (IORef [Resource])
 
@@ -98,14 +101,50 @@ retireStoreOwner (StoreOwner gate resources) = mask_ $ do
    putMVar gate True
    pure (and settled)
 
-tracked :: StoreOwner -> IO a -> (a -> IO ()) -> (a -> IO b) -> IO b
+-- No physical close is started here. Seal the SAME operation gate and return
+-- True only if every retained acquisition/close record is affirmatively Closed.
+-- Acquiring/Open/Closing/Uncertain and Busy are unconfirmed, never cleanup proof.
+-- Original StopD and aggregate result publication belong to the Backend caller.
+retireStoreOwnerIfSettled :: StoreOwner -> IO Bool
+retireStoreOwnerIfSettled (StoreOwner gate resources) = mask_ $ do
+ selected <- tryTakeMVar gate
+ case selected of
+  Nothing -> pure False
+  Just _ -> do
+   settled <- (do
+     rows <- readIORef resources
+     and <$> mapM (\(Resource cell _) -> (==Closed) <$> readIORef cell) rows)
+      `onException` putMVar gate True
+   -- Unsettled or failed observation must not allow a later runOwned/replay.
+   -- Resource records and their once-only close rights remain untouched.
+   putMVar gate True
+   pure settled
+
+tracked :: StoreOwner -> IO (Acquisition a) -> (a -> IO ()) -> (a -> IO b) -> IO b
 tracked (StoreOwner _ resources) acquire release action = mask $ \restore -> do
- value <- acquire
- cell <- newIORef Open
- let resource=Resource cell (release value)
+ -- Allocate and publish the unconfirmed record BEFORE acquisition. Allocation
+ -- or publication failure here precedes any resource acquisition by this call.
+ cell <- newIORef Acquiring
+ valueCell <- newIORef Nothing
+ let closeRetained = do
+      selected <- readIORef valueCell
+      case selected of
+       Nothing -> ioError (userError "backend acquisition unconfirmed")
+       Just value -> release value
+     resource=Resource cell closeRetained
  previous <- readIORef resources
  live <- filterMResource previous
  writeIORef resources (resource:live)
+ acquired <- acquire
+ value <- case acquired of
+  -- Only a source-proven no-resource result makes this record Closed.
+  NotAcquired problem -> writeIORef cell Closed >> ioError problem
+  Acquired selected -> do
+   -- Any interruption/failure before both writes leaves Acquiring, not Closed.
+   -- Publish the actual retained value before making its close right usable.
+   writeIORef valueCell (Just selected)
+   writeIORef cell Open
+   pure selected
  result <- try (restore (action value))
  cleanup <- try (closeResource resource)
  case result of
@@ -130,17 +169,28 @@ fileFlags :: CInt
 fileFlags = #{const O_RDONLY} .|. #{const O_NONBLOCK} .|. #{const O_NOFOLLOW} .|. #{const O_CLOEXEC}
 nameValid :: B.ByteString -> Bool
 nameValid name = not (B.null name) && B.length name<=255 && name/=C.pack "." && name/=C.pack ".." && not (B.any (\byte -> byte==0 || byte==47) name)
-openAt :: Fd -> B.ByteString -> CInt -> #{type mode_t} -> IO Fd
-openAt parent name flags mode = do
- require (nameValid name) "invalid native-selected filename"
- B.useAsCString name $ \text -> Fd <$> throwErrnoIfMinus1 "backend openat" (c_openat (number parent) text flags mode)
+-- Cache errno at the actual negative syscall receipt. Exceptions before a
+-- receipt reaches tracked remain Acquiring/Unknown; never guess from a name.
+acquireFd :: String -> IO CInt -> IO (Acquisition Fd)
+acquireFd label syscall = do
+ raw <- syscall
+ if raw == -1 then do
+  problem <- getErrno
+  pure (NotAcquired (errnoToIOError label problem Nothing Nothing))
+ else if raw >= 0 then pure (Acquired (Fd raw))
+ else ioError (userError "unsupported backend descriptor result")
+
+openAt :: Fd -> B.ByteString -> CInt -> #{type mode_t} -> IO (Acquisition Fd)
+openAt parent name flags mode =
+ if not (nameValid name) then pure (NotAcquired (userError "invalid native-selected filename"))
+ else B.useAsCString name $ \text -> acquireFd "backend openat" (c_openat (number parent) text flags mode)
 
 withPinnedDirectory :: StoreOwner -> Bool -> DirectoryPin -> (Fd -> IO a) -> IO a
 withPinnedDirectory owner private pin action = do
  let raw=TE.encodeUtf8 (T.pack (directoryPath pin))
      parts=filter (not . B.null) (B.split 47 raw)
  require (not (B.null raw) && B.head raw==47 && length parts<=64 && all nameValid parts && directoryDevice pin>=0 && directoryInode pin>0) "invalid trusted root pin"
- tracked owner (B.useAsCString (C.pack "/") (\name -> Fd <$> throwErrnoIfMinus1 "backend root" (c_open name directoryFlags))) closeFdOnce $ \root ->
+ tracked owner (B.useAsCString (C.pack "/") (\name -> acquireFd "backend root" (c_open name directoryFlags))) closeFdOnce $ \root ->
   walk root parts
  where
   walk fd [] = do
@@ -163,7 +213,7 @@ withChildDirectory :: StoreOwner -> Fd -> B.ByteString -> (Fd -> IO a) -> IO a
 withChildDirectory owner parent name = tracked owner (openAt parent name directoryFlags 0) closeFdOnce
 
 listNames :: StoreOwner -> Fd -> IO [B.ByteString]
-listNames owner fd = tracked owner (Dir.openDirStream (C.pack ("/proc/self/fd/"++show (number fd)))) Dir.closeDirStream $ \stream ->
+listNames owner fd = tracked owner (Acquired <$> Dir.openDirStream (C.pack ("/proc/self/fd/"++show (number fd)))) Dir.closeDirStream $ \stream ->
  let collect count acc = do
       name <- Dir.readDirStream stream
       if B.null name then pure (reverse acc) else if name==C.pack "." || name==C.pack ".." then collect count acc else do
@@ -269,7 +319,7 @@ readStartupFile owner path = runOwned owner $ do
  let raw=TE.encodeUtf8 (T.pack path)
      parts=filter (not . B.null) (B.split 47 raw)
  require (not (B.null raw) && B.head raw==47 && not (null parts) && all nameValid parts && length parts<=64) "invalid trusted startup path"
- tracked owner (B.useAsCString (C.pack "/") (\name -> Fd <$> throwErrnoIfMinus1 "backend startup root" (c_open name directoryFlags))) closeFdOnce $ \root ->
+ tracked owner (B.useAsCString (C.pack "/") (\name -> acquireFd "backend startup root" (c_open name directoryFlags))) closeFdOnce $ \root ->
   walk root parts
  where
   walk _ [] = ioError (userError "startup file missing")

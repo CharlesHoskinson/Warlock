@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "variants": {
+    "red": {
+      "sourceBeforeSHA256": "2aa8ee35f9ef5c767fd259b413f705c8930bfb0f62effe4a97bdc906b47cceb9",
+      "qaStoreSHA256": "bfc2e86c2cceb36fe423672f3e088cb55b86d06ea4189be6d5fa88f48d460fa8",
+      "expectedExecutionExit": 1
+    },
+    "green": {
+      "sourceBeforeSHA256": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+      "qaStoreSHA256": "ebdd53c569d388d14b21008ea80a98f78f994dce83ed3216cd2a7a21b1aff510",
+      "expectedExecutionExit": 0
+    },
+    "full": {
+      "sourceBeforeSHA256": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+      "qaStoreSHA256": "8b29affe4a369c009a6e2bae01adaf56b92ac1e4fb3bc2c3c6b33189c3b12295",
+      "expectedExecutionExit": 0
+    }
+  },
+  "qaInputs": {
+    "red/Main.hs": "ddc5bf0a20620cb86cbaa168038cccfcd9fdb26c39b6e4fdb19fd1aad0ae0f46",
+    "red/cabal.project": "98b53f84531fc5b7dd20423b7d6b6903e77768e9a290271bd49c5a7b6649d18a",
+    "red/qa-src/Warlock/Backend/Store.hsc": "bfc2e86c2cceb36fe423672f3e088cb55b86d06ea4189be6d5fa88f48d460fa8",
+    "red/warlock-store-acquisition-witness.cabal": "d3ccc53c1896e65f9c587cee2f840fd1fd5370fe0d3fa7b6e09cfbe23cfa414e",
+    "green/Main.hs": "ddc5bf0a20620cb86cbaa168038cccfcd9fdb26c39b6e4fdb19fd1aad0ae0f46",
+    "green/cabal.project": "98b53f84531fc5b7dd20423b7d6b6903e77768e9a290271bd49c5a7b6649d18a",
+    "green/qa-src/Warlock/Backend/Store.hsc": "ebdd53c569d388d14b21008ea80a98f78f994dce83ed3216cd2a7a21b1aff510",
+    "green/warlock-store-acquisition-witness.cabal": "d3ccc53c1896e65f9c587cee2f840fd1fd5370fe0d3fa7b6e09cfbe23cfa414e",
+    "full/Main.hs": "9674a247dd6757cc270cf04e5f4b62ce8396da961ad9a45e8d6e5dbe538cff18",
+    "full/cabal.project": "98b53f84531fc5b7dd20423b7d6b6903e77768e9a290271bd49c5a7b6649d18a",
+    "full/qa-src/Warlock/Backend/Store.hsc": "8b29affe4a369c009a6e2bae01adaf56b92ac1e4fb3bc2c3c6b33189c3b12295",
+    "full/warlock-store-retirement-qa.cabal": "5f56dc4bad299044c7634964cb7e4db87c7bd9928c0865ac8c67f86a12f3a8a9"
+  },
+  "canonicalQAInputs": {
+    "implementation/warlock/qa/store-retirement/AcquisitionFailureControls.hs": "103ba3c8fe2cc862f236ab37a8ad1a709500bb336ba06ceae16ade969a7bba82",
+    "implementation/warlock/qa/store-retirement/AcquisitionFailureMain.hs": "ddc5bf0a20620cb86cbaa168038cccfcd9fdb26c39b6e4fdb19fd1aad0ae0f46",
+    "implementation/warlock/qa/store-retirement/Main.hs": "9674a247dd6757cc270cf04e5f4b62ce8396da961ad9a45e8d6e5dbe538cff18",
+    "implementation/warlock/qa/store-retirement/StoreRetirement.overlay.patch": "b8f3b4215181fa6ca710e07871b4bf90f865df30dda72db67cf8fd89257e0d8a",
+    "implementation/warlock/qa/store-retirement/warlock-store-retirement-qa.cabal": "5f56dc4bad299044c7634964cb7e4db87c7bd9928c0865ac8c67f86a12f3a8a9"
+  },
+  "productionHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6"
+  },
+  "shippingHooks": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false
+}

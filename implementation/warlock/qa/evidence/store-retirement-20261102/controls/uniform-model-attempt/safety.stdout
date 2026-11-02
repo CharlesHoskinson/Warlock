@@ -1,0 +1,7 @@
+[ok] No violation found (24850ms at 402 traces/second).
+Witnesses:
+witnessTwoClosed was witnessed in 0 trace(s) out of 10000 explored (0.00%)
+witnessBusy was witnessed in 1883 trace(s) out of 10000 explored (18.83%)
+witnessUnknown was witnessed in 7 trace(s) out of 10000 explored (0.07%)
+witnessUnconfirmedAcquire was witnessed in 639 trace(s) out of 10000 explored (6.39%)
+Use --seed=0x13528ed --backend=typescript to reproduce.

@@ -1,0 +1,1844 @@
+{
+  "scope": "Compiled and linked guest artifacts; not a GUI or native acceptance observation",
+  "originalBuildExitStatus": 0,
+  "artifacts": {
+    "warlock-ui-owner": {
+      "image": {
+        "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/assets/warlock-ui-owner",
+        "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/assets/warlock-ui-owner",
+        "device": "58",
+        "inode": "48690",
+        "size": "700416",
+        "sha256": "f469a122f0e2bbfc33f5236f0dc2bdd6dfe26111e6f1c7bf27ec9955f90406dd"
+      },
+      "dynamicSection": "\nDynamic section at offset 0x7a2c8 contains 63 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000003 (PLTGOT)             0x47bfe8\n 0x0000000000000002 (PLTRELSZ)           3384 (bytes)\n 0x0000000000000017 (JMPREL)             0x419880\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000007 (RELA)               0x40a880\n 0x0000000000000008 (RELASZ)             61440 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000006 (SYMTAB)             0x400308\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000005 (STRTAB)             0x4037d0\n 0x000000000000000a (STRSZ)              27576 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x40a388\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libwebkitgtk-6.0.so.4]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtk-4.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgobject-2.0.so.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgio-2.0.so.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libglib-2.0.so.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libsoup-3.0.so.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSrts-1.0.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-prim-0.10.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-bignum-1.3-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbase-4.18.3.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSarray-0.5.8.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSdeepseq-1.4.8.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-boot-th-9.6.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSpretty-1.1.3.6-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStemplate-haskell-2.20.0.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbytestring-0.11.5.4-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStransformers-0.6.1.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSmtl-2.3.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSstm-2.5.1.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSexceptions-0.10.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSfilepath-1.4.301.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStime-1.12.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSunix-2.8.6.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSdirectory-1.3.8.5-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHScontainers-0.6.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbinary-0.8.9.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStext-2.0.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSprocess-1.6.19.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgmp.so.10]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libffi.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libnuma.so.1]\n 0x000000000000000c (INIT)               0x41a5b8\n 0x000000000000000d (FINI)               0x477158\n 0x000000000000001a (FINI_ARRAY)         0x47b2b8\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x47b2c0\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001d (RUNPATH)            Library runpath: [/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build:/usr/lib]\n 0x000000006ffffff0 (VERSYM)             0x40a3b8\n 0x000000006ffffffe (VERNEED)            0x40a820\n 0x000000006fffffff (VERNEEDNUM)         1\n 0x0000000000000000 (NULL)               0x0\n",
+      "ldd": "\tlinux-vdso.so.1 (0x00007fb3c7f84000)\n\tlibm.so.6 => /usr/lib/libm.so.6 (0x00007fb3c7e1a000)\n\tlibwebkitgtk-6.0.so.4 => /usr/lib/libwebkitgtk-6.0.so.4 (0x00007fb3c2000000)\n\tlibgtk-4.so.1 => /usr/lib/libgtk-4.so.1 (0x00007fb3c1200000)\n\tlibgobject-2.0.so.0 => /usr/lib/libgobject-2.0.so.0 (0x00007fb3c7db5000)\n\tlibgio-2.0.so.0 => /usr/lib/libgio-2.0.so.0 (0x00007fb3c101d000)\n\tlibglib-2.0.so.0 => /usr/lib/libglib-2.0.so.0 (0x00007fb3c1e9b000)\n\tlibsoup-3.0.so.0 => /usr/lib/libsoup-3.0.so.0 (0x00007fb3c0f7a000)\n\tlibHSrts-1.0.2-ghc9.6.7.so => /usr/lib/libHSrts-1.0.2-ghc9.6.7.so (0x00007fb3c0ed3000)\n\tlibHSghc-prim-0.10.0-ghc9.6.7.so => /usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so (0x00007fb3c0800000)\n\tlibHSghc-bignum-1.3-ghc9.6.7.so => /usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so (0x00007fb3c7d5e000)\n\tlibHSbase-4.18.3.0-ghc9.6.7.so => /usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so (0x00007fb3bfc00000)\n\tlibHSarray-0.5.8.0-ghc9.6.7.so => /usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so (0x00007fb3c0e4b000)\n\tlibHSdeepseq-1.4.8.1-ghc9.6.7.so => /usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so (0x00007fb3c7d40000)\n\tlibHSghc-boot-th-9.6.7-ghc9.6.7.so => /usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so (0x00007fb3c0e0a000)\n\tlibHSpretty-1.1.3.6-ghc9.6.7.so => /usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so (0x00007fb3c0d97000)\n\tlibHStemplate-haskell-2.20.0.0-ghc9.6.7.so => /usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so (0x00007fb3bf800000)\n\tlibHSbytestring-0.11.5.4-ghc9.6.7.so => /usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so (0x00007fb3bf69a000)\n\tlibHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so (0x00007fb3c7d2c000)\n\tlibHStransformers-0.6.1.0-ghc9.6.7.so => /usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so (0x00007fb3bf57d000)\n\tlibHSmtl-2.3.1-ghc9.6.7.so => /usr/lib/libHSmtl-2.3.1-ghc9.6.7.so (0x00007fb3c0d46000)\n\tlibHSstm-2.5.1.0-ghc9.6.7.so => /usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so (0x00007fb3c0d24000)\n\tlibHSexceptions-0.10.7-ghc9.6.7.so => /usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so (0x00007fb3bfbbc000)\n\tlibHSfilepath-1.4.301.0-ghc9.6.7.so => /usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so (0x00007fb3bf4b3000)\n\tlibHStime-1.12.2-ghc9.6.7.so => /usr/lib/libHStime-1.12.2-ghc9.6.7.so (0x00007fb3bf326000)\n\tlibHSunix-2.8.6.0-ghc9.6.7.so => /usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so (0x00007fb3bf1dd000)\n\tlibHSdirectory-1.3.8.5-ghc9.6.7.so => /usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so (0x00007fb3bf15b000)\n\tlibHSnetwork-3.2.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so (0x00007fb3bf089000)\n\tlibHScontainers-0.6.7-ghc9.6.7.so => /usr/lib/libHScontainers-0.6.7-ghc9.6.7.so (0x00007fb3bec00000)\n\tlibHSbinary-0.8.9.1-ghc9.6.7.so => /usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so (0x00007fb3befbb000)\n\tlibHStext-2.0.2-ghc9.6.7.so => /usr/lib/libHStext-2.0.2-ghc9.6.7.so (0x00007fb3be800000)\n\tlibHSprocess-1.6.19.0-ghc9.6.7.so => /usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so (0x00007fb3bebbf000)\n\tlibHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so (0x00007fb3beb60000)\n\tlibHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so (0x00007fb3be764000)\n\tlibHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so (0x00007fb3be5eb000)\n\tlibHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so (0x00007fb3be3ff000)\n\tlibgmp.so.10 => /usr/lib/libgmp.so.10 (0x00007fb3be358000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007fb3be000000)\n\tlibffi.so.8 => /usr/lib/libffi.so.8 (0x00007fb3c7d16000)\n\tlibnuma.so.1 => /usr/lib/libnuma.so.1 (0x00007fb3c1e8d000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fb3c7f86000)\n\tlibgmodule-2.0.so.0 => /usr/lib/libgmodule-2.0.so.0 (0x00007fb3c1e86000)\n\tlibepoxy.so.0 => /usr/lib/libepoxy.so.0 (0x00007fb3be24b000)\n\tlibpango-1.0.so.0 => /usr/lib/libpango-1.0.so.0 (0x00007fb3bdf91000)\n\tlibharfbuzz.so.0 => /usr/lib/libharfbuzz.so.0 (0x00007fb3bde46000)\n\tlibgdk_pixbuf-2.0.so.0 => /usr/lib/libgdk_pixbuf-2.0.so.0 (0x00007fb3beb24000)\n\tlibcairo.so.2 => /usr/lib/libcairo.so.2 (0x00007fb3bdcfd000)\n\tlibfreetype.so.6 => /usr/lib/libfreetype.so.6 (0x00007fb3bdc18000)\n\tlibfontconfig.so.1 => /usr/lib/libfontconfig.so.1 (0x00007fb3bdb9d000)\n\tlibwebpmux.so.3 => /usr/lib/libwebpmux.so.3 (0x00007fb3c0d18000)\n\tlibexpat.so.1 => /usr/lib/libexpat.so.1 (0x00007fb3c07d1000)\n\tlibjavascriptcoregtk-6.0.so.1 => /usr/lib/libjavascriptcoregtk-6.0.so.1 (0x00007fb3bb400000)\n\tlibicui18n.so.78 => /usr/lib/libicui18n.so.78 (0x00007fb3bb000000)\n\tlibsystemd.so.0 => /usr/lib/libsystemd.so.0 (0x00007fb3baeb6000)\n\tlibjpeg.so.8 => /usr/lib/libjpeg.so.8 (0x00007fb3bdaf5000)\n\tlibpng16.so.16 => /usr/lib/libpng16.so.16 (0x00007fb3bb3c3000)\n\tlibicuuc.so.78 => /usr/lib/libicuuc.so.78 (0x00007fb3bac00000)\n\tlibxml2.so.16 => /usr/lib/libxml2.so.16 (0x00007fb3baabb000)\n\tlibsqlite3.so.0 => /usr/lib/libsqlite3.so.0 (0x00007fb3ba91b000)\n\tlibxslt.so.1 => /usr/lib/libxslt.so.1 (0x00007fb3bae79000)\n\tliblcms2.so.2 => /usr/lib/liblcms2.so.2 (0x00007fb3ba8af000)\n\tlibgcrypt.so.20 => /usr/lib/libgcrypt.so.20 (0x00007fb3ba6fe000)\n\tlibgstallocators-1.0.so.0 => /usr/lib/libgstallocators-1.0.so.0 (0x00007fb3c0d0e000)\n\tlibgstapp-1.0.so.0 => /usr/lib/libgstapp-1.0.so.0 (0x00007fb3befa2000)\n\tlibgstbase-1.0.so.0 => /usr/lib/libgstbase-1.0.so.0 (0x00007fb3ba676000)\n\tlibgstreamer-1.0.so.0 => /usr/lib/libgstreamer-1.0.so.0 (0x00007fb3ba503000)\n\tlibgstpbutils-1.0.so.0 => /usr/lib/libgstpbutils-1.0.so.0 (0x00007fb3bae34000)\n\tlibgstaudio-1.0.so.0 => /usr/lib/libgstaudio-1.0.so.0 (0x00007fb3ba478000)\n\tlibgsttag-1.0.so.0 => /usr/lib/libgsttag-1.0.so.0 (0x00007fb3ba439000)\n\tlibgstvideo-1.0.so.0 => /usr/lib/libgstvideo-1.0.so.0 (0x00007fb3ba35a000)\n\tlibgstgl-1.0.so.0 => /usr/lib/libgstgl-1.0.so.0 (0x00007fb3ba2c4000)\n\tlibgstfft-1.0.so.0 => /usr/lib/libgstfft-1.0.so.0 (0x00007fb3c0d03000)\n\tlibwebpdemux.so.2 => /usr/lib/libwebpdemux.so.2 (0x00007fb3c0cfc000)\n\tlibwebp.so.7 => /usr/lib/libwebp.so.7 (0x00007fb3ba23d000)\n\tlibjxl.so.0.12 => /usr/lib/libjxl.so.0.12 (0x00007fb3b9e00000)\n\tlibavif.so.16 => /usr/lib/libavif.so.16 (0x00007fb3b9db8000)\n\tlibharfbuzz-icu.so.0 => /usr/lib/libharfbuzz-icu.so.0 (0x00007fb3c0cf7000)\n\tlibX11.so.6 => /usr/lib/libX11.so.6 (0x00007fb3b9c66000)\n\tlibwayland-server.so.0 => /usr/lib/libwayland-server.so.0 (0x00007fb3beb0f000)\n\tlibwayland-client.so.0 => /usr/lib/libwayland-client.so.0 (0x00007fb3bfbac000)\n\tlibmanette-0.2.so.0 => /usr/lib/libmanette-0.2.so.0 (0x00007fb3b9c14000)\n\tlibseccomp.so.2 => /usr/lib/libseccomp.so.2 (0x00007fb3bb396000)\n\tlibenchant-2.so.2 => /usr/lib/libenchant-2.so.2 (0x00007fb3be239000)\n\tlibgbm.so.1 => /usr/lib/libgbm.so.1 (0x00007fb3c07c9000)\n\tlibdrm.so.2 => /usr/lib/libdrm.so.2 (0x00007fb3bdade000)\n\tlibz.so.1 => /usr/lib/libz.so.1 (0x00007fb3bae19000)\n\tlibtasn1.so.6 => /usr/lib/libtasn1.so.6 (0x00007fb3be223000)\n\tlibhyphen.so.0 => /usr/lib/libhyphen.so.0 (0x00007fb3bef9a000)\n\tlibsecret-1.so.0 => /usr/lib/libsecret-1.so.0 (0x00007fb3b9bcc000)\n\tlibstdc++.so.6 => /usr/lib/libstdc++.so.6 (0x00007fb3b9800000)\n\tlibgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007fb3b9b9f000)\n\tlibpangocairo-1.0.so.0 => /usr/lib/libpangocairo-1.0.so.0 (0x00007fb3bdacc000)\n\tlibharfbuzz-subset.so.0 => /usr/lib/libharfbuzz-subset.so.0 (0x00007fb3b96b0000)\n\tlibfribidi.so.0 => /usr/lib/libfribidi.so.0 (0x00007fb3b9b7d000)\n\tlibcairo-gobject.so.2 => /usr/lib/libcairo-gobject.so.2 (0x00007fb3bae10000)\n\tlibgstplay-1.0.so.0 => /usr/lib/libgstplay-1.0.so.0 (0x00007fb3b9b59000)\n\tlibgraphene-1.0.so.0 => /usr/lib/libgraphene-1.0.so.0 (0x00007fb3b9b3b000)\n\tlibXi.so.6 => /usr/lib/libXi.so.6 (0x00007fb3b9b26000)\n\tlibpangoft2-1.0.so.0 => /usr/lib/libpangoft2-1.0.so.0 (0x00007fb3b9b07000)\n\tlibcloudproviders.so.0 => /usr/lib/libcloudproviders.so.0 (0x00007fb3b9aef000)\n\tlibtinysparql-3.0.so.0 => /usr/lib/libtinysparql-3.0.so.0 (0x00007fb3b95d9000)\n\tlibvulkan.so.1 => /usr/lib/libvulkan.so.1 (0x00007fb3b952e000)\n\tlibtiff.so.6 => /usr/lib/libtiff.so.6 (0x00007fb3b9496000)\n\tlibxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007fb3b9437000)\n\tlibwayland-egl.so.1 => /usr/lib/libwayland-egl.so.1 (0x00007fb3bb391000)\n\tlibXext.so.6 => /usr/lib/libXext.so.6 (0x00007fb3b9adb000)\n\tlibXcursor.so.1 => /usr/lib/libXcursor.so.1 (0x00007fb3b942a000)\n\tlibXdamage.so.1 => /usr/lib/libXdamage.so.1 (0x00007fb3ba238000)\n\tlibXfixes.so.3 => /usr/lib/libXfixes.so.3 (0x00007fb3b9ad3000)\n\tlibXrandr.so.2 => /usr/lib/libXrandr.so.2 (0x00007fb3b941d000)\n\tlibXinerama.so.1 => /usr/lib/libXinerama.so.1 (0x00007fb3b9418000)\n\tlibcairo-script-interpreter.so.2 => /usr/lib/libcairo-script-interpreter.so.2 (0x00007fb3b93f4000)\n\tlibcups.so.2 => /usr/lib/libcups.so.2 (0x00007fb3b935e000)\n\tlibcolord.so.2 => /usr/lib/libcolord.so.2 (0x00007fb3b9307000)\n\tlibmount.so.1 => /usr/lib/libmount.so.1 (0x00007fb3b92aa000)\n\tlibpcre2-8.so.0 => /usr/lib/libpcre2-8.so.0 (0x00007fb3b91f7000)\n\tlibpsl.so.5 => /usr/lib/libpsl.so.5 (0x00007fb3b91e3000)\n\tlibbrotlidec.so.1 => /usr/lib/libbrotlidec.so.1 (0x00007fb3b91d4000)\n\tlibzstd.so.1 => /usr/lib/libzstd.so.1 (0x00007fb3b90ee000)\n\tlibgssapi_krb5.so.2 => /usr/lib/libgssapi_krb5.so.2 (0x00007fb3b9096000)\n\tlibnghttp2.so.14 => /usr/lib/libnghttp2.so.14 (0x00007fb3b906c000)\n\tlibthai.so.0 => /usr/lib/libthai.so.0 (0x00007fb3b9061000)\n\tlibgraphite2.so.3 => /usr/lib/libgraphite2.so.3 (0x00007fb3b903e000)\n\tlibglycin-2.so.0 => /usr/lib/libglycin-2.so.0 (0x00007fb3b8a00000)\n\tlibXrender.so.1 => /usr/lib/libXrender.so.1 (0x00007fb3b9032000)\n\tlibxcb.so.1 => /usr/lib/libxcb.so.1 (0x00007fb3b9007000)\n\tlibxcb-render.so.0 => /usr/lib/libxcb-render.so.0 (0x00007fb3b8ff8000)\n\tlibxcb-shm.so.0 => /usr/lib/libxcb-shm.so.0 (0x00007fb3b8ff3000)\n\tlibpixman-1.so.0 => /usr/lib/libpixman-1.so.0 (0x00007fb3b8f44000)\n\tlibbz2.so.1.0 => /usr/lib/libbz2.so.1.0 (0x00007fb3b8f31000)\n\tlibatomic.so.1 => /usr/lib/libatomic.so.1 (0x00007fb3b8f26000)\n\tlibicudata.so.78 => /usr/lib/libicudata.so.78 (0x00007fb3b6a00000)\n\tlibgpg-error.so.0 => /usr/lib/libgpg-error.so.0 (0x00007fb3b8ef9000)\n\tlibunwind.so.8 => /usr/lib/libunwind.so.8 (0x00007fb3b8edd000)\n\tlibdw.so.1 => /usr/lib/libdw.so.1 (0x00007fb3b695e000)\n\tliborc-0.4.so.0 => /usr/lib/liborc-0.4.so.0 (0x00007fb3b684c000)\n\tlibEGL.so.1 => /usr/lib/libEGL.so.1 (0x00007fb3b8ec9000)\n\tlibGLX.so.0 => /usr/lib/libGLX.so.0 (0x00007fb3b8e98000)\n\tlibwayland-cursor.so.0 => /usr/lib/libwayland-cursor.so.0 (0x00007fb3b8e8f000)\n\tlibX11-xcb.so.1 => /usr/lib/libX11-xcb.so.1 (0x00007fb3b8e8a000)\n\tlibgudev-1.0.so.0 => /usr/lib/libgudev-1.0.so.0 (0x00007fb3b8e7b000)\n\tlibsharpyuv.so.0 => /usr/lib/libsharpyuv.so.0 (0x00007fb3b8e72000)\n\tlibjxl_cms.so.0.12 => /usr/lib/libjxl_cms.so.0.12 (0x00007fb3b89d7000)\n\tlibhwy.so.1 => /usr/lib/libhwy.so.1 (0x00007fb3b89c8000)\n\tlibbrotlienc.so.1 => /usr/lib/libbrotlienc.so.1 (0x00007fb3b678c000)\n\tlibyuv.so => /usr/lib/libyuv.so (0x00007fb3b66e5000)\n\tlibdav1d.so.7 => /usr/lib/libdav1d.so.7 (0x00007fb3b6504000)\n\tlibrav1e.so.0.8 => /usr/lib/librav1e.so.0.8 (0x00007fb3b6000000)\n\tlibSvtAv1Enc.so.4 => /usr/lib/libSvtAv1Enc.so.4 (0x00007fb3ada00000)\n\tlibaom.so.3 => /usr/lib/libaom.so.3 (0x00007fb3ad000000)\n\tlibhidapi-hidraw.so.0 => /usr/lib/libhidapi-hidraw.so.0 (0x00007fb3b89c0000)\n\tlibevdev.so.2 => /usr/lib/libevdev.so.2 (0x00007fb3b89aa000)\n\tlibtss2-esys.so.0 => /usr/lib/libtss2-esys.so.0 (0x00007fb3b6472000)\n\tlibtss2-mu.so.0 => /usr/lib/libtss2-mu.so.0 (0x00007fb3b6428000)\n\tlibtss2-rc.so.0 => /usr/lib/libtss2-rc.so.0 (0x00007fb3b89a1000)\n\tlibtss2-tctildr.so.0 => /usr/lib/libtss2-tctildr.so.0 (0x00007fb3b8997000)\n\tlibjson-glib-1.0.so.0 => /usr/lib/libjson-glib-1.0.so.0 (0x00007fb3b63fe000)\n\tlibdeflate.so.0 => /usr/lib/libdeflate.so.0 (0x00007fb3b63e6000)\n\tlibjbig.so.2.2 => /usr/lib/libjbig.so.2.2 (0x00007fb3b63d8000)\n\tliblzma.so.5 => /usr/lib/liblzma.so.5 (0x00007fb3b63a2000)\n\tliblzo2.so.2 => /usr/lib/liblzo2.so.2 (0x00007fb3b6381000)\n\tlibavahi-common.so.3 => /usr/lib/libavahi-common.so.3 (0x00007fb3b6372000)\n\tlibavahi-client.so.3 => /usr/lib/libavahi-client.so.3 (0x00007fb3b635f000)\n\tlibgnutls.so.30 => /usr/lib/libgnutls.so.30 (0x00007fb3acc00000)\n\tlibudev.so.1 => /usr/lib/libudev.so.1 (0x00007fb3b5fb0000)\n\tlibblkid.so.1 => /usr/lib/libblkid.so.1 (0x00007fb3b5f70000)\n\tlibunistring.so.5 => /usr/lib/libunistring.so.5 (0x00007fb3aca19000)\n\tlibidn2.so.0 => /usr/lib/libidn2.so.0 (0x00007fb3b633b000)\n\tlibbrotlicommon.so.1 => /usr/lib/libbrotlicommon.so.1 (0x00007fb3ad9dd000)\n\tlibkrb5.so.3 => /usr/lib/libkrb5.so.3 (0x00007fb3ad90e000)\n\tlibk5crypto.so.3 => /usr/lib/libk5crypto.so.3 (0x00007fb3ad8e0000)\n\tlibcom_err.so.2 => /usr/lib/libcom_err.so.2 (0x00007fb3b6333000)\n\tlibkrb5support.so.0 => /usr/lib/libkrb5support.so.0 (0x00007fb3b6324000)\n\tlibkeyutils.so.1 => /usr/lib/libkeyutils.so.1 (0x00007fb3acff9000)\n\tlibresolv.so.2 => /usr/lib/libresolv.so.2 (0x00007fb3acfe6000)\n\tlibdatrie.so.1 => /usr/lib/libdatrie.so.1 (0x00007fb3acfdd000)\n\tlibXau.so.6 => /usr/lib/libXau.so.6 (0x00007fb3acfd8000)\n\tlibXdmcp.so.6 => /usr/lib/libXdmcp.so.6 (0x00007fb3acfd0000)\n\tlibelf.so.1 => /usr/lib/libelf.so.1 (0x00007fb3acfb1000)\n\tlibGLdispatch.so.0 => /usr/lib/libGLdispatch.so.0 (0x00007fb3acf38000)\n\tlibcrypto.so.3 => /usr/lib/libcrypto.so.3 (0x00007fb3ac400000)\n\tlibtss2-sys.so.1 => /usr/lib/libtss2-sys.so.1 (0x00007fb3acf14000)\n\tlibdbus-1.so.3 => /usr/lib/libdbus-1.so.3 (0x00007fb3acebe000)\n\tlibleancrypto.so.1.9 => /usr/lib/libleancrypto.so.1.9 (0x00007fb3ac000000)\n\tlibp11-kit.so.0 => /usr/lib/libp11-kit.so.0 (0x00007fb3abe5e000)\n\tlibhogweed.so.7 => /usr/lib/libhogweed.so.7 (0x00007fb3ace75000)\n\tlibnettle.so.9 => /usr/lib/libnettle.so.9 (0x00007fb3ac9bd000)\n",
+      "readelfExit": 0,
+      "lddExit": 0,
+      "dependencies": [
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "47861",
+          "size": "85552",
+          "sha256": "6f840ea5a505ba6501e8d582b323ca859e0676a65b50db20174c495052513279"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "48335",
+          "size": "1209752",
+          "sha256": "59dc6406acea4e3ef83617df7a17ca72610419ec1fa83e313a0ac30cf6b6bdea"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "47954",
+          "size": "520872",
+          "sha256": "215be4cabdaee140194585aaf6f3e307b947a81f0665f55c169f72584d15254b"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "48398",
+          "size": "836264",
+          "sha256": "0b0900fa11ccfd720dc9b8d191d6874e2af3bd6194cf09cb5b6ecbfb9d0e3622"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "48488",
+          "size": "2031376",
+          "sha256": "b37607d6a2c3d81c06933f3e785101b4a0f6389f4b8082c569430a981bbe69c0"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "48588",
+          "size": "2472208",
+          "sha256": "fb27f217e0f4585010ef3f6f001563401c46a69dd2d709826a93d1f505e6d9d3"
+        },
+        {
+          "path": "/usr/lib/libEGL.so.1",
+          "resolvedPath": "/usr/lib/libEGL.so.1.1.0",
+          "device": "31",
+          "inode": "110917",
+          "size": "67536",
+          "sha256": "89d5d0f68f7e42397544db26347c24a893be2e08b81406e8e8714803c29db03b"
+        },
+        {
+          "path": "/usr/lib/libGLX.so.0",
+          "resolvedPath": "/usr/lib/libGLX.so.0.0.0",
+          "device": "31",
+          "inode": "110926",
+          "size": "133064",
+          "sha256": "4eca76728c640b67b1ed656a22b53d3734c100ba4f992aecd705d2e70bfe743a"
+        },
+        {
+          "path": "/usr/lib/libGLdispatch.so.0",
+          "resolvedPath": "/usr/lib/libGLdispatch.so.0.0.0",
+          "device": "31",
+          "inode": "110929",
+          "size": "460896",
+          "sha256": "b6d068112d4fd36750b6fedcddea0df7719b707495611cbe6fd92f6887eda467"
+        },
+        {
+          "path": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330318",
+          "size": "551472",
+          "sha256": "be7d5dd7e80c0ed4ebfa9bbbb2287a963777c3b807764a8cb9553f6832a1d47b"
+        },
+        {
+          "path": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330319",
+          "size": "12344312",
+          "sha256": "ced6e76d334356f9b2aa991fa0ee42ec774d9f0ae4419afd10a89dfcdcb8bdf4"
+        },
+        {
+          "path": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330320",
+          "size": "840144",
+          "sha256": "d435f87b74b478c0af843433c5bde8c216ebb2bea58efccdf3a0371625551b83"
+        },
+        {
+          "path": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330321",
+          "size": "1463208",
+          "sha256": "994b29012b2e49f1d5cbda53dee91d0978422af9ed892e4f78e4b84ef99c8c91"
+        },
+        {
+          "path": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330322",
+          "size": "3765888",
+          "sha256": "3bb400d7f04296c9c8822f0498104b9a73a59b1f824c1f03dd51e2fe259e0d20"
+        },
+        {
+          "path": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330323",
+          "size": "120880",
+          "sha256": "e4243858a70472e28237a2950dbc032c4b3b9b8b99922cddacb6a457fdfb52ab"
+        },
+        {
+          "path": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330324",
+          "size": "530200",
+          "sha256": "db46672b659943f3545e8ce4d220043e351cf266a7400bbb5b96a6a22b0f237d"
+        },
+        {
+          "path": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330325",
+          "size": "275784",
+          "sha256": "b410ae8d20e78bcd8cac9fd2994ea5ecf69e4a94fa74464780bbfa30b55d88f2"
+        },
+        {
+          "path": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330326",
+          "size": "825528",
+          "sha256": "4b7ff2115425a599038c3f9d3168b6e076dcb42efe8d41c0cf23843e2519aad1"
+        },
+        {
+          "path": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330327",
+          "size": "342864",
+          "sha256": "441420623c2127a991069574a9ef28b1109abdea8ebe205b9c0d8c9a7e2a6af4"
+        },
+        {
+          "path": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330329",
+          "size": "263112",
+          "sha256": "fed1d611974e659a3b987a5bbab418303e62c27e1b92bbbb81d43606b12a50c2"
+        },
+        {
+          "path": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330332",
+          "size": "5201744",
+          "sha256": "6d52ca0afa25dbcfb91161826d52c52e0713e66339515997e3905bc2cc39874c"
+        },
+        {
+          "path": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330338",
+          "size": "326216",
+          "sha256": "c932a5430590c2fa1b5c4966c104336331225585e5db0d638d1c80fe06c93942"
+        },
+        {
+          "path": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330340",
+          "size": "466672",
+          "sha256": "88033823e51ce750a6f68501f7b3ca8a1a46f557d6fddd33536769dfe4d80164"
+        },
+        {
+          "path": "/usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330341",
+          "size": "262608",
+          "sha256": "0d0f4b8cdd6c7da2f5995348d14061465c5c68c3dff8ed67a31d0c18442f64ac"
+        },
+        {
+          "path": "/usr/lib/libHSrts-1.0.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSrts-1.0.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330342",
+          "size": "659648",
+          "sha256": "d3525341695393b7e04f3c353593b3b1e4586442e1b6cbe4cfba4433964b52c8"
+        },
+        {
+          "path": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330346",
+          "size": "133640",
+          "sha256": "b51856cad81c76d620a8b0b56212a468877a8c565f10ebb1bb8e842a07aa16fe"
+        },
+        {
+          "path": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330347",
+          "size": "3834824",
+          "sha256": "36d66549aa669d7a90e0b5e511135917f438c04bd859e1d20be1574e173d12ee"
+        },
+        {
+          "path": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330349",
+          "size": "3179992",
+          "sha256": "3b020e330f82c23beebc24531db828d556f75bcea1e0e3d40d124f3a955f9b17"
+        },
+        {
+          "path": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330350",
+          "size": "1623176",
+          "sha256": "0c1ae70df5f3cc8d9c64c4540fb587375810be58ed596652af445e6a2b34f1dd"
+        },
+        {
+          "path": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330351",
+          "size": "1162280",
+          "sha256": "0e2a904dd6a7b34f2375823939443d379ee3ad378f113e14d6897c179c202317"
+        },
+        {
+          "path": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330352",
+          "size": "1345712",
+          "sha256": "83f37340f48feb39fbe4f52cc655fc9c2f388d2a33d9eb67773cd8a5737a0163"
+        },
+        {
+          "path": "/usr/lib/libSvtAv1Enc.so.4",
+          "resolvedPath": "/usr/lib/libSvtAv1Enc.so.4.2.0",
+          "device": "31",
+          "inode": "138022",
+          "size": "5435032",
+          "sha256": "c8f3ae2d4714b0eb312125e283412eb8a6281563e3e1ef5b0c706cf7d30e78db"
+        },
+        {
+          "path": "/usr/lib/libX11-xcb.so.1",
+          "resolvedPath": "/usr/lib/libX11-xcb.so.1.0.0",
+          "device": "31",
+          "inode": "294523",
+          "size": "13976",
+          "sha256": "8d3bed500d5b774f95068b219846923564d856c0dfe04538afa29383b12b5c4b"
+        },
+        {
+          "path": "/usr/lib/libX11.so.6",
+          "resolvedPath": "/usr/lib/libX11.so.6.4.0",
+          "device": "31",
+          "inode": "294526",
+          "size": "1378688",
+          "sha256": "8c202bd93c4f4f3967ac66a20588da1e8f44a17b57ecc292d5cce51aa1168b74"
+        },
+        {
+          "path": "/usr/lib/libXau.so.6",
+          "resolvedPath": "/usr/lib/libXau.so.6.0.0",
+          "device": "31",
+          "inode": "84801",
+          "size": "14232",
+          "sha256": "3e229dba702d7b56f1c58ac0e004ae691ae2ad5ede7b50968e1cd7d8b2ccdecc"
+        },
+        {
+          "path": "/usr/lib/libXcursor.so.1",
+          "resolvedPath": "/usr/lib/libXcursor.so.1.0.2",
+          "device": "31",
+          "inode": "114076",
+          "size": "47048",
+          "sha256": "2c789c94ecd3a8e7a364c18856de6d713d317eafad6154d7657ab68761089e00"
+        },
+        {
+          "path": "/usr/lib/libXdamage.so.1",
+          "resolvedPath": "/usr/lib/libXdamage.so.1.1.0",
+          "device": "31",
+          "inode": "133112",
+          "size": "14208",
+          "sha256": "37733ba61c9ecdd4c3b20851a2cf59e12ec1b40a292b19ccfcbe7115efd9438d"
+        },
+        {
+          "path": "/usr/lib/libXdmcp.so.6",
+          "resolvedPath": "/usr/lib/libXdmcp.so.6.0.0",
+          "device": "31",
+          "inode": "84788",
+          "size": "26488",
+          "sha256": "0c572ba75de0f967c9c4d088161d3e435ea721bd99c169aae707aba6870a71b1"
+        },
+        {
+          "path": "/usr/lib/libXext.so.6",
+          "resolvedPath": "/usr/lib/libXext.so.6.4.0",
+          "device": "31",
+          "inode": "88535",
+          "size": "76928",
+          "sha256": "e131bd58bb319d99a19ea280232e4bd982abc70775bb1a7a832c64e5c69f739f"
+        },
+        {
+          "path": "/usr/lib/libXfixes.so.3",
+          "resolvedPath": "/usr/lib/libXfixes.so.3.1.0",
+          "device": "31",
+          "inode": "110987",
+          "size": "26432",
+          "sha256": "81c569776401b91d9fdc8678337b034687e77ef17c359ef98adfef07ed31ab49"
+        },
+        {
+          "path": "/usr/lib/libXi.so.6",
+          "resolvedPath": "/usr/lib/libXi.so.6.1.0",
+          "device": "31",
+          "inode": "297793",
+          "size": "79928",
+          "sha256": "5f6ee4a60cdc091c1cd4b32c0151a4fd9924a28cd26ddce5b8faed3841dac9b3"
+        },
+        {
+          "path": "/usr/lib/libXinerama.so.1",
+          "resolvedPath": "/usr/lib/libXinerama.so.1.0.0",
+          "device": "31",
+          "inode": "133124",
+          "size": "14328",
+          "sha256": "d9b2bb9216bf5649e73006d8f1e56673fa75362efbf1979a345f198c81f7d001"
+        },
+        {
+          "path": "/usr/lib/libXrandr.so.2",
+          "resolvedPath": "/usr/lib/libXrandr.so.2.2.0",
+          "device": "31",
+          "inode": "114399",
+          "size": "47088",
+          "sha256": "7688f3b7a66ed1bea80b91fe036c400eeba4f5be881c6459221647af9639db48"
+        },
+        {
+          "path": "/usr/lib/libXrender.so.1",
+          "resolvedPath": "/usr/lib/libXrender.so.1.3.0",
+          "device": "31",
+          "inode": "297819",
+          "size": "47248",
+          "sha256": "8b45aa817b4850ec0762c1540e060bb2eb145827f12ae0d95f28d8b8bbb7e13b"
+        },
+        {
+          "path": "/usr/lib/libaom.so.3",
+          "resolvedPath": "/usr/lib/libaom.so.3.15.2",
+          "device": "31",
+          "inode": "137949",
+          "size": "9224032",
+          "sha256": "5d43902743a2e53b56978aba9ecc0c432d9440813a8b5b94326d5ad6c0d1d983"
+        },
+        {
+          "path": "/usr/lib/libatomic.so.1",
+          "resolvedPath": "/usr/lib/libatomic.so.1.2.0",
+          "device": "31",
+          "inode": "4298",
+          "size": "34768",
+          "sha256": "977b443ea807835dca23aa5f27b6245799c5f452d972d033b88ca768e0b216d1"
+        },
+        {
+          "path": "/usr/lib/libavahi-client.so.3",
+          "resolvedPath": "/usr/lib/libavahi-client.so.3.2.9",
+          "device": "31",
+          "inode": "294125",
+          "size": "75992",
+          "sha256": "e7daac72cc399a33bc85b8537dd851536adf97f92ce7d0ab06d296c421c938a3"
+        },
+        {
+          "path": "/usr/lib/libavahi-common.so.3",
+          "resolvedPath": "/usr/lib/libavahi-common.so.3.5.4",
+          "device": "31",
+          "inode": "294128",
+          "size": "55704",
+          "sha256": "8c33e9cde0d73b007a0c4ca776e8f9aa866891349c54c85617c882efeae5f69e"
+        },
+        {
+          "path": "/usr/lib/libavif.so.16",
+          "resolvedPath": "/usr/lib/libavif.so.16.4.2",
+          "device": "31",
+          "inode": "138043",
+          "size": "289032",
+          "sha256": "1d7a6030060bbeba238fcdfc86c4a49d4bfc6389a1dab7498a824c978fa2cef5"
+        },
+        {
+          "path": "/usr/lib/libblkid.so.1",
+          "resolvedPath": "/usr/lib/libblkid.so.1.1.0",
+          "device": "31",
+          "inode": "7741",
+          "size": "256896",
+          "sha256": "aeaf48e3e206ee795262b7d83be9ba37803f1ee1391bb1ac48359ace60a9d2dd"
+        },
+        {
+          "path": "/usr/lib/libbrotlicommon.so.1",
+          "resolvedPath": "/usr/lib/libbrotlicommon.so.1.2.0",
+          "device": "31",
+          "inode": "8058",
+          "size": "141264",
+          "sha256": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2"
+        },
+        {
+          "path": "/usr/lib/libbrotlidec.so.1",
+          "resolvedPath": "/usr/lib/libbrotlidec.so.1.2.0",
+          "device": "31",
+          "inode": "8061",
+          "size": "55168",
+          "sha256": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979"
+        },
+        {
+          "path": "/usr/lib/libbrotlienc.so.1",
+          "resolvedPath": "/usr/lib/libbrotlienc.so.1.2.0",
+          "device": "31",
+          "inode": "8064",
+          "size": "780768",
+          "sha256": "8dbc539197d276310ce2750dcb73de5465a1259d46a5d1894e6138fd354bf5c7"
+        },
+        {
+          "path": "/usr/lib/libbz2.so.1.0",
+          "resolvedPath": "/usr/lib/libbz2.so.1.0.8",
+          "device": "31",
+          "inode": "18221",
+          "size": "74720",
+          "sha256": "3265f0647d9157aaa820c5094eba03c5be0f101c49e9ffd21289978b8e1875af"
+        },
+        {
+          "path": "/usr/lib/libc.so.6",
+          "resolvedPath": "/usr/lib/libc.so.6",
+          "device": "31",
+          "inode": "3446",
+          "size": "2215072",
+          "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524"
+        },
+        {
+          "path": "/usr/lib/libcairo-gobject.so.2",
+          "resolvedPath": "/usr/lib/libcairo-gobject.so.2.11806.6",
+          "device": "31",
+          "inode": "88658",
+          "size": "34616",
+          "sha256": "3e68527d33b98596b3a64d763601210337f2036ebb183bc0c70a9eb15387ea02"
+        },
+        {
+          "path": "/usr/lib/libcairo-script-interpreter.so.2",
+          "resolvedPath": "/usr/lib/libcairo-script-interpreter.so.2.11806.6",
+          "device": "31",
+          "inode": "88661",
+          "size": "148248",
+          "sha256": "f4d33c25288d02a87adf739409a659b76d68f70cedb4a9a7c83f997640911829"
+        },
+        {
+          "path": "/usr/lib/libcairo.so.2",
+          "resolvedPath": "/usr/lib/libcairo.so.2.11806.6",
+          "device": "31",
+          "inode": "88664",
+          "size": "1342184",
+          "sha256": "2b9b586a7581c1d889f7e7d05cb4413e5cbc854e7a26a121bfebd32995a19af6"
+        },
+        {
+          "path": "/usr/lib/libcloudproviders.so.0",
+          "resolvedPath": "/usr/lib/libcloudproviders.so.0.4.1",
+          "device": "31",
+          "inode": "133059",
+          "size": "96304",
+          "sha256": "a4e160e90ac206a11932eac9df2553aaa1c0c5e1f6e60d8e63203bc88c9f12c4"
+        },
+        {
+          "path": "/usr/lib/libcolord.so.2",
+          "resolvedPath": "/usr/lib/libcolord.so.2.0.5",
+          "device": "31",
+          "inode": "297858",
+          "size": "355416",
+          "sha256": "b317e309e9c16641f915560d9428989333522257cd4fafd446402637f65cec0a"
+        },
+        {
+          "path": "/usr/lib/libcom_err.so.2",
+          "resolvedPath": "/usr/lib/libcom_err.so.2.1",
+          "device": "31",
+          "inode": "7851",
+          "size": "18376",
+          "sha256": "67ed8a11c44542ffdbaa04b3521f48729afddf936568632b6aa9d04c595316cd"
+        },
+        {
+          "path": "/usr/lib/libcrypto.so.3",
+          "resolvedPath": "/usr/lib/libcrypto.so.3",
+          "device": "31",
+          "inode": "8725",
+          "size": "5926392",
+          "sha256": "a75a864dcda6ef9e4dc29fad4b7988ca832b904c3915a63c920062c40763dae1"
+        },
+        {
+          "path": "/usr/lib/libcups.so.2",
+          "resolvedPath": "/usr/lib/libcups.so.2",
+          "device": "31",
+          "inode": "115431",
+          "size": "612320",
+          "sha256": "e70b2bf2fa4c52bf32ff3a95e1f2ac98de8d1abd3d4a9e744e03c62ce6d3a9cc"
+        },
+        {
+          "path": "/usr/lib/libdatrie.so.1",
+          "resolvedPath": "/usr/lib/libdatrie.so.1.4.1",
+          "device": "31",
+          "inode": "89441",
+          "size": "30672",
+          "sha256": "ab76b51c7066731c916f3badbba0b84e546adbf2a66419d6988e16a0ac7311ea"
+        },
+        {
+          "path": "/usr/lib/libdav1d.so.7",
+          "resolvedPath": "/usr/lib/libdav1d.so.7.0.0",
+          "device": "31",
+          "inode": "113052",
+          "size": "1816520",
+          "sha256": "d7c476ec78f16b276af14962fc2d8cea0978b623185655d6d63149ae004ba1d8"
+        },
+        {
+          "path": "/usr/lib/libdbus-1.so.3",
+          "resolvedPath": "/usr/lib/libdbus-1.so.3.38.3",
+          "device": "31",
+          "inode": "294040",
+          "size": "346296",
+          "sha256": "2d6bb6fb31dd78f3ad7e871bca2ed4ed41e45eaff77bd3cb3e130a78aca89118"
+        },
+        {
+          "path": "/usr/lib/libdeflate.so.0",
+          "resolvedPath": "/usr/lib/libdeflate.so.0",
+          "device": "31",
+          "inode": "106615",
+          "size": "92064",
+          "sha256": "2244966510703acd9a3bb011b97664613ce9733f67f8873d83853d782c3dd3dd"
+        },
+        {
+          "path": "/usr/lib/libdrm.so.2",
+          "resolvedPath": "/usr/lib/libdrm.so.2.134.0",
+          "device": "31",
+          "inode": "88749",
+          "size": "92104",
+          "sha256": "8b97afc5e15a07442768b302660cf844b0962623f8dcecbaebccadf288c611b1"
+        },
+        {
+          "path": "/usr/lib/libdw.so.1",
+          "resolvedPath": "/usr/lib/libdw-0.197.so",
+          "device": "31",
+          "inode": "295835",
+          "size": "662568",
+          "sha256": "a89708a8f51ac2969c33cbb2f56a9209f18447a652b6f14ba84453476fa63c3e"
+        },
+        {
+          "path": "/usr/lib/libelf.so.1",
+          "resolvedPath": "/usr/lib/libelf-0.197.so",
+          "device": "31",
+          "inode": "295839",
+          "size": "120920",
+          "sha256": "1cff588f1129943c7391fab3e16d95eaa6586cf3c0483e7f95e50784f1389d94"
+        },
+        {
+          "path": "/usr/lib/libenchant-2.so.2",
+          "resolvedPath": "/usr/lib/libenchant-2.so.2.8.21",
+          "device": "31",
+          "inode": "136925",
+          "size": "67536",
+          "sha256": "3891f48df84092b6cf4782c80910808ec6915bd0b72c69d78d8f8fb08c3aa34f"
+        },
+        {
+          "path": "/usr/lib/libepoxy.so.0",
+          "resolvedPath": "/usr/lib/libepoxy.so.0.0.0",
+          "device": "31",
+          "inode": "114281",
+          "size": "1099376",
+          "sha256": "2f60fd7b9b287b789741a2b438d6b57549bd8a7f76d66c3c1a1399c930ed0f1b"
+        },
+        {
+          "path": "/usr/lib/libevdev.so.2",
+          "resolvedPath": "/usr/lib/libevdev.so.2.3.0",
+          "device": "31",
+          "inode": "88790",
+          "size": "84048",
+          "sha256": "334ae388be71eef9f2115901c4260104c5462f557c222568c0f6d9d0bccd188b"
+        },
+        {
+          "path": "/usr/lib/libexpat.so.1",
+          "resolvedPath": "/usr/lib/libexpat.so.1.13.0",
+          "device": "31",
+          "inode": "26357",
+          "size": "190408",
+          "sha256": "0755d0589724746da578d47ee23bfa09ecee64d9bf8e6eab0c277e6757895395"
+        },
+        {
+          "path": "/usr/lib/libffi.so.8",
+          "resolvedPath": "/usr/lib/libffi.so.8.5.0",
+          "device": "31",
+          "inode": "19167",
+          "size": "51432",
+          "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c"
+        },
+        {
+          "path": "/usr/lib/libfontconfig.so.1",
+          "resolvedPath": "/usr/lib/libfontconfig.so.1.17.0",
+          "device": "31",
+          "inode": "84129",
+          "size": "501720",
+          "sha256": "9d103ae2234c4a8140250935ec6f8d72b0ce1a389fc1a75e17a485c16adc566b"
+        },
+        {
+          "path": "/usr/lib/libfreetype.so.6",
+          "resolvedPath": "/usr/lib/libfreetype.so.6.20.7",
+          "device": "31",
+          "inode": "84099",
+          "size": "931784",
+          "sha256": "0b0e16faaaed2145c89e193bc52f308bfb909ccd182fbed0d2f245329c248fca"
+        },
+        {
+          "path": "/usr/lib/libfribidi.so.0",
+          "resolvedPath": "/usr/lib/libfribidi.so.0.4.0",
+          "device": "31",
+          "inode": "89295",
+          "size": "137272",
+          "sha256": "42035482e3206334aa574affb84a6eccdfdc3b149888589631d5f246dca5483e"
+        },
+        {
+          "path": "/usr/lib/libgbm.so.1",
+          "resolvedPath": "/usr/lib/libgbm.so.1.0.0",
+          "device": "31",
+          "inode": "110853",
+          "size": "18416",
+          "sha256": "b66f5cb3dac86bf2ba0635a7778a8714c9df380aa37629537aad48c80e40e368"
+        },
+        {
+          "path": "/usr/lib/libgcc_s.so.1",
+          "resolvedPath": "/usr/lib/libgcc_s.so.1",
+          "device": "31",
+          "inode": "4265",
+          "size": "182512",
+          "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a"
+        },
+        {
+          "path": "/usr/lib/libgcrypt.so.20",
+          "resolvedPath": "/usr/lib/libgcrypt.so.20.8.9",
+          "device": "31",
+          "inode": "16300",
+          "size": "1767864",
+          "sha256": "3b6d1189d37c612da66e5b2552c90188a50df6218dbe2525638a95ab51af1473"
+        },
+        {
+          "path": "/usr/lib/libgdk_pixbuf-2.0.so.0",
+          "resolvedPath": "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8",
+          "device": "31",
+          "inode": "113503",
+          "size": "240824",
+          "sha256": "a704ca70b0a4b148983c3545cb1f08ced159bc64387e3bb4d26e3ef6d90a66ff"
+        },
+        {
+          "path": "/usr/lib/libgio-2.0.so.0",
+          "resolvedPath": "/usr/lib/libgio-2.0.so.0.9000.1",
+          "device": "31",
+          "inode": "25259",
+          "size": "1969504",
+          "sha256": "b38001cca69b2890a22fd3f6590bea7392bf489009de7ddfb6dbf296a133685e"
+        },
+        {
+          "path": "/usr/lib/libglib-2.0.so.0",
+          "resolvedPath": "/usr/lib/libglib-2.0.so.0.9000.1",
+          "device": "31",
+          "inode": "25267",
+          "size": "1457576",
+          "sha256": "1e8739af791b1a2f1f01fc7c6f3b9158888387d5a816195475e406438d41b688"
+        },
+        {
+          "path": "/usr/lib/libglycin-2.so.0",
+          "resolvedPath": "/usr/lib/libglycin-2.so.0",
+          "device": "31",
+          "inode": "113371",
+          "size": "4629488",
+          "sha256": "db6cc338d4e6a824506c240cd61ec7675423b748f6b288f577c67c73f46064e4"
+        },
+        {
+          "path": "/usr/lib/libgmodule-2.0.so.0",
+          "resolvedPath": "/usr/lib/libgmodule-2.0.so.0.9000.1",
+          "device": "31",
+          "inode": "25271",
+          "size": "22464",
+          "sha256": "b259a089b405eaa747fa15b62800301dfc948523f547dec84ec5ea679cd51a4b"
+        },
+        {
+          "path": "/usr/lib/libgmp.so.10",
+          "resolvedPath": "/usr/lib/libgmp.so.10.5.0",
+          "device": "31",
+          "inode": "7675",
+          "size": "678528",
+          "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49"
+        },
+        {
+          "path": "/usr/lib/libgnutls.so.30",
+          "resolvedPath": "/usr/lib/libgnutls.so.30.42.0",
+          "device": "31",
+          "inode": "19762",
+          "size": "2254952",
+          "sha256": "34fb5f09418585343efa342a2a4b57904544d6f562d7179a5eeaca60b0abd0c6"
+        },
+        {
+          "path": "/usr/lib/libgobject-2.0.so.0",
+          "resolvedPath": "/usr/lib/libgobject-2.0.so.0.9000.1",
+          "device": "31",
+          "inode": "25275",
+          "size": "399456",
+          "sha256": "ec51ca8b317565beecf3b370743491a9da108f885ddb0a01976c3eac1711dd67"
+        },
+        {
+          "path": "/usr/lib/libgpg-error.so.0",
+          "resolvedPath": "/usr/lib/libgpg-error.so.0.42.1",
+          "device": "31",
+          "inode": "16251",
+          "size": "178392",
+          "sha256": "6aae5cd42d86605daa4102a028e7df8f16f33b17c884a9e6649671676918c3a9"
+        },
+        {
+          "path": "/usr/lib/libgraphene-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgraphene-1.0.so.0.1000.8",
+          "device": "31",
+          "inode": "109166",
+          "size": "116616",
+          "sha256": "dc336282f2243850ad02b6dd228ae40bba87ecfcbbfb5ddffe082634240f479a"
+        },
+        {
+          "path": "/usr/lib/libgraphite2.so.3",
+          "resolvedPath": "/usr/lib/libgraphite2.so.3.3.1",
+          "device": "31",
+          "inode": "89341",
+          "size": "137160",
+          "sha256": "70eebd2fda11b867ebff5a8e3bdf272875acdde0851d258c98b3b046b01b4fc7"
+        },
+        {
+          "path": "/usr/lib/libgssapi_krb5.so.2",
+          "resolvedPath": "/usr/lib/libgssapi_krb5.so.2.2",
+          "device": "31",
+          "inode": "15758",
+          "size": "360736",
+          "sha256": "db71de39831ad557f7c75fadf772575f1180c4e1e7f83ec7318fabd78e129296"
+        },
+        {
+          "path": "/usr/lib/libgstallocators-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstallocators-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "111453",
+          "size": "34776",
+          "sha256": "28b4e457beccdc4698fd3aff585d84a09c50a9077ca4ebe16a1d8138e075cd4b"
+        },
+        {
+          "path": "/usr/lib/libgstapp-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstapp-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "111456",
+          "size": "100520",
+          "sha256": "f4b063dd7a135b5ad07622e00afad0b0dee951983e2cf1f6d3eec631f769b38b"
+        },
+        {
+          "path": "/usr/lib/libgstaudio-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstaudio-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "111459",
+          "size": "563584",
+          "sha256": "8ebb4d0e24eee49a2fe7f98a1b87e84d514a6c4813a54b9a55c92621a2430fc0"
+        },
+        {
+          "path": "/usr/lib/libgstbase-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstbase-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "109045",
+          "size": "550864",
+          "sha256": "b94947f16769f9861604ab90aee32eb144f31414d2308ad5bb1fe9b99a4740a3"
+        },
+        {
+          "path": "/usr/lib/libgstfft-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstfft-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "111462",
+          "size": "42880",
+          "sha256": "f6bb2dbb98c53ba2128c977f3e6b82a78a8b618ac832c3e14bbec2d7dac88568"
+        },
+        {
+          "path": "/usr/lib/libgstgl-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstgl-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "111465",
+          "size": "614104",
+          "sha256": "9518fa3828d77e633d8ce2159ef87619d91a6fbc67add8318fbf0d75a47aed85"
+        },
+        {
+          "path": "/usr/lib/libgstpbutils-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstpbutils-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "111468",
+          "size": "276600",
+          "sha256": "0e3deda4262a80cef02f1368d3a53cb440419efc2ecdc632c6468c986147693f"
+        },
+        {
+          "path": "/usr/lib/libgstplay-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstplay-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "137773",
+          "size": "145360",
+          "sha256": "192b5d899cc6b994101ca9103c11aa0c56ae765e747766a765e5d93994a7c756"
+        },
+        {
+          "path": "/usr/lib/libgstreamer-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstreamer-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "109057",
+          "size": "1514032",
+          "sha256": "951ee3fed50a353d77243915ba42633ca9b592c699ac0e08b455774c86bcd6e0"
+        },
+        {
+          "path": "/usr/lib/libgsttag-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgsttag-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "111483",
+          "size": "256104",
+          "sha256": "38e7c3483786172c0899d20bafb9b06499e1403de76f9d25b4250de5e036a7d1"
+        },
+        {
+          "path": "/usr/lib/libgstvideo-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgstvideo-1.0.so.0.2808.0",
+          "device": "31",
+          "inode": "111486",
+          "size": "903768",
+          "sha256": "ffb1c78114c9ba76007b6f452afb7b39264eb50b235e179ddb72e1f548a36200"
+        },
+        {
+          "path": "/usr/lib/libgtk-4.so.1",
+          "resolvedPath": "/usr/lib/libgtk-4.so.1.2400.1",
+          "device": "31",
+          "inode": "166590",
+          "size": "13048760",
+          "sha256": "b1d66a913b737d2f5d6b0469e97d904a0da98802a3b929e20b4869aebc652c8b"
+        },
+        {
+          "path": "/usr/lib/libgudev-1.0.so.0",
+          "resolvedPath": "/usr/lib/libgudev-1.0.so.0.3.0",
+          "device": "31",
+          "inode": "308368",
+          "size": "47144",
+          "sha256": "ff8211ad76137468565b703139a961f24a7fec069f252990b6a85190868d3833"
+        },
+        {
+          "path": "/usr/lib/libharfbuzz-icu.so.0",
+          "resolvedPath": "/usr/lib/libharfbuzz-icu.so.0.61460.0",
+          "device": "31",
+          "inode": "137908",
+          "size": "14288",
+          "sha256": "73fa1fa3f5bd016b1128e4af5695be8a8cd6733590777c8766bac404d846f042"
+        },
+        {
+          "path": "/usr/lib/libharfbuzz-subset.so.0",
+          "resolvedPath": "/usr/lib/libharfbuzz-subset.so.0.61460.0",
+          "device": "31",
+          "inode": "89412",
+          "size": "1370368",
+          "sha256": "fbbc1155c21ed557bf499e66f83bd2a06b76d5cd08266520fe187f4564f440ff"
+        },
+        {
+          "path": "/usr/lib/libharfbuzz.so.0",
+          "resolvedPath": "/usr/lib/libharfbuzz.so.0.61460.0",
+          "device": "31",
+          "inode": "89418",
+          "size": "1351824",
+          "sha256": "1d7a372d7325372c6bd358582ae00c72b06243681c6c466bf6b01b789437b754"
+        },
+        {
+          "path": "/usr/lib/libhidapi-hidraw.so.0",
+          "resolvedPath": "/usr/lib/libhidapi-hidraw.so.0.15.0",
+          "device": "31",
+          "inode": "138063",
+          "size": "26512",
+          "sha256": "8861a9b614bad89b97e7a04cd2e4c5c78465f6635cd19fd579797589691c80a6"
+        },
+        {
+          "path": "/usr/lib/libhogweed.so.7",
+          "resolvedPath": "/usr/lib/libhogweed.so.7.0",
+          "device": "31",
+          "inode": "19592",
+          "size": "284696",
+          "sha256": "93c5553921f308f65488a9877a3dce1284adeff729a011f7b4522ea6b4181a87"
+        },
+        {
+          "path": "/usr/lib/libhwy.so.1",
+          "resolvedPath": "/usr/lib/libhwy.so.1.4.0",
+          "device": "31",
+          "inode": "113292",
+          "size": "55336",
+          "sha256": "2d4dbb03cccaeb9157a8214ea94fd291bac3d9ac1d20828f4a86ba4100cb2fca"
+        },
+        {
+          "path": "/usr/lib/libhyphen.so.0",
+          "resolvedPath": "/usr/lib/libhyphen.so.0.4.0",
+          "device": "31",
+          "inode": "137920",
+          "size": "26496",
+          "sha256": "2c4228eb476f92d92bd511773286d257e49f8e18e567c79bb233300cc65f4b78"
+        },
+        {
+          "path": "/usr/lib/libicudata.so.78",
+          "resolvedPath": "/usr/lib/libicudata.so.78.3",
+          "device": "31",
+          "inode": "22161",
+          "size": "33112920",
+          "sha256": "d72003b08760852bee4c80cff32c1e6248ae6b1fda5bd313482733a4d5e70dc9"
+        },
+        {
+          "path": "/usr/lib/libicui18n.so.78",
+          "resolvedPath": "/usr/lib/libicui18n.so.78.3",
+          "device": "31",
+          "inode": "22164",
+          "size": "3721776",
+          "sha256": "60d7ad7b3f8e6e1c42895c03379954ee46008948dcdb2e556fa8e4c875742c60"
+        },
+        {
+          "path": "/usr/lib/libicuuc.so.78",
+          "resolvedPath": "/usr/lib/libicuuc.so.78.3",
+          "device": "31",
+          "inode": "22176",
+          "size": "2144304",
+          "sha256": "c99f0dd0c797c07f9ab64413d36c595393cdded6fa04cc4edd6f6a521fd155ca"
+        },
+        {
+          "path": "/usr/lib/libidn2.so.0",
+          "resolvedPath": "/usr/lib/libidn2.so.0.4.0",
+          "device": "31",
+          "inode": "19416",
+          "size": "133064",
+          "sha256": "9a36fa67dc82ce0e5dc38ef190c76231f532676f7ba13e363fc1df16a9c50a15"
+        },
+        {
+          "path": "/usr/lib/libjavascriptcoregtk-6.0.so.1",
+          "resolvedPath": "/usr/lib/libjavascriptcoregtk-6.0.so.1.8.8",
+          "device": "31",
+          "inode": "333723",
+          "size": "40606216",
+          "sha256": "a6b0b856dc8c4bc62481c5ac038b81a4229a60b7637a78b6da5fcbb2395dc4c8"
+        },
+        {
+          "path": "/usr/lib/libjbig.so.2.2",
+          "resolvedPath": "/usr/lib/libjbig.so.2.2",
+          "device": "31",
+          "inode": "106598",
+          "size": "58288",
+          "sha256": "fbe04f647dc088c5a58806be316f8df53971dee35ca4bf2cbbccbc7fc5eb41e4"
+        },
+        {
+          "path": "/usr/lib/libjpeg.so.8",
+          "resolvedPath": "/usr/lib/libjpeg.so.8.3.2",
+          "device": "31",
+          "inode": "106642",
+          "size": "686104",
+          "sha256": "d6cd94abf2b7a9aa59a0e056c83bbfdf8900fbf7101bfba8ea0ee1ca45958665"
+        },
+        {
+          "path": "/usr/lib/libjson-glib-1.0.so.0",
+          "resolvedPath": "/usr/lib/libjson-glib-1.0.so.0.1000.8",
+          "device": "31",
+          "inode": "129595",
+          "size": "170016",
+          "sha256": "c4e326f8baad4ad063c31de0668fbca8c4841eb2f4e92ba1f7dbd8e996f54f7f"
+        },
+        {
+          "path": "/usr/lib/libjxl.so.0.12",
+          "resolvedPath": "/usr/lib/libjxl.so.0.12.0",
+          "device": "31",
+          "inode": "113337",
+          "size": "3893272",
+          "sha256": "e16f4bf9a5afa8192f9219be3c14f039bf3c4d543f7e6d8ed467063b2f932f6a"
+        },
+        {
+          "path": "/usr/lib/libjxl_cms.so.0.12",
+          "resolvedPath": "/usr/lib/libjxl_cms.so.0.12.0",
+          "device": "31",
+          "inode": "113340",
+          "size": "165832",
+          "sha256": "f67a4a5e51e2b864b1faa966fc01f55ecd8f8dd961d498332bdf1971462ea308"
+        },
+        {
+          "path": "/usr/lib/libk5crypto.so.3",
+          "resolvedPath": "/usr/lib/libk5crypto.so.3.1",
+          "device": "31",
+          "inode": "15764",
+          "size": "182320",
+          "sha256": "e9ea7950674f25a6951b830036f95a595e1fc112247a69d11bc0003124ab7338"
+        },
+        {
+          "path": "/usr/lib/libkeyutils.so.1",
+          "resolvedPath": "/usr/lib/libkeyutils.so.1.10",
+          "device": "31",
+          "inode": "7950",
+          "size": "22480",
+          "sha256": "a82e692581b6215475c03538fa4b25681b5c71e8554c67afa7e34074b968b0d7"
+        },
+        {
+          "path": "/usr/lib/libkrb5.so.3",
+          "resolvedPath": "/usr/lib/libkrb5.so.3.3",
+          "device": "31",
+          "inode": "15784",
+          "size": "845896",
+          "sha256": "eb8369680ba30529b30abeaca57429b67f9af42ac43efdd5d95ca1901bb9c44c"
+        },
+        {
+          "path": "/usr/lib/libkrb5support.so.0",
+          "resolvedPath": "/usr/lib/libkrb5support.so.0.1",
+          "device": "31",
+          "inode": "15787",
+          "size": "55544",
+          "sha256": "941f17df15bc3ed160b392dee2930bd68565f445b8fe8d87ad522256c972967f"
+        },
+        {
+          "path": "/usr/lib/liblcms2.so.2",
+          "resolvedPath": "/usr/lib/liblcms2.so.2.0.19",
+          "device": "31",
+          "inode": "113081",
+          "size": "435264",
+          "sha256": "64f255d5716940bfa2a2c890abd801019b081dd587ab1af0c921c5741f26ec2b"
+        },
+        {
+          "path": "/usr/lib/libleancrypto.so.1.9",
+          "resolvedPath": "/usr/lib/libleancrypto.so.1.9.1",
+          "device": "31",
+          "inode": "19716",
+          "size": "2845224",
+          "sha256": "6f7c44d5854ca7af86556bb300efdda8346f316e652d3f7e7ee0bf5cf55b41c4"
+        },
+        {
+          "path": "/usr/lib/liblzma.so.5",
+          "resolvedPath": "/usr/lib/liblzma.so.5.8.4",
+          "device": "31",
+          "inode": "8120",
+          "size": "219344",
+          "sha256": "6e4dae5b099ec0e40a56beead2e51f858535aa794b5a8574a6723dfc1da8a3c1"
+        },
+        {
+          "path": "/usr/lib/liblzo2.so.2",
+          "resolvedPath": "/usr/lib/liblzo2.so.2.0.0",
+          "device": "31",
+          "inode": "46281",
+          "size": "128888",
+          "sha256": "b314f7eabdd5d8adcf0498d5908f1454c5bbf5d719b3f67ba2bdc032fdb93773"
+        },
+        {
+          "path": "/usr/lib/libm.so.6",
+          "resolvedPath": "/usr/lib/libm.so.6",
+          "device": "31",
+          "inode": "3456",
+          "size": "1268336",
+          "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d"
+        },
+        {
+          "path": "/usr/lib/libmanette-0.2.so.0",
+          "resolvedPath": "/usr/lib/libmanette-0.2.so.0",
+          "device": "31",
+          "inode": "138089",
+          "size": "334008",
+          "sha256": "65a9c60355ee1259be2fe32a282709f33453e0c9ab3697cd75d74dc4758cfe2c"
+        },
+        {
+          "path": "/usr/lib/libmount.so.1",
+          "resolvedPath": "/usr/lib/libmount.so.1.1.0",
+          "device": "31",
+          "inode": "7750",
+          "size": "379488",
+          "sha256": "967882491416426236028ba5290b3c88ed9b108d69f3a272a317341146fb2c09"
+        },
+        {
+          "path": "/usr/lib/libnettle.so.9",
+          "resolvedPath": "/usr/lib/libnettle.so.9.0",
+          "device": "31",
+          "inode": "19595",
+          "size": "370824",
+          "sha256": "5cfa2daa591d62161d2f26aa4b8347e3704da1b830e9aba0a312ed1b5f0c7a38"
+        },
+        {
+          "path": "/usr/lib/libnghttp2.so.14",
+          "resolvedPath": "/usr/lib/libnghttp2.so.14.29.5",
+          "device": "31",
+          "inode": "19491",
+          "size": "165928",
+          "sha256": "dc9f6c8c911dc14aef9585aed5cadf35ae5037175130753cd058d7eb353fb717"
+        },
+        {
+          "path": "/usr/lib/libnuma.so.1",
+          "resolvedPath": "/usr/lib/libnuma.so.1.0.0",
+          "device": "31",
+          "inode": "129540",
+          "size": "55632",
+          "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51"
+        },
+        {
+          "path": "/usr/lib/liborc-0.4.so.0",
+          "resolvedPath": "/usr/lib/liborc-0.4.so.0.44.0",
+          "device": "31",
+          "inode": "111174",
+          "size": "1109464",
+          "sha256": "ce9d681c311e47ab77b0918b6bb3437fcda734aa09dce269d57a97f2332c8d07"
+        },
+        {
+          "path": "/usr/lib/libp11-kit.so.0",
+          "resolvedPath": "/usr/lib/libp11-kit.so.0.4.11",
+          "device": "31",
+          "inode": "19195",
+          "size": "1708192",
+          "sha256": "1b87739328f0b11906554145ab4e506281644d94a5b6195cd11594aad5e310b8"
+        },
+        {
+          "path": "/usr/lib/libpango-1.0.so.0",
+          "resolvedPath": "/usr/lib/libpango-1.0.so.0.5800.2",
+          "device": "31",
+          "inode": "89705",
+          "size": "450312",
+          "sha256": "ea03a7e253f59f3876282947e23880e3ac313ec28e5de314c9ccbd124289978d"
+        },
+        {
+          "path": "/usr/lib/libpangocairo-1.0.so.0",
+          "resolvedPath": "/usr/lib/libpangocairo-1.0.so.0.5800.2",
+          "device": "31",
+          "inode": "89708",
+          "size": "71688",
+          "sha256": "e5e08c1444829436f85dbef91897578b7f3740107ac55a86e24458d55c99af88"
+        },
+        {
+          "path": "/usr/lib/libpangoft2-1.0.so.0",
+          "resolvedPath": "/usr/lib/libpangoft2-1.0.so.0.5800.2",
+          "device": "31",
+          "inode": "89711",
+          "size": "124888",
+          "sha256": "e12b401cf24f82e42d8ceff7fd6d0af975f6596e1ff6b413efd551d0f8c41262"
+        },
+        {
+          "path": "/usr/lib/libpcre2-8.so.0",
+          "resolvedPath": "/usr/lib/libpcre2-8.so.0.16.1",
+          "device": "31",
+          "inode": "18498",
+          "size": "727336",
+          "sha256": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58"
+        },
+        {
+          "path": "/usr/lib/libpixman-1.so.0",
+          "resolvedPath": "/usr/lib/libpixman-1.so.0.46.4",
+          "device": "31",
+          "inode": "88628",
+          "size": "714800",
+          "sha256": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8"
+        },
+        {
+          "path": "/usr/lib/libpng16.so.16",
+          "resolvedPath": "/usr/lib/libpng16.so.16.59.0",
+          "device": "31",
+          "inode": "84026",
+          "size": "243736",
+          "sha256": "36579634fdc89d6b7b567f1a890c13194bce0ba95e65ada1f775af1e7452b398"
+        },
+        {
+          "path": "/usr/lib/libpsl.so.5",
+          "resolvedPath": "/usr/lib/libpsl.so.5.3.5",
+          "device": "31",
+          "inode": "21070",
+          "size": "75640",
+          "sha256": "b5189c9a4b32b15f0bb1bab989069acd2d0dc89723b990266ad5566cd16f1924"
+        },
+        {
+          "path": "/usr/lib/librav1e.so.0.8",
+          "resolvedPath": "/usr/lib/librav1e.so.0.8.1",
+          "device": "31",
+          "inode": "137997",
+          "size": "3279280",
+          "sha256": "d67c438344071c29416bc3259d9d944ea218dcfb4ca619f80c04f6d5411b626f"
+        },
+        {
+          "path": "/usr/lib/libresolv.so.2",
+          "resolvedPath": "/usr/lib/libresolv.so.2",
+          "device": "31",
+          "inode": "3476",
+          "size": "67904",
+          "sha256": "ee828b251a61761a9e529a791758ec8a1fbefd85693e2dc23501fedb8cf2f31d"
+        },
+        {
+          "path": "/usr/lib/libseccomp.so.2",
+          "resolvedPath": "/usr/lib/libseccomp.so.2.6.0",
+          "device": "31",
+          "inode": "18238",
+          "size": "182288",
+          "sha256": "7cb971c30c6e854dedffe8b74f7548ed8f7b0f2e03233cd00f61f76a334dc5c3"
+        },
+        {
+          "path": "/usr/lib/libsecret-1.so.0",
+          "resolvedPath": "/usr/lib/libsecret-1.so.0.0.0",
+          "device": "31",
+          "inode": "25794",
+          "size": "292896",
+          "sha256": "7ef320a9302a520249972236ea0a4b22ae34453311e607d662105646f8c9f428"
+        },
+        {
+          "path": "/usr/lib/libsharpyuv.so.0",
+          "resolvedPath": "/usr/lib/libsharpyuv.so.0.1.2",
+          "device": "31",
+          "inode": "106684",
+          "size": "26512",
+          "sha256": "cb3c84af219c532d6e3dad31cce657ae5d087a9dfb3aea491dee6486c2883566"
+        },
+        {
+          "path": "/usr/lib/libsoup-3.0.so.0",
+          "resolvedPath": "/usr/lib/libsoup-3.0.so.0.8.0",
+          "device": "31",
+          "inode": "133270",
+          "size": "662104",
+          "sha256": "795c5e83d57231a1253b2039c7219689b541bdb7f49ed0297a52b9244718febd"
+        },
+        {
+          "path": "/usr/lib/libsqlite3.so.0",
+          "resolvedPath": "/usr/lib/libsqlite3.so.3.54.0",
+          "device": "31",
+          "inode": "7718",
+          "size": "1697864",
+          "sha256": "758544266d5060aff683efcc94ee9abf2625c6ff9d02b70bb6d1296e0ee9128f"
+        },
+        {
+          "path": "/usr/lib/libstdc++.so.6",
+          "resolvedPath": "/usr/lib/libstdc++.so.6.0.36",
+          "device": "31",
+          "inode": "4274",
+          "size": "2939928",
+          "sha256": "f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e"
+        },
+        {
+          "path": "/usr/lib/libsystemd.so.0",
+          "resolvedPath": "/usr/lib/libsystemd.so.0.45.0",
+          "device": "31",
+          "inode": "293103",
+          "size": "1345056",
+          "sha256": "1666c3ef4591827c32abb1f62d7556656c038cd2078b0a8ded73de9a33442802"
+        },
+        {
+          "path": "/usr/lib/libtasn1.so.6",
+          "resolvedPath": "/usr/lib/libtasn1.so.6.6.5",
+          "device": "31",
+          "inode": "19093",
+          "size": "88088",
+          "sha256": "37c55560d3f3a76a039e78e3394e4ab0e17b1d0f68d8a9b9c5916f9842aa4ca1"
+        },
+        {
+          "path": "/usr/lib/libthai.so.0",
+          "resolvedPath": "/usr/lib/libthai.so.0.3.2",
+          "device": "31",
+          "inode": "89498",
+          "size": "40000",
+          "sha256": "7a6e4bcfb7bd2ae8c20f0c85f33e829520f12bd7536a5eaf6d2d81129649399b"
+        },
+        {
+          "path": "/usr/lib/libtiff.so.6",
+          "resolvedPath": "/usr/lib/libtiff.so.6.3.0",
+          "device": "31",
+          "inode": "106751",
+          "size": "620584",
+          "sha256": "fc45c7d965193ddceee0dd30e224ed40ed88f3d8e9ef11704c0ace939edf32d7"
+        },
+        {
+          "path": "/usr/lib/libtinysparql-3.0.so.0",
+          "resolvedPath": "/usr/lib/libtinysparql-3.0.so.0.1200.0",
+          "device": "31",
+          "inode": "133387",
+          "size": "875792",
+          "sha256": "b61583dcc2306fd29b3e40ccfe9414d09e69b977b767f21480d9f13b45e02452"
+        },
+        {
+          "path": "/usr/lib/libtss2-esys.so.0",
+          "resolvedPath": "/usr/lib/libtss2-esys.so.0.0.1",
+          "device": "31",
+          "inode": "25512",
+          "size": "592528",
+          "sha256": "624a7dd576a26eff0e7e026bf223608bdf01cc882e76d8dc0656ef247beaefe9"
+        },
+        {
+          "path": "/usr/lib/libtss2-mu.so.0",
+          "resolvedPath": "/usr/lib/libtss2-mu.so.0.0.1",
+          "device": "31",
+          "inode": "25518",
+          "size": "301032",
+          "sha256": "ed1745af3899af99ff3ab98ef323900d1bb54eb66f8d53b506f37bc48b5f6083"
+        },
+        {
+          "path": "/usr/lib/libtss2-rc.so.0",
+          "resolvedPath": "/usr/lib/libtss2-rc.so.0.0.0",
+          "device": "31",
+          "inode": "25524",
+          "size": "31752",
+          "sha256": "bdc516e31991125be2cde20e72df9ae123856fd42f5e4a6e08b5890a39d1f36b"
+        },
+        {
+          "path": "/usr/lib/libtss2-sys.so.1",
+          "resolvedPath": "/usr/lib/libtss2-sys.so.1.0.1",
+          "device": "31",
+          "inode": "25527",
+          "size": "137168",
+          "sha256": "e5e0de25845f25a442826a321810c55a1b42ec723794bf0a1883385cf959199e"
+        },
+        {
+          "path": "/usr/lib/libtss2-tctildr.so.0",
+          "resolvedPath": "/usr/lib/libtss2-tctildr.so.0.0.0",
+          "device": "31",
+          "inode": "25557",
+          "size": "26768",
+          "sha256": "b45be572f98e3a734348f01e794c503cc32672281077a036a8295fee8831c457"
+        },
+        {
+          "path": "/usr/lib/libudev.so.1",
+          "resolvedPath": "/usr/lib/libudev.so.1.7.15",
+          "device": "31",
+          "inode": "293106",
+          "size": "326752",
+          "sha256": "dd636932094404444ce8319c89d6074936322f96a8f80e08e22f71c295a84d9d"
+        },
+        {
+          "path": "/usr/lib/libunistring.so.5",
+          "resolvedPath": "/usr/lib/libunistring.so.5.2.1",
+          "device": "31",
+          "inode": "19379",
+          "size": "1992752",
+          "sha256": "ba7a4afb4b6f823d64ebe324416e182cd42a981dba049e3ddcfa1c9af03cb7f3"
+        },
+        {
+          "path": "/usr/lib/libunwind.so.8",
+          "resolvedPath": "/usr/lib/libunwind.so.8.2.0",
+          "device": "31",
+          "inode": "108839",
+          "size": "67480",
+          "sha256": "7b6dc90a7732b5633d622ce0b78e1ebee75e3c1dd7b7ce1f56d60c3fc60a22e7"
+        },
+        {
+          "path": "/usr/lib/libvulkan.so.1",
+          "resolvedPath": "/usr/lib/libvulkan.so.1.4.363",
+          "device": "31",
+          "inode": "137169",
+          "size": "694272",
+          "sha256": "22afcdef45c93ca9a550cfd3b85923c1aa00d751649e83248d3617bbefead19f"
+        },
+        {
+          "path": "/usr/lib/libwayland-client.so.0",
+          "resolvedPath": "/usr/lib/libwayland-client.so.0.26.0",
+          "device": "31",
+          "inode": "110741",
+          "size": "60168",
+          "sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d"
+        },
+        {
+          "path": "/usr/lib/libwayland-cursor.so.0",
+          "resolvedPath": "/usr/lib/libwayland-cursor.so.0.26.0",
+          "device": "31",
+          "inode": "110744",
+          "size": "31200",
+          "sha256": "9bf05b4e53f00d46590c241c501d1d1711e99fb8106eb6f0654084c69072c2e5"
+        },
+        {
+          "path": "/usr/lib/libwayland-egl.so.1",
+          "resolvedPath": "/usr/lib/libwayland-egl.so.1.26.0",
+          "device": "31",
+          "inode": "110747",
+          "size": "14136",
+          "sha256": "3186e3235d617307bf457ac2da1dc5c52ab984e69135326558f7d33d7aaaee4d"
+        },
+        {
+          "path": "/usr/lib/libwayland-server.so.0",
+          "resolvedPath": "/usr/lib/libwayland-server.so.0.26.0",
+          "device": "31",
+          "inode": "110750",
+          "size": "84776",
+          "sha256": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89"
+        },
+        {
+          "path": "/usr/lib/libwebkitgtk-6.0.so.4",
+          "resolvedPath": "/usr/lib/libwebkitgtk-6.0.so.4.19.4",
+          "device": "31",
+          "inode": "333726",
+          "size": "97394688",
+          "sha256": "8220f0f4dd2901a4ac37a74fc10f2b819bbef7344589b0b40ac9ba9437c4441b"
+        },
+        {
+          "path": "/usr/lib/libwebp.so.7",
+          "resolvedPath": "/usr/lib/libwebp.so.7.2.0",
+          "device": "31",
+          "inode": "106687",
+          "size": "542864",
+          "sha256": "267dcd6cda1106607130a61a047f3ea28807137d45c56255dd7ca4bf32efcbf2"
+        },
+        {
+          "path": "/usr/lib/libwebpdemux.so.2",
+          "resolvedPath": "/usr/lib/libwebpdemux.so.2.0.17",
+          "device": "31",
+          "inode": "106693",
+          "size": "22480",
+          "sha256": "2ad7c92d60ae492b208201f8cf38de00ebf46162549669606aacea3c8c375573"
+        },
+        {
+          "path": "/usr/lib/libwebpmux.so.3",
+          "resolvedPath": "/usr/lib/libwebpmux.so.3.1.2",
+          "device": "31",
+          "inode": "106696",
+          "size": "46976",
+          "sha256": "5ce37ec67249b104a43b9e6ee5b2a59bbb3ca9a7c1d51df091edf8d6bec39a33"
+        },
+        {
+          "path": "/usr/lib/libxcb-render.so.0",
+          "resolvedPath": "/usr/lib/libxcb-render.so.0.0.0",
+          "device": "31",
+          "inode": "84884",
+          "size": "59368",
+          "sha256": "402feded6ecab1d6070a3cd0ce0e2b69efe32d849a90c535cdf93948b34c451f"
+        },
+        {
+          "path": "/usr/lib/libxcb-shm.so.0",
+          "resolvedPath": "/usr/lib/libxcb-shm.so.0.0.0",
+          "device": "31",
+          "inode": "84896",
+          "size": "14304",
+          "sha256": "e04329f8117411113e6094e3dc354ed50b8b3b10e6cf5f8a21a6b7bec4786eec"
+        },
+        {
+          "path": "/usr/lib/libxcb.so.1",
+          "resolvedPath": "/usr/lib/libxcb.so.1.1.0",
+          "device": "31",
+          "inode": "84926",
+          "size": "169984",
+          "sha256": "40df5eff95408b67d969e559f2689b3e50e6151251b1f4e03608ce5cd9c9a133"
+        },
+        {
+          "path": "/usr/lib/libxkbcommon.so.0",
+          "resolvedPath": "/usr/lib/libxkbcommon.so.0.13.2",
+          "device": "31",
+          "inode": "89236",
+          "size": "383144",
+          "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07"
+        },
+        {
+          "path": "/usr/lib/libxml2.so.16",
+          "resolvedPath": "/usr/lib/libxml2.so.16.1.4",
+          "device": "31",
+          "inode": "22263",
+          "size": "1326024",
+          "sha256": "5ff12cee1e6992555ba638190cce88a0aab40acad51d5c826f6487888a0160ab"
+        },
+        {
+          "path": "/usr/lib/libxslt.so.1",
+          "resolvedPath": "/usr/lib/libxslt.so.1.1.45",
+          "device": "31",
+          "inode": "138135",
+          "size": "247904",
+          "sha256": "2f174ad42aa0065339c7a6a2dd77952e5ecfaeb9a6273298b57f48203cf2a877"
+        },
+        {
+          "path": "/usr/lib/libyuv.so",
+          "resolvedPath": "/usr/lib/libyuv.so",
+          "device": "31",
+          "inode": "137985",
+          "size": "677840",
+          "sha256": "88e6189c67feaeb99967fc874f983a35fbea098ab159cfe26fa49bf39e2a2c78"
+        },
+        {
+          "path": "/usr/lib/libz.so.1",
+          "resolvedPath": "/usr/lib/libz.so.1.3.2",
+          "device": "31",
+          "inode": "7692",
+          "size": "108560",
+          "sha256": "6c78c5e58c3bb49a1cd151a95cdf1a17fe07a91a57a59e0279b984c533075ca9"
+        },
+        {
+          "path": "/usr/lib/libzstd.so.1",
+          "resolvedPath": "/usr/lib/libzstd.so.1.5.7",
+          "device": "31",
+          "inode": "8545",
+          "size": "939976",
+          "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8"
+        },
+        {
+          "path": "/usr/lib64/ld-linux-x86-64.so.2",
+          "resolvedPath": "/usr/lib/ld-linux-x86-64.so.2",
+          "device": "31",
+          "inode": "3437",
+          "size": "263152",
+          "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+        }
+      ]
+    },
+    "warlock-ui-backend": {
+      "image": {
+        "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/assets/warlock-ui-backend",
+        "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/assets/warlock-ui-backend",
+        "device": "58",
+        "inode": "48691",
+        "size": "23888",
+        "sha256": "f001ffd68785cce5461a9d00e9768c1f57ae473016ff91add5362262d16ffd37"
+      },
+      "dynamicSection": "\nDynamic section at offset 0x2b78 contains 58 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000003 (PLTGOT)             0x403fe8\n 0x0000000000000002 (PLTRELSZ)           24 (bytes)\n 0x0000000000000017 (JMPREL)             0x4015f0\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000007 (RELA)               0x4012f0\n 0x0000000000000008 (RELASZ)             768 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000006 (SYMTAB)             0x400308\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000005 (STRTAB)             0x400608\n 0x000000000000000a (STRSZ)              3156 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x401260\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSrts-1.0.2_thr-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-prim-0.10.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-bignum-1.3-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbase-4.18.3.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSarray-0.5.8.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSdeepseq-1.4.8.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-boot-th-9.6.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSpretty-1.1.3.6-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStemplate-haskell-2.20.0.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbytestring-0.11.5.4-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHScontainers-0.6.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStransformers-0.6.1.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSmtl-2.3.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSstm-2.5.1.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSexceptions-0.10.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSfilepath-1.4.301.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStime-1.12.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSunix-2.8.6.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSdirectory-1.3.8.5-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSprocess-1.6.19.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbinary-0.8.9.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStext-2.0.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libglib-2.0.so.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgmp.so.10]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libffi.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libnuma.so.1]\n 0x000000000000000c (INIT)               0x401608\n 0x000000000000000d (FINI)               0x401d3c\n 0x000000000000001a (FINI_ARRAY)         0x403b68\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x403b70\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001d (RUNPATH)            Library runpath: [/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build:/usr/lib:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build:/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build]\n 0x000000006ffffff0 (VERSYM)             0x401290\n 0x000000006ffffffe (VERNEED)            0x4012d0\n 0x000000006fffffff (VERNEEDNUM)         1\n 0x0000000000000000 (NULL)               0x0\n",
+      "ldd": "\tlinux-vdso.so.1 (0x00007f4e03e3b000)\n\tlibm.so.6 => /usr/lib/libm.so.6 (0x00007f4e03cd1000)\n\tlibHSrts-1.0.2_thr-ghc9.6.7.so => /usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so (0x00007f4e03c18000)\n\tlibHSghc-prim-0.10.0-ghc9.6.7.so => /usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so (0x00007f4e03600000)\n\tlibHSghc-bignum-1.3-ghc9.6.7.so => /usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so (0x00007f4e03bc1000)\n\tlibHSbase-4.18.3.0-ghc9.6.7.so => /usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so (0x00007f4e02a00000)\n\tlibHSarray-0.5.8.0-ghc9.6.7.so => /usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so (0x00007f4e03b39000)\n\tlibHSdeepseq-1.4.8.1-ghc9.6.7.so => /usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so (0x00007f4e03b1b000)\n\tlibHSghc-boot-th-9.6.7-ghc9.6.7.so => /usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so (0x00007f4e029bf000)\n\tlibHSpretty-1.1.3.6-ghc9.6.7.so => /usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so (0x00007f4e0294c000)\n\tlibHStemplate-haskell-2.20.0.0-ghc9.6.7.so => /usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so (0x00007f4e02400000)\n\tlibHSbytestring-0.11.5.4-ghc9.6.7.so => /usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so (0x00007f4e027e6000)\n\tlibHScontainers-0.6.7-ghc9.6.7.so => /usr/lib/libHScontainers-0.6.7-ghc9.6.7.so (0x00007f4e02000000)\n\tlibHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so (0x00007f4e03b07000)\n\tlibHStransformers-0.6.1.0-ghc9.6.7.so => /usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so (0x00007f4e01ee3000)\n\tlibHSmtl-2.3.1-ghc9.6.7.so => /usr/lib/libHSmtl-2.3.1-ghc9.6.7.so (0x00007f4e023af000)\n\tlibHSstm-2.5.1.0-ghc9.6.7.so => /usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so (0x00007f4e035de000)\n\tlibHSexceptions-0.10.7-ghc9.6.7.so => /usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so (0x00007f4e01e9f000)\n\tlibHSfilepath-1.4.301.0-ghc9.6.7.so => /usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so (0x00007f4e01dd5000)\n\tlibHStime-1.12.2-ghc9.6.7.so => /usr/lib/libHStime-1.12.2-ghc9.6.7.so (0x00007f4e01c48000)\n\tlibHSunix-2.8.6.0-ghc9.6.7.so => /usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so (0x00007f4e01aff000)\n\tlibHSdirectory-1.3.8.5-ghc9.6.7.so => /usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so (0x00007f4e01a7d000)\n\tlibHSnetwork-3.2.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so (0x00007f4e019ab000)\n\tlibHSprocess-1.6.19.0-ghc9.6.7.so => /usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so (0x00007f4e0196a000)\n\tlibHSbinary-0.8.9.1-ghc9.6.7.so => /usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so (0x00007f4e0189c000)\n\tlibHStext-2.0.2-ghc9.6.7.so => /usr/lib/libHStext-2.0.2-ghc9.6.7.so (0x00007f4e01400000)\n\tlibHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so (0x00007f4e0183d000)\n\tlibHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so (0x00007f4e017a1000)\n\tlibHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so (0x00007f4e01287000)\n\tlibHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so (0x00007f4e0109b000)\n\tlibglib-2.0.so.0 => /usr/lib/libglib-2.0.so.0 (0x00007f4e00f36000)\n\tlibgmp.so.10 => /usr/lib/libgmp.so.10 (0x00007f4e00e8f000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007f4e00c00000)\n\tlibffi.so.8 => /usr/lib/libffi.so.8 (0x00007f4e035d0000)\n\tlibnuma.so.1 => /usr/lib/libnuma.so.1 (0x00007f4e027d8000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f4e03e3d000)\n\tlibpcre2-8.so.0 => /usr/lib/libpcre2-8.so.0 (0x00007f4e00b4d000)\n",
+      "readelfExit": 0,
+      "lddExit": 0,
+      "dependencies": [
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "47861",
+          "size": "85552",
+          "sha256": "6f840ea5a505ba6501e8d582b323ca859e0676a65b50db20174c495052513279"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "48335",
+          "size": "1209752",
+          "sha256": "59dc6406acea4e3ef83617df7a17ca72610419ec1fa83e313a0ac30cf6b6bdea"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "47954",
+          "size": "520872",
+          "sha256": "215be4cabdaee140194585aaf6f3e307b947a81f0665f55c169f72584d15254b"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "48398",
+          "size": "836264",
+          "sha256": "0b0900fa11ccfd720dc9b8d191d6874e2af3bd6194cf09cb5b6ecbfb9d0e3622"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "48488",
+          "size": "2031376",
+          "sha256": "b37607d6a2c3d81c06933f3e785101b4a0f6389f4b8082c569430a981bbe69c0"
+        },
+        {
+          "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "48588",
+          "size": "2472208",
+          "sha256": "fb27f217e0f4585010ef3f6f001563401c46a69dd2d709826a93d1f505e6d9d3"
+        },
+        {
+          "path": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330318",
+          "size": "551472",
+          "sha256": "be7d5dd7e80c0ed4ebfa9bbbb2287a963777c3b807764a8cb9553f6832a1d47b"
+        },
+        {
+          "path": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330319",
+          "size": "12344312",
+          "sha256": "ced6e76d334356f9b2aa991fa0ee42ec774d9f0ae4419afd10a89dfcdcb8bdf4"
+        },
+        {
+          "path": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330320",
+          "size": "840144",
+          "sha256": "d435f87b74b478c0af843433c5bde8c216ebb2bea58efccdf3a0371625551b83"
+        },
+        {
+          "path": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330321",
+          "size": "1463208",
+          "sha256": "994b29012b2e49f1d5cbda53dee91d0978422af9ed892e4f78e4b84ef99c8c91"
+        },
+        {
+          "path": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330322",
+          "size": "3765888",
+          "sha256": "3bb400d7f04296c9c8822f0498104b9a73a59b1f824c1f03dd51e2fe259e0d20"
+        },
+        {
+          "path": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330323",
+          "size": "120880",
+          "sha256": "e4243858a70472e28237a2950dbc032c4b3b9b8b99922cddacb6a457fdfb52ab"
+        },
+        {
+          "path": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330324",
+          "size": "530200",
+          "sha256": "db46672b659943f3545e8ce4d220043e351cf266a7400bbb5b96a6a22b0f237d"
+        },
+        {
+          "path": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330325",
+          "size": "275784",
+          "sha256": "b410ae8d20e78bcd8cac9fd2994ea5ecf69e4a94fa74464780bbfa30b55d88f2"
+        },
+        {
+          "path": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330326",
+          "size": "825528",
+          "sha256": "4b7ff2115425a599038c3f9d3168b6e076dcb42efe8d41c0cf23843e2519aad1"
+        },
+        {
+          "path": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330327",
+          "size": "342864",
+          "sha256": "441420623c2127a991069574a9ef28b1109abdea8ebe205b9c0d8c9a7e2a6af4"
+        },
+        {
+          "path": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330329",
+          "size": "263112",
+          "sha256": "fed1d611974e659a3b987a5bbab418303e62c27e1b92bbbb81d43606b12a50c2"
+        },
+        {
+          "path": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330332",
+          "size": "5201744",
+          "sha256": "6d52ca0afa25dbcfb91161826d52c52e0713e66339515997e3905bc2cc39874c"
+        },
+        {
+          "path": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330338",
+          "size": "326216",
+          "sha256": "c932a5430590c2fa1b5c4966c104336331225585e5db0d638d1c80fe06c93942"
+        },
+        {
+          "path": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330340",
+          "size": "466672",
+          "sha256": "88033823e51ce750a6f68501f7b3ca8a1a46f557d6fddd33536769dfe4d80164"
+        },
+        {
+          "path": "/usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330341",
+          "size": "262608",
+          "sha256": "0d0f4b8cdd6c7da2f5995348d14061465c5c68c3dff8ed67a31d0c18442f64ac"
+        },
+        {
+          "path": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330344",
+          "size": "741792",
+          "sha256": "1de73b1dae2c2deb6ba462ca46da98ae808fd89159660dc050202a003e016bde"
+        },
+        {
+          "path": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330346",
+          "size": "133640",
+          "sha256": "b51856cad81c76d620a8b0b56212a468877a8c565f10ebb1bb8e842a07aa16fe"
+        },
+        {
+          "path": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330347",
+          "size": "3834824",
+          "sha256": "36d66549aa669d7a90e0b5e511135917f438c04bd859e1d20be1574e173d12ee"
+        },
+        {
+          "path": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330349",
+          "size": "3179992",
+          "sha256": "3b020e330f82c23beebc24531db828d556f75bcea1e0e3d40d124f3a955f9b17"
+        },
+        {
+          "path": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330350",
+          "size": "1623176",
+          "sha256": "0c1ae70df5f3cc8d9c64c4540fb587375810be58ed596652af445e6a2b34f1dd"
+        },
+        {
+          "path": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330351",
+          "size": "1162280",
+          "sha256": "0e2a904dd6a7b34f2375823939443d379ee3ad378f113e14d6897c179c202317"
+        },
+        {
+          "path": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330352",
+          "size": "1345712",
+          "sha256": "83f37340f48feb39fbe4f52cc655fc9c2f388d2a33d9eb67773cd8a5737a0163"
+        },
+        {
+          "path": "/usr/lib/libc.so.6",
+          "resolvedPath": "/usr/lib/libc.so.6",
+          "device": "31",
+          "inode": "3446",
+          "size": "2215072",
+          "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524"
+        },
+        {
+          "path": "/usr/lib/libffi.so.8",
+          "resolvedPath": "/usr/lib/libffi.so.8.5.0",
+          "device": "31",
+          "inode": "19167",
+          "size": "51432",
+          "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c"
+        },
+        {
+          "path": "/usr/lib/libglib-2.0.so.0",
+          "resolvedPath": "/usr/lib/libglib-2.0.so.0.9000.1",
+          "device": "31",
+          "inode": "25267",
+          "size": "1457576",
+          "sha256": "1e8739af791b1a2f1f01fc7c6f3b9158888387d5a816195475e406438d41b688"
+        },
+        {
+          "path": "/usr/lib/libgmp.so.10",
+          "resolvedPath": "/usr/lib/libgmp.so.10.5.0",
+          "device": "31",
+          "inode": "7675",
+          "size": "678528",
+          "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49"
+        },
+        {
+          "path": "/usr/lib/libm.so.6",
+          "resolvedPath": "/usr/lib/libm.so.6",
+          "device": "31",
+          "inode": "3456",
+          "size": "1268336",
+          "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d"
+        },
+        {
+          "path": "/usr/lib/libnuma.so.1",
+          "resolvedPath": "/usr/lib/libnuma.so.1.0.0",
+          "device": "31",
+          "inode": "129540",
+          "size": "55632",
+          "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51"
+        },
+        {
+          "path": "/usr/lib/libpcre2-8.so.0",
+          "resolvedPath": "/usr/lib/libpcre2-8.so.0.16.1",
+          "device": "31",
+          "inode": "18498",
+          "size": "727336",
+          "sha256": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58"
+        },
+        {
+          "path": "/usr/lib64/ld-linux-x86-64.so.2",
+          "resolvedPath": "/usr/lib/ld-linux-x86-64.so.2",
+          "device": "31",
+          "inode": "3437",
+          "size": "263152",
+          "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+        }
+      ]
+    }
+  },
+  "documents": {
+    "HttpMain.html": {
+      "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/qualified-html/HttpMain.html",
+      "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/qualified-html/HttpMain.html",
+      "device": "58",
+      "inode": "48709",
+      "size": "1075770",
+      "sha256": "0ee9224e7fd6ff89aca2bbe4553e1e7f463525fd6028e52edd580419652d57a9"
+    },
+    "HttpBar.html": {
+      "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/qualified-html/HttpBar.html",
+      "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/qualified-html/HttpBar.html",
+      "device": "58",
+      "inode": "48711",
+      "size": "281597",
+      "sha256": "494b9f376aadc48d07fe8e63578816a2359b9ba112204a3ed84dedc077f08d85"
+    },
+    "HttpPopup.html": {
+      "path": "/home/charl/warlock-store-runtime-build-20261102T023304Z/qualified-html/HttpPopup.html",
+      "resolvedPath": "/home/charl/warlock-store-runtime-build-20261102T023304Z/qualified-html/HttpPopup.html",
+      "device": "58",
+      "inode": "48710",
+      "size": "514170",
+      "sha256": "c5f2f7d85982341dc48f5b0ae811ab1ab916c6f97a7e49746c5eb53063486985"
+    }
+  },
+  "sourceInputCount": 217,
+  "sourceInputsStable": true,
+  "nativeAccepted": false,
+  "releaseAccepted": false
+}

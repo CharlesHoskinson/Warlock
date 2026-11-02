@@ -1,0 +1,216 @@
+{
+  "scope": "Actual current Elm/Haskell application-only VM usability trial; no native/release/AT/IME acceptance",
+  "originalDurationSeconds": 28,
+  "exit": 1,
+  "failure": null,
+  "forcedAtOriginalDeadlineOrRefusal": false,
+  "elapsed": 27.935889928994584,
+  "unit": "warlock-live-usability-e446831c5fba4bd5.scope",
+  "pinnedIdentity": {
+    "procContext": {
+      "proc": [
+        24,
+        1
+      ],
+      "mount": [
+        "26",
+        "rw,nosuid,nodev,noexec,relatime",
+        "rw"
+      ],
+      "pidNamespace": [
+        5,
+        4026531836
+      ],
+      "cgroupRoot": [
+        33,
+        1
+      ]
+    },
+    "groupIdentity": [
+      33,
+      114985
+    ],
+    "unit": "warlock-live-usability-e446831c5fba4bd5.scope",
+    "attempt": "warlock-live-usability-e446831c5fba4bd5",
+    "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-e446831c5fba4bd5.scope",
+    "deadline": "98152509134129",
+    "engine": {
+      "pid": 180002,
+      "birth": "9812470",
+      "ppid": 179992,
+      "pgid": 179992,
+      "uid": 1000,
+      "device": 58,
+      "inode": 48730,
+      "size": 700416,
+      "namespacePids": [
+        180002,
+        1
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-e446831c5fba4bd5.scope",
+      "core": [
+        "1",
+        "1"
+      ]
+    },
+    "broker": {
+      "pid": 179992,
+      "birth": "9812460",
+      "ppid": 179983,
+      "pgid": 179992,
+      "uid": 1000,
+      "device": 58,
+      "inode": 48730,
+      "size": 700416,
+      "namespacePids": [
+        179992
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-e446831c5fba4bd5.scope",
+      "core": [
+        "1",
+        "1"
+      ]
+    },
+    "backend": {
+      "pid": 179983,
+      "birth": "9812456",
+      "ppid": 179925,
+      "pgid": 179983,
+      "uid": 1000,
+      "device": 58,
+      "inode": 48731,
+      "size": 23888,
+      "namespacePids": [
+        179983
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-e446831c5fba4bd5.scope",
+      "core": [
+        "1",
+        "1"
+      ]
+    },
+    "address": "0x55fad17d35a0",
+    "at": [
+      647,
+      38
+    ],
+    "size": [
+      621,
+      750
+    ],
+    "foot": {
+      "pid": 2095,
+      "birth": "6930",
+      "ppid": 930,
+      "pgid": 2095,
+      "uid": 1000,
+      "device": 31,
+      "inode": 161589,
+      "size": 503440,
+      "namespacePids": [
+        2095
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+      "core": [
+        "unlimited",
+        "unlimited"
+      ]
+    }
+  },
+  "cleanup": {
+    "before": {
+      "known": false,
+      "exit": 0,
+      "properties": {
+        "LoadState": "not-found",
+        "ActiveState": "inactive",
+        "ControlGroup": "",
+        "MemoryMax": "infinity"
+      }
+    },
+    "stopExit": 5,
+    "launcherReaped": true,
+    "error": "FileNotFoundError",
+    "originalOwnedBirthsRemain": [],
+    "originalOwnedBirthsUnknown": [],
+    "idleRestore": {
+      "exit": 0,
+      "original": {
+        "enabled": true,
+        "stayAwake": false,
+        "stayAwakeStateLoaded": true,
+        "stayAwakeStatePath": "/home/charl/.local/state/omarchy/indicators/stay-awake",
+        "idle": false,
+        "inIdleCycle": false,
+        "screensaverStarted": false,
+        "screensaver": 150,
+        "lock": 300,
+        "screensaverDelay": 0,
+        "lockDelay": 150,
+        "screensaverWindows": 0,
+        "timers": {
+          "screensaver": false,
+          "lock": false,
+          "screensaverLaunchGrace": false
+        },
+        "processes": {
+          "screensaver": false,
+          "lock": false,
+          "wake": false
+        },
+        "lastEvent": "idle-monitor: active",
+        "lastEventAt": "2026-11-02T02:47:24.092Z"
+      },
+      "after": {
+        "enabled": true,
+        "stayAwake": false,
+        "stayAwakeStateLoaded": true,
+        "stayAwakeStatePath": "/home/charl/.local/state/omarchy/indicators/stay-awake",
+        "idle": false,
+        "inIdleCycle": false,
+        "screensaverStarted": false,
+        "screensaver": 150,
+        "lock": 300,
+        "screensaverDelay": 0,
+        "lockDelay": 150,
+        "screensaverWindows": 0,
+        "timers": {
+          "screensaver": false,
+          "lock": false,
+          "screensaverLaunchGrace": false
+        },
+        "processes": {
+          "screensaver": false,
+          "lock": false,
+          "wake": false
+        },
+        "lastEvent": "idle-monitor: active",
+        "lastEventAt": "2026-11-02T02:49:44.660Z"
+      },
+      "exactEnabledRestored": true
+    },
+    "footAfter": {
+      "pid": 2095,
+      "birth": "6930",
+      "ppid": 930,
+      "pgid": 2095,
+      "uid": 1000,
+      "device": 31,
+      "inode": 161589,
+      "size": 503440,
+      "namespacePids": [
+        2095
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+      "core": [
+        "unlimited",
+        "unlimited"
+      ]
+    },
+    "footPreserved": true
+  },
+  "nativeOperations": [],
+  "providerCleanupQualified": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false
+}

@@ -11,6 +11,10 @@ summary: "19 whole original requirements/42scenarios accepted; DEL010 closes on 
 
 # Current status
 
+As of November2 03:11UTC: **19/242 whole requirements and42/417scenarios**. Actual Haskell Store acquisition ownership is repaired and passes36ordinary suites plus identical old/new/fault controls. Bounded model evidence retains a uniform coverage gap and separate positive witness. The fresh Omarchy build completes17guarded Apps/Search/Refresh inputs with visually checked Foot/no-match/query retention, but selected child exit1 and strict cleanup uncertainty remain. [Current component](../../../../docs/warlock-build-loop/v2/store-retirement-component-20261102.json). Next actual persistent custody/request source; no native or release acceptance.
+
+## Earlier dated observations (retained)
+
 As of November2 01:48UTC: **19/242 whole requirements and42/417scenarios accepted**. [WholeDEL010](../../../../docs/warlock-build-loop/v2/persistent-auth-cross-user-acceptance-20261102.json) closes its missing actual cross-user verification on217immutable source inputs and15kernel credential cases; the3scenarios were already accepted and are requalified without double counting. Native GUI/provider/AT/IME/hardware/resource/release remain open. Next actual persistent-runtime source integration;15roles continue.
 
 ## Previous dated observations (retained)

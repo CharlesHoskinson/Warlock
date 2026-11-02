@@ -1,0 +1,1082 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-27c8f3c434b843f88ab3bb9a7cac0f2b.scope",
+    "coreLimit": 1
+  },
+  "core": [
+    1,
+    1
+  ],
+  "sourceManifestSHA256": "c73504f1804bb48204d0e9b906abc5d67ac6c9a460f7c12fbbdcf430e991b4b3",
+  "commands": [
+    {
+      "label": "versions",
+      "argv": [
+        "/usr/bin/cabal",
+        "--version"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.06582902900117915,
+      "stdoutSHA256": "19663218290ae889764fb259dc991e0c53d0f392c0dd85a9b245604de0638fe3",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "red-build",
+      "argv": [
+        "/usr/bin/cabal",
+        "--config-file=/home/charl/warlock-mvp-20261101T1058Z/build-dynamic/cabal.config",
+        "build",
+        "--offline",
+        "--project-file=/home/charl/warlock-store-retirement-20261102T020143Z/red/cabal.project",
+        "--builddir=/home/charl/warlock-store-retirement-20261102T020143Z/build/red",
+        "--with-compiler=/usr/bin/ghc",
+        "--with-hsc2hs=/usr/bin/hsc2hs",
+        "--enable-executable-dynamic",
+        "--jobs=2",
+        "warlock-store-acquisition-witness:exe:acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 2.9351540979987476,
+      "stdoutSHA256": "4f45057074681598e8e7b5f6ef60047b95f6cce32009a28b0997009be22c6d8a",
+      "stderrSHA256": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41"
+    },
+    {
+      "label": "red-list-bin",
+      "argv": [
+        "/usr/bin/cabal",
+        "--config-file=/home/charl/warlock-mvp-20261101T1058Z/build-dynamic/cabal.config",
+        "list-bin",
+        "--offline",
+        "--project-file=/home/charl/warlock-store-retirement-20261102T020143Z/red/cabal.project",
+        "--builddir=/home/charl/warlock-store-retirement-20261102T020143Z/build/red",
+        "warlock-store-acquisition-witness:exe:acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.568377039002371,
+      "stdoutSHA256": "4e9be9e116578f0f43752b1c84ccb9a66ed58e2b32f9c94cb6446695e95cdc23",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "red-readelf",
+      "argv": [
+        "/usr/bin/readelf",
+        "-d",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/red/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.008314298000186682,
+      "stdoutSHA256": "1e0255278a1310ef5725bff1c0fca89354feaf0715fb87cb4af5654acb991d9c",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "red-ldd",
+      "argv": [
+        "/usr/bin/ldd",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/red/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.007832604998839088,
+      "stdoutSHA256": "ba64fce792bb297d3f8d307c60d9e772ca2aba76e88e227c5245e0c59febce81",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "red-execute",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/red/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "forced": false,
+      "elapsedSeconds": 0.03307688199856784,
+      "stdoutSHA256": "bceb60bc961e82e15eb949c9348a22d32bdfa28b798e08e47f92928744ac98e6",
+      "stderrSHA256": "54be346e76d988ea9ca89db50fad05e9e98a04611864e5fd832829ae9f0e4bdd"
+    },
+    {
+      "label": "green-build",
+      "argv": [
+        "/usr/bin/cabal",
+        "--config-file=/home/charl/warlock-mvp-20261101T1058Z/build-dynamic/cabal.config",
+        "build",
+        "--offline",
+        "--project-file=/home/charl/warlock-store-retirement-20261102T020143Z/green/cabal.project",
+        "--builddir=/home/charl/warlock-store-retirement-20261102T020143Z/build/green",
+        "--with-compiler=/usr/bin/ghc",
+        "--with-hsc2hs=/usr/bin/hsc2hs",
+        "--enable-executable-dynamic",
+        "--jobs=2",
+        "warlock-store-acquisition-witness:exe:acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 3.0880655819928506,
+      "stdoutSHA256": "9f88d7792a3cf7f09d009ae6d1d1da08b227bd247533bc7665721b896e3e99bb",
+      "stderrSHA256": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41"
+    },
+    {
+      "label": "green-list-bin",
+      "argv": [
+        "/usr/bin/cabal",
+        "--config-file=/home/charl/warlock-mvp-20261101T1058Z/build-dynamic/cabal.config",
+        "list-bin",
+        "--offline",
+        "--project-file=/home/charl/warlock-store-retirement-20261102T020143Z/green/cabal.project",
+        "--builddir=/home/charl/warlock-store-retirement-20261102T020143Z/build/green",
+        "warlock-store-acquisition-witness:exe:acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.5689261600055033,
+      "stdoutSHA256": "3a4ba11490d39a47471e8a797c6482a2ef3647f7156871caf18c91017f5dd7be",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "green-readelf",
+      "argv": [
+        "/usr/bin/readelf",
+        "-d",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/green/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.008832164996420033,
+      "stdoutSHA256": "ce9f123e366416446f1fb79598fcf2f584ccb23415a0fe23dc49afb330635efd",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "green-ldd",
+      "argv": [
+        "/usr/bin/ldd",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/green/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.01659309898968786,
+      "stdoutSHA256": "6805e6f24f39616da7a7e32849e69b7eaca5f46ccc19ae768c95880902768736",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "green-execute",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/green/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.033336956999846734,
+      "stdoutSHA256": "e19f405ddcdfbdb687cef21a207ac58b1a037cd77087dcced284c70f711f8fbf",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "full-build",
+      "argv": [
+        "/usr/bin/cabal",
+        "--config-file=/home/charl/warlock-mvp-20261101T1058Z/build-dynamic/cabal.config",
+        "build",
+        "--offline",
+        "--project-file=/home/charl/warlock-store-retirement-20261102T020143Z/full/cabal.project",
+        "--builddir=/home/charl/warlock-store-retirement-20261102T020143Z/build/full",
+        "--with-compiler=/usr/bin/ghc",
+        "--with-hsc2hs=/usr/bin/hsc2hs",
+        "--enable-executable-dynamic",
+        "--jobs=2",
+        "warlock-store-retirement-qa:exe:store-settled-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 3.2995662370085483,
+      "stdoutSHA256": "382531ea2ab6ff901c115afb3a101ea0549d6089188a83b7191fa06db638ae22",
+      "stderrSHA256": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41"
+    },
+    {
+      "label": "full-list-bin",
+      "argv": [
+        "/usr/bin/cabal",
+        "--config-file=/home/charl/warlock-mvp-20261101T1058Z/build-dynamic/cabal.config",
+        "list-bin",
+        "--offline",
+        "--project-file=/home/charl/warlock-store-retirement-20261102T020143Z/full/cabal.project",
+        "--builddir=/home/charl/warlock-store-retirement-20261102T020143Z/build/full",
+        "warlock-store-retirement-qa:exe:store-settled-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.5685858970100526,
+      "stdoutSHA256": "e330c32bebb80260733ec6dc51b8ca9a840c4afbc6747bc20bf078326fc1dbd4",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "full-readelf",
+      "argv": [
+        "/usr/bin/readelf",
+        "-d",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/full/build/x86_64-linux/ghc-9.6.7/warlock-store-retirement-qa-0.0.0.1/x/store-settled-controls/build/store-settled-controls/store-settled-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.008741929006646387,
+      "stdoutSHA256": "a800c6832e7207e057657043df41ddb06bd7361cb837567dc369f94e76171102",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "full-ldd",
+      "argv": [
+        "/usr/bin/ldd",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/full/build/x86_64-linux/ghc-9.6.7/warlock-store-retirement-qa-0.0.0.1/x/store-settled-controls/build/store-settled-controls/store-settled-controls"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.007670330000109971,
+      "stdoutSHA256": "ba06ef151360aa4a29fe3721191b7f0dfc9925628e257cf1bb243c6f29a65287",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "full-execute",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/build/full/build/x86_64-linux/ghc-9.6.7/warlock-store-retirement-qa-0.0.0.1/x/store-settled-controls/build/store-settled-controls/store-settled-controls",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/fresh-owned-files"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "forced": false,
+      "elapsedSeconds": 0.033103414010838605,
+      "stdoutSHA256": "08253beb1bfb5ffd2f79c13a83f0822b9d0f60284e8e9d43e9c28f8e4d02dc72",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "variants": {
+    "red": {
+      "image": {
+        "path": "/home/charl/warlock-store-retirement-20261102T020143Z/build/red/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls",
+        "resolvedPath": "/home/charl/warlock-store-retirement-20261102T020143Z/build/red/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls",
+        "device": "58",
+        "inode": "47612",
+        "size": "153536",
+        "sha256": "bd3ec47ff5ef5b28db52063bce11a00233709f1fdd13336bcf1e17b89442b022"
+      },
+      "dependencies": {
+        "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330318",
+          "size": "551472",
+          "sha256": "be7d5dd7e80c0ed4ebfa9bbbb2287a963777c3b807764a8cb9553f6832a1d47b"
+        },
+        "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330319",
+          "size": "12344312",
+          "sha256": "ced6e76d334356f9b2aa991fa0ee42ec774d9f0ae4419afd10a89dfcdcb8bdf4"
+        },
+        "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330320",
+          "size": "840144",
+          "sha256": "d435f87b74b478c0af843433c5bde8c216ebb2bea58efccdf3a0371625551b83"
+        },
+        "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330321",
+          "size": "1463208",
+          "sha256": "994b29012b2e49f1d5cbda53dee91d0978422af9ed892e4f78e4b84ef99c8c91"
+        },
+        "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330322",
+          "size": "3765888",
+          "sha256": "3bb400d7f04296c9c8822f0498104b9a73a59b1f824c1f03dd51e2fe259e0d20"
+        },
+        "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330323",
+          "size": "120880",
+          "sha256": "e4243858a70472e28237a2950dbc032c4b3b9b8b99922cddacb6a457fdfb52ab"
+        },
+        "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330324",
+          "size": "530200",
+          "sha256": "db46672b659943f3545e8ce4d220043e351cf266a7400bbb5b96a6a22b0f237d"
+        },
+        "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330325",
+          "size": "275784",
+          "sha256": "b410ae8d20e78bcd8cac9fd2994ea5ecf69e4a94fa74464780bbfa30b55d88f2"
+        },
+        "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330326",
+          "size": "825528",
+          "sha256": "4b7ff2115425a599038c3f9d3168b6e076dcb42efe8d41c0cf23843e2519aad1"
+        },
+        "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330327",
+          "size": "342864",
+          "sha256": "441420623c2127a991069574a9ef28b1109abdea8ebe205b9c0d8c9a7e2a6af4"
+        },
+        "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330329",
+          "size": "263112",
+          "sha256": "fed1d611974e659a3b987a5bbab418303e62c27e1b92bbbb81d43606b12a50c2"
+        },
+        "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330332",
+          "size": "5201744",
+          "sha256": "6d52ca0afa25dbcfb91161826d52c52e0713e66339515997e3905bc2cc39874c"
+        },
+        "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330338",
+          "size": "326216",
+          "sha256": "c932a5430590c2fa1b5c4966c104336331225585e5db0d638d1c80fe06c93942"
+        },
+        "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330340",
+          "size": "466672",
+          "sha256": "88033823e51ce750a6f68501f7b3ca8a1a46f557d6fddd33536769dfe4d80164"
+        },
+        "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330344",
+          "size": "741792",
+          "sha256": "1de73b1dae2c2deb6ba462ca46da98ae808fd89159660dc050202a003e016bde"
+        },
+        "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330346",
+          "size": "133640",
+          "sha256": "b51856cad81c76d620a8b0b56212a468877a8c565f10ebb1bb8e842a07aa16fe"
+        },
+        "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330347",
+          "size": "3834824",
+          "sha256": "36d66549aa669d7a90e0b5e511135917f438c04bd859e1d20be1574e173d12ee"
+        },
+        "/usr/lib/libHStext-2.0.2-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330349",
+          "size": "3179992",
+          "sha256": "3b020e330f82c23beebc24531db828d556f75bcea1e0e3d40d124f3a955f9b17"
+        },
+        "/usr/lib/libHStime-1.12.2-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330350",
+          "size": "1623176",
+          "sha256": "0c1ae70df5f3cc8d9c64c4540fb587375810be58ed596652af445e6a2b34f1dd"
+        },
+        "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330351",
+          "size": "1162280",
+          "sha256": "0e2a904dd6a7b34f2375823939443d379ee3ad378f113e14d6897c179c202317"
+        },
+        "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330352",
+          "size": "1345712",
+          "sha256": "83f37340f48feb39fbe4f52cc655fc9c2f388d2a33d9eb67773cd8a5737a0163"
+        },
+        "/usr/lib/libc.so.6": {
+          "path": "/usr/lib/libc.so.6",
+          "resolvedPath": "/usr/lib/libc.so.6",
+          "device": "31",
+          "inode": "3446",
+          "size": "2215072",
+          "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524"
+        },
+        "/usr/lib/libffi.so.8": {
+          "path": "/usr/lib/libffi.so.8",
+          "resolvedPath": "/usr/lib/libffi.so.8.5.0",
+          "device": "31",
+          "inode": "19167",
+          "size": "51432",
+          "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c"
+        },
+        "/usr/lib/libgmp.so.10": {
+          "path": "/usr/lib/libgmp.so.10",
+          "resolvedPath": "/usr/lib/libgmp.so.10.5.0",
+          "device": "31",
+          "inode": "7675",
+          "size": "678528",
+          "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49"
+        },
+        "/usr/lib/libm.so.6": {
+          "path": "/usr/lib/libm.so.6",
+          "resolvedPath": "/usr/lib/libm.so.6",
+          "device": "31",
+          "inode": "3456",
+          "size": "1268336",
+          "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d"
+        },
+        "/usr/lib/libnuma.so.1": {
+          "path": "/usr/lib/libnuma.so.1",
+          "resolvedPath": "/usr/lib/libnuma.so.1.0.0",
+          "device": "31",
+          "inode": "129540",
+          "size": "55632",
+          "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51"
+        },
+        "/usr/lib64/ld-linux-x86-64.so.2": {
+          "path": "/usr/lib64/ld-linux-x86-64.so.2",
+          "resolvedPath": "/usr/lib/ld-linux-x86-64.so.2",
+          "device": "31",
+          "inode": "3437",
+          "size": "263152",
+          "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+        }
+      },
+      "observed": {
+        "schema": 1,
+        "case": "generic-acquisition-exception-before-value",
+        "scope": "Identical same-module Store witness; simulated acquisition event only, no real FD or physical cleanup proof",
+        "acquisitionEvents": 1,
+        "releaseCalls": 0,
+        "bodyCalls": 0,
+        "retryBodyCalls": 0,
+        "acquireResult": {
+          "kind": "IOException",
+          "message": "user error (generic acquisition failure before returning value)"
+        },
+        "retryResult": {
+          "kind": "IOException",
+          "message": "user error (backend store retired)"
+        },
+        "ownerSealedBeforeRetirement": false,
+        "retireStoreOwnerResult": true,
+        "ownerSealedAfterRetirement": true,
+        "retainedRecordsBeforeRetirement": 0,
+        "retainedRecordsAfterRetirement": 0,
+        "checks": {
+          "genericAcquireIOExceptionObserved": true,
+          "independentAcquisitionEventExactlyOnce": true,
+          "noReturnedValueBodyOrRelease": true,
+          "actualRetireStoreOwnerIsUnconfirmed": false,
+          "actualOwnerGateSealedAfterRetirement": true,
+          "sealedOwnerRejectsNewWork": true
+        },
+        "passed": false,
+        "realDescriptorAcquisitionObserved": false,
+        "physicalCleanupProven": false,
+        "nativeAcceptance": false,
+        "originalRequirementAccepted": false
+      },
+      "expectedExit": 1,
+      "passed": true
+    },
+    "green": {
+      "image": {
+        "path": "/home/charl/warlock-store-retirement-20261102T020143Z/build/green/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls",
+        "resolvedPath": "/home/charl/warlock-store-retirement-20261102T020143Z/build/green/build/x86_64-linux/ghc-9.6.7/warlock-store-acquisition-witness-0.0.0.1/x/acquisition-failure-controls/build/acquisition-failure-controls/acquisition-failure-controls",
+        "device": "58",
+        "inode": "47682",
+        "size": "161784",
+        "sha256": "80a37b7770e57a0a930531cb982191a9089493bb701405577b97ac1380178e92"
+      },
+      "dependencies": {
+        "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330318",
+          "size": "551472",
+          "sha256": "be7d5dd7e80c0ed4ebfa9bbbb2287a963777c3b807764a8cb9553f6832a1d47b"
+        },
+        "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330319",
+          "size": "12344312",
+          "sha256": "ced6e76d334356f9b2aa991fa0ee42ec774d9f0ae4419afd10a89dfcdcb8bdf4"
+        },
+        "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330320",
+          "size": "840144",
+          "sha256": "d435f87b74b478c0af843433c5bde8c216ebb2bea58efccdf3a0371625551b83"
+        },
+        "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330321",
+          "size": "1463208",
+          "sha256": "994b29012b2e49f1d5cbda53dee91d0978422af9ed892e4f78e4b84ef99c8c91"
+        },
+        "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330322",
+          "size": "3765888",
+          "sha256": "3bb400d7f04296c9c8822f0498104b9a73a59b1f824c1f03dd51e2fe259e0d20"
+        },
+        "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330323",
+          "size": "120880",
+          "sha256": "e4243858a70472e28237a2950dbc032c4b3b9b8b99922cddacb6a457fdfb52ab"
+        },
+        "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330324",
+          "size": "530200",
+          "sha256": "db46672b659943f3545e8ce4d220043e351cf266a7400bbb5b96a6a22b0f237d"
+        },
+        "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330325",
+          "size": "275784",
+          "sha256": "b410ae8d20e78bcd8cac9fd2994ea5ecf69e4a94fa74464780bbfa30b55d88f2"
+        },
+        "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330326",
+          "size": "825528",
+          "sha256": "4b7ff2115425a599038c3f9d3168b6e076dcb42efe8d41c0cf23843e2519aad1"
+        },
+        "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330327",
+          "size": "342864",
+          "sha256": "441420623c2127a991069574a9ef28b1109abdea8ebe205b9c0d8c9a7e2a6af4"
+        },
+        "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330329",
+          "size": "263112",
+          "sha256": "fed1d611974e659a3b987a5bbab418303e62c27e1b92bbbb81d43606b12a50c2"
+        },
+        "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330332",
+          "size": "5201744",
+          "sha256": "6d52ca0afa25dbcfb91161826d52c52e0713e66339515997e3905bc2cc39874c"
+        },
+        "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330338",
+          "size": "326216",
+          "sha256": "c932a5430590c2fa1b5c4966c104336331225585e5db0d638d1c80fe06c93942"
+        },
+        "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330340",
+          "size": "466672",
+          "sha256": "88033823e51ce750a6f68501f7b3ca8a1a46f557d6fddd33536769dfe4d80164"
+        },
+        "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330344",
+          "size": "741792",
+          "sha256": "1de73b1dae2c2deb6ba462ca46da98ae808fd89159660dc050202a003e016bde"
+        },
+        "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330346",
+          "size": "133640",
+          "sha256": "b51856cad81c76d620a8b0b56212a468877a8c565f10ebb1bb8e842a07aa16fe"
+        },
+        "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330347",
+          "size": "3834824",
+          "sha256": "36d66549aa669d7a90e0b5e511135917f438c04bd859e1d20be1574e173d12ee"
+        },
+        "/usr/lib/libHStext-2.0.2-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330349",
+          "size": "3179992",
+          "sha256": "3b020e330f82c23beebc24531db828d556f75bcea1e0e3d40d124f3a955f9b17"
+        },
+        "/usr/lib/libHStime-1.12.2-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330350",
+          "size": "1623176",
+          "sha256": "0c1ae70df5f3cc8d9c64c4540fb587375810be58ed596652af445e6a2b34f1dd"
+        },
+        "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330351",
+          "size": "1162280",
+          "sha256": "0e2a904dd6a7b34f2375823939443d379ee3ad378f113e14d6897c179c202317"
+        },
+        "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330352",
+          "size": "1345712",
+          "sha256": "83f37340f48feb39fbe4f52cc655fc9c2f388d2a33d9eb67773cd8a5737a0163"
+        },
+        "/usr/lib/libc.so.6": {
+          "path": "/usr/lib/libc.so.6",
+          "resolvedPath": "/usr/lib/libc.so.6",
+          "device": "31",
+          "inode": "3446",
+          "size": "2215072",
+          "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524"
+        },
+        "/usr/lib/libffi.so.8": {
+          "path": "/usr/lib/libffi.so.8",
+          "resolvedPath": "/usr/lib/libffi.so.8.5.0",
+          "device": "31",
+          "inode": "19167",
+          "size": "51432",
+          "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c"
+        },
+        "/usr/lib/libgmp.so.10": {
+          "path": "/usr/lib/libgmp.so.10",
+          "resolvedPath": "/usr/lib/libgmp.so.10.5.0",
+          "device": "31",
+          "inode": "7675",
+          "size": "678528",
+          "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49"
+        },
+        "/usr/lib/libm.so.6": {
+          "path": "/usr/lib/libm.so.6",
+          "resolvedPath": "/usr/lib/libm.so.6",
+          "device": "31",
+          "inode": "3456",
+          "size": "1268336",
+          "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d"
+        },
+        "/usr/lib/libnuma.so.1": {
+          "path": "/usr/lib/libnuma.so.1",
+          "resolvedPath": "/usr/lib/libnuma.so.1.0.0",
+          "device": "31",
+          "inode": "129540",
+          "size": "55632",
+          "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51"
+        },
+        "/usr/lib64/ld-linux-x86-64.so.2": {
+          "path": "/usr/lib64/ld-linux-x86-64.so.2",
+          "resolvedPath": "/usr/lib/ld-linux-x86-64.so.2",
+          "device": "31",
+          "inode": "3437",
+          "size": "263152",
+          "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+        }
+      },
+      "observed": {
+        "schema": 1,
+        "case": "generic-acquisition-exception-before-value",
+        "scope": "Identical same-module Store witness; simulated acquisition event only, no real FD or physical cleanup proof",
+        "acquisitionEvents": 1,
+        "releaseCalls": 0,
+        "bodyCalls": 0,
+        "retryBodyCalls": 0,
+        "acquireResult": {
+          "kind": "IOException",
+          "message": "user error (generic acquisition failure before returning value)"
+        },
+        "retryResult": {
+          "kind": "IOException",
+          "message": "user error (backend store retired)"
+        },
+        "ownerSealedBeforeRetirement": true,
+        "retireStoreOwnerResult": false,
+        "ownerSealedAfterRetirement": true,
+        "retainedRecordsBeforeRetirement": 1,
+        "retainedRecordsAfterRetirement": 1,
+        "checks": {
+          "genericAcquireIOExceptionObserved": true,
+          "independentAcquisitionEventExactlyOnce": true,
+          "noReturnedValueBodyOrRelease": true,
+          "actualRetireStoreOwnerIsUnconfirmed": true,
+          "actualOwnerGateSealedAfterRetirement": true,
+          "sealedOwnerRejectsNewWork": true
+        },
+        "passed": true,
+        "realDescriptorAcquisitionObserved": false,
+        "physicalCleanupProven": false,
+        "nativeAcceptance": false,
+        "originalRequirementAccepted": false
+      },
+      "expectedExit": 0,
+      "passed": true
+    },
+    "full": {
+      "image": {
+        "path": "/home/charl/warlock-store-retirement-20261102T020143Z/build/full/build/x86_64-linux/ghc-9.6.7/warlock-store-retirement-qa-0.0.0.1/x/store-settled-controls/build/store-settled-controls/store-settled-controls",
+        "resolvedPath": "/home/charl/warlock-store-retirement-20261102T020143Z/build/full/build/x86_64-linux/ghc-9.6.7/warlock-store-retirement-qa-0.0.0.1/x/store-settled-controls/build/store-settled-controls/store-settled-controls",
+        "device": "58",
+        "inode": "47752",
+        "size": "170856",
+        "sha256": "85fd235aad7b7272639a70f989019e38fd5afaf006798f9cf71c49e5b0064396"
+      },
+      "dependencies": {
+        "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330318",
+          "size": "551472",
+          "sha256": "be7d5dd7e80c0ed4ebfa9bbbb2287a963777c3b807764a8cb9553f6832a1d47b"
+        },
+        "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330319",
+          "size": "12344312",
+          "sha256": "ced6e76d334356f9b2aa991fa0ee42ec774d9f0ae4419afd10a89dfcdcb8bdf4"
+        },
+        "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330320",
+          "size": "840144",
+          "sha256": "d435f87b74b478c0af843433c5bde8c216ebb2bea58efccdf3a0371625551b83"
+        },
+        "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330321",
+          "size": "1463208",
+          "sha256": "994b29012b2e49f1d5cbda53dee91d0978422af9ed892e4f78e4b84ef99c8c91"
+        },
+        "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330322",
+          "size": "3765888",
+          "sha256": "3bb400d7f04296c9c8822f0498104b9a73a59b1f824c1f03dd51e2fe259e0d20"
+        },
+        "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330323",
+          "size": "120880",
+          "sha256": "e4243858a70472e28237a2950dbc032c4b3b9b8b99922cddacb6a457fdfb52ab"
+        },
+        "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330324",
+          "size": "530200",
+          "sha256": "db46672b659943f3545e8ce4d220043e351cf266a7400bbb5b96a6a22b0f237d"
+        },
+        "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330325",
+          "size": "275784",
+          "sha256": "b410ae8d20e78bcd8cac9fd2994ea5ecf69e4a94fa74464780bbfa30b55d88f2"
+        },
+        "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330326",
+          "size": "825528",
+          "sha256": "4b7ff2115425a599038c3f9d3168b6e076dcb42efe8d41c0cf23843e2519aad1"
+        },
+        "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330327",
+          "size": "342864",
+          "sha256": "441420623c2127a991069574a9ef28b1109abdea8ebe205b9c0d8c9a7e2a6af4"
+        },
+        "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330329",
+          "size": "263112",
+          "sha256": "fed1d611974e659a3b987a5bbab418303e62c27e1b92bbbb81d43606b12a50c2"
+        },
+        "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330332",
+          "size": "5201744",
+          "sha256": "6d52ca0afa25dbcfb91161826d52c52e0713e66339515997e3905bc2cc39874c"
+        },
+        "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330338",
+          "size": "326216",
+          "sha256": "c932a5430590c2fa1b5c4966c104336331225585e5db0d638d1c80fe06c93942"
+        },
+        "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330340",
+          "size": "466672",
+          "sha256": "88033823e51ce750a6f68501f7b3ca8a1a46f557d6fddd33536769dfe4d80164"
+        },
+        "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330344",
+          "size": "741792",
+          "sha256": "1de73b1dae2c2deb6ba462ca46da98ae808fd89159660dc050202a003e016bde"
+        },
+        "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330346",
+          "size": "133640",
+          "sha256": "b51856cad81c76d620a8b0b56212a468877a8c565f10ebb1bb8e842a07aa16fe"
+        },
+        "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330347",
+          "size": "3834824",
+          "sha256": "36d66549aa669d7a90e0b5e511135917f438c04bd859e1d20be1574e173d12ee"
+        },
+        "/usr/lib/libHStext-2.0.2-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330349",
+          "size": "3179992",
+          "sha256": "3b020e330f82c23beebc24531db828d556f75bcea1e0e3d40d124f3a955f9b17"
+        },
+        "/usr/lib/libHStime-1.12.2-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330350",
+          "size": "1623176",
+          "sha256": "0c1ae70df5f3cc8d9c64c4540fb587375810be58ed596652af445e6a2b34f1dd"
+        },
+        "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330351",
+          "size": "1162280",
+          "sha256": "0e2a904dd6a7b34f2375823939443d379ee3ad378f113e14d6897c179c202317"
+        },
+        "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so": {
+          "path": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330352",
+          "size": "1345712",
+          "sha256": "83f37340f48feb39fbe4f52cc655fc9c2f388d2a33d9eb67773cd8a5737a0163"
+        },
+        "/usr/lib/libc.so.6": {
+          "path": "/usr/lib/libc.so.6",
+          "resolvedPath": "/usr/lib/libc.so.6",
+          "device": "31",
+          "inode": "3446",
+          "size": "2215072",
+          "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524"
+        },
+        "/usr/lib/libffi.so.8": {
+          "path": "/usr/lib/libffi.so.8",
+          "resolvedPath": "/usr/lib/libffi.so.8.5.0",
+          "device": "31",
+          "inode": "19167",
+          "size": "51432",
+          "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c"
+        },
+        "/usr/lib/libgmp.so.10": {
+          "path": "/usr/lib/libgmp.so.10",
+          "resolvedPath": "/usr/lib/libgmp.so.10.5.0",
+          "device": "31",
+          "inode": "7675",
+          "size": "678528",
+          "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49"
+        },
+        "/usr/lib/libm.so.6": {
+          "path": "/usr/lib/libm.so.6",
+          "resolvedPath": "/usr/lib/libm.so.6",
+          "device": "31",
+          "inode": "3456",
+          "size": "1268336",
+          "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d"
+        },
+        "/usr/lib/libnuma.so.1": {
+          "path": "/usr/lib/libnuma.so.1",
+          "resolvedPath": "/usr/lib/libnuma.so.1.0.0",
+          "device": "31",
+          "inode": "129540",
+          "size": "55632",
+          "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51"
+        },
+        "/usr/lib64/ld-linux-x86-64.so.2": {
+          "path": "/usr/lib64/ld-linux-x86-64.so.2",
+          "resolvedPath": "/usr/lib/ld-linux-x86-64.so.2",
+          "device": "31",
+          "inode": "3437",
+          "size": "263152",
+          "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+        }
+      },
+      "observed": null,
+      "expectedExit": 0,
+      "passed": true
+    }
+  },
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "tools": {
+    "ghc": {
+      "path": "/usr/bin/ghc",
+      "resolvedPath": "/usr/bin/ghc-9.6.7",
+      "device": "31",
+      "inode": "330362",
+      "size": "276",
+      "sha256": "27bfe6baeb0ab8c0191a40cc586b4575257383b16f26689091bc5420a560d0df"
+    },
+    "hsc2hs": {
+      "path": "/usr/bin/hsc2hs",
+      "resolvedPath": "/usr/bin/hsc2hs-ghc-9.6.7",
+      "device": "31",
+      "inode": "330374",
+      "size": "1149",
+      "sha256": "815c54b01e965ced2a84f0e46fc0932c94bd580d3044efc9b1106939bf780d95"
+    },
+    "cabal": {
+      "path": "/usr/bin/cabal",
+      "resolvedPath": "/usr/bin/cabal",
+      "device": "31",
+      "inode": "333450",
+      "size": "10776",
+      "sha256": "d477c0d26d59fc02f94b34bce06998ef868fbbfa8be0b52052aacaa1663b242a"
+    },
+    "python3": {
+      "path": "/usr/bin/python3",
+      "resolvedPath": "/usr/bin/python3.14",
+      "device": "31",
+      "inode": "73148",
+      "size": "14424",
+      "sha256": "375532f83be620283ab780c14ca6bcc5907dc379d2b621de0c5d0a112cf5458b"
+    },
+    "readelf": {
+      "path": "/usr/bin/readelf",
+      "resolvedPath": "/usr/bin/readelf",
+      "device": "31",
+      "inode": "29305",
+      "size": "810072",
+      "sha256": "a72f12f3dd8c560554a3ba818bcecbda9178db5befbcc64d91bbb6a241fc21bc"
+    },
+    "ldd": {
+      "path": "/usr/bin/ldd",
+      "resolvedPath": "/usr/bin/ldd",
+      "device": "31",
+      "inode": "2648",
+      "size": "5440",
+      "sha256": "94f332c23cf00596d0387d6f54693664f9a53334d65953b2ff308057cc8530b1"
+    }
+  },
+  "finishedMonotonic": 95869.026909724
+}

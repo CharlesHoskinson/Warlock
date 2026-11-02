@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "reviewedUTC": "2026-11-02T02:42:58.010770+00:00",
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "accepted-component-observation"
+  },
+  "component": "Store acquisition uncertainty and settled-only retirement foundation",
+  "disposition": "accepted-component-observation",
+  "componentObservationAccepted": true,
+  "requirement": "ELM-ARC-002",
+  "requirementAccepted": false,
+  "scenarioAcceptance": false,
+  "scope": "Exact current3 production hashes plus isolated QA/retained actual protected host and guest component observations. No whole ownership-presentation requirement, StopD integration, physical resource or live GUI acceptance.",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6"
+  },
+  "qaSourceHashes": {
+    "implementation/warlock/qa/store-retirement/AcquisitionFailureControls.hs": "103ba3c8fe2cc862f236ab37a8ad1a709500bb336ba06ceae16ade969a7bba82",
+    "implementation/warlock/qa/store-retirement/AcquisitionFailureMain.hs": "ddc5bf0a20620cb86cbaa168038cccfcd9fdb26c39b6e4fdb19fd1aad0ae0f46",
+    "implementation/warlock/qa/store-retirement/Main.hs": "9674a247dd6757cc270cf04e5f4b62ce8396da961ad9a45e8d6e5dbe538cff18",
+    "implementation/warlock/qa/store-retirement/StoreRetirement.overlay.patch": "b8f3b4215181fa6ca710e07871b4bf90f865df30dda72db67cf8fd89257e0d8a",
+    "implementation/warlock/qa/store-retirement/store-retirement-guided.qnt": "0330d9588b101055ec57eda98939a42b806c429749556eea21a800f988670eb3",
+    "implementation/warlock/qa/store-retirement/store-retirement.qnt": "df8f506d7935b5d189bcb1aab46976bd2316065b374bf9bdab9e44914082d904",
+    "implementation/warlock/qa/store-retirement/store-retirement_test.qnt": "cce5e8a483f0400d83138bf16d1aa53c10cabcd8a28471d2d84016c9271a7331",
+    "implementation/warlock/qa/store-retirement/warlock-store-retirement-qa.cabal": "5f56dc4bad299044c7634964cb7e4db87c7bd9928c0865ac8c67f86a12f3a8a9"
+  },
+  "sourceFindings": [
+    {
+      "status": "pass",
+      "area": "acquisition publication",
+      "finding": "tracked allocates and publishes Acquiring before acquisition. Only explicit NotAcquired(IOException) records Closed without a release. Acquired stores the value before Open. Generic acquisition or either publication interruption retains unconfirmed state; runOwned poisons the same owner gate and prevents replay."
+    },
+    {
+      "status": "pass",
+      "area": "close custody",
+      "finding": "closeResource changes Open to Closing before one release attempt, then Closed only on affirmative return or Uncertain after failure. Neither uncertain close nor acquisition lacking a returned value is retried or guessed clean."
+    },
+    {
+      "status": "pass",
+      "area": "settled observation",
+      "finding": "retireStoreOwnerIfSettled acquires the same operation gate nonblocking; Busy returnsFalse. Otherwise it seals the gate and returnsTrue only for allClosed retained records, with an exception path restoring sealed gate. It starts no physical closer and does not discard retained uncertainty."
+    },
+    {
+      "status": "pass",
+      "area": "public source integration",
+      "finding": "Catalog.retireCatalogIfSettled and PinStore.retirePinStoreIfSettled forward their actual opaque StoreOwner. Existing catalog read limits, durable pin CAS/publication marker and Unknown behavior remain. Shipping Store exports no QA controls or fault hooks."
+    },
+    {
+      "status": "pass",
+      "area": "isolated witness correspondence",
+      "finding": "Both old and new acquisition-exception witnesses preserve the complete underlying respective Store algorithm: only one QA export and identical appended fragment differ. The isolated full-controls overlay exposes explicit publication/scan fault points; those hooks are absent from shipping source. All manifest variant and canonical QA hashes match."
+    }
+  ],
+  "hostVerification": {
+    "report": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793584659077966251/report.json",
+    "sha256": "e705a040272ba504666381847bf83433f81ed9f3c5da5583cfe40ca03a4b3a08",
+    "reportedInputClosure": 345,
+    "selectedProductionHashesCurrentAndExact": true,
+    "suites": 36,
+    "commands": 104,
+    "allNormalExitZero": true,
+    "allSuiteReceiptsPassed": true,
+    "scope": "Protected offline actual production/test build plus existing runtime/store/catalog/pins/compiledElm bridge regressions. Input closure is the report-bound345; this review recomputed selected3 production hashes and QA inputs, not foreign protected runner bytes.",
+    "nativeAccepted": false,
+    "releaseAccepted": false
+  },
+  "guestControls": {
+    "report": "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/store-controls-report.json",
+    "sha256": "ccd4871db0aeffa805fd13d6b62609ebab96d5cd22fe77c7da716222d836e2c7",
+    "commands": 16,
+    "allExpectedNormalExits": true,
+    "stdoutStderrLogsVerified": 32,
+    "red": {
+      "schema": 1,
+      "case": "generic-acquisition-exception-before-value",
+      "scope": "Identical same-module Store witness; simulated acquisition event only, no real FD or physical cleanup proof",
+      "acquisitionEvents": 1,
+      "releaseCalls": 0,
+      "bodyCalls": 0,
+      "retryBodyCalls": 0,
+      "acquireResult": {
+        "kind": "IOException",
+        "message": "user error (generic acquisition failure before returning value)"
+      },
+      "retryResult": {
+        "kind": "IOException",
+        "message": "user error (backend store retired)"
+      },
+      "ownerSealedBeforeRetirement": false,
+      "retireStoreOwnerResult": true,
+      "ownerSealedAfterRetirement": true,
+      "retainedRecordsBeforeRetirement": 0,
+      "retainedRecordsAfterRetirement": 0,
+      "checks": {
+        "genericAcquireIOExceptionObserved": true,
+        "independentAcquisitionEventExactlyOnce": true,
+        "noReturnedValueBodyOrRelease": true,
+        "actualRetireStoreOwnerIsUnconfirmed": false,
+        "actualOwnerGateSealedAfterRetirement": true,
+        "sealedOwnerRejectsNewWork": true
+      },
+      "passed": false,
+      "realDescriptorAcquisitionObserved": false,
+      "physicalCleanupProven": false,
+      "nativeAcceptance": false,
+      "originalRequirementAccepted": false
+    },
+    "green": {
+      "schema": 1,
+      "case": "generic-acquisition-exception-before-value",
+      "scope": "Identical same-module Store witness; simulated acquisition event only, no real FD or physical cleanup proof",
+      "acquisitionEvents": 1,
+      "releaseCalls": 0,
+      "bodyCalls": 0,
+      "retryBodyCalls": 0,
+      "acquireResult": {
+        "kind": "IOException",
+        "message": "user error (generic acquisition failure before returning value)"
+      },
+      "retryResult": {
+        "kind": "IOException",
+        "message": "user error (backend store retired)"
+      },
+      "ownerSealedBeforeRetirement": true,
+      "retireStoreOwnerResult": false,
+      "ownerSealedAfterRetirement": true,
+      "retainedRecordsBeforeRetirement": 1,
+      "retainedRecordsAfterRetirement": 1,
+      "checks": {
+        "genericAcquireIOExceptionObserved": true,
+        "independentAcquisitionEventExactlyOnce": true,
+        "noReturnedValueBodyOrRelease": true,
+        "actualRetireStoreOwnerIsUnconfirmed": true,
+        "actualOwnerGateSealedAfterRetirement": true,
+        "sealedOwnerRejectsNewWork": true
+      },
+      "passed": true,
+      "realDescriptorAcquisitionObserved": false,
+      "physicalCleanupProven": false,
+      "nativeAcceptance": false,
+      "originalRequirementAccepted": false
+    },
+    "fullControlsExit": 0,
+    "fullControlsStdout": "Store acquisition/publication and settled-only controls passed",
+    "controls": [
+      "empty/closed/busy/open/closing owner",
+      "synchronous close failure and async close failure",
+      "explicit no-resource receipt",
+      "actual tracked publication faults before and after retained value",
+      "settlement scan exception seals owner",
+      "actual public fixed-root missing-file IO"
+    ],
+    "scope": "Same-module simulated/unit resource witnesses establish conservative bookkeeping and gate behavior. Known-missing case uses real IO. Simulated acquisition counter and release counter are not physical descriptor acquisition/cleanup proof."
+  },
+  "modelReview": {
+    "skill": "/home/charl/.agents/skills/quint-modeling/SKILL.md",
+    "reviewerDidNotExecute": true,
+    "structural": {
+      "typedEnums": "pass",
+      "cohesiveSingleStateRecord": "pass",
+      "initAllVariables": "source-reviewed: s assigned",
+      "eachActionUpdatesState": "source-reviewed: one s assignment per action",
+      "allMajorActionsInUniformStep": "source-reviewed: register/acquire/retain/open/fault/close/end/busy/scan included",
+      "nontrivialSafety": "source-reviewed: at most one close; retained/possible-owned/no-resource/confirmed-close correspondence; settled observation implies sealed clean resources",
+      "finiteAbstraction": "Two single-use resource slots; actual list pruning/reuse, physical FD identity, timing, legacy retireStoreOwner and provider cleanup are outside this model."
+    },
+    "directed": {
+      "tests": 14,
+      "passed": 14,
+      "typecheckExit": 0,
+      "stdoutSha256": "9a9a6ce63e419a2c683031d0881c34d884f08f99e936cb80cc661930842e9d69"
+    },
+    "uniform": {
+      "samples": 10000,
+      "maxSteps": 40,
+      "seed": 20261101,
+      "safetyExit": 0,
+      "counterexampleObserved": false,
+      "coverageQualificationPassed": false,
+      "originalReportPassed": false,
+      "witnessCounts": {
+        "witnessTwoClosed": 0,
+        "witnessBusy": 1883,
+        "witnessUnknown": 7,
+        "witnessUnconfirmedAcquire": 639
+      },
+      "originalReportSha256": "d42c39fa4181b90aaa7eaa08cfd7cf37b487d1a408470b40baea8bdabee8e15a",
+      "limitation": "Zero dual-close witness is retained as failed coverage qualification, not relabeled or combined into a uniform pass."
+    },
+    "guided": {
+      "typecheckExitRootReported": 0,
+      "samples": 1,
+      "maxSteps": 20,
+      "seed": 20261101,
+      "witnessTwoClosed": 1,
+      "counterexampleObserved": false,
+      "sameSafetyPredicate": true,
+      "noNewStateAssignmentsOrReset": true,
+      "existingActionSubsetOnly": true,
+      "terminalSealStutterExplicit": true,
+      "stdoutSha256": "d7cda80a53565923759c947977bea39f183a469372e0f4e5f20a08d616b1d429",
+      "limitation": "A deliberate successful nested-close path demonstrates reachability in this abstraction; it is not uniform statistical coverage, exhaustive proof or a replacement for the retained broad failure."
+    },
+    "correspondenceDisposition": "Accepted scoped supplementary reachability plus preserved broad safety observations and explicit coverage gap. No model-to-kernel physical close or whole ARC002 inference."
+  },
+  "evidenceHashes": {
+    "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793584659077966251/report.json": "e705a040272ba504666381847bf83433f81ed9f3c5da5583cfe40ca03a4b3a08",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/store-controls-report.json": "ccd4871db0aeffa805fd13d6b62609ebab96d5cd22fe77c7da716222d836e2c7",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/qa-manifest.json": "c73504f1804bb48204d0e9b906abc5d67ac6c9a460f7c12fbbdcf430e991b4b3",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/Store.before.hsc": "2aa8ee35f9ef5c767fd259b413f705c8930bfb0f62effe4a97bdc906b47cceb9",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/Store.after.hsc": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/run-store-controls.py": "c0df14682da4bd25446cb74f4912113e61ca7bc9faac03e00c0d9bf05a312b5c",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/model-run-14790e732b4a4e97b17e25fb0c405be2/report.json": "d42c39fa4181b90aaa7eaa08cfd7cf37b487d1a408470b40baea8bdabee8e15a",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/model-run-14790e732b4a4e97b17e25fb0c405be2/directed.stdout": "9a9a6ce63e419a2c683031d0881c34d884f08f99e936cb80cc661930842e9d69",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/model-run-14790e732b4a4e97b17e25fb0c405be2/safety.stdout": "bc5f4e441fd497c1c6e0fadc9e819ff47ee90d3ccbb4ea03487237ce8de1b49a",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/guided-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/guided-typecheck.stderr": "a5d4d920f81d70068f460baf1a8a31a63c61de9c068d1e4f6ff838cc45f24218",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/guided-positive.stdout": "d7cda80a53565923759c947977bea39f183a469372e0f4e5f20a08d616b1d429",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/guided-positive.stderr": "27052517724ce49410997231f923274176dae5ccb0eab3af87d5d1a6731b1cef"
+  },
+  "guestControlLogHashes": {
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/versions.stdout": "19663218290ae889764fb259dc991e0c53d0f392c0dd85a9b245604de0638fe3",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/versions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-build.stdout": "4f45057074681598e8e7b5f6ef60047b95f6cce32009a28b0997009be22c6d8a",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-build.stderr": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-list-bin.stdout": "4e9be9e116578f0f43752b1c84ccb9a66ed58e2b32f9c94cb6446695e95cdc23",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-list-bin.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-readelf.stdout": "1e0255278a1310ef5725bff1c0fca89354feaf0715fb87cb4af5654acb991d9c",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-readelf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-ldd.stdout": "ba64fce792bb297d3f8d307c60d9e772ca2aba76e88e227c5245e0c59febce81",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-ldd.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-execute.stdout": "bceb60bc961e82e15eb949c9348a22d32bdfa28b798e08e47f92928744ac98e6",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/red-execute.stderr": "54be346e76d988ea9ca89db50fad05e9e98a04611864e5fd832829ae9f0e4bdd",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-build.stdout": "9f88d7792a3cf7f09d009ae6d1d1da08b227bd247533bc7665721b896e3e99bb",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-build.stderr": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-list-bin.stdout": "3a4ba11490d39a47471e8a797c6482a2ef3647f7156871caf18c91017f5dd7be",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-list-bin.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-readelf.stdout": "ce9f123e366416446f1fb79598fcf2f584ccb23415a0fe23dc49afb330635efd",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-readelf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-ldd.stdout": "6805e6f24f39616da7a7e32849e69b7eaca5f46ccc19ae768c95880902768736",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-ldd.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-execute.stdout": "e19f405ddcdfbdb687cef21a207ac58b1a037cd77087dcced284c70f711f8fbf",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/green-execute.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-build.stdout": "382531ea2ab6ff901c115afb3a101ea0549d6089188a83b7191fa06db638ae22",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-build.stderr": "e03fee92d70ef3e126872be0e2c520ab0706cb242c8a634cf245f18d1ff56c41",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-list-bin.stdout": "e330c32bebb80260733ec6dc51b8ca9a840c4afbc6747bc20bf078326fc1dbd4",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-list-bin.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-readelf.stdout": "a800c6832e7207e057657043df41ddb06bd7361cb837567dc369f94e76171102",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-readelf.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-ldd.stdout": "ba06ef151360aa4a29fe3721191b7f0dfc9925628e257cf1bb243c6f29a65287",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-ldd.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-execute.stdout": "08253beb1bfb5ffd2f79c13a83f0822b9d0f60284e8e9d43e9c28f8e4d02dc72",
+    "/home/charl/vm/omarchy/evidence/warlock-store-retirement-20261102T020143Z/logs/full-execute.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "concreteProductionBlockersFound": [],
+  "remainingObservations": [
+    "Current fresh217-input guest owner/backend build completion was reported by Root after component review began; exact live MVP after Store change remains pending/separate and is not inferred from compilation.",
+    "Caller-level original StopD, complete provider/retained-backing/callback retirement, physical FD custody and whole original ARC002 acceptance remain unqualified by this Store foundation.",
+    "Uniform sampling has no two-close witness; only separately identified directed/guided paths establish that reachable model case.",
+    "Exact immutable full source/evidence commit was not supplied for this component review; this disposition binds current hashes only."
+  ],
+  "historyPreserved": {
+    "redAcquisitionWitnessPreserved": true,
+    "uniformCoverageFailurePreserved": true,
+    "originalStartsDeadlinesAndClaimsUnchangedByReviewer": true,
+    "allRequirements": 242,
+    "allScenarios": 417
+  },
+  "nativeAccepted": false,
+  "providerCleanupAccepted": false,
+  "guiAccepted": false,
+  "atImeAccepted": false,
+  "hardwareAccepted": false,
+  "releaseAccepted": false,
+  "reviewerExecution": {
+    "tests": false,
+    "compiler": false,
+    "model": false,
+    "namespace": false,
+    "native": false,
+    "VM": false,
+    "method": "Read-only source/evidence parsing and hashes; only assigned review file authored. Forbidden foreign protected runners not read."
+  }
+}

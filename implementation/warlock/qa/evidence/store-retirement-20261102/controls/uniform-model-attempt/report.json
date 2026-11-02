@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "passed": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e1490ad0402442408ea04b122b446aa4.scope",
+    "coreLimit": 1
+  },
+  "manifestSHA256": "c96e6ed77321ddcf0b08328c54640c98763d57e29136e2059af6e6ed580cbfc9",
+  "commands": [
+    {
+      "label": "node-version",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/node",
+        "--version"
+      ],
+      "exit": 0,
+      "forced": false,
+      "elapsedSeconds": 0.009025014995131642,
+      "stdoutSHA256": "249baf635bb43877fcb9422efa1a4904b702d0ddf14d3949b7cd0950d5229c81",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "quint-version",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/node",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/quint/dist/src/cli.js",
+        "--version"
+      ],
+      "exit": 0,
+      "forced": false,
+      "elapsedSeconds": 0.26613979300600477,
+      "stdoutSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "typecheck",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/node",
+        "--max-old-space-size=1024",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/store-retirement.qnt"
+      ],
+      "exit": 0,
+      "forced": false,
+      "elapsedSeconds": 0.5678921650105622,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "test-typecheck",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/node",
+        "--max-old-space-size=1024",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/store-retirement_test.qnt"
+      ],
+      "exit": 0,
+      "forced": false,
+      "elapsedSeconds": 0.5678085659892531,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "directed",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/node",
+        "--max-old-space-size=1024",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/quint/dist/src/cli.js",
+        "test",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/store-retirement_test.qnt",
+        "--main=store_retirement_test",
+        "--match=^(?:twoNestedSuccessThenSeal|explicitNegativeReceiptIsSettled|genericAcquireExceptionNeverLooksClean|publicationFailureAfterRetainNeverLooksClean|rawAcquirePublicationFailureCannotLookClean|openRequiresRetainedValue|genericExceptionIsNotNegativeReceipt|busyProbeDoesNotSealOrCallClose|openResourcePreventsSettledSeal|uncertainCloseNeverRetried|oneClosedOneUncertainCannotSealClean|scanExceptionSealsAndRethrows|afterSuccessfulCloseCannotReclose|emptyOwnerCanSeal)$",
+        "--backend=typescript",
+        "--verbosity=2"
+      ],
+      "exit": 0,
+      "forced": false,
+      "elapsedSeconds": 0.6169045319984434,
+      "stdoutSHA256": "9a9a6ce63e419a2c683031d0881c34d884f08f99e936cb80cc661930842e9d69",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "safety",
+      "argv": [
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/node",
+        "--max-old-space-size=1024",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/model-toolchain/quint/dist/src/cli.js",
+        "run",
+        "/home/charl/warlock-store-retirement-20261102T020143Z/store-retirement.qnt",
+        "--main=store_retirement",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--witnesses",
+        "witnessTwoClosed",
+        "witnessBusy",
+        "witnessUnknown",
+        "witnessUnconfirmedAcquire",
+        "--seed=20261101",
+        "--max-samples=10000",
+        "--max-steps=40",
+        "--verbosity=1"
+      ],
+      "exit": 0,
+      "forced": false,
+      "elapsedSeconds": 25.32878631100175,
+      "stdoutSHA256": "bc5f4e441fd497c1c6e0fadc9e819ff47ee90d3ccbb4ea03487237ce8de1b49a",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "samples": 10000,
+  "maxSteps": 40,
+  "seed": 20261101,
+  "backend": "typescript",
+  "nodeSHA256": "e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb",
+  "quintTreeSHA256": "336f3ece0ad5a10965cdfc9acd15e9e2e1b08b7e9a849c9ffa7f76a6d13d7338",
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "error": "RuntimeError: witness missing/zero"
+}

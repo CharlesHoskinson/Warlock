@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "requirement": "ELM-ARC-002",
+  "scenario": "ownership-presentation",
+  "record": ".warlock-contributor/engine-pid1.json",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6"
+  },
+  "report": {
+    "path": "implementation/warlock/qa/evidence/store-retirement-20261102/report.json",
+    "sha256": "4b46924571efcfdb9a2201be0e76cfe367b151268bc826198d85821d86783cea"
+  },
+  "independentReview": {
+    "path": "docs/warlock-build-loop/v2/store-retirement-review-20261102.json",
+    "sha256": "26a6d9d9d5031dac8e1bd3efe90f3b46f5aa76879629aa226a8dbf926e3a4371"
+  },
+  "disposition": "implemented-and-component-verified-original-partial",
+  "actualSourceImplemented": true,
+  "hostSuites": 36,
+  "oldNewRegression": "RED1/GREEN0 on identical acquisition failure witness",
+  "boundedModel": "14named,10k40step no counterexample; uniformzero rarewitness explicitlyretained, separate guided1positive",
+  "liveCurrentBuild": "17guardedinputs; visualpositive/no-match/queryretention. Normalexit1, selectedoperationunsuccessful1 and retiredcgroupinventoryUnknown remain.",
+  "counts": {
+    "requirements": 19,
+    "scenarios": 42,
+    "originalRequirements": 242,
+    "originalScenarios": 417
+  },
+  "wholeRequirementAccepted": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "nextAction": "Publish verified Store foundation then integrate smallest independently reviewed persistent custody/request production source, retaining exact StopD and all prior evidence."
+}

@@ -1,0 +1,111 @@
+{
+  "procContext": {
+    "proc": [
+      24,
+      1
+    ],
+    "mount": [
+      "26",
+      "rw,nosuid,nodev,noexec,relatime",
+      "rw"
+    ],
+    "pidNamespace": [
+      5,
+      4026531836
+    ],
+    "cgroupRoot": [
+      33,
+      1
+    ]
+  },
+  "groupIdentity": [
+    33,
+    114985
+  ],
+  "unit": "warlock-live-usability-e446831c5fba4bd5.scope",
+  "attempt": "warlock-live-usability-e446831c5fba4bd5",
+  "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-e446831c5fba4bd5.scope",
+  "deadline": "98152509134129",
+  "engine": {
+    "pid": 180002,
+    "birth": "9812470",
+    "ppid": 179992,
+    "pgid": 179992,
+    "uid": 1000,
+    "device": 58,
+    "inode": 48730,
+    "size": 700416,
+    "namespacePids": [
+      180002,
+      1
+    ],
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-e446831c5fba4bd5.scope",
+    "core": [
+      "1",
+      "1"
+    ]
+  },
+  "broker": {
+    "pid": 179992,
+    "birth": "9812460",
+    "ppid": 179983,
+    "pgid": 179992,
+    "uid": 1000,
+    "device": 58,
+    "inode": 48730,
+    "size": 700416,
+    "namespacePids": [
+      179992
+    ],
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-e446831c5fba4bd5.scope",
+    "core": [
+      "1",
+      "1"
+    ]
+  },
+  "backend": {
+    "pid": 179983,
+    "birth": "9812456",
+    "ppid": 179925,
+    "pgid": 179983,
+    "uid": 1000,
+    "device": 58,
+    "inode": 48731,
+    "size": 23888,
+    "namespacePids": [
+      179983
+    ],
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/warlock-live-usability-e446831c5fba4bd5.scope",
+    "core": [
+      "1",
+      "1"
+    ]
+  },
+  "address": "0x55fad17d35a0",
+  "at": [
+    647,
+    38
+  ],
+  "size": [
+    621,
+    750
+  ],
+  "foot": {
+    "pid": 2095,
+    "birth": "6930",
+    "ppid": 930,
+    "pgid": 2095,
+    "uid": 1000,
+    "device": 31,
+    "inode": 161589,
+    "size": 503440,
+    "namespacePids": [
+      2095
+    ],
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-graphical.slice/app-Hyprland-xdg\\x2dterminal\\x2dexec-c5284b6f.scope",
+    "core": [
+      "unlimited",
+      "unlimited"
+    ]
+  }
+}

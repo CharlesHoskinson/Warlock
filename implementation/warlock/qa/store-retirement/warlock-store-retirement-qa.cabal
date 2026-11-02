@@ -1,0 +1,16 @@
+cabal-version: 3.0
+name: warlock-store-retirement-qa
+version: 0.0.0.1
+build-type: Simple
+
+-- QA-only package, outside the shipping runtime component. Root materializes
+-- the exact production Store postimage and applies the QA overlay in qa-src.
+executable store-settled-controls
+  hs-source-dirs: qa-src
+                 .
+  main-is: Main.hs
+  other-modules: Warlock.Backend.Store
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath
+  cc-options: -D_GNU_SOURCE
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

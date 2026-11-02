@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Read-only native-selected .desktop metadata. Exec is never dispatched.
-module Warlock.Backend.Catalog (Catalog,newCatalog,readCatalog,retireCatalog) where
+module Warlock.Backend.Catalog (Catalog,newCatalog,readCatalog,retireCatalog,retireCatalogIfSettled) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException,SomeAsyncException,fromException,throwIO,try)
 import Control.Monad (foldM,unless)
@@ -27,6 +27,8 @@ newCatalog roots locale lifetime = do
  Catalog roots locale lifetime <$> newStoreOwner <*> newMVar Nothing
 retireCatalog :: Catalog -> IO Bool
 retireCatalog (Catalog _ _ _ owner _) = retireStoreOwner owner
+retireCatalogIfSettled :: Catalog -> IO Bool
+retireCatalogIfSettled (Catalog _ _ _ owner _) = retireStoreOwnerIfSettled owner
 require :: Bool -> String -> IO ()
 require good message = unless good (ioError (userError message))
 

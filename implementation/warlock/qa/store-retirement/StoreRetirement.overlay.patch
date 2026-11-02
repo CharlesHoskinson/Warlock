@@ -1,0 +1,192 @@
+--- a/qa-src/Warlock/Backend/Store.hsc
++++ b/qa-src/Warlock/Backend/Store.hsc
+@@ -2,7 +2,7 @@
+ {-# LANGUAGE ScopedTypeVariables #-}
+ -- Native-selected fixed-root IO. No bridge value is a path or descriptor.
+ module Warlock.Backend.Store
+- (DirectoryPin(..),StoreOwner,newStoreOwner,runOwned,retireStoreOwner,retireStoreOwnerIfSettled,
++ (DirectoryPin(..),StoreOwner,newStoreOwner,runOwned,retireStoreOwner,retireStoreOwnerIfSettled,storeRetirementControls,
+   withPinnedDirectory,withChildDirectory,listNames,entryDirectory,directoryStamp,readRegular,withPinLock,
+   replacePins,readStartupFile) where
+ #define _GNU_SOURCE 1
+@@ -13,7 +13,7 @@
+ #include <unistd.h>
+ #include <stdio.h>
+ import Control.Concurrent.MVar
+-import Control.Exception (IOException,SomeException,SomeAsyncException,fromException,mask,mask_,onException,throwIO,try)
++import Control.Exception (AsyncException(ThreadKilled),IOException,SomeException,SomeAsyncException,fromException,mask,mask_,onException,throwIO,try)
+ import Control.Monad (unless,when)
+ import Data.Bits ((.|.),(.&.))
+ import qualified Data.ByteString as B
+@@ -106,12 +106,15 @@
+ -- Acquiring/Open/Closing/Uncertain and Busy are unconfirmed, never cleanup proof.
+ -- Original StopD and aggregate result publication belong to the Backend caller.
+ retireStoreOwnerIfSettled :: StoreOwner -> IO Bool
+-retireStoreOwnerIfSettled (StoreOwner gate resources) = mask_ $ do
++retireStoreOwnerIfSettled = retireStoreOwnerIfSettledWithHook0140 (pure ())
++retireStoreOwnerIfSettledWithHook0140 :: IO () -> StoreOwner -> IO Bool
++retireStoreOwnerIfSettledWithHook0140 beforeScan (StoreOwner gate resources) = mask_ $ do
+  selected <- tryTakeMVar gate
+  case selected of
+   Nothing -> pure False
+   Just _ -> do
+    settled <- (do
++     beforeScan
+      rows <- readIORef resources
+      and <$> mapM (\(Resource cell _) -> (==Closed) <$> readIORef cell) rows)
+       `onException` putMVar gate True
+@@ -121,7 +124,9 @@
+    pure settled
+ 
+ tracked :: StoreOwner -> IO (Acquisition a) -> (a -> IO ()) -> (a -> IO b) -> IO b
+-tracked (StoreOwner _ resources) acquire release action = mask $ \restore -> do
++tracked = trackedWithFaults0140 (pure ()) (pure ())
++trackedWithFaults0140 :: IO () -> IO () -> StoreOwner -> IO (Acquisition a) -> (a -> IO ()) -> (a -> IO b) -> IO b
++trackedWithFaults0140 afterAcquire afterRetain (StoreOwner _ resources) acquire release action = mask $ \restore -> do
+  -- Allocate and publish the unconfirmed record BEFORE acquisition. Allocation
+  -- or publication failure here precedes any resource acquisition by this call.
+  cell <- newIORef Acquiring
+@@ -136,6 +141,7 @@
+  live <- filterMResource previous
+  writeIORef resources (resource:live)
+  acquired <- acquire
++ afterAcquire
+  value <- case acquired of
+   -- Only a source-proven no-resource result makes this record Closed.
+   NotAcquired problem -> writeIORef cell Closed >> ioError problem
+@@ -143,6 +149,7 @@
+    -- Any interruption/failure before both writes leaves Acquiring, not Closed.
+    -- Publish the actual retained value before making its close right usable.
+    writeIORef valueCell (Just selected)
++   afterRetain
+    writeIORef cell Open
+    pure selected
+  result <- try (restore (action value))
+@@ -325,3 +332,127 @@
+   walk _ [] = ioError (userError "startup file missing")
+   walk fd [name] = readRegular owner True fd name 131072 >>= maybe (ioError (userError "startup file missing")) pure
+   walk fd (name:rest) = withChildDirectory owner fd name (\child -> walk child rest)
++
++-- QA-ONLY same-module declaration fragment. Append through the paired QA
++-- overlay to an isolated compiled Store variant; NEVER ship its exports/hooks.
++-- Root supplies an independently pinned, owned0700 empty test directory. Unit
++-- resources exercise actual tracked/closeResource transitions without unsafe FD
++-- double-close. The final missing-file case uses actual public store IO.
++storeRetirementControls :: DirectoryPin -> IO ()
++storeRetirementControls missingPin = do
++ let check label ok = unless ok (ioError (userError ("settled Store: " ++ label)))
++     states (StoreOwner _ rows) = readIORef rows >>= mapM (\(Resource cell _) -> readIORef cell)
++     sealed (StoreOwner gate _) = tryReadMVar gate
++     denied owner = do
++      r <- try (runOwned owner (pure ())) :: IO (Either SomeException ())
++      pure (case r of Left _ -> True; _ -> False)
++     noClose ref = readIORef ref >>= check "retirement never replays a closer" . (== (1 :: Int))
++     unknown label owner closes expected = do
++      first <- retireStoreOwnerIfSettled owner
++      second <- retireStoreOwnerIfSettled owner
++      actual <- states owner
++      gate <- sealed owner
++      blocked <- denied owner
++      check label (not first && not second && actual == [expected] && gate == Just True && blocked)
++      noClose closes
++ empty <- newStoreOwner
++ firstEmpty <- retireStoreOwnerIfSettled empty
++ againEmpty <- retireStoreOwnerIfSettled empty
++ emptyBlocked <- denied empty
++ check "empty owner seals once and denies new work" (firstEmpty && againEmpty && emptyBlocked)
++ closed <- newStoreOwner
++ closeCount <- newIORef (0 :: Int)
++ runOwned closed (tracked closed (pure (Acquired ())) (\_ -> modifyIORef' closeCount (+1)) (\_ -> pure ()))
++ closedBefore <- states closed
++ closedResult <- retireStoreOwnerIfSettled closed
++ noClose closeCount
++ check "actual tracked close receipt permits seal" (closedBefore == [Closed] && closedResult)
++ busy <- newStoreOwner
++ busyCloses <- newIORef (0 :: Int)
++ runOwned busy $ tracked busy (pure (Acquired ())) (\_ -> modifyIORef' busyCloses (+1)) $ \_ -> do
++  refused <- retireStoreOwnerIfSettled busy
++  count <- readIORef busyCloses
++  check "held actual runOwned gate refuses without closing" (not refused && count == 0)
++ busyDone <- retireStoreOwnerIfSettled busy
++ check "busy is not permanently fabricated closed" busyDone
++ noClose busyCloses
++ openOwner <- newStoreOwner
++ openCloses <- newIORef (0 :: Int)
++ tracked openOwner (pure (Acquired ())) (\_ -> modifyIORef' openCloses (+1)) $ \_ -> do
++  observed <- retireStoreOwnerIfSettled openOwner
++  rows <- states openOwner
++  count <- readIORef openCloses
++  blocked <- denied openOwner
++  check "Open resource is unconfirmed and gate sealed, never force-closed" (not observed && rows == [Open] && count == 0 && blocked)
++ openDone <- retireStoreOwnerIfSettled openOwner
++ check "already admitted close completion can later be observed" openDone
++ noClose openCloses
++ closingOwner <- newStoreOwner
++ closingCloses <- newIORef (0 :: Int)
++ let closingRelease _ = do
++      modifyIORef' closingCloses (+1)
++      observed <- retireStoreOwnerIfSettled closingOwner
++      rows <- states closingOwner
++      check "Closing is unconfirmed and never reentered" (not observed && rows == [Closing])
++ tracked closingOwner (pure (Acquired ())) closingRelease (\_ -> pure ())
++ closingDone <- retireStoreOwnerIfSettled closingOwner
++ check "normal close return records Closed" closingDone
++ noClose closingCloses
++ uncertain <- newStoreOwner
++ uncertainCloses <- newIORef (0 :: Int)
++ failed <- try (runOwned uncertain (tracked uncertain (pure (Acquired ()))
++   (\_ -> modifyIORef' uncertainCloses (+1) >> ioError (userError "injected close failure"))
++   (\_ -> pure ()))) :: IO (Either SomeException ())
++ check "actual close failure propagated" (case failed of Left _ -> True; _ -> False)
++ unknown "Uncertain is retained and never retried" uncertain uncertainCloses Uncertain
++ asyncOwner <- newStoreOwner
++ asyncCloses <- newIORef (0 :: Int)
++ interrupted <- try (runOwned asyncOwner (tracked asyncOwner (pure (Acquired ()))
++   (\_ -> modifyIORef' asyncCloses (+1) >> throwIO ThreadKilled) (\_ -> pure ()))) :: IO (Either SomeException ())
++ let wasAsync = case interrupted of
++      Left e -> case fromException e :: Maybe SomeAsyncException of
++       Just _ -> True
++       _ -> False
++      Right _ -> False
++ check "async close failure is propagated, not swallowed" wasAsync
++ unknown "async uncertainty never becomes closed" asyncOwner asyncCloses Uncertain
++ absent <- newStoreOwner
++ absentCloses <- newIORef (0 :: Int)
++ absentResult <- try (runOwned absent (tracked absent
++   (pure (NotAcquired (userError "explicit no-resource receipt")))
++   (\(_ :: ()) -> modifyIORef' absentCloses (+1)) (\_ -> pure ()))) :: IO (Either SomeException ())
++ absentRows <- states absent
++ absentSettled <- retireStoreOwnerIfSettled absent
++ absentCount <- readIORef absentCloses
++ check "typed no-resource receipt permits Closed without release" (case absentResult of Left _ -> absentRows == [Closed] && absentSettled && absentCount == 0; _ -> False)
++ -- Two exact publication fault points on the real tracked algorithm, via the
++ -- isolated QA-only overlay. Neither is a native descriptor cleanup claim.
++ let publicationFault afterRetain = do
++      owner <- newStoreOwner
++      acquisitions <- newIORef (0 :: Int)
++      releases <- newIORef (0 :: Int)
++      let failNow = ioError (userError "injected publication failure")
++          firstHook = if afterRetain then pure () else failNow
++          secondHook = if afterRetain then failNow else pure ()
++      result <- try (runOwned owner (trackedWithFaults0140 firstHook secondHook owner
++        (modifyIORef' acquisitions (+1) >> pure (Acquired ()))
++        (\_ -> modifyIORef' releases (+1)) (\_ -> pure ()))) :: IO (Either SomeException ())
++      resultSettled <- retireStoreOwnerIfSettled owner
++      rows <- states owner
++      a <- readIORef acquisitions
++      r <- readIORef releases
++      blocked <- denied owner
++      check "acquisition-success/publication-failure stays Acquiring with no guessed close" (case result of Left _ -> not resultSettled && rows == [Acquiring] && a == 1 && r == 0 && blocked; _ -> False)
++ publicationFault False
++ publicationFault True
++ metadataOwner <- newStoreOwner
++ metadataFailure <- try (retireStoreOwnerIfSettledWithHook0140 (throwIO ThreadKilled) metadataOwner) :: IO (Either SomeException Bool)
++ metadataSealed <- sealed metadataOwner
++ metadataDenied <- denied metadataOwner
++ check "metadata exception restores a sealed gate and propagates" (case metadataFailure of Left e -> metadataSealed == Just True && metadataDenied && (case fromException e :: Maybe SomeAsyncException of Just _ -> True; _ -> False); _ -> False)
++ nativeMissing <- newStoreOwner
++ missing <- runOwned nativeMissing $ withPinnedDirectory nativeMissing True missingPin $ \fd ->
++  readRegular nativeMissing True fd (C.pack "sol-known-missing-0131") 16
++ missingRows <- states nativeMissing
++ missingSettled <- retireStoreOwnerIfSettled nativeMissing
++ check "real negative openat missing-file path keeps clean no-resource receipts" (missing == Nothing && all (==Closed) missingRows && missingSettled)

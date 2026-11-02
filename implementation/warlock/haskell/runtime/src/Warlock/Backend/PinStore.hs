@@ -2,7 +2,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Fixed schema1 identity store. A Saved reply requires completed real IO.
 module Warlock.Backend.PinStore
- (PinStore,newPinStore,readPins,savePins,retirePinStore) where
+ (PinStore,newPinStore,readPins,savePins,retirePinStore,retirePinStoreIfSettled) where
 import Control.Exception (SomeException,SomeAsyncException,fromException,throwIO,try)
 import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
@@ -22,6 +22,8 @@ newPinStore :: DirectoryPin -> IO PinStore
 newPinStore pin = PinStore pin <$> newStoreOwner
 retirePinStore :: PinStore -> IO Bool
 retirePinStore (PinStore _ owner) = retireStoreOwner owner
+retirePinStoreIfSettled :: PinStore -> IO Bool
+retirePinStoreIfSettled (PinStore _ owner) = retireStoreOwnerIfSettled owner
 
 decodeStored :: B.ByteString -> Either Text PinSnapshot
 decodeStored bytes = do
