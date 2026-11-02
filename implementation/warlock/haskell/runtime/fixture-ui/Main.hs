@@ -11,7 +11,8 @@ import qualified Data.Text.Encoding as TE
 import Foreign.C.Error (Errno(..), eCONNRESET)
 import GHC.IO.Exception (ioe_errno)
 import System.Environment (getArgs)
-import System.IO (BufferMode(NoBuffering), Handle, hClose, hSetBinaryMode, hSetBuffering)
+import System.Exit (ExitCode(..),exitWith)
+import System.IO (BufferMode(NoBuffering), Handle, hClose, hFlush, hSetBinaryMode, hSetBuffering, stderr)
 import System.Posix.IO (OpenMode(WriteOnly), closeFd, creat, defaultFileFlags, exclusive, fdToHandle, openFd)
 import System.Posix.Types (Fd(..))
 import Warlock.Protocol.Codec (decodeServerCheckedWith, desktopProfile)
@@ -25,26 +26,37 @@ must :: Show e => Either e a -> IO a
 must = either (ioError . userError . show) pure
 field :: T.Text -> [(T.Text,J.Json)] -> IO J.Json
 field name values = maybe (ioError (userError "script field missing")) pure (lookup name values)
-script :: B.ByteString -> IO [Step]
+script :: B.ByteString -> IO ([Step],Int)
 script bytes = do
   limits <- must (J.bounds (8*1024*1024) 16)
   root <- must (J.decodeStrict limits bytes)
-  top <- must (J.exactObject ["schema","frames"] root)
+  let names = case root of
+        J.JObject fields | any ((=="exitCode") . fst) fields -> ["schema","frames","exitCode"]
+        _ -> ["schema","frames"]
+  top <- must (J.exactObject names root)
+  exitCode <- case lookup "exitCode" top of
+    Nothing -> pure 0
+    Just (J.JNumber value) -> case reads (T.unpack value) of
+      [(code,"")] | code>=0 && code<=125 -> pure code
+      _ -> ioError (userError "script exit code bound")
+    _ -> ioError (userError "script exit code type")
   version <- field "schema" top
   require (version == J.JNumber "1") "script schema"
   frames <- field "frames" top
   case frames of
-    J.JArray rows | length rows <= 32 -> forM rows $ \row -> do
-      pairs <- must (J.exactObject ["wire","replies","refused"] row)
-      w <- field "wire" pairs
-      n <- field "replies" pairs
-      r <- field "refused" pairs
-      case (w,n,r) of
-        (J.JString raw,J.JNumber count,J.JBool expectRefusal) ->
-          case reads (T.unpack count) of
-            [(expected,"")] | expected >= 0 && expected <= 16 && B.length (TE.encodeUtf8 raw) <= 2*1024*1024 -> pure (Step (TE.encodeUtf8 raw) expected expectRefusal)
-            _ -> ioError (userError "script reply budget")
-        _ -> ioError (userError "script typed fields")
+    J.JArray rows | length rows <= 32 -> do
+     steps <- forM rows $ \row -> do
+       pairs <- must (J.exactObject ["wire","replies","refused"] row)
+       w <- field "wire" pairs
+       n <- field "replies" pairs
+       r <- field "refused" pairs
+       case (w,n,r) of
+         (J.JString raw,J.JNumber count,J.JBool expectRefusal) ->
+           case reads (T.unpack count) of
+             [(expected,"")] | expected >= 0 && expected <= 16 && B.length (TE.encodeUtf8 raw) <= 2*1024*1024 -> pure (Step (TE.encodeUtf8 raw) expected expectRefusal)
+             _ -> ioError (userError "script reply budget")
+         _ -> ioError (userError "script typed fields")
+     pure (steps,exitCode)
     _ -> ioError (userError "script frame budget")
 
 readFrame :: Handle -> IO B.ByteString
@@ -76,7 +88,7 @@ main = do
   (input,output) <- case args of
     [a,b] | take 1 a == "/" && take 1 b == "/" -> pure (a,b)
     _ -> ioError (userError "expected trusted absolute SCRIPT OUTPUT paths")
-  steps <- B.readFile input >>= script
+  (steps,exitCode) <- B.readFile input >>= script
   h <- fdToHandle (Fd 0)
   hSetBinaryMode h True
   hSetBuffering h NoBuffering
@@ -96,3 +108,18 @@ main = do
   B.hPut result (TE.encodeUtf8 (J.renderJson (J.JArray (map (J.JString . TE.decodeUtf8) replies))))
   hClose result
   hClose h
+  -- Fixed, synthetic QA data only. Default scripts never emit these bytes.
+  -- The private receipt is written only after actual stderr write+flush.
+  if exitCode==23 then do
+    let markers = B.intercalate "\n"
+          ["WARLOCK_SYNTHETIC_CREDENTIAL_DEL017_8C41A2"
+          ,"WARLOCK_SYNTHETIC_DRAFT_DEL017_9D52B3"
+          ,"WARLOCK_SYNTHETIC_PIXELS_DEL017_AE63C4"] <> "\n"
+    B.hPut stderr markers
+    hFlush stderr
+    proofFd <- openFd (output ++ ".stderr-injected") WriteOnly defaultFileFlags {creat=Just 0o600,exclusive=True}
+    proof <- fdToHandle proofFd `catch` (\err -> closeFd proofFd >> ioError (err :: IOException))
+    B.hPut proof markers
+    hClose proof
+   else pure ()
+  if exitCode==0 then pure () else exitWith (ExitFailure exitCode)

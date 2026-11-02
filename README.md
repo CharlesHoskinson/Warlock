@@ -10,9 +10,9 @@ Warlock is an Elm desktop shell for Omarchy, bringing a Windows-style taskbar an
 
 The test drive is the quickest way to try Warlock: the real compiled Elm interface on a simulated Omarchy desktop, right in your browser. Contributors build the native shell from source against matching Hyprland components, and a packaged Omarchy install is on the roadmap.
 
-The current Elm/Haskell native host is still under development. The website and browser test drive are available; a persistent Warlock desktop on Omarchy has not yet met native or release acceptance. The [delivery ledger](docs/warlock-build-loop/v2/requirement-ledger.json) preserves all 242 requirements and 417 scenarios, including 17 whole-requirement verdicts with their original source and verification scope. Component checks and isolated VM runs do not extend those verdicts to the current host.
+The current Elm/Haskell native host is still under development. The website and browser test drive are available; a persistent Warlock desktop on Omarchy has not yet met native or release acceptance. The [delivery ledger](docs/warlock-build-loop/v2/requirement-ledger.json) preserves all 242 requirements and 417 scenarios, including 18 whole-requirement verdicts with their original source and verification scope. Component checks and isolated VM runs do not extend those verdicts to the current host.
 
-The Haskell host renders the compiled Elm interface in isolated Omarchy trials. An earlier bounded trial opened Applications and showed search/no-match feedback; its [source-bound observation](implementation/warlock/qa/evidence/ui005-haskell-search-20261101/observation.json) preserves the remaining query/native/AT/IME obligations. The latest trial exposed a test-readiness flaw: the popup appeared before the toolbar painted. A successful current-build search/refresh journey and persistent desktop remain unqualified. Window controls and application launch remain unavailable on the stock VM profile.
+The Haskell host renders the compiled Elm interface in isolated Omarchy trials. The [current trial](docs/warlock-build-loop/v2/backend-private-diagnostics-20261102.json) shows Foot search results, no-match feedback and query retention after Refresh through real guest input. The overall trial still fails: the selected UI child exits with code 1, and strict QA cannot confirm inventory after the owned cgroup retires. The earlier toolbar-readiness failures remain retained. Persistent desktop operation, native window controls and application launch remain unavailable on the stock VM profile.
 
 [Whole TEA005 acceptance](docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json) verifies the actual Elm/Haskell adapter, seven optimized Elm roots, adversarial HTTP delivery, and complete policy replay. [Whole TEA002 acceptance](docs/warlock-build-loop/v2/tea-pure-update-acceptance-20261101.json) separately binds pure reducer behavior to its tested source. TEA001, native GUI, provider cleanup and release remain open.
 
@@ -150,9 +150,11 @@ flowchart LR
   owner --> webkit["GTK / WebKitGTK system libraries"]
 ```
 
-The controlled bridge runs real catalog and pin traffic. Its current source passes all seven selected runtime suites and 6,425 origin checks. The standalone Omarchy app still exits before presenting its window; native window operations remain unavailable. See the [source-bound component observation](implementation/warlock/qa/evidence/ui-origin-20261101/component-observation.json) and [Omarchy trial instructions](docs/warlock/how-to/run-omarchy-mvp.md) for the verified scope and retained failures.
+The controlled bridge runs real catalog and pin traffic. The current protected Haskell profile passes ten selected suites. The standalone Omarchy app presents its window and supports bounded search/Refresh journeys; its process lifetime and native window operations remain unfinished. See the [current source-bound observation](docs/warlock-build-loop/v2/backend-private-diagnostics-20261102.json) and [Omarchy trial instructions](docs/warlock/how-to/run-omarchy-mvp.md) for the verified scope and retained failures.
 
-The original `architecture-024` capability-denial scenario is [independently accepted on actual bridge evidence](docs/warlock-build-loop/v2/arc024-capability-scenario-acceptance-20261101.json). Whole ARC024 remains partial for navigation and resource decision integration. The ledger contains 39 accepted scenarios on their recorded source tuples; whole-requirement acceptance remains 15 of 242, with all 417 scenarios preserved.
+Backend result JSON now includes `attempt`, seven `checks`, `failureStages`, a redacted `selectedOperationError` and three `retirement` classes. These report the retained outcome without changing success criteria. A real authenticated child-exit test injects synthetic confidential stderr data; none appears in its result JSON or 32 collected ordinary logs. This verifies the selected diagnostic boundary; system credential services and other native integrations still need their original verification.
+
+The original `architecture-024` capability-denial scenario is [independently accepted on actual bridge evidence](docs/warlock-build-loop/v2/arc024-capability-scenario-acceptance-20261101.json). Whole ARC024 remains partial for navigation and resource decision integration. The ledger contains 42 accepted scenarios on their recorded source tuples; whole-requirement acceptance is 18 of 242, with all 417 scenarios preserved.
 
 #### Archived host design
 
@@ -222,7 +224,7 @@ In the archived prototype, follow one click. When you click the taskbar button o
 
 **Applications and services.** Installed applications provide windows and desktop entries. XWayland connects X11 applications to the Wayland desktop. Omarchy Files, the audio service, NetworkManager, systemd-logind, desktop preferences, and local storage supply the services and data Warlock presents.
 
-The Haskell packages in the diagram are standalone libraries, independent of the desktop runtime.
+The archived diagram records the earlier standalone package work.
 
 ### Elm
 
@@ -234,7 +236,7 @@ Main coordinates desktop interaction, Bar renders the taskbar for an output, and
 
 ### Haskell
 
-Today's desktop build runs on the C/C++ host and the Python adapter shown above. Haskell is where Warlock's backend goes next: Elm owns everything you see and touch, and Haskell takes the parts that touch the system, namely supervising processes, preparing the interface's verified HTML, checking the dependencies of the binaries Warlock ships, and speaking a checked protocol with authenticated peers. Strong types, explicit effects and pure functions make those boundaries precise and testable.
+Current authored production uses Elm and Haskell. Elm owns everything you see and touch. Haskell supervises processes, prepares the interface's verified HTML, checks binary dependencies and speaks a checked protocol with authenticated peers. The C/C++ host and Python adapter above are retained prototype designs. Strong types, explicit effects and pure functions make the current boundaries precise and testable.
 
 Six packages in `implementation/warlock/haskell` provide the current library components, and the roadmap connects them into the persistent Haskell runtime the desktop runs on.
 

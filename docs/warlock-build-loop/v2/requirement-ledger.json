@@ -2598,14 +2598,21 @@
       "owner": "Native security lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "delivery-017",
           "oracle": "logs contain references and redacted metadata only",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "docs/warlock-build-loop/v2/backend-private-diagnostics-20261102.json",
+              "sha256": "4485e441d7a4a227b9ca471e2f4cc5ab409d3736df81a9bc4b32df87e2da7990",
+              "scope": "Actual Backend diagnostics/privacy component: closed failure/retirement tags and exact retained pass predicates, real authenticated child nonzero23 fixture, synthetic credential/draft/pixel stderr markers excluded from32ordinarylogs, fresh current guest backend/library build and real17input GUI journey. WholeDEL017 credentialservice/allintegrations, ARC002 and native/provider/AT/IME/hardware/resource/release remain unaccepted.",
+              "disposition": "partial"
+            }
+          ],
+          "missingObservation": "Selected Backend diagnostics/32ordinarylogs verified with real synthetic stderr injection. Existing system credential service/reference-only integration, all secret-bearing native integrations and complete log collection remain unqualified; generic AuthObservation/derivedShow paths outside actual closed credential route need separate review. No wholeDEL017/native/release acceptance."
         }
       ]
     },
@@ -17513,5 +17520,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-02T00:07:13.913945+00:00"
+  "updatedUTC": "2026-11-02T00:37:29.789332+00:00"
 }

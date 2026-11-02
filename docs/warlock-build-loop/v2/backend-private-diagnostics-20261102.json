@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-02T00:35:20.379438+00:00",
+  "requirement": "ELM-DEL-017",
+  "scenario": "delivery-017",
+  "disposition": "partial",
+  "baseCommit": "af1bf0efeb195a9ac9e9664547d695967b41111f",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "641e06dc8326fdf7d4e1be2aaa316d5739fcf161d5854c895c3d800a48450c06",
+    "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "a8266dbbffc42f78191b3ed8826e4fc32463f66ff942e7263e6b24a0dc3d3117",
+    "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": "7368f881753b3ef97bb5913419108938cf0e5110a840c2e48efb56acf7929bdc"
+  },
+  "scope": "Actual Backend diagnostics/privacy component: closed failure/retirement tags and exact retained pass predicates, real authenticated child nonzero23 fixture, synthetic credential/draft/pixel stderr markers excluded from32ordinarylogs, fresh current guest backend/library build and real17input GUI journey. WholeDEL017 credentialservice/allintegrations, ARC002 and native/provider/AT/IME/hardware/resource/release remain unaccepted.",
+  "behavior": "Ordinary backend JSON now reports closed attempt/retirement classes, all seven original success conditions and fixed operation error/exit-code metadata. It excludes captured output, supplied arguments, catalog contents and synthetic confidential markers. Existing pass conjunction, deadlines, owner cleanup and native/release flags are unchanged.",
+  "verification": {
+    "protectedReport": "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/haskell-report.json",
+    "reviewedInputs": 345,
+    "completeHaskellInputs": 217,
+    "controlledSuites": 10,
+    "normalCommands": 64,
+    "normalCommandsLimit": "Includes production/test build, retained model checks, current frontend compilation and fixed suites; not64nativechecks.",
+    "syntheticMarkerClasses": [
+      "credential",
+      "draft",
+      "pixels"
+    ],
+    "ordinaryLogFilesScanned": 32,
+    "privateInjectionReceiptExact": true,
+    "actualAuthenticatedChildExit": 23,
+    "sourceReview": "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/source-review.json",
+    "guestBuildExit": 0,
+    "guestOwnerDependencyFacts": 186,
+    "guestBackendDependencyFacts": 36
+  },
+  "live": {
+    "hostEvidence": "/home/charl/vm/omarchy/evidence/warlock-live-usability-backend-diagnostics-20261102T003107Z",
+    "buildEvidence": "/home/charl/vm/omarchy/evidence/warlock-backend-diagnostics-build-20261102T002516Z",
+    "sequence": "Apps/Search/foot/footz/Refresh",
+    "acknowledgedGuardedInputs": 17,
+    "rootViewed": [
+      "positive-foot.png",
+      "negative-footz.png",
+      "after-refresh-footz.png"
+    ],
+    "visualObservation": "Tiled current GUI shows Foot/FootServer/FootClient forfoot, no-match forfootz and retainedfootz/no-match afterRefresh. OriginalFoot terminal remains.",
+    "originalDurationSeconds": 28,
+    "launcherExit": 1,
+    "failure": null,
+    "forced": false,
+    "observedBackendFailureStages": [
+      "selectedOperationSucceeded"
+    ],
+    "observedBackendOperationError": {
+      "code": "unsuccessful",
+      "exitCode": 1
+    },
+    "sixOtherBackendChecks": true,
+    "backendRetirements": {
+      "process": "confirmed",
+      "catalog": "confirmed",
+      "pins": "confirmed"
+    },
+    "qaCleanupError": "FileNotFoundError",
+    "qaScopeInventoryConfirmedEmpty": false,
+    "footPreserved": true,
+    "idleEnabledRestored": true,
+    "physicalImeObserved": false,
+    "catalogGenerationReceiptObserved": false
+  },
+  "evidence": {
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/after-refresh-footz.png": "c99c360e0cb323a2c814335dc520f94cd6b261721e73167076913249b54fa0e6",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/backend-diagnostics.json": "130d183111011d6d8de3bb72863b980372b52c2c497329aa42c35e71757d5181",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/fixture-injection-receipt.txt": "1da8a664e7f10594eef730edd17f4f9d04f4093170643a7151d8c7f64b079cbc",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/guest-artifacts.json": "4f52f09dfb22436ae9856bbc458375d1e9a79ed690214c5a7f59b6a4b42b4166",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/guest-build-stage.json": "be4e0ce3ec54bf4f9cec0691e8af97b9edd63d207a7ad11478a06c12fad95307",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/guest-source-stage-receipt.json": "afba093e113c9e5273a0681fca39d812d865f6036fd93363ee3cb2b5f1377ebf",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/haskell-report.json": "db158f657fd86edf270b6237a72ab3191f15f556c0f8f353aa6ebe240458b964",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/live-journey.json": "fecfe0f3c1bf81e55b02bfc181b3720457f9275a528c738282605bcc9b825496",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/negative-footz.png": "45fdb5bf71cd4f474815cd38d32bb7436327565397c6c9e0bda7c7fc17617f9a",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/positive-foot.png": "f4592ae9d47464ebf8cf1046e08e18efe6d4940e23b00b2b1c52708fff1ca49a",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/privacy-log-scan.json": "a6f71c7ff496056a6898d9bf767a6798a2f342ac3714d29af7dbde17557197d8",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/source-review.json": "2cee1442667ab94b10e544c1afd59f804e681a2ae5eca79fba1013b57f2d41e0",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/ui-mvp.log": "49ae5d625cff6774d9154dbf35e0627b85d958a1587bf2372b542a91cd17b268",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/ui-suites.stderr": "aae3de532ef7de4d0ccf40af1bfb7b445d7aa451d6c873f54818c89682fa7d15",
+    "implementation/warlock/qa/evidence/backend-private-diagnostics-20261102/ui-suites.stdout": "be44b4fff36676fc920903e2f5d4cdb933e205161ae7eb2e52e841b97a018f6f"
+  },
+  "remainingObservations": [
+    "Existing system credential service/reference-only integration and complete secret-bearing native integration log collection remain unqualified; this is one Backend boundary.",
+    "New live error identifies child exit1, not the internal UI/provider/callback proof failure. Existing EngineResult false/false fence remains; do not flip it into acceptance.",
+    "Strict controller cannot certify removed-cgroup inventory; preserve unknown versus absent and all original deadlines.",
+    "Persistent Backend/trusted-pump/per-request deadline wiring and startup borrow/checked abort implementation remain next actual source work.",
+    "Physical input/IME/AT/hardware/resource/provider/native/release obligations remain separately open."
+  ],
+  "nativeAccepted": false,
+  "guiAccepted": false,
+  "releaseAccepted": false,
+  "wholeRequirementAccepted": false,
+  "wholeCountsUnchanged": {
+    "requirements": 18,
+    "totalRequirements": 242,
+    "scenarios": 42,
+    "totalScenarios": 417
+  }
+}

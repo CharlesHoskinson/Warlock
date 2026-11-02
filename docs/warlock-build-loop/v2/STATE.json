@@ -1,92 +1,29 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-02T00:08:26.003987+00:00",
+  "updatedUTC": "2026-11-02T00:37:29.789332+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "tea-model-effects",
+    "id": "backend-private-failure-diagnostics",
     "requirements": [
-      "ELM-TEA-002",
-      "ELM-TEA-001"
+      "ELM-DEL-017"
     ],
     "scenarios": [
-      "tea-pure-update",
-      "tea-typed-model"
+      "delivery-017"
     ],
     "paths": [
-      "implementation/warlock/src/Main.elm",
-      "implementation/warlock/src/DesktopPolicy.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/Bar.elm",
-      "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/HttpMain.elm",
-      "implementation/warlock/src/HttpBar.elm",
-      "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/qa/TeaContractReplay.elm",
-      "implementation/warlock/qa/tea-contract.cjs",
-      "implementation/warlock/qa/tea-contract-cases.cjs",
-      "implementation/warlock/src/Notifications.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/OutcomeAnnouncements.elm",
-      "implementation/warlock/src/JumpList.elm",
-      "implementation/warlock/src/ReconciliationFrame.elm",
-      "implementation/warlock/qa/NotificationsReplay.elm",
-      "implementation/warlock/qa/JumpListReplay.elm",
-      "implementation/warlock/qa/NativePointerFixture.elm",
-      "implementation/warlock/qa/RetirementProofReplay.elm",
-      "implementation/warlock/qa/typed-state.cjs",
-      "implementation/warlock/qa/NotificationRelevanceReplay.elm",
-      "implementation/warlock/qa/AnnouncementReplay.elm",
-      "implementation/warlock/qa/FilesReplay.elm",
-      "implementation/warlock/qa/FullscreenExitReplay.elm",
-      "implementation/warlock/qa/GeometryCapabilitySequences.elm",
-      "implementation/warlock/qa/LiveMotionReplay.elm",
-      "implementation/warlock/qa/LocalFieldReplay.elm",
-      "implementation/warlock/qa/MotionReadRecoveryReplay.elm",
-      "implementation/warlock/qa/MotionReplay.elm",
-      "implementation/warlock/qa/PinMaxReplay.elm",
-      "implementation/warlock/qa/ShortcutDraftProperties.elm",
-      "implementation/warlock/qa/ShortcutPreferencesReplay.elm",
-      "implementation/warlock/qa/SnapReplay.elm",
-      "implementation/warlock/qa/SolFilesRebind2214.elm",
-      "implementation/warlock/qa/SolSystemMenuIntegratedReplay2114.elm",
-      "implementation/warlock/qa/SystemMenuReplay.elm",
-      "implementation/warlock/qa/TaskViewReplay.elm",
-      "implementation/warlock/qa/TransferReplay.elm",
-      "implementation/warlock/qa/UiHttpFailureReplay.elm",
-      "implementation/warlock/qa/check-shortcut-draft.py",
-      "implementation/warlock/qa/files-typed-state.cjs",
-      "implementation/warlock/qa/local-field-publication.qnt",
-      "implementation/warlock/qa/motion-read-recovery.cjs",
-      "implementation/warlock/qa/motion-typed-state.cjs",
-      "implementation/warlock/qa/shortcut-draft-strict.cjs",
-      "implementation/warlock/qa/sol-files-rebind-result-2214.cjs",
-      "implementation/warlock/qa/system-menu-typed-state.cjs",
-      "implementation/warlock/qa/tea001-extra-typed.cjs",
-      "implementation/warlock/qa/ui-http-failure-typed.cjs",
-      "implementation/warlock/qa/ui-http.cjs",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/Files.elm",
-      "implementation/warlock/src/GeometryProjection.elm",
-      "implementation/warlock/src/Motion.elm",
-      "implementation/warlock/src/MotionPreferences.elm",
-      "implementation/warlock/src/Provider.elm",
-      "implementation/warlock/src/ShortcutPreferences.elm",
-      "implementation/warlock/src/Snap.elm",
-      "implementation/warlock/src/SystemMenu.elm",
-      "implementation/warlock/src/UiHttp.elm"
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+      "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs"
     ],
-    "before": "Current Elm owning routes compile and selected replays pass, but complete semantic Model and every typed effect have not been checked against independent literal domain expectations; no whole TEA001/002 acceptance is established.",
-    "after": "The actual Elm frontend typed lifecycle/receipt/operation models and pure reducers satisfy the complete original TEA001/002 contracts. Identical sanitized histories yield identical complete models and effects, with independently expected literal state/effect outcomes; native behavior stays separately qualified.",
+    "before": "Current actual Omarchy backend prints passed=false and cleanup=true after a valid GUI journey, hiding the failed selected-operation/custody/containment predicate. Reporting detailed failures must exclude credential, draft, pixel and captured child-output contents.",
+    "after": "The actual Haskell backend reports closed attempt/retirement classes, exact failed pass-conjunct names and redacted operation error/exit status. A real authenticated child that completes catalog exchange then exits23 proves the failure remains false, with synthetic secret/draft/pixel markers absent from ordinary diagnostics. Existing system-credential-service/native-integration obligations remain separately unaccepted.",
     "verification": [
-      "Pinned six-root compiler/type checks, actual DesktopPolicy owning-route complete-model/every-effect deterministic histories plus independent literal fixture outcomes and source-bound type/authority separation audit; retain failures and independently adjudicate each whole original EARS, no filtered-model shortcut or inferred native acceptance."
+      "Root protected Haskell build and existing ui-mvp-controls with actual authenticated success and child-exit23 negative, preserved old cases, exact parsed JSON conjunctions, bounded synthetic confidential stderr injection and scan retained ordinary logs. No pass/deadline/cleanup/native predicate change; native-on-VM current-build rerun observes actual failed conjunct separately from GUI/provider/AT/IME/hardware/release acceptance."
     ]
   },
   "nextSlices": [
@@ -2293,12 +2230,14 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "ui005-live-query-refresh",
+    "id": "tea-model-effects",
     "requirements": [
-      "ELM-UI-005"
+      "ELM-TEA-002",
+      "ELM-TEA-001"
     ],
     "scenarios": [
-      "search-race"
+      "tea-pure-update",
+      "tea-typed-model"
     ],
     "paths": [
       "implementation/warlock/src/Main.elm",
@@ -2306,22 +2245,70 @@
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/OutputController.elm",
       "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/Bar.elm",
       "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/SurfaceSnapshot.elm",
       "implementation/warlock/src/HttpMain.elm",
       "implementation/warlock/src/HttpBar.elm",
       "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/qa/ui-http.cjs",
-      "implementation/warlock/qa/LocalFieldReplay.elm",
+      "implementation/warlock/qa/TeaContractReplay.elm",
+      "implementation/warlock/qa/tea-contract.cjs",
+      "implementation/warlock/qa/tea-contract-cases.cjs",
+      "implementation/warlock/src/Notifications.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "implementation/warlock/src/JumpList.elm",
+      "implementation/warlock/src/ReconciliationFrame.elm",
+      "implementation/warlock/qa/NotificationsReplay.elm",
+      "implementation/warlock/qa/JumpListReplay.elm",
+      "implementation/warlock/qa/NativePointerFixture.elm",
+      "implementation/warlock/qa/RetirementProofReplay.elm",
       "implementation/warlock/qa/typed-state.cjs",
-      "implementation/warlock/qa/local-field-publication.qnt"
+      "implementation/warlock/qa/NotificationRelevanceReplay.elm",
+      "implementation/warlock/qa/AnnouncementReplay.elm",
+      "implementation/warlock/qa/FilesReplay.elm",
+      "implementation/warlock/qa/FullscreenExitReplay.elm",
+      "implementation/warlock/qa/GeometryCapabilitySequences.elm",
+      "implementation/warlock/qa/LiveMotionReplay.elm",
+      "implementation/warlock/qa/LocalFieldReplay.elm",
+      "implementation/warlock/qa/MotionReadRecoveryReplay.elm",
+      "implementation/warlock/qa/MotionReplay.elm",
+      "implementation/warlock/qa/PinMaxReplay.elm",
+      "implementation/warlock/qa/ShortcutDraftProperties.elm",
+      "implementation/warlock/qa/ShortcutPreferencesReplay.elm",
+      "implementation/warlock/qa/SnapReplay.elm",
+      "implementation/warlock/qa/SolFilesRebind2214.elm",
+      "implementation/warlock/qa/SolSystemMenuIntegratedReplay2114.elm",
+      "implementation/warlock/qa/SystemMenuReplay.elm",
+      "implementation/warlock/qa/TaskViewReplay.elm",
+      "implementation/warlock/qa/TransferReplay.elm",
+      "implementation/warlock/qa/UiHttpFailureReplay.elm",
+      "implementation/warlock/qa/check-shortcut-draft.py",
+      "implementation/warlock/qa/files-typed-state.cjs",
+      "implementation/warlock/qa/local-field-publication.qnt",
+      "implementation/warlock/qa/motion-read-recovery.cjs",
+      "implementation/warlock/qa/motion-typed-state.cjs",
+      "implementation/warlock/qa/shortcut-draft-strict.cjs",
+      "implementation/warlock/qa/sol-files-rebind-result-2214.cjs",
+      "implementation/warlock/qa/system-menu-typed-state.cjs",
+      "implementation/warlock/qa/tea001-extra-typed.cjs",
+      "implementation/warlock/qa/ui-http-failure-typed.cjs",
+      "implementation/warlock/qa/ui-http.cjs",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/Files.elm",
+      "implementation/warlock/src/GeometryProjection.elm",
+      "implementation/warlock/src/Motion.elm",
+      "implementation/warlock/src/MotionPreferences.elm",
+      "implementation/warlock/src/Provider.elm",
+      "implementation/warlock/src/ShortcutPreferences.elm",
+      "implementation/warlock/src/Snap.elm",
+      "implementation/warlock/src/SystemMenu.elm",
+      "implementation/warlock/src/UiHttp.elm"
     ],
-    "before": "The latest immutable frontend passes pure component checks, but the current built product has not been exercised after integration through real Omarchy input; authoritative final query/catalog correlation and usable refresh/recovery remain unobserved on the current app-only Haskell host.",
-    "after": "The actual current built Elm/Haskell app is exercised in an owned bounded Omarchy session. Real input changes query and refreshes while visible feedback, query preservation and current-generation dispatch eligibility are observed. Repair actual demonstrated source failures; retain exact source/artifacts, input acknowledgements, screenshots and cleanup limits.",
+    "before": "Current Elm owning routes compile and selected replays pass, but complete semantic Model and every typed effect have not been checked against independent literal domain expectations; no whole TEA001/002 acceptance is established.",
+    "after": "The actual Elm frontend typed lifecycle/receipt/operation models and pure reducers satisfy the complete original TEA001/002 contracts. Identical sanitized histories yield identical complete models and effects, with independently expected literal state/effect outcomes; native behavior stays separately qualified.",
     "verification": [
-      "Reuse current independently qualified frontend tuple889e and unchanged Haskell binaries only after source/artifact review; stage current optimized Http HTML with preimages and dependency inventory. Root-only owned native-on-VM input journey with fresh PID/birth/cgroup/window/lock/Foot/current geometry/original chosen deadline fences before each event, parsed QMP acknowledgements, unique per-attempt receipts and reviewed screenshots. Component/usability observations only until exact original source-bound native/keyboard/AT obligations and independent review pass; never infer protected native/release acceptance."
+      "Pinned six-root compiler/type checks, actual DesktopPolicy owning-route complete-model/every-effect deterministic histories plus independent literal fixture outcomes and source-bound type/authority separation audit; retain failures and independently adjudicate each whole original EARS, no filtered-model shortcut or inferred native acceptance."
     ]
   },
   "lastNativeObservation": {
@@ -3367,6 +3354,13 @@
       "selectedSlice": "tea-model-effects",
       "record": ".warlock-contributor/tea-model-effects.json",
       "reason": "Resume same18:30 record for actual coherent typed-domain source after distinct UI005 source wave; two real production-fix records and full protected GREEN. No timer reset."
+    },
+    {
+      "atUTC": "2026-11-02T00:37:29.789332+00:00",
+      "previousSlice": "tea-model-effects",
+      "selectedSlice": "backend-private-failure-diagnostics",
+      "record": ".warlock-contributor/backend-private-failure-diagnostics.json",
+      "reason": "Distinct actual diagnostics/privacy behavior after completed001, preserving all stopped engine/native histories. Actual Haskellsource and real synthetic nonzero/privacy controls implemented and protectedqualified."
     }
   ],
   "museRegulator": {
@@ -3764,7 +3758,7 @@
     "acceptedScenarios": 42,
     "behaviorChange": "Retain typed confirmation/receipt phases for Files, application actions, shortcuts, motion preferences and system controls; preserve Unknown reservations without replay. Typed geometry capabilities, snap regions, motion source and transport failures preserve existing boundary wire and labels. SessionClosing explicitly denies Logout; other bounded observed text is preserved."
   },
-  "nextConcreteAction": "Finish current-build Omarchy failure diagnosis with strict unknown cleanup; integrate the minimal persistent Haskell source/actual lifecycle and qualified controls. Original TEA001 accepted; keep15roles and original all242/417/native/AT/IME/hardware/resource/release scope.",
+  "nextConcreteAction": "Publish actual qualified Backend diagnostics/privacy source and current guest outcome. Then integrate minimal persistent Haskell startup-borrow/checked-abort and real Backend/trusted-pump/per-request deadline wiring. Actual failure now known at selected child exit1; preserve provider false fence and strict cgroup inventory uncertainty rather than relabeling success.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4112,7 +4106,7 @@
       "previousHistoryPreserved": true
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/tea-model-effects.json",
+  "activeContributorRecord": ".warlock-contributor/backend-private-failure-diagnostics.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -4419,23 +4413,45 @@
           "Original001 coherent typed-domain integration, actual persistent Haskell lifetime/window operations/provider/hardware/resource/release gates."
         ],
         "replan": "Publish current cancellation source/evidence, then resume SAME tea-model-effects original18:30 record, declare coherent001domain/fixed-profile paths, apply actual source and record legitimate production progress while preserving historical claims/timer. Diagnose named VM guard failure without weakening fences; keep15roles and real Omarchy trials."
+      },
+      {
+        "startedUTC": "2026-11-01T23:11:37.655841+00:00",
+        "endedUTC": "2026-11-02T00:11:37.655841+00:00",
+        "reportedUTC": "2026-11-02T00:13:52.692083+00:00",
+        "wholeRequirementsAccepted": 18,
+        "acceptedScenarios": 42,
+        "newWholeRequirementIds": [
+          "ELM-TEA-001"
+        ],
+        "newWholeEarsClosures": 1,
+        "newAcceptedScenarios": [
+          "ELM-TEA-001/tea-typed-model"
+        ],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Published bdeac73491a05d6c61932642b184c20b44f0e80e actual13module typed-domain source and source-level SessionState correction; full protected expanded compiler/replay/property/model GREEN.",
+          "Published af1bf0efeb195a9ac9e9664547d695967b41111f independent immutable whole001 acceptance and current-build Omarchy17input actual search/no-match/Refresh observations."
+        ],
+        "blockingClosureGaps": [
+          "No original GUI/native/provider/AT/IME/hardware/resource/release closure from the app-only VM trial.",
+          "Persistent backend/trusted-pump/per-request action deadline wiring and startupborrow/abort ordering still require actual source integration and protected qualification.",
+          "Current VM launcher returns1 normally; backend hides exact unsuccessful-operation conjunct. Strict QA controller cleanup sees retiredcgroup FileNotFound and does not certify inventory empty."
+        ],
+        "replan": "Integrate minimal actual persistent Haskell runtime and exact failure diagnostics; continue15roles,5QuintKit and real built-product Omarchy journeys without source/deadline/oracle weakening."
       }
     ],
-    "currentWindowStartedUTC": "2026-11-01T23:11:37.655841+00:00",
-    "nextReportDueUTC": "2026-11-02T00:11:37.655841+00:00",
+    "currentWindowStartedUTC": "2026-11-02T00:11:37.655841+00:00",
+    "nextReportDueUTC": "2026-11-02T01:11:37.655841+00:00",
     "currentWindowProgress": {
-      "observedUTC": "2026-11-02T00:07:13.913945+00:00",
-      "windowStartedUTC": "2026-11-01T23:11:37.655841+00:00",
+      "observedUTC": "2026-11-02T00:13:52.692083+00:00",
+      "windowStartedUTC": "2026-11-02T00:11:37.655841+00:00",
       "wholeRequirementsAccepted": 18,
       "acceptedScenarios": 42,
-      "newWholeRequirementIds": [
-        "ELM-TEA-001"
-      ],
-      "newWholeEarsClosures": 1,
-      "newAcceptedScenarios": [
-        "ELM-TEA-001/tea-typed-model"
-      ],
-      "counting": "Only independently accepted complete original EARS. Source/UI component checks are not closures."
+      "newWholeRequirementIds": [],
+      "newWholeEarsClosures": 0,
+      "newAcceptedScenarios": [],
+      "counting": "Only independently accepted complete original EARS; component/native-on-VM observations are not closures."
     }
   },
   "ui005CurrentStackCheckpoint": {
@@ -4512,17 +4528,22 @@
     "acceptanceBoundary": "No transfer from compile/model/replay/VM to protected native, hardware, AT/IME or release acceptance; preserve original deadlines."
   },
   "liveUsability20261101Current": {
-    "observedUTC": "2026-11-02T00:08:26.003987+00:00",
-    "sourceRevision": "bdeac73491a05d6c61932642b184c20b44f0e80e",
-    "componentReceipt": "docs/warlock-build-loop/v2/typed-model-live-20261102.json",
+    "observedUTC": "2026-11-02T00:37:29.789332+00:00",
+    "componentReceipt": "docs/warlock-build-loop/v2/backend-private-diagnostics-20261102.json",
     "physicalSequenceCompleted": true,
     "guardedQmpInputs": 17,
     "launcherExit": 1,
     "forced": false,
+    "observedBackendFailureStages": [
+      "selectedOperationSucceeded"
+    ],
+    "observedBackendOperationError": {
+      "code": "unsuccessful",
+      "exitCode": 1
+    },
     "cleanupInventoryUnconfirmed": true,
     "nativeAccepted": false,
-    "releaseAccepted": false,
-    "nextAction": "Integrate persistent Haskell lifetime under actual original source contracts and expose exact failed backend/custody predicate. Separate retired-cgroup observation from confirmed scope inventory without weakening absence/ownership or original deadlines."
+    "releaseAccepted": false
   },
   "teaNarrowInteropAcceptance": {
     "requirements": [
@@ -4578,5 +4599,30 @@
     "wholeRequirementsAccepted": 18,
     "acceptedScenarios": 42,
     "behaviorChange": "Retain typed confirmation/receipt phases for Files, application actions, shortcuts, motion preferences and system controls; preserve Unknown reservations without replay. Typed geometry capabilities, snap regions, motion source and transport failures preserve existing boundary wire and labels. SessionClosing explicitly denies Logout; other bounded observed text is preserved."
+  },
+  "backendPrivateDiagnosticsComponent": {
+    "observedUTC": "2026-11-02T00:37:29.789332+00:00",
+    "record": ".warlock-contributor/backend-private-failure-diagnostics.json",
+    "componentReceipt": "docs/warlock-build-loop/v2/backend-private-diagnostics-20261102.json",
+    "originalRequirement": "ELM-DEL-017",
+    "scenario": "delivery-017",
+    "disposition": "partial",
+    "protectedInputs": 345,
+    "controlledSuites": 10,
+    "commands": 64,
+    "ordinaryLogsScanned": 32,
+    "guestSources": 217,
+    "guestBuildExit": 0,
+    "liveBackendFailureStages": [
+      "selectedOperationSucceeded"
+    ],
+    "liveBackendOperationError": {
+      "code": "unsuccessful",
+      "exitCode": 1
+    },
+    "liveInputAcknowledgements": 17,
+    "liveForced": false,
+    "nativeAccepted": false,
+    "releaseAccepted": false
   }
 }

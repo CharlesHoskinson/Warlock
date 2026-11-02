@@ -1,0 +1,113 @@
+{
+  "canonicalWrites": false,
+  "concreteBlockers": [],
+  "disposition": "source-reviewed-no-concrete-blocker",
+  "executionStatus": "Root protected345-input --ui-origin run was in progress at assignment. This report asserts no protected pass, fixture execution, model execution or new VM diagnosis. Reviewer ran read/hash/source inspection only.",
+  "existingLimits": [
+    {
+      "area": "AuthShow",
+      "finding": "The auth field still uses the pre-existing Show rendering of Maybe AuthObservation. In the actual inspected credential ingress route, malformed input becomes closed boundary Reason/PeerRefusal/ancillary enums; the credential frame reader does not emit its generic InvalidPayload Text constructor. However the public transitive ChannelError type can carry InvalidPayload Text. This review does not claim a generic arbitrary AuthObservation value is text-redacted, or that every future producer is safe. No new auth rendering behavior is introduced here."
+    },
+    {
+      "area": "Other Show and log surfaces",
+      "finding": "BackendResult still derives Show and retains bootstrap outcomes/captured values for internal use. Current production ordinary output uses backendResultJson, not Show BackendResult. This is a review of that serializer and actual route, not a universal proof for arbitrary callers or all native integrations/log collectors."
+    },
+    {
+      "area": "Original credential-service obligation",
+      "finding": "This source change neither implements nor qualifies all existing-system credential-service integration, secret-bearing integrations or collected ordinary logs. Whole ELM-DEL-017 remains partial, pending actual execution evidence and the remaining original obligations."
+    },
+    {
+      "area": "Native/engine scope",
+      "finding": "ARC002 and native provider/callback/backing cleanup remain unaccepted. New diagnostic flags do not diagnose a historical VM failure until Root executes the qualified tuple and retains its actual result; source existence or planned assertions are not runtime evidence."
+    }
+  ],
+  "findings": [
+    {
+      "area": "Success conjunction",
+      "finding": "Original clean=processClean&&catalogClean&&pinClean and success=Executed with selectedCustody==Available, selectedContainment==BeforeSignalLeaderExited and Right selectedOperation are unchanged. backendPassed remains clean&&success. New classifications do not grant success or weaken any predicate.",
+      "functions": [
+        "runBackend"
+      ],
+      "paths": [
+        "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs"
+      ]
+    },
+    {
+      "area": "Deadline, scope and async cleanup",
+      "finding": "Original absolute deadlineFromAbsoluteNs, bootstrap/scoped credential path and independent process/catalog/pin retirement ordering are unchanged. Original asynchronous exceptions are rethrown after all independent retirement attempts, preferred over cleanup exceptions. Diagnostic classification occurs on the retained attempted/retirement results and does not extend D, retry operations or alter ownership.",
+      "functions": [
+        "runBackend",
+        "retirementStage"
+      ]
+    },
+    {
+      "area": "Failure attribution",
+      "finding": "Attempt/retirement enums map directly to retained outcomes. Selected checks are null when no Executed result exists; failureStages includes only known false Boolean conjuncts, avoiding an invented selected-process or provider result. Selected-operation error is derived only from actual retained selectedOperation.",
+      "functions": [
+        "attemptName",
+        "retirementName",
+        "backendResultJson"
+      ]
+    },
+    {
+      "area": "Ordinary serialization",
+      "finding": "New operation diagnostics expose only the finite ToolError code and numeric exit status. They do not Show ToolError/SomeException/Captured contents, supplied arguments, startup paths, catalog entries, draft text or pixels. StrictJson.renderJson plus UTF8 encoding replaces manual JSON quoting while retaining schema1 and existing fields. The production executable still prints backendResultJson and uses backendPassed for exit status.",
+      "functions": [
+        "operationFailureJson",
+        "backendResultJson"
+      ]
+    },
+    {
+      "area": "Real selected child QA source",
+      "finding": "Optional trusted script exitCode is bounded0..125 and defaults0, preserving the old schema+frames shape and old default behavior. Exit23 follows actual complete authenticated frame/replies, closes the transport, writes and flushes three fixed synthetic credential/draft/pixel markers to stderr, then creates a private0600 exclusive injection receipt before exiting23. Receipt ordering is a real write/flush witness, not a synthesized BackendResult.",
+      "paths": [
+        "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+        "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs"
+      ]
+    },
+    {
+      "area": "Proportional assertions authored, not executed by reviewer",
+      "finding": "Public suite invokes real runBackend with independently pinned child. Added assertions require exact injected receipt bytes, no marker/config-root/catalog data in ordinary backendResultJson, actual failed selectedOperation with exit23 after one callback/domain operation and clean retirement, exact known failureStages, and native/release false. Existing positive, legacy-no-attachment and hostile whole-frame controls retain their default scripts and original5second per-case D."
+    }
+  ],
+  "nativeAccepted": false,
+  "nextAction": "Root completes the serialized protected run and retains actual parsed diagnostic/marker results. Any later canonical STATE update uses the existing supported same-owner support-custody operation with exact before/current/desired snapshots and fresh authenticated claims, preserving the captured record and timer.",
+  "originalAccepted": false,
+  "originalEARS": "The shell SHALL keep credentials in the existing system credential service and exclude secrets, draft contents and captured pixels from ordinary diagnostic logs.",
+  "originalScenario": {
+    "given": "secret-bearing native integrations",
+    "name": "delivery-017",
+    "then": "logs contain references and redacted metadata only",
+    "when": "diagnostics are collected"
+  },
+  "originalVerification": "Inject identifiable synthetic secrets and scan collected logs.",
+  "record": ".warlock-contributor/backend-private-failure-diagnostics.json",
+  "recordStartedUTC": "2026-11-02T00:17:35.074786+00:00",
+  "releaseAccepted": false,
+  "requirement": "ELM-DEL-017",
+  "reviewedUTC": "2026-11-02T00:23:12.886147+00:00",
+  "reviewer": {
+    "independent": true,
+    "name": "reviewer",
+    "scope": "Read-only current source and original-contract review; no execution or code implementation in this diagnostics wave"
+  },
+  "scenario": "delivery-017",
+  "schema": 1,
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "a8266dbbffc42f78191b3ed8826e4fc32463f66ff942e7263e6b24a0dc3d3117",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "641e06dc8326fdf7d4e1be2aaa316d5739fcf161d5854c895c3d800a48450c06",
+    "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": "7368f881753b3ef97bb5913419108938cf0e5110a840c2e48efb56acf7929bdc"
+  },
+  "wholeRequirementVerdicts": [
+    {
+      "disposition": "partial",
+      "reason": "Bounded source-only diagnostics improvement; original system credential-service and all secret-bearing diagnostic integration/collection obligations are not established.",
+      "requirement": "ELM-DEL-017"
+    },
+    {
+      "disposition": "unaccepted-by-this-review",
+      "reason": "No ownership/presentation/provider retirement acceptance follows from redacted diagnostic fields.",
+      "requirement": "ELM-ARC-002"
+    }
+  ]
+}

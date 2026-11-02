@@ -81,11 +81,12 @@ main = do
  pinsPin <- pin pins
  let parents=reverse (takeWhile (/="/") (iterate takeDirectory (takeDirectory child)))
  ancestors <- mapM pin parents
- let run label opt frames = do
+ let runWithExit label opt frames exitCode = do
       let dir=root </> label; input=dir </> "script.json"; output=dir </> "replies.json"; config=dir </> "startup.json"
       privateDirectory dir
       let row (wire,count,refused) = obj [("wire",J.JString (TE.decodeUtf8 wire)),("replies",J.JNumber (T.pack (show (count :: Int)))),("refused",J.JBool refused)]
-      privateWrite input (encoded (obj [("schema",J.JNumber "1"),("frames",J.JArray (map row frames))]))
+      privateWrite input (encoded (obj ([("schema",J.JNumber "1"),("frames",J.JArray (map row frames))]
+        ++ if exitCode==0 then [] else [("exitCode",J.JNumber (T.pack (show (exitCode :: Int))))])))
       now <- getMonotonicTimeNSec
       let fields = [("schema",J.JNumber "1"),("binding",owner),("deadlineMonotonicNs",txt (show (toInteger now+5000000000)))
                    ,("ui",obj [("path",txt child),("device",txt (supplied!!0)),("inode",txt (supplied!!1)),("size",txt (supplied!!2)),("sha256",txt (supplied!!3)),("arguments",J.JArray [txt input,txt output]),("ancestors",J.JArray ancestors)])
@@ -103,6 +104,10 @@ main = do
          _ -> ioError (userError "reply must be encoded string")) values
         pure (result,decoded)
        _ -> ioError (userError "expected reply array")
+     run label opt frames = runWithExit label opt frames 0
+     diagnostic result = do
+      limits <- must (J.bounds 16384 16)
+      must (J.decodeStrict limits (backendResultJson result))
      enabled = [("applicationAttachment",J.JBool True)]
      empty = commit []
      catalogRequest = commit [request owner]
@@ -110,6 +115,19 @@ main = do
      envelope payload = obj [("bridgeProtocol",J.JNumber "1"),("kind",txt "native-event"),("payload",payload)]
  (good, replies) <- run "positive" enabled [(empty,1,False),(empty,0,False),(catalogRequest,1,False)]
  check "real authenticated empty commit emits only one attachment across repeated commits" (backendPassed good && backendCleanup good && backendCallbackCount good==3 && backendOperationCount good==1 && length replies==2 && canonical (head replies)==canonical (envelope attachment))
+ goodDiagnostic <- diagnostic good
+ check "successful public result exposes all original pass conjuncts" (at "attempt" goodDiagnostic==txt "executed" && at "failureStages" goodDiagnostic==J.JArray [] && all (\name -> at name (at "checks" goodDiagnostic)==J.JBool True) ["bootstrapExecuted","selectedCustodyAvailable","selectedLeaderExited","selectedOperationSucceeded","processCleanup","catalogCleanup","pinCleanup"])
+ (nonzero, nonzeroReplies) <- runWithExit "child-exit-23" enabled [(catalogRequest,2,False)] 23
+ nonzeroDiagnostic <- diagnostic nonzero
+ let syntheticMarkers = ["WARLOCK_SYNTHETIC_CREDENTIAL_DEL017_8C41A2"
+                        ,"WARLOCK_SYNTHETIC_DRAFT_DEL017_9D52B3"
+                        ,"WARLOCK_SYNTHETIC_PIXELS_DEL017_AE63C4"]
+ injected <- B.readFile (root </> "child-exit-23" </> "replies.json.stderr-injected")
+ check "real selected child wrote and flushed all three synthetic markers to stderr" (injected==B.intercalate "\n" syntheticMarkers <> "\n")
+ check "ordinary backend result excludes synthetic credential draft and pixel markers after nonzero child exit" (all (\marker -> not (marker `B.isInfixOf` backendResultJson nonzero)) syntheticMarkers)
+ check "actual selected nonzero exit remains failed after successful callback and clean retirement" (not (backendPassed nonzero) && backendCleanup nonzero && backendCallbackCount nonzero==1 && backendOperationCount nonzero==1 && length nonzeroReplies==2)
+ check "ordinary backend JSON identifies only the selected-operation failure" (at "attempt" nonzeroDiagnostic==txt "executed" && at "failureStages" nonzeroDiagnostic==J.JArray [txt "selectedOperationSucceeded"] && at "selectedOperationError" nonzeroDiagnostic==obj [("code",txt "unsuccessful"),("exitCode",J.JNumber "23")] && all (\name -> at name (at "retirement" nonzeroDiagnostic)==txt "confirmed") ["process","catalog","pins"])
+ check "failure diagnostic retains acceptance limits and redacts catalog/config data" (at "passed" nonzeroDiagnostic==J.JBool False && at "nativeAccepted" nonzeroDiagnostic==J.JBool False && at "releaseAccepted" nonzeroDiagnostic==J.JBool False && all (\secret -> not (secret `B.isInfixOf` backendResultJson nonzero)) [TE.encodeUtf8 (T.pack root),"Alpha","alpha.desktop"])
  check "catalog reply still follows original route" (at "kind" (at "payload" (replies!!1))==txt "application-catalog" && at "requestId" (at "payload" (replies!!1))==txt "17")
  (combined, both) <- run "first-commit-with-request" enabled [(catalogRequest,2,False)]
  check "attachment precedes the first admitted catalog response" (backendPassed combined && backendOperationCount combined==1 && length both==2 && canonical (head both)==canonical (envelope attachment) && at "kind" (at "payload" (both!!1))==txt "application-catalog")

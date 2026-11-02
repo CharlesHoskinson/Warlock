@@ -2,17 +2,15 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Production application actor. GUI policy and presentation stay in Elm.
 module Warlock.Backend
- (DirectoryPin(..),BackendConfig,loadBackendConfig,BackendResult(..),runBackend,backendResultJson) where
+ (DirectoryPin(..),BackendConfig,loadBackendConfig,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson) where
 import Control.Exception (SomeException,SomeAsyncException,fromException,mask,throwIO,try)
 import Control.Monad (forM_,unless)
 import qualified Data.ByteString as B
-import qualified Data.ByteString.Char8 as C
 import Data.IORef
 import qualified Data.Set as Set
 import Data.Text (Text)
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
-import Numeric (showHex)
 import System.Posix.Files (deviceID,fileID,getSymbolicLinkStatus)
 import Text.Read (readMaybe)
 import Warlock.Backend.Catalog
@@ -20,7 +18,7 @@ import Warlock.Backend.PinStore
 import Warlock.Backend.Store
 import Warlock.Ui.Display (readDisplayEnvironment)
 import Warlock.Bootstrap
-import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),deadlineFromAbsoluteNs,selectedCustody,selectedContainment,selectedOperation)
+import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),ToolError(..),deadlineFromAbsoluteNs,selectedCustody,selectedContainment,selectedOperation)
 import Warlock.Platform.Resolver (Identity(..),Kind(..),Pin(..),withRoot)
 import Warlock.Protocol.Codec (checkedDesktopCommit,checkDesktopReply,desktopProfile,encodeServerCheckedWith)
 import Warlock.Protocol.CredentialIngress
@@ -31,11 +29,18 @@ import Warlock.Protocol.StrictJson
 
 data UiImage = UiImage FilePath Integer Integer Integer B.ByteString [String] [DirectoryPin]
 data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool
+-- Closed diagnostic classifications only; none is a grant or success proof.
+data BackendAttemptStage = AttemptConversationException | AttemptRootRefused
+ | AttemptBootstrapRefused | AttemptPendingCustody | AttemptExecuted deriving (Eq,Show)
+data BackendRetirement = RetirementConfirmed | RetirementUnconfirmed | RetirementException deriving (Eq,Show)
+
 data BackendResult = BackendResult
  {backendPassed :: Bool,backendCleanup :: Bool,backendCallbackCount :: Int,backendOperationCount :: Int
  ,backendBootstrap :: Either Text BootstrapResult,backendAuthObservation :: Maybe AuthObservation
  ,backendCredentialTrace :: [CredentialObservation],backendSelectedPid :: Maybe Integer
- ,backendProcessCleanup :: Bool,backendCatalogCleanup :: Bool,backendPinCleanup :: Bool} deriving (Eq,Show)
+ ,backendProcessCleanup :: Bool,backendCatalogCleanup :: Bool,backendPinCleanup :: Bool
+ ,backendAttemptStage :: BackendAttemptStage
+ ,backendRetirements :: (BackendRetirement,BackendRetirement,BackendRetirement)} deriving (Eq,Show)
 
 loadBackendConfig :: FilePath -> IO (Either Text BackendConfig)
 loadBackendConfig path = mask $ \restore -> do
@@ -219,6 +224,12 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
       Left (_ :: SomeException) -> Left "backend conversation failed"
       Right (Left _) -> Left "backend root acquisition refused"
       Right (Right value) -> Right value
+     attemptStage=case attempted of
+      Left (_ :: SomeException) -> AttemptConversationException
+      Right (Left _) -> AttemptRootRefused
+      Right (Right Refused) -> AttemptBootstrapRefused
+      Right (Right PendingCustody) -> AttemptPendingCustody
+      Right (Right (Executed _)) -> AttemptExecuted
      processClean=either (const False) id processRetirement
      catalogClean=either (const False) id catalogRetirement
      pinClean=either (const False) id pinRetirement
@@ -232,16 +243,67 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
  -- Every independent owner was attempted before an asynchronous failure can
  -- escape. Prefer the original asynchronous exception over cleanup failures.
  case asynchronous of problem:_ -> throwIO problem; [] -> pure ()
- pure (BackendResult (clean && success) clean count dispatched outcome observed trace selected processClean catalogClean pinClean)
+ pure (BackendResult (clean && success) clean count dispatched outcome observed trace selected processClean catalogClean pinClean
+       attemptStage (retirementStage processRetirement,retirementStage catalogRetirement,retirementStage pinRetirement))
+
+retirementStage :: Either a Bool -> BackendRetirement
+retirementStage (Left _) = RetirementException
+retirementStage (Right True) = RetirementConfirmed
+retirementStage (Right False) = RetirementUnconfirmed
+
+attemptName :: BackendAttemptStage -> Text
+attemptName AttemptConversationException = "conversation-exception"
+attemptName AttemptRootRefused = "root-acquisition-refused"
+attemptName AttemptBootstrapRefused = "bootstrap-refused"
+attemptName AttemptPendingCustody = "bootstrap-custody-pending"
+attemptName AttemptExecuted = "executed"
+
+retirementName :: BackendRetirement -> Text
+retirementName RetirementConfirmed = "confirmed"
+retirementName RetirementUnconfirmed = "unconfirmed"
+retirementName RetirementException = "exception"
+
+-- Never render ToolError with Show: a closed code and exit status are enough.
+operationFailureJson :: ToolError -> Json
+operationFailureJson problem = JObject [("code",JString code),("exitCode",exitCode)]
+ where
+  (code,exitCode) = case problem of
+   ToolHashMismatch -> ("tool-hash-mismatch",JNull)
+   BadArguments -> ("bad-arguments",JNull)
+   SpawnOrIO -> ("spawn-or-io",JNull)
+   TimedOut -> ("timed-out",JNull)
+   OutputLimit -> ("output-limit",JNull)
+   Unsuccessful status -> ("unsuccessful",JNumber (T.pack (show status)))
+   CleanupUncertain -> ("cleanup-uncertain",JNull)
+   OwnerBusy -> ("owner-busy",JNull)
+   OutputUnavailable -> ("output-unavailable",JNull)
+   SessionClosed -> ("session-closed",JNull)
+   TransferUnavailable -> ("transfer-unavailable",JNull)
+   StopAlreadyAttempted -> ("stop-already-attempted",JNull)
 
 -- Ordinary executable diagnostics contain statuses/counts only, never captured
 -- UI stdout, catalog content, draft text, pixels or supplied arguments.
 backendResultJson :: BackendResult -> B.ByteString
-backendResultJson result = C.pack ("{\"schema\":1,\"passed\":"++flag (backendPassed result)++",\"cleanup\":"++flag (backendCleanup result)++",\"callbacks\":"++show (backendCallbackCount result)++",\"operations\":"++show (backendOperationCount result)++",\"auth\":"++quote (show (backendAuthObservation result))++",\"credentialRows\":"++show (length (backendCredentialTrace result))++",\"selectedPid\":"++maybe "null" show (backendSelectedPid result)++",\"nativeAccepted\":false,\"releaseAccepted\":false}")
+backendResultJson result = TE.encodeUtf8 (renderJson (JObject
+ [("schema",JNumber "1"),("passed",JBool (backendPassed result)),("cleanup",JBool (backendCleanup result))
+ ,("callbacks",number (backendCallbackCount result)),("operations",number (backendOperationCount result))
+ ,("auth",JString (T.pack (show (backendAuthObservation result)))),("credentialRows",number (length (backendCredentialTrace result)))
+ ,("selectedPid",maybe JNull (JNumber . T.pack . show) (backendSelectedPid result))
+ ,("attempt",JString (attemptName (backendAttemptStage result))),("checks",JObject checks)
+ ,("failureStages",JArray [JString name | (name,JBool False) <- checks])
+ ,("selectedOperationError",case backendBootstrap result of
+    Right (Executed selected) -> either operationFailureJson (const JNull) (selectedOperation selected)
+    _ -> JNull)
+ ,("retirement",JObject [("process",JString (retirementName processRetirement)),("catalog",JString (retirementName catalogRetirement)),("pins",JString (retirementName pinRetirement))])
+ ,("nativeAccepted",JBool False),("releaseAccepted",JBool False)]))
  where
-  flag good=if good then "true" else "false"
-  quote value='"':concatMap escape value++"\""
-  escape '"'="\\\""
-  escape '\\'="\\\\"
-  escape char | char<' ' = let digits=showHex (fromEnum char) "" in "\\u"++replicate (4-length digits) '0'++digits
-              | otherwise=[char]
+  number = JNumber . T.pack . show
+  (processRetirement,catalogRetirement,pinRetirement) = backendRetirements result
+  selectedCheck check = case backendBootstrap result of
+   Right (Executed selected) -> JBool (check selected)
+   _ -> JNull
+  checks = [("bootstrapExecuted",JBool (backendAttemptStage result==AttemptExecuted))
+           ,("selectedCustodyAvailable",selectedCheck ((==Available) . selectedCustody))
+           ,("selectedLeaderExited",selectedCheck ((==BeforeSignalLeaderExited) . selectedContainment))
+           ,("selectedOperationSucceeded",selectedCheck (either (const False) (const True) . selectedOperation))
+           ,("processCleanup",JBool (backendProcessCleanup result)),("catalogCleanup",JBool (backendCatalogCleanup result)),("pinCleanup",JBool (backendPinCleanup result))]

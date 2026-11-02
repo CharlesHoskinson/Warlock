@@ -1,0 +1,27 @@
+{
+  "hostEvidence": "/home/charl/vm/omarchy/evidence/warlock-backend-diagnostics-build-20261102T002516Z",
+  "guestRoot": "/home/charl/warlock-backend-diagnostics-build-20261102T002516Z",
+  "oldBuildRoot": "/home/charl/warlock-mvp-20261101T1058Z/engine-idle-20261101T172728Z",
+  "guestMutableSource": "/home/charl/warlock-mvp-20261101T1058Z/source",
+  "protectedGuestQa": "/home/charl/warlock-live-usability-typed-model-20261102T000451Z/qa-mocks/qa_run.py",
+  "hostProtectedBuildHandle": 59704,
+  "sourceManifestSHA256": "7815493d7af5bdbbed48cd32cb3f3ad0c8137a0e659f87a1a47dbf533d7979cc",
+  "sourceArchiveSHA256": "0ccdb10b479f621aa47e453c7daa9590896b282c843951ba1f510dd26dc55384",
+  "sourcePaths": [
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+    "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+    "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs",
+    "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs"
+  ],
+  "scriptHashes": {
+    "build-engine.sh": "b8e7ef1a51a673864faf4532f255932ba3df0b9ecf2c31bbeea811ecb304e5b3",
+    "stage-source.py": "1b973e677e8f8fa30bcad312f445d5879d650bc20202663376444b72407b915a",
+    "verify-artifacts.py": "22cdedeb5c0459e2cfd54714b29ea63f94ac6c2fc1bf09ad5ff198cf45fa3fca",
+    "run-build.sh": "33587037fe2c6a06a9ddbf9b7b4871af478c3a6934c5a57f885bb995a1126311"
+  },
+  "buildDeadlineSeconds": 600,
+  "readyToCompile": false,
+  "note": "Prepare only while host protected compiler runs; Root serializes actual checks. New owned build dir and libraries; preserve old binaries/reports and exact source preimages.",
+  "nativeAccepted": false,
+  "releaseAccepted": false
+}
