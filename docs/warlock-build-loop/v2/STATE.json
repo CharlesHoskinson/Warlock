@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T23:59:47.294118+00:00",
+  "updatedUTC": "2026-11-02T00:08:26.003987+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -3746,25 +3746,25 @@
   },
   "currentOriginalClosure": {
     "requirements": [
-      "ELM-TEA-005"
+      "ELM-TEA-001"
     ],
     "scenarios": [
-      "tea-narrow-interop"
+      "tea-typed-model"
     ],
     "accepted": true,
     "wholeEARS": true,
-    "acceptance": "docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json",
-    "independentReview": "docs/warlock-build-loop/v2/tea-narrow-interop-review-20261101.json",
-    "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
+    "acceptance": "docs/warlock-build-loop/v2/tea-typed-model-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/tea-typed-model-review-20261101.json",
+    "sourceRevision": "bdeac73491a05d6c61932642b184c20b44f0e80e",
     "administrative": false,
     "nativeExecution": false,
     "guiAcceptance": false,
     "releaseAcceptance": false,
-    "wholeRequirementsAccepted": 17,
-    "acceptedScenarios": 41,
-    "behaviorChange": "No production behavior change in this boundary QA/acceptance wave; actual adapter verified on immutable source."
+    "wholeRequirementsAccepted": 18,
+    "acceptedScenarios": 42,
+    "behaviorChange": "Retain typed confirmation/receipt phases for Files, application actions, shortcuts, motion preferences and system controls; preserve Unknown reservations without replay. Typed geometry capabilities, snap regions, motion source and transport failures preserve existing boundary wire and labels. SessionClosing explicitly denies Logout; other bounded observed text is preserved."
   },
-  "nextConcreteAction": "Commit actual typed-domain source and retained evidence, then independently verify immutable fullcommit against all three original TEA001 clauses; record whole acceptance only if accepted. Fresh current Omarchy MVP follows with unchanged deadlines and named guard diagnosis.",
+  "nextConcreteAction": "Finish current-build Omarchy failure diagnosis with strict unknown cleanup; integrate the minimal persistent Haskell source/actual lifecycle and qualified controls. Original TEA001 accepted; keep15roles and original all242/417/native/AT/IME/hardware/resource/release scope.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -3815,6 +3815,27 @@
       "releaseAcceptance": false,
       "wholeRequirementsAccepted": 15,
       "supersededUTC": "2026-11-01T21:21:52.032093+00:00"
+    },
+    {
+      "requirements": [
+        "ELM-TEA-005"
+      ],
+      "scenarios": [
+        "tea-narrow-interop"
+      ],
+      "accepted": true,
+      "wholeEARS": true,
+      "acceptance": "docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json",
+      "independentReview": "docs/warlock-build-loop/v2/tea-narrow-interop-review-20261101.json",
+      "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
+      "administrative": false,
+      "nativeExecution": false,
+      "guiAcceptance": false,
+      "releaseAcceptance": false,
+      "wholeRequirementsAccepted": 17,
+      "acceptedScenarios": 41,
+      "behaviorChange": "No production behavior change in this boundary QA/acceptance wave; actual adapter verified on immutable source.",
+      "supersededUTC": "2026-11-02T00:07:13.913945+00:00"
     }
   ],
   "privateUiComponentEvidence": {
@@ -4131,14 +4152,14 @@
     }
   },
   "latestOriginalScenarioVerdict": {
-    "atUTC": "2026-11-01T21:21:52.032093+00:00",
-    "requirement": "ELM-TEA-005",
-    "scenario": "tea-narrow-interop",
+    "atUTC": "2026-11-02T00:05:21.337918+00:00",
+    "requirement": "ELM-TEA-001",
+    "scenario": "tea-typed-model",
     "scenarioAccepted": true,
     "wholeRequirementAccepted": true,
-    "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
-    "evidence": "docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json",
-    "participantRecord": ".warlock-contributor/tea005-validated-interop.json",
+    "sourceRevision": "bdeac73491a05d6c61932642b184c20b44f0e80e",
+    "evidence": "docs/warlock-build-loop/v2/tea-typed-model-acceptance-20261101.json",
+    "participantRecord": ".warlock-contributor/tea-model-effects.json",
     "originalStopHistoriesPreserved": true
   },
   "activeVerificationPhase": "Cancellation source and7293DOM/130typed/57model qualified; live17input visual observation retained with forced pinned-guard failure, not lifecycle/native success.",
@@ -4403,13 +4424,17 @@
     "currentWindowStartedUTC": "2026-11-01T23:11:37.655841+00:00",
     "nextReportDueUTC": "2026-11-02T00:11:37.655841+00:00",
     "currentWindowProgress": {
-      "observedUTC": "2026-11-01T23:12:56.129300+00:00",
+      "observedUTC": "2026-11-02T00:07:13.913945+00:00",
       "windowStartedUTC": "2026-11-01T23:11:37.655841+00:00",
-      "wholeRequirementsAccepted": 17,
-      "acceptedScenarios": 41,
-      "newWholeRequirementIds": [],
-      "newWholeEarsClosures": 0,
-      "newAcceptedScenarios": [],
+      "wholeRequirementsAccepted": 18,
+      "acceptedScenarios": 42,
+      "newWholeRequirementIds": [
+        "ELM-TEA-001"
+      ],
+      "newWholeEarsClosures": 1,
+      "newAcceptedScenarios": [
+        "ELM-TEA-001/tea-typed-model"
+      ],
       "counting": "Only independently accepted complete original EARS. Source/UI component checks are not closures."
     }
   },
@@ -4487,28 +4512,17 @@
     "acceptanceBoundary": "No transfer from compile/model/replay/VM to protected native, hardware, AT/IME or release acceptance; preserve original deadlines."
   },
   "liveUsability20261101Current": {
-    "stage": "/home/charl/vm/omarchy/evidence/warlock-live-usability-cancel-refresh-20261101T225310Z/stage.json",
-    "stageSHA256": "2c8eee85796aa2fe372e7e6c02cf809fc30463d49af3ce7c9c65148d4b352f33",
-    "hostDriverSHA256": "bbc47b28d084b954218f7b7aa0c781e02ba7edeb5b069e5c2e2318b7b45a3124",
-    "guestControllerSHA256": "c0018a324e9ae81dc1144d12413831252d173b6d1429fba8e3baa010264a523c",
-    "journey": "implementation/warlock/qa/evidence/cancel-query-20261101/vm-journey.json",
-    "completedPhysicalSequence": true,
-    "acknowledgedGuardedInputs": 17,
-    "rootViewedImages": [
-      "implementation/warlock/qa/evidence/cancel-query-20261101/positive-foot.png",
-      "implementation/warlock/qa/evidence/cancel-query-20261101/negative-footz.png",
-      "implementation/warlock/qa/evidence/cancel-query-20261101/after-refresh-footz.png"
-    ],
-    "visualObservation": "Current tiled product shows Foot results for foot, no-match for footz, and retains footz/no-match after acknowledged Refresh pointer inputs.",
-    "physicalRefreshLimit": "No correlated catalog generation/backend receipt follows from the click or unchanged visible results.",
-    "physicalImeObserved": false,
-    "originalDurationSeconds": 28,
-    "guestExit": -9,
-    "guestElapsedSeconds": 27.877718457006267,
-    "forced": true,
-    "failure": "RuntimeError: Pinned live attempt guard failed: AssertionError",
-    "failureLimit": "Pinned live guard assertion near the original deadline is preserved; exact failed predicate/cause is not observed. This is a failed lifecycle trial, not a normal backend exit or native acceptance.",
-    "cleanupObservation": "Owned launcher reaped and scope/principal births recorded absent, original Foot preserved and idle restored. Existing read-error/absence limitations remain; provider proof is not established."
+    "observedUTC": "2026-11-02T00:08:26.003987+00:00",
+    "sourceRevision": "bdeac73491a05d6c61932642b184c20b44f0e80e",
+    "componentReceipt": "docs/warlock-build-loop/v2/typed-model-live-20261102.json",
+    "physicalSequenceCompleted": true,
+    "guardedQmpInputs": 17,
+    "launcherExit": 1,
+    "forced": false,
+    "cleanupInventoryUnconfirmed": true,
+    "nativeAccepted": false,
+    "releaseAccepted": false,
+    "nextAction": "Integrate persistent Haskell lifetime under actual original source contracts and expose exact failed backend/custody predicate. Separate retired-cgroup observation from confirmed scope inventory without weakening absence/ownership or original deadlines."
   },
   "teaNarrowInteropAcceptance": {
     "requirements": [
@@ -4540,8 +4554,29 @@
     "sourceReview": "implementation/warlock/qa/evidence/typed-model-20261101/source-review.json",
     "protectedReport": "implementation/warlock/qa/evidence/typed-model-20261101/report.json",
     "sourceClauseGaps": [],
-    "immutableOriginalVerdictPending": true,
+    "immutableOriginalVerdictPending": false,
     "nativeAccepted": false,
-    "releaseAccepted": false
+    "releaseAccepted": false,
+    "acceptedOriginal": "docs/warlock-build-loop/v2/tea-typed-model-acceptance-20261101.json"
+  },
+  "teaTypedModelAcceptance": {
+    "requirements": [
+      "ELM-TEA-001"
+    ],
+    "scenarios": [
+      "tea-typed-model"
+    ],
+    "accepted": true,
+    "wholeEARS": true,
+    "acceptance": "docs/warlock-build-loop/v2/tea-typed-model-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/tea-typed-model-review-20261101.json",
+    "sourceRevision": "bdeac73491a05d6c61932642b184c20b44f0e80e",
+    "administrative": false,
+    "nativeExecution": false,
+    "guiAcceptance": false,
+    "releaseAcceptance": false,
+    "wholeRequirementsAccepted": 18,
+    "acceptedScenarios": 42,
+    "behaviorChange": "Retain typed confirmation/receipt phases for Files, application actions, shortcuts, motion preferences and system controls; preserve Unknown reservations without replay. Typed geometry capabilities, snap regions, motion source and transport failures preserve existing boundary wire and labels. SessionClosing explicitly denies Logout; other bounded observed text is preserved."
   }
 }

@@ -1,0 +1,47 @@
+{
+  "hostEvidence": "/home/charl/vm/omarchy/evidence/warlock-live-usability-typed-model-20261102T000451Z",
+  "guestRoot": "/home/charl/warlock-live-usability-typed-model-20261102T000451Z",
+  "report": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793566187860125681/report.json",
+  "reportSHA256": "fa7e03f4282c9b27cf876d36daab735395564424bac2ebee50de35029f415b56",
+  "unchangedQualifiedHaskellInputs": 217,
+  "guestOwnerSHA256": "e04ef9496bf6868eb73cea17587873e3a6a01110c4810fa3084c0200153ce0a7",
+  "guestBackendSHA256": "d4b51b7f56078185087775b1baee2b819daa5155d751783ddc23313ec4fa92df",
+  "html": {
+    "controller": {
+      "path": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/HttpMain.html",
+      "sha256": "0ee9224e7fd6ff89aca2bbe4553e1e7f463525fd6028e52edd580419652d57a9",
+      "sourcePath": "implementation/warlock/src/HttpMain.elm",
+      "sourceSha256": "58a3b1f274bc69b053ca31ece17bcd6b65a593d5722ba65a7728b3d22471d5a9"
+    },
+    "bar": {
+      "path": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/HttpBar.html",
+      "sha256": "494b9f376aadc48d07fe8e63578816a2359b9ba112204a3ed84dedc077f08d85",
+      "sourcePath": "implementation/warlock/src/HttpBar.elm",
+      "sourceSha256": "74d4b6b80267e9b22065b2087ee2b5318a3ce1fe346e1897c99ced6031183af8"
+    },
+    "popup": {
+      "path": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/HttpPopup.html",
+      "sha256": "c5f2f7d85982341dc48f5b0ae811ab1ab916c6f97a7e49746c5eb53063486985",
+      "sourcePath": "implementation/warlock/src/HttpPopup.elm",
+      "sourceSha256": "e814d56f212765154436c1ab01cc2657b669a6d5d68f5c6d2180ccb64c9eeeb3"
+    }
+  },
+  "stagedHelperSHA256": {
+    "terra-vm-qmp-receipts-1902.py": "6e048bdbf3050ab7cef5a92f6875b29de4e3c56240555a3fb40ff43a6c576250",
+    "terra-vm-qmp-receipts-checks-1907.py": "b49d73c380ee550286f9c13b9598b595db6355b45757c1e9c0afab620b33aac3",
+    "qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+  },
+  "scope": "Native-on-VM usability staging, not native/release acceptance",
+  "originalTrialDurationSeconds": 28,
+  "elmReport": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793576983524112441/report.json",
+  "elmReportSHA256": "aa26737070e5d585b67928abfeab801287ba2a95e0dcfe229daa3007e1adee87",
+  "elmReview": ".warlock-contributor/evidence/tea001-current-elm-review-03.json",
+  "elmSourceInputs": 157,
+  "priorStage": "/home/charl/vm/omarchy/evidence/warlock-live-usability-cancel-refresh-20261101T225310Z/stage.json",
+  "sourceRevisionBeforeDirtyGui": "bdeac73491a05d6c61932642b184c20b44f0e80e",
+  "qualification": "Current immutable typed-model7JS/3HTML/157reviewed inputs/expanded pure regressions plus unchanged217qualifiedHaskell inputs and pinnedguestELFs. Named guard diagnostics and strict terminal exit predicates under Root review/test. Native-on-VM component only; original D28 and no native/provider/AT/IME/hardware/release acceptance.",
+  "guestControllerSHA256": "e03c56dcaff8c4794ed046dd9a0d9665ba72b1f119d245a4890cba48af7409e3",
+  "hostDriverSHA256": "51b73872536c6369e6587df83556b3a03377f523a3b8344ce52b1c32b74e6960",
+  "guestHelperSHA256": "61d9a84a4a41037fcf6464fa56153c9b2ec26986be676d2f84fb21d9ff14c2c5"
+}

@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-02T00:08:26.003987+00:00",
+  "requirements": [
+    "ELM-UI-005"
+  ],
+  "scenario": "search-race",
+  "disposition": "partial",
+  "sourceRevision": "bdeac73491a05d6c61932642b184c20b44f0e80e",
+  "scope": "Current actual Elm/Haskell application-only Omarchy usability; native-on-VM component, not native acceptance or protected QA campaign.",
+  "evidence": {
+    "implementation/warlock/qa/evidence/typed-model-live-20261102/negative-footz.png": "4d7adf58ca0d4703e1a47ebe7535783a6f53f38921452c44b22d99a4111bdadf",
+    "implementation/warlock/qa/evidence/typed-model-live-20261102/journey.json": "4c2883e6972d4d8be89e53987ae65cf56f5f67491171506e035c3ffb52eae612",
+    "implementation/warlock/qa/evidence/typed-model-live-20261102/after-refresh-footz.png": "95b6524f1338601f166ba65904e549bee3b1a033d57d7bf1069be617fed421b2",
+    "implementation/warlock/qa/evidence/typed-model-live-20261102/stage.json": "6cc69656e637b11fe3501bea357e13e28bfad64ea84878a0c0753e1f32eaa1fc",
+    "implementation/warlock/qa/evidence/typed-model-live-20261102/positive-foot.png": "58313ebc9f33fef90aadfc6bb556f70ed96a2e3be01725f3e2a34b95f9b3b319",
+    "implementation/warlock/qa/evidence/typed-model-live-20261102/mock-results.json": "474520169311afe59d5216d27ea0843095b481003cad9d4845324953084e46e5"
+  },
+  "hostEvidence": "/home/charl/vm/omarchy/evidence/warlock-live-usability-typed-model-20261102T000451Z",
+  "reviewedInputs": {
+    "currentElm": 157,
+    "unchangedQualifiedHaskell": 217
+  },
+  "rootViewed": [
+    "positive-foot.png",
+    "negative-footz.png",
+    "after-refresh-footz.png"
+  ],
+  "visualObservation": "Fullscreen current application shows foot with Foot/Foot Server/Foot Client results, then footz with No matching applications, and retains footz/no-match after guarded Refresh pointer input.",
+  "physicalInput": {
+    "guardedQmpAcknowledgements": 17,
+    "sequenceCompleted": true,
+    "catalogGenerationReceiptObserved": false,
+    "keyboardReleaseIndependentlyObserved": false,
+    "atomicFocusProof": false,
+    "physicalImeObserved": false
+  },
+  "protectedMockChecks": {
+    "guardFunctions": 9,
+    "guestTerminalGate": 5,
+    "hostTerminalGate": 8,
+    "scope": "Source-extracted synthetic control predicates run through unchanged guest qa_run; no real cleanup, input, native or orchestration claim."
+  },
+  "trial": {
+    "originalDurationSeconds": 28,
+    "launcherExit": 1,
+    "failure": null,
+    "forced": false,
+    "elapsedSeconds": 28.05062214199279,
+    "cleanupError": "FileNotFoundError",
+    "scopeInventoryConfirmedEmpty": false,
+    "originalOwnedBirthsRemain": [],
+    "originalOwnedBirthsUnknown": [],
+    "footPreserved": true,
+    "idleEnabledRestored": true
+  },
+  "backendObserved": {
+    "schema": 1,
+    "passed": false,
+    "cleanup": true,
+    "callbacks": 12,
+    "operations": 3,
+    "auth": "Just (FrameObserved CredentialDelivered)",
+    "credentialRows": 36,
+    "selectedPid": 156524,
+    "nativeAccepted": false,
+    "releaseAccepted": false
+  },
+  "diagnosis": "No pinned-guard assertion occurred on this attempt; prior assertion failure remains historical, not explained away. Owned launcher returned1 normally; backend reports passed=false/cleanup=true without exact failed-conjunct diagnosis. Strict controller cleanup hits FileNotFoundError when stamping an already removed cgroup directory after unit retirement; it preserves uncertainty and does not convert generic read errors into absence.",
+  "reviewedHelperHashes": {
+    "guestController": "e03c56dcaff8c4794ed046dd9a0d9665ba72b1f119d245a4890cba48af7409e3",
+    "hostDriver": "51b73872536c6369e6587df83556b3a03377f523a3b8344ce52b1c32b74e6960",
+    "controllerMocks": "edaccf253f943920b9aee3c9028bc299a6d39b47e411ad1fd60120bc3396a22b",
+    "guestExitMocks": "5b1e3193d9282805739b6440377d1313c4803559b07712e80f8694f454e5549e",
+    "hostExitMocks": "fcde890354ad13cd3919f14198ff9858a505a579220c901baab3e03f1e88536a"
+  },
+  "nextAction": "Integrate persistent Haskell lifetime under actual original source contracts and expose exact failed backend/custody predicate. Separate retired-cgroup observation from confirmed scope inventory without weakening absence/ownership or original deadlines.",
+  "nativeAcceptance": false,
+  "guiAcceptance": false,
+  "providerCleanupQualified": false,
+  "releaseAccepted": false,
+  "originalAcceptanceChanged": false
+}

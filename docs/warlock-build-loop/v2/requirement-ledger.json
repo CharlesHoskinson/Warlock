@@ -6029,22 +6029,135 @@
       "capability": "elm-host",
       "owner": "Native host lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "partial",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "tea-typed-model",
           "oracle": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred",
-          "status": "partial",
+          "status": "accepted",
           "evidence": [
             {
-              "path": "implementation/warlock/qa/evidence/tea-typed-state-20261101/component-observation.json",
-              "sha256": "602b1065fda198d57807f0fddb7d229520e449caff3bb2abd02f7b69a63bbc14",
-              "scope": "Six optimized Elm entry points,87typed controls and58complete Model/effect literal histories134tested31setup/twice; controlled pure bridge fixtures, not native or whole original acceptance.",
-              "disposition": "partial"
+              "path": "docs/warlock-build-loop/v2/tea-typed-model-review-20261101.json",
+              "sha256": "f791b37930de524c2f6a78d8f55bbd7ce4a5786eabb977191f2cb67ce090a5f9",
+              "scope": "Whole original ELM-TEA-001 tea-typed-model: custom typed lifecycle/receipt/operation state across the complete active seven-root frontend, separate native observations and desired state, projections from one authoritative policy tree; exact immutable compiler/replay/independent boundary evidence. Native behavior separately qualified.",
+              "disposition": "accepted"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/tea-typed-model-acceptance-20261101.json",
+              "sha256": "9396c0fb1347cdfe11e7665203c11948e5df5b490cc2369a8624f214ffa8a81d",
+              "scope": "Whole original ELM-TEA-001 tea-typed-model: custom typed lifecycle/receipt/operation state across the complete active seven-root frontend, separate native observations and desired state, projections from one authoritative policy tree; exact immutable compiler/replay/independent boundary evidence. Native behavior separately qualified.",
+              "disposition": "accepted"
             }
           ],
-          "missingObservation": "Remaining whole frontend retained lifecycle/receipt/operation custom-type and single-authority/observation-vs-desired inventory, actual remaining finite source fields and independent original immutable source acceptance. Native behavior separately qualified."
+          "missingObservation": "None for the complete original typed-model contract on the accepted immutable source. Native GUI/input/AT/IME/provider/hardware/resource/release remain separately qualified.",
+          "evidenceHistory": [
+            {
+              "status": "partial",
+              "evidence": [
+                {
+                  "path": "implementation/warlock/qa/evidence/tea-typed-state-20261101/component-observation.json",
+                  "sha256": "602b1065fda198d57807f0fddb7d229520e449caff3bb2abd02f7b69a63bbc14",
+                  "scope": "Six optimized Elm entry points,87typed controls and58complete Model/effect literal histories134tested31setup/twice; controlled pure bridge fixtures, not native or whole original acceptance.",
+                  "disposition": "partial"
+                }
+              ],
+              "missingObservation": "Remaining whole frontend retained lifecycle/receipt/operation custom-type and single-authority/observation-vs-desired inventory, actual remaining finite source fields and independent original immutable source acceptance. Native behavior separately qualified."
+            }
+          ],
+          "sourceRevision": "bdeac73491a05d6c61932642b184c20b44f0e80e",
+          "sourceHashes": {
+            "implementation/warlock/src/Main.elm": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+            "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+            "implementation/warlock/src/Desktop.elm": "a07c15be51b5875921ef24a235e45f57a0b52745cec971740af3a7fdc3adfb3f",
+            "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+            "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+            "implementation/warlock/src/Shell.elm": "6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094",
+            "implementation/warlock/src/Bar.elm": "aa3cd927c33f9624364b8ba04bc3ceb31c3a13541b6fd1044c9f7ac978d871b7",
+            "implementation/warlock/src/Popup.elm": "a9f188f9130aea7ab050abb02530cf8e633235c810dc991685e2065ff8a6bcae",
+            "implementation/warlock/src/HttpMain.elm": "58a3b1f274bc69b053ca31ece17bcd6b65a593d5722ba65a7728b3d22471d5a9",
+            "implementation/warlock/src/HttpBar.elm": "74d4b6b80267e9b22065b2087ee2b5318a3ce1fe346e1897c99ced6031183af8",
+            "implementation/warlock/src/HttpPopup.elm": "e814d56f212765154436c1ab01cc2657b669a6d5d68f5c6d2180ccb64c9eeeb3",
+            "implementation/warlock/qa/TeaContractReplay.elm": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+            "implementation/warlock/qa/tea-contract.cjs": "15597108de923405823578f89f2c667988f8602f12ddb68f449c365bb17319b8",
+            "implementation/warlock/qa/tea-contract-cases.cjs": "9ea3090e9df2215ac00a4b2dcee7c5af06319d43cd5dd5b8b09cafa2462fcbf4",
+            "implementation/warlock/src/Notifications.elm": "e61311c370fc0367844deb21a9ba3274a64f41faabe19bec6743af71685e2201",
+            "implementation/warlock/src/Surface.elm": "a6c9f976b4705142e88f010d8e3c0fa9338004b74878392179d75d01117b639e",
+            "implementation/warlock/src/OutcomeAnnouncements.elm": "e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb",
+            "implementation/warlock/src/JumpList.elm": "62577ce4d85acde5a3f3e894236e0e72dfa29d19bdc2f97cad6b910dc9dc533c",
+            "implementation/warlock/src/ReconciliationFrame.elm": "5f9480ab13609f26a3f57f37431e9eb29c658b1c009b463321e0f277d37b8ac5",
+            "implementation/warlock/qa/NotificationsReplay.elm": "d962a8d60b34201ae138afbfb0ff0e8ed9cb3a131a8b4cafecb74267dff7408f",
+            "implementation/warlock/qa/JumpListReplay.elm": "53a27333b19f9820da8624a389ca84aa8988d50f5ef8afa4db2cfb4a19686b0f",
+            "implementation/warlock/qa/NativePointerFixture.elm": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124",
+            "implementation/warlock/qa/RetirementProofReplay.elm": "eebc71f1f8c13b1baaa882c74a52cd42d5980edc0277053f7f5c9a080466c66b",
+            "implementation/warlock/qa/typed-state.cjs": "87b4d7b6946211a787b6d620eb2d8662978484e702bd2ea28a10fa6d00a39014",
+            "implementation/warlock/qa/NotificationRelevanceReplay.elm": "de99c29c7d40cd8cf253e54e9e960519745aab39df054465df85502c8d980466",
+            "implementation/warlock/qa/AnnouncementReplay.elm": "d55199bb422e26fcd10916ba9d65dfb3677c31963b64ca07c4bfc7680c4ea1d8",
+            "implementation/warlock/qa/FilesReplay.elm": "b46d8b9a99b84c4a1cb03c961d15a8e12316071233e56fd1138cff7f547fea90",
+            "implementation/warlock/qa/FullscreenExitReplay.elm": "e0dce514d5b6390cb29268bbe820d5306d7c85d47a3b82382ca57ffda0b77e49",
+            "implementation/warlock/qa/GeometryCapabilitySequences.elm": "2f0fcb6f6891cee7939e5335cbac4300920a0684bec89fae0728265aa9e62a69",
+            "implementation/warlock/qa/LiveMotionReplay.elm": "cd27bb03bf426dfb06c17522b2f30decd1a9eb07cc89d594fe5eb8f4e70f4083",
+            "implementation/warlock/qa/LocalFieldReplay.elm": "d70d23bcdb9f460f24cf3b176afc1584f3c96a978f270685dd1943ab88ec78e3",
+            "implementation/warlock/qa/MotionReadRecoveryReplay.elm": "844da69838e52b4ba1cdcc636f8df7842904a611eb225fc3014f9900c4125335",
+            "implementation/warlock/qa/MotionReplay.elm": "dcdfe2a86232006b5ee17b27d57b37872787d21e343c5d5c18dae8bdcba5efdc",
+            "implementation/warlock/qa/PinMaxReplay.elm": "7012e1031bae8fb246c9ca3de3477f1b64b2caf4b05aa71ada1b76c9bd0aeb75",
+            "implementation/warlock/qa/ShortcutDraftProperties.elm": "a1c17b9cbffd9380142e35a0842971eb828061484c2d1f0d6a79ebb0ee12f69a",
+            "implementation/warlock/qa/ShortcutPreferencesReplay.elm": "f6940c7190956ddc1a28b1be2778ef186759bfaaa3d35411d9abe40a3d3db3a7",
+            "implementation/warlock/qa/SnapReplay.elm": "8c5f69c06f2cb37e971eb493f68cb7a51e8d3344dc2936c063ef62cb1c1f40d5",
+            "implementation/warlock/qa/SolFilesRebind2214.elm": "6f9e95771c9eba56ae8fbba50e7f8315974e01ded3e4fdee768195d329dc00d7",
+            "implementation/warlock/qa/SolSystemMenuIntegratedReplay2114.elm": "7b448580857a1dca22c0addd9e009a2da2af9c87b0fa78fff5fc79caa079ad5a",
+            "implementation/warlock/qa/SystemMenuReplay.elm": "9ffa00c0d0a2b4a86be91ad7aa988b46f8e2efc91b57a95900095dee97f5ba03",
+            "implementation/warlock/qa/TaskViewReplay.elm": "9f2a30aaecbd0069b1d297d029cfff9126c506dd39bcdcc6c871e6189c53c9b6",
+            "implementation/warlock/qa/TransferReplay.elm": "eaf198640a854600c48b6314135865dfba58b07caf7581a32a707eb542267e09",
+            "implementation/warlock/qa/UiHttpFailureReplay.elm": "d3dab516f45f00d3e2f4fad71901e2204718b4f4ec8a0c5eac9661bc47cebc70",
+            "implementation/warlock/qa/check-shortcut-draft.py": "8781e7627c8db182c977866988354820ce1d9b89390892b24fa50c83640ae65e",
+            "implementation/warlock/qa/files-typed-state.cjs": "7e4739a6438653d596aaa8a5e994e9ef95c3f90fb716b011c441a76b8dfc45fd",
+            "implementation/warlock/qa/local-field-publication.qnt": "3c102fe49d68bf8ca33afaa0a1fb774404ecb1577a692a45907d72f78cb0bdfc",
+            "implementation/warlock/qa/motion-read-recovery.cjs": "8b8283d29a8d1a6d7645a1dc35bd1e3fc5d28dd7fb0bfd1e1a2402e163bfbe18",
+            "implementation/warlock/qa/motion-typed-state.cjs": "960a71375f01a679caf76917866a78d5bbcbe9cbc54a94c0c29bfb6ebd7383c9",
+            "implementation/warlock/qa/shortcut-draft-strict.cjs": "145f2109d556f6711f2601923728044007b30966b24b8258a780a2dbe11969c7",
+            "implementation/warlock/qa/sol-files-rebind-result-2214.cjs": "94469fd4a43262b57d4114afae255c589f7e53f4a93e222ee61002609efbef4b",
+            "implementation/warlock/qa/system-menu-typed-state.cjs": "5bc6f3c784bbd5a6dc80a9e8c40bfc37975b2bbdd4bc853dc288e9cda5c5e158",
+            "implementation/warlock/qa/tea001-extra-typed.cjs": "14c1657a16b58702bea4ebcfa9124f6c2069a28d7f3252da7863024a0684e9c8",
+            "implementation/warlock/qa/ui-http-failure-typed.cjs": "5c1297cadaeecb34a49a1e3de90ea57e78dc40a535cfb51b50d38b36e9d3fc28",
+            "implementation/warlock/qa/ui-http.cjs": "cd25171ab960023eeb0da0df25cbe29ef1cbc3a604ad59281c9cbec880f60c14",
+            "implementation/warlock/src/Effects.elm": "831ee16e2e49791d0604ccbf2297e242f81d0c7da5c944c2622dca5413da5661",
+            "implementation/warlock/src/Files.elm": "920722cf7c7ba4de35f165aa1891eb4749584529b8525f3423d121e7a412cb3a",
+            "implementation/warlock/src/GeometryProjection.elm": "71aa90a4d9cff4eb797b8a7ca16c5604b94684576243ed8bb961b6cb731ce841",
+            "implementation/warlock/src/Motion.elm": "e1e97519c6f95ed1283929a99d0fde4b76a76bfea3c1bc1429bf3eebb922b312",
+            "implementation/warlock/src/MotionPreferences.elm": "efb600fb7601644b7c68041bfb9eefeb14a2fc5247f56b06ef08a865ffac8cf0",
+            "implementation/warlock/src/Provider.elm": "bbc20c16113df0df6ac28986eddb805348a5c72942bdfbde915deadfb921288f",
+            "implementation/warlock/src/ShortcutPreferences.elm": "71155bf3a1a416e05350a7473bceecdd5dcbaf581726ececd1b4882a616b07c5",
+            "implementation/warlock/src/Snap.elm": "545bcccff558348f93f64bee6ebce12352ea1adc223b4f89e11570799542e7ed",
+            "implementation/warlock/src/SystemMenu.elm": "070e619f3088a1c051581066ce949fb1cd64b75f5df0ebd9efb18ab589c993c5",
+            "implementation/warlock/src/UiHttp.elm": "a41b32a054031bf5f99cc920450cffe01ad82362729a4af1450b05aa99507172"
+          },
+          "reviewer": {
+            "disposition": "accepted",
+            "independent": true,
+            "name": "reviewer",
+            "role": "Independent original acceptance reviewer; read-only source and retained evidence review"
+          },
+          "sourceTuple": {
+            "core": "Not loaded or executed; original pure Elm typed-model requirement qualifies native behavior separately.",
+            "plugin": "No native plugin loaded; no native capability/provider acceptance transferred.",
+            "sourceRevision": "bdeac73491a05d6c61932642b184c20b44f0e80e",
+            "toolchain": {
+              "developmentTools": {
+                "node": {
+                  "path": "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+                  "sha256": "e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb"
+                },
+                "python": {
+                  "path": "/usr/bin/python3.14",
+                  "sha256": "6afce98b1e5ce89dc1c5dfca9672276a9486bc318855c7554cbe6da62d073e10"
+                }
+              },
+              "elmCompilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+              "quintTreeSHA256": "336f3ece0ad5a10965cdfc9acd15e9e2e1b08b7e9a849c9ffa7f76a6d13d7338",
+              "quintVersion": "0.33.0"
+            }
+          }
         }
       ]
     },
@@ -17400,5 +17513,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T21:15:47.786045+00:00"
+  "updatedUTC": "2026-11-02T00:07:13.913945+00:00"
 }
