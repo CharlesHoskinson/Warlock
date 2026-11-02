@@ -1,22 +1,25 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ForeignFunctionInterface #-}
+{-# LANGUAGE ScopedTypeVariables #-}
 -- Root-only selected executable: fd 0 is the already activated owned socket.
 module Main (main) where
 import Control.Monad (unless,forM_)
-import Control.Exception (IOException,catch,throwIO)
+import Control.Exception (IOException,bracket,bracketOnError,catch,throwIO,try)
 import Foreign.C.Error (Errno(..),eCONNRESET,throwErrnoIfMinus1_)
 import Foreign.C.Types (CInt(..))
 import GHC.IO.Exception (ioe_errno)
 import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
 import Data.List (isPrefixOf)
+import Data.Char (isHexDigit)
 import Numeric (showHex)
 import System.Environment (lookupEnv)
-import System.IO (Handle,BufferMode(NoBuffering),hSetBinaryMode,hSetBuffering,hFlush,stdout)
+import System.IO (Handle,IOMode(ReadMode),BufferMode(NoBuffering),hClose,hSetBinaryMode,hSetBuffering,hFlush,hPutStrLn,stdout,withBinaryFile)
 import System.Exit (ExitCode(..))
-import System.Posix.IO (fdToHandle)
+import System.Posix.IO (OpenMode(WriteOnly),closeFd,creat,defaultFileFlags,exclusive,fdToHandle,openFd)
+import System.Posix.Files (readSymbolicLink)
 import System.Posix.Process (forkProcess,getProcessID,getProcessStatus,ProcessStatus(..),exitImmediately)
-import System.Posix.User (getRealUserID,getEffectiveUserID,getRealGroupID,setUserID)
+import System.Posix.User (getRealUserID,getEffectiveUserID,getRealGroupID,getEffectiveGroupID,setUserID)
 import System.Posix.Types (Fd(..))
 import Text.Read (readMaybe)
 import Warlock.Protocol.Codec (decodeServerChecked)
@@ -102,6 +105,59 @@ requireAck h = readControl h >>= maybe (ioError (userError "persistent ACK missi
 requireRefusal :: Handle -> IO ()
 requireRefusal h = readExpectedRefusal h >>= maybe (pure ()) (const (ioError (userError "refused request unexpectedly acknowledged")))
 
+-- QA metadata only. These fixed proc reads neither authenticate a sender nor
+-- grant an effect. Probe failure is incomplete evidence, not a fabricated map.
+contextLine :: String -> IO String
+contextLine phaseName = do
+ pid <- getProcessID
+ uid <- getRealUserID
+ euid <- getEffectiveUserID
+ gid <- getRealGroupID
+ egid <- getEffectiveGroupID
+ uidMap <- boundedProc "/proc/self/uid_map" 4096
+ gidMap <- boundedProc "/proc/self/gid_map" 4096
+ userNs <- readSymbolicLink "/proc/self/ns/user"
+ pidNs <- readSymbolicLink "/proc/self/ns/pid"
+ unless (length userNs<=64 && length pidNs<=64) (ioError (userError "context namespace bound"))
+ status <- boundedProc "/proc/self/status" 65536
+ eff <- capability "CapEff:" status
+ prm <- capability "CapPrm:" status
+ pure ("fixture_context " ++ show ["1",phaseName,show pid,show uid,show euid,show gid,show egid,C.unpack uidMap,C.unpack gidMap,userNs,pidNs,eff,prm])
+ where
+  boundedProc path bound = withBinaryFile path ReadMode $ \handle -> do
+   bytes <- B.hGet handle (bound+1)
+   unless (B.length bytes<=bound) (ioError (userError "context proc bound"))
+   pure bytes
+  capability name status = case [C.unpack value | line <- C.lines status, [field,value] <- [C.words line],field==C.pack name] of
+   [value] | length value==16 && all isHexDigit value -> pure value
+   _ -> ioError (userError "context capability field")
+
+withContextSink :: (Maybe Handle -> IO a) -> IO a
+withContextSink = bracket acquire release
+ where
+  acquire = do
+   selected <- lookupEnv "DEL010_CONTEXT_PATH"
+   case selected of
+    Nothing -> pure Nothing
+    Just path | not (null path) && head path=='/' -> do
+     result <- try (bracketOnError (openFd path WriteOnly defaultFileFlags {creat=Just 0o600,exclusive=True}) closeFd fdToHandle) :: IO (Either IOException Handle)
+     case result of
+      Right handle -> pure (Just handle)
+      Left _ -> putStrLn "fixture_context_error phase=open class=IOException" >> pure Nothing
+    _ -> putStrLn "fixture_context_error phase=open class=InvalidPath" >> pure Nothing
+  release Nothing = pure ()
+  release (Just handle) = hClose handle `catch` (\(_ :: IOException) -> putStrLn "fixture_context_error phase=close class=IOException")
+
+emitContext :: Maybe Handle -> String -> IO ()
+emitContext sink phaseName = do
+ observed <- try (contextLine phaseName) :: IO (Either IOException String)
+ let line=case observed of Right value -> value; Left _ -> "fixture_context_error phase=" ++ phaseName ++ " class=IOException"
+ putStrLn line
+ hFlush stdout
+ case sink of
+  Nothing -> pure ()
+  Just handle -> (hPutStrLn handle line >> hFlush handle) `catch` (\(_ :: IOException) -> putStrLn ("fixture_context_error phase=" ++ phaseName ++ " class=WriteFailure"))
+
 persistentMain :: String -> IO ()
 persistentMain mode = do
  h <- fdToHandle (Fd 0)
@@ -145,18 +201,21 @@ persistentMain mode = do
   "persistent-cross-user-same-pid" -> do
    sendFixture False h (persistentRequest seed 0)
    requireAck h
-   originalUid <- getRealUserID
-   targetText <- lookupEnv "DEL010_WRITER_UID"
-   target <- maybe (ioError (userError "actual delegated writer UID required")) pure (targetText >>= readMaybe)
-   unless (target /= originalUid) (ioError (userError "cross-user fixture requires distinct UID"))
-   setUserID target
-   real <- getRealUserID
-   effective <- getEffectiveUserID
-   unless (real == target && effective == target) (ioError (userError "actual UID change failed"))
-   pid <- getProcessID
-   gid <- getRealGroupID
-   putStrLn ("fixture_writer pid=" ++ show pid ++ " uid=" ++ show real ++ " gid=" ++ show gid)
-   hFlush stdout
+   withContextSink $ \sink -> do
+    emitContext sink "before-setuid"
+    originalUid <- getRealUserID
+    targetText <- lookupEnv "DEL010_WRITER_UID"
+    target <- maybe (ioError (userError "actual delegated writer UID required")) pure (targetText >>= readMaybe)
+    unless (target /= originalUid) (ioError (userError "cross-user fixture requires distinct UID"))
+    setUserID target
+    real <- getRealUserID
+    effective <- getEffectiveUserID
+    unless (real == target && effective == target) (ioError (userError "actual UID change failed"))
+    pid <- getProcessID
+    gid <- getRealGroupID
+    putStrLn ("fixture_writer pid=" ++ show pid ++ " uid=" ++ show real ++ " gid=" ++ show gid)
+    hFlush stdout
+    emitContext sink "after-setuid"
    sendFixture False h (persistentRequest seed 1)
    requireRefusal h
   _ -> ioError (userError "unknown persistent fixture mode")

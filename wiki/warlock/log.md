@@ -361,3 +361,14 @@ The fresh Omarchy journey completed17guarded Apps/Search/foot/footz/Refresh even
 Recorded totals remain18/242requirements and42/417scenarios; this component adds no whole EARS. Keep all15authenticated roles/fiveQuintKit, Root-only integration and protected execution, exact terminal/absence rotation and unchanged worker memory caps. Next integrate actual startup-borrow/checked-abort and Backend/trusted-pump/per-request deadline source. Do not replace missing native/provider/AT/IME/hardware/resource/release evidence with the new diagnostic clarity.
 
 Diataxis: README current status and diagnostic reference are updated; existing product tutorials and run-omarchy how-to still apply because GUI interactions/config schema are unchanged. This journal explains the separate backend predicate and QA cleanup outcomes. External wiki/linter remain absent here; no lint success is claimed.
+
+
+### 2026-11-02 01:38UTC — actual cross-user credential evidence
+
+Existing ordinary production authentication now has the missing actual cross-user observation. Root applied two QA-only Haskell sources and built the exact217input guest tuple. All15full-mode cases passed0 normally under unchanged5second conversation deadlines. SelectedPID171673 changed actual UID/EUID0 to1; measured user/pid namespaces and UID/GID maps stayed the same, GID stayed0 and effective/permitted capabilities dropped to0. Kernel recvmsg recorded171673/1/0 on the next valid effect request: exactForeignUser, one allowed-prefix callback, no second admission/callback/ACK and independent bootstrap retirement RightTrue. Eight seeded allowed sessions, retired/wrong binding and actual unrelated same-user process controls also passed.
+
+The executed guardian omitted the qa.slice parent in its independent negative cgroup scan; that cleanup-confirmed claim is unqualified and its original bytes remain unchanged. A separate fresh root observation derives the actual nested scope path from pinned runner context. Same-matcher actual selfPID/birth positive and sibling-prefix negative controls pass;222process entries show no target members or read errors at01:36:50UTC. This is current-time absence, not retroactive qualification of the old scan. No authentication rerun or deadline renewal occurred.
+
+Counts remain18/242whole and42/417scenarios pending immutable independent originalDEL010 adjudication. Preserve prior367a three-scenario verdicts and every missing/failed history. The00:11–01:11UTC hour closed0whole EARS, below2/aim3. Next commit/adjudicate this actual original obligation, then integrate real persistent runtime source. All15roles/fiveQuintKit, main desktop and native/AT/IME/hardware/resource/release obligations remain.
+
+[Source-bound evidence](../../docs/warlock-build-loop/v2/persistent-auth-cross-user-20261102.json).

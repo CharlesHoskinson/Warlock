@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "kind": "independent-source-only-qa-context-review",
+  "requirement": "ELM-DEL-010",
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "source-reviewed-no-concrete-execution-blocker"
+  },
+  "recordedAtUTC": "2026-11-02T01:27:29.156116+00:00",
+  "patch": {
+    "path": ".warlock-contributor/engine-pid1-drafts/elm-tests-del010-context-001.patch",
+    "sha256": "05ead1564ef662573d07792334986062ea5154ff6e300bfffc6ae5de181f400d"
+  },
+  "manifest": {
+    "path": ".warlock-contributor/engine-pid1-drafts/elm-tests-del010-context-001.json",
+    "sha256": "e5613fbe1f8eb9face2fd72c4326ae39fedac448e9a63bd0b9ee0a0d7111c14b"
+  },
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/fixture-peer/Main.hs": "6a2fa8135b55caf490a2da492441214c48d320b34f3f62a44e40d66264bacb5d",
+    "implementation/warlock/haskell/runtime/test-persistent/Main.hs": "bc61fcdb4f33aa2a1501ad1d28613a823f0f3405c7b590271d1d852dda2efdef"
+  },
+  "scope": "QA-only actual credential-context metadata added to existing selected peer fixture and public production-linked persistent suite; read-only review of exact patch and current postimages.",
+  "findings": [
+    {
+      "classification": "preserved-authentication-boundary",
+      "finding": "Existing first frame ACK, same selected PID setUserID, real/effective target UID verification, second frame ForeignUser refusal, and kernel recvmsg evidence remain authoritative. No production source changed by this patch."
+    },
+    {
+      "classification": "preserved-deadline",
+      "finding": "deadlineAfter 5000000 remains before context preparation and receiver sampling. Context overhead consumes the same original deadline; no reset, retry or timeout increase is introduced."
+    },
+    {
+      "classification": "bounded-private-corroboration",
+      "finding": "Fixed proc map/status reads and namespace/capability fields are bounded and validated. Child exclusively creates private0600 receipt before UID change and retains its writable handle across the change; parent verifies directory/file identity, owner, mode, single link, bounded length and post-read identity. Actual sender before/after IDs and same maps/namespaces are joined to selected PID and every nonempty rejected FragmentObserved suffix."
+    },
+    {
+      "classification": "evidence-consumption-limit",
+      "finding": "Legacy passed and completeOriginalEvidence intentionally do not depend on context metadata. Require the actual cross-user row credentialContextEvidence.contextEvidenceComplete=true separately when claiming the new context-qualified observation; incomplete metadata must remain incomplete."
+    },
+    {
+      "classification": "configuration-scope",
+      "finding": "setUserID changes UID/EUID only. GID/EGID remain measured receiver GID and must not be described as a GID transition. A root0 service to selected UID1 result establishes that measured guest configuration, not the desktop-user1000 service configuration."
+    },
+    {
+      "classification": "remaining-unobserved",
+      "finding": "Actual authentication execution, source-bound raw credentials/context receipt, original scenario acceptance and immutable source adjudication remain pending. Root-reported compilation is not reviewer-executed evidence and no runtime verdict is inferred."
+    }
+  ],
+  "concreteExecutionBlockers": [],
+  "execution": false,
+  "testsExecuted": false,
+  "compilerExecuted": false,
+  "vmExecuted": false,
+  "nativeAccepted": false,
+  "originalRequirementAccepted": false,
+  "scenarioAcceptance": false,
+  "nextAction": "Root alone executes existing protected system-manager qa-harness.slice/core1/unchanged qa_run inside-scope route, retains exact source/toolchain/launcher tuple, raw credential traces, private receipt and metadata-complete flag, then requests immutable source and actual evidence review."
+}

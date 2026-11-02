@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "kind": "supplemental-current-scope-postscan",
+  "atUTC": "2026-11-02T01:36:50.590801+00:00",
+  "targetFromActualRunnerContext": "/qa.slice/qa-harness.slice/qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope",
+  "contextPin": {
+    "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/root-auth-d258019003f44c2c9298ebc4cba1544f/runner-context-before.json",
+    "device": 58,
+    "inode": 42458,
+    "size": 637,
+    "sha256": "086819be03fb5593a69469ef8ee2375943422c6ff29e3076757666dbfc1cc02b"
+  },
+  "originalGuardianReportPin": {
+    "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/root-auth-d258019003f44c2c9298ebc4cba1544f/guardian-report.json",
+    "device": 58,
+    "inode": 42473,
+    "size": 4211,
+    "sha256": "a7458c66a65f1db7690c93c9a9ce6e0547566d420e104f5ca295a90a4507252e"
+  },
+  "positiveSelfControl": {
+    "target": "/user.slice/user-1000.slice/session-1882.scope",
+    "startedMonotonic": 93777.580436371,
+    "examined": 222,
+    "remaining": [
+      {
+        "pid": 171842,
+        "birth": "9377738",
+        "cgroup": "/user.slice/user-1000.slice/session-1882.scope"
+      },
+      {
+        "pid": 171845,
+        "birth": "9377752",
+        "cgroup": "/user.slice/user-1000.slice/session-1882.scope"
+      },
+      {
+        "pid": 171846,
+        "birth": "9377753",
+        "cgroup": "/user.slice/user-1000.slice/session-1882.scope"
+      },
+      {
+        "pid": 171854,
+        "birth": "9377755",
+        "cgroup": "/user.slice/user-1000.slice/session-1882.scope"
+      }
+    ],
+    "readErrors": [],
+    "finishedMonotonic": 93777.588752402
+  },
+  "positiveSelfMatchedPidBirth": true,
+  "negativeBoundaryPrefixControl": true,
+  "actualScopeScan": {
+    "target": "/qa.slice/qa-harness.slice/qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope",
+    "startedMonotonic": 93777.588759284,
+    "examined": 222,
+    "remaining": [],
+    "readErrors": [],
+    "finishedMonotonic": 93777.595059202
+  },
+  "currentEmpty": true,
+  "historicalGuardianCleanupQualified": false,
+  "historicalGuardianBug": "Executed scanner omitted qa.slice parent; its negative scan does not establish historical cleanup",
+  "authRerun": false,
+  "originalReceiptsModified": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "scope": "Fresh current process observation only; never retroactive cleanup, authentication or original acceptance"
+}

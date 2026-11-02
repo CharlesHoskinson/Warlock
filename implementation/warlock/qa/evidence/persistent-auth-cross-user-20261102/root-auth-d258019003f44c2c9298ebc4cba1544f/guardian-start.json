@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "scope": "VM actual kernel credential component only; no GUI/native provider/release acceptance",
+  "passed": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "attempt": "/home/charl/warlock-del010-cross-user-20261102T011435Z/root-auth-d258019003f44c2c9298ebc4cba1544f",
+  "unit": "qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope",
+  "argv": [
+    "/usr/bin/systemd-run",
+    "--scope",
+    "--slice=qa-harness.slice",
+    "--unit=qa-harness-del010-d258019003f44c2c9298ebc4cba1544f",
+    "--description=Warlock DEL010 private d258019003f44c2c9298ebc4cba1544f",
+    "-p",
+    "MemoryMax=2G",
+    "--",
+    "/usr/bin/prlimit",
+    "--core=1:1",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/charl/warlock-live-usability-typed-model-20261102T000451Z/qa-mocks/qa_run.py",
+    "--inside-scope",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/charl/warlock-del010-cross-user-20261102T011435Z/root-auth-runner.py"
+  ],
+  "forced": false,
+  "normal": false,
+  "initialScope": {
+    "argv": [
+      "/usr/bin/systemctl",
+      "--system",
+      "show",
+      "qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope",
+      "--no-pager",
+      "--property=Id",
+      "--property=LoadState",
+      "--property=ActiveState",
+      "--property=ControlGroup",
+      "--property=InvocationID",
+      "--property=Description"
+    ],
+    "returncode": 0,
+    "properties": {
+      "Id": "qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope",
+      "Description": "qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope",
+      "LoadState": "not-found",
+      "ActiveState": "inactive",
+      "InvocationID": "",
+      "ControlGroup": ""
+    },
+    "stdout": "Id=qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope\nDescription=qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope\nLoadState=not-found\nActiveState=inactive\nInvocationID=\nControlGroup=\n",
+    "stderr": ""
+  },
+  "runnerPin": {
+    "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/root-auth-runner.py",
+    "device": 58,
+    "inode": 42452,
+    "size": 10173,
+    "sha256": "358e94d5e41391e66de35f708303d790b778dbc8ffd55ea0cd312b8d108fe698"
+  },
+  "guardianPin": {
+    "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/root-auth-guardian.py",
+    "device": 58,
+    "inode": 42453,
+    "size": 8777,
+    "sha256": "9e66a5b9a04a9939ae690f64c37e02f74f5dd8d0c182cd18a13e12989419a400"
+  },
+  "timeoutSeconds": 120
+}

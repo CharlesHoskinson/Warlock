@@ -1,0 +1,354 @@
+--- a/implementation/warlock/haskell/runtime/fixture-peer/Main.hs
++++ b/implementation/warlock/haskell/runtime/fixture-peer/Main.hs
+@@ -1,22 +1,25 @@
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE ForeignFunctionInterface #-}
++{-# LANGUAGE ScopedTypeVariables #-}
+ -- Root-only selected executable: fd 0 is the already activated owned socket.
+ module Main (main) where
+ import Control.Monad (unless,forM_)
+-import Control.Exception (IOException,catch,throwIO)
++import Control.Exception (IOException,bracket,bracketOnError,catch,throwIO,try)
+ import Foreign.C.Error (Errno(..),eCONNRESET,throwErrnoIfMinus1_)
+ import Foreign.C.Types (CInt(..))
+ import GHC.IO.Exception (ioe_errno)
+ import qualified Data.ByteString as B
+ import qualified Data.ByteString.Char8 as C
+ import Data.List (isPrefixOf)
++import Data.Char (isHexDigit)
+ import Numeric (showHex)
+ import System.Environment (lookupEnv)
+-import System.IO (Handle,BufferMode(NoBuffering),hSetBinaryMode,hSetBuffering,hFlush,stdout)
++import System.IO (Handle,IOMode(ReadMode),BufferMode(NoBuffering),hClose,hSetBinaryMode,hSetBuffering,hFlush,hPutStrLn,stdout,withBinaryFile)
+ import System.Exit (ExitCode(..))
+-import System.Posix.IO (fdToHandle)
++import System.Posix.IO (OpenMode(WriteOnly),closeFd,creat,defaultFileFlags,exclusive,fdToHandle,openFd)
++import System.Posix.Files (readSymbolicLink)
+ import System.Posix.Process (forkProcess,getProcessID,getProcessStatus,ProcessStatus(..),exitImmediately)
+-import System.Posix.User (getRealUserID,getEffectiveUserID,getRealGroupID,setUserID)
++import System.Posix.User (getRealUserID,getEffectiveUserID,getRealGroupID,getEffectiveGroupID,setUserID)
+ import System.Posix.Types (Fd(..))
+ import Text.Read (readMaybe)
+ import Warlock.Protocol.Codec (decodeServerChecked)
+@@ -102,6 +105,59 @@
+ requireRefusal :: Handle -> IO ()
+ requireRefusal h = readExpectedRefusal h >>= maybe (pure ()) (const (ioError (userError "refused request unexpectedly acknowledged")))
+ 
++-- QA metadata only. These fixed proc reads neither authenticate a sender nor
++-- grant an effect. Probe failure is incomplete evidence, not a fabricated map.
++contextLine :: String -> IO String
++contextLine phaseName = do
++ pid <- getProcessID
++ uid <- getRealUserID
++ euid <- getEffectiveUserID
++ gid <- getRealGroupID
++ egid <- getEffectiveGroupID
++ uidMap <- boundedProc "/proc/self/uid_map" 4096
++ gidMap <- boundedProc "/proc/self/gid_map" 4096
++ userNs <- readSymbolicLink "/proc/self/ns/user"
++ pidNs <- readSymbolicLink "/proc/self/ns/pid"
++ unless (length userNs<=64 && length pidNs<=64) (ioError (userError "context namespace bound"))
++ status <- boundedProc "/proc/self/status" 65536
++ eff <- capability "CapEff:" status
++ prm <- capability "CapPrm:" status
++ pure ("fixture_context " ++ show ["1",phaseName,show pid,show uid,show euid,show gid,show egid,C.unpack uidMap,C.unpack gidMap,userNs,pidNs,eff,prm])
++ where
++  boundedProc path bound = withBinaryFile path ReadMode $ \handle -> do
++   bytes <- B.hGet handle (bound+1)
++   unless (B.length bytes<=bound) (ioError (userError "context proc bound"))
++   pure bytes
++  capability name status = case [C.unpack value | line <- C.lines status, [field,value] <- [C.words line],field==C.pack name] of
++   [value] | length value==16 && all isHexDigit value -> pure value
++   _ -> ioError (userError "context capability field")
++
++withContextSink :: (Maybe Handle -> IO a) -> IO a
++withContextSink = bracket acquire release
++ where
++  acquire = do
++   selected <- lookupEnv "DEL010_CONTEXT_PATH"
++   case selected of
++    Nothing -> pure Nothing
++    Just path | not (null path) && head path=='/' -> do
++     result <- try (bracketOnError (openFd path WriteOnly defaultFileFlags {creat=Just 0o600,exclusive=True}) closeFd fdToHandle) :: IO (Either IOException Handle)
++     case result of
++      Right handle -> pure (Just handle)
++      Left _ -> putStrLn "fixture_context_error phase=open class=IOException" >> pure Nothing
++    _ -> putStrLn "fixture_context_error phase=open class=InvalidPath" >> pure Nothing
++  release Nothing = pure ()
++  release (Just handle) = hClose handle `catch` (\(_ :: IOException) -> putStrLn "fixture_context_error phase=close class=IOException")
++
++emitContext :: Maybe Handle -> String -> IO ()
++emitContext sink phaseName = do
++ observed <- try (contextLine phaseName) :: IO (Either IOException String)
++ let line=case observed of Right value -> value; Left _ -> "fixture_context_error phase=" ++ phaseName ++ " class=IOException"
++ putStrLn line
++ hFlush stdout
++ case sink of
++  Nothing -> pure ()
++  Just handle -> (hPutStrLn handle line >> hFlush handle) `catch` (\(_ :: IOException) -> putStrLn ("fixture_context_error phase=" ++ phaseName ++ " class=WriteFailure"))
++
+ persistentMain :: String -> IO ()
+ persistentMain mode = do
+  h <- fdToHandle (Fd 0)
+@@ -145,18 +201,21 @@
+   "persistent-cross-user-same-pid" -> do
+    sendFixture False h (persistentRequest seed 0)
+    requireAck h
+-   originalUid <- getRealUserID
+-   targetText <- lookupEnv "DEL010_WRITER_UID"
+-   target <- maybe (ioError (userError "actual delegated writer UID required")) pure (targetText >>= readMaybe)
+-   unless (target /= originalUid) (ioError (userError "cross-user fixture requires distinct UID"))
+-   setUserID target
+-   real <- getRealUserID
+-   effective <- getEffectiveUserID
+-   unless (real == target && effective == target) (ioError (userError "actual UID change failed"))
+-   pid <- getProcessID
+-   gid <- getRealGroupID
+-   putStrLn ("fixture_writer pid=" ++ show pid ++ " uid=" ++ show real ++ " gid=" ++ show gid)
+-   hFlush stdout
++   withContextSink $ \sink -> do
++    emitContext sink "before-setuid"
++    originalUid <- getRealUserID
++    targetText <- lookupEnv "DEL010_WRITER_UID"
++    target <- maybe (ioError (userError "actual delegated writer UID required")) pure (targetText >>= readMaybe)
++    unless (target /= originalUid) (ioError (userError "cross-user fixture requires distinct UID"))
++    setUserID target
++    real <- getRealUserID
++    effective <- getEffectiveUserID
++    unless (real == target && effective == target) (ioError (userError "actual UID change failed"))
++    pid <- getProcessID
++    gid <- getRealGroupID
++    putStrLn ("fixture_writer pid=" ++ show pid ++ " uid=" ++ show real ++ " gid=" ++ show gid)
++    hFlush stdout
++    emitContext sink "after-setuid"
+    sendFixture False h (persistentRequest seed 1)
+    requireRefusal h
+   _ -> ioError (userError "unknown persistent fixture mode")
+--- a/implementation/warlock/haskell/runtime/test-persistent/Main.hs
++++ b/implementation/warlock/haskell/runtime/test-persistent/Main.hs
+@@ -4,19 +4,23 @@
+ -- A callback is subsequent-policy entry, never proof of a native mutation.
+ module Main (main) where
+ 
+-import Control.Exception (SomeException,try)
++import Control.Exception (IOException,SomeException,bracket,bracketOnError,try)
+ import Control.Monad (forM,unless)
+ import qualified Crypto.Hash.SHA256 as SHA
+ import qualified Data.ByteString as B
+ import qualified Data.ByteString.Char8 as C
+-import Data.Char (ord)
++import Data.Char (isHexDigit,ord)
+ import Data.IORef (modifyIORef',newIORef,readIORef)
+ import Data.List (intercalate,nub,stripPrefix)
+ import Numeric (showHex)
+ import System.Environment (getArgs)
+-import System.FilePath (takeDirectory)
+-import System.Posix.Files (deviceID,fileID,fileSize,getSymbolicLinkStatus,isDirectory,isRegularFile)
+-import System.Posix.User (getRealUserID,getRealGroupID)
++import System.FilePath (takeDirectory,(</>))
++import System.IO (IOMode(ReadMode),hClose,withBinaryFile)
++import System.Posix.Directory (openDirStream,readDirStream,closeDirStream)
++import System.Posix.IO (OpenMode(ReadOnly),closeFd,defaultFileFlags,fdToHandle,openFd)
++import System.Posix.Process (getProcessID)
++import System.Posix.Files (deviceID,fileID,fileSize,fileMode,fileOwner,getFdStatus,getSymbolicLinkStatus,isDirectory,isRegularFile,linkCount,readSymbolicLink)
++import System.Posix.User (getRealUserID,getEffectiveUserID,getRealGroupID,getEffectiveGroupID)
+ import Text.Read (readMaybe)
+ import Warlock.Bootstrap
+ import Warlock.Capture.Process.Bootstrap (Captured(..),Containment(..),OwnerStatus(..),ToolError(BadArguments),selectedCustody,selectedContainment,selectedOperation,deadlineAfter)
+@@ -83,8 +87,116 @@
+  [[_,pid,uid,gid]] -> (,,) <$> (stripPrefix "pid=" pid >>= readMaybe) <*> (stripPrefix "uid=" uid >>= readMaybe) <*> (stripPrefix "gid=" gid >>= readMaybe)
+  _ -> Nothing
+ 
+-runCase :: Root -> [Pin] -> FilePath -> Integer -> B.ByteString -> Maybe Integer -> Case -> IO Bool
+-runCase root pins child size digest crossUid (Case name fixtureMode seed positive) = do
++-- QA metadata only. These fixed proc reads neither authenticate a sender nor
++-- grant an effect. Probe failure is incomplete evidence, not a fabricated map.
++contextLine :: String -> IO String
++contextLine phaseName = do
++ pid <- getProcessID
++ uid <- getRealUserID
++ euid <- getEffectiveUserID
++ gid <- getRealGroupID
++ egid <- getEffectiveGroupID
++ uidMap <- boundedProc "/proc/self/uid_map" 4096
++ gidMap <- boundedProc "/proc/self/gid_map" 4096
++ userNs <- readSymbolicLink "/proc/self/ns/user"
++ pidNs <- readSymbolicLink "/proc/self/ns/pid"
++ unless (length userNs<=64 && length pidNs<=64) (ioError (userError "context namespace bound"))
++ status <- boundedProc "/proc/self/status" 65536
++ eff <- capability "CapEff:" status
++ prm <- capability "CapPrm:" status
++ pure ("fixture_context " ++ show ["1",phaseName,show pid,show uid,show euid,show gid,show egid,C.unpack uidMap,C.unpack gidMap,userNs,pidNs,eff,prm])
++ where
++  boundedProc path bound = withBinaryFile path ReadMode $ \handle -> do
++   bytes <- B.hGet handle (bound+1)
++   unless (B.length bytes<=bound) (ioError (userError "context proc bound"))
++   pure bytes
++  capability name status = case [C.unpack value | line <- C.lines status, [field,value] <- [C.words line],field==C.pack name] of
++   [value] | length value==16 && all isHexDigit value -> pure value
++   _ -> ioError (userError "context capability field")
++
++type ContextRow = [(String,String)]
++type ContextPlan = (FilePath,(Integer,Integer))
++
++contextKeys :: [String]
++contextKeys = ["phase","pid","uid","euid","gid","egid","uidMap","gidMap","userNamespace","pidNamespace","capEff","capPrm"]
++
++parseContext :: String -> Maybe ContextRow
++parseContext line = do
++ raw <- stripPrefix "fixture_context " line
++ fields <- readMaybe raw :: Maybe [String]
++ case fields of
++  ["1",phaseName,pid,uid,euid,gid,egid,uidMap,gidMap,userNs,pidNs,eff,prm]
++   | phaseName `elem` ["receiver","before-setuid","after-setuid"]
++   , all natural [pid,uid,euid,gid,egid], pid/="0"
++   , validMap uidMap && validMap gidMap
++   , validNs "user:[" userNs && validNs "pid:[" pidNs
++   , all (\value -> length value==16 && all isHexDigit value) [eff,prm] ->
++    Just (zip contextKeys [phaseName,pid,uid,euid,gid,egid,uidMap,gidMap,userNs,pidNs,eff,prm])
++  _ -> Nothing
++ where
++  natural value = not (null value) && length value<=20 && all (\c -> c>='0' && c<='9') value && maybe False ((==value) . show) (readMaybe value :: Maybe Integer)
++  validMap value = length value<=4096 && not (null (lines value)) && all (\row -> case words row of
++   [inside,outside,count] -> all natural [inside,outside,count] && (readMaybe count :: Maybe Integer)>Just 0
++   _ -> False) (lines value)
++  validNs prefixValue value = length value<=64 && case stripPrefix prefixValue value of
++   Just suffix -> case reverse suffix of ']':digits -> natural (reverse digits); _ -> False
++   Nothing -> False
++
++contextJson :: ContextRow -> String
++contextJson fields = object [(key,if key `elem` ["pid","uid","euid","gid","egid"] then value else quote value) | (key,value) <- fields]
++
++privateDirectory :: FilePath -> IO (Integer,Integer)
++privateDirectory directory = do
++ uid <- getRealUserID
++ status <- getSymbolicLinkStatus directory
++ unless (not (null directory) && head directory=='/' && isDirectory status && fileOwner status==uid && fileMode status `mod` 512==0o700) (ioError (userError "private context directory required"))
++ pure (toInteger (deviceID status),toInteger (fileID status))
++
++prepareContext :: Maybe FilePath -> IO (Maybe ContextPlan)
++prepareContext Nothing = pure Nothing
++prepareContext (Just directory) = do
++ stamp <- privateDirectory directory
++ entries <- bracket (openDirStream directory) closeDirStream (\stream -> sequence [readDirStream stream,readDirStream stream,readDirStream stream])
++ unless (all (`elem` [".","..",""]) entries) (ioError (userError "fresh private context directory required"))
++ pure (Just (directory </> "sender-context.receipt",stamp))
++
++readContextReceipt :: ContextPlan -> IO B.ByteString
++readContextReceipt (path,stamp) = do
++ beforeDir <- privateDirectory (takeDirectory path)
++ unless (beforeDir==stamp) (ioError (userError "context directory identity changed"))
++ uid <- getRealUserID
++ before <- getSymbolicLinkStatus path
++ let fileStamp status=(deviceID status,fileID status,fileSize status,fileMode status,fileOwner status,linkCount status)
++ unless (isRegularFile before && fileOwner before==uid && fileMode before `mod` 512==0o600 && linkCount before==1 && fileSize before>0 && fileSize before<=40000) (ioError (userError "private context receipt required"))
++ bytes <- bracket (bracketOnError (openFd path ReadOnly defaultFileFlags) closeFd (\fd -> do
++   actual <- getFdStatus fd
++   unless (fileStamp actual==fileStamp before) (ioError (userError "context receipt identity changed"))
++   fdToHandle fd)) hClose (\handle -> B.hGet handle 40001)
++ after <- getSymbolicLinkStatus path
++ afterDir <- privateDirectory (takeDirectory path)
++ unless (fileStamp after==fileStamp before && afterDir==stamp && toInteger (B.length bytes)==toInteger (fileSize before)) (ioError (userError "context receipt changed"))
++ pure bytes
++
++contextEvidence :: Either IOException (Maybe ContextPlan) -> Either IOException String -> Either IOException String -> Maybe Integer -> Integer -> Integer -> Maybe Integer -> [CredentialObservation] -> Bool -> IO String
++contextEvidence plan receiverBefore receiverAfter selectedPid uid gid targetUid refusedTrace normal = do
++ receipt <- case plan of Right (Just selected) -> try (readContextReceipt selected); _ -> pure (Left (userError "context receipt not requested or unavailable"))
++ let receiver = either (const Nothing) parseContext receiverBefore
++     receiverStable = case (receiverBefore,receiverAfter) of (Right before,Right after) -> before==after; _ -> False
++     senders = either (const Nothing) (\bytes -> case lines (C.unpack bytes) of [before,after] -> (,) <$> parseContext before <*> parseContext after; _ -> Nothing) receipt
++     value key fields=lookup key fields
++     identity row=sequence [value key row >>= readMaybe | key <- ["pid","uid","euid","gid","egid"]] :: Maybe [Integer]
++     exactIdentity = case (senders,selectedPid,targetUid) of
++      (Just (before,after),Just pid,Just target) -> identity before==Just [pid,uid,uid,gid,gid] && identity after==Just [pid,target,target,gid,gid] && value "phase" before==Just "before-setuid" && value "phase" after==Just "after-setuid" && not (null refusedTrace) && all (\(CredentialObservation stage p u g) -> stage==FragmentObserved && (p,u,g)==(pid,target,gid)) refusedTrace
++      _ -> False
++     mapsAgree = case (receiver,senders) of
++      (Just host,Just (before,after)) -> all (\key -> value key host==value key before && value key before==value key after) ["uidMap","gidMap","userNamespace","pidNamespace"] && value "phase" host==Just "receiver" && (identity host >>= \ids -> case ids of [_,u,e,g,eg] -> Just [u,e,g,eg]; _ -> Nothing)==Just [uid,uid,gid,gid]
++      _ -> False
++     complete = normal && receiverStable && exactIdentity && mapsAgree
++     rowJson = maybe "null" contextJson
++ pure (object [("schema","1"),("contextEvidenceComplete",boolean complete),("receiverStable",boolean receiverStable),("senderIdsMatchKernelTrace",boolean exactIdentity),("sameMeasuredNamespaceAndMaps",boolean mapsAgree),("receiver",rowJson receiver),("senderBefore",maybe "null" (contextJson . fst) senders),("senderAfter",maybe "null" (contextJson . snd) senders),("receiptSHA256",either (const "null") (quote . sha) receipt),("receiptPath",case plan of Right (Just (path,_)) -> quote path; _ -> "null"),("status",quote (if complete then "complete" else "incomplete: missing, failed or mismatched actual context observation")),("authenticationVerdictIndependent","true"),("authority",quote "QA process self-observation only; recvmsg credentials and production admission trace remain authoritative")])
++
++runCase :: Root -> [Pin] -> FilePath -> Integer -> B.ByteString -> Maybe Integer -> Maybe FilePath -> Case -> IO Bool
++runCase root pins child size digest crossUid contextDirectory (Case name fixtureMode seed positive) = do
+  current <- newCurrentSessions
+  owner <- newBootstrapOwner current
+  callbackRows <- newIORef ([] :: [(B.ByteString,[CredentialObservation])])
+@@ -115,7 +227,11 @@
+   require "ACK send succeeds" (sent==Right ())) (\_ -> modifyIORef' failures (++["unexpected server callback"]))
+  writeIngress ingressSlot ingress
+  deadline <- deadlineAfter 5000000 >>= either (ioError . userError . show) pure
+- let environment=[("DEL010_MODE",fixtureMode),("DEL010_SEED",show seed),("LANG","C")] ++ maybe [] (\uid -> [("DEL010_WRITER_UID",show uid)]) crossUid
++ let isCross=fixtureMode=="persistent-cross-user-same-pid"
++ contextPlan <- if isCross then try (prepareContext contextDirectory) else pure (Right Nothing)
++ receiverBefore <- if isCross then try (contextLine "receiver") else pure (Right "")
++ let contextEnvironment=case contextPlan of Right (Just (path,_)) -> [("DEL010_CONTEXT_PATH",path)]; _ -> []
++     environment=[("DEL010_MODE",fixtureMode),("DEL010_SEED",show seed),("LANG","C")] ++ maybe [] (\uid -> [("DEL010_WRITER_UID",show uid)]) crossUid ++ contextEnvironment
+  attempt <- try (runBootstrap owner root pins (C.pack (drop 1 child)) [] size digest deadline environment ingress) :: IO (Either SomeException BootstrapResult)
+  trace <- bootstrapCredentialTrace owner
+  selectedPid <- bootstrapSelectedPid owner
+@@ -127,6 +243,7 @@
+  during <- readIORef retireDuring
+  uid <- toInteger <$> getRealUserID
+  gid <- toInteger <$> getRealGroupID
++ receiverAfter <- if isCross then try (contextLine "receiver") else pure (Right "")
+  let (complete,trailing)=groups trace
+      captured=case attempt of Right (Executed outcome) -> either (const Nothing) Just (selectedOperation outcome); _ -> Nothing
+      actualOutput=maybe B.empty output captured
+@@ -181,9 +298,15 @@
+     Nothing -> pure () -- Kernel recvmsg, not discarded stdout, is authoritative.
+     Just facts -> require "optional fork stdout corroborates actual kernel identity" (all (==facts) refusedFacts)
+   _ -> require "known negative fixture mode" False
++ contextFields <-
++  if isCross
++   then do
++    evidence <- contextEvidence contextPlan receiverBefore receiverAfter selectedPid uid gid crossUid trailing normal
++    pure [("credentialContextEvidence",evidence)]
++   else pure []
+  errors <- readIORef failures
+  let passed=null errors
+- putStrLn (object [("schema","1"),("requirement",quote "ELM-DEL-010"),("case",quote name),("mode",quote fixtureMode),("seed",show seed),("passed",boolean passed),("nativeEffectClaim","false"),("subsequentPolicyEntryCount",show (length callbacks)),("expectedRawFrames",array (map (quote . C.unpack) rawExpected)),("expectedFrameHashes",array (map (quote . sha) rawExpected)),("callbacks",array [object [("wire",quote (C.unpack bytes)),("credentialCheckpoint",array (map credentialJson checkpoint))] | (bytes,checkpoint) <- callbacks]),("credentials",array (map credentialJson trace)),("selectedPid",maybe "null" show selectedPid),("receiverUid",show uid),("receiverGid",show gid),("authObservation",quote (show observed)),("bootstrapResult",quote (show attempt)),("stdout",quote (C.unpack actualOutput)),("stderr",quote (C.unpack actualDiagnostics)),("retirement",quote (show retired)),("retirementDuringCallback",array (map boolean during)),("ingressState",quote (show ingressState)),("readerState",quote (show readerState)),("failures",array (map quote errors))])
++ putStrLn (object ([("schema","1"),("requirement",quote "ELM-DEL-010"),("case",quote name),("mode",quote fixtureMode),("seed",show seed),("passed",boolean passed),("nativeEffectClaim","false"),("subsequentPolicyEntryCount",show (length callbacks)),("expectedRawFrames",array (map (quote . C.unpack) rawExpected)),("expectedFrameHashes",array (map (quote . sha) rawExpected)),("callbacks",array [object [("wire",quote (C.unpack bytes)),("credentialCheckpoint",array (map credentialJson checkpoint))] | (bytes,checkpoint) <- callbacks]),("credentials",array (map credentialJson trace)),("selectedPid",maybe "null" show selectedPid),("receiverUid",show uid),("receiverGid",show gid),("authObservation",quote (show observed)),("bootstrapResult",quote (show attempt)),("stdout",quote (C.unpack actualOutput)),("stderr",quote (C.unpack actualDiagnostics)),("retirement",quote (show retired)),("retirementDuringCallback",array (map boolean during)),("ingressState",quote (show ingressState)),("readerState",quote (show readerState)),("failures",array (map quote errors))] ++ contextFields))
+  pure passed
+  where
+   writeIngress slot value = modifyIORef' slot (const (Just value))
+@@ -191,12 +314,15 @@
+ main :: IO ()
+ main = do
+  args <- getArgs
+- (child,dev,ino,size,digest,mode,crossUid) <- case args of
+-  [path,d,i,n,shaText,"common"] -> parsePins path d i n shaText "common" Nothing
++ (child,dev,ino,size,digest,mode,crossUid,contextDirectory) <- case args of
++  [path,d,i,n,shaText,"common"] -> parsePins path d i n shaText "common" Nothing Nothing
+   [path,d,i,n,shaText,"full",uidText] -> case readMaybe uidText of
+-   Just uid | uid==1 -> parsePins path d i n shaText "full" (Just uid)
++   Just uid | uid==1 -> parsePins path d i n shaText "full" (Just uid) Nothing
+    _ -> ioError (userError "full mode requires actual delegated writer UID1")
+-  _ -> ioError (userError "expected CHILD DEV INODE SIZE SHA common | CHILD DEV INODE SIZE SHA full 1")
++  [path,d,i,n,shaText,"full",uidText,directory] -> case readMaybe uidText of
++   Just uid | uid==1 && not (null directory) && head directory=='/' -> parsePins path d i n shaText "full" (Just uid) (Just directory)
++   _ -> ioError (userError "full context mode requires UID1 and trusted absolute private directory")
++  _ -> ioError (userError "expected CHILD DEV INODE SIZE SHA common | CHILD DEV INODE SIZE SHA full 1 [PRIVATE_CONTEXT_DIRECTORY]")
+  pins <- sourcePins child dev ino
+  bytes <- B.readFile child
+  check "independently supplied selected executable size/hash" (toInteger (B.length bytes)==size && C.pack (sha bytes)==digest)
+@@ -210,7 +336,7 @@
+      crossCases=if mode=="full" then [Case "actual-cross-user" "persistent-cross-user-same-pid" 20261031 False] else []
+  rootStat <- getSymbolicLinkStatus "/"
+  result <- withRoot "/" (Identity (toInteger (deviceID rootStat)) (toInteger (fileID rootStat))) $ \root -> forM (seeded++negatives++crossCases) $ \testCase -> do
+-  outcome <- try (runCase root pins child size digest crossUid testCase) :: IO (Either SomeException Bool)
++  outcome <- try (runCase root pins child size digest crossUid contextDirectory testCase) :: IO (Either SomeException Bool)
+   case outcome of
+    Right passed -> pure passed
+    Left problem -> do
+@@ -222,8 +348,8 @@
+  putStrLn (object [("schema","1"),("kind",quote "persistent-auth-verdict"),("mode",quote mode),("passed",boolean passed),("cases",show (length outcomes)),("crossUserIncluded",boolean (mode=="full")),("completeOriginalEvidence",boolean (passed && mode=="full")),("nativeExecutionAcceptance","false")])
+  check "persistent bootstrap controls failed; raw structured traces above are retained" passed
+  where
+-  parsePins path d i n shaText mode crossUid = case (readMaybe d,readMaybe i,readMaybe n) of
+-   (Just dev,Just ino,Just size) | not (null path) && head path=='/' && dev>=0 && ino>0 && size>0 && length shaText==64 -> pure (path,dev,ino,size,C.pack shaText,mode,crossUid)
++  parsePins path d i n shaText mode crossUid contextDirectory = case (readMaybe d,readMaybe i,readMaybe n) of
++   (Just dev,Just ino,Just size) | not (null path) && head path=='/' && dev>=0 && ino>0 && size>0 && length shaText==64 -> pure (path,dev,ino,size,C.pack shaText,mode,crossUid,contextDirectory)
+    _ -> ioError (userError "invalid trusted selected child pins")
+ 
+ sourcePins :: FilePath -> Integer -> Integer -> IO [Pin]

@@ -1,0 +1,394 @@
+1fa943fb2030b0af3deea45ec72b8e56b9e3e445707b0592c9f7cf91d9f9ff31  /home/charl/warlock-mvp-20261101T1058Z/source/implementation/warlock/haskell/mvp-dynamic.project
+53597b4868b1c2131b98669a56b5429f52906dcec3cdda8f3492001839f28a99  /home/charl/warlock-mvp-20261101T1058Z/build-dynamic/cabal.config
+27bfe6baeb0ab8c0191a40cc586b4575257383b16f26689091bc5420a560d0df  /usr/bin/ghc
+815c54b01e965ced2a84f0e46fc0932c94bd580d3044efc9b1106939bf780d95  /usr/bin/hsc2hs
+cabal-install version 3.10.3.0
+compiled using version 3.10.3.0 of the Cabal library 
+Resolving dependencies...
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - cryptohash-sha256-0.11.102.1 (lib) (first run)
+ - hsc2hs-0.68.10 (exe:hsc2hs) (first run)
+ - warlock-held-document-proposal-0.1.0.0 (lib) (first run)
+ - network-3.2.0.0 (lib:network) (first run)
+ - warlock-process-custody-0.1.0.0 (lib) (first run)
+ - warlock-protocol-0.1.0.0 (lib) (first run)
+ - warlock-runtime-0.1.0.0 (exe:credential-peer-child) (first run)
+ - warlock-runtime-0.1.0.0 (lib) (first run)
+ - warlock-runtime-0.1.0.0 (test:persistent-bootstrap-controls) (first run)
+Configuring library for cryptohash-sha256-0.11.102.1..
+Preprocessing library for cryptohash-sha256-0.11.102.1..
+Building library for cryptohash-sha256-0.11.102.1..
+[1 of 3] Compiling Compat           ( src/Compat.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/Compat.dyn_o )
+[2 of 3] Compiling Crypto.Hash.SHA256.FFI ( src/Crypto/Hash/SHA256/FFI.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/Crypto/Hash/SHA256/FFI.dyn_o )
+[3 of 3] Compiling Crypto.Hash.SHA256 ( src/Crypto/Hash/SHA256.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/Crypto/Hash/SHA256.dyn_o )
+Configuring executable 'hsc2hs' for hsc2hs-0.68.10..
+Preprocessing executable 'hsc2hs' for hsc2hs-0.68.10..
+Building executable 'hsc2hs' for hsc2hs-0.68.10..
+[ 1 of 12] Compiling ATTParser        ( src/ATTParser.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/ATTParser.dyn_o )
+[ 2 of 12] Compiling Compat.ResponseFile ( src/Compat/ResponseFile.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/Compat/ResponseFile.dyn_o )
+[ 3 of 12] Compiling Compat.TempFile  ( src/Compat/TempFile.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/Compat/TempFile.dyn_o )
+[ 4 of 12] Compiling Common           ( src/Common.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/Common.dyn_o )
+[ 5 of 12] Compiling Flags            ( src/Flags.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/Flags.dyn_o )
+[ 6 of 12] Compiling HSCParser        ( src/HSCParser.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/HSCParser.dyn_o )
+[ 7 of 12] Compiling C                ( src/C.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/C.dyn_o )
+[ 8 of 12] Compiling CrossCodegen     ( src/CrossCodegen.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/CrossCodegen.dyn_o )
+[ 9 of 12] Compiling Paths_hsc2hs     ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/autogen/Paths_hsc2hs.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/Paths_hsc2hs.dyn_o )
+[10 of 12] Compiling UtilsCodegen     ( src/UtilsCodegen.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/UtilsCodegen.dyn_o )
+[11 of 12] Compiling DirectCodegen    ( src/DirectCodegen.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/DirectCodegen.dyn_o )
+[12 of 12] Compiling Main             ( src/Main.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs-tmp/Main.dyn_o )
+[13 of 13] Linking /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/hsc2hs-0.68.10/x/hsc2hs/build/hsc2hs/hsc2hs
+Configuring library for warlock-held-document-proposal-0.1.0.0..
+Preprocessing library for warlock-held-document-proposal-0.1.0.0..
+Building library for warlock-held-document-proposal-0.1.0.0..
+[1 of 6] Compiling Warlock.Platform.Descriptor ( src/Warlock/Platform/Descriptor.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/Warlock/Platform/Descriptor.dyn_o )
+[2 of 6] Compiling Warlock.Platform.Resolver.Internal ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/Warlock/Platform/Resolver/Internal.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/Warlock/Platform/Resolver/Internal.dyn_o )
+[3 of 6] Compiling Warlock.Platform.Resolver ( src/Warlock/Platform/Resolver.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/Warlock/Platform/Resolver.dyn_o )
+[4 of 6] Compiling Warlock.Http.Document ( src/Warlock/Http/Document.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/Warlock/Http/Document.dyn_o )
+[5 of 6] Compiling Warlock.Platform.Executable.Internal ( src/Warlock/Platform/Executable/Internal.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/Warlock/Platform/Executable/Internal.dyn_o )
+[6 of 6] Compiling Warlock.Platform.Executable ( src/Warlock/Platform/Executable.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/Warlock/Platform/Executable.dyn_o )
+Configuring network-3.2.0.0...
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for gcc... /usr/bin/gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether /usr/bin/gcc accepts -g... yes
+checking for /usr/bin/gcc option to enable C11 features... none needed
+checking for an ANSI C-conforming const... yes
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for limits.h... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for fcntl.h... yes
+checking for sys/uio.h... yes
+checking for sys/socket.h... yes
+checking for netinet/in.h... yes
+checking for netinet/tcp.h... yes
+checking for sys/un.h... yes
+checking for arpa/inet.h... yes
+checking for netdb.h... yes
+checking for net/if.h... yes
+checking for netioapi.h... no
+checking for struct ucred... yes
+checking for gai_strerror... yes
+checking for gethostent... yes
+checking for accept4... yes
+checking for getpeereid... no
+checking for /usr/bin/gcc options needed to detect all undeclared functions... none needed
+checking whether AI_ADDRCONFIG is declared... yes
+checking whether AI_ALL is declared... yes
+checking whether AI_NUMERICSERV is declared... yes
+checking whether AI_V4MAPPED is declared... yes
+checking whether IPV6_V6ONLY is declared... yes
+checking whether IPPROTO_IP is declared... yes
+checking whether IPPROTO_TCP is declared... yes
+checking whether IPPROTO_IPV6 is declared... yes
+checking whether SO_PEERCRED is declared... yes
+checking for struct msghdr.msg_control... yes
+checking for struct msghdr.msg_accrights... no
+checking for struct sockaddr.sa_len... no
+configure: creating ./network.buildinfo
+configure: creating ./config.status
+config.status: creating include/HsNetworkConfig.h
+Preprocessing library for network-3.2.0.0..
+Building library for network-3.2.0.0..
+[ 1 of 28] Compiling Network.Socket.Imports ( Network/Socket/Imports.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Imports.dyn_o )
+[ 2 of 28] Compiling Network.Socket.If ( Network/Socket/If.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/If.dyn_o )
+[ 3 of 28] Compiling Network.Socket.Flag ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Flag.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Flag.dyn_o )
+[ 4 of 28] Compiling Network.Socket.Cbits ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Cbits.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Cbits.dyn_o )
+[ 5 of 28] Compiling Network.Socket.Fcntl ( Network/Socket/Fcntl.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Fcntl.dyn_o )
+[ 6 of 28] Compiling Network.Socket.Posix.IOVec ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Posix/IOVec.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Posix/IOVec.dyn_o )
+[ 7 of 28] Compiling Network.Socket.ReadShow ( Network/Socket/ReadShow.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/ReadShow.dyn_o )
+[ 8 of 28] Compiling Network.Socket.Types ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Types.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Types.dyn_o )
+[ 9 of 28] Compiling Network.Socket.Posix.Cmsg ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Posix/Cmsg.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Posix/Cmsg.dyn_o )
+[10 of 28] Compiling Network.Socket.Internal ( Network/Socket/Internal.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Internal.dyn_o )
+[11 of 28] Compiling Network.Socket.Posix.MsgHdr ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Posix/MsgHdr.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Posix/MsgHdr.dyn_o )
+[12 of 28] Compiling Network.Socket.Posix.CmsgHdr ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Posix/CmsgHdr.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Posix/CmsgHdr.dyn_o )
+[13 of 28] Compiling Network.Socket.Options ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Options.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Options.dyn_o )
+[14 of 28] Compiling Network.Socket.Syscall ( Network/Socket/Syscall.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Syscall.dyn_o )
+[15 of 28] Compiling Network.Socket.Name ( Network/Socket/Name.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Name.dyn_o )
+[16 of 28] Compiling Network.Socket.Info ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Info.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Info.dyn_o )
+[17 of 28] Compiling Network.Socket.Handle ( Network/Socket/Handle.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Handle.dyn_o )
+[18 of 28] Compiling Network.Socket.ByteString.Internal ( Network/Socket/ByteString/Internal.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/ByteString/Internal.dyn_o )
+[19 of 28] Compiling Network.Socket.Buffer ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Buffer.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Buffer.dyn_o )
+[20 of 28] Compiling Network.Socket.SockAddr ( Network/Socket/SockAddr.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/SockAddr.dyn_o )
+[21 of 28] Compiling Network.Socket.Shutdown ( Network/Socket/Shutdown.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Shutdown.dyn_o )
+[22 of 28] Compiling Network.Socket.ByteString.IO ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/ByteString/IO.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/ByteString/IO.dyn_o )
+[23 of 28] Compiling Network.Socket.ByteString.Lazy.Posix ( Network/Socket/ByteString/Lazy/Posix.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/ByteString/Lazy/Posix.dyn_o )
+[24 of 28] Compiling Network.Socket.ByteString ( Network/Socket/ByteString.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/ByteString.dyn_o )
+[25 of 28] Compiling Network.Socket.Address ( Network/Socket/Address.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Address.dyn_o )
+[26 of 28] Compiling Network.Socket.Unix ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Unix.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/Unix.dyn_o )
+[27 of 28] Compiling Network.Socket   ( Network/Socket.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket.dyn_o )
+[28 of 28] Compiling Network.Socket.ByteString.Lazy ( Network/Socket/ByteString/Lazy.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/Network/Socket/ByteString/Lazy.dyn_o )
+Configuring library for warlock-process-custody-0.1.0.0..
+Preprocessing library for warlock-process-custody-0.1.0.0..
+Building library for warlock-process-custody-0.1.0.0..
+[1 of 8] Compiling Warlock.Capture.Process.Lease ( src/Warlock/Capture/Process/Lease.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Lease.dyn_o )
+[2 of 8] Compiling Warlock.Capture.Process.Transfer.Internal ( src/Warlock/Capture/Process/Transfer/Internal.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Transfer/Internal.dyn_o )
+[3 of 8] Compiling Warlock.Capture.Process.Transfer ( src/Warlock/Capture/Process/Transfer.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Transfer.dyn_o )
+[4 of 8] Compiling Warlock.Capture.Process.Owner ( src/Warlock/Capture/Process/Owner.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Owner.dyn_o )
+[5 of 8] Compiling Warlock.Capture.Process.Whitelist ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Whitelist.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Whitelist.dyn_o )
+[6 of 8] Compiling Warlock.Capture.Process.Internal ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Internal.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Internal.dyn_o )
+[7 of 8] Compiling Warlock.Capture.Process.Bootstrap ( src/Warlock/Capture/Process/Bootstrap.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process/Bootstrap.dyn_o )
+[8 of 8] Compiling Warlock.Capture.Process ( src/Warlock/Capture/Process.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/Warlock/Capture/Process.dyn_o )
+Configuring library for warlock-protocol-0.1.0.0..
+Preprocessing library for warlock-protocol-0.1.0.0..
+Building library for warlock-protocol-0.1.0.0..
+[ 1 of 22] Compiling Warlock.Protocol.Identity ( src/Warlock/Protocol/Identity.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Identity.dyn_o )
+[ 2 of 22] Compiling Warlock.Protocol.Custody ( src/Warlock/Protocol/Custody.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Custody.dyn_o )
+[ 3 of 22] Compiling Warlock.Protocol.Profile ( src/Warlock/Protocol/Profile.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Profile.dyn_o )
+[ 4 of 22] Compiling Warlock.Protocol.StrictJson ( src/Warlock/Protocol/StrictJson.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/StrictJson.dyn_o )
+[ 5 of 22] Compiling Warlock.Protocol.Wire ( src/Warlock/Protocol/Wire.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Wire.dyn_o )
+[ 6 of 22] Compiling Warlock.Protocol.Server ( src/Warlock/Protocol/Server.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Server.dyn_o )
+[ 7 of 22] Compiling Warlock.Protocol.Lifecycle ( src/Warlock/Protocol/Lifecycle.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Lifecycle.dyn_o )
+[ 8 of 22] Compiling Warlock.Protocol.Desktop ( src/Warlock/Protocol/Desktop.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Desktop.dyn_o )
+[ 9 of 22] Compiling Warlock.Protocol.Codec ( src/Warlock/Protocol/Codec.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Codec.dyn_o )
+[10 of 22] Compiling Warlock.Protocol.Boundary.Internal ( src/Warlock/Protocol/Boundary/Internal.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Boundary/Internal.dyn_o )
+[11 of 22] Compiling Warlock.Protocol.Boundary ( src/Warlock/Protocol/Boundary.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Boundary.dyn_o )
+[12 of 22] Compiling Warlock.Transport.Frame ( src/Warlock/Transport/Frame.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Transport/Frame.dyn_o )
+[13 of 22] Compiling Warlock.Protocol.Framing ( src/Warlock/Protocol/Framing.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Framing.dyn_o )
+[14 of 22] Compiling Warlock.Transport.PeerCredentials ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Transport/PeerCredentials.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Transport/PeerCredentials.dyn_o )
+[15 of 22] Compiling Warlock.Protocol.PeerCredential ( src/Warlock/Protocol/PeerCredential.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/PeerCredential.dyn_o )
+[16 of 22] Compiling Warlock.Protocol.CredentialGuard ( src/Warlock/Protocol/CredentialGuard.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/CredentialGuard.dyn_o )
+[17 of 22] Compiling Warlock.Transport.SocketFlags ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Transport/SocketFlags.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Transport/SocketFlags.dyn_o )
+[18 of 22] Compiling Warlock.Transport.Channel ( src/Warlock/Transport/Channel.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Transport/Channel.dyn_o )
+[19 of 22] Compiling Warlock.Protocol.Ingress.Internal ( src/Warlock/Protocol/Ingress/Internal.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Ingress/Internal.dyn_o )
+[20 of 22] Compiling Warlock.Protocol.Ingress ( src/Warlock/Protocol/Ingress.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/Ingress.dyn_o )
+[21 of 22] Compiling Warlock.Protocol.CredentialIngress ( src/Warlock/Protocol/CredentialIngress.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/CredentialIngress.dyn_o )
+[22 of 22] Compiling Warlock.Protocol.EngineTransport ( src/Warlock/Protocol/EngineTransport.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/Warlock/Protocol/EngineTransport.dyn_o )
+Configuring executable 'credential-peer-child' for warlock-runtime-0.1.0.0..
+Preprocessing executable 'credential-peer-child' for warlock-runtime-0.1.0.0..
+Building executable 'credential-peer-child' for warlock-runtime-0.1.0.0..
+[1 of 1] Compiling Main             ( fixture-peer/Main.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/credential-peer-child/build/credential-peer-child/credential-peer-child-tmp/Main.dyn_o )
+[2 of 2] Linking /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/credential-peer-child/build/credential-peer-child/credential-peer-child
+Configuring library for warlock-runtime-0.1.0.0..
+Preprocessing library for warlock-runtime-0.1.0.0..
+Building library for warlock-runtime-0.1.0.0..
+[ 1 of 22] Compiling Warlock.Backend.Store ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Backend/Store.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Backend/Store.dyn_o )
+[ 2 of 22] Compiling Warlock.Backend.PinStore ( src/Warlock/Backend/PinStore.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Backend/PinStore.dyn_o )
+[ 3 of 22] Compiling Warlock.Backend.Catalog ( src/Warlock/Backend/Catalog.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Backend/Catalog.dyn_o )
+[ 4 of 22] Compiling Warlock.Bootstrap.ScopedPeer ( src/Warlock/Bootstrap/ScopedPeer.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Bootstrap/ScopedPeer.dyn_o )
+[ 5 of 22] Compiling Warlock.Bootstrap.CurrentSessions ( src/Warlock/Bootstrap/CurrentSessions.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Bootstrap/CurrentSessions.dyn_o )
+[ 6 of 22] Compiling Warlock.Bootstrap.CredentialScopeGuard ( src/Warlock/Bootstrap/CredentialScopeGuard.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Bootstrap/CredentialScopeGuard.dyn_o )
+[ 7 of 22] Compiling Warlock.Bootstrap.SocketOwner ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Bootstrap/SocketOwner.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Bootstrap/SocketOwner.dyn_o )
+[ 8 of 22] Compiling Warlock.Bootstrap.Aggregate ( src/Warlock/Bootstrap/Aggregate.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Bootstrap/Aggregate.dyn_o )
+[ 9 of 22] Compiling Warlock.Bootstrap ( src/Warlock/Bootstrap.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Bootstrap.dyn_o )
+[10 of 22] Compiling Warlock.Ui.Display ( src/Warlock/Ui/Display.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/Display.dyn_o )
+[11 of 22] Compiling Warlock.Backend  ( src/Warlock/Backend.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Backend.dyn_o )
+[12 of 22] Compiling Warlock.Ui.EngineDeadline ( src/Warlock/Ui/EngineDeadline.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/EngineDeadline.dyn_o )
+[13 of 22] Compiling Warlock.Ui.Http  ( src/Warlock/Ui/Http.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/Http.dyn_o )
+[14 of 22] Compiling Warlock.Ui.Native ( src/Warlock/Ui/Native.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/Native.dyn_o )
+[15 of 22] Compiling Warlock.Ui.Policy ( src/Warlock/Ui/Policy.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/Policy.dyn_o )
+[16 of 22] Compiling Warlock.Ui.EngineProtocol ( src/Warlock/Ui/EngineProtocol.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/EngineProtocol.dyn_o )
+[17 of 22] Compiling Warlock.Ui.Config ( src/Warlock/Ui/Config.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/Config.dyn_o )
+[18 of 22] Compiling Warlock.Ui.PrivateNetwork ( /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/PrivateNetwork.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/PrivateNetwork.dyn_o )
+[19 of 22] Compiling Warlock.Ui.Owner ( src/Warlock/Ui/Owner.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/Owner.dyn_o )
+[20 of 22] Compiling Warlock.Ui.EngineAdapter ( src/Warlock/Ui/EngineAdapter.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/EngineAdapter.dyn_o )
+[21 of 22] Compiling Warlock.Ui.EngineBroker ( src/Warlock/Ui/EngineBroker.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/EngineBroker.dyn_o )
+[22 of 22] Compiling Warlock.Ui.ThreadNamespace ( src/Warlock/Ui/ThreadNamespace.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/Warlock/Ui/ThreadNamespace.dyn_o )
+Configuring test suite 'persistent-bootstrap-controls' for warlock-runtime-0.1.0.0..
+Preprocessing test suite 'persistent-bootstrap-controls' for warlock-runtime-0.1.0.0..
+Building test suite 'persistent-bootstrap-controls' for warlock-runtime-0.1.0.0..
+[1 of 1] Compiling Main             ( test-persistent/Main.hs, /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/persistent-bootstrap-controls/build/persistent-bootstrap-controls/persistent-bootstrap-controls-tmp/Main.dyn_o )
+[2 of 2] Linking /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/persistent-bootstrap-controls/build/persistent-bootstrap-controls/persistent-bootstrap-controls
+3e869bdd1db2675afb768a5b57a2a35e8ccbcf2dea9770fe6880b59f41f602d8  /home/charl/warlock-del010-cross-user-20261102T011435Z/assets/credential-peer-child
+
+Dynamic section at offset 0x12810 contains 53 entries:
+  Tag        Type                         Name/Value
+ 0x0000000000000003 (PLTGOT)             0x413fe8
+ 0x0000000000000002 (PLTRELSZ)           240 (bytes)
+ 0x0000000000000017 (JMPREL)             0x407080
+ 0x0000000000000014 (PLTREL)             RELA
+ 0x0000000000000007 (RELA)               0x403df8
+ 0x0000000000000008 (RELASZ)             12936 (bytes)
+ 0x0000000000000009 (RELAENT)            24 (bytes)
+ 0x0000000000000015 (DEBUG)              0x0
+ 0x0000000000000006 (SYMTAB)             0x400308
+ 0x000000000000000b (SYMENT)             24 (bytes)
+ 0x0000000000000005 (STRTAB)             0x4015c8
+ 0x000000000000000a (STRSZ)              9786 (bytes)
+ 0x000000006ffffef5 (GNU_HASH)           0x403c08
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSrts-1.0.2_thr-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-prim-0.10.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-bignum-1.3-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSbase-4.18.3.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSarray-0.5.8.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSdeepseq-1.4.8.1-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-boot-th-9.6.7-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSpretty-1.1.3.6-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHStemplate-haskell-2.20.0.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSbytestring-0.11.5.4-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHStransformers-0.6.1.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSmtl-2.3.1-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSstm-2.5.1.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSexceptions-0.10.7-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSfilepath-1.4.301.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHStime-1.12.2-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSunix-2.8.6.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHScontainers-0.6.7-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSdirectory-1.3.8.5-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSbinary-0.8.9.1-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHStext-2.0.2-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgmp.so.10]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libffi.so.8]
+ 0x0000000000000001 (NEEDED)             Shared library: [libnuma.so.1]
+ 0x000000000000000c (INIT)               0x407170
+ 0x000000000000000d (FINI)               0x411b24
+ 0x000000000000001a (FINI_ARRAY)         0x413800
+ 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)
+ 0x0000000000000019 (INIT_ARRAY)         0x413808
+ 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)
+ 0x000000000000001d (RUNPATH)            Library runpath: [/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build:/usr/lib:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build]
+ 0x000000006ffffff0 (VERSYM)             0x403c38
+ 0x000000006ffffffe (VERNEED)            0x403dc8
+ 0x000000006fffffff (VERNEEDNUM)         1
+ 0x0000000000000000 (NULL)               0x0
+	linux-vdso.so.1 (0x00007f084f57f000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007f084f415000)
+	libHSrts-1.0.2_thr-ghc9.6.7.so => /usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so (0x00007f084f35c000)
+	libHSghc-prim-0.10.0-ghc9.6.7.so => /usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so (0x00007f084ee00000)
+	libHSghc-bignum-1.3-ghc9.6.7.so => /usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so (0x00007f084f305000)
+	libHSbase-4.18.3.0-ghc9.6.7.so => /usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so (0x00007f084e200000)
+	libHSarray-0.5.8.0-ghc9.6.7.so => /usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so (0x00007f084e178000)
+	libHSdeepseq-1.4.8.1-ghc9.6.7.so => /usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so (0x00007f084ede2000)
+	libHSghc-boot-th-9.6.7-ghc9.6.7.so => /usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so (0x00007f084e137000)
+	libHSpretty-1.1.3.6-ghc9.6.7.so => /usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so (0x00007f084e0c4000)
+	libHStemplate-haskell-2.20.0.0-ghc9.6.7.so => /usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so (0x00007f084dc00000)
+	libHSbytestring-0.11.5.4-ghc9.6.7.so => /usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so (0x00007f084da9a000)
+	libHStransformers-0.6.1.0-ghc9.6.7.so => /usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so (0x00007f084d97d000)
+	libHSmtl-2.3.1-ghc9.6.7.so => /usr/lib/libHSmtl-2.3.1-ghc9.6.7.so (0x00007f084e073000)
+	libHSstm-2.5.1.0-ghc9.6.7.so => /usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so (0x00007f084e051000)
+	libHSexceptions-0.10.7-ghc9.6.7.so => /usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so (0x00007f084e00d000)
+	libHSfilepath-1.4.301.0-ghc9.6.7.so => /usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so (0x00007f084d8b3000)
+	libHStime-1.12.2-ghc9.6.7.so => /usr/lib/libHStime-1.12.2-ghc9.6.7.so (0x00007f084d726000)
+	libHSunix-2.8.6.0-ghc9.6.7.so => /usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so (0x00007f084d5dd000)
+	libHScontainers-0.6.7-ghc9.6.7.so => /usr/lib/libHScontainers-0.6.7-ghc9.6.7.so (0x00007f084d200000)
+	libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so (0x00007f084edd0000)
+	libHSdirectory-1.3.8.5-ghc9.6.7.so => /usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so (0x00007f084d17e000)
+	libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so (0x00007f084d0ac000)
+	libHSbinary-0.8.9.1-ghc9.6.7.so => /usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so (0x00007f084cfde000)
+	libHStext-2.0.2-ghc9.6.7.so => /usr/lib/libHStext-2.0.2-ghc9.6.7.so (0x00007f084cc00000)
+	libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so (0x00007f084ca87000)
+	libgmp.so.10 => /usr/lib/libgmp.so.10 (0x00007f084cf37000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007f084c800000)
+	libffi.so.8 => /usr/lib/libffi.so.8 (0x00007f084dfff000)
+	libnuma.so.1 => /usr/lib/libnuma.so.1 (0x00007f084dff1000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f084f581000)
+73b70e273f8b00d688823a75f29f2d0a09a1261999b087e03e115950ad3085a2  /home/charl/warlock-del010-cross-user-20261102T011435Z/assets/persistent-bootstrap-controls
+
+Dynamic section at offset 0x344b8 contains 58 entries:
+  Tag        Type                         Name/Value
+ 0x0000000000000003 (PLTGOT)             0x435fe8
+ 0x0000000000000002 (PLTRELSZ)           264 (bytes)
+ 0x0000000000000017 (JMPREL)             0x40e118
+ 0x0000000000000014 (PLTREL)             RELA
+ 0x0000000000000007 (RELA)               0x406ff0
+ 0x0000000000000008 (RELASZ)             28968 (bytes)
+ 0x0000000000000009 (RELAENT)            24 (bytes)
+ 0x0000000000000015 (DEBUG)              0x0
+ 0x0000000000000006 (SYMTAB)             0x400308
+ 0x000000000000000b (SYMENT)             24 (bytes)
+ 0x0000000000000005 (STRTAB)             0x402228
+ 0x000000000000000a (STRSZ)              19145 (bytes)
+ 0x000000006ffffef5 (GNU_HASH)           0x406cf8
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSrts-1.0.2_thr-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-prim-0.10.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-bignum-1.3-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSbase-4.18.3.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSarray-0.5.8.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSdeepseq-1.4.8.1-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-boot-th-9.6.7-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSpretty-1.1.3.6-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHStemplate-haskell-2.20.0.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSbytestring-0.11.5.4-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHStransformers-0.6.1.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSmtl-2.3.1-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSstm-2.5.1.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSexceptions-0.10.7-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSfilepath-1.4.301.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHStime-1.12.2-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSunix-2.8.6.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHScontainers-0.6.7-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSdirectory-1.3.8.5-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSprocess-1.6.19.0-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSbinary-0.8.9.1-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHStext-2.0.2-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libglib-2.0.so.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgmp.so.10]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libffi.so.8]
+ 0x0000000000000001 (NEEDED)             Shared library: [libnuma.so.1]
+ 0x000000000000000c (INIT)               0x40e220
+ 0x000000000000000d (FINI)               0x432860
+ 0x000000000000001a (FINI_ARRAY)         0x4354a8
+ 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)
+ 0x0000000000000019 (INIT_ARRAY)         0x4354b0
+ 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)
+ 0x000000000000001d (RUNPATH)            Library runpath: [/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build:/usr/lib:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build]
+ 0x000000006ffffff0 (VERSYM)             0x406d28
+ 0x000000006ffffffe (VERNEED)            0x406fc0
+ 0x000000006fffffff (VERNEEDNUM)         1
+ 0x0000000000000000 (NULL)               0x0
+	linux-vdso.so.1 (0x00007fa02b9cb000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007fa02b861000)
+	libHSrts-1.0.2_thr-ghc9.6.7.so => /usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so (0x00007fa02b7a8000)
+	libHSghc-prim-0.10.0-ghc9.6.7.so => /usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so (0x00007fa02b200000)
+	libHSghc-bignum-1.3-ghc9.6.7.so => /usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so (0x00007fa02b751000)
+	libHSbase-4.18.3.0-ghc9.6.7.so => /usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so (0x00007fa02a600000)
+	libHSarray-0.5.8.0-ghc9.6.7.so => /usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so (0x00007fa02a578000)
+	libHSdeepseq-1.4.8.1-ghc9.6.7.so => /usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so (0x00007fa02b733000)
+	libHSghc-boot-th-9.6.7-ghc9.6.7.so => /usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so (0x00007fa02a537000)
+	libHSpretty-1.1.3.6-ghc9.6.7.so => /usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so (0x00007fa02a4c4000)
+	libHStemplate-haskell-2.20.0.0-ghc9.6.7.so => /usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so (0x00007fa02a000000)
+	libHSbytestring-0.11.5.4-ghc9.6.7.so => /usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so (0x00007fa029e9a000)
+	libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so (0x00007fa02b71f000)
+	libHStransformers-0.6.1.0-ghc9.6.7.so => /usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so (0x00007fa029d7d000)
+	libHSmtl-2.3.1-ghc9.6.7.so => /usr/lib/libHSmtl-2.3.1-ghc9.6.7.so (0x00007fa02a473000)
+	libHSstm-2.5.1.0-ghc9.6.7.so => /usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so (0x00007fa02b6fb000)
+	libHSexceptions-0.10.7-ghc9.6.7.so => /usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so (0x00007fa02a42f000)
+	libHSfilepath-1.4.301.0-ghc9.6.7.so => /usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so (0x00007fa029cb3000)
+	libHStime-1.12.2-ghc9.6.7.so => /usr/lib/libHStime-1.12.2-ghc9.6.7.so (0x00007fa029b26000)
+	libHSunix-2.8.6.0-ghc9.6.7.so => /usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so (0x00007fa0299dd000)
+	libHScontainers-0.6.7-ghc9.6.7.so => /usr/lib/libHScontainers-0.6.7-ghc9.6.7.so (0x00007fa029600000)
+	libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so (0x00007fa02a3d0000)
+	libHSdirectory-1.3.8.5-ghc9.6.7.so => /usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so (0x00007fa02957e000)
+	libHSprocess-1.6.19.0-ghc9.6.7.so => /usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so (0x00007fa02999c000)
+	libHSbinary-0.8.9.1-ghc9.6.7.so => /usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so (0x00007fa0294b0000)
+	libHStext-2.0.2-ghc9.6.7.so => /usr/lib/libHStext-2.0.2-ghc9.6.7.so (0x00007fa029000000)
+	libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so (0x00007fa029414000)
+	libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so (0x00007fa029342000)
+	libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so (0x00007fa028e87000)
+	libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so (0x00007fa028c9e000)
+	libglib-2.0.so.0 => /usr/lib/libglib-2.0.so.0 (0x00007fa028b39000)
+	libgmp.so.10 => /usr/lib/libgmp.so.10 (0x00007fa028a92000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007fa028800000)
+	libffi.so.8 => /usr/lib/libffi.so.8 (0x00007fa02b1f0000)
+	libnuma.so.1 => /usr/lib/libnuma.so.1 (0x00007fa02b1e2000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fa02b9cd000)
+	libpcre2-8.so.0 => /usr/lib/libpcre2-8.so.0 (0x00007fa02874d000)

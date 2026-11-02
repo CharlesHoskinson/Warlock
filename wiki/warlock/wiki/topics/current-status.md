@@ -1,15 +1,19 @@
 ---
 title: "Warlock current knowledge status"
 created: 2026-10-29
-updated: 2026-11-01
+updated: 2026-11-02
 tags: [warlock, architecture, evidence]
 category: topic
 volatility: hot
 sources: [raw/notes/2026-10-29-shortcut-draft-production-baseline.md, raw/notes/2026-10-29-knowledge-space-and-delivery-observation.md, raw/notes/2026-10-31-receipt-states.md]
-summary: "17 whole original requirements/41scenarios accepted; TEA005 closes on actual Elm/Haskell adapter evidence. Current VM readiness failure and persistent native desktop/release work remain open."
+summary: "18 whole original requirements/42scenarios accepted; actual DEL010 cross-user trace passes, pending immutable review. Persistent runtime/native/release remain open."
 ---
 
 # Current status
+
+As of November2 01:38UTC: **18/242 whole requirements and42/417scenarios accepted**. Actual current Haskell authentication passes15cases including measured samePID UID0-to1 refusal; [component evidence](../../../../docs/warlock-build-loop/v2/persistent-auth-cross-user-20261102.json) awaits immutable independent original adjudication. The old guardian negative scan had the wrong parent path; the separately retained correct-path current scan passes positive/negative controls without repairing old history. Native GUI/provider/AT/IME/hardware/resource/release remain open;15roles continue.
+
+## Prior dated status (retained)
 
 As of November1 21:20UTC: **17/242 whole requirements and41/417scenarios accepted**. [Whole005 acceptance](../../../../docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json) binds every original adapter clause to published `45ba9ad19`; Root protected7roots/5262HTTP/87typed/58complete histories and10Haskellsuites/273models, with independent374regularblob union. This is existing adapter verification, not a new GUI behavior. All15roles continue; Root owns serialized protected checks. Current Omarchy readiness failed because the popup painted before the toolbar; wait for the actual Applications button in the next unchanged28s trial. Native/provider, AT/IME, hardware, TEA001 and release remain unaccepted. [Immutable dated observation](../../raw/notes/2026-11-01-narrow-interop.md).
 

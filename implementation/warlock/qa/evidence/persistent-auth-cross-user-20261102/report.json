@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-02T01:37:34.715596+00:00",
+  "requirement": "ELM-DEL-010",
+  "originalEARS": "The native service SHALL authenticate bridge peers by local user identity and approved session lifetime before accepting effect requests.",
+  "originalVerification": "Retain peer-credential traces for allowed and cross-user/replayed sessions.",
+  "originalScenarios": [
+    "delivery-010",
+    "peer-wrong-session",
+    "peer-approved-session"
+  ],
+  "disposition": "actual-component-pass-awaiting-immutable-independent-original-adjudication",
+  "sourceRevisionBeforeQaChange": "8d1100f0e84461a9617bbb6c6fb5373d732d4cc7",
+  "sourceBinding": "Exact 217 regular source blobs in source-manifest; independent acceptance binds the commit containing source and these evidence bytes.",
+  "sourceManifest": {
+    "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/source-manifest.json",
+    "sha256": "fa356aa702473e64adef24144016ceda84416c0dd69b1620cb1aa0f7d0dc3b16"
+  },
+  "sourceInputs": 217,
+  "productionChanged": false,
+  "qaPathsChanged": [
+    "implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
+    "implementation/warlock/haskell/runtime/test-persistent/Main.hs"
+  ],
+  "caseDeadlineMicroseconds": 5000000,
+  "outerGuardianSeconds": 120,
+  "buildExitStatus": 0,
+  "testExitStatus": 0,
+  "normalUnforced": true,
+  "cases": 15,
+  "caseVerdicts": {
+    "seed-20261031": true,
+    "seed-20261032": true,
+    "seed-20261033": true,
+    "seed-20261034": true,
+    "seed-20261035": true,
+    "seed-20261036": true,
+    "seed-20261037": true,
+    "seed-20261038": true,
+    "empty-first-EOF": true,
+    "buffered-retirement": true,
+    "after-retirement-send": true,
+    "malformed": true,
+    "foreign-binding": true,
+    "unrelated-same-user": true,
+    "actual-cross-user": true
+  },
+  "crossUser": {
+    "selectedPid": 171673,
+    "receiverUid": 0,
+    "senderUidBefore": 0,
+    "senderUidAfter": 1,
+    "gidBefore": 0,
+    "gidAfter": 0,
+    "policyEntries": 1,
+    "authObservation": "Just (FrameObserved (CredentialFrameRejected (CredentialPeer ForeignUser)))",
+    "kernelCredentials": [
+      {
+        "stage": "FragmentObserved",
+        "pid": 171673,
+        "uid": 0,
+        "gid": 0
+      },
+      {
+        "stage": "FragmentObserved",
+        "pid": 171673,
+        "uid": 0,
+        "gid": 0
+      },
+      {
+        "stage": "AdmissionObserved",
+        "pid": 171673,
+        "uid": 0,
+        "gid": 0
+      },
+      {
+        "stage": "FragmentObserved",
+        "pid": 171673,
+        "uid": 1,
+        "gid": 0
+      }
+    ],
+    "contextEvidence": {
+      "schema": 1,
+      "contextEvidenceComplete": true,
+      "receiverStable": true,
+      "senderIdsMatchKernelTrace": true,
+      "sameMeasuredNamespaceAndMaps": true,
+      "receiver": {
+        "phase": "receiver",
+        "pid": 171593,
+        "uid": 0,
+        "euid": 0,
+        "gid": 0,
+        "egid": 0,
+        "uidMap": "         0          0 4294967295\n",
+        "gidMap": "         0          0 4294967295\n",
+        "userNamespace": "user:[4026531837]",
+        "pidNamespace": "pid:[4026531836]",
+        "capEff": "000001ffffffffff",
+        "capPrm": "000001ffffffffff"
+      },
+      "senderBefore": {
+        "phase": "before-setuid",
+        "pid": 171673,
+        "uid": 0,
+        "euid": 0,
+        "gid": 0,
+        "egid": 0,
+        "uidMap": "         0          0 4294967295\n",
+        "gidMap": "         0          0 4294967295\n",
+        "userNamespace": "user:[4026531837]",
+        "pidNamespace": "pid:[4026531836]",
+        "capEff": "000001ffffffffff",
+        "capPrm": "000001ffffffffff"
+      },
+      "senderAfter": {
+        "phase": "after-setuid",
+        "pid": 171673,
+        "uid": 1,
+        "euid": 1,
+        "gid": 0,
+        "egid": 0,
+        "uidMap": "         0          0 4294967295\n",
+        "gidMap": "         0          0 4294967295\n",
+        "userNamespace": "user:[4026531837]",
+        "pidNamespace": "pid:[4026531836]",
+        "capEff": "0000000000000000",
+        "capPrm": "0000000000000000"
+      },
+      "receiptSHA256": "ca245b6b6309694e2a6db5a31d335109853a7b7d23b732929374e36aaafe27f4",
+      "receiptPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/root-auth-d258019003f44c2c9298ebc4cba1544f/context/sender-context.receipt",
+      "status": "complete",
+      "authenticationVerdictIndependent": true,
+      "authority": "QA process self-observation only; recvmsg credentials and production admission trace remain authoritative"
+    },
+    "retirement": "Right True",
+    "ingressState": "OwnerStatus {phase = OwnerRetired, accepted = True, gate = Retired, endpoint = Just EndpointConfirmed, setupFailure = Nothing, closeFailure = Nothing}",
+    "readerState": "ReaderReady"
+  },
+  "cleanup": {
+    "originalGuardianClaimQualified": false,
+    "reason": "Executed guardian omitted qa.slice parent in independent negative scan; original report is preserved without alteration.",
+    "freshPostscan": {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/cleanup-postscan-3b195ee66a3a4049bdc7a5f48a94bcf3.json",
+      "sha256": "cf1ed053615e1f37fe647ab14b024c3378b03f195fab54794e76cdc741990c74"
+    },
+    "freshCurrentEmpty": true,
+    "positiveSelfPidBirthControl": true,
+    "negativeBoundaryPrefixControl": true,
+    "examined": 222,
+    "unresolvedReadErrors": [],
+    "scope": "Fresh current-time scope absence only; not retroactive qualification of the flawed historical scan. Production bootstrap independently returned retirement Right True for all cases."
+  },
+  "historicalAcceptedScenarioSource": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+  "historicalEvidencePreserved": true,
+  "independentSourceReview": {
+    "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/context-source-review.json",
+    "sha256": "78470e9c859a6c0e4be9e3aa97a310883a19878e24d40d321659650937542bdf"
+  },
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "limits": [
+    "Measured guest initial user/pid namespaces, root0 receiver and selected same PID changing UID/EUID to1; no GID transition.",
+    "Approved callbacks are subsequent native policy entry only; no native effect issuer, compositor, GUI, AT/IME, hardware/resource or release acceptance.",
+    "Historical host privileged setup failure and all prior deadlines/stopped evidence remain unchanged."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/build-engine.sh",
+      "sha256": "82e8aabb295b4f4c526b321f079c5834f9e9ac006c3c551a074119a8e724fb50"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/build-launcher.stderr",
+      "sha256": "d007c27300aef9f69a6b72aa543b072e27dd44259d930e279c9200fd37b4406b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/build-launcher.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/build.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/cabal-plan.json",
+      "sha256": "4af6d0b2c189b847d3f85442354d5438ca0bd22733a63af5002c2e5943053b2e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/context-source-proposal.json",
+      "sha256": "e5613fbe1f8eb9face2fd72c4326ae39fedac448e9a63bd0b9ee0a0d7111c14b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/context-source-proposal.patch",
+      "sha256": "05ead1564ef662573d07792334986062ea5154ff6e300bfffc6ae5de181f400d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/context-source-review.json",
+      "sha256": "78470e9c859a6c0e4be9e3aa97a310883a19878e24d40d321659650937542bdf"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/guest-artifacts.json",
+      "sha256": "211dd3c6e060e99c768ffe92f470f2a7bd21d74433f88e611c23f16fb8672f74"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/guest-build.stderr",
+      "sha256": "2b86897cdad752b87814bbdce217641685d76c7d8231322c4419fe48deb95d64"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/guest-build.stdout",
+      "sha256": "302a64d054b5a5fa2de831edb295b9274eac3c3ab2c1be919a726badb057e979"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/postscan-source-review.json",
+      "sha256": "5a0d74f443922431eff42d899295b0fd14a0151c7a61a81fa7b2a266d862ee0d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/postscan.stdout",
+      "sha256": "2a3d6e059e8519aabdd1fda6e4faed4e2802268ce610ca1517e726379d384f26"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/cleanup-postscan-3b195ee66a3a4049bdc7a5f48a94bcf3.json",
+      "sha256": "cf1ed053615e1f37fe647ab14b024c3378b03f195fab54794e76cdc741990c74"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/context/sender-context.receipt",
+      "sha256": "ca245b6b6309694e2a6db5a31d335109853a7b7d23b732929374e36aaafe27f4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/credential-peer-child-after-ldd.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/credential-peer-child-after-ldd.stdout",
+      "sha256": "ad3ed4c9a445c467ab3cb69e96c6c3894252a9cab2d53d06e1e2f8a8be9e95f3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/credential-peer-child-before-ldd.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/credential-peer-child-before-ldd.stdout",
+      "sha256": "0e3e0d5ac5c7a3512b67a65d625289e7a81e041b24a4d11d436661f2e8388bcb"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/guardian-report.json",
+      "sha256": "a7458c66a65f1db7690c93c9a9ce6e0547566d420e104f5ca295a90a4507252e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/guardian-start.json",
+      "sha256": "b44c9ac90bdca0ad2103bcb423749ccacf7f9df038d405f488d1b950cdfafafc"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/launcher.stderr",
+      "sha256": "66c65287bb80d396a0972de82c2ab0fe049a5bb638753bdc05e69401ddeba684"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/launcher.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/persistent-bootstrap-controls-after-ldd.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/persistent-bootstrap-controls-after-ldd.stdout",
+      "sha256": "321ce7545d704c754a55da96a0083f1a66fc0bd21a563451f051f66b8f06e51d"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/persistent-bootstrap-controls-before-ldd.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/persistent-bootstrap-controls-before-ldd.stdout",
+      "sha256": "9448d78fb0047a485c45c684322d539f9bb98021cc03009c7c7f89eabeb6f6c8"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/runner-context-before.json",
+      "sha256": "086819be03fb5593a69469ef8ee2375943422c6ff29e3076757666dbfc1cc02b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/runner-report.json",
+      "sha256": "6e9b0b5ea9a89b087fc2fccffc8d8f4681aea711af4f95eab92cc289b472da8a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/runner-start.json",
+      "sha256": "bc266df3d107e459a9f793a64e4b32d5f7e6da825c53f89a4722cd8839e03bca"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/test.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-d258019003f44c2c9298ebc4cba1544f/test.stdout",
+      "sha256": "ce1ef830ca3c6687f7472f4d3c81827772ffd1350035e6cccdc259f4e7ecefa4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-guardian.py",
+      "sha256": "9e66a5b9a04a9939ae690f64c37e02f74f5dd8d0c182cd18a13e12989419a400"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-postscan.py",
+      "sha256": "8011d9c8d7c86f7faadb19bc1e3ff4d1c83c29f10cd80edbf2ada7d6326a2eb8"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-auth-runner.py",
+      "sha256": "358e94d5e41391e66de35f708303d790b778dbc8ffd55ea0cd312b8d108fe698"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-launch-source-review.json",
+      "sha256": "0437157648f8082baa1581175050ac391f4a62d7c37627090af707021c711379"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/root-launch.stdout",
+      "sha256": "07dcf1fa43e00674090c3ef23454acdeee179b353855c2a31f4f1e1d3899df65"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/run-build.sh",
+      "sha256": "cf2ce41c3e62dbf3c8095670d19718a2d042477f15acfc1adb1b22d53f6c06eb"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/source-manifest.json",
+      "sha256": "fa356aa702473e64adef24144016ceda84416c0dd69b1620cb1aa0f7d0dc3b16"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/source-stage-receipt.json",
+      "sha256": "143022053d1eb053037832eb4dd6f95a5f8938386c09da05bea2b97313926ec9"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/stage-source.py",
+      "sha256": "1b973e677e8f8fa30bcad312f445d5879d650bc20202663376444b72407b915a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/verify-artifacts.py",
+      "sha256": "c66bf7fce8f73311f4f0fc43d56066522a490bcd4d671a03ccb8d2b251d8ae05"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/verify.stderr",
+      "sha256": "6395da5a7e9d5cba3a7ddcdf6092aca86dc519fa4b2dc3774db4408e59cb2705"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/verify.stdout",
+      "sha256": "152d7822b14057e89f02c2a1719ae136387c9418c67618f1c77e207474b2bdce"
+    }
+  ]
+}

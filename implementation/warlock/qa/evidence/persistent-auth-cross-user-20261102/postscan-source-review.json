@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "sourceOnly": true,
+  "rootReviewed": true,
+  "sha256": "8011d9c8d7c86f7faadb19bc1e3ff4d1c83c29f10cd80edbf2ada7d6326a2eb8",
+  "scope": "Fixed actual attempt current proc cgroup observation with actual self PID/birth positive control and prefix negative control",
+  "findings": [
+    "Historical original context/report pinned and never overwritten",
+    "Actual exact nested cgroup path derived from pinned runner context",
+    "No signal, cleanup command, GUI operation or authentication rerun",
+    "Fresh currentEmpty cannot retroactively qualify historical negative scan"
+  ],
+  "executed": false
+}

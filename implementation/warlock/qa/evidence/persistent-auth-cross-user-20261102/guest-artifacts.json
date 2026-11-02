@@ -1,0 +1,571 @@
+{
+  "scope": "Compiled and linked guest artifacts; not a GUI or native acceptance observation",
+  "originalBuildExitStatus": 0,
+  "artifacts": {
+    "credential-peer-child": {
+      "image": {
+        "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/assets/credential-peer-child",
+        "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/assets/credential-peer-child",
+        "device": "58",
+        "inode": "42447",
+        "size": "108856",
+        "sha256": "3e869bdd1db2675afb768a5b57a2a35e8ccbcf2dea9770fe6880b59f41f602d8"
+      },
+      "dynamicSection": "\nDynamic section at offset 0x12810 contains 53 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000003 (PLTGOT)             0x413fe8\n 0x0000000000000002 (PLTRELSZ)           240 (bytes)\n 0x0000000000000017 (JMPREL)             0x407080\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000007 (RELA)               0x403df8\n 0x0000000000000008 (RELASZ)             12936 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000006 (SYMTAB)             0x400308\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000005 (STRTAB)             0x4015c8\n 0x000000000000000a (STRSZ)              9786 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x403c08\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSrts-1.0.2_thr-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-prim-0.10.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-bignum-1.3-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbase-4.18.3.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSarray-0.5.8.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSdeepseq-1.4.8.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-boot-th-9.6.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSpretty-1.1.3.6-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStemplate-haskell-2.20.0.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbytestring-0.11.5.4-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStransformers-0.6.1.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSmtl-2.3.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSstm-2.5.1.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSexceptions-0.10.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSfilepath-1.4.301.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStime-1.12.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSunix-2.8.6.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHScontainers-0.6.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSdirectory-1.3.8.5-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbinary-0.8.9.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStext-2.0.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgmp.so.10]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libffi.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libnuma.so.1]\n 0x000000000000000c (INIT)               0x407170\n 0x000000000000000d (FINI)               0x411b24\n 0x000000000000001a (FINI_ARRAY)         0x413800\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x413808\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001d (RUNPATH)            Library runpath: [/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build:/usr/lib:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build]\n 0x000000006ffffff0 (VERSYM)             0x403c38\n 0x000000006ffffffe (VERNEED)            0x403dc8\n 0x000000006fffffff (VERNEEDNUM)         1\n 0x0000000000000000 (NULL)               0x0\n",
+      "ldd": "\tlinux-vdso.so.1 (0x00007fba95e35000)\n\tlibm.so.6 => /usr/lib/libm.so.6 (0x00007fba95ccb000)\n\tlibHSrts-1.0.2_thr-ghc9.6.7.so => /usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so (0x00007fba95c12000)\n\tlibHSghc-prim-0.10.0-ghc9.6.7.so => /usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so (0x00007fba95600000)\n\tlibHSghc-bignum-1.3-ghc9.6.7.so => /usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so (0x00007fba95bbb000)\n\tlibHSbase-4.18.3.0-ghc9.6.7.so => /usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so (0x00007fba94a00000)\n\tlibHSarray-0.5.8.0-ghc9.6.7.so => /usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so (0x00007fba95b33000)\n\tlibHSdeepseq-1.4.8.1-ghc9.6.7.so => /usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so (0x00007fba95b15000)\n\tlibHSghc-boot-th-9.6.7-ghc9.6.7.so => /usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so (0x00007fba949bf000)\n\tlibHSpretty-1.1.3.6-ghc9.6.7.so => /usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so (0x00007fba9494c000)\n\tlibHStemplate-haskell-2.20.0.0-ghc9.6.7.so => /usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so (0x00007fba94400000)\n\tlibHSbytestring-0.11.5.4-ghc9.6.7.so => /usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so (0x00007fba947e6000)\n\tlibHStransformers-0.6.1.0-ghc9.6.7.so => /usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so (0x00007fba942e3000)\n\tlibHSmtl-2.3.1-ghc9.6.7.so => /usr/lib/libHSmtl-2.3.1-ghc9.6.7.so (0x00007fba94292000)\n\tlibHSstm-2.5.1.0-ghc9.6.7.so => /usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so (0x00007fba955de000)\n\tlibHSexceptions-0.10.7-ghc9.6.7.so => /usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so (0x00007fba9424e000)\n\tlibHSfilepath-1.4.301.0-ghc9.6.7.so => /usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so (0x00007fba94184000)\n\tlibHStime-1.12.2-ghc9.6.7.so => /usr/lib/libHStime-1.12.2-ghc9.6.7.so (0x00007fba93ff7000)\n\tlibHSunix-2.8.6.0-ghc9.6.7.so => /usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so (0x00007fba93eae000)\n\tlibHScontainers-0.6.7-ghc9.6.7.so => /usr/lib/libHScontainers-0.6.7-ghc9.6.7.so (0x00007fba93a00000)\n\tlibHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so (0x00007fba95afd000)\n\tlibHSdirectory-1.3.8.5-ghc9.6.7.so => /usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so (0x00007fba93e2c000)\n\tlibHSnetwork-3.2.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so (0x00007fba9392e000)\n\tlibHSbinary-0.8.9.1-ghc9.6.7.so => /usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so (0x00007fba93860000)\n\tlibHStext-2.0.2-ghc9.6.7.so => /usr/lib/libHStext-2.0.2-ghc9.6.7.so (0x00007fba93400000)\n\tlibHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so (0x00007fba93287000)\n\tlibgmp.so.10 => /usr/lib/libgmp.so.10 (0x00007fba937b9000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007fba93000000)\n\tlibffi.so.8 => /usr/lib/libffi.so.8 (0x00007fba955d0000)\n\tlibnuma.so.1 => /usr/lib/libnuma.so.1 (0x00007fba947d8000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fba95e37000)\n",
+      "readelfExit": 0,
+      "lddExit": 0,
+      "dependencies": [
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "41666",
+          "size": "85552",
+          "sha256": "6f840ea5a505ba6501e8d582b323ca859e0676a65b50db20174c495052513279"
+        },
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "42140",
+          "size": "1209752",
+          "sha256": "59dc6406acea4e3ef83617df7a17ca72610419ec1fa83e313a0ac30cf6b6bdea"
+        },
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "42293",
+          "size": "2031376",
+          "sha256": "b422c9ac3f78ada4ef45f927c44bd5c6ac9a80d03bd01123c2b8dfb1cfcda194"
+        },
+        {
+          "path": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330318",
+          "size": "551472",
+          "sha256": "be7d5dd7e80c0ed4ebfa9bbbb2287a963777c3b807764a8cb9553f6832a1d47b"
+        },
+        {
+          "path": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330319",
+          "size": "12344312",
+          "sha256": "ced6e76d334356f9b2aa991fa0ee42ec774d9f0ae4419afd10a89dfcdcb8bdf4"
+        },
+        {
+          "path": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330320",
+          "size": "840144",
+          "sha256": "d435f87b74b478c0af843433c5bde8c216ebb2bea58efccdf3a0371625551b83"
+        },
+        {
+          "path": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330321",
+          "size": "1463208",
+          "sha256": "994b29012b2e49f1d5cbda53dee91d0978422af9ed892e4f78e4b84ef99c8c91"
+        },
+        {
+          "path": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330322",
+          "size": "3765888",
+          "sha256": "3bb400d7f04296c9c8822f0498104b9a73a59b1f824c1f03dd51e2fe259e0d20"
+        },
+        {
+          "path": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330323",
+          "size": "120880",
+          "sha256": "e4243858a70472e28237a2950dbc032c4b3b9b8b99922cddacb6a457fdfb52ab"
+        },
+        {
+          "path": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330324",
+          "size": "530200",
+          "sha256": "db46672b659943f3545e8ce4d220043e351cf266a7400bbb5b96a6a22b0f237d"
+        },
+        {
+          "path": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330325",
+          "size": "275784",
+          "sha256": "b410ae8d20e78bcd8cac9fd2994ea5ecf69e4a94fa74464780bbfa30b55d88f2"
+        },
+        {
+          "path": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330326",
+          "size": "825528",
+          "sha256": "4b7ff2115425a599038c3f9d3168b6e076dcb42efe8d41c0cf23843e2519aad1"
+        },
+        {
+          "path": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330327",
+          "size": "342864",
+          "sha256": "441420623c2127a991069574a9ef28b1109abdea8ebe205b9c0d8c9a7e2a6af4"
+        },
+        {
+          "path": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330329",
+          "size": "263112",
+          "sha256": "fed1d611974e659a3b987a5bbab418303e62c27e1b92bbbb81d43606b12a50c2"
+        },
+        {
+          "path": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330332",
+          "size": "5201744",
+          "sha256": "6d52ca0afa25dbcfb91161826d52c52e0713e66339515997e3905bc2cc39874c"
+        },
+        {
+          "path": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330338",
+          "size": "326216",
+          "sha256": "c932a5430590c2fa1b5c4966c104336331225585e5db0d638d1c80fe06c93942"
+        },
+        {
+          "path": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330340",
+          "size": "466672",
+          "sha256": "88033823e51ce750a6f68501f7b3ca8a1a46f557d6fddd33536769dfe4d80164"
+        },
+        {
+          "path": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330344",
+          "size": "741792",
+          "sha256": "1de73b1dae2c2deb6ba462ca46da98ae808fd89159660dc050202a003e016bde"
+        },
+        {
+          "path": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330346",
+          "size": "133640",
+          "sha256": "b51856cad81c76d620a8b0b56212a468877a8c565f10ebb1bb8e842a07aa16fe"
+        },
+        {
+          "path": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330347",
+          "size": "3834824",
+          "sha256": "36d66549aa669d7a90e0b5e511135917f438c04bd859e1d20be1574e173d12ee"
+        },
+        {
+          "path": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330349",
+          "size": "3179992",
+          "sha256": "3b020e330f82c23beebc24531db828d556f75bcea1e0e3d40d124f3a955f9b17"
+        },
+        {
+          "path": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330350",
+          "size": "1623176",
+          "sha256": "0c1ae70df5f3cc8d9c64c4540fb587375810be58ed596652af445e6a2b34f1dd"
+        },
+        {
+          "path": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330351",
+          "size": "1162280",
+          "sha256": "0e2a904dd6a7b34f2375823939443d379ee3ad378f113e14d6897c179c202317"
+        },
+        {
+          "path": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330352",
+          "size": "1345712",
+          "sha256": "83f37340f48feb39fbe4f52cc655fc9c2f388d2a33d9eb67773cd8a5737a0163"
+        },
+        {
+          "path": "/usr/lib/libc.so.6",
+          "resolvedPath": "/usr/lib/libc.so.6",
+          "device": "31",
+          "inode": "3446",
+          "size": "2215072",
+          "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524"
+        },
+        {
+          "path": "/usr/lib/libffi.so.8",
+          "resolvedPath": "/usr/lib/libffi.so.8.5.0",
+          "device": "31",
+          "inode": "19167",
+          "size": "51432",
+          "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c"
+        },
+        {
+          "path": "/usr/lib/libgmp.so.10",
+          "resolvedPath": "/usr/lib/libgmp.so.10.5.0",
+          "device": "31",
+          "inode": "7675",
+          "size": "678528",
+          "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49"
+        },
+        {
+          "path": "/usr/lib/libm.so.6",
+          "resolvedPath": "/usr/lib/libm.so.6",
+          "device": "31",
+          "inode": "3456",
+          "size": "1268336",
+          "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d"
+        },
+        {
+          "path": "/usr/lib/libnuma.so.1",
+          "resolvedPath": "/usr/lib/libnuma.so.1.0.0",
+          "device": "31",
+          "inode": "129540",
+          "size": "55632",
+          "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51"
+        },
+        {
+          "path": "/usr/lib64/ld-linux-x86-64.so.2",
+          "resolvedPath": "/usr/lib/ld-linux-x86-64.so.2",
+          "device": "31",
+          "inode": "3437",
+          "size": "263152",
+          "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+        }
+      ]
+    },
+    "persistent-bootstrap-controls": {
+      "image": {
+        "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/assets/persistent-bootstrap-controls",
+        "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/assets/persistent-bootstrap-controls",
+        "device": "58",
+        "inode": "42448",
+        "size": "279632",
+        "sha256": "73b70e273f8b00d688823a75f29f2d0a09a1261999b087e03e115950ad3085a2"
+      },
+      "dynamicSection": "\nDynamic section at offset 0x344b8 contains 58 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000003 (PLTGOT)             0x435fe8\n 0x0000000000000002 (PLTRELSZ)           264 (bytes)\n 0x0000000000000017 (JMPREL)             0x40e118\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000007 (RELA)               0x406ff0\n 0x0000000000000008 (RELASZ)             28968 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000006 (SYMTAB)             0x400308\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000005 (STRTAB)             0x402228\n 0x000000000000000a (STRSZ)              19145 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x406cf8\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSrts-1.0.2_thr-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-prim-0.10.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-bignum-1.3-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbase-4.18.3.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSarray-0.5.8.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSdeepseq-1.4.8.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSghc-boot-th-9.6.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSpretty-1.1.3.6-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStemplate-haskell-2.20.0.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbytestring-0.11.5.4-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStransformers-0.6.1.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSmtl-2.3.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSstm-2.5.1.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSexceptions-0.10.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSfilepath-1.4.301.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStime-1.12.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSunix-2.8.6.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHScontainers-0.6.7-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSdirectory-1.3.8.5-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSprocess-1.6.19.0-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSbinary-0.8.9.1-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHStext-2.0.2-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libglib-2.0.so.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgmp.so.10]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libffi.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libnuma.so.1]\n 0x000000000000000c (INIT)               0x40e220\n 0x000000000000000d (FINI)               0x432860\n 0x000000000000001a (FINI_ARRAY)         0x4354a8\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x4354b0\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001d (RUNPATH)            Library runpath: [/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build:/usr/lib:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build:/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build]\n 0x000000006ffffff0 (VERSYM)             0x406d28\n 0x000000006ffffffe (VERNEED)            0x406fc0\n 0x000000006fffffff (VERNEEDNUM)         1\n 0x0000000000000000 (NULL)               0x0\n",
+      "ldd": "\tlinux-vdso.so.1 (0x00007f2a43933000)\n\tlibm.so.6 => /usr/lib/libm.so.6 (0x00007f2a437c9000)\n\tlibHSrts-1.0.2_thr-ghc9.6.7.so => /usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so (0x00007f2a43710000)\n\tlibHSghc-prim-0.10.0-ghc9.6.7.so => /usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so (0x00007f2a43200000)\n\tlibHSghc-bignum-1.3-ghc9.6.7.so => /usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so (0x00007f2a431ab000)\n\tlibHSbase-4.18.3.0-ghc9.6.7.so => /usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so (0x00007f2a42400000)\n\tlibHSarray-0.5.8.0-ghc9.6.7.so => /usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so (0x00007f2a43123000)\n\tlibHSdeepseq-1.4.8.1-ghc9.6.7.so => /usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so (0x00007f2a43105000)\n\tlibHSghc-boot-th-9.6.7-ghc9.6.7.so => /usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so (0x00007f2a430c4000)\n\tlibHSpretty-1.1.3.6-ghc9.6.7.so => /usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so (0x00007f2a43051000)\n\tlibHStemplate-haskell-2.20.0.0-ghc9.6.7.so => /usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so (0x00007f2a42000000)\n\tlibHSbytestring-0.11.5.4-ghc9.6.7.so => /usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so (0x00007f2a41e9a000)\n\tlibHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so (0x00007f2a436fa000)\n\tlibHStransformers-0.6.1.0-ghc9.6.7.so => /usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so (0x00007f2a41d7d000)\n\tlibHSmtl-2.3.1-ghc9.6.7.so => /usr/lib/libHSmtl-2.3.1-ghc9.6.7.so (0x00007f2a43000000)\n\tlibHSstm-2.5.1.0-ghc9.6.7.so => /usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so (0x00007f2a42fde000)\n\tlibHSexceptions-0.10.7-ghc9.6.7.so => /usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so (0x00007f2a423bc000)\n\tlibHSfilepath-1.4.301.0-ghc9.6.7.so => /usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so (0x00007f2a41cb3000)\n\tlibHStime-1.12.2-ghc9.6.7.so => /usr/lib/libHStime-1.12.2-ghc9.6.7.so (0x00007f2a41b26000)\n\tlibHSunix-2.8.6.0-ghc9.6.7.so => /usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so (0x00007f2a419dd000)\n\tlibHScontainers-0.6.7-ghc9.6.7.so => /usr/lib/libHScontainers-0.6.7-ghc9.6.7.so (0x00007f2a41600000)\n\tlibHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so (0x00007f2a415a1000)\n\tlibHSdirectory-1.3.8.5-ghc9.6.7.so => /usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so (0x00007f2a4151f000)\n\tlibHSprocess-1.6.19.0-ghc9.6.7.so => /usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so (0x00007f2a4199c000)\n\tlibHSbinary-0.8.9.1-ghc9.6.7.so => /usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so (0x00007f2a41451000)\n\tlibHStext-2.0.2-ghc9.6.7.so => /usr/lib/libHStext-2.0.2-ghc9.6.7.so (0x00007f2a41000000)\n\tlibHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so (0x00007f2a413b5000)\n\tlibHSnetwork-3.2.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so (0x00007f2a40f2e000)\n\tlibHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so (0x00007f2a40db5000)\n\tlibHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so => /home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so (0x00007f2a40bcc000)\n\tlibglib-2.0.so.0 => /usr/lib/libglib-2.0.so.0 (0x00007f2a40a67000)\n\tlibgmp.so.10 => /usr/lib/libgmp.so.10 (0x00007f2a4130e000)\n\tlibc.so.6 => /usr/lib/libc.so.6 (0x00007f2a40800000)\n\tlibffi.so.8 => /usr/lib/libffi.so.8 (0x00007f2a42fca000)\n\tlibnuma.so.1 => /usr/lib/libnuma.so.1 (0x00007f2a423ae000)\n\t/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f2a43935000)\n\tlibpcre2-8.so.0 => /usr/lib/libpcre2-8.so.0 (0x00007f2a4074d000)\n",
+      "readelfExit": 0,
+      "lddExit": 0,
+      "dependencies": [
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/cryptohash-sha256-0.11.102.1/build/libHScryptohash-sha256-0.11.102.1-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "41666",
+          "size": "85552",
+          "sha256": "6f840ea5a505ba6501e8d582b323ca859e0676a65b50db20174c495052513279"
+        },
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/network-3.2.0.0/build/libHSnetwork-3.2.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "42140",
+          "size": "1209752",
+          "sha256": "59dc6406acea4e3ef83617df7a17ca72610419ec1fa83e313a0ac30cf6b6bdea"
+        },
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/build/libHSwarlock-held-document-proposal-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "41759",
+          "size": "520872",
+          "sha256": "35103d1c0b6153c1b46143495dba778cc4f0d329afa3b909cf9df6f1120aaaab"
+        },
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/build/libHSwarlock-process-custody-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "42203",
+          "size": "836264",
+          "sha256": "ce17950e4f44403ca0726f530adf20d28d69fdcbd712f1e8a5e792855392b27d"
+        },
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/build/libHSwarlock-protocol-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "42293",
+          "size": "2031376",
+          "sha256": "b422c9ac3f78ada4ef45f927c44bd5c6ac9a80d03bd01123c2b8dfb1cfcda194"
+        },
+        {
+          "path": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so",
+          "resolvedPath": "/home/charl/warlock-del010-cross-user-20261102T011435Z/dist/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/libHSwarlock-runtime-0.1.0.0-inplace-ghc9.6.7.so",
+          "device": "58",
+          "inode": "42413",
+          "size": "2453472",
+          "sha256": "8f9ed3df70ba926be8d4f3e200e8e548a91d4ab4a49e3dae9186f7441d4065f5"
+        },
+        {
+          "path": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSarray-0.5.8.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330318",
+          "size": "551472",
+          "sha256": "be7d5dd7e80c0ed4ebfa9bbbb2287a963777c3b807764a8cb9553f6832a1d47b"
+        },
+        {
+          "path": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbase-4.18.3.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330319",
+          "size": "12344312",
+          "sha256": "ced6e76d334356f9b2aa991fa0ee42ec774d9f0ae4419afd10a89dfcdcb8bdf4"
+        },
+        {
+          "path": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbinary-0.8.9.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330320",
+          "size": "840144",
+          "sha256": "d435f87b74b478c0af843433c5bde8c216ebb2bea58efccdf3a0371625551b83"
+        },
+        {
+          "path": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSbytestring-0.11.5.4-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330321",
+          "size": "1463208",
+          "sha256": "994b29012b2e49f1d5cbda53dee91d0978422af9ed892e4f78e4b84ef99c8c91"
+        },
+        {
+          "path": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHScontainers-0.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330322",
+          "size": "3765888",
+          "sha256": "3bb400d7f04296c9c8822f0498104b9a73a59b1f824c1f03dd51e2fe259e0d20"
+        },
+        {
+          "path": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdeepseq-1.4.8.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330323",
+          "size": "120880",
+          "sha256": "e4243858a70472e28237a2950dbc032c4b3b9b8b99922cddacb6a457fdfb52ab"
+        },
+        {
+          "path": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSdirectory-1.3.8.5-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330324",
+          "size": "530200",
+          "sha256": "db46672b659943f3545e8ce4d220043e351cf266a7400bbb5b96a6a22b0f237d"
+        },
+        {
+          "path": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSexceptions-0.10.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330325",
+          "size": "275784",
+          "sha256": "b410ae8d20e78bcd8cac9fd2994ea5ecf69e4a94fa74464780bbfa30b55d88f2"
+        },
+        {
+          "path": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSfilepath-1.4.301.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330326",
+          "size": "825528",
+          "sha256": "4b7ff2115425a599038c3f9d3168b6e076dcb42efe8d41c0cf23843e2519aad1"
+        },
+        {
+          "path": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-bignum-1.3-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330327",
+          "size": "342864",
+          "sha256": "441420623c2127a991069574a9ef28b1109abdea8ebe205b9c0d8c9a7e2a6af4"
+        },
+        {
+          "path": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-boot-th-9.6.7-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330329",
+          "size": "263112",
+          "sha256": "fed1d611974e659a3b987a5bbab418303e62c27e1b92bbbb81d43606b12a50c2"
+        },
+        {
+          "path": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSghc-prim-0.10.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330332",
+          "size": "5201744",
+          "sha256": "6d52ca0afa25dbcfb91161826d52c52e0713e66339515997e3905bc2cc39874c"
+        },
+        {
+          "path": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSmtl-2.3.1-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330338",
+          "size": "326216",
+          "sha256": "c932a5430590c2fa1b5c4966c104336331225585e5db0d638d1c80fe06c93942"
+        },
+        {
+          "path": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSpretty-1.1.3.6-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330340",
+          "size": "466672",
+          "sha256": "88033823e51ce750a6f68501f7b3ca8a1a46f557d6fddd33536769dfe4d80164"
+        },
+        {
+          "path": "/usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSprocess-1.6.19.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330341",
+          "size": "262608",
+          "sha256": "0d0f4b8cdd6c7da2f5995348d14061465c5c68c3dff8ed67a31d0c18442f64ac"
+        },
+        {
+          "path": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSrts-1.0.2_thr-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330344",
+          "size": "741792",
+          "sha256": "1de73b1dae2c2deb6ba462ca46da98ae808fd89159660dc050202a003e016bde"
+        },
+        {
+          "path": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSstm-2.5.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330346",
+          "size": "133640",
+          "sha256": "b51856cad81c76d620a8b0b56212a468877a8c565f10ebb1bb8e842a07aa16fe"
+        },
+        {
+          "path": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStemplate-haskell-2.20.0.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330347",
+          "size": "3834824",
+          "sha256": "36d66549aa669d7a90e0b5e511135917f438c04bd859e1d20be1574e173d12ee"
+        },
+        {
+          "path": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStext-2.0.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330349",
+          "size": "3179992",
+          "sha256": "3b020e330f82c23beebc24531db828d556f75bcea1e0e3d40d124f3a955f9b17"
+        },
+        {
+          "path": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStime-1.12.2-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330350",
+          "size": "1623176",
+          "sha256": "0c1ae70df5f3cc8d9c64c4540fb587375810be58ed596652af445e6a2b34f1dd"
+        },
+        {
+          "path": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHStransformers-0.6.1.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330351",
+          "size": "1162280",
+          "sha256": "0e2a904dd6a7b34f2375823939443d379ee3ad378f113e14d6897c179c202317"
+        },
+        {
+          "path": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "resolvedPath": "/usr/lib/libHSunix-2.8.6.0-ghc9.6.7.so",
+          "device": "31",
+          "inode": "330352",
+          "size": "1345712",
+          "sha256": "83f37340f48feb39fbe4f52cc655fc9c2f388d2a33d9eb67773cd8a5737a0163"
+        },
+        {
+          "path": "/usr/lib/libc.so.6",
+          "resolvedPath": "/usr/lib/libc.so.6",
+          "device": "31",
+          "inode": "3446",
+          "size": "2215072",
+          "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524"
+        },
+        {
+          "path": "/usr/lib/libffi.so.8",
+          "resolvedPath": "/usr/lib/libffi.so.8.5.0",
+          "device": "31",
+          "inode": "19167",
+          "size": "51432",
+          "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c"
+        },
+        {
+          "path": "/usr/lib/libglib-2.0.so.0",
+          "resolvedPath": "/usr/lib/libglib-2.0.so.0.9000.1",
+          "device": "31",
+          "inode": "25267",
+          "size": "1457576",
+          "sha256": "1e8739af791b1a2f1f01fc7c6f3b9158888387d5a816195475e406438d41b688"
+        },
+        {
+          "path": "/usr/lib/libgmp.so.10",
+          "resolvedPath": "/usr/lib/libgmp.so.10.5.0",
+          "device": "31",
+          "inode": "7675",
+          "size": "678528",
+          "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49"
+        },
+        {
+          "path": "/usr/lib/libm.so.6",
+          "resolvedPath": "/usr/lib/libm.so.6",
+          "device": "31",
+          "inode": "3456",
+          "size": "1268336",
+          "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d"
+        },
+        {
+          "path": "/usr/lib/libnuma.so.1",
+          "resolvedPath": "/usr/lib/libnuma.so.1.0.0",
+          "device": "31",
+          "inode": "129540",
+          "size": "55632",
+          "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51"
+        },
+        {
+          "path": "/usr/lib/libpcre2-8.so.0",
+          "resolvedPath": "/usr/lib/libpcre2-8.so.0.16.1",
+          "device": "31",
+          "inode": "18498",
+          "size": "727336",
+          "sha256": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58"
+        },
+        {
+          "path": "/usr/lib64/ld-linux-x86-64.so.2",
+          "resolvedPath": "/usr/lib/ld-linux-x86-64.so.2",
+          "device": "31",
+          "inode": "3437",
+          "size": "263152",
+          "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+        }
+      ]
+    }
+  },
+  "documents": {},
+  "sourceInputCount": 217,
+  "sourceInputsStable": true,
+  "nativeAccepted": false,
+  "releaseAccepted": false
+}

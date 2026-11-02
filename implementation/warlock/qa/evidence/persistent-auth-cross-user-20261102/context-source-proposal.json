@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "kind": "unexecuted-qa-only-private-context-evidence-proposal",
+  "requirement": "ELM-DEL-010",
+  "originalEARS": "The native service SHALL authenticate bridge peers by local user identity and approved session lifetime before accepting effect requests.",
+  "originalVerification": "Retain peer-credential traces for allowed and cross-user/replayed sessions.",
+  "sourcePlan": {
+    "path": ".warlock-contributor/engine-pid1-drafts/terra-q-origin-del010-cross-user-001.md",
+    "sha256": "1c4a74e1e44ccb790dbde35cb8e5f466c18c226ac2f5e2a760f5e2f48832588e"
+  },
+  "patch": {
+    "path": ".warlock-contributor/engine-pid1-drafts/elm-tests-del010-context-001.patch",
+    "sha256": "05ead1564ef662573d07792334986062ea5154ff6e300bfffc6ae5de181f400d"
+  },
+  "files": [
+    {
+      "path": "implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
+      "preimage": "aa95817a45984d8f5f526f0e36312ce1d9e21256edde40075f72ebff5967565d",
+      "postimage": "6a2fa8135b55caf490a2da492441214c48d320b34f3f62a44e40d66264bacb5d"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-persistent/Main.hs",
+      "preimage": "e5cbed6fa0951ea8cc4cd880b76ade7c35c432a5656bb102c47337cb6e668c5f",
+      "postimage": "bc61fcdb4f33aa2a1501ad1d28613a823f0f3405c7b590271d1d852dda2efdef"
+    }
+  ],
+  "interface": "Existing common6arg and full7arg preserved. Optional eighth full-mode argument is a trusted absolute fresh root-owned0700 context directory. Parent supplies its fixed sender-context.receipt path using existing unrestricted trusted environment mechanism DEL010_CONTEXT_PATH; no production API/whitelist/Cabal change.",
+  "channel": "Only cross-user case creates metadata. Child create-exclusive0600 file before setuid; holds handle across actual real/effective UID0->1, writes+flushes actual before/after context, closes via bracket before second request. Existing fixture_writer line and protocol frame/ACK/refusal sequence retained. Public refusal intentionally discards Captured stdout; private receipt survives that correct behavior.",
+  "closedSchema": "Prefix fixture_context plus Read [String] exact13-element schema1 array: phase,pid,UID,EUID,GID,EGID,raw UID/GID maps,user/pid namespace links,CapEff,CapPrm. Fixed proc-only reads bounded4096/4096/65536, namespace64/caphex16; parent validates exact fields/types/map triples/namespace shape and exact two phases. Receipt <=40000bytes, private single-link regular0600 owned file; directory/fd/path identities checked around read.",
+  "evidence": "Receiver context is sampled before and after original run; sender before/after self-observations are joined to independently selectedPID/UID0/GID and actual rejected UID1 kernel trace. Exact maps/ns values retained as JSON strings plus receiptSHA256. Missing/probe/write/read mismatch is explicit incomplete metadata, not fabricated maps or an authentication pass/fail change.",
+  "preservation": "Original deadlineAfter5000000 call, real setUserID verification, ForeignUser/no secondcallback/noACK, old common14/full15 cases, operational pass semantics and existing completeOriginalEvidence meaning unchanged. Separate per-case contextEvidenceComplete. Metadata inside original D can consume time but never renew it. No native operation or provider gate added.",
+  "scope": "Actual UID0 receiver and UID1 writer relative to measured receiver user/pid namespace/maps; real kernel SCM and production selected admission remain authority. Root guest root is distinct from desktop-host-user1000 service configuration. Context is QA corroboration, not a credential source or native mutation receipt.",
+  "executed": false,
+  "canonicalEdits": false,
+  "nativeAccepted": false,
+  "rootNext": "Read-only peer review then declare/adopt2QApaths; Root alone compiles/tests or invokes privileged/VM context. Use optional trusted fresh0700 directory and retain full raw output, private receipt and source/toolchain/artifact hashes. No original closure inferred from this unexecuted patch.",
+  "recordedAt": "2026-11-02T01:15:38.618511+00:00",
+  "sourcePreflight": "Read-only self-inspection: exact canonical natural-number strings before JSON emission; sender before/after IDs are joined to selected PID/receiver IDs AND every nonempty actual rejected FragmentObserved suffix tuple, independent of stdout; fixed imports and public Unix APIs only. No execution. Multi-line if/then/do/else layout made explicit before freeze; no syntax tool/compiler invoked."
+}

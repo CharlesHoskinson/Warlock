@@ -1,29 +1,49 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-02T00:37:29.789332+00:00",
+  "updatedUTC": "2026-11-02T01:39:05.629898+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "backend-private-failure-diagnostics",
+    "id": "authenticated-session-delivery",
     "requirements": [
-      "ELM-DEL-017"
+      "ELM-DEL-010"
     ],
     "scenarios": [
-      "delivery-017"
+      "delivery-010",
+      "peer-wrong-session",
+      "peer-approved-session"
     ],
     "paths": [
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
-      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
-      "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs"
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+      "implementation/warlock/haskell/runtime/runtime.cabal",
+      "implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
+      "implementation/warlock/haskell/runtime/test-persistent/Main.hs",
+      "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt",
+      "implementation/warlock/haskell/runtime/formal/current_registration.qnt",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
+      "implementation/warlock/haskell/runtime/README.md",
+      "implementation/warlock/README.md"
     ],
-    "before": "Current actual Omarchy backend prints passed=false and cleanup=true after a valid GUI journey, hiding the failed selected-operation/custody/containment predicate. Reporting detailed failures must exclude credential, draft, pixel and captured child-output contents.",
-    "after": "The actual Haskell backend reports closed attempt/retirement classes, exact failed pass-conjunct names and redacted operation error/exit status. A real authenticated child that completes catalog exchange then exits23 proves the failure remains false, with synthetic secret/draft/pixel markers absent from ordinary diagnostics. Existing system-credential-service/native-integration obligations remain separately unaccepted.",
+    "before": "Original production peer authentication and three historical scenarios were qualified, but required real cross-user credential evidence was missing.",
+    "after": "Actual full15case guest run now rejects a same selected PID after measured UID0-to1 transition, with exact ForeignUser before another policy callback. Source and immutable evidence await independent original adjudication.",
     "verification": [
-      "Root protected Haskell build and existing ui-mvp-controls with actual authenticated success and child-exit23 negative, preserved old cases, exact parsed JSON conjunctions, bounded synthetic confidential stderr injection and scan retained ordinary logs. No pass/deadline/cleanup/native predicate change; native-on-VM current-build rerun observes actual failed conjunct separately from GUI/provider/AT/IME/hardware/release acceptance."
+      "Root protected production-library linked Haskell multi-frame/EOF/refusal/retirement controls with distinct full request identities and meaningful seeded fragmentation/order cases; real kernel cross-user UID trace, same-user current and retired/replayed lifetime traces, callback canaries and owned cleanup. Preserve original5s budgets, strict buildall/testall and model correspondence; no synthetic UID original acceptance, no native effect/GUI/release transfer."
     ]
   },
   "nextSlices": [
@@ -3758,7 +3778,7 @@
     "acceptedScenarios": 42,
     "behaviorChange": "Retain typed confirmation/receipt phases for Files, application actions, shortcuts, motion preferences and system controls; preserve Unknown reservations without replay. Typed geometry capabilities, snap regions, motion source and transport failures preserve existing boundary wire and labels. SessionClosing explicitly denies Logout; other bounded observed text is preserved."
   },
-  "nextConcreteAction": "Publish actual qualified Backend diagnostics/privacy source and current guest outcome. Then integrate minimal persistent Haskell startup-borrow/checked-abort and real Backend/trusted-pump/per-request deadline wiring. Actual failure now known at selected child exit1; preserve provider false fence and strict cgroup inventory uncertainty rather than relabeling success.",
+  "nextConcreteAction": "Commit actual DEL010 QA/source and cross-user evidence; independently adjudicate the immutable original. Then integrate concrete persistent Haskell Backend/startup-borrow/deadline source. Preserve native/provider fences and failed histories.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -4106,7 +4126,7 @@
       "previousHistoryPreserved": true
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/backend-private-failure-diagnostics.json",
+  "activeContributorRecord": ".warlock-contributor/persistent-auth.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -4439,19 +4459,40 @@
           "Current VM launcher returns1 normally; backend hides exact unsuccessful-operation conjunct. Strict QA controller cleanup sees retiredcgroup FileNotFound and does not certify inventory empty."
         ],
         "replan": "Integrate minimal actual persistent Haskell runtime and exact failure diagnostics; continue15roles,5QuintKit and real built-product Omarchy journeys without source/deadline/oracle weakening."
+      },
+      {
+        "startedUTC": "2026-11-02T00:11:37.655841+00:00",
+        "endedUTC": "2026-11-02T01:11:37.655841+00:00",
+        "reportedUTC": "2026-11-02T01:39:05.629898+00:00",
+        "wholeRequirementsAccepted": 18,
+        "acceptedScenarios": 42,
+        "newWholeRequirementIds": [],
+        "newWholeEarsClosures": 0,
+        "newAcceptedScenarios": [],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Published actual Backend private diagnostics and child-exit privacy controls8d1100f0e; protected10suites/64commands passed.",
+          "Fresh actual Omarchy17input Apps/Search/Refresh trial completed normally; selected child exit1 and strict cleanup remain unaccepted."
+        ],
+        "blockingClosureGaps": [
+          "Persistent Backend same-owner acquisition/retirement and original deadline/stop source still unintegrated.",
+          "Native GUI/provider/AT/IME/hardware/resource/release observations remain required."
+        ],
+        "replan": "Finish now-available originalDEL010 actual cross-user trace and immutable adjudication while writers converge actual persistent runtime source."
       }
     ],
-    "currentWindowStartedUTC": "2026-11-02T00:11:37.655841+00:00",
-    "nextReportDueUTC": "2026-11-02T01:11:37.655841+00:00",
+    "currentWindowStartedUTC": "2026-11-02T01:11:37.655841+00:00",
+    "nextReportDueUTC": "2026-11-02T02:11:37.655841+00:00",
     "currentWindowProgress": {
-      "observedUTC": "2026-11-02T00:13:52.692083+00:00",
-      "windowStartedUTC": "2026-11-02T00:11:37.655841+00:00",
+      "observedUTC": "2026-11-02T01:39:05.629898+00:00",
+      "windowStartedUTC": "2026-11-02T01:11:37.655841+00:00",
       "wholeRequirementsAccepted": 18,
       "acceptedScenarios": 42,
       "newWholeRequirementIds": [],
       "newWholeEarsClosures": 0,
       "newAcceptedScenarios": [],
-      "counting": "Only independently accepted complete original EARS; component/native-on-VM observations are not closures."
+      "counting": "Only independently accepted whole original EARS; actual15case cross-user component awaits immutable review."
     }
   },
   "ui005CurrentStackCheckpoint": {
@@ -4624,5 +4665,6 @@
     "liveForced": false,
     "nativeAccepted": false,
     "releaseAccepted": false
-  }
+  },
+  "persistentAuthCrossUser": "docs/warlock-build-loop/v2/persistent-auth-cross-user-20261102.json"
 }

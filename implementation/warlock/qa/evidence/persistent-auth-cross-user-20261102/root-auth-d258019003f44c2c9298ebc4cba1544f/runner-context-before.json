@@ -1,0 +1,31 @@
+{
+  "pid": 171582,
+  "uid": [
+    0,
+    0,
+    0
+  ],
+  "gid": [
+    0,
+    0,
+    0
+  ],
+  "userNamespace": "user:[4026531837]",
+  "pidNamespace": "pid:[4026531836]",
+  "uidMap": "         0          0 4294967295\n",
+  "gidMap": "         0          0 4294967295\n",
+  "cgroup": "0::/qa.slice/qa-harness.slice/qa-harness-del010-d258019003f44c2c9298ebc4cba1544f.scope\n",
+  "core": [
+    1,
+    1
+  ],
+  "capabilityLines": [
+    "CapInh:\t0000000000000000",
+    "CapPrm:\t000001ffffffffff",
+    "CapEff:\t000001ffffffffff",
+    "CapBnd:\t000001ffffffffff",
+    "CapAmb:\t0000000000000000",
+    "NoNewPrivs:\t0",
+    "Seccomp:\t0"
+  ]
+}

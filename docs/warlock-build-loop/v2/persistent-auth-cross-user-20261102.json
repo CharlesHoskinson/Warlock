@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "requirement": "ELM-DEL-010",
+  "scenarios": [
+    "delivery-010",
+    "peer-wrong-session",
+    "peer-approved-session"
+  ],
+  "record": ".warlock-contributor/persistent-auth.json",
+  "sourceRevisionBeforeQaChange": "8d1100f0e84461a9617bbb6c6fb5373d732d4cc7",
+  "observedUTC": "2026-11-02T01:37:34.715596+00:00",
+  "disposition": "actual-component-pass-awaiting-immutable-independent-original-adjudication",
+  "report": {
+    "path": "implementation/warlock/qa/evidence/persistent-auth-cross-user-20261102/report.json",
+    "sha256": "1cbb476664ecb9e70e54e03f851c2e97af8a91b92593123ffd70c419d852c48f"
+  },
+  "actualBehavior": "Existing production authentication refuses the selected sender after real UID0-to1 transition before a second policy callback; seeded current-session, wrong/retired-session and unrelated-process controls pass.",
+  "sourceChanges": "Two QA Haskell entrypoints add private bounded actual identity context. Production admission and original five-second deadlines are unchanged.",
+  "verification": "Protected offline guest build and exact linked artifacts; actual full15case kernel SCM run; separate private identity/map/namespace/capability receipt and current cgroup scan with positive/negative controls.",
+  "originalGuardianCleanupClaimQualified": false,
+  "freshCurrentScopeEmpty": true,
+  "wholeRequirementAccepted": false,
+  "countsUnchanged": {
+    "requirements": 18,
+    "scenarios": 42,
+    "originalRequirements": 242,
+    "originalScenarios": 417
+  },
+  "nextAction": "Commit actual source and immutable evidence, then independently adjudicate literal original DEL010; continue persistent Backend/startup-borrow/deadline source integration.",
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "contributorRecordObservation": "Ordinary actual qualification recorded; no accepted contributor claim. An attempted root support-doc extension became a null, never-created product-prefixed planned path. Its failed scaffold/history/timer are preserved; it is outside actual217 tested source inputs and cannot serve as source/evidence. Independent original adjudication must bind actual regular Git blobs only."
+}

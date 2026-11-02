@@ -154,6 +154,8 @@ The controlled bridge runs real catalog and pin traffic. The current protected H
 
 Backend result JSON now includes `attempt`, seven `checks`, `failureStages`, a redacted `selectedOperationError` and three `retirement` classes. These report the retained outcome without changing success criteria. A real authenticated child-exit test injects synthetic confidential stderr data; none appears in its result JSON or 32 collected ordinary logs. This verifies the selected diagnostic boundary; system credential services and other native integrations still need their original verification.
 
+A fresh Omarchy run now retains actual cross-user bridge-credential evidence: the same selected child changes UID0 to UID1, and its next effect request is refused with `ForeignUser` before another policy callback. All 15 authentication cases passed with unchanged five-second conversation deadlines. The [source-bound component report](docs/warlock-build-loop/v2/persistent-auth-cross-user-20261102.json) preserves the measured identity maps, namespace and capability change. Independent original-requirement adjudication is pending; this is authentication component evidence, separate from native GUI and release acceptance.
+
 The original `architecture-024` capability-denial scenario is [independently accepted on actual bridge evidence](docs/warlock-build-loop/v2/arc024-capability-scenario-acceptance-20261101.json). Whole ARC024 remains partial for navigation and resource decision integration. The ledger contains 42 accepted scenarios on their recorded source tuples; whole-requirement acceptance is 18 of 242, with all 417 scenarios preserved.
 
 #### Archived host design
