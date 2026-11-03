@@ -4876,8 +4876,8 @@
     "activeContributorRecord": ".warlock-contributor/tea-subscriptions-root.json",
     "originalRecordStartedUTC": "2026-11-02T06:02:04.208189+00:00",
     "expiresUTC": "2026-11-03T20:02:47.475490+00:00",
-    "componentReport": ".warlock-contributor/elm-cpu-1793666196760385365/report.json",
-    "componentReportSHA256": "af8423c91144911224ef36f31ef1bf9ff6d84f4d03faa13d20614a616c1cc798",
+    "componentReport": ".warlock-contributor/elm-cpu-1793666988161479553/report.json",
+    "componentReportSHA256": "788860a277135092e6e518bced99d7827f3b5d166e660afc001289c43de56438",
     "uiHttpSHA256": "ac7cfbc1d04e79e21c6dad489a9ebcbf1bbbbdb2d53177a7a6cbe93ab8ee193f",
     "siteMainSHA256": "f05a3768eb4573161544099917ce009f8df7eb57b8c9408f5266001980cafcfb",
     "componentPassed": true,
@@ -4926,7 +4926,7 @@
     "nativeAccepted": false,
     "releaseAccepted": false,
     "historicalOperationalSubrecords": "Retain their original timestamps and scopes; do not treat old team counts or remote-handoff observations as current liveness.",
-    "observedUTC": "2026-11-03T00:39:13.688072+00:00",
+    "observedUTC": "2026-11-03T00:57:08.696758+00:00",
     "checkpointObservedUTC": "2026-11-02T22:53:55.792842+00:00",
     "evidenceAvailability": "Paths under .warlock-contributor and /home/charl/.local/state are machine-local references. Raw receipts are not published or archived here; historical public evidence retains its own availability and source tuple.",
     "uiOriginQualification": {
@@ -4957,6 +4957,18 @@
       "height": 800,
       "idleEnabled": true,
       "priorGuestAbiReceiptsTransfer": false
+    },
+    "joinedClosedTopology": {
+      "stepsPerRun": 11,
+      "freshRuns": 2,
+      "negativeControls": 4,
+      "scope": "Conditional retained-popup compiled replay; actual Owner/native delivery and whole acceptance remain open."
+    },
+    "nativeReadinessAfterRestart": {
+      "loaderChecks": 4,
+      "providerJoins": 163,
+      "sourceHashesVerified": false,
+      "scope": "Two QA inputs differ from the original full build tuple; existing native gate is unsatisfied. Production-source equality and fresh guest metadata do not override it."
     }
   },
   "storeRetirementComponent": "docs/warlock-build-loop/v2/store-retirement-component-20261102.json",

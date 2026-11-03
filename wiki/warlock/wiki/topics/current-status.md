@@ -9,7 +9,10 @@ sources: [raw/notes/2026-10-29-shortcut-draft-production-baseline.md, raw/notes/
 summary: "19 whole original requirements/42scenarios accepted; DEL010 closes on actual cross-user evidence. Persistent runtime/native/release remain open."
 ---
 
-The November 3 joined dismissal component passes two fresh five-step compiled-root replays and six reason-specific mutation controls. The explicit already-open GIVEN and source-transcribed Owner relation do not prove reachability or real admission. Closed-topology/revocation and actual current-product Omarchy input/pixels remain open; no new whole EARS is accepted. The restarted guest's SSH and 1280×800 desktop are restored with idle enabled. See the [component metadata](../../../../docs/warlock-build-loop/v2/restoration-component-evidence-20261102.json) for the exact source and local-report references.
+The latest closed-topology component preserves the five-step dismissal case and adds an eleven-step continuation, each replayed twice with ten reason-specific negative controls. The retained-popup and GIVEN assumptions, real Owner admission and native delivery remain open. Fresh guest loader metadata passes; two changed QA inputs keep the current native provenance gate unsatisfied. No new whole EARS or product input/pixels are accepted. Exact local-report references are in the [component metadata](../../../../docs/warlock-build-loop/v2/restoration-component-evidence-20261102.json).
+
+
+The earlier November 3 dismissal checkpoint passed two fresh five-step compiled-root replays and six reason-specific mutation controls. The explicit already-open GIVEN and source-transcribed Owner relation do not prove reachability or real admission. At that checkpoint, closed-topology/revocation and actual current-product Omarchy input/pixels remained open; no new whole EARS was accepted. The restarted guest's SSH and 1280×800 desktop are restored with idle enabled. See the [component metadata](../../../../docs/warlock-build-loop/v2/restoration-component-evidence-20261102.json) for the exact source and local-report references.
 
 
 # Current status

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "observedUTC": "2026-11-03T00:39:13.688072+00:00",
+  "observedUTC": "2026-11-03T00:57:08.696758+00:00",
   "baseRevision": "c40b75f23486c0753d347e6a8be0200299124094",
   "scope": "Restoration and component evidence metadata. Source and hash references do not publish the local raw receipts or establish original-scenario acceptance.",
   "productionSourceSHA256": {
@@ -11,8 +11,8 @@
   },
   "reports": {
     "subscriptions": {
-      "path": ".warlock-contributor/elm-cpu-1793666196760385365/report.json",
-      "sha256": "af8423c91144911224ef36f31ef1bf9ff6d84f4d03faa13d20614a616c1cc798",
+      "path": ".warlock-contributor/elm-cpu-1793666988161479553/report.json",
+      "sha256": "788860a277135092e6e518bced99d7827f3b5d166e660afc001289c43de56438",
       "rawPublished": false
     },
     "observedExitRed": {
@@ -34,10 +34,15 @@
       "path": ".warlock-contributor/registry-cpu-1793652728682618344/report.json",
       "sha256": "9b1801036cb8712821fcc80c05d2a35bd262e8b5dd5748313ed3c67f0222eabc",
       "rawPublished": false
+    },
+    "joinedDismissal": {
+      "path": ".warlock-contributor/elm-cpu-1793666196760385365/report.json",
+      "sha256": "af8423c91144911224ef36f31ef1bf9ff6d84f4d03faa13d20614a616c1cc798",
+      "rawPublished": false
     }
   },
   "results": {
-    "subscriptions": "passed; compiled roots, two five-step already-open dismissal/controller/popup replays, six reason-specific mutation rejections, and SiteMain model/fake-DOM checks; whole coverage incomplete",
+    "subscriptions": "passed; preserved five-step dismissal and new eleven-step closed-topology histories, each in two fresh replays; ten reason-specific mutation controls; existing eight cases and SiteMain retained; whole coverage incomplete",
     "observedExitRed": "missing advisory field only; original operation/auth/custody assertions retained",
     "observedExitGreen": "three existing fixed persistent/common, custody and backend serialization suites passed",
     "uiOrigin": "ten existing fixed suites passed",
@@ -69,8 +74,8 @@
     "Observation/reap fault injection, later-cleanup coexistence and external JSON consumer compatibility remain separate coverage gaps.",
     "Prior first/second trial and expected RED evidence are preserved locally.",
     "Current native startup cause remains unproven; startup investigation ended after this distinct trial.",
-    "Joined controller/renderer control-revocation fixture remains outstanding.",
-    "Heavy builds paused under WSL disk policy at86percent; bounded low-volume work continues."
+    "Heavy builds paused under WSL disk policy at86percent; bounded low-volume work continues.",
+    "Joined replay covers conditional retained popup and source-transcribed Owner projection; actual Owner custody/admission, renderer lifetime and native producer remain unproved."
   ],
   "rawEvidenceAvailableInRepository": false,
   "newWholeEarsClosures": 0,
@@ -94,5 +99,31 @@
     "actualOwnerAdmissionProved": false,
     "subsequentTopologyCovered": false,
     "sourceLiteralSHA256": "6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6"
+  },
+  "joinedClosedTopology": {
+    "case": "HttpJoined-dismiss-then-closed-empty-topology",
+    "stepsPerRun": 11,
+    "freshRuns": 2,
+    "negativeControls": 4,
+    "sourceLiteralSHA256": "8435b31ad6790fddc0750f6b5926388f36f394de9f58de9238c3944d45db6740",
+    "givenReachabilityProved": false,
+    "retainedPopupLifetimeProved": false,
+    "actualOwnerAdmissionProved": false
+  },
+  "nativeReadinessAfterRestart": {
+    "scope": "Fresh guest loader metadata only; no product execution or campaign acceptance",
+    "loaderChecks": 4,
+    "providerJoins": 163,
+    "distinctProviderHashes": 157,
+    "completeBuildInputsMatching": 351,
+    "completeBuildInputsRecorded": 353,
+    "productionHaskellSourcesMatching": 223,
+    "productionElmSourcesMatching": 108,
+    "changedQaFiles": [
+      "tools/check_elm_cpu.py",
+      "tools/qa_cpu.py"
+    ],
+    "sourceHashesVerified": false,
+    "existingProvenanceGateSatisfied": false
   }
 }

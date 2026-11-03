@@ -178,7 +178,7 @@ def main():
             qa_files = tuple(name + '.elm' for name in workers.values()) + (
                 'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs', 'tea-contract-cases.cjs',
                 'sol-http-root-observer-0535.cjs', 'sol-http-popup-literals-0525.cjs',
-                'httpbar-literals.cjs', 'joined-control-literals.cjs', 'http-root-cases-manifest.json',
+                'httpbar-literals.cjs', 'joined-control-literals.cjs', 'closed-topology-after-dismiss-literals.cjs', 'http-root-cases-manifest.json',
                 'http-root-cases-guard.cjs', 'http-root-cases-negative.cjs',
                 'sitemain-root-literals.cjs', 'sitemain-root-observer.cjs',
                 'sitemain-root-manifest.json', 'sitemain-root-negative.cjs')
@@ -189,11 +189,13 @@ def main():
             subscription_src.mkdir()
             joined_sources = ('Desktop.elm', 'DesktopPolicy.elm', 'OutputController.elm', 'SurfaceController.elm',
                               'Surface.elm', 'OutcomeAnnouncements.elm', 'Popup.elm', 'Presentation.elm',
-                              'Announcement.elm', 'SurfaceSnapshot.elm',
+                              'Announcement.elm', 'SurfaceSnapshot.elm', 'Shell.elm', 'TaskbarShell.elm',
                               'UiHttp.elm', 'HttpMain.elm', 'HttpPopup.elm')
             joined_extra_pins = {
                 'Announcement.elm': 'a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f',
                 'SurfaceSnapshot.elm': '9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a',
+                'Shell.elm': '6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094',
+                'TaskbarShell.elm': 'eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26',
             }
             for name in joined_sources:
                 key = 'implementation/warlock/src/' + name
@@ -224,13 +226,14 @@ def main():
                 shutil.copy2(source, work / 'qa' / filename)
                 shutil.copy2(source, subscription_qa / filename)
             reviewed_http_inputs = {
-                'sol-http-root-observer-0535.cjs': '5f97204efc06eb0d5941ed1bb02e655a38ca6012f7f8e3d67c43f14e12e98026',
+                'sol-http-root-observer-0535.cjs': 'ec1fd8fbd225f8823afe10252dccbd4e088e0c299ad94810e8d3ce3aae1c8bd1',
                 'sol-http-popup-literals-0525.cjs': 'ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1',
                 'httpbar-literals.cjs': '6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173',
                 'joined-control-literals.cjs': '6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6',
-                'http-root-cases-manifest.json': 'f0fb01c8ab2e121f08533359f3557963f371c4e3802d60bd1e609f21e82dd4dd',
-                'http-root-cases-guard.cjs': 'f48ca3805fc443e9f3cd61aa96f5440a1eafe355516014257c522f36eaedaa02',
-                'http-root-cases-negative.cjs': '8a16809a07f12b8e60a4b02ac561e7accdfc0715fbaa67d9d8942daa92722364',
+                'closed-topology-after-dismiss-literals.cjs': '8435b31ad6790fddc0750f6b5926388f36f394de9f58de9238c3944d45db6740',
+                'http-root-cases-manifest.json': '41075da706094b6f6b711ff3ab03b8c8d49be19022e4d6a2ac33078a66815427',
+                'http-root-cases-guard.cjs': '3fd2683df290e98ec58f7dd055364d4aabc55075b60ac6bcfe58f2caaebf6210',
+                'http-root-cases-negative.cjs': '54446b046f157a5443230c1fe8c965d3de97a57553605a4fe12c0d3f6c4713d1',
                 'tea-contract-cases.cjs': '41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7',
             }
             for name, digest in reviewed_http_inputs.items():
@@ -309,7 +312,9 @@ def main():
             if (negative.get('ok') is not True or negative.get('originalAcceptanceClaim') is not False
                     or negative.get('controls') != ['absent-peer', 'empty-peer', 'altered-peer',
                         'removed-peer-cases', 'removed-case', 'duplicate-case', 'absent-joined',
-                        'empty-joined', 'altered-joined', 'removed-joined-case', 'duplicate-joined-case']):
+                        'empty-joined', 'altered-joined', 'removed-joined-case', 'duplicate-joined-case',
+                        'absent-closed-topology', 'empty-closed-topology', 'altered-closed-topology',
+                        'removed-closed-topology-case', 'reordered-joined-cases']):
                 raise RuntimeError('HTTP fixture negative controls incomplete')
             report['httpRootNegative'] = {'resultPath': negative_path.name, 'resultSHA256': sha(negative_path),
                 'result': negative}
@@ -321,6 +326,7 @@ def main():
             observed_http = json.loads(observer_path.read_text())
             cases = observed_http.get('cases', [])
             joined = observed_http.get('joined', {})
+            topology = observed_http.get('joinedTopology', {})
             if (observed_http.get('ok') is not True
                     or observed_http.get('originalAcceptanceClaim') is not False
                     or observed_http.get('coverage', {}).get('complete') is not False
@@ -331,12 +337,22 @@ def main():
                     or len(observed_http.get('peerSources', [])) != 1
                     or observed_http['peerSources'][0].get('sha256') != sha(subscription_qa / 'httpbar-literals.cjs')
                     or joined.get('literalHash') != sha(subscription_qa / 'joined-control-literals.cjs')
-                    or {k: joined.get(k) for k in ('name', 'root')} != {k: manifest.get('joined', {}).get(k) for k in ('name', 'root')}
-                    or joined.get('assertedStepsPerRun') != manifest.get('joined', {}).get('steps')
+                    or {k: joined.get(k) for k in ('name', 'root')} != {k: manifest['joined'][0].get(k) for k in ('name', 'root')}
+                    or joined.get('assertedStepsPerRun') != manifest['joined'][0].get('steps')
                     or joined.get('freshRuns') != 2
                     or joined.get('negatives') != ['given-mutated', 'given-omitted', 'commit-altered',
                                                     'projection-reordered', 'projection-duplicated', 'projection-missing']
                     or joined.get('compiledOriginal') != {name: plain_hashes[name] for name in ('HttpMain', 'HttpPopup')}
+                    or topology.get('literalHash') != sha(subscription_qa / 'closed-topology-after-dismiss-literals.cjs')
+                    or {k: topology.get(k) for k in ('name', 'root')} != {k: manifest['joined'][1].get(k) for k in ('name', 'root')}
+                    or topology.get('assertedStepsPerRun') != manifest['joined'][1].get('steps')
+                    or topology.get('freshRuns') != 2
+                    or topology.get('compiledOriginal') != {name: plain_hashes[name] for name in ('HttpMain', 'HttpPopup')}
+                    or topology.get('negativeRejections') != [
+                        {'name':'second-commit-altered', 'reason':'actual controller commit differs from independent complete literal', 'step':6},
+                        {'name':'topology-before-post-settle', 'reason':'HttpJoined-dismiss-then-closed-empty-topology step 5: joined full literal mismatch', 'step':5},
+                        {'name':'duplicate-revision-changed', 'reason':'HttpJoined-dismiss-then-closed-empty-topology step 10: joined full literal mismatch', 'step':10},
+                        {'name':'whole-model-altered', 'reason':'HttpJoined-dismiss-then-closed-empty-topology step 9: joined full literal mismatch', 'step':9}]
                     or not isinstance(cases, list) or not cases
                     or [{'name': case.get('name'), 'root': case.get('root'),
                          'steps': case.get('assertedStepsPerRun')} for case in cases] != manifest.get('cases')

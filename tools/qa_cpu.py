@@ -158,7 +158,7 @@ def main():
             'TeaAdmissionSubscriptionsReplay.elm', 'TeaRendererSubscriptionsReplay.elm',
             'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs', 'tea-contract-cases.cjs',
             'sol-http-root-observer-0535.cjs', 'sol-http-popup-literals-0525.cjs',
-            'httpbar-literals.cjs', 'joined-control-literals.cjs', 'http-root-cases-manifest.json',
+            'httpbar-literals.cjs', 'joined-control-literals.cjs', 'closed-topology-after-dismiss-literals.cjs', 'http-root-cases-manifest.json',
             'http-root-cases-guard.cjs', 'http-root-cases-negative.cjs',
             'sitemain-root-literals.cjs', 'sitemain-root-observer.cjs',
             'sitemain-root-manifest.json', 'sitemain-root-negative.cjs'))

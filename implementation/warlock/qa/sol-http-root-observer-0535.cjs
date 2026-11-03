@@ -322,12 +322,13 @@ function run(original, spec) {
 // QA-only joined replay. The peer provides every expected state and packet;
 // the values below only enforce the source-reviewed Owner projection relation.
 // This does not execute Haskell Owner or claim owner admission/native delivery.
-function runJoined(originals, spec) {
+function runJoined(originals, spec, onStep = () => {}) {
   insist(spec.root === 'HttpJoined' && Array.isArray(spec.steps), 'invalid joined history');
   const envs = Object.fromEntries(['HttpMain', 'HttpPopup'].map(root => [root, load(originals[root], root)]));
   const models = {}, trace = [], commits = new Map();
   const pending = [];
   for (let i = 0; i < spec.steps.length; i++) {
+    onStep(i);
     const step = spec.steps[i], root = step.root, env = envs[root];
     insist(env && step.input && typeof step.input.kind === 'string', 'invalid joined root/input');
     // Check linked delivery order before a reducer or literal mismatch can
@@ -425,7 +426,9 @@ function main() {
   const peerPath = path.resolve(process.argv[6]);
   insist(peerPath === path.join(__dirname, 'httpbar-literals.cjs'), 'required staged peer path differs');
   const joinedPath = path.join(__dirname, 'joined-control-literals.cjs');
+  const closedPath = path.join(__dirname, 'closed-topology-after-dismiss-literals.cjs');
   const fixtureFiles = { base: fs.readFileSync(oraclePath), peer: fs.readFileSync(peerPath), joined: fs.readFileSync(joinedPath),
+    closedTopology: fs.readFileSync(closedPath),
     policy: fs.readFileSync(path.join(repository, 'implementation/warlock/qa/tea-contract-cases.cjs')) };
   validateFiles(manifest, fixtureFiles);
   const oracle = require(oraclePath);
@@ -443,7 +446,14 @@ function main() {
   insist(joinedPacket && joinedPacket.coverage && joinedPacket.coverage.complete === false &&
     joinedPacket.coverage.originalAccepted === false && joinedPacket.coverage.nativeAccepted === false &&
     Array.isArray(joinedPacket.cases), 'joined literal missing cases or incomplete coverage');
-  validateJoined(manifest, joinedPacket.cases);
+  const closed = require(closedPath);
+  insist(closed.schema === 1 && typeof closed.build === 'function', 'closed topology literal schema mismatch');
+  const closedPacket = closed.build(repository);
+  insist(closedPacket && closedPacket.coverage && closedPacket.coverage.complete === false &&
+    closedPacket.coverage.originalAccepted === false && closedPacket.coverage.nativeAccepted === false &&
+    Array.isArray(closedPacket.cases), 'closed topology literal missing cases or incomplete coverage');
+  validateJoined(manifest, joinedPacket.cases.concat(closedPacket.cases));
+  insist(isDeepStrictEqual(full(closedPacket.cases[0].steps.slice(0, 5)), full(joinedPacket.cases[0].steps)), 'dismiss prefix differs from tested case');
   const peerSources = [{ path: peerPath, sha256: hash(fixtureFiles.peer) }];
   const results = [];
   for (const spec of packet.cases) {
@@ -491,8 +501,34 @@ function main() {
     negatives: ['given-mutated', 'given-omitted', 'commit-altered', 'projection-reordered', 'projection-duplicated', 'projection-missing'],
     negativeRejections,
     literalHash: hash(fixtureFiles.joined)};
+  const closedSpec = closedPacket.cases[0];
+  const firstClosed = runJoined(originals, closedSpec), secondClosed = runJoined(originals, closedSpec);
+  insist(isDeepStrictEqual(firstClosed.trace, secondClosed.trace), 'closed topology replay nondeterministic after literal assertions');
+  const closedRejections = [];
+  function rejectClosed(name, mutate, reason, expectedStep, mismatch) {
+    const spec = clone(closedSpec);
+    mutate(spec);
+    let step = null, rejected = false;
+    try { runJoined(originals, spec, i => { step = i; }); } catch (error) {
+      const expected = mismatch ? `${spec.name} step ${expectedStep}: joined full literal mismatch` : reason;
+      insist(step === expectedStep && error.message === expected && (!mismatch ||
+        error.counterexample && error.counterexample.step === expectedStep),
+        `closed topology negative failed for an unrelated reason: ${name}: step ${step}: ${error.message}`);
+      closedRejections.push({name, reason:error.message, step}); rejected = true;
+    }
+    insist(rejected, `closed topology negative did not reject: ${name}`);
+  }
+  rejectClosed('second-commit-altered', spec => { spec.steps[6].join.commit.projection.frame.publication = '10'; },
+    'actual controller commit differs from independent complete literal', 6, false);
+  rejectClosed('topology-before-post-settle', spec => { [spec.steps[5], spec.steps[6]] = [spec.steps[6], spec.steps[5]]; }, null, 5, true);
+  rejectClosed('duplicate-revision-changed', spec => { const input = JSON.parse(spec.steps[10].input.body); input.payload.revision = '3'; spec.steps[10].input.body = JSON.stringify(input); }, null, 10, true);
+  rejectClosed('whole-model-altered', spec => { spec.steps[9].expected.state.policy.controller.a.revision.a = '99'; }, null, 9, true);
+  const joinedTopology = {name:closedSpec.name, root:closedSpec.root, assertedStepsPerRun:closedSpec.steps.length, freshRuns:2,
+    compiledOriginal:Object.fromEntries(Object.entries(originals).map(([root, original]) => [root, hash(original)])),
+    instrumentedInMemory:firstClosed.instrumentedHash, reversibleInsertions:firstClosed.instrumentation,
+    negativeRejections:closedRejections, literalHash:hash(fixtureFiles.closedTopology)};
   console.log(JSON.stringify({ ok: true, coverage: oracle.coverage, cases: results,
-    joined: joinedResult,
+    joined: joinedResult, joinedTopology,
     policyLiteralSource: packet.policyOracle, oracleHash: hash(fs.readFileSync(oraclePath)),
     observerHash: hash(fs.readFileSync(__filename)), manifestHash: hash(fs.readFileSync(manifestPath)), peerSources,
     limits: ['pure replay only: actual root init is observed then stopped before DOM/effect execution',

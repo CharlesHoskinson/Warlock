@@ -1,5 +1,11 @@
 # Activity log
 
+## 2026-11-03 — closed topology after dismissal
+
+The protected subscription component `.warlock-contributor/elm-cpu-1793666988161479553/report.json` passes the preserved five-step dismissal and a new eleven-step continuation through POST settlement, closed empty topology, linked popup projections and duplicate revision handling. Each case replays twice; six original reason-specific and four new reason-and-step-specific mutations were rejected. Existing eight cases and SiteMain remain. Report SHA-256: `788860a277135092e6e518bced99d7827f3b5d166e660afc001289c43de56438`; the raw report remains local. The retained popup and initial GIVEN are explicit assumptions. Real Owner admission and native delivery remain unproved; no whole EARS is accepted.
+
+Fresh metadata for the restarted guest passes four loader checks and 163 provider joins. All 223 Haskell and 108 Elm sources match the recorded build, but two QA tools differ from its full 353-input set. The independent receipt keeps `sourceHashesVerified:false`; the existing native gate remains unsatisfied. No new product campaign was launched and no startup-diagnostic stop was reset.
+
 ## 2026-11-03 — joined dismissal component
 
 The protected subscription report `.warlock-contributor/elm-cpu-1793666196760385365/report.json` passed two fresh five-step already-open GIVEN, dismissal, controller commit and popup projection replays. Six mutations were rejected for their expected reasons; existing eight cases and SiteMain controls remain. Report SHA-256: `af8423c91144911224ef36f31ef1bf9ff6d84f4d03faa13d20614a616c1cc798`. The raw report remains local. The GIVEN is an explicit initial condition, and the Owner relation is a source transcription. Reachability, subsequent topology/revocation, real Owner admission and current-product Omarchy input/pixels remain open. No whole EARS was closed.
