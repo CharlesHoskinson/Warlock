@@ -66,6 +66,41 @@ main = do
     Just session -> do
      stale <- requestGracefulStop session
      check "escaped session cannot signal" (stale == Left SessionClosed)
+   -- Explicit live-before-containment control: termination is not an
+   -- independent normal-exit observation, even when the child later exits.
+   forcedOwner <- newOwner
+   forcedMarker <- newMarker
+   forcedDeadline <- deadlineAfter 5000000 >>= either (ioError . userError . show) pure
+   forcedInput <- openFile "/dev/null" ReadMode
+   forced <- runSelectedDetailed forcedOwner (selectedFixture child [forcedMarker] forcedInput) 4096 forcedDeadline $ \_ -> do
+    awaitMarker forcedMarker 200
+    pure (Left BadArguments)
+   check "live child before containment" (selectedContainment forced == BeforeSignalLeaderAlive)
+   check "forced child exit unknown" (selectedObservedExit forced == Nothing)
+   check "refusal unchanged" (selectedOperation forced == Left BadArguments)
+   check "forced child custody settled" (selectedCustody forced == Available)
+   removeFile forcedMarker
+   -- Actual child self-signals only after readiness and explicit release.
+   signalOwner <- newOwner
+   signalMarker <- newMarker
+   signalDeadline <- deadlineAfter 5000000 >>= either (ioError . userError . show) pure
+   signalInput <- openFile "/dev/null" ReadMode
+   signaled <- runSelectedDetailed signalOwner (selectedFixture child [signalMarker,"signal-when-removed"] signalInput) 4096 signalDeadline $ \session -> do
+    awaitMarker signalMarker 200
+    removeFile signalMarker
+    awaitLeader session
+   check "signal happened before containment" (selectedContainment signaled == BeforeSignalLeaderExited)
+   check "signal exit is unknown" (selectedObservedExit signaled == Nothing)
+   check "signal is not successful operation" (case selectedOperation signaled of Left _ -> True; Right _ -> False)
+   check "signaled child custody settled" (selectedCustody signaled == Available)
+   -- The argument refusal happens before spawn, so no process observation exists.
+   absentOwner <- newOwner
+   absentDeadline <- deadlineAfter 5000000 >>= either (ioError . userError . show) pure
+   absentInput <- openFile "/dev/null" ReadMode
+   absent <- runSelectedDetailed absentOwner (selectedFixture "" [] absentInput) 4096 absentDeadline (\_ -> pure (Right ()))
+   hClose absentInput
+   check "no spawn has unknown containment and observation" (selectedContainment absent == SignalStateUnknown && selectedObservedExit absent == Nothing)
+   check "no spawn retains bad-arguments" (selectedOperation absent == Left BadArguments)
    failureOwner <- newOwner
    failureMarker <- newMarker
    failureDeadline <- deadlineAfter 5000000 >>= either (ioError . userError . show) pure

@@ -5,8 +5,8 @@ import System.Exit (ExitCode(..))
 import System.Environment (getArgs)
 import System.IO (hFlush, stdout)
 import System.Posix.Files (fileExist)
-import System.Posix.Process (exitImmediately)
-import System.Posix.Signals (Handler(Catch), installHandler, sigTERM)
+import System.Posix.Process (exitImmediately, getProcessID)
+import System.Posix.Signals (Handler(Catch), installHandler, signalProcess, sigKILL, sigTERM)
 
 waitUntilRemoved :: FilePath -> Int -> IO ()
 waitUntilRemoved _ 0 = pure ()
@@ -31,6 +31,13 @@ main = do
    hFlush stdout
    threadDelay 80000
    exitImmediately (ExitFailure 7)
+  [marker, "signal-when-removed"] -> do
+   writeFile marker "ready"
+   putStrLn "READY"
+   hFlush stdout
+   waitUntilRemoved marker 500
+   getProcessID >>= signalProcess sigKILL
+   exitImmediately (ExitFailure 2)
   [marker, "exit-when-removed"] -> do
    writeFile marker "ready"
    putStrLn "READY"

@@ -75,7 +75,8 @@ def prepare(root, work, env, run, digest):
                            'ancestors': [{'path': str(p), 'device': str(p.stat().st_dev),
                                           'inode': str(p.stat().st_ino)} for p in parents if p != p.parent]}
     toolchain.verify()
-    quint_toolchain()
+    if quint_toolchain()[0] != node_pin:
+        raise RuntimeError('UI bridge toolchain changed during compilation')
     if node.is_symlink() or not node.is_file() or digest(node) != node_pin['node']['sha256']:
         raise RuntimeError('Pinned UI bridge Node changed during compilation')
     if (tree(frontend / 'src') != source_before or tree(source) != source_before

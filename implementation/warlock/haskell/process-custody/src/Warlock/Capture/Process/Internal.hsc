@@ -99,7 +99,7 @@ deadlineFromAbsoluteNsAt now value
 data SelectedInput = FixtureInput Handle | TicketInput TransferTicket
 data SelectedSpawn = SelectedSpawn FilePath [String] (Maybe SelectedInput) [(String,String)] (Maybe HeldExecutable)
 data Containment = BeforeSignalLeaderExited | BeforeSignalLeaderAlive | SignalStateUnknown deriving (Eq,Show)
-data SelectedOutcome = SelectedOutcome { selectedOperation :: Either ToolError Captured, selectedContainment :: Containment, selectedCustody :: OwnerStatus } deriving (Eq,Show)
+data SelectedOutcome = SelectedOutcome { selectedOperation :: Either ToolError Captured, selectedContainment :: Containment, selectedCustody :: OwnerStatus, selectedObservedExit :: Maybe Int } deriving (Eq,Show)
 data SelectedResult = SelectedResult { selectedCapture :: Captured, groupContainmentAttempted :: Bool, leaderExitedBeforeContainment :: Bool } deriving (Eq,Show)
 selectedFixture :: FilePath -> [String] -> Handle -> SelectedSpawn
 selectedFixture exe args input = SelectedSpawn exe args (Just (FixtureInput input)) [("LC_ALL","C"),("LANG","C"),("PATH","/usr/bin")] Nothing
@@ -368,14 +368,15 @@ runSelectedDetailed owner selection cap deadline conversation = do
  result <- runSelectedHook owner selection cap deadline conversation (const (pure ())) (Just observedExit) Nothing Nothing
  exited <- readIORef observedExit
  state <- status owner
- let containment = case exited of Just True -> BeforeSignalLeaderExited; Just False -> BeforeSignalLeaderAlive; Nothing -> SignalStateUnknown
- pure (SelectedOutcome result containment state)
+ let containment = case exited of Just (True,_) -> BeforeSignalLeaderExited; Just (False,_) -> BeforeSignalLeaderAlive; Nothing -> SignalStateUnknown
+     normalExit = case exited of Just (True,Just code) -> code; _ -> Nothing
+ pure (SelectedOutcome result containment state normalExit)
 
 -- Source-fixture seam only; hooks run at actual lifecycle points.
 runSelectedFixtureHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> IO (Either ToolError Captured)
 runSelectedFixtureHook owner selection cap deadline conversation hook = runSelectedHook owner selection cap deadline conversation hook Nothing Nothing Nothing
 
-runSelectedHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> Maybe (IORef (Maybe Bool)) -> Maybe (IORef (Maybe Captured)) -> Maybe SelectedFDPlan -> IO (Either ToolError Captured)
+runSelectedHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> Maybe (IORef (Maybe (Bool,Maybe (Maybe Int)))) -> Maybe (IORef (Maybe Captured)) -> Maybe SelectedFDPlan -> IO (Either ToolError Captured)
 runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selectedLease) cap deadline conversation hook exitObservation captureCell selectedPlan
  | null exe || head exe /= '/' || cap <= 0 || cap > 4194304 = pure (Left BadArguments)
  | otherwise = mask $ \restore -> do
@@ -675,10 +676,20 @@ runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selected
   terminateReap ph pid = do
    -- Confirm owned child is still observable and unreaped before any signal.
    wasDead <- leaderExited pid
-   mapM_ (\ref -> writeIORef ref (Just wasDead)) exitObservation
+   mapM_ (\ref -> writeIORef ref (Just (wasDead,Nothing))) exitObservation
    killGroup wasDead pid
    result <- timeout 2000000 (waitForProcess ph)
-   maybe (ioError (userError "owned child reap timed out")) pure result
+   case result of
+    Nothing -> ioError (userError "owned child reap timed out")
+    Just code -> do
+     -- process represents POSIX signal deaths by negative ExitFailure.
+     -- Reject out-of-range values as unknown, not as a numeric exit.
+     let observedCode = case code of
+          ExitSuccess -> Just 0
+          ExitFailure n | n > 0 && n <= 255 -> Just n
+          _ -> Nothing
+     mapM_ (\ref -> writeIORef ref (Just (wasDead,Just observedCode))) exitObservation
+     pure code
 
 hexDigest :: B.ByteString -> B.ByteString
 hexDigest = C.pack . concatMap format . B.unpack

@@ -18,7 +18,7 @@ import Warlock.Backend.PinStore
 import Warlock.Backend.Store
 import Warlock.Ui.Display (readDisplayEnvironment)
 import Warlock.Bootstrap
-import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),ToolError(..),deadlineFromAbsoluteNs,selectedCustody,selectedContainment,selectedOperation)
+import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),ToolError(..),deadlineFromAbsoluteNs,selectedCustody,selectedContainment,selectedOperation,selectedObservedExit)
 import Warlock.Platform.Resolver (Identity(..),Kind(..),Pin(..),withRoot)
 import Warlock.Protocol.Codec (checkedDesktopCommit,checkDesktopReply,desktopProfile,encodeServerCheckedWith)
 import Warlock.Protocol.CredentialIngress
@@ -304,6 +304,12 @@ backendResultJson result = TE.encodeUtf8 (renderJson (JObject
  ,("failureStages",JArray [JString name | (name,JBool False) <- checks])
  ,("selectedOperationError",case backendBootstrap result of
     Right (Executed selected) -> either operationFailureJson (const JNull) (selectedOperation selected)
+    _ -> JNull)
+ ,("selectedObservedExit",case backendBootstrap result of
+    Right (Executed selected) -> case selectedObservedExit selected of
+     Just code -> JObject [("kind",JString "exit-code-observation"),("trust",JString "untrusted"),
+                           ("authority",JBool False),("code",JNumber (T.pack (show code)))]
+     Nothing -> JNull
     _ -> JNull)
  ,("retirement",JObject [("process",JString (retirementName processRetirement)),("catalog",JString (retirementName catalogRetirement)),("pins",JString (retirementName pinRetirement))])
  ,("nativeAccepted",JBool False),("releaseAccepted",JBool False)]))

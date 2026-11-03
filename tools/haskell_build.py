@@ -298,7 +298,7 @@ def models_only(output, env):
             if info['exit'] != 0 or info['forcedCleanup']:
                 raise RuntimeError(name + ' failed; see retained logs')
         run_ui_models(copy, source, node, model_cli, model_env, logs, result, required)
-        if quint_toolchain()[0] != model_pin:
+        if quint_toolchain()[0] != model_pin or digest(node) != model_pin['node']['sha256']:
             raise RuntimeError('Model toolchain changed during execution')
         for name, expected in hashes.items():
             if digest(source / 'runtime/formal' / name) != expected or digest(formal / name) != expected:
@@ -370,7 +370,7 @@ def build(sdk, output, env, profile='common'):
         return models_only(output, env)
     if profile == 'site':
         return site_only(output, env)
-    if profile not in ('common', 'auth', 'ui-origin', 'custody', 'backend'):
+    if profile not in ('common', 'auth', 'ui-origin', 'custody', 'backend', 'persistent'):
         raise RuntimeError('Unknown fixed Haskell verification profile')
     sdk, output = Path(sdk).resolve(), Path(output).resolve()
     result = {'schema': 1, 'passed': False, 'profile': profile, 'commands': [], 'suites': {},
@@ -475,6 +475,12 @@ def build(sdk, output, env, profile='common'):
         fixtures = (FIXTURES if profile == 'common' else
                     ({'warlock-ui-backend': FIXTURES['warlock-ui-backend'], 'ui-stream-child': FIXTURES['ui-stream-child']} if profile == 'ui-origin'
                      else {'credential-peer-child': FIXTURES['credential-peer-child']}))
+        if profile == 'persistent':
+            targets = ['warlock-runtime:test:persistent-bootstrap-controls',
+                       'warlock-process-custody:test:deadline-stop-controls',
+                       'warlock-runtime:test:ui-mvp-controls']
+            fixtures = {name: FIXTURES[name] for name in
+                        ('credential-peer-child', 'graceful-stop-child', 'ui-stream-child')}
         if profile == 'custody':
             targets = ['warlock-process-custody:test:deadline-stop-controls', 'warlock-process-custody:test:persistent-exit-race-controls', 'warlock-protocol:test:ingress-controls']
             fixtures = {'graceful-stop-child': FIXTURES['graceful-stop-child']}
@@ -580,7 +586,8 @@ def build(sdk, output, env, profile='common'):
                     raise RuntimeError('UI model changed during execution')
         if profile in ('common', 'ui-origin'):
             run_ui_models(copy, source, node, model_cli, model_env, logs, result, required)
-        quint_toolchain()
+        if quint_toolchain()[0] != model_pin or digest(node) != model_pin['node']['sha256']:
+            raise RuntimeError('Model toolchain changed during execution')
         bins = {}
         for index, target in enumerate(targets + list(fixtures.values())):
             info = command('list-bin-' + str(index), 'list-bin', [target], test=True)
@@ -632,7 +639,7 @@ def build(sdk, output, env, profile='common'):
         dispatch_path = work / 'dispatch-all.json'
         dispatch_path.write_text(json.dumps({'suites': dispatches}, indent=2) + '\n')
         test_env = dict(build_env, WARLOCK_HASKELL_DISPATCH=str(dispatch_path))
-        info = command('test-all' if profile == 'common' else ('test-ui-origin' if profile == 'ui-origin' else ('test-custody' if profile == 'custody' else ('test-backend' if profile == 'backend' else 'test-public-auth'))), 'test',
+        info = command('test-all' if profile == 'common' else ('test-ui-origin' if profile == 'ui-origin' else ('test-custody' if profile == 'custody' else ('test-backend' if profile == 'backend' else ('test-persistent-common' if profile == 'persistent' else 'test-public-auth')))), 'test',
                        (['all'] if profile == 'common' else targets) + ['--keep-going', '--test-show-details=direct', '--test-wrapper=' + str(WRAPPER)],
                        test=True, timeout=900, extra_env=test_env)
         result['testCommandExit'] = info['exit']

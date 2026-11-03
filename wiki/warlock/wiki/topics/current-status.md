@@ -11,6 +11,10 @@ summary: "19 whole original requirements/42scenarios accepted; DEL010 closes on 
 
 # Current status
 
+Latest local observation, 2026-11-02T23:14Z: the original unattended expiry remains 2026-11-03T20:02:47.475490+00:00. Root integrated an independent, untrusted child-exit observation after an actual behavioral failure. The protected persistent/custody/backend component report `.warlock-contributor/haskell-cpu-1793660503565699641/report.json` passes; its local raw receipt is not published evidence. A fresh existing UI-origin qualification is still running for the new production tuple. No new whole EARS is closed. Actual Omarchy product input and inspected pixels remain missing; the earlier backend attempt failed before a product frame. Original deadlines, failed evidence and acceptance limits remain intact. Earlier dated entries below retain their original source and host scope.
+
+As of November2 21:10UTC, the local loop runtime is restored and the UiHttp typed-effect candidate passes protected HTTP observer and optimized transport checks. The selected Haskell component suites pass. Whole ELM-TEA-004 and current-product Omarchy observations remain open. The earlier 19/242 and 42/417 figures remain historical counts. No new whole requirement is accepted in this restoration.
+
 As of November2 03:11UTC: **19/242 whole requirements and42/417scenarios**. Actual Haskell Store acquisition ownership is repaired and passes36ordinary suites plus identical old/new/fault controls. Bounded model evidence retains a uniform coverage gap and separate positive witness. The fresh Omarchy build completes17guarded Apps/Search/Refresh inputs with visually checked Foot/no-match/query retention, but selected child exit1 and strict cleanup uncertainty remain. [Current component](../../../../docs/warlock-build-loop/v2/store-retirement-component-20261102.json). Next actual persistent custody/request source; no native or release acceptance.
 
 ## Earlier dated observations (retained)

@@ -11,7 +11,7 @@ import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
 import Data.Char (isHexDigit,ord)
 import Data.IORef (modifyIORef',newIORef,readIORef)
-import Data.List (intercalate,nub,stripPrefix)
+import Data.List (intercalate,isInfixOf,nub,stripPrefix)
 import Numeric (showHex)
 import System.Environment (getArgs)
 import System.FilePath (takeDirectory,(</>))
@@ -23,7 +23,7 @@ import System.Posix.Files (deviceID,fileID,fileSize,fileMode,fileOwner,getFdStat
 import System.Posix.User (getRealUserID,getEffectiveUserID,getRealGroupID,getEffectiveGroupID)
 import Text.Read (readMaybe)
 import Warlock.Bootstrap
-import Warlock.Capture.Process.Bootstrap (Captured(..),Containment(..),OwnerStatus(..),ToolError(BadArguments),selectedCustody,selectedContainment,selectedOperation,deadlineAfter)
+import Warlock.Capture.Process.Bootstrap (Captured(..),Containment(..),OwnerStatus(..),ToolError(..),selectedCustody,selectedContainment,selectedOperation,deadlineAfter)
 import Warlock.Platform.Resolver (Root,Identity(..),Kind(..),Pin(..),withRoot)
 import Warlock.Protocol.Codec (decodeClientChecked,encodeClientChecked)
 import Warlock.Protocol.CredentialIngress
@@ -203,7 +203,7 @@ runCase root pins child size digest crossUid contextDirectory (Case name fixture
  failures <- newIORef ([] :: [String])
  retireDuring <- newIORef ([] :: [Bool])
  let require label good = unless good (modifyIORef' failures (++[label]))
-     emptySession = fixtureMode=="persistent-empty-exit"
+     emptySession = fixtureMode `elem` ["persistent-empty-exit","persistent-diagnostic-exit"]
      expectedIndices = if emptySession then [] else if positive then indices seed else if fixtureMode=="persistent-buffered-retire" then take 1 (indices seed) else [0]
      rawExpected = map (request seed) expectedIndices
  expected <- mapM (either (ioError . userError . show) pure . decodeClientChecked) rawExpected
@@ -250,7 +250,7 @@ runCase root pins child size digest crossUid contextDirectory (Case name fixture
      actualDiagnostics=maybe B.empty diagnostics captured
      normal=case attempt of
       Right (Executed outcome) -> selectedCustody outcome==Available && selectedContainment outcome==BeforeSignalLeaderExited
-       && (if positive then maybe False (const True) captured else selectedOperation outcome==Left BadArguments)
+       && (if fixtureMode=="persistent-diagnostic-after-frames" then selectedOperation outcome==Left (Unsuccessful 70) else if positive then maybe False (const True) captured else selectedOperation outcome==Left BadArguments)
       _ -> False
      identities=[(pid,user,group) | CredentialObservation _ pid user group <- trace]
      selectedIdentities=maybe [] (\pid -> [(pid,uid,gid)]) selectedPid
@@ -264,6 +264,16 @@ runCase root pins child size digest crossUid contextDirectory (Case name fixture
  require "every delivered frame has authenticated fragments before final admission" (length admittedGroups==length callbacks && all (\rows -> length rows>=3 && all (\(CredentialObservation stage _ _ _) -> stage==FragmentObserved) (init rows)) admittedGroups && allowedIdentities)
  require "selected child PID independently observed" (selectedPid/=Nothing)
  require "normal owned selected leader exit and exact success/refusal operation result" normal
+ -- Independent literal expectations; a Show-field check permits the old
+ -- public facade to compile and fail at runtime before the diagnostic exists.
+ case attempt of
+  Right (Executed result) | fixtureMode == "persistent-diagnostic-exit" ->
+   require "pre-frame exit 70 is retained as untrusted observation" ("selectedObservedExit = Just 70" `isInfixOf` show result)
+  Right (Executed result) | fixtureMode == "persistent-diagnostic-after-frames" ->
+   require "post-frame failed exit retained independently" ("selectedObservedExit = Just 70" `isInfixOf` show result)
+  Right (Executed result) | positive ->
+   require "normal-frame zero exit is independently observed" ("selectedObservedExit = Just 0" `isInfixOf` show result)
+  _ -> pure ()
  require "independent bootstrap resource retirement succeeds" (either (const False) id retired)
  require "owned ingress endpoint and credential reader retired independently" (phase ingressState==OwnerRetired && endpoint ingressState==Just EndpointConfirmed && readerState==ReaderReady)
  require "no retained ACK replay or outbound mutation" (null retained)
@@ -271,6 +281,9 @@ runCase root pins child size digest crossUid contextDirectory (Case name fixture
   require "all and only expected frame admission groups retained" (length complete==length expected && null trailing && all (`elem` selectedIdentities) identities)
   require "clean EOF preserves last meaningful admitted observation" (finalIs CredentialDelivered)
  else case fixtureMode of
+  "persistent-diagnostic-exit" -> do
+   require "pre-frame EOF cannot reach policy" (null callbacks && null trace && null complete && null trailing && finalIs (CredentialFrameRejected (CredentialTransport StreamEOF)))
+   require "diagnostic EOF does not invoke callback retirement hook" (null during)
   "persistent-empty-exit" -> do
    require "initial exact StreamEOF is refused without any delivered frame" (finalIs (CredentialFrameRejected (CredentialTransport StreamEOF)) && null callbacks && null complete && null trailing && null trace)
    require "empty child exit does not invoke callback retirement hook" (null during)
@@ -331,8 +344,8 @@ main = do
  receiver <- toInteger <$> getRealUserID
  check "full mode receiver is mapped service UID0" (mode/="full" || receiver==0)
  putStrLn (object [("schema","1"),("kind",quote "persistent-auth-environment"),("mode",quote mode),("scope",quote "Public Haskell bootstrap library with actual kernel credentials; subsequent policy entry only, no native effects"),("selectedExecutable",quote child),("sha256",quote (sha bytes)),("size",show size),("device",show dev),("inode",show ino),("uidMap",quote (C.unpack uidMap)),("gidMap",quote (C.unpack gidMap)),("crossUserRequired",boolean (mode=="full")),("crossUserEvidence",if mode=="full" then quote "requires real UID1 writer trace in its case" else quote "unavailable in common mode; no full original acceptance")])
- let seeded=[Case ("seed-"++show seed) "persistent-seeded" seed True | seed <- [20261031..20261038]]
-     negatives=[Case "empty-first-EOF" "persistent-empty-exit" 20261031 False,Case "buffered-retirement" "persistent-buffered-retire" 20261031 False,Case "after-retirement-send" "persistent-after-retire" 20261031 False,Case "malformed" "persistent-malformed" 20261031 False,Case "foreign-binding" "persistent-foreign-binding" 20261031 False,Case "unrelated-same-user" "persistent-unrelated-fork" 20261031 False]
+ let seeded=Case "post-frame-exit-70" "persistent-diagnostic-after-frames" 20261031 True : [Case ("seed-"++show seed) "persistent-seeded" seed True | seed <- [20261031..20261038]]
+     negatives=[Case "pre-frame-exit-70" "persistent-diagnostic-exit" 20261031 False,Case "empty-first-EOF" "persistent-empty-exit" 20261031 False,Case "buffered-retirement" "persistent-buffered-retire" 20261031 False,Case "after-retirement-send" "persistent-after-retire" 20261031 False,Case "malformed" "persistent-malformed" 20261031 False,Case "foreign-binding" "persistent-foreign-binding" 20261031 False,Case "unrelated-same-user" "persistent-unrelated-fork" 20261031 False]
      crossCases=if mode=="full" then [Case "actual-cross-user" "persistent-cross-user-same-pid" 20261031 False] else []
  rootStat <- getSymbolicLinkStatus "/"
  result <- withRoot "/" (Identity (toInteger (deviceID rootStat)) (toInteger (fileID rootStat))) $ \root -> forM (seeded++negatives++crossCases) $ \testCase -> do
@@ -344,7 +357,7 @@ main = do
     putStrLn (object [("schema","1"),("case",quote name),("seed",show seed),("passed","false"),("fixtureException",quote (show problem))])
     pure False
  outcomes <- either (ioError . userError . show) pure result
- let passed=and outcomes && length outcomes==(if mode=="full" then 15 else 14)
+ let passed=and outcomes && length outcomes==(if mode=="full" then 17 else 16)
  putStrLn (object [("schema","1"),("kind",quote "persistent-auth-verdict"),("mode",quote mode),("passed",boolean passed),("cases",show (length outcomes)),("crossUserIncluded",boolean (mode=="full")),("completeOriginalEvidence",boolean (passed && mode=="full")),("nativeExecutionAcceptance","false")])
  check "persistent bootstrap controls failed; raw structured traces above are retained" passed
  where

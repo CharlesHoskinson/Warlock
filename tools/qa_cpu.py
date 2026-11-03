@@ -30,6 +30,15 @@ def reviewed(path, expected):
         raise RuntimeError('Reviewed input missing or changed: ' + str(path))
 
 
+
+def reviewed_inputs(packet):
+    for name, sha in packet['inputs'].items():
+        candidate = Path(name)
+        if candidate.is_absolute() or '..' in candidate.parts:
+            raise RuntimeError('Review input must be repository-relative')
+        reviewed(REPO / candidate, sha)
+
+
 def registry_inputs(root, self_test=False):
     names = {'tools/qa_cpu.py', 'tools/check_registry_cpu.py', 'window-integration-qa/qa_launch.py',
              'implementation/warlock/qa/check-registry-admission.py',
@@ -74,11 +83,14 @@ def haskell_inputs(root, prepare=False, site=False):
         names.update(str(path.relative_to(root)) for path in (root / 'implementation/warlock/src').rglob('*.elm'))
         names.update(str(path.relative_to(root)) for path in (root / 'implementation/warlock/haskell').rglob('*')
                      if path.is_file() and not any(part in ('dist-newstyle', '__pycache__') for part in path.parts))
+    if 'tools/quint-toolchain.json' in names:
+        names.update({'tools/toolchain_derivative.py', 'tools/host-toolchain-derivative.json'})
     return names
 
 
 def tea_inputs(root):
-    names = {'tools/qa_cpu.py', 'tools/check_tea_cpu.py', 'tools/check_elm_cpu.py',
+    names = {'tools/toolchain_derivative.py', 'tools/host-toolchain-derivative.json',
+             'tools/ui-host-toolchain.json', 'tools/qa_cpu.py', 'tools/check_tea_cpu.py', 'tools/check_elm_cpu.py',
              'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
              'tools/quint-toolchain.json', 'window-integration-qa/qa_launch.py',
              'implementation/warlock-preview-provider-v143/qa/toolchain.py',
@@ -103,15 +115,28 @@ def main():
     parser.add_argument('--inside-scope', action='store_true')
     args = parser.parse_args()
     review = args.review.absolute()
-    reviewed(review, args.sha256)
-    packet = json.loads(review.read_text())
+    try:
+        fd = os.open(review, os.O_RDONLY | os.O_CLOEXEC | os.O_NOFOLLOW | os.O_NONBLOCK)
+        with os.fdopen(fd, 'rb') as stream:
+            before = os.fstat(stream.fileno())
+            if not stat.S_ISREG(before.st_mode):
+                raise RuntimeError('Expected regular CPU review packet')
+            review_bytes = stream.read()
+            after = os.fstat(stream.fileno())
+        if (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns, before.st_ctime_ns) != (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns, after.st_ctime_ns):
+            raise RuntimeError('CPU review packet changed while reading')
+    except OSError as error:
+        raise RuntimeError('Expected regular CPU review packet') from error
+    if hashlib.sha256(review_bytes).hexdigest() != args.sha256:
+        raise RuntimeError('Reviewed packet missing or changed: ' + str(review))
+    packet = json.loads(review_bytes)
     if set(packet) != {'schema', 'runner', 'arguments', 'inputs'} or packet['schema'] != 1:
         raise RuntimeError('Unknown CPU review shape')
     runner = Path(packet['runner'])
     registry = runner == REPO / 'tools/check_registry_cpu.py'
     haskell = runner == REPO / 'tools/check_haskell_cpu.py'
     tea = runner == REPO / 'tools/check_tea_cpu.py'
-    allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend']] if haskell else
+    allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend'], ['--persistent']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract'], ['--subscriptions']])))
     if (not registry and not haskell and not tea and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
@@ -131,7 +156,13 @@ def main():
         mandatory.update('implementation/warlock/qa/' + name for name in (
             'TeaPopupSubscriptionsReplay.elm', 'TeaBarSubscriptionsReplay.elm',
             'TeaAdmissionSubscriptionsReplay.elm', 'TeaRendererSubscriptionsReplay.elm',
-            'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs'))
+            'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs', 'tea-contract-cases.cjs',
+            'sol-http-root-observer-0535.cjs', 'sol-http-popup-literals-0525.cjs',
+            'httpbar-literals.cjs', 'http-root-cases-manifest.json',
+            'http-root-cases-guard.cjs', 'http-root-cases-negative.cjs',
+            'sitemain-root-literals.cjs', 'sitemain-root-observer.cjs',
+            'sitemain-root-manifest.json', 'sitemain-root-negative.cjs'))
+        mandatory.update({'site/src/SiteMain.elm', 'site/elm.json'})
     if packet['arguments'] == ['--tea-contract']:
         mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
                           'implementation/warlock/qa/TeaContractReplay.elm',
@@ -202,13 +233,12 @@ def main():
         mandatory = tea_inputs(REPO)
     if haskell:
         mandatory = haskell_inputs(REPO, packet['arguments'] == ['--prepare'], site=packet['arguments'] == ['--site'])
+    if 'tools/quint-toolchain.json' in mandatory or 'tools/ui-host-toolchain.json' in mandatory:
+        mandatory.update({'tools/toolchain_derivative.py', 'tools/host-toolchain-derivative.json',
+                          'tools/ui-host-toolchain.json', 'tools/quint-toolchain.json'})
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
-    for name, sha in packet['inputs'].items():
-        candidate = Path(name)
-        if candidate.is_absolute() or '..' in candidate.parts:
-            raise RuntimeError('Review input must be repository-relative')
-        reviewed(REPO / candidate, sha)
+    reviewed_inputs(packet)
     if not args.inside_scope:
         command = ['systemd-run', '--user', '--scope', '--slice=qa-harness.slice',
                    '--unit=qa-harness-' + uuid.uuid4().hex, '-p', 'MemoryMax=3G', '--',
@@ -231,6 +261,8 @@ def main():
         for name in ('DISPLAY', 'WAYLAND_DISPLAY', 'WAYLAND_SOCKET', 'XAUTHORITY',
                      'HYPRLAND_INSTANCE_SIGNATURE', 'AQ_DRM_DEVICES', 'AQ_BACKENDS', 'AT_SPI_BUS_ADDRESS'):
             env.pop(name, None)
+        reviewed(review, args.sha256)
+        reviewed_inputs(packet)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
             return child.wait(timeout=3600 if haskell else (600 if tea else 240))
@@ -242,6 +274,16 @@ def main():
                 os.killpg(child.pid, signal.SIGKILL)
                 child.wait()
             raise
+        finally:
+            prior = sys.exception()
+            try:
+                reviewed(review, args.sha256)
+                reviewed_inputs(packet)
+            except Exception as post_error:
+                if prior is not None:
+                    prior.add_note('Post-run review check also failed: ' + str(post_error))
+                else:
+                    raise RuntimeError('Post-run review check failed; child status: ' + str(child.returncode)) from post_error
 
 
 if __name__ == '__main__':

@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "profile": "host-20261102",
+  "parents": {
+    "ui": "f53770c47929e28b50ddc7c2c0b5cb2315d90003983446be6c325b7dd0708a14",
+    "quint": "09c0bc0338db4ee189bdbb17a9b54d53992abf442f023691eea690a4ce9bc0b4"
+  },
+  "uiElfChanges": {
+    "/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0": {
+      "before": "c7acb54e5a5d252af46e77f7eac662740b64ca5173ba870c01af3932acc0a710",
+      "after": "badd43566333da97d916ab365c61227751d49cd5c0df5d49dabdbd67b8c6fd19"
+    },
+    "/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4": {
+      "before": "4427719530606773e846e443d0288b32ee7fbdcf0a6f80638c5eda4c810e92eb",
+      "after": "7138aeb748f73c150b1d34d67de69139a441910cd7b269076ba3c8b986dea9a7"
+    },
+    "/usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0": {
+      "before": "f56bf81443a88ce1167bb4f8188a63f1579e35dd31e8b3260f5d4fce7de90b05",
+      "after": "6a9047ac83e4e1afb8032e62332aa449e7c6307c731f621054c9c0573a460899"
+    }
+  },
+  "quint": {
+    "files": 4681,
+    "treeSHA256": "46cb2a21456aa8bbf552bcf4f50039d2607754a5b3644a54f56b953069190ad5"
+  }
+}

@@ -1,4 +1,4 @@
-module UiHttp exposing (Model, Msg(..), Event(..), controller, renderer, enqueue, update, problem, stop, gateway)
+module UiHttp exposing (Model, Msg(..), Event(..), Effect(..), controller, renderer, controllerEffects, rendererEffects, enqueue, enqueueEffects, update, updateEffects, problem, stop, stopEffects, gateway)
 
 import Http
 import Json.Decode as D
@@ -45,14 +45,53 @@ type Model = Model
 type Msg = Poll | Polled (Result Http.Error String) | Posted (Result Http.Error String)
 type Event = Incoming D.Value | Lost String
 
+-- Data descriptions used by the SAME production transition and interpreter.
+-- No public interpreter or Role constructor is added. These values neither
+-- select native authority nor turn local HTTP completion into a receipt.
+type Effect
+    = ReadEvents
+    | SendController E.Value
+    | SendRenderer E.Value
+    | CancelEvents
+    | CancelPost
+    | WakeAfter Float Msg
+
+interpret : List Effect -> Cmd Msg
+interpret descriptions =
+    let command description = case description of
+            ReadEvents -> poll
+            SendController value -> post Controller value
+            SendRenderer value -> post Renderer value
+            CancelEvents -> Http.cancel "warlock-ui-events"
+            CancelPost -> Http.cancel "warlock-ui-post"
+            WakeAfter duration message -> Process.sleep duration |> Task.perform (\_ -> message)
+    in Cmd.batch (List.map command descriptions)
+
+interpreted : (Model,List Effect,Maybe Event) -> (Model,Cmd Msg,Maybe Event)
+interpreted (model,descriptions,event) = (model,interpret descriptions,event)
+
+sendEffect : Role -> E.Value -> Effect
+sendEffect role value = if role==Controller then SendController value else SendRenderer value
+
 controller : (Model,Cmd Msg)
 controller = start Controller
 
 renderer : (Model,Cmd Msg)
 renderer = start Renderer
 
+controllerEffects : (Model,List Effect)
+controllerEffects = startEffects Controller
+
+rendererEffects : (Model,List Effect)
+rendererEffects = startEffects Renderer
+
+startEffects : Role -> (Model,List Effect)
+startEffects role = (Model {role=role,pending=[],active=Nothing,polling=True,failed=Nothing},[ReadEvents])
+
 start : Role -> (Model,Cmd Msg)
-start role = (Model {role=role,pending=[],active=Nothing,polling=True,failed=Nothing},poll)
+start role =
+    let (model,descriptions) = startEffects role
+    in (model,interpret descriptions)
 
 problem : Model -> Maybe String
 problem (Model model) = Maybe.map failureText model.failed
@@ -94,23 +133,34 @@ post role value = Http.request
     {method="POST",headers=headers,url=if role==Controller then "/commit" else "/actions"
     ,body=Http.jsonBody value,expect=Http.expectStringResponse Posted (response False),timeout=Just 5000,tracker=Just "warlock-ui-post"}
 
-failed : Failure -> Model -> (Model,Cmd Msg,Maybe Event)
-failed reason model =
-    if problem model/=Nothing then (model,Cmd.none,Nothing) else
-        (reject reason model,Cmd.batch [Http.cancel "warlock-ui-events",Http.cancel "warlock-ui-post"],Just (Lost (failureText reason)))
-
+-- Existing callers keep their public API. All policy/state decisions above
+-- the interpreter are made once in the pure *Effects functions below.
 stop : String -> Model -> (Model,Cmd Msg,Maybe Event)
-stop reason = failed (ExplicitStop reason)
+stop reason model = interpreted (stopEffects reason model)
 
 enqueue : E.Value -> Model -> (Model,Cmd Msg,Maybe Event)
-enqueue value ((Model model) as current) =
-    if model.failed/=Nothing then (current,Cmd.none,Nothing) else
+enqueue value model = interpreted (enqueueEffects value model)
+
+update : Msg -> Model -> (Model,Cmd Msg,Maybe Event)
+update message model = interpreted (updateEffects message model)
+
+failedEffects : Failure -> Model -> (Model,List Effect,Maybe Event)
+failedEffects reason model =
+    if problem model/=Nothing then (model,[],Nothing) else
+        (reject reason model,[CancelEvents,CancelPost],Just (Lost (failureText reason)))
+
+stopEffects : String -> Model -> (Model,List Effect,Maybe Event)
+stopEffects reason = failedEffects (ExplicitStop reason)
+
+enqueueEffects : E.Value -> Model -> (Model,List Effect,Maybe Event)
+enqueueEffects value ((Model model) as current) =
+    if model.failed/=Nothing then (current,[],Nothing) else
     let limit=if model.role==Controller then 131072 else 8192
         retained=List.length model.pending+(if model.active==Nothing then 0 else 1)
-    in if not (fits limit (E.encode 0 value)) || retained>=16 then failed CapacityExceeded current else
+    in if not (fits limit (E.encode 0 value)) || retained>=16 then failedEffects CapacityExceeded current else
         case model.active of
-            Nothing -> (Model {model | active=Just value},post model.role value,Nothing)
-            Just _ -> (Model {model | pending=model.pending++[value]},Cmd.none,Nothing)
+            Nothing -> (Model {model | active=Just value},[sendEffect model.role value],Nothing)
+            Just _ -> (Model {model | pending=model.pending++[value]},[],Nothing)
 
 gateway : D.Value -> Maybe (String,D.Value)
 gateway value =
@@ -127,27 +177,27 @@ allowed role kind =
         Controller -> List.member kind ["native-event","view-topology","view-action","view-disposition","view-dismiss","view-escape","view-reflow"]
         Renderer -> List.member kind ["presentation","announcements","focus"]
 
-update : Msg -> Model -> (Model,Cmd Msg,Maybe Event)
-update message ((Model model) as current) =
-    if model.failed/=Nothing then (current,Cmd.none,Nothing) else
+updateEffects : Msg -> Model -> (Model,List Effect,Maybe Event)
+updateEffects message ((Model model) as current) =
+    if model.failed/=Nothing then (current,[],Nothing) else
     case message of
-        Poll -> if model.polling then (current,Cmd.none,Nothing) else (Model {model | polling=True},poll,Nothing)
-        Polled (Err _) -> failed EventTransportUnavailable current
+        Poll -> if model.polling then (current,[],Nothing) else (Model {model | polling=True},[ReadEvents],Nothing)
+        Polled (Err _) -> failedEffects EventTransportUnavailable current
         Polled (Ok text) ->
-            if String.isEmpty text then (Model {model | polling=False},Process.sleep 100 |> Task.perform (\_ -> Poll),Nothing)
-            else if not (fits 1048704 text) then failed EventTooLarge current
+            if String.isEmpty text then (Model {model | polling=False},[WakeAfter 100 Poll],Nothing)
+            else if not (fits 1048704 text) then failedEffects EventTooLarge current
             else case D.decodeString D.value text |> Result.toMaybe of
-                Nothing -> failed EventInvalidJson current
+                Nothing -> failedEffects EventInvalidJson current
                 Just value ->
                     case gateway value of
                         Just (kind,_) ->
-                            if allowed model.role kind then (current,poll,Just (Incoming value)) else failed EventSourceRejected current
-                        Nothing -> failed EventGatewayMismatch current
-        Posted (Err _) -> failed DeliveryUnconfirmed current
+                            if allowed model.role kind then (current,[ReadEvents],Just (Incoming value)) else failedEffects EventSourceRejected current
+                        Nothing -> failedEffects EventGatewayMismatch current
+        Posted (Err _) -> failedEffects DeliveryUnconfirmed current
         Posted (Ok text) ->
             -- Delivery completion only permits the next queued HTTP request.
             -- It never enters Desktop as a presentation/native acknowledgement.
-            if not (String.isEmpty text) then failed DeliveryUnexpected current else
+            if not (String.isEmpty text) then failedEffects DeliveryUnexpected current else
             case model.pending of
-                [] -> (Model {model | active=Nothing},Cmd.none,Nothing)
-                next::rest -> (Model {model | active=Just next,pending=rest},post model.role next,Nothing)
+                [] -> (Model {model | active=Nothing},[],Nothing)
+                next::rest -> (Model {model | active=Just next,pending=rest},[sendEffect model.role next],Nothing)

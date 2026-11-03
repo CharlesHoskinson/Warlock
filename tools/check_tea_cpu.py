@@ -159,7 +159,8 @@ def main():
             model_report['sampling'] = {'samples': 10000, 'maxSteps': 50, 'seed': 20261101, 'witnesses': counts}
             if set(counts) != set(witnesses) or any(n == 0 for n in counts.values()):
                 raise RuntimeError('Model witness missing/zero; retain coverage gap')
-        quint_toolchain()
+        if quint_toolchain()[0] != pin or digest(node) != pin['node']['sha256']:
+            raise RuntimeError('Model toolchain changed during execution')
         # Run unchanged boundary controls before the intentionally failing RED.
         for module, name in fixtures[1:] + fixtures[:1]:
             if module in ('PinsReplay', 'PreviewPaintReplay', 'StreamCapacityReplay'):
@@ -188,7 +189,8 @@ def main():
             if 'toolchain' in locals():
                 toolchain.verify()
             if 'pin' in locals():
-                quint_toolchain()
+                if quint_toolchain()[0] != pin or digest(node) != pin['node']['sha256']:
+                    raise RuntimeError('Model toolchain changed during execution')
                 if digest(Path(pin['node']['path'])) != pin['node']['sha256']:
                     raise RuntimeError('Pinned Node changed')
             if report.get('pythonSHA256') and digest(Path(sys.executable).resolve()) != report['pythonSHA256']:

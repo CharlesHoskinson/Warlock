@@ -16,6 +16,7 @@ import secrets
 import stat
 import subprocess
 import sys
+import tarfile
 
 BASE = 'docs/elm-roadmap/requirements.json'
 STATE = 'docs/warlock-build-loop/v2/STATE.json'
@@ -836,13 +837,250 @@ def support_reconciliations(root, record, override=None, check_current=True):
         return {}, ['Support reconciliation: ' + str(exc)], None
 
 
+# One remote-handoff recovery, not a general-purpose foreign-source exception.
+TEA004_RECOVERY_RECORD = '.warlock-contributor/tea-subscriptions-root.json'
+TEA004_RECOVERY_IDENTITY = '435039e4844bcb563466a9eea0d99f70150d91347eee3dd39483b75aa9c990eb'
+TEA004_RECOVERY_ARCHIVE_SHA256 = '224df4b74e6d3e0ec08df1e4a59aa4ed112a3017119e7864ec8f52f0489ab717'
+TEA004_RECOVERY_CACHES = (
+    'plugins/warlock-contributor/scripts/__pycache__/warlock.cpython-314.pyc',
+    'window-integration-qa/__pycache__/qa_launch.cpython-314.pyc',
+)
+TEA004_RECOVERY_TOOL = 'tools/check_tea_cpu.py'
+TEA004_RECOVERY_NAMES = TEA004_RECOVERY_CACHES + (TEA004_RECOVERY_TOOL,)
+TEA004_RECOVERY_SOURCES = ('plugins/warlock-contributor/scripts/warlock.py',
+                            'window-integration-qa/qa_launch.py')
+TEA004_RECOVERY_EVIDENCE = '.warlock-contributor/evidence/tea004-recovery/'
+
+
+def tea004_recovery_sidecar(root, record):
+    return safe(root, str(reconciliation_path(root, record).relative_to(root))
+                .replace('/foreign-reconciliations/', '/tea004-recoveries/'))
+
+
+def tea004_recovery_claim(root, proof, at):
+    if (type(proof.get('schema')) is not int or proof['schema'] != 1
+            or proof.get('owner') != 'lead' or not isinstance(proof.get('run'), str)
+            or not isinstance(proof.get('claims'), list)):
+        raise ValueError('Invalid TEA004 claim proof')
+    observed = dt.datetime.fromisoformat(proof['observedUTC'])
+    if observed.tzinfo is None or observed > at:
+        raise ValueError('Invalid TEA004 claim observation time')
+    exact = 'file:' + str(root / TEA004_RECOVERY_TOOL)
+    parent = 'file:' + str(root / 'tools') + '/'
+    candidates = [row for row in proof['claims'] if isinstance(row, dict)
+                  and row.get('resource') in (exact, parent)]
+    if len(candidates) != 1:
+        raise ValueError('TEA004 proof must contain one covering tool claim')
+    row = candidates[0]
+    lease = dt.datetime.fromisoformat(row['lease_end'])
+    if (row.get('holder') != 'lead' or not isinstance(row.get('holder_did'), str)
+            or not re.fullmatch(r'did:key:z[1-9A-HJ-NP-Za-km-z]+', row['holder_did'])
+            or lease.tzinfo is None or lease <= at):
+        raise ValueError('TEA004 claim holder or lease is invalid')
+    return row
+
+
+def tea004_recovery_validate(root, record, data, check_current=True, check_census=False):
+    """Replay one pinned, independently reviewed exceptional batch."""
+    import io
+    import tarfile
+    if (not isinstance(data, dict) or set(data) != {'schema', 'events'}
+            or type(data['schema']) is not int or data['schema'] != 1
+            or not isinstance(data['events'], list) or len(data['events']) != 1):
+        raise ValueError('TEA004 recovery must contain one atomic batch')
+    event = data['events'][0]
+    if (not isinstance(event, dict) or set(event) != {'payload', 'reviewSha256', 'atUTC', 'previousEventSha256', 'eventSha256'}
+            or event['previousEventSha256'] is not None
+            or event['eventSha256'] != json_sha256({k: v for k, v in event.items() if k != 'eventSha256'})):
+        raise ValueError('TEA004 recovery event hash differs')
+    at = dt.datetime.fromisoformat(event['atUTC'])
+    if at.tzinfo is None:
+        raise ValueError('TEA004 event requires a timezone')
+    payload = event['payload']
+    fields = {'schema', 'recordPath', 'recordIdentitySha256', 'recordSnapshot', 'recordSnapshotSha256',
+              'archive', 'archiveSha256', 'ownerCensusSnapshot', 'ownerCensusSnapshotSha256',
+              'claimProof', 'claimProofSha256', 'entries', 'reviewFile'}
+    if (not isinstance(payload, dict) or set(payload) != fields or type(payload['schema']) is not int
+            or payload['schema'] != 1 or record.get('_recordPath') != TEA004_RECOVERY_RECORD
+            or payload['recordPath'] != TEA004_RECOVERY_RECORD
+            or record.get('owner') != 'lead'
+            or record_identity(record, TEA004_RECOVERY_RECORD) != TEA004_RECOVERY_IDENTITY
+            or payload['recordIdentitySha256'] != TEA004_RECOVERY_IDENTITY):
+        raise ValueError('TEA004 original record identity differs')
+    def evidence(name, prefix, expected):
+        if not isinstance(name, str) or not name.startswith(prefix):
+            raise ValueError('TEA004 evidence is outside the fixed scope')
+        path = safe(root, name)
+        if git_run(root, 'check-ignore', '-q', '--', name).returncode:
+            raise ValueError('TEA004 evidence must be ignored')
+        raw = regular_bytes(path)
+        if hashlib.sha256(raw).hexdigest() != expected:
+            raise ValueError('TEA004 evidence hash differs: ' + name)
+        return raw
+    record_raw = evidence(payload['recordSnapshot'], TEA004_RECOVERY_EVIDENCE, payload['recordSnapshotSha256'])
+    archived_record = json.loads(record_raw)
+    if (record_identity(archived_record, TEA004_RECOVERY_RECORD) != TEA004_RECOVERY_IDENTITY
+            or archived_record.get('foreignDirty') != record.get('foreignDirty')
+            or archived_record.get('iterations') != record.get('iterations')[:len(archived_record.get('iterations', []))]
+            or archived_record.get('pathExtensions', []) != record.get('pathExtensions', [])[:len(archived_record.get('pathExtensions', []))]):
+        raise ValueError('TEA004 archived record and current history differ')
+    archive_path = safe(root, payload['archive'])
+    archive_bytes = regular_bytes(archive_path)
+    if (payload['archiveSha256'] != TEA004_RECOVERY_ARCHIVE_SHA256
+            or hashlib.sha256(archive_bytes).hexdigest() != TEA004_RECOVERY_ARCHIVE_SHA256):
+        raise ValueError('TEA004 original archive hash differs')
+    with tarfile.open(fileobj=io.BytesIO(archive_bytes), mode='r:gz') as archive:
+        members = archive.getmembers()
+        names = [m.name for m in members]
+        if (len(names) != len(set(names)) or names.count(TEA004_RECOVERY_RECORD) != 1
+                or any(not name or pathlib.PurePosixPath(name).is_absolute()
+                       or pathlib.PurePosixPath(name).as_posix() != name
+                       or any(part in ('.', '..') for part in pathlib.PurePosixPath(name).parts)
+                       for name in names)
+                or any(name in names for name in TEA004_RECOVERY_CACHES)):
+            raise ValueError('TEA004 archive membership does not prove omitted caches')
+        member = archive.getmember(TEA004_RECOVERY_RECORD)
+        if not member.isfile() or member.size != len(record_raw):
+            raise ValueError('TEA004 archive record is not a matching regular file')
+        stream = archive.extractfile(member)
+        if stream is None or stream.read() != record_raw:
+            raise ValueError('TEA004 archive record bytes differ')
+    census_raw = evidence(payload['ownerCensusSnapshot'],
+                          '.warlock-contributor/evidence/foreign-owner-censuses/',
+                          payload['ownerCensusSnapshotSha256'])
+    census, census_sha, indexed = decode_owner_census(root, payload['ownerCensusSnapshot'])
+    if census_sha != hashlib.sha256(census_raw).hexdigest() or TEA004_RECOVERY_RECORD not in indexed:
+        raise ValueError('TEA004 census differs')
+    if indexed[TEA004_RECOVERY_RECORD][0] != record_raw:
+        raise ValueError('TEA004 census does not bind archived participant')
+    for _, (_, other) in indexed.items():
+        claimed = set(other.get('slice', {}).get('paths', [])) | set(other.get('adoptedDirty', {}).get('paths', []))
+        if claimed.intersection(TEA004_RECOVERY_NAMES):
+            raise ValueError('TEA004 exceptional custody conflicts with a participant owner')
+    if check_census:
+        verify_current_owner_census(root, census)
+    proof = json.loads(evidence(payload['claimProof'], TEA004_RECOVERY_EVIDENCE, payload['claimProofSha256']))
+    claim = tea004_recovery_claim(root, proof, at)
+    review_raw = evidence(payload['reviewFile'], TEA004_RECOVERY_EVIDENCE, event['reviewSha256'])
+    review = json.loads(review_raw)
+    if (not isinstance(review, dict) or set(review) != {'schema', 'disposition', 'scope', 'independent',
+            'scenarioAcceptance', 'reviewer', 'payloadSha256', 'sourceOwner'}
+            or type(review['schema']) is not int or review['schema'] != 1
+            or review['disposition'] != 'accepted' or review['scope'] != 'tea004-recovery-provenance-only'
+            or review['independent'] is not True or review['scenarioAcceptance'] is not False
+            or review['sourceOwner'] != 'lead' or review['payloadSha256'] != json_sha256(payload)
+            or not isinstance(review['reviewer'], str) or not review['reviewer'].strip()
+            or review['reviewer'].strip().casefold() == 'lead'):
+        raise ValueError('TEA004 independent review is invalid')
+    entries = payload['entries']
+    if (not isinstance(entries, list) or len(entries) != 3
+            or [item.get('path') if isinstance(item, dict) else None for item in entries] != list(TEA004_RECOVERY_NAMES)):
+        raise ValueError('TEA004 recovery requires the exact ordered three-path batch')
+    overlay = {}
+    for i, item in enumerate(entries):
+        name = TEA004_RECOVERY_NAMES[i]
+        keys = {'path', 'kind', 'fromSha256', 'toSha256', 'currentSnapshot', 'currentSnapshotSha256',
+                'sourcePath', 'sourceSha256', 'reason'}
+        if (set(item) != keys or item['kind'] != ('cache' if i < 2 else 'same-owner-tool')
+                or item['fromSha256'] != record['foreignDirty'].get(name)
+                or name in record.get('slice', {}).get('paths', [])
+                or name in record.get('adoptedDirty', {}).get('paths', [])
+                or not isinstance(item['reason'], str) or not item['reason'].strip()):
+            raise ValueError('TEA004 recovery entry differs from captured custody')
+        target = item['toSha256']
+        if target is not None and (not isinstance(target, str) or not re.fullmatch(r'[0-9a-f]{64}', target)):
+            raise ValueError('TEA004 recovery target is not a regular-file hash')
+        if i == 2 and target is None:
+            raise ValueError('TEA004 tool must be a regular source file')
+        if target == item['fromSha256']:
+            raise ValueError('TEA004 recovery requires changed custody')
+        if target is None:
+            if item['currentSnapshot'] is not None or item['currentSnapshotSha256'] is not None:
+                raise ValueError('Absent cache cannot have current bytes')
+        elif item['currentSnapshotSha256'] != target:
+            raise ValueError('TEA004 current snapshot hash differs')
+        else:
+            evidence(item['currentSnapshot'], TEA004_RECOVERY_EVIDENCE, target)
+        expected_source = TEA004_RECOVERY_SOURCES[i] if i < 2 else None
+        if item['sourcePath'] != expected_source:
+            raise ValueError('TEA004 generated cache source differs')
+        if expected_source is None:
+            if item['sourceSha256'] is not None:
+                raise ValueError('TEA004 tool cannot claim cache source')
+        elif (not isinstance(item['sourceSha256'], str)
+              or digest(safe(root, expected_source)) != item['sourceSha256']):
+            raise ValueError('TEA004 cache source fingerprint differs')
+        if check_current and fingerprint(root, name) != target:
+            raise ValueError('TEA004 reconciled path changed: ' + name)
+        overlay[name] = target
+    return overlay, claim, proof
+
+
+def tea004_recoveries(root, record, override=None, check_current=True, check_census=False):
+    path = tea004_recovery_sidecar(root, record)
+    if override is None and not path.exists():
+        return {}, [], None
+    try:
+        data = read(path) if override is None else override
+        overlay, _, _ = tea004_recovery_validate(root, record, data, check_current, check_census)
+        return overlay, [], data
+    except (OSError, ValueError, KeyError, TypeError, AttributeError, tarfile.TarError) as exc:
+        return {}, ['TEA004 recovery: ' + str(exc)], None
+
+
+def reconcile_tea004_recovery(root, record, reqs, state, args):
+    if (not args.transition_file.startswith(TEA004_RECOVERY_EVIDENCE)
+            or git_run(root, 'check-ignore', '-q', '--', args.transition_file).returncode):
+        raise ValueError('TEA004 transition must be ignored evidence')
+    payload = read(safe(root, args.transition_file))
+    sidecar = tea004_recovery_sidecar(root, record)
+    parent, leaf = open_parent(sidecar, create=True)
+    try:
+        try:
+            regular_bytes_at(parent, leaf)
+        except FileNotFoundError:
+            pass
+        else:
+            raise ValueError('TEA004 recovery batch already exists')
+        original = regular_bytes(safe(root, record['_recordPath']))
+        if original != regular_bytes(safe(root, payload['recordSnapshot'])):
+            raise ValueError('TEA004 snapshot is not the current participant')
+        base_errors, _ = validate(root, record, reqs, state)
+        allowed = {'Protected foreign-dirty path changed: ' + name for name in TEA004_RECOVERY_NAMES}
+        if any(error not in allowed for error in base_errors):
+            raise ValueError('Resolve unrelated participant errors before TEA004 recovery')
+        review_path = safe(root, payload['reviewFile'])
+        event = dict(payload=payload, reviewSha256=digest(review_path), atUTC=now(), previousEventSha256=None)
+        event['eventSha256'] = json_sha256(event)
+        data = dict(schema=1, events=[event])
+        overlay, claim, proof = tea004_recovery_validate(root, record, data, check_census=True)
+        live = support_live_claims('lead', proof['run'])
+        matching = [row for row in live if row.get('resource') == claim['resource']]
+        if (len(matching) != 1 or any(matching[0].get(k) != claim[k] for k in ('resource', 'holder', 'holder_did'))
+                or dt.datetime.fromisoformat(matching[0]['lease_end']) <= dt.datetime.now(dt.timezone.utc) + dt.timedelta(seconds=5)):
+            raise ValueError('TEA004 live covering claim is not confirmed')
+        overlay2, _, _ = tea004_recovery_validate(root, record, data, check_census=True)
+        if overlay2 != overlay or regular_bytes(safe(root, record['_recordPath'])) != original:
+            raise ValueError('TEA004 participant or custody changed before atomic write')
+        if git_run(root, 'check-ignore', '-q', '--', str(sidecar.relative_to(root))).returncode:
+            raise ValueError('TEA004 sidecar must remain ignored')
+        write_record(sidecar, data, parent_fd=parent, expected_sha='absent')
+        return dict(record=record['_recordPath'], sidecar=str(sidecar.relative_to(root)),
+                    participantBytesUnchanged=True, foreignOwnershipRetained=True,
+                    scenarioAcceptanceInferred=False)
+    finally:
+        os.close(parent)
+
+
 def protected_reconciliations(root, record):
     foreign, errors, data = foreign_reconciliations(root, record)
     support, support_errors, _ = support_reconciliations(root, record)
     errors += support_errors
-    if set(foreign) & set(support):
-        errors.append('A support path cannot also carry foreign-owner reconciliation')
-    return dict(foreign, **support), errors, data
+    recovery, recovery_errors, _ = tea004_recoveries(root, record)
+    errors += recovery_errors
+    if (set(foreign) & set(support) or set(recovery) & (set(foreign) | set(support))):
+        errors.append('A path cannot have conflicting provenance reconciliations')
+    return dict(foreign, **support, **recovery), errors, data
 
 
 def reconcile_support(root, record, reqs, state, args):
@@ -1663,6 +1901,64 @@ def bootstrap_artifact(root, name):
         os.close(parent)
 
 
+# Exact, independently classified remote-publication omissions. These constants
+# are not an authorization to discard any other file or participant record.
+PUBLISHED_BOOTSTRAP_CLASSIFICATION_SHA256 = 'e00b756bf1ee2ed579079963d556df2ae593bd4a93b0c055f1007eae9319f88e'
+PUBLISHED_BOOTSTRAP_MANIFEST_SHA256 = '6d71675b6d5477978b35a4e1725bc204eef0f39f0aa8f62beb62ee2f68845542'
+PUBLISHED_BOOTSTRAP_MANIFEST = 'docs/warlock-build-loop/v2/remote-handoff-20261102/manifest.json'
+PUBLISHED_BOOTSTRAP_OMISSIONS = {
+    ".warlock-contributor/auth-source-staged-review.json": {'fingerprint': "7d2f9803e19d42ebe3d9928d35cf36410882e6781e12ec6f40d8e7201aa4507a", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/auth-verdict-staged-review.json": {'fingerprint': "4f537c55ef544ccdc1f2d99b85db00fcaa5909f10d7b11fa580e842803204113", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/authority-accepted-record.json": {'fingerprint': "68a5a68f507501e2a948db39cd52abd1f621ff13d9a0bece3ca629547d58a067", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/authority-project-check.json": {'fingerprint': "ec4a6be2db929660686d2e1a9659f0fccbbe7d4bd2eabdcf014d5845d61dab04", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/authority-qualified-record.json": {'fingerprint': "b1ab31cbdf211f66acc6cb2ab5dc76a915a86850bd03ad824c80b462c2ef1688", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/authority-tuple-start.json": {'fingerprint': "a8dba366fc31cbf57c65a3c3f4b3f77c678fb4b8cb80ab305b6e7c413639f683", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/end-feedback-project-check.json": {'fingerprint': "ec4a6be2db929660686d2e1a9659f0fccbbe7d4bd2eabdcf014d5845d61dab04", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/feedback-claim-record.json": {'fingerprint': "8ef9749c2ce9a227977f95a89b93b18c168720959f65ee51ff3d92f140c769c0", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/haskell-root-research/cryptohash-sha256-0.11.102.1-package.json": {'fingerprint': "97293845937029044561ca74e564ae554aefebf7dbebcfb2120f61a90b4cbde5", 'producer': "research-capture"},
+    ".warlock-contributor/haskell-root-research/network-3.2.0.0-package.json": {'fingerprint': "97293845937029044561ca74e564ae554aefebf7dbebcfb2120f61a90b4cbde5", 'producer': "research-capture"},
+    ".warlock-contributor/participant-index-migration-result-20261101.json": {'fingerprint': "5f8185cc654b7b92d2140fad0a1bef4f86a640a2125887ba8c4d1fcc7da7c72b", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/published-project-check.json": {'fingerprint': "ec4a6be2db929660686d2e1a9659f0fccbbe7d4bd2eabdcf014d5845d61dab04", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/registry-accepted-record.json": {'fingerprint': "beb80325a172f9f234d85af870ece82a5bf91dce63e9afe74521035eb974f7fd", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/registry-admission-start.json": {'fingerprint': "bb19e178c469fcb3c488cb6cde70939c3bb42936c3c5b82629a873abecdc39ab", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/registry-project-final.json": {'fingerprint': "1bfde9205ee290135a4ff998030e868556df24dcd83607c318158f3c0e55fbf8", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/registry-published-project-check.json": {'fingerprint': "1bfde9205ee290135a4ff998030e868556df24dcd83607c318158f3c0e55fbf8", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/registry-qualified-record.json": {'fingerprint': "d3d93cf58c5dc4e090243f83182946113649eeb876809b9244b242caa91f1c10", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/rendering-record.json": {'fingerprint': "891048712d2f4811ce0bcbe1ae79ef175d9aca6856a2029cd5f89ba0656e994f", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/staged-feedback-review.json": {'fingerprint': "2b10aa7ad41c9a464fa67c484cce2f1bdecb394ebb17cd60dd6e73a2fb4d5710", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/tea-source-staged-review.json": {'fingerprint': "60e93fe7f3dd8e4afa432ca5f8258769f338090e6ae635b02a180db9b4ae5b6b", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/tea-verdict-staged-review.json": {'fingerprint': "c3dded7fffe086f4d8a50d2693816ba13f13bb47765ad82f7bd868aed535b2e8", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/ui-backend-metadata-stage-review.json": {'fingerprint': "54d6b51c9a99cd69fe960673fd40c928c4b4c8a09e32cd5a8bf0698b128e04ed", 'producer': "prefixed-cli-output"},
+    ".warlock-contributor/verification-plan.json": {'fingerprint': "a83180ee0f1d21f4afc2183daaa76df93e0dd8fcf028f1e96f9635ed845709ed", 'producer': "prefixed-cli-output"},
+}
+
+
+def published_bootstrap_omissions(root, source_sha, bound):
+    """Load the exact reviewed publication exception, or no exception."""
+    if (source_sha != PUBLISHED_BOOTSTRAP_CLASSIFICATION_SHA256
+            or bound != {'path': BOOTSTRAP_CLASSIFICATIONS, 'sha256': source_sha}):
+        return {}
+    raw = regular_bytes(safe(root, PUBLISHED_BOOTSTRAP_MANIFEST))
+    if hashlib.sha256(raw).hexdigest() != PUBLISHED_BOOTSTRAP_MANIFEST_SHA256:
+        raise ValueError('Pinned publication manifest bytes changed')
+    publication = bootstrap_json(raw)
+    if not isinstance(publication, dict) or not isinstance(publication.get('excluded'), list):
+        raise ValueError('Pinned publication exclusion inventory is invalid')
+    by_name = {}
+    for row in publication['excluded']:
+        if not isinstance(row, dict) or not isinstance(row.get('path'), str):
+            raise ValueError('Pinned publication exclusion entry is invalid')
+        name = row['path']
+        if name in by_name:
+            raise ValueError('Duplicate pinned publication exclusion')
+        by_name[name] = row
+    result = {}
+    for name, expected in PUBLISHED_BOOTSTRAP_OMISSIONS.items():
+        if by_name.get(name) == {'path': name, 'reason': 'non-JSON runtime output; retained locally'}:
+            result[name] = expected
+    return result
+
+
 def bootstrap_classifications(root, indexed, bound):
     """Reviewed provenance exclusions, never a participant/history verdict."""
     if bound is not None:
@@ -1713,6 +2009,7 @@ def bootstrap_classifications(root, indexed, bound):
             or reviewed.get('classificationsSha256') != json_sha256(payload)):
         raise ValueError('Bootstrap review does not bind this exact provenance-only payload')
     entries = manifest['entries']
+    omissions = None
     for name, entry in entries.items():
         if (not isinstance(name, str) or participant_index_path_error(name)
                 or name != pathlib.PurePosixPath(name).as_posix()
@@ -1724,7 +2021,22 @@ def bootstrap_classifications(root, indexed, bound):
                 or any(not isinstance(entry[key], str) or not entry[key].strip()
                        for key in ('fingerprint', 'reason', 'producer'))):
             raise ValueError('Invalid bootstrap classification entry: ' + name)
-        kind, actual, record = bootstrap_artifact(root, name)
+        try:
+            kind, actual, record = bootstrap_artifact(root, name)
+        except FileNotFoundError:
+            # Check the complete path without following a symlink, including
+            # a broken leaf. Only the reviewed regular-file absence may pass.
+            target = safe(root, name)
+            if os.path.lexists(target):
+                raise
+            if omissions is None:
+                omissions = published_bootstrap_omissions(root, source_sha, bound)
+            expected = omissions.get(name)
+            if (expected is None or entry['kind'] != 'file'
+                    or entry['fingerprint'] != expected['fingerprint']
+                    or entry['producer'] != expected['producer']):
+                raise
+            continue
         if kind != entry['kind'] or actual != entry['fingerprint']:
             raise ValueError('Bootstrap classification artifact fingerprint differs: ' + name)
         if isinstance(record, dict):
@@ -2761,6 +3073,8 @@ def main():
     reconciliation.add_argument('--transition-file', required=True, help='Ignored scratch JSON array of exact reviewed foreign-path transitions')
     support = subs.add_parser('reconcile-support', help='Append independently reviewed same-owner support-doc provenance without changing participant history')
     support.add_argument('--transition-file', required=True)
+    recovery = subs.add_parser('reconcile-tea004-recovery', help='Record one reviewed exact remote-handoff custody recovery')
+    recovery.add_argument('--transition-file', required=True)
     extension = subs.add_parser('extend', help='Add dependencies to the same owned slice without resetting its history or timer')
     extension_paths = extension.add_mutually_exclusive_group(required=True)
     extension_paths.add_argument('--path', action='append')
@@ -2838,7 +3152,7 @@ def main():
             record = json.loads(regular_bytes_at(lock_parent, path.name)) if lock_parent is not None else read(path)
             record['_recordPath'] = args.record
             return record
-        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'reconcile-support', 'index-participants', 'owner-census'):
+        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery', 'index-participants', 'owner-census'):
             records_parent, records_name = open_parent(safe(root, '.warlock-contributor/.records.lock'), create=True)
             records_lock = os.fdopen(os.open(records_name, os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_CLOEXEC,
                                              0o600, dir_fd=records_parent), 'w')
@@ -2908,10 +3222,12 @@ def main():
             result.update(planSchema=1, slice=s, originals=slice_originals(s, reqs))
         elif args.command == 'preflight':
             result.update(preflight(root, args.record, args.slice_file, reqs))
-        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan', 'extend', 'reconcile-foreign', 'reconcile-support'):
+        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
-            if args.command == 'reconcile-support':
+            if args.command == 'reconcile-tea004-recovery':
+                result.update(reconcile_tea004_recovery(root, read_target(), reqs, state, args))
+            elif args.command == 'reconcile-support':
                 result.update(reconcile_support(root, read_target(), reqs, state, args))
             elif args.command == 'reconcile-foreign':
                 result.update(reconcile_foreign(root, read_target(), reqs, state, args))

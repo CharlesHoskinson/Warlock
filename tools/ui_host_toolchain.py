@@ -16,7 +16,8 @@ def digest(path):
 def verify():
     if MANIFEST.is_symlink() or not MANIFEST.is_file():
         raise RuntimeError('Expected regular UI toolchain manifest')
-    packet = json.loads(MANIFEST.read_text())
+    from toolchain_derivative import selected
+    packet, _, identity = selected()
     sdk = Path(packet['sdkDirectory'])
     if packet['schema'] != 1 or sdk != Path('/home/charl/.cache/warlock-ui-host/sdk') or sdk.resolve() != sdk:
         raise RuntimeError('Unexpected private UI SDK')
@@ -33,6 +34,6 @@ def verify():
         path = Path(name)
         if path.is_symlink() or not path.is_file() or digest(path) != expected['sha256']:
             raise RuntimeError('UI linked dependency changed: ' + name)
-    return {'manifestSHA256': digest(MANIFEST), 'sdkFiles': len(observed),
+    return {'manifestSHA256': digest(MANIFEST), 'derivative': identity, 'sdkFiles': len(observed),
             'elfInputs': len(packet['elfInputs']), 'libraryDirectory': packet['libraryDirectory'],
             'scope': 'Pinned build/link inputs only; no engine or native execution'}

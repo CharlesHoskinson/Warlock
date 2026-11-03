@@ -1,5 +1,22 @@
 # Activity log
 
+## 2026-11-02T23:14Z — independent child-exit observation
+
+Root integrated an advisory numeric exit observation at the Haskell custody boundary after a protected behavioral failure demonstrated the missing field. The implementation preserves the original operation, authentication, containment and custody decisions. It records a normal code only after the leader was observed exited before containment and was successfully reaped. The backend labels the value untrusted and without authority. A valid exit observation can coexist with later cleanup uncertainty.
+
+The protected fixed component report `.warlock-contributor/haskell-cpu-1793660503565699641/report.json` passed the persistent bootstrap, custody and backend serialization suites. Its SHA-256 is `f1d08dcad00189f128ca222eaf0b6ed121282f138320134b03697944c62f68ae`. The exit-70 cases now pass. Pre-frame EOF still yields BadArguments; admitted frames followed by exit still yield Unsuccessful 70. Forced, signaled and absent-process controls retain unknown observations. JSON controls verify explicit object/null values and synthetic-secret redaction. The earlier failure remains `.warlock-contributor/haskell-cpu-1793659515635113664/report.json`. These raw reports are local evidence references, not published receipts.
+
+Full cross-user authentication, observation/reap fault injection, later-cleanup coexistence and external JSON consumer compatibility remain separate coverage limits. No whole EARS, native GUI or release acceptance follows. The existing UI-origin profile is being run for the new production tuple before another protected Omarchy attempt. The reviewed retained-service QA change preserves terminal metadata and keeps the original identity-gated stop; missing cgroup and retired births remain unknown. Its mock controls are still pending at this observation.
+
+
+## 2026-11-02T22:38Z — existing-root health check and SiteMain component
+
+Root checked the active host goal, current human instructions, the unchanged authorization expiry, service health, authenticated identities, claims, worker process births and terminal logs. The restored run keeps the same coordinator and fifteen worker roles. The private continuation checkpoint records current observations; earlier remote-handoff statements retain their historical scope. Authorization ends at 2026-11-03T20:02:47.475490+00:00.
+
+The protected SiteMain component run passed after a retained failure exposed missing numeric `tabIndex` reflection in the fake DOM. Root corrected that mock without changing production Elm, assertions or literal expectations. The passing report is `.warlock-contributor/elm-cpu-1793659009641647454/report.json` (SHA-256 `f6443ca2cbae8e816b3517ca09f3efe0bb56568fe27eae5ef9ecfbc47a17a294`). It includes the existing HTTP/subscription checks, four SiteMain pure cases repeated twice, ten fake-DOM transitions repeated twice and nine negative controls. The animation comment control checks only a lexical guard. The failed report remains `.warlock-contributor/elm-cpu-1793658877727525241/report.json`.
+
+No new whole EARS is accepted. Actual Omarchy attempts started the backend but did not reach a product frame or real input. The selected UI exited early; its root cause remains unproven. The original investigation warning, failed evidence, ownership, participant history and twenty-eight-second native deadline remain intact. The two required outcomes remain whole EARS completion and real current-product testing on Omarchy.
+
 ## 2026-10-29 — Versioned knowledge space established
 
 User explicitly requested lessons, ideas and architecture research in the Warlock repository. Sol creates this curated wiki under root review; the external journal remains maintained. The standing Astra track is published at `c74c80563`, with no adopted target architecture yet.
@@ -452,3 +469,12 @@ User requested all work on GitHub for remote development. The complete current s
 ### 2026-11-02T15:12:27.360004+00:00 — tested continuity recovery for the next unattended run
 
 The source-only remote publication is complete. A real existing-thread continuity guard is now included: singleton/private configuration, explicit expiry, terminal-report-aware checks, persisted cooldown and exact-thread Codex queue/resume. Its14 mocked-queue tests and all300 contributor regressions pass in the protected campaign. Failed resume warnings never count as verified restart; initial false build reports are not terminal. It stays alive across transient invalid observations. No watcher or team was started during remote handoff. See remote-handoff-20261102/README.md for configuration and the evidence. Broker health is currently good; the inspected evidence establishes stale orchestration and absent work-liveness recovery, not a historical broker outage.
+
+
+### 2026-11-02T21:10:49.639502+00:00 - restored local loop and integrated typed HTTP effects
+
+The original participant history is retained. Exact published omissions are explicit. Reconstructed negative fixture contents match their frozen fingerprints. Reconstruction does not establish historical test results or metadata. The full contributor regression suite passes 321 tests within the unchanged outer deadline of 180 seconds after a retained timeout.
+
+The reviewed UiHttp transition now emits typed effect descriptions through its private production interpreter. The protected compiled preimage observer rejects the missing transition. The postimage passes the fixed HTTP model/effect observer, six fixture guard controls and optimized eight-root transport replay. SiteMain has a separate static inventory. Whole ELM-TEA-004 remains open.
+
+The exact existing-root wake nonce is acknowledged. The matching Haskell component build passes its ten selected suites. Omarchy runs with WebKitGTK6 installed. No current-product Omarchy input/screenshot journey has completed. Next: verify the matching trial artifacts and run the protected guest journey with the original deadline of 28 seconds.

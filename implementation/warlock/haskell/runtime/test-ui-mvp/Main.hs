@@ -116,9 +116,14 @@ main = do
  (good, replies) <- run "positive" enabled [(empty,1,False),(empty,0,False),(catalogRequest,1,False)]
  check "real authenticated empty commit emits only one attachment across repeated commits" (backendPassed good && backendCleanup good && backendCallbackCount good==3 && backendOperationCount good==1 && length replies==2 && canonical (head replies)==canonical (envelope attachment))
  goodDiagnostic <- diagnostic good
+ check "normal exit observation is untrusted data without authority" (canonical (at "selectedObservedExit" goodDiagnostic)==canonical (obj [("kind",txt "exit-code-observation"),("trust",txt "untrusted"),("authority",J.JBool False),("code",J.JNumber "0")]))
  check "successful public result exposes all original pass conjuncts" (at "attempt" goodDiagnostic==txt "executed" && at "failureStages" goodDiagnostic==J.JArray [] && all (\name -> at name (at "checks" goodDiagnostic)==J.JBool True) ["bootstrapExecuted","selectedCustodyAvailable","selectedLeaderExited","selectedOperationSucceeded","processCleanup","catalogCleanup","pinCleanup"])
  (nonzero, nonzeroReplies) <- runWithExit "child-exit-23" enabled [(catalogRequest,2,False)] 23
  nonzeroDiagnostic <- diagnostic nonzero
+ check "nonzero exit observation does not replace the original operation failure" (canonical (at "selectedObservedExit" nonzeroDiagnostic)==canonical (obj [("kind",txt "exit-code-observation"),("trust",txt "untrusted"),("authority",J.JBool False),("code",J.JNumber "23")]))
+ let noObservation = good {backendBootstrap=Left "WARLOCK_SYNTHETIC_PRIVATE_FAILURE",backendPassed=False,backendAttemptStage=AttemptConversationException}
+ unknownDiagnostic <- diagnostic noObservation
+ check "missing selected process yields null observation without private error text" ((case unknownDiagnostic of J.JObject fields -> lookup "selectedObservedExit" fields==Just J.JNull; _ -> False) && at "passed" unknownDiagnostic==J.JBool False && at "nativeAccepted" unknownDiagnostic==J.JBool False && at "releaseAccepted" unknownDiagnostic==J.JBool False && not ("WARLOCK_SYNTHETIC_PRIVATE_FAILURE" `B.isInfixOf` backendResultJson noObservation))
  let syntheticMarkers = ["WARLOCK_SYNTHETIC_CREDENTIAL_DEL017_8C41A2"
                         ,"WARLOCK_SYNTHETIC_DRAFT_DEL017_9D52B3"
                         ,"WARLOCK_SYNTHETIC_PIXELS_DEL017_AE63C4"]

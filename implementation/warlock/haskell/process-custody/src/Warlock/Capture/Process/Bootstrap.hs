@@ -8,7 +8,7 @@ module Warlock.Capture.Process.Bootstrap
  , Session, SessionObservation(..), observeSession, awaitLeader
  , AdmissionDeadline, deadlineAfter, deadlineAbsoluteNs, deadlineFromAbsoluteNs, remainingMicros
  , ToolError(..), Captured(..), Containment(..), SelectedOutcome
- , selectedOperation, selectedContainment, selectedCustody, runSelectedDetailed
+ , selectedOperation, selectedContainment, selectedCustody, selectedObservedExit, runSelectedDetailed
  ) where
 
 import Warlock.Capture.Process.Internal
@@ -17,7 +17,7 @@ import Warlock.Capture.Process.Internal
  , observeSession, awaitLeader, AdmissionDeadline, deadlineAfter
  , deadlineAbsoluteNs, deadlineFromAbsoluteNs, remainingMicros, ToolError(..)
  , Captured(..), Containment(..), SelectedOutcome, selectedOperation
- , selectedContainment, selectedCustody, runSelectedDetailed )
+ , selectedContainment, selectedCustody, selectedObservedExit, runSelectedDetailed )
 import Warlock.Capture.Process.Transfer
  ( TransferTicket, TransferDisposition(..), TransferError(..), newTransferTicket
  , closeCallerTransfer, transferDisposition )

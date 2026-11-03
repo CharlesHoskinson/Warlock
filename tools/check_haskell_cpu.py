@@ -150,6 +150,7 @@ def main():
     modes.add_argument('--site', action='store_true')
     modes.add_argument('--custody', action='store_true')
     modes.add_argument('--backend', action='store_true')
+    modes.add_argument('--persistent', action='store_true', help='Fixed same-user persistent-bootstrap component profile')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
     scope = require_qa_scope()
@@ -172,7 +173,7 @@ def main():
                    '--dir', '/home/charles', '--ro-bind', str(ROOT), '/home/charles/Warlock',
                    '--bind' if args.prepare else '--ro-bind', str(CACHE), str(CACHE), '--bind', str(output), str(output),
                    '--chdir', str(ROOT), '--', sys.executable, '-B', str(Path(__file__).resolve()),
-                   '--inside-private', str(output)] + (['--prepare'] if args.prepare else (['--ui-origin'] if args.ui_origin else (['--ui-models'] if args.ui_models else (['--site'] if args.site else (['--custody'] if args.custody else (['--backend'] if args.backend else ['--build']))))))
+                   '--inside-private', str(output)] + (['--prepare'] if args.prepare else (['--ui-origin'] if args.ui_origin else (['--ui-models'] if args.ui_models else (['--site'] if args.site else (['--custody'] if args.custody else (['--backend'] if args.backend else (['--persistent'] if args.persistent else ['--build'])))))))
         report = {'schema': 1, 'protectedScope': scope, 'passed': False, 'prepare': args.prepare,
                   'nativeAccepted': False, 'releaseAccepted': False,
                   'parentNetworkNamespace': os.readlink('/proc/self/ns/net'),
@@ -231,8 +232,9 @@ def main():
                                'UI model-only component feedback; compilation and runtime tests omitted; no original acceptance' if args.ui_models else
                                'Focused custody and ingress regression only; formal models and other suites not executed; no original or native acceptance' if args.custody else
                                'Focused actual compiled frontend/backend regression only; formal models and other suites not executed; no original or native acceptance' if args.backend else
+                               'Same-user persistent bootstrap, custody exit and backend serialization components with existing registration model; no cross-user, native or original acceptance' if args.persistent else
                                'Actual offline Haskell package build and controlled component tests; no native GUI/provider or original scenario acceptance')
-            report['build'] = build(sdk, output, env, profile='site' if args.site else ('ui-models' if args.ui_models else ('ui-origin' if args.ui_origin else ('custody' if args.custody else ('backend' if args.backend else 'common')))))
+            report['build'] = build(sdk, output, env, profile='site' if args.site else ('ui-models' if args.ui_models else ('ui-origin' if args.ui_origin else ('custody' if args.custody else ('backend' if args.backend else ('persistent' if args.persistent else 'common'))))))
             if not report['build']['passed']:
                 raise RuntimeError(report['build'].get('error', 'Haskell component tests failed; see retained suite reports'))
             if saved['files'] != tree_hashes_without_receipt(sdk):

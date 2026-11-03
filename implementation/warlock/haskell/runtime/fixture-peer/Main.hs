@@ -171,6 +171,11 @@ persistentMain mode = do
      requests = map (persistentRequest seed) order
      fragmented = seed `mod` 2 == 0
  case mode of
+  "persistent-diagnostic-exit" -> do
+   throwErrnoIfMinus1_ "fixture shutdown(SHUT_WR)" (shutdownWrite 0 1)
+   requireRefusal h
+   exitImmediately (ExitFailure 70)
+  "persistent-diagnostic-after-frames" -> forM_ requests (\bytes -> sendFixture fragmented h bytes >> requireAck h) >> exitImmediately (ExitFailure 70)
   "persistent-empty-exit" -> do
    throwErrnoIfMinus1_ "fixture shutdown(SHUT_WR)" (shutdownWrite 0 1)
    requireRefusal h

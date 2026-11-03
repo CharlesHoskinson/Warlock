@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "requirement": "ELM-TEA-004",
+  "scenario": "tea-subscriptions",
+  "coverageComplete": false,
+  "originalAcceptanceClaim": false,
+  "fixtures": {
+    "base": {
+      "file": "sol-http-popup-literals-0525.cjs",
+      "sha256": "ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1"
+    },
+    "peer": {
+      "file": "httpbar-literals.cjs",
+      "sha256": "6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173"
+    },
+    "policy": {
+      "file": "implementation/warlock/qa/tea-contract-cases.cjs",
+      "sha256": "41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7"
+    }
+  },
+  "cases": [
+    {
+      "name": "HttpPopup-poll-delay-allowed-event-failed-sticky",
+      "root": "HttpPopup",
+      "steps": 9
+    },
+    {
+      "name": "HttpPopup-late-delivery-error-before-sleep-target",
+      "root": "HttpPopup",
+      "steps": 5
+    },
+    {
+      "name": "HttpBar-poll-delay-allowed-event-failed-sticky",
+      "root": "HttpBar",
+      "steps": 9
+    },
+    {
+      "name": "HttpBar-late-delivery-error-before-sleep-target",
+      "root": "HttpBar",
+      "steps": 5
+    },
+    {
+      "name": "HttpMain-complete-publish-queue-http-completion-is-not-native-ack",
+      "root": "HttpMain",
+      "steps": 6
+    },
+    {
+      "name": "HttpMain-unknown-delivery-retains-active-and-pending-no-replay",
+      "root": "HttpMain",
+      "steps": 7
+    },
+    {
+      "name": "HttpMain-polling-failure-retains-queued-data-and-policy-loss",
+      "root": "HttpMain",
+      "steps": 6
+    },
+    {
+      "name": "HttpBar-visible-loading-delayed-synchronous-stale-and-queue",
+      "root": "HttpBar",
+      "steps": 16
+    }
+  ]
+}

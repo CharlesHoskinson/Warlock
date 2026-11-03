@@ -27,7 +27,9 @@ def sha(path):
 
 
 def quint_toolchain():
-    pin = json.loads((REPO / 'tools/quint-toolchain.json').read_text())
+    from toolchain_derivative import selected
+    _, pin, identity = selected()
+    pin['derivative'] = identity
     root = Path(pin['path'])
     rows = {}
     for path in sorted(root.rglob('*')):
@@ -40,6 +42,17 @@ def quint_toolchain():
         raise RuntimeError('Installed Quint toolchain differs from reviewed inventory')
     return pin, root / 'dist/src/cli.js'
 
+
+
+def run_receipt_models(node, pin, cli, run):
+    if str(node) != pin['node']['path'] or sha(node) != pin['node']['sha256']:
+        raise RuntimeError('Pinned model interpreter differs')
+    run('receipt-model-typecheck', [str(node), str(cli), 'typecheck', 'qa/receipt-lifecycle_test.qnt'])
+    run('receipt-model-cancelled-tests', [str(node), str(cli), 'test', 'qa/receipt-lifecycle.qnt', '--main=ReceiptLifecycle', '--match=.*Test', '--backend=typescript', '--verbosity=2'])
+    run('receipt-model-original-tests', [str(node), str(cli), 'test', 'qa/receipt-lifecycle_test.qnt', '--main=ReceiptLifecycle_test', '--match=.*Test', '--backend=typescript', '--verbosity=2'])
+    run('receipt-model-safety', [str(node), str(cli), 'run', 'qa/receipt-lifecycle.qnt', '--main=ReceiptLifecycle', '--backend=typescript', '--invariant=safety', '--witnesses',
+                                'witnessPending', 'witnessCommitted', 'witnessRefused', 'witnessCancelled', 'witnessUnknown', 'witnessDisconnected', 'witnessNewRequest',
+                                '--max-samples=10000', '--max-steps=50', '--seed=20261031', '--verbosity=1'])
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -90,9 +103,9 @@ def main():
             env.pop(key, None)
         env['NO_COLOR'] = '1'
 
-    def run(name, command):
+    def run(name, command, cwd=work):
         toolchain.verify()
-        result = subprocess.run(command, cwd=work, env=env, capture_output=True, text=True, timeout=120)
+        result = subprocess.run(command, cwd=cwd, env=env, capture_output=True, text=True, timeout=120)
         (output / (name + '.stdout')).write_text(result.stdout)
         (output / (name + '.stderr')).write_text(result.stderr)
         report['commands'].append({'name': name, 'argv': command, 'exit': result.returncode})
@@ -162,7 +175,13 @@ def main():
                      'NativePreviewAdmission', 'NativePreviewRenderer')
             workers = {'popup': 'TeaPopupSubscriptionsReplay', 'bar': 'TeaBarSubscriptionsReplay',
                        'admission': 'TeaAdmissionSubscriptionsReplay', 'renderer': 'TeaRendererSubscriptionsReplay'}
-            qa_files = tuple(name + '.elm' for name in workers.values()) + ('tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs')
+            qa_files = tuple(name + '.elm' for name in workers.values()) + (
+                'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs', 'tea-contract-cases.cjs',
+                'sol-http-root-observer-0535.cjs', 'sol-http-popup-literals-0525.cjs',
+                'httpbar-literals.cjs', 'http-root-cases-manifest.json',
+                'http-root-cases-guard.cjs', 'http-root-cases-negative.cjs',
+                'sitemain-root-literals.cjs', 'sitemain-root-observer.cjs',
+                'sitemain-root-manifest.json', 'sitemain-root-negative.cjs')
             # Keep the harness's optional three-parent SiteMain probe inside a fresh owned tree.
             subscription_qa = output / 'subscription-source' / 'implementation/warlock/qa'
             subscription_qa.mkdir(parents=True)
@@ -174,11 +193,165 @@ def main():
                 sources[key] = staged_tea_sources[key] = sha(source)
                 shutil.copy2(source, work / 'qa' / filename)
                 shutil.copy2(source, subscription_qa / filename)
+            reviewed_http_inputs = {
+                'sol-http-root-observer-0535.cjs': 'ccd93b17d5126e2be411b2f9d42a57770e5cdffa8f1654ad7b01a42f80bef7cf',
+                'sol-http-popup-literals-0525.cjs': 'ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1',
+                'httpbar-literals.cjs': '6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173',
+                'http-root-cases-manifest.json': '2a00fc7fbabac6f3a228847d945f703a4d9dcade3b060a9a27034ea1b31e6064',
+                'http-root-cases-guard.cjs': '1943800f421da64c4f11a80359d200e142c5dd36839c386aec19afba5754b7f1',
+                'http-root-cases-negative.cjs': 'd04b96e8983525dfb675428bcdcbe3f4fef7730aba0672378d3aa228b4958782',
+                'tea-contract-cases.cjs': '41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7',
+            }
+            for name, digest in reviewed_http_inputs.items():
+                key = 'implementation/warlock/qa/' + name
+                if (sources[key] != digest or sha(work / 'qa' / name) != digest
+                        or sha(subscription_qa / name) != digest):
+                    raise RuntimeError('Reviewed HTTP fixture or stage differs: ' + name)
+            manifest = json.loads((subscription_qa / 'http-root-cases-manifest.json').read_text())
+            if (manifest.get('schema') != 1 or manifest.get('requirement') != 'ELM-TEA-004'
+                    or manifest.get('scenario') != 'tea-subscriptions'
+                    or manifest.get('coverageComplete') is not False
+                    or manifest.get('originalAcceptanceClaim') is not False):
+                raise RuntimeError('Reviewed HTTP fixture manifest identity differs')
+            reviewed_sitemain_inputs = {
+                'sitemain-root-literals.cjs': '04151053b079b4dba16656d71680d8eec9ebed709285c695e8270f3e57478cb3',
+                'sitemain-root-manifest.json': '35c43b1af218669b033eacb6f754efcf28982f21a1c6a7215f288231f12fcac5',
+                'sitemain-root-negative.cjs': '0bb0d6b118b258aa56d5fa764d392968f4be03219f96d220e3ef77d49dbaa7b2',
+                'sitemain-root-observer.cjs': '0a0ec6efc3c14bee29b055532775ecc567f2e96f1b0d43d2d6c7f2306b5bc643',
+            }
+            for name, digest in reviewed_sitemain_inputs.items():
+                key = 'implementation/warlock/qa/' + name
+                if (sources[key] != digest or sha(work / 'qa' / name) != digest
+                        or sha(subscription_qa / name) != digest):
+                    raise RuntimeError('Reviewed SiteMain fixture or stage differs: ' + name)
+            site_manifest = json.loads((subscription_qa / 'sitemain-root-manifest.json').read_text())
+            if (site_manifest.get('schema') != 1 or site_manifest.get('requirement') != 'ELM-TEA-004'
+                    or site_manifest.get('scenario') != 'tea-subscriptions'
+                    or site_manifest.get('fixtures', {}).get('siteMain') != {
+                        'file': 'site/src/SiteMain.elm',
+                        'sha256': 'f05a3768eb4573161544099917ce009f8df7eb57b8c9408f5266001980cafcfb'}
+                    or site_manifest.get('fixtures', {}).get('siteElmJson') != {
+                        'file': 'site/elm.json',
+                        'sha256': 'ffe9bc4f6811166a7bbafca49540bf7b8af214118dd9aff2f4707890eb9824dc'}
+                    or site_manifest.get('coverageComplete') is not False
+                    or site_manifest.get('originalAcceptanceClaim') is not False):
+                raise RuntimeError('Reviewed SiteMain fixture manifest identity differs')
+            # Bind and compile the ninth production root from its own staged site/
+            # package closure while preserving desktop eight-root profile honesty.
+            site_key = 'site/src/SiteMain.elm'
+            site_manifest_key = 'site/elm.json'
+            site_source = REPO / site_key
+            site_manifest_source = REPO / site_manifest_key
+            if (site_source.is_symlink() or not site_source.is_file()
+                    or site_manifest_source.is_symlink() or not site_manifest_source.is_file()):
+                raise RuntimeError('Required SiteMain source or elm.json missing')
+            sources[site_key] = sha(site_source)
+            sources[site_manifest_key] = sha(site_manifest_source)
+            if (sources[site_key] != site_manifest['fixtures']['siteMain']['sha256']
+                    or sources[site_manifest_key] != site_manifest['fixtures']['siteElmJson']['sha256']):
+                raise RuntimeError('SiteMain source or elm.json hash differs from reviewed manifest')
+            staged_site = output / 'subscription-source' / site_key
+            staged_site_manifest = output / 'subscription-source' / site_manifest_key
+            staged_site.parent.mkdir(parents=True)
+            shutil.copy2(site_source, staged_site)
+            shutil.copy2(site_manifest_source, staged_site_manifest)
+            if (staged_site.is_symlink() or sha(staged_site) != sources[site_key]
+                    or staged_site_manifest.is_symlink() or sha(staged_site_manifest) != sources[site_manifest_key]):
+                raise RuntimeError('Staged SiteMain source or elm.json differs')
+            plain_roots = ('HttpMain', 'HttpBar', 'HttpPopup')
+            for name in plain_roots:
+                run('compile-plain-' + name, [compiler, 'make', 'src/' + name + '.elm',
+                    '--output=' + str(output / (name + '.plain.js'))])
+            run('compile-plain-SiteMain', [compiler, 'make', 'src/SiteMain.elm',
+                '--output=' + str(output / 'SiteMain.plain.js')], cwd=staged_site_manifest.parent)
+            plain_hashes = {name: sha(output / (name + '.plain.js')) for name in plain_roots}
+            site_plain_hash = sha(output / 'SiteMain.plain.js')
             for name in workers.values():
                 # Debug.log exposes the actual tuple before formatting; never optimize these disjoint workers.
                 run('compile-' + name, [compiler, 'make', 'qa/' + name + '.elm',
                                        '--output=' + str(output / (name + '.js'))])
             selected_artifacts.update({name: sha(output / (name + '.js')) for name in (*roots, *workers.values())})
+            run('http-root-cases-negative', [str(node), str(subscription_qa / 'http-root-cases-negative.cjs'),
+                str(output / 'subscription-source')])
+            negative_path = output / 'http-root-cases-negative.stdout'
+            negative = json.loads(negative_path.read_text())
+            if (negative.get('ok') is not True or negative.get('originalAcceptanceClaim') is not False
+                    or negative.get('controls') != ['absent-peer', 'empty-peer', 'altered-peer',
+                        'removed-peer-cases', 'removed-case', 'duplicate-case']):
+                raise RuntimeError('HTTP fixture negative controls incomplete')
+            report['httpRootNegative'] = {'resultPath': negative_path.name, 'resultSHA256': sha(negative_path),
+                'result': negative}
+            run('http-root-observer', [str(node), str(subscription_qa / 'sol-http-root-observer-0535.cjs'),
+                str(output / 'subscription-source'),
+                *[str(output / (name + '.plain.js')) for name in plain_roots],
+                str(subscription_qa / 'httpbar-literals.cjs')])
+            observer_path = output / 'http-root-observer.stdout'
+            observed_http = json.loads(observer_path.read_text())
+            cases = observed_http.get('cases', [])
+            if (observed_http.get('ok') is not True
+                    or observed_http.get('originalAcceptanceClaim') is not False
+                    or observed_http.get('coverage', {}).get('complete') is not False
+                    or observed_http.get('manifestHash') != reviewed_http_inputs['http-root-cases-manifest.json']
+                    or observed_http.get('observerHash') != sha(subscription_qa / 'sol-http-root-observer-0535.cjs')
+                    or observed_http.get('oracleHash') != sha(subscription_qa / 'sol-http-popup-literals-0525.cjs')
+                    or observed_http.get('policyLiteralSource', {}).get('sha256') != sha(subscription_qa / 'tea-contract-cases.cjs')
+                    or len(observed_http.get('peerSources', [])) != 1
+                    or observed_http['peerSources'][0].get('sha256') != sha(subscription_qa / 'httpbar-literals.cjs')
+                    or not isinstance(cases, list) or not cases
+                    or [{'name': case.get('name'), 'root': case.get('root'),
+                         'steps': case.get('assertedStepsPerRun')} for case in cases] != manifest.get('cases')
+                    or len({case.get('name') for case in cases}) != len(cases)
+                    or any(case.get('freshRuns') != 2 or type(case.get('assertedStepsPerRun')) is not int
+                           or case['assertedStepsPerRun'] <= 0
+                           or case.get('compiledOriginal') != plain_hashes.get(case.get('root'))
+                           for case in cases)):
+                raise RuntimeError('HTTP owning-root observer result incomplete or mismatched')
+            report['httpRootObserver'] = {'resultPath': observer_path.name, 'resultSHA256': sha(observer_path),
+                'plainRootHashes': plain_hashes, 'result': observed_http}
+            run('sitemain-root-negative', [str(node), str(subscription_qa / 'sitemain-root-negative.cjs'),
+                str(output / 'subscription-source'), str(output / 'SiteMain.plain.js')])
+            site_negative_path = output / 'sitemain-root-negative.stdout'
+            site_negative = json.loads(site_negative_path.read_text())
+            if (site_negative.get('ok') is not True or site_negative.get('originalAcceptanceClaim') is not False
+                    or site_negative.get('controls') != [
+                        'missing-sitemain-source', 'empty-sitemain-source', 'altered-sitemain-source',
+                        'missing-site-elm-json', 'altered-site-elm-json', 'altered-literals',
+                        'removed-case', 'duplicate-case', 'injected-animated-subscription-bundle']):
+                raise RuntimeError('SiteMain fixture negative controls incomplete')
+            report['siteMainRootNegative'] = {'resultPath': site_negative_path.name,
+                'resultSHA256': sha(site_negative_path), 'result': site_negative}
+            run('sitemain-root-observer', [str(node), str(subscription_qa / 'sitemain-root-observer.cjs'),
+                str(output / 'subscription-source'), str(output / 'SiteMain.plain.js')])
+            site_observer_path = output / 'sitemain-root-observer.stdout'
+            observed_site = json.loads(site_observer_path.read_text())
+            site_cases = observed_site.get('cases', [])
+            site_dom = observed_site.get('fakeDomLifecycle', {})
+            if (observed_site.get('ok') is not True
+                    or observed_site.get('originalAcceptanceClaim') is not False
+                    or observed_site.get('coverage', {}).get('complete') is not False
+                    or observed_site.get('manifestHash') != reviewed_sitemain_inputs['sitemain-root-manifest.json']
+                    or observed_site.get('observerHash') != sha(subscription_qa / 'sitemain-root-observer.cjs')
+                    or observed_site.get('literalsHash') != sha(subscription_qa / 'sitemain-root-literals.cjs')
+                    or observed_site.get('sourcePins', {}).get('siteMain') != {
+                        'path': site_key, 'sha256': sources[site_key]}
+                    or observed_site.get('sourcePins', {}).get('siteElmJson') != {
+                        'path': site_manifest_key, 'sha256': sources[site_manifest_key]}
+                    or not isinstance(site_cases, list) or not site_cases
+                    or [{'name': case.get('name'), 'root': case.get('root'),
+                         'steps': case.get('assertedStepsPerRun')} for case in site_cases] != site_manifest.get('cases')
+                    or len({case.get('name') for case in site_cases}) != len(site_cases)
+                    or any(case.get('freshRuns') != 2 or type(case.get('assertedStepsPerRun')) is not int
+                           or case['assertedStepsPerRun'] <= 0
+                           or case.get('compiledOriginal') != site_plain_hash
+                           for case in site_cases)
+                    or site_dom.get('transitions') != site_manifest.get('fakeDomExpectedTransitions')
+                    or site_dom.get('freshRuns') != 2
+                    or site_dom.get('compiledOriginal') != site_plain_hash
+                    or site_dom.get('activeTimersAfterIdleAdvance') != 0):
+                raise RuntimeError('SiteMain owning-root observer result incomplete or mismatched')
+            report['siteMainRootObserver'] = {'resultPath': site_observer_path.name,
+                'resultSHA256': sha(site_observer_path), 'plainRootHash': site_plain_hash,
+                'result': observed_site}
             result_path = output / 'tea-subscriptions.json'
             run('tea-subscriptions', [str(node), str(subscription_qa / 'tea-subscriptions.cjs'), '--workers',
                                      *[str(output / (name + '.js')) for name in workers.values()], '--roots',
@@ -197,6 +370,10 @@ def main():
                     or summary.get('marker') != 'TEA_SUBSCRIPTIONS_OBSERVE_V1'
                     or summary.get('cases') != expected_cases or summary.get('runsPerCase') != 2
                     or type(summary.get('transitions')) is not int or summary['transitions'] <= 0
+                    or summary.get('scope') != 'QA single-root replay + eight compiled Browser.element roots for port/XHR/timer verification + static SiteMain source inventory; native behavior qualified separately'
+                    or summary.get('completeRuntimeBoundary') is not False
+                    or summary.get('siteMainSha256') != sources[site_key]
+                    or summary.get('siteMainBytePreserved') is not True
                     or summary.get('optimizedRootsVerified') is not True
                     or summary.get('optimizedRootHashes') != {name: selected_artifacts[name] for name in roots}
                     or summary.get('oracleSha256') != sha(work / 'qa/tea-subscriptions-cases.cjs')
@@ -223,7 +400,8 @@ def main():
                                                'hashes': {name: sha(subscription_qa / name) for name in qa_files}}
             report['subscriptionLimits'] = [
                 'coverage.complete=false retained; HTTP wrapper Model/effect AST gaps remain in the raw coverage declaration',
-                'SiteMain static inventory is not executed or qualified by this eight-root profile; raw nine-root wording is not acceptance',
+                'Eight desktop roots use the optimized runtime harness; SiteMain has a separate ordinary-compiled fake-DOM component check, without browser/native or whole-scenario acceptance',
+                'sitemain-root-observer.cjs observes compiled ordinary SiteMain.plain.js (Sub.none + Dom.focus spotlight lifecycle); product EARS ELM-TEA-004 remains open',
                 'No live native host ordering, GUI, provider, AT/IME or release acceptance']
         if args.standalone_mvp:
             for filename in ('NativePointerFixture.elm', 'StandaloneMvpReplay.elm', 'standalone-mvp.cjs'):
@@ -556,18 +734,14 @@ def main():
                 sources[str(source.relative_to(REPO))] = sha(source)
                 shutil.copy2(source, work / 'qa' / name)
             sources['tools/quint-toolchain.json'] = sha(REPO / 'tools/quint-toolchain.json')
-            run('receipt-model-typecheck', [str(node), str(cli), 'typecheck', 'qa/receipt-lifecycle_test.qnt'])
-            run('receipt-model-cancelled-tests', [str(node), str(cli), 'test', 'qa/receipt-lifecycle.qnt', '--main=ReceiptLifecycle', '--match=.*Test', '--backend=typescript', '--verbosity=2'])
-            run('receipt-model-original-tests', [str(node), str(cli), 'test', 'qa/receipt-lifecycle_test.qnt', '--main=ReceiptLifecycle_test', '--match=.*Test', '--backend=typescript', '--verbosity=2'])
-            run('receipt-model-safety', [str(node), str(cli), 'run', 'qa/receipt-lifecycle.qnt', '--main=ReceiptLifecycle', '--backend=typescript', '--invariant=safety', '--witnesses',
-                                        'witnessPending', 'witnessCommitted', 'witnessRefused', 'witnessCancelled', 'witnessUnknown', 'witnessDisconnected', 'witnessNewRequest',
-                                        '--max-samples=10000', '--max-steps=50', '--seed=20261031', '--verbosity=1'])
+            run_receipt_models(node, pin, cli, run)
             text = (output / 'receipt-model-safety.stdout').read_text()
             witnesses = {name: int(count) for name, count in re.findall(r'(witness\w+) was witnessed in (\d+) trace', text)}
             report['modelWitnessCounts'] = witnesses
             if len(witnesses) != 7 or any(count == 0 for count in witnesses.values()):
                 raise RuntimeError('Model reachability witness missing or zero; inspect retained sampling report')
-            quint_toolchain()
+            if quint_toolchain()[0] != pin or sha(node) != pin['node']['sha256']:
+                raise RuntimeError('Receipt model toolchain changed')
             run(harness_name, [str(node), 'qa/' + harness_name + '.cjs', str(output / (harness_name + '.js')), str(output / (harness_name + '.json'))])
         if args.browser:
             # New network/PID namespaces have no host network or desktop sockets.
@@ -580,6 +754,17 @@ def main():
                                             '--tmpfs', '/tmp', '--', sys.executable, '-B',
                                             str(REPO / 'tools/check_feedback_browser.py'), str(output)])
         if args.subscriptions:
+            if (staged_site.is_symlink() or not staged_site.is_file() or sha(staged_site) != sources[site_key]
+                    or staged_site_manifest.is_symlink() or not staged_site_manifest.is_file()
+                    or sha(staged_site_manifest) != sources[site_manifest_key]):
+                raise RuntimeError('SiteMain inventory or elm.json stage changed')
+            site_artifact = output / 'SiteMain.plain.js'
+            if site_artifact.is_symlink() or not site_artifact.is_file() or sha(site_artifact) != site_plain_hash:
+                raise RuntimeError('SiteMain plain root artifact changed')
+            for name, digest in plain_hashes.items():
+                artifact = output / (name + '.plain.js')
+                if artifact.is_symlink() or not artifact.is_file() or sha(artifact) != digest:
+                    raise RuntimeError('HTTP plain root artifact changed: ' + name)
             for filename in qa_files:
                 staged = subscription_qa / filename
                 if (staged.is_symlink() or not staged.is_file()

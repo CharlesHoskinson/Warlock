@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "requirement": "ELM-TEA-004",
+  "scenario": "tea-subscriptions",
+  "coverageComplete": false,
+  "originalAcceptanceClaim": false,
+  "fixtures": {
+    "siteMain": {
+      "file": "site/src/SiteMain.elm",
+      "sha256": "f05a3768eb4573161544099917ce009f8df7eb57b8c9408f5266001980cafcfb"
+    },
+    "siteElmJson": {
+      "file": "site/elm.json",
+      "sha256": "ffe9bc4f6811166a7bbafca49540bf7b8af214118dd9aff2f4707890eb9824dc"
+    },
+    "literals": {
+      "file": "sitemain-root-literals.cjs",
+      "sha256": "04151053b079b4dba16656d71680d8eec9ebed709285c695e8270f3e57478cb3"
+    }
+  },
+  "cases": [
+    {
+      "name": "SiteMain-init-and-sub-none-no-recurring-demand",
+      "root": "SiteMain",
+      "steps": 1
+    },
+    {
+      "name": "SiteMain-keyboard-step-jump-stale-and-settled-focus",
+      "root": "SiteMain",
+      "steps": 7
+    },
+    {
+      "name": "SiteMain-pointer-spotlight-clears-focus-miss-without-cmd",
+      "root": "SiteMain",
+      "steps": 5
+    },
+    {
+      "name": "SiteMain-pure-local-controls-no-effects-or-subscriptions",
+      "root": "SiteMain",
+      "steps": 10
+    }
+  ],
+  "fakeDomExpectedTransitions": 10
+}

@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-03T00:23:27.796899+00:00",
+  "baseRevision": "c40b75f23486c0753d347e6a8be0200299124094",
+  "scope": "Restoration and component evidence metadata. Source and hash references do not publish the local raw receipts or establish original-scenario acceptance.",
+  "productionSourceSHA256": {
+    "implementation/warlock/src/UiHttp.elm": "ac7cfbc1d04e79e21c6dad489a9ebcbf1bbbbdb2d53177a7a6cbe93ab8ee193f",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": "30b1c58267106e7e16fd2184598ea8624a4c58950f0854e6a690a6ef94e9b722",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": "b98d37b2bda016c82fc764114502ef19d28826c2c4086a3744eb0e7fd4c09319",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "e2b8b5253b2c458a0c4d529d52e2331e125741aa1ee4287c67a46b103927e023"
+  },
+  "reports": {
+    "subscriptions": {
+      "path": ".warlock-contributor/elm-cpu-1793663899590192334/report.json",
+      "sha256": "0f85320a7a97eefba659237d8ebe300a158f89dbfe2d408fd93911538d62b65c",
+      "rawPublished": false
+    },
+    "observedExitRed": {
+      "path": ".warlock-contributor/haskell-cpu-1793659515635113664/report.json",
+      "sha256": "a4b3a8e83454e2115165dd822a894b5bde0457fc68bec6b7635e1f89eaea8f28",
+      "rawPublished": false
+    },
+    "observedExitGreen": {
+      "path": ".warlock-contributor/haskell-cpu-1793660503565699641/report.json",
+      "sha256": "f1d08dcad00189f128ca222eaf0b6ed121282f138320134b03697944c62f68ae",
+      "rawPublished": false
+    },
+    "uiOrigin": {
+      "path": ".warlock-contributor/haskell-cpu-1793660842333746847/report.json",
+      "sha256": "a6cdbfdcb304452a5e57e1a934dc2292f38506e93a947c31fd8dbbd7e12102a6",
+      "rawPublished": false
+    },
+    "plugin": {
+      "path": ".warlock-contributor/registry-cpu-1793652728682618344/report.json",
+      "sha256": "9b1801036cb8712821fcc80c05d2a35bd262e8b5dd5748313ed3c67f0222eabc",
+      "rawPublished": false
+    }
+  },
+  "results": {
+    "subscriptions": "passed; compiled desktop roots plus ordinary SiteMain model/fake-DOM component; whole coverage incomplete",
+    "observedExitRed": "missing advisory field only; original operation/auth/custody assertions retained",
+    "observedExitGreen": "three existing fixed persistent/common, custody and backend serialization suites passed",
+    "uiOrigin": "ten existing fixed suites passed",
+    "plugin": "321 tests passed on the recorded restoration source tuple",
+    "nativePreservationMocks": "28 tests passed; local log retained",
+    "guestLoader": "four exact fresh ELF loader checks and163per-root provider/hash joins passed; bounded trial only"
+  },
+  "nativeThird": {
+    "receipt": {
+      "path": "machine-local/observation.json",
+      "sha256": "1b878739f887ccd2a5fc9924d3621585b3e09848db6d500bbb7c71bb7ca5c58b",
+      "rawPublished": false
+    },
+    "selectedNormalExit": 1,
+    "callbacks": 0,
+    "operations": 0,
+    "productFrameObserved": false,
+    "realProductInputObserved": false,
+    "serviceTerminalState": "active/exited",
+    "serviceMainExit": 0,
+    "backendExit": 1,
+    "controlGroup": "unavailable",
+    "scopeRetirement": "unknown",
+    "retiredBirths": "unknown",
+    "desktopPreservation": "Foot PID/birth and idle matched in valid before/after snapshots; not continuous observation"
+  },
+  "limits": [
+    "Normal exit observations are untrusted data, without authority; independent from cleanup status.",
+    "Observation/reap fault injection, later-cleanup coexistence and external JSON consumer compatibility remain separate coverage gaps.",
+    "Prior first/second trial and expected RED evidence are preserved locally.",
+    "Current native startup cause remains unproven; startup investigation ended after this distinct trial.",
+    "Joined controller/renderer control-revocation fixture remains outstanding.",
+    "Heavy builds paused under WSL disk policy at86percent; bounded low-volume work continues."
+  ],
+  "rawEvidenceAvailableInRepository": false,
+  "newWholeEarsClosures": 0,
+  "nativeAccepted": false,
+  "originalAccepted": false,
+  "releaseAccepted": false,
+  "authorizationExpiresUTC": "2026-11-03T20:02:47.475490+00:00",
+  "originalNativeDeadlineSeconds": 28,
+  "qualificationLimits": [
+    "Latest Elm check includes the HTTP observer EOF whitespace correction and matching source pin.",
+    "Earlier Haskell/UI-origin results retain their recorded tuples. Their production Haskell sources are unchanged; the later check_elm_cpu.py pin update changes the complete QA tool closure.",
+    "Guest restarted after the third native trial. Its historical guest identity and ABI receipts do not qualify the new guest."
+  ]
+}

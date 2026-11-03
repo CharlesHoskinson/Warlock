@@ -15,7 +15,8 @@
 // Uses the reviewed single pre-format _Debug_log read hook on each single-root worker
 // (avoiding Elm 0.19 cross-module port-name collisions) AND verifies real compiled
 // Browser.element synchronous in-flight, delayed, and closed-overlay port callbacks
-// plus recurring HTTP XHR/timer commands across all 9 roots. No native/GUI claim.
+// plus HTTP XHR/timer commands for eight compiled roots and a static SiteMain
+// source inventory. SiteMain is not compiled or run here. No native/GUI claim.
 
 const fs = require('node:fs');
 const path = require('node:path');
@@ -329,13 +330,84 @@ function walkDom(node, predicate) {
   return null;
 }
 
+// Virtual time is absolute; nested callbacks schedule relative to their firing time.
+function makeClock() {
+  let now = 0;
+  let sequence = 0;
+  const timers = new Map();
+  const trace = [];
+  function schedule(fn, delay = 0) {
+    const id = ++sequence;
+    const deadline = now + Math.max(0, Number(delay) || 0);
+    timers.set(id, { fn, deadline });
+    trace.push({ event: 'create', id, at: now, deadline });
+    return id;
+  }
+  function cancel(id) {
+    const existed = timers.delete(id);
+    trace.push({ event: 'cancel', id, at: now, existed });
+  }
+  function tick(milliseconds) {
+    insist(Number.isFinite(milliseconds) && milliseconds >= 0, 'clock: invalid advance');
+    const target = now + milliseconds;
+    let count = 0;
+    for (;;) {
+      const due = [...timers].filter(([, row]) => row.deadline <= target)
+        .sort((a, b) => a[1].deadline - b[1].deadline || a[0] - b[0])[0];
+      if (!due) break;
+      insist(++count <= 10000, 'clock: runaway timers');
+      const [id, row] = due;
+      timers.delete(id);
+      now = row.deadline;
+      trace.push({ event: 'fire', id, at: now, deadline: row.deadline });
+      row.fn();
+    }
+    now = target;
+  }
+  function clear() {
+    for (const id of [...timers.keys()]) cancel(id);
+  }
+  return { schedule, cancel, tick, clear, trace };
+}
+
+function assertLiveAbort(req, label) {
+  insist(req.aborted && req.abortCount === 1 && req.abortOrigins[0] === 'live', label);
+}
+
+function checkClockRegression() {
+  const clock = makeClock();
+  const fired = [];
+  clock.schedule(() => {
+    fired.push('first');
+    clock.schedule(() => fired.push('nested'), 5);
+  }, 10);
+  clock.schedule(() => fired.push('second'), 10);
+  const cancelled = clock.schedule(() => fired.push('cancelled'), 11);
+  clock.cancel(cancelled);
+  clock.tick(9);
+  insist(isDeepStrictEqual(fired, []), 'clock: early firing');
+  clock.tick(1);
+  insist(isDeepStrictEqual(fired, ['first', 'second']), 'clock: deadline/order');
+  clock.tick(4);
+  insist(isDeepStrictEqual(fired, ['first', 'second']), 'clock: nested early firing');
+  clock.tick(1);
+  insist(isDeepStrictEqual(fired, ['first', 'second', 'nested']), 'clock: nested/cancelled firing');
+  insist(isDeepStrictEqual(clock.trace.filter(row => row.event === 'fire').map(row => row.at), [10, 10, 15]), 'clock: fire timestamps');
+  insist(clock.trace.some(row => row.event === 'cancel' && row.id === cancelled && row.existed), 'clock: missing cancellation trace');
+  let rejected = false;
+  try { assertLiveAbort({ aborted: true, abortCount: 1, abortOrigins: ['cleanup'] }, 'cleanup is not live cancellation'); }
+  catch (_) { rejected = true; }
+  insist(rejected, 'cleanup abort must not satisfy live cancellation');
+  assertLiveAbort({ aborted: true, abortCount: 1, abortOrigins: ['live'] }, 'live abort control');
+}
+
 async function mountOptimizedElement(bundlePath, moduleName, flags = null) {
   const bytes = fs.readFileSync(bundlePath);
   const code = bytes.toString('utf8');
   insist(elm191ListAbi(code) === 'optimized', `${moduleName} must use the source-pinned Elm 0.19.1 optimized List ABI`);
   const requests = [];
-  const timers = new Map();
-  let sequence = 0;
+  const clock = makeClock();
+  let cleaningUp = false;
 
   class ControlledXHR {
     constructor() {
@@ -345,13 +417,14 @@ async function mountOptimizedElement(bundlePath, moduleName, flags = null) {
       this.aborted = false;
       this.done = false;
       this.abortCount = 0;
+      this.abortOrigins = [];
     }
     addEventListener(kind, handler) { this.handlers[kind] = handler; }
     open(method, url, async) { this.method = method; this.url = url; this.async = async; }
     setRequestHeader(key, value) { this.headers[key] = value; }
     getAllResponseHeaders() { return 'Content-Type: application/json\r\n'; }
     send(body) { this.body = body ?? ''; requests.push(this); }
-    abort() { this.aborted = true; this.abortCount++; }
+    abort() { this.aborted = true; this.abortCount++; this.abortOrigins.push(cleaningUp ? 'cleanup' : 'live'); }
     respond(status, body = '') {
       insist(!this.done && !this.aborted, `${moduleName}: response to inactive XHR`);
       this.done = true;
@@ -369,12 +442,8 @@ async function mountOptimizedElement(bundlePath, moduleName, flags = null) {
     }
   }
 
-  const schedule = (fn, delay = 0) => {
-    const id = ++sequence;
-    timers.set(id, { fn, delay: Number(delay) || 0 });
-    return id;
-  };
-  const cancel = id => timers.delete(id);
+  const schedule = clock.schedule;
+  const cancel = clock.cancel;
   const container = new DomNode(1, 'DIV');
   const mount = new DomNode(3, '#text', '');
   container.appendChild(mount);
@@ -415,25 +484,16 @@ async function mountOptimizedElement(bundlePath, moduleName, flags = null) {
     app,
     container,
     requests,
+    timerTrace: clock.trace,
     sha256: hash(bytes),
     async flush() {
       for (let round = 0; round < 12; round++) {
-        for (const [id, row] of [...timers]) {
-          if (row.delay <= 0) {
-            timers.delete(id);
-            row.fn();
-          }
-        }
+        clock.tick(0);
         await new Promise(resolve => setImmediate(resolve));
       }
     },
     async tick(milliseconds) {
-      for (const [id, row] of [...timers]) {
-        if (row.delay <= milliseconds) {
-          timers.delete(id);
-          row.fn();
-        }
-      }
+      clock.tick(milliseconds);
       await this.flush();
     },
     gets() { return requests.filter(r => r.method === 'GET'); },
@@ -444,7 +504,8 @@ async function mountOptimizedElement(bundlePath, moduleName, flags = null) {
       await this.flush();
     },
     close() {
-      timers.clear();
+      cleaningUp = true;
+      clock.clear();
       for (const req of requests) {
         if (!req.done && !req.aborted) req.abort();
       }
@@ -452,6 +513,33 @@ async function mountOptimizedElement(bundlePath, moduleName, flags = null) {
   };
   await env.flush();
   return env;
+}
+
+// Literal expected wire payloads for the selected one-view topology and then
+// a host disconnect while already detached. Not derived from observed output.
+function expectedDetachedCommit(publication, generation, status, reconnectEnabled) {
+  const scope = { id: '1', generation: '1' };
+  return {
+    viewProtocol: 1, kind: 'view-commit', projection: {
+      viewProtocol: 1, kind: 'view-frame', revision: '1', views: [scope],
+      focusOwner: scope, popupOwner: null,
+      frame: {
+        surfaceProtocol: 2, keyboardParent: true, motion: 'reduced',
+        appearance: { theme: 'night', textScale: 100, effectsOff: false, reducedTransparency: false },
+        publication, lease: '0', mode: 'closed', status, popup: [],
+        bar: [
+          { id: 'bar:reconnect', domId: 'reconnect', label: 'Reconnect', ariaLabel: 'Reconnect to the window system', detail: '', enabled: reconnectEnabled, focusOnly: false },
+          { id: 'bar:overview', domId: `applications:detached:${generation}:control:overview-opener`, label: 'Task View', ariaLabel: 'Open Task View', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:switcher', domId: `applications:detached:${generation}:control:switcher-opener`, label: 'Switch windows', ariaLabel: 'Open window switcher', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:notifications', domId: `applications:detached:${generation}:notifications:opener`, label: 'Notifications', ariaLabel: 'Open notifications', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:files', domId: `applications:detached:${generation}:files:opener`, label: 'Files', ariaLabel: 'Open Files menu', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:system', domId: `applications:detached:${generation}:system:opener`, label: 'System', ariaLabel: 'Open system menu', detail: '', enabled: false, focusOnly: false },
+          { id: 'bar:settings', domId: `applications:detached:${generation}:settings:opener`, label: 'Settings', ariaLabel: 'Open settings', detail: '', enabled: false, focusOnly: false },
+        ],
+      },
+      announcer: { scope, surface: 'bar' }, announcement: null,
+    }, requests: [], focus: [],
+  };
 }
 
 async function verifyOptimizedRoots(rootPaths) {
@@ -726,7 +814,7 @@ async function verifyOptimizedRoots(rootPaths) {
     await httpMain.flush();
     await httpMain.tick(99);
     insist(httpMain.gets().length === 1, 'HttpMain must not poll before 100ms timer expires');
-    await httpMain.tick(100);
+    await httpMain.tick(1);
     insist(httpMain.gets().length === 2, 'HttpMain must issue next /events GET after 100ms timer');
     assertHttpReq(httpMain.activeGet(), 'GET', '/events', 'HttpMain GET#2');
     httpMain.activeGet().respond(200, JSON.stringify(gateway('view-topology', {
@@ -738,8 +826,8 @@ async function verifyOptimizedRoots(rootPaths) {
     assertHttpReq(httpMain.activeGet(), 'GET', '/events', 'HttpMain GET#3');
     assertHttpReq(httpMain.posts()[0], 'POST', '/commit', 'HttpMain POST#1');
     const commitBody = full(JSON.parse(httpMain.posts()[0].body));
-    insist(isDeepStrictEqual(Object.keys(commitBody).sort(), ['focus', 'kind', 'projection', 'requests', 'viewProtocol']) &&
-      commitBody.viewProtocol === 1 && commitBody.kind === 'view-commit', 'HttpMain POST /commit must carry 5-field view-commit');
+    insist(isDeepStrictEqual(commitBody, full(expectedDetachedCommit('3', '2', 'Connecting…', false))),
+      'HttpMain POST#1 complete topology commit mismatch');
     httpMain.posts()[0].respond(204, '');
     await httpMain.flush();
     httpMain.activeGet().respond(200, JSON.stringify(gateway('native-event', { protocolVersion: 3, kind: 'host-disconnected' })));
@@ -747,10 +835,13 @@ async function verifyOptimizedRoots(rootPaths) {
     insist(httpMain.gets().length === 4 && httpMain.posts().length === 2, 'HttpMain must deliver revocation while closed');
     const inFlightCommit = httpMain.posts()[1];
     assertHttpReq(inFlightCommit, 'POST', '/commit', 'HttpMain POST#2');
+    insist(isDeepStrictEqual(full(JSON.parse(inFlightCommit.body)),
+      full(expectedDetachedCommit('4', '3', 'Connection lost. Reconnect to continue.', true))),
+      'HttpMain POST#2 complete disconnect commit mismatch');
     insist(!inFlightCommit.done && !inFlightCommit.aborted, 'HttpMain POST#2 must still be in-flight before GET failure');
     httpMain.activeGet().fail('error');
     await httpMain.flush();
-    insist(inFlightCommit.aborted && inFlightCommit.abortCount === 1,
+    assertLiveAbort(inFlightCommit,
       'HttpMain GET failure must invoke Http.cancel "warlock-ui-post" to abort in-flight POST /commit');
     await httpMain.tick(100);
     insist(httpMain.gets().length === 4 && httpMain.posts().length === 2,
@@ -771,7 +862,7 @@ async function verifyOptimizedRoots(rootPaths) {
       await httpEnv.flush();
       await httpEnv.tick(99);
       insist(httpEnv.gets().length === 1, `${mod} must not poll at 99ms after 204`);
-      await httpEnv.tick(100);
+      await httpEnv.tick(1);
       insist(httpEnv.gets().length === 2, `${mod} must resume /events GET at 100ms`);
       assertHttpReq(httpEnv.activeGet(), 'GET', '/events', `${mod} GET#2`);
       httpEnv.activeGet().respond(200, JSON.stringify(gateway('presentation', frame('1', '0', 'closed', 'Ready', [control('bar:applications', 'open-apps', 'Applications')], []))));
@@ -818,18 +909,22 @@ async function verifyOptimizedRoots(rootPaths) {
       if (!isPopup) {
         inFlightPost.fail('error');
         await httpEnv.flush();
-        insist(inFlightGet.aborted && inFlightGet.abortCount === 1,
+        assertLiveAbort(inFlightGet,
           'HttpBar POST failure must invoke Http.cancel "warlock-ui-events" to abort active GET /events');
-        insist(httpEnv.container.textContent.includes('UI delivery is unconfirmed. The action will not be repeated. Restart this view to reconnect.'),
-          'HttpBar must render sticky unconfirmed-delivery alert');
+        const stoppedAlert = walkDom(httpEnv.container, node => node.attributes.role === 'alert');
+        insist(stoppedAlert && stoppedAlert.textContent === 'UI delivery is unconfirmed. The action will not be repeated. This view has stopped.',
+          'HttpBar must render sticky unconfirmed-delivery role alert');
       } else {
         inFlightGet.respond(200, JSON.stringify(gateway('native-event', { protocolVersion: 3, kind: 'host-disconnected' })));
         await httpEnv.flush();
-        insist(inFlightPost.aborted && inFlightPost.abortCount === 1,
+        assertLiveAbort(inFlightPost,
           'HttpPopup forbidden event source must invoke Http.cancel "warlock-ui-post" to abort active POST /actions');
-        insist(httpEnv.container.textContent.includes('UI event source is not allowed for this role. Restart this view to reconnect.'),
-          'HttpPopup must render sticky role-rejection alert');
+        const stoppedAlert = walkDom(httpEnv.container, node => node.attributes.role === 'alert');
+        insist(stoppedAlert && stoppedAlert.textContent === 'UI event source is not allowed for this role. This view has stopped.',
+          'HttpPopup must render sticky role-rejection role alert');
       }
+      insist(!walkDom(httpEnv.container, node => Object.hasOwn(node.attributes, 'data-surface-control') || Object.hasOwn(node.attributes, 'data-surface-field')),
+        `${mod} stopped view must remove ordinary actionable surface controls`);
       await httpEnv.tick(100);
       insist(httpEnv.gets().length === getsBeforeStop && httpEnv.posts().length === 2,
         `${mod} must permanently stop /events polling and never retry POST after failure`);
@@ -842,6 +937,7 @@ async function verifyOptimizedRoots(rootPaths) {
 }
 
 async function main() {
+  checkClockRegression();
   const args = process.argv.slice(2);
   let workerPaths = null;
   let rootBundles = null;
@@ -917,7 +1013,7 @@ async function main() {
   const oracleBytes = fs.readFileSync(casesPath);
   const oracle = loadOracle(oracleBytes, casesPath);
   const coverage = full(oracle.coverage, 'oracle/coverage');
-  insist(coverage && typeof coverage.complete === 'boolean' &&
+  insist(coverage && coverage.complete === false &&
     Array.isArray(coverage.rootsInventoried) && coverage.rootsInventoried.length === 9,
     'explicit 9-root ELM-TEA-004 inventory required in oracle coverage');
 
@@ -937,7 +1033,7 @@ async function main() {
     schema: 2,
     requirement: 'ELM-TEA-004',
     scenario: 'tea-subscriptions',
-    scope: 'QA single-root full-state/effect/subscription-plan replay + compiled 9-root Browser.element runtime port/XHR/timer verification; native behavior qualified separately',
+    scope: 'QA single-root replay + eight compiled Browser.element roots for port/XHR/timer verification + static SiteMain source inventory; native behavior qualified separately',
     workers: workerMetadata,
     oracleSha256: hash(oracleBytes),
     runnerSha256: hash(fs.readFileSync(__filename)),
@@ -945,7 +1041,7 @@ async function main() {
     siteMainBytePreserved,
     optimizedRootHashes,
     optimizedRootsVerified: Boolean(optimizedRootHashes),
-    completeRuntimeBoundary: Boolean(optimizedRootHashes && siteMainBytePreserved),
+    completeRuntimeBoundary: false,
     marker: MARKER,
     coverageDeclaration: coverage,
     cases: cases.map(c => ({ name: c.name, worker: c.worker })),
