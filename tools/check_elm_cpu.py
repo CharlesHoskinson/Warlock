@@ -178,7 +178,7 @@ def main():
             qa_files = tuple(name + '.elm' for name in workers.values()) + (
                 'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs', 'tea-contract-cases.cjs',
                 'sol-http-root-observer-0535.cjs', 'sol-http-popup-literals-0525.cjs',
-                'httpbar-literals.cjs', 'joined-control-literals.cjs', 'closed-topology-after-dismiss-literals.cjs', 'http-root-cases-manifest.json',
+                'httpbar-literals.cjs', 'joined-control-literals.cjs', 'closed-topology-after-dismiss-literals.cjs', 'http-popup-control-literals.cjs', 'http-root-cases-manifest.json',
                 'http-root-cases-guard.cjs', 'http-root-cases-negative.cjs',
                 'sitemain-root-literals.cjs', 'sitemain-root-observer.cjs',
                 'sitemain-root-manifest.json', 'sitemain-root-negative.cjs')
@@ -190,12 +190,16 @@ def main():
             joined_sources = ('Desktop.elm', 'DesktopPolicy.elm', 'OutputController.elm', 'SurfaceController.elm',
                               'Surface.elm', 'OutcomeAnnouncements.elm', 'Popup.elm', 'Presentation.elm',
                               'Announcement.elm', 'SurfaceSnapshot.elm', 'Shell.elm', 'TaskbarShell.elm',
-                              'UiHttp.elm', 'HttpMain.elm', 'HttpPopup.elm')
+                              'UiHttp.elm', 'HttpMain.elm', 'HttpPopup.elm', 'NativePreviewRealm.elm',
+                              'RetainedPreviewPresenter.elm', 'PreviewPaintGate.elm')
             joined_extra_pins = {
                 'Announcement.elm': 'a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f',
                 'SurfaceSnapshot.elm': '9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a',
                 'Shell.elm': '6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094',
                 'TaskbarShell.elm': 'eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26',
+                'NativePreviewRealm.elm': '2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf',
+                'RetainedPreviewPresenter.elm': '4289acb5af5da1811f688cf3d665169dea07e06a8bd28c41c1c43d1c015c6443',
+                'PreviewPaintGate.elm': 'fa2194375853ba16d5c783d04d110b052c43dccc89faf9fb6c4dce7aef709d4f',
             }
             for name in joined_sources:
                 key = 'implementation/warlock/src/' + name
@@ -226,14 +230,15 @@ def main():
                 shutil.copy2(source, work / 'qa' / filename)
                 shutil.copy2(source, subscription_qa / filename)
             reviewed_http_inputs = {
-                'sol-http-root-observer-0535.cjs': 'ec1fd8fbd225f8823afe10252dccbd4e088e0c299ad94810e8d3ce3aae1c8bd1',
+                'sol-http-root-observer-0535.cjs': 'ca5b9cb7578bc9fedd15d5f23a9adc26b992ae47dbd12df5bce738238d0c02a1',
                 'sol-http-popup-literals-0525.cjs': 'ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1',
                 'httpbar-literals.cjs': '6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173',
                 'joined-control-literals.cjs': '6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6',
                 'closed-topology-after-dismiss-literals.cjs': '8435b31ad6790fddc0750f6b5926388f36f394de9f58de9238c3944d45db6740',
-                'http-root-cases-manifest.json': '41075da706094b6f6b711ff3ab03b8c8d49be19022e4d6a2ac33078a66815427',
-                'http-root-cases-guard.cjs': '3fd2683df290e98ec58f7dd055364d4aabc55075b60ac6bcfe58f2caaebf6210',
-                'http-root-cases-negative.cjs': '54446b046f157a5443230c1fe8c965d3de97a57553605a4fe12c0d3f6c4713d1',
+                'http-popup-control-literals.cjs': '8fb6d1ec0eba318b70fa0e4617c30ee20fe0a2e39a2f7b8e2822dd8c21cebf55',
+                'http-root-cases-manifest.json': '8beb60943bd2480b52151a009db7fee2c7759383482de19b3bc09ee79ef2faf8',
+                'http-root-cases-guard.cjs': 'ef413d508edc938599f20ba34c20f379da79cb9dca60b5a48ef9a624cc85cc48',
+                'http-root-cases-negative.cjs': 'ebb1417540ad1bbe4f8516140c02e802ff2545057722c91c7346d00e2141230b',
                 'tea-contract-cases.cjs': '41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7',
             }
             for name, digest in reviewed_http_inputs.items():
@@ -314,7 +319,9 @@ def main():
                         'removed-peer-cases', 'removed-case', 'duplicate-case', 'absent-joined',
                         'empty-joined', 'altered-joined', 'removed-joined-case', 'duplicate-joined-case',
                         'absent-closed-topology', 'empty-closed-topology', 'altered-closed-topology',
-                        'removed-closed-topology-case', 'reordered-joined-cases']):
+                        'removed-closed-topology-case', 'reordered-joined-cases',
+                        'absent-popup-control', 'empty-popup-control', 'altered-popup-control',
+                        'removed-popup-control-case', 'duplicated-popup-control-case']):
                 raise RuntimeError('HTTP fixture negative controls incomplete')
             report['httpRootNegative'] = {'resultPath': negative_path.name, 'resultSHA256': sha(negative_path),
                 'result': negative}
@@ -327,6 +334,7 @@ def main():
             cases = observed_http.get('cases', [])
             joined = observed_http.get('joined', {})
             topology = observed_http.get('joinedTopology', {})
+            popup_control = observed_http.get('popupControl', {})
             if (observed_http.get('ok') is not True
                     or observed_http.get('originalAcceptanceClaim') is not False
                     or observed_http.get('coverage', {}).get('complete') is not False
@@ -348,6 +356,17 @@ def main():
                     or topology.get('assertedStepsPerRun') != manifest['joined'][1].get('steps')
                     or topology.get('freshRuns') != 2
                     or topology.get('compiledOriginal') != {name: plain_hashes[name] for name in ('HttpMain', 'HttpPopup')}
+                    or popup_control.get('literalHash') != sha(subscription_qa / 'http-popup-control-literals.cjs')
+                    or not isinstance(popup_control.get('cases'), list)
+                    or [{'name': c.get('name'), 'root': c.get('root'), 'steps': c.get('assertedStepsPerRun')}
+                        for c in popup_control.get('cases', [])] != manifest.get('popupControl')
+                    or any(c.get('freshRuns') != 2 or c.get('compiledOriginal') != plain_hashes['HttpPopup']
+                           for c in popup_control.get('cases', []))
+                    or popup_control.get('negativeRejections') != [
+                        {'name': name, 'reason': name + ' step 1: COMPLETE owning model/subscription/typed descriptions differ', 'step': 1}
+                        for name in ('HttpPopup-action-sends-renderer-then-settles',
+                                     'HttpPopup-native-event-gateway-rejected',
+                                     'HttpPopup-synthetic-quarantine-preview-command-refused')]
                     or topology.get('negativeRejections') != [
                         {'name':'second-commit-altered', 'reason':'actual controller commit differs from independent complete literal', 'step':6},
                         {'name':'topology-before-post-settle', 'reason':'HttpJoined-dismiss-then-closed-empty-topology step 5: joined full literal mismatch', 'step':5},

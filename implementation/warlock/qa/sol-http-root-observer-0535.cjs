@@ -158,6 +158,9 @@ globalThis.${API} = {
       case 'viewAction':
         ${root === 'HttpMain' ? "throw new Error('no renderer View in HttpMain');" : `return ${PREFIX}${root}$View(${PREFIX}${root === 'HttpBar' ? 'Bar' : 'Popup'}$Action(_Json_wrap(input.value)));`}
         break;
+      case 'viewNativeQuarantine':
+        ${root !== 'HttpPopup' ? "throw new Error('direct native control is HttpPopup QA-only');" : `return ${PREFIX}HttpPopup$View({$:'NativeQuarantine', a:_Json_wrap(input.value)});`}
+        break;
       case 'poll': message=${PREFIX}UiHttp$Poll; break;
       case 'polledOk': message=${PREFIX}UiHttp$Polled($elm$core$Result$Ok(input.body)); break;
       case 'postedOk': message=${PREFIX}UiHttp$Posted($elm$core$Result$Ok(input.body)); break;
@@ -289,17 +292,25 @@ function run(original, spec) {
     const step = spec.steps[i];
     let command;
     if (i === 0) {
-      insist(step.input.kind === 'init', 'history must start from actual owning init');
-      command = env.initial.command;
+      insist(step.input.kind === 'init' || (spec.root === 'HttpPopup' && step.input.kind === 'given'), 'history must start from actual owning init or Popup QA given');
+      if (step.input.kind === 'given') {
+        insist(Object.keys(step.input).length === 1, 'malformed Popup QA given');
+        env.context.__solGivenJson = JSON.stringify(full(step.expected.state));
+        model = vm.runInContext('JSON.parse(__solGivenJson)', env.context, {timeout:WAIT_MS});
+        env.typed.splice(0); env.returns.splice(0);
+        command = {$:2,m:{$:'[]'}};
+      } else command = env.initial.command;
     } else {
       insist(step.input && typeof step.input.kind === 'string' &&
         Object.keys(step.input).every(key => ['kind', 'body', 'value'].includes(key)) &&
         (!Object.hasOwn(step.input, 'body') || typeof step.input.body === 'string'), 'unsupported fixture input field');
       if (['polledOk', 'postedOk'].includes(step.input.kind)) insist(typeof step.input.body === 'string', 'exact HTTP callback body required');
       else insist(!Object.hasOwn(step.input, 'body'), 'unexpected callback body');
-      if (step.input.kind === 'viewAction') {
+      if (['viewAction', 'viewNativeQuarantine'].includes(step.input.kind)) {
         insist(Object.hasOwn(step.input, 'value'), 'exact captured action value required');
         full(step.input.value); // reject unsupported fixture data, do not strip fields
+        if (step.input.kind !== 'viewAction') insist(spec.root === 'HttpPopup' &&
+          JSON.stringify(step.input.value).length <= 65536, 'invalid bounded Popup QA control');
       } else insist(!Object.hasOwn(step.input, 'value'), 'unexpected action value');
       env.context.__solInput = step.input;
       env.context.__solModel = model;
@@ -421,14 +432,15 @@ function main() {
   }
   const manifestPath = path.join(__dirname, 'http-root-cases-manifest.json');
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-  const { validateFiles, validateCases, validateJoined } = require('./http-root-cases-guard.cjs');
+  const { validateFiles, validateCases, validateJoined, validatePopupControl } = require('./http-root-cases-guard.cjs');
   const oraclePath = path.join(__dirname, 'sol-http-popup-literals-0525.cjs');
   const peerPath = path.resolve(process.argv[6]);
   insist(peerPath === path.join(__dirname, 'httpbar-literals.cjs'), 'required staged peer path differs');
   const joinedPath = path.join(__dirname, 'joined-control-literals.cjs');
   const closedPath = path.join(__dirname, 'closed-topology-after-dismiss-literals.cjs');
+  const popupControlPath = path.join(__dirname, 'http-popup-control-literals.cjs');
   const fixtureFiles = { base: fs.readFileSync(oraclePath), peer: fs.readFileSync(peerPath), joined: fs.readFileSync(joinedPath),
-    closedTopology: fs.readFileSync(closedPath),
+    closedTopology: fs.readFileSync(closedPath), popupControl: fs.readFileSync(popupControlPath),
     policy: fs.readFileSync(path.join(repository, 'implementation/warlock/qa/tea-contract-cases.cjs')) };
   validateFiles(manifest, fixtureFiles);
   const oracle = require(oraclePath);
@@ -440,6 +452,43 @@ function main() {
   insist(supplied && Array.isArray(supplied.cases) && supplied.cases.length > 0, 'peer literal cases missing');
   packet.cases.push(...supplied.cases);
   validateCases(manifest, packet.cases);
+  const control = require(popupControlPath);
+  insist(control.schema === 1 && typeof control.build === 'function', 'popup control literal schema mismatch');
+  const controlPacket = control.build(repository);
+  insist(controlPacket && controlPacket.coverage && controlPacket.coverage.complete === false &&
+    controlPacket.coverage.originalAccepted === false && controlPacket.coverage.nativeAccepted === false &&
+    Array.isArray(controlPacket.cases), 'popup control literal missing cases or incomplete coverage');
+  validatePopupControl(manifest, controlPacket.cases);
+  const popupControlResults = [];
+  for (const spec of controlPacket.cases) {
+    insist(spec.root === 'HttpPopup', 'popup control belongs to HttpPopup only');
+    const original = fs.readFileSync(paths.HttpPopup, 'utf8');
+    const first = run(original, spec), second = run(original, spec);
+    insist(isDeepStrictEqual(first.trace, second.trace), `${spec.name}: nondeterministic popup control replay`);
+    popupControlResults.push({name:spec.name, root:spec.root, assertedStepsPerRun:spec.steps.length,
+      freshRuns:2, compiledOriginal:hash(original), instrumentedInMemory:first.instrumentedHash,
+      reversibleInsertions:first.instrumentation});
+  }
+  const controlNegatives = [];
+  for (const [name, mutation] of [
+    ['HttpPopup-action-sends-renderer-then-settles', state => { state.http.a.active = {$:'Nothing'}; }],
+    ['HttpPopup-native-event-gateway-rejected', state => { state.http.a.failed = {$:'Nothing'}; }],
+    ['HttpPopup-synthetic-quarantine-preview-command-refused', state => { state.http.a.failed = {$:'Nothing'}; }],
+  ]) {
+    const original = fs.readFileSync(paths.HttpPopup, 'utf8');
+    const source = controlPacket.cases.find(c => c.name === name);
+    insist(source && source.steps.length > 1, 'popup control negative source missing');
+    const spec = JSON.parse(JSON.stringify(source));
+    mutation(spec.steps[1].expected.state);
+    let rejected = false;
+    try { run(original, spec); } catch (error) {
+      const reason = `${name} step 1: COMPLETE owning model/subscription/typed descriptions differ`;
+      insist(error.message === reason && error.counterexample && error.counterexample.step === 1,
+        `popup control negative failed for unrelated reason: ${name}: ${error.message}`);
+      controlNegatives.push({name,reason,step:1}); rejected = true;
+    }
+    insist(rejected, `popup control negative did not reject: ${name}`);
+  }
   const joined = require(joinedPath);
   insist(joined.schema === 1 && typeof joined.build === 'function', 'joined literal schema mismatch');
   const joinedPacket = joined.build(repository);
@@ -528,7 +577,7 @@ function main() {
     instrumentedInMemory:firstClosed.instrumentedHash, reversibleInsertions:firstClosed.instrumentation,
     negativeRejections:closedRejections, literalHash:hash(fixtureFiles.closedTopology)};
   console.log(JSON.stringify({ ok: true, coverage: oracle.coverage, cases: results,
-    joined: joinedResult, joinedTopology,
+    joined: joinedResult, joinedTopology, popupControl:{cases:popupControlResults, negativeRejections:controlNegatives, literalHash:hash(fixtureFiles.popupControl)},
     policyLiteralSource: packet.policyOracle, oracleHash: hash(fs.readFileSync(oraclePath)),
     observerHash: hash(fs.readFileSync(__filename)), manifestHash: hash(fs.readFileSync(manifestPath)), peerSources,
     limits: ['pure replay only: actual root init is observed then stopped before DOM/effect execution',

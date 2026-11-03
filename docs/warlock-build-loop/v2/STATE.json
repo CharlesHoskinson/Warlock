@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-02T23:51:06.386103+00:00",
+  "updatedUTC": "2026-11-03T03:03:25.045526+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -4876,8 +4876,8 @@
     "activeContributorRecord": ".warlock-contributor/tea-subscriptions-root.json",
     "originalRecordStartedUTC": "2026-11-02T06:02:04.208189+00:00",
     "expiresUTC": "2026-11-03T20:02:47.475490+00:00",
-    "componentReport": ".warlock-contributor/elm-cpu-1793666988161479553/report.json",
-    "componentReportSHA256": "788860a277135092e6e518bced99d7827f3b5d166e660afc001289c43de56438",
+    "componentReport": ".warlock-contributor/elm-cpu-1793672158203139868/report.json",
+    "componentReportSHA256": "4f2c0fd19a75bcc473ce3d7e0cc7c1fdb1416b2568286c2e4529c0612f05b94e",
     "uiHttpSHA256": "ac7cfbc1d04e79e21c6dad489a9ebcbf1bbbbdb2d53177a7a6cbe93ab8ee193f",
     "siteMainSHA256": "f05a3768eb4573161544099917ce009f8df7eb57b8c9408f5266001980cafcfb",
     "componentPassed": true,
@@ -4926,7 +4926,7 @@
     "nativeAccepted": false,
     "releaseAccepted": false,
     "historicalOperationalSubrecords": "Retain their original timestamps and scopes; do not treat old team counts or remote-handoff observations as current liveness.",
-    "observedUTC": "2026-11-03T00:57:08.696758+00:00",
+    "observedUTC": "2026-11-03T03:03:25.045526+00:00",
     "checkpointObservedUTC": "2026-11-02T22:53:55.792842+00:00",
     "evidenceAvailability": "Paths under .warlock-contributor and /home/charl/.local/state are machine-local references. Raw receipts are not published or archived here; historical public evidence retains its own availability and source tuple.",
     "uiOriginQualification": {
@@ -4968,7 +4968,27 @@
       "loaderChecks": 4,
       "providerJoins": 163,
       "sourceHashesVerified": false,
-      "scope": "Two QA inputs differ from the original full build tuple; existing native gate is unsatisfied. Production-source equality and fresh guest metadata do not override it."
+      "scope": "Prior full build tuple differs from current QA inputs. Fresh production build passed, but new Owner test compilation failed. Corrected source awaits fresh protected qualification; no provenance gate override."
+    },
+    "previousComponentReport": {
+      "path": ".warlock-contributor/elm-cpu-1793666988161479553/report.json",
+      "sha256": "788860a277135092e6e518bced99d7827f3b5d166e660afc001289c43de56438"
+    },
+    "httpPopupControls": {
+      "cases": [
+        "HttpPopup-action-sends-renderer-then-settles",
+        "HttpPopup-native-event-gateway-rejected",
+        "HttpPopup-synthetic-quarantine-preview-command-refused"
+      ],
+      "stepCounts": [
+        3,
+        2,
+        3
+      ],
+      "freshRunsEach": 2,
+      "exactReasonMutants": 3,
+      "literalSHA256": "8fb6d1ec0eba318b70fa0e4617c30ee20fe0a2e39a2f7b8e2822dd8c21cebf55",
+      "scope": "Selected owning-model snapshots, typed effect descriptions and transport observations. Direct quarantine is QA-only and does not establish an HTTP native-control producer. Complete opaque Cmd AST, actual GUI and whole acceptance remain open."
     }
   },
   "storeRetirementComponent": "docs/warlock-build-loop/v2/store-retirement-component-20261102.json",

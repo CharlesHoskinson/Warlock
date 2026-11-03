@@ -490,3 +490,10 @@ The original participant history is retained. Exact published omissions are expl
 The reviewed UiHttp transition now emits typed effect descriptions through its private production interpreter. The protected compiled preimage observer rejects the missing transition. The postimage passes the fixed HTTP model/effect observer, six fixture guard controls and optimized eight-root transport replay. SiteMain has a separate static inventory. Whole ELM-TEA-004 remains open.
 
 The exact existing-root wake nonce is acknowledged. The matching Haskell component build passes its ten selected suites. Omarchy runs with WebKitGTK6 installed. No current-product Omarchy input/screenshot journey has completed. Next: verify the matching trial artifacts and run the protected guest journey with the original deadline of 28 seconds.
+
+
+## [2026-11-02 20:03] qa | HttpPopup boundary characterization
+
+- Protected component checks pass three new HttpPopup histories and their expected-reason rejection controls. Earlier joined histories and SiteMain checks remain included.
+- Selected complete model and typed-effect observations do not prove a complete opaque command AST or an HTTP native-control producer.
+- Source and immutable local report hashes are in [restoration evidence](../../docs/warlock-build-loop/v2/restoration-component-evidence-20261102.json). Whole TEA004, current-product Omarchy input and pixels, and release acceptance remain open.

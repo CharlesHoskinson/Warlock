@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "observedUTC": "2026-11-03T00:57:08.696758+00:00",
+  "observedUTC": "2026-11-03T03:03:25.045526+00:00",
   "baseRevision": "c40b75f23486c0753d347e6a8be0200299124094",
   "scope": "Restoration and component evidence metadata. Source and hash references do not publish the local raw receipts or establish original-scenario acceptance.",
   "productionSourceSHA256": {
@@ -39,6 +39,11 @@
       "path": ".warlock-contributor/elm-cpu-1793666196760385365/report.json",
       "sha256": "af8423c91144911224ef36f31ef1bf9ff6d84f4d03faa13d20614a616c1cc798",
       "rawPublished": false
+    },
+    "subscriptionsHttpPopup": {
+      "path": ".warlock-contributor/elm-cpu-1793672158203139868/report.json",
+      "sha256": "4f2c0fd19a75bcc473ce3d7e0cc7c1fdb1416b2568286c2e4529c0612f05b94e",
+      "rawPublished": false
     }
   },
   "results": {
@@ -48,7 +53,8 @@
     "uiOrigin": "ten existing fixed suites passed",
     "plugin": "321 tests passed on the recorded restoration source tuple",
     "nativePreservationMocks": "28 tests passed; local log retained",
-    "guestLoader": "four exact fresh ELF loader checks and163per-root provider/hash joins passed; bounded trial only"
+    "guestLoader": "four exact fresh ELF loader checks and163per-root provider/hash joins passed; bounded trial only",
+    "subscriptionsHttpPopup": "Protected pass: three new HttpPopup cases, each twice with exact-reason negative control; prior eight cases, joined5/11step and SiteMain checks preserved."
   },
   "nativeThird": {
     "receipt": {
@@ -74,8 +80,8 @@
     "Observation/reap fault injection, later-cleanup coexistence and external JSON consumer compatibility remain separate coverage gaps.",
     "Prior first/second trial and expected RED evidence are preserved locally.",
     "Current native startup cause remains unproven; startup investigation ended after this distinct trial.",
-    "Heavy builds paused under WSL disk policy at86percent; bounded low-volume work continues.",
-    "Joined replay covers conditional retained popup and source-transcribed Owner projection; actual Owner custody/admission, renderer lifetime and native producer remain unproved."
+    "Joined replay covers conditional retained popup and source-transcribed Owner projection; actual Owner custody/admission, renderer lifetime and native producer remain unproved.",
+    "Verified archival restored85percent preflight. Fresh production build passed, but new Owner test compilation failed on two shadowed local names; corrected source is not yet qualified. Disk policy again holds further builds at86percent."
   ],
   "rawEvidenceAvailableInRepository": false,
   "newWholeEarsClosures": 0,
@@ -125,5 +131,30 @@
     ],
     "sourceHashesVerified": false,
     "existingProvenanceGateSatisfied": false
+  },
+  "httpPopupControls": {
+    "cases": [
+      "HttpPopup-action-sends-renderer-then-settles",
+      "HttpPopup-native-event-gateway-rejected",
+      "HttpPopup-synthetic-quarantine-preview-command-refused"
+    ],
+    "stepCounts": [
+      3,
+      2,
+      3
+    ],
+    "freshRunsEach": 2,
+    "exactReasonMutants": 3,
+    "literalSHA256": "8fb6d1ec0eba318b70fa0e4617c30ee20fe0a2e39a2f7b8e2822dd8c21cebf55",
+    "scope": "Selected owning-model snapshots, typed effect descriptions and transport observations. Direct quarantine is QA-only and does not establish an HTTP native-control producer. Complete opaque Cmd AST, actual GUI and whole acceptance remain open."
+  },
+  "freshQualificationFailure": {
+    "report": ".warlock-contributor/haskell-cpu-1793674812232781739/report.json",
+    "sha256": "75c15d39a21ce92d3fd696d22b6de5a662468e6d65a335f6030aa031d85facee",
+    "passed": false,
+    "productionBuildPassed": true,
+    "testCompilePassed": false,
+    "workingTreeTestOnly": true,
+    "correctedSourceQualified": false
   }
 }

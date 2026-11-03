@@ -24,6 +24,10 @@
     "closedTopology": {
       "file": "closed-topology-after-dismiss-literals.cjs",
       "sha256": "8435b31ad6790fddc0750f6b5926388f36f394de9f58de9238c3944d45db6740"
+    },
+    "popupControl": {
+      "file": "http-popup-control-literals.cjs",
+      "sha256": "8fb6d1ec0eba318b70fa0e4617c30ee20fe0a2e39a2f7b8e2822dd8c21cebf55"
     }
   },
   "cases": [
@@ -78,6 +82,23 @@
       "name": "HttpJoined-dismiss-then-closed-empty-topology",
       "root": "HttpJoined",
       "steps": 11
+    }
+  ],
+  "popupControl": [
+    {
+      "name": "HttpPopup-action-sends-renderer-then-settles",
+      "root": "HttpPopup",
+      "steps": 3
+    },
+    {
+      "name": "HttpPopup-native-event-gateway-rejected",
+      "root": "HttpPopup",
+      "steps": 2
+    },
+    {
+      "name": "HttpPopup-synthetic-quarantine-preview-command-refused",
+      "root": "HttpPopup",
+      "steps": 3
     }
   ]
 }
