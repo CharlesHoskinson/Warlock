@@ -16,6 +16,10 @@
     "policy": {
       "file": "implementation/warlock/qa/tea-contract-cases.cjs",
       "sha256": "41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7"
+    },
+    "joined": {
+      "file": "joined-control-literals.cjs",
+      "sha256": "6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6"
     }
   },
   "cases": [
@@ -59,5 +63,10 @@
       "root": "HttpBar",
       "steps": 16
     }
-  ]
+  ],
+  "joined": {
+    "name": "HttpJoined-open-given-dismiss-closed-presentation",
+    "root": "HttpJoined",
+    "steps": 5
+  }
 }

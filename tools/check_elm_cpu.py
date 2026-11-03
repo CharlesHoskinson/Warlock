@@ -178,13 +178,43 @@ def main():
             qa_files = tuple(name + '.elm' for name in workers.values()) + (
                 'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs', 'tea-contract-cases.cjs',
                 'sol-http-root-observer-0535.cjs', 'sol-http-popup-literals-0525.cjs',
-                'httpbar-literals.cjs', 'http-root-cases-manifest.json',
+                'httpbar-literals.cjs', 'joined-control-literals.cjs', 'http-root-cases-manifest.json',
                 'http-root-cases-guard.cjs', 'http-root-cases-negative.cjs',
                 'sitemain-root-literals.cjs', 'sitemain-root-observer.cjs',
                 'sitemain-root-manifest.json', 'sitemain-root-negative.cjs')
             # Keep the harness's optional three-parent SiteMain probe inside a fresh owned tree.
             subscription_qa = output / 'subscription-source' / 'implementation/warlock/qa'
             subscription_qa.mkdir(parents=True)
+            subscription_src = subscription_qa.parent / 'src'
+            subscription_src.mkdir()
+            joined_sources = ('Desktop.elm', 'DesktopPolicy.elm', 'OutputController.elm', 'SurfaceController.elm',
+                              'Surface.elm', 'OutcomeAnnouncements.elm', 'Popup.elm', 'Presentation.elm',
+                              'Announcement.elm', 'SurfaceSnapshot.elm',
+                              'UiHttp.elm', 'HttpMain.elm', 'HttpPopup.elm')
+            joined_extra_pins = {
+                'Announcement.elm': 'a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f',
+                'SurfaceSnapshot.elm': '9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a',
+            }
+            for name in joined_sources:
+                key = 'implementation/warlock/src/' + name
+                source = work / 'src' / name
+                if name in joined_extra_pins and sources[key] != joined_extra_pins[name]:
+                    raise RuntimeError('Joined reviewed source pin mismatch: ' + name)
+                if source.is_symlink() or not source.is_file() or sha(source) != sources[key]:
+                    raise RuntimeError('Joined source stage mismatch: ' + name)
+                shutil.copy2(source, subscription_src / name)
+                if sha(subscription_src / name) != sources[key]:
+                    raise RuntimeError('Joined pinned source copy mismatch: ' + name)
+            owner_key = 'implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs'
+            owner = REPO / owner_key
+            if owner.is_symlink() or not owner.is_file():
+                raise RuntimeError('Joined owner source missing')
+            sources[owner_key] = sha(owner)
+            staged_owner = output / 'subscription-source' / owner_key
+            staged_owner.parent.mkdir(parents=True)
+            shutil.copy2(owner, staged_owner)
+            if sha(staged_owner) != sources[owner_key]:
+                raise RuntimeError('Joined owner source stage mismatch')
             for filename in qa_files:
                 source = root / 'qa' / filename
                 if source.is_symlink() or not source.is_file():
@@ -194,12 +224,13 @@ def main():
                 shutil.copy2(source, work / 'qa' / filename)
                 shutil.copy2(source, subscription_qa / filename)
             reviewed_http_inputs = {
-                'sol-http-root-observer-0535.cjs': 'ccd93b17d5126e2be411b2f9d42a57770e5cdffa8f1654ad7b01a42f80bef7cf',
+                'sol-http-root-observer-0535.cjs': '5f97204efc06eb0d5941ed1bb02e655a38ca6012f7f8e3d67c43f14e12e98026',
                 'sol-http-popup-literals-0525.cjs': 'ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1',
                 'httpbar-literals.cjs': '6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173',
-                'http-root-cases-manifest.json': '2a00fc7fbabac6f3a228847d945f703a4d9dcade3b060a9a27034ea1b31e6064',
-                'http-root-cases-guard.cjs': '1943800f421da64c4f11a80359d200e142c5dd36839c386aec19afba5754b7f1',
-                'http-root-cases-negative.cjs': 'd04b96e8983525dfb675428bcdcbe3f4fef7730aba0672378d3aa228b4958782',
+                'joined-control-literals.cjs': '6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6',
+                'http-root-cases-manifest.json': 'f0fb01c8ab2e121f08533359f3557963f371c4e3802d60bd1e609f21e82dd4dd',
+                'http-root-cases-guard.cjs': 'f48ca3805fc443e9f3cd61aa96f5440a1eafe355516014257c522f36eaedaa02',
+                'http-root-cases-negative.cjs': '8a16809a07f12b8e60a4b02ac561e7accdfc0715fbaa67d9d8942daa92722364',
                 'tea-contract-cases.cjs': '41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7',
             }
             for name, digest in reviewed_http_inputs.items():
@@ -277,7 +308,8 @@ def main():
             negative = json.loads(negative_path.read_text())
             if (negative.get('ok') is not True or negative.get('originalAcceptanceClaim') is not False
                     or negative.get('controls') != ['absent-peer', 'empty-peer', 'altered-peer',
-                        'removed-peer-cases', 'removed-case', 'duplicate-case']):
+                        'removed-peer-cases', 'removed-case', 'duplicate-case', 'absent-joined',
+                        'empty-joined', 'altered-joined', 'removed-joined-case', 'duplicate-joined-case']):
                 raise RuntimeError('HTTP fixture negative controls incomplete')
             report['httpRootNegative'] = {'resultPath': negative_path.name, 'resultSHA256': sha(negative_path),
                 'result': negative}
@@ -288,6 +320,7 @@ def main():
             observer_path = output / 'http-root-observer.stdout'
             observed_http = json.loads(observer_path.read_text())
             cases = observed_http.get('cases', [])
+            joined = observed_http.get('joined', {})
             if (observed_http.get('ok') is not True
                     or observed_http.get('originalAcceptanceClaim') is not False
                     or observed_http.get('coverage', {}).get('complete') is not False
@@ -297,6 +330,13 @@ def main():
                     or observed_http.get('policyLiteralSource', {}).get('sha256') != sha(subscription_qa / 'tea-contract-cases.cjs')
                     or len(observed_http.get('peerSources', [])) != 1
                     or observed_http['peerSources'][0].get('sha256') != sha(subscription_qa / 'httpbar-literals.cjs')
+                    or joined.get('literalHash') != sha(subscription_qa / 'joined-control-literals.cjs')
+                    or {k: joined.get(k) for k in ('name', 'root')} != {k: manifest.get('joined', {}).get(k) for k in ('name', 'root')}
+                    or joined.get('assertedStepsPerRun') != manifest.get('joined', {}).get('steps')
+                    or joined.get('freshRuns') != 2
+                    or joined.get('negatives') != ['given-mutated', 'given-omitted', 'commit-altered',
+                                                    'projection-reordered', 'projection-duplicated', 'projection-missing']
+                    or joined.get('compiledOriginal') != {name: plain_hashes[name] for name in ('HttpMain', 'HttpPopup')}
                     or not isinstance(cases, list) or not cases
                     or [{'name': case.get('name'), 'root': case.get('root'),
                          'steps': case.get('assertedStepsPerRun')} for case in cases] != manifest.get('cases')
@@ -754,6 +794,12 @@ def main():
                                             '--tmpfs', '/tmp', '--', sys.executable, '-B',
                                             str(REPO / 'tools/check_feedback_browser.py'), str(output)])
         if args.subscriptions:
+            for name in joined_sources:
+                source = subscription_src / name
+                if source.is_symlink() or not source.is_file() or sha(source) != sources['implementation/warlock/src/' + name]:
+                    raise RuntimeError('Joined source stage changed: ' + name)
+            if staged_owner.is_symlink() or not staged_owner.is_file() or sha(staged_owner) != sources[owner_key]:
+                raise RuntimeError('Joined owner source stage changed')
             if (staged_site.is_symlink() or not staged_site.is_file() or sha(staged_site) != sources[site_key]
                     or staged_site_manifest.is_symlink() or not staged_site_manifest.is_file()
                     or sha(staged_site_manifest) != sources[site_manifest_key]):

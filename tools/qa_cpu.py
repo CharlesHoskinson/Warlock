@@ -158,11 +158,12 @@ def main():
             'TeaAdmissionSubscriptionsReplay.elm', 'TeaRendererSubscriptionsReplay.elm',
             'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs', 'tea-contract-cases.cjs',
             'sol-http-root-observer-0535.cjs', 'sol-http-popup-literals-0525.cjs',
-            'httpbar-literals.cjs', 'http-root-cases-manifest.json',
+            'httpbar-literals.cjs', 'joined-control-literals.cjs', 'http-root-cases-manifest.json',
             'http-root-cases-guard.cjs', 'http-root-cases-negative.cjs',
             'sitemain-root-literals.cjs', 'sitemain-root-observer.cjs',
             'sitemain-root-manifest.json', 'sitemain-root-negative.cjs'))
-        mandatory.update({'site/src/SiteMain.elm', 'site/elm.json'})
+        mandatory.update({'site/src/SiteMain.elm', 'site/elm.json',
+                          'implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs'})
     if packet['arguments'] == ['--tea-contract']:
         mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
                           'implementation/warlock/qa/TeaContractReplay.elm',

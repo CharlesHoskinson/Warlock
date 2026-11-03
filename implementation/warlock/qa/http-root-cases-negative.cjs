@@ -2,13 +2,14 @@
 // Root-only controls; fixtures remain independent source literals.
 const fs = require('node:fs');
 const path = require('node:path');
-const { validateFiles, validateCases } = require('./http-root-cases-guard.cjs');
+const { validateFiles, validateCases, validateJoined } = require('./http-root-cases-guard.cjs');
 const dir = __dirname;
 const repo = path.resolve(process.argv[2] || '.');
 const manifest = JSON.parse(fs.readFileSync(path.join(dir, 'http-root-cases-manifest.json'), 'utf8'));
 const files = { base: fs.readFileSync(path.join(dir, manifest.fixtures.base.file)),
   peer: fs.readFileSync(path.join(dir, manifest.fixtures.peer.file)),
-  policy: fs.readFileSync(path.join(repo, manifest.fixtures.policy.file)) };
+  policy: fs.readFileSync(path.join(repo, manifest.fixtures.policy.file)),
+  joined: fs.readFileSync(path.join(dir, manifest.fixtures.joined.file)) };
 function mustFail(name, fn, expected) {
   let error;
   try { fn(); } catch (e) { error = e; }
@@ -19,10 +20,17 @@ const base = require('./sol-http-popup-literals-0525.cjs').build(repo);
 const peer = require('./httpbar-literals.cjs').build(repo);
 const cases = base.cases.concat(peer.cases);
 validateCases(manifest, cases);
+const joined = require('./joined-control-literals.cjs').build(repo).cases;
+validateJoined(manifest, joined);
 mustFail('absent peer', () => validateFiles(manifest, {...files, peer: undefined}), 'peer: missing or empty');
 mustFail('empty peer', () => validateFiles(manifest, {...files, peer: Buffer.alloc(0)}), 'peer: missing or empty');
 mustFail('altered peer', () => validateFiles(manifest, {...files, peer: Buffer.concat([files.peer, Buffer.from('x')])}), 'peer: fixture digest mismatch');
 mustFail('removed peer cases', () => validateCases(manifest, base.cases), 'ordered case inventory differs');
 mustFail('removed named case', () => validateCases(manifest, cases.slice(0, -1)), 'ordered case inventory differs');
 mustFail('duplicate case', () => validateCases(manifest, cases.concat(cases[0])), 'duplicate case name');
-console.log(JSON.stringify({ok: true, controls: ['absent-peer','empty-peer','altered-peer','removed-peer-cases','removed-case','duplicate-case'], originalAcceptanceClaim: false}));
+mustFail('absent joined', () => validateFiles(manifest, {...files, joined: undefined}), 'joined: missing or empty');
+mustFail('empty joined', () => validateFiles(manifest, {...files, joined: Buffer.alloc(0)}), 'joined: missing or empty');
+mustFail('altered joined', () => validateFiles(manifest, {...files, joined: Buffer.concat([files.joined,Buffer.from('x')])}), 'joined: fixture digest mismatch');
+mustFail('removed joined case', () => validateJoined(manifest, []), 'joined case inventory differs');
+mustFail('duplicate joined case', () => validateJoined(manifest, joined.concat(joined[0])), 'joined case inventory differs');
+console.log(JSON.stringify({ok: true, controls: ['absent-peer','empty-peer','altered-peer','removed-peer-cases','removed-case','duplicate-case','absent-joined','empty-joined','altered-joined','removed-joined-case','duplicate-joined-case'], originalAcceptanceClaim: false}));

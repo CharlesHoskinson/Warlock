@@ -1,13 +1,16 @@
 ---
 title: "Warlock current knowledge status"
 created: 2026-10-29
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [warlock, architecture, evidence]
 category: topic
 volatility: hot
 sources: [raw/notes/2026-10-29-shortcut-draft-production-baseline.md, raw/notes/2026-10-29-knowledge-space-and-delivery-observation.md, raw/notes/2026-10-31-receipt-states.md]
 summary: "19 whole original requirements/42scenarios accepted; DEL010 closes on actual cross-user evidence. Persistent runtime/native/release remain open."
 ---
+
+The November 3 joined dismissal component passes two fresh five-step compiled-root replays and six reason-specific mutation controls. The explicit already-open GIVEN and source-transcribed Owner relation do not prove reachability or real admission. Closed-topology/revocation and actual current-product Omarchy input/pixels remain open; no new whole EARS is accepted. The restarted guest's SSH and 1280×800 desktop are restored with idle enabled. See the [component metadata](../../../../docs/warlock-build-loop/v2/restoration-component-evidence-20261102.json) for the exact source and local-report references.
+
 
 # Current status
 

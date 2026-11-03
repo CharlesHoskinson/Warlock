@@ -4876,8 +4876,8 @@
     "activeContributorRecord": ".warlock-contributor/tea-subscriptions-root.json",
     "originalRecordStartedUTC": "2026-11-02T06:02:04.208189+00:00",
     "expiresUTC": "2026-11-03T20:02:47.475490+00:00",
-    "componentReport": ".warlock-contributor/elm-cpu-1793663899590192334/report.json",
-    "componentReportSHA256": "0f85320a7a97eefba659237d8ebe300a158f89dbfe2d408fd93911538d62b65c",
+    "componentReport": ".warlock-contributor/elm-cpu-1793666196760385365/report.json",
+    "componentReportSHA256": "af8423c91144911224ef36f31ef1bf9ff6d84f4d03faa13d20614a616c1cc798",
     "uiHttpSHA256": "ac7cfbc1d04e79e21c6dad489a9ebcbf1bbbbdb2d53177a7a6cbe93ab8ee193f",
     "siteMainSHA256": "f05a3768eb4573161544099917ce009f8df7eb57b8c9408f5266001980cafcfb",
     "componentPassed": true,
@@ -4926,7 +4926,7 @@
     "nativeAccepted": false,
     "releaseAccepted": false,
     "historicalOperationalSubrecords": "Retain their original timestamps and scopes; do not treat old team counts or remote-handoff observations as current liveness.",
-    "observedUTC": "2026-11-03T00:24:19.214956+00:00",
+    "observedUTC": "2026-11-03T00:39:13.688072+00:00",
     "checkpointObservedUTC": "2026-11-02T22:53:55.792842+00:00",
     "evidenceAvailability": "Paths under .warlock-contributor and /home/charl/.local/state are machine-local references. Raw receipts are not published or archived here; historical public evidence retains its own availability and source tuple.",
     "uiOriginQualification": {
@@ -4941,7 +4941,23 @@
       "scope": "Mocked terminal identity/stop/capture controls only; actual guest behavior and Foot/idle remain unqualified."
     },
     "sourceEvidenceMetadata": "docs/warlock-build-loop/v2/restoration-component-evidence-20261102.json",
-    "initialComponentObservationUTC": "2026-11-02T22:45:15.376411+00:00"
+    "initialComponentObservationUTC": "2026-11-02T22:45:15.376411+00:00",
+    "joinedDismissal": {
+      "case": "HttpJoined-open-given-dismiss-closed-presentation",
+      "stepsPerRun": 5,
+      "freshRuns": 2,
+      "negativeControls": 6,
+      "scope": "Source-literal GIVEN and source-transcribed Owner relation; no reachability, real Owner admission, subsequent topology, physical input or native acceptance."
+    },
+    "guestReadinessAfterRestart": {
+      "scope": "Guest readiness only; no Warlock product pixels or input",
+      "sshVerified": true,
+      "desktopInspected": true,
+      "width": 1280,
+      "height": 800,
+      "idleEnabled": true,
+      "priorGuestAbiReceiptsTransfer": false
+    }
   },
   "storeRetirementComponent": "docs/warlock-build-loop/v2/store-retirement-component-20261102.json",
   "persistentCustodyIntegration": {

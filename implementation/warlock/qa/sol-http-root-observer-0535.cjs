@@ -319,6 +319,97 @@ function run(original, spec) {
   }
   return { trace, instrumentation: env.observed.insertions, instrumentedHash: hash(env.observed.changed) };
 }
+// QA-only joined replay. The peer provides every expected state and packet;
+// the values below only enforce the source-reviewed Owner projection relation.
+// This does not execute Haskell Owner or claim owner admission/native delivery.
+function runJoined(originals, spec) {
+  insist(spec.root === 'HttpJoined' && Array.isArray(spec.steps), 'invalid joined history');
+  const envs = Object.fromEntries(['HttpMain', 'HttpPopup'].map(root => [root, load(originals[root], root)]));
+  const models = {}, trace = [], commits = new Map();
+  const pending = [];
+  for (let i = 0; i < spec.steps.length; i++) {
+    const step = spec.steps[i], root = step.root, env = envs[root];
+    insist(env && step.input && typeof step.input.kind === 'string', 'invalid joined root/input');
+    // Check linked delivery order before a reducer or literal mismatch can
+    // conceal the ordering rejection being exercised by its counterfactual.
+    if (step.join && ['presentation', 'announcements'].includes(step.join.kind)) {
+      const head = pending[0];
+      insist(root === 'HttpPopup' && step.input.kind === 'polledOk' && head &&
+        pending.length === 1 && commits.has(step.join.commitStep) &&
+        head.index === step.join.commitStep && head.next === step.join.kind,
+        'renderer delivery out of order');
+    }
+    let command;
+    if (step.input.kind === 'given') {
+      insist(!Object.hasOwn(models, root) && Object.keys(step.input).length === 1, 'duplicate or malformed joined given');
+      // Independent source literal in the pinned fixture, never an observed value.
+      // Hydrate only plain JSON data inside the root's own realm.
+      const literal = full(step.expected.state);
+      env.context.__solGivenJson = JSON.stringify(literal);
+      models[root] = vm.runInContext('JSON.parse(__solGivenJson)', env.context, { timeout: WAIT_MS });
+      env.typed.splice(0); env.returns.splice(0);
+      command = { $: 2, m: { $: '[]' } };
+    } else if (step.input.kind === 'init') {
+      insist(!Object.hasOwn(models, root) && Object.keys(step.input).length === 1, 'duplicate or malformed joined init');
+      models[root] = env.initial.model; command = env.initial.command;
+    } else {
+      insist(Object.hasOwn(models, root), 'joined root not initialized');
+      insist(Object.keys(step.input).every(key => ['kind', 'body', 'value'].includes(key)), 'unsupported joined input');
+      if (['polledOk', 'postedOk'].includes(step.input.kind)) insist(typeof step.input.body === 'string', 'exact callback body required');
+      else insist(!Object.hasOwn(step.input, 'body'), 'unexpected callback body');
+      if (step.input.kind === 'viewAction') { insist(Object.hasOwn(step.input, 'value'), 'missing action'); full(step.input.value); }
+      else insist(!Object.hasOwn(step.input, 'value'), 'unexpected action');
+      env.context.__solInput = step.input; env.context.__solModel = models[root]; env.context.__solUpdate = env.initial.update;
+      const pair = vm.runInContext(`globalThis.${API}.a2(__solUpdate,globalThis.${API}.message(__solInput),__solModel)`, env.context, { timeout: WAIT_MS });
+      models[root] = pair.a; command = pair.b;
+    }
+    const actual = snapshot(env, models[root], command), expected = full(step.expected);
+    if (!isDeepStrictEqual(actual, expected)) {
+      const error = new Error(`${spec.name} step ${i}: joined full literal mismatch`);
+      error.counterexample = { name: spec.name, step: i, root, input: step.input, actual, expected };
+      throw error;
+    }
+    const sends = actual.descriptions.flatMap(d => d.module === 'UiHttp'
+      ? listValues(d.effects, 'UiHttp').filter(x => x.$ === 'SendController').map(x => x.a.a) : []);
+    if (step.join && step.join.kind === 'commit') {
+      insist(root === 'HttpMain' && sends.length === 1 && pending.length === 0, 'joined commit ordering');
+      const commit = full(step.join.commit), selected = full(step.join.selected);
+      insist(isDeepStrictEqual(sends[0], commit), 'actual controller commit differs from independent complete literal');
+      const p = commit.projection;
+      insist(commit.viewProtocol === 1 && commit.kind === 'view-commit' && p && p.viewProtocol === 1 && p.kind === 'view-frame', 'invalid commit header');
+      insist(isDeepStrictEqual(p.views, selected === null ? [] : [selected]) &&
+        (p.focusOwner === null || isDeepStrictEqual(p.focusOwner, selected)) &&
+        (p.popupOwner === null || isDeepStrictEqual(p.popupOwner, selected)), 'projection custody differs');
+      insist(p.frame && p.frame.surfaceProtocol === 2, 'invalid projection frame');
+      commits.set(i, { commit, selected }); pending.push({ index: i, next: 'presentation' });
+    } else insist(sends.length === 0, 'unbound controller commit');
+    if (step.join && ['presentation', 'announcements'].includes(step.join.kind)) {
+      insist(root === 'HttpPopup' && step.input.kind === 'polledOk' && pending.length === 1, 'invalid joined renderer delivery');
+      const head = pending[0], entry = commits.get(step.join.commitStep);
+      insist(entry && head.index === step.join.commitStep && head.next === step.join.kind, 'renderer delivery out of order');
+      const p = entry.commit.projection, f = p.frame;
+      const recipient = { scope: entry.selected, surface: 'popup' };
+      const payload = step.join.kind === 'presentation' ? f : {
+        announcementProtocol: 1, kind: 'announcement-projection', recipient,
+        announcer: p.announcer, publication: f.publication, lease: f.lease,
+        message: p.announcement, deliver: isDeepStrictEqual(p.announcer, full(recipient))
+      };
+      insist(isDeepStrictEqual(full(JSON.parse(step.input.body)), full({bridgeProtocol:1, kind:step.join.kind, payload})), 'renderer packet does not match committed projection');
+      if (head.next === 'presentation') head.next = 'announcements'; else pending.shift();
+    } else {
+      if (step.join) insist(step.join.kind === 'commit', 'unknown joined assertion');
+      if (root === 'HttpPopup' && step.input.kind === 'polledOk' && step.input.body !== '') {
+        const packet = JSON.parse(step.input.body);
+        insist(!['presentation', 'announcements'].includes(packet.kind), 'unbound renderer event');
+      }
+    }
+    trace.push(actual);
+  }
+  insist(Object.hasOwn(models, 'HttpMain') && Object.hasOwn(models, 'HttpPopup') && commits.size > 0 && pending.length === 0, 'incomplete joined history');
+  return {trace, instrumentation:Object.fromEntries(Object.entries(envs).map(([root, env]) => [root, env.observed.insertions])),
+    instrumentedHash:Object.fromEntries(Object.entries(envs).map(([root, env]) => [root, hash(env.observed.changed)]))};
+}
+
 function main() {
   insist(process.argv.length === 7, 'usage: observer.cjs repository HttpMain.plain.js HttpBar.plain.js HttpPopup.plain.js httpbar-literals.cjs');
   const repository = path.resolve(process.argv[2]);
@@ -329,11 +420,12 @@ function main() {
   }
   const manifestPath = path.join(__dirname, 'http-root-cases-manifest.json');
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-  const { validateFiles, validateCases } = require('./http-root-cases-guard.cjs');
+  const { validateFiles, validateCases, validateJoined } = require('./http-root-cases-guard.cjs');
   const oraclePath = path.join(__dirname, 'sol-http-popup-literals-0525.cjs');
   const peerPath = path.resolve(process.argv[6]);
   insist(peerPath === path.join(__dirname, 'httpbar-literals.cjs'), 'required staged peer path differs');
-  const fixtureFiles = { base: fs.readFileSync(oraclePath), peer: fs.readFileSync(peerPath),
+  const joinedPath = path.join(__dirname, 'joined-control-literals.cjs');
+  const fixtureFiles = { base: fs.readFileSync(oraclePath), peer: fs.readFileSync(peerPath), joined: fs.readFileSync(joinedPath),
     policy: fs.readFileSync(path.join(repository, 'implementation/warlock/qa/tea-contract-cases.cjs')) };
   validateFiles(manifest, fixtureFiles);
   const oracle = require(oraclePath);
@@ -345,6 +437,13 @@ function main() {
   insist(supplied && Array.isArray(supplied.cases) && supplied.cases.length > 0, 'peer literal cases missing');
   packet.cases.push(...supplied.cases);
   validateCases(manifest, packet.cases);
+  const joined = require(joinedPath);
+  insist(joined.schema === 1 && typeof joined.build === 'function', 'joined literal schema mismatch');
+  const joinedPacket = joined.build(repository);
+  insist(joinedPacket && joinedPacket.coverage && joinedPacket.coverage.complete === false &&
+    joinedPacket.coverage.originalAccepted === false && joinedPacket.coverage.nativeAccepted === false &&
+    Array.isArray(joinedPacket.cases), 'joined literal missing cases or incomplete coverage');
+  validateJoined(manifest, joinedPacket.cases);
   const peerSources = [{ path: peerPath, sha256: hash(fixtureFiles.peer) }];
   const results = [];
   for (const spec of packet.cases) {
@@ -356,7 +455,44 @@ function main() {
       freshRuns: 2, compiledOriginal: hash(original), instrumentedInMemory: first.instrumentedHash,
       reversibleInsertions: first.instrumentation });
   }
+  const originals = Object.fromEntries(['HttpMain', 'HttpPopup'].map(root => [root, fs.readFileSync(paths[root], 'utf8')]));
+  const joinedSpec = joinedPacket.cases[0];
+  const firstJoined = runJoined(originals, joinedSpec), secondJoined = runJoined(originals, joinedSpec);
+  insist(isDeepStrictEqual(firstJoined.trace, secondJoined.trace), 'joined replay nondeterministic after literal assertions');
+  // Mutate independent inputs after the positive literal replay; never turn
+  // observed output into an expectation. Each counterfactual must be refused.
+  const clone = value => JSON.parse(JSON.stringify(value));
+  const negativeRejections = [];
+  function rejectJoined(name, mutate, reason, mismatchStep) {
+    const spec = clone(joinedSpec);
+    mutate(spec);
+    let rejected = false;
+    try { runJoined(originals, spec); } catch (error) {
+      const expected = mismatchStep === undefined ? reason
+        : `${spec.name} step ${mismatchStep}: joined full literal mismatch`;
+      insist(error.message === expected && (mismatchStep === undefined ||
+        error.counterexample && error.counterexample.step === mismatchStep),
+        `joined negative failed for an unrelated reason: ${name}: ${error.message}`);
+      negativeRejections.push({name, reason: error.message,
+        step: mismatchStep === undefined ? null : mismatchStep});
+      rejected = true;
+    }
+    insist(rejected, `joined negative did not reject: ${name}`);
+  }
+  rejectJoined('given-mutated', spec => { spec.steps[0].expected.state.policy.controller.a.controller.a.desktop.open = false; }, null, 2);
+  rejectJoined('given-omitted', spec => { spec.steps.splice(0, 1); }, 'joined root not initialized');
+  rejectJoined('commit-altered', spec => { spec.steps[2].join.commit.projection.frame.mode = 'applications'; }, 'actual controller commit differs from independent complete literal');
+  rejectJoined('projection-reordered', spec => { [spec.steps[3], spec.steps[4]] = [spec.steps[4], spec.steps[3]]; }, 'renderer delivery out of order');
+  rejectJoined('projection-duplicated', spec => { spec.steps.splice(4, 0, clone(spec.steps[3])); }, 'renderer delivery out of order');
+  rejectJoined('projection-missing', spec => { spec.steps.pop(); }, 'incomplete joined history');
+  const joinedResult = {name: joinedSpec.name, root: joinedSpec.root, assertedStepsPerRun: joinedSpec.steps.length,
+    freshRuns: 2, compiledOriginal: Object.fromEntries(Object.entries(originals).map(([root, original]) => [root, hash(original)])),
+    instrumentedInMemory: firstJoined.instrumentedHash, reversibleInsertions: firstJoined.instrumentation,
+    negatives: ['given-mutated', 'given-omitted', 'commit-altered', 'projection-reordered', 'projection-duplicated', 'projection-missing'],
+    negativeRejections,
+    literalHash: hash(fixtureFiles.joined)};
   console.log(JSON.stringify({ ok: true, coverage: oracle.coverage, cases: results,
+    joined: joinedResult,
     policyLiteralSource: packet.policyOracle, oracleHash: hash(fs.readFileSync(oraclePath)),
     observerHash: hash(fs.readFileSync(__filename)), manifestHash: hash(fs.readFileSync(manifestPath)), peerSources,
     limits: ['pure replay only: actual root init is observed then stopped before DOM/effect execution',

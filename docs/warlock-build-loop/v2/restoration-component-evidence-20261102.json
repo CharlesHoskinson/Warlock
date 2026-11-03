@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "observedUTC": "2026-11-03T00:23:27.796899+00:00",
+  "observedUTC": "2026-11-03T00:39:13.688072+00:00",
   "baseRevision": "c40b75f23486c0753d347e6a8be0200299124094",
   "scope": "Restoration and component evidence metadata. Source and hash references do not publish the local raw receipts or establish original-scenario acceptance.",
   "productionSourceSHA256": {
@@ -11,8 +11,8 @@
   },
   "reports": {
     "subscriptions": {
-      "path": ".warlock-contributor/elm-cpu-1793663899590192334/report.json",
-      "sha256": "0f85320a7a97eefba659237d8ebe300a158f89dbfe2d408fd93911538d62b65c",
+      "path": ".warlock-contributor/elm-cpu-1793666196760385365/report.json",
+      "sha256": "af8423c91144911224ef36f31ef1bf9ff6d84f4d03faa13d20614a616c1cc798",
       "rawPublished": false
     },
     "observedExitRed": {
@@ -37,7 +37,7 @@
     }
   },
   "results": {
-    "subscriptions": "passed; compiled desktop roots plus ordinary SiteMain model/fake-DOM component; whole coverage incomplete",
+    "subscriptions": "passed; compiled roots, two five-step already-open dismissal/controller/popup replays, six reason-specific mutation rejections, and SiteMain model/fake-DOM checks; whole coverage incomplete",
     "observedExitRed": "missing advisory field only; original operation/auth/custody assertions retained",
     "observedExitGreen": "three existing fixed persistent/common, custody and backend serialization suites passed",
     "uiOrigin": "ten existing fixed suites passed",
@@ -82,6 +82,17 @@
   "qualificationLimits": [
     "Latest Elm check includes the HTTP observer EOF whitespace correction and matching source pin.",
     "Earlier Haskell/UI-origin results retain their recorded tuples. Their production Haskell sources are unchanged; the later check_elm_cpu.py pin update changes the complete QA tool closure.",
-    "Guest restarted after the third native trial. Its historical guest identity and ABI receipts do not qualify the new guest."
-  ]
+    "Guest restarted after the third native trial. Its historical guest identity and ABI receipts do not qualify the new guest.",
+    "Later joined-fixture and reviewed-input QA changes have their own current tuple; historical Haskell/UI-origin complete QA closures are not transferred."
+  ],
+  "joinedDismissal": {
+    "case": "HttpJoined-open-given-dismiss-closed-presentation",
+    "stepsPerRun": 5,
+    "freshRuns": 2,
+    "negativeControls": 6,
+    "givenReachabilityProved": false,
+    "actualOwnerAdmissionProved": false,
+    "subsequentTopologyCovered": false,
+    "sourceLiteralSHA256": "6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6"
+  }
 }

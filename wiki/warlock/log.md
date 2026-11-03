@@ -1,5 +1,11 @@
 # Activity log
 
+## 2026-11-03 — joined dismissal component
+
+The protected subscription report `.warlock-contributor/elm-cpu-1793666196760385365/report.json` passed two fresh five-step already-open GIVEN, dismissal, controller commit and popup projection replays. Six mutations were rejected for their expected reasons; existing eight cases and SiteMain controls remain. Report SHA-256: `af8423c91144911224ef36f31ef1bf9ff6d84f4d03faa13d20614a616c1cc798`. The raw report remains local. The GIVEN is an explicit initial condition, and the Owner relation is a source transcription. Reachability, subsequent topology/revocation, real Owner admission and current-product Omarchy input/pixels remain open. No whole EARS was closed.
+
+The restarted lab guest now has working SSH and an inspected 1280×800 desktop. Idle protection remains enabled. These observations qualify guest readiness only; historical guest ABI receipts do not transfer. All native failure and stop evidence remains intact.
+
 ## 2026-11-02T23:14Z — independent child-exit observation
 
 Root integrated an advisory numeric exit observation at the Haskell custody boundary after a protected behavioral failure demonstrated the missing field. The implementation preserves the original operation, authentication, containment and custody decisions. It records a normal code only after the leader was observed exited before containment and was successfully reaped. The backend labels the value untrusted and without authority. A valid exit observation can coexist with later cleanup uncertainty.

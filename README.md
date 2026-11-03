@@ -12,7 +12,7 @@ The test drive is the quickest way to try Warlock: the real compiled Elm interfa
 
 The current Elm/Haskell native host is still under development. Persistent desktop operation has not met native or release acceptance. The [delivery ledger](docs/warlock-build-loop/v2/requirement-ledger.json) preserves all 242 requirements and 417 scenarios. Its historical 19 whole-requirement and 42 scenario verdicts retain their published source and verification scope. The restored run adds no whole-EARS acceptance and does not remeasure those totals.
 
-The latest protected component report passes the typed UiHttp route and ordinary compiled SiteMain model replay with a fake-DOM focus lifecycle. These simulated DOM/timer checks do not establish physical browser or native input. Whole ELM-TEA-004 remains open. The [current delivery state](docs/warlock-build-loop/v2/STATE.json) records the exact source and report references.
+The latest protected component report passes the typed UiHttp route, an independently specified already-open dismissal and linked controller/popup replay, and ordinary compiled SiteMain model checks with a fake-DOM focus lifecycle. The joined replay passes twice and rejects six mutations for their expected reasons. Its starting state is assumed; subsequent topology/revocation and actual Owner delivery remain unverified. These simulated DOM/timer checks do not establish physical browser or native input. Whole ELM-TEA-004 remains open. The [current delivery state](docs/warlock-build-loop/v2/STATE.json) records the exact source and report references.
 
 The restored Omarchy attempt executes the backend but fails before a confirmed Warlock frame or product input. Current-product pixels, real input and outer scope retirement remain unconfirmed. The [earlier Foot search/Refresh observation](docs/warlock-build-loop/v2/store-retirement-component-20261102.json) retains its older tested tuple and failures. It does not qualify the current build.
 
@@ -28,7 +28,7 @@ Open an application and Warlock's portal brings it in: a ring of red ember fragm
 
 ![Warlock's portal opening a Browser window in the test drive: a ring of red ember fragments expands as the new window is revealed](docs/warlock-brand/readme/portal.gif)
 
-The [November 2 remote handoff](docs/warlock-build-loop/v2/remote-handoff-20261102/README.md) includes the current beta GUI, website and tooling work, all archived engineering proposals, verification failures and stall findings. The MVP passes 639 component assertions; subscription runtime verification remains incomplete. No background development team is currently running.
+The [November 2 remote handoff](docs/warlock-build-loop/v2/remote-handoff-20261102/README.md) includes the current beta GUI, website and tooling work, all archived engineering proposals, verification failures and stall findings. The MVP passes 639 component assertions; subscription runtime verification remains incomplete. That handoff describes an earlier stopped team. The restored loop has separate authorization through November 3, 20:02 UTC; its component evidence does not accept native GUI behavior.
 
 ## Why Warlock
 
