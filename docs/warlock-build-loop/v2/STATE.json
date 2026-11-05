@@ -5062,10 +5062,31 @@
     "guard": {
       "unit": "warlock-continuity-20261105.service",
       "expiresUTC": "2026-11-06T19:07:31.942628+00:00",
-      "wakeVerified": false
+      "wakeVerified": true,
+      "wakeNonce": "continuity-20261105-f45c9da1",
+      "wakeAcknowledgedUTC": "2026-11-05T20:59:11.103113+00:00",
+      "wakeScope": "One exact queued nonce reached existing root after active goal verification. Does not prove all crash or capacity recovery."
     },
     "nativeTrialArmed": false,
     "originalAcceptance": false,
-    "releaseAccepted": false
+    "releaseAccepted": false,
+    "earsRegulator": {
+      "identity": "muse-ears",
+      "model": "muse-wonder-1.0",
+      "effort": "high",
+      "contributorMode": "off",
+      "timer": "warlock-muse-ears-20261105.timer",
+      "intervalSeconds": 1200,
+      "expiresUTC": "2026-11-06T19:07:31.942628+00:00",
+      "runtime": "~/.local/state/warlock-team/20261105/ears-regulator/",
+      "firstAudit": "audit-1793911860953929320/audit.json",
+      "firstAuditSHA256": "8a2cd3e7c9032cc48a7eb914147788f5d062bcc2ecc59c1f2793a1f38a968e4e",
+      "firstVerdict": "stalled",
+      "requirement": "ELM-TEA-004",
+      "response": "~/.local/state/warlock-team/20261105/terra-team/ears-audit-response.json",
+      "loopRule": "Root and Sol consume the latest completed audit each iteration, record finding dispositions, and select concrete source or verification work against unchanged original oracles.",
+      "acceptanceAuthority": false,
+      "automaticWakeRoundTripVerified": false
+    }
   }
 }

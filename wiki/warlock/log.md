@@ -505,3 +505,5 @@ The exact existing-root wake nonce is acknowledged. The matching Haskell compone
 - Protected protocol and Owner suites pass. The 35-case Elm replay includes closed lifetime, matching quarantine, foreign bindings and seeded sequences.
 - The [component record](../../docs/warlock-build-loop/v2/http-preview-controls-component-20261105.json) preserves source hashes and local receipt references. Prior failed runs remain retained.
 - Purpose issuance, nonempty proposals, paint, the native producer and original TEA004 acceptance remain open. Ten Terra planning sessions now report to the requested Sol supervisor.
+
+- 2026-11-05: Added the independent Muse EARS audit to the completion loop. Root and Sol must record finding dispositions and select concrete implementation or verification work. The first audit flags ELM-TEA-004 delivery gaps. Models and builds do not grant whole-requirement acceptance. See the current ARM regulator section in the loop instructions and STATE run overlay.
