@@ -124,23 +124,24 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
+    protocol_profile = args.protocol or args.preview_schema
     scope = require_qa_scope()
     if args.inside_private is not None:
         private_runtime = Path('/run/user') / str(os.getuid())
         private_runtime.mkdir(parents=True, mode=0o700)
     runtime_base()
-    mode = ('--preview-consumption' if args.preview_consumption else
+    mode = ('--preview-schema' if args.preview_schema else ('--preview-consumption' if args.preview_consumption else
             ('--subscriptions' if args.subscriptions else ('--owner-build' if args.owner_build else
-             ('--preview-control' if args.preview_control else ('--protocol' if args.protocol else '--owner')))))
+             ('--preview-control' if args.preview_control else ('--protocol' if args.protocol else '--owner'))))))
     if args.inside_private is None:
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
         sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
-            ROOT, args.subscriptions, args.preview_control, args.protocol, args.preview_consumption))}
+            ROOT, args.subscriptions, args.preview_control, protocol_profile, args.preview_consumption))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
@@ -170,7 +171,7 @@ def main():
             child = subprocess.run(command, cwd=ROOT, env=clean, timeout=3500, check=False)
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
-            if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, args.protocol,
+            if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, protocol_profile,
                                 args.preview_consumption)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
@@ -250,14 +251,16 @@ def main():
                      '--with-hsc2hs=' + str(ghc / 'hsc2hs'), '--with-gcc=/usr/bin/gcc',
                      '--with-ar=/usr/bin/ar', '--with-ld=/usr/bin/ld', '--with-pkg-config=/usr/bin/pkg-config', '--jobs=2']
             target = 'warlock-runtime:test:ui-origin-controls'
-            protocol = 'warlock-protocol:test:desktop-boundary-controls'
+            protocol_suites = (('preview-control', 'desktop-boundary-controls') if args.preview_schema else
+                               ('desktop-boundary-controls',))
+            protocol_targets = [(suite, 'warlock-protocol:test:' + suite) for suite in protocol_suites]
             backend = 'warlock-runtime:exe:warlock-ui-backend'
-            run('protocol-build' if args.protocol else 'owner-build', common + ['build'] + flags +
-                ([protocol] if args.protocol else [target, protocol, backend]), stage)
+            run('preview-schema-build' if args.preview_schema else ('protocol-build' if args.protocol else 'owner-build'),
+                common + ['build'] + flags + ([selected for _, selected in protocol_targets] if protocol_profile else
+                [target, *[selected for _, selected in protocol_targets], backend]), stage)
             binaries = {}
-            selected_targets = ([('desktop-boundary-controls', protocol)] if args.protocol else
-                                [('ui-origin-controls', target), ('desktop-boundary-controls', protocol),
-                                 ('warlock-ui-backend', backend)])
+            selected_targets = (protocol_targets if protocol_profile else
+                                [('ui-origin-controls', target), *protocol_targets, ('warlock-ui-backend', backend)])
             for name, selected in selected_targets:
                 lines = run('list-' + name, common + ['list-bin'] + flags + [selected], stage).splitlines()
                 if len(lines) != 1:
@@ -267,7 +270,7 @@ def main():
                     raise RuntimeError('Unexpected compiled binary location')
                 binaries[name] = image(path)
             documents, plain = {}, {}
-            if not args.protocol:
+            if not protocol_profile:
                 frontend = output / 'frontend'
                 frontend.mkdir(mode=0o700)
                 shutil.copytree(ROOT / 'implementation/warlock/src', frontend / 'src')
@@ -315,26 +318,26 @@ def main():
                         or any(coverage.get(k) is not False for k in ('complete', 'originalAccepted', 'nativeAccepted'))):
                     raise RuntimeError('Fixed preview-control replay report differs')
                 report['previewControl'] = result
-            if args.owner or args.preview_control or args.protocol:
+            if args.owner or args.preview_control or protocol_profile:
                 runs = output / 'runs'
                 runs.mkdir(mode=0o700)
                 def wrapped(item):
                     return {'path': item['path'], 'pin': [item[k] for k in ('device', 'inode', 'size', 'sha256')]}
                 dispatch = {'suites': {}}
-                if not args.protocol:
+                if not protocol_profile:
                     dispatch['suites'][binaries['ui-origin-controls']['path']] = {
                         'suite': 'ui-origin-controls', 'test': wrapped(binaries['ui-origin-controls']),
                         'fixtures': {'warlock-ui-backend': wrapped(binaries['warlock-ui-backend'])},
                         'uiDocuments': documents, 'runRoot': str(runs / 'ui-origin-controls')}
-                dispatch['suites'][binaries['desktop-boundary-controls']['path']] = {
-                    'suite': 'desktop-boundary-controls', 'test': wrapped(binaries['desktop-boundary-controls']),
-                    'fixtures': {}, 'runRoot': str(runs / 'desktop-boundary-controls')}
+                for suite in protocol_suites:
+                    dispatch['suites'][binaries[suite]['path']] = {
+                        'suite': suite, 'test': wrapped(binaries[suite]),
+                        'fixtures': {}, 'runRoot': str(runs / suite)}
                 dispatch_path = output / 'dispatch.json'
                 dispatch_path.write_text(json.dumps(dispatch, indent=2) + '\n')
                 test_env = dict(env, WARLOCK_HASKELL_DISPATCH=str(dispatch_path))
                 report['suiteReceipts'] = {}
-                for suite in (('desktop-boundary-controls',) if args.protocol else
-                              ('desktop-boundary-controls', 'ui-origin-controls')):
+                for suite in (protocol_suites if protocol_profile else (*protocol_suites, 'ui-origin-controls')):
                     run(suite, [sys.executable, '-B', ROOT / 'tools/haskell_test_wrapper.py',
                                 binaries[suite]['path']], stage, 900, test_env)
                     receipt = json.loads((runs / suite / 'results.json').read_text())
