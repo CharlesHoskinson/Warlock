@@ -26,10 +26,105 @@ def image(path):
                 'size': str(status.st_size), 'sha256': digest(path)}
 
 
+def consumption_frontend(output, env, packet, run):
+    """Fixed actual Elm component route; original joined HTTP oracles stay open."""
+    frontend = output / 'frontend'
+    frontend.mkdir(mode=0o700)
+    source = ROOT / 'implementation/warlock'
+    before = inventory(source / 'src')
+    shutil.copytree(source / 'src', frontend / 'src')
+    shutil.copytree(Path(packet['elmHome']), frontend / 'elm-home')
+    (frontend / 'qa').mkdir(mode=0o700)
+    qa_files = [name for name in arm64_inputs(ROOT, consumption=True)
+                if name.startswith('implementation/warlock/qa/')]
+    for name in sorted(qa_files):
+        shutil.copyfile(ROOT / name, frontend / 'qa' / Path(name).name)
+    reviewed_sources = json.loads((output / 'report.json').read_text())['sourceHashes']
+    for name in qa_files:
+        if digest(frontend / 'qa' / Path(name).name) != reviewed_sources[name]:
+            raise RuntimeError('Reviewed consumption QA stage differs: ' + name)
+    config = json.loads((source / 'elm.json').read_text())
+    config['source-directories'] = ['src', 'qa']
+    (frontend / 'elm.json').write_text(json.dumps(config, sort_keys=True) + '\n')
+    staged_config = digest(frontend / 'elm.json')
+    if inventory(frontend / 'src') != before:
+        raise RuntimeError('Consumption frontend source stage differs')
+    build_env = dict(env, ELM_HOME=str(frontend / 'elm-home'))
+    for name in ('preview-consumption.cjs', 'typed-state.cjs'):
+        run('syntax-' + name, [packet['node'], '--check', frontend / 'qa' / name], frontend, 30, build_env)
+    typed = ('NotificationsReplay', 'JumpListReplay', 'NotificationRelevanceReplay',
+             'RetirementProofReplay', 'LocalFieldReplay')
+    entries = [('PreviewConsumptionReplay', 'qa'), ('RetainedPreviewPresenterReplay', 'src')]
+    entries += [(name, 'qa') for name in typed]
+    roots = ('Main', 'Bar', 'Popup', 'HttpMain', 'HttpBar', 'HttpPopup',
+             'NativePreviewAdmission', 'NativePreviewRenderer')
+    entries += [(name, 'src') for name in roots]
+    artifacts = {}
+    for name, directory in entries:
+        target = frontend / (name + '.js')
+        run('compile-' + name, [packet['elm'], 'make', directory + '/' + name + '.elm',
+            '--optimize', '--output=' + str(target)], frontend, 180, build_env)
+        artifacts[name] = image(target)
+    typed_path = frontend / 'typed-state.json'
+    run('typed-state', [packet['node'], frontend / 'qa/typed-state.cjs',
+                       *[artifacts[name]['path'] for name in typed], typed_path], frontend, 90, build_env)
+    observed = json.loads(typed_path.read_text())
+    typed_counts = {'NotificationsReplay': 24, 'JumpListReplay': 30, 'NotificationRelevanceReplay': 20,
+              'RetirementProofReplay': 20, 'LocalFieldReplay': 43}
+    rows = observed.get('fixtures', [])
+    if (observed.get('schema') != 1 or observed.get('passed') is not True or observed.get('failures') != []
+            or observed.get('runnerSha256') != digest(frontend / 'qa/typed-state.cjs')
+            or [row.get('name') for row in rows] != list(typed)
+            or len(observed.get('checks', [])) != sum(typed_counts.values())
+            or any(row.get('passed') is not True or row.get('failures') != []
+                   or row.get('sha256') != artifacts[row['name']]['sha256']
+                   or len(row.get('checks', [])) != typed_counts[row['name']]
+                   or any(check.get('passed') is not True for check in row.get('checks', [])) for row in rows)):
+        raise RuntimeError('Exact existing typed lifecycle/local-field regression report differs')
+    budgets: dict = {'cases': {'min': 7, 'max': 7}, 'steps': {'min': 4280, 'max': 4500},
+               'assertions': {'min': 5300, 'max': 10000}, 'seeds': {'min': 3, 'max': 3},
+               'responseMs': 20000, 'totalMs': 180000}
+    fixture_hashes = {'compiled': artifacts['PreviewConsumptionReplay']['sha256'],
+                      'oracle': digest(frontend / 'qa/preview-consumption.cjs'),
+                      'elmFixture': digest(frontend / 'qa/PreviewConsumptionReplay.elm')}
+    receipts = []
+    for index in range(2):
+        receipt = json.loads(run('preview-consumption-fresh-' + str(index),
+            [packet['node'], frontend / 'qa/preview-consumption.cjs', artifacts['PreviewConsumptionReplay']['path']],
+            frontend, 210, build_env))
+        counts = receipt.get('counts', {})
+        if (set(receipt) != {'status', 'counts', 'budgets', 'seeds', 'hashes', 'lastSequence'}
+                or receipt.get('status') != 'passed' or receipt.get('budgets') != budgets
+                or receipt.get('seeds') != [20261105, 20261106, 20261107]
+                or receipt.get('hashes') != fixture_hashes or set(counts) != {'cases', 'steps', 'assertions', 'seeds'}
+                or any(type(counts[name]) is not int or not budgets[name]['min'] <= counts[name] <= budgets[name]['max']
+                       for name in ('cases', 'steps', 'assertions', 'seeds'))
+                or type(receipt.get('lastSequence')) is not int or receipt['lastSequence'] != counts['steps']):
+            raise RuntimeError('Consumption fixture terminal receipt is missing, incomplete or mismatched')
+        receipts.append(receipt)
+    if receipts[0] != receipts[1]:
+        raise RuntimeError('Two fresh consumption executions differ')
+    for artifact in artifacts.values():
+        if image(Path(artifact['path'])) != artifact:
+            raise RuntimeError('Compiled consumption/compatibility artifact changed')
+    if (inventory(frontend / 'src') != before or inventory(source / 'src') != before
+            or digest(frontend / 'elm.json') != staged_config
+            or any(digest(frontend / 'qa' / Path(name).name) != reviewed_sources[name] for name in qa_files)):
+        raise RuntimeError('Consumption source, staged manifest or fixture changed during execution')
+    return {'scope': 'Actual compiled Elm Popup/ingress consumption component and existing typed regressions only',
+            'artifacts': artifacts, 'optimizedProductionRoots': list(roots), 'productionRootBehaviorExecuted': False,
+            'consumption': {'freshRuns': 2, 'receipts': receipts},
+            'typedState': {'path': str(typed_path), 'sha256': digest(typed_path), 'checks': sum(typed_counts.values()),
+                           'fixtures': list(typed)},
+            'retainedPresenter': {'compiled': True, 'behaviorExecuted': False},
+            'originalHttpFiveAndEleven': {'executed': False, 'status': 'Pending separate current-source oracle derivative review'},
+            'nativeAcceptance': False, 'originalAcceptance': False, 'releaseAccepted': False}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
@@ -38,11 +133,14 @@ def main():
         private_runtime = Path('/run/user') / str(os.getuid())
         private_runtime.mkdir(parents=True, mode=0o700)
     runtime_base()
-    mode = '--subscriptions' if args.subscriptions else ('--owner-build' if args.owner_build else ('--preview-control' if args.preview_control else ('--protocol' if args.protocol else '--owner')))
+    mode = ('--preview-consumption' if args.preview_consumption else
+            ('--subscriptions' if args.subscriptions else ('--owner-build' if args.owner_build else
+             ('--preview-control' if args.preview_control else ('--protocol' if args.protocol else '--owner')))))
     if args.inside_private is None:
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
-        sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(ROOT, args.subscriptions, args.preview_control, args.protocol))}
+        sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
+            ROOT, args.subscriptions, args.preview_control, args.protocol, args.preview_consumption))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
@@ -72,7 +170,8 @@ def main():
             child = subprocess.run(command, cwd=ROOT, env=clean, timeout=3500, check=False)
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
-            if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, args.protocol)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
+            if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, args.protocol,
+                                args.preview_consumption)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
                 raise RuntimeError('Private ARM profile failed; retained logs')
@@ -112,7 +211,9 @@ def main():
                          'tea-contract-cases.cjs'):
                 run('syntax-' + name, [packet['node'], '--check',
                     ROOT / 'implementation/warlock/qa' / name], timeout=30)
-        if args.subscriptions:
+        if args.preview_consumption:
+            report['previewConsumption'] = consumption_frontend(output, env, packet, run)
+        elif args.subscriptions:
             subscription_output = output / 'subscriptions'
             run('subscriptions', [sys.executable, '-B', ROOT / 'tools/check_elm_cpu.py',
                                   '--subscriptions', '--arm64', '--arm64-output', subscription_output], timeout=3300)

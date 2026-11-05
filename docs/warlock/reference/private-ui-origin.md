@@ -78,3 +78,5 @@ Raw receipts remain machine-local. Original TEA004 and native acceptance remain 
 
 A control fact does not construct an operation ticket. Nonempty proposals and paint requests remain unsupported and fail closed.
 Authoritative purpose reservation, original-ticket issuance and a real native producer require further implementation.
+
+The November 5 [confirmation-custody component](../../warlock-build-loop/v2/preview-consumption-component-20261105.json) retains opaque accepted tickets in a global Popup FIFO. A full FIFO preserves the entire prior model and emits no effects. Exact transport completion removes only its matching receipt. The HTTP wrapper explicitly refuses this effect until its transport route qualifies. Compiled component checks do not establish native authority, paint or whole EARS acceptance.

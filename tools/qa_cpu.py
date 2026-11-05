@@ -94,14 +94,33 @@ def continuity_inputs(root):
             'window-integration-qa/qa_launch.py'}
 
 
-def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False):
+TEAM_QUINT_PAIRS = ('schema', 'authority', 'transport', 'http', 'consumption')
+
+
+def team_quint_inputs(root, pair):
+    if pair not in TEAM_QUINT_PAIRS:
+        raise RuntimeError('Unknown fixed team model pair')
+    prefix = '.warlock-contributor/team-quint-inputs/' + pair + '/'
+    return {'tools/qa_cpu.py', 'tools/check_team_quint_cpu.py', 'tools/team-quint-toolchain.json',
+            'tools/quint-toolchain.json', 'window-integration-qa/qa_launch.py',
+            prefix + 'request.json', prefix + 'plan.json', prefix + 'snapshot.json',
+            prefix + 'tea004-preview-' + pair + '.qnt',
+            prefix + 'tea004-preview-' + pair + '_test.qnt'}
+
+
+def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False):
     names = {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
              'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
              'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
              'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py',
              'implementation/warlock/elm.json'}
     names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
-    if subscriptions:
+    if consumption:
+        names.update('implementation/warlock/qa/' + name for name in (
+            'PreviewConsumptionReplay.elm', 'preview-consumption.cjs', 'LocalFieldReplay.elm',
+            'NotificationsReplay.elm', 'JumpListReplay.elm', 'NotificationRelevanceReplay.elm',
+            'RetirementProofReplay.elm', 'NativePointerFixture.elm', 'typed-state.cjs'))
+    elif subscriptions:
         # Preserve the entire existing subscription profile's oracle/source
         # closure while using only the new ARM compiler/cache selection.
         names.add('tools/check_elm_cpu.py')
@@ -175,13 +194,18 @@ def main():
     tea = runner == REPO / 'tools/check_tea_cpu.py'
     continuity = runner == REPO / 'tools/check_continuity_cpu.py'
     arm64 = runner == REPO / 'tools/check_arm64_cpu.py'
+    team_quint = runner == REPO / 'tools/check_team_quint_cpu.py'
     allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend'], ['--persistent']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract'], ['--subscriptions']])))
     if continuity:
         allowed = [[]]
     if arm64:
-        allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol']]
-    if (not registry and not haskell and not tea and not continuity and not arm64 and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+        allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
+                   ['--preview-consumption']]
+    if team_quint:
+        allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
+                   for tail in ([], ['--tests-only'])]
+    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
@@ -285,7 +309,10 @@ def main():
     if arm64:
         mandatory = arm64_inputs(REPO, subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
-                                 protocol_only=packet['arguments'] == ['--protocol'])
+                                 protocol_only=packet['arguments'] == ['--protocol'],
+                                 consumption=packet['arguments'] == ['--preview-consumption'])
+    if team_quint:
+        mandatory = team_quint_inputs(REPO, packet['arguments'][0][2:])
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
     reviewed_inputs(packet)
@@ -315,7 +342,7 @@ def main():
         reviewed_inputs(packet)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
-            return child.wait(timeout=3600 if haskell or arm64 else (600 if tea else 240))
+            return child.wait(timeout=3600 if haskell or arm64 or team_quint else (600 if tea else 240))
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             os.killpg(child.pid, signal.SIGTERM)
             try:

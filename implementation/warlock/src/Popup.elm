@@ -1,4 +1,4 @@
-port module Popup exposing (main, Model, Msg(..), Composition(..), Effect(..), Subscription(..), initial, subscriptionPlan, subscriptions, update, transition, view)
+port module Popup exposing (main, Model, Msg(..), Composition(..), Effect(..), Subscription(..), initial, subscriptionPlan, subscriptions, update, transition, view, pendingConfirmations, encodeConsumed)
 
 import Browser
 import Announcement
@@ -8,6 +8,7 @@ import Json.Decode as D
 import Json.Encode as E
 import RetainedPreviewPresenter as Preview
 import NativePreviewRealm as Realm
+import NativePreviewProposalIngress as Ingress
 import Presentation
 import PreviewPaintGate
 import SurfaceRenderer
@@ -21,6 +22,7 @@ port actions : E.Value -> Cmd msg
 
 port nativePreviews : (D.Value -> msg) -> Sub msg
 port previewCommands : E.Value -> Cmd msg
+port previewConsumed : E.Value -> Cmd msg
 port previewPaintRequests : E.Value -> Cmd msg
 port previewPainted : (D.Value -> msg) -> Sub msg
 port nativePreviewGrants : (D.Value -> msg) -> Sub msg
@@ -30,11 +32,11 @@ port nativePreviewIssued : (D.Value -> msg) -> Sub msg
 port nativePreviewRetry : (D.Value -> msg) -> Sub msg
 port nativePreviewRetirement : (D.Value -> msg) -> Sub msg
 
-type Msg = Announce D.Value | Present D.Value | Action E.Value | LocalAction E.Value | NativePreview D.Value | PreviewPainted D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
+type Msg = Announce D.Value | Present D.Value | Action E.Value | LocalAction E.Value | NativePreview D.Value | PreviewPainted D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value | ConfirmationTransportCompleted Ingress.AcceptedTicket
 type Composition = Idle | Preediting { baseline : String, before : Maybe String }
 
 -- Pure effect descriptions are shared by the statically selected transports.
-type Effect = Dispatch E.Value | PreviewCommand E.Value | PaintRequest E.Value
+type Effect = Dispatch E.Value | PreviewCommand E.Value | PaintRequest E.Value | TicketConsumed Ingress.AcceptedTicket
 
 type Subscription
     = PresentationChannel
@@ -49,10 +51,16 @@ type Subscription
     | NativePreviewRetryChannel
     | NativePreviewRetirementChannel
 
-type alias Model = { announcements : Announcement.Model, presentation : Presentation.Model, previews : Preview.Model, paintGate : PreviewPaintGate.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
+type alias Model = { announcements : Announcement.Model, presentation : Presentation.Model, previews : Preview.Model, paintGate : PreviewPaintGate.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter), confirmationOutbox : List Ingress.AcceptedTicket }
 
 initial : Model
-initial = {announcements=Announcement.initial,presentation=Presentation.initial,previews=Preview.initial,paintGate=PreviewPaintGate.initial,pendingQuery=Nothing,composition=Idle,lastQuery=Nothing}
+initial = {announcements=Announcement.initial,presentation=Presentation.initial,previews=Preview.initial,paintGate=PreviewPaintGate.initial,pendingQuery=Nothing,composition=Idle,lastQuery=Nothing,confirmationOutbox=[]}
+
+pendingConfirmations : Model -> List Ingress.AcceptedTicket
+pendingConfirmations model = model.confirmationOutbox
+
+encodeConsumed : Ingress.AcceptedTicket -> E.Value
+encodeConsumed = Ingress.encodeConsumed
 
 isComposing : Model -> Bool
 isComposing model = model.composition/=Idle
@@ -164,6 +172,7 @@ update message model =
             Dispatch value -> actions value
             PreviewCommand value -> previewCommands value
             PaintRequest value -> previewPaintRequests value
+            TicketConsumed ticket -> previewConsumed (encodeConsumed ticket)
     in (next,Cmd.batch (List.map interpret effects))
 
 transition : Msg -> Model -> (Model,List Effect)
@@ -253,7 +262,19 @@ transition message model =
         NativeQuarantine raw ->
             let (previews,commands) = D.decodeValue Realm.domainDecoder raw |> Result.map (\domain -> Preview.quarantineRealm domain model.previews) |> Result.withDefault (model.previews,E.list identity [])
             in emitPreview commands {model | previews=previews}
-        NativeIssued raw -> ({model | previews=Preview.issued raw model.previews},[])
+        NativeIssued raw ->
+            let (previews,accepted) = Preview.issuedWithConfirmation raw model.previews
+            in case accepted of
+                Just ticket ->
+                    if List.length model.confirmationOutbox < 1065 then
+                        ({model | previews=previews,confirmationOutbox=model.confirmationOutbox ++ [ticket]},[TicketConsumed ticket])
+                    else (model,[])
+                Nothing -> (model,[])
+        ConfirmationTransportCompleted ticket ->
+            let removeFirst remaining = case remaining of
+                    [] -> []
+                    first :: rest -> if Ingress.sameAcceptedTicket ticket first then rest else first :: removeFirst rest
+            in ({model | confirmationOutbox=removeFirst model.confirmationOutbox},[])
         NativeRetry raw ->
             let (previews,commands) = D.decodeValue Realm.domainDecoder raw |> Result.map (\domain -> Preview.retry domain model.previews) |> Result.withDefault (model.previews,E.list identity [])
             in emitPreview commands {model | previews=previews}

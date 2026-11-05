@@ -1,4 +1,4 @@
-module NativePreviewProposalIngress exposing (Intent, Model, decode, empty, enqueue, issued, pending, proposals, sameIntent, split, status)
+module NativePreviewProposalIngress exposing (AcceptedTicket, Intent, Model, decode, empty, enqueue, issued, issuedWithConfirmation, encodeConsumed, sameAcceptedTicket, pending, proposals, sameIntent, split, status)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -8,6 +8,7 @@ import UInt64
 -- Transport bookkeeping only. PreviewPresenter remains the sole window policy.
 type alias Intent = { identity : String, command : E.Value }
 type Model = Model Realm.Grant (List Intent)
+type AcceptedTicket = AcceptedTicket Realm.Domain UInt64.Counter String
 type alias Proposal = { protocol : Int, kind : String, domain : Realm.Domain, rows : List Intent }
 type alias Ticket = { protocol : Int, kind : String, domain : Realm.Domain, ordinal : UInt64.Counter, advisory : Bool, wire : String }
 type alias Packet = { protocol : Int, kind : String, domain : Realm.Domain, ordinal : UInt64.Counter, intents : List Intent }
@@ -77,7 +78,10 @@ positive = UInt64.decoder |> D.andThen (\n -> if n /= UInt64.zero then D.succeed
 -- This fact must arrive through the native-owned port. Its wire is decoded for
 -- exact intent matching; the original transport wire is never regenerated here.
 issued : D.Value -> Model -> Maybe Model
-issued raw (Model grant rows) =
+issued raw model = issuedWithConfirmation raw model |> Maybe.map Tuple.first
+
+issuedWithConfirmation : D.Value -> Model -> Maybe ( Model, AcceptedTicket )
+issuedWithConfirmation raw (Model grant rows) =
     let ticket = strict ["previewProtocol","kind","binding","receiverEpoch","controlOrdinal","alreadyDelivered","wire"]
             (D.map6 Ticket
                 (D.field "previewProtocol" D.int) (D.field "kind" D.string) Realm.domainDecoder
@@ -90,9 +94,20 @@ issued raw (Model grant rows) =
         if fact.protocol /= 3 || fact.kind /= "preview-control-ticket" || not (Realm.same fact.domain grant.domain) || bytes fact.wire > 4096 then Nothing
         else D.decodeString packet fact.wire |> Result.toMaybe |> Maybe.andThen (\decoded -> case decoded.intents of
             [intent] -> if decoded.protocol == 3 && decoded.kind == "preview-commands" && Realm.same decoded.domain grant.domain && decoded.ordinal == fact.ordinal && List.any (sameIntent intent) rows then
-                Just (Model grant (List.filter (\row -> not (sameIntent intent row)) rows))
+                Just (Model grant (List.filter (\row -> not (sameIntent intent row)) rows), AcceptedTicket fact.domain fact.ordinal fact.wire)
               else Nothing
             _ -> Nothing))
 
 status : Model -> E.Value
 status (Model grant rows) = E.object [("pending",E.int (List.length rows)),("capacity",E.int grant.capacity),("intents",E.list encode rows)]
+
+-- Encode only the original accepted wire; it is never rebuilt from decoded JSON.
+encodeConsumed : AcceptedTicket -> E.Value
+encodeConsumed (AcceptedTicket domain ordinal wire) =
+    E.object [("previewProtocol",E.int 3),("kind",E.string "preview-control-consumed"),
+        ("binding",Realm.bindingValue domain),("receiverEpoch",E.string (UInt64.string domain.receiverEpoch)),
+        ("controlOrdinal",E.string (UInt64.string ordinal)),("wire",E.string wire)]
+
+sameAcceptedTicket : AcceptedTicket -> AcceptedTicket -> Bool
+sameAcceptedTicket (AcceptedTicket leftDomain leftOrdinal leftWire) (AcceptedTicket rightDomain rightOrdinal rightWire) =
+    Realm.same leftDomain rightDomain && leftOrdinal == rightOrdinal && leftWire == rightWire

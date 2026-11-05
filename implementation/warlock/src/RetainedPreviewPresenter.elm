@@ -1,4 +1,4 @@
-module RetainedPreviewPresenter exposing (Model, initial, hasActiveIngress, hasRetainedControlOrTransactions, present, receive, receiveRealm, image, visual, visuals, observe, metadata, enrollment, feedback, enrollRealm, closeRealm, quarantineRealm, retireLegacy, realmStatus, issued, retry)
+module RetainedPreviewPresenter exposing (Model, initial, hasActiveIngress, hasRetainedControlOrTransactions, present, receive, receiveRealm, image, visual, visuals, observe, metadata, enrollment, feedback, enrollRealm, closeRealm, quarantineRealm, retireLegacy, realmStatus, issued, issuedWithConfirmation, retry)
 
 import Html exposing (Html)
 import Json.Decode as D
@@ -84,8 +84,13 @@ closeRealm domain (Model policy grant ingress deferred) =
     else Preview.closeRealm domain policy |> Maybe.map (\next -> Model next grant ingress deferred)
 
 issued : D.Value -> Model -> Model
-issued raw ((Model policy grant ingress deferred) as prior) =
-    ingress |> Maybe.andThen (Ingress.issued raw) |> Maybe.map (\next -> Model policy grant (Just next) deferred) |> Maybe.withDefault prior
+issued raw model = issuedWithConfirmation raw model |> Tuple.first
+
+issuedWithConfirmation : D.Value -> Model -> ( Model, Maybe Ingress.AcceptedTicket )
+issuedWithConfirmation raw ((Model policy grant ingress deferred) as prior) =
+    case ingress |> Maybe.andThen (Ingress.issuedWithConfirmation raw) of
+        Just (next,ticket) -> (Model policy grant (Just next) deferred,Just ticket)
+        Nothing -> (prior,Nothing)
 
 retry : Realm.Domain -> Model -> (Model,E.Value)
 retry domain ((Model policy grant ingress deferred) as prior) =

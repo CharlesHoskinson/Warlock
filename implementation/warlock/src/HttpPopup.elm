@@ -36,6 +36,7 @@ supported effect =
         Popup.Dispatch _ -> True
         Popup.PreviewCommand raw -> emptyPreview raw
         Popup.PaintRequest raw -> D.decodeValue (D.list D.value) raw |> Result.map List.isEmpty |> Result.withDefault False
+        Popup.TicketConsumed _ -> False
 
 update : Msg -> Model -> (Model,Cmd Msg)
 update message model =
