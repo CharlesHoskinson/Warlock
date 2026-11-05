@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-05T23:55:22.905871+00:00",
+  "requirement": "ELM-TEA-004",
+  "scenario": "tea-subscriptions",
+  "scope": "Compiled HTTP transport and subscription contracts only. Native acceptance remains separate.",
+  "report": ".warlock-contributor/arm64-cpu-1793922571440124969/report.json",
+  "reportSHA256": "9d8e973129e22211507e414c0d45c5f1a758156adc0882529534173e977bbb3e",
+  "nestedReport": ".warlock-contributor/arm64-cpu-1793922571440124969/subscriptions/report.json",
+  "nestedReportSHA256": "c0ad5a446fff64ad44e1793526e717ee128f3c13eb72b9b7243a206f73c6d1ce",
+  "independentReview": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-full-http-subscriptions-execution-review.json",
+  "independentReviewSHA256": "f0ed437f16ebb3c72ae9473be648f0350a1e00235ff9c1862b2c111df0c2bad8",
+  "reviewPacketSHA256": "cc255c1c61ad7ed053ba008ae430c23d268975796e638657fee7f5174eb0a5e8",
+  "execution": {
+    "outerExit": 0,
+    "commands": 28,
+    "allCommandsExitZero": true,
+    "sourceInputs": 278,
+    "nestedSources": 154,
+    "httpCampaigns": 16,
+    "httpChecks": 7394,
+    "httpFailures": 0,
+    "completeHttpLiteralCases": 13,
+    "specifiedStepsPerFreshHistory": 87,
+    "freshRunsPerLiteralCase": 2,
+    "joinedHistories": [
+      5,
+      11
+    ],
+    "negativeControls": {
+      "behavioralCounterfactuals": 13,
+      "inventory": 21
+    },
+    "subscriptionWorkerCases": 6,
+    "subscriptionWorkerStepsPerRun": 36,
+    "subscriptionFreshRuns": 2,
+    "siteMain": "Compiled source-bound replay; lexical animation negative is not a behavioral nonempty-subscription proof.",
+    "artifacts": 20
+  },
+  "changes": [
+    "Correlate HTTP completions by opaque request identity and request kind.",
+    "Retain exact Popup confirmation tickets until their matching transport completion.",
+    "Defer a confirmation when all 16 transport slots are occupied.",
+    "Suppress an identical queued reconciliation proposal without allocating an identity or changing the model.",
+    "Keep untagged errors fail-closed without treating an untagged success as acknowledgement.",
+    "Preserve the original refusal for synthetic View quarantine; route checked transport controls separately.",
+    "Run the 16 HTTP campaigns before the original subscription oracles with fixed per-campaign assertion budgets."
+  ],
+  "sourcePins": {
+    "implementation/warlock/src/UiHttp.elm": "73ae1bcb1d1d98fbe8ecbcfebca879f3df1e668dc2366cdfb37979fa6c3cf846",
+    "implementation/warlock/src/HttpPopup.elm": "b0c3596d0e637722050830ca50ed2dd116b5c95953a3e6b988683d649563a52d",
+    "implementation/warlock/src/HttpMain.elm": "c0dcd27b03b737b83be70d439944ea9741128e18dd9405b55595c559e8bef3cf",
+    "implementation/warlock/qa/UiHttpReplay.elm": "eb0fc2636f9dcc34c9a0ea5a016b1b8a37ec5ff9d03539c4f5c88131e224bf10",
+    "implementation/warlock/qa/ui-http.cjs": "11ba46628c54b83486af54173849a5868d770c3e462b39907cdd87a5a2b78cc1",
+    "implementation/warlock/qa/UiHttpFailureReplay.elm": "d3dab516f45f00d3e2f4fad71901e2204718b4f4ec8a0c5eac9661bc47cebc70",
+    "implementation/warlock/qa/http-full-subscriptions-v2/full-manifest.json": "06281241d600b1e3b5781d16bb07ebfbfdaf694d0afd7f76003c3b2224abda13",
+    "tools/check_elm_cpu.py": "5a845c6e7d6b9df2a0703d487dc0e6858e9f66b1c240b4ed07cd03c4b154e7d7",
+    "tools/arm64-toolchain.json": "e0f136b2205d96eee5220861631d144cdf3280fc2406db110c23a2d94e95a734"
+  },
+  "artifacts": {
+    "Main.js": "081eaa0c117790f93c0c62c061ea32fc5760cb3ac865aa6a75fb8161e55b5437",
+    "Bar.js": "b9b6a53d927748c1bdd0b6640ac268ac8d9af7220e972840a267c38604305db9",
+    "Popup.js": "5c8fa61768ab778a0527468b8fd5d159af6d32d21ed76a78e1b95b556a6c533a",
+    "HttpMain.js": "2cc56af4aca87cb81201ad19982e961f143c8f9d3b555a6dff248e3c323dbdda",
+    "HttpBar.js": "86151d6c77bd33da15df162ae5ca2e7269210df098552e14da3f4068d9237ce1",
+    "HttpPopup.js": "4f76bc3d6e3bef504e2233e77f71bfa1ababa38caae9844b71629f3d9cc954a0",
+    "NativePreviewAdmission.js": "7202a3110017b8805a8afbf950958fc87ee59c519ffcd3b6193fc755f1688191",
+    "NativePreviewRenderer.js": "34056d5b449d00461af1cd7cf13c72a1159232d9ee16b4a0535608824099a10d",
+    "UiHttpReplay.js": "8bd469305e39e9db999311a07b79d8439c477faed4bafbda086a1fd55688fbcc",
+    "HttpMain.plain.js": "5ca39e2e7582b0105018418f12437df9c26ac12ed19f27c4af5049d39ee307aa",
+    "HttpBar.plain.js": "95f32ba9542db60090a4efd27c677121f2da23c8abcdb475d9ead8e0003f74e5",
+    "HttpPopup.plain.js": "a66f1a0b04f6d86abb3245b4044ac1c9b17359e6d577bf61cf0b168e6662b3c8",
+    "SiteMain.plain.js": "4bf943b9f6ebf085d27a4fc13024061b596886395db16867a7ae08f495df5563",
+    "TeaPopupSubscriptionsReplay.js": "12cf8e63167b06c2f21f51bececa6ac77ce7899ca2f8efed1140b97bd0b04cc0",
+    "TeaBarSubscriptionsReplay.js": "9229d106c90381fda045a5f100733fbd85b34048ecd4ff1d43d4899e25b258be",
+    "TeaAdmissionSubscriptionsReplay.js": "20fef2789287a4a7feacd534080d4db58f04d320676893b04c1cbcb436f7e10b",
+    "TeaRendererSubscriptionsReplay.js": "6b10fb0a82c7fa2e60b612dbcd1da2803405bc3278e3bb8acb2807a201473100",
+    "HttpMain.html": "5b795ce5e743ff3a1a2ce0d1e7f4bb2f987a33d88372cefea1763a10b3e97b92",
+    "HttpBar.html": "abf90c9236ca4774aeaba7735fa993b199974f3302cce614e2c217dc7450a58c",
+    "HttpPopup.html": "c1da4984b40eaa1f2801eb8c2d470e8a15f9008f9cfdeff2d2e377e652f9a074"
+  },
+  "preservedFailures": [
+    "http-integration-compile.stderr: linker-cache preflight mismatch; no compiler executed.",
+    ".warlock-contributor/arm64-cpu-1793920671893999674/report.json: stale presenter source pin.",
+    ".warlock-contributor/arm64-cpu-1793920919457347242/report.json: actual full-queue capacity failure.",
+    ".warlock-contributor/arm64-cpu-1793921098219819090/report.json: diagnostic confirmed capacity stop and cancelled GET/POST.",
+    ".warlock-contributor/arm64-cpu-1793922127986944849/report.json: HTTP passed; stale historical observer stage pin.",
+    ".warlock-contributor/arm64-cpu-1793922307017458459/report.json: observed-counter guard rejected a valid counterexample before the required literal mismatch."
+  ],
+  "limits": [
+    "HTTP 204 is transport completion only.",
+    "The finite HTTP model does not prove proposal idempotence after HTTP completion or native resource custody.",
+    "No browser CSP, native presentation, physical input, AT/IME, paint, resource retirement, performance or deployment acceptance follows from this run.",
+    "Original failures, deadlines and native trial stops remain unchanged."
+  ],
+  "remaining": [
+    "Wire and qualify the actual Backend-owned receiver, authenticated single reader and retained native reply paths.",
+    "Implement native purpose, ticket, paint and owned-resource cleanup with real handler evidence.",
+    "Obtain native presentation/input, AT/IME, resource/performance and release observations.",
+    "Submit the exact source tuple for independent original-requirement adjudication."
+  ],
+  "wholeTea004Accepted": false,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false
+}
