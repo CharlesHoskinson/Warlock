@@ -5,6 +5,7 @@ import Browser.Dom
 import Html exposing (div, input, label, text)
 import Html.Attributes exposing (attribute, for, id, readonly, type_, value)
 import Json.Decode as D
+import NativePreviewRealm as Realm
 import Popup
 import Presentation
 import SurfaceRenderer
@@ -15,13 +16,25 @@ import UiHttp
 type alias Model = {popup : Popup.Model,http : UiHttp.Model}
 type Msg = View Popup.Msg | Transport UiHttp.Msg | Focused
 
--- No native preview producer is qualified for this HTTP profile. Empty
--- descriptions are inert; a real command remains unconfirmed and fails closed.
+-- Native control facts use the existing realm policy. No native preview
+-- producer is qualified for this HTTP profile; nonempty proposals and paint
+-- requests remain explicit, unconfirmed refusals until their transport exists.
+emptyPreview : D.Value -> Bool
+emptyPreview raw =
+    let realm = D.keyValuePairs D.value |> D.andThen (\pairs ->
+            if List.sort (List.map Tuple.first pairs)==["binding","entries","kind","previewProtocol","receiverEpoch"] then
+                D.map4 (\protocol kind _ entries -> protocol==3 && kind=="preview-proposals" && List.isEmpty entries)
+                    (D.field "previewProtocol" D.int) (D.field "kind" D.string) Realm.domainDecoder (D.field "entries" (D.list D.value))
+            else D.fail "Exact empty native proposal fields")
+    in case D.decodeValue (D.list D.value) raw of
+        Ok entries -> List.isEmpty entries
+        Err _ -> D.decodeValue realm raw |> Result.withDefault False
+
 supported : Popup.Effect -> Bool
 supported effect =
     case effect of
         Popup.Dispatch _ -> True
-        Popup.PreviewCommand raw -> D.decodeValue (D.list D.value) raw |> Result.map List.isEmpty |> Result.withDefault False
+        Popup.PreviewCommand raw -> emptyPreview raw
         Popup.PaintRequest raw -> D.decodeValue (D.list D.value) raw |> Result.map List.isEmpty |> Result.withDefault False
 
 update : Msg -> Model -> (Model,Cmd Msg)
@@ -51,6 +64,12 @@ update message model =
                     case UiHttp.gateway raw of
                         Just ("presentation",payload) -> apply (Popup.Present payload) command current
                         Just ("announcements",payload) -> apply (Popup.Announce payload) command current
+                        Just ("native-preview-grant",payload) ->
+                            control ["binding","receiverEpoch","capacity"] Realm.grantDecoder Popup.NativeGrant payload command current
+                        Just ("native-preview-quarantine",payload) ->
+                            control ["binding","receiverEpoch"] Realm.domainDecoder Popup.NativeQuarantine payload command current
+                        Just ("native-preview-closed",payload) ->
+                            control ["binding","receiverEpoch"] Realm.domainDecoder Popup.NativeClosed payload command current
                         Just ("focus",payload) ->
                             let target=if current.popup.composition==Popup.Idle then Presentation.focusTarget True payload current.popup.presentation else Nothing
                                 focus=
@@ -67,6 +86,20 @@ apply : Popup.Msg -> Cmd UiHttp.Msg -> Model -> (Model,Cmd Msg)
 apply message command model =
     let (next,emitted)=update (View message) model
     in (next,Cmd.batch [Cmd.map Transport command,emitted])
+
+-- HTTP delivery is transport evidence only. Reuse the existing Popup realm
+-- transitions for enrollment, stale-domain refusal and retirement. These
+-- controls stay reachable while the presentation is closed.
+control : List String -> D.Decoder a -> (D.Value -> Popup.Msg) -> D.Value -> Cmd UiHttp.Msg -> Model -> (Model,Cmd Msg)
+control fields decoder message payload command model =
+    let exact = D.keyValuePairs D.value |> D.andThen (\pairs ->
+            if List.sort (List.map Tuple.first pairs)==List.sort fields then decoder
+            else D.fail "Exact native preview control fields")
+    in case D.decodeValue exact payload of
+        Ok _ -> apply (message payload) command model
+        Err _ ->
+            let (http,cancel,_)=UiHttp.stop "Invalid native preview control." model.http
+            in ({model | http=http},Cmd.map Transport cancel)
 
 retainedField : Popup.Model -> List (Html.Html Msg)
 retainedField popup =

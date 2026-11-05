@@ -81,10 +81,45 @@ class ContinuityTests(unittest.TestCase):
         self.queue.assert_not_called()
 
     def test_explicit_paused_and_complete_goal_never_queues(self):
-        for status in ("paused", "complete"):
+        for status in ("paused", "complete", "completed", "stopped", "cancelled", "canceled"):
             self.write_checkpoint({"goalStatus": status}, age=1000)
             self.assertEqual(self.tick()["status"], "goal-quiescent")
         self.queue.assert_not_called()
+
+    def test_actual_external_blocker_never_queues(self):
+        self.write_checkpoint({"goalStatus": "blocked", "externalBlocker": True}, age=1000)
+        self.assertEqual(self.tick()["status"], "external-blocked")
+        self.queue.assert_not_called()
+
+    def test_internal_blocked_goal_still_requests_repair(self):
+        self.write_checkpoint({"goalStatus": "blocked", "externalBlocker": False}, age=1000)
+        self.assertTrue(self.tick()["queueAccepted"])
+
+    def test_checkpoint_pause_during_observation_prevents_queue(self):
+        original = policy.load_config
+        calls = 0
+
+        def load(path):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                self.write_checkpoint({"goalStatus": "paused"})
+            return original(path)
+
+        with patch.object(policy, "load_config", side_effect=load):
+            self.assertEqual(self.tick()["status"], "checkpoint-changed")
+        self.queue.assert_not_called()
+
+    def test_watch_exits_when_authorization_is_quiescent(self):
+        for status in ("disarmed", "expired", "goal-quiescent", "external-blocked"):
+            with self.subTest(status=status), \
+                    patch("sys.argv", ["guard", "--config", str(self.path), "--watch"]), \
+                    patch.object(policy, "tick", return_value={"status": status}) as tick, \
+                    patch.object(policy.time, "sleep") as sleep, \
+                    patch("sys.stdout", io.StringIO()):
+                self.assertEqual(policy.main(), 0)
+                tick.assert_called_once()
+                sleep.assert_not_called()
 
     def test_watch_retries_after_transient_invalid_snapshot(self):
         output = io.StringIO()

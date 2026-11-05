@@ -61,3 +61,20 @@ native IME/AT and release instructions require their own later qualification.
 ### GTK thread compatibility
 
 `Warlock.Ui.ThreadNamespace.requireThreadCompatibleNamespace` compares actual device/inode identities for the calling thread's current PID namespace and namespace for children. Missing or different identities produce a static failure before GTK. Linux rejects thread creation in this state; see [clone(2)](https://man7.org/linux/man-pages/man2/clone.2.html). This is a necessary condition, not successful GTK startup. The guest now records controlled refusal instead of aborting in GLib. UI/engine cleanup remain unqualified. A separate owned engine must execute inside its PID namespace while the authenticated owner retains the original native endpoint. Whole ARC024 navigation/resource traces and DEL014 execution negatives remain open.
+
+
+## Typed preview control delivery
+
+The authenticated desktop profile accepts `native-preview-grant`, `native-preview-quarantine` and `native-preview-closed` facts.
+Each fact carries the current binding and a positive canonical receiver epoch.
+A grant also carries capacity from 1 through 1065. Unknown, duplicate and variant-incompatible fields are refused.
+
+The Haskell owner sends these facts to the Popup queue in arrival order, including while the overlay is closed.
+The controller and bar queues do not receive them. HttpPopup applies the existing Elm Popup policy.
+
+The [component record](../../warlock-build-loop/v2/http-preview-controls-component-20261105.json) binds the source and protected observations.
+It records actual Owner delivery, foreign-binding refusal and complete-model lifecycle replays.
+Raw receipts remain machine-local. Original TEA004 and native acceptance remain open.
+
+A control fact does not construct an operation ticket. Nonempty proposals and paint requests remain unsupported and fail closed.
+Authoritative purpose reservation, original-ticket issuance and a real native producer require further implementation.

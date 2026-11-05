@@ -216,6 +216,24 @@ main = do
   check "oversize full reply is refused without partial catalog" (isLeft huge)
   unavailable <- must (D.catalogReply owner (counter "7") Nothing Nothing >>= checkDesktopReply >>= encodeServerCheckedWith desktopProfile)
   check "explicit unavailable server frame still validates" (isRight (decodeServerCheckedWith desktopProfile unavailable))
+  -- HTTP preview controls use the same opaque decoder as the authenticated
+  -- native socket. They do not grant a renderer control ordinals or commands.
+  let control kind controlFields = gatewayOf ("{\"protocolVersion\":3,\"kind\":\""<>kind<>"\",\"binding\":"<>bound<>" ,\"receiverEpoch\":\"1\""<>controlFields<>"}")
+      controls = [control "native-preview-grant" ",\"capacity\":1",
+                  control "native-preview-quarantine" "",
+                  control "native-preview-closed" ""]
+  forM_ controls $ \wire -> do
+    typed <- must (D.decodeDesktopGateway wire)
+    roundtrip <- must (D.encodeDesktopGateway typed >>= D.decodeDesktopGateway)
+    check "preview controls retain exact binding and typed roundtrip" (D.replyBinding typed==owner && roundtrip==typed)
+  forM_ ["0","-1","1066","18446744073709551617","1.0","1e0","\"1\"","true"] $ \capacity ->
+    check "preview grant refuses invalid or overflowing capacity"
+      (isLeft (D.decodeDesktopGateway (control "native-preview-grant" (",\"capacity\":"<>capacity))))
+  forM_ [control "native-preview-quarantine" ",\"capacity\":1",
+         control "native-preview-closed" ",\"receiverEpoch\":\"2\"",
+         control "native-preview-unknown" "",
+         control "native-preview-grant" ""] $ \wire ->
+    check "preview controls refuse unknown duplicate and mismatched fields" (isLeft (D.decodeDesktopGateway wire))
   generatedCorpus check
   count <- readIORef checked
   putStrLn ("{\"schema\":1,\"suite\":\"desktop-boundary-controls\",\"passed\":true,\"checks\":" ++ show count ++ ",\"seed\":20261101,\"generatedCases\":256,\"mutationClasses\":16,\"nativeAcceptance\":false}")

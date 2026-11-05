@@ -265,7 +265,20 @@ runUiOwnerPrepared witness config prepareEngine = mask $ \restore -> do
   (runEngine,retireEngine) <- prepareEngine endpoints ownerEvent
   (do
     forM_ listeners (\(role,origin,document,ticket) -> launch (serve native role origin document ticket))
-    launch $ let loop = do raw <- receiveGateway native; record Controller "native-event" raw; accepted <- enqueue [(Controller,raw)]; require accepted "native event queue full"; loop in loop
+    let receiveLoop = do
+          raw <- receiveGateway native
+          -- receiveGateway has already checked framing, exact schema
+          -- and the authenticated binding. Route its typed fact, never
+          -- a browser-supplied destination or overlay visibility flag.
+          fact <- either (ioError . userError . T.unpack) pure (D.decodeDesktopGateway raw)
+          let (recipient,packet)=case D.popupControl fact of
+                Just (kind,payload) -> (Popup,gateway kind payload)
+                Nothing -> (Controller,raw)
+          record recipient "native-event" raw
+          accepted <- enqueue [(recipient,packet)]
+          require accepted "native event queue full"
+          receiveLoop
+    launch receiveLoop
     result <- restore runEngine
     writeIORef engineStatus (Just result)
     remaining <- remainingMicros deadline

@@ -6,7 +6,7 @@ module Warlock.Protocol.Desktop
   , PinSnapshot, pinSnapshot, pinRevision, pinIdentities, decodePinSnapshot, encodePinSnapshot
   , CatalogEntry, catalogEntry, CatalogSnapshot, catalogSnapshot
   , DesktopReply, PinStatus(..), applicationAttached, catalogReply, pinsReply, replyBinding
-  , decodeDesktopReply, encodeDesktopReply, decodeDesktopGateway, encodeDesktopGateway ) where
+  , decodeDesktopReply, encodeDesktopReply, decodeDesktopGateway, encodeDesktopGateway, popupControl ) where
 
 import qualified Data.ByteString as B
 import Data.Char (ord)
@@ -27,7 +27,10 @@ data CatalogSnapshot = CatalogSnapshot Counter Counter [CatalogEntry] deriving (
 data PinStatus = PinSaved | PinRefused | PinUnknown deriving (Eq, Show)
 data DesktopReply = CatalogReply Binding Counter (Maybe CatalogSnapshot) (Maybe PinSnapshot)
                   | PinsReply Binding Counter PinStatus (Maybe PinSnapshot)
-                  | ApplicationAttached Binding deriving (Eq, Show)
+                  | ApplicationAttached Binding
+                  | PreviewGrant Binding Counter Int
+                  | PreviewQuarantine Binding Counter
+                  | PreviewClosed Binding Counter deriving (Eq, Show)
 
 err :: Show a => Either a b -> Either Text b
 err = either (Left . T.pack . show) Right
@@ -193,11 +196,28 @@ replyBinding :: DesktopReply -> Binding
 replyBinding (CatalogReply owner _ _ _) = owner
 replyBinding (PinsReply owner _ _ _) = owner
 replyBinding (ApplicationAttached owner) = owner
+replyBinding (PreviewGrant owner _ _) = owner
+replyBinding (PreviewQuarantine owner _) = owner
+replyBinding (PreviewClosed owner _) = owner
+
+-- These facts retain their authenticated peer binding. Projection creates no
+-- grant: the existing Elm realm/presenter remains the lifetime authority.
+popupControl :: DesktopReply -> Maybe (Text,Json)
+popupControl reply = case reply of
+  PreviewGrant owner epoch capacity -> Just ("native-preview-grant",JObject (domain owner epoch ++ [("capacity",JNumber (T.pack (show capacity)))]))
+  PreviewQuarantine owner epoch -> Just ("native-preview-quarantine",JObject (domain owner epoch))
+  PreviewClosed owner epoch -> Just ("native-preview-closed",JObject (domain owner epoch))
+  _ -> Nothing
+ where
+  domain owner epoch = [("binding",bindingJson owner),("receiverEpoch",JString (renderCounter epoch))]
 replyJson :: DesktopReply -> Json
 replyJson reply = JObject $ [("protocolVersion",JNumber "3"),("binding",bindingJson (replyBinding reply))] ++ case reply of
   CatalogReply _ request catalog pins -> [("kind",JString "application-catalog"),("requestId",JString (renderCounter request)),("snapshot",nullable catalogJson catalog),("preferences",nullable pinJson pins)]
   PinsReply _ request status pins -> [("kind",JString "taskbar-pins-outcome"),("requestId",JString (renderCounter request)),("status",JString (case status of PinSaved -> "Saved"; PinRefused -> "Refused"; PinUnknown -> "Unknown")),("preferences",nullable pinJson pins)]
   ApplicationAttached _ -> [("kind",JString "application-attached"),("nativeOperations",JArray [])]
+  PreviewGrant _ epoch capacity -> [("kind",JString "native-preview-grant"),("receiverEpoch",JString (renderCounter epoch)),("capacity",JNumber (T.pack (show capacity)))]
+  PreviewQuarantine _ epoch -> [("kind",JString "native-preview-quarantine"),("receiverEpoch",JString (renderCounter epoch))]
+  PreviewClosed _ epoch -> [("kind",JString "native-preview-closed"),("receiverEpoch",JString (renderCounter epoch))]
 -- Application attachment announces only the already authenticated application
 -- binding. It creates no native authority or native operations.
 applicationAttached :: Binding -> Either Text DesktopReply
@@ -245,7 +265,27 @@ decodeDesktopReply raw = do
       status <- field "status" exact >>= textValue
       typed <- case status of "Saved" -> Right PinSaved; "Refused" -> Right PinRefused; "Unknown" -> Right PinUnknown; _ -> Left "pin status"
       pinsReply owner request typed pins
+    "native-preview-grant" -> do
+      exact <- object ["protocolVersion","kind","binding","receiverEpoch","capacity"] value
+      owner <- field "binding" exact >>= parseBinding
+      epoch <- field "receiverEpoch" exact >>= counter
+      positive epoch
+      capacity <- case field "capacity" exact of
+        Right (JNumber number) -> case reads (T.unpack number) :: [(Integer,String)] of
+          [(count,"")] | count>0 && count<=1065 -> Right (fromInteger count)
+          _ -> Left "bounded native preview capacity"
+        _ -> Left "native preview capacity integer"
+      pure (PreviewGrant owner epoch capacity)
+    "native-preview-quarantine" -> previewDomain PreviewQuarantine value
+    "native-preview-closed" -> previewDomain PreviewClosed value
     _ -> Left "unsupported desktop reply kind"
+ where
+  previewDomain constructor value = do
+    exact <- object ["protocolVersion","kind","binding","receiverEpoch"] value
+    owner <- field "binding" exact >>= parseBinding
+    epoch <- field "receiverEpoch" exact >>= counter
+    positive epoch
+    pure (constructor owner epoch)
 encodeDesktopGateway :: DesktopReply -> Either Text B.ByteString
 encodeDesktopGateway reply = do
   _ <- encodeDesktopReply reply

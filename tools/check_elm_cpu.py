@@ -64,22 +64,36 @@ def main():
     modes.add_argument('--status-scroll', action='store_true', help='Fixed UI007 status scroll replay and model')
     modes.add_argument('--tea-contract', action='store_true', help='Original TEA001/002 complete-model and typed-effect component fixture')
     modes.add_argument('--subscriptions', action='store_true', help='Fixed eight-root subscription component replay; original coverage remains incomplete')
+    parser.add_argument('--arm64', action='store_true', help='Separately reviewed local ARM compiler, subscriptions mode only')
+    parser.add_argument('--arm64-output', type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.arm64 and not args.subscriptions:
+        raise RuntimeError('ARM Elm selection is restricted to subscriptions')
+    if args.arm64_output is not None and (not args.arm64 or args.arm64_output.name != 'subscriptions'
+            or args.arm64_output.parent.parent != REPO / '.warlock-contributor'
+            or not re.fullmatch('arm64-cpu-[0-9]+', args.arm64_output.parent.name)):
+        raise RuntimeError('Unexpected private ARM subscription output')
     scope = require_qa_scope()
     runtime_base()
     root = REPO / 'implementation/warlock'
     held = REPO / 'implementation/warlock-preview-provider-v143'
-    output = REPO / '.warlock-contributor' / ('elm-cpu-' + str(time.time_ns()))
+    output = args.arm64_output or REPO / '.warlock-contributor' / ('elm-cpu-' + str(time.time_ns()))
     output.mkdir(parents=True)
     report = {'schema': 1, 'passed': False, 'scope': 'Elm compiler and pure production projection only',
               'nativeAcceptance': False, 'releaseAccepted': False, 'protectedScope': scope, 'commands': []}
     node = Path(shutil.which('node') or '/missing-node').resolve()
+    if args.arm64:
+        import arm64_toolchain as toolchain
+    else:
+        spec = importlib.util.spec_from_file_location('held_toolchain', held / 'qa/toolchain.py')
+        toolchain = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(toolchain)
+    pinned = toolchain.verify()
+    if args.arm64:
+        node = Path(pinned['node'])
+        report['arm64Toolchain'] = pinned
     report['developmentTools'] = {name: {'path': str(path), 'sha256': sha(path)}
                                   for name, path in [('python', Path(sys.executable).resolve()), ('node', node)]}
-    spec = importlib.util.spec_from_file_location('held_toolchain', held / 'qa/toolchain.py')
-    toolchain = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(toolchain)
-    pinned = toolchain.verify()
     report['compilerSHA256'] = pinned['compilerSHA256']
     sources = {str(p.relative_to(REPO)): sha(p) for p in sorted((root / 'src').rglob('*.elm'))}
     sources['implementation/warlock/elm.json'] = sha(root / 'elm.json')
@@ -91,7 +105,9 @@ def main():
     selected_artifacts = {}
     shutil.copytree(held / pinned['elmHome'], output / 'elm-home')
     from elm_http_dependencies import stage as stage_http_dependencies
-    report['httpDependencies'] = stage_http_dependencies(output / 'elm-home')
+    report['httpDependencies'] = ({'scope': 'Exact complete ARM cache inventory',
+                                   'tree': pinned['trees'][pinned['elmHome']]}
+                                  if args.arm64 else stage_http_dependencies(output / 'elm-home'))
     config = json.loads((root / 'elm.json').read_text())
     config['source-directories'] = ['src', 'qa']
     (work / 'qa').mkdir()

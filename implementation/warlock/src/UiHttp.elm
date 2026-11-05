@@ -175,7 +175,7 @@ allowed : Role -> String -> Bool
 allowed role kind =
     case role of
         Controller -> List.member kind ["native-event","view-topology","view-action","view-disposition","view-dismiss","view-escape","view-reflow"]
-        Renderer -> List.member kind ["presentation","announcements","focus"]
+        Renderer -> List.member kind ["presentation","announcements","focus","native-preview-grant","native-preview-quarantine","native-preview-closed"]
 
 updateEffects : Msg -> Model -> (Model,List Effect,Maybe Event)
 updateEffects message ((Model model) as current) =

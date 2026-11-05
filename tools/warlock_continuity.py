@@ -20,7 +20,7 @@ PROMPT = (
     "or resume an actual external-blocked goal. If the existing unattended authorization remains "
     "valid, repair internal failures and continue authorized work. Preserve source ownership, "
     "all QA/readiness gates, deadlines, failed evidence and native acceptance limits. Maintain "
-    "the authorized 15 roles only after checking existing workers and coordinator ownership; "
+    "the currently authorized roles only after checking existing workers and coordinator ownership; "
     "never duplicate coordinators, identities or workers. Reconcile actual terminal reports and "
     "unconsumed handles, then refresh the continuation checkpoint. This queued message does not "
     "establish that development restarted or that any check passed."
@@ -115,8 +115,10 @@ def tick(path, clock=time.time, runner=subprocess.run):
     checkpoint, info = read_json(config["checkpoint"])
     if not isinstance(checkpoint, dict) or info.st_mtime > now:
         raise ValueError("Invalid or future checkpoint")
-    if checkpoint.get("goalStatus") in ("paused", "complete"):
+    if checkpoint.get("goalStatus") in ("paused", "complete", "completed", "stopped", "cancelled", "canceled"):
         return dict(result, status="goal-quiescent")
+    if checkpoint.get("externalBlocker"):
+        return dict(result, status="external-blocked")
     reason = "stale-checkpoint" if now - info.st_mtime > 300 else None
     active = checkpoint.get("activeVerification", {})
     if isinstance(active, dict) and "running" in str(active.get("status", "")).lower():
@@ -146,6 +148,9 @@ def tick(path, clock=time.time, runner=subprocess.run):
     # Recheck the exact private config after observations, then reserve before dispatch.
     if load_config(path) != (config, expires) or clock() >= expires:
         return dict(result, status="config-changed-or-expired")
+    latest, latest_info = read_json(config["checkpoint"])
+    if latest != checkpoint or latest_info.st_mtime_ns != info.st_mtime_ns:
+        return dict(result, status="checkpoint-changed")
     persist(state_path, {"lastAttemptEpoch": now, "reason": reason})
     result.update(queueAttempted=True, status="wake-unconfirmed", reason=reason)
     argv = [config["codex"], "queue", "--thread", config["thread"], "--message", PROMPT,
@@ -179,7 +184,8 @@ def main():
                               "queueAttempted": False, "restartVerified": False}
                     code = 2
                 print(json.dumps(result, sort_keys=True), flush=True)
-                if not args.watch:
+                if not args.watch or result.get("status") in (
+                        "disarmed", "expired", "goal-quiescent", "external-blocked"):
                     return code
                 time.sleep(60)
     except KeyboardInterrupt:

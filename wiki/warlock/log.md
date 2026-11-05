@@ -497,3 +497,11 @@ The exact existing-root wake nonce is acknowledged. The matching Haskell compone
 - Protected component checks pass three new HttpPopup histories and their expected-reason rejection controls. Earlier joined histories and SiteMain checks remain included.
 - Selected complete model and typed-effect observations do not prove a complete opaque command AST or an HTTP native-control producer.
 - Source and immutable local report hashes are in [restoration evidence](../../docs/warlock-build-loop/v2/restoration-component-evidence-20261102.json). Whole TEA004, current-product Omarchy input and pixels, and release acceptance remain open.
+
+
+## [2026-11-05 13:20] build | Typed HTTP controls on Omarchy ARM64
+
+- The current component routes authenticated grant, quarantine and closed facts to Popup through the actual Owner boundary.
+- Protected protocol and Owner suites pass. The 35-case Elm replay includes closed lifetime, matching quarantine, foreign bindings and seeded sequences.
+- The [component record](../../docs/warlock-build-loop/v2/http-preview-controls-component-20261105.json) preserves source hashes and local receipt references. Prior failed runs remain retained.
+- Purpose issuance, nonempty proposals, paint, the native producer and original TEA004 acceptance remain open. Ten Terra planning sessions now report to the requested Sol supervisor.

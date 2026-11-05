@@ -552,10 +552,16 @@ nativeGatewayAdmissionRegression budget = do
  let valid = "{\"bridgeProtocol\":1,\"kind\":\"native-event\",\"payload\":{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"nativeOperations\":[]}}"
      foreignBinding = "{\"bridgeProtocol\":1,\"kind\":\"native-event\",\"payload\":{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"2\"},\"nativeOperations\":[]}}"
      nativeOperations = "{\"bridgeProtocol\":1,\"kind\":\"native-event\",\"payload\":{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"nativeOperations\":[\"activate\"]}}"
+     previewGrant frontend = jsonBytes (object [("bridgeProtocol",J.JNumber "1"),("kind",text "native-event"),
+       ("payload",object [("protocolVersion",J.JNumber "3"),("kind",text "native-preview-grant"),
+         ("binding",object [("lifetime",text "1"),("session",text "1"),("frontend",text frontend)]),
+         ("receiverEpoch",text "1"),("capacity",J.JNumber "1")])])
      cases = [("foreign binding refused",foreignBinding,Just "foreign native gateway binding"),
               ("fresh matching peer after foreign binding",valid,Nothing),
               ("native operation refused",nativeOperations,Just "unsupported version or kind"),
-              ("fresh matching peer after native operation",valid,Nothing)]
+              ("fresh matching peer after native operation",valid,Nothing),
+              ("preview foreign binding refused",previewGrant "2",Just "foreign native gateway binding"),
+              ("preview positive matching peer after foreign binding",previewGrant "1",Nothing)]
  forM_ cases $ \(label,raw,expectedError) -> mask $ \restore -> do
   framed <- must (Framing.desktopGatewayPrefix raw)
   owner <- getProcessID
@@ -632,6 +638,89 @@ nativeGatewayAdmissionRegression budget = do
     check budget ("actual adopted gateway: " ++ label) (status == Just (Exited ExitSuccess))
    ) `finally` cleanup
 
+-- Actual authenticated native socket -> Owner FIFO -> popup HTTP boundary.
+-- No compositor, native producer or preview-purpose issuance is inferred.
+previewControlRoutingRegression :: IORef Int -> FilePath -> J.Json -> IO ()
+previewControlRoutingRegression budget storage documents = mask $ \restore -> do
+ directory <- fresh (storage </> "preview-control-routing")
+ let configPath=directory </> "ui.json"
+     readyPath=directory </> "ready"
+     resultPath=directory </> "result.json"
+     payload kind epoch extra=object ([("protocolVersion",J.JNumber "3"),("kind",text kind),("binding",bindingJson),("receiverEpoch",text epoch)]++extra)
+     inputs=[payload "native-preview-grant" "1" [("capacity",J.JNumber "1")],
+             payload "native-preview-quarantine" "1" [],payload "native-preview-closed" "1" [],
+             payload "native-preview-grant" "2" [("capacity",J.JNumber "1")]]
+     gateway payloadValue=object [("bridgeProtocol",J.JNumber "1"),("kind",text "native-event"),("payload",payloadValue)]
+     expected payloadValue=object [("bridgeProtocol",J.JNumber "1"),("kind",at "kind" payloadValue),
+       ("payload",case payloadValue of J.JObject fields -> object (filter (\(key,_) -> key/="protocolVersion" && key/="kind") fields); _ -> J.JNull)]
+ now <- getMonotonicTimeNSec
+ let cutoff=toInteger now+5000000000
+ writePrivate configPath (jsonBytes (object [("schema",J.JNumber "1"),("binding",bindingJson),
+   ("deadlineMonotonicNs",text (show cutoff)),("documents",documents)]))
+ (peer,endpoint) <- S.socketPair S.AF_UNIX S.Stream S.defaultProtocol
+ pid <- (forkProcess $ restore $ do
+   S.close peer
+   outcome <- try $ do
+    S.withFdSocket endpoint $ \fd -> do
+     _ <- dupTo (Fd fd) (Fd 0)
+     pure ()
+    S.close endpoint
+    result <- withPeerNetwork $ \witness -> do
+     enterPrivateNetwork
+     config <- Config.loadUiConfig configPath >>= must
+     Owner.runUiOwner witness config $ \endpoints _ -> do
+      writePrivate readyPath "ready"
+      let poll origin remaining = do
+           response@(Response code _ _) <- request origin "GET" "/events" [("Host",Policy.hostBytes origin),("X-Warlock-Api","1")] B.empty
+           if code==200 || remaining<=0 then pure response else threadDelay 2000 >> poll origin (remaining-1)
+      forM_ inputs $ \input -> do
+       Response code _ bytes <- poll (Owner.popupOrigin endpoints) (100 :: Int)
+       packet <- parseJson bytes
+       unless (code==200 && packet==expected input) (ioError (userError "native preview popup recipient/FIFO/payload differs"))
+      forM_ [Owner.controllerOrigin endpoints,Owner.barOrigin endpoints,Owner.popupOrigin endpoints] $ \origin -> do
+       Response code _ _ <- request origin "GET" "/events" [("Host",Policy.hostBytes origin),("X-Warlock-Api","1")] B.empty
+       unless (code==204) (ioError (userError "native preview control duplicated or delivered to foreign role"))
+      pure (Owner.EngineResult True True)
+    writePrivate resultPath (Owner.uiResultJson result)
+    unless (Owner.uiPassed result && Owner.uiCleanup result && Owner.uiCommitCount result==0 && Owner.uiActionCount result==0)
+      (ioError (userError "preview control Owner cleanup or authority count differs"))
+   case outcome of
+    Right () -> exitImmediately ExitSuccess
+    Left (problem :: SomeException) -> C.putStrLn (C.pack ("preview routing: "++show problem)) >> exitImmediately (ExitFailure 1)
+  ) `onException` (S.close endpoint >> S.close peer)
+ S.close endpoint
+ reaped <- newIORef False
+ let live = (<cutoff) . toInteger <$> getMonotonicTimeNSec
+     awaitReady = do
+      ready <- doesFileExist readyPath
+      if ready then pure True else do
+       remaining <- live
+       if remaining then threadDelay 2000 >> awaitReady else pure False
+     awaitExit = do
+      status <- getProcessStatus False False pid
+      case status of
+       Just value -> writeIORef reaped True >> pure (Just value)
+       Nothing -> do
+        remaining <- live
+        if remaining then threadDelay 2000 >> awaitExit else pure Nothing
+     cleanup = do
+      done <- readIORef reaped
+      unless done $ do
+       signalProcess sigKILL pid
+       _ <- getProcessStatus True False pid
+       pure ()
+      S.close peer
+ (do
+   ready <- awaitReady
+   check budget "actual Owner listeners prepared before native preview control fixture" ready
+   forM_ inputs $ \input -> must (Framing.desktopGatewayPrefix (jsonBytes (gateway input))) >>= N.sendAll peer
+   status <- awaitExit
+   check budget "actual Owner preserves closed-popup control recipient FIFO and exact payloads" (status==Just (Exited ExitSuccess))
+   observed <- B.readFile resultPath >>= parseJson
+   check budget "control-only Owner admits no invented controller commit or renderer action"
+     (at "passed" observed==J.JBool True && at "cleanup" observed==J.JBool True)
+  ) `finally` cleanup
+
 parent :: FilePath -> IO ()
 parent storage = do
  names <- listDirectory storage
@@ -645,6 +734,7 @@ parent storage = do
  manifestBytes <- B.readFile manifestPath
  manifest <- parseJson manifestBytes
  _ <- must (J.exactObject ["backend","documents"] manifest)
+ previewControlRoutingRegression budget storage (at "documents" manifest)
  backendPath <- stringField "path" (at "backend" manifest)
  backendImage <- imageFact backendPath
  _ <- must (J.exactObject ["path","device","inode","size","sha256"] (at "backend" manifest))
