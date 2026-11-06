@@ -72,6 +72,76 @@ def verify_tools():
     return packet
 
 
+TEST_SELECTOR_LIMIT = 64
+
+
+def validate_selector_admission(plan, declared_tests=None):
+    """Pure selector layer shared by real admission and fixed startup controls."""
+    names = [*plan['tests'], *plan['invariants'], *plan['witnesses']]
+    if any(not isinstance(name, str) or not re.fullmatch('[A-Za-z][A-Za-z0-9_]*', name) for name in names):
+        raise RuntimeError('Model selectors must be simple declared identifiers')
+    for key in ('tests', 'invariants', 'witnesses'):
+        limit = TEST_SELECTOR_LIMIT if key == 'tests' else 32
+        if not 1 <= len(plan[key]) <= limit or len(set(plan[key])) != len(plan[key]):
+            raise RuntimeError('Empty, repeated or excessive model selectors')
+    if declared_tests is not None and sorted(declared_tests) != sorted(plan['tests']):
+        raise RuntimeError('Named model/test declarations do not match the reviewed plan')
+
+
+def selector_admission_controls():
+    """Fixed in-memory admission checks, never synthetic Quint files/runs."""
+    def selectors(tests=3, invariants=1, witnesses=1):
+        return {'tests': ['Test' + str(n) for n in range(tests)],
+                'invariants': ['Invariant' + str(n) for n in range(invariants)],
+                'witnesses': ['Witness' + str(n) for n in range(witnesses)]}
+    excessive = 'Empty, repeated or excessive model selectors'
+    mismatch = 'Named model/test declarations do not match the reviewed plan'
+    cases = []
+    for count in (49, 40, 36, 64):
+        plan = selectors(tests=count)
+        cases.append(('complete-' + str(count), plan, list(plan['tests']), None))
+    plan = selectors(tests=65)
+    cases.append(('tests-65-rejected', plan, list(plan['tests']), excessive))
+    for key in ('invariants', 'witnesses'):
+        plan = selectors(**{key: 33})
+        cases.append((key + '-33-rejected', plan, list(plan['tests']), excessive))
+        plan = selectors(**{key: 32})
+        cases.append((key + '-32-admitted', plan, list(plan['tests']), None))
+    plan = selectors()
+    declared = list(plan['tests'])
+    plan['tests'].pop()
+    cases.append(('omitted-declared-test-rejected', plan, declared, mismatch))
+    plan = selectors()
+    declared = list(plan['tests'])
+    plan['tests'].append(plan['tests'][0])
+    cases.append(('duplicate-test-rejected', plan, declared, excessive))
+    plan = selectors()
+    declared = list(plan['tests'])
+    plan['tests'][-1] = 'UndeclaredTest'
+    cases.append(('undeclared-test-rejected', plan, declared, mismatch))
+    plan = selectors()
+    declared = list(plan['tests'])
+    plan['tests'][-1] = 'Test2|Injected'
+    cases.append(('injected-name-rejected', plan, declared, 'Model selectors must be simple declared identifiers'))
+    rows = []
+    for label, plan, declared, expected_error in cases:
+        observed_error = None
+        error_type = None
+        try:
+            validate_selector_admission(plan, declared)
+        except Exception as error:  # Preserve unexpected errors; they cannot count as intended rejection.
+            observed_error, error_type = str(error), type(error).__name__
+        passed = observed_error == expected_error and (expected_error is None or error_type == 'RuntimeError')
+        rows.append({'name': label, 'passed': passed, 'expectedError': expected_error,
+                     'observedError': observed_error, 'errorType': error_type,
+                     'tests': len(plan['tests']), 'declaredTests': len(declared),
+                     'invariants': len(plan['invariants']), 'witnesses': len(plan['witnesses'])})
+    return {'schema': 1, 'passed': all(row['passed'] for row in rows), 'controls': rows,
+            'limits': {'tests': TEST_SELECTOR_LIMIT, 'invariants': 32, 'witnesses': 32},
+            'scope': 'Pure selector admission only; no synthetic models or Quint commands',
+            'modelAcceptance': False, 'nativeAcceptance': False}
+
+
 def validate_plan(plan, pair, inputs):
     if (set(plan) != {'schema', 'pair', 'sourceBase', 'modelModule', 'testModule', 'tests', 'invariants',
                      'witnesses', 'seeds', 'maxSamples', 'maxSteps'}
@@ -84,12 +154,11 @@ def validate_plan(plan, pair, inputs):
     symbols = [plan['modelModule'], plan['testModule'], *plan['tests'], *plan['invariants'], *plan['witnesses']]
     if any(not isinstance(name, str) or not re.fullmatch('[A-Za-z][A-Za-z0-9_]*', name) for name in symbols):
         raise RuntimeError('Model selectors must be simple declared identifiers')
-    for key in ('tests', 'invariants', 'witnesses'):
-        if not 1 <= len(plan[key]) <= 32 or len(set(plan[key])) != len(plan[key]):
-            raise RuntimeError('Empty, repeated or excessive model selectors')
+    validate_selector_admission(plan)
     model = inputs / ('tea004-preview-' + pair + '.qnt')
     tests = inputs / ('tea004-preview-' + pair + '_test.qnt')
     texts = [model.read_text(), tests.read_text()]
+    validate_selector_admission(plan, re.findall(r'\brun\s+(\w+)\s*=', texts[1]))
     if (re.findall(r'\bmodule\s+(\w+)\s*\{', texts[0]) != [plan['modelModule']]
             or re.findall(r'\bmodule\s+(\w+)\s*\{', texts[1]) != [plan['testModule']]
             or sorted(re.findall(r'\brun\s+(\w+)\s*=', texts[1])) != sorted(plan['tests'])):
@@ -117,7 +186,7 @@ def main():
     runtime_base()
     inputs = ROOT / '.warlock-contributor/team-quint-inputs' / pair
     plan = read_json(inputs / 'plan.json')
-    validate_plan(plan, pair, inputs)
+    controls = selector_admission_controls()
     tools = verify_tools()
     sources = {name: digest(ROOT / name) for name in sorted(team_quint_inputs(ROOT, pair))}
     if args.inside_private is None:
@@ -127,7 +196,8 @@ def main():
                   'protectedScope': scope, 'commands': [], 'phase': 'tests-only' if args.tests_only else 'full',
                   'scope': 'Isolated draft model typecheck, named tests and sampled traces only',
                   'exhaustiveProof': False, 'implementationAcceptance': False, 'nativeAcceptance': False,
-                  'originalAcceptance': False, 'releaseAccepted': False, 'toolchainSHA256': digest(TOOL)}
+                  'originalAcceptance': False, 'releaseAccepted': False, 'toolchainSHA256': digest(TOOL),
+                  'selectorAdmissionControls': controls}
         (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
         command = ['/usr/bin/bwrap', '--die-with-parent', '--unshare-net', '--unshare-pid',
                    '--ro-bind', '/usr', '/usr', '--symlink', 'usr/bin', '/bin', '--symlink', 'usr/lib', '/lib',
@@ -143,6 +213,9 @@ def main():
         env = {'PATH': '/usr/bin:/bin', 'LANG': 'C.UTF-8', 'LC_ALL': 'C.UTF-8', 'NO_COLOR': '1',
                'PYTHONDONTWRITEBYTECODE': '1', 'HOME': str(output / 'home'), 'TMPDIR': '/tmp'}
         try:
+            if not controls['passed']:
+                raise RuntimeError('Fixed selector admission startup controls failed; no Quint invocation')
+            validate_plan(plan, pair, inputs)
             child = subprocess.run(command, cwd=ROOT, env=env, timeout=3500, check=False)
             report = read_json(output / 'report.json')
             verify_tools()
@@ -218,6 +291,10 @@ def main():
             raise RuntimeError(label + ' failed exact result classification; retain trace and diagnostics')
 
     try:
+        report['selectorAdmissionControls'] = controls
+        if not controls['passed']:
+            raise RuntimeError('Fixed selector admission startup controls failed; no Quint invocation')
+        validate_plan(plan, pair, inputs)
         model = 'tea004-preview-' + pair + '.qnt'
         tests = 'tea004-preview-' + pair + '_test.qnt'
         run('typecheck-model', ['typecheck', model], 'typecheck')
