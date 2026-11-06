@@ -14,7 +14,7 @@ const pins={
  'implementation/warlock/src/Surface.elm':'175d4432e2a28c18cfa18e72f2effc61bf8d551ddce0679e14e25681fc78ec1c',
  'implementation/warlock/src/Popup.elm':'c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb',
  'implementation/warlock/src/Presentation.elm':'745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396',
- 'implementation/warlock/src/UiHttp.elm':'73ae1bcb1d1d98fbe8ecbcfebca879f3df1e668dc2366cdfb37979fa6c3cf846',
+ 'implementation/warlock/src/UiHttp.elm':'c3543e27ad787d3c84894554178121205d19b9868c250d0717989c1207cdc72f',
  'implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs':'3585e3ca0f8fbca8dc9b66d54821e8e60707b6798550945ea983c81a4181926f'
 };
 const C=(tag,...xs)=>Object.fromEntries([['$',tag],...xs.map((x,i)=>[String.fromCharCode(97+i),x])]);

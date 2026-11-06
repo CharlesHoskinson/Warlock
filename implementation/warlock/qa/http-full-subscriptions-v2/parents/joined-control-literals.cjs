@@ -15,9 +15,9 @@ const pins={
  'implementation/warlock/src/OutcomeAnnouncements.elm':'e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb',
  'implementation/warlock/src/Popup.elm':'c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb',
  'implementation/warlock/src/Presentation.elm':'745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396',
- 'implementation/warlock/src/UiHttp.elm':'73ae1bcb1d1d98fbe8ecbcfebca879f3df1e668dc2366cdfb37979fa6c3cf846',
+ 'implementation/warlock/src/UiHttp.elm':'c3543e27ad787d3c84894554178121205d19b9868c250d0717989c1207cdc72f',
  'implementation/warlock/src/HttpMain.elm':'c0dcd27b03b737b83be70d439944ea9741128e18dd9405b55595c559e8bef3cf',
- 'implementation/warlock/src/HttpPopup.elm':'b0c3596d0e637722050830ca50ed2dd116b5c95953a3e6b988683d649563a52d',
+ 'implementation/warlock/src/HttpPopup.elm':'e7a8b1d479d3b8d728bf97b5bab8a2cfee7b2a1010902d984690215574ee84e2',
  'implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs':'3585e3ca0f8fbca8dc9b66d54821e8e60707b6798550945ea983c81a4181926f'
 };
 const C=(tag,...v)=>Object.fromEntries([['$',tag],...v.map((x,i)=>[String.fromCharCode(97+i),x])]);

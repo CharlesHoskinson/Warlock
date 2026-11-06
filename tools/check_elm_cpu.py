@@ -104,6 +104,10 @@ def main():
     staged_tea_sources = {}
     selected_artifacts = {}
     shutil.copytree(held / pinned['elmHome'], output / 'elm-home')
+    if args.arm64:
+        from arm64_toolchain import inventory as arm_inventory
+        if arm_inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
+            raise RuntimeError('Actual initial compiler cache differs from approved ARM cache')
     from elm_http_dependencies import stage as stage_http_dependencies
     report['httpDependencies'] = ({'scope': 'Exact complete ARM cache inventory',
                                    'tree': pinned['trees'][pinned['elmHome']]}
@@ -189,6 +193,68 @@ def main():
             run('ui-http', [str(node), 'qa/ui-http.cjs', *[str(output / (name + '.js'))
                            for name in ('HttpMain', 'HttpBar', 'HttpPopup', 'UiHttpReplay')],
                            str(output / 'ui-http.json')])
+            if args.subscriptions:
+                for filename in ('legacy-controls-supplement.cjs', 'legacy-controls-budget.json'):
+                    source = root / 'qa' / filename
+                    staged = work / 'qa' / filename
+                    if source.is_symlink() or not source.is_file():
+                        raise RuntimeError('Fixed legacy HTTP supplement input missing: ' + filename)
+                    key = str(source.relative_to(REPO))
+                    sources[key] = sha(source)
+                    shutil.copy2(source, staged)
+                    if sha(staged) != sources[key]:
+                        raise RuntimeError('Legacy HTTP supplement stage differs: ' + filename)
+                legacy_budget = json.loads((work / 'qa/legacy-controls-budget.json').read_text())
+                legacy_names = legacy_budget.get('namedCases')
+                if (legacy_budget.get('schema') != 1 or legacy_budget.get('cases') != 22
+                        or legacy_budget.get('assertions') != 50 or legacy_budget.get('seed') != 20261101
+                        or legacy_budget.get('seedCount') != 1 or legacy_budget.get('responseMs') != 5000
+                        or legacy_budget.get('campaignMs') != 60000 or legacy_budget.get('overallMs') != 180000
+                        or not isinstance(legacy_names, list) or len(legacy_names) != 22
+                        or len(set(legacy_names)) != 22
+                        or legacy_budget.get('driverSha256') != sha(work / 'qa/legacy-controls-supplement.cjs')
+                        or legacy_budget.get('harnessSha256') != sha(work / 'qa/ui-http.cjs')
+                        or legacy_budget.get('sourceRoot') != str(REPO)
+                        or set(legacy_budget.get('sourceHashes', {})) != {
+                            'implementation/warlock/src/UiHttp.elm', 'implementation/warlock/src/HttpPopup.elm',
+                            'implementation/warlock/src/HttpMain.elm', 'implementation/warlock/src/HttpBar.elm',
+                            'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs'}
+                        or any(sources.get(name) != digest for name, digest in legacy_budget['sourceHashes'].items())):
+                    raise RuntimeError('Fixed legacy HTTP supplement budget/source identity differs')
+                run('legacy-controls-syntax', [str(node), '--check', 'qa/legacy-controls-supplement.cjs'])
+                legacy_result_path = output / 'legacy-controls-supplement.json'
+                run('legacy-controls-supplement', [str(node), 'qa/legacy-controls-supplement.cjs',
+                    *[str(output / (name + '.js')) for name in ('HttpMain', 'HttpBar', 'HttpPopup', 'UiHttpReplay')],
+                    str(legacy_result_path), str(REPO)])
+                legacy = json.loads(legacy_result_path.read_text())
+                legacy_images = {key: sha(output / (name + '.js')) for key, name in
+                                 (('main', 'HttpMain'), ('bar', 'HttpBar'), ('popup', 'HttpPopup'), ('replay', 'UiHttpReplay'))}
+                legacy_artifacts = dict(legacy_images, harness=sha(work / 'qa/ui-http.cjs'),
+                    driver=sha(work / 'qa/legacy-controls-supplement.cjs'),
+                    budget=sha(work / 'qa/legacy-controls-budget.json'), prefix=legacy_budget['prefixSha256'])
+                legacy_budgets = {'responseMs': 5000, 'campaignMs': 60000, 'overallMs': 180000}
+                terminal = legacy.get('terminal', {})
+                if (legacy.get('schema') != 1 or legacy.get('passed') is not True
+                        or any(legacy.get(name) is not False for name in ('acceptanceAuthority', 'originalAcceptance',
+                            'nativeAcceptance', 'guiAcceptance', 'cspExecutionAcceptance', 'releaseAccepted'))
+                        or legacy.get('seed') != 20261101 or legacy.get('seedCount') != 1
+                        or legacy.get('artifactHashes') != legacy_artifacts
+                        or legacy.get('sourceHashes') != legacy_budget['sourceHashes']
+                        or legacy.get('budgets') != legacy_budgets
+                        or len(legacy.get('checks', [])) != 50 or legacy.get('failures') != []
+                        or any(row.get('passed') is not True for row in legacy.get('checks', []))
+                        or any(sum(row.get('name') == name for row in legacy['checks']) != 1 for name in legacy_names)
+                        or terminal.get('schema') != 1 or terminal.get('complete') is not True
+                        or terminal.get('cases') != 22 or terminal.get('assertions') != 50
+                        or terminal.get('expectedAssertions') != 50 or terminal.get('seed') != 20261101
+                        or terminal.get('seedCount') != 1 or terminal.get('missing') != []
+                        or terminal.get('namedCases') != legacy_names or terminal.get('artifactHashes') != legacy_artifacts
+                        or terminal.get('sourceHashes') != legacy_budget['sourceHashes']
+                        or terminal.get('budgets') != legacy_budgets):
+                    raise RuntimeError('Legacy HTTP supplement terminal receipt incomplete or mismatched')
+                report['legacyControlsSupplement'] = {'resultPath': legacy_result_path.name,
+                    'resultSHA256': sha(legacy_result_path), 'result': legacy,
+                    'scope': 'Controlled HTTP only; renderer role uses UiHttpReplay proxy; no nonempty legacy-owned state/Owner/native acceptance'}
         if args.subscriptions:
             roots = ('Main', 'Bar', 'Popup', 'HttpMain', 'HttpBar', 'HttpPopup',
                      'NativePreviewAdmission', 'NativePreviewRenderer')
@@ -506,6 +572,80 @@ def main():
             report['subscriptions'] = dict(summary, resultPath=result_path.name, resultSHA256=sha(result_path))
             report['compiledSubscriptionRoots'] = list(roots)
             report['wholeTea004Accepted'] = False
+            if args.arm64:
+                context_path = output / 'reachable-compilation-context.json'
+                context = {'schema': 1, 'profile': 'reachable-legacy-v2', 'node': pinned['node'],
+                    'elm': pinned['elm'], 'elmHome': pinned['elmHome'],
+                    'toolchainManifestSHA256': pinned['manifestSHA256'],
+                    'initialElmHomeInventory': pinned['trees'][pinned['elmHome']],
+                    'stagedElmManifestSHA256': staged_elm_manifest_sha,
+                    'bundleSha256': plain_hashes['HttpPopup'], 'sourceHashes': sources,
+                    'commands': report['commands']}
+                context_path.write_text(json.dumps(context, sort_keys=True) + '\n')
+                run('reachable-legacy', [sys.executable, '-B', str(REPO / 'tools/check_http_reachable_cpu.py'),
+                                       str(output), sha(context_path)])
+                reachable_path = output / 'reachable-legacy.stdout'
+                reachable = json.loads(reachable_path.read_text())
+                expected_rows = [{'seed': seed, 'cases': 10, 'steps': 38, 'wholeObservations': 38,
+                                  'counterfactuals': 4} for seed in (20261105, 20261106)]
+                actual_rows = reachable.get('receipt', [])
+                fields = ('seed', 'cases', 'steps', 'wholeObservations', 'counterfactuals')
+                expected_negatives = [('retry-route-removed', 'closed-reconcile-after-correlated-http204-reoffers', 5),
+                    ('retirement-route-removed', 'closed-empty-retry-retirement-duplicate', 3),
+                    ('retry-closed-gate', 'closed-reconcile-after-correlated-http204-reoffers', 5),
+                    ('retirement-closed-gate', 'closed-empty-retry-retirement-duplicate', 3)]
+                if ([{key: row.get(key) for key in fields} for row in actual_rows] != expected_rows
+                        or reachable.get('status') != 'passed'
+                        or reachable.get('profile') != 'reachable-legacy-pure-draft'
+                        or reachable.get('nativeAcceptance') is not False or reachable.get('originalAcceptance') is not False):
+                    raise RuntimeError('Reachable exact two-seed terminal budget differs')
+                for row in actual_rows:
+                    negatives = row.get('negatives', [])
+                    if [(n.get('label'), n.get('caseName'), n.get('step')) for n in negatives] != expected_negatives:
+                        raise RuntimeError('Reachable exact counterfactual inventory differs')
+                    for negative in negatives:
+                        counter = negative.get('counterexample', {})
+                        reason = negative['caseName'] + ' step ' + str(negative['step']) + ': COMPLETE owning model/subscription/typed descriptions differ'
+                        if (negative.get('reason') != reason or counter.get('name') != negative['caseName']
+                                or counter.get('step') != negative['step']
+                                or not isinstance(counter.get('actual'), dict) or not isinstance(counter.get('expected'), dict)
+                                or counter['actual'] == counter['expected']):
+                            raise RuntimeError('Reachable counterfactual is an unrelated or missing full mismatch')
+                for row in actual_rows:
+                    guards = row.get('observerGuardNegatives', [])
+                    guard_case = 'closed-empty-retry-retirement-duplicate'
+                    if (row.get('observerGuards') != 2
+                            or [(n.get('label'), n.get('caseName'), n.get('step')) for n in guards] !=
+                               [('returned-command-drop', guard_case, 1), ('returned-command-duplicate', guard_case, 1)]):
+                        raise RuntimeError('Reachable command-only guard inventory differs')
+                    for negative, count in zip(guards, (0, 2)):
+                        counter = negative.get('counterexample', {})
+                        actual, expected = dict(counter.get('actual', {})), dict(counter.get('expected', {}))
+                        actual_counts = actual.pop('commandLeaves', None)
+                        expected_counts = expected.pop('commandLeaves', None)
+                        if (negative.get('reason') != guard_case + ' step 1: COMPLETE owning model/subscription/typed descriptions differ'
+                                or counter.get('name') != guard_case or counter.get('step') != 1
+                                or actual != expected or not actual
+                                or actual_counts != {'Http': count, 'Task': 0}
+                                or expected_counts != {'Http': 1, 'Task': 0}
+                                or not re.fullmatch('[0-9a-f]{64}', negative.get('mutantSHA256', ''))):
+                            raise RuntimeError('Reachable missing/duplicate Cmd guard changed other literal observations')
+                fixture = output / 'work/qa/reachable-legacy'
+                expected_hashes = {'bundle': plain_hashes['HttpPopup'], 'observer': sha(fixture / 'reachable-observer.cjs'),
+                    'literals': sha(fixture / 'reachable-literals.cjs'), 'closure': sha(output / 'reachable-closure.json'),
+                    'compileReceipt': sha(output / 'reachable-compile-receipt.json')}
+                if reachable.get('hashes') != expected_hashes:
+                    raise RuntimeError('Reachable source/script/image/closure binding differs')
+                closure = json.loads((output / 'reachable-closure.json').read_text())
+                for name, expected in closure['files'].items():
+                    path = Path(name)
+                    if path.is_symlink() or not path.is_file() or sha(path) != expected:
+                        raise RuntimeError('Reachable closure changed after private replay: ' + name)
+                report['reachableLegacy'] = {'resultPath': reachable_path.name, 'resultSHA256': sha(reachable_path),
+                    'result': reachable, 'closureSHA256': expected_hashes['closure'],
+                    'compileReceiptSHA256': expected_hashes['compileReceipt'],
+                    'acceptanceAuthority': False, 'nativeAcceptance': False, 'originalAcceptance': False,
+                    'releaseAccepted': False, 'scope': 'Actual init, controlled HTTP whole-model/effect fixture only; empty legacy retirement and scoped retry, no Owner/native acceptance'}
             report['subscriptionQaStage'] = {'path': str(subscription_qa.relative_to(output)),
                                                'hashes': {name: sha(subscription_qa / name) for name in qa_files}}
             report['subscriptionLimits'] = [

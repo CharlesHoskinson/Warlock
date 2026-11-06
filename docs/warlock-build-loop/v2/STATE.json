@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-05T20:21:13.789665+00:00",
+  "updatedUTC": "2026-11-06T03:29:52.842944+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -2724,61 +2724,27 @@
     }
   ],
   "lastCompletedBoundedSlice": {
-    "id": "haskell-desktop-stream-catalog-pins",
+    "id": "tea-subscriptions-original-frontend-adjudication",
     "requirements": [
-      "ELM-ARC-003",
-      "ELM-DEL-011"
+      "ELM-TEA-004"
     ],
     "scenarios": [
-      "architecture-003",
-      "delivery-011",
-      "arbitrary-path-denied"
+      "tea-subscriptions"
     ],
-    "paths": [
-      "implementation/warlock/src/Main.elm",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
-      "implementation/warlock/haskell/protocol/protocol.cabal",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
-      "implementation/warlock/haskell/runtime/app/Main.hs",
-      "implementation/warlock/haskell/runtime/runtime.cabal",
-      "implementation/warlock/haskell/runtime/test-ui/Main.hs",
-      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
-      "implementation/warlock/haskell/protocol/test-desktop/Main.hs",
-      "implementation/warlock/qa/ui-backend-port.cjs",
-      "implementation/warlock/qa/ui-native-stream.qnt",
-      "implementation/warlock/qa/ui-native-stream_test.qnt",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceController.elm"
-    ],
-    "before": "Actual Main exposes multiple incoming ports; current Haskell protocol admits only native1/2 and has no called catalog/pin backend or GUI stream composition. Imported historical Python behavior is not Haskell implementation.",
-    "after": "The actual Main exposes one versioned incoming/outgoing stream and a called production Haskell backend validates full commit and typed operation schema before kernel-authenticated catalog/pin IO, returns matching actual outcomes, and rejects command/path/unknown operations before IO. Full privateUIHTTP/native/persistent-delivery goal remains, not redefined to a library/read-only demo.",
-    "verification": [
-      "Root protected buildall/testall and real production-executable kernel-framed actual compiledMain roundtrip with complete surfaceCommit, matching schema/hash receipts, strict typed profiles and legacy64KiB controls. Meaningful malformed/profile/provenance fuzz before anycallback, actualno command/arbitraryfileIO proof and CAS/privatefile/persistence controls; Quint model actual boundaries. Independently reviewed source readiness/immutable alloriginaloracles; no nativeGUI/AT/release inference."
-    ],
-    "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/ui-backend.json",
-    "outcome": "Whole originalARC003+DEL011/all3scenarios independentlyaccepted93674172 onimmutable5818e78f; actualsourceintegration andcompletebridge/preIOsecurityoracles. NativeGUI/privateHTTP/persistentview/AT/IME/release obligations separate.",
-    "readinessReview": ".warlock-contributor/ui-backend-readiness-review.json",
     "status": "accepted",
-    "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
-    "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
-    "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json"
+    "outcome": "original typed frontend adjudication",
+    "sourceRevision": "c3c1c893bb9962ed4e2319f37df387efa99c3615",
+    "acceptance": {
+      "path": "docs/warlock-build-loop/v2/tea-subscriptions-acceptance-20261106.json",
+      "sha256": "ea69c380fe93a7979f13ff0e497d6b6f8db883e948517777ce5479aea8e9d7f1",
+      "scope": "Whole original ELM-TEA-004/tea-subscriptions typed frontend contract on the named deterministic boundary and committed source tuple. Visible-consumer/active-transaction subscriptions and closed-overlay ordered control are qualified by the original Core port fixtures plus current HTTP replay. No native physical behavior or release acceptance is inferred.",
+      "sourceRevision": "c3c1c893bb9962ed4e2319f37df387efa99c3615",
+      "reviewer": "terra-quint5-canonical"
+    },
+    "independentReview": "docs/warlock-build-loop/v2/tea-subscriptions-review-20261106.json",
+    "scope": "Original named frontend requirement only. Related native implementation, physical observations and release remain open.",
+    "nativeAcceptance": false,
+    "releaseAccepted": false
   },
   "stoppedInvestigations": [
     {
@@ -5160,8 +5126,8 @@
     "participantRecord": ".warlock-contributor/tea-subscriptions-root.json",
     "history": "Original participant bytes and stop histories retained. Reviewed custody recovery precedes current source extension.",
     "component": "http-preview-controls-component-20261105.json",
-    "currentObservation": "Full protected HTTP/subscription component passed and was independently verified. Whole requirement, native and release acceptance remain open.",
-    "nextConcreteAction": "Complete independent original TEA004 adjudication against its exact criteria and immutable source tuple. Continue real Backend-owned receiver/default pipeline and retained POST/consume cleanup; native qualification remains separate.",
+    "currentObservation": "Original ELM-TEA-004 / tea-subscriptions accepted on committed c3c1c893 after independent source-bound frontend adjudication. Native behavior and release remain open.",
+    "nextConcreteAction": "Qualify guarded readiness schema/model contracts for original REV-034 before native wire admission. Preserve the stopped persistent-auth history and blocked peer-role preflight.",
     "teamRun": "warlock-20261105-completion",
     "teamLaunchStatus": "All ten existing Terra threads executed substantive implementation or verification turns. Runtime receipts distinguish live and terminal turns; no duplicate actors were created.",
     "guard": {
@@ -5173,7 +5139,7 @@
       "wakeScope": "One exact queued nonce reached existing root after active goal verification. Does not prove all crash or capacity recovery."
     },
     "nativeTrialArmed": false,
-    "originalAcceptance": false,
+    "originalAcceptance": true,
     "releaseAccepted": false,
     "earsRegulator": {
       "identity": "muse-ears",
@@ -5196,6 +5162,96 @@
     "previewConsumptionComponent": "preview-consumption-component-20261105.json",
     "previewWireCodecComponent": "preview-wire-codec-component-20261105.json",
     "httpTransportSubscriptionsComponent": "http-transport-subscriptions-component-20261105.json",
-    "teamExecutionReceipt": "~/.local/state/warlock-team/20261105/terra-team/full-team-activation-receipt.json"
-  }
+    "teamExecutionReceipt": "~/.local/state/warlock-team/20261105/terra-team/full-team-activation-receipt.json",
+    "originalAcceptanceScope": "ELM-TEA-004 / tea-subscriptions typed frontend contract only.",
+    "allOriginalRequirementsAccepted": false,
+    "httpReachableSubscriptionsComponent": {
+      "sourceRevision": "c3c1c893bb9962ed4e2319f37df387efa99c3615",
+      "report": ".warlock-contributor/arm64-cpu-1793934559909024677/report.json",
+      "independentExecutionReview": "docs/warlock-build-loop/v2/evidence/tea-subscriptions-20261106/execution-review.json",
+      "acceptance": "docs/warlock-build-loop/v2/tea-subscriptions-acceptance-20261106.json",
+      "wholeEarsAdded": 1,
+      "nativeAcceptance": false,
+      "releaseAccepted": false
+    }
+  },
+  "originalTea004Adjudication20261106": {
+    "status": "accepted",
+    "requirement": "ELM-TEA-004",
+    "scenario": "tea-subscriptions",
+    "sourceRevision": "c3c1c893bb9962ed4e2319f37df387efa99c3615",
+    "acceptance": {
+      "path": "docs/warlock-build-loop/v2/tea-subscriptions-acceptance-20261106.json",
+      "sha256": "ea69c380fe93a7979f13ff0e497d6b6f8db883e948517777ce5479aea8e9d7f1",
+      "scope": "Whole original ELM-TEA-004/tea-subscriptions typed frontend contract on the named deterministic boundary and committed source tuple. Visible-consumer/active-transaction subscriptions and closed-overlay ordered control are qualified by the original Core port fixtures plus current HTTP replay. No native physical behavior or release acceptance is inferred.",
+      "sourceRevision": "c3c1c893bb9962ed4e2319f37df387efa99c3615",
+      "reviewer": "terra-quint5-canonical"
+    },
+    "nativeAcceptance": false,
+    "releaseAccepted": false,
+    "wholeEarsAdded": 1,
+    "allOriginalRequirementsAccepted": false
+  },
+  "boundedCompletionHistory": [
+    {
+      "retainedAtUTC": "2026-11-06T03:29:52.842938+00:00",
+      "previous": {
+        "id": "haskell-desktop-stream-catalog-pins",
+        "requirements": [
+          "ELM-ARC-003",
+          "ELM-DEL-011"
+        ],
+        "scenarios": [
+          "architecture-003",
+          "delivery-011",
+          "arbitrary-path-denied"
+        ],
+        "paths": [
+          "implementation/warlock/src/Main.elm",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+          "implementation/warlock/haskell/protocol/protocol.cabal",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
+          "implementation/warlock/haskell/runtime/app/Main.hs",
+          "implementation/warlock/haskell/runtime/runtime.cabal",
+          "implementation/warlock/haskell/runtime/test-ui/Main.hs",
+          "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+          "implementation/warlock/haskell/protocol/test-desktop/Main.hs",
+          "implementation/warlock/qa/ui-backend-port.cjs",
+          "implementation/warlock/qa/ui-native-stream.qnt",
+          "implementation/warlock/qa/ui-native-stream_test.qnt",
+          "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+          "implementation/warlock/src/OutputController.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/Surface.elm",
+          "implementation/warlock/src/SurfaceController.elm"
+        ],
+        "before": "Actual Main exposes multiple incoming ports; current Haskell protocol admits only native1/2 and has no called catalog/pin backend or GUI stream composition. Imported historical Python behavior is not Haskell implementation.",
+        "after": "The actual Main exposes one versioned incoming/outgoing stream and a called production Haskell backend validates full commit and typed operation schema before kernel-authenticated catalog/pin IO, returns matching actual outcomes, and rejects command/path/unknown operations before IO. Full privateUIHTTP/native/persistent-delivery goal remains, not redefined to a library/read-only demo.",
+        "verification": [
+          "Root protected buildall/testall and real production-executable kernel-framed actual compiledMain roundtrip with complete surfaceCommit, matching schema/hash receipts, strict typed profiles and legacy64KiB controls. Meaningful malformed/profile/provenance fuzz before anycallback, actualno command/arbitraryfileIO proof and CAS/privatefile/persistence controls; Quint model actual boundaries. Independently reviewed source readiness/immutable alloriginaloracles; no nativeGUI/AT/release inference."
+        ],
+        "owner": "root-agentbus",
+        "participantRecord": ".warlock-contributor/ui-backend.json",
+        "outcome": "Whole originalARC003+DEL011/all3scenarios independentlyaccepted93674172 onimmutable5818e78f; actualsourceintegration andcompletebridge/preIOsecurityoracles. NativeGUI/privateHTTP/persistentview/AT/IME/release obligations separate.",
+        "readinessReview": ".warlock-contributor/ui-backend-readiness-review.json",
+        "status": "accepted",
+        "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+        "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
+        "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json"
+      }
+    }
+  ]
 }
