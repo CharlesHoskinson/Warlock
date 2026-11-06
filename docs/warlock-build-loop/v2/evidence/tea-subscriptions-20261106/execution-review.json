@@ -1,0 +1,66 @@
+{
+  "reviewer": "continuity-arm64",
+  "disposition": "accepted-component-execution-only",
+  "report": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793934559909024677/report.json",
+  "reportSha256": "f7c904fdbca2f8158a18381bb40d50aa3f1e882b655fe0b0da6e6d3ae07694ad",
+  "subscriptionsReportSha256": "b2f96263b9268c5ec11b6788ab77eed01d1473673e9aac5c457e741486ee2bc8",
+  "packetSha256": "49763f0f93222e3595e4cf6e146a6b9fda15778f0bbe435fe8547594b34cbfd1",
+  "verified": {
+    "currentSourceHashes": 284,
+    "nestedSourceHashes": 156,
+    "retainedArtifactPins": 20,
+    "normalNestedExitZeroCommands": 31,
+    "normalOuterExitZeroCommands": 1,
+    "httpCampaigns": 16,
+    "httpChecks": 7394,
+    "supplementCases": 22,
+    "supplementChecks": 50,
+    "fullLiteralCases": 13,
+    "fullLiteralStepsPerFreshRun": 87,
+    "freshRuns": 2,
+    "routeCounterfactuals": 13,
+    "inventoryNegativeControls": 21,
+    "totalHttpNegativeControls": 34,
+    "workerCases": 6,
+    "workerStepsPerRun": 36,
+    "workerFreshRuns": 2,
+    "reachableSeeds": [
+      20261105,
+      20261106
+    ],
+    "reachableCasesPerSeed": 10,
+    "reachableObservationsPerSeed": 38,
+    "reachableRouteNegativesPerSeed": 4,
+    "commandOnlyGuardsPerSeed": 2,
+    "fullRetainedNegativeWitnesses": 12,
+    "closureFiles": 673,
+    "retainedClosureFilesHashChecked": 423,
+    "cleanedStageFiles": 250
+  },
+  "closureQualification": [
+    "All284canonical source/tool hashes and20retained compiled artifacts independently match current source/report; structured result hashes and embedded JSON match retained output",
+    "All423still-present closure files and existing cache file modes independently match; compile receipt binds actual compiled HttpPopup image/source/toolchain/context",
+    "Existing finally cleanup deletes work/ and stagedelm-home/:250stage/source/cache entries not available for independent post-run rehash",
+    "Before/after full673closure and canonical/stagedcache inventory/hash/mode checks are supported by reviewed exactrunner successful terminal receipt, not claimed as post-cleanup retained-file inspection"
+  ],
+  "negativeQualification": [
+    "Each route negative retains exactcase/step/reason and unequal fullactual/expected",
+    "Each command-only negative retains mutantSHA and exact0or2vs1Http,Task0 while everyotherfield matches"
+  ],
+  "priorFailedReportsRetained": [
+    "1793933301188819749",
+    "1793933685561841938",
+    "1793934191201558279"
+  ],
+  "limits": [
+    "Fixed two seeds are bounded source fixtures, not exhaustive sampling",
+    "Empty legacy retirement and reconcile retry only; no nonempty legacy-owned or actual Owner/native producer authority inferred",
+    "Controlled pure/fakeDOM/XHR component evidence; native GTK/WebKit/Wayland, purpose/paint/AT/IME/resource obligations remain separate",
+    "Independent original obligation adjudication still required; whole EARS completion not authorized"
+  ],
+  "reviewerExecutedProduct": false,
+  "wholeTea004Accepted": false,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false
+}
