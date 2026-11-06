@@ -187,3 +187,12 @@ test-suite ui-engine-broker-controls
   build-depends: base >=4.18 && <5, bytestring, text, unix, network ==3.2.0.0, warlock-runtime, warlock-protocol, warlock-process-custody
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+-- Ordinary-linked optional notification startup data controls.
+test-suite notification-config-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-notification-config
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, text, unix, filepath, warlock-runtime
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates

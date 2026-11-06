@@ -2,7 +2,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Production application actor. GUI policy and presentation stay in Elm.
 module Warlock.Backend
- (DirectoryPin(..),BackendConfig,loadBackendConfig,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson) where
+ (DirectoryPin(..),BackendConfig,loadBackendConfig,configuredNotificationBusAddress,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson) where
 import Control.Exception (SomeException,SomeAsyncException,fromException,mask,throwIO,try)
 import Control.Monad (forM_,unless)
 import qualified Data.ByteString as B
@@ -28,7 +28,26 @@ import Warlock.Protocol.Ingress (Direction(..),Priority(..),ingressBinding)
 import Warlock.Protocol.StrictJson
 
 data UiImage = UiImage FilePath Integer Integer Integer B.ByteString [String] [DirectoryPin]
-data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool
+data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool (Maybe Text)
+
+-- Selected startup data only. Actual bus authentication, ownership, deadline
+-- and lifecycle checks remain necessary before any notification operation.
+configuredNotificationBusAddress :: BackendConfig -> Maybe Text
+configuredNotificationBusAddress (BackendConfig _ _ _ _ _ _ _ address) = address
+
+notificationAddress :: Text -> Either Text Text
+notificationAddress raw = do
+ body <- maybe (Left "notification bus must use one explicit unix path") Right (T.stripPrefix "unix:path=" raw)
+ let (path,suffix) = T.breakOn ",guid=" body
+     asciiPath c = (c>='a' && c<='z') || (c>='A' && c<='Z') || (c>='0' && c<='9') || c `elem` ("/_-." :: String)
+     parts = T.splitOn "/" path
+     guidValid = case T.stripPrefix ",guid=" suffix of
+      Nothing -> T.null suffix
+      Just guid -> T.length guid==32 && T.all (\c -> (c>='0' && c<='9') || (c>='a' && c<='f')) guid
+ require (T.isPrefixOf "/" path && T.length path<=4096 && T.all asciiPath path
+   && length parts>=2 && all (\part -> not (T.null part) && part/="." && part/="..") (drop 1 parts)
+   && guidValid) "invalid explicit notification bus address"
+ pure raw
 -- Closed diagnostic classifications only; none is a grant or success proof.
 data BackendAttemptStage = AttemptConversationException | AttemptRootRefused
  | AttemptBootstrapRefused | AttemptPendingCustody | AttemptExecuted deriving (Eq,Show)
@@ -61,13 +80,18 @@ decodeConfig bytes = do
  limits <- failure (bounds 131072 16)
  raw <- failure (decodeStrict limits bytes)
  let names=["schema","binding","deadlineMonotonicNs","ui","catalogRoots","pinsRoot","locale"]
- fields <- case raw of
-  JObject pairs | any ((=="applicationAttachment") . fst) pairs -> object ("applicationAttachment":names) raw
-  _ -> object names raw
+ let optionalNames = case raw of
+      JObject pairs -> [name | name <- ["applicationAttachment","notificationBusAddress"], any ((==name) . fst) pairs]
+      _ -> []
+ fields <- object (names++optionalNames) raw
  attachment <- case lookup "applicationAttachment" fields of
   Nothing -> Right False
   Just (JBool value) -> Right value
   _ -> Left "invalid application attachment opt-in"
+ notificationBus <- case lookup "notificationBusAddress" fields of
+  Nothing -> Right Nothing
+  Just (JString address) -> Just <$> notificationAddress address
+  _ -> Left "invalid notification bus selection"
  require (lookup "schema" fields==Just (JNumber "1")) "unsupported startup schema"
  bound <- key "binding" fields >>= bindingConfig
  deadline <- key "deadlineMonotonicNs" fields >>= string
@@ -78,7 +102,7 @@ decodeConfig bytes = do
  pins <- key "pinsRoot" fields >>= directoryConfig
  locale <- key "locale" fields >>= string
  require (T.length locale<=128 && not (T.any (< ' ') locale)) "invalid trusted locale"
- pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment)
+ pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment notificationBus)
  where
   bindingConfig raw = do
    fields <- object ["lifetime","session","frontend"] raw
@@ -175,7 +199,7 @@ applyDesktopRequest bound catalog pins operations lastWrite sendReply request = 
   construct = either (ioError . userError . T.unpack) pure
 
 runBackend :: BackendConfig -> IO BackendResult
-runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled) = mask $ \restore -> do
+runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled _) = mask $ \restore -> do
  catalog <- newCatalog roots locale (lifetime bound)
  pins <- newPinStore pinsRoot
  attachmentAttempted <- newIORef False

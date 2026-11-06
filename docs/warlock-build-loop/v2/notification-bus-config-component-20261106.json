@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "disposition": "Verified optional notification bus configuration component; no original or native acceptance.",
+  "supportsOriginal": "ELM-UX-031",
+  "sourceBaseRevision": "5925ba0e3856ac36766c86c0740b2fb31bc8e60b",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "a857be418b684cfcb967564a9004331d5f95e752f3e9ccfeae5e21fafabbb0ab",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "17e60a7a8e6e021535311a4d4628e6bdb541e0a0c36513a8c9bbc36fdf92d5a4",
+    "implementation/warlock/haskell/runtime/test-notification-config/Main.hs": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+    "tools/qa_cpu.py": "d5ed617e60f184cb61d50de5964a1ec1ce0fd0a0c974b8d403b2d5d8c2fb036c",
+    "tools/check_arm64_cpu.py": "70107bb407371e838869daa77492fb475c305412e5fab785e3f4926515d61bdb",
+    "tools/haskell_test_wrapper.py": "78283ea59b3a57ef3eb5a25f799af39cad8a69581ddb1d6410a126fc99001940"
+  },
+  "behavior": {
+    "before": "Startup config rejected notificationBusAddress; public selected-data accessor absent.",
+    "after": "Checked startup config accepts and retains one explicit lexically canonical ASCII unix:path address and optional lowercase GUID. No selection is Nothing. Unknown/duplicate/invalid fields remain refused; old attachment configs remain compatible.",
+    "trustedPathDataBound": 4096,
+    "addressesAreDataNotAuthority": true,
+    "busOrSocketOperationAdded": false,
+    "runBackendServiceStartedByThisChange": false
+  },
+  "verification": {
+    "red": {
+      "report": ".warlock-contributor/arm64-cpu-1793976028837131648/report.json",
+      "sha256": "60c4c33610489c2bdc7d54e52bc1263bca974c3fcdc7192cfd686c9b4a078682",
+      "passed": false,
+      "classification": "Actual expected missing configuredNotificationBusAddress export compiler/API RED. Ordinary library built; named controls did not run.",
+      "thirtyChecksRan": false,
+      "outerHandle": 73145,
+      "outerExit": 1,
+      "outerConsumed": true
+    },
+    "green": {
+      "report": ".warlock-contributor/arm64-cpu-1793976156916010396/report.json",
+      "sha256": "51add481c502c63639eeb9898c872ffb4a1a78090abaa3f34f1830e188a07832",
+      "passed": true,
+      "inputCount": 240,
+      "commandsExit0": 3,
+      "exactOrderedControls": 30,
+      "normalSuiteExit": 0,
+      "timeout": false,
+      "forcedCleanup": false,
+      "copiedImageSHA256": "55fa179fe06c9d75821199a82930de58b7dccc3b28c678ac78d0c54c7e8ca1c2",
+      "imageFormat": "ELF64 little-endian AArch64",
+      "outerHandle": 72707,
+      "outerExit": 0,
+      "outerConsumed": true
+    },
+    "pairedDelta": {
+      "sameInputs": 240,
+      "onlyChangedInput": "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "beforeSHA256": "e2b8b5253b2c458a0c4d529d52e2331e125741aa1ee4287c67a46b103927e023",
+      "afterSHA256": "a857be418b684cfcb967564a9004331d5f95e752f3e9ccfeae5e21fafabbb0ab",
+      "fixturesAndSupportUnchanged": true
+    },
+    "independentReviews": [
+      {
+        "member": "controls/ux031-root-bus-config-independent-source-review.json",
+        "sha256": "4e84dc677c5dc46a2f3859ad2ddcd9c1cf1cfce969655c7ee02743d4e818696f"
+      },
+      {
+        "member": "controls/ux031-config-red-packet-independent-review.json",
+        "sha256": "12ec2518f915d0e1a70f8f30d27cdff1085fffd89bf43a08b41f648322cbe49d"
+      },
+      {
+        "member": "controls/ux031-config-red-independent-execution-review.json",
+        "sha256": "e5cc1e466da9b7e55992191031b4492724362bae8ab8c453c57946e72aebc184"
+      },
+      {
+        "member": "controls/ux031-config-green-independent-execution-review.json",
+        "sha256": "ffa0982365e580ee51b2659b4d6fea96eba03c4b2e2e6aa061402d5aea07d871"
+      }
+    ]
+  },
+  "archive": {
+    "path": "docs/warlock-build-loop/v2/evidence/notification-bus-config-20261106/checks.tar.gz",
+    "sha256": "657975558bc54784ad1199cc8569728fa5719ab8191c59188ea16345733557fa",
+    "bytes": 7532190,
+    "manifestPath": "docs/warlock-build-loop/v2/evidence/notification-bus-config-20261106/manifest.json",
+    "manifestSHA256": "f0e3afd121a28d730ea8ef5b343daa2511d8957e0dc06776879b17705ce528e4",
+    "safeUniqueRegularMembers": 780,
+    "uncompressedBytes": 42636831,
+    "allMembersRehashed": true,
+    "redNonforeignSourceBodyBindings": "238/240",
+    "greenNonforeignSourceBodyBindings": "238/240",
+    "allSourceBodyBindingsComplete": false,
+    "foreignBodiesOmittedWithPinsRetained": [
+      "implementation/warlock/haskell/process-custody/test/FacadeControl.hs",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc"
+    ]
+  },
+  "limits": [
+    "Config data parsing only; no EXTERNAL authentication, Hello, GIO ownership, issuer provisioning, notification producer receipt or original UX031 oracle executed.",
+    "No existing runtime or frontend regression suite is inferred from this new mode. Old97/2194 fixture sources remain unchanged but were not run here.",
+    "Both foreign bodies are omitted; local retained provenance and SDK remain prerequisites. No complete public reconstruction claim.",
+    "Generated offline cabal.project is retained as generated, not byte-identical source; warnings retained without a clean-warning claim.",
+    "Outer terminal facts are Root observations, identified as such by independent execution reviews.",
+    "Whole HTTP Model/opaque Cmd AST, preview producer purpose/ticket/paint, native presentation/input/AT/IME, measured budgets and release remain open."
+  ],
+  "participantProgress": {
+    "initialStartPreserved": true,
+    "actualCompiledBackendFixRecordedUTC": "2026-11-06T14:43:57.720390+00:00",
+    "oldStoppedInvestigationsUnchanged": true
+  },
+  "acceptedRequirementsDelta": 0,
+  "acceptedScenariosDelta": 0,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false
+}

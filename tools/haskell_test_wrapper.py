@@ -61,8 +61,18 @@ def main():
             raise RuntimeError('fixture executable pin changed: ' + name)
         return path
     calls = []
+    test_image = requested
+    config_image_pin = None
     child_env = dict(os.environ)
-    if suite in NOARGS:
+    if suite == 'notification-config-controls':
+        image_dir = fresh('image')
+        test_image = image_dir / 'notification-config-controls'
+        shutil.copy2(requested, test_image)
+        config_image_pin = pin(test_image)
+        if config_image_pin[2:] != pin(requested)[2:]:
+            raise RuntimeError('notification config image copy differs')
+        calls = [('default', [str(fresh('storage'))])]
+    elif suite in NOARGS:
         calls = [('default', [])]
     elif suite in CHILD:
         child = fixture(CHILD[suite])
@@ -132,7 +142,7 @@ def main():
     for label, args in calls:
         log = base / (label + '.log')
         with log.open('wb') as stream:
-            proc = subprocess.Popen([str(requested), *args], stdout=stream, stderr=subprocess.STDOUT,
+            proc = subprocess.Popen([str(test_image), *args], stdout=stream, stderr=subprocess.STDOUT,
                                     start_new_session=True, env=child_env)
             timed_out = False
             def terminate_child(signum, frame):
@@ -164,6 +174,11 @@ def main():
                 os.killpg(proc.pid, signal.SIGKILL)
             results.append({'mode': label, 'argv': args, 'exit': code, 'timeout': timed_out,
                             'forcedCleanup': forced or timed_out, 'log': str(log)})
+            if suite == 'notification-config-controls':
+                if pin(test_image) != config_image_pin or pin(requested) != manifest['test']['pin']:
+                    raise RuntimeError('notification config image changed')
+                results[-1]['image'] = str(test_image)
+                results[-1]['imagePin'] = config_image_pin
         (base / 'results.json').write_text(json.dumps(results, indent=2) + '\n')
     if suite == 'ui-backend-controls':
         for name, item in manifest['frontend'].items():

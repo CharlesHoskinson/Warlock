@@ -15,6 +15,7 @@ from arm64_toolchain import digest, inventory, verify
 from qa_cpu import arm64_inputs
 
 ROOT = Path(__file__).resolve().parents[1]
+EXPECTED_NOTIFICATION_CONFIG = '("old-config-unconfigured",True)\n("explicit-private-address",True)\n("explicit-guid-preserved",True)\n("attachment-and-address",True)\n("old-attachment-unconfigured",True)\n("tcp-refused",True)\n("abstract-refused",True)\n("list-refused",True)\n("relative-refused",True)\n("parent-refused",True)\n("dot-refused",True)\n("empty-segment-refused",True)\n("trailing-slash-refused",True)\n("root-refused",True)\n("percent-refused",True)\n("space-refused",True)\n("control-refused",True)\n("unknown-key-refused",True)\n("guid-length-refused",True)\n("guid-uppercase-refused",True)\n("duplicate-guid-refused",True)\n("long-path-refused",True)\n("null-refused",True)\n("number-refused",True)\n("bool-refused",True)\n("array-refused",True)\n("object-refused",True)\n("unknown-config-field-refused",True)\n("duplicate-selection-refused",True)\n("trusted-path-data-boundary",True)\n'
 sys.path.insert(0, str(ROOT / 'window-integration-qa'))
 from qa_launch import require_qa_scope, runtime_base  # ty: ignore[import-not-found]
 
@@ -628,12 +629,12 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
     protocol_profile = args.protocol or args.preview_schema or args.workspace_navigation_protocol
-    haskell_profile = protocol_profile or args.held_executable or args.peer_role
+    haskell_profile = protocol_profile or args.held_executable or args.peer_role or args.notification_config
     scope = require_qa_scope()
     if args.inside_private is not None:
         private_runtime = Path('/run/user') / str(os.getuid())
@@ -658,6 +659,8 @@ def main():
         mode = '--workspace-navigation-protocol'
     if args.ux031_daemon_only:
         mode = '--ux031-daemon-only'
+    if args.notification_config:
+        mode = '--notification-config'
     if args.inside_private is None:
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
@@ -792,7 +795,29 @@ def main():
                                 ('desktop-boundary-controls',)))
             protocol_targets = [(suite, 'warlock-protocol:test:' + suite) for suite in protocol_suites]
             backend = 'warlock-runtime:exe:warlock-ui-backend'
-            if args.peer_role:
+            if args.notification_config:
+                metadata = (stage / 'runtime/runtime.cabal').read_text()
+                pieces = metadata.split('\ntest-suite notification-config-controls\n')
+                if len(pieces) != 2:
+                    raise RuntimeError('Expected one ordinary-linked notification config suite')
+                stanza = re.split(r'\n(?:test-suite|executable|library|common|flag)\b', pieces[1], maxsplit=1)[0]
+                expected = ['  type: exitcode-stdio-1.0', '  hs-source-dirs: test-notification-config',
+                            '  main-is: Main.hs', '  build-depends: base >=4.18 && <5, bytestring, text, unix, filepath, warlock-runtime',
+                            '  default-language: Haskell2010', '  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates']
+                actual = [line for line in stanza.splitlines() if line.strip() and not line.lstrip().startswith('--')]
+                if actual != expected:
+                    raise RuntimeError('Unexpected notification config suite declarations')
+                fixture_root = stage / 'runtime/test-notification-config'
+                files = {str(p.relative_to(fixture_root)) for p in fixture_root.rglob('*') if p.is_file() and p.suffix in ('.hs', '.hsc')}
+                if files != {'Main.hs'} or digest(fixture_root / 'Main.hs') != '75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f':
+                    raise RuntimeError('Unexpected notification config fixture sources')
+                selected_targets = [('notification-config-controls', 'warlock-runtime:test:notification-config-controls')]
+                build_targets = ['warlock-runtime:lib:warlock-runtime', selected_targets[0][1]]
+                build_label = 'notification-config-build'
+                protocol_suites = ()
+                report['notificationConfig'] = {'ordinaryLibraryTarget': build_targets[0],
+                    'scope': 'Optional trusted startup data only', 'nativeAcceptance': False, 'originalAcceptance': False}
+            elif args.peer_role:
                 library_targets = ['warlock-process-custody:lib:warlock-process-custody',
                                    'warlock-runtime:lib:warlock-runtime']
                 for package, suite, directory in (('process-custody', 'bootstrap-facade-controls', 'test'),
@@ -940,13 +965,17 @@ def main():
                         or any(coverage.get(k) is not False for k in ('complete', 'originalAccepted', 'nativeAccepted'))):
                     raise RuntimeError('Fixed preview-control replay report differs')
                 report['previewControl'] = result
-            if args.owner or args.preview_control or protocol_profile or args.held_executable or args.peer_role:
+            if args.owner or args.preview_control or protocol_profile or args.held_executable or args.peer_role or args.notification_config:
                 runs = output / 'runs'
                 runs.mkdir(mode=0o700)
                 def wrapped(item):
                     return {'path': item['path'], 'pin': [item[k] for k in ('device', 'inode', 'size', 'sha256')]}
                 dispatch = {'suites': {}}
-                if args.peer_role:
+                if args.notification_config:
+                    suite = 'notification-config-controls'
+                    dispatch['suites'][binaries[suite]['path']] = {'suite': suite, 'test': wrapped(binaries[suite]),
+                        'fixtures': {}, 'runRoot': str(runs / suite)}
+                elif args.peer_role:
                     for suite, fixture in (('bootstrap-facade-controls', 'bootstrap-facade-child'),
                                            ('persistent-bootstrap-controls', 'credential-peer-child')):
                         dispatch['suites'][binaries[suite]['path']] = {
@@ -971,15 +1000,31 @@ def main():
                 dispatch_path.write_text(json.dumps(dispatch, indent=2) + '\n')
                 test_env = dict(env, WARLOCK_HASKELL_DISPATCH=str(dispatch_path))
                 report['suiteReceipts'] = {}
-                suites = (('bootstrap-facade-controls', 'persistent-bootstrap-controls') if args.peer_role else
-                          (('held-executable-controls',) if args.held_executable else
-                           (protocol_suites if protocol_profile else (*protocol_suites, 'ui-origin-controls'))))
+                suites = (('notification-config-controls',) if args.notification_config else
+                          (('bootstrap-facade-controls', 'persistent-bootstrap-controls') if args.peer_role else
+                           (('held-executable-controls',) if args.held_executable else
+                            (protocol_suites if protocol_profile else (*protocol_suites, 'ui-origin-controls')))))
                 for suite in suites:
                     run(suite, [sys.executable, '-B', ROOT / 'tools/haskell_test_wrapper.py',
                                 binaries[suite]['path']], stage, 900, test_env)
                     receipt = json.loads((runs / suite / 'results.json').read_text())
                     if len(receipt) != 1 or receipt[0]['exit'] != 0 or receipt[0]['forcedCleanup']:
                         raise RuntimeError(suite + ' lacks successful terminal receipt')
+                    if args.notification_config:
+                        item = receipt[0]
+                        fixed_image = runs / suite / 'image' / suite
+                        fixed_storage = runs / suite / 'storage'
+                        actual_image = image(fixed_image)
+                        if (item.get('mode') != 'default' or item.get('timeout') is not False
+                                or item.get('forcedCleanup') is not False or item.get('argv') != [str(fixed_storage)]
+                                or item.get('image') != str(fixed_image)
+                                or item.get('imagePin') != [actual_image['device'], actual_image['inode'], actual_image['size'], actual_image['sha256']]
+                                or actual_image['size'] != binaries[suite]['size'] or actual_image['sha256'] != binaries[suite]['sha256']):
+                            raise RuntimeError('Notification config COPY receipt differs')
+                        log = runs / suite / 'default.log'
+                        if log.is_symlink() or not log.is_file() or log.stat().st_size > 16384 or log.read_text() != EXPECTED_NOTIFICATION_CONFIG:
+                            raise RuntimeError('Notification config ordered literal results differ')
+                        report['notificationConfig']['fixtureChecks'] = 30
                     if args.held_executable and (receipt[0].get('mode') != 'default' or receipt[0].get('timeout') is not False
                             or receipt[0].get('argv') != [str(runs / suite / 'image'), 'custody-child',
                                                         binaries['custody-child']['size'], binaries['custody-child']['sha256']]):
