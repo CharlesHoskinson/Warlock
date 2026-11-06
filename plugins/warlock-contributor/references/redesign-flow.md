@@ -1,42 +1,96 @@
-# One contributor workflow
+# Journey delivery
 
-## Design readiness, not product acceptance
+## Authority and history
 
-1. Read exact originals from `docs/elm-roadmap/requirements.json` and the applicable `openspec/changes/elm-desktop-pivot/specs/`; maintain original given/when/then, verification, literal timing and 242/417 inventory. Review relevant `openspec/changes/warlock-production-language-migration/` design/tasks/spec only within owned scope. Exact standalone OpenSpec binary `/home/charles/.local/share/warlock-openspec/1.15.0/openspec` is pinned SHA256 `15dbc91d6c0c8bedda936043f2fc0ea6ce6ca8011e6a40273cb9f5c586cff564`; read-only `--help`, `show`, `status` and `instructions` are not permission to create/edit/apply/archive foreign drafts. OpenSpec availability and source/hash still need revalidation.
-2. Share one T3/T4 contract, hash and acknowledgement and independent Q2 corpus, not a competing protocol. T1 owns ADR and unresolved ownership, T2 must establish actual Haskell-native/runtime/system-library capability and ABI. Authored production, including wrapper glue, uses Elm and Haskell only. Generated Elm output and separately inventoried system libraries do not authorize another authored language. Do not infer a native integration mechanism from a library version or FFI signature. Record one owner for every effect, receipt, cancellation, durability and native retirement; UI derives a projection and native facts are not user intent.
-3. Q1 defines required original model invariants and maps actual model actions to exact implementation source; Q3 prepares meaningful production-route seeded property/state-machine/byte generators against Q2 corpus. Include valid reachability, overflow/stale/duplicate/reorder/disconnect, resource cancellation and cleanup, and preserve minimized failing trace, seed, source and tool hashes. No model sampling alone proves native behavior. Changed contracts must follow `docs/warlock-build-loop/v2/FUZZING-CONTRACTS.md`, not add toy mirror checks.
-4. Use `warlock-ctx --budget 1000 q 'narrow question'` before source; at most two graph calls and three windows. Graph is an index, not proof. Sol/root serialize update/eval. Browse and download through Scrapling only, primary sources, retaining URL/status/UTC/hash and applicable limits without secrets. Owners add bounded raw wiki notes; Sol handles shared indexes and lint. Document adopted/rejected/deferred decisions.
+Preserve the frozen 242 requirements and 417 scenarios. Keep their original identities, given/when/then oracles, verification obligations and timing bounds. Use the existing requirement ledger for acceptance. No workflow event accepts a requirement.
 
-## Selected implementation and protected verification
+Keep Elm GUI policy and Haskell backend authority. Keep one owner for each effect, permission, receipt and physical resource. Preserve full-width identities, Unknown/no replay, user drafts, focus, IME and accessibility obligations.
 
-Use authenticated assigned AgentBus identity: `agentbus up`, `agentbus doctor`, `agentbus recv`, `agentbus claims --mine` serially. Before a shared file edit, `agentbus claim file:/absolute/path --wait 60`; only a grant authorizes coordination, save its exact hold/lease and renew before expiry with that hold. Queue/timeout is not a grant. Claims are advisory; ownership and user scope still apply. Honor root's HOLD/RELEASE (no concurrent protected runs); lost claims, stale hash and ambiguous mutation block dependent work and require reconciliation, not blind retries. Handoff public artifact path/hash and exact observations via `agentbus send sol SUBJECT --body TEXT --ref /absolute/path`; release exact hold only after edits end. No credentials in bus or artifacts.
+Historical participant records retain their original policies, clocks and stops. New workflow policy 2 requires an explicit new start. It cannot be attached to an old record. A stopped original pair cannot be restarted under another label. Preserve all failed evidence and foreign work.
 
-Authorized private interface, research, plugin and source-preparation support does not require a fabricated product slice. Use the existing checker `python3 -B plugins/warlock-contributor/scripts/warlock.py --repo <REPO> --json check --project-only` for that support scope; it does not create a production-progress event or reset a product timer. Root still owns protected tests.
+## The delivery unit
 
-For selected product implementation, choose an original requirement/scenario and actual owned files. The existing contributor script's `--json plan`, `preflight --slice-file`, `start --owner ... --slice-file ...`, and `extend` manage the same participant record. Save a unique ignored plan, do not reinitialize or rewrite history. Preserve dirty foreign sources. Run `python3 -B docs/warlock-build-loop/v2/loop.py --record <OWN_RECORD> check` before and after product work. Policy 6 source classification is implemented in this engine; regression qualification and installed-checker identity must be verified separately. Past policies 1–5 keep their original meanings. `verify-plan` is advisory and unmapped Haskell paths need explicit proportional verification; a historic runner mapping does not qualify replacement code.
+Choose one useful journey with an ordered input script and observable exit condition. Read its exact original scenarios. Trace the actual source route. Identify the first missing boundary. Do not treat a source packet, a helper test or a successful build as a completed journey.
 
-Root executes reviewed commands under unchanged protected launcher: CPU `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/charles/Warlock/window-integration-qa python3 -B /home/charles/Warlock/window-integration-qa/qa_run.py -- <REVIEWED_COMMAND>`; native `python3 -B docs/warlock-build-loop/v2/loop.py --record <OWN_RECORD> native --runner <ABSOLUTE_REVIEWED_RUNNER>`. Hold exact qualifying source/ABI tuple, core limit, original clocks/deadlines, user drafts, private owned cleanup and runtime device protection. A command shown here is a pattern, not an executed or approved new campaign. If protection, dependencies, native capability, ownership, or source correspondence are absent, fail closed and report the blocker; never silently substitute fallback or relax guards.
+The first proving journey is a walking skeleton: start an isolated current-stack session, refresh the real catalog, open the Elm launcher, launch a harmless owned application with preserved arguments, then stop cleanly. ELM-UX-003 supplies the catalog and launch oracle. Bootstrap, surface and capability work are explicit prerequisites. They do not invent new accepted requirements.
 
-Each sprint completes `docs/warlock-build-loop/v2/SPRINT-RETROFIT-TEMPLATE.md` for the actual original scenario: source hashes; pre/post/invariants; effect/permission and terminal-ACK owners; actual model/source/corpus mapping; positive/negative property and native cases; retained failures, seeds and independent review. Record each Diátaxis quadrant as a concrete updated page or named unaffected page with reason. Root manages public docs, release, publication, graph/wiki and actual source-bound acceptance. Honor the current authorized preparation or implementation mode; reviewed readiness and the already-authorized root/Muse action govern promotion, without another user approval request. Native and final implementation prerequisites remain binding. Source/docs/qualification cannot reset a stopped investigation or close an EARS. Outstanding AT/IME, native presentation, preview live/historical/unavailable, draft preservation, licensed redistribution, source correspondence and release stay explicit after any bounded component success.
+A NoDisplay parser correction is a useful increment. It does not prove the visible launcher or real application launch. A completed journey requires every declared action in order on one frozen source/build/ABI tuple. Retain real input, visible results, literal timing and cleanup evidence. Partial observations remain partial.
 
-## Current adopted placement during preparation
+## Canonical selection
 
-Root's `root-ui-native-transport-source-decision-v1.json` adopts source direction only: private-network Elm/WebKit and Haskell UI/local HTTP owner, one host-side Haskell native admission/custody authority, ordinary applications in the host session/network context. Elm retains GUI interaction policy. Use the existing canonical protocol over intended owned bootstrap/framing; nativeOperations remains empty. No FD transfer, proxy, general bus or arbitrary shell bridge. Current source development is authorized preparation, not a new permission request or native admission. Preserve host STOP2, exact original deadlines and later feature/release gates. Minimum implementation-loop readiness is a feasible reviewed initial integration and actual proportional source checks; completing DEL003/004/005 release acceptance is not a prerequisite to start implementing those obligations.
+Use STATE.activeContributorRecord, STATE.activeSlice and STATE.activeSelection as the current root selection. CONTINUATION and recurring checks reference that selection. They do not select another record independently.
 
+Create the record with start --workflow-policy 2 --delivery-plan-file. Select it with delivery-select and the exact current STATE SHA256. Carry the returned selection generation through operational commands. A matching record name alone does not establish current selection.
 
-## Progress review and stall correction
+Keep the new record in the primary repository's existing ignored participant inventory. Worker branches do not create a second root record or acceptance ledger. Preserve each worker's old worktree and uncommitted files. Use a clean branch for new authored changes.
 
-1. Verify the actual goal and latest human instructions. Check authorization expiry, pause, handoff and external blockers before dispatch.
-2. Select the explicit current participant record. Compare its original IDs, scenarios and progress clock with the current handoff. Reconcile stale selection fields. Do not rewrite participant history or infer a new selection from the newest file.
-3. Read the original ledger. Report accepted requirements and scenarios separately from component tests, source packets and model results. An unchanged acceptance count requires an explanation of the remaining original oracle.
-4. Identify the first missing step between candidate source, independent review, protected execution, integration and original acceptance. Use exact source hashes and terminal reports. An unconsumed execution handle remains pending.
-5. Assign one next action to an existing authorized owner. Specify the original scenario, frozen inputs, expected observation and actual prerequisite. Root owns protected execution and integration. Sol owns worker assignments. The EARS agent advises both.
-6. When a candidate passes independent readiness review, schedule its proportional protected check. Full native or release completion does not block bounded component tests. Native effects and original acceptance retain their own gates.
-7. At the next existing review, compare the expected observation with the actual result. If it is missing, name the failed dependency or missed owner action. Escalate repeated unchanged findings to Root and Sol. Change the assignment or repair the internal failure. Do not create another generic audit packet.
-8. Preserve every policy stop and original deadline. Select another authorized original scenario when a stop requires a change. An audit, plugin edit, support check or new worker turn cannot reset product progress.
+## Source to execution
 
-The recurring EARS agent must read the selected record and current original scenarios. Its recommendation must identify an executable action or a specific blocking prerequisite. Retain unchanged global obligations as context. Do not repeatedly recommend a stopped slice. A source-ready candidate requires execution or a concrete refusal reason before another review of identical bytes.
+1. Agree on the smallest shared interface and independent literal examples.
+2. Assign disjoint owned changes under Sol's existing coordination.
+3. Have one assembler combine compatible source, fixture, runner and profile versions.
+4. Freeze one candidate manifest and its exact expected observation.
+5. Review that assembly once against the original criteria.
+6. Give Root the exact protected argv and missing prerequisites.
+7. Execute the smallest appropriate check through the unchanged protection.
+8. Record the actual job identity, terminal report and outer-handle consumption.
+9. Integrate passing, reviewed source and retain the adopted revision.
+10. Exercise the built journey when its native prerequisites hold.
+11. Adjudicate only original obligations actually observed.
+12. Complete the mandatory RSI step before the next slice.
 
-Worker health requires matching process births and current terminal events. Queue acceptance, an idle thread and a dispatcher are not active workers. Reuse existing authorized identities. Assign distinct useful work before replenishing the requested worker floor. Never fill a quota with repeated unchanged reviews.
+Use delivery-event for candidate, review, execution, integration, journey and RSI observations. Bind artifacts by path and SHA256. A retained inner report does not consume an outer job. A stale report, another candidate's review or a changed fixture cannot advance the state.
 
-Use the existing participant record, ledger and handoff for these observations. Do not add a second acceptance ledger, coordinator, timer or approval loop. A next-review checkpoint does not extend authorization or an investigation deadline.
+An API compiler RED is not a semantic RED. A RED/GREEN pair preserves one independent fixture and names both source manifests. Expected RED never permits integration. A missing future production file can be represented only as an explicit absent source. Fixtures and runners require actual bytes.
+
+## Scoped protection
+
+Root retains protected execution and integration authority. Sol does not become a second executor. Writers prepare executable tests and reviewed commands. They do not run raw compilers, native effects or substitute an unprotected shell command.
+
+For managed CPU and native work, use the loop wrapper with candidate and selection identity. The wrapper rechecks the current candidate and argv at the actual spawn boundary under the existing record lock. The archived native coordinator, launcher, native lock and cancellation supervisor remain pinned and unchanged. CPU execution delegates only to the reviewed qa_cpu packet command.
+
+The wrapper emits actual process identity. Root appends that launch and later consumes the actual outer handle. Spawn failure does not manufacture a running participant job. These controls coordinate trusted local actors. They are not isolation from another process with the same Unix identity.
+
+A scoped CPU component check does not require a complete native desktop or release package. A native operation requires its actual provider, ABI, authorization, private runtime and owned cleanup. Missing readiness blocks that operation and its dependent claims. It does not block independent pure work.
+
+## Clocks and intervention
+
+Policy 2 captures boot identity, monotonic time, boottime and UTC locally. Awake elapsed includes execution-queue wait and excludes measured suspend. Unknown boot continuity or regressing samples requires reconciliation. Never invent excluded time or extend authorization.
+
+A tested integration of changed product source advances delivery progress once. Repeated same-source qualification, audits, documentation and RSI do not reset that clock. A completed unchanged-source qualification slice still requires RSI.
+
+Forty-five awake minutes without advance or repeated experiments with the same failure require an intervention. This prospective management intervention is distinct from a historical policy stop. Keep elapsed history. Correct the dependency or change the hypothesis in the same history. A ready candidate waiting on Root calls for execution or a specific refusal, rather than blaming the writer.
+
+The fixed authorization expiry and every original native/scenario deadline remain independent. A management intervention grants no native permission.
+
+## Mandatory recursive self-improvement
+
+After every completed product slice, run one bounded Propose–Probe–Compose step. Use the actual execution, review, queue and user-observation evidence. Choose one concrete plugin or harness hypothesis and a refutation case.
+
+Freeze the baseline plugin and harness, task sources, original oracles, authorization and native guards. Run the same probe and appropriate regressions. Record the exact comparison and report hashes in the same participant history.
+
+Adoption requires tested result bytes and an explicit Root review of the retained diff. No-change requires observed probe/regression results and a reason. A blocked attempt names its dependency, owner and next action. It is not an adopted improvement.
+
+RSI cannot edit original oracles, waive protection, accept an EARS, erase failures or restart a stopped investigation. RSI does not trigger another RSI cycle. A model's preference or a faster-looking transcript is not improvement evidence.
+
+## Roles and flow
+
+Reuse the existing Sol coordinator and seventeen authenticated worker identities. Keep one product journey and one protected execution active. Admit assignments against current inputs and a named deliverable. Keep at most one ready assembly and one correcting assembly.
+
+The seventeen roles cover catalog semantics/corpus, Elm projection/sequence tests, host launch/identity-model correspondence, runtime integration/contract review, assembly/build review, real-input harness/lifecycle negatives, keyboard/accessibility/UX checks, and delivery/RSI. The EARS tracker follows the current derived next action and original missing observations.
+
+Maintain at least fifteen actually working agents as requested. Use distinct current-boundary work. Report PID/birth and terminal evidence. Queues, idle seats, completed turns and the dispatcher do not meet that target. A shortfall is reported and repaired with useful work, never concealed with repeated reviews.
+
+Workers commit coherent draft source on their own clean branches. The assembler hands Root one compatible candidate. Draft commits are not passing integrations. Root preserves and reviews every merge. No worker edits another owner's source or the primary workspace.
+
+## Evidence and maintenance
+
+Use applicable Quint actions, production-route properties and independent boundary examples when a changed contract requires them. Preserve reachability witnesses, seeds and minimized failures. Keep native, AT, IME and hardware observations separate from model and component results.
+
+Complete retrofit and documentation dispositions for the integrated journey. Record affected pages or a specific unaffected reason. Batch graph/wiki maintenance and publication with meaningful integration. They do not block a ready protected check or reset product progress.
+
+Record one current stopping point with actual pending handles and source hashes. Quiesce workers before plugin installation or hook changes. Relaunch only after plugin tests, migration checks and current authorization pass. Do not extend the unattended expiry during migration.
+
+A `journey-observed` pass binds `journeyPlanSha256` to the canonical JSON digest of the record's journey. Its `steps` array must match every `inputSteps` item in order: each row has zero-based `stepIndex`, exact `inputStep`, `outcome: "pass"` and a hash-bound `evidence` reference. A pass has no `missingObligations`. Its hash-bound `cleanup` receipt identifies the same candidate and revision with `terminal: true`, `classification: "normal"`, `exit: 0`, `timedOut: false` and `forcedCleanup: false`. Partial and failed observations remain reportable. These fields validate evidence structure, not the truth of the observation or original acceptance.
+
+Keep Harness2 comparison contexts under an ignored repository evidence directory with mode 0700. The core refuses regression references outside the repository. Retain the original receipt bytes; do not rewrite a hash-bound report to relocate it.

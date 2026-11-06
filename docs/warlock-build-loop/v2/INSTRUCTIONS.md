@@ -1,3 +1,11 @@
+# Current prospective workflow
+
+The user authorizes the journey workflow and mandatory post-slice RSI in contributor plugin 0.17. Use `plugins/warlock-contributor/references/redesign-flow.md` for new workflow-policy-2 records. Keep the requirements table, original scenario oracles, literal native deadlines, acceptance ledger and protected launcher rules below unchanged.
+
+Policies 1–6 and existing stopped investigations retain their original clock and stop meanings. Policy 2 uses locally sampled management clocks and explicit interventions. This does not restart historical records or extend authorization. Models, fixtures, native observations and original acceptance remain distinct.
+
+Root serializes protected execution and integration. Sol is the sole coordinator. Existing identities and the fifteen-productive-worker target remain. The current journey, candidate, review, job, integration and RSI facts belong to the existing participant record. STATE holds its canonical selection. No second ledger or controller is introduced.
+
 # Warlock implementation loop
 
 Effective October 7, 2026, following the [nine-reviewer AAR](../../warlock-workflow-review/20261007/AAR.md). These instructions supersede v1's scheduling, derivative-copying, reporting and automatic validation sequence. Preserve historical source and evidence. The user requested implementation, not another research or infrastructure program.

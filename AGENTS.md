@@ -1,3 +1,13 @@
+# Current delivery workflow
+
+Use the Warlock contributor plugin 0.17 journey workflow for new work. New root records explicitly select workflow policy 2. Preserve all historical policies, records and stops. The operative procedure is `plugins/warlock-contributor/references/redesign-flow.md`.
+
+Deliver one integrated user journey. Use canonical STATE selection and exact candidate/job evidence. Root retains protected execution and integration. Sol remains the sole coordinator. Keep original 242/417, literal oracles, native timing, ownership and protected launchers unchanged.
+
+After every completed product slice, perform one bounded RSI step with frozen inputs and regression evidence. Record tested adoption, evidenced no-change or a concrete blocker. RSI is not product progress or original acceptance. It does not recursively trigger itself.
+
+The standing fifteen-working-agent target remains. Report actual process births and terminal states. Reuse authorized identities. Do not invent work or count queues as running agents.
+
 # Current production architecture
 
 Warlock-authored production code uses Elm and Haskell only. All GUI elements

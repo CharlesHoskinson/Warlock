@@ -2,6 +2,17 @@
 
 One shared offline Python checker and implementation skill, with thin Claude Code, Codex and Grok packaging. It helps contributors deliver actual GUI behavior against Warlock's original requirements. It cannot certify a physical/native/AT oracle or release acceptance. Linux, Python 3.9+ and Git in the repository are sufficient for checker use; product builds retain their existing protected QA tools.
 
+
+## Journey workflow and RSI
+
+Version 0.17 adds an explicit journey-delivery mode to the existing engine. Start new records with `--workflow-policy 2 --delivery-plan-file`. Historical records retain their original policies and stops.
+
+Use `delivery-select` for the canonical active record. Use `delivery-event` for exact candidate, review, job, integration, journey and RSI observations. `progress-audit --expect-slice ... --expect-selection ...` derives the next Root action. `delivery-precheck` is structural and never grants execution authority.
+
+Every completed product slice requires one bounded RSI comparison before the next slice. Tested adoption, evidenced no-change and accountable blockers remain distinct. RSI never resets product progress or accepts original scenarios.
+
+Read the [delivery procedure](references/redesign-flow.md), [workflow skill](skills/warlock-workflow/SKILL.md) and optional [Harness2 integration](references/harness2.md). The core has no Harness2 dependency. Frozen original oracles and native guards remain outside editable experiments.
+
 From the repository root:
 
 ```sh

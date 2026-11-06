@@ -17,6 +17,7 @@ import stat
 import subprocess
 import sys
 import tarfile
+import time
 
 BASE = 'docs/elm-roadmap/requirements.json'
 STATE = 'docs/warlock-build-loop/v2/STATE.json'
@@ -1806,8 +1807,542 @@ def handoff(root, record, reqs, state):
             'Follow any no-progress warning; do not rerun unchanged qualification by default.'}
 
 
+def delivery_text(value, label):
+    if not isinstance(value, str) or not value.strip() or len(value) > 16384:
+        raise ValueError('Invalid delivery ' + label)
+    return value
+
+
+def delivery_time(value):
+    parsed = dt.datetime.fromisoformat(delivery_text(value, 'timestamp').replace('Z', '+00:00'))
+    if parsed.tzinfo is None:
+        raise ValueError('Delivery timestamp needs timezone')
+    return parsed
+
+
+def clock_sample():
+    """Local scheduler clocks, never a substitute for original scenario clocks."""
+    return {'utc': now(), 'bootId': pathlib.Path('/proc/sys/kernel/random/boot_id').read_text().strip(),
+            'monotonicNs': time.monotonic_ns(), 'boottimeNs': time.clock_gettime_ns(time.CLOCK_BOOTTIME)}
+
+
+def validate_clock_sample(sample):
+    if not isinstance(sample, dict) or set(sample) != {'utc', 'bootId', 'monotonicNs', 'boottimeNs'}:
+        raise ValueError('Invalid delivery clock sample')
+    delivery_time(sample['utc'])
+    delivery_text(sample['bootId'], 'boot identity')
+    for key in ('monotonicNs', 'boottimeNs'):
+        if type(sample[key]) is not int or sample[key] < 0:
+            raise ValueError('Invalid delivery clock counter')
+    if sample['boottimeNs'] < sample['monotonicNs']:
+        raise ValueError('Delivery boot clock precedes monotonic clock')
+
+
+def delivery_identity(record):
+    if record.get('workflowPolicy') != 2 or type(record['workflowPolicy']) is not int:
+        raise ValueError('Unknown delivery workflow policy')
+    delivery = record.get('delivery', {})
+    return {key: delivery[key] for key in ('schema', 'journey', 'clockOrigin', 'authorizationExpiresUTC', 'guardHashes')}
+
+
+DELIVERY_GUARDS = (BASE, LANGUAGE_BASELINE, LANGUAGE_REVISION, LANGUAGE_HELPER,
+                   'implementation/elm-build-loop-v1/loop.py', 'window-integration-qa/qa_run.py',
+                   'window-integration-qa/qa_launch.py')
+
+
+def snapshot_sha256(value):
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode()).hexdigest()
+
+
+def plugin_snapshot(root):
+    names = git(root, 'ls-files', '--cached', '--others', '--exclude-standard', '-z', '--', 'plugins/warlock-contributor').decode().split('\0')
+    files = {name: digest(safe(root, name)) for name in sorted(set(names)) if name}
+    if not files or any(value is None for value in files.values()):
+        raise ValueError('Plugin snapshot has missing files')
+    return {'files': files, 'sha256': snapshot_sha256(files)}
+
+
+def plugin_snapshot_ref(root, reference):
+    value = json.loads(delivery_ref(root, reference))
+    if (not isinstance(value, dict) or set(value) != {'files', 'sha256'} or not isinstance(value['files'], dict) or
+            not value['files'] or value['sha256'] != snapshot_sha256(value['files'])):
+        raise ValueError('Invalid canonical plugin snapshot')
+    for name, sha in value['files'].items():
+        safe(root, name)
+        if not name.startswith('plugins/warlock-contributor/') or not isinstance(sha, str) or re.fullmatch('[0-9a-f]{64}', sha) is None:
+            raise ValueError('Invalid plugin snapshot file')
+    return value
+
+
+def validate_rsi(root, record, state, event, current=False):
+    """One bounded post-slice improvement receipt; no authority or oracle changes."""
+    integrated = state['integrated']
+    if (not integrated or not integrated.get('sliceCompleted') or state.get('rsi') or
+            event.get('candidateSha256') != state['candidateSha256'] or
+            event.get('integrationRevision') != integrated['revision']):
+        raise ValueError('RSI does not match one completed tested slice')
+    evidence = json.loads(delivery_ref(root, event['evidence']))
+    disposition = event.get('disposition')
+    if (evidence.get('schema') != 1 or disposition not in ('adopted', 'no-change', 'deferred-blocker') or
+            evidence.get('disposition') != disposition or evidence.get('candidateSha256') != state['candidateSha256'] or
+            evidence.get('integrationRevision') != integrated['revision']):
+        raise ValueError('RSI evidence binding differs')
+    for field in ('proposedChange', 'refutationCase', 'reason'):
+        delivery_text(evidence.get(field), 'RSI ' + field)
+    baseline_plugin = plugin_snapshot_ref(root, evidence['baselinePlugin'])
+    json.loads(delivery_ref(root, evidence['baselineHarness']))
+    if evidence.get('authorizationExpiresUTC') != record['delivery']['authorizationExpiresUTC']:
+        raise ValueError('RSI authorization binding differs')
+    if baseline_plugin['sha256'] != integrated['pluginBaselineSha256']:
+        raise ValueError('RSI plugin baseline differs from completed slice')
+    if disposition == 'deferred-blocker':
+        blocker = json.loads(delivery_ref(root, evidence['blocker']))
+        for field in ('dependency', 'owner', 'nextAction'):
+            delivery_text(blocker.get(field), 'RSI blocker ' + field)
+        if blocker.get('candidateSha256') != state['candidateSha256']:
+            raise ValueError('RSI blocker belongs to another completed slice')
+    else:
+        result_plugin = plugin_snapshot_ref(root, evidence['resultPlugin'])
+        before = json.loads(delivery_ref(root, evidence['baselineHarness']))
+        after = json.loads(delivery_ref(root, evidence['candidateHarness']))
+        comparison = json.loads(delivery_ref(root, evidence['comparison']))
+        regression = json.loads(delivery_ref(root, evidence['regression']))
+        baseline, candidate = baseline_plugin['sha256'], result_plugin['sha256']
+        if (comparison.get('schema') != 1 or comparison.get('kind') != 'same-task-harness-comparison' or
+                comparison.get('completedCandidateSha256') != state['candidateSha256'] or
+                comparison.get('baselinePluginSha256') != baseline or
+                comparison.get('baselineSnapshotSha256') != snapshot_sha256(before) or
+                comparison.get('candidateSnapshotSha256') != snapshot_sha256(after) or
+                evidence.get('authorizationExpiresUTC') != record['delivery']['authorizationExpiresUTC']):
+            raise ValueError('RSI comparison is not bound to the same task, plugin, harness and refutation case')
+        roles = {'taskFiles', 'sourceFiles', 'oracleFiles', 'guardFiles', 'authorizationFiles', 'pluginBaselineFiles'}
+        fixed = before.get('fixedInputs')
+        if not isinstance(fixed, dict) or set(fixed) != roles or fixed != after.get('fixedInputs'):
+            raise ValueError('RSI immutable snapshot inputs differ')
+        maps = {}
+        for role, bindings in fixed.items():
+            if not isinstance(bindings, dict):
+                raise ValueError('RSI immutable input map malformed')
+            maps[role] = {}
+            for name, binding in bindings.items():
+                safe(root, name)
+                sha = binding.get('sha256') if isinstance(binding, dict) else None
+                if not isinstance(sha, str) or re.fullmatch('[0-9a-f]{64}', sha) is None:
+                    raise ValueError('Invalid RSI immutable input hash')
+                maps[role][name] = sha
+        if (maps['sourceFiles'] != state['candidate']['manifest']['sources'] or
+                maps['pluginBaselineFiles'] != baseline_plugin['files'] or
+                comparison.get('immutableHashes') != {role: snapshot_sha256(values) for role, values in maps.items()}):
+            raise ValueError('RSI immutable hashes differ from completed source and plugin')
+        protected = dict(maps['oracleFiles'], **maps['guardFiles'])
+        if any(sha is not None and protected.get(name) != sha for name, sha in record['delivery']['guardHashes'].items()):
+            raise ValueError('RSI snapshot omits or changes original/native guards')
+        names = before.get('checkNames')
+        checks = comparison.get('checks')
+        if (not isinstance(names, list) or not names or len(set(names)) != len(names) or names != after.get('checkNames') or
+                not isinstance(checks, list) or len(checks) != len(names) or
+                any(not isinstance(row, dict) or set(row) != {'name', 'baselinePassed', 'candidatePassed'} or
+                    type(row['baselinePassed']) is not bool or type(row['candidatePassed']) is not bool for row in checks) or
+                [row['name'] for row in checks] != names):
+            raise ValueError('RSI comparison needs exact ordered baseline/candidate observations')
+        compared_regression = dict(comparison.get('regression', {}))
+        if isinstance(compared_regression.get('path'), str) and pathlib.Path(compared_regression['path']).is_absolute():
+            compared_regression['path'] = str(pathlib.Path(compared_regression['path']).relative_to(root))
+        if compared_regression != evidence['regression']:
+            raise ValueError('RSI comparison regression binding differs')
+        delivery_ref(root, compared_regression)
+        if (regression.get('schema') != 1 or regression.get('pluginSha256') != candidate or
+                regression.get('terminal') is not True or regression.get('exit') != 0 or
+                type(regression.get('testsRun')) is not int or regression['testsRun'] < 1 or
+                regression.get('failures') != 0):
+            raise ValueError('RSI result lacks a passing bound regression report')
+        if disposition == 'no-change' and candidate != baseline:
+            raise ValueError('RSI no-change cannot adopt different plugin bytes')
+        if disposition == 'adopted':
+            review = json.loads(delivery_ref(root, evidence['rootReview']))
+            if (candidate == baseline or not all(row['candidatePassed'] for row in checks) or
+                    review.get('disposition') != 'accepted' or review.get('role') != 'Root' or
+                    review.get('candidateSha256') != state['candidateSha256'] or
+                    review.get('integrationRevision') != integrated['revision'] or
+                    review.get('baselinePluginSha256') != baseline or review.get('resultPluginSha256') != candidate):
+                raise ValueError('RSI adoption requires actual changed tested bytes and bound Root review')
+            delivery_text(review.get('reviewer'), 'RSI Root reviewer')
+            delivery_ref(root, review['diff'])
+            if current and plugin_snapshot(root)['sha256'] != candidate:
+                raise ValueError('RSI adopted result is not the actual current checker')
+        elif current and plugin_snapshot(root)['sha256'] != baseline:
+            raise ValueError('RSI no-change differs from actual installed plugin snapshot')
+    if current and any(fingerprint(root, name) != sha for name, sha in record['delivery']['guardHashes'].items()):
+        raise ValueError('RSI cannot change immutable original/native guards')
+    return evidence
+
+
+def validate_delivery_plan(plan, selected, reqs):
+    if not isinstance(plan, dict) or set(plan) != {'schema', 'journey', 'authorizationExpiresUTC'} or plan['schema'] != 1:
+        raise ValueError('Invalid delivery plan schema')
+    journey = plan['journey']
+    fields = {'userOutcome', 'originalPairs', 'inputSteps', 'expectedObservation'}
+    if not isinstance(journey, dict) or set(journey) != fields:
+        raise ValueError('Invalid delivery journey fields')
+    delivery_text(journey['userOutcome'], 'user outcome')
+    delivery_text(journey['expectedObservation'], 'expected observation')
+    if not isinstance(journey['inputSteps'], list) or not 1 <= len(journey['inputSteps']) <= 32:
+        raise ValueError('Delivery journey needs bounded input steps')
+    for step in journey['inputSteps']:
+        delivery_text(step, 'input step')
+    pairs = journey['originalPairs']
+    if not isinstance(pairs, list) or not pairs or any(not isinstance(p, dict) or set(p) != {'requirement', 'scenario'} for p in pairs):
+        raise ValueError('Invalid delivery original pairs')
+    actual = [(p['requirement'], p['scenario']) for p in pairs]
+    if any(not isinstance(a, str) or not isinstance(b, str) for a, b in actual):
+        raise ValueError('Invalid delivery original pair identity')
+    if len(set(actual)) != len(actual) or set(actual) != slice_scenario_pairs(selected, reqs):
+        raise ValueError('Delivery journey original pairs differ from selected originals')
+    delivery_time(plan['authorizationExpiresUTC'])
+
+
+def delivery_progress_status(record, clock=None, sample=None):
+    """Prospective management observations; source edits do not reset this clock."""
+    delivery = record['delivery']
+    origin = delivery['clockOrigin']
+    current = sample or clock_sample()
+    if clock is not None:
+        current = dict(current, utc=clock.isoformat())
+    validate_clock_sample(origin)
+    validate_clock_sample(current)
+    baseline = origin
+    last = origin
+    unknown = False
+    failed = []
+    advances = set()
+    for event in delivery['events']:
+        observed = event['clockSample']
+        validate_clock_sample(observed)
+        unknown = unknown or observed['bootId'] != last['bootId'] or any(
+            observed[key] < last[key] for key in ('monotonicNs', 'boottimeNs'))
+        if event.get('deliveryAdvance') and event['deliveryAdvance'] not in advances:
+            advances.add(event['deliveryAdvance'])
+            baseline = observed
+            failed = []
+        if event['kind'] == 'execution-finished' and event.get('failureSignature'):
+            failed.append(event['failureSignature'])
+        last = observed
+    unknown = unknown or current['bootId'] != last['bootId'] or any(
+        current[key] < last[key] for key in ('monotonicNs', 'boottimeNs'))
+    awake = max(0, (current['monotonicNs'] - baseline['monotonicNs']) // 1000000000)
+    boot = max(0, (current['boottimeNs'] - baseline['boottimeNs']) // 1000000000)
+    if boot < awake:
+        unknown = True
+    repeated = len(failed) >= 2 and failed[-1] == failed[-2]
+    reasons = (['45-awake-minutes-without-tested-integration'] if awake >= 2700 else [])
+    if repeated:
+        reasons.append('two-experiments-with-same-failure')
+    expired = delivery_time(current['utc']) >= delivery_time(delivery['authorizationExpiresUTC'])
+    return {'workflowPolicy': 2, 'iterationsWithoutProgress': 0,
+            'lastRecordedProgressUTC': baseline['utc'], 'secondsSinceRecordedProgress': None if unknown else awake,
+            'suspendedSeconds': None if unknown else max(0, boot - awake),
+            'limits': {'iterations': 2, 'seconds': 2700, 'sameFailureExperiments': 2},
+            'investigationNeedsChange': False, 'planChangeRequired': bool(reasons),
+            'reconciliationRequired': unknown, 'authorizationExpired': expired, 'reasons': reasons,
+            'action': 'Reconcile clocks and environment.' if unknown else 'Authorization expired; no dispatch.' if expired else
+                      'Change the next action or defer in this same history.' if reasons else 'Continue the selected delivery action.',
+            'basis': 'Locally sampled management clocks and recorded source-bound events; no original acceptance inferred.'}
+
+
+def delivery_ref(root, value):
+    if not isinstance(value, dict) or set(value) != {'path', 'sha256'}:
+        raise ValueError('Delivery reference requires path and sha256')
+    body = regular_bytes(safe(root, value['path']))
+    if hashlib.sha256(body).hexdigest() != value['sha256']:
+        raise ValueError('Delivery evidence changed: ' + value['path'])
+    return body
+
+
+def validate_delivery_candidate(root, record, candidate, current=False):
+    fields = {'id', 'manifest', 'scope', 'argv', 'expectedObservation', 'nativePrerequisites'}
+    if not isinstance(candidate, dict) or not fields <= set(candidate) or set(candidate) - fields - {'baselineCandidateSha256'}:
+        raise ValueError('Invalid delivery candidate fields')
+    delivery_text(candidate['id'], 'candidate id')
+    delivery_text(candidate['expectedObservation'], 'expected observation')
+    if candidate['scope'] not in ('cpu', 'native'):
+        raise ValueError('Invalid delivery execution scope')
+    if not isinstance(candidate['argv'], list) or not 1 <= len(candidate['argv']) <= 128:
+        raise ValueError('Delivery candidate requires bounded argv')
+    for argument in candidate['argv']:
+        delivery_text(argument, 'argv')
+        if '\0' in argument:
+            raise ValueError('NUL in delivery argv')
+    manifest = candidate['manifest']
+    if not isinstance(manifest, dict) or set(manifest) != {'sources', 'fixtures', 'runners', 'profiles'}:
+        raise ValueError('Invalid delivery manifest roles')
+    for role, paths in manifest.items():
+        if not isinstance(paths, dict) or not 1 <= len(paths) <= 4096:
+            raise ValueError('Delivery manifest role needs actual files: ' + role)
+        for name, sha in paths.items():
+            safe(root, name)
+            absent_product = sha is None and role == 'sources' and authored_v6(name)
+            if not absent_product and (not isinstance(sha, str) or re.fullmatch('[0-9a-f]{64}', sha) is None):
+                raise ValueError('Invalid delivery manifest hash')
+            if current and digest(safe(root, name)) != sha:
+                raise ValueError('Delivery candidate input changed: ' + name)
+    sources, owned = set(manifest['sources']), set(record['slice']['paths'])
+    if not sources <= owned:
+        raise ValueError('Delivery candidate sources must remain within owned paths')
+    # Later dependency extensions preserve old candidates, but a live candidate
+    # must bind the complete current declaration before append or execution.
+    if current and sources != owned:
+        raise ValueError('Delivery candidate must bind every declared source')
+    prerequisites = candidate['nativePrerequisites']
+    if not isinstance(prerequisites, list) or len(prerequisites) > 64:
+        raise ValueError('Invalid native prerequisite references')
+    for reference in prerequisites:
+        delivery_ref(root, reference)
+    if candidate['scope'] == 'native' and not prerequisites:
+        raise ValueError('Native candidate requires scoped readiness evidence')
+
+
+def delivery_product_identity(hashes):
+    return json_sha256({name: sha for name, sha in hashes.items() if authored_v6(name)})
+
+
+def delivery_state(root, record, reqs):
+    """Replay typed facts. Retained evidence is structural, not independently true."""
+    identity = delivery_identity(record)
+    if identity['schema'] != 1:
+        raise ValueError('Invalid delivery schema')
+    validate_delivery_plan({'schema': 1, 'journey': identity['journey'],
+                            'authorizationExpiresUTC': identity['authorizationExpiresUTC']}, record['slice'], reqs)
+    validate_clock_sample(identity['clockOrigin'])
+    if not isinstance(identity['guardHashes'], dict) or set(identity['guardHashes']) != set(DELIVERY_GUARDS):
+        raise ValueError('Delivery immutable guard inventory differs')
+    events = record['delivery'].get('events')
+    if not isinstance(events, list) or len(events) > 4096:
+        raise ValueError('Invalid delivery event history')
+    state = {'candidate': None, 'candidateSha256': None, 'review': None, 'job': None,
+             'terminal': None, 'integrated': None, 'journey': None, 'deferred': None, 'rsi': None}
+    seen, candidates, jobs = set(), set(), set()
+    advances = {delivery_product_identity(record['sourceHashes'])}
+    for index, event in enumerate(events):
+        if not isinstance(event, dict) or event.get('sequence') != index + 1:
+            raise ValueError('Delivery event sequence differs')
+        event_id = delivery_text(event.get('eventId'), 'event id')
+        if event_id in seen:
+            raise ValueError('Duplicate delivery event id')
+        seen.add(event_id)
+        validate_clock_sample(event['clockSample'])
+        if event.get('atUTC') != event['clockSample']['utc']:
+            raise ValueError('Delivery event timestamp differs from sample')
+        kind = event.get('kind')
+        if kind == 'candidate':
+            if state['integrated'] and state['integrated'].get('sliceCompleted') and not state['rsi']:
+                raise ValueError('Complete bounded RSI before the next slice candidate')
+            candidate = event['candidate']
+            validate_delivery_candidate(root, record, candidate)
+            sha = json_sha256(candidate)
+            baseline = candidate.get('baselineCandidateSha256')
+            if baseline is not None and (baseline != state['candidateSha256'] or not state['terminal'] or
+                    state['terminal']['classification'] != 'expected-red' or not state['job']['consumed'] or
+                    candidate['manifest']['fixtures'] != state['candidate']['manifest']['fixtures']):
+                raise ValueError('RED/GREEN baseline or frozen fixture identity differs')
+            if event.get('candidateSha256') != sha or candidate['id'] in candidates:
+                raise ValueError('Duplicate or changed delivery candidate identity')
+            if state['job'] and not state['job'].get('consumed'):
+                raise ValueError('Protected job still occupies delivery slot')
+            if state['candidate'] and not state['terminal'] and state['review'] and state['review']['disposition'] == 'accepted':
+                raise ValueError('Consume the ready candidate before producing another')
+            candidates.add(candidate['id'])
+            state = dict(candidate=candidate, candidateSha256=sha, review=None, job=None,
+                         terminal=None, integrated=None, journey=None, deferred=None, rsi=None)
+        elif kind == 'review':
+            if not state['candidate'] or event.get('candidateSha256') != state['candidateSha256']:
+                raise ValueError('Review refers to another delivery candidate')
+            review = json.loads(delivery_ref(root, event['review']))
+            if (review.get('candidateSha256') != state['candidateSha256'] or
+                    review.get('scope') != state['candidate']['scope'] or
+                    review.get('disposition') not in ('accepted', 'changes-required') or
+                    delivery_text(review.get('reviewer'), 'reviewer').strip().casefold() == record['owner'].strip().casefold()):
+                raise ValueError('Delivery review identity, scope or disposition differs')
+            if state['job'] or state['review']:
+                raise ValueError('Duplicate review or execution already began')
+            state['review'] = review
+        elif kind == 'execution-started':
+            if (event.get('candidateSha256') != state['candidateSha256'] or not state['review'] or
+                    state['review']['disposition'] != 'accepted' or state['job'] or state['deferred']):
+                raise ValueError('Delivery candidate is not ready for a new job')
+            job = delivery_text(event.get('jobId'), 'job id')
+            delivery_text(event.get('outerHandle'), 'outer tool handle')
+            if job in jobs:
+                raise ValueError('Delivery job identity reused')
+            jobs.add(job)
+            state['job'] = dict(event, consumed=False)
+        elif kind == 'execution-finished':
+            job = state['job']
+            if not job or event.get('jobId') != job['jobId'] or event.get('candidateSha256') != state['candidateSha256'] or state['terminal']:
+                raise ValueError('Delivery terminal does not match running job')
+            report = json.loads(delivery_ref(root, event['report']))
+            if (report.get('terminal') is not True or report.get('jobId') != job['jobId'] or
+                    report.get('candidateSha256') != state['candidateSha256'] or
+                    report.get('scope') != state['candidate']['scope'] or
+                    report.get('manifestSha256') != json_sha256(state['candidate']['manifest']) or
+                    report.get('fixtureSha256') != json_sha256(state['candidate']['manifest']['fixtures']) or
+                    type(report.get('exit')) is not int or report.get('classification') not in ('pass', 'failed', 'expected-red', 'unknown')):
+                raise ValueError('Delivery terminal manifest, fixture, job or outcome differs')
+            if report['classification'] == 'pass' and report['exit'] != 0:
+                raise ValueError('Passing delivery report has nonzero exit')
+            if type(event.get('outerHandleConsumed')) is not bool:
+                raise ValueError('Delivery terminal needs outer-handle consumption observation')
+            state['terminal'] = report
+            state['job']['consumed'] = event['outerHandleConsumed']
+        elif kind == 'execution-consumed':
+            job = state['job']
+            if not job or not state['terminal'] or job['consumed'] or event.get('jobId') != job['jobId'] or event.get('outerHandle') != job['outerHandle']:
+                raise ValueError('Consumed handle does not match terminal delivery job')
+            job['consumed'] = True
+        elif kind == 'integrated':
+            if (not state['terminal'] or state['terminal']['classification'] != 'pass' or not state['job']['consumed'] or
+                    event.get('candidateSha256') != state['candidateSha256'] or state['integrated']):
+                raise ValueError('Only a consumed passing candidate can be integrated')
+            revision = delivery_text(event.get('revision'), 'integration revision')
+            if re.fullmatch('[0-9a-f]{40}', revision) is None:
+                raise ValueError('Integration requires full commit identity')
+            for name, sha in state['candidate']['manifest']['sources'].items():
+                blob = git(root, 'show', revision + ':' + name)
+                if hashlib.sha256(blob).hexdigest() != sha:
+                    raise ValueError('Integrated revision source differs: ' + name)
+            product = delivery_product_identity(state['candidate']['manifest']['sources'])
+            expected = product if product not in advances else None
+            if event.get('deliveryAdvance') != expected:
+                raise ValueError('Integration advance does not match tested sources')
+            completed = any(authored_v6(name) and sha is not None for name, sha in state['candidate']['manifest']['sources'].items())
+            if type(event.get('sliceCompleted')) is not bool or event['sliceCompleted'] != completed:
+                raise ValueError('Slice completion differs from tested authored source')
+            if not isinstance(event.get('pluginBaselineSha256'), str) or re.fullmatch('[0-9a-f]{64}', event['pluginBaselineSha256']) is None:
+                raise ValueError('Integration lacks exact plugin baseline for RSI')
+            snapshot = event.get('pluginBaseline', {})
+            if (not isinstance(snapshot, dict) or not isinstance(snapshot.get('files'), dict) or
+                    snapshot.get('sha256') != event['pluginBaselineSha256'] or
+                    snapshot_sha256(snapshot['files']) != event['pluginBaselineSha256']):
+                raise ValueError('Integrated plugin baseline map differs')
+            advances.add(product)
+            state['integrated'] = event
+        elif kind == 'rsi':
+            state['rsi'] = validate_rsi(root, record, state, event)
+        elif kind == 'journey-observed':
+            if not state['integrated'] or event.get('candidateSha256') != state['candidateSha256'] or state['journey']:
+                raise ValueError('Journey observation needs the integrated candidate')
+            observation = json.loads(delivery_ref(root, event['observation']))
+            if (observation.get('candidateSha256') != state['candidateSha256'] or
+                    observation.get('revision') != state['integrated']['revision'] or
+                    observation.get('outcome') not in ('pass', 'failed', 'partial', 'unknown') or
+                    not isinstance(observation.get('missingObligations'), list)):
+                raise ValueError('Journey observation differs from integrated source')
+            delivery_text(observation.get('inputRoute'), 'actual input route')
+            delivery_text(observation.get('observedBehavior'), 'observed behavior')
+            if observation['outcome'] == 'pass':
+                plan = record['delivery']['journey']
+                steps = observation.get('steps')
+                if (observation.get('journeyPlanSha256') != json_sha256(plan) or
+                        observation['missingObligations'] or not isinstance(steps, list) or
+                        len(steps) != len(plan['inputSteps'])):
+                    raise ValueError('Journey pass requires the exact plan and every planned step without missing obligations')
+                for index, (step, planned) in enumerate(zip(steps, plan['inputSteps'])):
+                    if (not isinstance(step, dict) or
+                            set(step) != {'stepIndex', 'inputStep', 'outcome', 'evidence'} or
+                            type(step['stepIndex']) is not int or step['stepIndex'] != index or
+                            step['inputStep'] != planned or step['outcome'] != 'pass'):
+                        raise ValueError('Journey pass requires ordered passing evidence for every planned step')
+                    delivery_ref(root, step['evidence'])
+                cleanup = json.loads(delivery_ref(root, observation.get('cleanup')))
+                if (not isinstance(cleanup, dict) or cleanup.get('candidateSha256') != state['candidateSha256'] or
+                        cleanup.get('revision') != state['integrated']['revision'] or
+                        cleanup.get('terminal') is not True or cleanup.get('classification') != 'normal' or
+                        type(cleanup.get('exit')) is not int or cleanup['exit'] != 0 or
+                        cleanup.get('timedOut') is not False or cleanup.get('forcedCleanup') is not False):
+                    raise ValueError('Journey pass requires a bound terminal normal cleanup without timeout or force')
+            state['journey'] = observation
+        elif kind in ('deferred', 'plan-changed'):
+            for field in ('reason', 'owner', 'nextAction'):
+                delivery_text(event.get(field), field)
+            if state['job'] and not state['job']['consumed']:
+                raise ValueError('Consume protected job before changing delivery plan')
+            state['deferred'] = event if kind == 'deferred' else None
+        else:
+            raise ValueError('Unknown delivery event kind')
+    return state
+
+
+def current_selection(record, state, expected):
+    selection = state.get('activeSelection', {})
+    if (type(expected) is not int or expected < 1 or selection.get('generation') != expected or
+            state.get('activeContributorRecord') != record.get('_recordPath') or
+            state.get('activeSlice') != record['slice'] or
+            selection.get('recordIdentitySha256') != record_identity(record, record['_recordPath'])):
+        raise ValueError('Canonical delivery selection differs; reconcile STATE and expected generation')
+    delivery_time(selection['selectedUTC'])
+    return selection
+
+
+def delivery_next_action(root, record, reqs):
+    state = delivery_state(root, record, reqs)
+    progress = delivery_progress_status(record)
+    job = state['job']
+    if job and not job['consumed']:
+        kind = 'consume' if state['terminal'] else 'wait-terminal'
+    elif progress['authorizationExpired']:
+        kind = 'authorization-expired'
+    elif progress['reconciliationRequired']:
+        kind = 'reconcile-clock'
+    elif state['integrated'] and state['integrated'].get('sliceCompleted') and not state['rsi']:
+        kind = 'rsi'
+    elif state['deferred']:
+        kind = 'deferred'
+    elif state['review'] and state['review']['disposition'] == 'accepted' and not state['terminal']:
+        # An awake Root queue delay calls for execution, not another writer hypothesis.
+        kind = 'execute'
+    elif progress['planChangeRequired'] and (not record['delivery']['events'] or record['delivery']['events'][-1]['kind'] != 'plan-changed'):
+        kind = 'change-plan'
+    elif not state['candidate']:
+        kind = 'assemble'
+    elif not state['review']:
+        kind = 'review'
+    elif state['review']['disposition'] != 'accepted':
+        kind = 'correct'
+    elif not state['terminal']:
+        kind = 'execute'
+    elif state['terminal']['classification'] != 'pass':
+        kind = 'correct'
+    elif not state['integrated']:
+        kind = 'integrate'
+    elif not state['journey']:
+        kind = 'exercise-journey'
+    else:
+        kind = 'adjudicate' if state['journey']['outcome'] == 'pass' else 'correct'
+    return {'kind': kind, 'executor': 'Root', 'candidateId': state['candidate']['id'] if state['candidate'] else None,
+            'candidateSha256': state['candidateSha256'], 'jobId': job['jobId'] if job else None,
+            'argv': state['candidate']['argv'] if state['candidate'] else [],
+            'expectedObservation': state['candidate']['expectedObservation'] if state['candidate'] else record['delivery']['journey']['expectedObservation'],
+            'executionAuthorized': False, 'acceptanceInferred': False, 'progress': progress}
+
+
+def validate_execution_precheck(root, record, reqs, state, candidate_id, scope, expected):
+    current_selection(record, state, expected)
+    errors, _ = validate(root, record, reqs, state)
+    if errors:
+        raise ValueError('; '.join(errors))
+    action = delivery_next_action(root, record, reqs)
+    delivery = delivery_state(root, record, reqs)
+    if action['kind'] != 'execute' or not delivery['candidate'] or candidate_id != delivery['candidate']['id'] or scope != delivery['candidate']['scope']:
+        raise ValueError('Delivery execution precheck refused: ' + action['kind'])
+    validate_delivery_candidate(root, record, delivery['candidate'], current=True)
+    return {'nextRootAction': action, 'executionAuthorized': False, 'executionPerformed': False,
+            'acceptanceInferred': False, 'structuralPrecheckPassed': True}
+
+
 def progress_status(record, clock=None):
     """Recorded progress is a self-attestation, never an observed feature count."""
+    if 'workflowPolicy' in record:
+        delivery_identity(record)
+        return delivery_progress_status(record, clock)
     iterations = record.get('iterations', [])
     qualifying = 0
     for item in reversed(iterations):
@@ -2361,7 +2896,7 @@ def stopped_record_overlaps(root, candidate_slice, reqs, exclude_record=None, in
             progress = {'investigationNeedsChange': True,
                         'reasons': ['participant-record-progress-unreadable'],
                         'lastRecordedProgressUTC': None, 'secondsSinceRecordedProgress': None}
-        if not progress['investigationNeedsChange']:
+        if not progress['investigationNeedsChange'] and data.get('workflowPolicy') != 2:
             continue
         blocked.append({'record': relative, 'recordSha256': source_hash,
                         'owner': data['owner'], 'sliceId': data['slice'].get('id'),
@@ -2636,10 +3171,12 @@ def contribution_report(root, record, reqs, state):
     return packet
 
 
-def progress_audit(root, record, reqs, state, expected_slice):
+def progress_audit(root, record, reqs, state, expected_slice, expected_selection=None):
     """Read canonical progress without selecting work or granting execution."""
     if record['slice']['id'] != expected_slice:
         raise ValueError('Selected participant slice differs from --expect-slice')
+    if record.get('workflowPolicy') == 2:
+        current_selection(record, state, expected_selection)
     packet = contribution_report(root, record, reqs, state)
     inventory = participant_inventory(root)
     packet['errors'].extend(inventory['errors'])
@@ -2683,6 +3220,8 @@ def progress_audit(root, record, reqs, state, expected_slice):
                         'executionAuthorized': False, 'action': action},
         executionPerformed=False, acceptanceInferred=False, nativeAcceptance=False,
         originalAcceptance=False, releaseAccepted=False)
+    if record.get('workflowPolicy') == 2:
+        packet['nextRootAction'] = delivery_next_action(root, record, reqs)
     return packet
 
 
@@ -2987,6 +3526,8 @@ def validate(root, record, reqs, state):
     if record.get('schema') != 1 or not record.get('owner'):
         raise ValueError('Invalid record schema/owner')
     s = normalize_slice(root, record['slice'], reqs)
+    if 'workflowPolicy' in record:
+        delivery_state(root, record, reqs)
     adoption = record.get('adoptedDirty', {'paths': [], 'ownershipNote': None})
     if not isinstance(adoption, dict) or not isinstance(adoption.get('paths'), list):
         raise ValueError('Invalid dirty adoption metadata')
@@ -3121,6 +3662,17 @@ def main():
     subs.add_parser('handoff')
     audit = subs.add_parser('progress-audit', help='Read-only explicit participant progress and canonical acceptance counts')
     audit.add_argument('--expect-slice', required=True, help='Expected selected slice ID; mismatches fail closed')
+    audit.add_argument('--expect-selection', type=int)
+    delivery_select = subs.add_parser('delivery-select', help='Atomically select a new-policy participant in canonical STATE')
+    delivery_select.add_argument('--expect-state-sha', required=True)
+    delivery_event = subs.add_parser('delivery-event', help='Append source-bound workflow facts to the existing participant')
+    delivery_event.add_argument('--event-file', required=True)
+    delivery_event.add_argument('--expect-record-sha', required=True)
+    delivery_event.add_argument('--expect-selection', type=int, required=True)
+    delivery_precheck = subs.add_parser('delivery-precheck', help='Read-only scoped structural check; never executes or authorizes QA')
+    delivery_precheck.add_argument('--candidate', required=True)
+    delivery_precheck.add_argument('--scope', choices=('cpu', 'native'), required=True)
+    delivery_precheck.add_argument('--expect-selection', type=int, required=True)
     reconciliation = subs.add_parser('reconcile-foreign', help='Append reviewed foreign provenance without adopting files or changing participant history')
     reconciliation.add_argument('--transition-file', required=True, help='Ignored scratch JSON array of exact reviewed foreign-path transitions')
     support = subs.add_parser('reconcile-support', help='Append independently reviewed same-owner support-doc provenance without changing participant history')
@@ -3169,6 +3721,8 @@ def main():
     check.add_argument('--require-record', action='store_true', help='Fail if the participant slice record is absent')
     check.add_argument('--base-ref', help='Check changed implementation paths since this Git revision')
     start = subs.add_parser('start')
+    start.add_argument('--workflow-policy', type=int, choices=(2,))
+    start.add_argument('--delivery-plan-file')
     start.add_argument('--owner', required=True); start.add_argument('--slice-file')
     start.add_argument('--adopt-dirty', action='append', default=[], metavar='PATH', help='Explicitly assert ownership of an already dirty declared product path')
     start.add_argument('--ownership-note', help='Explain authorization/ownership for adopting dirty product paths')
@@ -3184,9 +3738,9 @@ def main():
     history_inventory = None
     try:
         root = pathlib.Path(args.repo or discover_repo()).resolve()
-        if args.command == 'progress-audit' and not any(
+        if args.command in ('progress-audit', 'delivery-select', 'delivery-event', 'delivery-precheck') and not any(
                 item == '--record' or item.startswith('--record=') for item in sys.argv[1:]):
-            raise ValueError('progress-audit requires explicit --record selection')
+            raise ValueError(args.command + ' requires explicit --record selection')
         owned_checker = safe(root, 'plugins/warlock-contributor/scripts/warlock.py')
         if digest(owned_checker) != result['checkerSha256']:
             raise ValueError('Installed checker differs from repository-owned checker; use the reviewed repository copy')
@@ -3207,7 +3761,7 @@ def main():
             record = json.loads(regular_bytes_at(lock_parent, path.name)) if lock_parent is not None else read(path)
             record['_recordPath'] = args.record
             return record
-        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery', 'index-participants', 'owner-census'):
+        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery', 'index-participants', 'owner-census', 'delivery-select', 'delivery-event'):
             records_parent, records_name = open_parent(safe(root, '.warlock-contributor/.records.lock'), create=True)
             records_lock = os.fdopen(os.open(records_name, os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_CLOEXEC,
                                              0o600, dir_fd=records_parent), 'w')
@@ -3228,7 +3782,107 @@ def main():
             lock_parent, lock_name = open_parent(lock_path, create=True)
             lock = os.fdopen(os.open(lock_name, os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_CLOEXEC, 0o600, dir_fd=lock_parent), 'w')
             fcntl.flock(lock, fcntl.LOCK_EX)
-        if args.command == 'doctor':
+        if args.command == 'delivery-select':
+            record = read_target()
+            delivery_state(root, record, reqs)
+            errors, _ = validate(root, record, reqs, state)
+            if errors:
+                raise ValueError('; '.join(errors))
+            progress = delivery_progress_status(record)
+            if progress['authorizationExpired'] or progress['reconciliationRequired']:
+                raise ValueError('Delivery authorization expired or clocks require reconciliation')
+            state_path = safe(root, STATE)
+            current, state_sha = json_snapshot(state_path)
+            if state_sha != args.expect_state_sha:
+                raise ValueError('Canonical STATE changed before selection')
+            for existing in history_inventory['records'].values():
+                if existing.get('workflowPolicy') == 2:
+                    previous_delivery = delivery_state(root, existing, reqs)
+                    previous_job = previous_delivery['job']
+                    if previous_job and not previous_job['consumed']:
+                        raise ValueError('Consume the occupied protected slot before changing selection')
+                    if previous_delivery['integrated'] and previous_delivery['integrated'].get('sliceCompleted') and not previous_delivery['rsi']:
+                        raise ValueError('Complete bounded RSI before selecting the next slice')
+            previous = current.get('activeSelection', {})
+            generation = previous.get('generation', 0)
+            if type(generation) is not int or generation < 0:
+                raise ValueError('Invalid canonical selection generation')
+            current.setdefault('sliceSelectionHistory', []).append({
+                'atUTC': now(), 'activeContributorRecord': current.get('activeContributorRecord'),
+                'activeSlice': current.get('activeSlice'), 'activeSelection': current.get('activeSelection')})
+            current['activeContributorRecord'] = args.record
+            current['activeSlice'] = record['slice']
+            current['activeSelection'] = {'generation': generation + 1,
+                'recordIdentitySha256': record_identity(record, args.record), 'selectedUTC': now()}
+            write_record(state_path, current, expected_sha=state_sha)
+            result.update(activeSelection=current['activeSelection'], record=args.record, acceptanceInferred=False)
+        elif args.command == 'delivery-event':
+            record = read_target()
+            before_sha = hashlib.sha256(regular_bytes_at(lock_parent, path.name)).hexdigest()
+            if before_sha != args.expect_record_sha:
+                raise ValueError('Delivery record changed before append')
+            current_selection(record, state, args.expect_selection)
+            errors, _ = validate(root, record, reqs, state)
+            if errors:
+                raise ValueError('; '.join(errors))
+            if record.get('workflowPolicy') != 2:
+                raise ValueError('Delivery events require explicit new-start opt-in')
+            event = read(safe(root, args.event_file))
+            fields = {
+                'candidate': {'candidate'}, 'review': {'candidateSha256', 'review'},
+                'execution-started': {'candidateSha256', 'jobId', 'outerHandle'},
+                'execution-finished': {'candidateSha256', 'jobId', 'outerHandleConsumed', 'report'},
+                'execution-consumed': {'jobId', 'outerHandle'},
+                'integrated': {'candidateSha256', 'revision'},
+                'rsi': {'candidateSha256', 'integrationRevision', 'disposition', 'evidence'},
+                'journey-observed': {'candidateSha256', 'observation'},
+                'deferred': {'reason', 'owner', 'nextAction'}, 'plan-changed': {'reason', 'owner', 'nextAction'}}
+            if not isinstance(event, dict) or event.get('kind') not in fields or set(event) != fields[event['kind']] | {'eventId', 'kind'}:
+                raise ValueError('Invalid delivery event input fields')
+            progress = delivery_progress_status(record)
+            closing = event['kind'] in ('execution-finished', 'execution-consumed', 'deferred')
+            if not closing and (progress['authorizationExpired'] or progress['reconciliationRequired']):
+                raise ValueError('Delivery authorization expired or clocks require reconciliation')
+            actual = delivery_state(root, record, reqs)
+            if event['kind'] == 'candidate':
+                validate_delivery_candidate(root, record, event['candidate'], current=True)
+                event['candidateSha256'] = json_sha256(event['candidate'])
+            elif event['kind'] == 'execution-started':
+                candidate = actual['candidate']
+                validate_execution_precheck(root, record, reqs, state,
+                    candidate['id'] if candidate else '', candidate['scope'] if candidate else '', args.expect_selection)
+            elif event['kind'] in ('review', 'integrated', 'journey-observed'):
+                if not actual['candidate']:
+                    raise ValueError('No delivery candidate')
+                validate_delivery_candidate(root, record, actual['candidate'], current=True)
+            if event['kind'] == 'integrated' and actual['candidate']:
+                event['pluginBaseline'] = plugin_snapshot(root)
+                event['pluginBaselineSha256'] = event['pluginBaseline']['sha256']
+                event['sliceCompleted'] = any(authored_v6(name) and sha is not None
+                    for name, sha in actual['candidate']['manifest']['sources'].items())
+                product = delivery_product_identity(actual['candidate']['manifest']['sources'])
+                prior = {delivery_product_identity(record['sourceHashes'])}
+                prior.update(e['deliveryAdvance'] for e in record['delivery']['events'] if e.get('deliveryAdvance'))
+                if product not in prior:
+                    event['deliveryAdvance'] = product
+            if event['kind'] == 'rsi':
+                validate_rsi(root, record, actual, event, current=True)
+            if event['kind'] == 'execution-finished':
+                terminal = json.loads(delivery_ref(root, event['report']))
+                if terminal.get('classification') in ('failed', 'unknown'):
+                    event['failureSignature'] = delivery_text(terminal.get('failureSignature'), 'failure signature')
+            sample = clock_sample()
+            event.update(sequence=len(record['delivery']['events']) + 1, clockSample=sample, atUTC=sample['utc'])
+            record['delivery']['events'].append(event)
+            delivery_state(root, record, reqs)
+            write_record(path, record, parent_fd=lock_parent, expected_sha=before_sha)
+            write_participant_index(root, history_inventory, args.record, record, records_parent)
+            result.update(record=args.record, nextRootAction=delivery_next_action(root, record, reqs),
+                          recordSha256=digest(path), acceptanceInferred=False)
+        elif args.command == 'delivery-precheck':
+            record = read_target()
+            result.update(validate_execution_precheck(root, record, reqs, state, args.candidate, args.scope, args.expect_selection))
+        elif args.command == 'doctor':
             result.update(doctor(root, args.record))
         elif args.command == 'self-test':
             result.update(self_test(root))
@@ -3301,7 +3955,7 @@ def main():
             elif args.command == 'review':
                 result.update(review(root, read_target(), reqs, state, args.include))
             elif args.command == 'progress-audit':
-                result.update(progress_audit(root, read_target(), reqs, state, args.expect_slice))
+                result.update(progress_audit(root, read_target(), reqs, state, args.expect_slice, args.expect_selection))
             elif args.command == 'report':
                 result.update(contribution_report(root, read_target(), reqs, state))
             else:
@@ -3333,6 +3987,16 @@ def main():
             if any(n not in dirty_snapshot for n in adopted):
                 raise ValueError('Adopted path is not currently dirty')
             record = {'schema': 1, 'owner': args.owner, 'slice': s, 'explicitSliceOverride': bool(args.slice_file), 'baseline': EXPECTED, 'startedUTC': now(), 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip(), 'sourceHashes': {n: digest(safe(root,n)) for n in s['paths']}, 'foreignDirty': {n: h for n, h in dirty_snapshot.items() if n not in adopted}, 'adoptedDirty': {'paths': adopted, 'ownershipNote': args.ownership_note}, 'iterations': []}
+            if bool(args.workflow_policy) != bool(args.delivery_plan_file):
+                raise ValueError('New delivery start requires both --workflow-policy 2 and --delivery-plan-file')
+            if args.workflow_policy == 2:
+                plan = read(safe(root, args.delivery_plan_file))
+                validate_delivery_plan(plan, s, reqs)
+                if delivery_time(plan['authorizationExpiresUTC']) <= dt.datetime.now(dt.timezone.utc):
+                    raise ValueError('Delivery authorization already expired')
+                record['workflowPolicy'] = 2
+                record['delivery'] = dict(plan, clockOrigin=clock_sample(), events=[],
+                                         guardHashes={name: fingerprint(root, name) for name in DELIVERY_GUARDS})
             # Reserve the exact participant identity in the index first. If
             # record creation is interrupted, later starts fail closed on the
             # missing indexed record instead of overlooking its history.
@@ -3381,6 +4045,10 @@ def main():
         if args.command == 'check' and args.base_ref and path.exists() and not args.project_only:
             names = git(root, 'diff', '--no-renames', '--name-only', '-z', args.base_ref, '--').decode().split('\0')
             result.setdefault('errors', []).extend('Archival implementation change: ' + n for n in names if n.startswith('implementation/') and not n.startswith('implementation/warlock/'))
+        if args.command in ('handoff', 'report', 'status', 'check') and path.exists() and not (args.command == 'check' and args.project_only):
+            current_record = read_target()
+            if current_record.get('workflowPolicy') == 2:
+                result['nextRootAction'] = delivery_next_action(root, current_record, reqs)
         result['ok'] = not result.get('errors')
         code = 0 if result['ok'] else 1
     except (ValueError, OSError, KeyError, TypeError, AttributeError, IndexError) as exc:

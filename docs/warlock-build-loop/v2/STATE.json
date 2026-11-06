@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-06T03:29:52.842944+00:00",
+  "updatedUTC": "2026-11-06T18:36:26.814770+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -5271,5 +5271,20 @@
     "releaseAccepted": false,
     "investigationRestarted": false,
     "timerReset": false
+  },
+  "journeyWorkflowMigration": {
+    "schema": 1,
+    "pluginVersion": "0.17.0",
+    "workflowPolicy": 2,
+    "status": "implementation-tested-selection-pending",
+    "previousSelectionPreserved": true,
+    "authorizationExpiresUTC": "2026-11-06T19:07:31.942628+00:00",
+    "postSliceRSI": "required",
+    "firstJourney": {
+      "requirement": "ELM-UX-003",
+      "scenario": "ux-003",
+      "acceptance": false
+    },
+    "historicalStopsUnchanged": true
   }
 }
