@@ -108,14 +108,46 @@ def team_quint_inputs(root, pair):
             prefix + 'tea004-preview-' + pair + '_test.qnt'}
 
 
-def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False):
+def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False):
     names = {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
              'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
              'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
              'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py',
              'implementation/warlock/elm.json'}
     names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
-    if successor_focus:
+    if workspace_original:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'TaskViewReplay.elm', 'TaskViewEscapeReplay.elm', 'WorkspaceNavigationReplay.elm',
+            'OutputRetirementReplay.elm', 'NativePointerFixture.elm', 'task-view-original-fixed.cjs'))
+    elif workspace_dom:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'WorkspaceUnsupportedDomReplay.elm', 'workspace-unsupported-dom-fixed.cjs',
+            'ui006-dom-guard.js', 'ui006-dom-guard.html',
+            'OutputRetirementReplay.elm', 'NativePointerFixture.elm'))
+    elif workspace_owner_component_red:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'WorkspaceOwnerComponentReplay.elm', 'Desktop-test-observer.txt',
+            'workspace-owner-component-red-fixed.cjs', 'OutputRetirementReplay.elm', 'NativePointerFixture.elm'))
+    elif workspace_owner_component:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'WorkspaceOwnerComponentReplay.elm', 'Desktop-test-observer.txt',
+            'workspace-owner-component-fixed.cjs', 'OutputRetirementReplay.elm', 'NativePointerFixture.elm'))
+    elif workspace_owner_baseline:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'WorkspaceOwnerLiteralReplay.elm', 'Desktop-test-observer.txt',
+            'workspace-owner-literal-fixed.cjs', 'workspace-owner-baseline-fixed.cjs',
+            'OutputRetirementReplay.elm', 'NativePointerFixture.elm'))
+    elif successor_focus:
         names.update('implementation/warlock/qa/' + name for name in (
             'SystemMenuReplay.elm', 'SolSystemMenuIntegratedReplay2114.elm',
             'SystemMenuFocusPipeline.elm', 'SuccessorFocusReplay.elm', 'SystemMenuFocusExtended.elm',
@@ -208,7 +240,7 @@ def main():
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
@@ -318,7 +350,12 @@ def main():
                                  preview_control=packet['arguments'] == ['--preview-control'],
                                  protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role']),
                                  consumption=packet['arguments'] == ['--preview-consumption'],
-                                 successor_focus=packet['arguments'] == ['--successor-focus'])
+                                 successor_focus=packet['arguments'] == ['--successor-focus'],
+                                 workspace_owner_baseline=packet['arguments'] == ['--workspace-owner-baseline'],
+                                 workspace_owner_component=packet['arguments'] == ['--workspace-owner-component'],
+                                 workspace_owner_component_red=packet['arguments'] == ['--workspace-owner-component-red'],
+                                 workspace_original=packet['arguments'] == ['--workspace-original'],
+                                 workspace_dom=packet['arguments'] == ['--workspace-dom'])
     if team_quint:
         mandatory = team_quint_inputs(REPO, packet['arguments'][0][2:])
     if set(packet['inputs']) != mandatory:

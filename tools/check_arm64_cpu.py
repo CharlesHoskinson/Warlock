@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Fixed private ARM build profiles, admitted only by hash-reviewed qa_cpu."""
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -27,6 +28,421 @@ def image(path):
 
 
 SUCCESSOR_FOCUS_CHECKS = {'SystemMenuReplay': ['sessionClosingClassifiedAndLogoutDenied', 'otherSessionTextLabelAndLogoutPreserved', 'sessionStateBoundsAndTypeRefused', 'networkPermissionsPreserveAdmission', 'powerCapabilitiesPreserveAdmission', 'foreignNetworkCapabilityRefused', 'foreignPowerPermissionRefused', 'powerCapabilityLabelsPreserved', 'systemMenuOpenerIntegrated', 'menuModeAcceptedByProductionRenderer', 'openingReadFocusMatchesCloseControl', 'originalUnavailableNetworkShown', 'remainingStateObserved', 'oneExplicitVolumeChange', 'pendingCannotRepeat', 'committedCannotRepeatOldRevision', 'unknownCannotReplay', 'readReconcilesChangedStateWithoutEffect', 'unavailableNeverSubmits', 'restartRequiresUIConfirmation', 'cancelHasNoNativeEffect', 'confirmedRestartSubmitsOnce', 'directConfirmationCannotBypassPrompt', 'wrongReceiptCannotSettle', 'staleViewCannotSubmit', 'closingFocusesOpenerWithoutNativeEffect', 'anotherPopupRetiresSystemWithoutLosingNativeState', 'allControlsHaveNames'], 'SolSystemMenuIntegratedReplay2114': ['seed-0/given-complete-domain', 'seed-0/positive-proposal-complete-domain-and-wire', 'seed-0/pending-duplicate-no-effect', 'seed-0/unknown-retains-complete-reservation', 'seed-0/unknown-duplicate-stable', 'seed-0/unknown-cannot-repeat', 'seed-0/foreign-request-preserves-complete-state', 'seed-0/foreign-service-preserves-complete-state', 'seed-0/invalid-status-preserves-complete-state', 'seed-0/late-committed-settles', 'seed-0/late-submitted-settles-without-invented-observation', 'seed-0/late-refused-retains-spent-intent', 'seed-0/same-revision-read-keeps-unconfirmed', 'seed-0/observation-preserves-typed-reservation', 'seed-0/older-outcome-after-new-observation-is-stale', 'seed-0/newer-read-settles-without-replay', 'seed-0/old-intent-cannot-be-replayed-after-read', 'seed-0/fresh-explicit-intent-can-follow-new-observation', 'seed-0/full-width-request-preserved', 'seed-1/given-complete-domain', 'seed-1/positive-proposal-complete-domain-and-wire', 'seed-1/pending-duplicate-no-effect', 'seed-1/unknown-retains-complete-reservation', 'seed-1/unknown-duplicate-stable', 'seed-1/unknown-cannot-repeat', 'seed-1/foreign-request-preserves-complete-state', 'seed-1/foreign-service-preserves-complete-state', 'seed-1/invalid-status-preserves-complete-state', 'seed-1/late-committed-settles', 'seed-1/late-submitted-settles-without-invented-observation', 'seed-1/late-refused-retains-spent-intent', 'seed-1/same-revision-read-keeps-unconfirmed', 'seed-1/observation-preserves-typed-reservation', 'seed-1/older-outcome-after-new-observation-is-stale', 'seed-1/newer-read-settles-without-replay', 'seed-1/old-intent-cannot-be-replayed-after-read', 'seed-1/fresh-explicit-intent-can-follow-new-observation', 'seed-1/full-width-request-preserved', 'seed-2/given-complete-domain', 'seed-2/positive-proposal-complete-domain-and-wire', 'seed-2/pending-duplicate-no-effect', 'seed-2/unknown-retains-complete-reservation', 'seed-2/unknown-duplicate-stable', 'seed-2/unknown-cannot-repeat', 'seed-2/foreign-request-preserves-complete-state', 'seed-2/foreign-service-preserves-complete-state', 'seed-2/invalid-status-preserves-complete-state', 'seed-2/late-committed-settles', 'seed-2/late-submitted-settles-without-invented-observation', 'seed-2/late-refused-retains-spent-intent', 'seed-2/same-revision-read-keeps-unconfirmed', 'seed-2/observation-preserves-typed-reservation', 'seed-2/older-outcome-after-new-observation-is-stale', 'seed-2/newer-read-settles-without-replay', 'seed-2/old-intent-cannot-be-replayed-after-read', 'seed-2/fresh-explicit-intent-can-follow-new-observation', 'seed-2/full-width-request-preserved', 'seed-3/given-complete-domain', 'seed-3/positive-proposal-complete-domain-and-wire', 'seed-3/pending-duplicate-no-effect', 'seed-3/unknown-retains-complete-reservation', 'seed-3/unknown-duplicate-stable', 'seed-3/unknown-cannot-repeat', 'seed-3/foreign-request-preserves-complete-state', 'seed-3/foreign-service-preserves-complete-state', 'seed-3/invalid-status-preserves-complete-state', 'seed-3/late-committed-settles', 'seed-3/late-submitted-settles-without-invented-observation', 'seed-3/late-refused-retains-spent-intent', 'seed-3/same-revision-read-keeps-unconfirmed', 'seed-3/observation-preserves-typed-reservation', 'seed-3/older-outcome-after-new-observation-is-stale', 'seed-3/newer-read-settles-without-replay', 'seed-3/old-intent-cannot-be-replayed-after-read', 'seed-3/fresh-explicit-intent-can-follow-new-observation', 'seed-3/full-width-request-preserved', 'seed-4/given-complete-domain', 'seed-4/positive-proposal-complete-domain-and-wire', 'seed-4/pending-duplicate-no-effect', 'seed-4/unknown-retains-complete-reservation', 'seed-4/unknown-duplicate-stable', 'seed-4/unknown-cannot-repeat', 'seed-4/foreign-request-preserves-complete-state', 'seed-4/foreign-service-preserves-complete-state', 'seed-4/invalid-status-preserves-complete-state', 'seed-4/late-committed-settles', 'seed-4/late-submitted-settles-without-invented-observation', 'seed-4/late-refused-retains-spent-intent', 'seed-4/same-revision-read-keeps-unconfirmed', 'seed-4/observation-preserves-typed-reservation', 'seed-4/older-outcome-after-new-observation-is-stale', 'seed-4/newer-read-settles-without-replay', 'seed-4/old-intent-cannot-be-replayed-after-read', 'seed-4/fresh-explicit-intent-can-follow-new-observation', 'seed-4/full-width-request-preserved', 'seed-5/given-complete-domain', 'seed-5/positive-proposal-complete-domain-and-wire', 'seed-5/pending-duplicate-no-effect', 'seed-5/unknown-retains-complete-reservation', 'seed-5/unknown-duplicate-stable', 'seed-5/unknown-cannot-repeat', 'seed-5/foreign-request-preserves-complete-state', 'seed-5/foreign-service-preserves-complete-state', 'seed-5/invalid-status-preserves-complete-state', 'seed-5/late-committed-settles', 'seed-5/late-submitted-settles-without-invented-observation', 'seed-5/late-refused-retains-spent-intent', 'seed-5/same-revision-read-keeps-unconfirmed', 'seed-5/observation-preserves-typed-reservation', 'seed-5/older-outcome-after-new-observation-is-stale', 'seed-5/newer-read-settles-without-replay', 'seed-5/old-intent-cannot-be-replayed-after-read', 'seed-5/fresh-explicit-intent-can-follow-new-observation', 'seed-5/full-width-request-preserved', 'seed-6/given-complete-domain', 'seed-6/positive-proposal-complete-domain-and-wire', 'seed-6/pending-duplicate-no-effect', 'seed-6/unknown-retains-complete-reservation', 'seed-6/unknown-duplicate-stable', 'seed-6/unknown-cannot-repeat', 'seed-6/foreign-request-preserves-complete-state', 'seed-6/foreign-service-preserves-complete-state', 'seed-6/invalid-status-preserves-complete-state', 'seed-6/late-committed-settles', 'seed-6/late-submitted-settles-without-invented-observation', 'seed-6/late-refused-retains-spent-intent', 'seed-6/same-revision-read-keeps-unconfirmed', 'seed-6/observation-preserves-typed-reservation', 'seed-6/older-outcome-after-new-observation-is-stale', 'seed-6/newer-read-settles-without-replay', 'seed-6/old-intent-cannot-be-replayed-after-read', 'seed-6/fresh-explicit-intent-can-follow-new-observation', 'seed-6/full-width-request-preserved', 'seed-7/given-complete-domain', 'seed-7/positive-proposal-complete-domain-and-wire', 'seed-7/pending-duplicate-no-effect', 'seed-7/unknown-retains-complete-reservation', 'seed-7/unknown-duplicate-stable', 'seed-7/unknown-cannot-repeat', 'seed-7/foreign-request-preserves-complete-state', 'seed-7/foreign-service-preserves-complete-state', 'seed-7/invalid-status-preserves-complete-state', 'seed-7/late-committed-settles', 'seed-7/late-submitted-settles-without-invented-observation', 'seed-7/late-refused-retains-spent-intent', 'seed-7/same-revision-read-keeps-unconfirmed', 'seed-7/observation-preserves-typed-reservation', 'seed-7/older-outcome-after-new-observation-is-stale', 'seed-7/newer-read-settles-without-replay', 'seed-7/old-intent-cannot-be-replayed-after-read', 'seed-7/fresh-explicit-intent-can-follow-new-observation', 'seed-7/full-width-request-preserved', 'seed-8/given-complete-domain', 'seed-8/positive-proposal-complete-domain-and-wire', 'seed-8/pending-duplicate-no-effect', 'seed-8/unknown-retains-complete-reservation', 'seed-8/unknown-duplicate-stable', 'seed-8/unknown-cannot-repeat', 'seed-8/foreign-request-preserves-complete-state', 'seed-8/foreign-service-preserves-complete-state', 'seed-8/invalid-status-preserves-complete-state', 'seed-8/late-committed-settles', 'seed-8/late-submitted-settles-without-invented-observation', 'seed-8/late-refused-retains-spent-intent', 'seed-8/same-revision-read-keeps-unconfirmed', 'seed-8/observation-preserves-typed-reservation', 'seed-8/older-outcome-after-new-observation-is-stale', 'seed-8/newer-read-settles-without-replay', 'seed-8/old-intent-cannot-be-replayed-after-read', 'seed-8/fresh-explicit-intent-can-follow-new-observation', 'seed-8/full-width-request-preserved', 'seed-9/given-complete-domain', 'seed-9/positive-proposal-complete-domain-and-wire', 'seed-9/pending-duplicate-no-effect', 'seed-9/unknown-retains-complete-reservation', 'seed-9/unknown-duplicate-stable', 'seed-9/unknown-cannot-repeat', 'seed-9/foreign-request-preserves-complete-state', 'seed-9/foreign-service-preserves-complete-state', 'seed-9/invalid-status-preserves-complete-state', 'seed-9/late-committed-settles', 'seed-9/late-submitted-settles-without-invented-observation', 'seed-9/late-refused-retains-spent-intent', 'seed-9/same-revision-read-keeps-unconfirmed', 'seed-9/observation-preserves-typed-reservation', 'seed-9/older-outcome-after-new-observation-is-stale', 'seed-9/newer-read-settles-without-replay', 'seed-9/old-intent-cannot-be-replayed-after-read', 'seed-9/fresh-explicit-intent-can-follow-new-observation', 'seed-9/full-width-request-preserved', 'seed-10/given-complete-domain', 'seed-10/positive-proposal-complete-domain-and-wire', 'seed-10/pending-duplicate-no-effect', 'seed-10/unknown-retains-complete-reservation', 'seed-10/unknown-duplicate-stable', 'seed-10/unknown-cannot-repeat', 'seed-10/foreign-request-preserves-complete-state', 'seed-10/foreign-service-preserves-complete-state', 'seed-10/invalid-status-preserves-complete-state', 'seed-10/late-committed-settles', 'seed-10/late-submitted-settles-without-invented-observation', 'seed-10/late-refused-retains-spent-intent', 'seed-10/same-revision-read-keeps-unconfirmed', 'seed-10/observation-preserves-typed-reservation', 'seed-10/older-outcome-after-new-observation-is-stale', 'seed-10/newer-read-settles-without-replay', 'seed-10/old-intent-cannot-be-replayed-after-read', 'seed-10/fresh-explicit-intent-can-follow-new-observation', 'seed-10/full-width-request-preserved', 'seed-11/given-complete-domain', 'seed-11/positive-proposal-complete-domain-and-wire', 'seed-11/pending-duplicate-no-effect', 'seed-11/unknown-retains-complete-reservation', 'seed-11/unknown-duplicate-stable', 'seed-11/unknown-cannot-repeat', 'seed-11/foreign-request-preserves-complete-state', 'seed-11/foreign-service-preserves-complete-state', 'seed-11/invalid-status-preserves-complete-state', 'seed-11/late-committed-settles', 'seed-11/late-submitted-settles-without-invented-observation', 'seed-11/late-refused-retains-spent-intent', 'seed-11/same-revision-read-keeps-unconfirmed', 'seed-11/observation-preserves-typed-reservation', 'seed-11/older-outcome-after-new-observation-is-stale', 'seed-11/newer-read-settles-without-replay', 'seed-11/old-intent-cannot-be-replayed-after-read', 'seed-11/fresh-explicit-intent-can-follow-new-observation', 'seed-11/full-width-request-preserved', 'seed-12/given-complete-domain', 'seed-12/positive-proposal-complete-domain-and-wire', 'seed-12/pending-duplicate-no-effect', 'seed-12/unknown-retains-complete-reservation', 'seed-12/unknown-duplicate-stable', 'seed-12/unknown-cannot-repeat', 'seed-12/foreign-request-preserves-complete-state', 'seed-12/foreign-service-preserves-complete-state', 'seed-12/invalid-status-preserves-complete-state', 'seed-12/late-committed-settles', 'seed-12/late-submitted-settles-without-invented-observation', 'seed-12/late-refused-retains-spent-intent', 'seed-12/same-revision-read-keeps-unconfirmed', 'seed-12/observation-preserves-typed-reservation', 'seed-12/older-outcome-after-new-observation-is-stale', 'seed-12/newer-read-settles-without-replay', 'seed-12/old-intent-cannot-be-replayed-after-read', 'seed-12/fresh-explicit-intent-can-follow-new-observation', 'seed-12/full-width-request-preserved', 'seed-13/given-complete-domain', 'seed-13/positive-proposal-complete-domain-and-wire', 'seed-13/pending-duplicate-no-effect', 'seed-13/unknown-retains-complete-reservation', 'seed-13/unknown-duplicate-stable', 'seed-13/unknown-cannot-repeat', 'seed-13/foreign-request-preserves-complete-state', 'seed-13/foreign-service-preserves-complete-state', 'seed-13/invalid-status-preserves-complete-state', 'seed-13/late-committed-settles', 'seed-13/late-submitted-settles-without-invented-observation', 'seed-13/late-refused-retains-spent-intent', 'seed-13/same-revision-read-keeps-unconfirmed', 'seed-13/observation-preserves-typed-reservation', 'seed-13/older-outcome-after-new-observation-is-stale', 'seed-13/newer-read-settles-without-replay', 'seed-13/old-intent-cannot-be-replayed-after-read', 'seed-13/fresh-explicit-intent-can-follow-new-observation', 'seed-13/full-width-request-preserved', 'seed-14/given-complete-domain', 'seed-14/positive-proposal-complete-domain-and-wire', 'seed-14/pending-duplicate-no-effect', 'seed-14/unknown-retains-complete-reservation', 'seed-14/unknown-duplicate-stable', 'seed-14/unknown-cannot-repeat', 'seed-14/foreign-request-preserves-complete-state', 'seed-14/foreign-service-preserves-complete-state', 'seed-14/invalid-status-preserves-complete-state', 'seed-14/late-committed-settles', 'seed-14/late-submitted-settles-without-invented-observation', 'seed-14/late-refused-retains-spent-intent', 'seed-14/same-revision-read-keeps-unconfirmed', 'seed-14/observation-preserves-typed-reservation', 'seed-14/older-outcome-after-new-observation-is-stale', 'seed-14/newer-read-settles-without-replay', 'seed-14/old-intent-cannot-be-replayed-after-read', 'seed-14/fresh-explicit-intent-can-follow-new-observation', 'seed-14/full-width-request-preserved', 'seed-15/given-complete-domain', 'seed-15/positive-proposal-complete-domain-and-wire', 'seed-15/pending-duplicate-no-effect', 'seed-15/unknown-retains-complete-reservation', 'seed-15/unknown-duplicate-stable', 'seed-15/unknown-cannot-repeat', 'seed-15/foreign-request-preserves-complete-state', 'seed-15/foreign-service-preserves-complete-state', 'seed-15/invalid-status-preserves-complete-state', 'seed-15/late-committed-settles', 'seed-15/late-submitted-settles-without-invented-observation', 'seed-15/late-refused-retains-spent-intent', 'seed-15/same-revision-read-keeps-unconfirmed', 'seed-15/observation-preserves-typed-reservation', 'seed-15/older-outcome-after-new-observation-is-stale', 'seed-15/newer-read-settles-without-replay', 'seed-15/old-intent-cannot-be-replayed-after-read', 'seed-15/fresh-explicit-intent-can-follow-new-observation', 'seed-15/full-width-request-preserved', 'seed-16/given-complete-domain', 'seed-16/positive-proposal-complete-domain-and-wire', 'seed-16/pending-duplicate-no-effect', 'seed-16/unknown-retains-complete-reservation', 'seed-16/unknown-duplicate-stable', 'seed-16/unknown-cannot-repeat', 'seed-16/foreign-request-preserves-complete-state', 'seed-16/foreign-service-preserves-complete-state', 'seed-16/invalid-status-preserves-complete-state', 'seed-16/late-committed-settles', 'seed-16/late-submitted-settles-without-invented-observation', 'seed-16/late-refused-retains-spent-intent', 'seed-16/same-revision-read-keeps-unconfirmed', 'seed-16/observation-preserves-typed-reservation', 'seed-16/older-outcome-after-new-observation-is-stale', 'seed-16/newer-read-settles-without-replay', 'seed-16/old-intent-cannot-be-replayed-after-read', 'seed-16/fresh-explicit-intent-can-follow-new-observation', 'seed-16/full-width-request-preserved', 'seed-17/given-complete-domain', 'seed-17/positive-proposal-complete-domain-and-wire', 'seed-17/pending-duplicate-no-effect', 'seed-17/unknown-retains-complete-reservation', 'seed-17/unknown-duplicate-stable', 'seed-17/unknown-cannot-repeat', 'seed-17/foreign-request-preserves-complete-state', 'seed-17/foreign-service-preserves-complete-state', 'seed-17/invalid-status-preserves-complete-state', 'seed-17/late-committed-settles', 'seed-17/late-submitted-settles-without-invented-observation', 'seed-17/late-refused-retains-spent-intent', 'seed-17/same-revision-read-keeps-unconfirmed', 'seed-17/observation-preserves-typed-reservation', 'seed-17/older-outcome-after-new-observation-is-stale', 'seed-17/newer-read-settles-without-replay', 'seed-17/old-intent-cannot-be-replayed-after-read', 'seed-17/fresh-explicit-intent-can-follow-new-observation', 'seed-17/full-width-request-preserved', 'seed-18/given-complete-domain', 'seed-18/positive-proposal-complete-domain-and-wire', 'seed-18/pending-duplicate-no-effect', 'seed-18/unknown-retains-complete-reservation', 'seed-18/unknown-duplicate-stable', 'seed-18/unknown-cannot-repeat', 'seed-18/foreign-request-preserves-complete-state', 'seed-18/foreign-service-preserves-complete-state', 'seed-18/invalid-status-preserves-complete-state', 'seed-18/late-committed-settles', 'seed-18/late-submitted-settles-without-invented-observation', 'seed-18/late-refused-retains-spent-intent', 'seed-18/same-revision-read-keeps-unconfirmed', 'seed-18/observation-preserves-typed-reservation', 'seed-18/older-outcome-after-new-observation-is-stale', 'seed-18/newer-read-settles-without-replay', 'seed-18/old-intent-cannot-be-replayed-after-read', 'seed-18/fresh-explicit-intent-can-follow-new-observation', 'seed-18/full-width-request-preserved', 'seed-19/given-complete-domain', 'seed-19/positive-proposal-complete-domain-and-wire', 'seed-19/pending-duplicate-no-effect', 'seed-19/unknown-retains-complete-reservation', 'seed-19/unknown-duplicate-stable', 'seed-19/unknown-cannot-repeat', 'seed-19/foreign-request-preserves-complete-state', 'seed-19/foreign-service-preserves-complete-state', 'seed-19/invalid-status-preserves-complete-state', 'seed-19/late-committed-settles', 'seed-19/late-submitted-settles-without-invented-observation', 'seed-19/late-refused-retains-spent-intent', 'seed-19/same-revision-read-keeps-unconfirmed', 'seed-19/observation-preserves-typed-reservation', 'seed-19/older-outcome-after-new-observation-is-stale', 'seed-19/newer-read-settles-without-replay', 'seed-19/old-intent-cannot-be-replayed-after-read', 'seed-19/fresh-explicit-intent-can-follow-new-observation', 'seed-19/full-width-request-preserved', 'seed-20/given-complete-domain', 'seed-20/positive-proposal-complete-domain-and-wire', 'seed-20/pending-duplicate-no-effect', 'seed-20/unknown-retains-complete-reservation', 'seed-20/unknown-duplicate-stable', 'seed-20/unknown-cannot-repeat', 'seed-20/foreign-request-preserves-complete-state', 'seed-20/foreign-service-preserves-complete-state', 'seed-20/invalid-status-preserves-complete-state', 'seed-20/late-committed-settles', 'seed-20/late-submitted-settles-without-invented-observation', 'seed-20/late-refused-retains-spent-intent', 'seed-20/same-revision-read-keeps-unconfirmed', 'seed-20/observation-preserves-typed-reservation', 'seed-20/older-outcome-after-new-observation-is-stale', 'seed-20/newer-read-settles-without-replay', 'seed-20/old-intent-cannot-be-replayed-after-read', 'seed-20/fresh-explicit-intent-can-follow-new-observation', 'seed-20/full-width-request-preserved', 'seed-21/given-complete-domain', 'seed-21/positive-proposal-complete-domain-and-wire', 'seed-21/pending-duplicate-no-effect', 'seed-21/unknown-retains-complete-reservation', 'seed-21/unknown-duplicate-stable', 'seed-21/unknown-cannot-repeat', 'seed-21/foreign-request-preserves-complete-state', 'seed-21/foreign-service-preserves-complete-state', 'seed-21/invalid-status-preserves-complete-state', 'seed-21/late-committed-settles', 'seed-21/late-submitted-settles-without-invented-observation', 'seed-21/late-refused-retains-spent-intent', 'seed-21/same-revision-read-keeps-unconfirmed', 'seed-21/observation-preserves-typed-reservation', 'seed-21/older-outcome-after-new-observation-is-stale', 'seed-21/newer-read-settles-without-replay', 'seed-21/old-intent-cannot-be-replayed-after-read', 'seed-21/fresh-explicit-intent-can-follow-new-observation', 'seed-21/full-width-request-preserved', 'seed-22/given-complete-domain', 'seed-22/positive-proposal-complete-domain-and-wire', 'seed-22/pending-duplicate-no-effect', 'seed-22/unknown-retains-complete-reservation', 'seed-22/unknown-duplicate-stable', 'seed-22/unknown-cannot-repeat', 'seed-22/foreign-request-preserves-complete-state', 'seed-22/foreign-service-preserves-complete-state', 'seed-22/invalid-status-preserves-complete-state', 'seed-22/late-committed-settles', 'seed-22/late-submitted-settles-without-invented-observation', 'seed-22/late-refused-retains-spent-intent', 'seed-22/same-revision-read-keeps-unconfirmed', 'seed-22/observation-preserves-typed-reservation', 'seed-22/older-outcome-after-new-observation-is-stale', 'seed-22/newer-read-settles-without-replay', 'seed-22/old-intent-cannot-be-replayed-after-read', 'seed-22/fresh-explicit-intent-can-follow-new-observation', 'seed-22/full-width-request-preserved', 'seed-23/given-complete-domain', 'seed-23/positive-proposal-complete-domain-and-wire', 'seed-23/pending-duplicate-no-effect', 'seed-23/unknown-retains-complete-reservation', 'seed-23/unknown-duplicate-stable', 'seed-23/unknown-cannot-repeat', 'seed-23/foreign-request-preserves-complete-state', 'seed-23/foreign-service-preserves-complete-state', 'seed-23/invalid-status-preserves-complete-state', 'seed-23/late-committed-settles', 'seed-23/late-submitted-settles-without-invented-observation', 'seed-23/late-refused-retains-spent-intent', 'seed-23/same-revision-read-keeps-unconfirmed', 'seed-23/observation-preserves-typed-reservation', 'seed-23/older-outcome-after-new-observation-is-stale', 'seed-23/newer-read-settles-without-replay', 'seed-23/old-intent-cannot-be-replayed-after-read', 'seed-23/fresh-explicit-intent-can-follow-new-observation', 'seed-23/full-width-request-preserved', 'seed-24/given-complete-domain', 'seed-24/positive-proposal-complete-domain-and-wire', 'seed-24/pending-duplicate-no-effect', 'seed-24/unknown-retains-complete-reservation', 'seed-24/unknown-duplicate-stable', 'seed-24/unknown-cannot-repeat', 'seed-24/foreign-request-preserves-complete-state', 'seed-24/foreign-service-preserves-complete-state', 'seed-24/invalid-status-preserves-complete-state', 'seed-24/late-committed-settles', 'seed-24/late-submitted-settles-without-invented-observation', 'seed-24/late-refused-retains-spent-intent', 'seed-24/same-revision-read-keeps-unconfirmed', 'seed-24/observation-preserves-typed-reservation', 'seed-24/older-outcome-after-new-observation-is-stale', 'seed-24/newer-read-settles-without-replay', 'seed-24/old-intent-cannot-be-replayed-after-read', 'seed-24/fresh-explicit-intent-can-follow-new-observation', 'seed-24/full-width-request-preserved', 'seed-25/given-complete-domain', 'seed-25/positive-proposal-complete-domain-and-wire', 'seed-25/pending-duplicate-no-effect', 'seed-25/unknown-retains-complete-reservation', 'seed-25/unknown-duplicate-stable', 'seed-25/unknown-cannot-repeat', 'seed-25/foreign-request-preserves-complete-state', 'seed-25/foreign-service-preserves-complete-state', 'seed-25/invalid-status-preserves-complete-state', 'seed-25/late-committed-settles', 'seed-25/late-submitted-settles-without-invented-observation', 'seed-25/late-refused-retains-spent-intent', 'seed-25/same-revision-read-keeps-unconfirmed', 'seed-25/observation-preserves-typed-reservation', 'seed-25/older-outcome-after-new-observation-is-stale', 'seed-25/newer-read-settles-without-replay', 'seed-25/old-intent-cannot-be-replayed-after-read', 'seed-25/fresh-explicit-intent-can-follow-new-observation', 'seed-25/full-width-request-preserved', 'seed-26/given-complete-domain', 'seed-26/positive-proposal-complete-domain-and-wire', 'seed-26/pending-duplicate-no-effect', 'seed-26/unknown-retains-complete-reservation', 'seed-26/unknown-duplicate-stable', 'seed-26/unknown-cannot-repeat', 'seed-26/foreign-request-preserves-complete-state', 'seed-26/foreign-service-preserves-complete-state', 'seed-26/invalid-status-preserves-complete-state', 'seed-26/late-committed-settles', 'seed-26/late-submitted-settles-without-invented-observation', 'seed-26/late-refused-retains-spent-intent', 'seed-26/same-revision-read-keeps-unconfirmed', 'seed-26/observation-preserves-typed-reservation', 'seed-26/older-outcome-after-new-observation-is-stale', 'seed-26/newer-read-settles-without-replay', 'seed-26/old-intent-cannot-be-replayed-after-read', 'seed-26/fresh-explicit-intent-can-follow-new-observation', 'seed-26/full-width-request-preserved', 'seed-27/given-complete-domain', 'seed-27/positive-proposal-complete-domain-and-wire', 'seed-27/pending-duplicate-no-effect', 'seed-27/unknown-retains-complete-reservation', 'seed-27/unknown-duplicate-stable', 'seed-27/unknown-cannot-repeat', 'seed-27/foreign-request-preserves-complete-state', 'seed-27/foreign-service-preserves-complete-state', 'seed-27/invalid-status-preserves-complete-state', 'seed-27/late-committed-settles', 'seed-27/late-submitted-settles-without-invented-observation', 'seed-27/late-refused-retains-spent-intent', 'seed-27/same-revision-read-keeps-unconfirmed', 'seed-27/observation-preserves-typed-reservation', 'seed-27/older-outcome-after-new-observation-is-stale', 'seed-27/newer-read-settles-without-replay', 'seed-27/old-intent-cannot-be-replayed-after-read', 'seed-27/fresh-explicit-intent-can-follow-new-observation', 'seed-27/full-width-request-preserved', 'seed-28/given-complete-domain', 'seed-28/positive-proposal-complete-domain-and-wire', 'seed-28/pending-duplicate-no-effect', 'seed-28/unknown-retains-complete-reservation', 'seed-28/unknown-duplicate-stable', 'seed-28/unknown-cannot-repeat', 'seed-28/foreign-request-preserves-complete-state', 'seed-28/foreign-service-preserves-complete-state', 'seed-28/invalid-status-preserves-complete-state', 'seed-28/late-committed-settles', 'seed-28/late-submitted-settles-without-invented-observation', 'seed-28/late-refused-retains-spent-intent', 'seed-28/same-revision-read-keeps-unconfirmed', 'seed-28/observation-preserves-typed-reservation', 'seed-28/older-outcome-after-new-observation-is-stale', 'seed-28/newer-read-settles-without-replay', 'seed-28/old-intent-cannot-be-replayed-after-read', 'seed-28/fresh-explicit-intent-can-follow-new-observation', 'seed-28/full-width-request-preserved', 'seed-29/given-complete-domain', 'seed-29/positive-proposal-complete-domain-and-wire', 'seed-29/pending-duplicate-no-effect', 'seed-29/unknown-retains-complete-reservation', 'seed-29/unknown-duplicate-stable', 'seed-29/unknown-cannot-repeat', 'seed-29/foreign-request-preserves-complete-state', 'seed-29/foreign-service-preserves-complete-state', 'seed-29/invalid-status-preserves-complete-state', 'seed-29/late-committed-settles', 'seed-29/late-submitted-settles-without-invented-observation', 'seed-29/late-refused-retains-spent-intent', 'seed-29/same-revision-read-keeps-unconfirmed', 'seed-29/observation-preserves-typed-reservation', 'seed-29/older-outcome-after-new-observation-is-stale', 'seed-29/newer-read-settles-without-replay', 'seed-29/old-intent-cannot-be-replayed-after-read', 'seed-29/fresh-explicit-intent-can-follow-new-observation', 'seed-29/full-width-request-preserved', 'seed-30/given-complete-domain', 'seed-30/positive-proposal-complete-domain-and-wire', 'seed-30/pending-duplicate-no-effect', 'seed-30/unknown-retains-complete-reservation', 'seed-30/unknown-duplicate-stable', 'seed-30/unknown-cannot-repeat', 'seed-30/foreign-request-preserves-complete-state', 'seed-30/foreign-service-preserves-complete-state', 'seed-30/invalid-status-preserves-complete-state', 'seed-30/late-committed-settles', 'seed-30/late-submitted-settles-without-invented-observation', 'seed-30/late-refused-retains-spent-intent', 'seed-30/same-revision-read-keeps-unconfirmed', 'seed-30/observation-preserves-typed-reservation', 'seed-30/older-outcome-after-new-observation-is-stale', 'seed-30/newer-read-settles-without-replay', 'seed-30/old-intent-cannot-be-replayed-after-read', 'seed-30/fresh-explicit-intent-can-follow-new-observation', 'seed-30/full-width-request-preserved', 'seed-31/given-complete-domain', 'seed-31/positive-proposal-complete-domain-and-wire', 'seed-31/pending-duplicate-no-effect', 'seed-31/unknown-retains-complete-reservation', 'seed-31/unknown-duplicate-stable', 'seed-31/unknown-cannot-repeat', 'seed-31/foreign-request-preserves-complete-state', 'seed-31/foreign-service-preserves-complete-state', 'seed-31/invalid-status-preserves-complete-state', 'seed-31/late-committed-settles', 'seed-31/late-submitted-settles-without-invented-observation', 'seed-31/late-refused-retains-spent-intent', 'seed-31/same-revision-read-keeps-unconfirmed', 'seed-31/observation-preserves-typed-reservation', 'seed-31/older-outcome-after-new-observation-is-stale', 'seed-31/newer-read-settles-without-replay', 'seed-31/old-intent-cannot-be-replayed-after-read', 'seed-31/fresh-explicit-intent-can-follow-new-observation', 'seed-31/full-width-request-preserved', 'desktop/given-counter-and-complete-child-pinned', 'desktop/given-proposal-full-ordered-effect', 'desktop/unknown-full-model-and-every-effect', 'desktop/duplicate-unknown-full-model-no-effect', 'desktop/unknown-no-replay-full-model', 'desktop/late-refused-full-model-and-every-effect', 'desktop/late-submitted-full-model-and-every-effect', 'desktop/wrong-request-preserves-full-model', 'desktop/foreign-binding-preserves-full-model', 'desktop/foreign-service-preserves-full-model', 'desktop/malformed-status-preserves-full-model', 'desktop/null-status-preserves-full-model', 'desktop/refresh-full-model-and-exact-read-effect', 'desktop/matching-newer-read-full-model-no-replay', 'capability/network-yes-complete-model-wire', 'capability/network-no-complete-model-wire', 'capability/network-auth-complete-model-wire', 'capability/power-suspend-yes-complete-model-wire', 'capability/power-reboot-yes-complete-model-wire', 'capability/power-poweroff-yes-complete-model-wire', 'capability/power-suspend-no-complete-model-wire', 'capability/power-reboot-no-complete-model-wire', 'capability/power-poweroff-no-complete-model-wire', 'capability/power-suspend-na-complete-model-wire', 'capability/power-reboot-na-complete-model-wire', 'capability/power-poweroff-na-complete-model-wire', 'capability/power-suspend-challenge-complete-model-wire', 'capability/power-reboot-challenge-complete-model-wire', 'capability/power-poweroff-challenge-complete-model-wire', 'capability/network-cross-domain-rejected', 'capability/power-cross-domain-rejected', 'session/closing-complete-model-no-wire', 'session/active-complete-model-and-wire', 'session/online-complete-model-and-wire', 'session/open-text-complete-model-and-wire', 'session/empty-complete-model-and-wire', 'session/case-sensitive-complete-model-and-wire', 'session/near-closing-complete-model-and-wire', 'session/maximum-text-complete-model-and-wire', 'session/overlong-text-rejected', 'session/control-text-rejected', 'session/non-string-rejected'], 'SystemMenuFocusPipeline': ['missingPointerObservationRefusesOpen', 'foreignIdleRefusesThenCurrentIdleAllows', 'confirmationPublishesSuccessorAndFocus', 'cancellationPublishesSuccessorAndFocus', 'literalFullModelsAndOrderedEffects', 'staleThenValid', 'duplicateCancelRefused', 'unavailableNetworkDisabled', 'observedVolumeDisplayed'], 'SuccessorFocusReplay': ['opened-current-available-snapshot', 'unavailable-network-refused-no-send', 'remaining-observed-state', 'prompt-focus-matches-literal-successor-and-enabled-row', 'cancel-focus-matches-literal-successor-and-enabled-row', 'stale-refused-then-valid-cancel', 'duplicate-cancel-stutters', 'foreign-binding-old-stamp-refused', 'exhaustion-emits-no-focus', 'close-requests-current-system-opener', 'renderer-rejects-foreign-and-stale-then-valid'], 'SystemMenuFocusExtended': ['sessionClosingClassifiedAndLogoutDenied', 'otherSessionTextLabelAndLogoutPreserved', 'sessionStateBoundsAndTypeRefused', 'networkPermissionsPreserveAdmission', 'powerCapabilitiesPreserveAdmission', 'foreignNetworkCapabilityRefused', 'foreignPowerPermissionRefused', 'powerCapabilityLabelsPreserved', 'systemMenuOpenerIntegrated', 'menuModeAcceptedByProductionRenderer', 'openingReadFocusMatchesCloseControl', 'originalUnavailableNetworkShown', 'remainingStateObserved', 'oneExplicitVolumeChange', 'pendingCannotRepeat', 'committedCannotRepeatOldRevision', 'unknownCannotReplay', 'readReconcilesChangedStateWithoutEffect', 'unavailableNeverSubmits', 'restartRequiresUIConfirmation', 'cancelHasNoNativeEffect', 'confirmedRestartSubmitsOnce', 'directConfirmationCannotBypassPrompt', 'wrongReceiptCannotSettle', 'staleViewCannotSubmit', 'closingFocusesOpenerWithoutNativeEffect', 'staleCloseRefusedThenCurrentCloseFocusesExactOpener', 'cancelConfirmationEmitsCloseFocus', 'confirmationExactFullModelAndSuccessorEffect', 'cancellationExactFullModelAndSuccessorEffect', 'oldConfirmationStampRefusedThenCurrentAccepted', 'oldRevisionRefusedThenCurrentAccepted', 'closedMenuRefusesConfirmation', 'confirmationFocusesCurrentEligibleCancel', 'cancelTargetIsCurrentEnabledCloseControl', 'staleCancelCannotRefocusThenValidCancelRestoresCurrentClose', 'duplicateCancelCannotRefocus', 'oldBindingStampCannotCancelForeignModel', 'exhaustedPresentationEmitsNoConfirmationFocus', 'disabledAndForeignActionsRefusedThenCurrentCloseAvailable', 'anotherPopupRetiresSystemWithoutLosingNativeState', 'allControlsHaveNames']}
+
+
+def workspace_owner_baseline_frontend(output, env, packet, run):
+    """Fixed isolated observer; expected semantic RED, no native acceptance."""
+    frontend = output / 'workspace-owner-baseline'
+    frontend.mkdir(mode=0o700)
+    source = ROOT / 'implementation/warlock'
+    before = inventory(source / 'src')
+    cache_before = inventory(Path(packet['elmHome']))
+    reviewed = json.loads((output / 'report.json').read_text())['sourceHashes']
+    exact = {'docs/elm-roadmap/INTERACTION.md': '2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4', 'implementation/warlock/src/Desktop.elm': '2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db', 'implementation/warlock/src/Surface.elm': '175d4432e2a28c18cfa18e72f2effc61bf8d551ddce0679e14e25681fc78ec1c', 'implementation/warlock/qa/WorkspaceOwnerLiteralReplay.elm': '5c16d6a1417227419a2ae3b47175197b6458b00021be2ee49b269c6087702309', 'implementation/warlock/qa/Desktop-test-observer.txt': 'f3cc8e83d12fa54d23b6ae1cd1a816b70847f143163382b5f29798b100f29ca0', 'implementation/warlock/qa/workspace-owner-literal-fixed.cjs': '27af6d45c562bad906693fc9270ba6b7c1884b0ac9999960a284b014dd6101db', 'implementation/warlock/qa/workspace-owner-baseline-fixed.cjs': '0556836f1fe1cc02c8b548f6c85492a80b6a172b51081a6260a58954e2b92746'}
+    if any(reviewed.get(name) != expected for name, expected in exact.items()):
+        raise RuntimeError('Baseline source, policy, fixture or overlay differs')
+    shutil.copytree(source / 'src', frontend / 'src')
+    shutil.copytree(Path(packet['elmHome']), frontend / 'elm-home')
+    (frontend / 'qa').mkdir(mode=0o700)
+    (frontend / 'assets').mkdir(mode=0o700)
+    qa_files = sorted(name for name in arm64_inputs(ROOT, workspace_owner_baseline=True)
+                      if name.startswith('implementation/warlock/qa/'))
+    for name in qa_files:
+        shutil.copyfile(ROOT / name, frontend / 'qa' / Path(name).name)
+    desktop = frontend / 'src/Desktop.elm'
+    if digest(desktop) != exact['implementation/warlock/src/Desktop.elm']:
+        raise RuntimeError('Unexpected copied Desktop baseline')
+    shutil.copyfile(frontend / 'qa/Desktop-test-observer.txt', desktop)
+    isolated_source = inventory(frontend / 'src')
+    config = json.loads((source / 'elm.json').read_text())
+    config['source-directories'] = ['src', 'qa']
+    (frontend / 'elm.json').write_text(json.dumps(config, sort_keys=True) + '\n')
+    config_hash = digest(frontend / 'elm.json')
+    def unchanged():
+        return (inventory(source / 'src') == before and inventory(frontend / 'src') == isolated_source
+                and inventory(Path(packet['elmHome'])) == cache_before
+                and inventory(frontend / 'elm-home') == cache_before
+                and digest(frontend / 'elm.json') == config_hash
+                and all(digest(ROOT / name) == reviewed[name]
+                        and digest(frontend / 'qa' / Path(name).name) == reviewed[name] for name in qa_files))
+    if not unchanged():
+        raise RuntimeError('Baseline source/cache closure differs')
+    for key in ('node', 'elm'):
+        with Path(packet[key]).open('rb') as stream:
+            header = stream.read(20)
+        if header[:6] != b'\x7fELF\x02\x01' or int.from_bytes(header[18:20], 'little') != 183:
+            raise RuntimeError('Expected pinned ELF64 little-endian AArch64 ' + key)
+    build_env = dict(env, ELM_HOME=str(frontend / 'elm-home'))
+    target = frontend / 'assets/workspace-owner-literal-baseline.js'
+    run('compile-WorkspaceOwnerLiteralReplay', [packet['elm'], 'make',
+        'qa/WorkspaceOwnerLiteralReplay.elm', '--optimize', '--output=' + str(target)], frontend, 180, build_env)
+    compiled = image(target)
+    raw = run('workspace-owner-baseline', [packet['node'], frontend / 'qa/workspace-owner-baseline-fixed.cjs'], frontend, 180, build_env)
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise RuntimeError('Duplicate terminal receipt key: ' + key)
+            result[key] = value
+        return result
+    receipt = json.loads(raw, object_pairs_hook=unique_pairs)
+    expected = ['literalFixturePreconditions', 'completeOpenedDesktopMatchesBaselinePlusLiteralChanges', 'orderedOpenEffectsArePublishThenLiteralFocus', 'completeClosedDesktopExceptOpaqueReturnFocus', 'orderedCloseEffectsArePublishThenOneRead', 'registeredOpenHasExactFocusAndNoRequests', 'registeredCloseHasExactReadAndNoMutation', 'matchedReadReturnsExactOriginalOpener', 'duplicateReadCannotRepeatFocus', 'overviewOwnerAndLiteralUnsupportedControls', 'keyboardAndPointerUnsupportedCallbacksStutter', 'foreignReplacementAndStaleCallbacksStutter', 'foreignEnabledCloseCannotDismiss', 'replacementEnabledCloseCannotDismiss', 'staleEnabledCloseCannotDismiss', 'validEnabledCloseAfterRefusalsWorks', 'duplicateEnabledCloseCannotReapply', 'policyRejectsInvalidScopesWithoutEffects', 'validEscapeAfterRefusalsClosesWithoutMutation', 'zeroOutputRetiresUnsupportedOwner', 'returnedOutputRejectsRetiredOwner', 'noOpEffectsDoNotRegisterCommand', 'topologyTransitionsDoNotMutateWorkspace', 'duplicateEscapeIsInert']
+    if set(receipt) != {'classification','requirement','scenario','failed','checkNames','checks','nativeAcceptance','originalAcceptance'}:
+        raise RuntimeError('Baseline receipt shape differs')
+    if (receipt['classification'] != 'EXPECTED_COMPONENT_RED' or receipt['requirement'] != 'ELM-UI-006'
+            or receipt['scenario'] != 'workspace-management-unavailable'
+            or receipt['failed'] != ['overviewOwnerAndLiteralUnsupportedControls']
+            or receipt['checkNames'] != expected or set(receipt['checks']) != set(expected)
+            or any(receipt['checks'][name] is not (name != 'overviewOwnerAndLiteralUnsupportedControls') for name in expected)
+            or receipt['nativeAcceptance'] is not False or receipt['originalAcceptance'] is not False):
+        raise RuntimeError('Baseline RED differs or another check failed')
+    if not unchanged() or image(target) != compiled:
+        raise RuntimeError('Baseline source/cache/image changed')
+    return {'classification':'EXPECTED_COMPONENT_RED','receipt':receipt,'compiled':compiled,
+            'driverSha256':digest(frontend / 'qa/workspace-owner-baseline-fixed.cjs'),
+            'stdoutSha256':digest(output / 'logs/workspace-owner-baseline.stdout'),
+            'nativeAcceptance':False,'originalAcceptance':False,'releaseAccepted':False,
+            'opaqueCmdASTObserved':False,'productionRootBehaviorExecuted':False}
+
+
+def workspace_dom_frontend(output, env, packet, run):
+    """Pinned controlled-DOM replay; no browser, native or AT evidence."""
+    frontend = output / 'workspace-dom'
+    frontend.mkdir(mode=0o700)
+    source = ROOT / 'implementation/warlock'
+    before = inventory(source / 'src')
+    cache_before = inventory(Path(packet['elmHome']))
+    reviewed = json.loads((output / 'report.json').read_text())['sourceHashes']
+    exact = {
+        'docs/elm-roadmap/INTERACTION.md': '2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4',
+        'implementation/warlock/src/Desktop.elm': '2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db',
+        'implementation/warlock/src/Surface.elm': '9b49b673cde2d2a9252e3b461b1fb8d3229fb5a4d5ed0321af03f74178d5869e',
+        'implementation/warlock/qa/WorkspaceUnsupportedDomReplay.elm': '3e0e22f15e35d766077fa48c4dbd41bfd9720eae7fab84007183786573a739d4',
+        'implementation/warlock/qa/workspace-unsupported-dom-fixed.cjs': 'e35c5ef36dfe45cae8c9a22636bb98087c7e22edcbc47a4346ed6098c6cc3540',
+        'implementation/warlock/qa/ui006-dom-guard.js': 'f91b7ee19600d4043d1ae1cf17f4ddff7e994e2bab5cf40bb671f04623f2b7cb',
+        'implementation/warlock/qa/ui006-dom-guard.html': 'ae222696c9ea4bcdeec1b0e19e5e930ee81f33c0ff88a30f8bdeb16aace4026f',
+    }
+    if any(reviewed.get(name) != expected for name, expected in exact.items()):
+        raise RuntimeError('Workspace DOM source/policy/fixture differs')
+    shutil.copytree(source / 'src', frontend / 'src')
+    shutil.copytree(Path(packet['elmHome']), frontend / 'elm-home')
+    (frontend / 'qa').mkdir(mode=0o700)
+    (frontend / 'assets').mkdir(mode=0o700)
+    qa_files = sorted(name for name in arm64_inputs(ROOT, workspace_dom=True)
+                      if name.startswith('implementation/warlock/qa/'))
+    for name in qa_files:
+        shutil.copyfile(ROOT / name, frontend / 'qa' / Path(name).name)
+    isolated_source = inventory(frontend / 'src')
+    if isolated_source != before:
+        raise RuntimeError('Workspace DOM copied source differs from inventoried root source')
+    src_prefix = 'implementation/warlock/src/'
+    reviewed_elm = {name[len(src_prefix):]: sha for name, sha in reviewed.items()
+                    if name.startswith(src_prefix) and name.endswith('.elm')}
+    staged_elm = {str(path.relative_to(frontend / 'src')): digest(path)
+                  for path in (frontend / 'src').rglob('*.elm')}
+    if not reviewed_elm or staged_elm != reviewed_elm:
+        raise RuntimeError('Workspace DOM staged Elm differs from reviewed source hashes')
+    config_bytes = (source / 'elm.json').read_bytes()
+    if hashlib.sha256(config_bytes).hexdigest() != reviewed['implementation/warlock/elm.json']:
+        raise RuntimeError('Workspace DOM copied configuration differs from reviewed source')
+    config = json.loads(config_bytes)
+    config['source-directories'] = ['src', 'qa']
+    (frontend / 'elm.json').write_text(json.dumps(config, sort_keys=True) + '\n')
+    config_hash = digest(frontend / 'elm.json')
+    def unchanged():
+        return (inventory(source / 'src') == before and inventory(frontend / 'src') == isolated_source
+                and inventory(Path(packet['elmHome'])) == cache_before
+                and inventory(frontend / 'elm-home') == cache_before
+                and digest(frontend / 'elm.json') == config_hash
+                and all(digest(ROOT / name) == reviewed[name]
+                        and digest(frontend / 'qa' / Path(name).name) == reviewed[name] for name in qa_files))
+    if not unchanged():
+        raise RuntimeError('Workspace DOM source/cache closure differs')
+    for key in ('node', 'elm'):
+        with Path(packet[key]).open('rb') as stream:
+            header = stream.read(20)
+        if header[:6] != b'\x7fELF\x02\x01' or int.from_bytes(header[18:20], 'little') != 183:
+            raise RuntimeError('Expected pinned ELF64 little-endian AArch64 ' + key)
+    build_env = dict(env, ELM_HOME=str(frontend / 'elm-home'))
+    target = frontend / 'assets/workspace-unsupported-dom.js'
+    run('compile-WorkspaceUnsupportedDomReplay', [packet['elm'], 'make',
+        'qa/WorkspaceUnsupportedDomReplay.elm', '--optimize', '--output=' + str(target)], frontend, 180, build_env)
+    compiled = image(target)
+    raw = run('workspace-dom', [packet['node'], frontend / 'qa/workspace-unsupported-dom-fixed.cjs'], frontend, 180, build_env)
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise RuntimeError('Duplicate terminal receipt key: ' + key)
+            result[key] = value
+        return result
+    receipt = json.loads(raw, object_pairs_hook=unique_pairs)
+    expected = ['literalOrder'] + [identity + '/' + suffix for identity in
+        ['overview:workspace-create','overview:workspace-delete','overview:workspace-rename']
+        for suffix in ['identity','label','detail','disabledRole','noClickHandler']] + [
+        'closeContrast','packetAndStale','oneCloseAfterRefusal']
+    if (set(receipt) != {'classification','checks','names','nativeAcceptance','originalAcceptance'}
+            or receipt['classification'] != 'CONTROLLED_DOM_GREEN'
+            or receipt['names'] != expected or set(receipt['checks']) != set(expected)
+            or any(receipt['checks'][name] is not True for name in expected)
+            or receipt['nativeAcceptance'] is not False or receipt['originalAcceptance'] is not False):
+        raise RuntimeError('Controlled DOM receipt differs or any check failed')
+    if not unchanged() or image(target) != compiled:
+        raise RuntimeError('Workspace DOM source/cache/image changed')
+    return {'classification':'CONTROLLED_DOM_GREEN','receipt':receipt,'compiled':compiled,
+            'driverSha256':digest(frontend / 'qa/workspace-unsupported-dom-fixed.cjs'),
+            'stdoutSha256':digest(output / 'logs/workspace-dom.stdout'),
+            'nativeAcceptance':False,'originalAcceptance':False,'releaseAccepted':False,
+            'browserObserved':False,'browserGuardExecuted':False,'nativeFocusObserved':False}
+
+
+def workspace_owner_component_frontend(output, env, packet, run):
+    """Fixed isolated observer; expected component GREEN, no native acceptance."""
+    frontend = output / 'workspace-owner-component'
+    frontend.mkdir(mode=0o700)
+    source = ROOT / 'implementation/warlock'
+    before = inventory(source / 'src')
+    cache_before = inventory(Path(packet['elmHome']))
+    reviewed = json.loads((output / 'report.json').read_text())['sourceHashes']
+    exact = {'docs/elm-roadmap/INTERACTION.md': '2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4', 'implementation/warlock/src/Desktop.elm': '2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db', 'implementation/warlock/src/Surface.elm': '9b49b673cde2d2a9252e3b461b1fb8d3229fb5a4d5ed0321af03f74178d5869e', 'implementation/warlock/qa/WorkspaceOwnerComponentReplay.elm': 'da9f4839fa32bb3f4c90a2e569d6bfcd76d80c39e197da4ed2557f2a959e00c0', 'implementation/warlock/qa/Desktop-test-observer.txt': 'f3cc8e83d12fa54d23b6ae1cd1a816b70847f143163382b5f29798b100f29ca0', 'implementation/warlock/qa/workspace-owner-component-fixed.cjs': '9559ca5ec6a5fce7733bc7158759d1be1f0c9ab98dbe0af0aebfe5eda50fffb5'}
+    if any(reviewed.get(name) != expected for name, expected in exact.items()):
+        raise RuntimeError('Baseline source, policy, fixture or overlay differs')
+    shutil.copytree(source / 'src', frontend / 'src')
+    shutil.copytree(Path(packet['elmHome']), frontend / 'elm-home')
+    (frontend / 'qa').mkdir(mode=0o700)
+    (frontend / 'assets').mkdir(mode=0o700)
+    qa_files = sorted(name for name in arm64_inputs(ROOT, workspace_owner_component=True)
+                      if name.startswith('implementation/warlock/qa/'))
+    for name in qa_files:
+        shutil.copyfile(ROOT / name, frontend / 'qa' / Path(name).name)
+    desktop = frontend / 'src/Desktop.elm'
+    if digest(desktop) != exact['implementation/warlock/src/Desktop.elm']:
+        raise RuntimeError('Unexpected copied Desktop baseline')
+    shutil.copyfile(frontend / 'qa/Desktop-test-observer.txt', desktop)
+    isolated_source = inventory(frontend / 'src')
+    config = json.loads((source / 'elm.json').read_text())
+    config['source-directories'] = ['src', 'qa']
+    (frontend / 'elm.json').write_text(json.dumps(config, sort_keys=True) + '\n')
+    config_hash = digest(frontend / 'elm.json')
+    def unchanged():
+        return (inventory(source / 'src') == before and inventory(frontend / 'src') == isolated_source
+                and inventory(Path(packet['elmHome'])) == cache_before
+                and inventory(frontend / 'elm-home') == cache_before
+                and digest(frontend / 'elm.json') == config_hash
+                and all(digest(ROOT / name) == reviewed[name]
+                        and digest(frontend / 'qa' / Path(name).name) == reviewed[name] for name in qa_files))
+    if not unchanged():
+        raise RuntimeError('Baseline source/cache closure differs')
+    for key in ('node', 'elm'):
+        with Path(packet[key]).open('rb') as stream:
+            header = stream.read(20)
+        if header[:6] != b'\x7fELF\x02\x01' or int.from_bytes(header[18:20], 'little') != 183:
+            raise RuntimeError('Expected pinned ELF64 little-endian AArch64 ' + key)
+    build_env = dict(env, ELM_HOME=str(frontend / 'elm-home'))
+    target = frontend / 'assets/workspace-owner-component.js'
+    run('compile-WorkspaceOwnerComponentReplay', [packet['elm'], 'make',
+        'qa/WorkspaceOwnerComponentReplay.elm', '--optimize', '--output=' + str(target)], frontend, 180, build_env)
+    compiled = image(target)
+    raw = run('workspace-owner-component', [packet['node'], frontend / 'qa/workspace-owner-component-fixed.cjs'], frontend, 180, build_env)
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise RuntimeError('Duplicate terminal receipt key: ' + key)
+            result[key] = value
+        return result
+    receipt = json.loads(raw, object_pairs_hook=unique_pairs)
+    expected = ['literalFixturePreconditions', 'completeOpenedDesktopMatchesBaselinePlusLiteralChanges', 'orderedOpenEffectsArePublishThenLiteralFocus', 'completeClosedDesktopExceptOpaqueReturnFocus', 'orderedCloseEffectsArePublishThenOneRead', 'registeredOpenHasExactFocusAndNoRequests', 'registeredCloseHasExactReadAndNoMutation', 'matchedReadReturnsExactOriginalOpener', 'duplicateReadCannotRepeatFocus', 'overviewOwnerAndLiteralUnsupportedControls', 'keyboardAndPointerUnsupportedCallbacksStutter', 'foreignReplacementAndStaleCallbacksStutter', 'foreignEnabledCloseCannotDismiss', 'replacementEnabledCloseCannotDismiss', 'staleEnabledCloseCannotDismiss', 'validEnabledCloseAfterRefusalsWorks', 'duplicateEnabledCloseCannotReapply', 'policyRejectsInvalidScopesWithoutEffects', 'validEscapeAfterRefusalsClosesWithoutMutation', 'zeroOutputRetiresUnsupportedOwner', 'returnedOutputRejectsRetiredOwner', 'noOpEffectsDoNotRegisterCommand', 'topologyTransitionsDoNotMutateWorkspace', 'duplicateEscapeIsInert']
+    if set(receipt) != {'classification','requirement','scenario','failed','checkNames','checks','nativeAcceptance','originalAcceptance'}:
+        raise RuntimeError('Baseline receipt shape differs')
+    if (receipt['classification'] != 'COMPONENT_GREEN' or receipt['requirement'] != 'ELM-UI-006'
+            or receipt['scenario'] != 'workspace-management-unavailable'
+            or receipt['failed'] != []
+            or receipt['checkNames'] != expected or set(receipt['checks']) != set(expected)
+            or any(receipt['checks'][name] is not True for name in expected)
+            or receipt['nativeAcceptance'] is not False or receipt['originalAcceptance'] is not False):
+        raise RuntimeError('Component GREEN differs or any check failed')
+    if not unchanged() or image(target) != compiled:
+        raise RuntimeError('Baseline source/cache/image changed')
+    return {'classification':'COMPONENT_GREEN','receipt':receipt,'compiled':compiled,
+            'driverSha256':digest(frontend / 'qa/workspace-owner-component-fixed.cjs'),
+            'stdoutSha256':digest(output / 'logs/workspace-owner-component.stdout'),
+            'nativeAcceptance':False,'originalAcceptance':False,'releaseAccepted':False,
+            'opaqueCmdASTObserved':False,'productionRootBehaviorExecuted':False}
+
+
+def workspace_owner_component_red_frontend(output, env, packet, run):
+    """Fixed isolated observer; expected component RED, no native acceptance."""
+    frontend = output / 'workspace-owner-component-red'
+    frontend.mkdir(mode=0o700)
+    source = ROOT / 'implementation/warlock'
+    before = inventory(source / 'src')
+    cache_before = inventory(Path(packet['elmHome']))
+    reviewed = json.loads((output / 'report.json').read_text())['sourceHashes']
+    exact = {'docs/elm-roadmap/INTERACTION.md': '2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4', 'implementation/warlock/src/Desktop.elm': '2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db', 'implementation/warlock/src/Surface.elm': '175d4432e2a28c18cfa18e72f2effc61bf8d551ddce0679e14e25681fc78ec1c', 'implementation/warlock/qa/WorkspaceOwnerComponentReplay.elm': 'da9f4839fa32bb3f4c90a2e569d6bfcd76d80c39e197da4ed2557f2a959e00c0', 'implementation/warlock/qa/Desktop-test-observer.txt': 'f3cc8e83d12fa54d23b6ae1cd1a816b70847f143163382b5f29798b100f29ca0', 'implementation/warlock/qa/workspace-owner-component-red-fixed.cjs': 'b957ff98dd32bc28db4743937602d4e52294ae653a89680bde0ba926ed098881'}
+    if any(reviewed.get(name) != expected for name, expected in exact.items()):
+        raise RuntimeError('Baseline source, policy, fixture or overlay differs')
+    shutil.copytree(source / 'src', frontend / 'src')
+    shutil.copytree(Path(packet['elmHome']), frontend / 'elm-home')
+    (frontend / 'qa').mkdir(mode=0o700)
+    (frontend / 'assets').mkdir(mode=0o700)
+    qa_files = sorted(name for name in arm64_inputs(ROOT, workspace_owner_component_red=True)
+                      if name.startswith('implementation/warlock/qa/'))
+    for name in qa_files:
+        shutil.copyfile(ROOT / name, frontend / 'qa' / Path(name).name)
+    desktop = frontend / 'src/Desktop.elm'
+    if digest(desktop) != exact['implementation/warlock/src/Desktop.elm']:
+        raise RuntimeError('Unexpected copied Desktop baseline')
+    shutil.copyfile(frontend / 'qa/Desktop-test-observer.txt', desktop)
+    isolated_source = inventory(frontend / 'src')
+    config = json.loads((source / 'elm.json').read_text())
+    config['source-directories'] = ['src', 'qa']
+    (frontend / 'elm.json').write_text(json.dumps(config, sort_keys=True) + '\n')
+    config_hash = digest(frontend / 'elm.json')
+    def unchanged():
+        return (inventory(source / 'src') == before and inventory(frontend / 'src') == isolated_source
+                and inventory(Path(packet['elmHome'])) == cache_before
+                and inventory(frontend / 'elm-home') == cache_before
+                and digest(frontend / 'elm.json') == config_hash
+                and all(digest(ROOT / name) == reviewed[name]
+                        and digest(frontend / 'qa' / Path(name).name) == reviewed[name] for name in qa_files))
+    if not unchanged():
+        raise RuntimeError('Baseline source/cache closure differs')
+    for key in ('node', 'elm'):
+        with Path(packet[key]).open('rb') as stream:
+            header = stream.read(20)
+        if header[:6] != b'\x7fELF\x02\x01' or int.from_bytes(header[18:20], 'little') != 183:
+            raise RuntimeError('Expected pinned ELF64 little-endian AArch64 ' + key)
+    build_env = dict(env, ELM_HOME=str(frontend / 'elm-home'))
+    target = frontend / 'assets/workspace-owner-component-red.js'
+    run('compile-WorkspaceOwnerComponentReplay', [packet['elm'], 'make',
+        'qa/WorkspaceOwnerComponentReplay.elm', '--optimize', '--output=' + str(target)], frontend, 180, build_env)
+    compiled = image(target)
+    raw = run('workspace-owner-component-red', [packet['node'], frontend / 'qa/workspace-owner-component-red-fixed.cjs'], frontend, 180, build_env)
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise RuntimeError('Duplicate terminal receipt key: ' + key)
+            result[key] = value
+        return result
+    receipt = json.loads(raw, object_pairs_hook=unique_pairs)
+    expected = ['literalFixturePreconditions', 'completeOpenedDesktopMatchesBaselinePlusLiteralChanges', 'orderedOpenEffectsArePublishThenLiteralFocus', 'completeClosedDesktopExceptOpaqueReturnFocus', 'orderedCloseEffectsArePublishThenOneRead', 'registeredOpenHasExactFocusAndNoRequests', 'registeredCloseHasExactReadAndNoMutation', 'matchedReadReturnsExactOriginalOpener', 'duplicateReadCannotRepeatFocus', 'overviewOwnerAndLiteralUnsupportedControls', 'keyboardAndPointerUnsupportedCallbacksStutter', 'foreignReplacementAndStaleCallbacksStutter', 'foreignEnabledCloseCannotDismiss', 'replacementEnabledCloseCannotDismiss', 'staleEnabledCloseCannotDismiss', 'validEnabledCloseAfterRefusalsWorks', 'duplicateEnabledCloseCannotReapply', 'policyRejectsInvalidScopesWithoutEffects', 'validEscapeAfterRefusalsClosesWithoutMutation', 'zeroOutputRetiresUnsupportedOwner', 'returnedOutputRejectsRetiredOwner', 'noOpEffectsDoNotRegisterCommand', 'topologyTransitionsDoNotMutateWorkspace', 'duplicateEscapeIsInert']
+    if set(receipt) != {'classification','requirement','scenario','failed','checkNames','checks','nativeAcceptance','originalAcceptance'}:
+        raise RuntimeError('Baseline receipt shape differs')
+    if (receipt['classification'] != 'EXPECTED_COMPONENT_RED' or receipt['requirement'] != 'ELM-UI-006'
+            or receipt['scenario'] != 'workspace-management-unavailable'
+            or receipt['failed'] != ['overviewOwnerAndLiteralUnsupportedControls']
+            or receipt['checkNames'] != expected or set(receipt['checks']) != set(expected)
+            or any(receipt['checks'][name] is not (name != 'overviewOwnerAndLiteralUnsupportedControls') for name in expected)
+            or receipt['nativeAcceptance'] is not False or receipt['originalAcceptance'] is not False):
+        raise RuntimeError('Component RED differs or other check failed')
+    if not unchanged() or image(target) != compiled:
+        raise RuntimeError('Baseline source/cache/image changed')
+    return {'classification':'EXPECTED_COMPONENT_RED','receipt':receipt,'compiled':compiled,
+            'driverSha256':digest(frontend / 'qa/workspace-owner-component-red-fixed.cjs'),
+            'stdoutSha256':digest(output / 'logs/workspace-owner-component-red.stdout'),
+            'nativeAcceptance':False,'originalAcceptance':False,'releaseAccepted':False,
+            'opaqueCmdASTObserved':False,'productionRootBehaviorExecuted':False}
+
+
+def workspace_original_frontend(output, env, packet, run):
+    """Fixed original three-worker source replay; no native acceptance."""
+    frontend = output / 'workspace-original'
+    frontend.mkdir(mode=0o700)
+    source = ROOT / 'implementation/warlock'
+    source_before = inventory(source / 'src')
+    cache_before = inventory(Path(packet['elmHome']))
+    reviewed = json.loads((output / 'report.json').read_text())['sourceHashes']
+    expected_cache = packet['trees'][packet['elmHome']]
+    if cache_before != expected_cache:
+        raise RuntimeError('Workspace original cache differs from verified ARM manifest')
+    src_prefix = 'implementation/warlock/src/'
+    reviewed_src = {name[len(src_prefix):]: sha for name, sha in reviewed.items()
+                    if name.startswith(src_prefix) and name.endswith('.elm')}
+    def matches_reviewed_src(directory):
+        files = {str(path.relative_to(directory)): path for path in directory.rglob('*.elm')}
+        return set(files) == set(reviewed_src) and all(digest(files[name]) == sha for name, sha in reviewed_src.items())
+    if not matches_reviewed_src(source / 'src'):
+        raise RuntimeError('Workspace original source differs from reviewed closure')
+    exact = {'docs/elm-roadmap/INTERACTION.md': '2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4', 'implementation/warlock/src/Surface.elm': '9b49b673cde2d2a9252e3b461b1fb8d3229fb5a4d5ed0321af03f74178d5869e', 'implementation/warlock/src/Desktop.elm': '2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db', 'implementation/warlock/qa/TaskViewReplay.elm': '9f2a30aaecbd0069b1d297d029cfff9126c506dd39bcdcc6c871e6189c53c9b6', 'implementation/warlock/qa/TaskViewEscapeReplay.elm': '9f95642d106544223fcae61f3b81a684853276ed8b7de461437267d9dba33ac8', 'implementation/warlock/qa/WorkspaceNavigationReplay.elm': '92d2907941ebb0530b6f2d77b20fa1a8fe41bd516610daee993f352550284ffe', 'implementation/warlock/qa/OutputRetirementReplay.elm': 'fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9', 'implementation/warlock/qa/NativePointerFixture.elm': 'b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124', 'implementation/warlock/qa/task-view-original-fixed.cjs': 'b7672f4d45e8eeb4cd2dad4cec9a158441e865fc068e665017903353895cfbc7'}
+    if any(reviewed.get(name) != expected for name, expected in exact.items()):
+        raise RuntimeError('Workspace original reviewed source differs')
+    shutil.copytree(source / 'src', frontend / 'src')
+    shutil.copytree(Path(packet['elmHome']), frontend / 'elm-home')
+    (frontend / 'qa').mkdir(mode=0o700)
+    (frontend / 'assets').mkdir(mode=0o700)
+    qa_files = sorted(name for name in arm64_inputs(ROOT, workspace_original=True)
+                      if name.startswith('implementation/warlock/qa/'))
+    for name in qa_files:
+        shutil.copyfile(ROOT / name, frontend / 'qa' / Path(name).name)
+    config_bytes = (source / 'elm.json').read_bytes()
+    if hashlib.sha256(config_bytes).hexdigest() != reviewed['implementation/warlock/elm.json']:
+        raise RuntimeError('Workspace original config differs from reviewed closure')
+    config = json.loads(config_bytes)
+    config['source-directories'] = ['src', 'qa']
+    (frontend / 'elm.json').write_text(json.dumps(config, sort_keys=True) + '\n')
+    config_hash = digest(frontend / 'elm.json')
+    def unchanged():
+        return (inventory(source / 'src') == source_before and inventory(frontend / 'src') == source_before
+                and matches_reviewed_src(source / 'src') and matches_reviewed_src(frontend / 'src')
+                and digest(source / 'elm.json') == reviewed['implementation/warlock/elm.json']
+                and inventory(Path(packet['elmHome'])) == expected_cache
+                and inventory(frontend / 'elm-home') == expected_cache
+                and digest(frontend / 'elm.json') == config_hash
+                and all(digest(ROOT / name) == reviewed[name]
+                        and digest(frontend / 'qa' / Path(name).name) == reviewed[name] for name in qa_files))
+    if not unchanged():
+        raise RuntimeError('Workspace original source/cache stage differs')
+    for key in ('node', 'elm'):
+        with Path(packet[key]).open('rb') as stream:
+            header = stream.read(20)
+        if header[:6] != b'\x7fELF\x02\x01' or int.from_bytes(header[18:20], 'little') != 183:
+            raise RuntimeError('Expected pinned ELF64 little-endian AArch64 ' + key)
+    build_env = dict(env, ELM_HOME=str(frontend / 'elm-home'))
+    artifacts = {}
+    for name in ('TaskViewReplay', 'TaskViewEscapeReplay', 'WorkspaceNavigationReplay'):
+        target = frontend / 'assets' / (name + '.js')
+        run('compile-' + name, [packet['elm'], 'make', 'qa/' + name + '.elm',
+            '--optimize', '--output=' + str(target)], frontend, 180, build_env)
+        artifacts[name] = image(target)
+    driver = frontend / 'qa/task-view-original-fixed.cjs'
+    run('task-view-original', [packet['node'], driver], frontend, 180, build_env)
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise RuntimeError('Duplicate terminal receipt key: ' + key)
+            result[key] = value
+        return result
+    receipt_path = frontend / 'task-view-original-report.json'
+    receipt = json.loads(receipt_path.read_text(), object_pairs_hook=unique_pairs)
+    if set(receipt) != {'passed', 'fixtures', 'failures', 'runnerPathSha256AtReport'}:
+        raise RuntimeError('Workspace original receipt shape differs')
+    rows = receipt['fixtures']
+    expected = {'TaskViewReplay': ['cancelTransferReturnsSameCurrentEligibleMoveControl', 'duplicateAndStaleTransferCancellationAreInert', 'unavailableTransferOriginReturnsCurrentFilter', 'incoherentTransferOriginReturnsAlwaysAvailableAll', 'removedTransferCapabilityReturnsCurrentFilter', 'filteredOutTransferOriginNeverReceivesFocus', 'retiredTransferOriginNeverSubstitutes', 'unknownReservedTransferOriginIsNotFocusedOrReplayed', 'closedTransferCancelNeverRefocuses', 'allWorkspaceCancelStillReturnsExactOrigin', 'retiredTransferReturnsCurrentRetainedWorkspaceFocus', 'retiredTransferChooserHasVisibleBrowseAndDismissal', 'retiredTransferDoesNotRepeatFocus', 'retiredTransferAndWorkspaceReturnAll', 'incoherentTransferObservationCannotRetireSelection', 'existingUnavailableExactMemberKeepsTransferChooser', 'closedTransferNeverRefocuses', 'sameApplicationNewIncarnationNeverSubstitutes', 'matchedRefusalWaitsForFreshRead', 'exactRefusalRestoresFilteredOverview', 'differentUnknownDuringRefusedReadDoesNotResumeOldOrigin', 'restoredEligibleFamilyGetsCurrentFocus', 'duplicateRefusalCannotReopenOrReplay', 'emittedRestoreCarriesExactFullIntentKey', 'pendingRestoreShowsCorrelatedLabel', 'pendingDuplicateDispatchIsSuppressed', 'refusedRestoreShowsCorrelatedLabel', 'committedChoiceStaysClosed', 'unknownChoiceStaysClosedWithoutReplay', 'unknownRestoreShowsCorrelatedLabel', 'unknownRefreshUsesReadOnlyWireKinds', 'staleUnknownProjectionCannotSettleOrReplay', 'unknownReservationPersistsAcrossFreshRead', 'unknownReadRecoveryReopensExactWorkspaceWithoutReplay', 'unknownReadRecoveryRepeatedOpenPreservesWorkspaceAndFocus', 'unknownReadRecoveryFallsBackToAllWhenWorkspaceDisappears', 'unknownMissingWorkspaceOverviewOpened', 'unknownMissingWorkspaceSelectionCleared', 'unknownMissingWorkspaceFocusTargetsAll', 'unknownMissingWorkspaceNoMutation', 'foreignIntentCannotReturn', 'anotherInterfaceCancelsReturn', 'replacementAuthorityCannotReturn', 'retiredFamilyReturnsToAllWindows', 'unconfirmedTransferRetainsSourceFamilyWithoutInventingNativeOwner', 'emptyInventoryComesThroughExactRootReceipt', 'nativeActiveEmptyMarkerDoesNotNeedFocusedWindow', 'emptyWorkspaceOpensAndBrowsesWithoutEffects', 'emptyWorkspaceKeepsVisibleDismissal', 'emptySelectionHasExplicitNotice', 'emptyWorkspaceDismissalIsReadOnly', 'foreignGeometryCannotInventEmptyWorkspace', 'duplicateWorkspacePacketRejectedByRoot', 'differentGeometrySequenceCannotJoinInventory', 'retiredEmptySelectionFallsBackToAll', 'groupsMatchMembership', 'activeWorkspaceNamed', 'openingIsObservationOnly', 'workspaceBrowseIsLocal', 'overviewInitialAccessibleFilterSelection', 'overviewAccessibleFilterFollowsReadOnlyBrowse', 'staleSelectionInert', 'unavailableWorkspaceNeverActivates', 'retiredIdentityNeverSubstitutes', 'selectionRefreshesBeforeEffect', 'duplicateChoiceInert', 'dismissalDoesNotMutate', 'dismissalDefersDOMFocusUntilFreshRead', 'independentRevisionNamespacesRemainBrowsable', 'mixedOutputMembershipWithheld', 'mixedFocusMembershipWithheld', 'mixedMinimizedMembershipWithheld', 'ordinaryRendererAcceptsTaskView', 'offWorkspaceSelectionRequiresFreshObservation', 'freshObservationRestoresExactWorkspaceTwoRootOnce', 'staleNavigationObservationNeverMutates', 'retiredNavigationRootNeverSubstitutes', 'duplicateNavigationObservationNeverReplays'], 'TaskViewEscapeReplay': ['CurrentOverviewEscapeDismissesWithoutNativeMutation', 'StaleEscapePublicationCannotDismiss', 'StaleEscapeLeaseCannotDismiss', 'ReplacedEscapeOwnerCannotDismiss', 'NumericEscapeCounterCannotDismiss', 'UnexpectedEscapeFieldCannotDismiss', 'DuplicateOldEscapeCannotRemintFocus'], 'WorkspaceNavigationReplay': ['goEmptyWorkspaceControl', 'populatedDestinationCannotGo', 'activeDestinationCannotGo', 'oneTypedNavigation', 'pendingFeedback', 'duplicateSuppressed', 'deadlineUnknownNoReplay', 'unknownCanReopenAndDismiss', 'unknownCannotMutateWindow', 'unknownHasReadOnlyRecovery', 'unknownTaskbarRecoversWithoutNavigation', 'recoveryDoesNotDuplicateRead', 'committedExactReceipt', 'refusedRetainsDestinationContext', 'foreignCannotSettle', 'disconnectNeverReplays']}
+    if (receipt['passed'] is not True or receipt['failures'] != []
+            or receipt['runnerPathSha256AtReport'] != digest(driver)
+            or not isinstance(rows, list) or [row.get('name') for row in rows] != list(expected)):
+        raise RuntimeError('Workspace original receipt differs')
+    for row in rows:
+        name = row['name']
+        checks = row.get('checks')
+        payload = row.get('payload')
+        if (set(row) != {'name', 'sha256', 'checks', 'payload', 'passed'}
+                or row['passed'] is not True or row['sha256'] != artifacts[name]['sha256']
+                or not isinstance(checks, list) or [c.get('name') for c in checks] != expected[name]
+                or any(set(c) != {'name', 'passed'} or c['passed'] is not True for c in checks)
+                or not isinstance(payload, dict) or set(payload.get('checks', {})) != set(expected[name])
+                or any(v is not True for v in payload['checks'].values())):
+            raise RuntimeError('Workspace original case inventory differs: ' + name)
+    if not unchanged() or any(image(Path(item['path'])) != item for item in artifacts.values()):
+        raise RuntimeError('Workspace original source/cache/image changed')
+    return {'scope': 'Three original synthetic component workers only', 'receipt': receipt,
+            'receiptSha256': digest(receipt_path), 'artifacts': artifacts,
+            'driverSha256': digest(driver), 'nativeAcceptance': False,
+            'originalAcceptance': False, 'releaseAccepted': False,
+            'opaqueCmdASTObserved': False, 'productionRootBehaviorExecuted': False}
 
 
 def successor_focus_frontend(output, env, packet, run):
@@ -212,7 +628,7 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
@@ -228,11 +644,21 @@ def main():
              ('--preview-control' if args.preview_control else ('--protocol' if args.protocol else '--owner'))))))))
     if args.successor_focus:
         mode = '--successor-focus'
+    if args.workspace_owner_baseline:
+        mode = '--workspace-owner-baseline'
+    if args.workspace_owner_component:
+        mode = '--workspace-owner-component'
+    if args.workspace_owner_component_red:
+        mode = '--workspace-owner-component-red'
+    if args.workspace_original:
+        mode = '--workspace-original'
+    elif args.workspace_dom:
+        mode = '--workspace-dom'
     if args.inside_private is None:
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
         sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
-            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus))}
+            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
@@ -263,7 +689,7 @@ def main():
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
             if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, haskell_profile,
-                                args.preview_consumption, args.successor_focus)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
+                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
                 raise RuntimeError('Private ARM profile failed; retained logs')
@@ -303,7 +729,17 @@ def main():
                          'tea-contract-cases.cjs'):
                 run('syntax-' + name, [packet['node'], '--check',
                     ROOT / 'implementation/warlock/qa' / name], timeout=30)
-        if args.successor_focus:
+        if args.workspace_original:
+            report['workspaceOriginal'] = workspace_original_frontend(output, env, packet, run)
+        elif args.workspace_dom:
+            report['workspaceDom'] = workspace_dom_frontend(output, env, packet, run)
+        elif args.workspace_owner_component_red:
+            report['workspaceOwnerComponentRed'] = workspace_owner_component_red_frontend(output, env, packet, run)
+        elif args.workspace_owner_component:
+            report['workspaceOwnerComponent'] = workspace_owner_component_frontend(output, env, packet, run)
+        elif args.workspace_owner_baseline:
+            report['workspaceOwnerBaseline'] = workspace_owner_baseline_frontend(output, env, packet, run)
+        elif args.successor_focus:
             report['successorFocus'] = successor_focus_frontend(output, env, packet, run)
         elif args.preview_consumption:
             report['previewConsumption'] = consumption_frontend(output, env, packet, run)
