@@ -125,6 +125,7 @@ def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only
         # closure while using only the new ARM compiler/cache selection.
         names.add('tools/check_elm_cpu.py')
         names.add('tools/elm_http_dependencies.py')
+        names.add('tools/check_http_reachable_cpu.py')
         names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/qa').rglob('*')
                      if p.is_file() and p.suffix in ('.elm', '.cjs', '.json'))
         names.update({'site/src/SiteMain.elm', 'site/elm.json',

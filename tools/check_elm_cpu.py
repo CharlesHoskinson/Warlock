@@ -104,6 +104,10 @@ def main():
     staged_tea_sources = {}
     selected_artifacts = {}
     shutil.copytree(held / pinned['elmHome'], output / 'elm-home')
+    if args.arm64:
+        from arm64_toolchain import inventory as arm_inventory
+        if arm_inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
+            raise RuntimeError('Actual initial compiler cache differs from approved ARM cache')
     from elm_http_dependencies import stage as stage_http_dependencies
     report['httpDependencies'] = ({'scope': 'Exact complete ARM cache inventory',
                                    'tree': pinned['trees'][pinned['elmHome']]}
@@ -568,6 +572,80 @@ def main():
             report['subscriptions'] = dict(summary, resultPath=result_path.name, resultSHA256=sha(result_path))
             report['compiledSubscriptionRoots'] = list(roots)
             report['wholeTea004Accepted'] = False
+            if args.arm64:
+                context_path = output / 'reachable-compilation-context.json'
+                context = {'schema': 1, 'profile': 'reachable-legacy-v2', 'node': pinned['node'],
+                    'elm': pinned['elm'], 'elmHome': pinned['elmHome'],
+                    'toolchainManifestSHA256': pinned['manifestSHA256'],
+                    'initialElmHomeInventory': pinned['trees'][pinned['elmHome']],
+                    'stagedElmManifestSHA256': staged_elm_manifest_sha,
+                    'bundleSha256': plain_hashes['HttpPopup'], 'sourceHashes': sources,
+                    'commands': report['commands']}
+                context_path.write_text(json.dumps(context, sort_keys=True) + '\n')
+                run('reachable-legacy', [sys.executable, '-B', str(REPO / 'tools/check_http_reachable_cpu.py'),
+                                       str(output), sha(context_path)])
+                reachable_path = output / 'reachable-legacy.stdout'
+                reachable = json.loads(reachable_path.read_text())
+                expected_rows = [{'seed': seed, 'cases': 10, 'steps': 38, 'wholeObservations': 38,
+                                  'counterfactuals': 4} for seed in (20261105, 20261106)]
+                actual_rows = reachable.get('receipt', [])
+                fields = ('seed', 'cases', 'steps', 'wholeObservations', 'counterfactuals')
+                expected_negatives = [('retry-route-removed', 'closed-reconcile-after-correlated-http204-reoffers', 5),
+                    ('retirement-route-removed', 'closed-empty-retry-retirement-duplicate', 3),
+                    ('retry-closed-gate', 'closed-reconcile-after-correlated-http204-reoffers', 5),
+                    ('retirement-closed-gate', 'closed-empty-retry-retirement-duplicate', 3)]
+                if ([{key: row.get(key) for key in fields} for row in actual_rows] != expected_rows
+                        or reachable.get('status') != 'passed'
+                        or reachable.get('profile') != 'reachable-legacy-pure-draft'
+                        or reachable.get('nativeAcceptance') is not False or reachable.get('originalAcceptance') is not False):
+                    raise RuntimeError('Reachable exact two-seed terminal budget differs')
+                for row in actual_rows:
+                    negatives = row.get('negatives', [])
+                    if [(n.get('label'), n.get('caseName'), n.get('step')) for n in negatives] != expected_negatives:
+                        raise RuntimeError('Reachable exact counterfactual inventory differs')
+                    for negative in negatives:
+                        counter = negative.get('counterexample', {})
+                        reason = negative['caseName'] + ' step ' + str(negative['step']) + ': COMPLETE owning model/subscription/typed descriptions differ'
+                        if (negative.get('reason') != reason or counter.get('name') != negative['caseName']
+                                or counter.get('step') != negative['step']
+                                or not isinstance(counter.get('actual'), dict) or not isinstance(counter.get('expected'), dict)
+                                or counter['actual'] == counter['expected']):
+                            raise RuntimeError('Reachable counterfactual is an unrelated or missing full mismatch')
+                for row in actual_rows:
+                    guards = row.get('observerGuardNegatives', [])
+                    guard_case = 'closed-empty-retry-retirement-duplicate'
+                    if (row.get('observerGuards') != 2
+                            or [(n.get('label'), n.get('caseName'), n.get('step')) for n in guards] !=
+                               [('returned-command-drop', guard_case, 1), ('returned-command-duplicate', guard_case, 1)]):
+                        raise RuntimeError('Reachable command-only guard inventory differs')
+                    for negative, count in zip(guards, (0, 2)):
+                        counter = negative.get('counterexample', {})
+                        actual, expected = dict(counter.get('actual', {})), dict(counter.get('expected', {}))
+                        actual_counts = actual.pop('commandLeaves', None)
+                        expected_counts = expected.pop('commandLeaves', None)
+                        if (negative.get('reason') != guard_case + ' step 1: COMPLETE owning model/subscription/typed descriptions differ'
+                                or counter.get('name') != guard_case or counter.get('step') != 1
+                                or actual != expected or not actual
+                                or actual_counts != {'Http': count, 'Task': 0}
+                                or expected_counts != {'Http': 1, 'Task': 0}
+                                or not re.fullmatch('[0-9a-f]{64}', negative.get('mutantSHA256', ''))):
+                            raise RuntimeError('Reachable missing/duplicate Cmd guard changed other literal observations')
+                fixture = output / 'work/qa/reachable-legacy'
+                expected_hashes = {'bundle': plain_hashes['HttpPopup'], 'observer': sha(fixture / 'reachable-observer.cjs'),
+                    'literals': sha(fixture / 'reachable-literals.cjs'), 'closure': sha(output / 'reachable-closure.json'),
+                    'compileReceipt': sha(output / 'reachable-compile-receipt.json')}
+                if reachable.get('hashes') != expected_hashes:
+                    raise RuntimeError('Reachable source/script/image/closure binding differs')
+                closure = json.loads((output / 'reachable-closure.json').read_text())
+                for name, expected in closure['files'].items():
+                    path = Path(name)
+                    if path.is_symlink() or not path.is_file() or sha(path) != expected:
+                        raise RuntimeError('Reachable closure changed after private replay: ' + name)
+                report['reachableLegacy'] = {'resultPath': reachable_path.name, 'resultSHA256': sha(reachable_path),
+                    'result': reachable, 'closureSHA256': expected_hashes['closure'],
+                    'compileReceiptSHA256': expected_hashes['compileReceipt'],
+                    'acceptanceAuthority': False, 'nativeAcceptance': False, 'originalAcceptance': False,
+                    'releaseAccepted': False, 'scope': 'Actual init, controlled HTTP whole-model/effect fixture only; empty legacy retirement and scoped retry, no Owner/native acceptance'}
             report['subscriptionQaStage'] = {'path': str(subscription_qa.relative_to(output)),
                                                'hashes': {name: sha(subscription_qa / name) for name in qa_files}}
             report['subscriptionLimits'] = [
