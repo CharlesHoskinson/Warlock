@@ -240,7 +240,7 @@ def main():
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
@@ -348,7 +348,7 @@ def main():
     if arm64:
         mandatory = arm64_inputs(REPO, subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
-                                 protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role']),
+                                 protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--workspace-navigation-protocol']),
                                  consumption=packet['arguments'] == ['--preview-consumption'],
                                  successor_focus=packet['arguments'] == ['--successor-focus'],
                                  workspace_owner_baseline=packet['arguments'] == ['--workspace-owner-baseline'],

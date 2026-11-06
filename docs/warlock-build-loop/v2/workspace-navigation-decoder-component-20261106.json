@@ -1,0 +1,167 @@
+{
+  "schema": 1,
+  "component": "Existing workspace-navigation standalone protocol decoder",
+  "requirement": "ELM-REV-034",
+  "scenario": "protocol-schema-complete",
+  "disposition": "Bounded source component and ordinary-linked CPU evidence only. No original, native bridge or release acceptance.",
+  "acceptanceGranted": false,
+  "sourceRevisionBase": "2db10bd42bf2d3f68327838a66607ee44466f240",
+  "sourceHashes": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/WorkspaceNavigation.hs": "63baa4a3084f278073a218929e1a82282cc1cfa32d1cd21b2c136aa4159c3f33",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "2fa2927f2cb50a586b3317a526b42d4b9ec84c8f7914cca809f6a47e8a0b1120",
+    "implementation/warlock/haskell/protocol/test-workspace-navigation/Main.hs": "e43a06259a5ec39a12e64cd3e87886c5333c61f011b02d39e5e678a294c90c56",
+    "implementation/warlock/haskell/protocol/test-workspace-navigation/WorkspaceStandaloneLiterals.hs": "f407ff12ddd2df22ca00bb4a25c5e8ec825d5fd5b60ffa3dc2b6d14e24b8cf69"
+  },
+  "supportSourceHashes": {
+    "tools/check_arm64_cpu.py": "69dfbe726ca89fa09b90bcaa98f1e830b5e99f1ff97076a1dd6371c33ceecdb8",
+    "tools/qa_cpu.py": "026bc18ff385681573c1f69b2323d12a0545c57e5c7a81e447e65a0686142cfe",
+    "tools/haskell_test_wrapper.py": "2946ced8d6ed46c9839a85cbd9a921dc88f9331b11d81ed55e324ecca7b66b44"
+  },
+  "before": "Existing Elm protocol3/workspaceProtocol1 request and recovery data had no corresponding public standalone Haskell decoder.",
+  "after": "The ordinary protocol library exposes an opaque decoder for the existing request/recovery schema. Exact fields, canonical counters, signed ordinary workspace identities, binding/context correspondence and lossless roundtrip bytes are checked. Recovery contains no fabricated request counter.",
+  "currentIntegrationScope": {
+    "currentDesktopAndBackendDispatchChanged": false,
+    "currentDesktopStillRefusesWorkspaceKinds": true,
+    "actualNativeProviderQualified": false,
+    "nativeDispatchAvailable": false,
+    "nativeAuthorityGrantedByDecoding": false,
+    "queueAdmissionQualified": false
+  },
+  "contracts": {
+    "protocolVersion": 3,
+    "workspaceProtocol": 1,
+    "outerRawBytes": 131072,
+    "outerUTF16Units": 131072,
+    "renderedRequestUTF8Bytes": 8192,
+    "depth": 16,
+    "ordinaryWorkspaceIdentity": "Canonical ASCII decimal 1 through 9223372036854775807",
+    "counters": "Canonical lossless UInt64 strings; zero only where existing wire permits, including monitor",
+    "boundScope": "Standalone raw envelope and individual rendered request only; this does not establish a complete embedded view-commit capacity proof.",
+    "constructorsExported": false,
+    "externalConstructorImportProbeExecuted": false
+  },
+  "tests": {
+    "profile": "--workspace-navigation-protocol",
+    "ordinaryLibrary": "warlock-protocol:lib:warlock-protocol",
+    "suites": [
+      "workspace-navigation-controls",
+      "desktop-boundary-controls"
+    ],
+    "testsUseHomeSourceCopies": false,
+    "red": {
+      "report": ".warlock-contributor/arm64-cpu-1793968313185880375/report.json",
+      "reportSHA256": "2df547de3d32c433eb16c7328ed07aab48c6f6500800f72dda27cc0d9bcac532",
+      "inputs": 238,
+      "outerExit": 1,
+      "classification": "Expected missing-public-module compiler RED",
+      "buildCommands": 1,
+      "buildExit": 1,
+      "namedControlsExecuted": false,
+      "reason": "Could not find module Warlock.Protocol.WorkspaceNavigation",
+      "independentExecutionReviewSHA256": "bfaaeddf9cc7d7306c9249bc9fc130698ee5d16571cac5d199b7f81e2e19f369",
+      "postSDKGuardPassClaimed": false
+    },
+    "green": {
+      "report": ".warlock-contributor/arm64-cpu-1793968756590917094/report.json",
+      "reportSHA256": "c77ea416633160c813f68bcb9da8e9f1fabdd0c692dfcd588ea71d78ba9d818e",
+      "inputs": 239,
+      "outerExit": 0,
+      "commands": 5,
+      "allCommandExitsZero": true,
+      "decoderOrderedChecks": 97,
+      "rootChecks": 18,
+      "independentLiteralChecks": 61,
+      "independentDerivedChecks": 18,
+      "orderedInventoryExact": true,
+      "legacyDesktopChecks": 2194,
+      "legacySeed": 20261101,
+      "legacyGeneratedCases": 256,
+      "legacyMutationClasses": 16,
+      "normalSuiteReceipts": 2,
+      "timeout": false,
+      "forcedCleanup": false,
+      "compiledImages": {
+        "workspace-navigation-controls": "5c3698f2652608a586b70c9fb8b94cbe8daa6995391a4361bd924d92b2b795da",
+        "desktop-boundary-controls": "8896fc1db210ef22aaef9fb365b9fcaafe11dcce0cdb29c757137824f8e5fc0b"
+      },
+      "independentExecutionReviewSHA256": "215728e4e30aeeb89112d5935b3d0417955e742aa6669cdd601fbd0fef0b19a5"
+    },
+    "pairedDelta": {
+      "same97FixtureBytes": true,
+      "sameSupportToolBytes": true,
+      "commonSourceInputs": 238,
+      "changedCommonInputs": [
+        "implementation/warlock/haskell/protocol/protocol.cabal"
+      ],
+      "addedInput": "implementation/warlock/haskell/protocol/src/Warlock/Protocol/WorkspaceNavigation.hs",
+      "greenCabalChangesOnlyPublicModuleExposure": true
+    },
+    "toolchainManifestSHA256": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+    "execution": "Existing protected systemd CPU scope, MemoryMax3G/core1 and private offline no-display namespace. Existing runner limits unchanged."
+  },
+  "evidence": {
+    "archive": "docs/warlock-build-loop/v2/evidence/workspace-navigation-decoder-20261106/checks.tar.gz",
+    "archiveSHA256": "d8c0e37350e8deeb36173d7a2dda7086e1f480ebf45cb320862cdb973bc2f3a0",
+    "archiveBytes": 11488321,
+    "manifest": "docs/warlock-build-loop/v2/evidence/workspace-navigation-decoder-20261106/manifest.json",
+    "manifestSHA256": "eee6cfb9f95b6ed120bf08809ba7c0c5f0070ac182f3c3406450cb42e4215b93",
+    "regularMembers": 784,
+    "uncompressedBytes": 67145972,
+    "everyMemberRehashed": true,
+    "publicSourceBindings": {
+      "red": {
+        "matchedBodies": 236,
+        "totalPins": 238
+      },
+      "green": {
+        "matchedBodies": 237,
+        "totalPins": 239
+      }
+    },
+    "allSourceBodyBindingsComplete": false,
+    "unexpectedMissingNonforeignBodies": [],
+    "foreignBodiesOmittedWithPinsRetained": [
+      "implementation/warlock/haskell/process-custody/test/FacadeControl.hs",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc"
+    ],
+    "reproductionLimit": "Public capsule omits both unchanged foreign draft bodies. Full exact broad input reconstruction requires those retained local provenance inputs. Their publication or adoption is not part of this component."
+  },
+  "participant": {
+    "record": ".warlock-contributor/rev034-workspace-decoder-root.json",
+    "finalSnapshotSHA256": "9fa1c669542856f9831415c16a2a53827fd37cf518b445c6ef24b326733d6ea0",
+    "startUTC": "2026-11-06T12:14:43.179398+00:00",
+    "productionProgressUTC": "2026-11-06T12:41:42.370584+00:00",
+    "priorCompilerFailureRetained": true,
+    "olderStopHistoriesReset": false
+  },
+  "remaining": [
+    "Full original protocol-schema field, queue class and refusal-outcome inventory and independent admission",
+    "Retained noGrantReoffered failure at seed20261106/original10000samples30steps and two unattempted witnesses; no model or limit change",
+    "Actual current-owner transport, provider custody, approved peer/session and native scene/protocol traces",
+    "Complete independent HTTP and overview initial Model/opaque returnedCmd AST obligations",
+    "Native producer purpose/ticket/paint authority and physical retirement",
+    "Native keyboard/pointer/AT/IME/focus/pixels and resource budgets",
+    "External constructor-import probe and complete embedded frame capacity are unexecuted",
+    "Reproducible package, reversible deployment and whole release acceptance"
+  ],
+  "fixtureLimits": [
+    "Standalone outer-bound tests are not a full embedded frame proof.",
+    "Rendered8193 invalid extra-padding-field fixture establishes error precedence, not valid-schema reachability.",
+    "Refusal/valid pairs are pure independent decoder calls, not authenticated channel or lifecycle evidence.",
+    "Historical final299frontend remains qualified at its old5af/e706tooltuple; it is not a fresh current-tool frontend result."
+  ],
+  "ledger": {
+    "originalRequirements": 242,
+    "originalScenarios": 417,
+    "recordedAcceptedRequirements": 20,
+    "recordedAcceptedScenarios": 43,
+    "acceptedRequirementsDelta": 0,
+    "acceptedScenariosDelta": 0
+  },
+  "fullREV034Accepted": false,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "nativeTrialArmed": false,
+  "automaticWakeRoundTripVerified": false,
+  "releaseAccepted": false
+}

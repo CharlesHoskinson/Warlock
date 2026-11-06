@@ -628,11 +628,11 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
-    protocol_profile = args.protocol or args.preview_schema
+    protocol_profile = args.protocol or args.preview_schema or args.workspace_navigation_protocol
     haskell_profile = protocol_profile or args.held_executable or args.peer_role
     scope = require_qa_scope()
     if args.inside_private is not None:
@@ -654,6 +654,8 @@ def main():
         mode = '--workspace-original'
     elif args.workspace_dom:
         mode = '--workspace-dom'
+    if args.workspace_navigation_protocol:
+        mode = '--workspace-navigation-protocol'
     if args.inside_private is None:
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
@@ -780,8 +782,9 @@ def main():
                      '--with-hsc2hs=' + str(ghc / 'hsc2hs'), '--with-gcc=/usr/bin/gcc',
                      '--with-ar=/usr/bin/ar', '--with-ld=/usr/bin/ld', '--with-pkg-config=/usr/bin/pkg-config', '--jobs=2']
             target = 'warlock-runtime:test:ui-origin-controls'
-            protocol_suites = (('preview-control', 'desktop-boundary-controls') if args.preview_schema else
-                               ('desktop-boundary-controls',))
+            protocol_suites = (('workspace-navigation-controls', 'desktop-boundary-controls') if args.workspace_navigation_protocol else
+                               (('preview-control', 'desktop-boundary-controls') if args.preview_schema else
+                                ('desktop-boundary-controls',)))
             protocol_targets = [(suite, 'warlock-protocol:test:' + suite) for suite in protocol_suites]
             backend = 'warlock-runtime:exe:warlock-ui-backend'
             if args.peer_role:
@@ -830,6 +833,49 @@ def main():
                 build_label = 'preview-schema-build' if args.preview_schema else ('protocol-build' if args.protocol else 'owner-build')
                 selected_targets = (protocol_targets if protocol_profile else
                                     [('ui-origin-controls', target), *protocol_targets, ('warlock-ui-backend', backend)])
+            if args.workspace_navigation_protocol:
+                metadata = (stage / 'protocol/protocol.cabal').read_text()
+                for suite, directory in (('workspace-navigation-controls', 'test-workspace-navigation'),
+                                         ('desktop-boundary-controls', 'test-desktop')):
+                    pieces = metadata.split('\ntest-suite ' + suite + '\n')
+                    if len(pieces) != 2:
+                        raise RuntimeError('Expected one ordinary-linked protocol suite: ' + suite)
+                    stanza = re.split(r'\n(?:test-suite|executable|library|common|flag)\b', pieces[1], maxsplit=1)[0]
+                    declarations = {}
+                    for line in stanza.splitlines():
+                        if not line.strip() or line.lstrip().startswith('--'):
+                            continue
+                        declaration = re.fullmatch(r'  ([a-z][a-z-]*): (.+)', line)
+                        if not declaration or declaration.group(1) in declarations:
+                            raise RuntimeError('Noncanonical or continued protocol suite field: ' + suite)
+                        declarations[declaration.group(1)] = declaration.group(2)
+                    required = {'type', 'hs-source-dirs', 'main-is', 'build-depends', 'default-language', 'ghc-options'}
+                    if not required <= declarations.keys() or declarations.keys() - required - {'other-modules'}:
+                        raise RuntimeError('Unexpected ordinary-linked protocol suite declarations: ' + suite)
+                    dependencies = [item.strip() for item in declarations['build-depends'].split(',')]
+                    extras = declarations.get('other-modules', '').replace(',', ' ').split()
+                    allowed_extras = ['WorkspaceStandaloneLiterals'] if suite == 'workspace-navigation-controls' else []
+                    if (declarations['type'] != 'exitcode-stdio-1.0'
+                            or declarations['hs-source-dirs'] != directory
+                            or declarations['main-is'] != 'Main.hs'
+                            or declarations['default-language'] != 'Haskell2010'
+                            or dependencies != ['base >=4.18 && <5', 'bytestring', 'text', 'warlock-protocol']
+                            or declarations['ghc-options'] != '-Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates'
+                            or (extras and extras != allowed_extras)):
+                        raise RuntimeError('Protocol suite does not link the fixed ordinary library: ' + suite)
+                    expected_files = {'Main.hs'} | {name + '.hs' for name in extras}
+                    actual_files = {str(path.relative_to(stage / 'protocol' / directory))
+                                    for path in (stage / 'protocol' / directory).rglob('*')
+                                    if path.is_file() and path.suffix in ('.hs', '.hsc')}
+                    if actual_files != expected_files:
+                        raise RuntimeError('Protocol test source directory contains unreviewed home modules: ' + suite)
+                build_targets = ['warlock-protocol:lib:warlock-protocol', *build_targets]
+                build_label = 'workspace-navigation-protocol-build'
+                report['workspaceNavigationProtocol'] = {
+                    'ordinaryLibraryTarget': 'warlock-protocol:lib:warlock-protocol',
+                    'suites': list(protocol_suites), 'testsUseHomeModules': False,
+                    'ordinaryLinkedSuiteDeclarationsChecked': True,
+                    'nativeDispatchQualified': False, 'originalAcceptance': False}
             run(build_label, common + ['build'] + flags + build_targets, stage)
             binaries = {}
             for name, selected in selected_targets:
