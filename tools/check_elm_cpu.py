@@ -189,6 +189,68 @@ def main():
             run('ui-http', [str(node), 'qa/ui-http.cjs', *[str(output / (name + '.js'))
                            for name in ('HttpMain', 'HttpBar', 'HttpPopup', 'UiHttpReplay')],
                            str(output / 'ui-http.json')])
+            if args.subscriptions:
+                for filename in ('legacy-controls-supplement.cjs', 'legacy-controls-budget.json'):
+                    source = root / 'qa' / filename
+                    staged = work / 'qa' / filename
+                    if source.is_symlink() or not source.is_file():
+                        raise RuntimeError('Fixed legacy HTTP supplement input missing: ' + filename)
+                    key = str(source.relative_to(REPO))
+                    sources[key] = sha(source)
+                    shutil.copy2(source, staged)
+                    if sha(staged) != sources[key]:
+                        raise RuntimeError('Legacy HTTP supplement stage differs: ' + filename)
+                legacy_budget = json.loads((work / 'qa/legacy-controls-budget.json').read_text())
+                legacy_names = legacy_budget.get('namedCases')
+                if (legacy_budget.get('schema') != 1 or legacy_budget.get('cases') != 22
+                        or legacy_budget.get('assertions') != 50 or legacy_budget.get('seed') != 20261101
+                        or legacy_budget.get('seedCount') != 1 or legacy_budget.get('responseMs') != 5000
+                        or legacy_budget.get('campaignMs') != 60000 or legacy_budget.get('overallMs') != 180000
+                        or not isinstance(legacy_names, list) or len(legacy_names) != 22
+                        or len(set(legacy_names)) != 22
+                        or legacy_budget.get('driverSha256') != sha(work / 'qa/legacy-controls-supplement.cjs')
+                        or legacy_budget.get('harnessSha256') != sha(work / 'qa/ui-http.cjs')
+                        or legacy_budget.get('sourceRoot') != str(REPO)
+                        or set(legacy_budget.get('sourceHashes', {})) != {
+                            'implementation/warlock/src/UiHttp.elm', 'implementation/warlock/src/HttpPopup.elm',
+                            'implementation/warlock/src/HttpMain.elm', 'implementation/warlock/src/HttpBar.elm',
+                            'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs'}
+                        or any(sources.get(name) != digest for name, digest in legacy_budget['sourceHashes'].items())):
+                    raise RuntimeError('Fixed legacy HTTP supplement budget/source identity differs')
+                run('legacy-controls-syntax', [str(node), '--check', 'qa/legacy-controls-supplement.cjs'])
+                legacy_result_path = output / 'legacy-controls-supplement.json'
+                run('legacy-controls-supplement', [str(node), 'qa/legacy-controls-supplement.cjs',
+                    *[str(output / (name + '.js')) for name in ('HttpMain', 'HttpBar', 'HttpPopup', 'UiHttpReplay')],
+                    str(legacy_result_path), str(REPO)])
+                legacy = json.loads(legacy_result_path.read_text())
+                legacy_images = {key: sha(output / (name + '.js')) for key, name in
+                                 (('main', 'HttpMain'), ('bar', 'HttpBar'), ('popup', 'HttpPopup'), ('replay', 'UiHttpReplay'))}
+                legacy_artifacts = dict(legacy_images, harness=sha(work / 'qa/ui-http.cjs'),
+                    driver=sha(work / 'qa/legacy-controls-supplement.cjs'),
+                    budget=sha(work / 'qa/legacy-controls-budget.json'), prefix=legacy_budget['prefixSha256'])
+                legacy_budgets = {'responseMs': 5000, 'campaignMs': 60000, 'overallMs': 180000}
+                terminal = legacy.get('terminal', {})
+                if (legacy.get('schema') != 1 or legacy.get('passed') is not True
+                        or any(legacy.get(name) is not False for name in ('acceptanceAuthority', 'originalAcceptance',
+                            'nativeAcceptance', 'guiAcceptance', 'cspExecutionAcceptance', 'releaseAccepted'))
+                        or legacy.get('seed') != 20261101 or legacy.get('seedCount') != 1
+                        or legacy.get('artifactHashes') != legacy_artifacts
+                        or legacy.get('sourceHashes') != legacy_budget['sourceHashes']
+                        or legacy.get('budgets') != legacy_budgets
+                        or len(legacy.get('checks', [])) != 50 or legacy.get('failures') != []
+                        or any(row.get('passed') is not True for row in legacy.get('checks', []))
+                        or any(sum(row.get('name') == name for row in legacy['checks']) != 1 for name in legacy_names)
+                        or terminal.get('schema') != 1 or terminal.get('complete') is not True
+                        or terminal.get('cases') != 22 or terminal.get('assertions') != 50
+                        or terminal.get('expectedAssertions') != 50 or terminal.get('seed') != 20261101
+                        or terminal.get('seedCount') != 1 or terminal.get('missing') != []
+                        or terminal.get('namedCases') != legacy_names or terminal.get('artifactHashes') != legacy_artifacts
+                        or terminal.get('sourceHashes') != legacy_budget['sourceHashes']
+                        or terminal.get('budgets') != legacy_budgets):
+                    raise RuntimeError('Legacy HTTP supplement terminal receipt incomplete or mismatched')
+                report['legacyControlsSupplement'] = {'resultPath': legacy_result_path.name,
+                    'resultSHA256': sha(legacy_result_path), 'result': legacy,
+                    'scope': 'Controlled HTTP only; renderer role uses UiHttpReplay proxy; no nonempty legacy-owned state/Owner/native acceptance'}
         if args.subscriptions:
             roots = ('Main', 'Bar', 'Popup', 'HttpMain', 'HttpBar', 'HttpPopup',
                      'NativePreviewAdmission', 'NativePreviewRenderer')

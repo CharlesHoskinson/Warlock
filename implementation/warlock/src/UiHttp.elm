@@ -268,7 +268,7 @@ allowed role kind =
     case role of
         Controller -> List.member kind ["native-event","view-topology","view-action","view-disposition","view-dismiss","view-escape","view-reflow"]
         Renderer -> List.member kind ["presentation","announcements","focus","native-preview-grant","native-preview-quarantine","native-preview-closed"]
-        PopupRole -> List.member kind ["presentation","announcements","focus","native-preview-grant","native-preview-quarantine","native-preview-closed","native-preview-issued"]
+        PopupRole -> List.member kind ["presentation","announcements","focus","native-preview-grant","native-preview-quarantine","native-preview-closed","native-preview-issued","native-preview-retry","native-preview-retirement"]
 
 updateEffects : Msg -> Model -> (Model,List Effect,Maybe Event)
 updateEffects message ((Model model) as current) =

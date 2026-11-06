@@ -13,6 +13,7 @@ import SurfaceRenderer
 import SurfaceTheme
 import Task
 import UiHttp
+import UInt64
 
 type alias Model = {popup : Popup.Model,http : UiHttp.Model}
 type Msg = View Popup.Msg | Transport UiHttp.Msg | Focused
@@ -77,6 +78,10 @@ update message model =
                         Just ("native-preview-closed",payload) ->
                             control ["binding","receiverEpoch"] Realm.domainDecoder Popup.NativeClosed payload command current
                         Just ("native-preview-issued",payload) -> apply (Popup.NativeIssued payload) command current
+                        Just ("native-preview-retry",payload) ->
+                            control ["binding","receiverEpoch"] Realm.domainDecoder Popup.NativeRetry payload command current
+                        Just ("native-preview-retirement",payload) ->
+                            control ["lifetime","session","frontend"] legacyBindingDecoder Popup.NativeRetirement payload command current
                         Just ("focus",payload) ->
                             let target=if current.popup.composition==Popup.Idle then Presentation.focusTarget True payload current.popup.presentation else Nothing
                                 focus=
@@ -137,6 +142,12 @@ apply message command model =
 -- HTTP delivery is transport evidence only. Reuse the existing Popup realm
 -- transitions for enrollment, stale-domain refusal and retirement. These
 -- controls stay reachable while the presentation is closed.
+-- Legacy retirement uses the original raw positive binding, not a realm envelope.
+legacyBindingDecoder : D.Decoder ()
+legacyBindingDecoder =
+    let positive = UInt64.decoder |> D.andThen (\n -> if n /= UInt64.zero then D.succeed () else D.fail "Positive binding")
+    in D.map3 (\_ _ _ -> ()) (D.field "lifetime" positive) (D.field "session" positive) (D.field "frontend" positive)
+
 control : List String -> D.Decoder a -> (D.Value -> Popup.Msg) -> D.Value -> Cmd UiHttp.Msg -> Model -> (Model,Cmd Msg)
 control fields decoder message payload command model =
     let exact = D.keyValuePairs D.value |> D.andThen (\pairs ->
