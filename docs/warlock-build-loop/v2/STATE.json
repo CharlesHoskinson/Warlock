@@ -8,43 +8,24 @@
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "tea-subscriptions-visible-beta",
+    "id": "ux003-walking-skeleton",
     "requirements": [
-      "ELM-TEA-004"
+      "ELM-UX-003"
     ],
     "scenarios": [
-      "tea-subscriptions"
+      "ux-003"
     ],
     "paths": [
-      "implementation/warlock/qa/StandaloneMvpReplay.elm",
-      "implementation/warlock/qa/TeaAdmissionSubscriptionsReplay.elm",
-      "implementation/warlock/qa/TeaBarSubscriptionsReplay.elm",
-      "implementation/warlock/qa/TeaPopupSubscriptionsReplay.elm",
-      "implementation/warlock/qa/TeaRendererSubscriptionsReplay.elm",
-      "implementation/warlock/qa/preview-description-browser.mjs",
-      "implementation/warlock/qa/standalone-mvp.cjs",
-      "implementation/warlock/qa/tea-contract-cases.cjs",
-      "implementation/warlock/qa/tea-subscriptions-cases.cjs",
-      "implementation/warlock/qa/tea-subscriptions.cjs",
-      "implementation/warlock/qa/ui-http.cjs",
-      "implementation/warlock/src/Bar.elm",
-      "implementation/warlock/src/HttpBar.elm",
-      "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/src/NativePreviewAdmission.elm",
-      "implementation/warlock/src/NativePreviewReceiver.elm",
-      "implementation/warlock/src/NativePreviewRenderer.elm",
-      "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/PreviewPaintGate.elm",
-      "implementation/warlock/src/PreviewPresenter.elm",
-      "implementation/warlock/src/RetainedPreviewPresenter.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/src/SurfaceTheme.elm"
+      "implementation/warlock/src/Catalog.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/DesktopPolicy.elm",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs"
     ],
-    "before": "Bar and Popup subscribe regardless of visible/active demand; Popup paint gate drops actual protocol3 object proposals, and beta explanations obscure unavailable appOnly actions.",
-    "after": "Derive recurring demand from visible consumers and retained transactions; preserve ordered revocation and scoped paint proposals even while closed, with truthful visible beta state feedback.",
+    "before": "Original catalog eligibility and argument-preserving launch have not been adjudicated in a complete current-stack user journey.",
+    "after": "An isolated current-stack session refreshes eligible desktop entries, launches a harmless owned application with preserved recorded arguments, and cleans up normally.",
     "verification": [
-      "Protected actual optimized roots and literal model/effect/subscription boundary fixtures, synchronous/delayed callbacks, current-source Omarchy visible journey. Complete HTTP wrapper model/effect AST remains mandatory before wholeTEA004 verdict; native qualified separately."
+      "Protected current-source Elm replay, independent literal desktop-file and argv cases, and isolated native recording of the complete ordered journey including cleanup. Native, keyboard, AT and release acceptance remain separately scoped."
     ]
   },
   "nextSlices": [
@@ -3348,6 +3329,51 @@
       "selectedSlice": "backend-private-failure-diagnostics",
       "record": ".warlock-contributor/backend-private-failure-diagnostics.json",
       "reason": "Distinct actual diagnostics/privacy behavior after completed001, preserving all stopped engine/native histories. Actual Haskellsource and real synthetic nonzero/privacy controls implemented and protectedqualified."
+    },
+    {
+      "atUTC": "2026-11-06T18:44:06.892804+00:00",
+      "activeContributorRecord": ".warlock-contributor/tea-subscriptions-root.json",
+      "activeSlice": {
+        "id": "tea-subscriptions-visible-beta",
+        "requirements": [
+          "ELM-TEA-004"
+        ],
+        "scenarios": [
+          "tea-subscriptions"
+        ],
+        "paths": [
+          "implementation/warlock/qa/StandaloneMvpReplay.elm",
+          "implementation/warlock/qa/TeaAdmissionSubscriptionsReplay.elm",
+          "implementation/warlock/qa/TeaBarSubscriptionsReplay.elm",
+          "implementation/warlock/qa/TeaPopupSubscriptionsReplay.elm",
+          "implementation/warlock/qa/TeaRendererSubscriptionsReplay.elm",
+          "implementation/warlock/qa/preview-description-browser.mjs",
+          "implementation/warlock/qa/standalone-mvp.cjs",
+          "implementation/warlock/qa/tea-contract-cases.cjs",
+          "implementation/warlock/qa/tea-subscriptions-cases.cjs",
+          "implementation/warlock/qa/tea-subscriptions.cjs",
+          "implementation/warlock/qa/ui-http.cjs",
+          "implementation/warlock/src/Bar.elm",
+          "implementation/warlock/src/HttpBar.elm",
+          "implementation/warlock/src/HttpPopup.elm",
+          "implementation/warlock/src/NativePreviewAdmission.elm",
+          "implementation/warlock/src/NativePreviewReceiver.elm",
+          "implementation/warlock/src/NativePreviewRenderer.elm",
+          "implementation/warlock/src/Popup.elm",
+          "implementation/warlock/src/PreviewPaintGate.elm",
+          "implementation/warlock/src/PreviewPresenter.elm",
+          "implementation/warlock/src/RetainedPreviewPresenter.elm",
+          "implementation/warlock/src/Surface.elm",
+          "implementation/warlock/src/SurfaceRenderer.elm",
+          "implementation/warlock/src/SurfaceTheme.elm"
+        ],
+        "before": "Bar and Popup subscribe regardless of visible/active demand; Popup paint gate drops actual protocol3 object proposals, and beta explanations obscure unavailable appOnly actions.",
+        "after": "Derive recurring demand from visible consumers and retained transactions; preserve ordered revocation and scoped paint proposals even while closed, with truthful visible beta state feedback.",
+        "verification": [
+          "Protected actual optimized roots and literal model/effect/subscription boundary fixtures, synchronous/delayed callbacks, current-source Omarchy visible journey. Complete HTTP wrapper model/effect AST remains mandatory before wholeTEA004 verdict; native qualified separately."
+        ]
+      },
+      "activeSelection": null
     }
   ],
   "museRegulator": {
@@ -4174,7 +4200,7 @@
       "outcome": "Persistent custody foundation published6e6ad828c; component verified, fullARC002original remains incomplete, no acceptedcountincrease."
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/tea-subscriptions-root.json",
+  "activeContributorRecord": ".warlock-contributor/ux003-walking-skeleton-root.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -5276,7 +5302,7 @@
     "schema": 1,
     "pluginVersion": "0.17.0",
     "workflowPolicy": 2,
-    "status": "implementation-tested-selection-pending",
+    "status": "selected",
     "previousSelectionPreserved": true,
     "authorizationExpiresUTC": "2026-11-06T19:07:31.942628+00:00",
     "postSliceRSI": "required",
@@ -5285,6 +5311,13 @@
       "scenario": "ux-003",
       "acceptance": false
     },
-    "historicalStopsUnchanged": true
+    "historicalStopsUnchanged": true,
+    "commit": "a09595173ed3464bb124c85596106e132313db6a",
+    "selectionGeneration": 1
+  },
+  "activeSelection": {
+    "generation": 1,
+    "recordIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
+    "selectedUTC": "2026-11-06T18:44:06.892836+00:00"
   }
 }
