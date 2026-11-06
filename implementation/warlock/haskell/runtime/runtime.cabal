@@ -212,3 +212,11 @@ test-suite notification-issuer-controls
   build-depends: base >=4.18 && <5, bytestring, directory, filepath, unix, warlock-runtime
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat
+
+test-suite catalog-nodisplay-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-catalog-nodisplay
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, text, containers, unix, directory, filepath, warlock-runtime, warlock-protocol
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0

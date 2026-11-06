@@ -82,6 +82,7 @@ insertEntry locale entries (path,bytes) = do
   fields <- either (ioError . userError . T.unpack) pure (desktopFields source)
   let get name=Map.findWithDefault "" name fields
   if T.toLower (get "Hidden")=="true" then pure (Map.insert identity Nothing entries)
+  else if T.toLower (get "NoDisplay")=="true" then pure (Map.insert identity Nothing entries)
   else if get "Type"/="Application" || T.null (get "Exec") then pure entries
   else do
    value <- either (ioError . userError . T.unpack) pure
