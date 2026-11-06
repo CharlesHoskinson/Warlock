@@ -1845,6 +1845,58 @@ def delivery_identity(record):
     return {key: delivery[key] for key in ('schema', 'journey', 'clockOrigin', 'authorizationExpiresUTC', 'guardHashes')}
 
 
+def effective_delivery_authorization(record):
+    """Recorded expiry only; a later human pause or inactive goal still vetoes execution."""
+    if record.get('workflowPolicy') != 2 or type(record['workflowPolicy']) is not int:
+        raise ValueError('Authorization renewal requires an existing policy2 record')
+    expiry = record['delivery']['authorizationExpiresUTC']
+    for event in record['delivery']['events']:
+        if event.get('kind') == 'authorization-renewed':
+            renewed = event['authorizationExpiresUTC']
+            if (delivery_time(renewed) <= delivery_time(expiry) or
+                    delivery_time(renewed) <= delivery_time(event['atUTC'])):
+                raise ValueError('Renewed authorization must extend the prior deadline prospectively')
+            expiry = renewed
+    return expiry
+
+
+def validate_authorization_renewal(root, record, event, previous_expiry, previous_authorized):
+    """Validate retained human/goal receipts without granting execution authority."""
+    identity = delivery_identity(record)
+    evidence = json.loads(delivery_ref(root, event['evidence']))
+    fields = {'schema', 'kind', 'recordPath', 'owner', 'startedUTC', 'deliveryIdentitySha256',
+              'previousExpiresUTC', 'authorizationExpiresUTC', 'authorizedUTC', 'humanRequest', 'goalObservation'}
+    if (not isinstance(evidence, dict) or set(evidence) != fields or
+            type(evidence['schema']) is not int or evidence['schema'] != 1 or
+            evidence['kind'] != 'explicit-human-authorization-renewal' or
+            evidence['recordPath'] != record.get('_recordPath') or evidence['owner'] != record['owner'] or
+            evidence['startedUTC'] != record['startedUTC'] or
+            evidence['deliveryIdentitySha256'] != json_sha256(identity) or
+            evidence['previousExpiresUTC'] != previous_expiry or
+            evidence['authorizationExpiresUTC'] != event['authorizationExpiresUTC']):
+        raise ValueError('Authorization renewal evidence differs from the same record, scope or prior deadline')
+    authorized = delivery_time(evidence['authorizedUTC'])
+    observed = delivery_time(event['atUTC'])
+    expiry = delivery_time(event['authorizationExpiresUTC'])
+    if (authorized < delivery_time(identity['clockOrigin']['utc']) or
+            (previous_authorized is not None and authorized <= delivery_time(previous_authorized)) or
+            authorized > observed or expiry <= observed or expiry <= delivery_time(previous_expiry)):
+        raise ValueError('Authorization renewal chronology is backdated, future-dated or contracting')
+    human = json.loads(delivery_ref(root, evidence['humanRequest']))
+    goal = json.loads(delivery_ref(root, evidence['goalObservation']))
+    if (not isinstance(human, dict) or type(human.get('schema')) is not int or human['schema'] != 1 or
+            human.get('kind') != 'human-authorization' or human.get('action') != 'renew-same-record' or
+            human.get('authorizedUTC') != evidence['authorizedUTC'] or
+            human.get('authorizationExpiresUTC') != event['authorizationExpiresUTC']):
+        raise ValueError('Renewal requires an exact explicit human request, not a queued agent message')
+    delivery_text(human.get('text'), 'explicit human authorization request')
+    if (not isinstance(goal, dict) or type(goal.get('schema')) is not int or goal['schema'] != 1 or
+            goal.get('status') != 'active' or
+            not authorized <= delivery_time(goal.get('observedUTC')) <= observed):
+        raise ValueError('Renewal requires an active goal observation after the human request')
+    return evidence['authorizedUTC']
+
+
 DELIVERY_GUARDS = (BASE, LANGUAGE_BASELINE, LANGUAGE_REVISION, LANGUAGE_HELPER,
                    'implementation/elm-build-loop-v1/loop.py', 'window-integration-qa/qa_run.py',
                    'window-integration-qa/qa_launch.py')
@@ -1874,7 +1926,7 @@ def plugin_snapshot_ref(root, reference):
     return value
 
 
-def validate_rsi(root, record, state, event, current=False):
+def validate_rsi(root, record, state, event, current=False, authorization_expires=None):
     """One bounded post-slice improvement receipt; no authority or oracle changes."""
     integrated = state['integrated']
     if (not integrated or not integrated.get('sliceCompleted') or state.get('rsi') or
@@ -1891,7 +1943,8 @@ def validate_rsi(root, record, state, event, current=False):
         delivery_text(evidence.get(field), 'RSI ' + field)
     baseline_plugin = plugin_snapshot_ref(root, evidence['baselinePlugin'])
     json.loads(delivery_ref(root, evidence['baselineHarness']))
-    if evidence.get('authorizationExpiresUTC') != record['delivery']['authorizationExpiresUTC']:
+    authorization_expires = authorization_expires or effective_delivery_authorization(record)
+    if evidence.get('authorizationExpiresUTC') != authorization_expires:
         raise ValueError('RSI authorization binding differs')
     if baseline_plugin['sha256'] != integrated['pluginBaselineSha256']:
         raise ValueError('RSI plugin baseline differs from completed slice')
@@ -1913,7 +1966,7 @@ def validate_rsi(root, record, state, event, current=False):
                 comparison.get('baselinePluginSha256') != baseline or
                 comparison.get('baselineSnapshotSha256') != snapshot_sha256(before) or
                 comparison.get('candidateSnapshotSha256') != snapshot_sha256(after) or
-                evidence.get('authorizationExpiresUTC') != record['delivery']['authorizationExpiresUTC']):
+                evidence.get('authorizationExpiresUTC') != authorization_expires):
             raise ValueError('RSI comparison is not bound to the same task, plugin, harness and refutation case')
         roles = {'taskFiles', 'sourceFiles', 'oracleFiles', 'guardFiles', 'authorizationFiles', 'pluginBaselineFiles'}
         fixed = before.get('fixedInputs')
@@ -2037,13 +2090,15 @@ def delivery_progress_status(record, clock=None, sample=None):
     reasons = (['45-awake-minutes-without-tested-integration'] if awake >= 2700 else [])
     if repeated:
         reasons.append('two-experiments-with-same-failure')
-    expired = delivery_time(current['utc']) >= delivery_time(delivery['authorizationExpiresUTC'])
+    authorization_expires = effective_delivery_authorization(record)
+    expired = delivery_time(current['utc']) >= delivery_time(authorization_expires)
     return {'workflowPolicy': 2, 'iterationsWithoutProgress': 0,
             'lastRecordedProgressUTC': baseline['utc'], 'secondsSinceRecordedProgress': None if unknown else awake,
             'suspendedSeconds': None if unknown else max(0, boot - awake),
             'limits': {'iterations': 2, 'seconds': 2700, 'sameFailureExperiments': 2},
             'investigationNeedsChange': False, 'planChangeRequired': bool(reasons),
             'reconciliationRequired': unknown, 'authorizationExpired': expired, 'reasons': reasons,
+            'effectiveAuthorizationExpiresUTC': authorization_expires,
             'action': 'Reconcile clocks and environment.' if unknown else 'Authorization expired; no dispatch.' if expired else
                       'Change the next action or defer in this same history.' if reasons else 'Continue the selected delivery action.',
             'basis': 'Locally sampled management clocks and recorded source-bound events; no original acceptance inferred.'}
@@ -2122,6 +2177,8 @@ def delivery_state(root, record, reqs):
              'terminal': None, 'integrated': None, 'journey': None, 'deferred': None, 'rsi': None}
     seen, candidates, jobs = set(), set(), set()
     advances = {delivery_product_identity(record['sourceHashes'])}
+    authorization_expires = identity['authorizationExpiresUTC']
+    authorization_issued = None
     for index, event in enumerate(events):
         if not isinstance(event, dict) or event.get('sequence') != index + 1:
             raise ValueError('Delivery event sequence differs')
@@ -2133,7 +2190,11 @@ def delivery_state(root, record, reqs):
         if event.get('atUTC') != event['clockSample']['utc']:
             raise ValueError('Delivery event timestamp differs from sample')
         kind = event.get('kind')
-        if kind == 'candidate':
+        if kind == 'authorization-renewed':
+            authorization_issued = validate_authorization_renewal(
+                root, record, event, authorization_expires, authorization_issued)
+            authorization_expires = event['authorizationExpiresUTC']
+        elif kind == 'candidate':
             if state['integrated'] and state['integrated'].get('sliceCompleted') and not state['rsi']:
                 raise ValueError('Complete bounded RSI before the next slice candidate')
             candidate = event['candidate']
@@ -2226,7 +2287,7 @@ def delivery_state(root, record, reqs):
             advances.add(product)
             state['integrated'] = event
         elif kind == 'rsi':
-            state['rsi'] = validate_rsi(root, record, state, event)
+            state['rsi'] = validate_rsi(root, record, state, event, authorization_expires=authorization_expires)
         elif kind == 'journey-observed':
             if not state['integrated'] or event.get('candidateSha256') != state['candidateSha256'] or state['journey']:
                 raise ValueError('Journey observation needs the integrated candidate')
@@ -3795,9 +3856,9 @@ def main():
             current, state_sha = json_snapshot(state_path)
             if state_sha != args.expect_state_sha:
                 raise ValueError('Canonical STATE changed before selection')
-            for existing in history_inventory['records'].values():
+            for existing_path, existing in history_inventory['records'].items():
                 if existing.get('workflowPolicy') == 2:
-                    previous_delivery = delivery_state(root, existing, reqs)
+                    previous_delivery = delivery_state(root, dict(existing, _recordPath=existing_path), reqs)
                     previous_job = previous_delivery['job']
                     if previous_job and not previous_job['consumed']:
                         raise ValueError('Consume the occupied protected slot before changing selection')
@@ -3829,6 +3890,7 @@ def main():
                 raise ValueError('Delivery events require explicit new-start opt-in')
             event = read(safe(root, args.event_file))
             fields = {
+                'authorization-renewed': {'authorizationExpiresUTC', 'evidence'},
                 'candidate': {'candidate'}, 'review': {'candidateSha256', 'review'},
                 'execution-started': {'candidateSha256', 'jobId', 'outerHandle'},
                 'execution-finished': {'candidateSha256', 'jobId', 'outerHandleConsumed', 'report'},
@@ -3841,8 +3903,11 @@ def main():
                 raise ValueError('Invalid delivery event input fields')
             progress = delivery_progress_status(record)
             closing = event['kind'] in ('execution-finished', 'execution-consumed', 'deferred')
-            if not closing and (progress['authorizationExpired'] or progress['reconciliationRequired']):
+            renewal = event['kind'] == 'authorization-renewed'
+            if not closing and (progress['reconciliationRequired'] or (progress['authorizationExpired'] and not renewal)):
                 raise ValueError('Delivery authorization expired or clocks require reconciliation')
+            if renewal and any(fingerprint(root, name) != sha for name, sha in record['delivery']['guardHashes'].items()):
+                raise ValueError('Authorization renewal cannot change immutable original/native guards')
             actual = delivery_state(root, record, reqs)
             if event['kind'] == 'candidate':
                 validate_delivery_candidate(root, record, event['candidate'], current=True)
