@@ -32,6 +32,36 @@ Follow [progress review and stall correction](references/redesign-flow.md#progre
 
 Count original acceptance separately from component checks and agent activity. A reviewed source packet needs protected execution or a specific blocking prerequisite. Another review of unchanged bytes does not complete that step.
 
+## Canonical review receipts
+
+The optional `scripts/canonicalize_review.py` helper copies an existing review decision into the core's `disposition` field.
+It accepts only `accepted` or `changes-required`. It preserves the original fields and adds the original receipt path and SHA256.
+Conflicting decisions, mismatched context, self-review, duplicate JSON fields, symbolic links and output overwrites are refused.
+
+Use absolute paths. Read the reviewer, candidate, scope and owner from the exact review and selected record.
+Select a new output path in an existing directory owned by your UID.
+The output directory must not permit group or other writes.
+Output ancestors must belong to root or your UID and reject group or other writes.
+Root-owned sticky temporary ancestors, such as `/tmp`, are allowed. Symbolic links remain refused.
+The helper trusts root and same-UID actors. It does not isolate evidence from those actors.
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/canonicalize_review.py \
+  --input /absolute/original-review.json --sha256 ORIGINAL_RECEIPT_SHA256 \
+  --candidate-sha256 FULL_CANDIDATE_SHA256 --reviewer EXACT_REVIEWER \
+  --owner SELECTED_RECORD_OWNER --scope cpu --output /absolute/canonical-review.json
+```
+
+The helper reports the new receipt hash. Keep the original receipt unchanged.
+Submit the canonical receipt through the existing `delivery-event` review procedure.
+The helper does not grant review independence, source adoption, execution permission or original acceptance. The unchanged core checks admission.
+
+Run the isolated helper regression with:
+
+```sh
+python3 -B -m unittest discover -s plugins/warlock-contributor/qa -p test_canonicalize_review.py -q
+```
+
 ## Scaffold and resume
 
 For source entry points and the existing Elm/event/effect route, use the
