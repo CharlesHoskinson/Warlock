@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "scope": "Compact exact retained report/log/review copies only; excludes binaries/SDK/source-body capsule.",
+  "files": {
+    "api-red/report.json": {
+      "sha256": "1f88e93aad4151219751ec7932684403b5ba7790beeb46786d28f79ed348f596",
+      "bytes": 37017,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978754021684393/report.json"
+    },
+    "api-red/logs/notification-issuer-build.stderr": {
+      "sha256": "8286c078bca6e60394bf4f6ada3cfb07d75faf7f38f6d7e430980efa6317ea8d",
+      "bytes": 3468,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978754021684393/logs/notification-issuer-build.stderr"
+    },
+    "api-red/logs/notification-issuer-build.stdout": {
+      "sha256": "9a31e9c9f1b4e9b56ce0c9539e592a9cf6a7be6bc67f801f454e6e2243ab5213",
+      "bytes": 51885,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978754021684393/logs/notification-issuer-build.stdout"
+    },
+    "issuer-green/report.json": {
+      "sha256": "1b60ab275945b49c4fc3e91c273c9e9b38b121a94a69d79da0ce9cb40249b38a",
+      "bytes": 40195,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/report.json"
+    },
+    "issuer-green/logs/list-notification-issuer-controls.stderr": {
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+      "bytes": 122,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/logs/list-notification-issuer-controls.stderr"
+    },
+    "issuer-green/logs/list-notification-issuer-controls.stdout": {
+      "sha256": "841fde7362f055af9dd2311da3599322ff0ede791a07f7ebc40cccd91ec55aae",
+      "bytes": 238,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/logs/list-notification-issuer-controls.stdout"
+    },
+    "issuer-green/logs/notification-issuer-build.stderr": {
+      "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+      "bytes": 1133,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/logs/notification-issuer-build.stderr"
+    },
+    "issuer-green/logs/notification-issuer-build.stdout": {
+      "sha256": "9e4ee47cec9a47001435af8bc23c20f5a867cc1ad572a746e1b4d9da4c80c053",
+      "bytes": 52620,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/logs/notification-issuer-build.stdout"
+    },
+    "issuer-green/logs/notification-issuer-controls.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/logs/notification-issuer-controls.stderr"
+    },
+    "issuer-green/logs/notification-issuer-controls.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/logs/notification-issuer-controls.stdout"
+    },
+    "issuer-green/suite/default.log": {
+      "sha256": "ee8097a06be98263d025f8f61401c5e5d7441769e5c42f25f70f36f8c2a77c63",
+      "bytes": 37,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/default.log"
+    },
+    "issuer-green/suite/results.json": {
+      "sha256": "4e41bc52a541441136fa4f1d44ecf959de1b11ad256e48ba962a75e786d8506d",
+      "bytes": 712,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/results.json"
+    },
+    "config-regression-green/report.json": {
+      "sha256": "1e612167f2aa9acee80305660073fe410914e765fba88f3fba9ecdc054f00af7",
+      "bytes": 40219,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/report.json"
+    },
+    "config-regression-green/logs/list-notification-config-controls.stderr": {
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+      "bytes": 122,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/logs/list-notification-config-controls.stderr"
+    },
+    "config-regression-green/logs/list-notification-config-controls.stdout": {
+      "sha256": "8616992ef16a687c8ba5113ceed75972d95dce5de1fb23a44245649145307b51",
+      "bytes": 238,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/logs/list-notification-config-controls.stdout"
+    },
+    "config-regression-green/logs/notification-config-build.stderr": {
+      "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+      "bytes": 1133,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/logs/notification-config-build.stderr"
+    },
+    "config-regression-green/logs/notification-config-build.stdout": {
+      "sha256": "e13f2368f901962a8aaa8a890e575a71ef9e5dd4dd685c1eafa5f835572ebff7",
+      "bytes": 52620,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/logs/notification-config-build.stdout"
+    },
+    "config-regression-green/logs/notification-config-controls.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/logs/notification-config-controls.stderr"
+    },
+    "config-regression-green/logs/notification-config-controls.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/logs/notification-config-controls.stdout"
+    },
+    "config-regression-green/suite/default.log": {
+      "sha256": "904284d58e19174d362cb949c181caee2b3d33beecb506c95d8c4e39e8a43114",
+      "bytes": 842,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/runs/notification-config-controls/default.log"
+    },
+    "config-regression-green/suite/results.json": {
+      "sha256": "a006c5918b5972329a94495900ecef32fe583428b2d420e83f58ae8714f88acd",
+      "bytes": 712,
+      "copiedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/runs/notification-config-controls/results.json"
+    },
+    "reviews/api-red-execution-review.json": {
+      "sha256": "e742ff0e7773ba7aa410a6f1e5f7dc956591ba48d28a3dd2a41489709858efb4",
+      "bytes": 2744,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-issuer-api-red-independent-review/review.json"
+    },
+    "reviews/issuer-green-execution-review.json": {
+      "sha256": "2d9f233c8dfdde2ffafe57a8de680d92f0eb440f8e23d077da2b8bf63beac74e",
+      "bytes": 3621,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-issuer-green-independent-review/review.json"
+    },
+    "reviews/config-regression-execution-review.json": {
+      "sha256": "4656e6f218c7f72ae20d604cddc1c0bbb8bd1621d16a564d0d5cb42d96516db2",
+      "bytes": 3816,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-issuer-config-regression-independent-review/review.json"
+    },
+    "reviews/issuer-r66-static-integration-review.json": {
+      "sha256": "c4ad961145ed9bf6a5d9c90449ebc9df1b12406009b6957e9642fef1991ea3b3",
+      "bytes": 5512,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-issuer-r66-full-static-integration-independent-review.json"
+    },
+    "reviews/issuer-r66-outer-custody-review.json": {
+      "sha256": "7cd50f6335dd4122fc4a2fbb0caef8c3545cf7e9c4f924da5ce8c18f18dbf98b",
+      "bytes": 4913,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-issuer-r66-outer-custody-independent-review.json"
+    },
+    "reviews/fixed-r68-profile-review.json": {
+      "sha256": "f5b77d473fd76083bc8c878dade9d932a64af25c8521446eb77dabd0ce6cd50e",
+      "bytes": 4801,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-notification-issuer-r68-review/review.json"
+    },
+    "api-red/review-packet.json": {
+      "sha256": "db53525934fcb56d42838eadec0e6cf536cb345b9d1ba75b572de15d0de45002",
+      "bytes": 35193,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-issuer-red-protected-review.json"
+    },
+    "issuer-green/review-packet.json": {
+      "sha256": "cea0eea40e2c8de9d88de72d2f2026bc12bce4132f17f2f70f27fee7cbb43887",
+      "bytes": 35498,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-issuer-green-protected-review.json"
+    },
+    "config-regression-green/review-packet.json": {
+      "sha256": "ef9d6027b708fcdd07f73f9012487ddd11f771ab0dfd9be617ed2e235087325a",
+      "bytes": 35498,
+      "copiedFrom": "/home/hoskinson/.local/state/warlock-team/20261105/ux031-issuer-config-regression-protected-review.json"
+    },
+    "component-summary.json": {
+      "sha256": "c601b79ee1a7340aa1ee916183137bf95a0bcbf82dd3dc415678c95a86cbcb63",
+      "bytes": 6340,
+      "authoredFor": "Root publication candidate with independent executed-fixture scope correction"
+    }
+  },
+  "fileCountExcludingManifest": 31,
+  "totalBytesExcludingManifest": 421249,
+  "acceptanceGranted": false
+}

@@ -1,0 +1,64 @@
+Warning: Specifying an absolute path to the project file is deprecated. Use
+--project-dir to set the project's directory.
+Warning: No remote package servers have been specified. Usually you would have
+one specified in the config file.
+
+src/Crypto/Hash/SHA256.hs:144:19: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+144 | copyCtx dst src = memcpy (castPtr dst) (castPtr src) (fromIntegral sizeCtx)
+    |                   ^^^^^^
+
+src/Crypto/Hash/SHA256.hs:336:53: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+336 |                    withByteStringPtr t' $ \tptr' -> memcpy p tptr' 32
+    |                                                     ^^^^^^
+configure: WARNING: unrecognized options: --with-compiler
+configure: WARNING: unrecognized options: --with-compiler
+
+test-notification-issuer/Main.hs:11:43: error:
+    Module ‘Warlock.Backend’ does not export ‘newNotificationIssuer’
+   |
+11 | import Warlock.Backend (loadBackendConfig,newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText)
+   |                                           ^^^^^^^^^^^^^^^^^^^^^
+
+test-notification-issuer/Main.hs:11:65: error:
+    Module
+    ‘Warlock.Backend’
+    does not export
+    ‘provisionNotificationIssuer’
+   |
+11 | import Warlock.Backend (loadBackendConfig,newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText)
+   |                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test-notification-issuer/Main.hs:11:93: error:
+    Module
+    ‘Warlock.Backend’
+    does not export
+    ‘reserveNotificationGeneration’
+   |
+11 | import Warlock.Backend (loadBackendConfig,newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText)
+   |                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test-notification-issuer/Main.hs:11:123: error:
+    Module ‘Warlock.Backend’ does not export ‘retireNotificationIssuer’
+   |
+11 | import Warlock.Backend (loadBackendConfig,newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText)
+   |                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test-notification-issuer/Main.hs:11:148: error:
+    Module
+    ‘Warlock.Backend’
+    does not export
+    ‘notificationGenerationText’
+   |
+11 | import Warlock.Backend (loadBackendConfig,newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText)
+   |                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: [Cabal-7125]
+Failed to build test:notification-issuer-controls from warlock-runtime-0.1.0.0.
+

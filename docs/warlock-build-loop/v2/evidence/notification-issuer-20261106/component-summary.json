@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "component": "Opaque notification issuer/store lifetime component and retained bus-config regression",
+  "supportsOriginal": "ELM-UX-031",
+  "disposition": "Bounded single-process ordinary-linked filesystem IO component only; no original/native/service acceptance.",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/app-notification-provision/Main.hs": "bb490273b89684339ec590673cf08a07c67c2a7a3086e1abc300ca619858405e",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "1f56aaa6a479b5ae386e1ec446e5b0cae58cf1cf7469b2fa2f7d618f54f13f82",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "cbb4776f1f5e3b75754dc552ff0de9cede7363a124641523f8d30a2a110ee7dd",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/NotificationIssuer.hs": "d50ae90b7134cc1cd3d85c308fae14ff59f12dc6694be3b887e806c924242e0e",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "4a432f698c779e7d054805513f2f030b37636e9d1e29e5598e8e5c4c1987ffbe",
+    "implementation/warlock/haskell/runtime/test-notification-config/Main.hs": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+    "implementation/warlock/haskell/runtime/test-notification-issuer/Main.hs": "2a1b3ba1593bed25a68744e9408d209c613230e3d94ae4171abfe08882ffa711",
+    "tools/check_arm64_cpu.py": "c405059980ec7dec45238532b1c2226ac7ce9dfd3d2f981256ad1bb8a5ba0c97",
+    "tools/haskell_test_wrapper.py": "96746425060d2dbda00f92d5d23eb05df8db9de2eb3183aef755768e7a10d9ad",
+    "tools/qa_cpu.py": "b6bea07dd909badeb295783d2f4a357d3684a541ef54912f04117ec5c3fa5ba7"
+  },
+  "observations": {
+    "apiRed": {
+      "report": "1793978754021684393",
+      "sha256": "1f88e93aad4151219751ec7932684403b5ba7790beeb46786d28f79ed348f596",
+      "inputs": 241,
+      "classification": "Expected compiler API RED: five missing public Backend issuer exports; no runtime controls executed.",
+      "commands": 1,
+      "commandExit": 1,
+      "postFailedSDKGuardPassClaimed": false
+    },
+    "issuerGreen": {
+      "report": "1793978838741365106",
+      "sha256": "1b60ab275945b49c4fc3e91c273c9e9b38b121a94a69d79da0ce9cb40249b38a",
+      "inputs": 243,
+      "commands": 3,
+      "allCommandExitsZero": true,
+      "fixtureSHA256": "2a1b3ba1593bed25a68744e9408d209c613230e3d94ae4171abfe08882ffa711",
+      "terminalLiteral": "notification issuer fixture complete\n",
+      "normalReceipt": [
+        {
+          "mode": "default",
+          "argv": [
+            "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/storage"
+          ],
+          "exit": 0,
+          "timeout": false,
+          "forcedCleanup": false,
+          "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/default.log",
+          "image": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/image/notification-issuer-controls",
+          "imagePin": [
+            "56",
+            "1079904",
+            "36100880",
+            "02fd14d0b1dd8425ac37b87335752e58e8335b99ce1744a7e6c32f97d21444b6"
+          ]
+        }
+      ],
+      "scope": "Real public provision/reserve/retire IO on one disposable owned root; canonical slot bytes, returned generation projections, same-process second-live-handle refusal, expired deadline/no advance. No aggregate assertion count is invented."
+    },
+    "configRegressionGreen": {
+      "report": "1793979012235863605",
+      "sha256": "1e612167f2aa9acee80305660073fe410914e765fba88f3fba9ecdc054f00af7",
+      "inputs": 243,
+      "sameExactSourceTupleAsIssuerGreen": true,
+      "commands": 3,
+      "allCommandExitsZero": true,
+      "exactOrderedControls": 30,
+      "fixtureSHA256": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f"
+    }
+  },
+  "provisionExecutable": {
+    "path": "implementation/warlock/haskell/runtime/app-notification-provision/Main.hs",
+    "sourceReviewed": true,
+    "builtByTheseProfiles": false,
+    "executedByTheseProfiles": false,
+    "note": "Provision function exercised through ordinary-linked suite; standalone provision executable target was not built or invoked."
+  },
+  "outerLifecycle": "All three outer handles terminal and consumed according to Root actual terminal observations; independent reviewers inspected retained inner reports/logs/receipts. No independent outer receipt is fabricated.",
+  "compactEvidence": {
+    "manifest": "manifest.json",
+    "binariesIncluded": false,
+    "SDKIncluded": false,
+    "sourceBodiesIncluded": false,
+    "fullyReconstructiblePublicBuildClaimed": false,
+    "foreignBodiesIncluded": false,
+    "retainedPrerequisites": "Original private frozen stages, binaries, full source/provenance, SDK and failed reports remain retained locally; this compact metadata/log package is not complete public reconstruction."
+  },
+  "limits": [
+    "No cross-process issuer/crash-injection/power-loss/hostile-sameUID proof or complete interruption/close-uncertainty campaign. Named checkpoint identity is not atomic hostile namespace protection.",
+    "No socket connection, EXTERNAL, Hello, GIO ownership, actual native service integration, notification producer/action receipt, valid/expired/reused original UX031 observation, AT/IME/paint or resource/release acceptance.",
+    "Generation text is a projection, never a constructor or native authority. Lifetime failure must retain exact custody or fail-stop; unconfirmed close is not cleanup success.",
+    "Existing config30 regression was run; old97/2194 or broader frontend regressions were not run by these profiles.",
+    "Compiler API RED is preparation failure, not semantic runtime RED. All compiler/dependency/configure warnings retained; no clean-warning claim.",
+    "Generated offline cabal.project is not claimed source-identical. No original investigation start/timer/stop history reset inferred from component pass."
+  ],
+  "acceptedRequirementDelta": 0,
+  "acceptedScenarioDelta": 0,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "unobservedAdditionalLifetimeControl": "Named lifetime-inode replacement refusal is source-reviewed only. The executed r68 Main did not test that control."
+}

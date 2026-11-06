@@ -1,0 +1,90 @@
+{
+  "disposition": "SOURCE_READY_FOR_API_COMPILER_RED_THEN_SINGLE_PROCESS_IO_GREEN_ONLY",
+  "actionableCodeFindings": [],
+  "currentHEAD": "9aee259590d9334f7c91ffc3db0f8f15ec867395",
+  "sourceBeforeCurrentMismatches": {},
+  "all11BasePinsMatch": true,
+  "fixedMainSHA256": "2a1b3ba1593bed25a68744e9408d209c613230e3d94ae4171abfe08882ffa711",
+  "candidateHashes": {
+    "check_arm64_cpu.candidate.py": "c405059980ec7dec45238532b1c2226ac7ce9dfd3d2f981256ad1bb8a5ba0c97",
+    "qa_cpu.candidate.py": "b6bea07dd909badeb295783d2f4a357d3684a541ef54912f04117ec5c3fa5ba7",
+    "haskell_test_wrapper.candidate.py": "96746425060d2dbda00f92d5d23eb05df8db9de2eb3183aef755768e7a10d9ad",
+    "runtime.candidate.cabal": "802d351cd1c2aaec5364f1bbf12113929e2949d0d18fb6861e3b015d39c3fbd8",
+    "Main.hs": "2a1b3ba1593bed25a68744e9408d209c613230e3d94ae4171abfe08882ffa711",
+    "Root-verification-request.json": "133d8e634c7d50ca169428b669d686807dc8ae8c4f7b005bc1b146ad8b71c016",
+    "IssuerLifetimeMain.unintegrated.hs": "0432d66eacef885e555aafb7dc67049be408ed7b86acc842c5891cff82c02b7d",
+    "notification-issuer-support.patch": "6cb3df560cd71a1e590349deea32c38ad7029f5d274ea5093a5b829e9a7cf401"
+  },
+  "ordinaryLinkage": {
+    "library": "warlock-runtime:lib:warlock-runtime",
+    "suite": "warlock-runtime:test:notification-issuer-controls",
+    "hsSourceDirs": "test-notification-issuer",
+    "exactSingleMainCensus": true,
+    "MainHardPinEnforced": true,
+    "noOtherModulesCPPHomeProductionSources": true,
+    "dependencies": [
+      "base >=4.18 && <5",
+      "bytestring",
+      "directory",
+      "filepath",
+      "unix",
+      "warlock-runtime"
+    ],
+    "flags": "-Wall -Werror -Wcompat"
+  },
+  "wrapperAdmission": {
+    "exactOneFixedSuite": true,
+    "fresh0700StorageAndImageDirectories": true,
+    "copyOriginalPinnedImage": true,
+    "originalCopiedImagePrepostPins": true,
+    "exactSingleOwnedStorageArg": true,
+    "normalDefaultExit0": true,
+    "timeoutFalseAndNoForcedCleanup": true,
+    "parentImageReceiptAndFullTerminalStdout": true,
+    "terminalLiteral": "notification issuer fixture complete\n",
+    "1809003500BoundsPreserved": true,
+    "arbitraryArgOrChildInterfaceAdded": false
+  },
+  "i6r66APICompatibility": {
+    "backendSourceSHA256": "cbb4776f1f5e3b75754dc552ff0de9cede7363a124641523f8d30a2a110ee7dd",
+    "issuerSourceSHA256": "d50ae90b7134cc1cd3d85c308fae14ff59f12dc6694be3b887e806c924242e0e",
+    "usedSignatures": [
+      "newNotificationIssuer :: BackendConfig -> IO NotificationIssuer",
+      "provisionNotificationIssuer :: NotificationIssuer -> IO (Either IssuerFailure ())",
+      "reserveNotificationGeneration :: NotificationIssuer -> IO (Either IssuerFailure NotificationGeneration)",
+      "retireNotificationIssuer :: NotificationIssuer -> IO Bool",
+      "notificationGenerationText :: NotificationGeneration -> Text"
+    ],
+    "typedIssuerFailureMainUsesOnlyPolymorphicEitherElimination": true,
+    "typedLeftNeedsNeitherEqNorTextOrShow": true,
+    "RightNotificationGenerationEqAndTextExportPresent": true,
+    "MainCompatibleBySourceNotCompiled": true,
+    "failureCustodyOrInterruptionAPIBehaviorNotExercisedByThisMain": true
+  },
+  "preservation": {
+    "allCurrentModesIncludingConfig30AndDaemonRetained": true,
+    "configCOPYBranchSameWhenSelected": true,
+    "configMainAnd30LiteralUnchanged": true,
+    "old97And2194SourcesUnchanged": true,
+    "otherSuitesNotExecutedByNewMode": true,
+    "SDKIsolationSourceAndImagesPrepostUnchanged": true
+  },
+  "phaseClassification": {
+    "currentRoot": "Issuerexports absent; actualcompiler/API-gapRED expected, no singleprocessIOchecksclaimed",
+    "futureRoot": "AfterseparatelyreviewedI6r66integrationandCabalhiddenmoduledeclaration, sameMain/supportrepeated; onlynormalterminalreceiptprovesboundedfixtureGreen",
+    "supportDoesNotTreatCompilerFailureAsPassed": true,
+    "testOraclesUnchangedBetweenPhases": true
+  },
+  "scopeLimits": [
+    "OneprocessIO fixture exercises selected explicitprovision/reserve/retire/privatefilebytes/refusals/expireddeadline paths only",
+    "TypedIssuerFailure custody, interruption settlement, crossprocessserialization, crash/lifetime/descendantretirement notproven",
+    "IssuerLifetimeMain.unintegrated.hs is deliberatelyoutsideexactMaincensus; neitherexecutednorqualificationproof",
+    "No realnotificationservice/recipient, actualnative/Ready/currentexpiredreuseddispatch, wholeissuer/fullUX031/originalacceptance",
+    "I6r66sourcecustody correctness remainsseparate independentproductreview; thisprofile readiness cannot adjudicateit"
+  ],
+  "deadlineUTC": "2026-11-06T19:07:31.942628Z unchanged",
+  "staticPythonASTAndSourceHashesOnly": true,
+  "qaCompilerServiceAuthExecuted": false,
+  "sharedWrites": false,
+  "wholeIssuerNativeOriginalReleaseAcceptance": false
+}

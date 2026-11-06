@@ -64,9 +64,9 @@ def main():
     test_image = requested
     config_image_pin = None
     child_env = dict(os.environ)
-    if suite == 'notification-config-controls':
+    if suite in ('notification-config-controls', 'notification-issuer-controls'):
         image_dir = fresh('image')
-        test_image = image_dir / 'notification-config-controls'
+        test_image = image_dir / suite
         shutil.copy2(requested, test_image)
         config_image_pin = pin(test_image)
         if config_image_pin[2:] != pin(requested)[2:]:
@@ -174,7 +174,7 @@ def main():
                 os.killpg(proc.pid, signal.SIGKILL)
             results.append({'mode': label, 'argv': args, 'exit': code, 'timeout': timed_out,
                             'forcedCleanup': forced or timed_out, 'log': str(log)})
-            if suite == 'notification-config-controls':
+            if suite in ('notification-config-controls', 'notification-issuer-controls'):
                 if pin(test_image) != config_image_pin or pin(requested) != manifest['test']['pin']:
                     raise RuntimeError('notification config image changed')
                 results[-1]['image'] = str(test_image)

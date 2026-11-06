@@ -2,8 +2,8 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Production application actor. GUI policy and presentation stay in Elm.
 module Warlock.Backend
- (DirectoryPin(..),BackendConfig,loadBackendConfig,configuredNotificationBusAddress,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson) where
-import Control.Exception (SomeException,SomeAsyncException,fromException,mask,throwIO,try)
+ (DirectoryPin(..),BackendConfig,loadBackendConfig,configuredNotificationBusAddress,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson,NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText,BackendCustodyException(..),BackendCustodyFailure(..)) where
+import Control.Exception (Exception(..),SomeException,SomeAsyncException,asyncExceptionFromException,asyncExceptionToException,fromException,mask,throwIO,try)
 import Control.Monad (forM_,unless)
 import qualified Data.ByteString as B
 import Data.IORef
@@ -14,6 +14,7 @@ import qualified Data.Text.Encoding as TE
 import System.Posix.Files (deviceID,fileID,getSymbolicLinkStatus)
 import Text.Read (readMaybe)
 import Warlock.Backend.Catalog
+import Warlock.Backend.NotificationIssuer (NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newIssuer,provisionIssuer,reserveGeneration,retireIssuer,generationText)
 import Warlock.Backend.PinStore
 import Warlock.Backend.Store
 import Warlock.Ui.Display (readDisplayEnvironment)
@@ -48,6 +49,29 @@ notificationAddress raw = do
    && length parts>=2 && all (\part -> not (T.null part) && part/="." && part/="..") (drop 1 parts)
    && guidValid) "invalid explicit notification bus address"
  pure raw
+-- The exception remains asynchronously classified, and retains the original
+-- exception and issuer whenever ordinary result custody cannot be returned.
+data BackendCustodyException = BackendCustodyException SomeException NotificationIssuer
+instance Show BackendCustodyException where show _ = "backend interrupted with issuer custody"
+instance Exception BackendCustodyException where
+ toException = asyncExceptionToException
+ fromException = asyncExceptionFromException
+-- Synchronous observation errors retain custody without being misclassified.
+data BackendCustodyFailure = BackendCustodyFailure SomeException NotificationIssuer
+instance Show BackendCustodyFailure where show _ = "backend observation failed with issuer custody"
+instance Exception BackendCustodyFailure
+
+newNotificationIssuer :: BackendConfig -> IO NotificationIssuer
+newNotificationIssuer (BackendConfig _ deadlineText _ _ pin _ _ _) = newIssuer pin deadlineText
+provisionNotificationIssuer :: NotificationIssuer -> IO (Either IssuerFailure ())
+provisionNotificationIssuer = provisionIssuer
+reserveNotificationGeneration :: NotificationIssuer -> IO (Either IssuerFailure NotificationGeneration)
+reserveNotificationGeneration = reserveGeneration
+retireNotificationIssuer :: NotificationIssuer -> IO Bool
+retireNotificationIssuer = retireIssuer
+notificationGenerationText :: NotificationGeneration -> Text
+notificationGenerationText = generationText
+
 -- Closed diagnostic classifications only; none is a grant or success proof.
 data BackendAttemptStage = AttemptConversationException | AttemptRootRefused
  | AttemptBootstrapRefused | AttemptPendingCustody | AttemptExecuted deriving (Eq,Show)
@@ -59,7 +83,8 @@ data BackendResult = BackendResult
  ,backendCredentialTrace :: [CredentialObservation],backendSelectedPid :: Maybe Integer
  ,backendProcessCleanup :: Bool,backendCatalogCleanup :: Bool,backendPinCleanup :: Bool
  ,backendAttemptStage :: BackendAttemptStage
- ,backendRetirements :: (BackendRetirement,BackendRetirement,BackendRetirement)} deriving (Eq,Show)
+ ,backendRetirements :: (BackendRetirement,BackendRetirement,BackendRetirement)
+ ,backendNotificationCustody :: Maybe NotificationIssuer} deriving (Eq,Show)
 
 loadBackendConfig :: FilePath -> IO (Either Text BackendConfig)
 loadBackendConfig path = mask $ \restore -> do
@@ -202,6 +227,7 @@ runBackend :: BackendConfig -> IO BackendResult
 runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled _) = mask $ \restore -> do
  catalog <- newCatalog roots locale (lifetime bound)
  pins <- newPinStore pinsRoot
+ notificationIssuer <- newIssuer pinsRoot deadlineText
  attachmentAttempted <- newIORef False
  callbacks <- newIORef 0
  operations <- newIORef 0
@@ -250,11 +276,21 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
  processRetirement <- try (retireBootstrap owner) :: IO (Either SomeException Bool)
  catalogRetirement <- try (retireCatalog catalog) :: IO (Either SomeException Bool)
  pinRetirement <- try (retirePinStore pins) :: IO (Either SomeException Bool)
- observed <- bootstrapAuthObservation owner
- trace <- bootstrapCredentialTrace owner
- selected <- bootstrapSelectedPid owner
- count <- readIORef callbacks
- dispatched <- readIORef operations
+ notificationRetirement <- try (retireIssuer notificationIssuer) :: IO (Either SomeException Bool)
+ observations <- try $ do
+  observed <- bootstrapAuthObservation owner
+  trace <- bootstrapCredentialTrace owner
+  selected <- bootstrapSelectedPid owner
+  count <- readIORef callbacks
+  dispatched <- readIORef operations
+  pure (observed,trace,selected,count,dispatched)
+ (observed,trace,selected,count,dispatched) <- case observations of
+  Right values -> pure values
+  Left (problem :: SomeException) ->
+   if either (const False) id notificationRetirement then throwIO problem
+   else case fromException problem :: Maybe SomeAsyncException of
+    Just _ -> throwIO (BackendCustodyException problem notificationIssuer)
+    Nothing -> throwIO (BackendCustodyFailure problem notificationIssuer)
  let outcome=case attempted of
       Left (_ :: SomeException) -> Left "backend conversation failed"
       Right (Left _) -> Left "backend root acquisition refused"
@@ -268,18 +304,22 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
      processClean=either (const False) id processRetirement
      catalogClean=either (const False) id catalogRetirement
      pinClean=either (const False) id pinRetirement
-     clean=processClean && catalogClean && pinClean
+     clean=processClean && catalogClean && pinClean && either (const False) id notificationRetirement
      success=case outcome of
       Right (Executed result) -> selectedCustody result==Available && selectedContainment result==BeforeSignalLeaderExited && either (const False) (const True) (selectedOperation result)
       _ -> False
  let originals=case attempted of Left (problem :: SomeException) -> [problem]; _ -> []
-     cleanupProblems=[problem | Left problem <- [processRetirement,catalogRetirement,pinRetirement]]
+     cleanupProblems=[problem | Left problem <- [processRetirement,catalogRetirement,pinRetirement,notificationRetirement]]
      asynchronous=[problem | problem <- originals++cleanupProblems,Just _ <- [fromException problem :: Maybe SomeAsyncException]]
  -- Every independent owner was attempted before an asynchronous failure can
  -- escape. Prefer the original asynchronous exception over cleanup failures.
- case asynchronous of problem:_ -> throwIO problem; [] -> pure ()
+ case asynchronous of
+  problem:_ -> if either (const False) id notificationRetirement
+   then throwIO problem else throwIO (BackendCustodyException problem notificationIssuer)
+  [] -> pure ()
  pure (BackendResult (clean && success) clean count dispatched outcome observed trace selected processClean catalogClean pinClean
-       attemptStage (retirementStage processRetirement,retirementStage catalogRetirement,retirementStage pinRetirement))
+       attemptStage (retirementStage processRetirement,retirementStage catalogRetirement,retirementStage pinRetirement)
+       (if either (const False) id notificationRetirement then Nothing else Just notificationIssuer))
 
 retirementStage :: Either a Bool -> BackendRetirement
 retirementStage (Left _) = RetirementException

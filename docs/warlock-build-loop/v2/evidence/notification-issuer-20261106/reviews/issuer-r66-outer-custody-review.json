@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "reviewer": "continuity-arm64",
+  "verdict": "outer-custody-repair-source-ready-for-bounded-ordinary-issuer-io-test-integration",
+  "bindings": {
+    "candidate/src/Warlock/Backend.hs": "cbb4776f1f5e3b75754dc552ff0de9cede7363a124641523f8d30a2a110ee7dd",
+    "candidate/src/Warlock/Backend/NotificationIssuer.hs": "d50ae90b7134cc1cd3d85c308fae14ff59f12dc6694be3b887e806c924242e0e",
+    "candidate/src/Warlock/Backend/Store.hsc": "4a432f698c779e7d054805513f2f030b37636e9d1e29e5598e8e5c4c1987ffbe",
+    "ROOT-REVIEW.md": "32fd767c9d55c9dc4dfbbd6d3b65d68ebef82ac5643991bef3257a465c599777"
+  },
+  "actualMainSHA256": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+  "focusedConclusion": "No remaining outer-boundary custody-loss counterexample found in r66 under the actual Main fail-stop contract. A failed process need not keep a Haskell custody object after its own termination. Source readiness is for bounded ordinary issuer IO controls, not complete issuer/native acceptance.",
+  "sourceTraces": [
+    {
+      "path": "candidate/src/Warlock/Backend.hs:276-322",
+      "trace": "All four owner retirements attempted under original mask. If post-retirement observations fail with unconfirmed issuer, typed synchronous BackendCustodyFailure or asynchronously classified BackendCustodyException carries exact issuer. Original/cleanup async failures similarly carry issuer when unconfirmed. Ordinary result retains Just exactissuer iff issuer retirement not confirmed; clean and backendPassed require confirmed issuer retirement."
+    },
+    {
+      "path": "runtime/app/Main.hs",
+      "trace": "Actual standalone main prints backendResultJson then exitFailure for backendPassed=False; an uncaught typed failure terminates the same owning process. Neither route emits a successful cleanup/pass receipt. Kernel process-exit descriptor disposal is fail-stop, not an affirmative physical-close observation. No new global registry/unbounded wait required to permit this bounded probe."
+    },
+    {
+      "path": "NotificationIssuer.hs State/use/retireIssuer",
+      "trace": "Successful use retains Holding same StoreOwner+opaque NotificationLifetime. Return/exception failure retains Poisoned same lifetime owner plus transaction/checker owners; IssuerFailure/IssuerInterrupted carry same issuer. A cooperative second live sameprocess handle independently opens same lifetime inode and fails nonblocking flock; it cannot reuse first handle generation by reconstructing text."
+    },
+    {
+      "path": "Store.hsc:acquireNotificationLifetime/checkNotificationLifetime/closeResource",
+      "trace": "Retained lifetime FD receives nonblocking exclusive flock and same-named pinned inode/device check. Checkpoint validation before/after transaction uses same heldFD. Unconfirmed close enters Uncertain and retirement remains false; no retry of close or false pass. Named checkpoint protection is not atomic defense against hostile sameUID inode replacement."
+    }
+  ],
+  "necessaryCallerContract": [
+    "Any sameprocess adapter that catches IssuerFailure/IssuerInterrupted/BackendCustodyException/BackendCustodyFailure must retain exact opaque issuer and cannot continue as successfully retired. Actual Main instead exits failed, which is valid fail-stop.",
+    "A close-unconfirmed receipt cannot be used to authorize a new issuer/service in the surviving process. If a future adapter needs continued operation after uncertainclose, separately review its authoritative custody/poison policy; r66 is not proof such recovery is safe.",
+    "Provisioning-before-lifetime-acquisition and crossprocess/crash ambiguity remain separate source/test obligations. Do not infer global sameUID exclusion or never-missing flock after a failedclose from this outer repair."
+  ],
+  "testReadiness": [
+    "Proceed to independently reviewed fixed ordinary-linked issuer component test preparation and protected RED/GREEN, retaining actual fixture-root argv.",
+    "Meaningful cases: sameprocess live clone refuses, original1/2generation and monotonic advance, original deadline refuses/no epochrollback, lifetime-inode replacement refuses, retirement false remains failure/custody-retained. Existing external crossprocess/crash fixtures remain unexecuted.",
+    "Actual compile/type/exception behavior must be observed; source review does not itself qualify all repair claims."
+  ],
+  "remainingLimits": [
+    "No new service/GIO/auth/notification/native/original/release qualification.",
+    "Existing resource/close uncertainty and Q6 findings not concerning repaired outer caller path remain subject to independent adjudication.",
+    "Uncaught exceptions/process exit are not cleanup success; arbitrary hostile caller dropping opaque object is outside actual Main contract."
+  ],
+  "executed": false,
+  "sharedMutation": false,
+  "originalAcceptance": false,
+  "nativeAcceptance": false
+}

@@ -1,0 +1,81 @@
+{
+  "reviewedNs": 1793978978307495678,
+  "verdict": "BOUNDED_SINGLE_PROCESS_ORDINARY_LINKED_ISSUER_IO_GREEN_VERIFIED",
+  "report": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/report.json",
+  "reportSHA256": "1b60ab275945b49c4fc3e91c273c9e9b38b121a94a69d79da0ce9cb40249b38a",
+  "packetSHA256": "cea0eea40e2c8de9d88de72d2f2026bc12bce4132f17f2f70f27fee7cbb43887",
+  "sourceInputs": 243,
+  "currentSourceMismatches": [],
+  "stagedHaskellMismatchesExcludingGeneratedOfflineProject": [],
+  "fixedMainSHA256": "2a1b3ba1593bed25a68744e9408d209c613230e3d94ae4171abfe08882ffa711",
+  "commandExits": [
+    {
+      "name": "notification-issuer-build",
+      "exit": 0
+    },
+    {
+      "name": "list-notification-issuer-controls",
+      "exit": 0
+    },
+    {
+      "name": "notification-issuer-controls",
+      "exit": 0
+    }
+  ],
+  "normalSuiteReceipt": {
+    "mode": "default",
+    "argv": [
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/storage"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "forcedCleanup": false,
+    "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/default.log",
+    "image": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/image/notification-issuer-controls",
+    "imagePin": [
+      "56",
+      "1079904",
+      "36100880",
+      "02fd14d0b1dd8425ac37b87335752e58e8335b99ce1744a7e6c32f97d21444b6"
+    ]
+  },
+  "retainedImageChecks": {
+    "original": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/notification-issuer-controls/build/notification-issuer-controls/notification-issuer-controls",
+      "pin": [
+        "56",
+        "1079882",
+        "36100880",
+        "02fd14d0b1dd8425ac37b87335752e58e8335b99ce1744a7e6c32f97d21444b6"
+      ],
+      "ELF64LEAArch64": true
+    },
+    "copied": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978838741365106/runs/notification-issuer-controls/image/notification-issuer-controls",
+      "pin": [
+        "56",
+        "1079904",
+        "36100880",
+        "02fd14d0b1dd8425ac37b87335752e58e8335b99ce1744a7e6c32f97d21444b6"
+      ],
+      "ELF64LEAArch64": true
+    }
+  },
+  "terminalLogSHA256": "ee8097a06be98263d025f8f61401c5e5d7441769e5c42f25f70f36f8c2a77c63",
+  "terminalLiteral": "notification issuer fixture complete\n",
+  "ordinaryRuntimeLibraryBuiltAlongsideSuite": true,
+  "configuration30AndOld97And2194NotRunByThisMode": true,
+  "warningsPreserved": "BuildstderrcontainsretainedCabal/dependency/configurewarnings; no warningfreeclaim",
+  "APIREDRetainedReport": "1793978754021684393 expectedfivepublicexports beforeIO",
+  "qualificationScope": [
+    "ActualpublicBackendfixtureexecutedselectedprovision/reserve/retire/privatefilebytes/refusal/expireddeadlineoperations inoneprocessowneddisposableroot",
+    "No crossprocess/crash/lifetime kernelretirementproof",
+    "No completeIssuerFailure/interruptioncoverage oractualGIO/service/producerreceipt/native/originalacceptance",
+    "Configuration30 compositionregression remainsnextappropriateexistingcheck, notclaimedbythismode"
+  ],
+  "outerExecutionHandle": "Root76792; reviewer didnotconsumeorlaunch",
+  "deadlineHistoryPreserved": true,
+  "reviewerExecutedQACompilerServiceAuth": false,
+  "sharedWrites": false,
+  "wholeIssuerNativeOriginalReleaseAcceptance": false
+}

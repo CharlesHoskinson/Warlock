@@ -1,0 +1,104 @@
+{
+  "reviewedNs": 1793979190448099587,
+  "verdict": "EXACT30_CONFIG_REGRESSION_GREEN_ON_ISSUER243_SOURCE_TUPLE",
+  "report": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/report.json",
+  "reportSHA256": "1e612167f2aa9acee80305660073fe410914e765fba88f3fba9ecdc054f00af7",
+  "packetSHA256": "ef9d6027b708fcdd07f73f9012487ddd11f771ab0dfd9be617ed2e235087325a",
+  "sameInputsAsIssuerGreen": true,
+  "sourcePins": 243,
+  "currentMismatches": [],
+  "stagedHaskellMismatchesExcludingGeneratedOfflineProject": [],
+  "fixedMainSHA256": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+  "commands": [
+    {
+      "name": "notification-config-build",
+      "exit": 0
+    },
+    {
+      "name": "list-notification-config-controls",
+      "exit": 0
+    },
+    {
+      "name": "notification-config-controls",
+      "exit": 0
+    }
+  ],
+  "orderedTrueChecks": [
+    "old-config-unconfigured",
+    "explicit-private-address",
+    "explicit-guid-preserved",
+    "attachment-and-address",
+    "old-attachment-unconfigured",
+    "tcp-refused",
+    "abstract-refused",
+    "list-refused",
+    "relative-refused",
+    "parent-refused",
+    "dot-refused",
+    "empty-segment-refused",
+    "trailing-slash-refused",
+    "root-refused",
+    "percent-refused",
+    "space-refused",
+    "control-refused",
+    "unknown-key-refused",
+    "guid-length-refused",
+    "guid-uppercase-refused",
+    "duplicate-guid-refused",
+    "long-path-refused",
+    "null-refused",
+    "number-refused",
+    "bool-refused",
+    "array-refused",
+    "object-refused",
+    "unknown-config-field-refused",
+    "duplicate-selection-refused",
+    "trusted-path-data-boundary"
+  ],
+  "normalReceipt": {
+    "mode": "default",
+    "argv": [
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/runs/notification-config-controls/storage"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "forcedCleanup": false,
+    "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/runs/notification-config-controls/default.log",
+    "image": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/runs/notification-config-controls/image/notification-config-controls",
+    "imagePin": [
+      "56",
+      "1082402",
+      "33836648",
+      "ba9a7749aafbddbf3ce57d581d689aaaa98259dcb83bc699d7b377c7a4b8ce82"
+    ]
+  },
+  "terminalLogSHA256": "904284d58e19174d362cb949c181caee2b3d33beecb506c95d8c4e39e8a43114",
+  "images": {
+    "original": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/notification-config-controls/build/notification-config-controls/notification-config-controls",
+      "pin": [
+        "56",
+        "1082379",
+        "33836648",
+        "ba9a7749aafbddbf3ce57d581d689aaaa98259dcb83bc699d7b377c7a4b8ce82"
+      ],
+      "ELF64LEAArch64": true
+    },
+    "copied": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793979012235863605/runs/notification-config-controls/image/notification-config-controls",
+      "pin": [
+        "56",
+        "1082402",
+        "33836648",
+        "ba9a7749aafbddbf3ce57d581d689aaaa98259dcb83bc699d7b377c7a4b8ce82"
+      ],
+      "ELF64LEAArch64": true
+    }
+  },
+  "warningsRetained": true,
+  "scope": "Optionaltrustedstartupaddressdataparserregression remainscorrectafterissuerproductmerge; no socket/auth/Hello/GIO/service/producernative/originalacceptance. Thismode doesnot rerunissuerIO/old97/2194.",
+  "rootOuterHandle": "14382consumedexit0 asRootreported; reviewer didnotexecuteorconsume",
+  "qaCompilerServiceAuthExecutedByReviewer": false,
+  "sharedWrites": false,
+  "nativeOriginalReleaseAcceptance": false
+}
