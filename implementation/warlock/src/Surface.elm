@@ -302,7 +302,11 @@ controls model =
                 ++ (model.overviewTransfer |> Maybe.map destinationRows |> Maybe.withDefault [])
         else [{id="control:close",domId=Desktop.key model "overview:close",label="Close Task View",ariaLabel="Close Task View and return to windows",detail="",enabled=True,message=scoped Desktop.CloseOverview}
            ,{id="overview:all",domId=Desktop.key model "overview:all",label="All windows",ariaLabel="Browse all workspaces",detail=if model.overviewWorkspace==Nothing then "Selected" else "",enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp Nothing)}]
-            ++ List.concatMap workspaceRows groups ++ [recoveryControl "overview:refresh" model] ++ (if WorkspaceNavigation.blocked model.workspaceNavigation then [{id="overview:workspace-refresh",domId=Desktop.key model "overview:workspace-refresh",label="Refresh workspace status",ariaLabel="Read workspace switch status without repeating the action",detail="",enabled=not model.workspaceNavigation.recovering,message=scoped Desktop.RefreshWorkspaceNavigation}] else [])
+            ++ List.concatMap workspaceRows groups
+            ++ List.map (\(identity,label) ->
+                {id=identity,domId=Desktop.key model identity,label=label,ariaLabel=label ++ "; unavailable",detail="Not supported",enabled=False,message=Nothing})
+                [("overview:workspace-create","Create workspace"),("overview:workspace-delete","Delete workspace"),("overview:workspace-rename","Rename workspace")]
+            ++ [recoveryControl "overview:refresh" model] ++ (if WorkspaceNavigation.blocked model.workspaceNavigation then [{id="overview:workspace-refresh",domId=Desktop.key model "overview:workspace-refresh",label="Refresh workspace status",ariaLabel="Read workspace switch status without repeating the action",detail="",enabled=not model.workspaceNavigation.recovering,message=scoped Desktop.RefreshWorkspaceNavigation}] else [])
     else if model.open then
         let
             scoped build = Desktop.capture model |> Maybe.map build
