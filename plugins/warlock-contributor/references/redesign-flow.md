@@ -22,3 +22,21 @@ Each sprint completes `docs/warlock-build-loop/v2/SPRINT-RETROFIT-TEMPLATE.md` f
 ## Current adopted placement during preparation
 
 Root's `root-ui-native-transport-source-decision-v1.json` adopts source direction only: private-network Elm/WebKit and Haskell UI/local HTTP owner, one host-side Haskell native admission/custody authority, ordinary applications in the host session/network context. Elm retains GUI interaction policy. Use the existing canonical protocol over intended owned bootstrap/framing; nativeOperations remains empty. No FD transfer, proxy, general bus or arbitrary shell bridge. Current source development is authorized preparation, not a new permission request or native admission. Preserve host STOP2, exact original deadlines and later feature/release gates. Minimum implementation-loop readiness is a feasible reviewed initial integration and actual proportional source checks; completing DEL003/004/005 release acceptance is not a prerequisite to start implementing those obligations.
+
+
+## Progress review and stall correction
+
+1. Verify the actual goal and latest human instructions. Check authorization expiry, pause, handoff and external blockers before dispatch.
+2. Select the explicit current participant record. Compare its original IDs, scenarios and progress clock with the current handoff. Reconcile stale selection fields. Do not rewrite participant history or infer a new selection from the newest file.
+3. Read the original ledger. Report accepted requirements and scenarios separately from component tests, source packets and model results. An unchanged acceptance count requires an explanation of the remaining original oracle.
+4. Identify the first missing step between candidate source, independent review, protected execution, integration and original acceptance. Use exact source hashes and terminal reports. An unconsumed execution handle remains pending.
+5. Assign one next action to an existing authorized owner. Specify the original scenario, frozen inputs, expected observation and actual prerequisite. Root owns protected execution and integration. Sol owns worker assignments. The EARS agent advises both.
+6. When a candidate passes independent readiness review, schedule its proportional protected check. Full native or release completion does not block bounded component tests. Native effects and original acceptance retain their own gates.
+7. At the next existing review, compare the expected observation with the actual result. If it is missing, name the failed dependency or missed owner action. Escalate repeated unchanged findings to Root and Sol. Change the assignment or repair the internal failure. Do not create another generic audit packet.
+8. Preserve every policy stop and original deadline. Select another authorized original scenario when a stop requires a change. An audit, plugin edit, support check or new worker turn cannot reset product progress.
+
+The recurring EARS agent must read the selected record and current original scenarios. Its recommendation must identify an executable action or a specific blocking prerequisite. Retain unchanged global obligations as context. Do not repeatedly recommend a stopped slice. A source-ready candidate requires execution or a concrete refusal reason before another review of identical bytes.
+
+Worker health requires matching process births and current terminal events. Queue acceptance, an idle thread and a dispatcher are not active workers. Reuse existing authorized identities. Assign distinct useful work before replenishing the requested worker floor. Never fill a quota with repeated unchanged reviews.
+
+Use the existing participant record, ledger and handoff for these observations. Do not add a second acceptance ledger, coordinator, timer or approval loop. A next-review checkpoint does not extend authorization or an investigation deadline.

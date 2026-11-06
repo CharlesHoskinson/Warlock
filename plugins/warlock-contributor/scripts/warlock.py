@@ -2636,6 +2636,56 @@ def contribution_report(root, record, reqs, state):
     return packet
 
 
+def progress_audit(root, record, reqs, state, expected_slice):
+    """Read canonical progress without selecting work or granting execution."""
+    if record['slice']['id'] != expected_slice:
+        raise ValueError('Selected participant slice differs from --expect-slice')
+    packet = contribution_report(root, record, reqs, state)
+    inventory = participant_inventory(root)
+    packet['errors'].extend(inventory['errors'])
+    packet['warnings'].extend(inventory['warnings'])
+    stopped = []
+    for name, prior in sorted(inventory['records'].items()):
+        progress = progress_status(prior)
+        if progress['investigationNeedsChange']:
+            stopped.append({'record': name, 'recordSha256': digest(safe(root, name)),
+                            'owner': prior['owner'], 'sliceId': prior['slice']['id'],
+                            'progress': progress})
+    needs_change = packet['progress']['investigationNeedsChange']
+    if needs_change:
+        packet['errors'].append('Selected participant investigation needs change; preserve its stopped history and clock')
+    ledger = read(safe(root, LEDGER))
+    rows = ledger['requirements']
+    scenarios = [scenario for row in rows for scenario in row['scenarios']]
+    statuses = {}
+    for scenario in scenarios:
+        statuses[scenario['status']] = statuses.get(scenario['status'], 0) + 1
+    if needs_change:
+        action = 'Preserve this stopped investigation and select another bounded original scenario; do not reset its clock.'
+    elif packet['errors']:
+        action = 'Resolve the reported participant/source/history errors before dependent claims or execution.'
+    else:
+        action = ('Root should review the selected candidate readiness and exact claims, then perform the next '
+                  'proportional protected check or product integration. Do not substitute an unchanged review for execution.')
+    packet.update(progressAuditSchema=1,
+        selectedParticipant={'record': record['_recordPath'], 'recordSha256': digest(safe(root, record['_recordPath'])),
+                             'owner': record['owner'], 'sliceId': record['slice']['id'],
+                             'expectedSliceId': expected_slice},
+        originalAcceptanceCounts={'requirements': len(rows),
+            'acceptedRequirements': sum(row.get('requirementAccepted') is True for row in rows),
+            'scenarios': len(scenarios), 'acceptedScenarios': statuses.get('accepted', 0),
+            'scenarioCountsByRecordedStatus': statuses, 'ledgerSha256': digest(safe(root, LEDGER)),
+            'basis': 'Canonical requirement ledger only; no participant/component pass is promoted to original acceptance.'},
+        participantIterationCounts={outcome: sum(item['outcome'] == outcome for item in record.get('iterations', []))
+                                    for outcome in ('qualification', 'production-fix', 'scenario-verdict')},
+        stoppedRecords=stopped,
+        nextRootAction={'executor': 'Root', 'suggestionOnly': True, 'readinessVerified': False,
+                        'executionAuthorized': False, 'action': action},
+        executionPerformed=False, acceptanceInferred=False, nativeAcceptance=False,
+        originalAcceptance=False, releaseAccepted=False)
+    return packet
+
+
 def markdown_literal(value):
     """Keep contributor text literal, without HTML, links or injected headings."""
     text = ' '.join(str(value).splitlines())
@@ -3069,6 +3119,8 @@ def main():
     preview = subs.add_parser('preflight', help='Read-only saved-plan and prospective-record checks; no ownership or writes')
     preview.add_argument('--slice-file', required=True)
     subs.add_parser('handoff')
+    audit = subs.add_parser('progress-audit', help='Read-only explicit participant progress and canonical acceptance counts')
+    audit.add_argument('--expect-slice', required=True, help='Expected selected slice ID; mismatches fail closed')
     reconciliation = subs.add_parser('reconcile-foreign', help='Append reviewed foreign provenance without adopting files or changing participant history')
     reconciliation.add_argument('--transition-file', required=True, help='Ignored scratch JSON array of exact reviewed foreign-path transitions')
     support = subs.add_parser('reconcile-support', help='Append independently reviewed same-owner support-doc provenance without changing participant history')
@@ -3132,6 +3184,9 @@ def main():
     history_inventory = None
     try:
         root = pathlib.Path(args.repo or discover_repo()).resolve()
+        if args.command == 'progress-audit' and not any(
+                item == '--record' or item.startswith('--record=') for item in sys.argv[1:]):
+            raise ValueError('progress-audit requires explicit --record selection')
         owned_checker = safe(root, 'plugins/warlock-contributor/scripts/warlock.py')
         if digest(owned_checker) != result['checkerSha256']:
             raise ValueError('Installed checker differs from repository-owned checker; use the reviewed repository copy')
@@ -3222,7 +3277,7 @@ def main():
             result.update(planSchema=1, slice=s, originals=slice_originals(s, reqs))
         elif args.command == 'preflight':
             result.update(preflight(root, args.record, args.slice_file, reqs))
-        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery'):
+        elif args.command in ('handoff', 'claim', 'review', 'report', 'progress-audit', 'verify-plan', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
             if args.command == 'reconcile-tea004-recovery':
@@ -3245,6 +3300,8 @@ def main():
                 result.update(scaffold_claim(root, read_target(), reqs, state, args))
             elif args.command == 'review':
                 result.update(review(root, read_target(), reqs, state, args.include))
+            elif args.command == 'progress-audit':
+                result.update(progress_audit(root, read_target(), reqs, state, args.expect_slice))
             elif args.command == 'report':
                 result.update(contribution_report(root, read_target(), reqs, state))
             else:

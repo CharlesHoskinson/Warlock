@@ -13,6 +13,14 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py inspect --requirement 
 
 These commands inspect the repository without adopting the active work. Before implementation, follow `plan` → `preflight --slice-file` → `start --slice-file` below, selecting your own record. Bare `start --owner` resumes the selected `STATE.activeSlice`; use it only when you own that slice. Carry the same global `--record` through the loop. Then use `verify-plan`, implement, `record`, ending loop `check`, `report` and `review`. `self-test` is optional plugin regression testing after package changes, not a prerequisite for every GUI contribution.
 
+## Coordinate the implementation loop
+
+Load [warlock-workflow](skills/warlock-workflow/SKILL.md) for an authorized multi-agent continuation. Use the existing contributor engine for its participant record. Select that record explicitly from the current human instructions and handoff. An old default record does not identify current work.
+
+Follow [progress review and stall correction](references/redesign-flow.md#progress-review-and-stall-correction) when original acceptance stalls. Identify the next missing execution or integration step. Assign it to its existing owner. Compare the expected observation with the next actual terminal result. Preserve policy stops and original deadlines.
+
+Count original acceptance separately from component checks and agent activity. A reviewed source packet needs protected execution or a specific blocking prerequisite. Another review of unchanged bytes does not complete that step.
+
 ## Scaffold and resume
 
 For source entry points and the existing Elm/event/effect route, use the
@@ -469,6 +477,19 @@ native or release acceptance.
 The v2 product-loop wrapper requires a participant record before and after native execution; session hooks remain advisory. For explicitly requested documentation/plugin/support work, run the shared `check --project-only` directly before and after without inventing a GUI slice. The [CI template](references/warlock-contributions.yml) runs recordless `--json check` on a clean checkout and compares PR changes against the base revision; ignored local ownership records are not available to CI. Copy it to `.github/workflows/warlock-contributions.yml` to activate GitHub Actions when the publishing credential has `workflow` permission. The existing GitHub credential lacks that permission, so this package publishes the reviewed template rather than claiming live CI.
 
 Local records are self-attested, not a tamper-proof audit or proof of independent review. The checker detects contradictions and stale/current evidence but cannot tell whether changed code improves behavior, whether a reviewer is honest, or whether pixels/AT match the original oracle. Work in separate Git worktrees when concurrent ownership is unclear. Record reports must describe observable behavior and unresolved obligations.
+
+## Audit current progress
+
+Use an explicit participant and expected slice ID. A mismatch fails. The command reads the existing ledger and participant history.
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py \
+  --repo /absolute/path/to/Warlock \
+  --record .warlock-contributor/your-slice.json --json \
+  progress-audit --expect-slice your-slice-id
+```
+
+The result separates recorded original acceptance from participant iteration counts. It includes the original progress clock, stopped records and a suggested Root action. A stopped selected record returns an error. The command does not write records, reset clocks, verify readiness, grant execution or infer acceptance.
 
 ## Prepare a delivery note
 
