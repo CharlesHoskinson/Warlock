@@ -6253,14 +6253,25 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "protocol-schema-complete",
           "oracle": "every required field, queue class and refusal outcome has a decoder fixture; any omission blocks admission",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "docs/warlock-build-loop/v2/workspace-navigation-decoder-component-20261106.json",
+              "sha256": "f6c0900cd0ab40b0deeec7814cf9f5d82ff42f273c75bdc1e401a18691831176",
+              "scope": "Committed33650513 standalone opaque workspace-navigation request/recovery data decoder only: ordinary protocol library,97 ordered decoder controls and unchanged2194 Desktop controls;5 protected commands/two normal suite receipts. Current Desktop/native dispatch remains unchanged and rejects workspace kinds. No original/native/release acceptance."
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/evidence/workspace-navigation-decoder-20261106/manifest.json",
+              "sha256": "eee6cfb9f95b6ed120bf08809ba7c0c5f0070ac182f3c3406450cb42e4215b93",
+              "scope": "Public capsule d8c0e37350e8deeb36173d7a2dda7086e1f480ebf45cb320862cdb973bc2f3a0 retains compiler-only RED2df547 and GREENc77ea416 plus independent execution reviews bfaaeddf/215728e4. Source bodies236/238 RED and237/239 GREEN; two foreign draft bodies omitted with pins retained. Full broad-source reconstruction is not public-complete."
+            }
+          ],
+          "missingObservation": "Full original required-field, queue-class and refusal-outcome inventory with independently adjudicated decoder fixtures remains incomplete; any omission still blocks implementation admission. Standalone bounds do not establish complete embedded view-commit capacity; external constructor-import probe remains unexecuted. Retained noGrantReoffered failure at seed20261106/original10000samples30steps and two unattempted witnesses remain unqualified. Actual current-owner transport, qualified provider custody, approved peer/session correspondence, native scene/protocol traces and independent original-scenario review remain required. Decoding grants no authority; current Desktop/native dispatch remains unavailable. No original/native/release acceptance."
         }
       ]
     },
