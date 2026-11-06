@@ -23,7 +23,8 @@
       "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
       "implementation/warlock/haskell/runtime/runtime.cabal",
       "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs",
-      "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs"
+      "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs",
+      "implementation/warlock/haskell/runtime/test-catalog-publication/Main.hs"
     ],
     "before": "Original catalog eligibility and argument-preserving launch have not been adjudicated in a complete current-stack user journey.",
     "after": "An isolated current-stack session refreshes eligible desktop entries, launches a harmless owned application with preserved recorded arguments, and cleans up normally.",
@@ -3439,6 +3440,39 @@
         "recordIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
         "selectedUTC": "2026-11-06T18:58:20.017178+00:00"
       }
+    },
+    {
+      "atUTC": "2026-11-06T23:09:56.048917+00:00",
+      "activeContributorRecord": ".warlock-contributor/ux003-walking-skeleton-root.json",
+      "activeSlice": {
+        "id": "ux003-walking-skeleton",
+        "requirements": [
+          "ELM-UX-003"
+        ],
+        "scenarios": [
+          "ux-003"
+        ],
+        "paths": [
+          "implementation/warlock/src/Catalog.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/DesktopPolicy.elm",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+          "implementation/warlock/haskell/runtime/runtime.cabal",
+          "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs",
+          "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs"
+        ],
+        "before": "Original catalog eligibility and argument-preserving launch have not been adjudicated in a complete current-stack user journey.",
+        "after": "An isolated current-stack session refreshes eligible desktop entries, launches a harmless owned application with preserved recorded arguments, and cleans up normally.",
+        "verification": [
+          "Protected current-source Elm replay, independent literal desktop-file and argv cases, and isolated native recording of the complete ordered journey including cleanup. Native, keyboard, AT and release acceptance remain separately scoped."
+        ]
+      },
+      "activeSelection": {
+        "generation": 3,
+        "recordIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
+        "selectedUTC": "2026-11-06T21:56:58.991795+00:00"
+      }
     }
   ],
   "museRegulator": {
@@ -5381,8 +5415,8 @@
     "selectionGeneration": 1
   },
   "activeSelection": {
-    "generation": 3,
+    "generation": 4,
     "recordIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
-    "selectedUTC": "2026-11-06T21:56:58.991795+00:00"
+    "selectedUTC": "2026-11-06T23:09:56.048947+00:00"
   }
 }

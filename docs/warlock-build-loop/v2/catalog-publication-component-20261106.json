@@ -1,0 +1,197 @@
+{
+  "schema": 1,
+  "date": "2026-11-06",
+  "component": "Catalog publication after completed local reply send",
+  "status": "Verified bounded CPU component; original launch journey and native acceptance remain open",
+  "requirement": "ELM-UX-003",
+  "scenario": "ux-003",
+  "selectionGeneration": 4,
+  "participantIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
+  "sourceChanges": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": {
+      "beforeSha256": "cbb4776f1f5e3b75754dc552ff0de9cede7363a124641523f8d30a2a110ee7dd",
+      "afterSha256": "b36b439bd41ab70e779c059e323e6142061ef731ba37c2dc2f40f3acd94cb636"
+    },
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": {
+      "beforeSha256": "8c5aebcb096f7b3d68b0abc5964f39c4f3ea557ca0aeb9e1e3c1ae022ccb1ec4",
+      "afterSha256": "a9b328f7fbb0f5014354ad5a2aaada86aee5f9e9dcdd0b7ded8293af69c67adf"
+    }
+  },
+  "behavior": "Prepare a single-use token for the exact constructed catalog reply. Publish its revision after complete local send returns. Reject resolution before publication, after failed send or source changes, and after retirement. Returned desktop-entry bytes and Exec fields are data only.",
+  "testedManifest": {
+    "sources": {
+      "implementation/warlock/haskell/runtime/runtime.cabal": "7d5d43003cd69ebb6dab6be9ba8545bfc120fedc086920f673896e41ab48c5ba",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "b36b439bd41ab70e779c059e323e6142061ef731ba37c2dc2f40f3acd94cb636",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "a9b328f7fbb0f5014354ad5a2aaada86aee5f9e9dcdd0b7ded8293af69c67adf",
+      "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd",
+      "implementation/warlock/haskell/runtime/test-catalog-publication/Main.hs": "1d31248918b047422448cbf0a1c97070680b9ba92fa1079cf099a61db6a68885",
+      "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67",
+      "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+      "implementation/warlock/src/Desktop.elm": "2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db",
+      "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e"
+    },
+    "fixtures": {
+      "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd",
+      "implementation/warlock/haskell/runtime/test-catalog-publication/Main.hs": "1d31248918b047422448cbf0a1c97070680b9ba92fa1079cf099a61db6a68885",
+      "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67"
+    },
+    "runners": {
+      "tools/check_arm64_cpu.py": "f200a295bef1c9ed1f45fdfa9892ec906aac2b1816f47f44d191cee067a808ae",
+      "tools/qa_cpu.py": "b9aa5477f02ec302274b0e7b1ea447f0b9022b720d4d91f60252553d137bc2e8",
+      "tools/haskell_test_wrapper.py": "1dd3509d05a749707bcd97ff6d5b062e9fb8363354f4c8f458376245dcb02cb1"
+    },
+    "profiles": {
+      "tools/arm64-toolchain.json": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+      ".warlock-contributor/evidence/nextloop-20261106/catalog-publication/green-qa-review.json": "c99d309b38c4110b97687e5603b34ee87cbb59f5f32079c09b55e2f4fc00183a"
+    }
+  },
+  "red": {
+    "candidateSha256": "d4c191adb21d62d328105cd3684df3b4bf4656e27ddef93f3379b5adf5d65b70",
+    "report": {
+      "path": ".warlock-contributor/arm64-cpu-1794006809866357646/report.json",
+      "sha256": "9ff0adf3ec1b105c4075caa7ede8d0b94325e7bf8bd52d09d1d4beb35c57f617"
+    },
+    "commandsExit": [
+      1
+    ],
+    "observation": "Ordinary build stops at 27 missing-export GHC-76037 diagnostics in the fixed public publication fixture. Runtime fixtures did not execute; this is compiler API RED, not semantic runtime RED.",
+    "independentReview": {
+      "path": "local-state:nextloop-20261106/catalog-publication-profile-preparation/red-independent-execution-review.json",
+      "sha256": "0c1f824d409a9702b4807e52ffade6dc8c391e0b20d55251f775d38cfba4f95b"
+    },
+    "outerHandleConsumed": true
+  },
+  "green": {
+    "candidateSha256": "7b6ba66afa23647af2e0a3da66425b9a1b7f7a7e5ea4da32baf737c0ec75566c",
+    "report": {
+      "path": ".warlock-contributor/arm64-cpu-1794007113707258394/report.json",
+      "sha256": "ccbe81fa1b869a1a4ea89ef98fdaa8f8ac2e861fbf1a3f6030b20c81cc7a36c3"
+    },
+    "commandsExit": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "currentInputHashesMatched": 246,
+    "ordinaryRuntimeLibraryCompiled": true,
+    "frontendRootsCompiled": false,
+    "suites": {
+      "catalog-nodisplay-controls": [
+        {
+          "mode": "default",
+          "argv": [
+            "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-nodisplay-controls/storage"
+          ],
+          "exit": 0,
+          "timeout": false,
+          "forcedCleanup": false,
+          "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-nodisplay-controls/default.log",
+          "image": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-nodisplay-controls/image/catalog-nodisplay-controls",
+          "imagePin": [
+            "56",
+            "1237108",
+            "32233200",
+            "295329a27dd9b8664b7282b1b30a9154b9dfa58b17595a8f4230312cedbaa8ea"
+          ]
+        }
+      ],
+      "catalog-source-revision-adversarial": [
+        {
+          "mode": "default",
+          "argv": [
+            "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-source-revision-adversarial/storage"
+          ],
+          "exit": 0,
+          "timeout": false,
+          "forcedCleanup": false,
+          "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-source-revision-adversarial/default.log",
+          "image": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-source-revision-adversarial/image/catalog-source-revision-adversarial",
+          "imagePin": [
+            "56",
+            "1237120",
+            "32231688",
+            "c24e05169eeda3eb2b43a63ec82ca3da6c14146f125645012646ebafb84fd6c2"
+          ]
+        }
+      ],
+      "catalog-publication-controls": [
+        {
+          "mode": "default",
+          "argv": [
+            "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-publication-controls/storage"
+          ],
+          "exit": 0,
+          "timeout": false,
+          "forcedCleanup": false,
+          "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-publication-controls/default.log",
+          "image": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794007113707258394/runs/catalog-publication-controls/image/catalog-publication-controls",
+          "imagePin": [
+            "56",
+            "1237133",
+            "31976304",
+            "e4f021bc7d0cce3b4593db76b536cd7af6e5532005d8fd470a9707247d9326fa"
+          ]
+        }
+      ]
+    },
+    "independentReview": {
+      "path": "local-state:nextloop-20261106/catalog-publication-profile-preparation/green-independent-execution-review.json",
+      "sha256": "2a78ef848dfad92eb8e62693b2e25d8be906d443bc7f13ed138f23f994444cda"
+    },
+    "outerHandleConsumed": true
+  },
+  "sourceAndProfileReview": {
+    "path": "local-state:nextloop-20261106/catalog-publication-profile-preparation/independent-publication-profile-review.json",
+    "sha256": "4f6c5323d1b1ea142b478ae3f5747717f92ea727f78be8c2b1233c947203da71"
+  },
+  "greenCandidateReview": {
+    "path": "local-state:nextloop-20261106/catalog-publication-profile-preparation/green-independent-candidate-review.json",
+    "sha256": "7ec5f30278dd7881fb14b9ef6e56bf05a03f2dd9155848895c85a590fbe47ef9"
+  },
+  "fixedFixtures": {
+    "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd",
+    "implementation/warlock/haskell/runtime/test-catalog-publication/Main.hs": "1d31248918b047422448cbf0a1c97070680b9ba92fa1079cf099a61db6a68885",
+    "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67"
+  },
+  "priorFailedFixtureReviewRetained": {
+    "path": "local-state:nextloop-20261106/catalog-publisher-sol/independent-source-review.json",
+    "sha256": "080ad8c19a8c4476a20f09d123975f9bdb90a9e2f74c64de52efdd3724e9de34"
+  },
+  "metadataFreezeCorrection": {
+    "originalHelperReview": {
+      "path": "local-state:nextloop-20261106/catalog-publication-profile-preparation/independent-intake-helper-review.json",
+      "sha256": "0ec78ae7163931b3eaf22db4bfc217984171fff5d9502804ecbe51fbfbb2123c"
+    },
+    "successorHelperReview": {
+      "path": "local-state:nextloop-20261106/catalog-publication-profile-preparation/independent-intake-helper-v2-review.json",
+      "sha256": "52d91e9a22d2a308bd3376ab404b27cd50edb7925f95d88147c69fc0b4e17be1"
+    },
+    "change": "Re-enumerate the complete source path set during final freeze; require exact declared paths and original participant identity. This metadata-only helper is not a production or native result."
+  },
+  "documentation": {
+    "reference": "docs/warlock/reference/desktop-application-stream.md updated with publication contract and evidence boundary",
+    "explanation": "Same reference describes local send completion and data-only resolution; no separate architecture policy changed",
+    "tutorial": "Unchanged: internal catalog publication adds no operator command or finished launcher journey",
+    "howTo": "Unchanged: use the existing protected CPU entry; no installation or desktop changes"
+  },
+  "originalCountsChanged": false,
+  "acceptedRequirementsDelta": 0,
+  "acceptedScenariosDelta": 0,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "remaining": [
+    "Actual original-deadline and binding bridge into application launch scope, owned executable issuer and Backend launch dispatch.",
+    "Current-stack Elm input, actual owned harmless child with exact argv, peer-reply observation and normal cleanup on one source/ABI tuple.",
+    "Original input, timing, accessibility, hardware and release obligations."
+  ],
+  "evidenceLimits": [
+    "The publication fixture controls local send callbacks. Actual Backend credentialed transport is compiled and source-reviewed; no actual peer-send callback trace was executed by this component.",
+    "Current catalog controls do not qualify a generic Exec parser, terminal provider, held executable admission or native application launch.",
+    "Seven protected commands and three normal suite receipts are executed counts; no inferred assertion count or original EARS closure."
+  ]
+}

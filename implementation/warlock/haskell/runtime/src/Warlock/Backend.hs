@@ -189,18 +189,23 @@ applyDesktopRequest
 applyDesktopRequest bound catalog pins operations lastWrite sendReply request = case D.requestKind request of
   D.CatalogRead -> do
    modifyIORef' operations (+1)
-   actual <- readCatalog catalog
+   actual <- prepareCatalogPublication catalog
    preferences <- either (const Nothing) Just <$> readPins pins
    case actual of
     Left _ -> do
      construct (D.catalogReply bound (D.requestId request) Nothing preferences) >>= sendReply
-    Right (snapshot,_) -> do
-     -- Check complete envelope including preferences. Overflow exposes
-     -- explicit unavailable, never a truncated subset of the catalog.
+    Right (snapshot,_,publication) -> do
+     -- Only the actual successful write of this exact constructed reply may
+     -- publish its revision for data resolution. Overflow/failed writes never
+     -- publish, and an uncertain write is not followed by a fallback replay.
      case D.catalogReply bound (D.requestId request) (Just snapshot) preferences of
       Left _ -> do
        construct (D.catalogReply bound (D.requestId request) Nothing preferences) >>= sendReply
-      Right reply -> sendReply reply
+      Right reply -> do
+       catalogPublicationResult <- publishCatalog publication (sendReply reply)
+       case catalogPublicationResult of
+        Left _ -> ioError (userError "catalog reply publication unconfirmed")
+        Right () -> pure ()
   D.PinsWrite -> case D.pinProposal request of
    Nothing -> ioError (userError "checked pin proposal missing")
    Just proposal -> do

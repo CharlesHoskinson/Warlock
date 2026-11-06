@@ -64,7 +64,7 @@ def main():
     test_image = requested
     config_image_pin = None
     child_env = dict(os.environ)
-    if suite in ('notification-config-controls', 'notification-issuer-controls', 'catalog-nodisplay-controls', 'catalog-source-revision-adversarial'):
+    if suite in ('notification-config-controls', 'notification-issuer-controls', 'catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls'):
         image_dir = fresh('image')
         test_image = image_dir / suite
         shutil.copy2(requested, test_image)
@@ -174,7 +174,7 @@ def main():
                 os.killpg(proc.pid, signal.SIGKILL)
             results.append({'mode': label, 'argv': args, 'exit': code, 'timeout': timed_out,
                             'forcedCleanup': forced or timed_out, 'log': str(log)})
-            if suite in ('notification-config-controls', 'notification-issuer-controls', 'catalog-nodisplay-controls', 'catalog-source-revision-adversarial'):
+            if suite in ('notification-config-controls', 'notification-issuer-controls', 'catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls'):
                 if pin(test_image) != config_image_pin or pin(requested) != manifest['test']['pin']:
                     raise RuntimeError('notification config image changed')
                 results[-1]['image'] = str(test_image)

@@ -71,6 +71,17 @@ desktop identity precedence and refuses unsafe or incomplete traversal. A whole
 reply that exceeds its count or byte bound becomes explicitly unavailable;
 entries are never silently truncated. The entry bound is 2,048.
 
+Catalog reads return metadata. The backend prepares a single-use publication
+token for the exact reply and publishes the catalog revision after the complete
+local send returns.
+A failed send, replacement preparation or retirement prevents resolution through
+that token. Local send completion does not confirm receipt by the peer.
+`resolveDesktop` checks the published lifetime and revision, then rescans the
+pinned roots before it returns immutable desktop-entry bytes and parsed fields.
+These values grant no executable or launch authority. The
+[publication component evidence](../../warlock-build-loop/v2/catalog-publication-component-20261106.json)
+records the protected compiler failure and the three passing catalog suites.
+
 `Warlock.Backend.PinStore` uses fixed `taskbar.lock` and `taskbar.json` names in a
 pinned private directory. The schema is 1. It requires private regular files,
 single links, no-follow access, a nonblocking lock and revision CAS. `Saved`
