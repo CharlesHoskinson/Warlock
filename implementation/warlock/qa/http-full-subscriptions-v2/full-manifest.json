@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "target": {
+    "implementation/warlock/src/Desktop.elm": "a07c15be51b5875921ef24a235e45f57a0b52745cec971740af3a7fdc3adfb3f",
+    "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/Surface.elm": "175d4432e2a28c18cfa18e72f2effc61bf8d551ddce0679e14e25681fc78ec1c",
+    "implementation/warlock/src/OutcomeAnnouncements.elm": "e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb",
+    "implementation/warlock/src/Popup.elm": "c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb",
+    "implementation/warlock/src/Presentation.elm": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+    "implementation/warlock/src/UiHttp.elm": "73ae1bcb1d1d98fbe8ecbcfebca879f3df1e668dc2366cdfb37979fa6c3cf846",
+    "implementation/warlock/src/HttpMain.elm": "c0dcd27b03b737b83be70d439944ea9741128e18dd9405b55595c559e8bef3cf",
+    "implementation/warlock/src/HttpPopup.elm": "b0c3596d0e637722050830ca50ed2dd116b5c95953a3e6b988683d649563a52d",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs": "3585e3ca0f8fbca8dc9b66d54821e8e60707b6798550945ea983c81a4181926f",
+    "implementation/warlock/src/Shell.elm": "6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/HttpBar.elm": "135d13fce502e0b2e2d4b14f6e4a452a3f1a51db2f332fbd6c9b9d16e78ebab6",
+    "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+    "implementation/warlock/src/RetainedPreviewPresenter.elm": "7d3206e62e547af98171018a3bb65acdde0701393f35ea652bfffd1d5890810b",
+    "implementation/warlock/src/PreviewPaintGate.elm": "fa2194375853ba16d5c783d04d110b052c43dccc89faf9fb6c4dce7aef709d4f"
+  },
+  "historical": {
+    "sol-http-root-observer-0535.cjs": "a5e3bd62f0ccf39d3e16da9117e6cacb6a3f497e43eca8157666d7d5bef6d854",
+    "sol-http-popup-literals-0525.cjs": "ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1",
+    "httpbar-literals.cjs": "6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173",
+    "joined-control-literals.cjs": "6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6",
+    "closed-topology-after-dismiss-literals.cjs": "8435b31ad6790fddc0750f6b5926388f36f394de9f58de9238c3944d45db6740",
+    "http-popup-control-literals.cjs": "8fb6d1ec0eba318b70fa0e4617c30ee20fe0a2e39a2f7b8e2822dd8c21cebf55",
+    "http-root-cases-manifest.json": "8beb60943bd2480b52151a009db7fee2c7759383482de19b3bc09ee79ef2faf8",
+    "http-root-cases-guard.cjs": "ef413d508edc938599f20ba34c20f379da79cb9dca60b5a48ef9a624cc85cc48",
+    "http-root-cases-negative.cjs": "ebb1417540ad1bbe4f8516140c02e802ff2545057722c91c7346d00e2141230b",
+    "tea-contract-cases.cjs": "41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7",
+    "tea-subscriptions-cases.cjs": "a7f7cf418977cd4f49d2c6cb70f9313fd4992ea18e82c4289b0985026ae2c930"
+  },
+  "bundle": {
+    "TeaAdmissionSubscriptionsReplay.elm": "fb3d3b254337dd8c18c04e423d27af24eea649c4a3fca928df6deb50cdcce245",
+    "TeaBarSubscriptionsReplay.elm": "6fe9393de64a3ba182d6af795b0625bccd29ad0df57e5a5afefd387604cef70d",
+    "TeaPopupSubscriptionsReplay.elm": "50aaefcb9b07504844784c206ab0a5ae6591d42140776d31e7fdecf34f3cd528",
+    "TeaRendererSubscriptionsReplay.elm": "f9fa36a1e09570be3b24bcf3d689376055cac5f1611694b5f35259ba02c2e497",
+    "full-literals.cjs": "2a06a440db4d00303865e35d0dbe58a21bfa60199cee081a09b79250e35ea54d",
+    "full-negative.cjs": "c3b3520f59d110c4461ef2eb7f490430508afabaf0525890242bfb12fd5535bb",
+    "full-observer.cjs": "dee19a907df4b41d6bedec2355d19ee64290f947ed3902c08be2b6cdcba68dbb",
+    "literals.cjs": "cbc7970e0426da7de3a4d0fb4891fd6ccfb5d201a6bb6a84670bc3cd054793a1",
+    "parents/closed-topology-after-dismiss-literals.cjs": "b5ecea4c2dbb36665cfc6c016adddaaa40e3dd2a35147467adcb7579e8d9858f",
+    "parents/http-popup-control-literals.cjs": "9af173a9088d2257efabc9fceb7da2a519ddabfaa288599013048da1b19e732e",
+    "parents/http-root-cases-guard.cjs": "ef413d508edc938599f20ba34c20f379da79cb9dca60b5a48ef9a624cc85cc48",
+    "parents/http-root-cases-manifest.json": "8beb60943bd2480b52151a009db7fee2c7759383482de19b3bc09ee79ef2faf8",
+    "parents/http-root-cases-negative.cjs": "ebb1417540ad1bbe4f8516140c02e802ff2545057722c91c7346d00e2141230b",
+    "parents/httpbar-literals.cjs": "6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173",
+    "parents/joined-control-literals.cjs": "2eef44aaccc235514cc0e7cb5ce6c482e183dc917e79259e93b5acc5c29541cc",
+    "parents/sol-http-popup-literals-0525.cjs": "ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1",
+    "parents/tea-contract-cases.cjs": "41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7",
+    "tea-subscriptions-cases.cjs": "906cf3c7b6aea0ca4501ef928cdb84ae5b1df124cad5d633bbba204f7c7168dd",
+    "tea-subscriptions.cjs": "b1685b8e293d8839a1d33226f6c5b7fb484149a08f7617b47db6845e044da421"
+  },
+  "inventory": {
+    "schema": 1,
+    "baseAndBar": [
+      {
+        "name": "HttpPopup-poll-delay-allowed-event-failed-sticky",
+        "root": "HttpPopup",
+        "steps": 9
+      },
+      {
+        "name": "HttpPopup-late-delivery-error-before-sleep-target",
+        "root": "HttpPopup",
+        "steps": 5
+      },
+      {
+        "name": "HttpBar-poll-delay-allowed-event-failed-sticky",
+        "root": "HttpBar",
+        "steps": 9
+      },
+      {
+        "name": "HttpBar-late-delivery-error-before-sleep-target",
+        "root": "HttpBar",
+        "steps": 5
+      },
+      {
+        "name": "HttpMain-complete-publish-queue-http-completion-is-not-native-ack",
+        "root": "HttpMain",
+        "steps": 6
+      },
+      {
+        "name": "HttpMain-unknown-delivery-retains-active-and-pending-no-replay",
+        "root": "HttpMain",
+        "steps": 7
+      },
+      {
+        "name": "HttpMain-polling-failure-retains-queued-data-and-policy-loss",
+        "root": "HttpMain",
+        "steps": 6
+      },
+      {
+        "name": "HttpBar-visible-loading-delayed-synchronous-stale-and-queue",
+        "root": "HttpBar",
+        "steps": 16
+      }
+    ],
+    "popupControl": [
+      {
+        "name": "HttpPopup-action-sends-renderer-then-settles",
+        "root": "HttpPopup",
+        "steps": 3
+      },
+      {
+        "name": "HttpPopup-native-event-gateway-rejected",
+        "root": "HttpPopup",
+        "steps": 2
+      },
+      {
+        "name": "HttpPopup-synthetic-quarantine-preview-command-refused",
+        "root": "HttpPopup",
+        "steps": 3
+      }
+    ],
+    "joined": [
+      {
+        "name": "HttpJoined-open-given-dismiss-closed-presentation",
+        "root": "HttpJoined",
+        "steps": 5
+      },
+      {
+        "name": "HttpJoined-dismiss-then-closed-empty-topology",
+        "root": "HttpJoined",
+        "steps": 11
+      }
+    ],
+    "freshRuns": 2,
+    "originalCounters": {
+      "guardInventoryNegatives": 21,
+      "joinedNegatives": 6,
+      "closedTopologyNegatives": 4,
+      "popupControlNegatives": 3
+    },
+    "semanticConflict": {
+      "case": "HttpPopup-synthetic-quarantine-preview-command-refused",
+      "original": "ExplicitStop; cancel GET/POST; sticky stop",
+      "current": "singleton reconcile admitted as PopupProposal; no semantic waiver granted",
+      "handling": "Original literal retained unchanged through representation migration. Full run must report failure if current behavior differs; never skip this case."
+    }
+  },
+  "execution": "UNEXECUTED artifact, Root protected run only"
+}

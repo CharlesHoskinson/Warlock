@@ -64,22 +64,36 @@ def main():
     modes.add_argument('--status-scroll', action='store_true', help='Fixed UI007 status scroll replay and model')
     modes.add_argument('--tea-contract', action='store_true', help='Original TEA001/002 complete-model and typed-effect component fixture')
     modes.add_argument('--subscriptions', action='store_true', help='Fixed eight-root subscription component replay; original coverage remains incomplete')
+    parser.add_argument('--arm64', action='store_true', help='Separately reviewed local ARM compiler, subscriptions mode only')
+    parser.add_argument('--arm64-output', type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.arm64 and not args.subscriptions:
+        raise RuntimeError('ARM Elm selection is restricted to subscriptions')
+    if args.arm64_output is not None and (not args.arm64 or args.arm64_output.name != 'subscriptions'
+            or args.arm64_output.parent.parent != REPO / '.warlock-contributor'
+            or not re.fullmatch('arm64-cpu-[0-9]+', args.arm64_output.parent.name)):
+        raise RuntimeError('Unexpected private ARM subscription output')
     scope = require_qa_scope()
     runtime_base()
     root = REPO / 'implementation/warlock'
     held = REPO / 'implementation/warlock-preview-provider-v143'
-    output = REPO / '.warlock-contributor' / ('elm-cpu-' + str(time.time_ns()))
+    output = args.arm64_output or REPO / '.warlock-contributor' / ('elm-cpu-' + str(time.time_ns()))
     output.mkdir(parents=True)
     report = {'schema': 1, 'passed': False, 'scope': 'Elm compiler and pure production projection only',
               'nativeAcceptance': False, 'releaseAccepted': False, 'protectedScope': scope, 'commands': []}
     node = Path(shutil.which('node') or '/missing-node').resolve()
+    if args.arm64:
+        import arm64_toolchain as toolchain
+    else:
+        spec = importlib.util.spec_from_file_location('held_toolchain', held / 'qa/toolchain.py')
+        toolchain = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(toolchain)
+    pinned = toolchain.verify()
+    if args.arm64:
+        node = Path(pinned['node'])
+        report['arm64Toolchain'] = pinned
     report['developmentTools'] = {name: {'path': str(path), 'sha256': sha(path)}
                                   for name, path in [('python', Path(sys.executable).resolve()), ('node', node)]}
-    spec = importlib.util.spec_from_file_location('held_toolchain', held / 'qa/toolchain.py')
-    toolchain = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(toolchain)
-    pinned = toolchain.verify()
     report['compilerSHA256'] = pinned['compilerSHA256']
     sources = {str(p.relative_to(REPO)): sha(p) for p in sorted((root / 'src').rglob('*.elm'))}
     sources['implementation/warlock/elm.json'] = sha(root / 'elm.json')
@@ -91,7 +105,9 @@ def main():
     selected_artifacts = {}
     shutil.copytree(held / pinned['elmHome'], output / 'elm-home')
     from elm_http_dependencies import stage as stage_http_dependencies
-    report['httpDependencies'] = stage_http_dependencies(output / 'elm-home')
+    report['httpDependencies'] = ({'scope': 'Exact complete ARM cache inventory',
+                                   'tree': pinned['trees'][pinned['elmHome']]}
+                                  if args.arm64 else stage_http_dependencies(output / 'elm-home'))
     config = json.loads((root / 'elm.json').read_text())
     config['source-directories'] = ['src', 'qa']
     (work / 'qa').mkdir()
@@ -158,7 +174,10 @@ def main():
                 run(harness_name, [str(node), 'qa/' + harness_name + '.cjs', str(output / (harness_name + '.js')), str(output / (harness_name + '.json'))])
         elif args.authority or args.receipts or args.standalone_mvp or args.status_scroll or args.tea_contract:
             raise RuntimeError('Original scenario fixture is required')
-        if not (args.authority or args.receipts or args.browser or args.subscriptions):
+        # The full subscription campaign also executes the actual HTTP roots
+        # and transport worker. Keep these checks in addition to its original
+        # model/effect and subscription oracles below.
+        if not (args.authority or args.receipts or args.browser):
             for filename in ('UiHttpReplay.elm', 'ui-http.cjs'):
                 source = root / 'qa' / filename
                 if source.is_symlink() or not source.is_file():
@@ -191,14 +210,14 @@ def main():
                               'Surface.elm', 'OutcomeAnnouncements.elm', 'Popup.elm', 'Presentation.elm',
                               'Announcement.elm', 'SurfaceSnapshot.elm', 'Shell.elm', 'TaskbarShell.elm',
                               'UiHttp.elm', 'HttpMain.elm', 'HttpPopup.elm', 'NativePreviewRealm.elm',
-                              'RetainedPreviewPresenter.elm', 'PreviewPaintGate.elm')
+                              'RetainedPreviewPresenter.elm', 'PreviewPaintGate.elm', 'HttpBar.elm')
             joined_extra_pins = {
                 'Announcement.elm': 'a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f',
                 'SurfaceSnapshot.elm': '9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a',
                 'Shell.elm': '6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094',
                 'TaskbarShell.elm': 'eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26',
                 'NativePreviewRealm.elm': '2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf',
-                'RetainedPreviewPresenter.elm': '4289acb5af5da1811f688cf3d665169dea07e06a8bd28c41c1c43d1c015c6443',
+                'RetainedPreviewPresenter.elm': '7d3206e62e547af98171018a3bb65acdde0701393f35ea652bfffd1d5890810b',
                 'PreviewPaintGate.elm': 'fa2194375853ba16d5c783d04d110b052c43dccc89faf9fb6c4dce7aef709d4f',
             }
             for name in joined_sources:
@@ -230,7 +249,7 @@ def main():
                 shutil.copy2(source, work / 'qa' / filename)
                 shutil.copy2(source, subscription_qa / filename)
             reviewed_http_inputs = {
-                'sol-http-root-observer-0535.cjs': 'ca5b9cb7578bc9fedd15d5f23a9adc26b992ae47dbd12df5bce738238d0c02a1',
+                'sol-http-root-observer-0535.cjs': 'a5e3bd62f0ccf39d3e16da9117e6cacb6a3f497e43eca8157666d7d5bef6d854',
                 'sol-http-popup-literals-0525.cjs': 'ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1',
                 'httpbar-literals.cjs': '6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173',
                 'joined-control-literals.cjs': '6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6',
@@ -310,7 +329,23 @@ def main():
                 run('compile-' + name, [compiler, 'make', 'qa/' + name + '.elm',
                                        '--output=' + str(output / (name + '.js'))])
             selected_artifacts.update({name: sha(output / (name + '.js')) for name in (*roots, *workers.values())})
-            run('http-root-cases-negative', [str(node), str(subscription_qa / 'http-root-cases-negative.cjs'),
+            # Versioned derivative; original fixture files remain byte-exact.
+            derivative_files = ('TeaAdmissionSubscriptionsReplay.elm', 'TeaBarSubscriptionsReplay.elm', 'TeaPopupSubscriptionsReplay.elm', 'TeaRendererSubscriptionsReplay.elm', 'full-literals.cjs', 'full-negative.cjs', 'full-observer.cjs', 'literals.cjs', 'parents/closed-topology-after-dismiss-literals.cjs', 'parents/http-popup-control-literals.cjs', 'parents/http-root-cases-guard.cjs', 'parents/http-root-cases-manifest.json', 'parents/http-root-cases-negative.cjs', 'parents/httpbar-literals.cjs', 'parents/joined-control-literals.cjs', 'parents/sol-http-popup-literals-0525.cjs', 'parents/tea-contract-cases.cjs', 'tea-subscriptions-cases.cjs', 'tea-subscriptions.cjs', 'full-manifest.json')
+            derivative_qa = subscription_qa / 'http-full-subscriptions-v2'
+            derivative_source_keys = set()
+            for relative in derivative_files:
+                source = root / 'qa/http-full-subscriptions-v2' / relative
+                target = derivative_qa / relative
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Required reviewed HTTP derivative missing: ' + relative)
+                key = str(source.relative_to(REPO))
+                sources[key] = sha(source)
+                derivative_source_keys.add(key)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(source, target)
+                if sha(target) != sources[key]:
+                    raise RuntimeError('HTTP derivative stage differs: ' + relative)
+            run('http-root-cases-negative', [str(node), str(derivative_qa / 'full-negative.cjs'),
                 str(output / 'subscription-source')])
             negative_path = output / 'http-root-cases-negative.stdout'
             negative = json.loads(negative_path.read_text())
@@ -325,10 +360,10 @@ def main():
                 raise RuntimeError('HTTP fixture negative controls incomplete')
             report['httpRootNegative'] = {'resultPath': negative_path.name, 'resultSHA256': sha(negative_path),
                 'result': negative}
-            run('http-root-observer', [str(node), str(subscription_qa / 'sol-http-root-observer-0535.cjs'),
+            run('http-root-observer', [str(node), str(derivative_qa / 'full-observer.cjs'),
                 str(output / 'subscription-source'),
                 *[str(output / (name + '.plain.js')) for name in plain_roots],
-                str(subscription_qa / 'httpbar-literals.cjs')])
+                ])
             observer_path = output / 'http-root-observer.stdout'
             observed_http = json.loads(observer_path.read_text())
             cases = observed_http.get('cases', [])
@@ -339,7 +374,7 @@ def main():
                     or observed_http.get('originalAcceptanceClaim') is not False
                     or observed_http.get('coverage', {}).get('complete') is not False
                     or observed_http.get('manifestHash') != reviewed_http_inputs['http-root-cases-manifest.json']
-                    or observed_http.get('observerHash') != sha(subscription_qa / 'sol-http-root-observer-0535.cjs')
+                    or observed_http.get('observerHash') != sha(derivative_qa / 'full-observer.cjs')
                     or observed_http.get('oracleHash') != sha(subscription_qa / 'sol-http-popup-literals-0525.cjs')
                     or observed_http.get('policyLiteralSource', {}).get('sha256') != sha(subscription_qa / 'tea-contract-cases.cjs')
                     or len(observed_http.get('peerSources', [])) != 1
@@ -428,7 +463,7 @@ def main():
                 'resultSHA256': sha(site_observer_path), 'plainRootHash': site_plain_hash,
                 'result': observed_site}
             result_path = output / 'tea-subscriptions.json'
-            run('tea-subscriptions', [str(node), str(subscription_qa / 'tea-subscriptions.cjs'), '--workers',
+            run('tea-subscriptions', [str(node), str(derivative_qa / 'tea-subscriptions.cjs'), '--workers',
                                      *[str(output / (name + '.js')) for name in workers.values()], '--roots',
                                      *[str(output / (name + '.js')) for name in roots], '--out', str(result_path)])
             summary = json.loads(result_path.read_text())
@@ -451,8 +486,8 @@ def main():
                     or summary.get('siteMainBytePreserved') is not True
                     or summary.get('optimizedRootsVerified') is not True
                     or summary.get('optimizedRootHashes') != {name: selected_artifacts[name] for name in roots}
-                    or summary.get('oracleSha256') != sha(work / 'qa/tea-subscriptions-cases.cjs')
-                    or summary.get('runnerSha256') != sha(work / 'qa/tea-subscriptions.cjs')
+                    or summary.get('oracleSha256') != sha(derivative_qa / 'tea-subscriptions-cases.cjs')
+                    or summary.get('runnerSha256') != sha(derivative_qa / 'tea-subscriptions.cjs')
                     or set(summary.get('workers', {})) != set(workers)
                     or coverage.get('complete') is not False or not coverage.get('missing')
                     or summary.get('nativeAccepted') is not False or summary.get('releaseAccepted') is not False):
@@ -851,6 +886,12 @@ def main():
                 if (staged.is_symlink() or not staged.is_file()
                         or sha(staged) != sources['implementation/warlock/qa/' + filename]):
                     raise RuntimeError('Subscription harness/source stage changed: ' + filename)
+            for relative in derivative_files:
+                key = 'implementation/warlock/qa/http-full-subscriptions-v2/' + relative
+                staged = derivative_qa / relative
+                if (key not in derivative_source_keys or staged.is_symlink()
+                        or not staged.is_file() or sha(staged) != sources[key]):
+                    raise RuntimeError('HTTP derivative stage changed: ' + relative)
         if args.tea_contract or args.subscriptions:
             if (work / 'elm.json').is_symlink() or sha(work / 'elm.json') != staged_elm_manifest_sha:
                 raise RuntimeError('Staged Elm manifest changed during execution')
@@ -865,7 +906,7 @@ def main():
                     raise RuntimeError('TEA001 compiled worker changed during execution: ' + worker)
             for key, digest in sources.items():
                 qa_prefix = 'implementation/warlock/qa/'
-                if key.startswith(qa_prefix):
+                if key.startswith(qa_prefix) and not (args.subscriptions and key in derivative_source_keys):
                     staged_qa = work / 'qa' / key[len(qa_prefix):]
                     if staged_qa.is_symlink() or not staged_qa.is_file() or sha(staged_qa) != digest:
                         raise RuntimeError('Staged QA input changed: ' + key)

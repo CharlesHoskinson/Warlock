@@ -267,3 +267,33 @@ Codex-process replacement or proof of recovery from every capacity failure.
 Preserve drafts, live handles, protected QA ownership and original deadlines.
 Model capacity remains an external limit; retry only with bounded backoff and
 never override a user pause. Local timer operations and lint are support evidence.
+
+### Current ARM EARS delivery regulator
+
+User instruction, November 5: include the independent EARS regulator in every
+completion-loop iteration. The current machine-local timer is
+`warlock-muse-ears-20261105.timer`. It runs a bounded, read-only
+`muse-wonder-1.0` HIGH audit every 20 minutes, with Contributor mode off.
+Its runtime and receipts are in
+`~/.local/state/warlock-team/20261105/ears-regulator/`. It expires at
+2026-11-06T19:07:31.942628+00:00 and respects user pause and stop instructions.
+
+Root and Sol must consume the latest completed audit before selecting the next
+implementation action or reporting closure. Record each finding's disposition
+and link the original requirement ID, scenario and unchanged oracle to the
+actual source delta, current-source build and behavioral evidence. Turn confirmed
+gaps into concrete implementation or verification tasks. Diagnose uncertain
+findings before changing code. A missing or failed audit remains an open review
+obligation and must not prevent work that repairs a known gap.
+
+Keep implementation, model checks, compiled component checks, original EARS
+acceptance, native observations and release acceptance distinct. A passing build
+or Quint model cannot close a whole EARS requirement. Root remains the sole
+integrator and protected QA executor. The regulator requests attention and
+reports findings. It cannot approve integration or grant acceptance. Queued
+attention alone does not prove that automatic recovery reached the root.
+
+The first completed audit on November 5 reported stalled delivery for
+ELM-TEA-004. Its source-bound findings and Sol's response are retained in the
+machine-local audit and `terra-team/ears-audit-response.json`. Preserve those
+findings until actual implementation and verification resolve them.

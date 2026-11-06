@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "profile": "omarchy-arm64-20261105",
+  "scope": "Separate local build derivative; not native or original acceptance",
+  "machine": "aarch64",
+  "elm": "/home/hoskinson/.local/share/mise/installs/node/26.13.0/lib/node_modules/elm/bin/elm",
+  "node": "/home/hoskinson/.local/share/mise/installs/node/26.13.0/bin/node",
+  "ghcPrefix": "/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7",
+  "cabal": "/home/hoskinson/.local/share/warlock-toolchain/cabal-3.12.1.0/cabal",
+  "elmHome": "/home/hoskinson/.local/share/warlock-toolchain/elm-cache",
+  "dependencies": "/home/hoskinson/.local/share/warlock-toolchain/dependencies/source",
+  "trees": {
+    "/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7": {
+      "files": 10700,
+      "sha256": "7fe730433f5fcc51fb41f4574d52b4d124d755ce44ce03c7621fa5c644ac3624"
+    },
+    "/home/hoskinson/.local/share/warlock-toolchain/elm-cache": {
+      "files": 118,
+      "sha256": "b53f9ccc488a83f019bede1892b8a0471c16eadffe5d5dcbdec501a4317461de"
+    },
+    "/home/hoskinson/.local/share/warlock-toolchain/dependencies/source": {
+      "files": 116,
+      "sha256": "f3893b20872f15c8d9e1310d2d6ea65343b940286af295c9ac42389ec86fe505"
+    }
+  },
+  "files": {
+    "/home/hoskinson/.local/share/mise/installs/node/26.13.0/lib/node_modules/elm/bin/elm": "912659979ab84fb3369f9b5aae5d584b755fe8ee2b3af94c8dc2f5ce0b2642a2",
+    "/home/hoskinson/.local/share/mise/installs/node/26.13.0/bin/node": "66f4a883c880ef336276e7730c01cbae2b92fb8e6a51f7371f920599cac824b7",
+    "/home/hoskinson/.local/share/warlock-toolchain/cabal-3.12.1.0/cabal": "670e708eda3ccd52c1989b81a725a66b2156cc7dbca66b9b51bb587f337a28ed",
+    "/home/hoskinson/.local/share/warlock-toolchain/provenance.json": "081a85703e14cc150782280071e66b50735c31e7d08a2933c078e5b490f3dabd",
+    "/home/hoskinson/.local/share/warlock-toolchain/dependencies/preparation.json": "d222f908f2ff7cea4f0c8e93a2dc76a7a06ee76fa2855895d76ffbf98388241d",
+    "/home/hoskinson/.local/share/warlock-toolchain/cabal-config": "e6dc61acae1ab64906aecd44615b1a6b1a59c51b7b585fe99c1656c6e68705d8",
+    "/home/hoskinson/.local/share/warlock-toolchain/system-build-inputs.json": "33b9ed73bd1d249225d228a35c8f40ae941f690bca8f3626fb2e6f5e267ac7b4",
+    "/etc/ld.so.cache": "e26846bd2ef0d774afeb7f995b1dea790ca0037f13bb64df5694ee74b414d7b6",
+    "/etc/passwd": "34b878192f4c961da82f84ee6492a4434ce0123f449e0d4ed5bba1bcb10acee8",
+    "/etc/group": "6eff404a80b8d317637db4600a478aa96ee3888e966e098bf714652b0a1e11c3",
+    "/etc/nsswitch.conf": "d33947c888e10b0a6984d1c9b37c970fdb6f27ce479c01e7d04e1151a8a0514a"
+  },
+  "systemInputs": "/home/hoskinson/.local/share/warlock-toolchain/system-build-inputs.json",
+  "parents": {
+    "tools/haskell-toolchain.json": "7a2c7706cbf05b3e68abd661c7789cd9ce9d24a5b714091176e6e6b275ac0a76",
+    "tools/ui-host-toolchain.json": "f53770c47929e28b50ddc7c2c0b5cb2315d90003983446be6c325b7dd0708a14",
+    "tools/elm-http-dependencies.json": "ac6870371db068344a02e99ab40a45207b393d91d05cfd94e7b0cc54f4bd8f68",
+    "tools/haskell-dependencies.json": "ca6a7fe7f45cfe4baaf074c55b7c1f0faeba4accae4ee1059788f02681d75a5a"
+  }
+}

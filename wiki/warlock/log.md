@@ -497,3 +497,25 @@ The exact existing-root wake nonce is acknowledged. The matching Haskell compone
 - Protected component checks pass three new HttpPopup histories and their expected-reason rejection controls. Earlier joined histories and SiteMain checks remain included.
 - Selected complete model and typed-effect observations do not prove a complete opaque command AST or an HTTP native-control producer.
 - Source and immutable local report hashes are in [restoration evidence](../../docs/warlock-build-loop/v2/restoration-component-evidence-20261102.json). Whole TEA004, current-product Omarchy input and pixels, and release acceptance remain open.
+
+
+## [2026-11-05 13:20] build | Typed HTTP controls on Omarchy ARM64
+
+- The current component routes authenticated grant, quarantine and closed facts to Popup through the actual Owner boundary.
+- Protected protocol and Owner suites pass. The 35-case Elm replay includes closed lifetime, matching quarantine, foreign bindings and seeded sequences.
+- The [component record](../../docs/warlock-build-loop/v2/http-preview-controls-component-20261105.json) preserves source hashes and local receipt references. Prior failed runs remain retained.
+- Purpose issuance, nonempty proposals, paint, the native producer and original TEA004 acceptance remain open. Ten Terra planning sessions now report to the requested Sol supervisor.
+
+- 2026-11-05: Added the independent Muse EARS audit to the completion loop. Root and Sol must record finding dispositions and select concrete implementation or verification work. The first audit flags ELM-TEA-004 delivery gaps. Models and builds do not grant whole-requirement acceptance. See the current ARM regulator section in the loop instructions and STATE run overlay.
+
+- 2026-11-05: Qualified the finite frontend confirmation-custody model for assigned implementation after protected tests and sampled safety/witness checks. Exact report: `.warlock-contributor/team-quint-consumption-1793913016419287359/report.json`. Earlier parser and negative-test failures remain retained. The one-slot set abstraction does not prove production FIFO ordering, capacity 1065, byte parsing or native behavior. Existing impl5 is authorized to implement the global Popup outbox under Sol. Current compiled Elm, original HTTP AST and whole-EARS verification remain open.
+
+- 2026-11-05: Qualified the finite preview schema contract for the existing protocol worker after protected report `.warlock-contributor/team-quint-schema-1793913401261746322/report.json`. Four terminal negative tests and explicit refused-attempt checks preserve the original guard and poststate obligations. Earlier parse, uninitialized-state and duplicate-update failures remain retained. The model does not prove byte parsing, UInt64 bounds or native authority. The second Muse audit still finds the original HTTP 5/11-step full model/effect AST and native observations open.
+
+- 2026-11-05: Qualified the finite native authority model for assigned implementation after protected report `.warlock-contributor/team-quint-authority-1793914088326539207/report.json`. The actual native bank still needs compiled source and real custody evidence. Empty or never-issued realm cleanup is outside this model and remains an explicit original-requirement obligation. Earlier failures and the second Muse stalled verdict remain retained.
+
+- 2026-11-05: Integrated and independently verified the actual compiled Popup confirmation-custody component. Two fresh executions each cover seven cases, 4354 steps and 6520 assertions; 137 existing typed checks also pass. Three seed values feed one deterministic history. See `docs/warlock-build-loop/v2/preview-consumption-component-20261105.json`. Original complete HTTP 5/11-step oracles, native authority and release acceptance remain open.
+
+- 2026-11-05: Integrated and independently verified the actual public Haskell preview codec and unchanged desktop regression. Both protected tests end normally; the old suite reports2194checks. The new suite reports a terminal marker and no assertion count is inferred. The initial layout failure remains a compile failure. See `docs/warlock-build-loop/v2/preview-wire-codec-component-20261105.json`. Native producer and full original HTTP/native obligations remain open.
+
+- 2026-11-05: Fixed HTTP request correlation, confirmation retention and duplicate queued reconciliation. The full protected HTTP/subscription profile passed all 28 commands. Independent review verified 278 inputs, 20 artifacts, 7394 HTTP checks and the original five/eleven-step histories. All original negatives and failed runs remain retained. See `docs/warlock-build-loop/v2/http-transport-subscriptions-component-20261105.json`. Native receiver, paint, resource and original acceptance remain open.

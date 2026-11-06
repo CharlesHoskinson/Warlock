@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-11-05T21:41:06.101822+00:00",
+  "requirement": "ELM-TEA-004",
+  "scenario": "tea-subscriptions",
+  "scope": "Compiled Popup confirmation-custody component, not whole original acceptance",
+  "behavior": "Retain exact opaque accepted-ticket confirmations in a bounded global FIFO across popup realm transitions; commit presenter and confirmation together only when capacity permits; remove only an exact accepted receipt. HTTP consumed transport remains explicitly unsupported pending its qualified implementation.",
+  "verification": {
+    "report": ".warlock-contributor/arm64-cpu-1793914639276987630/report.json",
+    "reportSHA256": "3acbf1e717de3a9ebc203f119324caa79536efe587522fc33064d847750ed08b",
+    "independentReviewLocal": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-consumption-execution-review.json",
+    "independentReviewSHA256": "912a5ae3647a4c8b86e7e466f2f81d520f3295d513f36830b69a76793d5a71ea",
+    "commandCount": 20,
+    "sourceInputCount": 127,
+    "artifactCount": 15,
+    "freshRuns": 2,
+    "countsEach": {
+      "cases": 7,
+      "steps": 4354,
+      "assertions": 6520,
+      "seeds": 3
+    },
+    "seeds": [
+      20261105,
+      20261106,
+      20261107
+    ],
+    "seedInterpretation": "Three seed values mixed into one deterministic sequence; two fresh process executions, not three complete fuzz campaigns",
+    "receiptHashes": {
+      "compiled": "8fd9d1a1859c37e783804b779bd1b3cacfad527fdbb5076f4496ae86b4d9f450",
+      "oracle": "6c2a5664abd684d0ae778f4da975067163565d968ae1f506680c51420dfb7e0d",
+      "elmFixture": "540c738131b689870b0b57da1b5eaea1f289d3bf6e8e4b89fffa74b25fee30f3"
+    },
+    "typedStateChecks": 137,
+    "optimizedProductionRootsCompiled": [
+      "Main",
+      "Bar",
+      "Popup",
+      "HttpMain",
+      "HttpBar",
+      "HttpPopup",
+      "NativePreviewAdmission",
+      "NativePreviewRenderer"
+    ],
+    "productionRootBehaviorExecuted": false,
+    "retainedPresenterBehaviorExecuted": false
+  },
+  "sourceHashes": {
+    "implementation/warlock/src/NativePreviewProposalIngress.elm": "de3ff03abfee182586007234be87a663d60d29331667afed5cb407755bc27882",
+    "implementation/warlock/src/RetainedPreviewPresenter.elm": "7d3206e62e547af98171018a3bb65acdde0701393f35ea652bfffd1d5890810b",
+    "implementation/warlock/src/Popup.elm": "c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb",
+    "implementation/warlock/src/HttpPopup.elm": "14be7542aaa366b5437f5069517f05bea848aec736a47477c22d9f9b8c1797c6",
+    "implementation/warlock/qa/PreviewConsumptionReplay.elm": "540c738131b689870b0b57da1b5eaea1f289d3bf6e8e4b89fffa74b25fee30f3",
+    "implementation/warlock/qa/preview-consumption.cjs": "6c2a5664abd684d0ae778f4da975067163565d968ae1f506680c51420dfb7e0d",
+    "tools/check_arm64_cpu.py": "49b9b200e1c960773048e6a7eaf374a32c593863ac42b2e827885129f2aaca36",
+    "tools/qa_cpu.py": "f5492fc3f28d6d3497bc47429389985ef525af930e20cefbaf11755a06b0304f"
+  },
+  "observations": [
+    "Entire Popup model equality and complete empty effect list at actual FIFO capacity1065",
+    "Valid reoffer after one exact opaque completion, exact FIFO and unrelated receipt retention",
+    "Foreign, stale, cross-realm and same-ordinal different-wire opaque receipt controls",
+    "Strict original-wire, domain/epoch/ordinal and intent acceptance guards retained"
+  ],
+  "remaining": [
+    "Original complete HTTP five-step and eleven-step Model/effect AST fixtures on current source",
+    "HTTP tagged consumed transport, queue16 composition and native issued/retry/retirement gateway",
+    "Lifetime ordinal frontier and empty/never-issued realm cleanup correspondence",
+    "Actual native receiver/provider purpose, producer, paint and resource retirement",
+    "Native presentation/input, AT/IME, performance/resource observations and release gates"
+  ],
+  "failedEvidencePreserved": true,
+  "wholeEarsAdded": 0,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false
+}

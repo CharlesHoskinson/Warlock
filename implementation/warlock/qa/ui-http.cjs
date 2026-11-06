@@ -12,6 +12,14 @@ function check(name,ok,witness){const row={name,passed:Boolean(ok)};if(!ok)row.w
 function need(name,ok,witness){check(name,ok,witness);if(!ok)throw Error(name);}
 function save(){fs.writeFileSync(reportFile,JSON.stringify(report,null,2)+'\n');}
 const environments=[];
+const requiredContractChecks=['contract queue16/deferred stutter','contract queue17 action fails','contract wrong kind no-op','contract wrong error no-op','contract legacy no-op','contract drain then queue','contract duplicate stutter','contract stale no-op','contract altered wire stops','contract FIFO 15 exact actions and original confirmation'];
+const expectedCampaignChecks={"roots":46,"exactQueueContract":12,"previewReconciliationTransport":11,"previewDeferredFullQueue":43,"focusRoutes":63,"rendererSeedRoutes":1088,"fifo":3424,"capacities":30,"failures":137,"eventDuringDelivery":464,"receiptNotAck":10,"pendingQueryHonestControls":393,"seededPendingQueryDom":1472,"httpPopupRetainedQueryOnFailure":52,"cancellationPendingControls":116,"betaUsabilityControlsAndLoading":32};
+const expectedCampaignCount=16,expectedCheckCount=7394,expectedContractCount=10;
+const campaignReceipts=[];
+let completedCampaigns=0;
+const watchdog=setTimeout(()=>{report.passed=false;report.terminal={completed:false,reason:'overall-watchdog',completedCampaigns};save();process.exit(1);},180000);
+async function bounded(label,promise,ms=5000){let timer;try{return await Promise.race([promise,new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error(label+' timed out')),ms);})]);}finally{clearTimeout(timer);}}
+
 
 class Node {
   constructor(type,name,text=''){this.nodeType=type;this.tagName=name;this.nodeName=name;this.data=text;this.nodeValue=text;this.parentNode=null;this.childNodes=[];this.attributes={};this.style={setProperty(k,v){this[k]=v;},removeProperty(k){delete this[k];}};this.listeners={};}
@@ -61,8 +69,8 @@ function harness(file,name,flags=null){
     gets(){return requests.filter(r=>r.method==='GET');},posts(){return requests.filter(r=>r.method==='POST');},
     get(){return requests.find(r=>r.method==='GET'&&!r.done&&!r.aborted);},
     latest(){return messages.at(-1);},
-    async send(value){app.ports.incoming.send(value);await this.flush();},
-    async event(value){const request=this.get();need(name+' actual pending GET before controlled event',Boolean(request));request.respond(200,JSON.stringify(value));await this.flush();},
+    async send(value){app.ports.incoming.send(value);await bounded('worker reply',this.flush());},
+    async event(value){const request=this.get();need(name+' actual pending GET before controlled event',Boolean(request),request?undefined:{alert:walk(container,node=>node.attributes?.role==='alert')?.textContent??null,requests:requests.map(row=>({method:row.method,url:row.url,done:row.done,aborted:row.aborted}))});request.respond(200,JSON.stringify(value));await this.flush();},
     close(){timers.clear();for(const request of requests)if(!request.done&&!request.aborted)request.abort();}
   };
   environments.push(env);return env;
@@ -922,4 +930,80 @@ async function betaUsabilityControlsAndLoading(){
   popEnv.close();
 }
 
-(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();await pendingQueryHonestControls();await seededPendingQueryDom();await httpPopupRetainedQueryOnFailure();await cancellationPendingControls();await betaUsabilityControlsAndLoading();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();
+async function previewReconciliationTransport(){
+  const env=harness(popupFile,'HttpPopup');await env.flush();
+  const binding={lifetime:'1',session:'2',frontend:'3'},receiverEpoch='4';
+  await env.event(gateway('native-preview-grant',{binding,receiverEpoch,capacity:1}));
+  await env.event(gateway('native-preview-quarantine',{binding,receiverEpoch}));
+  need('preview quarantine sends one proposal',env.posts().length===1,env.posts().length);
+  const proposal=JSON.parse(env.posts()[0].body);
+  check('preview proposal fixed path and reconcile',env.posts()[0].url==='/preview-proposals'&&proposal.entries.length===1&&proposal.entries[0].commands[0].kind==='reconcile',proposal);
+  env.posts()[0].respond(204);await env.flush();
+  check('proposal 204 alone sends no confirmation',env.posts().length===1);
+  const wire=JSON.stringify({previewProtocol:3,kind:'preview-commands',binding,receiverEpoch,controlOrdinal:'1',entries:proposal.entries});
+  const ticket={previewProtocol:3,kind:'preview-control-ticket',binding,receiverEpoch,controlOrdinal:'1',alreadyDelivered:false,wire};
+  await env.event(gateway('native-preview-issued',ticket));
+  need('matching issued sends one confirmation',env.posts().length===2,env.posts().length);
+  check('confirmation fixed path and original wire',env.posts()[1].url==='/preview-consumed'&&JSON.parse(env.posts()[1].body).wire===wire,env.posts()[1].body);
+  await env.event(gateway('native-preview-issued',ticket));
+  check('duplicate issued does not duplicate confirmation',env.posts().length===2);
+  env.posts()[1].respond(204);await env.flush();
+  env.posts()[0].respond(204,'',true);await env.flush();
+  check('late proposal completion does not replay',env.posts().length===2);
+  env.close();
+}
+
+async function exactQueueContract(){
+  const env=await worker(true);
+  const binding={lifetime:'21',session:'22',frontend:'23'},receiverEpoch='24',controlOrdinal='1';
+  const identity='binding:21:22:23',command={kind:'reconcile',binding};
+  const packet={previewProtocol:3,kind:'preview-commands',binding,receiverEpoch,controlOrdinal,entries:[{identity,commands:[command]}]};
+  const wire=JSON.stringify(packet),alternateWire=JSON.stringify(packet,null,2);
+  const ticket={previewProtocol:3,kind:'preview-control-ticket',binding,receiverEpoch,controlOrdinal,alreadyDelivered:false,wire};
+  await env.send({kind:'contract-probe',grant:{binding,receiverEpoch,capacity:1},identity,command,ticket,alternate:{...ticket,wire:alternateWire}});
+  const reply=env.latest();need('contract probe returns structured checks',reply?.label==='contract-probe'&&reply.checks&&!reply.error,reply);
+  const c=reply.checks;
+  for(const [name,key] of [['contract queue16/deferred stutter','deferred'],['contract queue17 action fails','overflow17'],['contract wrong kind no-op','wrongKindStutter'],['contract wrong error no-op','wrongErrorStutter'],['contract legacy no-op','legacyStutter'],['contract drain then queue','queuedAfterDrain'],['contract duplicate stutter','alreadyQueuedStutter'],['contract stale no-op','staleStutter'],['contract altered wire stops','alteredWireStopped']])check(name,c[key]===true,c);
+  check('contract FIFO 15 exact actions and original confirmation',c.drain?.count===15&&c.drain?.fifo===true&&c.drain?.exact===true&&c.drain?.completed===true,c.drain);
+  env.close();
+}
+
+async function previewDeferredFullQueue(){
+  const env=harness(popupFile,'HttpPopup');await env.flush();
+  const binding={lifetime:'11',session:'12',frontend:'13'},receiverEpoch='14';
+  await env.event(gateway('native-preview-grant',{binding,receiverEpoch,capacity:1}));
+  await env.event(gateway('native-preview-quarantine',{binding,receiverEpoch}));
+  need('deferred proposal active',env.posts().length===1);
+  const proposal=JSON.parse(env.posts()[0].body);
+  const row=(id,domId,label)=>({id,domId,label,ariaLabel:label,detail:'',enabled:true});
+  await env.event(gateway('presentation',{surfaceProtocol:2,publication:'1',lease:'1',mode:'applications',status:'Ready',bar:[row('bar:applications','bar','Applications')],popup:[row('control:refresh','refresh','Refresh')]}));
+  const button=walk(env.container,n=>n.attributes?.['data-surface-control']==='control:refresh');
+  need('deferred refresh control exists',Boolean(button)&&typeof button.listeners.click==='function');
+  for(let i=0;i<15;i++){button.listeners.click({type:'click',target:button,currentTarget:button,stopPropagation(){},preventDefault(){}});await env.flush();}
+  check('deferred FIFO has one active request',env.posts().length===1);
+  const wire=JSON.stringify({previewProtocol:3,kind:'preview-commands',binding,receiverEpoch,controlOrdinal:'1',entries:proposal.entries});
+  const ticket={previewProtocol:3,kind:'preview-control-ticket',binding,receiverEpoch,controlOrdinal:'1',alreadyDelivered:false,wire};
+  await env.event(gateway('native-preview-issued',ticket));
+  check('deferred confirmation waits behind full queue',env.posts().length===1);
+  for(let i=0;i<16;i++){
+    need('deferred next queued post '+i,env.posts().length===i+1,env.posts().length);
+    if(i>0)check('deferred queued action route '+i,env.posts()[i].url==='/actions');
+    env.posts()[i].respond(204);await env.flush();
+    if(i===0){env.posts()[0].respond(204,'',true);await env.flush();check('stale proposal completion cannot drain action',env.posts().length===2);}
+  }
+  need('deferred confirmation eventually sent',env.posts().length===17,env.posts().length);
+  check('deferred confirmation retains exact wire',env.posts()[16].url==='/preview-consumed'&&JSON.parse(env.posts()[16].body).wire===wire);
+  env.posts()[16].respond(204);await env.flush();
+  check('deferred confirmation sent once',env.posts().length===17);
+  env.close();
+}
+
+(async()=>{try{
+  const campaigns=[roots,exactQueueContract,previewReconciliationTransport,previewDeferredFullQueue,focusRoutes,rendererSeedRoutes,fifo,capacities,failures,eventDuringDelivery,receiptNotAck,pendingQueryHonestControls,seededPendingQueryDom,httpPopupRetainedQueryOnFailure,cancellationPendingControls,betaUsabilityControlsAndLoading];
+  if(!equal(campaigns.map(campaign=>campaign.name),Object.keys(expectedCampaignChecks))||campaigns.length!==expectedCampaignCount||requiredContractChecks.length!==expectedContractCount)throw Error('fixed campaign or contract manifest differs');
+  for(const campaign of campaigns){const before=report.checks.length;await bounded(campaign.name,campaign(),60000);const actual=report.checks.length-before,expected=expectedCampaignChecks[campaign.name];campaignReceipts.push({name:campaign.name,checks:actual,expected});if(actual!==expected)throw Error(campaign.name+' fixed check budget differs: '+actual+' expected '+expected);completedCampaigns++;}
+  const missing=requiredContractChecks.filter(name=>report.checks.filter(row=>row.name===name).length!==1);
+  check('contract expected cases present exactly once',missing.length===0,missing);
+  report.terminal={completed:completedCampaigns===expectedCampaignCount,completedCampaigns,expectedCampaigns:expectedCampaignCount,campaignReceipts,checkCount:report.checks.length,expectedCheckCount,failureCount:report.failures.length,requiredChecks:requiredContractChecks.length,expectedContractCount,missing,artifactHashes:report.artifactHashes};
+  report.passed=report.terminal.completed&&report.checks.length===expectedCheckCount&&missing.length===0&&report.failures.length===0;
+}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));report.terminal={completed:false,completedCampaigns,reason:report.error,checkCount:report.checks.length,failureCount:report.failures.length,artifactHashes:report.artifactHashes};}finally{clearTimeout(watchdog);for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();

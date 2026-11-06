@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-11-05T22:09:06.348416+00:00",
+  "requirement": "ELM-TEA-004",
+  "scenario": "tea-subscriptions",
+  "scope": "Actual public-linked Haskell preview wire codec component only",
+  "behavior": "Opaque validated proposal, ticket and consumption data; strict object fields, UTF8/NUL refusal, positive canonical counters, matching domain/ordinal and exact original inner bytes. Serialization grants no native authority.",
+  "verification": {
+    "report": ".warlock-contributor/arm64-cpu-1793915910226332567/report.json",
+    "reportSHA256": "7d908ec2e066552e61f61483b4bc0c7e78d7041f0f4a7361e8cad95369c2c7f0",
+    "independentReviewLocal": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-preview-schema-execution-review.json",
+    "independentReviewSHA256": "12e27cb75017b5be9464f80ded533837cb423a23c698a7aedd868c076d30f1a4",
+    "sourceInputs": 235,
+    "commands": 5,
+    "newPublicSuite": {
+      "name": "preview-control",
+      "terminalMarker": "preview-control schema controls passed",
+      "assertionCount": "Not reported; none inferred"
+    },
+    "existingRegression": {
+      "name": "desktop-boundary-controls",
+      "checks": 2194,
+      "generatedCases": 256,
+      "mutationClasses": 16
+    },
+    "executables": {
+      "preview-control": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793915910226332567/dist/build/aarch64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/preview-control/build/preview-control/preview-control",
+        "device": "56",
+        "inode": "774368",
+        "size": "28568336",
+        "sha256": "2590c1d12c397320b37608264c199bc97aa86e77e26d67aafa186fc777a6514a"
+      },
+      "desktop-boundary-controls": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793915910226332567/dist/build/aarch64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/desktop-boundary-controls/build/desktop-boundary-controls/desktop-boundary-controls",
+        "device": "56",
+        "inode": "774372",
+        "size": "29196112",
+        "sha256": "1213655825830dfc1e7a68ee081188d8d8d2e193b6e2a323f0d8ef832d2abb89"
+      }
+    },
+    "suiteReceipts": {
+      "preview-control": [
+        {
+          "mode": "default",
+          "argv": [],
+          "exit": 0,
+          "timeout": false,
+          "forcedCleanup": false,
+          "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793915910226332567/runs/preview-control/default.log"
+        }
+      ],
+      "desktop-boundary-controls": [
+        {
+          "mode": "default",
+          "argv": [],
+          "exit": 0,
+          "timeout": false,
+          "forcedCleanup": false,
+          "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793915910226332567/runs/desktop-boundary-controls/default.log"
+        }
+      ]
+    }
+  },
+  "sourceHashes": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PreviewControl.hs": "9afb1006cd00c8f3dd54a3b684313e3cf6435da1bea89637075327aafcc73a79",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "8a5e155c5732790566a1b5aa530ae2e3b3810dea9e7c225ca57267fe18782d7d",
+    "implementation/warlock/haskell/protocol/test-preview-control/Main.hs": "185acf36f9e8688b70bb94a87b449f4cdf356d24dbfc797ae1112c32bbdb344d",
+    "tools/qa_cpu.py": "bc5429d51b378fda40c7412176ba84bae4d4f2b506320da3c5223a2e19d2a352",
+    "tools/check_arm64_cpu.py": "fa1bf9999f7c66e271b8672fbd82a75ef45cfdf16f2ba91dc47a529f1c6aa514",
+    "tools/haskell_test_wrapper.py": "cd22df6c8df61b4cc58e032bae6a98a8e95dbbbf0d35cab30f9ce2c2bc50a988"
+  },
+  "limits": [
+    "Canonical identity is ASCII and at most70bytes; valid512byte/multibyte identity and depth16 acceptance are unreachable, not proven",
+    "Enumeration indices are deterministic inputs, not PRNG seeds",
+    "A codec cannot prove receiver/provider custody, issuance, delivery, paint or physical retirement"
+  ],
+  "failedEvidence": [
+    {
+      "report": ".warlock-contributor/arm64-cpu-1793915773825419410/report.json",
+      "classification": "Layout compile failure before tests, not semanticRED",
+      "repair": "Root-owned whitespace/layout-only correction, original stage retained"
+    }
+  ],
+  "remaining": [
+    "Actual Backend-owned producer and authenticated single-reader native peer bridge",
+    "Native purpose/ticket/paint/resource authority and runtime/HTTP transport composition",
+    "Original full five/eleven-step HTTP Model/effect AST fixtures",
+    "Native presentation/input, AT/IME, performance/resource and release observations"
+  ],
+  "wholeEarsAdded": 0,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false
+}

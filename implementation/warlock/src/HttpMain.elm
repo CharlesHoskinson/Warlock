@@ -45,6 +45,9 @@ update message model =
             in case event of
                 Nothing -> (current,Cmd.map Transport command)
                 Just (UiHttp.Lost _) -> (lost current,Cmd.map Transport command)
+                -- Controller requests cannot own a Popup consumption ticket.
+                -- Retain transport progress without inventing a policy receipt.
+                Just (UiHttp.TransportConsumedCompleted _) -> (current,Cmd.map Transport command)
                 Just (UiHttp.Incoming raw) ->
                     let (next,emitted)=update (PolicyMessage (Policy.Incoming raw)) current
                     in (next,Cmd.batch [Cmd.map Transport command,emitted])
