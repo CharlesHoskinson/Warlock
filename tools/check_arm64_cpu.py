@@ -124,24 +124,25 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
     protocol_profile = args.protocol or args.preview_schema
+    haskell_profile = protocol_profile or args.held_executable
     scope = require_qa_scope()
     if args.inside_private is not None:
         private_runtime = Path('/run/user') / str(os.getuid())
         private_runtime.mkdir(parents=True, mode=0o700)
     runtime_base()
-    mode = ('--preview-schema' if args.preview_schema else ('--preview-consumption' if args.preview_consumption else
+    mode = ('--held-executable' if args.held_executable else ('--preview-schema' if args.preview_schema else ('--preview-consumption' if args.preview_consumption else
             ('--subscriptions' if args.subscriptions else ('--owner-build' if args.owner_build else
-             ('--preview-control' if args.preview_control else ('--protocol' if args.protocol else '--owner'))))))
+             ('--preview-control' if args.preview_control else ('--protocol' if args.protocol else '--owner')))))))
     if args.inside_private is None:
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
         sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
-            ROOT, args.subscriptions, args.preview_control, protocol_profile, args.preview_consumption))}
+            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
@@ -171,7 +172,7 @@ def main():
             child = subprocess.run(command, cwd=ROOT, env=clean, timeout=3500, check=False)
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
-            if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, protocol_profile,
+            if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, haskell_profile,
                                 args.preview_consumption)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
@@ -255,12 +256,30 @@ def main():
                                ('desktop-boundary-controls',))
             protocol_targets = [(suite, 'warlock-protocol:test:' + suite) for suite in protocol_suites]
             backend = 'warlock-runtime:exe:warlock-ui-backend'
-            run('preview-schema-build' if args.preview_schema else ('protocol-build' if args.protocol else 'owner-build'),
-                common + ['build'] + flags + ([selected for _, selected in protocol_targets] if protocol_profile else
-                [target, *[selected for _, selected in protocol_targets], backend]), stage)
+            if args.held_executable:
+                library_target = 'warlock-held-document-proposal:lib:warlock-held-document-proposal'
+                library = (stage / 'held-document/held-document.cabal').read_text().split('\nlibrary\n', 1)[1].split('\ntest-suite ', 1)[0]
+                exposed = re.search(r'^  exposed-modules: (.+)$', library, re.M)
+                if not exposed or exposed.group(1).replace(',', '').split() != [
+                        'Warlock.Platform.Resolver', 'Warlock.Platform.Executable', 'Warlock.Http.Document']:
+                    raise RuntimeError('Ordinary held library module opacity differs')
+                selected_targets = [('held-executable-controls', 'warlock-held-document-proposal:test:held-executable-controls'),
+                                    ('custody-child', 'warlock-process-custody:exe:custody-child')]
+                build_targets = [library_target, *[selected for _, selected in selected_targets]]
+                build_label = 'held-executable-build'
+                protocol_suites = ()
+                report['heldExecutableProfile'] = {'ordinaryLibraryTarget': library_target,
+                    'declaredOrdinaryInternalModulesExposed': False, 'testsUseHomeModules': True,
+                    'publicLinkedTestProof': False, 'externalImportOpacityProbeExecuted': False, 'fixture': 'custody-child',
+                    'scope': 'Held executable lease/process fixture only; no native desktop or original acceptance'}
+            else:
+                build_targets = ([selected for _, selected in protocol_targets] if protocol_profile else
+                                 [target, *[selected for _, selected in protocol_targets], backend])
+                build_label = 'preview-schema-build' if args.preview_schema else ('protocol-build' if args.protocol else 'owner-build')
+                selected_targets = (protocol_targets if protocol_profile else
+                                    [('ui-origin-controls', target), *protocol_targets, ('warlock-ui-backend', backend)])
+            run(build_label, common + ['build'] + flags + build_targets, stage)
             binaries = {}
-            selected_targets = (protocol_targets if protocol_profile else
-                                [('ui-origin-controls', target), *protocol_targets, ('warlock-ui-backend', backend)])
             for name, selected in selected_targets:
                 lines = run('list-' + name, common + ['list-bin'] + flags + [selected], stage).splitlines()
                 if len(lines) != 1:
@@ -270,7 +289,7 @@ def main():
                     raise RuntimeError('Unexpected compiled binary location')
                 binaries[name] = image(path)
             documents, plain = {}, {}
-            if not protocol_profile:
+            if not haskell_profile:
                 frontend = output / 'frontend'
                 frontend.mkdir(mode=0o700)
                 shutil.copytree(ROOT / 'implementation/warlock/src', frontend / 'src')
@@ -318,13 +337,18 @@ def main():
                         or any(coverage.get(k) is not False for k in ('complete', 'originalAccepted', 'nativeAccepted'))):
                     raise RuntimeError('Fixed preview-control replay report differs')
                 report['previewControl'] = result
-            if args.owner or args.preview_control or protocol_profile:
+            if args.owner or args.preview_control or protocol_profile or args.held_executable:
                 runs = output / 'runs'
                 runs.mkdir(mode=0o700)
                 def wrapped(item):
                     return {'path': item['path'], 'pin': [item[k] for k in ('device', 'inode', 'size', 'sha256')]}
                 dispatch = {'suites': {}}
-                if not protocol_profile:
+                if args.held_executable:
+                    dispatch['suites'][binaries['held-executable-controls']['path']] = {
+                        'suite': 'held-executable-controls', 'test': wrapped(binaries['held-executable-controls']),
+                        'fixtures': {'custody-child': wrapped(binaries['custody-child'])},
+                        'runRoot': str(runs / 'held-executable-controls')}
+                elif not protocol_profile:
                     dispatch['suites'][binaries['ui-origin-controls']['path']] = {
                         'suite': 'ui-origin-controls', 'test': wrapped(binaries['ui-origin-controls']),
                         'fixtures': {'warlock-ui-backend': wrapped(binaries['warlock-ui-backend'])},
@@ -337,12 +361,18 @@ def main():
                 dispatch_path.write_text(json.dumps(dispatch, indent=2) + '\n')
                 test_env = dict(env, WARLOCK_HASKELL_DISPATCH=str(dispatch_path))
                 report['suiteReceipts'] = {}
-                for suite in (protocol_suites if protocol_profile else (*protocol_suites, 'ui-origin-controls')):
+                suites = (('held-executable-controls',) if args.held_executable else
+                          (protocol_suites if protocol_profile else (*protocol_suites, 'ui-origin-controls')))
+                for suite in suites:
                     run(suite, [sys.executable, '-B', ROOT / 'tools/haskell_test_wrapper.py',
                                 binaries[suite]['path']], stage, 900, test_env)
                     receipt = json.loads((runs / suite / 'results.json').read_text())
                     if len(receipt) != 1 or receipt[0]['exit'] != 0 or receipt[0]['forcedCleanup']:
                         raise RuntimeError(suite + ' lacks successful terminal receipt')
+                    if args.held_executable and (receipt[0].get('mode') != 'default' or receipt[0].get('timeout') is not False
+                            or receipt[0].get('argv') != [str(runs / suite / 'image'), 'custody-child',
+                                                        binaries['custody-child']['size'], binaries['custody-child']['sha256']]):
+                        raise RuntimeError('Held executable disposable COPY receipt differs')
                     report['suiteReceipts'][suite] = receipt
             for item in [*binaries.values(), *documents.values(), *plain.values()]:
                 if image(Path(item['path'])) != {k: item[k] for k in ('path', 'device', 'inode', 'size', 'sha256')}:

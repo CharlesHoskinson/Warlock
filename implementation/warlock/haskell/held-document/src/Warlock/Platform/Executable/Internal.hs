@@ -2,7 +2,7 @@
 module Warlock.Platform.Executable.Internal
  (ExecutableLease, HeldExecutable, LeaseRole(..), LeaseState(..), LeaseError(..)
  ,newExecutableLease, acquireExecutableLease, acquireExecutableLeaseWithHooks, issueReadyExecutable, retireExecutableLease
- ,executableLeaseState, HeldBorrow, prepareHeldBorrow, activateHeldBorrowWhile, tryHeldBorrowNotAcquired, tryReleaseHeld, releaseHeldBorrow, borrowHeld, borrowHeldInterruptible, borrowHeldWhile, retireHeld) where
+ ,executableLeaseState, observeHeldRole, HeldBorrow, prepareHeldBorrow, activateHeldBorrowWhile, tryHeldBorrowNotAcquired, tryReleaseHeld, releaseHeldBorrow, borrowHeld, borrowHeldInterruptible, borrowHeldWhile, retireHeld) where
 
 import Control.Concurrent.MVar
 import Control.Exception (SomeException, SomeAsyncException, fromException, mask, onException, throwIO, try, uninterruptibleMask_)
@@ -20,7 +20,7 @@ newtype ExecutableLease = ExecutableLease (MVar Slot)
 data HeldState = Live Integer | HeldClosing | HeldClosed | HeldUnknown
 data BorrowRelease = BorrowNew | BorrowActivating | BorrowNotAcquired | BorrowPending | BorrowReleased | BorrowUnknown
 -- Exactly one package-private owner; no external constructor from an FD.
-data HeldExecutable = HeldExecutable Fd (MVar HeldState)
+data HeldExecutable = HeldExecutable Fd (MVar HeldState) !LeaseRole
 -- Opaque per-acquisition release state; constructor never leaves this module.
 data HeldBorrow = HeldBorrow Fd (MVar BorrowRelease) (MVar HeldState)
 
@@ -124,8 +124,16 @@ issueReadyExecutable :: ExecutableLease -> IO (Maybe (HeldExecutable,Resolution,
 issueReadyExecutable (ExecutableLease gate) = mask $ \_ -> do
  holder <- newMVar (Live 0)
  transition gate $ \s -> case s of
-  Ready fd receipt role -> let held = HeldExecutable fd holder in (Moved held,Just (held,receipt,role))
+  Ready fd receipt role -> let held = HeldExecutable fd holder role in (Moved held,Just (held,receipt,role))
   _ -> (s,Nothing)
+
+-- Checked data snapshot only; this does not create a borrow or authority.
+observeHeldRole :: HeldExecutable -> IO (Either LeaseError LeaseRole)
+observeHeldRole (HeldExecutable _ gate role) = observe gate $ \state -> case state of
+ Live _ -> Right role
+ HeldClosing -> Left LeaseBusy
+ HeldClosed -> Left LeaseClosed
+ HeldUnknown -> Left LeaseCloseUncertain
 
 borrowHeld :: HeldExecutable -> IO (Either LeaseError (FilePath,IO ()))
 borrowHeld held = mask $ \_ -> do
@@ -200,7 +208,7 @@ tryReleaseHeld (HeldBorrow _ released gate) = mask $ \_ -> do
 -- Allocate the unique owner-retainable capability BEFORE any borrow count
 -- changes. Owner must retain it before calling activateHeldBorrowWhile.
 prepareHeldBorrow :: HeldExecutable -> IO HeldBorrow
-prepareHeldBorrow (HeldExecutable fd gate) = HeldBorrow fd <$> newMVar BorrowNew <*> pure gate
+prepareHeldBorrow (HeldExecutable fd gate _) = HeldBorrow fd <$> newMVar BorrowNew <*> pure gate
 
 -- True is a terminal receipt for this exact capability: activation returned
 -- without acquiring. Busy, new, in-flight, successful and uncertain are False.
@@ -253,7 +261,7 @@ activateHeldBorrowWhile (HeldBorrow (Fd fd) released gate) cancelled pause = mas
 
 borrowHeldWith :: (MVar HeldState -> IO (Maybe Bool)) -> HeldExecutable
  -> IO (Maybe (Either LeaseError (FilePath,IO Bool,IO (),HeldBorrow)))
-borrowHeldWith acquire (HeldExecutable (Fd fd) gate) = mask $ \_ -> do
+borrowHeldWith acquire (HeldExecutable (Fd fd) gate _) = mask $ \_ -> do
  released <- newMVar BorrowPending
  pid <- getProcessID
  let capability = HeldBorrow (Fd fd) released gate
@@ -296,7 +304,7 @@ borrowHeldWhile held cancelled pause = borrowHeldWith acquire held
    in loop
 
 retireHeld :: HeldExecutable -> IO (Either LeaseError ())
-retireHeld (HeldExecutable fd gate) = mask $ \_ -> do
+retireHeld (HeldExecutable fd gate _) = mask $ \_ -> do
  chosen <- transition gate $ \s -> case s of
   Live 0 -> (HeldClosing,Right ()); Live _ -> (s,Left LeaseBusy)
   HeldUnknown -> (s,Left LeaseCloseUncertain); HeldClosed -> (s,Left LeaseClosed)

@@ -202,7 +202,7 @@ def main():
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
@@ -310,7 +310,7 @@ def main():
     if arm64:
         mandatory = arm64_inputs(REPO, subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
-                                 protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema']),
+                                 protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable']),
                                  consumption=packet['arguments'] == ['--preview-consumption'])
     if team_quint:
         mandatory = team_quint_inputs(REPO, packet['arguments'][0][2:])

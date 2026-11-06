@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-11-06T05:33:32.228961+00:00",
+  "component": "same-held-executable-role-metadata",
+  "baseRevision": "5cba47d1b671ff56087a1d08cba78b03bdc3534f",
+  "originalRequirement": "ELM-DEL-010",
+  "scenarioDependency": "peer-approved-session",
+  "scope": "Retain the resolver-issued role in the same opaque HeldExecutable; expose a liveness-checked metadata observation. This dependency does not implement or accept the complete peer authentication scenario.",
+  "behavior": [
+    "Role is retained when the validated executable lease moves into its held object.",
+    "Live and borrowed held objects return the retained role. Completed retirement refuses role observation.",
+    "Observation creates neither a borrow nor native authority. No caller adapter, readiness wire, purpose or resource handler is adopted."
+  ],
+  "sourceHashes": {
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs": "7036e66facf7b8e41fa451f227d9dc9a420a3e8bcd60741cc6adea742fa2959e",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": "fa6f26c2de463b703971c31758e6e509dfd2e90ac2bf94cf2afb16a4bcce7187",
+    "implementation/warlock/haskell/held-document/test/LeaseControls.hs": "f43f95ddb50057190aeaf07bdc2662fd9752afca3402b00f527a708097d86c80",
+    "tools/check_arm64_cpu.py": "99a4eb9947462503f8733b07d881a2aba01a99363c9438223d55cc15c8494655",
+    "tools/qa_cpu.py": "ffbac2add6122de986aba11792ca3cac2a276266ddb7e411843fee5479894ec2"
+  },
+  "compilerRed": {
+    "report": ".warlock-contributor/arm64-cpu-1793942332975679145/report.json",
+    "exit": 1,
+    "commands": 1,
+    "cause": "Five GHC-76037 missing public observeHeldRole export diagnostics. No unrelated compiler error or runtime suite.",
+    "runtimeExecuted": false,
+    "failedEvidencePreserved": true
+  },
+  "lifecycleGreen": {
+    "report": ".warlock-contributor/arm64-cpu-1793942536867455576/report.json",
+    "inputs": 236,
+    "commands": 4,
+    "allCommandsExit0": true,
+    "ordinaryLibraryBuilt": true,
+    "normalSuiteReceipts": 1,
+    "suite": "held-executable-controls",
+    "timeout": false,
+    "forcedCleanup": false,
+    "assertionCountClaimed": false,
+    "testsUseHomeModules": true,
+    "publicLinkedTestProof": false,
+    "externalImportOpacityProbeExecuted": false,
+    "independentReview": "terra-team/held-role-lifecycle-green-execution-review.json"
+  },
+  "sharedLauncherRegression": {
+    "report": ".warlock-contributor/arm64-cpu-1793942668689406651/report.json",
+    "inputs": 286,
+    "outerCommands": 1,
+    "nestedCommands": 31,
+    "httpCampaigns": 16,
+    "httpChecks": 7394,
+    "httpFailures": 0,
+    "legacyCases": 22,
+    "legacyChecks": 50,
+    "originalLiteralCases": 13,
+    "originalLiteralSteps": 87,
+    "freshRuns": 2,
+    "originalJoinedHistories": [
+      5,
+      11
+    ],
+    "originalNegatives": 34,
+    "subscriptionWorkerCases": 6,
+    "subscriptionWorkerSteps": 36,
+    "reachableSeeds": [
+      20261105,
+      20261106
+    ],
+    "reachableCasesPerSeed": 10,
+    "reachableStepsPerSeed": 38,
+    "reachableNegativeWitnesses": 12,
+    "compiledImages": 20,
+    "independentReview": "continuity-held-role-shared-launcher-execution-review.json",
+    "retainedClosure": {
+      "entries": 675,
+      "independentlyRehashedRetained": 425,
+      "normallyCleanedStaging": 250,
+      "limit": "The reviewed runner checked staged bytes before and after execution. The independent review could not rehash the250 normally cleaned entries after cleanup."
+    }
+  },
+  "history": {
+    "record": ".warlock-contributor/persistent-auth.json",
+    "owner": "root-agentbus",
+    "originalIdsAndStartPreserved": true,
+    "firstFiveIterationsPreserved": true,
+    "prechangeQualificationClaimedProgress": false,
+    "genuineNewSourceProgressRecorded": true,
+    "oldSevenPathDriftCountedAsNewProgress": false,
+    "foreignCredentialOwnershipPreserved": true,
+    "replacementRecordCreated": false,
+    "originalFiveSecondPeerBudgetChanged": false
+  },
+  "readinessModelLimits": {
+    "schemaCampaign": "Failed134of136: one fixed-budget sampled grant-reoffer witness missed; two trailing witnesses unattempted. Preserved and unqualified.",
+    "authorityTransportCampaigns": "Separate finite model passes remain source-bound historical evidence; no native or readiness admission inferred.",
+    "newReadyWireAdopted": false
+  },
+  "limitations": [
+    "SelectedPeer caller binding and current-session/cross-user/replayed original credential traces remain open on the changed source tuple.",
+    "The lifecycle suite compiles home modules. Ordinary library build is not an external linked API or hidden-constructor probe.",
+    "Closing and uncertain role states are source-reviewed, not forced runtime cases in this increment.",
+    "No producer purpose, ticket, paint, physical retirement, native presentation/input, AT/IME, resource/performance or release acceptance.",
+    "HTTP coverage and opaque Cmd function AST limits are preserved; an HTTP204 is not native issuance.",
+    "Cabal and pinned dependency deprecation warnings are retained; no warning-free or repository-wide Ruff/ty clean claim."
+  ],
+  "evidence": {
+    "manifest": "docs/warlock-build-loop/v2/evidence/held-executable-role-20261106/manifest.json",
+    "manifestSHA256": "4f11fe4c3bef2884b0fdabe17c7d1e4ee339c2a3255265cb67996df84c8c61f9",
+    "archive": "docs/warlock-build-loop/v2/evidence/held-executable-role-20261106/checks.tar.gz",
+    "archiveSHA256": "fe16501206ea6aa5fb008db9ab6b0352081f7e56df671e5ca7114ded0f389185",
+    "files": 611,
+    "allArchivedMembersRehashed": true
+  },
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "automaticWakeRoundTripVerified": false
+}
