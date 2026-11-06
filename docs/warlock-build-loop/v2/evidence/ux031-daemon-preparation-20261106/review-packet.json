@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "runner": "/home/hoskinson/Projects/Warlock/tools/check_arm64_cpu.py",
+  "arguments": [
+    "--ux031-daemon-only"
+  ],
+  "inputs": {
+    "tools/arm64-toolchain.json": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+    "tools/arm64_toolchain.py": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796",
+    "tools/check_arm64_cpu.py": "1f2778426f3ce64c60d26df59c4d97671e4b42bcf350e979738555e36449ffdc",
+    "tools/qa_cpu.py": "e0dcceee525bab9ccabcabc265aca017108676d358910251b80933c9a84b01b4",
+    "tools/ux031-private-bus.conf": "465f5056d58e3581d59654a4c33401114582b6c804eb1d9fee2692776f11cda6",
+    "tools/ux031_daemon_only.py": "d2b4a8cab7a07323d6f8039b02538b4f61d9612ab683a6f367ca7abc78f8f32c",
+    "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  }
+}

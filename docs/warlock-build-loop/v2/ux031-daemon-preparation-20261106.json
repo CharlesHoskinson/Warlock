@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "disposition": "Independently reviewed protected daemon configuration, listen and normal-cleanup preparation only.",
+  "supportsOriginal": "ELM-UX-031",
+  "sourceRevisionBeforeSupport": "d2453ca3fda9354bd4d60182b38a08405917bd98",
+  "sourceHashes": {
+    "tools/arm64-toolchain.json": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+    "tools/arm64_toolchain.py": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796",
+    "tools/check_arm64_cpu.py": "1f2778426f3ce64c60d26df59c4d97671e4b42bcf350e979738555e36449ffdc",
+    "tools/qa_cpu.py": "e0dcceee525bab9ccabcabc265aca017108676d358910251b80933c9a84b01b4",
+    "tools/ux031-private-bus.conf": "465f5056d58e3581d59654a4c33401114582b6c804eb1d9fee2692776f11cda6",
+    "tools/ux031_daemon_only.py": "d2b4a8cab7a07323d6f8039b02538b4f61d9612ab683a6f367ca7abc78f8f32c",
+    "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  },
+  "reportId": "1793973687510602906",
+  "observed": {
+    "passed": true,
+    "protectedCoreLimit": 1,
+    "privateNamespaceChildPid": 3,
+    "liveObservationMilliseconds": 100,
+    "terminationRequested": "SIGTERM",
+    "childExit": 0,
+    "forcedCleanup": false,
+    "pipeEOF": [
+      "stderr",
+      "stdout"
+    ],
+    "errors": [],
+    "manifestAndNineELFPinsUnchanged": true,
+    "sampledNamespaceRestored": true
+  },
+  "outerLifecycle": {
+    "handle": 8366,
+    "exit": 0,
+    "consumed": true,
+    "evidenceScope": "Root terminal observation; independent reviewer read inner receipts and uses Root attestation for outer handle."
+  },
+  "evidence": [
+    {
+      "path": "docs/warlock-build-loop/v2/evidence/ux031-daemon-preparation-20261106/report.json",
+      "sha256": "9ffe41a5a65ffd9b3765385aa71d9d0023d14ef4387566481e2eead03d92e59d"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/evidence/ux031-daemon-preparation-20261106/daemon-receipt.json",
+      "sha256": "9bb0e6711b20fa040b5cba02879ae3140c407582f4a221cf0b1b4d8f37d6abd7"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/evidence/ux031-daemon-preparation-20261106/execution-review.json",
+      "sha256": "af1833dbf215328d878035e56496b781fe049ef38c63ced47780ae7c3440388f"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/evidence/ux031-daemon-preparation-20261106/source-review.json",
+      "sha256": "093bc7cf0f236374e4f4b267b1521fb505d09ce604e6bb8e9842d4e599ce6d4a"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/evidence/ux031-daemon-preparation-20261106/packet-review.json",
+      "sha256": "dcd4a9d3db8a3e389f847593d616cc7c00a6da8647a0abf87a628362849067dc"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/evidence/ux031-daemon-preparation-20261106/review-packet.json",
+      "sha256": "4f9d92287443b2a28d2153cf390ed13991cd9e8e702f480980626c2245c025ec"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/evidence/ux031-daemon-preparation-20261106/static-elf-closure.json",
+      "sha256": "ef17a5671d46aac6870bf82a8c70c691f2824e2ed700f57a11606c7a9d1f5044"
+    }
+  ],
+  "limits": [
+    "No client connection, EXTERNAL authentication, Hello, GIO service, notification method, action receipt, issuer provisioning or original scenario executed.",
+    "Namespace census proves sampled restoration, not absence of transient children between samples.",
+    "No frontend regression at the new tool tuple; previous decoder239 and Elm reports retain historical tuples.",
+    "SDK and system manifest remain local retained prerequisites; this document does not claim a public complete SDK reconstruction.",
+    "Both rejected supervisor source versions and review findings remain retained locally."
+  ],
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "acceptedRequirementDelta": 0,
+  "acceptedScenarioDelta": 0
+}

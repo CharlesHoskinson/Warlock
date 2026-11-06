@@ -1,0 +1,145 @@
+{
+  "checkedUTC": "2026-11-06T13:50:06.680533+00:00",
+  "scope": "Static ELF dependencies resolved under /usr/lib only; no loader execution or runtime resolution/ABI/notification proof.",
+  "systemManifestSHA256": "33b9ed73bd1d249225d228a35c8f40ae941f690bca8f3626fb2e6f5e267ac7b4",
+  "files": {
+    "/usr/lib/ld-linux-aarch64.so.1": {
+      "requestedPath": "/usr/lib/ld-linux-aarch64.so.1",
+      "sha256": "b1f2738bdb51e6419d7062f96c8a44bd68853698dc5ac624fa6ca9f9b03d456d",
+      "size": 201832,
+      "device": 36,
+      "inode": 3376,
+      "manifestMatch": true,
+      "needed": [],
+      "interpreter": [],
+      "runpath": []
+    },
+    "/usr/bin/dbus-daemon": {
+      "requestedPath": "/usr/bin/dbus-daemon",
+      "sha256": "7a3fc70805c2f7c2888839b4d62a23e84163a6bf8427f512756eaf8244c04790",
+      "size": 264808,
+      "device": 36,
+      "inode": 16827,
+      "manifestMatch": true,
+      "needed": [
+        "libdbus-1.so.3",
+        "libexpat.so.1",
+        "libaudit.so.1",
+        "libcap-ng.so.0",
+        "libsystemd.so.0",
+        "libc.so.6",
+        "ld-linux-aarch64.so.1"
+      ],
+      "interpreter": [
+        "/lib/ld-linux-aarch64.so.1"
+      ],
+      "runpath": []
+    },
+    "/usr/lib/libc.so.6": {
+      "requestedPath": "/usr/lib/libc.so.6",
+      "sha256": "6ab264fb4e8df9942b0fb75b48fcd5c30b2f081d8dfaa6c25d7be1d3fce5b2ab",
+      "size": 1853736,
+      "device": 36,
+      "inode": 3385,
+      "manifestMatch": true,
+      "needed": [
+        "ld-linux-aarch64.so.1"
+      ],
+      "interpreter": [
+        "/usr/lib/ld-linux-aarch64.so.1"
+      ],
+      "runpath": []
+    },
+    "/usr/lib/libsystemd.so.0.45.0": {
+      "requestedPath": "/usr/lib/libsystemd.so.0",
+      "sha256": "82ffd5629ecf5d0d6f15928144d4f52dfceaf389150b526f748dd5d7d5e61ec5",
+      "size": 1710616,
+      "device": 36,
+      "inode": 15921,
+      "manifestMatch": true,
+      "needed": [
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-aarch64.so.1"
+      ],
+      "interpreter": [],
+      "runpath": []
+    },
+    "/usr/lib/libgcc_s.so.1": {
+      "requestedPath": "/usr/lib/libgcc_s.so.1",
+      "sha256": "ac598673a4bf67c0295b6609e46b1fafd0d4adf3f80a513d61ac49ecff772e48",
+      "size": 133352,
+      "device": 36,
+      "inode": 4196,
+      "manifestMatch": true,
+      "needed": [
+        "libc.so.6"
+      ],
+      "interpreter": [],
+      "runpath": []
+    },
+    "/usr/lib/libcap-ng.so.0.0.0": {
+      "requestedPath": "/usr/lib/libcap-ng.so.0",
+      "sha256": "c62b668a9810af6a194d5808e9498b5bb59f3d1f350d4ea66f0017a177b945f0",
+      "size": 67704,
+      "device": 36,
+      "inode": 15552,
+      "manifestMatch": true,
+      "needed": [
+        "libc.so.6",
+        "ld-linux-aarch64.so.1"
+      ],
+      "interpreter": [],
+      "runpath": []
+    },
+    "/usr/lib/libaudit.so.1.0.0": {
+      "requestedPath": "/usr/lib/libaudit.so.1",
+      "sha256": "cf41b23b9a259a5531f06fadb56e90b3011a301e0763830ef06d71d1e09c1e46",
+      "size": 198672,
+      "device": 36,
+      "inode": 15615,
+      "manifestMatch": true,
+      "needed": [
+        "libcap-ng.so.0",
+        "libc.so.6",
+        "ld-linux-aarch64.so.1"
+      ],
+      "interpreter": [],
+      "runpath": []
+    },
+    "/usr/lib/libexpat.so.1.13.1": {
+      "requestedPath": "/usr/lib/libexpat.so.1",
+      "sha256": "04755e5476227b0fab77e07f8b4c7542ef11111707738ccc47290066d6def6e7",
+      "size": 198640,
+      "device": 36,
+      "inode": 300898,
+      "manifestMatch": true,
+      "needed": [
+        "libc.so.6",
+        "ld-linux-aarch64.so.1"
+      ],
+      "interpreter": [],
+      "runpath": []
+    },
+    "/usr/lib/libdbus-1.so.3.38.3": {
+      "requestedPath": "/usr/lib/libdbus-1.so.3",
+      "sha256": "e23d65f51af54dd8822cb76ad11be11d38d51a9d55d59503d26016d1e178626a",
+      "size": 395472,
+      "device": 36,
+      "inode": 16864,
+      "manifestMatch": true,
+      "needed": [
+        "libsystemd.so.0",
+        "libc.so.6",
+        "ld-linux-aarch64.so.1"
+      ],
+      "interpreter": [],
+      "runpath": []
+    }
+  },
+  "missing": [],
+  "allManifestPinsMatch": true,
+  "daemonExecuted": false,
+  "qaExecuted": false,
+  "nativeAcceptance": false
+}
