@@ -5,6 +5,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 import fcntl
 import json
+import math
 import os
 from pathlib import Path
 import stat
@@ -104,6 +105,32 @@ def persist(path, data):
             os.unlink(temporary)
 
 
+def owner_event(checkpoint, info, pending, config, now, field, timestamp):
+    """Only an exact fresh owner checkpoint event can release a wake latch."""
+    event = checkpoint.get(field)
+    if (checkpoint.get("goalStatus") != "active" or checkpoint.get("externalBlocker") is not False
+            or not 0 <= now - info.st_mtime <= 300 or info.st_mtime < pending["requestedEpoch"]
+            or not isinstance(event, dict) or event.get("nonce") != pending["nonce"]
+            or event.get("thread") != config["thread"]):
+        return None
+    try:
+        recorded = datetime.fromisoformat(event[timestamp].replace("Z", "+00:00"))
+        if recorded.tzinfo is None or not pending["requestedEpoch"] <= recorded.timestamp() <= now:
+            return None
+    except (KeyError, AttributeError, TypeError, ValueError):
+        return None
+    return event
+
+
+def wake_message(nonce, thread):
+    return (PROMPT + "\n\nContinuity wake nonce: " + nonce + ". Existing Root thread " + thread
+            + " only: acknowledge this exact nonce only after receiving this actual message and "
+              "freshly observing that the human-authorized goal is active. In the existing checkpoint "
+              "write continuityWakeAcknowledgment with nonce, thread, observedGoalStatus=active, "
+              "and acknowledgedUTC. Queue acceptance is not acknowledgment. Never self-ack from "
+              "a watcher or reset participant clocks, history, stops or deadlines.")
+
+
 def tick(path, clock=time.time, runner=subprocess.run):
     """Caller must hold singleton(path) across each tick and queue attempt."""
     now = clock()
@@ -133,35 +160,105 @@ def tick(path, clock=time.time, runner=subprocess.run):
                         (actual.get("passed") is False and isinstance(actual.get("error"), str)
                          and actual["error"].strip())):
                     reason = "running-checkpoint-has-terminal-report"
-    if reason is None:
-        return dict(result, status="fresh")
     state_path = Path(str(path) + ".state.json")
+    state = {}
     try:
         state, _ = read_json(state_path)
         last = state["lastAttemptEpoch"]
-        if type(last) not in (int, float) or last < 0:
+        if type(last) not in (int, float) or not math.isfinite(last) or last < 0:
             raise ValueError("Invalid cooldown state")
-        if now - last < 300:
-            return dict(result, status="cooldown", reason=reason)
     except FileNotFoundError:
-        pass
+        last = None
+    pending = state.get("pendingWake")
+    if pending is not None:
+        if (not isinstance(pending, dict) or not isinstance(pending.get("nonce"), str)
+                or not pending["nonce"].startswith("continuity-")
+                or str(uuid.UUID(pending["nonce"][11:])) != pending["nonce"][11:]
+                or type(pending.get("requestedEpoch")) not in (int, float)
+                or not math.isfinite(pending["requestedEpoch"]) or pending["requestedEpoch"] < 0
+                or type(pending.get("attentionRecorded")) is not bool):
+            raise ValueError("Invalid pending wake state")
+        result.update(wakeNonce=pending["nonce"], rootWakeAcknowledged=False, attentionRequired=False)
+        if pending.get("thread") != config["thread"]:
+            return dict(result, status="wake-pending-binding-mismatch")
+        ack = owner_event(checkpoint, info, pending, config, now,
+                          "continuityWakeAcknowledgment", "acknowledgedUTC")
+        resolution = owner_event(checkpoint, info, pending, config, now,
+                                 "continuityWakeResolution", "resolvedUTC")
+        acknowledged = bool(ack and ack.get("observedGoalStatus") == "active")
+        resolved = bool(resolution and resolution.get("action") == "retry"
+                        and isinstance(resolution.get("reason"), str) and resolution["reason"].strip())
+        if acknowledged or resolved:
+            if load_config(path) != (config, expires) or clock() >= expires:
+                return dict(result, status="config-changed-or-expired")
+            latest, latest_info = read_json(config["checkpoint"])
+            if latest != checkpoint or latest_info.st_mtime_ns != info.st_mtime_ns:
+                return dict(result, status="checkpoint-changed")
+            state.pop("pendingWake")
+            state["lastOwnerEvent"] = {"kind": "acknowledgment" if acknowledged else "resolution",
+                                      "event": ack if acknowledged else resolution}
+            persist(state_path, state)
+            return dict(result, status="wake-acknowledged" if acknowledged else "wake-owner-resolved",
+                        rootWakeAcknowledged=acknowledged)
+        if now - pending["requestedEpoch"] >= 300 and not pending["attentionRecorded"]:
+            pending["attentionRecorded"] = True
+            pending["attentionUTC"] = datetime.fromtimestamp(now, timezone.utc).isoformat()
+            persist(state_path, state)
+            return dict(result, status="wake-pending-attention", attentionRequired=True)
+        return dict(result, status="wake-pending")
+    if reason is None:
+        return dict(result, status="fresh")
+    if last is not None and now - last < 300:
+        return dict(result, status="cooldown", reason=reason)
     # Recheck the exact private config after observations, then reserve before dispatch.
     if load_config(path) != (config, expires) or clock() >= expires:
         return dict(result, status="config-changed-or-expired")
     latest, latest_info = read_json(config["checkpoint"])
     if latest != checkpoint or latest_info.st_mtime_ns != info.st_mtime_ns:
         return dict(result, status="checkpoint-changed")
-    persist(state_path, {"lastAttemptEpoch": now, "reason": reason})
-    result.update(queueAttempted=True, status="wake-unconfirmed", reason=reason)
-    argv = [config["codex"], "queue", "--thread", config["thread"], "--message", PROMPT,
+    nonce = "continuity-" + str(uuid.uuid4())
+    receipt_path = Path(str(path) + ".attempt-" + nonce + ".json")
+    if receipt_path.exists() or receipt_path.is_symlink():
+        raise ValueError("Continuity attempt receipt already exists")
+    # Reserve before dispatch: a crash during queueing remains pending rather
+    # than silently repeating a possibly accepted wake after process restart.
+    state.update(lastAttemptEpoch=now, reason=reason,
+                 pendingWake={"nonce": nonce, "thread": config["thread"], "requestedEpoch": now,
+                              "attentionRecorded": False})
+    receipt = {"schema": 1, "wakeNonce": nonce, "thread": config["thread"],
+               "requestedUTC": result["observedUTC"], "reason": reason,
+               "outcome": "dispatch-reserved", "restartVerified": False}
+    persist(receipt_path, receipt)
+    persist(state_path, state)
+    result.update(queueAttempted=True, status="wake-unconfirmed", reason=reason,
+                  wakeNonce=nonce, attemptReceipt=str(receipt_path), rootWakeAcknowledged=False)
+    argv = [config["codex"], "queue", "--thread", config["thread"], "--message", wake_message(nonce, config["thread"]),
             "--resume", "-C", config["repo"]]
     try:
         child = runner(argv, cwd=config["repo"], capture_output=True, text=True, timeout=20, check=False)
         warning = "warn" in (child.stdout + child.stderr).lower()
+        accepted = child.returncode == 0 and not warning
+        # An exit code or warning does not prove that queueing never happened.
         result.update(queueExitCode=child.returncode, warningObserved=warning,
-                      queueAccepted=child.returncode == 0 and not warning)
+                      queueAccepted=accepted, dispatchUncertain=not accepted, preDispatchRejected=False)
+    except FileNotFoundError as failure:
+        # subprocess.run could not exec the fixed image/cwd: no dispatched child.
+        result.update(queueAccepted=False, queueFailure=type(failure).__name__,
+                      dispatchUncertain=False, preDispatchRejected=True)
     except (subprocess.TimeoutExpired, OSError) as failure:
-        result.update(queueAccepted=False, queueFailure=type(failure).__name__)
+        # The child may have queued the message before timeout or lost reply.
+        result.update(queueAccepted=False, queueFailure=type(failure).__name__,
+                      dispatchUncertain=True, preDispatchRejected=False)
+    receipt.update({key: result[key] for key in
+                    ("queueAccepted", "queueExitCode", "warningObserved", "queueFailure",
+                     "dispatchUncertain", "preDispatchRejected") if key in result})
+    receipt["outcome"] = ("accepted-unacknowledged" if result["queueAccepted"] else
+                          ("dispatch-uncertain" if result["dispatchUncertain"] else "pre-dispatch-rejected"))
+    persist(receipt_path, receipt)
+    if result["preDispatchRejected"]:
+        state.pop("pendingWake")
+        state["lastFailedAttempt"] = str(receipt_path)
+    persist(state_path, state)
     return result
 
 
