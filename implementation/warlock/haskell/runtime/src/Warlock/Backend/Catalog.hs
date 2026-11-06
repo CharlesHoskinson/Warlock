@@ -38,7 +38,7 @@ readCatalog (Catalog roots locale lifetime owner state) = attempt $ runOwned own
  byteCount <- newIORef (0 :: Int)
  groups <- mapM (\root -> withPinnedDirectory owner False root (scan owner nodes byteCount 0 B.empty)) roots
  let files=concat groups
-     signature=SHA.hash (B.concat [C.pack (show (B.length name))<>C.pack ":"<>name<>C.pack (show (B.length bytes))<>C.pack ":"<>bytes | (name,bytes) <- files])
+     signature=SHA.hash (B.concat [C.pack (show index)<>C.pack ":"<>C.pack (show (B.length name))<>C.pack ":"<>name<>C.pack (show (B.length bytes))<>C.pack ":"<>bytes | (index,rows) <- zip [0 :: Int ..] groups, (name,bytes) <- rows])
  entries <- foldM (insertEntry locale) Map.empty files
  let visible=[(identity,value) | (identity,Just value) <- Map.toAscList entries]
  require (length visible<=2048) "catalog entry capacity"
