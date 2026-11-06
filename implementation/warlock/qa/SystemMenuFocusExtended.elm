@@ -1,0 +1,172 @@
+port module SystemMenuFocusExtended exposing (main)
+import Desktop
+import Binding
+import NativePointerFixture
+import SystemMenu
+import Surface
+import SurfaceRenderer
+import Json.Decode as D
+import Json.Encode as E
+import Platform
+import UInt64
+port outgoing : E.Value -> Cmd msg
+counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
+bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
+native raw model = NativePointerFixture.incoming raw model |> Tuple.first
+attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
+snapshot revision percent = E.object [("service",E.string "9"),("revision",E.string revision),("volume",E.object [("percent",E.int percent),("muted",E.bool False),("label",E.string "Warlock private audio")]),("network",E.null),("power",E.object [("suspend",E.string "yes"),("reboot",E.string "yes"),("poweroff",E.string "no")]),("session",E.object [("name",E.string "Warlock private session"),("state",E.string "active"),("locked",E.bool False)])]
+permissionSnapshot permission capability = E.object
+    [("service",E.string "9"),("revision",E.string "1"),("volume",E.null)
+    ,("network",E.object [("enabled",E.bool True),("state",E.string "activated"),("permission",E.string permission)])
+    ,("power",E.object [("suspend",E.string capability),("reboot",E.string capability),("poweroff",E.string capability)])
+    ,("session",E.null)]
+permissionCase permission capability operation expectedOperation allowed =
+    case D.decodeValue SystemMenu.decoder (permissionSnapshot permission capability) of
+        Err _ -> False
+        Ok current ->
+            let before=SystemMenu.observe current SystemMenu.initial
+                target=SystemMenu.intent current operation 0
+                (after,wire)=SystemMenu.propose (counter "777") target before
+            in if allowed then
+                after.pending==Just {request=counter "777",intent=target,receipt=SystemMenu.AwaitingReceipt}
+                    && (wire |> Maybe.map (D.decodeValue (D.map2 Tuple.pair (D.field "operation" D.string) (D.field "value" D.int))) |> Maybe.withDefault (Err (D.Failure "missing operation" E.null)))==Ok (expectedOperation,0)
+               else after==before && wire==Nothing
+sessionSnapshot rawState = E.object
+    [("service",E.string "9"),("revision",E.string "1"),("volume",E.null),("network",E.null),("power",E.null)
+    ,("session",E.object [("name",E.string "Warlock private session"),("state",rawState),("locked",E.bool False)])]
+sessionCase rawState expectedState allowed =
+    case D.decodeValue SystemMenu.decoder (sessionSnapshot (E.string rawState)) of
+        Err _ -> False
+        Ok actual ->
+            let expected={service=counter "9",revision=counter "1",volume=Nothing,network=Nothing,power=Nothing,session=Just {name="Warlock private session",state=expectedState,locked=False}}
+                given={snapshot=Just expected,pending=Nothing,spent=[],notice="Current system state. Unavailable controls cannot be changed."}
+                target={service=counter "9",revision=counter "1",operation=SystemMenu.Logout,value=0}
+                expectedAfter=if allowed then {given | pending=Just {request=counter "777",intent=target,receipt=SystemMenu.AwaitingReceipt},spent=[target],notice="Log out: waiting for native result…"} else given
+                expectedWire=if allowed then Just (E.object [("service",E.string "9"),("revision",E.string "1"),("operation",E.string "session-logout"),("value",E.int 0)]) else Nothing
+                observed=SystemMenu.observe actual SystemMenu.initial
+                (after,wire)=SystemMenu.propose (counter "777") target observed
+            in actual==expected && observed==given && SystemMenu.supported target observed==allowed && after==expectedAfter && Maybe.map (E.encode 0) wire==Maybe.map (E.encode 0) expectedWire
+sessionLabelCase rawState model =
+    case D.decodeValue SystemMenu.decoder (sessionSnapshot (E.string rawState)) of
+        Err _ -> False
+        Ok actual ->
+            List.any (\control -> control.id=="system:session:state" && control.label=="Session Warlock private session · "++rawState++"; unlocked")
+                (Surface.controls {model | systemMenu=SystemMenu.observe actual SystemMenu.initial})
+loaded request value = E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-snapshot"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]
+outcome request status value = E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-outcome"),("binding",bound),("requestId",E.string (UInt64.string request)),("status",E.string status),("snapshot",value)]
+dispatch build model = Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (build stamp) model) |> Maybe.withDefault (model,[])
+effect e = case e of
+    Desktop.Send wire -> D.decodeValue (D.field "kind" D.string) wire==Ok "system-menu-effect"
+    _ -> False
+result =
+    let ready=native attached Desktop.initial
+        (opened,_)=dispatch Desktop.OpenSystemMenu ready
+        request=opened.systemMenuExpected |> Maybe.withDefault UInt64.zero
+        (read,readEffects)=Desktop.update (Desktop.Incoming (loaded request (snapshot "1" 100))) opened
+        current=D.decodeValue SystemMenu.decoder (snapshot "1" 100) |> Result.withDefault {service=counter "9",revision=counter "1",volume=Nothing,network=Nothing,power=Nothing,session=Nothing}
+        volume=SystemMenu.intent current SystemMenu.Volume 25
+        (pending,effects)=dispatch (\stamp -> Desktop.SystemChange stamp volume) read
+        effectRequest=pending.systemMenu.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
+        (_,duplicate)=dispatch (\stamp -> Desktop.SystemChange stamp volume) pending
+        committed=native (outcome effectRequest "Committed" (snapshot "2" 25)) pending
+        (_,afterCommit)=dispatch (\stamp -> Desktop.SystemChange stamp volume) committed
+        unknown=native (outcome effectRequest "Unknown" (snapshot "1" 100)) pending
+        (_,unknownRepeat)=dispatch (\stamp -> Desktop.SystemChange stamp volume) unknown
+        (refreshing,refreshEffects)=dispatch Desktop.RefreshSystemMenu unknown
+        reconciled=native (loaded (refreshing.systemMenuExpected |> Maybe.withDefault UInt64.zero) (snapshot "2" 25)) refreshing
+        unavailable=SystemMenu.intent current SystemMenu.Network 0
+        (_,unavailableEffects)=dispatch (\stamp -> Desktop.SystemChange stamp unavailable) read
+        restart=SystemMenu.intent current SystemMenu.Reboot 0
+        (confirm,confirmEffects)=dispatch (\stamp -> Desktop.SystemChange stamp restart) read
+        (cancelled,cancelEffects)=dispatch Desktop.CancelSystemChange confirm
+        (submitted,submitEffects)=dispatch (\stamp -> Desktop.ConfirmSystemChange stamp restart) confirm
+        (_,directConfirm)=dispatch (\stamp -> Desktop.ConfirmSystemChange stamp restart) read
+        wrong=native (outcome (counter "999") "Committed" (snapshot "2" 25)) pending
+        stale=Desktop.capture read |> Maybe.map (\stamp -> Desktop.update (Desktop.SystemChange stamp volume) committed |> Tuple.second) |> Maybe.withDefault []
+        (closed,closeEffects)=dispatch Desktop.CloseSystemMenu read
+        staleClose=Desktop.capture opened |> Maybe.map (\stamp -> Desktop.update (Desktop.CloseSystemMenu stamp) read) |> Maybe.withDefault (read,[])
+        validAfterStale=dispatch Desktop.CloseSystemMenu (Tuple.first staleClose)
+        literalOpener="applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener"
+        focusTargets focusEffects=List.filterMap (\item -> case item of
+            Desktop.Focus target -> Just target
+            _ -> Nothing) focusEffects
+        currentOpener=D.decodeValue (D.field "bar" (D.list (D.map3 (\id domId enabled -> {id=id,domId=domId,enabled=enabled}) (D.field "id" D.string) (D.field "domId" D.string) (D.field "enabled" D.bool)))) (Surface.packet (counter "1") (counter "1") closed) |> Result.withDefault [] |> List.filter (\control -> control.id=="bar:system" && control.enabled)
+        snapshotForTargets=SurfaceRenderer.decode (Surface.packet (counter "1") (counter "1") read) |> Result.toMaybe
+        targetControls=snapshotForTargets |> Maybe.map (\view -> (SurfaceRenderer.action True "system:network:state" view,SurfaceRenderer.action True "control:foreign" view,SurfaceRenderer.action True "control:close" view))
+        staleCancel=Desktop.capture read |> Maybe.map (\stamp -> Desktop.update (Desktop.CancelSystemChange stamp) confirm) |> Maybe.withDefault (confirm,[])
+        validAfterStaleCancel=dispatch Desktop.CancelSystemChange (Tuple.first staleCancel)
+        repeatCancel=dispatch Desktop.CancelSystemChange cancelled
+        foreignBinding=D.decodeValue Binding.decoder (E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "2")]) |> Result.toMaybe
+        beforeForeignWindows=confirm.windows
+        beforeForeignShell=beforeForeignWindows.shell
+        foreignModel={confirm | windows={beforeForeignWindows | shell={beforeForeignShell | binding=foreignBinding}}}
+        foreignCancel=Desktop.capture confirm |> Maybe.map (\stamp -> Desktop.update (Desktop.CancelSystemChange stamp) foreignModel) |> Maybe.withDefault (foreignModel,[])
+        exhaustedBeforeCancel={confirm | presentation=Just (counter "18446744073709551615")}
+        exhaustedCancel=dispatch Desktop.CancelSystemChange exhaustedBeforeCancel
+        exhaustedBeforeConfirm={read | presentation=Just (counter "18446744073709551615")}
+        exhaustedConfirm=dispatch (\stamp -> Desktop.SystemChange stamp restart) exhaustedBeforeConfirm
+        expectedConfirm={read | systemMenuConfirmation=Just restart,presentation=Just (counter "5")}
+        expectedCancel={expectedConfirm | systemMenuConfirmation=Nothing,presentation=Just (counter "6")}
+        staleConfirmation=Desktop.capture opened |> Maybe.map (\stamp -> Desktop.update (Desktop.SystemChange stamp restart) read) |> Maybe.withDefault (read,[])
+        afterStaleConfirmation=dispatch (\stamp -> Desktop.SystemChange stamp restart) (Tuple.first staleConfirmation)
+        confirmationAfterClosed=dispatch (\stamp -> Desktop.SystemChange stamp restart) closed
+        oldIntent={restart | revision=counter "0"}
+        invalidThenValid=dispatch (\stamp -> Desktop.SystemChange stamp restart) (Tuple.first (dispatch (\stamp -> Desktop.SystemChange stamp oldIntent) read))
+        invalidIntent=dispatch (\stamp -> Desktop.SystemChange stamp oldIntent) read
+        (otherPopup,_)=dispatch Desktop.OpenNotifications read
+        frame=Surface.packet (counter "1") (counter "1") read
+        checked name value=(name,E.bool value)
+        checks=[checked "sessionClosingClassifiedAndLogoutDenied" (sessionCase "closing" SystemMenu.SessionClosing False)
+            ,checked "otherSessionTextLabelAndLogoutPreserved" (List.all (\raw -> sessionCase raw (SystemMenu.OtherSessionState raw) True && sessionLabelCase raw read) ["","active","online","Closing","closing ","native:observed",String.repeat 32 "s"])
+            ,checked "sessionStateBoundsAndTypeRefused" (List.all (\raw -> Result.toMaybe (D.decodeValue SystemMenu.decoder (sessionSnapshot raw))==Nothing) [E.string (String.repeat 33 "s"),E.string "active\n",E.int 0,E.null,E.bool True])
+            ,checked "networkPermissionsPreserveAdmission" (List.all (\(permission,allowed) -> permissionCase permission "yes" SystemMenu.Network "network-enable" allowed) [("yes",True),("no",False),("auth",True)])
+            ,checked "powerCapabilitiesPreserveAdmission" (List.all (\(capability,allowed) -> List.all (\(operation,wire) -> permissionCase "yes" capability operation wire allowed) [(SystemMenu.Suspend,"suspend"),(SystemMenu.Reboot,"reboot"),(SystemMenu.PowerOff,"poweroff")]) [("yes",True),("no",False),("na",False),("challenge",True)])
+            ,checked "foreignNetworkCapabilityRefused" (Result.toMaybe (D.decodeValue SystemMenu.decoder (permissionSnapshot "challenge" "yes"))==Nothing)
+            ,checked "foreignPowerPermissionRefused" (Result.toMaybe (D.decodeValue SystemMenu.decoder (permissionSnapshot "yes" "auth"))==Nothing)
+            ,checked "powerCapabilityLabelsPreserved" (List.any (\c -> c.label=="Power · suspend available, restart available, shutdown unavailable") (Surface.controls read))
+            ,checked "systemMenuOpenerIntegrated" (D.decodeValue (D.field "bar" (D.list (D.field "id" D.string))) frame |> Result.map (List.member "bar:system") |> Result.withDefault False)
+            ,checked "menuModeAcceptedByProductionRenderer" (SurfaceRenderer.decode frame |> Result.map (SurfaceRenderer.mode >> (==) "system") |> Result.withDefault False)
+            ,checked "openingReadFocusMatchesCloseControl" (List.any (\e -> case e of
+                Desktop.Focus target -> Surface.controls read |> List.any (\c -> c.id=="control:close" && c.domId==target)
+                _ -> False) readEffects)
+            ,checked "originalUnavailableNetworkShown" (List.any (\c -> c.label=="Network unavailable" && not c.enabled && c.message==Nothing) (Surface.controls read))
+            ,checked "remainingStateObserved" (List.any (\c -> String.startsWith "Volume 100%" c.label) (Surface.controls read) && List.any (\c -> String.startsWith "Session Warlock private session" c.label) (Surface.controls read))
+            ,checked "oneExplicitVolumeChange" (List.length (List.filter effect effects)==1)
+            ,checked "pendingCannotRepeat" (List.isEmpty duplicate)
+            ,checked "committedCannotRepeatOldRevision" (List.isEmpty afterCommit && committed.systemMenu.pending==Nothing)
+            ,checked "unknownCannotReplay" (List.isEmpty unknownRepeat && unknown.systemMenu.pending/=Nothing && String.contains "not confirmed" unknown.systemMenu.notice)
+            ,checked "readReconcilesChangedStateWithoutEffect" (reconciled.systemMenu.pending==Nothing && not (List.any effect refreshEffects))
+            ,checked "unavailableNeverSubmits" (List.isEmpty unavailableEffects)
+            ,checked "restartRequiresUIConfirmation" (confirm.systemMenuConfirmation==Just restart && not (List.any effect confirmEffects))
+            ,checked "cancelHasNoNativeEffect" (cancelled.systemMenuConfirmation==Nothing && not (List.any effect cancelEffects))
+            ,checked "confirmedRestartSubmitsOnce" (List.length (List.filter effect submitEffects)==1 && submitted.systemMenu.pending/=Nothing)
+            ,checked "directConfirmationCannotBypassPrompt" (List.isEmpty directConfirm)
+            ,checked "wrongReceiptCannotSettle" (wrong==pending)
+            ,checked "staleViewCannotSubmit" (List.isEmpty stale)
+            ,checked "closingFocusesOpenerWithoutNativeEffect" (not closed.systemMenuOpen && not (List.any effect closeEffects) && focusTargets closeEffects==[literalOpener] && (case currentOpener of
+                [control] -> control.domId==literalOpener
+                _ -> False))
+            ,checked "staleCloseRefusedThenCurrentCloseFocusesExactOpener" (Tuple.first staleClose==read && List.isEmpty (Tuple.second staleClose) && focusTargets (Tuple.second validAfterStale)==[literalOpener])
+            ,checked "cancelConfirmationEmitsCloseFocus" (cancelled.systemMenuOpen && cancelled.systemMenuConfirmation==Nothing && focusTargets cancelEffects==["applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:close"] && not (List.any effect cancelEffects))
+            ,checked "confirmationExactFullModelAndSuccessorEffect" (confirm==expectedConfirm && confirmEffects==[Desktop.Focus "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:cancel"])
+            ,checked "cancellationExactFullModelAndSuccessorEffect" (cancelled==expectedCancel && cancelEffects==[Desktop.Focus "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:close"])
+            ,checked "oldConfirmationStampRefusedThenCurrentAccepted" (Tuple.first staleConfirmation==read && List.isEmpty (Tuple.second staleConfirmation) && Tuple.first afterStaleConfirmation==expectedConfirm && Tuple.second afterStaleConfirmation==confirmEffects)
+            ,checked "oldRevisionRefusedThenCurrentAccepted" (Tuple.first invalidIntent==read && List.isEmpty (Tuple.second invalidIntent) && Tuple.first invalidThenValid==expectedConfirm && Tuple.second invalidThenValid==confirmEffects)
+            ,checked "closedMenuRefusesConfirmation" (Tuple.first confirmationAfterClosed==closed && List.isEmpty (Tuple.second confirmationAfterClosed))
+            ,checked "confirmationFocusesCurrentEligibleCancel" (focusTargets confirmEffects==["applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:cancel"] && (case focusTargets confirmEffects of
+                [target] -> Surface.controls confirm |> List.any (\control -> control.id=="system:cancel" && control.enabled && control.domId==target)
+                _ -> False) && not (List.any effect confirmEffects))
+            ,checked "cancelTargetIsCurrentEnabledCloseControl" (case focusTargets cancelEffects of
+                [target] -> Surface.controls cancelled |> List.any (\control -> control.id=="control:close" && control.enabled && control.domId==target)
+                _ -> False)
+            ,checked "staleCancelCannotRefocusThenValidCancelRestoresCurrentClose" (Tuple.first staleCancel==confirm && List.isEmpty (Tuple.second staleCancel) && focusTargets (Tuple.second validAfterStaleCancel)==["applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:close"])
+            ,checked "duplicateCancelCannotRefocus" (Tuple.first repeatCancel==cancelled && List.isEmpty (Tuple.second repeatCancel))
+            ,checked "oldBindingStampCannotCancelForeignModel" (foreignBinding/=Nothing && Tuple.first foreignCancel==foreignModel && List.isEmpty (Tuple.second foreignCancel))
+            ,checked "exhaustedPresentationEmitsNoConfirmationFocus" ((Tuple.first exhaustedCancel).presentation==Nothing && List.isEmpty (focusTargets (Tuple.second exhaustedCancel)) && (Tuple.first exhaustedConfirm).presentation==Nothing && List.isEmpty (focusTargets (Tuple.second exhaustedConfirm)))
+            ,checked "disabledAndForeignActionsRefusedThenCurrentCloseAvailable" (case targetControls of
+                Just (disabled,foreign,valid) -> disabled==Nothing && foreign==Nothing && valid/=Nothing
+                Nothing -> False)
+            ,checked "anotherPopupRetiresSystemWithoutLosingNativeState" (not otherPopup.systemMenuOpen && otherPopup.notificationsOpen && otherPopup.systemMenu==read.systemMenu)
+            ,checked "allControlsHaveNames" (List.all (\c -> not (String.isEmpty c.ariaLabel)) (Surface.controls read))]
+    in E.object [("checks",E.object checks),("frame",frame),("confirmFrame",Surface.packet (counter "2") (counter "1") confirm),("pendingFrame",Surface.packet (counter "3") (counter "1") pending)]
+main = Platform.worker {init=\() -> ((),outgoing result),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}

@@ -7,7 +7,7 @@ const crypto=require('node:crypto');
 const pins={
  'implementation/warlock/qa/joined-control-literals.cjs':'6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6',
  'implementation/warlock/src/OutputController.elm':'fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae',
- 'implementation/warlock/src/Desktop.elm':'a07c15be51b5875921ef24a235e45f57a0b52745cec971740af3a7fdc3adfb3f',
+ 'implementation/warlock/src/Desktop.elm':'2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db',
  'implementation/warlock/src/SurfaceController.elm':'2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998',
  'implementation/warlock/src/Shell.elm':'6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094',
  'implementation/warlock/src/TaskbarShell.elm':'eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26',

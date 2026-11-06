@@ -1180,12 +1180,16 @@ updateAvailable message model =
             if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuExpected/=Nothing then (model,[]) else readSystemMenu {model | systemMenuConfirmation=Nothing}
         SystemChange stamp intent ->
             if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuExpected/=Nothing || model.systemMenu.pending/=Nothing || not (SystemMenu.supported intent model.systemMenu) then (model,[]) else
-            if SystemMenu.confirmed intent then (advance {model | systemMenuConfirmation=Just intent},[Focus (key model "system:cancel")]) else sendSystemChange intent model
+            if SystemMenu.confirmed intent then
+                let next=advance {model | systemMenuConfirmation=Just intent}
+                in (next,if next.presentation==Nothing then [] else [Focus (key next "system:cancel")])
+            else sendSystemChange intent model
         ConfirmSystemChange stamp intent ->
             if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuConfirmation/=Just intent || model.systemMenuExpected/=Nothing then (model,[]) else sendSystemChange intent {model | systemMenuConfirmation=Nothing}
         CancelSystemChange stamp ->
             if capture model/=Just stamp || not model.systemMenuOpen || model.systemMenuConfirmation==Nothing then (model,[]) else
-                (advance {model | systemMenuConfirmation=Nothing},[Focus (key model "system:close")])
+                let next=advance {model | systemMenuConfirmation=Nothing}
+                in (next,if next.presentation==Nothing then [] else [Focus (key next "system:close")])
         OpenNotifications stamp ->
             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
             let windows=model.windows

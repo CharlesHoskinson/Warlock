@@ -1,0 +1,281 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-11-06T08:33:55.950260+00:00",
+  "component": "system-menu-successor-focus-key",
+  "disposition": "Verified Elm component; no original, native or release acceptance.",
+  "supportsOriginal": {
+    "requirement": "ELM-UI-011",
+    "scenario": "focus-scope-nested dismissal",
+    "ears": "WHEN a shell focus scope closes, the host SHALL restore its eligible identity-bound opener or the declared eligible fallback, restore surviving parent scopes for nested dismissal, reject replacement incarnations and let lock security supersede ordinary restoration.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "acceptanceGranted": false
+  },
+  "before": "SystemChange and CancelSystemChange advanced the model but requested a focus key from the prior presentation.",
+  "after": "Each branch requests the key from its successor model. Exhausted presentation emits no focus request.",
+  "productionSource": {
+    "path": "implementation/warlock/src/Desktop.elm",
+    "before": "a07c15be51b5875921ef24a235e45f57a0b52745cec971740af3a7fdc3adfb3f",
+    "after": "2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db",
+    "reviewedPatchSHA256": "77d4fbda61a5ccea036341f3c3b2b40e73ac3926044ad97038bc179292e4ccb4"
+  },
+  "verification": {
+    "runs": {
+      "compiler-preparation-failure": {
+        "path": ".warlock-contributor/arm64-cpu-1793950811643754735/report.json",
+        "sha256": "bb2d65299c1ac6a474153de346e49b4883650a4e7c048a37f98617b8e874d8de",
+        "archiveMembers": [
+          "runs/1793950811643754735/report.json"
+        ],
+        "passed": false,
+        "sourceInputs": 127,
+        "commands": 5,
+        "commandExits": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "semantic-red": {
+        "path": ".warlock-contributor/arm64-cpu-1793950970948210813/report.json",
+        "sha256": "65ae7442a6f917acb70af7f734f5070f5b9a3fe3d4f13b05276b777957f4d54d",
+        "archiveMembers": [
+          "runs/1793950970948210813/report.json"
+        ],
+        "passed": false,
+        "sourceInputs": 127,
+        "commands": 7,
+        "commandExits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "cache-postguard-failure": {
+        "path": ".warlock-contributor/arm64-cpu-1793951236470509914/report.json",
+        "sha256": "f2c197390c4f3ed2d1fb18b83b32fd291021eafccaaa0c9a453a2c4fc2ff8c84",
+        "archiveMembers": [
+          "runs/1793951236470509914/report.json"
+        ],
+        "passed": false,
+        "sourceInputs": 127,
+        "commands": 7,
+        "commandExits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "component-green": {
+        "path": ".warlock-contributor/arm64-cpu-1793952220638107044/report.json",
+        "sha256": "c5a86e7b06d3dbc8589e3ad28b360c8c3b7fdcc8703181f054b944f80f09361b",
+        "archiveMembers": [
+          "runs/1793952220638107044/report.json"
+        ],
+        "passed": true,
+        "sourceInputs": 127,
+        "commands": 7,
+        "commandExits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "shared-source-pin-failure": {
+        "path": ".warlock-contributor/arm64-cpu-1793952469318290939/report.json",
+        "sha256": "d04bc1a65ae6698a692b71d48eb9a562912ed0b10ca3d6e2c7dd29cda1bed3f9",
+        "archiveMembers": [
+          "runs/1793952469318290939/report.json"
+        ],
+        "passed": false,
+        "sourceInputs": 290,
+        "commands": 1,
+        "commandExits": [
+          1
+        ]
+      },
+      "shared-green": {
+        "path": ".warlock-contributor/arm64-cpu-1793953210083038021/report.json",
+        "sha256": "70200515bc409397cc3c6a716ec29a9eb8ef270ea0c1f06763a25004aa12f32f",
+        "archiveMembers": [
+          "runs/1793953210083038021/report.json"
+        ],
+        "passed": true,
+        "sourceInputs": 290,
+        "commands": 1,
+        "commandExits": [
+          0
+        ]
+      }
+    },
+    "semanticRed": {
+      "newWorkerChecks": [
+        9,
+        11,
+        42
+      ],
+      "failedChecks": [
+        4,
+        4,
+        7
+      ],
+      "originalChecksPassed": [
+        28,
+        650
+      ],
+      "compilerPreparationFailureIsNotSemanticRed": true
+    },
+    "componentGreen": {
+      "commands": 7,
+      "compiledWorkers": 5,
+      "checks": [
+        28,
+        650,
+        9,
+        11,
+        42
+      ],
+      "allChecksPassed": 740,
+      "productionRootsCompiled": 0
+    },
+    "sharedGreen": {
+      "outerCommands": 1,
+      "nestedCommands": 31,
+      "currentInputHashes": 290,
+      "compiledArtifacts": 20,
+      "productionEntryPoints": [
+        "Main",
+        "Bar",
+        "Popup",
+        "HttpMain",
+        "HttpBar",
+        "HttpPopup"
+      ],
+      "httpCampaigns": 16,
+      "httpChecks": 7394,
+      "supplementCases": 22,
+      "supplementChecks": 50,
+      "literalRouteCases": 13,
+      "literalSteps": 87,
+      "joinedHistorySteps": [
+        5,
+        11
+      ],
+      "syntheticQuarantineSteps": 3,
+      "freshRuns": 2,
+      "negativeControls": 34,
+      "fullNegativeWitnesses": 12,
+      "closure": {
+        "entries": 699,
+        "retainedEntriesRehashed": 449,
+        "normallyCleanedEntries": 250,
+        "cleanedEntryQualification": "Only reviewed runtime pre/post checks attest the removed staging entries."
+      }
+    }
+  },
+  "sdkCacheRevision": {
+    "manifest": "tools/arm64-toolchain.json",
+    "beforeManifestSHA256": "e0f136b2205d96eee5220861631d144cdf3280fc2406db110c23a2d94e95a734",
+    "afterManifestSHA256": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+    "originalInventory": {
+      "files": 118,
+      "sha256": "b53f9ccc488a83f019bede1892b8a0471c16eadffe5d5dcbdec501a4317461de"
+    },
+    "warmedInventory": {
+      "files": 138,
+      "sha256": "11763ff714448ef588fda585ee5543ec9a23f1eb9812868c7d9841c5d22f8b6e"
+    },
+    "originalBackup": "/home/hoskinson/.local/share/warlock-toolchain/elm-cache-before-successor-focus-20261106",
+    "derivedFilesAdded": 20,
+    "allOriginalInputsPreserved": true,
+    "cacheGuardChanged": false,
+    "cacheRepairProposalF0a8Adopted": false
+  },
+  "activeHttpPinRefresh": {
+    "bindings": {
+      "implementation/warlock/qa/http-full-subscriptions-v2/parents/joined-control-literals.cjs": {
+        "before": "8119bc53603a9db9fae4bafd1d79075e8f18258f72afa3f8d4e268e48d120abd",
+        "after": "256ff946d79fd89e71ca84be75f3b8df35892a8ae496ceba331330d0a34de554"
+      },
+      "implementation/warlock/qa/http-full-subscriptions-v2/parents/closed-topology-after-dismiss-literals.cjs": {
+        "before": "65b20a6c150bd746f04e740e5ca4affc51de27e556355b77acf15f8f75328411",
+        "after": "b08c08609ba8ab26bd7fa938da7066c3027608a0927ee595c203fc6cbe3677b3"
+      },
+      "implementation/warlock/qa/http-full-subscriptions-v2/full-manifest.json": {
+        "before": "6b640da6245de51aa257772367f66ab364f2478aabd570bab4d58594ca4e7122",
+        "after": "e0313dc35f77a56d58c42843fc333131d47c360c70e885ff81093390699c000c"
+      }
+    },
+    "scope": "Two active Desktop hash scalars and three manifest binding fields only. Historical files, cases, models, effects, negative guards, status text, seeds and budgets are unchanged."
+  },
+  "participant": {
+    "record": ".warlock-contributor/successor-focus-root.json",
+    "owner": "root-agentbus",
+    "startedUTC": "2026-11-06T07:37:36.510161+00:00",
+    "iterations": 3,
+    "meaningfulProgress": [
+      false,
+      true,
+      false
+    ],
+    "lastProductionFixUTC": "2026-11-06T08:14:44.174616+00:00",
+    "historyReset": false,
+    "existingUI005AndDEL010StopsPreserved": true
+  },
+  "evidence": {
+    "manifest": "docs/warlock-build-loop/v2/evidence/successor-focus-20261106/manifest.json",
+    "manifestSHA256": "f958c57b534888b2df4eac7a7614189fbe0c01e0bef13609806766bf2bc8eb9a",
+    "archive": "docs/warlock-build-loop/v2/evidence/successor-focus-20261106/checks.tar.gz",
+    "archiveSHA256": "eb756597538ba075c25e803c1faaddf814000d077466e463de56d96e4100ba4e",
+    "archiveBytes": 9583485,
+    "regularMembers": 1260,
+    "allMembersRehashedByRoot": true,
+    "failedRunsRetained": 4
+  },
+  "supportScope": {
+    "testedToolHashes": {
+      "tools/check_arm64_cpu.py": "c7a2e8d44fb39a98d7e831614f9c284adcd271a898d5e2d3a4ce8e2ff219e040",
+      "tools/qa_cpu.py": "99509a71d4a55ccbd539570af8343e91401ba5280d7c9949b09d6f4bf2eadcab"
+    },
+    "peerRoleProfile": "The previously prepared --peer-role mode is in this support closure. It has a source review only; no caller integration or execution verdict is granted here.",
+    "excludedForeignWorktreeFiles": [
+      "implementation/warlock/haskell/process-custody/test/FacadeControl.hs",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc"
+    ],
+    "scopeCorrection": "The component profile compiled five workers only. The separate shared run compiled the six production entry points.",
+    "supportCommit": "9ebb9217da5b1bc307f2408bfde6e9cfaea1a3f2",
+    "stagingFlow": "Root support tooling was committed separately under its existing project-only support flow. This GUI staging excludes protected tools and leaves their captured hashes unchanged."
+  },
+  "documentationDisposition": {
+    "tutorial": "No new user workflow or tutorial step.",
+    "howTo": "The existing governed-loop instructions remain the procedure. Protected review packets in the archive record the exact commands.",
+    "reference": "This record, the fixed profile and SDK manifest bind sources, inputs and results.",
+    "explanation": "The before/after description explains the successor-key defect. No backend authority changes."
+  },
+  "limits": {
+    "backendSystemMenuCapabilityProducerReachabilityOpen": true,
+    "nativeFocusAndAccessibilityUnobserved": true,
+    "wholeUI011ScopeIdentityFallbackLockWorkspaceAndRetirementOpen": true,
+    "opaqueCmdASTObserved": false,
+    "nativeTrialArmed": false,
+    "nativeAcceptance": false,
+    "originalAcceptance": false,
+    "releaseAccepted": false,
+    "githubCIPassClaimed": false,
+    "acceptedRequirementsDelta": 0,
+    "acceptedScenariosDelta": 0
+  }
+}
