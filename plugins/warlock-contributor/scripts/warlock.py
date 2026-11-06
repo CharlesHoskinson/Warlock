@@ -1900,6 +1900,53 @@ def validate_authorization_renewal(root, record, event, previous_expiry, previou
 DELIVERY_GUARDS = (BASE, LANGUAGE_BASELINE, LANGUAGE_REVISION, LANGUAGE_HELPER,
                    'implementation/elm-build-loop-v1/loop.py', 'window-integration-qa/qa_run.py',
                    'window-integration-qa/qa_launch.py')
+DELIVERY_RESTORABLE_GUARD = 'implementation/elm-build-loop-v1/loop.py'
+DELIVERY_RESTORABLE_SHA256 = '13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6'
+
+
+def restored_delivery_guards(guards, event):
+    if 'guardRestorations' not in event:
+        return dict(guards)
+    restoration = {DELIVERY_RESTORABLE_GUARD: DELIVERY_RESTORABLE_SHA256}
+    if (event.get('kind') != 'authorization-renewed' or event['guardRestorations'] != restoration or
+            DELIVERY_RESTORABLE_GUARD not in guards or guards[DELIVERY_RESTORABLE_GUARD] is not None):
+        raise ValueError('Invalid canonical archived guard restoration transition')
+    return dict(guards, **restoration)
+
+
+def effective_delivery_guards(record):
+    guards = dict(delivery_identity(record)['guardHashes'])
+    for event in record['delivery']['events']:
+        guards = restored_delivery_guards(guards, event)
+    return guards
+
+
+def validate_canonical_guard_blob(root, record):
+    name = DELIVERY_RESTORABLE_GUARD
+    entries = git(root, 'ls-tree', '-z', record['sourceRevision'], '--', name).split(b'\0')
+    if len(entries) != 2 or entries[-1] != b'' or b'\t' not in entries[0]:
+        raise ValueError('Canonical archived guard is absent from the original revision')
+    metadata, path = entries[0].split(b'\t', 1)
+    fields = metadata.split()
+    if (len(fields) != 3 or fields[0] not in (b'100644', b'100755') or fields[1] != b'blob' or
+            path.decode() != name or
+            hashlib.sha256(git(root, 'show', record['sourceRevision'] + ':' + name)).hexdigest() != DELIVERY_RESTORABLE_SHA256):
+        raise ValueError('Original revision does not contain the pinned regular archived guard')
+
+
+def renewal_guard_restorations(root, record):
+    restorations = {}
+    for name, expected in effective_delivery_guards(record).items():
+        actual = fingerprint(root, name)
+        if actual == expected:
+            continue
+        if name != DELIVERY_RESTORABLE_GUARD or expected is not None or actual != DELIVERY_RESTORABLE_SHA256:
+            raise ValueError('Authorization renewal cannot change immutable original/native guards')
+        if hashlib.sha256(regular_bytes(safe(root, name))).hexdigest() != DELIVERY_RESTORABLE_SHA256:
+            raise ValueError('Restored archived guard is not the pinned regular file')
+        validate_canonical_guard_blob(root, record)
+        restorations[name] = actual
+    return restorations
 
 
 def snapshot_sha256(value):
@@ -1926,7 +1973,7 @@ def plugin_snapshot_ref(root, reference):
     return value
 
 
-def validate_rsi(root, record, state, event, current=False, authorization_expires=None):
+def validate_rsi(root, record, state, event, current=False, authorization_expires=None, guard_hashes=None):
     """One bounded post-slice improvement receipt; no authority or oracle changes."""
     integrated = state['integrated']
     if (not integrated or not integrated.get('sliceCompleted') or state.get('rsi') or
@@ -1944,6 +1991,7 @@ def validate_rsi(root, record, state, event, current=False, authorization_expire
     baseline_plugin = plugin_snapshot_ref(root, evidence['baselinePlugin'])
     json.loads(delivery_ref(root, evidence['baselineHarness']))
     authorization_expires = authorization_expires or effective_delivery_authorization(record)
+    guard_hashes = effective_delivery_guards(record) if guard_hashes is None else guard_hashes
     if evidence.get('authorizationExpiresUTC') != authorization_expires:
         raise ValueError('RSI authorization binding differs')
     if baseline_plugin['sha256'] != integrated['pluginBaselineSha256']:
@@ -1988,7 +2036,7 @@ def validate_rsi(root, record, state, event, current=False, authorization_expire
                 comparison.get('immutableHashes') != {role: snapshot_sha256(values) for role, values in maps.items()}):
             raise ValueError('RSI immutable hashes differ from completed source and plugin')
         protected = dict(maps['oracleFiles'], **maps['guardFiles'])
-        if any(sha is not None and protected.get(name) != sha for name, sha in record['delivery']['guardHashes'].items()):
+        if any(sha is not None and protected.get(name) != sha for name, sha in guard_hashes.items()):
             raise ValueError('RSI snapshot omits or changes original/native guards')
         names = before.get('checkNames')
         checks = comparison.get('checks')
@@ -2025,7 +2073,7 @@ def validate_rsi(root, record, state, event, current=False, authorization_expire
                 raise ValueError('RSI adopted result is not the actual current checker')
         elif current and plugin_snapshot(root)['sha256'] != baseline:
             raise ValueError('RSI no-change differs from actual installed plugin snapshot')
-    if current and any(fingerprint(root, name) != sha for name, sha in record['delivery']['guardHashes'].items()):
+    if current and any(fingerprint(root, name) != sha for name, sha in guard_hashes.items()):
         raise ValueError('RSI cannot change immutable original/native guards')
     return evidence
 
@@ -2179,6 +2227,7 @@ def delivery_state(root, record, reqs):
     advances = {delivery_product_identity(record['sourceHashes'])}
     authorization_expires = identity['authorizationExpiresUTC']
     authorization_issued = None
+    guard_hashes = dict(identity['guardHashes'])
     for index, event in enumerate(events):
         if not isinstance(event, dict) or event.get('sequence') != index + 1:
             raise ValueError('Delivery event sequence differs')
@@ -2190,6 +2239,9 @@ def delivery_state(root, record, reqs):
         if event.get('atUTC') != event['clockSample']['utc']:
             raise ValueError('Delivery event timestamp differs from sample')
         kind = event.get('kind')
+        if 'guardRestorations' in event:
+            guard_hashes = restored_delivery_guards(guard_hashes, event)
+            validate_canonical_guard_blob(root, record)
         if kind == 'authorization-renewed':
             authorization_issued = validate_authorization_renewal(
                 root, record, event, authorization_expires, authorization_issued)
@@ -2287,7 +2339,8 @@ def delivery_state(root, record, reqs):
             advances.add(product)
             state['integrated'] = event
         elif kind == 'rsi':
-            state['rsi'] = validate_rsi(root, record, state, event, authorization_expires=authorization_expires)
+            state['rsi'] = validate_rsi(root, record, state, event,
+                                       authorization_expires=authorization_expires, guard_hashes=guard_hashes)
         elif kind == 'journey-observed':
             if not state['integrated'] or event.get('candidateSha256') != state['candidateSha256'] or state['journey']:
                 raise ValueError('Journey observation needs the integrated candidate')
@@ -3906,8 +3959,10 @@ def main():
             renewal = event['kind'] == 'authorization-renewed'
             if not closing and (progress['reconciliationRequired'] or (progress['authorizationExpired'] and not renewal)):
                 raise ValueError('Delivery authorization expired or clocks require reconciliation')
-            if renewal and any(fingerprint(root, name) != sha for name, sha in record['delivery']['guardHashes'].items()):
-                raise ValueError('Authorization renewal cannot change immutable original/native guards')
+            if renewal:
+                restorations = renewal_guard_restorations(root, record)
+                if restorations:
+                    event['guardRestorations'] = restorations
             actual = delivery_state(root, record, reqs)
             if event['kind'] == 'candidate':
                 validate_delivery_candidate(root, record, event['candidate'], current=True)

@@ -16,6 +16,105 @@ from test_delivery_flow import DeliveryFixture, engine
 class DeliveryAuthorizationTests(DeliveryFixture):
     integrated_changed = flow.DeliveryFlowTests.integrated_changed
     rsi_event = flow.DeliveryFlowTests.rsi_event
+    archived_guard = 'implementation/elm-build-loop-v1/loop.py'
+    archived_guard_sha = '13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6'
+
+    def missing_canonical_guard(self):
+        body = (fixtures.PLUGIN.parents[1] / self.archived_guard).read_bytes()
+        target = self.fixture.write(self.archived_guard, body.decode())
+        self.assertEqual(fixtures.digest(target), self.archived_guard_sha)
+        self.fixture.run_git('add', self.archived_guard)
+        self.fixture.run_git('commit', '-qm', 'canonical archived guard in original revision')
+        # Model the tracked archived blob missing from the checkout at start,
+        # without turning it into foreign dirty custody in this isolated fixture.
+        self.fixture.run_git('update-index', '--assume-unchanged', self.archived_guard)
+        target.unlink()
+        return body
+
+    def test_canonical_archived_guard_restoration_is_recorded_without_rewriting_old_rsi(self):
+        body = self.missing_canonical_guard()
+        sha, revision = self.integrated_changed()
+        self.append(self.rsi_event(sha, revision))
+        before = self.record()
+        self.assertIsNone(before['delivery']['guardHashes'][self.archived_guard])
+        (self.repo / self.archived_guard).write_bytes(body)
+        sample = self.sample()
+        renewal, _, _, _ = self.renewal(sample)
+        self.append_at(renewal, sample)
+        after = self.record()
+        self.assertEqual(after['delivery']['guardHashes'], before['delivery']['guardHashes'])
+        self.assertEqual(after['delivery']['events'][:-1], before['delivery']['events'])
+        self.assertEqual(after['delivery']['clockOrigin'], before['delivery']['clockOrigin'])
+        self.assertEqual(after['delivery']['events'][-1]['guardRestorations'], {self.archived_guard: self.archived_guard_sha})
+        self.assertEqual(engine().effective_delivery_guards(after)[self.archived_guard], self.archived_guard_sha)
+        self.cli_at(sample, 'handoff')
+        module = engine()
+        reqs = {row['id']: row for row in module.requirement_document(self.repo)['requirements']}
+        for restorations in ({self.archived_guard: '0' * 64},
+                             {'window-integration-qa/qa_launch.py': self.archived_guard_sha}):
+            damaged = json.loads(json.dumps(after))
+            damaged['_recordPath'] = self.record_path
+            damaged['delivery']['events'][-1]['guardRestorations'] = restorations
+            with self.assertRaisesRegex(ValueError, 'restoration transition'):
+                module.delivery_state(self.repo, damaged, reqs)
+        later = self.sample(4)
+        next_event, _, _, _ = self.renewal(later, '2', previous=renewal['authorizationExpiresUTC'])
+        (self.repo / self.archived_guard).write_bytes(body + b'\n# changed after restoration\n')
+        self.append_at(next_event, later, ok=False)
+        (self.repo / self.archived_guard).write_bytes(body)
+        self.append_at(next_event, later)
+        self.assertNotIn('guardRestorations', self.record()['delivery']['events'][-1])
+
+    def test_guard_restoration_refuses_wrong_bytes_other_guard_and_caller_override(self):
+        body = self.missing_canonical_guard()
+        self.start_delivery()
+        sample = self.sample()
+        renewal, _, _, _ = self.renewal(sample)
+        (self.repo / self.archived_guard).write_bytes(body + b'\n# changed\n')
+        self.append_at(renewal, sample, ok=False)
+        (self.repo / self.archived_guard).write_bytes(body)
+        other = self.fixture.write('window-integration-qa/qa_launch.py', 'unauthorized missing guard restoration')
+        self.append_at(renewal, sample, ok=False)
+        other.unlink()
+        injected = dict(renewal, guardRestorations={self.archived_guard: self.archived_guard_sha})
+        self.append_at(injected, sample, ok=False)
+        target = self.repo / self.archived_guard
+        target.unlink()
+        alternate = self.fixture.write('.warlock-contributor/guard-copy.py', body.decode())
+        target.symlink_to(alternate)
+        self.append_at(renewal, sample, ok=False)
+
+    def test_guard_restoration_requires_canonical_blob_in_original_revision(self):
+        self.start_delivery()
+        body = (fixtures.PLUGIN.parents[1] / self.archived_guard).read_bytes()
+        self.fixture.write(self.archived_guard, body.decode())
+        sample = self.sample()
+        renewal, _, _, _ = self.renewal(sample)
+        self.append_at(renewal, sample, ok=False)
+
+    def test_new_rsi_requires_recorded_restored_guard_in_snapshot(self):
+        body = self.missing_canonical_guard()
+        sha, revision = self.integrated_changed()
+        (self.repo / self.archived_guard).write_bytes(body)
+        sample = self.sample()
+        renewal, _, _, _ = self.renewal(sample)
+        self.append_at(renewal, sample)
+        rsi = self.rsi_event(sha, revision)
+        evidence = json.loads((self.repo / rsi['evidence']['path']).read_text())
+        evidence['authorizationExpiresUTC'] = renewal['authorizationExpiresUTC']
+        rsi['evidence'] = self.ref('restored-rsi', evidence)
+        self.append_at(rsi, sample, ok=False)
+        snapshot = json.loads((self.repo / evidence['baselineHarness']['path']).read_text())
+        snapshot['fixedInputs']['guardFiles'][self.archived_guard] = {'sha256': self.archived_guard_sha, 'bytes': len(body)}
+        evidence['baselineHarness'] = self.ref('restored-harness', snapshot)
+        evidence['candidateHarness'] = evidence['baselineHarness']
+        comparison = json.loads((self.repo / evidence['comparison']['path']).read_text())
+        comparison['baselineSnapshotSha256'] = engine().snapshot_sha256(snapshot)
+        comparison['candidateSnapshotSha256'] = comparison['baselineSnapshotSha256']
+        comparison['immutableHashes']['guardFiles'] = engine().snapshot_sha256({self.archived_guard: self.archived_guard_sha})
+        evidence['comparison'] = self.ref('restored-comparison', comparison)
+        rsi['evidence'] = self.ref('complete-restored-rsi', evidence)
+        self.append_at(rsi, sample)
 
     def sample(self, hours=3):
         origin = self.record()['delivery']['clockOrigin']

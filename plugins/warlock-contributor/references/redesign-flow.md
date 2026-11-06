@@ -98,3 +98,5 @@ Keep Harness2 comparison contexts under an ignored repository evidence directory
 ## Renew an explicitly authorized work window
 
 Continue the same participant record. Preserve its initial expiry, clock origin, candidate, review, queue age and failed history. An `authorization-renewed` event records a later expiry only when it cites the actual human request and a subsequent active-goal observation. The original authorization remains immutable. Renewal metadata does not override a later pause, handoff, goal change or original scenario deadline. It is not product progress. Do not create a replacement participant to reset the management clock. RSI binds the authorization effective at the event being reviewed.
+
+If the archived coordinator was absent when the record started, renewal may record its restoration only from the exact pinned regular Git blob at the original source revision. The initial null fingerprint stays immutable. The event records the restoration; other guard changes remain refused. This repair grants no native or original acceptance.
