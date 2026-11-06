@@ -108,14 +108,20 @@ def team_quint_inputs(root, pair):
             prefix + 'tea004-preview-' + pair + '_test.qnt'}
 
 
-def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False):
+def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False):
     names = {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
              'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
              'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
              'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py',
              'implementation/warlock/elm.json'}
     names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
-    if consumption:
+    if successor_focus:
+        names.update('implementation/warlock/qa/' + name for name in (
+            'SystemMenuReplay.elm', 'SolSystemMenuIntegratedReplay2114.elm',
+            'SystemMenuFocusPipeline.elm', 'SuccessorFocusReplay.elm', 'SystemMenuFocusExtended.elm',
+            'NativePointerFixture.elm', 'system-menu-typed-state.cjs', 'successor-focus-harness.cjs',
+            'check-search.py'))
+    elif consumption:
         names.update('implementation/warlock/qa/' + name for name in (
             'PreviewConsumptionReplay.elm', 'preview-consumption.cjs', 'LocalFieldReplay.elm',
             'NotificationsReplay.elm', 'JumpListReplay.elm', 'NotificationRelevanceReplay.elm',
@@ -202,7 +208,7 @@ def main():
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
@@ -310,8 +316,9 @@ def main():
     if arm64:
         mandatory = arm64_inputs(REPO, subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
-                                 protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable']),
-                                 consumption=packet['arguments'] == ['--preview-consumption'])
+                                 protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role']),
+                                 consumption=packet['arguments'] == ['--preview-consumption'],
+                                 successor_focus=packet['arguments'] == ['--successor-focus'])
     if team_quint:
         mandatory = team_quint_inputs(REPO, packet['arguments'][0][2:])
     if set(packet['inputs']) != mandatory:
