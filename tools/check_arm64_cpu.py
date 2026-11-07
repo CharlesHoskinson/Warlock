@@ -629,7 +629,7 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
@@ -669,6 +669,8 @@ def main():
         mode = '--application-owner-route'
     if args.application_availability:
         mode = '--application-availability'
+    if args.native_stage_build:
+        mode = '--native-stage-build'
     if args.catalog_publication:
         mode = '--catalog-publication'
     if args.catalog_source_revision:
@@ -677,7 +679,7 @@ def main():
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
         sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
-            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only))}
+            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
@@ -708,7 +710,7 @@ def main():
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
             if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, haskell_profile,
-                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
+                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
                 raise RuntimeError('Private ARM profile failed; retained logs')
@@ -740,6 +742,11 @@ def main():
         return (logs / (name + '.stdout')).read_text()
 
     try:
+        if args.native_stage_build:
+            run('ux003-staging-contract-tests', [sys.executable, '-B',
+                ROOT / 'implementation/warlock/qa/omarchy_trial/test_application_staging.py',
+                '--helper', ROOT / 'tools/omarchy_ui_mvp.py'], timeout=120)
+            run('native-stage-contract-tests', [sys.executable, '-B', ROOT / 'tools/test_arm64_native_stage.py'], timeout=120)
         if args.preview_control:
             # Fixed source syntax preflight prevents expensive recompilation
             # when a declared QA fixture cannot be parsed by the pinned Node.
@@ -1027,6 +1034,16 @@ def main():
                     'declaredOrdinaryInternalModulesExposed': False, 'testsUseHomeModules': True,
                     'publicLinkedTestProof': False, 'externalImportOpacityProbeExecuted': False, 'fixture': 'custody-child',
                     'scope': 'Held executable lease/process fixture only; no native desktop or original acceptance'}
+            elif args.native_stage_build:
+                from arm64_native_stage import TARGETS
+                selected_targets = list(TARGETS)
+                build_targets = ['warlock-held-document-proposal:lib:warlock-held-document-proposal',
+                                 'warlock-process-custody:lib:warlock-process-custody',
+                                 'warlock-protocol:lib:warlock-protocol',
+                                 'warlock-runtime:lib:warlock-runtime',
+                                 *[selected for _, selected in selected_targets]]
+                build_label = 'native-stage-build'
+                protocol_suites = ()
             else:
                 build_targets = ([selected for _, selected in protocol_targets] if protocol_profile else
                                  [target, *[selected for _, selected in protocol_targets], backend])
@@ -1106,6 +1123,9 @@ def main():
                     run('compile-plain-' + entry, [packet['elm'], 'make', 'src/' + entry + '.elm', '--output=' + str(js)], frontend, 180, elm_env)
                     plain[role] = image(js)
             report.update(executables=binaries, uiDocuments=documents, plainRoots=plain)
+            if args.native_stage_build:
+                from arm64_native_stage import collect
+                report['nativeBuildStageManifest'] = collect(output, packet, binaries, documents, run)
             if args.preview_control:
                 qa = ROOT / 'implementation/warlock/qa'
                 result = json.loads(run('http-preview-control', [packet['node'],

@@ -108,7 +108,7 @@ def team_quint_inputs(root, pair):
             prefix + 'tea004-preview-' + pair + '_test.qnt'}
 
 
-def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False):
+def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False, native_stage_build=False):
     if daemon_only:
         return {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
                 'tools/arm64-toolchain.json', 'tools/ux031_daemon_only.py',
@@ -119,6 +119,10 @@ def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only
              'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py',
              'implementation/warlock/elm.json'}
     names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
+    if native_stage_build:
+        names.update({'tools/arm64_native_stage.py', 'tools/test_arm64_native_stage.py',
+                      'tools/omarchy_ui_mvp.py',
+                      'implementation/warlock/qa/omarchy_trial/test_application_staging.py'})
     if application_availability:
         names.add('tools/check_elm_cpu.py')
         names.add('tools/elm_http_dependencies.py')
@@ -248,7 +252,7 @@ def main():
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability'], ['--native-stage-build']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
@@ -354,7 +358,7 @@ def main():
     if continuity:
         mandatory = continuity_inputs(REPO)
     if arm64:
-        mandatory = arm64_inputs(REPO, application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
+        mandatory = arm64_inputs(REPO, native_stage_build=packet['arguments'] == ['--native-stage-build'], application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
                                  protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--workspace-navigation-protocol'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route']),
                                  consumption=packet['arguments'] == ['--preview-consumption'],
