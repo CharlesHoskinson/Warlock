@@ -667,3 +667,13 @@ unique candidate; the refused candidate cannot execute or integrate. A refusal
 does not advance progress, clear deferral, extend authorization or satisfy RSI.
 Closing evidence can be recorded after expiry or a clock discontinuity; further
 work still requires the existing authorization and clock checks.
+
+Version 0.17.8 adds a read-only advisory for the fixed WebKit metadata candidate:
+`python3 -B plugins/warlock-contributor/scripts/native_command_preflight.py
+--root /absolute/repository --candidate /absolute/candidate.json --sha256 FILE_SHA`.
+It checks the exact portable protected command, three original native guard
+hashes, the reviewed portable wrapper, and candidate-bound runner/packet bytes.
+The archived launcher's old host alias is refused. This is a pre-freeze check,
+not candidate validation, execution permission, provider qualification or an
+execution lease. Existing source, identity, goal, scope and native checks remain
+required. Other native commands are outside this advisory's fixed scope.
