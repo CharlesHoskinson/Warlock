@@ -260,3 +260,23 @@ test-suite application-owner-route-controls
   build-depends: base >=4.18 && <5, bytestring, text, directory, filepath, unix, cryptohash-sha256 ==0.11.102.1, warlock-runtime, warlock-process-custody, warlock-protocol
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+-- Preparation-only fixed native metadata observation. Never a GUI/provider grant.
+executable webkit-provider-probe
+  hs-source-dirs: test-webkit-provider-probe, ui
+  main-is: Main.hs
+  other-modules: ProviderProbeContract, ProviderProbeHeaders, Warlock.Ui.WebKitABI
+  pkgconfig-depends: webkitgtk-6.0 ==2.54.2, gobject-2.0
+  extra-libraries: webkitgtk-6.0, gobject-2.0
+  build-depends: base >=4.18 && <5
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+test-suite webkit-provider-probe-contract-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-webkit-provider-probe
+  main-is: Controls.hs
+  other-modules: ProviderProbeContract
+  build-depends: base >=4.18 && <5
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0

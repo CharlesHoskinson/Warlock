@@ -1,7 +1,7 @@
 """Static ELF manifest refusal controls. No native image is executed."""
 import unittest
 import json
-from arm64_native_stage import elf_header, readelf_dependencies, approved_runpath, library_recipe
+from arm64_native_stage import stage_image_names, elf_header, readelf_dependencies, approved_runpath, library_recipe
 
 
 def header(machine=183):
@@ -10,6 +10,19 @@ def header(machine=183):
     data[16:18] = (3).to_bytes(2, 'little')
     data[18:20] = machine.to_bytes(2, 'little')
     return bytes(data)
+
+
+class ProviderProbeImageRoleTests(unittest.TestCase):
+    def test_legacy_exact_three_image_names(self):
+        self.assertEqual(stage_image_names(), {'warlock-ui-backend', 'warlock-ui-owner', 'application-argv-fixture'})
+
+    def test_provider_adds_only_fixed_metadata_image(self):
+        self.assertEqual(stage_image_names(True), {'warlock-ui-backend', 'warlock-ui-owner', 'application-argv-fixture', 'webkit-provider-probe'})
+
+    def test_nonboolean_role_expansion_refuses(self):
+        for value in (1, 'yes', None, ['foreign-image']):
+            with self.assertRaises(ValueError):
+                stage_image_names(value)
 
 
 class NativeStageContractTests(unittest.TestCase):

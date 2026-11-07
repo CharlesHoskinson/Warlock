@@ -629,10 +629,11 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build', 'provider-probe-build'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
+    args.native_stage_build = args.native_stage_build or args.provider_probe_build
     protocol_profile = args.protocol or args.preview_schema or args.workspace_navigation_protocol
     haskell_profile = protocol_profile or args.held_executable or args.peer_role or args.notification_config or args.notification_issuer or args.catalog_nodisplay or args.catalog_source_revision or args.catalog_publication or args.application_owner_route
     scope = require_qa_scope()
@@ -671,6 +672,8 @@ def main():
         mode = '--application-availability'
     if args.native_stage_build:
         mode = '--native-stage-build'
+    if args.provider_probe_build:
+        mode = '--provider-probe-build'
     if args.catalog_publication:
         mode = '--catalog-publication'
     if args.catalog_source_revision:
@@ -679,7 +682,7 @@ def main():
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
         sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
-            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build))}
+            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
@@ -710,7 +713,7 @@ def main():
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
             if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, haskell_profile,
-                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
+                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
                 raise RuntimeError('Private ARM profile failed; retained logs')
@@ -745,6 +748,8 @@ def main():
         return (logs / (name + '.stdout')).read_text()
 
     try:
+        if args.provider_probe_build:
+            run('provider-probe-parser-controls', [sys.executable, '-B', ROOT / 'tools/test_webkit_provider_probe_runner.py'], timeout=120)
         if args.native_stage_build:
             run('ux003-staging-contract-tests', [sys.executable, '-B',
                 ROOT / 'implementation/warlock/qa/omarchy_trial/test_application_staging.py',
@@ -1040,6 +1045,28 @@ def main():
             elif args.native_stage_build:
                 from arm64_native_stage import TARGETS
                 selected_targets = list(TARGETS)
+                if args.provider_probe_build:
+                    suite = 'webkit-provider-probe-contract-controls'
+                    pure_target = 'warlock-runtime:test:' + suite
+                    run('provider-pure-controls-build', common + ['build'] + flags + [pure_target], stage)
+                    lines = run('list-provider-pure-controls', common + ['list-bin'] + flags + [pure_target], stage).splitlines()
+                    if len(lines) != 1 or not Path(lines[0]).is_relative_to(output / 'dist') or Path(lines[0]).name != suite:
+                        raise RuntimeError('Unexpected provider pure control image')
+                    pure_image = image(Path(lines[0]))
+                    runs = output / 'provider-pure-runs'
+                    runs.mkdir(mode=0o700)
+                    dispatch_path = output / 'provider-pure-dispatch.json'
+                    dispatch_path.write_text(json.dumps({'suites': {pure_image['path']: {
+                        'suite': suite, 'test': {'path': pure_image['path'], 'pin': [pure_image[k] for k in ('device', 'inode', 'size', 'sha256')]},
+                        'fixtures': {}, 'runRoot': str(runs / suite)}}}) + '\n')
+                    run('provider-pure-controls', [sys.executable, '-B', ROOT / 'tools/haskell_test_wrapper.py', pure_image['path']],
+                        stage, 120, dict(env, WARLOCK_HASKELL_DISPATCH=str(dispatch_path)))
+                    receipt = json.loads((runs / suite / 'results.json').read_text())
+                    if (len(receipt) != 1 or receipt[0]['exit'] != 0 or receipt[0]['forcedCleanup']
+                            or (runs / suite / 'default.log').read_text() != 'webkit-provider-probe-contract-controls: 13 complete\n'):
+                        raise RuntimeError('Provider pure controls receipt differs')
+                    report['providerPureControls'] = {'checks': 13, 'image': pure_image, 'metadataFFIExecuted': False}
+                    selected_targets.append(('webkit-provider-probe', 'warlock-runtime:exe:webkit-provider-probe'))
                 build_targets = ['warlock-held-document-proposal:lib:warlock-held-document-proposal',
                                  'warlock-process-custody:lib:warlock-process-custody',
                                  'warlock-protocol:lib:warlock-protocol',
@@ -1128,7 +1155,7 @@ def main():
             report.update(executables=binaries, uiDocuments=documents, plainRoots=plain)
             if args.native_stage_build:
                 from arm64_native_stage import collect
-                report['nativeBuildStageManifest'] = collect(output, packet, binaries, documents, run)
+                report['nativeBuildStageManifest'] = collect(output, packet, binaries, documents, run, provider_probe=args.provider_probe_build)
             if args.preview_control:
                 qa = ROOT / 'implementation/warlock/qa'
                 result = json.loads(run('http-preview-control', [packet['node'],

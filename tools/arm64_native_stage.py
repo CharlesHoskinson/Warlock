@@ -136,9 +136,15 @@ def private_directory_snapshot(system):
             'mtimeNs': after.st_mtime_ns, 'ctimeNs': after.st_ctime_ns, 'entries': entries}
 
 
-def collect(output, packet, binaries, documents, run):
+def stage_image_names(provider_probe=False):
+    if type(provider_probe) is not bool:
+        raise ValueError('Provider probe role must be fixed boolean')
+    return {name for name, _ in TARGETS} | ({'webkit-provider-probe'} if provider_probe else set())
+
+
+def collect(output, packet, binaries, documents, run, provider_probe=False):
     """Root protected builder calls only fixed readelf argv, never ELF targets."""
-    if set(binaries) != {name for name, _ in TARGETS} or set(documents) != {'controller', 'bar', 'popup'}:
+    if set(binaries) != stage_image_names(provider_probe) or set(documents) != {'controller', 'bar', 'popup'}:
         raise ValueError('Native stage requires exact three images and three Http documents')
     system_path = Path(packet['systemInputs'])
     expected_system = packet['files'][str(system_path)]

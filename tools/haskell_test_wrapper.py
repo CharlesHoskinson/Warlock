@@ -20,7 +20,7 @@ FIXTURES = {'ingress-controls', 'credential-guard-controls'}
 ROOTS = {'durable-storage-controls', 'selection-admission-controls', 'host-guard-controls',
          'slot-store-controls', 'pair-store-smoke', 'child-directory-controls',
          'independent-admission-shape', 'pair-store-sequences', 'independent-lifetime-owner'}
-NOARGS = {'held-document-controls', 'public-controls', 'boundary-controls', 'owner-sequences',
+NOARGS = {'webkit-provider-probe-contract-controls', 'held-document-controls', 'public-controls', 'boundary-controls', 'owner-sequences',
           'elf-cases', 'native-cancellation-controls', 'desktop-boundary-controls', 'workspace-navigation-controls', 'preview-control', 'ui-engine-controls', 'ui-private-network-controls', 'ui-display-controls', 'ui-webkit-controls', 'ui-engine-protocol-controls', 'ui-engine-exec-controls', 'ui-engine-broker-controls'}
 
 
