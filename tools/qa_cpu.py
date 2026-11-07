@@ -108,7 +108,25 @@ def team_quint_inputs(root, pair):
             prefix + 'tea004-preview-' + pair + '_test.qnt'}
 
 
-def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False, native_stage_build=False, provider_probe_build=False, provider_callback_build=False, physical_context_owner_build=False, physical_context_owner_bridge=False, physical_context_owner_backing=False, virtual_pointer_build=False, ux003_journey_build=False):
+def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False, native_stage_build=False, provider_probe_build=False, provider_callback_build=False, physical_context_owner_build=False, physical_context_owner_bridge=False, physical_context_owner_backing=False, virtual_pointer_build=False, ux003_journey_build=False, aquamarine_build=False):
+    if aquamarine_build:
+        manifest_name = '.warlock-contributor/evidence/nextloop-20261106/aquamarine-build-inputs/inputs.json'
+        manifest_path = root / manifest_name
+        if manifest_path.is_symlink() or digest(manifest_path) != '9e7347b8903b162c9042b5be6d3b6f52b3caac962fcb3d9b194c4d444ba9feb6':
+            raise RuntimeError('Aquamarine supplemental manifest changed')
+        manifest = json.loads(manifest_path.read_text())
+        names = {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
+                 'tools/aquamarine_build.py', 'tools/test_aquamarine_build.py',
+                 'tools/run_arm_nested_foundation.py', 'tools/test_arm_nested_foundation.py',
+                 'tools/run_arm_gl_foundation.py', 'tools/test_arm_gl_foundation.py',
+                 'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
+                 'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
+                 'tools/haskell-dependencies.json',
+                 'window-integration-qa/qa_launch.py', manifest_name}
+        names.update(name for name, entry in manifest['files'].items() if 'sha256' in entry)
+        if any(Path(name).is_absolute() or '..' in Path(name).parts for name in names):
+            raise RuntimeError('Aquamarine supplemental input escaped repository')
+        return names
     if ux003_journey_build:
         names = arm64_inputs(root, physical_context_owner_backing=True)
         names.update({'implementation/warlock/haskell/runtime/fixture-ux003-native-observer/Main.hs',
@@ -300,7 +318,7 @@ def main():
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability'], ['--native-stage-build'], ['--provider-probe-build'], ['--provider-callback-build'], ['--physical-context-owner-build'], ['--physical-context-owner-bridge'], ['--physical-context-owner-backing'], ['--virtual-pointer-build'], ['--ux003-journey-build']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability'], ['--native-stage-build'], ['--provider-probe-build'], ['--provider-callback-build'], ['--physical-context-owner-build'], ['--physical-context-owner-bridge'], ['--physical-context-owner-backing'], ['--virtual-pointer-build'], ['--ux003-journey-build'], ['--aquamarine-build']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
@@ -408,7 +426,7 @@ def main():
     if continuity:
         mandatory = continuity_inputs(REPO)
     if arm64:
-        mandatory = arm64_inputs(REPO, ux003_journey_build=packet['arguments'] == ['--ux003-journey-build'], virtual_pointer_build=packet['arguments'] == ['--virtual-pointer-build'], physical_context_owner_backing=packet['arguments'] == ['--physical-context-owner-backing'], physical_context_owner_bridge=packet['arguments'] == ['--physical-context-owner-bridge'], physical_context_owner_build=packet['arguments'] == ['--physical-context-owner-build'], provider_callback_build=packet['arguments'] == ['--provider-callback-build'], provider_probe_build=packet['arguments'] == ['--provider-probe-build'], native_stage_build=packet['arguments'] == ['--native-stage-build'], application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
+        mandatory = arm64_inputs(REPO, aquamarine_build=packet['arguments'] == ['--aquamarine-build'], ux003_journey_build=packet['arguments'] == ['--ux003-journey-build'], virtual_pointer_build=packet['arguments'] == ['--virtual-pointer-build'], physical_context_owner_backing=packet['arguments'] == ['--physical-context-owner-backing'], physical_context_owner_bridge=packet['arguments'] == ['--physical-context-owner-bridge'], physical_context_owner_build=packet['arguments'] == ['--physical-context-owner-build'], provider_callback_build=packet['arguments'] == ['--provider-callback-build'], provider_probe_build=packet['arguments'] == ['--provider-probe-build'], native_stage_build=packet['arguments'] == ['--native-stage-build'], application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
                                  protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--workspace-navigation-protocol'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route']),
                                  consumption=packet['arguments'] == ['--preview-consumption'],
