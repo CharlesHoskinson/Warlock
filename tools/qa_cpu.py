@@ -115,7 +115,8 @@ def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only
                  'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
                  'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
                  'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py',
-                 'tools/provider_callback_build.py', 'tools/test_provider_callback_build.py'}
+                 'tools/provider_callback_build.py', 'tools/test_provider_callback_build.py',
+                 'implementation/warlock/haskell/runtime/test-webkit-callback-capi/callback-invoke.c'}
         names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/haskell').rglob('*')
                      if p.is_file() and not any(part in ('dist-newstyle', '__pycache__') for part in p.parts))
         return names
@@ -227,6 +228,12 @@ def tea_inputs(root):
     return names
 
 
+def capi_invocation_controls_inputs(root):
+    # Only pure unittest/mocked-runner code; no compiler, SDK build or native target.
+    return {'tools/qa_cpu.py', 'tools/run_capi_invocation_probe.py',
+            'tools/test_capi_invocation_probe.py', 'window-integration-qa/qa_launch.py'}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--review', type=Path, required=True)
@@ -257,6 +264,7 @@ def main():
     tea = runner == REPO / 'tools/check_tea_cpu.py'
     continuity = runner == REPO / 'tools/check_continuity_cpu.py'
     arm64 = runner == REPO / 'tools/check_arm64_cpu.py'
+    capi_controls = runner == REPO / 'tools/test_capi_invocation_probe.py'
     team_quint = runner == REPO / 'tools/check_team_quint_cpu.py'
     allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend'], ['--persistent']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract'], ['--subscriptions']])))
@@ -268,7 +276,9 @@ def main():
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
-    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+    if capi_controls:
+        allowed = [[]]
+    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and not capi_controls and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
@@ -383,6 +393,8 @@ def main():
                                  daemon_only=packet['arguments'] == ['--ux031-daemon-only'])
     if team_quint:
         mandatory = team_quint_inputs(REPO, packet['arguments'][0][2:])
+    if capi_controls:
+        mandatory = capi_invocation_controls_inputs(REPO)
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
     reviewed_inputs(packet)
@@ -408,6 +420,8 @@ def main():
         for name in ('DISPLAY', 'WAYLAND_DISPLAY', 'WAYLAND_SOCKET', 'XAUTHORITY',
                      'HYPRLAND_INSTANCE_SIGNATURE', 'AQ_DRM_DEVICES', 'AQ_BACKENDS', 'AT_SPI_BUS_ADDRESS'):
             env.pop(name, None)
+        if capi_controls:
+            env.pop('WARLOCK_CAPI_RUNNER_UNDER_TEST', None)
         reviewed(review, args.sha256)
         reviewed_inputs(packet)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)

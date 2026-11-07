@@ -285,6 +285,7 @@ test-suite webkit-callback-capi-controls
   type: exitcode-stdio-1.0
   hs-source-dirs: test-webkit-callback-capi
   main-is: Main.hs
+  c-sources: test-webkit-callback-capi/callback-invoke.c
   build-depends: base >=4.18 && <5
   pkgconfig-depends: gobject-2.0
   default-language: Haskell2010

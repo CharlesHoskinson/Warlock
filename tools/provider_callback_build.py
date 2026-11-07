@@ -16,10 +16,12 @@ TARGETS = (
     ('owned-signal-lifecycle-controls', 'warlock-runtime:test:owned-signal-lifecycle-controls'),
 )
 BASE_CABAL_SHA256 = 'f11bfb0e2bf6b5480ffe5759465dce5d06569d579b50c84691fbb3cd5574c695'
-POST_CABAL_SHA256 = '9650b5504e22c09ac68dafb87fc0fd4443f18ebbfd3773ccdfd33b99257408a6'
-ADDED_SUFFIX = '\ntest-suite webkit-callback-capi-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-webkit-callback-capi\n  main-is: Main.hs\n  build-depends: base >=4.18 && <5\n  pkgconfig-depends: gobject-2.0\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates\n\ntest-suite owned-signal-lifecycle-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-owned-signal, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp\n  pkgconfig-depends: gobject-2.0\n  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0\n'
-SUITE_STANZAS = {'webkit-callback-capi-controls': 'test-suite webkit-callback-capi-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-webkit-callback-capi\n  main-is: Main.hs\n  build-depends: base >=4.18 && <5\n  pkgconfig-depends: gobject-2.0\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates\n', 'owned-signal-lifecycle-controls': 'test-suite owned-signal-lifecycle-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-owned-signal, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp\n  pkgconfig-depends: gobject-2.0\n  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0\n'}
-FIXTURE_HASHES = {'test-webkit-callback-capi': '2d5a72f20348a9961cc28e96d0ca6cc634e60050bddce072e92d4e830fcd4c42', 'test-owned-signal': '7269e40e32790f296a7d31d443b4881004fd1ace0c219b67530f335606a9f607'}
+POST_CABAL_SHA256 = '7213b9bf0bbee9aceaaed29ae3e507579ece65319fbe1a8499c770f4f878e2c7'
+ADDED_SUFFIX = '\ntest-suite webkit-callback-capi-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-webkit-callback-capi\n  main-is: Main.hs\n  c-sources: test-webkit-callback-capi/callback-invoke.c\n  build-depends: base >=4.18 && <5\n  pkgconfig-depends: gobject-2.0\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates\n\ntest-suite owned-signal-lifecycle-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-owned-signal, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp\n  pkgconfig-depends: gobject-2.0\n  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0\n'
+SUITE_STANZAS = {'webkit-callback-capi-controls': 'test-suite webkit-callback-capi-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-webkit-callback-capi\n  main-is: Main.hs\n  c-sources: test-webkit-callback-capi/callback-invoke.c\n  build-depends: base >=4.18 && <5\n  pkgconfig-depends: gobject-2.0\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates\n', 'owned-signal-lifecycle-controls': 'test-suite owned-signal-lifecycle-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-owned-signal, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp\n  pkgconfig-depends: gobject-2.0\n  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0\n'}
+FIXTURE_HASHES = {'test-webkit-callback-capi': 'f74ed64d4ae856c0eb82fece3d61f23a277d14f5fef19a0a93c36a60c91ac2b6', 'test-owned-signal': '7269e40e32790f296a7d31d443b4881004fd1ace0c219b67530f335606a9f607'}
+
+C_FIXTURE_FILES = {'test-webkit-callback-capi': {'callback-invoke.c': '8a5afb03759001f3f8313b89a3a4825e6ff6c99e3c24a80c122c4e6159005b97'}}
 
 
 def validate_runtime(runtime):
@@ -44,11 +46,13 @@ def validate_runtime(runtime):
         root = runtime / directory
         if root.is_symlink() or not root.is_dir():
             raise RuntimeError('Callback fixture directory differs')
+        expected_files = {'Main.hs': expected_sha, **C_FIXTURE_FILES.get(directory, {})}
         entries = list(root.rglob('*'))
-        if any(p.is_symlink() or not p.is_file() for p in entries) or {str(p.relative_to(root)) for p in entries} != {'Main.hs'}:
+        if any(p.is_symlink() or not p.is_file() for p in entries) or {str(p.relative_to(root)) for p in entries} != set(expected_files):
             raise RuntimeError('Unexpected callback fixture/home-module source')
-        if digest(root / 'Main.hs') != expected_sha:
-            raise RuntimeError('Fixed callback fixture source differs: ' + directory)
+        for name, expected_hash in expected_files.items():
+            if digest(root / name) != expected_hash:
+                raise RuntimeError('Fixed callback fixture source differs: ' + directory + '/' + name)
 
 
 def command_plan(packet, output, stage):

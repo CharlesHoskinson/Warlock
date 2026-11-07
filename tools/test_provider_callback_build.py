@@ -10,6 +10,7 @@ import struct
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = None
 helper = None
@@ -27,6 +28,8 @@ class ProfileControls(unittest.TestCase):
         for directory in helper.FIXTURE_HASHES:
             (self.runtime / directory).mkdir()
             shutil.copyfile(source / directory / 'Main.hs', self.runtime / directory / 'Main.hs')
+        shutil.copyfile(source / 'test-webkit-callback-capi/callback-invoke.c',
+                        self.runtime / 'test-webkit-callback-capi/callback-invoke.c')
 
     def test_exact_fixtures_and_only_two_targets(self):
         helper.validate_runtime(self.runtime)
@@ -137,6 +140,66 @@ class ProfileControls(unittest.TestCase):
                     and node.test.attr == 'provider_probe_build'):
                 actual.append(hashlib.sha256(ast.dump(node, include_attributes=False).encode()).hexdigest())
         self.assertEqual(sorted(actual), EXPECTED_LEGACY_PROVIDER_IF_HASHES)
+
+    def test_z00_exact_single_c_file_and_source_pins(self):
+        self.assertEqual(helper.C_FIXTURE_FILES, {'test-webkit-callback-capi': {
+            'callback-invoke.c': '8a5afb03759001f3f8313b89a3a4825e6ff6c99e3c24a80c122c4e6159005b97'}})
+        self.assertEqual(helper.FIXTURE_HASHES, {
+            'test-webkit-callback-capi': 'f74ed64d4ae856c0eb82fece3d61f23a277d14f5fef19a0a93c36a60c91ac2b6',
+            'test-owned-signal': '7269e40e32790f296a7d31d443b4881004fd1ace0c219b67530f335606a9f607'})
+
+    def test_z01_changed_c_file_refused(self):
+        p = self.runtime / 'test-webkit-callback-capi/callback-invoke.c'
+        p.write_bytes(p.read_bytes() + b'/* changed */\n')
+        with self.assertRaises(RuntimeError): helper.validate_runtime(self.runtime)
+
+    def test_z02_missing_c_file_refused(self):
+        (self.runtime / 'test-webkit-callback-capi/callback-invoke.c').unlink()
+        with self.assertRaises(RuntimeError): helper.validate_runtime(self.runtime)
+
+    def test_z03_symlink_c_file_refused(self):
+        p = self.runtime / 'test-webkit-callback-capi/callback-invoke.c'; target = self.runtime / 'outside.c'
+        p.rename(target); p.symlink_to(target)
+        with self.assertRaises(RuntimeError): helper.validate_runtime(self.runtime)
+
+    def test_z04_unexpected_second_c_file_refused(self):
+        (self.runtime / 'test-webkit-callback-capi/other.c').write_text('/* not selected */\n')
+        with self.assertRaises(RuntimeError): helper.validate_runtime(self.runtime)
+
+    def test_z05_c_file_in_owned_signal_directory_refused(self):
+        (self.runtime / 'test-owned-signal/callback-invoke.c').write_text('/* wrong suite */\n')
+        with self.assertRaises(RuntimeError): helper.validate_runtime(self.runtime)
+
+    def test_z06_cabal_c_source_path_drift_refused(self):
+        p = self.runtime / 'runtime.cabal'
+        p.write_text(p.read_text().replace('c-sources: test-webkit-callback-capi/callback-invoke.c',
+                                           'c-sources: ../foreign.c'))
+        # Even an accidentally updated whole-file pin cannot bypass exact fixed suffix/stanzas.
+        with patch.object(helper, 'POST_CABAL_SHA256', hashlib.sha256(p.read_bytes()).hexdigest()):
+            with self.assertRaises(RuntimeError): helper.validate_runtime(self.runtime)
+
+    def test_z07_extra_cabal_c_source_and_flags_refused(self):
+        p = self.runtime / 'runtime.cabal'; original = p.read_text()
+        line = '  c-sources: test-webkit-callback-capi/callback-invoke.c\n'
+        for altered in [line.rstrip() + ' other.c\n', line + '  cc-options: -DBYPASS\n',
+                        line + '  include-dirs: /unselected\n', line + '  cpp-options: -DBYPASS\n']:
+            with self.subTest(field=altered):
+                p.write_text(original.replace(line, altered))
+                with patch.object(helper, 'POST_CABAL_SHA256', hashlib.sha256(p.read_bytes()).hexdigest()):
+                    with self.assertRaises(RuntimeError): helper.validate_runtime(self.runtime)
+        p.write_text(original)
+
+    def test_z08_input_closure_names_c_even_when_not_materialized(self):
+        missing = Path(self.temp.name) / 'no-source-yet'
+        names = qa.arm64_inputs(missing, provider_callback_build=True)
+        self.assertIn('implementation/warlock/haskell/runtime/test-webkit-callback-capi/callback-invoke.c', names)
+        self.assertFalse(any(n.endswith('.elm') for n in names))
+
+    def test_z09_only_first_suite_gains_c_field_owned_suite_unchanged(self):
+        self.assertEqual(helper.SUITE_STANZAS['webkit-callback-capi-controls'].count('c-sources:'), 1)
+        self.assertIn('  c-sources: test-webkit-callback-capi/callback-invoke.c\n', helper.SUITE_STANZAS['webkit-callback-capi-controls'])
+        self.assertNotIn('c-sources:', helper.SUITE_STANZAS['owned-signal-lifecycle-controls'])
+        self.assertEqual(helper.POST_CABAL_SHA256, '7213b9bf0bbee9aceaaed29ae3e507579ece65319fbe1a8499c770f4f878e2c7')
 
     def image_file(self, machine=183):
         dist = Path(self.temp.name) / 'dist'; dist.mkdir(exist_ok=True)
