@@ -694,3 +694,40 @@ still receive the actual wake, freshly observe the active authorized goal, prese
 its exact thread/nonce and truthful blocker state, and use the existing ownership
 and atomic-refresh procedure. The unchanged continuity guard checks the published
 checkpoint and its freshness. Do not treat this advisory as publication or permission.
+
+
+### Retain complete managed QA receipts
+
+Version 0.17.10 requires file retention before managed QA output reaches a tool display limit.
+
+Before each authorized managed QA invocation, select new evidence files under
+`.warlock-contributor/evidence/` within the current claim scope. Refuse an existing
+file or symlink. Redirect complete stdout and stderr to those files before the
+invocation starts. Keep the exact protected command and its argument boundaries.
+A tool output limit must apply only to the displayed summary. It must not limit
+the retained streams. Keep the files when the command fails or is refused.
+
+After the invocation ends, hash the complete retained bytes. Read the actual
+`deliveryLaunch` object from those bytes. Preserve its record, candidate digest,
+selection, scope, PID, birth ticks and exact argv. Preserve the actual runner
+summary and its referenced report. For a pure unittest route, preserve the
+literal test summary. Do not substitute the final precheck result for either
+execution summary.
+
+Display a compact receipt with the evidence paths, hashes and exact byte ranges.
+Bind the launch and summary to the frozen candidate, fixtures, runners and profile.
+Verify the referenced report and current source bindings through the existing
+review gates. Retain the actual outer tool handle and terminal exit separately.
+Consume that actual handle through the existing workflow after it becomes terminal.
+A recorded summary does not consume the outer handle.
+
+If output is truncated and complete receipt files are unavailable, label the
+observation **truncated and unqualified**. Preserve the available output and the
+actual outer terminal receipt. Do not invent a PID, birth tick, handle or summary.
+Do not infer a passing observation from exit zero alone. A guarded retry needs
+its own actual launch and receipt. Keep the first attempt in the same history.
+
+This procedure improves evidence retention. The existing core already refuses
+missing or invalid execution evidence. Receipt retention grants no execution,
+source, native or original-scenario acceptance. Current goal, ownership, protected
+launcher, deadline and independent review requirements still apply.
