@@ -629,7 +629,7 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build', 'provider-probe-build', 'provider-callback-build', 'physical-context-owner-build', 'physical-context-owner-bridge', 'physical-context-owner-backing'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build', 'provider-probe-build', 'provider-callback-build', 'physical-context-owner-build', 'physical-context-owner-bridge', 'physical-context-owner-backing', 'virtual-pointer-build'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
@@ -682,6 +682,8 @@ def main():
         mode = '--physical-context-owner-bridge'
     if args.physical_context_owner_backing:
         mode = '--physical-context-owner-backing'
+    if args.virtual_pointer_build:
+        mode = '--virtual-pointer-build'
     if args.catalog_publication:
         mode = '--catalog-publication'
     if args.catalog_source_revision:
@@ -690,7 +692,7 @@ def main():
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
         sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
-            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build, physical_context_owner_build=args.physical_context_owner_build, physical_context_owner_bridge=args.physical_context_owner_bridge, physical_context_owner_backing=args.physical_context_owner_backing))}
+            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build, physical_context_owner_build=args.physical_context_owner_build, physical_context_owner_bridge=args.physical_context_owner_bridge, physical_context_owner_backing=args.physical_context_owner_backing, virtual_pointer_build=args.virtual_pointer_build))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
@@ -729,7 +731,7 @@ def main():
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
             if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, haskell_profile,
-                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build, physical_context_owner_build=args.physical_context_owner_build, physical_context_owner_bridge=args.physical_context_owner_bridge, physical_context_owner_backing=args.physical_context_owner_backing)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
+                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build, physical_context_owner_build=args.physical_context_owner_build, physical_context_owner_bridge=args.physical_context_owner_bridge, physical_context_owner_backing=args.physical_context_owner_backing, virtual_pointer_build=args.virtual_pointer_build)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
                 raise RuntimeError('Private ARM profile failed; retained logs')
@@ -779,7 +781,12 @@ def main():
                          'tea-contract-cases.cjs'):
                 run('syntax-' + name, [packet['node'], '--check',
                     ROOT / 'implementation/warlock/qa' / name], timeout=30)
-        if args.physical_context_owner_build or args.physical_context_owner_bridge or args.physical_context_owner_backing:
+        if args.virtual_pointer_build:
+            from virtual_pointer_build import run_profile
+            run('virtual-pointer-build-controls', [sys.executable, '-B',
+                ROOT / 'tools/test_virtual_pointer_build.py', '--root', ROOT], timeout=120)
+            report['virtualPointerBuild'] = run_profile(ROOT, output, packet, run)
+        elif args.physical_context_owner_build or args.physical_context_owner_bridge or args.physical_context_owner_backing:
             from physical_context_build import pin_image, run_profile
             run('physical-context-profile-controls', [sys.executable, '-B',
                 ROOT / 'tools/test_physical_context_build.py', '--root', ROOT], timeout=120)
