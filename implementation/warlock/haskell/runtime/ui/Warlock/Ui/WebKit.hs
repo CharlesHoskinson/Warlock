@@ -2,7 +2,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- WebKitGTK 6 boundary; no page loads before its role filter is installed.
 module Warlock.Ui.WebKit
-  (runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
+  (runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
 
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, catch, mask_, mask, onException, try, finally, bracket, toException)
 import Control.Concurrent (threadDelay)
@@ -217,14 +217,34 @@ checkEnvironment = do
 -- closure notifier is the receipt that the handler is no longer in use.
 -- Keep the notifier FunPtr itself for process lifetime: freeing it from inside
 -- its own invocation would have the same lifetime race as the old handler.
+-- The constructor is private. A return witness describes only this invocation,
+-- never a request marker, an exception, or an already-requested retry. It does
+-- not establish retirement, callback return, thread ownership or native readiness.
+data SignalDisconnectObservation = SignalDisconnectObservation Bool Bool
+
+signalDisconnectReturned :: SignalDisconnectObservation -> Bool
+signalDisconnectReturned (SignalDisconnectObservation returned _) = returned
+
+signalRetirementConfirmed :: SignalDisconnectObservation -> Bool
+signalRetirementConfirmed (SignalDisconnectObservation _ retired) = retired
+
+-- Preserve the original interface and retirement requirement for every caller.
 connectOwnedSignal :: Ptr a -> String -> FunPtr () -> IO () -> IO (IO ())
 connectOwnedSignal object name callback releaseCallback = mask_ $ do
+  observe <- connectOwnedSignalObserved object name callback releaseCallback
+  pure $ mask_ $ do
+    observation <- observe
+    unless (signalRetirementConfirmed observation)
+      (ioError (userError "WebKit signal retirement uncertain"))
+
+connectOwnedSignalObserved :: Ptr a -> String -> FunPtr () -> IO () -> IO (IO SignalDisconnectObservation)
+connectOwnedSignalObserved object name callback releaseCallback = mask_ $ do
   retired <- newIORef False
   requested <- newIORef False
   notifier <- wrapClosureNotify $ \_ _ -> mask_ $ do
     result <- try releaseCallback :: IO (Either SomeException ())
     case result of
-      Right () -> writeIORef retired True
+      Right () -> atomicWriteIORef retired True
       Left _ -> pure ()
   ident <- withCString name $ \signal -> signalConnect (castPtr object) signal callback nullPtr notifier 0
   -- On a failed/uncertain connection retain callback and notifier: it is not
@@ -232,9 +252,11 @@ connectOwnedSignal object name callback releaseCallback = mask_ $ do
   if ident == 0 then ioError (userError "WebKit signal connection failed") else
     pure $ mask_ $ do
       already <- atomicModifyIORef' requested (\old -> (True,old))
-      unless already (signalDisconnect (castPtr object) ident)
-      finished <- readIORef retired
-      unless finished (ioError (userError "WebKit signal retirement uncertain"))
+      returned <- if already then pure False else do
+        signalDisconnect (castPtr object) ident
+        pure True
+      finished <- atomicModifyIORef' retired (\value -> (value,value))
+      pure (SignalDisconnectObservation returned finished)
 
 -- GTask dispatches on its captured thread-default GMainContext. Hold the
 -- actual default context exclusively across registration, dispatch, and

@@ -108,7 +108,17 @@ def team_quint_inputs(root, pair):
             prefix + 'tea004-preview-' + pair + '_test.qnt'}
 
 
-def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False, native_stage_build=False, provider_probe_build=False):
+def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False, native_stage_build=False, provider_probe_build=False, provider_callback_build=False):
+    if provider_callback_build:
+        # Fixed compile/link-only closure. No Elm frontend or native-stage campaigns.
+        names = {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
+                 'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
+                 'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
+                 'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py',
+                 'tools/provider_callback_build.py', 'tools/test_provider_callback_build.py'}
+        names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/haskell').rglob('*')
+                     if p.is_file() and not any(part in ('dist-newstyle', '__pycache__') for part in p.parts))
+        return names
     if daemon_only:
         return {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
                 'tools/arm64-toolchain.json', 'tools/ux031_daemon_only.py',
@@ -254,7 +264,7 @@ def main():
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability'], ['--native-stage-build'], ['--provider-probe-build']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability'], ['--native-stage-build'], ['--provider-probe-build'], ['--provider-callback-build']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
@@ -360,7 +370,7 @@ def main():
     if continuity:
         mandatory = continuity_inputs(REPO)
     if arm64:
-        mandatory = arm64_inputs(REPO, provider_probe_build=packet['arguments'] == ['--provider-probe-build'], native_stage_build=packet['arguments'] == ['--native-stage-build'], application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
+        mandatory = arm64_inputs(REPO, provider_callback_build=packet['arguments'] == ['--provider-callback-build'], provider_probe_build=packet['arguments'] == ['--provider-probe-build'], native_stage_build=packet['arguments'] == ['--native-stage-build'], application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
                                  protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--workspace-navigation-protocol'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route']),
                                  consumption=packet['arguments'] == ['--preview-consumption'],

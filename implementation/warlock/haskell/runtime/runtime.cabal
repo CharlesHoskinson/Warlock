@@ -280,3 +280,23 @@ test-suite webkit-provider-probe-contract-controls
   build-depends: base >=4.18 && <5
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+test-suite webkit-callback-capi-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-webkit-callback-capi
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5
+  pkgconfig-depends: gobject-2.0
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
+
+test-suite owned-signal-lifecycle-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-owned-signal, ui
+  main-is: Main.hs
+  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
+  pkgconfig-depends: gobject-2.0
+  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0

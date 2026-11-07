@@ -629,7 +629,7 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build', 'provider-probe-build'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build', 'provider-probe-build', 'provider-callback-build'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
@@ -674,6 +674,8 @@ def main():
         mode = '--native-stage-build'
     if args.provider_probe_build:
         mode = '--provider-probe-build'
+    if args.provider_callback_build:
+        mode = '--provider-callback-build'
     if args.catalog_publication:
         mode = '--catalog-publication'
     if args.catalog_source_revision:
@@ -682,12 +684,14 @@ def main():
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
         sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
-            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build))}
+            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
                       'scope': 'ARM component build/replay only; no original scenario or native acceptance',
                       'nativeAcceptance': False, 'originalAcceptance': False, 'releaseAccepted': False}
+        if args.provider_callback_build:
+            report['scope'] = 'Two new fixed callback fixture images compiled/linked only; no fixture execution or native acceptance'
         (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
         # Hide host runtime sockets and network. All compiler writes are confined
         # to the new output; SDK, source, system inputs and caches remain read-only.
@@ -713,7 +717,7 @@ def main():
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
             if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, haskell_profile,
-                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
+                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
                 raise RuntimeError('Private ARM profile failed; retained logs')
@@ -798,6 +802,11 @@ def main():
                 raise RuntimeError('ARM subscription replay has no successful report')
             report['subscriptionsReport'] = {'path': str(subscription_output / 'report.json'),
                                                 'sha256': digest(subscription_output / 'report.json')}
+        elif args.provider_callback_build:
+            from provider_callback_build import run_profile
+            run('provider-callback-profile-controls', [sys.executable, '-B',
+                ROOT / 'tools/test_provider_callback_build.py', '--root', ROOT], timeout=120)
+            report['providerCallbackBuild'] = run_profile(ROOT, output, packet, run)
         else:
             source = ROOT / 'implementation/warlock/haskell'
             before = inventory(source)
