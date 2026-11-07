@@ -677,3 +677,20 @@ The archived launcher's old host alias is refused. This is a pre-freeze check,
 not candidate validation, execution permission, provider qualification or an
 execution lease. Existing source, identity, goal, scope and native checks remain
 required. Other native commands are outside this advisory's fixed scope.
+
+Version 0.17.9 adds a read-only Boolean preflight for a Root checkpoint draft:
+`python3 -B plugins/warlock-contributor/scripts/checkpoint_preflight.py
+--root /absolute/repository --checkpoint /absolute/repository/.warlock-contributor/evidence/checkpoint-draft.json
+--sha256 FILE_SHA`.
+Run it on the exact proposed bytes before Root's existing atomic checkpoint
+refresh. The draft must be a bounded regular file inside the repository.
+`externalBlocker` must be a JSON Boolean: null, strings and numbers are refused.
+A genuine blocker stays `true`; the helper does not choose or coerce its value.
+
+A successful preflight checks only that field's representation against the pinned
+continuity protocol. It writes nothing and does not validate the full checkpoint,
+observe a goal, acknowledge a nonce or clear the watcher's pending wake. Root must
+still receive the actual wake, freshly observe the active authorized goal, preserve
+its exact thread/nonce and truthful blocker state, and use the existing ownership
+and atomic-refresh procedure. The unchanged continuity guard checks the published
+checkpoint and its freshness. Do not treat this advisory as publication or permission.
