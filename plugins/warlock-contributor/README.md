@@ -134,6 +134,23 @@ campaign and installs no client plugin. Test fixtures do not modify participant
 records, the real Git index or the delivery ledger. Review the repository test
 code before executing it, as with any contributed code.
 
+For a fixed `--application-owner-route` packet, inspect its three embedded fixture
+pins before freezing the candidate:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/owner_route_preflight.py \
+  --root "$PWD" --review "$PWD/.warlock-contributor/owner-review.json" \
+  --sha256 REVIEW_SHA256
+```
+
+Use the exact packet path and digest. Retain the result with the candidate.
+The utility reads the runner AST and compares its literal fixture map with the
+packet and current fixture bytes. It refuses mismatches, dynamic maps and
+ambiguous bindings without importing or executing the runner. A
+`consistent-advisory-only` result leaves source review, complete QA, caller
+ownership and native gates required. Literal consistency does not prove the
+runner's control flow or establish SourceReady.
+
 `plan` builds a slice from original IDs and scenarios and includes their unchanged
 oracles and verification obligations. It does not choose the next feature, change
 `STATE`, claim ownership or run QA. Use `--json` before the command to save the

@@ -43,6 +43,8 @@ Use delivery-event for candidate, review, execution, integration, journey and RS
 
 An API compiler RED is not a semantic RED. A RED/GREEN pair preserves one independent fixture and names both source manifests. Expected RED never permits integration. A missing future production file can be represented only as an explicit absent source. Fixtures and runners require actual bytes.
 
+Before freezing a fixed `--application-owner-route` candidate, run `scripts/owner_route_preflight.py` from the contributor plugin with the exact packet path and SHA256. Retain its advisory result with the candidate. It checks the three literal fixture bindings without executing the runner. A consistent result grants no readiness or execution authority; independent review and the protected launcher remain required.
+
 ## Scoped protection
 
 Root retains protected execution and integration authority. Sol does not become a second executor. Writers prepare executable tests and reviewed commands. They do not run raw compilers, native effects or substitute an unprotected shell command.
