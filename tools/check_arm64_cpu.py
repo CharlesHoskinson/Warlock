@@ -715,7 +715,10 @@ def main():
             if child.returncode or not report['passed']:
                 raise RuntimeError('Private ARM profile failed; retained logs')
         except Exception as error:  # noqa: BLE001 -- retain failure evidence before exiting
-            report.update(passed=False, error=str(error))
+            if isinstance(report.get('error'), str) and report['error']:
+                report.update(passed=False, outerError=str(error))
+            else:
+                report.update(passed=False, error=str(error))
         finally:
             (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
             print(json.dumps({'passed': report['passed'], 'report': str(output / 'report.json')}), flush=True)

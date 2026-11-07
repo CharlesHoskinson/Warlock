@@ -1,0 +1,81 @@
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 03 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - GNU
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           AArch64
+  Version:                           0x1
+  Entry point address:               0x23020
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          1849640 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         12
+  Size of section headers:           64 (bytes)
+  Number of section headers:         64
+  Section header string table index: 63
+
+Program Headers:
+  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align
+  PHDR           0x000040 0x0000000000000040 0x0000000000000040 0x0002a0 0x0002a0 R   0x8
+  INTERP         0x1629c8 0x00000000001629c8 0x00000000001629c8 0x00001f 0x00001f R   0x8
+      [Requesting program interpreter: /usr/lib/ld-linux-aarch64.so.1]
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x1ae8ec 0x1ae8ec R E 0x10000
+  LOAD           0x1bd090 0x00000000001bd090 0x00000000001bd090 0x004448 0x00bbd0 RW  0x10000
+  DYNAMIC        0x1bfa98 0x00000000001bfa98 0x00000000001bfa98 0x000200 0x000200 RW  0x8
+  NOTE           0x0002e0 0x00000000000002e0 0x00000000000002e0 0x000024 0x000024 R   0x4
+  NOTE           0x1ae8cc 0x00000000001ae8cc 0x00000000001ae8cc 0x000020 0x000020 R   0x4
+  TLS            0x1bd090 0x00000000001bd090 0x00000000001bd090 0x000030 0x000080 R   0x10
+  GNU_EH_FRAME   0x1629e8 0x00000000001629e8 0x00000000001629e8 0x006c94 0x006c94 R   0x4
+  GNU_SFRAME     0x18e260 0x000000000018e260 0x000000000018e260 0x020127 0x020127 R   0x8
+  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x10
+  GNU_RELRO      0x1bd090 0x00000000001bd090 0x00000000001bd090 0x002f70 0x002f70 R   0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     
+   01     .interp 
+   02     .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_d .gnu.version_r .rela.dyn .rela.plt .relr.dyn .plt .text .rodata .stapsdt.base .interp .eh_frame_hdr .eh_frame .sframe .gcc_except_table .note.ABI-tag 
+   03     .tdata .init_array .data.rel.ro .dynamic .got .data .bss 
+   04     .dynamic 
+   05     .note.gnu.build-id 
+   06     .note.ABI-tag 
+   07     .tdata .tbss 
+   08     .eh_frame_hdr 
+   09     .sframe 
+   10     
+   11     .tdata .init_array .data.rel.ro .dynamic .got 
+
+Dynamic section at offset 0x1bfa98 contains 27 entries:
+  Tag        Type                         Name/Value
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-aarch64.so.1]
+ 0x000000000000000e (SONAME)             Library soname: [libc.so.6]
+ 0x0000000000000019 (INIT_ARRAY)         0x1bd0c0
+ 0x000000000000001b (INIT_ARRAYSZ)       32 (bytes)
+ 0x000000006ffffef5 (GNU_HASH)           0x308
+ 0x0000000000000005 (STRTAB)             0x175a8
+ 0x0000000000000006 (SYMTAB)             0x52f0
+ 0x000000000000000a (STRSZ)              34768 (bytes)
+ 0x000000000000000b (SYMENT)             24 (bytes)
+ 0x0000000000000003 (PLTGOT)             0x1bfc98
+ 0x0000000000000002 (PLTRELSZ)           408 (bytes)
+ 0x0000000000000014 (PLTREL)             RELA
+ 0x0000000000000017 (JMPREL)             0x22130
+ 0x0000000000000007 (RELA)               0x21968
+ 0x0000000000000008 (RELASZ)             1992 (bytes)
+ 0x0000000000000009 (RELAENT)            24 (bytes)
+ 0x000000006ffffffc (VERDEF)             0x215b8
+ 0x000000006ffffffd (VERDEFNUM)          25
+ 0x000000000000001e (FLAGS)              BIND_NOW
+ 0x000000006ffffffb (FLAGS_1)            Flags: NOW
+ 0x000000006ffffffe (VERNEED)            0x21928
+ 0x000000006fffffff (VERNEEDNUM)         1
+ 0x000000006ffffff0 (VERSYM)             0x1fd78
+ 0x0000000000000024 (RELR)               0x222c8
+ 0x0000000000000023 (RELRSZ)             264 (bytes)
+ 0x0000000000000025 (RELRENT)            8 (bytes)
+ 0x0000000000000000 (NULL)               0x0

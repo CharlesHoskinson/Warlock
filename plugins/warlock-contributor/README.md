@@ -649,3 +649,5 @@ arbitrary docs and genuine foreign drafts cannot use this exception. Provenance
 recognition is neither production progress nor scenario acceptance.
 
 For a newly authorized work window, use the same-record renewal event in [the delivery flow](references/redesign-flow.md#renew-an-explicitly-authorized-work-window). Preserve elapsed history and source-bound reviews. A queued continuity message grants no authorization.
+
+Version 0.17.6 adds a mocked outer-builder regression for retained child failure evidence. A nonempty string child error remains in `error`; the outer failure is recorded in `outerError`. Missing, empty or malformed child errors use the outer error. This does not change protected execution guards or native acceptance.
