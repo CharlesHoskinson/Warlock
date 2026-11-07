@@ -302,6 +302,8 @@ guiObservationControls start = do
  assert "GUI literal typed observation accepted" (accepted == Right (SubmitGuiObservation full))
  assert "GUI partial observation is not complete" (not (guiObservationComplete partial))
  assert "GUI full bounded facts complete" (guiObservationComplete full)
+ assert "GUI observation diagnostic exact literal" (J.renderJson (guiObservationJson full) == "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\"}")
+ assert "GUI observation diagnostic preserves incomplete fact" (guiObservationJson partial /= guiObservationJson full)
  encoded <- need issued
  assert "GUI literal request exact" (encoded == raw)
  let (sending, response) = finishRequest serverPending GuiObservationAck

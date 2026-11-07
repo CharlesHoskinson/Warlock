@@ -15,7 +15,8 @@ import qualified System.Posix.Files as P
 import Warlock.Backend
 import Warlock.Bootstrap (BootstrapResult(..))
 import Warlock.Capture.Process.Bootstrap
-import Warlock.Protocol.Identity (parseCounter)
+import Warlock.Protocol.Identity (parseCounter,renderCounter)
+import qualified Warlock.Protocol.Desktop as D
 import Warlock.Protocol.StrictJson (Json(..),renderJson)
 
 check :: String -> Bool -> IO ()
@@ -124,4 +125,14 @@ main = do
      check "application literal argv receipt" (output captured=="[\"two words\",\"\",\"caf\\233\"]\n" && B.null (diagnostics captured))
     Left _ -> ioError (userError "application operation failed")
   Nothing -> ioError (userError "application receipt missing")
+ case backendApplicationObservation result of
+  Just (intent,Just published) -> do
+   check "diagnostic actual submitted request eleven" (renderCounter (D.launchRequest intent)=="11")
+   check "diagnostic actual launch revision one" (renderCounter (D.launchGeneration intent)=="1" && renderCounter (D.launchLifetime intent)=="1")
+   check "diagnostic actual selected entry" (D.launchEntry intent=="ux003-recorder")
+   check "diagnostic last successful catalog is exact submitted snapshot" (backendCatalogObservation result==Just published)
+   encoded <- must (D.encodeDesktopReply published)
+   check "diagnostic actual published revision literal" ("\"generation\":\"1\"" `B.isInfixOf` encoded)
+   check "diagnostic actual published entry literal" ("\"id\":\"ux003-recorder\"" `B.isInfixOf` encoded)
+  _ -> ioError (userError "actual published launch diagnostic missing")
  putStrLn "application-owner-route-controls: complete"

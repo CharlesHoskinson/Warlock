@@ -330,3 +330,10 @@ test-suite filter-backing-root-controls
   build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+executable ux003-native-observer
+  hs-source-dirs: fixture-ux003-native-observer
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, text, warlock-runtime, warlock-protocol, warlock-process-custody
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

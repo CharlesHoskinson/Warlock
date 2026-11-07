@@ -425,6 +425,67 @@ class ExtractedBridgeCallbackControls(unittest.TestCase):
     def test_backing_positive_dispatch_uses_exact_noargs_receipt(self):
         self.positive_callback(True, 'filter-backing-root-controls', 'filter-backing-root-controls: complete\n')
 
+
+class JourneyBuildProfileControls(unittest.TestCase):
+    def test_fixed_observer_and_affected_fixture_compile_only(self):
+        self.assertEqual(helper.JOURNEY_TARGETS, helper.BACKING_TARGETS + (
+            ('ux003-native-observer', 'warlock-runtime:exe:ux003-native-observer'),
+            ('application-owner-route-controls', 'warlock-runtime:test:application-owner-route-controls')))
+        output = Path('/private/compile-only')
+        packet = {'cabal': '/sdk/cabal', 'ghcPrefix': '/sdk/ghc'}
+        old = helper.backing_command_plan(packet, output, output / 'haskell')
+        new = helper.journey_command_plan(packet, output, output / 'haskell')
+        self.assertEqual([argv[2] for _, argv in new], ['build'] + ['list-bin'] * 9)
+        self.assertEqual(new[0][1][:-9], old[0][1][:-7])
+        self.assertEqual(new[0][1][-9:], [target for _, target in helper.JOURNEY_TARGETS])
+        self.assertTrue(all(argv[:-1] == old[1][1][:-1] for _, argv in new[1:]))
+        self.assertFalse(any(word in ('run', 'test', 'exec', 'repl') for _, argv in new for word in argv))
+        self.assertEqual(helper.BACKING_BEHAVIOR_SUITES,
+            ('ui-engine-protocol-controls', 'ui-engine-broker-controls', 'filter-backing-root-controls'))
+
+    def test_journey_requires_same_protected_backing_callback(self):
+        with self.assertRaises(RuntimeError):
+            helper.run_profile('/missing', '/missing', {}, None, journey=True)
+        with self.assertRaises(RuntimeError):
+            helper.run_profile('/missing', '/missing', {}, None, bridge=True, journey=True)
+        with self.assertRaises(RuntimeError):
+            helper.run_profile('/missing', '/missing', {}, None, bridge=True, backing=True, journey=True)
+
+    def test_journey_required_source_and_ordinary_component_drift_refused(self):
+        with tempfile.TemporaryDirectory(prefix='journey-build-control-') as directory:
+            runtime = Path(directory) / 'runtime'
+            for name in {'runtime.cabal', *helper.SOURCE_HASHES, *helper.BRIDGE_SOURCE_HASHES,
+                         *helper.BACKING_SOURCE_HASHES, *helper.JOURNEY_SOURCE_HASHES}:
+                target = runtime / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / 'implementation/warlock/haskell/runtime' / name, target)
+            helper.validate_journey_runtime(runtime)
+            for name in helper.JOURNEY_SOURCE_HASHES:
+                file = runtime / name
+                original = file.read_bytes()
+                file.unlink()
+                with self.assertRaises(RuntimeError): helper.validate_journey_runtime(runtime)
+                file.write_bytes(original + b'-- changed\n')
+                with self.assertRaises(RuntimeError): helper.validate_journey_runtime(runtime)
+                file.unlink()
+                outside = runtime / ('outside-' + file.parent.name + '-' + file.name)
+                outside.write_bytes(original)
+                file.symlink_to(outside)
+                with self.assertRaises(RuntimeError): helper.validate_journey_runtime(runtime)
+                file.unlink(); file.write_bytes(original)
+            extra = runtime / 'fixture-ux003-native-observer/Foreign.hs'
+            extra.write_text('module Foreign where\n')
+            with self.assertRaises(RuntimeError): helper.validate_journey_runtime(runtime)
+
+    def test_journey_owning_closure_keeps_fixed_missing_source_names(self):
+        names = qa.arm64_inputs(Path('/missing'), ux003_journey_build=True)
+        for name in helper.JOURNEY_SOURCE_HASHES:
+            self.assertIn('implementation/warlock/haskell/runtime/' + name, names)
+        self.assertIn('tools/run_ux003_native_journey.py', names)
+        self.assertIn('tools/test_ux003_native_journey.py', names)
+        self.assertIn('tools/haskell_test_wrapper.py', names)
+        self.assertFalse(any(name.endswith('.elm') for name in names))
+
 def main():
     global ROOT, helper, qa
     parser = argparse.ArgumentParser(description=__doc__)

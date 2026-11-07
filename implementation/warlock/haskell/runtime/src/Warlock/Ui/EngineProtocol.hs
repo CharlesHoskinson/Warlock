@@ -2,7 +2,7 @@
 -- PREPARATION DRAFT. Pure wire/state contract; not an authentication,
 -- deadline-enforcement, process-custody, or native-acceptance receipt.
 module Warlock.Ui.EngineProtocol
-  ( GuiObservation, guiObservation, guiObservationComplete
+  ( GuiObservation, guiObservation, guiObservationComplete, guiObservationJson
   , SessionId, RequestId, Startup, Scope, Box, Event(..), Projection
   , Method(..), Request(..), Reply(..), EventResult(..), ProtocolError(..)
   , Session, sessionId, requestId, startup, startupOrigins, startupDeadline

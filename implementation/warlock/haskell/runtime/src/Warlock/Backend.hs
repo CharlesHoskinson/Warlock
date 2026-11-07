@@ -97,7 +97,9 @@ data BackendResult = BackendResult
  ,backendProcessCleanup :: Bool,backendCatalogCleanup :: Bool,backendPinCleanup :: Bool
  ,backendAttemptStage :: BackendAttemptStage
  ,backendRetirements :: (BackendRetirement,BackendRetirement,BackendRetirement)
- ,backendNotificationCustody :: Maybe NotificationIssuer,backendApplicationCustody :: Maybe App.ApplicationIssuer,backendApplicationReceipt :: Maybe (Counter,SelectedOutcome)} deriving (Eq,Show)
+ ,backendNotificationCustody :: Maybe NotificationIssuer,backendApplicationCustody :: Maybe App.ApplicationIssuer,backendApplicationReceipt :: Maybe (Counter,SelectedOutcome)
+ ,backendCatalogObservation :: Maybe D.DesktopReply
+ ,backendApplicationObservation :: Maybe (D.LaunchIntent,Maybe D.DesktopReply)} deriving (Eq,Show)
 
 loadBackendConfig :: FilePath -> IO (Either Text BackendConfig)
 loadBackendConfig path = mask $ \restore -> do
@@ -199,8 +201,8 @@ positive value = string value >>= failure . parseCounter False
 applyDesktopRequest
  :: Binding -> Catalog -> PinStore -> IORef Int
  -> IORef (Maybe (Counter,D.PinSnapshot,D.DesktopReply))
- -> (D.DesktopReply -> IO ()) -> D.DesktopRequest -> IO ()
-applyDesktopRequest bound catalog pins operations lastWrite sendReply request = case D.requestKind request of
+ -> IORef (Maybe D.DesktopReply) -> (D.DesktopReply -> IO ()) -> D.DesktopRequest -> IO ()
+applyDesktopRequest bound catalog pins operations lastWrite catalogObservation sendReply request = case D.requestKind request of
   D.CatalogRead -> do
    modifyIORef' operations (+1)
    actual <- prepareCatalogPublication catalog
@@ -219,7 +221,7 @@ applyDesktopRequest bound catalog pins operations lastWrite sendReply request = 
        catalogPublicationResult <- publishCatalog publication (sendReply reply)
        case catalogPublicationResult of
         Left _ -> ioError (userError "catalog reply publication unconfirmed")
-        Right () -> pure ()
+        Right () -> writeIORef catalogObservation (Just reply)
   D.PinsWrite -> case D.pinProposal request of
    Nothing -> ioError (userError "checked pin proposal missing")
    Just proposal -> do
@@ -249,6 +251,10 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
  pins <- newPinStore pinsRoot
  notificationIssuer <- newIssuer pinsRoot deadlineText
  attachmentAttempted <- newIORef False
+ -- Bounded diagnostics retain actual successful publication/operation values.
+ -- They do not participate in admission, resolution, success or retirement.
+ catalogObservation <- newIORef (Nothing :: Maybe D.DesktopReply)
+ applicationObservation <- newIORef (Nothing :: Maybe (D.LaunchIntent,Maybe D.DesktopReply))
  callbacks <- newIORef 0
  operations <- newIORef 0
  -- One bounded last-disposition cell plus a high-water mark prevents replay
@@ -277,7 +283,7 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
      construct = either (ioError . userError . T.unpack) pure
      handle request = case D.requestKind request of
       D.ApplicationLaunch -> handleApplication request
-      _ -> applyDesktopRequest bound catalog pins operations lastWrite sendReply request
+      _ -> applyDesktopRequest bound catalog pins operations lastWrite catalogObservation sendReply request
      issuerInCurrentAdmission = do
       active <- readIORef admittedContext >>= maybe (ioError (userError "application request outside admission")) pure
       let (scope,credential) = active
@@ -309,7 +315,10 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
            settled <- App.settleApplicationImage issuer held
            case (result,settled) of
             (Right observed,App.ApplicationRetired)
-             | selectedCustody observed==Available && either (const False) (const True) (selectedOperation observed) -> reply D.LaunchSubmitted
+             | selectedCustody observed==Available && either (const False) (const True) (selectedOperation observed) -> do
+              reply D.LaunchSubmitted
+              published <- readIORef catalogObservation
+              writeIORef applicationObservation (Just (intent,published))
             (Left App.RevalidationRefused,App.ApplicationRetired) -> reply (D.LaunchRefused D.DesktopEntryRaced)
             _ -> reply D.LaunchUnknown
      handler checked = case checkedDesktopCommit checked of
@@ -372,8 +381,10 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
   count <- readIORef callbacks
   dispatched <- readIORef operations
   applicationObserved <- maybe (pure Nothing) App.applicationReceipt applicationIssuerForObservation
-  pure (observed,trace,selected,count,dispatched,applicationObserved)
- (observed,trace,selected,count,dispatched,applicationObserved) <- case observations of
+  published <- readIORef catalogObservation
+  submitted <- readIORef applicationObservation
+  pure (observed,trace,selected,count,dispatched,applicationObserved,published,submitted)
+ (observed,trace,selected,count,dispatched,applicationObserved,published,submitted) <- case observations of
   Right values -> pure values
   Left (problem :: SomeException) -> throwWithCustody problem
  let outcome=case attempted of
@@ -404,7 +415,7 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
  retainedApplication <- readIORef applicationIssuer
  pure (BackendResult (clean && success) clean count dispatched outcome observed trace selected processClean catalogClean pinClean
        attemptStage (retirementStage processRetirement,retirementStage catalogRetirement,retirementStage pinRetirement)
-       (if either (const False) id notificationRetirement then Nothing else Just notificationIssuer) retainedApplication applicationObserved)
+       (if either (const False) id notificationRetirement then Nothing else Just notificationIssuer) retainedApplication applicationObserved published submitted)
 
 retirementStage :: Either a Bool -> BackendRetirement
 retirementStage (Left _) = RetirementException
