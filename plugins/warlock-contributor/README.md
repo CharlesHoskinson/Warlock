@@ -651,3 +651,19 @@ recognition is neither production progress nor scenario acceptance.
 For a newly authorized work window, use the same-record renewal event in [the delivery flow](references/redesign-flow.md#renew-an-explicitly-authorized-work-window). Preserve elapsed history and source-bound reviews. A queued continuity message grants no authorization.
 
 Version 0.17.6 adds a mocked outer-builder regression for retained child failure evidence. A nonempty string child error remains in `error`; the outer failure is recorded in `outerError`. Missing, empty or malformed child errors use the outer error. This does not change protected execution guards or native acceptance.
+
+Version 0.17.7 adds `execution-refused` for an accepted candidate whose protected
+invocation was refused before any job started. Root supplies the candidate hash,
+unique consumed outer handle, strict report reference and independent review
+reference through the existing `delivery-event` CAS/selection command. The
+report binds the exact candidate manifest, fixtures, nonzero exit and retained
+raw evidence; `actualLaunch` and `jobId` must both be null. The independent
+review binds that report and concludes `no-process-started`. Copy raw evidence
+into repository evidence storage before referencing it; preserve original bytes.
+
+This closing observation keeps the accepted review and all history, creates no
+job or terminal, and disqualifies the refused candidate. Root can assemble a new
+unique candidate; the refused candidate cannot execute or integrate. A refusal
+does not advance progress, clear deferral, extend authorization or satisfy RSI.
+Closing evidence can be recorded after expiry or a clock discontinuity; further
+work still requires the existing authorization and clock checks.

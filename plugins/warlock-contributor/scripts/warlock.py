@@ -2295,6 +2295,49 @@ def delivery_product_identity(hashes):
     return json_sha256({name: sha for name, sha in hashes.items() if authored_v6(name)})
 
 
+def validate_execution_refusal(root, record, state, event, reviewed_at):
+    """Close only an independently reviewed pre-spawn refusal, never a real job."""
+    if set(event) != {'eventId', 'kind', 'candidateSha256', 'outerHandle', 'report', 'review',
+                      'sequence', 'clockSample', 'atUTC'}:
+        raise ValueError('Invalid pre-spawn refusal event fields')
+    if (not state['candidate'] or event['candidateSha256'] != state['candidateSha256'] or
+            not state['review'] or state['review']['disposition'] != 'accepted' or
+            state['job'] or state['terminal'] or state.get('refusal')):
+        raise ValueError('Pre-spawn refusal requires an accepted candidate with no job')
+    handle = delivery_text(event['outerHandle'], 'refused outer tool handle')
+    report = json.loads(delivery_ref(root, event['report']))
+    fields = {'schema', 'classification', 'candidateSha256', 'scope', 'manifestSha256',
+              'fixtureSha256', 'outerHandle', 'outerHandleConsumed', 'exit',
+              'actualLaunch', 'jobId', 'observedUTC', 'rawEvidence'}
+    if (not isinstance(report, dict) or set(report) != fields or
+            type(report['schema']) is not int or report['schema'] != 1 or
+            report['classification'] != 'pre-spawn-refused' or
+            report['candidateSha256'] != state['candidateSha256'] or
+            report['scope'] != state['candidate']['scope'] or
+            report['manifestSha256'] != json_sha256(state['candidate']['manifest']) or
+            report['fixtureSha256'] != json_sha256(state['candidate']['manifest']['fixtures']) or
+            report['outerHandle'] != handle or report['outerHandleConsumed'] is not True or
+            type(report['exit']) is not int or report['exit'] == 0 or
+            report['actualLaunch'] is not None or report['jobId'] is not None):
+        raise ValueError('Pre-spawn refusal report identity, consumption or outcome differs')
+    if not delivery_ref(root, report['rawEvidence']).strip():
+        raise ValueError('Pre-spawn refusal requires retained raw evidence')
+    review = json.loads(delivery_ref(root, event['review']))
+    fields = {'schema', 'reviewer', 'disposition', 'candidateSha256', 'scope', 'report',
+              'conclusion', 'observedUTC'}
+    if (not isinstance(review, dict) or set(review) != fields or
+            type(review['schema']) is not int or review['schema'] != 1 or
+            review['disposition'] != 'accepted' or review['conclusion'] != 'no-process-started' or
+            review['candidateSha256'] != state['candidateSha256'] or
+            review['scope'] != state['candidate']['scope'] or review['report'] != event['report'] or
+            delivery_text(review['reviewer'], 'refusal reviewer').strip().casefold() == record['owner'].strip().casefold()):
+        raise ValueError('Pre-spawn refusal requires an independent bound review')
+    if not (delivery_time(reviewed_at) <= delivery_time(report['observedUTC']) <=
+            delivery_time(review['observedUTC']) <= delivery_time(event['atUTC'])):
+        raise ValueError('Pre-spawn refusal evidence chronology differs')
+    return report
+
+
 def delivery_state(root, record, reqs):
     """Replay typed facts. Retained evidence is structural, not independently true."""
     identity = delivery_identity(record)
@@ -2309,8 +2352,9 @@ def delivery_state(root, record, reqs):
     if not isinstance(events, list) or len(events) > 4096:
         raise ValueError('Invalid delivery event history')
     state = {'candidate': None, 'candidateSha256': None, 'review': None, 'job': None,
-             'terminal': None, 'integrated': None, 'journey': None, 'deferred': None, 'rsi': None}
+             'terminal': None, 'integrated': None, 'journey': None, 'deferred': None, 'rsi': None, 'refusal': None}
     seen, candidates, jobs = set(), set(), set()
+    outer_handles, refused_handles = set(), set()
     advances = {delivery_product_identity(record['sourceHashes'])}
     authorization_expires = identity['authorizationExpiresUTC']
     authorization_issued = None
@@ -2351,11 +2395,11 @@ def delivery_state(root, record, reqs):
                 raise ValueError('Duplicate or changed delivery candidate identity')
             if state['job'] and not state['job'].get('consumed'):
                 raise ValueError('Protected job still occupies delivery slot')
-            if state['candidate'] and not state['terminal'] and state['review'] and state['review']['disposition'] == 'accepted':
+            if state['candidate'] and not state['terminal'] and not state.get('refusal') and state['review'] and state['review']['disposition'] == 'accepted':
                 raise ValueError('Consume the ready candidate before producing another')
             candidates.add(candidate['id'])
             state = dict(candidate=candidate, candidateSha256=sha, review=None, job=None,
-                         terminal=None, integrated=None, journey=None, deferred=None, rsi=None)
+                         terminal=None, integrated=None, journey=None, deferred=None, rsi=None, refusal=None)
         elif kind == 'review':
             if not state['candidate'] or event.get('candidateSha256') != state['candidateSha256']:
                 raise ValueError('Review refers to another delivery candidate')
@@ -2368,12 +2412,26 @@ def delivery_state(root, record, reqs):
             if state['job'] or state['review']:
                 raise ValueError('Duplicate review or execution already began')
             state['review'] = review
+        elif kind == 'execution-refused':
+            reviewed_at = next((prior['atUTC'] for prior in reversed(events[:index])
+                                if prior['kind'] == 'review' and
+                                prior.get('candidateSha256') == state['candidateSha256']), None)
+            report = validate_execution_refusal(root, record, state, event, reviewed_at)
+            handle = event['outerHandle']
+            if handle in outer_handles:
+                raise ValueError('Pre-spawn refusal outer handle reused')
+            outer_handles.add(handle)
+            refused_handles.add(handle)
+            state['refusal'] = report
         elif kind == 'execution-started':
             if (event.get('candidateSha256') != state['candidateSha256'] or not state['review'] or
-                    state['review']['disposition'] != 'accepted' or state['job'] or state['deferred']):
+                    state['review']['disposition'] != 'accepted' or state['job'] or state['deferred'] or state.get('refusal')):
                 raise ValueError('Delivery candidate is not ready for a new job')
             job = delivery_text(event.get('jobId'), 'job id')
-            delivery_text(event.get('outerHandle'), 'outer tool handle')
+            handle = delivery_text(event.get('outerHandle'), 'outer tool handle')
+            if handle in refused_handles:
+                raise ValueError('Consumed refusal handle cannot start a job')
+            outer_handles.add(handle)
             if job in jobs:
                 raise ValueError('Delivery job identity reused')
             jobs.add(job)
@@ -2500,11 +2558,13 @@ def delivery_next_action(root, record, reqs):
         kind = 'rsi'
     elif state['deferred']:
         kind = 'deferred'
-    elif state['review'] and state['review']['disposition'] == 'accepted' and not state['terminal']:
+    elif state['review'] and state['review']['disposition'] == 'accepted' and not state['terminal'] and not state.get('refusal'):
         # An awake Root queue delay calls for execution, not another writer hypothesis.
         kind = 'execute'
     elif progress['planChangeRequired'] and (not record['delivery']['events'] or record['delivery']['events'][-1]['kind'] != 'plan-changed'):
         kind = 'change-plan'
+    elif state.get('refusal'):
+        kind = 'correct'
     elif not state['candidate']:
         kind = 'assemble'
     elif not state['review']:
@@ -4036,6 +4096,7 @@ def main():
                 'authorization-renewed': {'authorizationExpiresUTC', 'evidence'},
                 'clock-reconciled': {'evidence'},
                 'candidate': {'candidate'}, 'review': {'candidateSha256', 'review'},
+                'execution-refused': {'candidateSha256', 'outerHandle', 'report', 'review'},
                 'execution-started': {'candidateSha256', 'jobId', 'outerHandle'},
                 'execution-finished': {'candidateSha256', 'jobId', 'outerHandleConsumed', 'report'},
                 'execution-consumed': {'jobId', 'outerHandle'},
@@ -4046,7 +4107,7 @@ def main():
             if not isinstance(event, dict) or event.get('kind') not in fields or set(event) != fields[event['kind']] | {'eventId', 'kind'}:
                 raise ValueError('Invalid delivery event input fields')
             progress = delivery_progress_status(record)
-            closing = event['kind'] in ('execution-finished', 'execution-consumed', 'deferred')
+            closing = event['kind'] in ('execution-finished', 'execution-consumed', 'execution-refused', 'deferred')
             renewal = event['kind'] == 'authorization-renewed'
             reconcile_clock = event['kind'] == 'clock-reconciled'
             if not closing and ((progress['reconciliationRequired'] and not reconcile_clock) or
