@@ -17,9 +17,9 @@ TARGETS = (
 )
 # Exact composed ownership/provider source; independent product review and
 # Root adoption/qualification remain required. These hashes grant no authority.
-CABAL_SHA256 = 'd604c7d414b73282344f4bfa24a5a35e4222dcc340fe908e566bd5307dfc71ab'
-SOURCE_HASHES = {'ui/Warlock/Ui/DefaultContextOwner.hs': '7dbe4fb93a6c7bc98078c75819e43b046e1ef53c63b0946a23b3b6ef30413743', 'test-default-context-owner/Main.hs': 'a03e015ee86c7f581e86fc103ecf0853bd8241add9fbae98d04c9ada4184e197', 'ui/Warlock/Ui/WebKit.hs': '217861778c5a8ca6996bdbcdfebf3b689a36f7475150e55171f9318b5a246430', 'ui/Warlock/Ui/Mvp.hsc': '54f22a62eb9ef59d2bc25710ad11dc79265c4a2ab44b2ac147ffb9799015723d', 'ui/Warlock/Ui/CallbackRetirement.hs': '76dace5cb34d05a4e13f587615a824f73ac29297074897f065fc935ce73d25f4', 'ui/Warlock/Ui/ProcessSignalOwner.hs': '01378b006b4de137fd1bd14ec172585e5559139af653280de6c145ddbde30170', 'test-ui-webkit/Main.hs': 'f057132baf7ecc1bcd70c485430dd973298ed6e2ae4a3d521107edc300f213c9'}
-COMPONENT_STANZAS = {'executable warlock-ui-owner': 'executable warlock-ui-owner\n  hs-source-dirs: ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.EngineEntrypoint, Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner\n  pkgconfig-depends: gobject-2.0\n  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n', 'test-suite ui-webkit-controls': 'test-suite ui-webkit-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-ui-webkit, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner\n  pkgconfig-depends: gobject-2.0\n  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n', 'test-suite physical-context-owner-controls': 'test-suite physical-context-owner-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-default-context-owner, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner\n  pkgconfig-depends: gobject-2.0, gio-2.0\n  build-depends: base >=4.18 && <5, unix, warlock-runtime\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n', 'test-suite physical-context-owner-threaded-controls': 'test-suite physical-context-owner-threaded-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-default-context-owner, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner\n  pkgconfig-depends: gobject-2.0, gio-2.0\n  build-depends: base >=4.18 && <5, unix, warlock-runtime\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0\n'}
+CABAL_SHA256 = '61626b6dfbe95ad091a455e9615c1250c7aaa5cd3374ecee1aeea3cd0c95efe4'
+SOURCE_HASHES = {'ui/Warlock/Ui/DefaultContextOwner.hs': '7dbe4fb93a6c7bc98078c75819e43b046e1ef53c63b0946a23b3b6ef30413743', 'test-default-context-owner/Main.hs': 'a03e015ee86c7f581e86fc103ecf0853bd8241add9fbae98d04c9ada4184e197', 'ui/Warlock/Ui/WebKit.hs': '00de662b6b93ea2b17592feabcc3c9433bfc742e655593c93fff97655da00f02', 'ui/Warlock/Ui/Mvp.hsc': '54f22a62eb9ef59d2bc25710ad11dc79265c4a2ab44b2ac147ffb9799015723d', 'ui/Warlock/Ui/CallbackRetirement.hs': '76dace5cb34d05a4e13f587615a824f73ac29297074897f065fc935ce73d25f4', 'ui/Warlock/Ui/ProcessSignalOwner.hs': '01378b006b4de137fd1bd14ec172585e5559139af653280de6c145ddbde30170', 'test-ui-webkit/Main.hs': 'f057132baf7ecc1bcd70c485430dd973298ed6e2ae4a3d521107edc300f213c9'}
+COMPONENT_STANZAS = {'executable warlock-ui-owner': 'executable warlock-ui-owner\n  hs-source-dirs: ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.EngineEntrypoint, Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner, Warlock.Ui.FilterBackingRoot\n  pkgconfig-depends: gobject-2.0\n  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n', 'test-suite ui-webkit-controls': 'test-suite ui-webkit-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-ui-webkit, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner\n  pkgconfig-depends: gobject-2.0\n  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n', 'test-suite physical-context-owner-controls': 'test-suite physical-context-owner-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-default-context-owner, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner\n  pkgconfig-depends: gobject-2.0, gio-2.0\n  build-depends: base >=4.18 && <5, unix, warlock-runtime\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n', 'test-suite physical-context-owner-threaded-controls': 'test-suite physical-context-owner-threaded-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-default-context-owner, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner\n  pkgconfig-depends: gobject-2.0, gio-2.0\n  build-depends: base >=4.18 && <5, unix, warlock-runtime\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0\n'}
 
 
 BRIDGE_TARGETS = TARGETS + (
@@ -27,8 +27,14 @@ BRIDGE_TARGETS = TARGETS + (
     ('ui-engine-broker-controls', 'warlock-runtime:test:ui-engine-broker-controls'),
 )
 BRIDGE_BEHAVIOR_SUITES = ('ui-engine-protocol-controls', 'ui-engine-broker-controls')
-BRIDGE_SOURCE_HASHES = {'src/Warlock/Ui/EngineProtocol.hs': '84c110229dfaf4cae59b82544e7f179a0291cf5800b84274899cce8ec00e2ac5', 'src/Warlock/Ui/EngineBroker.hs': '8070f1662757ecb6d03ecb2ea1f74eb5665cb86c12265747340d14a72cb07ba1', 'src/Warlock/Ui/EngineAdapter.hs': 'dda839d4a8bb6d618b1ac6132bf84097d8d858e18d7bee2877b27e4a21388ca5', 'ui/Warlock/Ui/EngineEntrypoint.hs': 'ac0a8af5996256d33eb0f249c69c7ded21233dd789ec7e12c8c1d25226c39937', 'test-ui-engine-protocol/Main.hs': 'c732173ca80873e1d54ac93af3cf75f4f9e6df75b8a6cd29af799674853f1d0d', 'test-ui-engine-broker/Main.hs': 'bb25c0474e918d7c66b38ce5471b8eeb89cdcaefef69f08f18c99b8c6d8bf40d', 'ui/Main.hs': '1a8f72cd533b658b07b0786d817401082ec3ce2c31221179de2a02976f522e6d', 'ui/Warlock/Ui/EngineCustody.hsc': '8d258bfca9bf70eb1cba89c17e874dfeb4c291d2e48623ee6704d3df2ce420b1', 'test-ui-engine-protocol/ProtocolBoundary.hs': '3e294c7a095bf5b67c5396b3f2377affb02882d7136a814d95838552dbb07759', 'test-ui-engine-protocol/DesktopIdleControls.hs': 'b5741ca909729a17c529c24e41e47359e7b2dc02b6cbd5b506fb4fb48c1ef74a'}
+BRIDGE_SOURCE_HASHES = {'src/Warlock/Ui/EngineProtocol.hs': 'c6ce32d250543e31b1521986ddeab41fc9ca7872d4d3731b60783949ed49ce44', 'src/Warlock/Ui/EngineBroker.hs': '4818a8094e42b61521995583544f5eb02b1a162c674d57918c2e4ff26ab5f515', 'src/Warlock/Ui/EngineAdapter.hs': 'dda839d4a8bb6d618b1ac6132bf84097d8d858e18d7bee2877b27e4a21388ca5', 'ui/Warlock/Ui/EngineEntrypoint.hs': '50b13ce201401779d135957052c5479b495148fbc482e3a34da5f121ba1d36e8', 'test-ui-engine-protocol/Main.hs': 'a1b4575af0d5b3a76bfa1e59989bcc3ed4457ca30e736389fa1623dafdeb35be', 'test-ui-engine-broker/Main.hs': 'dd27d93061fa60490b3f4c1f6f28f639e652cec4aafc8614be3db91968532c0e', 'ui/Main.hs': '58465703179aab4ffabc937c236bc60b751b192a97b892710d9ca1254662e6c9', 'ui/Warlock/Ui/EngineCustody.hsc': '5e7175ba4d90cfe622b0b382c37440bbe51496dc3b550c59fde20f840a833f8f', 'test-ui-engine-protocol/ProtocolBoundary.hs': '3e294c7a095bf5b67c5396b3f2377affb02882d7136a814d95838552dbb07759', 'test-ui-engine-protocol/DesktopIdleControls.hs': 'b5741ca909729a17c529c24e41e47359e7b2dc02b6cbd5b506fb4fb48c1ef74a'}
 BRIDGE_COMPONENT_STANZAS = {'test-suite ui-engine-protocol-controls': 'test-suite ui-engine-protocol-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-ui-engine-protocol\n  main-is: Main.hs\n  other-modules: ProtocolBoundary, DesktopIdleControls\n  build-depends: base >=4.18 && <5, bytestring, text, unix, network ==3.2.0.0, warlock-runtime, warlock-protocol\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n', 'test-suite ui-engine-broker-controls': 'test-suite ui-engine-broker-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-ui-engine-broker\n  main-is: Main.hs\n  build-depends: base >=4.18 && <5, bytestring, text, unix, network ==3.2.0.0, warlock-runtime, warlock-protocol, warlock-process-custody\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n\n-- Ordinary-linked optional notification startup data controls.'}
+
+BACKING_TARGETS = BRIDGE_TARGETS + (('filter-backing-root-controls', 'warlock-runtime:test:filter-backing-root-controls'),)
+BACKING_BEHAVIOR_SUITES = BRIDGE_BEHAVIOR_SUITES + ('filter-backing-root-controls',)
+BACKING_SOURCE_HASHES = {'ui/Warlock/Ui/FilterBackingRoot.hsc': 'bbc92b60813532408c686f20e694f544d5c801a8ba75e5a3dd6821826d7f1ca4', 'test-filter-backing-root/Main.hs': '1be7797f62e9db90b0056c1531ca61155080d6deadd10a345936a10b9dd8ddbd'}
+BACKING_COMPONENT_STANZA = 'test-suite filter-backing-root-controls\n  type: exitcode-stdio-1.0\n  hs-source-dirs: test-filter-backing-root, ui\n  main-is: Main.hs\n  other-modules: Warlock.Ui.FilterBackingRoot, Warlock.Ui.EngineCustody\n  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0\n'
+
 
 def _plain_file(runtime, relative):
     file = runtime / relative
@@ -126,12 +132,47 @@ def bridge_command_plan(packet, output, stage):
             *[('list-' + name, listing + [target]) for name, target in BRIDGE_TARGETS]]
 
 
-def run_profile(root, output, packet, run, *, bridge=False, execute=None):
+
+def validate_backing_runtime(runtime):
+    validate_bridge_runtime(runtime)
+    runtime = Path(runtime)
+    if set(BACKING_SOURCE_HASHES) != {'ui/Warlock/Ui/FilterBackingRoot.hsc', 'test-filter-backing-root/Main.hs'}:
+        raise RuntimeError('Backing source bindings incomplete')
+    for name, expected in BACKING_SOURCE_HASHES.items():
+        if (not isinstance(expected, str) or re.fullmatch('[0-9a-f]{64}', expected) is None
+                or digest(_plain_file(runtime, name)) != expected):
+            raise RuntimeError('Fixed backing source differs: ' + name)
+    text = (runtime / 'runtime.cabal').read_text()
+    heading = 'test-suite filter-backing-root-controls'
+    pieces = text.split(heading + '\n')
+    if len(pieces) != 2:
+        raise RuntimeError('Backing fixture stanza absent or repeated')
+    actual = heading + '\n' + re.split(r'\n(?:test-suite|executable|library|common|flag)\b', pieces[1], maxsplit=1)[0]
+    if actual.rstrip('\n') != BACKING_COMPONENT_STANZA.rstrip('\n'):
+        raise RuntimeError('Backing ordinary fixture fields differ')
+    directory = runtime / 'test-filter-backing-root'
+    entries = list(directory.rglob('*'))
+    if (directory.is_symlink() or any(p.is_symlink() or not p.is_file() for p in entries)
+            or {str(p.relative_to(directory)) for p in entries} != {'Main.hs'}):
+        raise RuntimeError('Unexpected backing fixture/home module')
+
+
+def backing_command_plan(packet, output, stage):
+    original = bridge_command_plan(packet, output, stage)
+    build = original[0][1][:-6] + [target for _, target in BACKING_TARGETS]
+    listing = original[1][1][:-1]
+    return [('physical-context-owner-backing-build', build),
+            *[('list-' + name, listing + [target]) for name, target in BACKING_TARGETS]]
+
+
+def run_profile(root, output, packet, run, *, bridge=False, backing=False, execute=None):
     """Called only by the reviewed protected ARM mode; run retains command receipts."""
+    if backing and not bridge:
+        raise RuntimeError('Backing behavior requires the fixed bridge mode')
     if bridge and not callable(execute):
         raise RuntimeError('Bridge behavior requires the fixed protected callback')
     root, output = Path(root), Path(output)
-    validate = validate_bridge_runtime if bridge else validate_runtime
+    validate = validate_backing_runtime if backing else (validate_bridge_runtime if bridge else validate_runtime)
     source = root / 'implementation/warlock/haskell'
     validate(source / 'runtime')
     before = inventory(source)
@@ -155,8 +196,8 @@ def run_profile(root, output, packet, run, *, bridge=False, execute=None):
     project.write_text(original_project + suffix)
     config = output / 'cabal.config'
     config.write_text('active-repositories: :none\nstore-dir: ' + str(output / 'store') + '\nremote-repo-cache: ' + str(output / 'repo-cache') + '\n')
-    plan = (bridge_command_plan if bridge else command_plan)(packet, output, stage)
-    targets = BRIDGE_TARGETS if bridge else TARGETS
+    plan = (backing_command_plan if backing else (bridge_command_plan if bridge else command_plan))(packet, output, stage)
+    targets = BACKING_TARGETS if backing else (BRIDGE_TARGETS if bridge else TARGETS)
     run(*plan[0], stage)
     binaries = {}
     for (name, _), (label, argv) in zip(targets, plan[1:], strict=True):
@@ -169,14 +210,15 @@ def run_profile(root, output, packet, run, *, bridge=False, execute=None):
             raise RuntimeError('Physical-context compiled image changed')
     behavior = {}
     if bridge:
-        for name in BRIDGE_BEHAVIOR_SUITES:
+        for name in (BACKING_BEHAVIOR_SUITES if backing else BRIDGE_BEHAVIOR_SUITES):
             pin = binaries[name]
             if pin_image(Path(pin['path']), output / 'dist', name) != pin:
                 raise RuntimeError('Bridge image drift before behavior')
             behavior[name] = execute(name, pin, stage)
             if pin_image(Path(pin['path']), output / 'dist', name) != pin:
                 raise RuntimeError('Bridge image drift after behavior')
-    return {'scope': ('Six fixed targets compiled; only two ordinary protocol/socket fixtures run' if bridge
+    return {'scope': ('Seven fixed targets compiled; only two codec/socket and one owned-filesystem fixture run' if backing
+                      else 'Six fixed targets compiled; only two ordinary protocol/socket fixtures run' if bridge
                       else 'Four fixed targets compiled/linked only; no fixture Main invocation'),
             'targets': [target for _, target in targets], 'compiledImages': binaries,
             'haskellSourceTree': before,

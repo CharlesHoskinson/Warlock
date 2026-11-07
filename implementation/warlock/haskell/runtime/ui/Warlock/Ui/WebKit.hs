@@ -2,15 +2,18 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- WebKitGTK 6 boundary; no page loads before its role filter is installed.
 module Warlock.Ui.WebKit
-  (providerVersionQualified, runWebKitObserved, runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
+  (providerVersionQualified, runWebKitObservedWithBacking, runWebKitObserved, runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
 
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, catch, mask_, mask, onException, try, finally, bracket, toException)
 import Control.Concurrent (threadDelay)
 import Control.Monad (unless, when, forM_)
+import Data.Bits ((.&.))
 import Data.IORef
 import System.Environment (getEnvironment)
 import System.IO.Error (isDoesNotExistError)
-import System.Posix.Files (getSymbolicLinkStatus)
+import System.Posix.Files (getSymbolicLinkStatus, isDirectory, fileMode, fileOwner, deviceID, fileID)
+import qualified System.Posix.Directory as PosixDirectory
+import System.Posix.User (getEffectiveUserID)
 import qualified Data.ByteString as B
 import Data.Text (Text)
 import qualified Data.Text as T
@@ -422,21 +425,65 @@ runWebKitWithCustody custody = runWebKitInternal (Just custody)
 -- Legacy callers retain the original EngineResult and cleanup semantics.
 runWebKitInternal :: Maybe Custody -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO EngineResult
 runWebKitInternal custody endpoints ownerEvent =
-  fst <$> runWebKitInternalObserved custody endpoints ownerEvent
+  fst <$> runWebKitInternalObserved custody Nothing endpoints ownerEvent
 
 -- Selected child route reports bounded observations, never cleanup authority.
 runWebKitObserved :: UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO Protocol.GuiObservation
-runWebKitObserved endpoints ownerEvent = snd <$> runWebKitInternalObserved Nothing endpoints ownerEvent
+runWebKitObserved _ _ = ioError (userError "observed WebKit requires parent backing root")
 
-runWebKitInternalObserved :: Maybe Custody -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (EngineResult, Protocol.GuiObservation)
-runWebKitInternalObserved custody endpoints ownerEvent = do
+runWebKitObservedWithBacking :: Protocol.BackingRootBinding -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO Protocol.GuiObservation
+runWebKitObservedWithBacking binding endpoints ownerEvent =
+  snd <$> runWebKitInternalObserved Nothing (Just binding) endpoints ownerEvent
+
+runWebKitInternalObserved :: Maybe Custody -> Maybe Protocol.BackingRootBinding -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (EngineResult, Protocol.GuiObservation)
+runWebKitInternalObserved custody binding endpoints ownerEvent = do
   requireThreadCompatibleNamespace
   checkEnvironment
+  mapM_ (requireBackingRoot (uiRemainingMicros endpoints)) binding
   withPhysicalDefaultContextOwner (uiRemainingMicros endpoints) $ \contextOwner ->
-    runWebKitOwned contextOwner custody endpoints ownerEvent
+    runWebKitOwned contextOwner custody binding endpoints ownerEvent
 
-runWebKitOwned :: PhysicalDefaultContextOwner -> Maybe Custody -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (EngineResult, Protocol.GuiObservation)
-runWebKitOwned contextOwner custody endpoints ownerEvent = mask $ \restore -> do
+
+-- No deletion is available here. The parent retains the root descriptor and
+-- can discharge it only after the same owned namespace PID1 has been reaped.
+-- The root is private to the same UID; this is not isolation from that UID.
+requireBackingRoot :: IO Int -> Protocol.BackingRootBinding -> IO ()
+requireBackingRoot remaining binding = do
+  left <- remaining
+  unless (left > 0) (ioError (userError "backing root original deadline expired"))
+  let (path,dev,ino,uid) = Protocol.backingRootFields binding
+  currentUid <- getEffectiveUserID
+  status <- getSymbolicLinkStatus (T.unpack path)
+  unless (isDirectory status && fileMode status .&. 0o7777 == 0o700
+       && toInteger (fileOwner status) == uid && toInteger currentUid == uid
+       && toInteger (deviceID status) == dev && toInteger (fileID status) == ino)
+    (ioError (userError "parent backing root identity changed"))
+  after <- remaining
+  unless (after > 0) (ioError (userError "backing root original deadline expired"))
+
+createBoundBacking :: IO Int -> Protocol.BackingRootBinding -> Role -> IO (FilePath,IO ())
+createBoundBacking remaining binding role = do
+  requireBackingRoot remaining binding
+  let (root,_,_,uid) = Protocol.backingRootFields binding
+      leaf = case role of Controller -> "controller"; Bar -> "bar"; Popup -> "popup"
+      path = T.unpack root ++ "/" ++ leaf
+  -- mkdir is exclusive: existing files, directories and links all refuse.
+  PosixDirectory.createDirectory path 0o700
+  first <- getSymbolicLinkStatus path
+  let checkChild status = isDirectory status && fileMode status .&. 0o7777 == 0o700
+        && toInteger (fileOwner status) == uid
+        && deviceID status == deviceID first && fileID status == fileID first
+      recheck = do
+        requireBackingRoot remaining binding
+        current <- getSymbolicLinkStatus path
+        unless (checkChild current) (ioError (userError "filter backing identity changed"))
+        requireBackingRoot remaining binding
+  unless (checkChild first) (ioError (userError "filter backing not private"))
+  recheck
+  pure (path,recheck)
+
+runWebKitOwned :: PhysicalDefaultContextOwner -> Maybe Custody -> Maybe Protocol.BackingRootBinding -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (EngineResult, Protocol.GuiObservation)
+runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \restore -> do
   requirePhysicalDefaultContextOwner contextOwner
   ok <- gtkInit
   unless (ok /= 0) (ioError (userError "GTK initialization failed"))
@@ -485,12 +532,19 @@ runWebKitOwned contextOwner custody endpoints ownerEvent = mask $ \restore -> do
         context <- own (contextNew >>= (`must` "WebKit context")) unref
         -- A partial allocation retains its directory as an explicit ownership
         -- obligation; no uncertain async task can reopen a removed pathname.
-        path <- do
-          template <- newCString "/tmp/warlock-filter-XXXXXX"
-          (mkdtemp template >>= (`must` "private filter directory") >>= peekCString) `finally` free template
+        (path,recheckBacking) <- case binding of
+          Nothing -> do
+            -- Legacy EngineResult callers retain their original unowned path;
+            -- this branch cannot report parent-owned backing cleanup.
+            template <- newCString "/tmp/warlock-filter-XXXXXX"
+            legacy <- (mkdtemp template >>= (`must` "private filter directory") >>= peekCString) `finally` free template
+            pure (legacy,pure ())
+          Just root -> createBoundBacking (uiRemainingMicros endpoints) root role
         modifyIORef' backings ((path,nullPtr):)
+        recheckBacking
         store <- withCString path $ \name -> storeNew name >>= (`must` "filter store")
         modifyIORef' backings (map (\(name,value) -> if name==path then (name,store) else (name,value)))
+        recheckBacking
         (compiled,retired) <- compileFilter contextOwner endpoints store origin role `onException` writeIORef uncertain True
         unless retired $ do
           writeIORef uncertain True

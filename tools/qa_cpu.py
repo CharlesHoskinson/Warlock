@@ -108,7 +108,12 @@ def team_quint_inputs(root, pair):
             prefix + 'tea004-preview-' + pair + '_test.qnt'}
 
 
-def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False, native_stage_build=False, provider_probe_build=False, provider_callback_build=False, physical_context_owner_build=False, physical_context_owner_bridge=False):
+def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False, native_stage_build=False, provider_probe_build=False, provider_callback_build=False, physical_context_owner_build=False, physical_context_owner_bridge=False, physical_context_owner_backing=False):
+    if physical_context_owner_backing:
+        names = arm64_inputs(root, physical_context_owner_bridge=True)
+        names.update({'implementation/warlock/haskell/runtime/ui/Warlock/Ui/FilterBackingRoot.hsc',
+                      'implementation/warlock/haskell/runtime/test-filter-backing-root/Main.hs'})
+        return names
     if physical_context_owner_bridge:
         names = arm64_inputs(root, physical_context_owner_build=True)
         names.update({'tools/haskell_test_wrapper.py', 'implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs','implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs','implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs','implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs','implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs','implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs','implementation/warlock/haskell/runtime/ui/Main.hs','implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc','implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs','implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs'})
@@ -286,7 +291,7 @@ def main():
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability'], ['--native-stage-build'], ['--provider-probe-build'], ['--provider-callback-build'], ['--physical-context-owner-build'], ['--physical-context-owner-bridge']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability'], ['--native-stage-build'], ['--provider-probe-build'], ['--provider-callback-build'], ['--physical-context-owner-build'], ['--physical-context-owner-bridge'], ['--physical-context-owner-backing']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
@@ -394,7 +399,7 @@ def main():
     if continuity:
         mandatory = continuity_inputs(REPO)
     if arm64:
-        mandatory = arm64_inputs(REPO, physical_context_owner_bridge=packet['arguments'] == ['--physical-context-owner-bridge'], physical_context_owner_build=packet['arguments'] == ['--physical-context-owner-build'], provider_callback_build=packet['arguments'] == ['--provider-callback-build'], provider_probe_build=packet['arguments'] == ['--provider-probe-build'], native_stage_build=packet['arguments'] == ['--native-stage-build'], application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
+        mandatory = arm64_inputs(REPO, physical_context_owner_backing=packet['arguments'] == ['--physical-context-owner-backing'], physical_context_owner_bridge=packet['arguments'] == ['--physical-context-owner-bridge'], physical_context_owner_build=packet['arguments'] == ['--physical-context-owner-build'], provider_callback_build=packet['arguments'] == ['--provider-callback-build'], provider_probe_build=packet['arguments'] == ['--provider-probe-build'], native_stage_build=packet['arguments'] == ['--native-stage-build'], application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
                                  protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--workspace-navigation-protocol'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route']),
                                  consumption=packet['arguments'] == ['--preview-consumption'],

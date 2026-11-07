@@ -5,7 +5,7 @@
 -- namespace; its subsequently forked children enter the new PID namespace.
 module Warlock.Ui.EngineCustody
   ( EngineProcess, ImageFacts(..), startUnreadyEngine, takeEngineChannel, enginePid, engineImageFacts, engineExpectedIds, engineLiveChild, engineCredentialGuard, stopEngineProcess
-  , EngineExitReceipt, EngineExitDisposition(..), finishEngineProcess, engineNormalExit, engineExitReaped, engineExitDisposition, engineExitFacts, engineExitLiveImageFacts
+  , EngineExitReceipt, EngineExitDisposition(..), finishEngineProcess, engineNormalExit, engineExitReaped, engineExitDisposition, engineExitFacts, engineExitLiveImageFacts, engineExitMatches
   , Custody, startCustody, stopCustody, abandonCustody, verifyChild, openPidfd, pidfdExited, fdReady
   , Setup(..), NamespaceExit(..), CallbackRetirement(..), OwnerIdentity(..)
   , ProviderRoute(..), CleanupFacts(..), CleanupIssue(..), cleanupIssues
@@ -636,16 +636,16 @@ data OwnedEngineIdentity = OwnedEngineIdentity !CInt !Integer !FilePath !FilePat
 data LiveImageEvidence = LiveImageEvidence !ImageFacts !Integer !Integer
 
 data EngineExitReceipt = EngineExitReceipt !EngineExitDisposition !Bool
-  !OwnedEngineIdentity !ImageFacts !String !(Maybe (CInt,CInt)) !Bool !Bool !Bool !(Maybe LiveImageEvidence)
+  !OwnedEngineIdentity !ImageFacts !String !(Maybe (CInt,CInt)) !Bool !Bool !Bool !(Maybe LiveImageEvidence) !(IORef (Maybe EngineExitReceipt))
 
 engineExitDisposition :: EngineExitReceipt -> EngineExitDisposition
-engineExitDisposition (EngineExitReceipt value _ _ _ _ _ _ _ _ _) = value
+engineExitDisposition (EngineExitReceipt value _ _ _ _ _ _ _ _ _ _) = value
 
 engineNormalExit :: EngineExitReceipt -> Bool
 engineNormalExit receipt = engineExitDisposition receipt == EngineExitedNormally
 
 engineExitReaped :: EngineExitReceipt -> Bool
-engineExitReaped (EngineExitReceipt _ value _ _ _ _ _ _ _ _) = value
+engineExitReaped (EngineExitReceipt _ value _ _ _ _ _ _ _ _ _) = value
 
 -- ImageFacts below is the STARTUP held image, never a post-exit executable
 -- claim: exec can change an image without changing pidfd/PID/birth.
@@ -653,13 +653,13 @@ engineExitReaped (EngineExitReceipt _ value _ _ _ _ _ _ _ _) = value
 -- A normal receipt concerns this PID1's process memory, not pathname cleanup,
 -- WebKit helper-thread provenance, provider admission or original acceptance.
 engineExitFacts :: EngineExitReceipt -> (CInt,Integer,FilePath,FilePath,ImageFacts,String,Maybe (CInt,CInt))
-engineExitFacts (EngineExitReceipt _ _ (OwnedEngineIdentity pid start namespace parentNamespace) image originalD status _ _ _ _) =
+engineExitFacts (EngineExitReceipt _ _ (OwnedEngineIdentity pid start namespace parentNamespace) image originalD status _ _ _ _ _) =
   (pid,start,namespace,parentNamespace,image,originalD,status)
 
 -- Separate full-digest sampling time from subsequent live metadata checks.
 -- None of these data claim that an executable can be observed after exit.
 engineExitLiveImageFacts :: EngineExitReceipt -> Maybe (ImageFacts,Integer,Integer)
-engineExitLiveImageFacts (EngineExitReceipt _ _ _ _ _ _ _ _ _ sample) =
+engineExitLiveImageFacts (EngineExitReceipt _ _ _ _ _ _ _ _ _ sample _) =
   case sample of
     Nothing -> Nothing
     Just (LiveImageEvidence image digestAt checkedAt) -> Just (image,digestAt,checkedAt)
@@ -669,6 +669,10 @@ engineExitLiveImageFacts (EngineExitReceipt _ _ _ _ _ _ _ _ _ sample) =
 -- regular executable inode as the still-executing parent: Linux executable
 -- write-denial pins that inode, so rehashing the full ELF on every UI RPC is
 -- unnecessary. The timestamp is a live-sample diagnostic, not a new deadline.
+engineExitMatches :: EngineProcess -> EngineExitReceipt -> Bool
+engineExitMatches (EngineProcess _ _ _ _ _ _ _ _ issuer _)
+  (EngineExitReceipt _ _ _ _ _ _ _ _ _ _ issuedBy) = issuer == issuedBy
+
 validateLiveEngineImage :: EngineProcess -> IO Bool
 validateLiveEngineImage (EngineProcess _ _ expected expectedImage _ _ _ _ _ cell) = do
   let sameIdentity status (ImageFacts dev ino size _) = isRegularFile status
@@ -795,7 +799,7 @@ finishEngineProcess (EngineProcess custody@(Custody _ pidCell) socketCell expect
     Nothing -> do
       lastLive <- readIORef liveImage
       let unknown = EngineExitReceipt EngineExitUnknown False identity image
-            (deadlineAbsoluteNs deadline) Nothing False False False lastLive
+            (deadlineAbsoluteNs deadline) Nothing False False False lastLive cache
           perform = do
             current <- readIORef pidCell
             pidfd <- maybe (ioError (userError "engine pidfd unavailable")) pure current
@@ -837,7 +841,7 @@ finishEngineProcess (EngineProcess custody@(Custody _ pidCell) socketCell expect
                   | status == Just (#{const CLD_EXITED},0) = EngineExitedNormally
                   | otherwise = EngineExitedAbnormally
             pure (EngineExitReceipt disposition reaped identity image
-              (deadlineAbsoluteNs deadline) status lifeClosed socketClosed pidfdClosed lastLive)
+              (deadlineAbsoluteNs deadline) status lifeClosed socketClosed pidfdClosed lastLive cache)
       outcome <- try perform :: IO (Either SomeException EngineExitReceipt)
       case outcome of
         Right receipt -> writeIORef cache (Just receipt) >> pure receipt

@@ -59,7 +59,7 @@ import qualified Warlock.Ui.EngineProtocol as Protocol
 import Warlock.Ui.EngineProtocol
   ( Startup )
 import Warlock.Ui.Owner (EngineResult, TrustedOwnerEvent, UiEndpoints(..))
-import Warlock.Ui.WebKit (runWebKit, runWebKitObserved)
+import Warlock.Ui.WebKit (runWebKit, runWebKitObservedWithBacking)
 
 -- This token is interpreted only by the eventual same-held-image dispatcher;
 -- it alone is not proof of image identity, PID1, parent, peer or authority.
@@ -301,20 +301,22 @@ startMonitors life deadline = do
   pure (killThread lifeThread >> killThread deadlineThread)
 
 runEngineOnly :: EngineArgs -> IO (Either EngineFailure EngineResult)
-runEngineOnly = runEngineRoute (\endpoints emit _ -> runWebKit endpoints emit)
+runEngineOnly = runEngineRoute (\_ endpoints emit _ -> runWebKit endpoints emit)
 
 -- Success here means authenticated terminal ACK and parent EOF were received, including
 -- for partial observations. Only the parent can combine facts with owned reap.
 runEngineObserved :: EngineArgs -> IO (Either EngineFailure ())
-runEngineObserved = runEngineRoute $ \endpoints emit rpc -> do
-  observed <- runWebKitObserved endpoints emit
+runEngineObserved = runEngineRoute $ \startup endpoints emit rpc -> do
+  binding <- maybe (ioError (userError "observed engine requires parent backing root")) pure
+               (Protocol.startupBackingRoot startup)
+  observed <- runWebKitObservedWithBacking binding endpoints emit
   acknowledged <- rpc (Protocol.SubmitGuiObservation observed)
   case acknowledged of
     Right Protocol.GuiObservationAck -> pure ()
     _ -> ioError (userError "GUI observation ACK/parent close unavailable; no replay")
 
 runEngineRoute
-  :: (UiEndpoints -> (TrustedOwnerEvent -> IO (Either T.Text ()))
+  :: (Startup -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either T.Text ()))
       -> (Protocol.Request -> IO (Either Protocol.ProtocolError Protocol.Reply)) -> IO a)
   -> EngineArgs -> IO (Either EngineFailure a)
 runEngineRoute runSelected args@(EngineArgs (Fd rpc) life originalD incarnation expectedUid expectedGid) = do
@@ -361,7 +363,7 @@ runEngineRoute runSelected args@(EngineArgs (Fd rpc) life originalD incarnation 
                   if left <= 1000000 then pure left
                     else min left <$> uiRemainingMicros remote
                 endpoints = remote {uiShouldStop=localStop,uiRemainingMicros=localRemaining}
-            runSelected endpoints (Adapter.emitEvent rpcCall) rpcCall
+            runSelected startup endpoints (Adapter.emitEvent rpcCall) rpcCall
             ) `finally` stopMonitors
           ) `finally` Socket.close socket
       case outcome of

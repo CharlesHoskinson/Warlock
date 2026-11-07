@@ -229,8 +229,10 @@ startupTransaction broker = do
   let startup = brokerStartup broker
   startupJson <- either (const (ioError (userError "engine startup invalid"))) pure
                    (J.decodeStrict bounds (Protocol.encodeStartup startup))
+  let startupKeys = ["version","controller","bar","popup","deadline","incarnation"]
+        ++ case Protocol.startupBackingRoot startup of Nothing -> []; Just _ -> ["backingRoot"]
   fields <- either (const (ioError (userError "engine startup invalid"))) pure
-              (J.exactObject ["version","controller","bar","popup","deadline","incarnation"] startupJson)
+              (J.exactObject startupKeys startupJson)
   incarnation <- maybe (ioError (userError "engine startup invalid")) pure (lookup "incarnation" fields)
   let expected = TE.encodeUtf8 $ J.renderJson $ J.JObject
         [("engineReady",J.JNumber "1"),("deadline",J.JString (Protocol.startupDeadline startup)),("incarnation",incarnation)]

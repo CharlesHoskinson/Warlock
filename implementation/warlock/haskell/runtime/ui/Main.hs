@@ -18,6 +18,9 @@ import Warlock.Ui.EngineCustody
   , finishEngineProcess, engineNormalExit, engineExitLiveImageFacts)
 import Warlock.Ui.EngineEntrypoint (Mode(..), classifyMode, runEngineObserved)
 import qualified Warlock.Ui.EngineProtocol as Protocol
+import Warlock.Ui.FilterBackingRoot
+  (newFilterBackingRoot, filterBackingBinding, markFilterBackingSpawn, bindFilterBacking
+  , retireFilterBacking, discardUnstartedBacking)
 import Warlock.Ui.Owner
   (UiEndpoints(..), TrustedOwnerEvent, EngineResult(..), runUiOwnerPrepared, uiPassed, uiResultJson)
 import Warlock.Ui.Policy (Origin, hostBytes)
@@ -42,8 +45,14 @@ prepareSelected config display endpoints ownerEvent = mask_ $ do
   controller <- port (controllerOrigin endpoints)
   bar <- port (barOrigin endpoints)
   popup <- port (popupOrigin endpoints)
-  startup <- either (ioError . userError . show) pure
-    (Protocol.startup controller bar popup (T.pack (deadlineAbsoluteNs deadline)) identity)
+  backing <- newFilterBackingRoot deadline
+  rootBinding <- filterBackingBinding backing `onException` discardUnstartedBacking backing
+  startup <- (either (ioError . userError . show) pure
+    (Protocol.startupWithBacking controller bar popup (T.pack (deadlineAbsoluteNs deadline)) identity rootBinding))
+    `onException` discardUnstartedBacking backing
+  -- After this reservation a startup failure may already have forked. Never
+  -- delete the root through the unstarted path or invent a normal receipt.
+  markFilterBackingSpawn backing
   engine <- startUnreadyEngine deadline incarnation
     ([("LANG","C.UTF-8"),("LC_ALL","C.UTF-8")] ++ displayEnvironmentPairs display)
   let stop = do
@@ -57,9 +66,14 @@ prepareSelected config display endpoints ownerEvent = mask_ $ do
     `onException` stop
   broker <- Broker.attachBroker prepared (engineCredentialGuard engine)
     `onException` (Broker.closePrepared prepared `finally` stop)
+  bindFilterBacking backing engine broker
+    `onException` ((do _ <- Broker.closeBroker broker; pure ()) `finally` stop)
   let retire = do
-        receipt <- Broker.closeBroker broker `finally` stop
-        require (receipt == Broker.CloseConfirmed) "engine RPC retirement unconfirmed"
+        closed <- Broker.closeBroker broker `finally` stop
+        require (closed == Broker.CloseConfirmed) "engine RPC retirement unconfirmed"
+        process <- finishEngineProcess engine
+        clean <- retireFilterBacking backing process
+        require clean "owned filter backing retirement unconfirmed"
       run = do
         ready <- Broker.completeStartup broker
         require (ready == Broker.StartupWrittenLocally) "engine startup unconfirmed"
@@ -80,15 +94,18 @@ prepareSelected config display endpoints ownerEvent = mask_ $ do
         closed <- Broker.closeBroker broker
         require (closed == Broker.CloseConfirmed) "engine completion EOF unconfirmed"
         receipt <- finishEngineProcess engine
+        backingClean <- retireFilterBacking backing receipt
         let complete = maybe False Protocol.guiObservationComplete observation
             normal = engineNormalExit receipt
             imageValidated = case engineExitLiveImageFacts receipt of
               Just _ -> True
               Nothing -> False
-        -- A parent-issued normal PID1 reap discharges process memory only.
-        -- Paths/backings and the full native/provider/input journey are still
-        -- unqualified: never turn this partial observation into whole cleanup.
-        pure (EngineResult (terminalAck && complete && imageValidated && normal) False)
+        -- Parent cleanup derives only from this same opaque normal process
+        -- receipt and the actual owned backing-tree/Broker retirement. The
+        -- child supplies GUI data, never this cleanup proof. Native/original
+        -- journey acceptance still requires its separately observed oracles.
+        pure (EngineResult (terminalAck && complete && imageValidated && normal && backingClean)
+          (normal && backingClean))
   pure (run,retire)
 
 runBroker :: FilePath -> IO ()

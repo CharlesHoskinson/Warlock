@@ -6,6 +6,7 @@ module Warlock.Ui.EngineProtocol
   , SessionId, RequestId, Startup, Scope, Box, Event(..), Projection
   , Method(..), Request(..), Reply(..), EventResult(..), ProtocolError(..)
   , Session, sessionId, requestId, startup, startupOrigins, startupDeadline
+  , BackingRootBinding, backingRootBinding, backingRootFields, startupWithBacking, startupBackingRoot
   , startupIncarnation, scope, box, projection, projectionJson, eventJson, parseEvent
   , newSession, isPoisoned, beginRequest, acceptRequest, finishRequest, confirmReplySent
   , acceptReply, poisonSession, encodeStartup, decodeStartup
@@ -38,7 +39,10 @@ data ProtocolError = Invalid | TooLarge | InvalidState | ForeignSession
 newtype SessionId = SessionId Counter deriving (Eq, Ord, Show)
 newtype RequestId = RequestId Counter deriving (Eq, Ord, Show)
 -- The numeric port representation is private; Origin validation stays in Policy.
-data Startup = Startup Origin Origin Origin Int Int Int Counter SessionId deriving (Eq, Show)
+-- Root identity is metadata, never a child cleanup capability. Only an
+-- authenticated Startup binds it to the selected incarnation and original D.
+data BackingRootBinding = BackingRootBinding Text Integer Integer Integer deriving (Eq, Show)
+data Startup = Startup Origin Origin Origin Int Int Int Counter SessionId (Maybe BackingRootBinding) deriving (Eq, Show)
 data Scope = Scope Counter Counter deriving (Eq, Show)
 data Box = Box Int32 Int32 Int32 Int32 deriving (Eq, Show)
 -- These constructors carry typed fields, never owner/gateway JSON constructors.
@@ -86,13 +90,34 @@ startup a b c deadline incarnation = do
   ob <- either (const (Left Invalid)) Right (makeOrigin b)
   oc <- either (const (Left Invalid)) Right (makeOrigin c)
   d <- counter False deadline
-  pure (Startup oa ob oc a b c d incarnation)
+  pure (Startup oa ob oc a b c d incarnation Nothing)
 startupOrigins :: Startup -> (Origin, Origin, Origin)
-startupOrigins (Startup a b c _ _ _ _ _) = (a,b,c)
+startupOrigins (Startup a b c _ _ _ _ _ _) = (a,b,c)
 startupDeadline :: Startup -> Text
-startupDeadline (Startup _ _ _ _ _ _ d _) = renderCounter d
+startupDeadline (Startup _ _ _ _ _ _ d _ _) = renderCounter d
 startupIncarnation :: Startup -> SessionId
-startupIncarnation (Startup _ _ _ _ _ _ _ i) = i
+startupIncarnation (Startup _ _ _ _ _ _ _ i _) = i
+
+
+backingRootBinding :: Text -> Integer -> Integer -> Integer -> Either ProtocolError BackingRootBinding
+backingRootBinding path dev ino uid = do
+  suffix <- maybe (Left Invalid) Right (T.stripPrefix "/tmp/warlock-ui-backing-" path)
+  unless (T.length suffix == 64 && T.all (\c -> (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f')) suffix) (Left Invalid)
+  unless (dev >= 0 && dev <= 18446744073709551615
+       && ino > 0 && ino <= 18446744073709551615
+       && uid >= 0 && uid <= 4294967295) (Left Invalid)
+  pure (BackingRootBinding path dev ino uid)
+backingRootFields :: BackingRootBinding -> (Text,Integer,Integer,Integer)
+backingRootFields (BackingRootBinding path dev ino uid) = (path,dev,ino,uid)
+startupWithBacking :: Int -> Int -> Int -> Text -> SessionId -> BackingRootBinding -> Either ProtocolError Startup
+startupWithBacking a b c deadline incarnation binding = do
+  legacy <- startup a b c deadline incarnation
+  let selected = case legacy of
+        Startup oa ob oc pa pb pc d sid _ -> Startup oa ob oc pa pb pc d sid (Just binding)
+  when (B.length (encodeStartup selected) > maxHeaderBytes) (Left TooLarge)
+  pure selected
+startupBackingRoot :: Startup -> Maybe BackingRootBinding
+startupBackingRoot (Startup _ _ _ _ _ _ _ _ binding) = binding
 
 bytes :: J.Json -> B.ByteString
 bytes = TE.encodeUtf8 . J.renderJson
@@ -332,19 +357,45 @@ readWire direction raw = do
 -- Startup is a separate broker-to-engine one-time object. The transport must
 -- bind it to the validated exec and never accept it as an engine request.
 encodeStartup :: Startup -> B.ByteString
-encodeStartup (Startup _ _ _ a b c d s) = bytes (J.JObject [("version",J.JNumber "1"),("controller",J.JNumber (T.pack (show a))),("bar",J.JNumber (T.pack (show b))),("popup",J.JNumber (T.pack (show c))),("deadline",jcounter d),("incarnation",J.JString (sidText s))])
+encodeStartup (Startup _ _ _ a b c d s binding) = bytes (J.JObject
+  ([ ("version",J.JNumber (case binding of Nothing -> "1"; Just _ -> "2"))
+   , ("controller",J.JNumber (T.pack (show a))), ("bar",J.JNumber (T.pack (show b)))
+   , ("popup",J.JNumber (T.pack (show c))), ("deadline",jcounter d)
+   , ("incarnation",J.JString (sidText s)) ] ++ case binding of
+    Nothing -> []
+    Just (BackingRootBinding path dev ino uid) ->
+      [("backingRoot",J.JObject [("path",J.JString path)
+       ,("device",J.JString (T.pack (show dev))), ("inode",J.JString (T.pack (show ino)))
+       ,("owner",J.JString (T.pack (show uid)))])]))
 decodeStartup :: B.ByteString -> Either ProtocolError Startup
 decodeStartup raw = do
   value <- parse maxHeaderBytes 3 raw
-  fs <- exact ["version","controller","bar","popup","deadline","incarnation"] value
-  v <- field "version" fs
-  unless (v == J.JNumber "1") (Left Invalid)
+  version <- case value of J.JObject entries -> field "version" entries; _ -> Left Invalid
+  let ordinary = ["version","controller","bar","popup","deadline","incarnation"]
+  keys <- case version of
+    J.JNumber "1" -> Right ordinary
+    J.JNumber "2" -> Right (ordinary ++ ["backingRoot"])
+    _ -> Left Invalid
+  fs <- exact keys value
   a <- field "controller" fs >>= number 1024 65535
   b <- field "bar" fs >>= number 1024 65535
   c <- field "popup" fs >>= number 1024 65535
   d <- field "deadline" fs >>= textValue
   s <- field "incarnation" fs >>= textValue >>= sessionId
-  startup a b c d s
+  case version of
+    J.JNumber "1" -> startup a b c d s
+    _ -> do
+      root <- field "backingRoot" fs >>= exact ["path","device","inode","owner"]
+      path <- field "path" root >>= textValue
+      dev <- field "device" root >>= textValue >>= backingNumber 0 18446744073709551615
+      ino <- field "inode" root >>= textValue >>= backingNumber 1 18446744073709551615
+      uid <- field "owner" root >>= textValue >>= backingNumber 0 4294967295
+      binding <- backingRootBinding path dev ino uid
+      startupWithBacking a b c d s binding
+  where
+    backingNumber low high text = case reads (T.unpack text) of
+      [(value,"")] | value >= low && value <= high && T.pack (show (value :: Integer)) == text -> Right value
+      _ -> Left Invalid
 
 newSession :: Startup -> Session
 newSession initial = Session (startupIncarnation initial) (either (const Nothing) Just (parseCounter False "1")) Nothing False

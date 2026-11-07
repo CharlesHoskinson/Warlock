@@ -73,10 +73,15 @@ withFixture :: GuardMode -> (Fixture -> IO a) -> IO a
 withFixture = withFixtureBudget 5000000
 
 withFixtureBudget :: Int -> GuardMode -> (Fixture -> IO a) -> IO a
-withFixtureBudget budget mode action = do
+withFixtureBudget budget = withFixtureBacking budget Nothing
+
+withFixtureBacking :: Int -> Maybe P.BackingRootBinding -> GuardMode -> (Fixture -> IO a) -> IO a
+withFixtureBacking budget binding mode action = do
   deadline <- deadlineAfter budget >>= must
   sid <- must (P.sessionId "42")
-  startup <- must (P.startup 21101 21102 21103 (T.pack (deadlineAbsoluteNs deadline)) sid)
+  startup <- must $ case binding of
+    Nothing -> P.startup 21101 21102 21103 (T.pack (deadlineAbsoluteNs deadline)) sid
+    Just root -> P.startupWithBacking 21101 21102 21103 (T.pack (deadlineAbsoluteNs deadline)) sid root
   controller <- must (makeOrigin 21101)
   bar <- must (makeOrigin 21102)
   popup <- must (makeOrigin 21103)
@@ -257,6 +262,7 @@ negativeControls = do
 
 main :: IO ()
 main = do
+  backingStartupSocketControl
   positiveControls
   guiCompletionControls
   terminalByteControl
@@ -333,3 +339,21 @@ terminalByteControl = do
     check "GUI terminal extra byte is data not EOF" (case extra of
       Right (Transport.CredentialChunk bytes _) -> bytes == "x"
       _ -> False)) `finally` (S.close sender >> S.close receiver)
+
+-- Same actual SCM socket/guard path, with metadata only: no directories or GUI.
+backingStartupSocketControl :: IO ()
+backingStartupSocketControl = do
+  root <- must (P.backingRootBinding
+    "/tmp/warlock-ui-backing-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    18446744073709551615 18446744073709551614 1000)
+  withFixtureBacking 5000000 (Just root) ParentOnly $ \fixture -> do
+    startFixture fixture
+    check "socket startup parent backing preserved" (P.startupBackingRoot (fixtureStartup fixture) == Just root)
+    check "socket startup original deadline preserved"
+      (P.startupDeadline (fixtureStartup fixture) == T.pack (deadlineAbsoluteNs (fixtureDeadline fixture)))
+    admissions <- readIORef (fixtureAdmissions fixture)
+    check "socket backing metadata needs existing admission" (admissions > 0)
+  withFixtureBacking 5000000 (Just root) WrongParent $ \fixture -> do
+    sendStartupReady fixture
+    result <- Broker.completeStartup (fixtureBroker fixture)
+    check "socket backing cannot bypass foreign credential refusal" (result /= Broker.StartupWrittenLocally)
