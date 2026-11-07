@@ -2102,6 +2102,84 @@ def validate_delivery_plan(plan, selected, reqs):
     delivery_time(plan['authorizationExpiresUTC'])
 
 
+def delivery_clock_reconciliation_fields(record, events, sample):
+    """Bind a locally sampled bridge to the exact immutable history prefix."""
+    validate_clock_sample(sample)
+    origin = record['delivery']['clockOrigin']
+    previous = events[-1]['clockSample'] if events else origin
+    stamps = [origin['utc']] + [event['clockSample']['utc'] for event in events]
+    if delivery_time(sample['utc']) < max(delivery_time(stamp) for stamp in stamps):
+        raise ValueError('Clock reconciliation cannot move UTC backward')
+    return {'historySha256': json_sha256(events),
+            'previousSampleSha256': json_sha256(previous),
+            'currentSampleSha256': json_sha256(sample)}
+
+
+def delivery_clock_interval(previous, observed):
+    """Uncertain intervals receive no suspend exclusion; UTC is a bound, not a clock proof."""
+    wall = delivery_time(observed['utc']) - delivery_time(previous['utc'])
+    wall_ns = (wall.days * 86400 + wall.seconds) * 1000000000 + wall.microseconds * 1000
+    mono = observed['monotonicNs'] - previous['monotonicNs']
+    boot = observed['boottimeNs'] - previous['boottimeNs']
+    same_boot = observed['bootId'] == previous['bootId']
+    certain = (same_boot and wall_ns >= 0 and mono >= 0 and boot >= 0 and
+               boot // 1000000000 >= mono // 1000000000)
+    if certain:
+        # Preserve the existing whole-second boot-versus-awake check. Sequential
+        # clock-read skew within a second never earns negative suspend credit.
+        return mono, max(mono, boot), False
+    # Never subtract counters from unrelated boots. For regression on one boot,
+    # retain any observed positive counter span as an additional lower bound.
+    charged = max(0, wall_ns, mono if same_boot else 0, boot if same_boot else 0)
+    return charged, charged, True
+
+
+def validate_clock_reconciliation(root, record, events, event, expiry, job, current=False):
+    """Evidence is retained context; only the existing Root admission writes a bridge."""
+    fields = {'eventId', 'kind', 'evidence', 'sequence', 'atUTC', 'clockSample', 'reconciliation'}
+    if set(event) != fields or event['kind'] != 'clock-reconciled':
+        raise ValueError('Invalid clock reconciliation event fields')
+    identity = delivery_identity(record)
+    if job and not job.get('consumed'):
+        raise ValueError('Consume protected job before clock reconciliation')
+    sample = event['clockSample']
+    bridge = delivery_clock_reconciliation_fields(record, events, sample)
+    if event['reconciliation'] != bridge:
+        raise ValueError('Clock reconciliation prefix or sample differs')
+    prefix = dict(record, delivery=dict(record['delivery'], events=events))
+    if not delivery_progress_status(prefix, sample=sample)['reconciliationRequired']:
+        raise ValueError('Clock reconciliation requires an unresolved discontinuity')
+    observed = delivery_time(sample['utc'])
+    if observed >= delivery_time(expiry):
+        raise ValueError('Clock reconciliation requires unexpired authorization')
+    evidence = json.loads(delivery_ref(root, event['evidence']))
+    required = {'schema', 'kind', 'recordPath', 'deliveryIdentitySha256', 'historySha256',
+                'previousSampleSha256', 'observedBootId', 'observedUTC', 'goalObservation'}
+    if (not isinstance(evidence, dict) or set(evidence) != required or
+            type(evidence['schema']) is not int or evidence['schema'] != 1 or
+            evidence['kind'] != 'same-history-clock-reconciliation' or
+            evidence['recordPath'] != record.get('_recordPath') or
+            evidence['deliveryIdentitySha256'] != json_sha256(identity) or
+            evidence['historySha256'] != bridge['historySha256'] or
+            evidence['previousSampleSha256'] != bridge['previousSampleSha256'] or
+            evidence['observedBootId'] != sample['bootId']):
+        raise ValueError('Clock evidence differs from record, history or current boot')
+    evidence_at = delivery_time(evidence['observedUTC'])
+    previous = events[-1]['clockSample'] if events else identity['clockOrigin']
+    if not delivery_time(previous['utc']) <= evidence_at <= observed:
+        raise ValueError('Clock evidence chronology differs')
+    goal = json.loads(delivery_ref(root, evidence['goalObservation']))
+    if (not isinstance(goal, dict) or type(goal.get('schema')) is not int or goal['schema'] != 1 or
+            goal.get('status') != 'active'):
+        raise ValueError('Clock reconciliation requires an active goal observation')
+    goal_at = delivery_time(goal.get('observedUTC'))
+    if not evidence_at <= goal_at <= observed:
+        raise ValueError('Clock goal observation chronology differs')
+    if current and ((observed - evidence_at).total_seconds() > 120 or
+                    (observed - goal_at).total_seconds() > 120):
+        raise ValueError('Clock reconciliation evidence is stale')
+
+
 def delivery_progress_status(record, clock=None, sample=None):
     """Prospective management observations; source edits do not reset this clock."""
     delivery = record['delivery']
@@ -2116,22 +2194,31 @@ def delivery_progress_status(record, clock=None, sample=None):
     unknown = False
     failed = []
     advances = set()
-    for event in delivery['events']:
+    awake_ns = boot_ns = 0
+    for index, event in enumerate(delivery['events']):
         observed = event['clockSample']
         validate_clock_sample(observed)
-        unknown = unknown or observed['bootId'] != last['bootId'] or any(
-            observed[key] < last[key] for key in ('monotonicNs', 'boottimeNs'))
+        awake_delta, boot_delta, discontinuity = delivery_clock_interval(last, observed)
+        awake_ns += awake_delta
+        boot_ns += boot_delta
+        unknown = unknown or discontinuity
+        if event['kind'] == 'clock-reconciled':
+            if (not unknown or 'deliveryAdvance' in event or event.get('reconciliation') !=
+                    delivery_clock_reconciliation_fields(record, delivery['events'][:index], observed)):
+                raise ValueError('Invalid clock reconciliation bridge')
+            unknown = False
         if event.get('deliveryAdvance') and event['deliveryAdvance'] not in advances:
             advances.add(event['deliveryAdvance'])
             baseline = observed
+            awake_ns = boot_ns = 0
             failed = []
         if event['kind'] == 'execution-finished' and event.get('failureSignature'):
             failed.append(event['failureSignature'])
         last = observed
-    unknown = unknown or current['bootId'] != last['bootId'] or any(
-        current[key] < last[key] for key in ('monotonicNs', 'boottimeNs'))
-    awake = max(0, (current['monotonicNs'] - baseline['monotonicNs']) // 1000000000)
-    boot = max(0, (current['boottimeNs'] - baseline['boottimeNs']) // 1000000000)
+    awake_delta, boot_delta, discontinuity = delivery_clock_interval(last, current)
+    unknown = unknown or discontinuity
+    awake = (awake_ns + awake_delta) // 1000000000
+    boot = (boot_ns + boot_delta) // 1000000000
     if boot < awake:
         unknown = True
     repeated = len(failed) >= 2 and failed[-1] == failed[-2]
@@ -2149,7 +2236,7 @@ def delivery_progress_status(record, clock=None, sample=None):
             'effectiveAuthorizationExpiresUTC': authorization_expires,
             'action': 'Reconcile clocks and environment.' if unknown else 'Authorization expired; no dispatch.' if expired else
                       'Change the next action or defer in this same history.' if reasons else 'Continue the selected delivery action.',
-            'basis': 'Locally sampled management clocks and recorded source-bound events; no original acceptance inferred.'}
+            'basis': 'Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.'}
 
 
 def delivery_ref(root, value):
@@ -2242,7 +2329,10 @@ def delivery_state(root, record, reqs):
         if 'guardRestorations' in event:
             guard_hashes = restored_delivery_guards(guard_hashes, event)
             validate_canonical_guard_blob(root, record)
-        if kind == 'authorization-renewed':
+        if kind == 'clock-reconciled':
+            validate_clock_reconciliation(root, record, events[:index], event,
+                                          authorization_expires, state['job'])
+        elif kind == 'authorization-renewed':
             authorization_issued = validate_authorization_renewal(
                 root, record, event, authorization_expires, authorization_issued)
             authorization_expires = event['authorizationExpiresUTC']
@@ -3944,6 +4034,7 @@ def main():
             event = read(safe(root, args.event_file))
             fields = {
                 'authorization-renewed': {'authorizationExpiresUTC', 'evidence'},
+                'clock-reconciled': {'evidence'},
                 'candidate': {'candidate'}, 'review': {'candidateSha256', 'review'},
                 'execution-started': {'candidateSha256', 'jobId', 'outerHandle'},
                 'execution-finished': {'candidateSha256', 'jobId', 'outerHandleConsumed', 'report'},
@@ -3957,7 +4048,9 @@ def main():
             progress = delivery_progress_status(record)
             closing = event['kind'] in ('execution-finished', 'execution-consumed', 'deferred')
             renewal = event['kind'] == 'authorization-renewed'
-            if not closing and (progress['reconciliationRequired'] or (progress['authorizationExpired'] and not renewal)):
+            reconcile_clock = event['kind'] == 'clock-reconciled'
+            if not closing and ((progress['reconciliationRequired'] and not reconcile_clock) or
+                                (progress['authorizationExpired'] and not renewal)):
                 raise ValueError('Delivery authorization expired or clocks require reconciliation')
             if renewal:
                 restorations = renewal_guard_restorations(root, record)
@@ -3993,6 +4086,11 @@ def main():
                     event['failureSignature'] = delivery_text(terminal.get('failureSignature'), 'failure signature')
             sample = clock_sample()
             event.update(sequence=len(record['delivery']['events']) + 1, clockSample=sample, atUTC=sample['utc'])
+            if reconcile_clock:
+                event['reconciliation'] = delivery_clock_reconciliation_fields(
+                    record, record['delivery']['events'], sample)
+                validate_clock_reconciliation(root, record, record['delivery']['events'], event,
+                                              effective_delivery_authorization(record), actual['job'], current=True)
             record['delivery']['events'].append(event)
             delivery_state(root, record, reqs)
             write_record(path, record, parent_fd=lock_parent, expected_sha=before_sha)
