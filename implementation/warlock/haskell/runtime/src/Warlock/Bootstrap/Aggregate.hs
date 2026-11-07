@@ -1,14 +1,18 @@
+{-# LANGUAGE RankNTypes #-}
 {-# LANGUAGE OverloadedStrings #-}
 -- Internal adapter. Observation is not a native grant or a process manager.
-module Warlock.Bootstrap.Aggregate (BootstrapOwner, BootstrapResult(..), AuthObservation(..), newBootstrapOwner, runBootstrap, runBootstrapWithArguments, bootstrapAuthObservation, bootstrapCredentialTrace, bootstrapSelectedPid, retireBootstrap) where
+module Warlock.Bootstrap.Aggregate (BootstrapOwner, BootstrapResult(..), AuthObservation(..), newBootstrapOwner, runBootstrap, runBootstrapWithArguments, runBootstrapWithArgumentsContext, bootstrapAuthObservation, bootstrapCredentialTrace, bootstrapSelectedPid, retireBootstrap) where
 import Control.Concurrent.MVar
 import Control.Concurrent (forkFinally,killThread)
-import Control.Exception (Exception,AsyncException(ThreadKilled),SomeException,SomeAsyncException,fromException,mask,mask_,uninterruptibleMask_,onException,throwIO,try,finally)
+import Control.Exception (Exception,AsyncException(ThreadKilled),SomeException,SomeAsyncException,fromException,mask,mask_,uninterruptibleMask_,onException,throwIO,try,finally,bracket)
 import qualified Data.ByteString as B
 import Text.Read (readMaybe)
 import Data.IORef (IORef,newIORef,readIORef,writeIORef)
-import Warlock.Bootstrap.ScopedPeer (PeerRefusal)
-import Warlock.Bootstrap.CurrentSessions (CurrentSessions, Registration, newRegistration, withApprovedOwnedPeer, retireRegistration)
+import Warlock.Bootstrap.ScopedPeer (PeerRefusal,Scope)
+import Warlock.Protocol.PeerCredential (PeerCredential)
+import Warlock.Protocol.Identity (Binding)
+import Warlock.Protocol.CredentialGuard (CredentialGuard(..))
+import Warlock.Bootstrap.CurrentSessions (CurrentSessions, Registration, newRegistration, withApprovedOwnedPeer, withApprovedOwnedPeerDeadline, retireRegistration)
 import Warlock.Protocol.CredentialIngress (CredentialIngress, CredentialIngressResult(..), CredentialFrameError(CredentialTransport), receiveCredentialIngress, receiveDesktopCredentialIngressAfterIdle, retireCredentialIngress)
 import Warlock.Protocol.Ingress (ChannelError(StreamEOF))
 import Warlock.Bootstrap.SocketOwner (SocketOwner,newSocketOwner,acquireSocketOwner,withEndpoints,claimTransfer,shutdownPeerWrite,retireSocketOwner)
@@ -41,7 +45,17 @@ runBootstrap owner root pins path links size digest deadline environment ingress
 -- Arguments are selected by the trusted supervisor, never by a wire request.
 -- Keep the original entry point, owner, deadline and authentication unchanged.
 runBootstrapWithArguments :: BootstrapOwner -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> [String] -> AdmissionDeadline -> [(String,String)] -> CredentialIngress -> IO BootstrapResult
-runBootstrapWithArguments owner@(BootstrapOwner core lease pair state authObservation trace selectedPid admission) root pins path links size digest arguments deadline environment ingress =
+runBootstrapWithArguments = runBootstrapWithArgumentsOwned Nothing (\_ _ -> pure (pure ()))
+
+-- Internal application actor hook, not exported by the public Bootstrap facade.
+-- It cannot choose credentials: only the same recvmsg admission invokes it.
+runBootstrapWithArgumentsContext :: Binding -> (Scope -> PeerCredential -> IO (IO ()))
+ -> BootstrapOwner -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> [String] -> AdmissionDeadline -> [(String,String)] -> CredentialIngress -> IO BootstrapResult
+runBootstrapWithArgumentsContext bindingValue = runBootstrapWithArgumentsOwned (Just bindingValue)
+
+runBootstrapWithArgumentsOwned :: Maybe Binding -> (Scope -> PeerCredential -> IO (IO ()))
+ -> BootstrapOwner -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> [String] -> AdmissionDeadline -> [(String,String)] -> CredentialIngress -> IO BootstrapResult
+runBootstrapWithArgumentsOwned originalBinding installContext owner@(BootstrapOwner core lease pair state authObservation trace selectedPid admission) root pins path links size digest arguments deadline environment ingress =
  (mask $ \restore -> do
   admitted <- uninterruptibleMask_ $ modifyMVar state $ \s@(State phase held ticket) -> case phase of
     Fresh -> pure (State Running held ticket,True)
@@ -78,8 +92,14 @@ runBootstrapWithArguments owner@(BootstrapOwner core lease pair state authObserv
                               Left reason -> pure (Left reason)
                               Right observation -> do
                                 writeIORef selectedPid (Just (toInteger (observedPid observation)))
-                                scoped <- withApprovedOwnedPeer admission session peer (resolvedIdentity receipt) role $ \scope -> do
-                                  let guard = guardForScopeTracing trace scope
+                                let enter = case originalBinding of
+                                      Nothing -> withApprovedOwnedPeer
+                                      Just bindingValue -> withApprovedOwnedPeerDeadline deadline bindingValue
+                                scoped <- enter admission session peer (resolvedIdentity receipt) role $ \scope -> do
+                                  let actualGuard = guardForScopeTracing trace scope
+                                      guard = actualGuard { withCredentialAdmission = \credential action ->
+                                        withCredentialAdmission actualGuard credential
+                                         (bracket (installContext scope credential) id (\_ -> action)) }
                                       pump delivered = do
                                         frame <- if delivered
                                           then receiveDesktopCredentialIngressAfterIdle (maybe 0 id (readMaybe (deadlineAbsoluteNs deadline))) ingress guard

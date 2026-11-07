@@ -2,7 +2,7 @@
 -- Trusted bootstrap internal module; never expose Scope constructors to wire clients.
 -- This only authenticates an owned transport sender, not native authority.
 module Warlock.Bootstrap.ScopedPeer
- (Scope, ScopeStatus(..), PeerRefusal(..), withScopedOwnedPeer, authenticateFragment, withAdmission, retireScope
+ (Scope, ScopeStatus(..), PeerRefusal(..), withScopedOwnedPeer, withScopedOwnedPeerDeadline, scopeApplicationContext, authenticateFragment, withAdmission, withCurrentAdmission, claimApplicationProducer, retireScope
 #ifdef WARLOCK_SCOPED_PEER_TESTING
  ,withAdmissionAfterAuthenticationForTest
 #endif
@@ -16,15 +16,17 @@ import System.Posix.Files (deviceID, fileID, fileOwner, getFdStatus, getFileStat
 import System.Posix.Types (Fd, UserID)
 import System.Posix.User (getRealUserID)
 import Warlock.Capture.Process (Session, SessionObservation(..), observeSession)
+import Warlock.Capture.Process.Bootstrap (AdmissionDeadline,remainingMicros)
 import Warlock.Platform.Resolver (Identity(..))
 import Warlock.Platform.Executable (LeaseRole(..))
+import Warlock.Protocol.Identity (Binding)
 import Warlock.Protocol.PeerCredential (PeerCredential, credentialPid, credentialUid)
 
 data PeerRefusal = WrongRole | ScopeClosed | WrongThread | ScopeUnavailable | ForeignProcess
  | ForeignUser | ForeignSession | ExecutableChanged | EndpointChanged | ObservationChanged | ObservationFailed
  deriving (Eq,Show)
 data ScopeStatus = ScopeLive !Int | ScopeDraining !Int | ScopeRetired deriving (Eq,Show)
-data Scope = Scope !ThreadId !(MVar ScopeStatus) !Session !SessionObservation !Fd !Identity !UserID !Word64 !(IO Word64)
+data Scope = Scope !ThreadId !(MVar ScopeStatus) !Session !SessionObservation !Fd !Identity !UserID !Word64 !(IO Word64) !(MVar Bool) !(Maybe (AdmissionDeadline,Binding))
 
 -- Only the resolver-selected bootstrap aggregate calls this while inside the
 -- runSelectedDetailed conversation. No process or descriptor is adopted here.
@@ -33,7 +35,18 @@ data Scope = Scope !ThreadId !(MVar ScopeStatus) !Session !SessionObservation !F
 -- process owner retains the unreaped child throughout synchronous admission.
 withScopedOwnedPeer :: Session -> Fd -> Identity -> LeaseRole -> Word64 -> IO Word64
                     -> (Scope -> IO a) -> IO (Either PeerRefusal a)
-withScopedOwnedPeer session peer identity role epoch currentEpoch action
+withScopedOwnedPeer session peer identity role epoch currentEpoch action =
+ withScopedPeerDeadline Nothing session peer identity role epoch currentEpoch action
+
+-- Application-capable scope must carry the SAME original bootstrap deadline.
+-- Legacy scopes remain transport-only and cannot issue application images.
+withScopedOwnedPeerDeadline :: AdmissionDeadline -> Binding -> Session -> Fd -> Identity -> LeaseRole -> Word64 -> IO Word64
+                           -> (Scope -> IO a) -> IO (Either PeerRefusal a)
+withScopedOwnedPeerDeadline deadline binding = withScopedPeerDeadline (Just (deadline,binding))
+
+withScopedPeerDeadline :: Maybe (AdmissionDeadline,Binding) -> Session -> Fd -> Identity -> LeaseRole -> Word64 -> IO Word64
+                      -> (Scope -> IO a) -> IO (Either PeerRefusal a)
+withScopedPeerDeadline originalDeadline session peer identity role epoch currentEpoch action
  | role /= UiImage = pure (Left WrongRole)
  | epoch == 0 = pure (Left ForeignSession)
  | otherwise = mask $ \restore -> do
@@ -44,14 +57,15 @@ withScopedOwnedPeer session peer identity role epoch currentEpoch action
       tid <- myThreadId
       live <- newMVar (ScopeLive 0)
       uid <- getRealUserID
-      let scope = Scope tid live session observation peer identity uid epoch currentEpoch
+      applicationProducer <- newMVar False
+      let scope = Scope tid live session observation peer identity uid epoch currentEpoch applicationProducer originalDeadline
       result <- restore (action scope) `finally` (retireScope scope >> pure ())
       pure (Right result)
 
 -- This is an internal fragment check only; its result is not a durable token.
 -- Each credential comes from recvmsg, never JSON, SO_PEERCRED or a caller UID.
 authenticateFragment :: Scope -> PeerCredential -> IO (Either PeerRefusal ())
-authenticateFragment scope@(Scope _ _ _ initial _ _ uid _ _) credential
+authenticateFragment scope@(Scope _ _ _ initial _ _ uid _ _ _ _) credential
  | toInteger (credentialPid credential) /= toInteger (observedPid initial) = pure (Left ForeignProcess)
  | toInteger (credentialUid credential) /= toInteger uid = pure (Left ForeignUser)
  | otherwise = current scope
@@ -65,9 +79,9 @@ withAdmission = withAdmissionAfterAuthenticationForTest (pure ())
 -- Test component only. Runs after the real authentication returned Right and
 -- before claiming Scope admission; no Scope/CurrentSessions lock is held.
 withAdmissionAfterAuthenticationForTest :: IO () -> Scope -> PeerCredential -> IO a -> IO (Either PeerRefusal a)
-withAdmissionAfterAuthenticationForTest afterAuthentication scope@(Scope _ state _ _ _ _ _ _ _) credential action = mask $ \restore -> do
+withAdmissionAfterAuthenticationForTest afterAuthentication scope@(Scope _ state _ _ _ _ _ _ _ _ _) credential action = mask $ \restore -> do
 #else
-withAdmission scope@(Scope _ state _ _ _ _ _ _ _) credential action = mask $ \restore -> do
+withAdmission scope@(Scope _ state _ _ _ _ _ _ _ _ _) credential action = mask $ \restore -> do
 #endif
  checked <- restore (authenticateFragment scope credential)
  case checked of
@@ -86,21 +100,54 @@ withAdmission scope@(Scope _ state _ _ _ _ _ _ _) credential action = mask $ \re
       ScopeRetired -> ScopeRetired))
     pure (Right result)
 
+-- Internal purpose producer called only from the currently admitted callback.
+-- It cannot begin from idle ScopeLive 0, another thread, or draining custody.
+-- The nested retain is released before the original withAdmission releases 1.
+withCurrentAdmission :: Scope -> PeerCredential -> IO a -> IO (Either PeerRefusal a)
+withCurrentAdmission scope@(Scope _ state _ _ _ _ _ _ _ _ _) credential action = mask $ \restore -> do
+ checked <- restore (authenticateFragment scope credential)
+ case checked of
+  Left reason -> pure (Left reason)
+  Right () -> do
+   held <- modifyMVar state $ \status -> case status of
+    ScopeLive 1 -> pure (ScopeLive 2,True)
+    _ -> pure (status,False)
+   if not held then pure (Left ScopeClosed) else do
+    result <- restore action `finally` uninterruptibleMask_ (modifyMVar_ state (\status -> pure $ case status of
+      ScopeLive 2 -> ScopeLive 1
+      ScopeDraining 2 -> ScopeDraining 1
+      _ -> ScopeRetired))
+    pure (Right result)
+
+-- Snapshot of native-owned bootstrap data, not a fresh duration or grant.
+scopeApplicationContext :: Scope -> IO (Maybe (AdmissionDeadline,Binding))
+scopeApplicationContext (Scope _ _ _ _ _ _ _ _ _ _ originalDeadline) = pure originalDeadline
+
+-- One backend application producer for this actual scope lifetime. This is
+-- scope-owned state, not a caller Boolean and not a global generation/registry.
+-- A failed or retired issuer cannot renew its original lifetime by cloning.
+claimApplicationProducer :: Scope -> PeerCredential -> IO (Either PeerRefusal ())
+claimApplicationProducer scope@(Scope _ _ _ _ _ _ _ _ _ producer _) credential = do
+ result <- withCurrentAdmission scope credential $ modifyMVar producer $ \used ->
+  pure (True,if used then Left ScopeClosed else Right ())
+ pure (either Left id result)
+
 -- The owning supervisor calls this when the approved lifetime is retired.
 -- A callback admitted before retirement may finish; no later admission starts.
 retireScope :: Scope -> IO ScopeStatus
-retireScope (Scope _ state _ _ _ _ _ _ _) = uninterruptibleMask_ $ modifyMVar state $ \status ->
+retireScope (Scope _ state _ _ _ _ _ _ _ _ _) = uninterruptibleMask_ $ modifyMVar state $ \status ->
  let next = case status of ScopeLive 0 -> ScopeRetired; ScopeLive n -> ScopeDraining n; other -> other
  in pure (next,next)
 
 current :: Scope -> IO (Either PeerRefusal ())
-current (Scope owner live session initial peer (Identity expectedDevice expectedInode) uid epoch epochSource) = do
+current (Scope owner live session initial peer (Identity expectedDevice expectedInode) uid epoch epochSource _ originalDeadline) = do
  thread <- myThreadId
  status <- readMVar live
  let active = case status of ScopeLive _ -> True; _ -> False
  currentUid <- getRealUserID
  currentEpoch <- epochSource
- if not active then pure (Left ScopeClosed) else if thread /= owner then pure (Left WrongThread) else if currentUid /= uid then pure (Left ForeignUser) else if currentEpoch /= epoch then pure (Left ForeignSession) else do
+ remaining <- maybe (pure 1) (remainingMicros . fst) originalDeadline
+ if remaining==0 then pure (Left ScopeUnavailable) else if not active then pure (Left ScopeClosed) else if thread /= owner then pure (Left WrongThread) else if currentUid /= uid then pure (Left ForeignUser) else if currentEpoch /= epoch then pure (Left ForeignSession) else do
   observed <- observeSession session
   case observed of
    Left _ -> pure (Left ScopeUnavailable)
@@ -119,7 +166,8 @@ current (Scope owner live session initial peer (Identity expectedDevice expected
     statusAfter <- readMVar live
     let stillLive = case statusAfter of ScopeLive _ -> True; _ -> False
     finalEpoch <- epochSource
-    pure $ if not stillLive then Left ScopeClosed else if finalEpoch /= epoch then Left ForeignSession else case (facts,after) of
+    finalRemaining <- maybe (pure 1) (remainingMicros . fst) originalDeadline
+    pure $ if finalRemaining==0 then Left ScopeUnavailable else if not stillLive then Left ScopeClosed else if finalEpoch /= epoch then Left ForeignSession else case (facts,after) of
       (Left _,_) -> Left ObservationFailed
       (_,Left _) -> Left ScopeUnavailable
       (Right (exeOk,endpointOk,userOk),Right final)

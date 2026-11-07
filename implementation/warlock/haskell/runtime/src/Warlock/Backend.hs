@@ -2,7 +2,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Production application actor. GUI policy and presentation stay in Elm.
 module Warlock.Backend
- (DirectoryPin(..),BackendConfig,loadBackendConfig,configuredNotificationBusAddress,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson,NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText,BackendCustodyException(..),BackendCustodyFailure(..)) where
+ (DirectoryPin(..),BackendConfig,loadBackendConfig,configuredNotificationBusAddress,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson,NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText,BackendCustodyException(..),BackendCustodyFailure(..),BackendApplicationCustodyException(..),BackendApplicationCustodyFailure(..)) where
 import Control.Exception (Exception(..),SomeException,SomeAsyncException,asyncExceptionFromException,asyncExceptionToException,fromException,mask,throwIO,try)
 import Control.Monad (forM_,unless)
 import qualified Data.ByteString as B
@@ -13,13 +13,17 @@ import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
 import System.Posix.Files (deviceID,fileID,getSymbolicLinkStatus)
 import Text.Read (readMaybe)
+import qualified Warlock.Backend.ApplicationExecutable as App
+import Warlock.Backend.ApplicationPlanConfig (decodeApplicationPlans)
+import Warlock.Protocol.PeerCredential (PeerCredential)
+import Warlock.Bootstrap.Aggregate (runBootstrapWithArgumentsContext)
 import Warlock.Backend.Catalog
 import Warlock.Backend.NotificationIssuer (NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newIssuer,provisionIssuer,reserveGeneration,retireIssuer,generationText)
 import Warlock.Backend.PinStore
 import Warlock.Backend.Store
 import Warlock.Ui.Display (readDisplayEnvironment)
 import Warlock.Bootstrap
-import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),ToolError(..),deadlineFromAbsoluteNs,selectedCustody,selectedContainment,selectedOperation,selectedObservedExit)
+import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),ToolError(..),deadlineFromAbsoluteNs,SelectedOutcome,selectedCustody,selectedContainment,selectedOperation,selectedObservedExit)
 import Warlock.Platform.Resolver (Identity(..),Kind(..),Pin(..),withRoot)
 import Warlock.Protocol.Codec (checkedDesktopCommit,checkDesktopReply,desktopProfile,encodeServerCheckedWith)
 import Warlock.Protocol.CredentialIngress
@@ -29,12 +33,12 @@ import Warlock.Protocol.Ingress (Direction(..),Priority(..),ingressBinding)
 import Warlock.Protocol.StrictJson
 
 data UiImage = UiImage FilePath Integer Integer Integer B.ByteString [String] [DirectoryPin]
-data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool (Maybe Text)
+data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool (Maybe Text) [App.ApplicationPlan]
 
 -- Selected startup data only. Actual bus authentication, ownership, deadline
 -- and lifecycle checks remain necessary before any notification operation.
 configuredNotificationBusAddress :: BackendConfig -> Maybe Text
-configuredNotificationBusAddress (BackendConfig _ _ _ _ _ _ _ address) = address
+configuredNotificationBusAddress (BackendConfig _ _ _ _ _ _ _ address _) = address
 
 notificationAddress :: Text -> Either Text Text
 notificationAddress raw = do
@@ -60,9 +64,18 @@ instance Exception BackendCustodyException where
 data BackendCustodyFailure = BackendCustodyFailure SomeException NotificationIssuer
 instance Show BackendCustodyFailure where show _ = "backend observation failed with issuer custody"
 instance Exception BackendCustodyFailure
+-- Both independent resource owners remain reachable on unconfirmed retirement.
+data BackendApplicationCustodyException = BackendApplicationCustodyException SomeException NotificationIssuer App.ApplicationIssuer
+instance Show BackendApplicationCustodyException where show _ = "backend interrupted with application custody"
+instance Exception BackendApplicationCustodyException where
+ toException = asyncExceptionToException
+ fromException = asyncExceptionFromException
+data BackendApplicationCustodyFailure = BackendApplicationCustodyFailure SomeException NotificationIssuer App.ApplicationIssuer
+instance Show BackendApplicationCustodyFailure where show _ = "backend failed with application custody"
+instance Exception BackendApplicationCustodyFailure
 
 newNotificationIssuer :: BackendConfig -> IO NotificationIssuer
-newNotificationIssuer (BackendConfig _ deadlineText _ _ pin _ _ _) = newIssuer pin deadlineText
+newNotificationIssuer (BackendConfig _ deadlineText _ _ pin _ _ _ _) = newIssuer pin deadlineText
 provisionNotificationIssuer :: NotificationIssuer -> IO (Either IssuerFailure ())
 provisionNotificationIssuer = provisionIssuer
 reserveNotificationGeneration :: NotificationIssuer -> IO (Either IssuerFailure NotificationGeneration)
@@ -84,7 +97,7 @@ data BackendResult = BackendResult
  ,backendProcessCleanup :: Bool,backendCatalogCleanup :: Bool,backendPinCleanup :: Bool
  ,backendAttemptStage :: BackendAttemptStage
  ,backendRetirements :: (BackendRetirement,BackendRetirement,BackendRetirement)
- ,backendNotificationCustody :: Maybe NotificationIssuer} deriving (Eq,Show)
+ ,backendNotificationCustody :: Maybe NotificationIssuer,backendApplicationCustody :: Maybe App.ApplicationIssuer,backendApplicationReceipt :: Maybe (Counter,SelectedOutcome)} deriving (Eq,Show)
 
 loadBackendConfig :: FilePath -> IO (Either Text BackendConfig)
 loadBackendConfig path = mask $ \restore -> do
@@ -106,7 +119,7 @@ decodeConfig bytes = do
  raw <- failure (decodeStrict limits bytes)
  let names=["schema","binding","deadlineMonotonicNs","ui","catalogRoots","pinsRoot","locale"]
  let optionalNames = case raw of
-      JObject pairs -> [name | name <- ["applicationAttachment","notificationBusAddress"], any ((==name) . fst) pairs]
+      JObject pairs -> [name | name <- ["applicationAttachment","notificationBusAddress","applicationPlans"], any ((==name) . fst) pairs]
       _ -> []
  fields <- object (names++optionalNames) raw
  attachment <- case lookup "applicationAttachment" fields of
@@ -117,6 +130,7 @@ decodeConfig bytes = do
   Nothing -> Right Nothing
   Just (JString address) -> Just <$> notificationAddress address
   _ -> Left "invalid notification bus selection"
+ plans <- decodeApplicationPlans (lookup "applicationPlans" fields)
  require (lookup "schema" fields==Just (JNumber "1")) "unsupported startup schema"
  bound <- key "binding" fields >>= bindingConfig
  deadline <- key "deadlineMonotonicNs" fields >>= string
@@ -127,7 +141,7 @@ decodeConfig bytes = do
  pins <- key "pinsRoot" fields >>= directoryConfig
  locale <- key "locale" fields >>= string
  require (T.length locale<=128 && not (T.any (< ' ') locale)) "invalid trusted locale"
- pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment notificationBus)
+ pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment notificationBus plans)
  where
   bindingConfig raw = do
    fields <- object ["lifetime","session","frontend"] raw
@@ -225,11 +239,12 @@ applyDesktopRequest bound catalog pins operations lastWrite sendReply request = 
       reply <- construct (D.pinsReply bound (D.requestId request) status snapshot)
       writeIORef lastWrite (Just (D.requestId request,proposal,reply))
       sendReply reply
+  D.ApplicationLaunch -> ioError (userError "application launch requires current admitted context")
  where
   construct = either (ioError . userError . T.unpack) pure
 
 runBackend :: BackendConfig -> IO BackendResult
-runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled _) = mask $ \restore -> do
+runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled _ applicationPlans) = mask $ \restore -> do
  catalog <- newCatalog roots locale (lifetime bound)
  pins <- newPinStore pinsRoot
  notificationIssuer <- newIssuer pinsRoot deadlineText
@@ -242,6 +257,14 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
  current <- newCurrentSessions
  owner <- newBootstrapOwner current
  slot <- newIORef Nothing
+ admittedContext <- newIORef (Nothing :: Maybe (Scope,PeerCredential))
+ applicationIssuer <- newIORef (Nothing :: Maybe App.ApplicationIssuer)
+ let installContext scope credential = do
+      installed <- atomicModifyIORef' admittedContext $ \old -> case old of
+       Nothing -> (Just (scope,credential),True)
+       Just _ -> (old,False)
+      unless installed (ioError (userError "overlapping admitted callback"))
+      pure (writeIORef admittedContext Nothing)
  ingressBound <- either (ioError . userError . show) pure (ingressBinding (renderCounter (lifetime bound)) (renderCounter (session bound)) (renderCounter (frontend bound)))
  let sendReply reply = do
       checked <- either (ioError . userError . T.unpack) pure (checkDesktopReply reply)
@@ -252,7 +275,43 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
       sent <- sendCredentialIngress ingress
       unless (sent==Right ()) (ioError (userError "backend reply delivery unconfirmed"))
      construct = either (ioError . userError . T.unpack) pure
-     handle = applyDesktopRequest bound catalog pins operations lastWrite sendReply
+     handle request = case D.requestKind request of
+      D.ApplicationLaunch -> handleApplication request
+      _ -> applyDesktopRequest bound catalog pins operations lastWrite sendReply request
+     issuerInCurrentAdmission = do
+      active <- readIORef admittedContext >>= maybe (ioError (userError "application request outside admission")) pure
+      let (scope,credential) = active
+      if null applicationPlans then pure (Left App.ImageUnconfigured) else do
+       existing <- readIORef applicationIssuer
+       case existing of
+        Just issuer -> pure (Right issuer)
+        Nothing -> do
+         created <- App.newApplicationIssuer scope credential catalog applicationPlans 1048576
+         case created of Right issuer -> writeIORef applicationIssuer (Just issuer); Left _ -> pure ()
+         pure created
+     handleApplication request = do
+      active <- readIORef admittedContext >>= maybe (ioError (userError "application request outside admission")) pure
+      let (_,credential) = active
+      intent <- maybe (ioError (userError "checked application intent missing")) pure (D.launchIntent request)
+      let reply state = construct (D.launchReply bound intent state) >>= sendReply
+      if D.launchLifetime intent/=lifetime bound then reply (D.LaunchRefused D.RetiredAuthority) else do
+       selected <- issuerInCurrentAdmission
+       case selected of
+        Left _ -> reply (D.LaunchRefused D.NativeEntryUnavailable)
+        Right issuer -> do
+         issued <- App.issueApplicationImage issuer credential bound (D.launchRequest intent) (D.launchGeneration intent) (D.launchEntry intent)
+         case issued of
+          Left App.ReplayRefused -> reply (D.LaunchRefused D.RequestReuse)
+          Left _ -> reply (D.LaunchRefused D.NativeEntryUnavailable)
+          Right held -> do
+           modifyIORef' operations (+1)
+           result <- App.runApplicationImage issuer credential held
+           settled <- App.settleApplicationImage issuer held
+           case (result,settled) of
+            (Right observed,App.ApplicationRetired)
+             | selectedCustody observed==Available && either (const False) (const True) (selectedOperation observed) -> reply D.LaunchSubmitted
+            (Left App.RevalidationRefused,App.ApplicationRetired) -> reply (D.LaunchRefused D.DesktopEntryRaced)
+            _ -> reply D.LaunchUnknown
      handler checked = case checkedDesktopCommit checked of
       Nothing -> ioError (userError "native profile reached desktop actor")
       Just commit -> do
@@ -264,7 +323,11 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
        firstAttempt <- if attachmentEnabled
         then atomicModifyIORef' attachmentAttempted (\attempted -> (True,not attempted))
         else pure False
-       if firstAttempt then construct (D.applicationAttached bound) >>= sendReply else pure ()
+       if firstAttempt then do
+        producer <- issuerInCurrentAdmission
+        let available = case producer of Right _ -> D.ApplicationLaunchAvailable; Left _ -> D.ApplicationUnavailable
+        construct (D.applicationAttachedWithAvailability bound available) >>= sendReply
+       else pure ()
        -- The shared codec/gate has validated ALL requests before this point.
        -- Presentation-only commits run this empty loop, with zero domain IO.
        forM_ requests handle
@@ -277,25 +340,42 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
   let imagePins=[Pin (TE.encodeUtf8 (T.pack (directoryPath parent))) (Identity (directoryDevice parent) (directoryInode parent)) Directory | parent <- parents]
        ++[Pin (TE.encodeUtf8 (T.pack image)) (Identity dev ino) Regular]
   withRoot "/" (Identity (toInteger (deviceID rootStat)) (toInteger (fileID rootStat))) $ \root ->
-   runBootstrapWithArguments owner root imagePins (TE.encodeUtf8 (T.pack (drop 1 image))) [] size digest arguments deadline ([("LANG","C"),("LC_ALL","C")] ++ displayEnvironment) ingress
+   runBootstrapWithArgumentsContext bound installContext owner root imagePins (TE.encodeUtf8 (T.pack (drop 1 image))) [] size digest arguments deadline ([("LANG","C"),("LC_ALL","C")] ++ displayEnvironment) ingress
  processRetirement <- try (retireBootstrap owner) :: IO (Either SomeException Bool)
+ applicationIssuerForObservation <- readIORef applicationIssuer
+ applicationRetirement <- try $ do
+  retained <- readIORef applicationIssuer
+  case retained of
+   Nothing -> pure True
+   Just issuer -> do
+    result <- App.retireApplicationIssuer issuer
+    case result of
+     App.ApplicationRetired -> writeIORef applicationIssuer Nothing >> pure True
+     App.ApplicationRetained _ -> pure False
  catalogRetirement <- try (retireCatalog catalog) :: IO (Either SomeException Bool)
  pinRetirement <- try (retirePinStore pins) :: IO (Either SomeException Bool)
  notificationRetirement <- try (retireIssuer notificationIssuer) :: IO (Either SomeException Bool)
+ let throwWithCustody problem = do
+      retained <- readIORef applicationIssuer
+      case retained of
+       Just issuer -> case fromException problem :: Maybe SomeAsyncException of
+        Just _ -> throwIO (BackendApplicationCustodyException problem notificationIssuer issuer)
+        Nothing -> throwIO (BackendApplicationCustodyFailure problem notificationIssuer issuer)
+       Nothing -> if either (const False) id notificationRetirement then throwIO problem
+        else case fromException problem :: Maybe SomeAsyncException of
+         Just _ -> throwIO (BackendCustodyException problem notificationIssuer)
+         Nothing -> throwIO (BackendCustodyFailure problem notificationIssuer)
  observations <- try $ do
   observed <- bootstrapAuthObservation owner
   trace <- bootstrapCredentialTrace owner
   selected <- bootstrapSelectedPid owner
   count <- readIORef callbacks
   dispatched <- readIORef operations
-  pure (observed,trace,selected,count,dispatched)
- (observed,trace,selected,count,dispatched) <- case observations of
+  applicationObserved <- maybe (pure Nothing) App.applicationReceipt applicationIssuerForObservation
+  pure (observed,trace,selected,count,dispatched,applicationObserved)
+ (observed,trace,selected,count,dispatched,applicationObserved) <- case observations of
   Right values -> pure values
-  Left (problem :: SomeException) ->
-   if either (const False) id notificationRetirement then throwIO problem
-   else case fromException problem :: Maybe SomeAsyncException of
-    Just _ -> throwIO (BackendCustodyException problem notificationIssuer)
-    Nothing -> throwIO (BackendCustodyFailure problem notificationIssuer)
+  Left (problem :: SomeException) -> throwWithCustody problem
  let outcome=case attempted of
       Left (_ :: SomeException) -> Left "backend conversation failed"
       Right (Left _) -> Left "backend root acquisition refused"
@@ -309,22 +389,22 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
      processClean=either (const False) id processRetirement
      catalogClean=either (const False) id catalogRetirement
      pinClean=either (const False) id pinRetirement
-     clean=processClean && catalogClean && pinClean && either (const False) id notificationRetirement
+     clean=processClean && catalogClean && pinClean && either (const False) id notificationRetirement && either (const False) id applicationRetirement
      success=case outcome of
       Right (Executed result) -> selectedCustody result==Available && selectedContainment result==BeforeSignalLeaderExited && either (const False) (const True) (selectedOperation result)
       _ -> False
  let originals=case attempted of Left (problem :: SomeException) -> [problem]; _ -> []
-     cleanupProblems=[problem | Left problem <- [processRetirement,catalogRetirement,pinRetirement,notificationRetirement]]
+     cleanupProblems=[problem | Left problem <- [processRetirement,catalogRetirement,pinRetirement,notificationRetirement,applicationRetirement]]
      asynchronous=[problem | problem <- originals++cleanupProblems,Just _ <- [fromException problem :: Maybe SomeAsyncException]]
  -- Every independent owner was attempted before an asynchronous failure can
  -- escape. Prefer the original asynchronous exception over cleanup failures.
  case asynchronous of
-  problem:_ -> if either (const False) id notificationRetirement
-   then throwIO problem else throwIO (BackendCustodyException problem notificationIssuer)
+  problem:_ -> throwWithCustody problem
   [] -> pure ()
+ retainedApplication <- readIORef applicationIssuer
  pure (BackendResult (clean && success) clean count dispatched outcome observed trace selected processClean catalogClean pinClean
        attemptStage (retirementStage processRetirement,retirementStage catalogRetirement,retirementStage pinRetirement)
-       (if either (const False) id notificationRetirement then Nothing else Just notificationIssuer))
+       (if either (const False) id notificationRetirement then Nothing else Just notificationIssuer) retainedApplication applicationObserved)
 
 retirementStage :: Either a Bool -> BackendRetirement
 retirementStage (Left _) = RetirementException

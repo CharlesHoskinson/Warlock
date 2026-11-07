@@ -3,9 +3,11 @@
 module Warlock.Protocol.Desktop
   ( DesktopCommit, decodeDesktopCommit, encodeDesktopCommit, commitRequests, commitProjection, commitFocus
   , DesktopRequest, RequestKind(..), requestKind, requestBinding, requestId, pinProposal
+  , LaunchIntent, launchIntent, launchRequest, launchLifetime, launchGeneration, launchEntry
+  , LaunchStatus(..), LaunchRefusal(..), launchReply, launchOutcome
   , PinSnapshot, pinSnapshot, pinRevision, pinIdentities, decodePinSnapshot, encodePinSnapshot
   , CatalogEntry, catalogEntry, CatalogSnapshot, catalogSnapshot
-  , DesktopReply, PinStatus(..), applicationAttached, catalogReply, pinsReply, replyBinding
+  , DesktopReply, PinStatus(..), ApplicationAvailability(..), applicationAttached, applicationAttachedWithAvailability, applicationAvailability, catalogReply, pinsReply, replyBinding
   , decodeDesktopReply, encodeDesktopReply, decodeDesktopGateway, encodeDesktopGateway, popupControl ) where
 
 import qualified Data.ByteString as B
@@ -18,16 +20,22 @@ import Warlock.Protocol.Identity
 import Warlock.Protocol.StrictJson
 import Warlock.Protocol.Wire (parseBinding)
 
-data RequestKind = CatalogRead | PinsWrite deriving (Eq, Show)
+data RequestKind = CatalogRead | PinsWrite | ApplicationLaunch deriving (Eq, Show)
+data LaunchIntent = LaunchIntent Counter Counter Counter Text deriving (Eq, Show)
+data LaunchRefusal = RetiredAuthority | RequestReuse | RetiredRequest | CatalogUnavailable | StaleCatalog | RemovedEntry | NativeEntryUnavailable | DesktopEntryRaced deriving (Eq, Show)
+data LaunchStatus = LaunchSubmitted | LaunchUnknown | LaunchRefused LaunchRefusal deriving (Eq, Show)
 data PinSnapshot = PinSnapshot Counter [Text] deriving (Eq, Show)
-data DesktopRequest = CatalogRequest Binding Counter | PinsRequest Binding Counter PinSnapshot deriving (Eq, Show)
+data DesktopRequest = CatalogRequest Binding Counter | PinsRequest Binding Counter PinSnapshot | LaunchRequest Binding LaunchIntent deriving (Eq, Show)
 data DesktopCommit = DesktopCommit Json [DesktopRequest] [Text] deriving (Eq, Show)
 data CatalogEntry = CatalogEntry Text Text Text Text Text [Text] deriving (Eq, Show)
 data CatalogSnapshot = CatalogSnapshot Counter Counter [CatalogEntry] deriving (Eq, Show)
 data PinStatus = PinSaved | PinRefused | PinUnknown deriving (Eq, Show)
+-- Availability DATA only; this never constructs native/window admission.
+data ApplicationAvailability = ApplicationUnavailable | ApplicationLaunchAvailable deriving (Eq,Show)
 data DesktopReply = CatalogReply Binding Counter (Maybe CatalogSnapshot) (Maybe PinSnapshot)
                   | PinsReply Binding Counter PinStatus (Maybe PinSnapshot)
-                  | ApplicationAttached Binding
+                  | LaunchReply Binding LaunchIntent LaunchStatus
+                  | ApplicationAttached Binding (Maybe ApplicationAvailability)
                   | PreviewGrant Binding Counter Int
                   | PreviewQuarantine Binding Counter
                   | PreviewClosed Binding Counter deriving (Eq, Show)
@@ -101,28 +109,62 @@ encodePinSnapshot = jsonBytes . pinJson
 requestKind :: DesktopRequest -> RequestKind
 requestKind (CatalogRequest _ _) = CatalogRead
 requestKind (PinsRequest _ _ _) = PinsWrite
+requestKind (LaunchRequest _ _) = ApplicationLaunch
 requestBinding :: DesktopRequest -> Binding
 requestBinding (CatalogRequest owner _) = owner
 requestBinding (PinsRequest owner _ _) = owner
+requestBinding (LaunchRequest owner _) = owner
 requestId :: DesktopRequest -> Counter
 requestId (CatalogRequest _ request) = request
 requestId (PinsRequest _ request _) = request
+requestId (LaunchRequest _ intent) = launchRequest intent
 pinProposal :: DesktopRequest -> Maybe PinSnapshot
 pinProposal (CatalogRequest _ _) = Nothing
 pinProposal (PinsRequest _ _ proposal) = Just proposal
+pinProposal (LaunchRequest _ _) = Nothing
+launchIntent :: DesktopRequest -> Maybe LaunchIntent
+launchIntent (LaunchRequest _ intent) = Just intent
+launchIntent _ = Nothing
+launchRequest, launchLifetime, launchGeneration :: LaunchIntent -> Counter
+launchRequest (LaunchIntent request _ _ _) = request
+launchLifetime (LaunchIntent _ life _ _) = life
+launchGeneration (LaunchIntent _ _ generation _) = generation
+launchEntry :: LaunchIntent -> Text
+launchEntry (LaunchIntent _ _ _ entry) = entry
+parseLaunchIntent :: Json -> Either Text LaunchIntent
+parseLaunchIntent value = do
+  fields <- object ["request","lifetime","generation","entry"] value
+  request <- field "request" fields >>= counter
+  life <- field "lifetime" fields >>= counter
+  generation <- field "generation" fields >>= counter
+  entry <- field "entry" fields >>= textValue
+  require (not (T.null entry) && utf16Length entry <= 256 && not (T.any ((<32) . ord) entry)) "launch identity"
+  pure (LaunchIntent request life generation entry)
+launchIntentJson :: LaunchIntent -> Json
+launchIntentJson (LaunchIntent request life generation entry) = JObject
+  [("request",JString (renderCounter request)),("lifetime",JString (renderCounter life)),("generation",JString (renderCounter generation)),("entry",JString entry)]
 parseRequest :: Json -> Either Text DesktopRequest
 parseRequest value = do
   require (B.length (jsonBytes value) <= 8192) "desktop request capacity"
   fields <- case value of JObject pairs -> Right pairs; _ -> Left "request object required"
   field "protocolVersion" fields >>= fixed (JNumber "3")
   kind <- field "kind" fields >>= textValue
-  let names = ["protocolVersion","kind","binding","requestId"]
-  exact <- object (names ++ if kind == "taskbar-pins-write" then ["proposal"] else []) value
-  owner <- field "binding" exact >>= parseBinding
-  request <- field "requestId" exact >>= counter
   case kind of
-    "catalog-request" -> pure (CatalogRequest owner request)
-    "taskbar-pins-write" -> PinsRequest owner request <$> (field "proposal" exact >>= parsePins)
+    "application-launch" -> do
+      exact <- object ["protocolVersion","kind","binding","intent"] value
+      owner <- field "binding" exact >>= parseBinding
+      intent <- field "intent" exact >>= parseLaunchIntent
+      pure (LaunchRequest owner intent)
+    "catalog-request" -> do
+      exact <- object ["protocolVersion","kind","binding","requestId"] value
+      owner <- field "binding" exact >>= parseBinding
+      request <- field "requestId" exact >>= counter
+      pure (CatalogRequest owner request)
+    "taskbar-pins-write" -> do
+      exact <- object ["protocolVersion","kind","binding","requestId","proposal"] value
+      owner <- field "binding" exact >>= parseBinding
+      request <- field "requestId" exact >>= counter
+      PinsRequest owner request <$> (field "proposal" exact >>= parsePins)
     _ -> Left "unsupported desktop request kind"
 decodeDesktopCommit :: B.ByteString -> Either Text DesktopCommit
 decodeDesktopCommit raw = do
@@ -195,7 +237,8 @@ nullable f = maybe JNull f
 replyBinding :: DesktopReply -> Binding
 replyBinding (CatalogReply owner _ _ _) = owner
 replyBinding (PinsReply owner _ _ _) = owner
-replyBinding (ApplicationAttached owner) = owner
+replyBinding (LaunchReply owner _ _) = owner
+replyBinding (ApplicationAttached owner _) = owner
 replyBinding (PreviewGrant owner _ _) = owner
 replyBinding (PreviewQuarantine owner _) = owner
 replyBinding (PreviewClosed owner _) = owner
@@ -214,17 +257,75 @@ replyJson :: DesktopReply -> Json
 replyJson reply = JObject $ [("protocolVersion",JNumber "3"),("binding",bindingJson (replyBinding reply))] ++ case reply of
   CatalogReply _ request catalog pins -> [("kind",JString "application-catalog"),("requestId",JString (renderCounter request)),("snapshot",nullable catalogJson catalog),("preferences",nullable pinJson pins)]
   PinsReply _ request status pins -> [("kind",JString "taskbar-pins-outcome"),("requestId",JString (renderCounter request)),("status",JString (case status of PinSaved -> "Saved"; PinRefused -> "Refused"; PinUnknown -> "Unknown")),("preferences",nullable pinJson pins)]
-  ApplicationAttached _ -> [("kind",JString "application-attached"),("nativeOperations",JArray [])]
+  LaunchReply _ intent status -> [("kind",JString "application-launch-outcome"),("outcome",launchOutcomeJson intent status)]
+  ApplicationAttached _ selected -> [("kind",JString "application-attached"),("nativeOperations",JArray [])]
+    ++ case selected of
+      Nothing -> []
+      Just availability -> [("applicationOperations",JArray (case availability of ApplicationUnavailable -> []; ApplicationLaunchAvailable -> [JString "application-launch"]))]
   PreviewGrant _ epoch capacity -> [("kind",JString "native-preview-grant"),("receiverEpoch",JString (renderCounter epoch)),("capacity",JNumber (T.pack (show capacity)))]
   PreviewQuarantine _ epoch -> [("kind",JString "native-preview-quarantine"),("receiverEpoch",JString (renderCounter epoch))]
   PreviewClosed _ epoch -> [("kind",JString "native-preview-closed"),("receiverEpoch",JString (renderCounter epoch))]
+launchOutcomeJson :: LaunchIntent -> LaunchStatus -> Json
+launchOutcomeJson intent status = JObject
+  [("catalogProtocol",JNumber "1"),("kind",JString "launch-outcome"),("intent",launchIntentJson intent),("status",JString state),("reason",JString reason)]
+ where
+  (state,reason) = case status of
+    LaunchSubmitted -> ("Submitted","native-submission-accepted")
+    LaunchUnknown -> ("Unknown","submission-not-confirmed")
+    LaunchRefused refusal -> ("Refused",case refusal of
+      RetiredAuthority -> "retired-authority"; RequestReuse -> "request-reuse"
+      RetiredRequest -> "retired-request"; CatalogUnavailable -> "catalog-unavailable"
+      StaleCatalog -> "stale-catalog"; RemovedEntry -> "removed-entry"
+      NativeEntryUnavailable -> "native-entry-unavailable"; DesktopEntryRaced -> "desktop-entry-raced")
+parseLaunchOutcome :: Json -> Either Text (LaunchIntent,LaunchStatus)
+parseLaunchOutcome value = do
+  fields <- object ["catalogProtocol","kind","intent","status","reason"] value
+  field "catalogProtocol" fields >>= fixed (JNumber "1")
+  field "kind" fields >>= fixed (JString "launch-outcome")
+  intent <- field "intent" fields >>= parseLaunchIntent
+  state <- field "status" fields >>= textValue
+  reason <- field "reason" fields >>= textValue
+  status <- case (state,reason) of
+    ("Submitted","native-submission-accepted") -> Right LaunchSubmitted
+    ("Unknown","submission-not-confirmed") -> Right LaunchUnknown
+    ("Refused","retired-authority") -> Right (LaunchRefused RetiredAuthority)
+    ("Refused","request-reuse") -> Right (LaunchRefused RequestReuse)
+    ("Refused","retired-request") -> Right (LaunchRefused RetiredRequest)
+    ("Refused","catalog-unavailable") -> Right (LaunchRefused CatalogUnavailable)
+    ("Refused","stale-catalog") -> Right (LaunchRefused StaleCatalog)
+    ("Refused","removed-entry") -> Right (LaunchRefused RemovedEntry)
+    ("Refused","native-entry-unavailable") -> Right (LaunchRefused NativeEntryUnavailable)
+    ("Refused","desktop-entry-raced") -> Right (LaunchRefused DesktopEntryRaced)
+    _ -> Left "unsupported launch outcome"
+  pure (intent,status)
+-- Inspection is data only; it does not establish receipt or effect authority.
+launchOutcome :: DesktopReply -> Maybe (LaunchIntent,LaunchStatus)
+launchOutcome (LaunchReply _ intent status) = Just (intent,status)
+launchOutcome _ = Nothing
+
+-- Typed application data only: construction grants no authority or effect.
+launchReply :: Binding -> LaunchIntent -> LaunchStatus -> Either Text DesktopReply
+launchReply owner intent status = do
+  let reply = LaunchReply owner intent status
+  _ <- encodeDesktopReply reply
+  pure reply
 -- Application attachment announces only the already authenticated application
 -- binding. It creates no native authority or native operations.
 applicationAttached :: Binding -> Either Text DesktopReply
 applicationAttached owner = do
-  let reply = ApplicationAttached owner
+  let reply = ApplicationAttached owner Nothing
   _ <- encodeDesktopReply reply
   pure reply
+-- Explicit new producer uses this constructor even for the empty list.
+-- Legacy constructor retains old wire bytes; legacy absence decodes unavailable.
+applicationAttachedWithAvailability :: Binding -> ApplicationAvailability -> Either Text DesktopReply
+applicationAttachedWithAvailability owner available = do
+ let reply = ApplicationAttached owner (Just available)
+ _ <- encodeDesktopReply reply
+ pure reply
+applicationAvailability :: DesktopReply -> Maybe ApplicationAvailability
+applicationAvailability (ApplicationAttached _ selected) = Just (maybe ApplicationUnavailable id selected)
+applicationAvailability _ = Nothing
 catalogReply :: Binding -> Counter -> Maybe CatalogSnapshot -> Maybe PinSnapshot -> Either Text DesktopReply
 catalogReply owner request catalog pins = do
   positive request
@@ -247,16 +348,26 @@ decodeDesktopReply raw = do
   kind <- field "kind" fields >>= textValue
   case kind of
     "application-attached" -> do
-      exact <- object ["protocolVersion","kind","binding","nativeOperations"] value
+      let present = lookup "applicationOperations" fields
+      exact <- object (["protocolVersion","kind","binding","nativeOperations"] ++ case present of Nothing -> []; Just _ -> ["applicationOperations"]) value
       owner <- field "binding" exact >>= parseBinding
       field "nativeOperations" exact >>= fixed (JArray [])
-      applicationAttached owner
+      case present of
+       Nothing -> applicationAttached owner
+       Just (JArray []) -> applicationAttachedWithAvailability owner ApplicationUnavailable
+       Just (JArray [JString "application-launch"]) -> applicationAttachedWithAvailability owner ApplicationLaunchAvailable
+       Just _ -> Left "unsupported application operations"
     "application-catalog" -> do
       exact <- object ["protocolVersion","kind","binding","requestId","preferences","snapshot"] value
       owner <- field "binding" exact >>= parseBinding
       request <- field "requestId" exact >>= counter
       pins <- field "preferences" exact >>= optional parsePins
       field "snapshot" exact >>= optional parseCatalog >>= \catalog -> catalogReply owner request catalog pins
+    "application-launch-outcome" -> do
+      exact <- object ["protocolVersion","kind","binding","outcome"] value
+      owner <- field "binding" exact >>= parseBinding
+      (intent,status) <- field "outcome" exact >>= parseLaunchOutcome
+      launchReply owner intent status
     "taskbar-pins-outcome" -> do
       exact <- object ["protocolVersion","kind","binding","requestId","preferences","status"] value
       owner <- field "binding" exact >>= parseBinding

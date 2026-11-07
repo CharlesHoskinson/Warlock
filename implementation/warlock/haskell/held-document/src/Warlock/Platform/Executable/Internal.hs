@@ -1,10 +1,12 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 module Warlock.Platform.Executable.Internal
  (ExecutableLease, HeldExecutable, LeaseRole(..), LeaseState(..), LeaseError(..)
- ,newExecutableLease, acquireExecutableLease, acquireExecutableLeaseWithHooks, issueReadyExecutable, retireExecutableLease
+ ,newExecutableLease, acquireExecutableLease, acquireApplicationExecutableLease, acquireExecutableLeaseWithHooks, issueReadyExecutable, retireExecutableLease
  ,executableLeaseState, observeHeldRole, HeldBorrow, prepareHeldBorrow, activateHeldBorrowWhile, tryHeldBorrowNotAcquired, tryReleaseHeld, releaseHeldBorrow, borrowHeld, borrowHeldInterruptible, borrowHeldWhile, retireHeld) where
 
 import Control.Concurrent.MVar
+import Data.Bits ((.&.))
+import System.Posix.Files (getFdStatus,fileMode)
 import Control.Exception (SomeException, SomeAsyncException, fromException, mask, onException, throwIO, try, uninterruptibleMask_)
 import qualified Data.ByteString as B
 import System.Posix.IO (closeFd)
@@ -12,7 +14,7 @@ import System.Posix.Process (getProcessID)
 import System.Posix.Types (Fd(..))
 import Warlock.Platform.Resolver.Internal (Root,Pin,Link,Resolution,ResolveError(..),Hooks,clone,noHooks,resolveSnapshotVia)
 
-data LeaseRole = UiImage deriving (Eq,Show)
+data LeaseRole = UiImage | ApplicationImage deriving (Eq,Show)
 data LeaseState = EmptyLease | BuildingLease | PendingLease | ReadyLease | ClosingLease | ClosedLease | MovedLease | UncertainLease deriving (Eq,Show)
 data LeaseError = LeaseBusy | LeaseClosed | LeaseCloseUncertain deriving (Eq,Show)
 data Slot = Empty | Building | Pending Fd | Ready Fd Resolution LeaseRole | Closing Fd | Closed | Moved HeldExecutable | Unknown Fd
@@ -43,6 +45,12 @@ acquireExecutableLease :: ExecutableLease -> Root -> [Pin] -> B.ByteString -> [L
 acquireExecutableLease lease root pins path links size digest role =
  acquireExecutableLeaseWithHooks lease root pins path links size digest role noHooks (pure ())
 
+-- Fixed application purpose acquisition. Callers cannot supply a role tag.
+-- This proves physical inode ownership only; runtime admission stays separate.
+acquireApplicationExecutableLease :: ExecutableLease -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> IO (Either ResolveError ())
+acquireApplicationExecutableLease lease root pins path links size digest =
+ acquireExecutableLeaseWithHooks lease root pins path links size digest ApplicationImage noHooks (pure ())
+
 -- Package-private source fixture hook after Pending; no raw FD is exposed.
 acquireExecutableLeaseWithHooks :: ExecutableLease -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> LeaseRole -> Hooks -> IO () -> IO (Either ResolveError ())
 acquireExecutableLeaseWithHooks lease@(ExecutableLease gate) root pins path links size digest role hooks afterPending = mask $ \restore -> do
@@ -61,7 +69,18 @@ acquireExecutableLeaseWithHooks lease@(ExecutableLease gate) root pins path link
      (_,Left c) -> case (fromException c :: Maybe SomeAsyncException) of Just _ -> throwIO c; Nothing -> pure (Left OsFailure)
      _ -> pure (Left OsFailure)
  where
-  consume readFd _ = mask $ \_ -> do
+  consume readFd bytes = mask $ \_ -> do
+   if role==ApplicationImage
+    then do
+     metadata <- getFdStatus readFd
+     let elf=B.length bytes>=64 && B.take 7 bytes==B.pack [127,69,76,70,2,1,1]
+          && B.index bytes 18==183 && B.index bytes 19==0
+          && B.index bytes 16 `elem` [2,3] && B.index bytes 17==0
+          && B.take 4 (B.drop 20 bytes)==B.pack [1,0,0,0]
+          && B.index bytes 52==64 && B.index bytes 53==0
+     if elf && (fileMode metadata .&. 0o111)/=0 then pure ()
+      else ioError (userError "application image must be executable ELF64LE AArch64")
+    else pure ()
    fd <- clone readFd
    let publish = do
         accepted <- transition gate $ \s -> case s of Building -> (Pending fd,True); _ -> (s,False)

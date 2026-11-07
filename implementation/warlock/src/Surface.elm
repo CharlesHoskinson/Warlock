@@ -311,11 +311,11 @@ controls model =
         let
             scoped build = Desktop.capture model |> Maybe.map build
             entries = model.applications |> Maybe.map (Catalog.search model.query) |> Maybe.withDefault []
-            ready = not model.windows.shell.applicationOnly && not (List.member (Launch.status model.launch) ["Pending","Unknown"])
+            ready = (not model.windows.shell.applicationOnly || Shell.applicationLaunchAvailable model.windows.shell) && not (List.member (Launch.status model.launch) ["Pending","Unknown"])
             entryControl entry =
                 let choice = if ready then Launch.select (Catalog.id entry.identity) model.launch |> Maybe.map Desktop.Start else Nothing
                     label="Open "++entry.name
-                    detail = if model.windows.shell.applicationOnly then "Opening unavailable in this session" else ""
+                    detail = if model.windows.shell.applicationOnly && not (Shell.applicationLaunchAvailable model.windows.shell) then "Opening unavailable in this session" else ""
                 in {id="entry:" ++ Catalog.id entry.identity,domId=Desktop.key model ("entry:" ++ Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail=detail,enabled=choice/=Nothing,message=choice}
             pinIds = Desktop.pinIdentities model
             pinAction suffix name label detail allowed message = {id=suffix,domId=Desktop.key model suffix,label=displayLabel label,ariaLabel=actionName label name,detail=detail,enabled=Pins.writable model.pins && allowed,message=if Pins.writable model.pins && allowed then scoped message else Nothing}
@@ -411,7 +411,8 @@ barControls model =
         pinControl identity =
             let entry=model.applications |> Maybe.andThen (Catalog.lookup identity)
                 label=entry |> Maybe.map .name |> Maybe.withDefault identity
-                choice=if Shell.available model.windows.shell then Launch.select identity model.launch |> Maybe.map Desktop.Start else Nothing
+                launchReady=if model.windows.shell.applicationOnly then Shell.applicationLaunchAvailable model.windows.shell else Shell.available model.windows.shell
+                choice=if launchReady then Launch.select identity model.launch |> Maybe.map Desktop.Start else Nothing
                 disabled reason={id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName (reason ++ label) label,detail=reason,enabled=False,message=Nothing}
             in case Desktop.pinnedGroup identity model of
                 Just group ->
@@ -421,7 +422,7 @@ barControls model =
                     else disabled "Ambiguous application identity: "
                 Nothing ->
                     if entry==Nothing then disabled "Unavailable application: " else if not (List.isEmpty (Desktop.pinGroups identity model)) then disabled "Ambiguous application identity: " else
-                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName ("Open " ++ label) label,detail=if model.windows.shell.applicationOnly then "Pinned · Opening unavailable in this session" else "Pinned launcher",enabled=choice/=Nothing,message=choice}
+                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName ("Open " ++ label) label,detail=if model.windows.shell.applicationOnly && not (Shell.applicationLaunchAvailable model.windows.shell) then "Pinned · Opening unavailable in this session" else "Pinned launcher",enabled=choice/=Nothing,message=choice}
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}

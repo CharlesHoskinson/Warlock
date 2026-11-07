@@ -625,7 +625,7 @@ update message model =
         _ -> updateOrdinary message model
 
 updateOrdinary message model =
-    if (WorkspaceNavigation.blocked model.workspaceNavigation && workspaceMutation message) || (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message && not (model.windows.shell.applicationOnly && applicationGesture message)) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
+    if (WorkspaceNavigation.blocked model.workspaceNavigation && workspaceMutation message) || (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message && not (model.windows.shell.applicationOnly && applicationGesture model message)) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
     let (next,effects)=updateAvailable message model
         windowMutation=List.any (\effect -> case effect of
             WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect"
@@ -736,7 +736,7 @@ motionGesture message =
 -- Application-only sessions have no native pointer observer. Their explicitly
 -- bounded catalog/pin gestures do not exercise compositor or window authority.
 -- Native sessions retain the complete pointer-ownership gate.
-applicationGesture message =
+applicationGesture model message =
     case message of
         OpenApplications _ -> True
         RefreshApplications _ -> True
@@ -745,6 +745,7 @@ applicationGesture message =
         SearchQuery _ _ -> True
         TogglePin _ _ -> True
         MovePin _ _ _ -> True
+        Start _ -> Shell.applicationLaunchAvailable model.windows.shell
         _ -> False
 
 gestureAction message =
@@ -1392,7 +1393,7 @@ updateAvailable message model =
                             closed=advance (retireSwitcher {model | open=False,jumpEntry=Nothing,jumpOpening=False,jumpBack=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                         in update (Start selection) closed
         Start selection ->
-            if MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+            if (model.windows.shell.applicationOnly && not (Shell.applicationLaunchAvailable model.windows.shell)) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             let (launch,intent) = Launch.start selection model.launch
             in case (intent,model.windows.shell.binding) of
                 (Just wire,Just binding) ->

@@ -629,12 +629,12 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
     protocol_profile = args.protocol or args.preview_schema or args.workspace_navigation_protocol
-    haskell_profile = protocol_profile or args.held_executable or args.peer_role or args.notification_config or args.notification_issuer or args.catalog_nodisplay or args.catalog_source_revision or args.catalog_publication
+    haskell_profile = protocol_profile or args.held_executable or args.peer_role or args.notification_config or args.notification_issuer or args.catalog_nodisplay or args.catalog_source_revision or args.catalog_publication or args.application_owner_route
     scope = require_qa_scope()
     if args.inside_private is not None:
         private_runtime = Path('/run/user') / str(os.getuid())
@@ -665,6 +665,10 @@ def main():
         mode = '--notification-issuer'
     if args.catalog_nodisplay:
         mode = '--catalog-nodisplay'
+    if args.application_owner_route:
+        mode = '--application-owner-route'
+    if args.application_availability:
+        mode = '--application-availability'
     if args.catalog_publication:
         mode = '--catalog-publication'
     if args.catalog_source_revision:
@@ -761,6 +765,15 @@ def main():
             report['successorFocus'] = successor_focus_frontend(output, env, packet, run)
         elif args.preview_consumption:
             report['previewConsumption'] = consumption_frontend(output, env, packet, run)
+        elif args.application_availability:
+            selected_output = output / 'application-availability'
+            run('application-availability', [sys.executable, '-B', ROOT / 'tools/check_elm_cpu.py',
+                    '--application-availability', '--arm64', '--arm64-output', selected_output], timeout=3300)
+            summary = json.loads((selected_output / 'report.json').read_text())
+            if summary.get('passed') is not True:
+                raise RuntimeError('Application availability lacks successful terminal report')
+            report['applicationAvailabilityReport'] = {'path': str(selected_output / 'report.json'),
+                                                        'sha256': digest(selected_output / 'report.json')}
         elif args.subscriptions:
             subscription_output = output / 'subscriptions'
             run('subscriptions', [sys.executable, '-B', ROOT / 'tools/check_elm_cpu.py',
@@ -803,7 +816,55 @@ def main():
                                 ('desktop-boundary-controls',)))
             protocol_targets = [(suite, 'warlock-protocol:test:' + suite) for suite in protocol_suites]
             backend = 'warlock-runtime:exe:warlock-ui-backend'
-            if args.catalog_publication:
+            if args.application_owner_route:
+                metadata = (stage / 'runtime/runtime.cabal').read_text()
+                catalog_cases = (
+                    ('catalog-nodisplay-controls', 'test-catalog-nodisplay', '6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd'),
+                    ('catalog-source-revision-adversarial', 'test-catalog-source-revision-adversarial', '2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67'),
+                    ('catalog-publication-controls', 'test-catalog-publication', '1d31248918b047422448cbf0a1c97070680b9ba92fa1079cf099a61db6a68885'))
+                for suite, directory, fixture_sha in catalog_cases:
+                    pieces = metadata.split('\ntest-suite ' + suite + '\n')
+                    if len(pieces) != 2:
+                        raise RuntimeError('Expected one ordinary-linked catalog suite: ' + suite)
+                    stanza = re.split(r'\n(?:test-suite|executable|library|common|flag)\b', pieces[1], maxsplit=1)[0]
+                    expected = ['  type: exitcode-stdio-1.0', '  hs-source-dirs: ' + directory,
+                                '  main-is: Main.hs', '  build-depends: base >=4.18 && <5, bytestring, text, containers, unix, directory, filepath, warlock-runtime, warlock-protocol',
+                                '  default-language: Haskell2010', '  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0']
+                    if suite == 'catalog-publication-controls':
+                        expected[3] = '  build-depends: base >=4.18 && <5, bytestring, containers, directory, filepath, unix, warlock-runtime, warlock-protocol'
+                    actual = [line for line in stanza.splitlines() if line.strip() and not line.lstrip().startswith('--')]
+                    if actual != expected:
+                        raise RuntimeError('Unexpected catalog suite declarations: ' + suite)
+                    fixture_root = stage / 'runtime' / directory
+                    files = {str(p.relative_to(fixture_root)) for p in fixture_root.rglob('*') if p.is_file() and p.suffix in ('.hs', '.hsc')}
+                    if files != {'Main.hs'} or digest(fixture_root / 'Main.hs') != fixture_sha:
+                        raise RuntimeError('Unexpected fixed catalog fixture sources: ' + suite)
+                selected_targets = [(suite, 'warlock-runtime:test:' + suite) for suite, _, _ in catalog_cases]
+                build_targets = ['warlock-runtime:lib:warlock-runtime', *[target for _, target in selected_targets]]
+                application_targets = (('application-owner-peer-fixture', 'executable', 'fixture-application-owner-peer'),
+                                       ('application-argv-fixture', 'executable', 'fixture-application-argv'),
+                                       ('application-owner-route-controls', 'test-suite', 'test-application-owner-route'))
+                exact_stanzas = {'application-owner-peer-fixture': '  hs-source-dirs: fixture-application-owner-peer\n  main-is: Main.hs\n  build-depends: base >=4.18 && <5, bytestring, text, unix, warlock-protocol\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0', 'application-argv-fixture': '  hs-source-dirs: fixture-application-argv\n  main-is: Main.hs\n  build-depends: base >=4.18 && <5\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0', 'application-owner-route-controls': '  type: exitcode-stdio-1.0\n  hs-source-dirs: test-application-owner-route\n  main-is: Main.hs\n  build-depends: base >=4.18 && <5, bytestring, text, directory, filepath, unix, cryptohash-sha256 ==0.11.102.1, warlock-runtime, warlock-process-custody, warlock-protocol\n  default-language: Haskell2010\n  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0'}
+                for name, kind, directory in application_targets:
+                    pieces = metadata.split('\n' + kind + ' ' + name + '\n')
+                    if len(pieces) != 2 or pieces[1].split('\n\n', 1)[0].rstrip() != exact_stanzas[name]:
+                        raise RuntimeError('Unexpected ordinary application declarations: ' + name)
+                    directory_root = stage / 'runtime' / directory
+                    if {str(p.relative_to(directory_root)) for p in directory_root.rglob('*') if p.is_file() and p.suffix in ('.hs', '.hsc')} != {'Main.hs'}:
+                        raise RuntimeError('Unexpected application home sources: ' + name)
+                    if digest(directory_root / 'Main.hs') != {'application-owner-peer-fixture': 'bc32dc9b97d99c64001dbcbc8410070ff4ac236978c5b89e11147f228962e767', 'application-argv-fixture': 'd44def2256ddc027e90c0f4d6d2f11796b5672d431942b2afbd453b62b90c5bf', 'application-owner-route-controls': '0e692ed4c90e850fc24132b9052e7e9db797251fb02aee737e5edd2c9f8ff227'}[name]:
+                        raise RuntimeError('Application literal source pin differs: ' + name)
+                    selected_targets.append((name, 'warlock-runtime:' + ('test:' if kind == 'test-suite' else 'exe:') + name))
+                build_targets = ['warlock-held-document-proposal:lib:warlock-held-document-proposal',
+                                 'warlock-process-custody:lib:warlock-process-custody',
+                                 'warlock-protocol:lib:warlock-protocol', 'warlock-runtime:lib:warlock-runtime',
+                                 *[target for _, target in selected_targets]]
+                build_label = 'application-owner-route-build'
+                protocol_suites = ()
+                report['applicationOwnerRoute'] = {'ordinaryLibraryTarget': 'warlock-runtime:lib:warlock-runtime',
+                    'suites': [suite for suite, _, _ in catalog_cases], 'scope': 'Catalog regression and ordinary controlled application-owner IO only',
+                    'nativeAcceptance': False, 'originalAcceptance': False}
+            elif args.catalog_publication:
                 metadata = (stage / 'runtime/runtime.cabal').read_text()
                 catalog_cases = (
                     ('catalog-nodisplay-controls', 'test-catalog-nodisplay', '6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd'),
@@ -1074,13 +1135,18 @@ def main():
                         or any(coverage.get(k) is not False for k in ('complete', 'originalAccepted', 'nativeAccepted'))):
                     raise RuntimeError('Fixed preview-control replay report differs')
                 report['previewControl'] = result
-            if args.owner or args.preview_control or protocol_profile or args.held_executable or args.peer_role or args.notification_config or args.notification_issuer or args.catalog_nodisplay or args.catalog_source_revision or args.catalog_publication:
+            if args.owner or args.preview_control or protocol_profile or args.held_executable or args.peer_role or args.notification_config or args.notification_issuer or args.catalog_nodisplay or args.catalog_source_revision or args.catalog_publication or args.application_owner_route:
                 runs = output / 'runs'
                 runs.mkdir(mode=0o700)
                 def wrapped(item):
                     return {'path': item['path'], 'pin': [item[k] for k in ('device', 'inode', 'size', 'sha256')]}
                 dispatch = {'suites': {}}
-                if args.catalog_publication:
+                if args.application_owner_route:
+                    for suite in ('catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls', 'application-owner-route-controls'):
+                        dispatch['suites'][binaries[suite]['path']] = {'suite': suite, 'test': wrapped(binaries[suite]),
+                            'fixtures': ({name: wrapped(binaries[name]) for name in ('application-owner-peer-fixture', 'application-argv-fixture')}
+                                         if suite == 'application-owner-route-controls' else {}), 'runRoot': str(runs / suite)}
+                elif args.catalog_publication:
                     for suite in ('catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls'):
                         dispatch['suites'][binaries[suite]['path']] = {'suite': suite, 'test': wrapped(binaries[suite]),
                             'fixtures': {}, 'runRoot': str(runs / suite)}
@@ -1125,20 +1191,47 @@ def main():
                 dispatch_path.write_text(json.dumps(dispatch, indent=2) + '\n')
                 test_env = dict(env, WARLOCK_HASKELL_DISPATCH=str(dispatch_path))
                 report['suiteReceipts'] = {}
-                suites = (('catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls') if args.catalog_publication else
+                suites = (('catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls', 'application-owner-route-controls') if args.application_owner_route else
+                          (('catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls') if args.catalog_publication else
                           (('catalog-nodisplay-controls', 'catalog-source-revision-adversarial') if args.catalog_source_revision else
                           (('catalog-nodisplay-controls',) if args.catalog_nodisplay else
                           (('notification-issuer-controls',) if args.notification_issuer else
                           (('notification-config-controls',) if args.notification_config else
                            (('bootstrap-facade-controls', 'persistent-bootstrap-controls') if args.peer_role else
                             (('held-executable-controls',) if args.held_executable else
-                             (protocol_suites if protocol_profile else (*protocol_suites, 'ui-origin-controls')))))))))
+                             (protocol_suites if protocol_profile else (*protocol_suites, 'ui-origin-controls'))))))))))
                 for suite in suites:
                     run(suite, [sys.executable, '-B', ROOT / 'tools/haskell_test_wrapper.py',
                                 binaries[suite]['path']], stage, 900, test_env)
                     receipt = json.loads((runs / suite / 'results.json').read_text())
                     if len(receipt) != 1 or receipt[0]['exit'] != 0 or receipt[0]['forcedCleanup']:
                         raise RuntimeError(suite + ' lacks successful terminal receipt')
+                    if args.application_owner_route:
+                        item = receipt[0]
+                        fixed_image = runs / suite / 'image' / suite
+                        fixed_storage = runs / suite / 'storage'
+                        actual_image = image(fixed_image)
+                        if (item.get('mode') != 'default' or item.get('timeout') is not False
+                                or item.get('forcedCleanup') is not False or item.get('argv') != ([str(fixed_storage), str(runs / suite / 'image' / 'application-owner-peer-fixture'), str(runs / suite / 'image' / 'application-argv-fixture')] if suite == 'application-owner-route-controls' else [str(fixed_storage)])
+                                or item.get('image') != str(fixed_image)
+                                or item.get('imagePin') != [actual_image['device'], actual_image['inode'], actual_image['size'], actual_image['sha256']]
+                                or actual_image['size'] != binaries[suite]['size'] or actual_image['sha256'] != binaries[suite]['sha256']):
+                            raise RuntimeError('Catalog source-revision COPY receipt differs')
+                        sentinel = {'catalog-nodisplay-controls': 'catalog-nodisplay-controls: complete\n',
+                                    'catalog-source-revision-adversarial': 'catalog-source-revision-adversarial: complete\n',
+                                    'catalog-publication-controls': 'catalog-publication-controls: complete\n', 'application-owner-route-controls': 'application-owner-route-controls: complete\n'}[suite]
+                        log = runs / suite / 'default.log'
+                        if log.is_symlink() or not log.is_file() or log.stat().st_size > 16384 or log.read_text() != sentinel:
+                            raise RuntimeError('Catalog source-revision terminal output differs')
+                        if suite == 'application-owner-route-controls':
+                            expected_copies = []
+                            for name in ('application-owner-peer-fixture', 'application-argv-fixture'):
+                                copied = image(runs / suite / 'image' / name)
+                                if (copied['size'], copied['sha256']) != (binaries[name]['size'], binaries[name]['sha256']):
+                                    raise RuntimeError('Application controlled image differs')
+                                expected_copies.append({'path': copied['path'], 'pin': [copied[k] for k in ('device', 'inode', 'size', 'sha256')]})
+                            if item.get('fixtureImages') != expected_copies:
+                                raise RuntimeError('Application controlled image receipt differs')
                     if args.catalog_publication:
                         item = receipt[0]
                         fixed_image = runs / suite / 'image' / suite

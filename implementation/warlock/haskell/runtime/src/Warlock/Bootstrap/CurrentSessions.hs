@@ -2,7 +2,7 @@
 -- Trusted bootstrap internal authority. No wire constructor or native grant.
 module Warlock.Bootstrap.CurrentSessions
  (CurrentSessions, Registration, newCurrentSessions, newRegistration,
-  withApprovedOwnedPeer, retireRegistration
+  withApprovedOwnedPeer, withApprovedOwnedPeerDeadline, retireRegistration
 #ifdef CURRENT_SESSIONS_TEST
   , newCurrentSessionsAtForTest, withApprovedBeforeInstallForTest
 #endif
@@ -12,7 +12,9 @@ import Control.Concurrent.MVar (MVar, modifyMVar, newMVar, readMVar)
 import Control.Exception (finally, mask, uninterruptibleMask_)
 import Data.Word (Word64)
 import System.Posix.Types (Fd)
-import Warlock.Bootstrap.ScopedPeer (Scope, ScopeStatus(..), PeerRefusal(..), retireScope, withScopedOwnedPeer)
+import Warlock.Bootstrap.ScopedPeer (Scope, ScopeStatus(..), PeerRefusal(..), retireScope, withScopedOwnedPeer, withScopedOwnedPeerDeadline)
+import Warlock.Capture.Process.Bootstrap (AdmissionDeadline)
+import Warlock.Protocol.Identity (Binding)
 import Warlock.Capture.Process (Session)
 import Warlock.Platform.Resolver (Identity)
 import Warlock.Platform.Executable (LeaseRole)
@@ -86,12 +88,25 @@ withApprovedBeforeInstallForTest = runApproved
 #endif
 runApproved :: Registration -> Session -> Fd -> Identity -> LeaseRole -> IO ()
             -> (Scope -> IO a) -> IO (Either PeerRefusal a)
-runApproved registration@(Registration authority _) session peer identity role beforeInstall action = mask $ \restore -> do
+runApproved = runApprovedContext Nothing
+
+-- Only trusted bootstrap forwards its existing absolute deadline and Binding.
+withApprovedOwnedPeerDeadline :: AdmissionDeadline -> Binding -> Registration -> Session -> Fd -> Identity -> LeaseRole
+ -> (Scope -> IO a) -> IO (Either PeerRefusal a)
+withApprovedOwnedPeerDeadline deadline bindingValue registration session peer identity role action =
+ runApprovedContext (Just (deadline,bindingValue)) registration session peer identity role (pure ()) action
+
+runApprovedContext :: Maybe (AdmissionDeadline,Binding) -> Registration -> Session -> Fd -> Identity -> LeaseRole -> IO ()
+ -> (Scope -> IO a) -> IO (Either PeerRefusal a)
+runApprovedContext original registration@(Registration authority _) session peer identity role beforeInstall action = mask $ \restore -> do
  allocated <- reserve registration
  case allocated of
   Left refusal -> pure (Left refusal)
   Right generation -> (do
-   scoped <- restore (withScopedOwnedPeer session peer identity role generation (epochSource authority) $ \scope -> do
+   let enter = case original of
+        Nothing -> withScopedOwnedPeer
+        Just (deadline,bindingValue) -> withScopedOwnedPeerDeadline deadline bindingValue
+   scoped <- restore (enter session peer identity role generation (epochSource authority) $ \scope -> do
      beforeInstall
      accepted <- install registration generation scope
      if accepted then Right <$> action scope else do

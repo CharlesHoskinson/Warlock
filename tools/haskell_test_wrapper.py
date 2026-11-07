@@ -64,7 +64,23 @@ def main():
     test_image = requested
     config_image_pin = None
     child_env = dict(os.environ)
-    if suite in ('notification-config-controls', 'notification-issuer-controls', 'catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls'):
+    application_images = []
+    if suite == 'application-owner-route-controls':
+        image_dir = fresh('image')
+        test_image = image_dir / suite
+        shutil.copy2(requested, test_image)
+        config_image_pin = pin(test_image)
+        if config_image_pin[2:] != pin(requested)[2:]:
+            raise RuntimeError('Application test image copy differs')
+        for name in ('application-owner-peer-fixture', 'application-argv-fixture'):
+            original = fixture(name)
+            copied = image_dir / name
+            shutil.copy2(original, copied)
+            if pin(copied)[2:] != pin(original)[2:]:
+                raise RuntimeError('Application controlled image copy differs')
+            application_images.append({'path': str(copied), 'pin': pin(copied)})
+        calls = [('default', [str(fresh('storage')), *[item['path'] for item in application_images]])]
+    elif suite in ('notification-config-controls', 'notification-issuer-controls', 'catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls'):
         image_dir = fresh('image')
         test_image = image_dir / suite
         shutil.copy2(requested, test_image)
@@ -174,9 +190,14 @@ def main():
                 os.killpg(proc.pid, signal.SIGKILL)
             results.append({'mode': label, 'argv': args, 'exit': code, 'timeout': timed_out,
                             'forcedCleanup': forced or timed_out, 'log': str(log)})
-            if suite in ('notification-config-controls', 'notification-issuer-controls', 'catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls'):
+            if suite in ('notification-config-controls', 'notification-issuer-controls', 'catalog-nodisplay-controls', 'catalog-source-revision-adversarial', 'catalog-publication-controls', 'application-owner-route-controls'):
                 if pin(test_image) != config_image_pin or pin(requested) != manifest['test']['pin']:
                     raise RuntimeError('notification config image changed')
+                if suite == 'application-owner-route-controls':
+                    for item, name in zip(application_images, ('application-owner-peer-fixture', 'application-argv-fixture')):
+                        if pin(item['path']) != item['pin'] or pin(fixture(name)) != manifest['fixtures'][name]['pin']:
+                            raise RuntimeError('Application controlled image changed')
+                    results[-1]['fixtureImages'] = application_images
                 results[-1]['image'] = str(test_image)
                 results[-1]['imagePin'] = config_image_pin
         (base / 'results.json').write_text(json.dumps(results, indent=2) + '\n')
