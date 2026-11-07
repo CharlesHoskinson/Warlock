@@ -2,7 +2,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- WebKitGTK 6 boundary; no page loads before its role filter is installed.
 module Warlock.Ui.WebKit
-  (runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
+  (providerVersionQualified, runWebKitObserved, runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
 
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, catch, mask_, mask, onException, try, finally, bracket, toException)
 import Control.Concurrent (threadDelay)
@@ -20,12 +20,16 @@ import Foreign.Marshal.Alloc (allocaBytesAligned, alloca, free)
 import Foreign.Marshal.Array (withArray)
 import Foreign.Marshal.Utils (fillBytes)
 import Foreign.Storable (peek, poke, peekByteOff)
-import Foreign.Ptr (FunPtr, Ptr, nullPtr, freeHaskellFunPtr, plusPtr, castFunPtr, castPtr)
+import Foreign.Ptr (FunPtr, Ptr, nullPtr, freeHaskellFunPtr, plusPtr, castPtr)
+import qualified Warlock.Ui.EngineProtocol as Protocol
 import Warlock.Ui.Owner (UiEndpoints(..), TrustedOwnerEvent, EngineResult(..))
 import Warlock.Ui.Policy (Origin, Role(..), navigationAllowed, resourceAllowed, resourceFilter, documentUri)
 import Warlock.Ui.Mvp (MvpViews(..), SurfaceLease, parseProjectionLease, attachMvpWindow, stepMvpWindow, mvpCloseRequested, retireMvpWindow)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Ui.ThreadNamespace (requireThreadCompatibleNamespace)
+import Warlock.Ui.DefaultContextOwner (PhysicalDefaultContextOwner, withPhysicalDefaultContextOwner, requirePhysicalDefaultContextOwner)
+import Warlock.Ui.ProcessSignalOwner (connectProcessSignal, disconnectProcessSignal)
+import Warlock.Ui.CallbackRetirement (newCallbackState, captureOwnedCallback, callbackObservation, quarantineCallback, runCallbackOperation, retireOwnedCallback)
 import Warlock.Ui.WebKitABI (gValueSize, gValueAlignment, enumValueOffset)
 import Warlock.Ui.EngineCustody (Custody, stopCustody, cleanupIssues, productionCleanupFacts, CleanupFacts(..), Setup(..), NamespaceExit(..), OwnerIdentity(..))
 
@@ -63,17 +67,27 @@ foreign import ccall safe "webkit_policy_decision_ignore"
 -- Keep this function pointer alive for the entire connected signal lifetime.
 -- Disconnect the exact handler before calling freeDecisionHandler.
 newDecisionHandler :: Origin -> Role -> IO DecisionHandler
-newDecisionHandler origin role = do
+newDecisionHandler = newDecisionHandlerChecked (pure ()) (pure ())
+
+newDecisionHandlerChecked :: IO () -> IO () -> Origin -> Role -> IO DecisionHandler
+newDecisionHandlerChecked checkAffinity refused origin role = do
+  checkAffinity
   navigationDecision <- enumValue policyType "WEBKIT_POLICY_DECISION_TYPE_NAVIGATION_ACTION"
   responseDecision <- enumValue policyType "WEBKIT_POLICY_DECISION_TYPE_RESPONSE"
   DecisionHandler <$> wrapDecision (callback navigationDecision responseDecision)
   where
     callback navigationDecision responseDecision _ decision kind _ = mask_ $ do
-      if decision == nullPtr then pure 1 else do
-        allowed <- decide navigationDecision responseDecision decision kind `catch` denyException
-        (if allowed then decisionUse decision else decisionIgnore decision)
-          `catch` ignoreException
-        pure 1
+      affinity <- try checkAffinity :: IO (Either SomeException ())
+      case affinity of
+        Left _ -> do
+          -- No GTK/WebKit call on an unproved physical thread or stale lease.
+          refused `catch` ignoreException
+          pure 1
+        Right () -> if decision == nullPtr then pure 1 else do
+          allowed <- decide navigationDecision responseDecision decision kind `catch` denyException
+          (if allowed then decisionUse decision else decisionIgnore decision)
+            `catch` ignoreException
+          pure 1
     denyException :: SomeException -> IO Bool
     denyException _ = pure False
     ignoreException :: SomeException -> IO ()
@@ -199,6 +213,10 @@ makeView session manager context = do
 
 -- Reject inherited WebKit overrides and proxy configuration rather than allowing
 -- a caller to select a different engine or disable its sandbox.
+-- Exact reviewed provider tuples only; no environment or probe override.
+providerVersionQualified :: (CUInt, CUInt, CUInt) -> Bool
+providerVersionQualified version = version `elem` [(2,52,6),(2,54,1),(2,54,2)]
+
 checkEnvironment :: IO ()
 checkEnvironment = do
   env <- getEnvironment
@@ -211,7 +229,7 @@ checkEnvironment = do
     Right _ -> ioError (userError "Flatpak engine route unsupported")
     Left problem -> unless (isDoesNotExistError problem) (ioError problem)
   version <- (,,) <$> webkitMajor <*> webkitMinor <*> webkitMicro
-  unless (version `elem` [(2,52,6),(2,54,1)]) (ioError (userError "unqualified WebKit version"))
+  unless (providerVersionQualified version) (ioError (userError "unqualified WebKit version"))
 
 -- A connected callback may still be executing when disconnected. GLib's
 -- closure notifier is the receipt that the handler is no longer in use.
@@ -312,73 +330,78 @@ handleMvpDispatch result = case result of
 -- The async completion owns its result cell and callback until completion has
 -- actually been observed. If cancellation cannot retire it, those objects are
 -- intentionally retained for process lifetime instead of risking a callback UAF.
-compileFilter :: UiEndpoints -> Ptr Object -> Origin -> Role -> IO (Maybe (Ptr Object), Bool)
-compileFilter endpoints store origin role = withOwnedDefaultContext $ mask $ \restore -> do
-  cancellable <- cancellableNew >>= (`must` "filter cancellable")
+compileFilter :: PhysicalDefaultContextOwner -> UiEndpoints -> Ptr Object -> Origin -> Role -> IO (Maybe (Ptr Object), Bool)
+compileFilter contextOwner endpoints store origin role = withOwnedDefaultContext $ mask $ \restore -> do
+  result <- newCallbackState
+  let affine = runCallbackOperation contextOwner result
+  cancellable <- affine (cancellableNew >>= (`must` "filter cancellable"))
   bytes <- B.useAsCStringLen (resourceFilter origin role) $ \(ptr,len) ->
-    bytesNew ptr (fromIntegral len) >>= (`must` "filter bytes")
-  result <- newIORef Nothing
-  callback <- wrapReady $ \source async _ -> mask_ $ do
-    outcome <- try $ alloca $ \err -> do
+    affine (bytesNew ptr (fromIntegral len) >>= (`must` "filter bytes"))
+  callback <- wrapReady $ \source async _ -> captureOwnedCallback contextOwner result $
+    alloca $ \err -> do
       poke err nullPtr
-      value <- storeFinish source async err
+      value <- affine (storeFinish source async err)
       problem <- peek err
       if problem /= nullPtr then do
-        errorFree problem
-        when (value /= nullPtr) (filterUnref value)
+        affine (errorFree problem)
+        when (value /= nullPtr) (affine (filterUnref value))
         pure Nothing
       else pure (if value == nullPtr then Nothing else Just value)
-    writeIORef result (Just (either (const Nothing) id (outcome :: Either SomeException (Maybe (Ptr Object)))))
   let waitResult = do
-        observed <- readIORef result
-        case observed of
+        (observed, quarantined) <- callbackObservation result
+        if quarantined then pure Nothing else case observed of
           Just value -> pure value
           Nothing -> do
             stopped <- uiShouldStop endpoints
             remaining <- uiRemainingMicros endpoints
             if stopped || remaining <= 500000 then pure Nothing else do
-              _ <- contextIteration nullPtr 0
+              _ <- affine (contextIteration nullPtr 0)
               threadDelay 1000
               waitResult
       drain 0 = pure ()
       drain count = do
-        observed <- readIORef result
+        (observed, quarantined) <- callbackObservation result
         remaining <- uiRemainingMicros endpoints
-        case observed of
+        if quarantined then pure () else case observed of
           Just _ -> pure ()
           Nothing -> when (remaining > 250000) $ do
-            _ <- contextIteration nullPtr 0
+            _ <- affine (contextIteration nullPtr 0)
             threadDelay (min 1000 (remaining-250000))
             drain (count-1)
-      retire = do
-        observed <- readIORef result
-        remaining <- uiRemainingMicros endpoints
-        when (observed == Nothing && remaining > 250000) $
-          cancellableCancel cancellable >> drain (250 :: Int)
-        completed <- readIORef result
-        case completed of
-          -- Quarantine every C reference, callback and backing store. No
-          -- callback pointer or source bytes are released before completion.
-          Nothing -> pure False
-          Just _ -> do
-            freeHaskellFunPtr callback
-            unref cancellable
-            bytesUnref bytes
-            pure True
-  withCString "warlock" $ \ident -> storeSave store ident bytes cancellable callback nullPtr
+      retire returned = do
+        retirement <- try $ do
+          (observed, quarantined) <- callbackObservation result
+          if quarantined then pure False else do
+            remaining <- uiRemainingMicros endpoints
+            when (observed == Nothing && remaining > 250000) $
+              affine (cancellableCancel cancellable) >> drain (250 :: Int)
+            (completed, failedProof) <- callbackObservation result
+            case (completed, failedProof) of
+              (Just value, False) -> do
+                -- Release a late/unreturned filter only with the same fresh
+                -- owner proof as all other releases. Callback is released last.
+                let late = case value of
+                      Just object | returned /= Just object -> [filterUnref object]
+                      _ -> []
+                retireOwnedCallback contextOwner result
+                  (late ++ [unref cancellable, bytesUnref bytes, freeHaskellFunPtr callback])
+              _ -> pure False
+        case retirement of
+          Right clean -> pure clean
+          Left (failure :: SomeException) -> do
+            quarantineCallback result
+            case fromException failure :: Maybe SomeAsyncException of
+              Just _ -> throwIO failure
+              Nothing -> pure False
+  withCString "warlock" $ \ident -> affine (storeSave store ident bytes cancellable callback nullPtr)
   outcome <- try (restore waitResult) :: IO (Either SomeException (Maybe (Ptr Object)))
-  clean <- retire
+  let returned = either (const Nothing) id outcome
+  clean <- retire returned
   case outcome of
-    Left problem -> do
-      when clean $ do
-        observed <- readIORef result
-        case observed of Just (Just value) -> filterUnref value; _ -> pure ()
-      throwIO problem
-    Right value -> do
-      when (value == Nothing && clean) $ do
-        observed <- readIORef result
-        case observed of Just (Just late) -> filterUnref late; _ -> pure ()
-      pure (value,clean)
+    Left problem -> throwIO problem
+    -- Never hand an uncertain filter to the manager. All unretired references,
+    -- callback and backing store stay quarantined by the caller.
+    Right value -> pure (if clean then value else Nothing, clean)
 
 -- The UI main thread owns all signal dispatch. Store objects and their private
 -- compiled directories are deliberately retained until full engine/helper and
@@ -396,10 +419,25 @@ runWebKitWithCustody custody = runWebKitInternal (Just custody)
 -- a recoverable error. Inspect the calling thread, and refuse when the procfs
 -- identities cannot be observed as well as when they differ.
 
+-- Legacy callers retain the original EngineResult and cleanup semantics.
 runWebKitInternal :: Maybe Custody -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO EngineResult
-runWebKitInternal custody endpoints ownerEvent = mask $ \restore -> do
+runWebKitInternal custody endpoints ownerEvent =
+  fst <$> runWebKitInternalObserved custody endpoints ownerEvent
+
+-- Selected child route reports bounded observations, never cleanup authority.
+runWebKitObserved :: UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO Protocol.GuiObservation
+runWebKitObserved endpoints ownerEvent = snd <$> runWebKitInternalObserved Nothing endpoints ownerEvent
+
+runWebKitInternalObserved :: Maybe Custody -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (EngineResult, Protocol.GuiObservation)
+runWebKitInternalObserved custody endpoints ownerEvent = do
   requireThreadCompatibleNamespace
   checkEnvironment
+  withPhysicalDefaultContextOwner (uiRemainingMicros endpoints) $ \contextOwner ->
+    runWebKitOwned contextOwner custody endpoints ownerEvent
+
+runWebKitOwned :: PhysicalDefaultContextOwner -> Maybe Custody -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (EngineResult, Protocol.GuiObservation)
+runWebKitOwned contextOwner custody endpoints ownerEvent = mask $ \restore -> do
+  requirePhysicalDefaultContextOwner contextOwner
   ok <- gtkInit
   unless (ok /= 0) (ioError (userError "GTK initialization failed"))
   noProxy <- enumValue proxyType "WEBKIT_NETWORK_PROXY_MODE_NO_PROXY"
@@ -409,25 +447,32 @@ runWebKitInternal custody endpoints ownerEvent = mask $ \restore -> do
   -- Retain the store's owning reference AND directory, not just a borrowed
   -- pathname, through every manager/view lifetime and unresolved async task.
   backings <- newIORef ([] :: [(FilePath,Ptr Object)])
-  states <- newIORef ([] :: [IORef LoadState])
+  states <- newIORef ([] :: [(Role,IORef LoadState)])
+  attached <- newIORef False
   uncertain <- newIORef False
   let own action release = do
+        requirePhysicalDefaultContextOwner contextOwner
         value <- action
-        modifyIORef' releases (release value:)
+        modifyIORef' releases ((requirePhysicalDefaultContextOwner contextOwner >> release value):)
         pure value
-      connect object name callback releaseCallback = do
-        disconnect <- connectOwnedSignal object name (castFunPtr callback) releaseCallback
-        modifyIORef' releases (disconnect:)
+      connect object name callback = do
+        signal <- connectProcessSignal contextOwner object name callback
+        modifyIORef' releases ((do
+          _ <- disconnectProcessSignal signal
+          writeIORef uncertain True
+          ioError (userError "production signal callback retained until owner process exit")):)
       failed state = modifyIORef' state (\old -> old {loadReady=False,loadFailed=True})
-      observe state action = action `catch` (\(_ :: SomeException) -> failed state)
+      observe state action = (requirePhysicalDefaultContextOwner contextOwner >> action)
+        `catch` (\(_ :: SomeException) -> writeIORef uncertain True >> failed state)
       cleanup = do
         pending <- readIORef uncertain
         if pending then pure [] else do
           actions <- readIORef releases
           retireInOrder (uiRemainingMicros endpoints) actions
       setup (role,origin) = do
+        requirePhysicalDefaultContextOwner contextOwner
         state <- newIORef (LoadState False False False)
-        modifyIORef' states (state:)
+        modifyIORef' states ((role,state):)
         session <- own (sessionNew >>= (`must` "ephemeral session")) unref
         ephemeral <- sessionEphemeral session
         unless (ephemeral /= 0) (ioError (userError "non-ephemeral session"))
@@ -435,7 +480,7 @@ runWebKitInternal custody endpoints ownerEvent = mask $ \restore -> do
         downloadHandler <- wrapDownload $ \_ download _ -> mask_ $ observe state $ do
           failed state
           when (download /= nullPtr) (downloadCancel download)
-        connect session "download-started" downloadHandler (freeHaskellFunPtr downloadHandler)
+        connect session "download-started" downloadHandler
         manager <- own (managerNew >>= (`must` "content manager")) unref
         context <- own (contextNew >>= (`must` "WebKit context")) unref
         -- A partial allocation retains its directory as an explicit ownership
@@ -446,12 +491,16 @@ runWebKitInternal custody endpoints ownerEvent = mask $ \restore -> do
         modifyIORef' backings ((path,nullPtr):)
         store <- withCString path $ \name -> storeNew name >>= (`must` "filter store")
         modifyIORef' backings (map (\(name,value) -> if name==path then (name,store) else (name,value)))
-        (compiled,retired) <- compileFilter endpoints store origin role `onException` writeIORef uncertain True
-        unless retired (writeIORef uncertain True)
+        (compiled,retired) <- compileFilter contextOwner endpoints store origin role `onException` writeIORef uncertain True
+        unless retired $ do
+          writeIORef uncertain True
+          ioError (userError "filter callback retirement uncertain")
         case compiled of
           Nothing -> ioError (userError "filter compilation failed")
-          Just filterObject -> managerFilter manager filterObject `finally` filterUnref filterObject
-        unless retired (ioError (userError "filter callback retirement uncertain"))
+          Just filterObject ->
+            ((requirePhysicalDefaultContextOwner contextOwner >> managerFilter manager filterObject)
+              `finally` (requirePhysicalDefaultContextOwner contextOwner >> filterUnref filterObject))
+              `onException` writeIORef uncertain True
         view <- own (makeView session manager context >>= refSink) unref
         actualSession <- viewSession view
         actualManager <- viewManager view
@@ -459,31 +508,35 @@ runWebKitInternal custody endpoints ownerEvent = mask $ \restore -> do
         actualEphemeral <- if actualSession==nullPtr then pure 0 else sessionEphemeral actualSession
         unless (actualSession==session && actualManager==manager && actualContext==context && actualEphemeral/=0)
           (ioError (userError "WebView constructor ownership mismatch"))
-        handler@(DecisionHandler decision) <- newDecisionHandler origin role
-        connect view "decide-policy" decision (freeDecisionHandler handler)
+        DecisionHandler decision <- newDecisionHandlerChecked
+          (requirePhysicalDefaultContextOwner contextOwner)
+          (writeIORef uncertain True >> failed state) origin role
+        connect view "decide-policy" decision
         changed <- wrapLoad $ \current event _ -> mask_ $ observe state $
           if event==startedEvent then modifyIORef' state (\old -> old {loadStarted=True,loadReady=False}) else
             when (event==finishedEvent) $ do
               uri <- readUri viewUri current
               modifyIORef' state (\old -> old {loadReady=loadStarted old && not (loadFailed old) && maybe False (navigationAllowed origin) uri})
-        connect view "load-changed" changed (freeHaskellFunPtr changed)
+        connect view "load-changed" changed
         loadFailure <- wrapLoadFailed $ \_ _ _ _ _ -> mask_ $ do
           failed state
           -- Suppress WebKit's unapproved stock error document.
           pure 1
-        connect view "load-failed" loadFailure (freeHaskellFunPtr loadFailure)
+        connect view "load-failed" loadFailure
         terminated <- wrapLoad $ \_ _ _ -> mask_ (failed state)
-        connect view "web-process-terminated" terminated (freeHaskellFunPtr terminated)
+        connect view "web-process-terminated" terminated
         B.useAsCString (documentUri origin) (viewLoad view)
         pure view
       loop mvp = do
+        requirePhysicalDefaultContextOwner contextOwner
         stopped <- uiShouldStop endpoints
         remaining <- uiRemainingMicros endpoints
-        active <- readIORef states >>= mapM readIORef
+        active <- readIORef states >>= mapM (readIORef . snd)
         closed <- mvpCloseRequested mvp
         unless (stopped || remaining<=500000 || any loadFailed active || (closed && not (all loadReady active))) $ do
+          requirePhysicalDefaultContextOwner contextOwner
           _ <- contextIteration nullPtr 0
-          current <- readIORef states >>= mapM readIORef
+          current <- readIORef states >>= mapM (readIORef . snd)
           when (length current == 3 && all (\state -> loadStarted state && loadReady state && not (loadFailed state)) current) $ do
             result <- stepMvpWindow mvp (readMvpLease (uiLastProjection endpoints)) ownerEvent
             handleMvpDispatch result
@@ -493,12 +546,26 @@ runWebKitInternal custody endpoints ownerEvent = mask $ \restore -> do
         views <- mapM setup [(Controller,controllerOrigin endpoints),(Bar,barOrigin endpoints),(Popup,popupOrigin endpoints)]
         case views of
           [controller,bar,popup] -> do
-            mvp <- own (attachMvpWindow (MvpViews controller bar popup)) retireMvpWindow
+            mvp <- own (attachMvpWindow contextOwner (MvpViews controller bar popup)) retireMvpWindow
+            writeIORef attached True
             restore (loop mvp)
           _ -> ioError (userError "WebKit role view invariant")
   outcome <- try start :: IO (Either SomeException ())
-  observed <- readIORef states >>= mapM readIORef
+  observed <- readIORef states >>= mapM (readIORef . snd)
   let loaded = length observed==3 && all (\state -> loadStarted state && loadReady state && not (loadFailed state)) observed
+  roleStates <- readIORef states
+  let roleLoaded role = case lookup role roleStates of
+        Nothing -> pure False
+        Just cell -> do
+          value <- readIORef cell
+          pure (loadStarted value && loadReady value && not (loadFailed value))
+  controllerLoaded <- roleLoaded Controller
+  barLoaded <- roleLoaded Bar
+  popupLoaded <- roleLoaded Popup
+  mvpAttached <- readIORef attached
+  preCleanupFault <- readIORef uncertain
+  let observation = Protocol.guiObservation controllerLoaded barLoaded popupLoaded mvpAttached
+        (not preCleanupFault && either (const False) (const True) outcome)
   cleanupOutcome <- try cleanup :: IO (Either SomeException [Either SomeException ()])
   lost <- readIORef uncertain
   retained <- readIORef backings
@@ -517,4 +584,4 @@ runWebKitInternal custody endpoints ownerEvent = mask $ \restore -> do
   case outcome of
     Left problem | Just _ <- (fromException problem :: Maybe SomeAsyncException) -> throwIO problem
     _ -> case asynchronous of problem:_ -> throwIO problem; [] -> pure ()
-  pure (EngineResult passed wholeClean)
+  pure (EngineResult passed wholeClean, observation)

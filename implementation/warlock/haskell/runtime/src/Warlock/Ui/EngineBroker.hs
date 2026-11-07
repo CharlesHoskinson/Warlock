@@ -4,7 +4,7 @@
 -- Caller transfers one separately owned engine RPC socket, never UI fd 0.
 module Warlock.Ui.EngineBroker
   ( PreparedBroker, Broker, BrokerResult(..), CloseReceipt(..), prepareBroker
-  , attachBroker, closePrepared, completeStartup, serveBrokerOnce, closeBroker ) where
+  , attachBroker, closePrepared, completeStartup, serveBrokerOnce, closeBroker, brokerGuiObservation ) where
 
 import Control.Exception (SomeException, SomeAsyncException, fromException, mask, mask_, onException, throwIO, try)
 import Control.Monad (unless, when)
@@ -26,10 +26,10 @@ import Warlock.Ui.Owner (UiEndpoints(..), TrustedOwnerEvent)
 
 -- A completed local write is not evidence that the child received or acted on
 -- a reply; its independent liveness/consumption and cleanup remain unknown.
-data BrokerResult = StartupWrittenLocally | ReplyWrittenLocally | Busy | NotReady | Closed | OwnerRefused CloseReceipt | Indeterminate deriving (Eq,Show)
+data BrokerResult = StartupWrittenLocally | ReplyWrittenLocally | GuiObservationWrittenLocally | Busy | NotReady | Closed | OwnerRefused CloseReceipt | Indeterminate deriving (Eq,Show)
 data CloseReceipt = CloseConfirmed | CloseInProgress | CloseUncertain deriving (Eq,Show)
 data Phase = BootReady Protocol.Session | BootReading | BootAdmitted
-           | Ready Protocol.Session | Running | Admitted | Retired
+           | Ready Protocol.Session | Running | Admitted | Completed | Retired
 data CloseState = SocketOpen | SocketClosing | SocketClosed | SocketUncertain
 data PrepareState = PrepareOpen | PrepareTaken | PrepareClosing | PrepareClosed | PrepareUncertain
 
@@ -45,8 +45,13 @@ data Broker refusal = Broker
   , brokerEndpoints :: UiEndpoints
   , brokerOwner :: TrustedOwnerEvent -> IO (Either T.Text ())
   , brokerPhase :: IORef Phase
+  , brokerCompletion :: IORef (Maybe Protocol.GuiObservation)
   , brokerClose :: IORef CloseState
   }
+
+-- Historical admitted observation, not a current liveness/cleanup grant.
+brokerGuiObservation :: Broker refusal -> IO (Maybe Protocol.GuiObservation)
+brokerGuiObservation = readIORef . brokerCompletion
 
 -- Standard descriptors are refused before transfer; thereafter socket close
 -- ownership transfers even on failure. The custody owner must independently
@@ -91,7 +96,8 @@ attachBroker (PreparedBroker socket reader deadline startup endpoints owner prep
   (do
     phase <- newIORef (BootReady (Protocol.newSession startup))
     closeState <- newIORef SocketOpen
-    pure (Broker socket reader guard deadline startup endpoints owner phase closeState))
+    completion <- newIORef Nothing
+    pure (Broker socket reader guard deadline startup endpoints owner phase completion closeState))
    `onException` (do
      result <- try (Socket.close socket) :: IO (Either SomeException ())
      let state = case result of Right () -> PrepareClosed; Left _ -> PrepareUncertain
@@ -265,28 +271,34 @@ serveBrokerOnce broker = mask $ \restore -> do
     BootReady _ -> (phase,Left NotReady)
     BootReading -> (phase,Left Busy)
     BootAdmitted -> (phase,Left Busy)
+    Completed -> (Completed,Left Closed)
     Retired -> (Retired,Left Closed)
   case selected of
     Left result -> pure result
     Right session -> do
       outcome <- try (restore (withinOriginalDeadline (brokerDeadline broker) (transaction broker session)))
-                 :: IO (Either SomeException (Protocol.Session,Bool))
+                 :: IO (Either SomeException (Protocol.Session,Bool,Maybe Protocol.GuiObservation))
       case outcome of
         Left err -> do
           _ <- closeBroker broker
           case fromException err :: Maybe SomeAsyncException of
             Just _ -> throwIO err
             Nothing -> pure Indeterminate
-        Right (_,True) -> OwnerRefused <$> closeBroker broker
-        Right (updated,False) -> do
+        Right (_,True,_) -> OwnerRefused <$> closeBroker broker
+        Right (updated,False,observation) -> do
           published <- atomicModifyIORef' (brokerPhase broker) $ \phase -> case phase of
-            Admitted -> (Ready updated,True)
+            Admitted -> ((case observation of Nothing -> Ready updated; Just _ -> Completed),True)
             _ -> (phase,False)
-          if published then pure ReplyWrittenLocally else do
+          if published then case observation of
+            Nothing -> pure ReplyWrittenLocally
+            Just value -> do
+              atomicModifyIORef' (brokerCompletion broker) (const (Just value,()))
+              pure GuiObservationWrittenLocally
+          else do
             _ <- closeBroker broker
             pure Indeterminate
 
-transaction :: Broker refusal -> Protocol.Session -> IO (Protocol.Session,Bool)
+transaction :: Broker refusal -> Protocol.Session -> IO (Protocol.Session,Bool,Maybe Protocol.GuiObservation)
 transaction broker session = do
   (raw,credential) <- readFrame broker Transport.engineHeaderLength
   let (accepted,decoded) = Protocol.acceptRequest session raw
@@ -304,7 +316,9 @@ transaction broker session = do
       Running -> (Admitted,True)
       _ -> (phase,False)
     unless live (ioError (userError "engine broker retired"))
-    replyResult <- Adapter.serveRequest (brokerEndpoints broker) (brokerOwner broker) request
+    replyResult <- case request of
+      Protocol.SubmitGuiObservation _ -> pure (Right Protocol.GuiObservationAck)
+      _ -> Adapter.serveRequest (brokerEndpoints broker) (brokerOwner broker) request
     reply <- either (const (ioError (userError "engine owner refused"))) pure replyResult
     remaining <- remainingMicros (brokerDeadline broker)
     unless (remaining > 0) (ioError (userError "engine owner outcome uncertain"))
@@ -324,5 +338,13 @@ transaction broker session = do
   SocketBytes.sendAll (brokerSocket broker) framed
   leftAfter <- remainingMicros (brokerDeadline broker)
   unless (leftAfter > 0) (ioError (userError "engine reply outcome uncertain"))
+  let observation = case request of Protocol.SubmitGuiObservation value -> Just value; _ -> Nothing
+  case observation of
+    Nothing -> pure ()
+    Just _ -> do
+      afterWrite <- checkFragment (brokerGuard broker) credential
+      either (const (ioError (userError "GUI completion peer uncertain"))) pure afterWrite
+      afterGuard <- remainingMicros (brokerDeadline broker)
+      unless (afterGuard > 0) (ioError (userError "GUI completion deadline uncertain"))
   let (finished,receipt) = Protocol.confirmReplySent sending
-  either (const (ioError (userError "engine reply state uncertain"))) (const (pure (finished,ownerRefused))) receipt
+  either (const (ioError (userError "engine reply state uncertain"))) (const (pure (finished,ownerRefused,observation))) receipt

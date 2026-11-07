@@ -28,7 +28,7 @@ executable warlock-ui-backend
 executable warlock-ui-owner
   hs-source-dirs: ui
   main-is: Main.hs
-  other-modules: Warlock.Ui.EngineEntrypoint, Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
+  other-modules: Warlock.Ui.EngineEntrypoint, Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
   build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
@@ -89,7 +89,7 @@ executable ui-security-child
     buildable: False
   hs-source-dirs: test-ui-security, ui
   main-is: Main.hs
-  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
+  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
   build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
@@ -142,7 +142,7 @@ test-suite ui-webkit-controls
   type: exitcode-stdio-1.0
   hs-source-dirs: test-ui-webkit, ui
   main-is: Main.hs
-  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
+  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
   build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
@@ -173,7 +173,7 @@ test-suite ui-engine-exec-controls
   type: exitcode-stdio-1.0
   hs-source-dirs: test-ui-engine-exec, ui
   main-is: Main.hs
-  other-modules: Warlock.Ui.EngineEntrypoint, Warlock.Ui.EngineCustody, Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.Mvp
+  other-modules: Warlock.Ui.EngineEntrypoint, Warlock.Ui.EngineCustody, Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
   build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1, warlock-runtime, warlock-protocol, warlock-process-custody
@@ -295,9 +295,29 @@ test-suite owned-signal-lifecycle-controls
   type: exitcode-stdio-1.0
   hs-source-dirs: test-owned-signal, ui
   main-is: Main.hs
-  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
+  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
   build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0
+
+test-suite physical-context-owner-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-default-context-owner, ui
+  main-is: Main.hs
+  other-modules: Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner
+  pkgconfig-depends: gobject-2.0, gio-2.0
+  build-depends: base >=4.18 && <5, unix, warlock-runtime
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+test-suite physical-context-owner-threaded-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-default-context-owner, ui
+  main-is: Main.hs
+  other-modules: Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner
+  pkgconfig-depends: gobject-2.0, gio-2.0
+  build-depends: base >=4.18 && <5, unix, warlock-runtime
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded -with-rtsopts=-V0

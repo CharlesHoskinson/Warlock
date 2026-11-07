@@ -24,7 +24,7 @@ import System.Posix.Signals (sigKILL, signalProcess)
 import Warlock.Capture.Process.Bootstrap (deadlineAfter, remainingMicros)
 import Warlock.Ui.EngineCustody (startCustody, stopCustody, abandonCustody)
 import Warlock.Ui.PrivateNetwork (enterPrivateNetwork)
-import Warlock.Ui.WebKit (connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
+import Warlock.Ui.WebKit (providerVersionQualified, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
 
 data Object
 type Notify = Ptr Object -> Ptr () -> Ptr () -> IO ()
@@ -288,6 +288,11 @@ namespaceCompatibility = do
 
 main :: IO ()
 main = do
+ check "provider exact2.52.6 remains qualified" (providerVersionQualified (2,52,6))
+ check "provider exact2.54.1 remains qualified" (providerVersionQualified (2,54,1))
+ check "provider selected2.54.2 qualifies only exact tuple" (providerVersionQualified (2,54,2))
+ check "provider nearby2.54.3 refused" (not (providerVersionQualified (2,54,3)))
+ check "provider foreign major3.54.2 refused" (not (providerVersionQualified (3,54,2)))
  namespaceCompatibility
  -- Reproducible, bounded sequence variation, including repeated toggles.
  forM_ [0..63] normalSequence

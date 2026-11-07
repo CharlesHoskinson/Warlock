@@ -14,8 +14,9 @@ import Warlock.Ui.Config (UiConfig, loadUiConfig, uiDeadline)
 import Warlock.Ui.Display (DisplayEnvironment, captureDisplayEnvironment, displayEnvironmentPairs)
 import qualified Warlock.Ui.EngineBroker as Broker
 import Warlock.Ui.EngineCustody
-  (startUnreadyEngine, takeEngineChannel, engineCredentialGuard, stopEngineProcess)
-import Warlock.Ui.EngineEntrypoint (Mode(..), classifyMode, runEngineOnly)
+  (startUnreadyEngine, takeEngineChannel, engineCredentialGuard, stopEngineProcess
+  , finishEngineProcess, engineNormalExit, engineExitLiveImageFacts)
+import Warlock.Ui.EngineEntrypoint (Mode(..), classifyMode, runEngineObserved)
 import qualified Warlock.Ui.EngineProtocol as Protocol
 import Warlock.Ui.Owner
   (UiEndpoints(..), TrustedOwnerEvent, EngineResult(..), runUiOwnerPrepared, uiPassed, uiResultJson)
@@ -62,17 +63,32 @@ prepareSelected config display endpoints ownerEvent = mask_ $ do
       run = do
         ready <- Broker.completeStartup broker
         require (ready == Broker.StartupWrittenLocally) "engine startup unconfirmed"
+        -- A local stop is returned through the existing Stop RPC. Keep serving
+        -- the child's final observation/ACK while the SAME original D permits;
+        -- breaking before serve would strand its natural-exit handshake.
         let loop = do
-              stopping <- uiShouldStop endpoints
-              if stopping then pure () else do
-                result <- Broker.serveBrokerOnce broker
-                case result of
-                  Broker.ReplyWrittenLocally -> loop
-                  _ -> pure ()
-        loop
-        -- Window mapping/local writes/namespace exit cannot qualify provider
-        -- callback and backing retirement. Preserve the unknown facts.
-        pure (EngineResult False False)
+              result <- Broker.serveBrokerOnce broker
+              case result of
+                Broker.ReplyWrittenLocally -> loop
+                Broker.GuiObservationWrittenLocally -> pure True
+                _ -> pure False
+        terminalAck <- loop
+        observation <- Broker.brokerGuiObservation broker
+        -- Child holds its live/image identity until this authenticated
+        -- channel reaches EOF after the terminal ACK/postguard. Closing it
+        -- before natural wait is the barrier, not a second RPC roundtrip.
+        closed <- Broker.closeBroker broker
+        require (closed == Broker.CloseConfirmed) "engine completion EOF unconfirmed"
+        receipt <- finishEngineProcess engine
+        let complete = maybe False Protocol.guiObservationComplete observation
+            normal = engineNormalExit receipt
+            imageValidated = case engineExitLiveImageFacts receipt of
+              Just _ -> True
+              Nothing -> False
+        -- A parent-issued normal PID1 reap discharges process memory only.
+        -- Paths/backings and the full native/provider/input journey are still
+        -- unqualified: never turn this partial observation into whole cleanup.
+        pure (EngineResult (terminalAck && complete && imageValidated && normal) False)
   pure (run,retire)
 
 runBroker :: FilePath -> IO ()
@@ -96,8 +112,8 @@ main = do
   case mode of
     BrokerConfig path -> runBroker path
     EngineOnly args -> do
-      result <- runEngineOnly args
+      result <- runEngineObserved args
       case result of
-        Right observed | enginePassed observed -> pure ()
+        Right () -> pure ()
         _ -> exitFailure
     Reject -> ioError (userError "expected trusted UI configuration or owned engine role")

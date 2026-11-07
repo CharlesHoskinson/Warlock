@@ -629,7 +629,7 @@ def consumption_frontend(output, env, packet, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
-    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build', 'provider-probe-build', 'provider-callback-build'):
+    for mode in ('subscriptions', 'owner-build', 'owner', 'preview-control', 'protocol', 'preview-consumption', 'preview-schema', 'held-executable', 'peer-role', 'successor-focus', 'workspace-owner-baseline', 'workspace-owner-component', 'workspace-owner-component-red', 'workspace-original', 'workspace-dom', 'workspace-navigation-protocol', 'ux031-daemon-only', 'notification-config', 'notification-issuer', 'catalog-nodisplay', 'catalog-source-revision', 'catalog-publication', 'application-owner-route', 'application-availability', 'native-stage-build', 'provider-probe-build', 'provider-callback-build', 'physical-context-owner-build', 'physical-context-owner-bridge'):
         modes.add_argument('--' + mode, action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
@@ -676,6 +676,10 @@ def main():
         mode = '--provider-probe-build'
     if args.provider_callback_build:
         mode = '--provider-callback-build'
+    if args.physical_context_owner_build:
+        mode = '--physical-context-owner-build'
+    if args.physical_context_owner_bridge:
+        mode = '--physical-context-owner-bridge'
     if args.catalog_publication:
         mode = '--catalog-publication'
     if args.catalog_source_revision:
@@ -684,7 +688,7 @@ def main():
         output = ROOT / '.warlock-contributor' / ('arm64-cpu-' + str(time.time_ns()))
         output.mkdir(parents=True, mode=0o700)
         sources = {name: digest(ROOT / name) for name in sorted(arm64_inputs(
-            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build))}
+            ROOT, args.subscriptions, args.preview_control, haskell_profile, args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build, physical_context_owner_build=args.physical_context_owner_build, physical_context_owner_bridge=args.physical_context_owner_bridge))}
         packet = verify(full=True)
         report = {'schema': 1, 'passed': False, 'mode': mode, 'protectedScope': scope, 'sourceHashes': sources,
                       'toolchainManifestSHA256': packet['manifestSHA256'], 'commands': [],
@@ -692,6 +696,10 @@ def main():
                       'nativeAcceptance': False, 'originalAcceptance': False, 'releaseAccepted': False}
         if args.provider_callback_build:
             report['scope'] = 'Two new fixed callback fixture images compiled/linked only; no fixture execution or native acceptance'
+        if args.physical_context_owner_build:
+            report['scope'] = 'Four fixed physical-context targets compiled/linked only; no fixture or GTK execution'
+        if args.physical_context_owner_bridge:
+            report['scope'] = 'Six fixed targets; only ordinary protocol and Unix-socket/mock-guard CPU fixtures execute; no GTK/owner execution'
         (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
         # Hide host runtime sockets and network. All compiler writes are confined
         # to the new output; SDK, source, system inputs and caches remain read-only.
@@ -717,7 +725,7 @@ def main():
             report = json.loads((output / 'report.json').read_text())
             verify(full=True)
             if set(arm64_inputs(ROOT, args.subscriptions, args.preview_control, haskell_profile,
-                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
+                                args.preview_consumption, args.successor_focus, args.workspace_owner_baseline, args.workspace_owner_component, args.workspace_owner_component_red, args.workspace_original, args.workspace_dom, daemon_only=args.ux031_daemon_only, native_stage_build=args.native_stage_build, provider_probe_build=args.provider_probe_build, provider_callback_build=args.provider_callback_build, physical_context_owner_build=args.physical_context_owner_build, physical_context_owner_bridge=args.physical_context_owner_bridge)) != set(sources) or any(digest(ROOT / name) != sha for name, sha in sources.items()):
                 raise RuntimeError('ARM source closure changed during execution')
             if child.returncode or not report['passed']:
                 raise RuntimeError('Private ARM profile failed; retained logs')
@@ -767,7 +775,68 @@ def main():
                          'tea-contract-cases.cjs'):
                 run('syntax-' + name, [packet['node'], '--check',
                     ROOT / 'implementation/warlock/qa' / name], timeout=30)
-        if args.ux031_daemon_only:
+        if args.physical_context_owner_build or args.physical_context_owner_bridge:
+            from physical_context_build import pin_image, run_profile
+            run('physical-context-profile-controls', [sys.executable, '-B',
+                ROOT / 'tools/test_physical_context_build.py', '--root', ROOT], timeout=120)
+            def execute_bridge_cpu(suite, original, stage):
+                sentinels = {
+                    'ui-engine-protocol-controls':
+                        'desktop idle transport controls: same-process SCM fixture; no native acceptance\n'
+                        'engine protocol valid JSON boundaries: depth 14/15/16, bytes 393215/393216/393217\n'
+                        'engine protocol replay draft seed=20261101\n',
+                    'ui-engine-broker-controls':
+                        'engine broker socketpair controls passed; mock guard is not owned-process evidence\n',
+                }
+                if not args.physical_context_owner_bridge or suite not in sentinels:
+                    raise RuntimeError('Only two fixed CPU bridge fixtures may execute')
+                if pin_image(Path(original['path']), output / 'dist', suite) != original:
+                    raise RuntimeError('Bridge original image changed before copy')
+                copies = output / 'dist' / 'bridge-cpu-images'
+                runs = output / 'bridge-cpu-runs'
+                for directory in (copies, runs):
+                    directory.mkdir(mode=0o700, exist_ok=True)
+                    if (directory.is_symlink() or directory.stat().st_uid != os.getuid()
+                            or directory.stat().st_mode & 0o777 != 0o700):
+                        raise RuntimeError('Unsafe bridge CPU private directory')
+                copied = copies / suite
+                if copied.exists() or copied.is_symlink():
+                    raise RuntimeError('Bridge CPU image destination reused')
+                shutil.copy2(Path(original['path']), copied)
+                copied_pin = pin_image(copied, output / 'dist', suite)
+                if (copied_pin['size'], copied_pin['sha256']) != (original['size'], original['sha256']):
+                    raise RuntimeError('Bridge CPU copied image differs')
+                dispatch = output / ('bridge-' + suite + '-dispatch.json')
+                with dispatch.open('x') as stream:
+                    json.dump({'suites': {str(copied): {
+                        'suite': suite, 'test': {'path': str(copied),
+                            'pin': [copied_pin[k] for k in ('device', 'inode', 'size', 'sha256')]},
+                        'fixtures': {}, 'runRoot': str(runs / suite)}}}, stream)
+                run('bridge-cpu-' + suite, [sys.executable, '-B', ROOT / 'tools/haskell_test_wrapper.py', copied],
+                    stage, 240, dict(env, WARLOCK_HASKELL_DISPATCH=str(dispatch)))
+                if (pin_image(copied, output / 'dist', suite) != copied_pin
+                        or pin_image(Path(original['path']), output / 'dist', suite) != original):
+                    raise RuntimeError('Bridge CPU image changed during execution')
+                result_path = runs / suite / 'results.json'
+                if result_path.is_symlink() or not result_path.is_file() or result_path.stat().st_size > 16384:
+                    raise RuntimeError('Missing fixed bridge wrapper receipt')
+                results = json.loads(result_path.read_text())
+                log = runs / suite / 'default.log'
+                if (len(results) != 1 or results[0].get('mode') != 'default'
+                        or results[0].get('argv') != [] or results[0].get('exit') != 0
+                        or results[0].get('timeout') is not False
+                        or results[0].get('forcedCleanup') is not False
+                        or results[0].get('log') != str(log)
+                        or log.is_symlink() or not log.is_file() or log.stat().st_size > 16384
+                        or log.read_text() != sentinels[suite]):
+                    raise RuntimeError('Bridge CPU normal receipt or exact sentinel differs')
+                return {'originalImage': original, 'copiedImage': copied_pin,
+                        'dispatchSHA256': digest(dispatch), 'results': str(result_path),
+                        'resultsSHA256': digest(result_path), 'logSHA256': digest(log),
+                        'noArguments': True, 'normalExit': True, 'scope': 'CPU codec/socket fixture only'}
+            report['physicalContextBuild'] = run_profile(ROOT, output, packet, run,
+                bridge=args.physical_context_owner_bridge, execute=execute_bridge_cpu)
+        elif args.ux031_daemon_only:
             from ux031_daemon_only import run_daemon_only
             report['daemonOnly'] = run_daemon_only(output)
         elif args.workspace_original:

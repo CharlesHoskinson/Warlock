@@ -2,7 +2,8 @@
 -- PREPARATION DRAFT. Pure wire/state contract; not an authentication,
 -- deadline-enforcement, process-custody, or native-acceptance receipt.
 module Warlock.Ui.EngineProtocol
-  ( SessionId, RequestId, Startup, Scope, Box, Event(..), Projection
+  ( GuiObservation, guiObservation, guiObservationComplete
+  , SessionId, RequestId, Startup, Scope, Box, Event(..), Projection
   , Method(..), Request(..), Reply(..), EventResult(..), ProtocolError(..)
   , Session, sessionId, requestId, startup, startupOrigins, startupDeadline
   , startupIncarnation, scope, box, projection, projectionJson, eventJson, parseEvent
@@ -48,12 +49,18 @@ data Event = Topology Counter (Maybe (Scope, Maybe Box))
            | Dismiss Scope Counter | Escape Scope Counter Counter
            | Reflow Scope Counter deriving (Eq, Show)
 newtype Projection = Projection J.Json deriving (Eq, Show)
+-- Bounded child observations only. Neither this type nor ACK claims cleanup.
+data GuiObservation = GuiObservation Bool Bool Bool Bool Bool deriving (Eq, Show)
+guiObservation :: Bool -> Bool -> Bool -> Bool -> Bool -> GuiObservation
+guiObservation = GuiObservation
+guiObservationComplete :: GuiObservation -> Bool
+guiObservationComplete (GuiObservation a b c attached returned) = a && b && c && attached && returned
 data Method = Stop | Remaining | LastProjection | OwnerTopology | OwnerDismiss
-            | OwnerEscape | OwnerReflow deriving (Eq, Ord, Show)
-data Request = GetStop | GetRemaining | GetLastProjection | OwnerEvent Event deriving (Eq, Show)
+            | OwnerEscape | OwnerReflow | GuiComplete deriving (Eq, Ord, Show)
+data Request = GetStop | GetRemaining | GetLastProjection | OwnerEvent Event | SubmitGuiObservation GuiObservation deriving (Eq, Show)
 data EventResult = Accepted | Stale | Refused deriving (Eq, Show)
 data Reply = StopReply Bool | RemainingReply Int | ProjectionReply (Maybe Projection)
-           | EventReply EventResult deriving (Eq, Show)
+           | EventReply EventResult | GuiObservationAck deriving (Eq, Show)
 data Pending = AwaitReply | NeedReply | SendingReply deriving (Eq, Show)
 data Session = Session SessionId (Maybe Counter) (Maybe (RequestId, Method, Pending)) Bool deriving (Eq, Show)
 
@@ -171,6 +178,22 @@ measure depth value = case value of
                     | otherwise = 4
           addBound n count
 
+guiObservationJson :: GuiObservation -> J.Json
+guiObservationJson (GuiObservation a b c attached returned) = J.JObject
+ [("controllerLoaded",J.JBool a),("barLoaded",J.JBool b),("popupLoaded",J.JBool c),
+  ("mvpAttached",J.JBool attached),("loopReturned",J.JBool returned),
+  ("callbackCustody",J.JString "process-pinned")]
+parseGuiObservation :: J.Json -> Either ProtocolError GuiObservation
+parseGuiObservation value = do
+ fs <- exact ["controllerLoaded","barLoaded","popupLoaded","mvpAttached","loopReturned","callbackCustody"] value
+ policy <- field "callbackCustody" fs
+ unless (policy == J.JString "process-pinned") (Left Invalid)
+ let flag key = do
+      item <- field key fs
+      case item of J.JBool b -> Right b; _ -> Left Invalid
+ GuiObservation <$> flag "controllerLoaded" <*> flag "barLoaded" <*> flag "popupLoaded"
+   <*> flag "mvpAttached" <*> flag "loopReturned"
+
 scopeJson :: Scope -> J.Json
 scopeJson (Scope a b) = J.JObject [("id",jcounter a),("generation",jcounter b)]
 parseScope :: J.Json -> Either ProtocolError Scope
@@ -232,29 +255,34 @@ method :: Request -> Method
 method GetStop = Stop
 method GetRemaining = Remaining
 method GetLastProjection = LastProjection
+method (SubmitGuiObservation _) = GuiComplete
 method (OwnerEvent event) = case event of Topology _ _ -> OwnerTopology; Dismiss _ _ -> OwnerDismiss; Escape _ _ _ -> OwnerEscape; Reflow _ _ -> OwnerReflow
 methodName :: Method -> Text
-methodName m = case m of Stop -> "stop"; Remaining -> "remaining"; LastProjection -> "lastProjection"; OwnerTopology -> "topology"; OwnerDismiss -> "dismiss"; OwnerEscape -> "escape"; OwnerReflow -> "reflow"
+methodName m = case m of Stop -> "stop"; Remaining -> "remaining"; LastProjection -> "lastProjection"; OwnerTopology -> "topology"; OwnerDismiss -> "dismiss"; OwnerEscape -> "escape"; OwnerReflow -> "reflow"; GuiComplete -> "guiObservation"
 parseMethod :: Text -> Either ProtocolError Method
-parseMethod value = case [m | m <- [Stop,Remaining,LastProjection,OwnerTopology,OwnerDismiss,OwnerEscape,OwnerReflow], methodName m == value] of
+parseMethod value = case [m | m <- [Stop,Remaining,LastProjection,OwnerTopology,OwnerDismiss,OwnerEscape,OwnerReflow,GuiComplete], methodName m == value] of
   [m] -> Right m
   _ -> Left Invalid
 requestBody :: Request -> J.Json
 requestBody (OwnerEvent e) = eventJson e
+requestBody (SubmitGuiObservation value) = guiObservationJson value
 requestBody _ = J.JNull
 parseRequestBody :: Method -> J.Json -> Either ProtocolError Request
 parseRequestBody Stop J.JNull = Right GetStop
 parseRequestBody Remaining J.JNull = Right GetRemaining
 parseRequestBody LastProjection J.JNull = Right GetLastProjection
+parseRequestBody GuiComplete value = SubmitGuiObservation <$> parseGuiObservation value
 parseRequestBody m value = OwnerEvent <$> parseEvent m value
 replyBody :: Reply -> J.Json
 replyBody r = case r of
+  GuiObservationAck -> J.JString "observed"
   StopReply value -> J.JBool value
   RemainingReply n -> J.JNumber (T.pack (show n))
   ProjectionReply Nothing -> J.JNull
   ProjectionReply (Just p) -> projectionJson p
   EventReply result -> J.JString (case result of Accepted -> "accepted"; Stale -> "stale"; Refused -> "refused")
 parseReplyBody :: Method -> J.Json -> Either ProtocolError Reply
+parseReplyBody GuiComplete (J.JString "observed") = Right GuiObservationAck
 parseReplyBody Stop (J.JBool b) = Right (StopReply b)
 parseReplyBody Remaining value = RemainingReply <$> number 0 30000000 value
 parseReplyBody LastProjection J.JNull = Right (ProjectionReply Nothing)
@@ -264,6 +292,7 @@ parseReplyBody m (J.JString value) | m `elem` [OwnerTopology,OwnerDismiss,OwnerE
 parseReplyBody _ _ = Left Invalid
 replyMatches :: Method -> Reply -> Bool
 replyMatches m r = case (m,r) of
+  (GuiComplete,GuiObservationAck) -> True
   (Stop,StopReply _) -> True; (Remaining,RemainingReply n) -> n >= 0 && n <= 30000000
   (LastProjection,ProjectionReply _) -> True
   (OwnerTopology,EventReply Stale) -> False
@@ -379,7 +408,7 @@ confirmReplySent :: Session -> (Session, Either ProtocolError ())
 confirmReplySent state@(Session s n pending bad)
   | bad = (state,Left Poisoned)
   | otherwise = case pending of
-      Just (_,_,SendingReply) -> (Session s n Nothing False,Right ())
+      Just (_,m,SendingReply) -> (Session s (if m == GuiComplete then Nothing else n) Nothing False,Right ())
       _ -> failClosed state InvalidState
 acceptReply :: Session -> B.ByteString -> (Session, Either ProtocolError Reply)
 acceptReply state@(Session s n pending bad) raw
@@ -393,5 +422,5 @@ acceptReply state@(Session s n pending bad) raw
           | r /= expected || m /= expectedMethod -> failClosed state WrongReply
           | otherwise -> case parseReplyBody m p of
               Left err -> failClosed state err
-              Right reply -> (Session s n Nothing False,Right reply)
+              Right reply -> (Session s (if m == GuiComplete then Nothing else n) Nothing False,Right reply)
       Just _ -> failClosed state InvalidState

@@ -21,7 +21,7 @@
 -- No fallback may manufacture a verified session, projection or EngineResult.
 module Warlock.Ui.EngineEntrypoint
   ( Mode(..), EngineArgs, classifyMode, prepareEngine
-  , EngineFailure(..), runEngineOnly ) where
+  , EngineFailure(..), runEngineOnly, runEngineObserved ) where
 
 import Control.Exception (SomeAsyncException, SomeException, finally, fromException, mask, throwIO, try)
 import Control.Concurrent (forkIO, killThread, threadDelay)
@@ -58,8 +58,8 @@ import qualified Warlock.Ui.EngineAdapter as Adapter
 import qualified Warlock.Ui.EngineProtocol as Protocol
 import Warlock.Ui.EngineProtocol
   ( Startup )
-import Warlock.Ui.Owner (EngineResult, UiEndpoints(..))
-import Warlock.Ui.WebKit (runWebKit)
+import Warlock.Ui.Owner (EngineResult, TrustedOwnerEvent, UiEndpoints(..))
+import Warlock.Ui.WebKit (runWebKit, runWebKitObserved)
 
 -- This token is interpreted only by the eventual same-held-image dispatcher;
 -- it alone is not proof of image identity, PID1, parent, peer or authority.
@@ -248,6 +248,23 @@ makeRpc socket reader deadline expectedUid expectedGid peer startup = do
           (reply,_) <- readFrame reader socket deadline Transport.engineHeaderLength expectedUid expectedGid (Just peer)
           let (next,decoded) = Protocol.acceptReply pending reply
           answer <- either (const (ioError (userError "reply refused"))) pure decoded
+          -- Only this post-ACK terminal phase treats EOF as permission to
+          -- exit. The SAME authenticated socket, ancillary-safe reader and
+          -- encompassing original-D timeout remain in force. Any data or
+          -- control error refuses; no ACK-of-ACK or request replay exists.
+          case (request, answer) of
+            (Protocol.SubmitGuiObservation _, Protocol.GuiObservationAck) -> do
+              beforeClose <- remainingMicros deadline
+              require (beforeClose > 0)
+              terminal <- Transport.receiveCredentialChunk reader socket 1
+              case terminal of
+                Right Transport.EndOfStream -> pure ()
+                _ -> ioError (userError "GUI terminal parent close unavailable")
+              reusable <- Transport.credentialReaderReusable reader
+              require reusable
+              afterClose <- remainingMicros deadline
+              require (afterClose > 0)
+            _ -> pure ()
           pure (next,answer)
         case outcome of
           Left problem -> do
@@ -258,7 +275,7 @@ makeRpc socket reader deadline expectedUid expectedGid peer startup = do
           Right (next,answer) -> do
             remaining <- remainingMicros deadline
             admitted <- atomicModifyIORef' state $ \old -> case old of
-              Busy _ | remaining > 0 -> (Idle next,True)
+              Busy _ | remaining > 0 -> ((case answer of Protocol.GuiObservationAck -> Dead; _ -> Idle next),True)
               _ -> (Dead,False)
             pure (if admitted then Right answer else Left Protocol.InvalidState)
 
@@ -284,7 +301,23 @@ startMonitors life deadline = do
   pure (killThread lifeThread >> killThread deadlineThread)
 
 runEngineOnly :: EngineArgs -> IO (Either EngineFailure EngineResult)
-runEngineOnly args@(EngineArgs (Fd rpc) life originalD incarnation expectedUid expectedGid) = do
+runEngineOnly = runEngineRoute (\endpoints emit _ -> runWebKit endpoints emit)
+
+-- Success here means authenticated terminal ACK and parent EOF were received, including
+-- for partial observations. Only the parent can combine facts with owned reap.
+runEngineObserved :: EngineArgs -> IO (Either EngineFailure ())
+runEngineObserved = runEngineRoute $ \endpoints emit rpc -> do
+  observed <- runWebKitObserved endpoints emit
+  acknowledged <- rpc (Protocol.SubmitGuiObservation observed)
+  case acknowledged of
+    Right Protocol.GuiObservationAck -> pure ()
+    _ -> ioError (userError "GUI observation ACK/parent close unavailable; no replay")
+
+runEngineRoute
+  :: (UiEndpoints -> (TrustedOwnerEvent -> IO (Either T.Text ()))
+      -> (Protocol.Request -> IO (Either Protocol.ProtocolError Protocol.Reply)) -> IO a)
+  -> EngineArgs -> IO (Either EngineFailure a)
+runEngineRoute runSelected args@(EngineArgs (Fd rpc) life originalD incarnation expectedUid expectedGid) = do
   prepared <- prepareEngine args
   case prepared of
     Left failure -> pure (Left failure)
@@ -328,7 +361,7 @@ runEngineOnly args@(EngineArgs (Fd rpc) life originalD incarnation expectedUid e
                   if left <= 1000000 then pure left
                     else min left <$> uiRemainingMicros remote
                 endpoints = remote {uiShouldStop=localStop,uiRemainingMicros=localRemaining}
-            runWebKit endpoints (Adapter.emitEvent rpcCall)
+            runSelected endpoints (Adapter.emitEvent rpcCall) rpcCall
             ) `finally` stopMonitors
           ) `finally` Socket.close socket
       case outcome of

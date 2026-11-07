@@ -202,6 +202,7 @@ main = do
  DesktopIdleControls.run
  ProtocolBoundary.run
  start <- initial
+ guiObservationControls start
  let startupLiteral = "{\"version\":1,\"controller\":12001,\"bar\":12002,\"popup\":12003,\"deadline\":\"123456789\",\"incarnation\":\"91\"}"
  assert "literal startup accepted" (decodeStartup startupLiteral == Right start)
  assert "encoded startup remains readable" (decodeStartup (encodeStartup start) == Right start)
@@ -287,3 +288,37 @@ main = do
  assert "wrong reply method poisons client" (wrong == Left WrongReply && isPoisoned failed)
  when (not (isPoisoned failed)) (ioError (userError "unreachable"))
  putStrLn ("engine protocol replay draft seed=" ++ show seed)
+
+-- Literal completion bytes carry no cleanup/pass authority.
+guiObservationControls :: Startup -> IO ()
+guiObservationControls start = do
+ let full = guiObservation True True True True True
+     partial = guiObservation True False True True True
+     payload = "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\"}"
+     raw = frame (requestHeader "guiObservation") payload
+     (clientWaiting, issued) = beginRequest (newSession start) (SubmitGuiObservation full)
+     (serverPending, accepted) = acceptRequest (newSession start) raw
+ assert "GUI literal typed observation accepted" (accepted == Right (SubmitGuiObservation full))
+ assert "GUI partial observation is not complete" (not (guiObservationComplete partial))
+ assert "GUI full bounded facts complete" (guiObservationComplete full)
+ encoded <- need issued
+ assert "GUI literal request exact" (encoded == raw)
+ let (sending, response) = finishRequest serverPending GuiObservationAck
+ ack <- need response
+ assert "GUI literal ACK exact" (ack == frame (replyHeader "guiObservation") "\"observed\"")
+ let (serverDone, confirmed) = confirmReplySent sending
+     (clientDone, acknowledged) = acceptReply clientWaiting ack
+ assert "GUI ACK confirmed" (confirmed == Right () && acknowledged == Right GuiObservationAck)
+ assert "GUI no subsequent client request" (case snd (beginRequest clientDone GetStop) of Left _ -> True; _ -> False)
+ assert "GUI no terminal replay" (case snd (acceptRequest serverDone raw) of Left _ -> True; _ -> False)
+ let foreignRaw = frame "{\"version\":1,\"direction\":\"request\",\"session\":\"92\",\"request\":\"1\",\"method\":\"guiObservation\"}" payload
+ assert "GUI foreign session refused" (snd (acceptRequest (newSession start) foreignRaw) == Left ForeignSession)
+ let bad = frame (requestHeader "guiObservation") "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"freed\"}"
+ assert "GUI nonpinned custody malformed" (case snd (acceptRequest (newSession start) bad) of Left _ -> True; _ -> False)
+ let lost = poisonSession clientWaiting
+ assert "GUI EOF before valid ACK refuses" (case snd (acceptReply clientWaiting B.empty) of Left _ -> True; _ -> False)
+ assert "GUI ACK loss cannot replay" (snd (beginRequest lost (SubmitGuiObservation full)) == Left Poisoned)
+ let (a,b,c) = startupOrigins start
+     endpoints = Owner.UiEndpoints a b c (pure False) (pure 1) (pure Nothing)
+ direct <- Adapter.serveRequest endpoints (const (pure (Right ()))) (SubmitGuiObservation full)
+ assert "GUI direct adapter cannot manufacture ACK" (direct == Left InvalidState)
