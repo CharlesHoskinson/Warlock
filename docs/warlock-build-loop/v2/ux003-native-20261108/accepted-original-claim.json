@@ -1,0 +1,150 @@
+{
+  "claimSchema": 1,
+  "claims": [
+    {
+      "requirement": "ELM-UX-003",
+      "scenario": "ux-003",
+      "oracle": "only eligible entries appear and launches preserve recorded arguments",
+      "verificationScope": "Elm replay assertion and isolated native recording: only eligible entries appear and launches preserve recorded arguments.",
+      "scope": "ONE literal original visible/NoDisplay catalog and recorded-argument launch scenario, existing current-source Elm replay plus actual isolated native input/pixels/child argv/normal cleanup. Native typing/search and broader keyboard/AT/release coverage remain unproven and are not claimed.",
+      "evidence": [
+        {
+          "path": "docs/warlock-build-loop/v2/ux003-native-20261108/adjudication-evidence.json",
+          "sha256": "f5c84516f83267d1481df64a3d6e57dd9a999837ab94eaf09e5df27620327d91"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ux003-native-20261108/reviews/independent-visual-and-original-review.json",
+          "sha256": "1bbe7a19fcff74f9b92f1adde7bf46fdf9bd1e032014cf828b2d0e121985838a"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ux003-native-20261108/reviews/independent-semantic-review.json",
+          "sha256": "f3c9046cc048c411da0dcbc4fdcae093fdf6eb2ef934866d37feada76f9b133e"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ux003-native-20261108/existing-replay-correspondence.json",
+          "sha256": "400c0d503e9677f9c09139b605375d7aabecd2b4f572b2504338b921a5781c36"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ux003-native-20261108/actual-catalog-and-recorded-argv.json",
+          "sha256": "88147636b2ccf0292b9541ea8736238942be587053a6a8deab1c9a507e8ebfaf"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ux003-native-20261108/native/report.json",
+          "sha256": "a7b3dd7504753cd336a87aac36e711d1671758c878263782fefdaa5760f27f2f"
+        }
+      ],
+      "sourceHashes": {
+        "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs": "4c0e9f75acfffa0413b5efc59cb592e5609d3482f032f7c3131f2048edcfea91",
+        "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": "16ccafd66cacb3835225bc9739d2a957e5e601a8819a14d99ec565224dcc1a94",
+        "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "a5d79d72064c2d2e9a8fb8de995f2c44eee2410d7f7c6512a2cd1b41d4c03c03",
+        "implementation/warlock/haskell/runtime/fixture-application-argv/Main.hs": "d44def2256ddc027e90c0f4d6d2f11796b5672d431942b2afbd453b62b90c5bf",
+        "implementation/warlock/haskell/runtime/fixture-application-owner-peer/Main.hs": "bc32dc9b97d99c64001dbcbc8410070ff4ac236978c5b89e11147f228962e767",
+        "implementation/warlock/haskell/runtime/fixture-ux003-native-observer/Main.hs": "e563f85093bcd7261dc99aea247f1bb085ccc64a997715619b627af8ceeb7f6b",
+        "implementation/warlock/haskell/runtime/runtime.cabal": "ace459e3085728e2da478254323b8a622c8d4f1acfe6b713983fb3bd5299f146",
+        "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "3879c725eb3f72375d3b9280a860c50e565c4fd968819121ae643b95902d60fe",
+        "implementation/warlock/haskell/runtime/src/Warlock/Backend/ApplicationExecutable.hs": "a6a497bf36b00b26357a69743ed748f4b9de7f48df089d88d3a57d17e51b4e59",
+        "implementation/warlock/haskell/runtime/src/Warlock/Backend/ApplicationPlanConfig.hs": "862187637d4efa8844939dce32e1fd9ec87cdab470a72d542f841ccdc95fc076",
+        "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "a9b328f7fbb0f5014354ad5a2aaada86aee5f9e9dcdd0b7ded8293af69c67adf",
+        "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "694e878829fcbb35fee6e42293db5f1486da214ce512bb1345cdef09927290fa",
+        "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": "c429d59b33f2996e7e929effe717e62751c282a615c688f4d651ba6fcaf1da79",
+        "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": "4daff7fa10f919c725cb45429c1d4a6c10b404525a825e69f61c82493a4f4c7a",
+        "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs": "976f459aeda27a4a6320d9207c300532d904c6a44567816d818ade00d186519c",
+        "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs": "dda839d4a8bb6d618b1ac6132bf84097d8d858e18d7bee2877b27e4a21388ca5",
+        "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs": "4818a8094e42b61521995583544f5eb02b1a162c674d57918c2e4ff26ab5f515",
+        "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs": "92a02a80ca91949aa705979e75dbc6a36d44b8ff7310aefe0a97a66975d5ae66",
+        "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs": "0bf6d868d72e312adb6a56d10920321308315622139f0091a060ba585136ff05",
+        "implementation/warlock/haskell/runtime/test-application-owner-route/Main.hs": "55588e0366247dd44ec3ac886bf4207189a84203e06ae984a79de2ff346a9e90",
+        "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd",
+        "implementation/warlock/haskell/runtime/test-catalog-publication/Main.hs": "1d31248918b047422448cbf0a1c97070680b9ba92fa1079cf099a61db6a68885",
+        "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67",
+        "implementation/warlock/haskell/runtime/test-default-context-owner/Main.hs": "a03e015ee86c7f581e86fc103ecf0853bd8241add9fbae98d04c9ada4184e197",
+        "implementation/warlock/haskell/runtime/test-filter-backing-root/Main.hs": "1be7797f62e9db90b0056c1531ca61155080d6deadd10a345936a10b9dd8ddbd",
+        "implementation/warlock/haskell/runtime/test-owned-signal/Main.hs": "7269e40e32790f296a7d31d443b4881004fd1ace0c219b67530f335606a9f607",
+        "implementation/warlock/haskell/runtime/test-ui-display/Main.hs": "13d731fb8a74cdbaeab8d7dcad2ff77350ee2b50c2f79c6e844cfffeef93f4ec",
+        "implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs": "dd27d93061fa60490b3f4c1f6f28f639e652cec4aafc8614be3db91968532c0e",
+        "implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs": "92960afdbea5addbec913e5a42150a6a9b269eab897828e54ac2660afdc877f8",
+        "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": "9f44d4209f69aace293ec80ffc503d483812c1921ce1d9c037ccd07eb517935b",
+        "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "6df03794ebcb66a3c2d2d7690eeada73fa744407f28d871a00c6f312adc24c11",
+        "implementation/warlock/haskell/runtime/test-webkit-callback-capi/Main.hs": "f74ed64d4ae856c0eb82fece3d61f23a277d14f5fef19a0a93c36a60c91ac2b6",
+        "implementation/warlock/haskell/runtime/test-webkit-callback-capi/callback-invoke.c": "8a5afb03759001f3f8313b89a3a4825e6ff6c99e3c24a80c122c4e6159005b97",
+        "implementation/warlock/haskell/runtime/test-webkit-provider-probe/Controls.hs": "be9885d27bade1400563310dc8e95078aad13d8c5227a4aaee500c576d3f7012",
+        "implementation/warlock/haskell/runtime/test-webkit-provider-probe/Main.hs": "17f47886bcc879a89856bdb773de0736392105a3112aa995199c91b396d63651",
+        "implementation/warlock/haskell/runtime/test-webkit-provider-probe/ProviderProbeContract.hs": "da1387ddd63ca62a3998d817af2c04bfea25e9c5c9343e5e6e917a5a801b6414",
+        "implementation/warlock/haskell/runtime/test-webkit-provider-probe/ProviderProbeHeaders.hsc": "bdb92d1317a30ddc62677938d232181e27a6de1f4f5b3461b5a84a0cd343ca9a",
+        "implementation/warlock/haskell/runtime/ui/Main.hs": "1efe1ec3625abbaabe0ba237166b2990bd2f82b034a01abd033ae8cbb9bbf497",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/CallbackRetirement.hs": "76dace5cb34d05a4e13f587615a824f73ac29297074897f065fc935ce73d25f4",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/DefaultContextOwner.hs": "7dbe4fb93a6c7bc98078c75819e43b046e1ef53c63b0946a23b3b6ef30413743",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": "5e7175ba4d90cfe622b0b382c37440bbe51496dc3b550c59fde20f840a833f8f",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs": "50b13ce201401779d135957052c5479b495148fbc482e3a34da5f121ba1d36e8",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/FilterBackingRoot.hsc": "bbc92b60813532408c686f20e694f544d5c801a8ba75e5a3dd6821826d7f1ca4",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "54f22a62eb9ef59d2bc25710ad11dc79265c4a2ab44b2ac147ffb9799015723d",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/ProcessSignalOwner.hs": "01378b006b4de137fd1bd14ec172585e5559139af653280de6c145ddbde30170",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "46843721b482bd49463cd047449f8480099350fcb7294970988918e593b34a03",
+        "implementation/warlock/qa/ApplicationAvailabilityReplay.elm": "311ffd0dc7b160fdf4788a6513c732ca7e8da7929a57fc5e267e143041000c0f",
+        "implementation/warlock/qa/application-availability.cjs": "0507e40ff47b7001e9450b1e1af438dc5eb7c913da59ee0bfb4c893398cd6fb8",
+        "implementation/warlock/qa/native-runtime-helpers/LICENSE.wlr-virtual-pointer.txt": "de371ae38be7b1e9e4d339d13f85dfc448f279cbe3a75640e91bedd5bf7a9557",
+        "implementation/warlock/qa/native-runtime-helpers/virtual-pointer-protocol-provenance.json": "3d8a27c0cb4075a0288fb8f6ad5a51d61c957ecf7d9947f1f8591b9c2c1f2316",
+        "implementation/warlock/qa/native-runtime-helpers/wlr-virtual-pointer-unstable-v1.xml": "3ff6d540be0bc5228195bf072bde42117ea17945a5c2061add5d3cf97d6bb524",
+        "implementation/warlock/qa/omarchy_trial/test_application_staging.py": "94e36a27704d827ca9b0002b0fa4eacdc2f235f6b35daaddfc7b64fd880ab0d3",
+        "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+        "implementation/warlock/src/Desktop.elm": "6c97990e9a4c38246e446ab8b210d3228ad4986f96c6df346b5d1e0b71e83ef5",
+        "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+        "implementation/warlock/src/Shell.elm": "47acbd553611b40c7bca83ec503a90f30f1b382fab21c3f44325a3400c5c52ce",
+        "implementation/warlock/src/Surface.elm": "a4821ebb742193ed49083fec23feeec4be9e50502ba2fe76eac312284d5a5da2"
+      },
+      "reviewer": {
+        "name": "workflow_astra",
+        "independent": true,
+        "disposition": "accepted",
+        "evidence": {
+          "path": "docs/warlock-build-loop/v2/ux003-native-20261108/reviews/independent-visual-and-original-review.json",
+          "sha256": "1bbe7a19fcff74f9b92f1adde7bf46fdf9bd1e032014cf828b2d0e121985838a"
+        }
+      },
+      "disposition": "accepted",
+      "missingObservations": [],
+      "sourceTuple": {
+        "sourceRevision": "1ad6bb1ebbb910256b8266dd0cc0b10a14f0d0f5",
+        "core": {
+          "path": "plugins/warlock-contributor/scripts/warlock.py",
+          "sha256": "1a0efa3946a1164f2bd7fd4cda99a647d0c7e18d444c1cc234c740c376775376"
+        },
+        "plugin": {
+          "version": "0.17.11",
+          "manifests": [
+            {
+              "path": "plugins/warlock-contributor/.claude-plugin/plugin.json",
+              "sha256": "aa84fc10acfb9b856c50ee0a037573d42348ed5a68e043b21132d55dc8096ba2"
+            },
+            {
+              "path": "plugins/warlock-contributor/.codex-plugin/plugin.json",
+              "sha256": "169e2b49ed566824f747003631c09fdf1bb881f00286afa53e1af45dd39fd675"
+            }
+          ]
+        },
+        "toolchain": {
+          "actualNativeBuild": {
+            "path": "docs/warlock-build-loop/v2/ux003-native-20261108/qualification/actual-owner-observer-build.json",
+            "sha256": "1f7cb98a26593777eadd19f510215fcd2fbe21058afee74ff580ed90d13adf9b"
+          },
+          "actualElmDocumentBuild": {
+            "path": "docs/warlock-build-loop/v2/ux003-native-20261108/qualification/actual-elm-document-recorder-build.json",
+            "sha256": "94d1030aceab93e80fe1df0b00f3b5ce64686b9b74fdfaf65d2c1667e515067d"
+          },
+          "replayCompilerAndSdk": {
+            "path": "docs/warlock-build-loop/v2/ux003-native-20261108/replay/compiler-and-replay-report.json",
+            "sha256": "12517ee9f549f2ae64d677a11fd5ca0e81db91c12ed5cf2a5ccdf6710dcdd80b"
+          },
+          "sourceMap": {
+            "path": "docs/warlock-build-loop/v2/ux003-native-20261108/current-selected-source-hashes.json",
+            "sha256": "b8bc3e34a7a8a41350a387ff5b79af77f53ed0493b01d90f876545360b670e7a"
+          }
+        }
+      },
+      "uncreditedCoverage": [
+        "Native typing/search not demonstrated; full planned journey not automatically passed."
+      ],
+      "originalScenarioCount": 1
+    }
+  ]
+}

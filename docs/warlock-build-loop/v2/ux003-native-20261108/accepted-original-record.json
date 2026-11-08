@@ -1,0 +1,30 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "1a0efa3946a1164f2bd7fd4cda99a647d0c7e18d444c1cc234c740c376775376",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ux003-walking-skeleton-root.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-07T19:45:25.674283+00:00",
+    "secondsSinceRecordedProgress": 64726,
+    "suspendedSeconds": 1563,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": true,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [
+      "45-awake-minutes-without-tested-integration"
+    ],
+    "effectiveAuthorizationExpiresUTC": "2026-11-08T14:30:00Z",
+    "action": "Change the next action or defer in this same history.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "ok": true
+}

@@ -13636,15 +13636,108 @@
       "capability": "elm-taskbar",
       "owner": "Elm presentation lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "unadjudicated",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "ux-003",
           "oracle": "only eligible entries appear and launches preserve recorded arguments",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/adjudication-evidence.json",
+              "sha256": "f5c84516f83267d1481df64a3d6e57dd9a999837ab94eaf09e5df27620327d91"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/reviews/independent-visual-and-original-review.json",
+              "sha256": "1bbe7a19fcff74f9b92f1adde7bf46fdf9bd1e032014cf828b2d0e121985838a"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/reviews/independent-semantic-review.json",
+              "sha256": "f3c9046cc048c411da0dcbc4fdcae093fdf6eb2ef934866d37feada76f9b133e"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/existing-replay-correspondence.json",
+              "sha256": "400c0d503e9677f9c09139b605375d7aabecd2b4f572b2504338b921a5781c36"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/actual-catalog-and-recorded-argv.json",
+              "sha256": "88147636b2ccf0292b9541ea8736238942be587053a6a8deab1c9a507e8ebfaf"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/native/report.json",
+              "sha256": "a7b3dd7504753cd336a87aac36e711d1671758c878263782fefdaa5760f27f2f"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/accepted-original-claim.json",
+              "sha256": "e3a8f4fde7deb75832a22109ee4ca558bb90ca614000d8780716c7e010521c59"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/accepted-original-record.json",
+              "sha256": "d5af9d41d0b6616be333d276114d24517561bad002209dc344793eba3e2803c9"
+            }
+          ],
+          "missingObservation": null,
+          "priorObservations": [
+            {
+              "name": "ux-003",
+              "oracle": "only eligible entries appear and launches preserve recorded arguments",
+              "status": "unadjudicated",
+              "evidence": [],
+              "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+            }
+          ],
+          "reviewerDisposition": {
+            "name": "workflow_astra",
+            "independent": true,
+            "disposition": "accepted",
+            "evidence": {
+              "path": "docs/warlock-build-loop/v2/ux003-native-20261108/reviews/independent-visual-and-original-review.json",
+              "sha256": "1bbe7a19fcff74f9b92f1adde7bf46fdf9bd1e032014cf828b2d0e121985838a"
+            }
+          },
+          "verificationScope": "Elm replay assertion and isolated native recording: only eligible entries appear and launches preserve recorded arguments.",
+          "sourceTuple": {
+            "sourceRevision": "1ad6bb1ebbb910256b8266dd0cc0b10a14f0d0f5",
+            "core": {
+              "path": "plugins/warlock-contributor/scripts/warlock.py",
+              "sha256": "1a0efa3946a1164f2bd7fd4cda99a647d0c7e18d444c1cc234c740c376775376"
+            },
+            "plugin": {
+              "version": "0.17.11",
+              "manifests": [
+                {
+                  "path": "plugins/warlock-contributor/.claude-plugin/plugin.json",
+                  "sha256": "aa84fc10acfb9b856c50ee0a037573d42348ed5a68e043b21132d55dc8096ba2"
+                },
+                {
+                  "path": "plugins/warlock-contributor/.codex-plugin/plugin.json",
+                  "sha256": "169e2b49ed566824f747003631c09fdf1bb881f00286afa53e1af45dd39fd675"
+                }
+              ]
+            },
+            "toolchain": {
+              "actualNativeBuild": {
+                "path": "docs/warlock-build-loop/v2/ux003-native-20261108/qualification/actual-owner-observer-build.json",
+                "sha256": "1f7cb98a26593777eadd19f510215fcd2fbe21058afee74ff580ed90d13adf9b"
+              },
+              "actualElmDocumentBuild": {
+                "path": "docs/warlock-build-loop/v2/ux003-native-20261108/qualification/actual-elm-document-recorder-build.json",
+                "sha256": "94d1030aceab93e80fe1df0b00f3b5ce64686b9b74fdfaf65d2c1667e515067d"
+              },
+              "replayCompilerAndSdk": {
+                "path": "docs/warlock-build-loop/v2/ux003-native-20261108/replay/compiler-and-replay-report.json",
+                "sha256": "12517ee9f549f2ae64d677a11fd5ca0e81db91c12ed5cf2a5ccdf6710dcdd80b"
+              },
+              "sourceMap": {
+                "path": "docs/warlock-build-loop/v2/ux003-native-20261108/current-selected-source-hashes.json",
+                "sha256": "b8bc3e34a7a8a41350a387ff5b79af77f53ed0493b01d90f876545360b670e7a"
+              }
+            }
+          },
+          "uncreditedCoverage": [
+            "Native typing/search not demonstrated; full planned journey not automatically passed."
+          ]
         }
       ]
     },
@@ -18164,5 +18257,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-06T03:25:45.033607+00:00"
+  "updatedUTC": "2026-11-08T14:12:47.355832+00:00"
 }
