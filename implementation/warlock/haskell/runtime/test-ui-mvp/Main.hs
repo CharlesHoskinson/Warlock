@@ -3,6 +3,7 @@
 -- trusted framed child; no browser, renderer stub or synthetic actor callback.
 module Main (main) where
 
+import Control.Exception (ErrorCall(..), toException)
 import Control.Monad (forM_, unless)
 import qualified Crypto.Hash.SHA256 as SHA
 import qualified Data.ByteString as B
@@ -65,6 +66,11 @@ pin path = do
 
 main :: IO ()
 main = do
+ let failureText message = backendBootstrapFailureText (toException (ErrorCall message))
+ check "bootstrap diagnostic retains the actual exception text" (failureText "display environment refused"=="display environment refused")
+ check "bootstrap diagnostic caps a long exception before Text allocation" (failureText (replicate 4096 'x' ++ "PRIVATE_TAIL")==T.replicate 4096 "x")
+ check "bootstrap diagnostic preserves Unicode at the character boundary" (failureText (replicate 4095 'x' ++ "éPRIVATE_TAIL")==T.replicate 4095 "x" <> "é")
+ check "bootstrap diagnostic permits an empty actual exception without invented detail" (T.null (failureText ""))
  args <- getArgs
  (child, supplied, root) <- case args of
   [path,dev,ino,size,digest,directory] | isAbsolute path && isAbsolute directory -> pure (path,[dev,ino,size,digest],directory)
@@ -111,7 +117,7 @@ main = do
      enabled = [("applicationAttachment",J.JBool True)]
      empty = commit []
      catalogRequest = commit [request owner]
-     attachment = obj [("protocolVersion",J.JNumber "3"),("kind",txt "application-attached"),("binding",owner),("nativeOperations",J.JArray [])]
+     attachment = obj [("protocolVersion",J.JNumber "3"),("kind",txt "application-attached"),("binding",owner),("nativeOperations",J.JArray []),("applicationOperations",J.JArray [])]
      envelope payload = obj [("bridgeProtocol",J.JNumber "1"),("kind",txt "native-event"),("payload",payload)]
  (good, replies) <- run "positive" enabled [(empty,1,False),(empty,0,False),(catalogRequest,1,False)]
  check "real authenticated empty commit emits only one attachment across repeated commits" (backendPassed good && backendCleanup good && backendCallbackCount good==3 && backendOperationCount good==1 && length replies==2 && canonical (head replies)==canonical (envelope attachment))

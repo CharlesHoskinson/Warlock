@@ -68,9 +68,12 @@ main = do
                   ,("lifetime",JString (renderCounter (D.launchLifetime intent)))
                   ,("generation",JString (renderCounter (D.launchGeneration intent)))
                   ,("entry",JString (D.launchEntry intent)),("catalog",maybe JNull desktopJson snapshot)]
+              bootstrapFailure = case backendBootstrap result of
+                Left problem -> JString (T.take 4096 problem)
+                Right _ -> JNull
               receipt = JObject
                 [("schema",JNumber "1"),("kind",JString "ux003-backend-observation")
-                ,("backend",jsonValue (backendResultJson result)),("owner",owner)
+                ,("backend",jsonValue (backendResultJson result)),("bootstrapFailure",bootstrapFailure),("owner",owner)
                 ,("application",app),("publishedCatalog",published),("publishedLaunch",launch)
                 ,("nativeAcceptance",JBool False),("originalAcceptance",JBool False)]
           C.putStrLn (TE.encodeUtf8 (renderJson receipt))

@@ -1,0 +1,197 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "scope": "original-ELM-UX-003-ux-003-semantic-and-owned-retirement-evidence",
+  "disposition": "semantic-parts-demonstrated-pending-independent-pixels",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/report.json",
+    "sha256": "a7b3dd7504753cd336a87aac36e711d1671758c878263782fefdaa5760f27f2f"
+  },
+  "packet": {
+    "path": "/home/hoskinson/.local/state/warlock-team/20261105/nextloop-20261106/resume-20261107T2337/prelaunch-held-pointer-correction/revision4-held-extent-fixture/next-native/packet.ARMED-PROPOSED.json",
+    "sha256": "f70eba0fbf00ee34b97ebb980068e58747418329c3b835725606b26c362ba15a"
+  },
+  "criteria": {
+    "path": "/home/hoskinson/.local/state/warlock-team/20261105/nextloop-20261106/resume-20261107T2337/original-ux003-adjudication/criteria-and-evidence-plan.json",
+    "sha256": "4d4f9047ff6bb339dd85f5d55463480eadd56936421fb660489175a542e4d979"
+  },
+  "sourceAndConfig": {
+    "backendConfig": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/run/backend.json",
+      "sha256": "42101cf65fb5f252507071b985c20cee9ad1155a3f3805f5c4cd493360d26134"
+    },
+    "visibleDesktop": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/run/ux003-catalog/ux003-recorder.desktop",
+      "sha256": "999a90aec9d80ee70e2caa8175ae37dcd4a9b537feaadcb579ec2581f1c2141b"
+    },
+    "hiddenDesktop": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/run/ux003-catalog/ux003-hidden.desktop",
+      "sha256": "a5b65df9e0de27ad9a72b13aafb8e5b62c21d757a95c88bd6ed077e702b82029"
+    },
+    "recorderSource": {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/fixture-application-argv/Main.hs",
+      "sha256": "d44def2256ddc027e90c0f4d6d2f11796b5672d431942b2afbd453b62b90c5bf"
+    },
+    "recorderImage": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794037285027049547/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/application-argv-fixture/build/application-argv-fixture/application-argv-fixture",
+      "sha256": "dd13427e3e3b508aed092bd3972bac9c75e640c4256d37c5fdae88d5b59d0831"
+    },
+    "observerSource": {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/fixture-ux003-native-observer/Main.hs",
+      "sha256": "e563f85093bcd7261dc99aea247f1bb085ccc64a997715619b627af8ceeb7f6b"
+    },
+    "rawBackendOutput": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/backend.stdout",
+      "sha256": "a05d3d0c7c0599b666dd9465e3a5348dddf92bbee281b3d90e63efbb990cbdb4"
+    }
+  },
+  "oracleEvidence": {
+    "eligibleEntries": {
+      "publishedOnly": [
+        "ux003-recorder / Owned Recorder"
+      ],
+      "hiddenSource": "Hidden Recorder / NoDisplay=true",
+      "catalogGeneration": "1",
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "visualAdjudication": "pending Astra; no pixel acceptance inferred from catalog alone"
+    },
+    "preservedArguments": {
+      "logicalArgv": [
+        "two words",
+        "",
+        "café"
+      ],
+      "stdoutHex": "5b2274776f20776f726473222c22222c226361665c323333225d0a",
+      "stderrHex": "",
+      "request": "1",
+      "entry": "ux003-recorder",
+      "exit": 0,
+      "custody": "Available",
+      "catalogLaunchBound": true,
+      "source": "Real compiled getArgs >>= print; observer only serializes real runBackend selected outcome. Haskell decimal escape233 represents café, not extra argument."
+    }
+  },
+  "retirementEvidence": {
+    "typedEngine": {
+      "pid": "2485227",
+      "startTicks": "12753518",
+      "namespace": "pid:[4026533860]",
+      "parentNamespace": "pid:[4026531836]",
+      "originalDeadline": "124738173948763",
+      "startupImage": {
+        "device": "58",
+        "inode": "2368210",
+        "size": "37292344",
+        "sha256": "4b8649df44d27cc80029553dbef849e250998a1655fb6d345ce6d061e5a7c46d"
+      },
+      "lastLiveImage": {
+        "image": {
+          "device": "58",
+          "inode": "2368210",
+          "size": "37292344",
+          "sha256": "4b8649df44d27cc80029553dbef849e250998a1655fb6d345ce6d061e5a7c46d"
+        },
+        "digestSampleMonotonicNs": "124714970575190",
+        "checkedMonotonicNs": "124737182799915"
+      },
+      "disposition": "EngineExitedNormally",
+      "normalExit": true,
+      "reaped": true,
+      "ownedReceiptMatches": true,
+      "waitStatus": [
+        "1",
+        "0"
+      ]
+    },
+    "brokerTerminal": "GuiObservationWrittenLocally",
+    "brokerClose": "CloseConfirmed",
+    "backing": {
+      "path": "/tmp/warlock-ui-backing-b96c50f5d37b19d377d4782c7659c462613ae7844e2ded702fffe4e407589b10",
+      "device": "59",
+      "inode": "947319",
+      "owner": "1000",
+      "retired": true
+    },
+    "pointer": {
+      "pid": 2485218,
+      "startTicks": "12753483",
+      "exit": 0,
+      "normal": true,
+      "groupAbsent": true,
+      "stdoutTailHex": "",
+      "monotonicNs": 124737602387688
+    },
+    "stack": {
+      "normal": true,
+      "processes": [
+        {
+          "role": "nested",
+          "pid": 2485058,
+          "startTicks": "12753326",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-after",
+          "pid": 2484870,
+          "startTicks": "12753197",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-apply",
+          "pid": 2484857,
+          "startTicks": "12753166",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-before",
+          "pid": 2484850,
+          "startTicks": "12753135",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "host",
+          "pid": 2484777,
+          "startTicks": "12753088",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        }
+      ],
+      "originalDeadlineNs": 124738173948763,
+      "cleanupCeilingNs": 124740173948763
+    },
+    "globalRestoration": true,
+    "forcedCleanup": false,
+    "cleanupUnknown": false,
+    "originalDurationNs": 28000000000,
+    "pointerRetiredBeforeD": true
+  },
+  "limits": [
+    "Raw fullJourneyAccepted/nativeAcceptance/originalAcceptance remain false and untouched. External scenario adjudication requires matching independent pixel review.",
+    "Retained-child namespace diagnostic unknown is not engine cleanup proof; actual typed engine receipt supplies that evidence.",
+    "No broader AT/IME/keyboard/generalrelease or otherEARS requirements added or accepted. No tests/native/model execution by reviewer."
+  ],
+  "effectsPerformed": false
+}

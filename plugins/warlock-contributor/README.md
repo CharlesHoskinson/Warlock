@@ -125,6 +125,9 @@ it reports which client executables are on PATH without launching or installing
 them. It does not establish client trust, enabled hooks or product-toolchain
 readiness. Missing client executables do not prevent direct checker use.
 
+
+Standing delegated renewals use a separate evidence type from explicit human renewals. Each renewal binds the retained human delegation, reviewed operating policy and actual same-session Opus decision. The decision must select the exact declared expiry. The checker preserves the goal, identity scopes, participant start and original attempt clocks. Root retains credential operations and protected execution. A model decision does not count as a new human request or native acceptance.
+
 `self-test` explicitly runs the plugin's regression suite using temporary Git
 fixtures. It returns a nonzero exit on failure, missing tests, zero discovered
 tests or a five-minute timeout, and includes captured test output in its JSON
@@ -731,3 +734,36 @@ This procedure improves evidence retention. The existing core already refuses
 missing or invalid execution evidence. Receipt retention grants no execution,
 source, native or original-scenario acceptance. Current goal, ownership, protected
 launcher, deadline and independent review requirements still apply.
+
+### Activate reviewers and check the complete execution path
+
+Use `followup_task` to assign work to a completed reviewer. `send_message` does
+not start a turn. Confirm the actual turn status before reporting active review.
+Queued work and waiting time are not progress evidence.
+
+Use one resumable Root entry point for approved materialization and canonical
+event admission. Between its stage and admit phases, run the actual shared
+read-only preflight command it emits. The utility verifies the report and does
+not run that command. Emit one exact existing protected execution command for
+Root to run separately. The bundle utility does not execute it.
+Preserve each completed step and its exact byte hashes.
+Resume from the first incomplete step. Reject conflicting destination bytes.
+Keep claims, current authorization and canonical UTF-8 candidate hashing in that path.
+
+Run the complete read-only preflight on final materialized bytes before effect
+admission or a current execution-readiness receipt. Share the normal runner's
+pre-effect validators. Check helper membership, compiled/current correspondence,
+system inventory, aliases, loader selection and every remaining prerequisite.
+Collect all current blockers in one structured report. Do not start the operation
+clock, launch product or QA effect children, or stage GUI input during a blocked
+preflight. Read-only goal checks may start their fixed client.
+
+Fix the reported blockers as one bounded change. Review only the changed bindings
+and their effects on the existing predicates. Preserve all failed attempts.
+Do not use repeated native attempts to discover checks available before execution.
+
+Retain raw terminal output and logs as soon as they are available. Consume the
+actual outer handle before admitting the canonical terminal event. Report the
+observed product behavior separately from preparation, source checks and readiness.
+A successful preflight grants no execution or original-scenario acceptance.
+Existing ownership, review, launcher, deadline and acceptance rules remain in force.

@@ -1,0 +1,419 @@
+{
+  "schema": 1,
+  "reviewer": "workflow_astra",
+  "scope": "original-ELM-UX-003-ux-003-independent-actual-evidence",
+  "disposition": "accepted",
+  "requirementId": "ELM-UX-003",
+  "scenario": "ux-003",
+  "scenarioCount": 1,
+  "oracle": "only eligible entries appear and launches preserve recorded arguments",
+  "verdict": {
+    "requirementAccepted": true,
+    "scenarioAccepted": true,
+    "originalRequirementDelta": 1,
+    "originalScenarioDelta": 1,
+    "oracleParts": [
+      {
+        "part": "only eligible entries appear",
+        "verdict": "demonstrated",
+        "basis": "Same-run staged visible Owned Recorder and Hidden Recorder with NoDisplay=true; production catalog generation1 contains only ux003-recorder. Independently viewed unfiltered Applications panel displays only Owned Recorder and no Hidden Recorder. Source exclusion, actual catalog and actual visible list agree."
+      },
+      {
+        "part": "launches preserve recorded arguments",
+        "verdict": "demonstrated",
+        "basis": "Actual trusted native opener and entry mouseup observations, retained same-process sole ACK1/ACK2, owner admitted actions, catalog-bound launch request1/entry ux003-recorder/generation1, after-launch status, and real compiled getArgs recorder exit0 with exact three logical arguments."
+      }
+    ]
+  },
+  "evidence": {
+    "report": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/report.json",
+      "sha256": "a7b3dd7504753cd336a87aac36e711d1671758c878263782fefdaa5760f27f2f"
+    },
+    "criteria": {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/nextloop-20261106/resume-20261107T2337/original-ux003-adjudication/criteria-and-evidence-plan.json",
+      "sha256": "4d4f9047ff6bb339dd85f5d55463480eadd56936421fb660489175a542e4d979"
+    },
+    "originalLedger": {
+      "path": "/home/hoskinson/Projects/Warlock/docs/warlock-build-loop/v2/requirement-ledger.json",
+      "sha256": "611dff380ada48bf6b12bd5c230562240ddf175a942416d7a8fe1a14ad004086"
+    },
+    "semanticPeerReview": {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/nextloop-20261106/resume-20261107T2337/original-ux003-adjudication/actual-held-pointer-semantic-review-build.json",
+      "sha256": "f3c9046cc048c411da0dcbc4fdcae093fdf6eb2ef934866d37feada76f9b133e"
+    },
+    "candidateCurrentReview": {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/nextloop-20261106/resume-20261107T2337/prelaunch-held-pointer-correction/revision4-held-extent-fixture/next-native/independent-current-candidate-review-astra.json",
+      "sha256": "77415c428982cb34452b8e21b32ec12bff23ea4c3c9c187382b9ec0a980dc358"
+    },
+    "packet": {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/nextloop-20261106/resume-20261107T2337/prelaunch-held-pointer-correction/revision4-held-extent-fixture/next-native/packet.ARMED-PROPOSED.json",
+      "sha256": "f70eba0fbf00ee34b97ebb980068e58747418329c3b835725606b26c362ba15a"
+    },
+    "sourceAndConfig": {
+      "backendConfig": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/run/backend.json",
+        "sha256": "42101cf65fb5f252507071b985c20cee9ad1155a3f3805f5c4cd493360d26134"
+      },
+      "visibleDesktop": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/run/ux003-catalog/ux003-recorder.desktop",
+        "sha256": "999a90aec9d80ee70e2caa8175ae37dcd4a9b537feaadcb579ec2581f1c2141b"
+      },
+      "hiddenDesktop": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/run/ux003-catalog/ux003-hidden.desktop",
+        "sha256": "a5b65df9e0de27ad9a72b13aafb8e5b62c21d757a95c88bd6ed077e702b82029"
+      },
+      "recorderSource": {
+        "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/fixture-application-argv/Main.hs",
+        "sha256": "d44def2256ddc027e90c0f4d6d2f11796b5672d431942b2afbd453b62b90c5bf"
+      },
+      "recorderImage": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794037285027049547/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/application-argv-fixture/build/application-argv-fixture/application-argv-fixture",
+        "sha256": "dd13427e3e3b508aed092bd3972bac9c75e640c4256d37c5fdae88d5b59d0831"
+      },
+      "observerSource": {
+        "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/fixture-ux003-native-observer/Main.hs",
+        "sha256": "e563f85093bcd7261dc99aea247f1bb085ccc64a997715619b627af8ceeb7f6b"
+      },
+      "rawBackendOutput": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/backend.stdout",
+        "sha256": "a05d3d0c7c0599b666dd9465e3a5348dddf92bbee281b3d90e63efbb990cbdb4"
+      }
+    }
+  },
+  "visualReview": {
+    "allRetainedPngsViewed": true,
+    "uniquePngCount": 8,
+    "countClarification": "Eight unique PNGs exist: six named journey screenshots plus two additional opener-readiness frames. Both readiness frames were inspected, including the failed first frame.",
+    "screenshots": [
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/mapped.png",
+        "sha256": "cceeafad51b7e37df087a5d9f4542904a16308f4c6a353125d1ece90819cd161",
+        "viewedIndependently": true,
+        "observation": "Initial window is white and blank; no catalog or readiness inferred."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/opener-readiness-01.png",
+        "sha256": "a62ac92da2a22809d230616c2aa916aa5e15799a7dfdd332c3391f2cf2afa8b9",
+        "viewedIndependently": true,
+        "observation": "White initial page with Waiting for desktop state text; not ready."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/opener-readiness-02.png",
+        "sha256": "27a577f3ea6bc85c82da5420c1a4728578c6ece02c787a8096076ff385030c8e",
+        "viewedIndependently": true,
+        "observation": "Night-themed Applications button painted and enabled-looking; popup still Choose a window / Applications connected. Window controls unavailable. Pre-input readiness only."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/catalog-before-search.png",
+        "sha256": "794b9989e6458052e6d6a699aa3ec02bff2c262a8cd33b79c9c659c6990bcd2f",
+        "viewedIndependently": true,
+        "observation": "Applications panel contains empty Search applications placeholder and only Owned Recorder actions, pin and Open Owned Recorder entry. No Hidden Recorder entry."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/hidden-search.png",
+        "sha256": "c2d0c9a4550c75f8d0cad084acab3f1128dc22fe7b55fad6fd20489fe558c5fc",
+        "viewedIndependently": true,
+        "observation": "Applications panel still shows empty Search applications placeholder and only Owned Recorder. Filename does not establish a typed hidden query or a search result."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/search-cleared.png",
+        "sha256": "34a661d1d6197a79c19595cbe7732dd36c75d1d68b88e3c8116543590f53ed81",
+        "viewedIndependently": true,
+        "observation": "Applications panel still has empty search placeholder and only Owned Recorder; Applications opener has focus outline. No claim that a previously entered query was cleared."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/visible-search.png",
+        "sha256": "82dfedd7f6351aa304c068ef49b0c6645ca3518494ac34037e1683f13aa76181",
+        "viewedIndependently": true,
+        "observation": "Applications panel still has empty search placeholder and only Owned Recorder, including Open Owned Recorder at the later click location. No successful typed visible query demonstrated."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/after-launch.png",
+        "sha256": "366b5be8d018e16d5c8beeacd4d66fd5c792e3e0b78891d1c16ffdf3612baa1e",
+        "viewedIndependently": true,
+        "observation": "Popup returns to Choose a window with Launch submitted status. This is visual submission evidence; actual child output separately proves launch/argv."
+      }
+    ]
+  },
+  "inputEvidence": {
+    "pointerBootstrap": {
+      "pid": 2485218,
+      "startTicks": "12753483",
+      "exit": null,
+      "alive": true,
+      "inputHex": "73796e6320300a",
+      "ackHex": "726561647920300a",
+      "monotonicNs": 124714478459842,
+      "originalDeadlineNs": 124738173948763,
+      "meaning": "same live helper roundtrip only; not GTK or Elm delivery evidence"
+    },
+    "actualInputs": [
+      {
+        "pid": 2485218,
+        "startTicks": "12753483",
+        "exit": null,
+        "alive": true,
+        "inputHex": "6d6f7665203139382034380a627574746f6e2032373220310a627574746f6e2032373220300a73796e6320310a",
+        "ackHex": "726561647920310a",
+        "monotonicNs": 124717659437349,
+        "originalDeadlineNs": 124738173948763,
+        "meaning": "same live helper roundtrip only; not GTK or Elm delivery evidence",
+        "step": "open",
+        "targetPid": 2485227,
+        "targetStartTicks": "12753518"
+      },
+      {
+        "pid": 2485218,
+        "startTicks": "12753483",
+        "exit": null,
+        "alive": true,
+        "inputHex": "6d6f766520333030203438300a627574746f6e2032373220310a627574746f6e2032373220300a73796e6320320a",
+        "ackHex": "726561647920320a",
+        "monotonicNs": 124721504905683,
+        "originalDeadlineNs": 124738173948763,
+        "meaning": "same live helper roundtrip only; not GTK or Elm delivery evidence",
+        "step": "visible",
+        "targetPid": 2485227,
+        "targetStartTicks": "12753518"
+      },
+      {
+        "step": "close",
+        "input": [
+          "-M",
+          "alt",
+          "-k",
+          "F4",
+          "-m",
+          "alt"
+        ],
+        "targetPid": 2485227,
+        "monotonicNs": 124722741362333
+      }
+    ],
+    "pointerRetirement": {
+      "pid": 2485218,
+      "startTicks": "12753483",
+      "exit": 0,
+      "normal": true,
+      "groupAbsent": true,
+      "stdoutTailHex": "",
+      "monotonicNs": 124737602387688
+    },
+    "interpretation": "Helper ACKs attest its own roundtrips, not alone GTK delivery. Separate same-run trusted DOM mouseup records target bar:applications and entry:ux003-recorder; subsequent owner/catalog launch and recorder result demonstrate the required application action. One held pointer PID2485218/start12753483 spans sole sequences1/2 and closes normally after GUI close."
+  },
+  "catalogEvidence": {
+    "visibleDesktop": "[Desktop Entry]\nType=Application\nName=Owned Recorder\nExec=fixture-recorder\nTerminal=false\n",
+    "hiddenDesktop": "[Desktop Entry]\nType=Application\nName=Hidden Recorder\nExec=fixture-recorder\nNoDisplay=true\nTerminal=false\n",
+    "publishedCatalog": {
+      "protocolVersion": 3,
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "kind": "application-catalog",
+      "requestId": "3",
+      "snapshot": {
+        "catalogProtocol": 2,
+        "lifetime": "9007199254740993",
+        "generation": "1",
+        "entries": [
+          {
+            "id": "ux003-recorder",
+            "name": "Owned Recorder",
+            "iconHint": "application-x-executable",
+            "wmclass": "",
+            "genericName": "",
+            "keywords": []
+          }
+        ]
+      },
+      "preferences": {
+        "revision": "1",
+        "identities": []
+      }
+    },
+    "publishedLaunch": {
+      "request": "1",
+      "lifetime": "9007199254740993",
+      "generation": "1",
+      "entry": "ux003-recorder",
+      "catalog": {
+        "protocolVersion": 3,
+        "binding": {
+          "lifetime": "9007199254740993",
+          "session": "9007199254740995",
+          "frontend": "9007199254740997"
+        },
+        "kind": "application-catalog",
+        "requestId": "3",
+        "snapshot": {
+          "catalogProtocol": 2,
+          "lifetime": "9007199254740993",
+          "generation": "1",
+          "entries": [
+            {
+              "id": "ux003-recorder",
+              "name": "Owned Recorder",
+              "iconHint": "application-x-executable",
+              "wmclass": "",
+              "genericName": "",
+              "keywords": []
+            }
+          ]
+        },
+        "preferences": {
+          "revision": "1",
+          "identities": []
+        }
+      }
+    }
+  },
+  "argvEvidence": {
+    "configuredLogicalArgv": [
+      "two words",
+      "",
+      "café"
+    ],
+    "observedApplication": {
+      "request": "1",
+      "exit": 0,
+      "custody": "Available",
+      "containment": "BeforeSignalLeaderExited",
+      "stdoutHex": "5b2274776f20776f726473222c22222c226361665c323333225d0a",
+      "stderrHex": "",
+      "operationSucceeded": true
+    },
+    "decodedAsciiHaskellShow": "[\"two words\",\"\",\"caf\\233\"]\n",
+    "interpretation": "The real recorder is getArgs >>= print. Decimal Haskell string escape233 denotes the character é; output encodes exactly [two words, empty string, café]. Space and empty argument boundaries are retained. This proves the controlled fixture arguments, not arbitrary desktop Exec behavior."
+  },
+  "ownershipAndCleanup": {
+    "typedEngine": {
+      "pid": "2485227",
+      "startTicks": "12753518",
+      "namespace": "pid:[4026533860]",
+      "parentNamespace": "pid:[4026531836]",
+      "originalDeadline": "124738173948763",
+      "startupImage": {
+        "device": "58",
+        "inode": "2368210",
+        "size": "37292344",
+        "sha256": "4b8649df44d27cc80029553dbef849e250998a1655fb6d345ce6d061e5a7c46d"
+      },
+      "lastLiveImage": {
+        "image": {
+          "device": "58",
+          "inode": "2368210",
+          "size": "37292344",
+          "sha256": "4b8649df44d27cc80029553dbef849e250998a1655fb6d345ce6d061e5a7c46d"
+        },
+        "digestSampleMonotonicNs": "124714970575190",
+        "checkedMonotonicNs": "124737182799915"
+      },
+      "disposition": "EngineExitedNormally",
+      "normalExit": true,
+      "reaped": true,
+      "ownedReceiptMatches": true,
+      "waitStatus": [
+        "1",
+        "0"
+      ]
+    },
+    "brokerTerminal": "GuiObservationWrittenLocally",
+    "brokerClose": "CloseConfirmed",
+    "backing": {
+      "path": "/tmp/warlock-ui-backing-b96c50f5d37b19d377d4782c7659c462613ae7844e2ded702fffe4e407589b10",
+      "device": "59",
+      "inode": "947319",
+      "owner": "1000",
+      "retired": true
+    },
+    "pointer": {
+      "pid": 2485218,
+      "startTicks": "12753483",
+      "exit": 0,
+      "normal": true,
+      "groupAbsent": true,
+      "stdoutTailHex": "",
+      "monotonicNs": 124737602387688
+    },
+    "stack": {
+      "normal": true,
+      "processes": [
+        {
+          "role": "nested",
+          "pid": 2485058,
+          "startTicks": "12753326",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-after",
+          "pid": 2484870,
+          "startTicks": "12753197",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-apply",
+          "pid": 2484857,
+          "startTicks": "12753166",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-before",
+          "pid": 2484850,
+          "startTicks": "12753135",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "host",
+          "pid": 2484777,
+          "startTicks": "12753088",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        }
+      ],
+      "originalDeadlineNs": 124738173948763,
+      "cleanupCeilingNs": 124740173948763
+    },
+    "globalRestoration": true,
+    "forcedCleanup": false,
+    "cleanupUnknown": false,
+    "originalDurationNs": 28000000000,
+    "pointerRetiredBeforeD": true
+  },
+  "limits": [
+    "One original scenario has two oracle parts; this is not two scenarios. Maximum original delta is +1 requirement and +1 scenario.",
+    "Keyboard search did not visibly take effect. hidden-search, search-cleared and visible-search filenames do not prove their intended text states. All catalog screenshots retain the empty Search applications placeholder. The prospective search coverage was not achieved and is not claimed.",
+    "This unmet prospective search exercise is additional coverage, not a missing element of the original ledger oracle: the unfiltered visible list, actual source NoDisplay fixture and production catalog directly establish eligible-only appearance without relying on hidden-query absence.",
+    "Raw passed=true was not used as an acceptance oracle. Raw nativeAcceptance/originalAcceptance/fullJourneyAccepted=false and all historical failed reports remain unchanged; this is the separate independent original-scenario adjudication.",
+    "Normal cleanup is supported by matching parent engine receipt, BrokerCloseConfirmed, backing retirement/absence, pointer actual normal0/group absence and owned compositor receipts; it is not inferred from an empty process census or child Boolean alone.",
+    "No broader release, AT, IME, general keyboard/search, arbitrary application, performance, or other EARS acceptance. No claim of immutable generated code, or proof that every past failure had the same input-lifecycle cause."
+  ],
+  "effectsPerformed": false,
+  "reviewActions": [
+    "Read retained JSON/source/fixture bytes",
+    "Hash retained evidence",
+    "Visually inspect all eight PNGs"
+  ],
+  "primaryOrLedgerWrites": false
+}

@@ -10,6 +10,8 @@ import Control.Concurrent (threadDelay)
 import Control.Monad (forM_, unless)
 import Data.IORef
 import qualified Data.Text as T
+import qualified Data.ByteString.Char8 as BS
+import Warlock.Ui.Owner (retainRequestTrace)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Protocol.Identity (renderCounter)
 import Warlock.Ui.Mvp (leaseScope, leaseRevision, leasePublication, leaseToken, leasePopupOpen)
@@ -17,6 +19,7 @@ import Foreign.C.String (CString, withCString)
 import Foreign.C.Types (CInt(..))
 import Foreign.Ptr (FunPtr, Ptr, castFunPtr, freeHaskellFunPtr, nullPtr)
 import System.Exit (ExitCode(..))
+import System.Environment (getArgs)
 import System.IO (hFlush, stdout)
 import System.IO.Error (ioeGetErrorString)
 import System.Posix.Process (ProcessStatus(..), exitImmediately, forkProcess, getProcessStatus)
@@ -24,7 +27,7 @@ import System.Posix.Signals (sigKILL, signalProcess)
 import Warlock.Capture.Process.Bootstrap (deadlineAfter, remainingMicros)
 import Warlock.Ui.EngineCustody (startCustody, stopCustody, abandonCustody)
 import Warlock.Ui.PrivateNetwork (enterPrivateNetwork)
-import Warlock.Ui.WebKit (providerVersionQualified, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
+import Warlock.Ui.WebKit (firstMouseupDiagnosticScript, finiteDpiFallbackSetting, rendererAllocationReady, rendererDiagnosticEnvelope, providerVersionQualified, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
 
 data Object
 type Notify = Ptr Object -> Ptr () -> Ptr () -> IO ()
@@ -286,8 +289,58 @@ namespaceCompatibility = do
    _ <- getProcessStatus True False pid
    ioError (userError "namespace compatibility child exceeded original deadline")
 
+allocationControls :: IO ()
+allocationControls = do
+ -- Fixed passive observation cannot generate or suppress the real input.
+ let script = firstMouseupDiagnosticScript
+ forM_ ["new Promise", "'mouseup'", "capture:true", "passive:true", "once:true", "isTrusted", "data-surface-control", "data-publication", "data-lease"] $ \literal ->
+  check "fixed first-mouseup observation contract" (BS.pack literal `BS.isInfixOf` script)
+ forM_ ["dispatchEvent", ".click(", "preventDefault", "setTimeout", "setInterval", "eval("] $ \literal ->
+  check "diagnostic does not synthesize input or add timers" (not (BS.pack literal `BS.isInfixOf` script))
+ let row route ordinal = J.JObject [("route",J.JString route),("ordinal",J.JNumber (T.pack (show ordinal))),("sha256",J.JString "redacted-digest-only")]
+     keep rows = foldl (flip retainRequestTrace) [] rows
+     eventRows = [row "Events" n | n <- [1..200 :: Int]]
+     action = row "Actions" (0 :: Int)
+     retained = keep (action:eventRows)
+ check "polling cannot evict the preceding admitted Actions row" (action `elem` retained)
+ check "trace stays64max with48poll rows" (length retained==49 && length (filter (/=action) retained)==48)
+ check "latest poll chronology preserved" (retained==reverse (drop 152 eventRows)++[action])
+ let mixed = [row (if even n then "Events" else "native-event") n | n <- [1..200 :: Int]]
+     expected = reverse ([r | (n,r) <- zip [1..200 :: Int] mixed, (even n && n>=106) || (odd n && n>=169)])
+ check "newest16nonevents and48events retain global order" (keep mixed==expected && length expected==64)
+ check "identical redacted rows do not defeat trace cap" (length (keep (replicate 200 action))==16)
+ -- Finite DPI policy uses actual metadata; it never forces valid user DPI.
+ check "default DPI on zero-mm virtual monitor uses CSS nominal96" (finiteDpiFallbackSetting (-1) 1280 720 0 0==Just (96*1024))
+ check "zero DPI on zero-mm virtual monitor gets finite fallback" (finiteDpiFallbackSetting 0 1280 720 0 0==Just (96*1024))
+ forM_ [1,96*1024,192*1024] $ \setting ->
+  check "positive configured DPI preserved even with zero-mm monitor" (finiteDpiFallbackSetting setting 1280 720 0 0==Nothing)
+ forM_ [(340,190),(0,190),(340,0)] $ \(mmw,mmh) ->
+  check "finite physical diagonal preserves automatic DPI" (finiteDpiFallbackSetting (-1) 1280 720 mmw mmh==Nothing)
+ forM_ [(0,720),(1280,0),(-1,720)] $ \(w,h) ->
+  check "unknown pixel geometry is not fabricated into monitor evidence" (finiteDpiFallbackSetting (-1) w h 0 0==Nothing)
+ forM_ [(False,980,72),(True,0,72),(True,980,0),(True,-1,72)] $ \(mapped,w,h) ->
+  check "renderer zero/unmapped child cannot issue a query" (not (rendererAllocationReady mapped w h))
+ check "renderer positive mapped child permits query" (rendererAllocationReady True 980 72)
+ captured <- either (ioError . userError . show) pure (rendererDiagnosticEnvelope 980 72 "123" "{\"status\":\"observed\",\"viewport\":[980,72]}")
+ check "literal allocation timestamp and DOM preserved" (captured=="{\"gtkAllocation\":{\"mapped\":true,\"width\":980,\"height\":72,\"observedMonotonicNs\":\"123\"},\"dom\":{\"status\":\"observed\",\"viewport\":[980,72]}}")
+ check "zero allocation envelope refused" (case rendererDiagnosticEnvelope 0 72 "123" "{}" of Left _ -> True; _ -> False)
+ check "nonpositive monotonic observation refused" (case rendererDiagnosticEnvelope 980 72 "0" "{}" of Left _ -> True; _ -> False)
+ check "malformed DOM JSON refused" (case rendererDiagnosticEnvelope 980 72 "123" "{" of Left _ -> True; _ -> False)
+ check "nonobject DOM JSON refused" (case rendererDiagnosticEnvelope 980 72 "123" "[]" of Left _ -> True; _ -> False)
+ large <- either (ioError . userError . show) pure (rendererDiagnosticEnvelope 980 72 "123" ("{\"text\":\"" <> T.replicate 8180 "a" <> "\"}"))
+ check "overbound DOM omitted with allocation receipt retained" (T.isInfixOf "result-over-envelope-byte-bound" large && T.isInfixOf "observedMonotonicNs" large && not (T.isInfixOf (T.replicate 100 "a") large))
+ putStrLn "allocation-controls: PASS"
+
 main :: IO ()
 main = do
+ args <- getArgs
+ case args of
+  ["--allocation-only"] -> allocationControls
+  [] -> ordinaryControls
+  _ -> ioError (userError "expected no arguments or fixed --allocation-only")
+
+ordinaryControls :: IO ()
+ordinaryControls = do
  check "provider exact2.52.6 remains qualified" (providerVersionQualified (2,52,6))
  check "provider exact2.54.1 remains qualified" (providerVersionQualified (2,54,1))
  check "provider selected2.54.2 qualifies only exact tuple" (providerVersionQualified (2,54,2))

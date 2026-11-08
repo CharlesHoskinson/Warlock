@@ -1,28 +1,33 @@
+{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ForeignFunctionInterface #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 -- WebKitGTK 6 boundary; no page loads before its role filter is installed.
 module Warlock.Ui.WebKit
-  (providerVersionQualified, runWebKitObservedWithBacking, runWebKitObserved, runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
+  (firstMouseupDiagnosticScript, finiteDpiFallbackSetting, rendererAllocationReady, rendererDiagnosticEnvelope, providerVersionQualified, runWebKitObservedWithBacking, runWebKitObserved, runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
 
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, catch, mask_, mask, onException, try, finally, bracket, toException)
 import Control.Concurrent (threadDelay)
 import Control.Monad (unless, when, forM_)
 import Data.Bits ((.&.))
 import Data.IORef
+import GHC.Clock (getMonotonicTimeNSec)
 import System.Environment (getEnvironment)
 import System.IO.Error (isDoesNotExistError)
 import System.Posix.Files (getSymbolicLinkStatus, isDirectory, fileMode, fileOwner, deviceID, fileID)
 import qualified System.Posix.Directory as PosixDirectory
 import System.Posix.User (getEffectiveUserID)
 import qualified Data.ByteString as B
+import qualified Data.ByteString.Char8 as C
 import Data.Text (Text)
 import qualified Data.Text as T
+import qualified Data.Text.Encoding as TE
 import Foreign.C.String (CString, withCString, peekCString, newCString)
-import Foreign.C.Types (CInt(..), CUInt(..), CULong(..), CSize(..))
+import Foreign.C.Types (CInt(..), CUInt(..), CULong(..), CSize(..), CPtrdiff(..))
 import Foreign.Marshal.Alloc (allocaBytesAligned, alloca, free)
-import Foreign.Marshal.Array (withArray)
+import Foreign.Marshal.Array (withArray, allocaArray)
 import Foreign.Marshal.Utils (fillBytes)
-import Foreign.Storable (peek, poke, peekByteOff)
+import Foreign.Storable (peek, poke, peekByteOff, peekElemOff)
+import Foreign.StablePtr (newStablePtr)
 import Foreign.Ptr (FunPtr, Ptr, nullPtr, freeHaskellFunPtr, plusPtr, castPtr)
 import qualified Warlock.Ui.EngineProtocol as Protocol
 import Warlock.Ui.Owner (UiEndpoints(..), TrustedOwnerEvent, EngineResult(..))
@@ -154,6 +159,21 @@ foreign import ccall unsafe "webkit_get_major_version" webkitMajor :: IO CUInt
 foreign import ccall unsafe "webkit_get_minor_version" webkitMinor :: IO CUInt
 foreign import ccall unsafe "webkit_get_micro_version" webkitMicro :: IO CUInt
 foreign import ccall safe "gtk_init_check" gtkInit :: IO CInt
+foreign import ccall unsafe "gdk_display_get_default" dpiDefaultDisplay :: IO (Ptr Object)
+foreign import ccall unsafe "gtk_settings_get_for_display" dpiDisplaySettings :: Ptr Object -> IO (Ptr Object)
+foreign import ccall unsafe "gdk_display_get_monitors" dpiDisplayMonitors :: Ptr Object -> IO (Ptr Object)
+foreign import ccall unsafe "g_list_model_get_n_items" dpiMonitorCount :: Ptr Object -> IO CUInt
+foreign import ccall unsafe "g_list_model_get_item" dpiMonitorItem :: Ptr Object -> CUInt -> IO (Ptr Object)
+foreign import ccall unsafe "gdk_monitor_is_valid" dpiMonitorValid :: Ptr Object -> IO CInt
+foreign import ccall unsafe "gdk_monitor_get_geometry" dpiMonitorGeometry :: Ptr Object -> Ptr CInt -> IO ()
+foreign import ccall unsafe "gdk_monitor_get_width_mm" dpiMonitorWidthMm :: Ptr Object -> IO CInt
+foreign import ccall unsafe "gdk_monitor_get_height_mm" dpiMonitorHeightMm :: Ptr Object -> IO CInt
+foreign import ccall unsafe "g_type_from_name" dpiTypeFromName :: CString -> IO GType
+foreign import ccall unsafe "g_object_get_property" dpiGetProperty :: Ptr Object -> CString -> Ptr () -> IO ()
+foreign import ccall safe "g_object_set_property" dpiSetProperty :: Ptr Object -> CString -> Ptr () -> IO ()
+foreign import ccall unsafe "g_value_get_int" dpiValueGetInt :: Ptr () -> IO CInt
+foreign import ccall unsafe "g_value_set_int" dpiValueSetInt :: Ptr () -> CInt -> IO ()
+foreign import ccall unsafe "gtk_widget_get_display" dpiWidgetDisplay :: Ptr Object -> IO (Ptr Object)
 foreign import ccall safe "webkit_network_session_new_ephemeral" sessionNew :: IO (Ptr Object)
 foreign import ccall unsafe "webkit_network_session_is_ephemeral" sessionEphemeral :: Ptr Object -> IO CInt
 foreign import ccall safe "webkit_network_session_set_proxy_settings" sessionProxy :: Ptr Object -> CInt -> Ptr Object -> IO ()
@@ -188,6 +208,16 @@ foreign import ccall unsafe "webkit_web_view_get_user_content_manager" viewManag
 foreign import ccall unsafe "webkit_web_view_get_context" viewContext :: Ptr Object -> IO (Ptr Object)
 foreign import ccall unsafe "webkit_web_view_get_uri" viewUri :: Ptr Object -> IO CString
 foreign import ccall safe "webkit_download_cancel" downloadCancel :: Ptr Object -> IO ()
+foreign import ccall safe "webkit_web_view_call_async_javascript_function"
+  callAsyncJavascript :: Ptr Object -> CString -> CPtrdiff -> Ptr Object -> CString -> CString -> Ptr Object -> FunPtr ReadyCallback -> Ptr () -> IO ()
+foreign import ccall safe "webkit_web_view_call_async_javascript_function_finish"
+  callAsyncJavascriptFinish :: Ptr Object -> Ptr Object -> Ptr (Ptr Object) -> IO (Ptr Object)
+foreign import ccall unsafe "jsc_value_is_string" javascriptIsString :: Ptr Object -> IO CInt
+foreign import ccall unsafe "jsc_value_to_string_as_bytes" javascriptStringBytes :: Ptr Object -> IO (Ptr Object)
+foreign import ccall unsafe "g_bytes_get_data" bytesData :: Ptr Object -> Ptr CSize -> IO (Ptr ())
+foreign import ccall unsafe "gtk_widget_get_mapped" rendererWidgetMapped :: Ptr Object -> IO CInt
+foreign import ccall unsafe "gtk_widget_get_width" rendererWidgetWidth :: Ptr Object -> IO CInt
+foreign import ccall unsafe "gtk_widget_get_height" rendererWidgetHeight :: Ptr Object -> IO CInt
 foreign import ccall unsafe "mkdtemp" mkdtemp :: CString -> IO CString
 
 must :: Ptr a -> String -> IO (Ptr a)
@@ -482,11 +512,187 @@ createBoundBacking remaining binding role = do
   recheck
   pure (path,recheck)
 
+-- One read-only query per visible role, issued only after the first validated
+-- projection. The existing GUI loop drives callbacks; no new wait or timer is
+-- introduced. Pending diagnostics do not delay terminal ACK or certify cleanup.
+-- Two fixed passive operations: one first-mouseup observation per visible
+-- role. No event synthesis, timer, UI wait or acceptance authority. A never
+-- resolved Promise remains pending/unknown and process-pinned through exit.
+firstMouseupDiagnosticScript :: B.ByteString
+firstMouseupDiagnosticScript = C.pack (concat
+ ["const cap=(v,n=96)=>String(v==null?'':v).slice(0,n);\n","const number=v=>Number.isFinite(v)&&Math.abs(v)<=65536?v:null;\n","const box=e=>{if(!e||!e.getBoundingClientRect)return null;const r=e.getBoundingClientRect();return [r.x,r.y,r.width,r.height].map(number);};\n","const element=e=>e?{tag:cap(e.tagName,32),id:cap(e.id,128),control:cap(e.getAttribute('data-surface-control'),128)}:null;\n","const installedPerformanceMs=number(performance.now());\n","return new Promise(resolve=>{\n","  const rows=[];\n","  const row=e=>{if(rows.length<8)rows.push({type:cap(e.type,24),isTrusted:e.isTrusted===true,button:number(e.button),buttons:number(e.buttons),client:[number(e.clientX),number(e.clientY)],timeStamp:number(e.timeStamp),target:element(e.target instanceof Element?e.target:e.target&&e.target.parentElement)});};\n","  const types=['pointerdown','mousedown','pointerup'];\n","  const finish=e=>{\n","    row(e);\n","    for(const type of types)document.removeEventListener(type,row,true);\n","    try {\n","      const target=e.target instanceof Element?e.target:e.target&&e.target.parentElement;\n","      const control=target&&target.closest?target.closest('[data-surface-control]'):null;\n","      const root=document.querySelector('.surface-bar,.surface-popup');\n","      const style=control?getComputedStyle(control):null;\n","      const data={status:'first-mouseup-observed',phase:'capture-before-target',isTrusted:e.isTrusted===true,installedPerformanceMs,eventPerformanceMs:number(performance.now()),eventRows:rows,eventLimit:8,viewport:[number(innerWidth),number(innerHeight)],bodyText:cap(document.body?document.body.innerText:'',512),target:element(target),control:control?Object.assign(element(control),{disabled:typeof control.disabled==='boolean'?control.disabled:null,ariaDisabled:cap(control.getAttribute('aria-disabled'),8),focusOnly:cap(control.getAttribute('data-focus-only'),8),bounds:box(control),pointerEvents:cap(style.pointerEvents,32),display:cap(style.display,32),visibility:cap(style.visibility,32),opacity:cap(style.opacity,16)}):null,surface:root?{publication:cap(root.getAttribute('data-publication'),20),lease:cap(root.getAttribute('data-lease'),20),mode:cap(root.getAttribute('data-mode'),16),theme:cap(root.getAttribute('data-theme'),16),textScale:cap(root.getAttribute('data-text-scale'),4)}:null,activeElement:element(document.activeElement),priorScriptExceptions:'not-observed',clickAfterMouseup:'not-observed'};\n","      const result=JSON.stringify(data);\n","      resolve(new TextEncoder().encode(result).length<=8192?result:JSON.stringify({status:'first-mouseup-result-over-byte-bound'}));\n","    } catch(error) { resolve(JSON.stringify({status:'first-mouseup-query-error',error:cap(error,256)})); }\n","  };\n","  for(const type of types)document.addEventListener(type,row,{capture:true,passive:true});\n","  document.addEventListener('mouseup',finish,{capture:true,passive:true,once:true});\n","});\n"])
+
+-- Pure readiness for a diagnostic only: never part of GUI completeness.
+rendererAllocationReady :: Bool -> Int -> Int -> Bool
+rendererAllocationReady mapped width height = mapped && width>0 && height>0
+-- GTK4/WebKit's automatic screen DPI divides by the physical diagonal.
+-- Preserve every positive application setting and every nonzero diagonal.
+finiteDpiFallbackSetting :: Int -> Int -> Int -> Int -> Int -> Maybe Int
+finiteDpiFallbackSetting setting width height widthMm heightMm
+ | setting<=0 && width>0 && height>0 && widthMm==0 && heightMm==0 = Just (96*1024)
+ | otherwise = Nothing
+
+-- Application-local initialization, before a WebContext or page can capture
+-- font DPI. No environment/global setting changes and no additional wait.
+initializeFiniteDisplayDpi :: PhysicalDefaultContextOwner -> UiEndpoints -> IO (Ptr Object,J.Json)
+initializeFiniteDisplayDpi contextOwner endpoints = do
+ let live = do
+       requirePhysicalDefaultContextOwner contextOwner
+       remaining <- uiRemainingMicros endpoints
+       unless (remaining>0) (ioError (userError "display DPI original deadline"))
+     affine action = do
+       live
+       result <- action
+       live
+       pure result
+ dpiDisplay <- affine (dpiDefaultDisplay >>= (`must` "DPI default display"))
+ dpiSettings <- affine (dpiDisplaySettings dpiDisplay >>= (`must` "DPI display settings"))
+ dpiIntType <- affine (withCString "gint" dpiTypeFromName)
+ unless (dpiIntType/=0) (ioError (userError "DPI integer GType absent"))
+ let withDpiValue action = allocaBytesAligned gValueSize gValueAlignment $ \slot -> do
+       fillBytes slot 0 gValueSize
+       _ <- affine (valueInit slot dpiIntType)
+       action slot `finally` affine (valueUnset slot)
+     readDpi = withDpiValue $ \slot -> do
+       affine (withCString "gtk-xft-dpi" $ \name -> dpiGetProperty dpiSettings name slot)
+       fromIntegral <$> affine (dpiValueGetInt slot)
+     writeDpi target = withDpiValue $ \slot -> do
+       affine (dpiValueSetInt slot (fromIntegral target))
+       affine (withCString "gtk-xft-dpi" $ \name -> dpiSetProperty dpiSettings name slot)
+ dpiBefore <- readDpi
+ dpiMonitors <- affine (dpiDisplayMonitors dpiDisplay >>= (`must` "DPI monitor model"))
+ dpiCount <- affine (dpiMonitorCount dpiMonitors)
+ -- GTK4's WebKit screen manager selects item zero as its primary screen.
+ dpiPrimary <- if dpiCount==0 then pure Nothing else do
+   dpiMonitor <- affine (dpiMonitorItem dpiMonitors 0 >>= (`must` "DPI primary monitor"))
+   (do
+     dpiValid <- affine (dpiMonitorValid dpiMonitor)
+     if dpiValid==0 then pure Nothing else allocaArray 4 $ \rectangle -> do
+       affine (dpiMonitorGeometry dpiMonitor rectangle)
+       dpiWidth <- fromIntegral <$> peekElemOff rectangle 2
+       dpiHeight <- fromIntegral <$> peekElemOff rectangle 3
+       dpiWidthMm <- fromIntegral <$> affine (dpiMonitorWidthMm dpiMonitor)
+       dpiHeightMm <- fromIntegral <$> affine (dpiMonitorHeightMm dpiMonitor)
+       live
+       pure (Just (dpiWidth,dpiHeight,dpiWidthMm,dpiHeightMm)))
+       `finally` affine (unref dpiMonitor)
+ let dpiFallback = case dpiPrimary of
+       Just (width,height,widthMm,heightMm) -> finiteDpiFallbackSetting dpiBefore width height widthMm heightMm
+       Nothing -> Nothing
+ case dpiFallback of Nothing -> pure (); Just target -> writeDpi target
+ dpiAfter <- readDpi
+ case dpiFallback of
+   Just target -> unless (dpiAfter==target) (ioError (userError "finite display DPI readback differs"))
+   Nothing -> pure ()
+ let number value = J.JNumber (T.pack (show value))
+     pixels = case dpiPrimary of Just (width,height,_,_) -> J.JArray [number width,number height]; Nothing -> J.JNull
+     physical = case dpiPrimary of Just (_,_,widthMm,heightMm) -> J.JArray [number widthMm,number heightMm]; Nothing -> J.JNull
+     facts = J.JObject [("gtkXftDpiBefore",number dpiBefore),("gtkXftDpiAfter",number dpiAfter),
+       ("fallbackApplied",J.JBool (dpiFallback/=Nothing)),("monitorCount",number dpiCount),
+       ("primaryPixels",pixels),("primaryPhysicalMm",physical)]
+ live
+ pure (dpiDisplay,facts)
+
+-- Retain the measured property even when no override or DOM request occurred.
+-- The diagnostic remains inert, strictly bounded and outside completeness.
+withDisplayDpiDiagnostic :: J.Json -> Text -> Text
+withDisplayDpiDiagnostic facts details = either (const fallback) id encoded
+ where
+  fallback = J.renderJson (J.JObject [("status",J.JString "result-over-display-dpi-byte-bound"),("displayDpi",facts)])
+  encoded = do
+   limits <- either (const (Left Protocol.Invalid)) Right (J.bounds 8192 16)
+   parsed <- either (const (Left Protocol.Invalid)) Right (J.decodeStrict limits (TE.encodeUtf8 details))
+   fields <- case parsed of J.JObject values -> Right values; _ -> Left Protocol.Invalid
+   Protocol.rendererDiagnosticText (TE.encodeUtf8 (J.renderJson (J.JObject (("displayDpi",facts):fields))))
+
+rendererDiagnosticEnvelope :: Int -> Int -> Text -> Text -> Either Protocol.ProtocolError Text
+rendererDiagnosticEnvelope width height observedAt details = do
+ unless (rendererAllocationReady True width height) (Left Protocol.Invalid)
+ _ <- either (const (Left Protocol.Invalid)) Right (Protocol.requestId observedAt)
+ diagnosticRaw <- Protocol.rendererDiagnosticText (TE.encodeUtf8 details)
+ limits <- either (const (Left Protocol.Invalid)) Right (J.bounds 8192 16)
+ dom <- either (const (Left Protocol.Invalid)) Right (J.decodeStrict limits (TE.encodeUtf8 diagnosticRaw))
+ case dom of J.JObject _ -> pure (); _ -> Left Protocol.Invalid
+ let allocation = J.JObject [("mapped",J.JBool True),("width",J.JNumber (T.pack (show width))),
+        ("height",J.JNumber (T.pack (show height))),("observedMonotonicNs",J.JString observedAt)]
+     encode value = TE.encodeUtf8 (J.renderJson (J.JObject [("gtkAllocation",allocation),("dom",value)]))
+ case Protocol.rendererDiagnosticText (encode dom) of
+  Left Protocol.TooLarge -> Protocol.rendererDiagnosticText (encode (J.JObject [("status",J.JString "result-over-envelope-byte-bound")]))
+  value -> value
+
+-- Read each exact child on the existing physical owner thread. The existing
+-- loop observes readiness; this function neither waits nor creates a timer.
+readRendererAllocation :: PhysicalDefaultContextOwner -> UiEndpoints -> Ptr Object -> IO (Bool,Int,Int,Text)
+readRendererAllocation contextOwner endpoints view = do
+  let live = do
+        requirePhysicalDefaultContextOwner contextOwner
+        remaining <- uiRemainingMicros endpoints
+        unless (remaining>500000) (ioError (userError "renderer allocation original deadline"))
+      affine action = do
+        live
+        value <- action
+        live
+        pure value
+  mapped <- affine (rendererWidgetMapped view)
+  width <- affine (rendererWidgetWidth view)
+  height <- affine (rendererWidgetHeight view)
+  observedAt <- getMonotonicTimeNSec
+  live
+  pure (mapped/=0,fromIntegral width,fromIntegral height,T.pack (show observedAt))
+
+beginRendererDiagnostic :: PhysicalDefaultContextOwner -> UiEndpoints -> Ptr Object -> Int -> Int -> Text -> IO (IO Text)
+beginRendererDiagnostic contextOwner endpoints view width height observedAt = mask_ $ do
+  result <- newCallbackState
+  let live = do
+        requirePhysicalDefaultContextOwner contextOwner
+        remaining <- uiRemainingMicros endpoints
+        unless (remaining>500000) (ioError (userError "renderer diagnostic original deadline"))
+      affine action = live >> runCallbackOperation contextOwner result action
+      envelope details = either (ioError . userError . show) pure
+        (rendererDiagnosticEnvelope width height observedAt details)
+      status = do
+        (value,quarantined) <- callbackObservation result
+        if quarantined then envelope (T.pack "{\"status\":\"callback-quarantined\"}")
+          else maybe (envelope (T.pack "{\"status\":\"pending-original-deadline\"}")) pure value
+  -- This extra object reference and the stable root are process-pinned. Never
+  -- release the wrapper, cancellable, view or cell while a callback can arrive.
+  held <- affine (refSink view)
+  cancellable <- affine (cancellableNew >>= (`must` "renderer diagnostic cancellable"))
+  callback <- wrapReady $ \source async _ -> captureOwnedCallback contextOwner result $ do
+    live
+    unless (source==held && async/=nullPtr) (ioError (userError "renderer diagnostic source identity"))
+    alloca $ \err -> do
+      poke err nullPtr
+      value <- affine (callAsyncJavascriptFinish held async err)
+      problem <- peek err
+      if problem/=nullPtr then do
+        affine (errorFree problem)
+        when (value/=nullPtr) (affine (unref value))
+        envelope (T.pack "{\"status\":\"javascript-evaluation-failed\"}")
+      else if value==nullPtr then envelope (T.pack "{\"status\":\"javascript-result-absent\"}") else
+        (do
+          isString <- affine (javascriptIsString value)
+          unless (isString/=0) (ioError (userError "renderer diagnostic result not string"))
+          bytes <- affine (javascriptStringBytes value >>= (`must` "renderer diagnostic bytes"))
+          (alloca $ \size -> do
+            pointer <- affine (bytesData bytes size)
+            lengthBytes <- peek size
+            unless (lengthBytes<=8192 && (pointer/=nullPtr || lengthBytes==0)) (ioError (userError "renderer diagnostic byte bound"))
+            raw <- affine (B.packCStringLen (castPtr pointer,fromIntegral lengthBytes))
+            details <- either (ioError . userError . show) pure (Protocol.rendererDiagnosticText raw)
+            envelope details)
+              `finally` affine (bytesUnref bytes)) `finally` affine (unref value)
+  _ <- newStablePtr (held,cancellable,callback,result)
+  B.useAsCStringLen firstMouseupDiagnosticScript $ \(script,lengthBytes) ->
+    affine (callAsyncJavascript held script (fromIntegral lengthBytes) nullPtr nullPtr nullPtr cancellable callback nullPtr)
+  pure status
+
 runWebKitOwned :: PhysicalDefaultContextOwner -> Maybe Custody -> Maybe Protocol.BackingRootBinding -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (EngineResult, Protocol.GuiObservation)
 runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \restore -> do
   requirePhysicalDefaultContextOwner contextOwner
   ok <- gtkInit
   unless (ok /= 0) (ioError (userError "GTK initialization failed"))
+  (dpiDisplay,dpiFacts) <- initializeFiniteDisplayDpi contextOwner endpoints
   noProxy <- enumValue proxyType "WEBKIT_NETWORK_PROXY_MODE_NO_PROXY"
   startedEvent <- enumValue loadEventType "WEBKIT_LOAD_STARTED"
   finishedEvent <- enumValue loadEventType "WEBKIT_LOAD_FINISHED"
@@ -495,6 +701,10 @@ runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \resto
   -- pathname, through every manager/view lifetime and unresolved async task.
   backings <- newIORef ([] :: [(FilePath,Ptr Object)])
   states <- newIORef ([] :: [(Role,IORef LoadState)])
+  rendererViews <- newIORef ([] :: [(Role,Ptr Object)])
+  rendererDiagnostics <- newIORef ([] :: [(Role,IO Text)])
+  diagnosticAttempted <- newIORef False
+  diagnosticNotIssued <- newIORef (T.pack "{\"status\":\"not-issued-load-or-projection-unready\"}")
   attached <- newIORef False
   uncertain <- newIORef False
   let own action release = do
@@ -579,6 +789,7 @@ runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \resto
         connect view "load-failed" loadFailure
         terminated <- wrapLoad $ \_ _ _ -> mask_ (failed state)
         connect view "web-process-terminated" terminated
+        when (role/=Controller) (modifyIORef' rendererViews ((role,view):))
         B.useAsCString (documentUri origin) (viewLoad view)
         pure view
       loop mvp = do
@@ -594,6 +805,39 @@ runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \resto
           when (length current == 3 && all (\state -> loadStarted state && loadReady state && not (loadFailed state)) current) $ do
             result <- stepMvpWindow mvp (readMvpLease (uiLastProjection endpoints)) ownerEvent
             handleMvpDispatch result
+            projection <- uiLastProjection endpoints
+            attempted <- readIORef diagnosticAttempted
+            when (binding/=Nothing && not attempted) $ case projection of
+              Nothing -> writeIORef diagnosticNotIssued (T.pack "{\"status\":\"not-issued-no-validated-projection\"}")
+              Just _ -> do
+                views <- readIORef rendererViews
+                case (lookup Bar views,lookup Popup views) of
+                  (Just bar,Just popup) -> do
+                    allocations <- try (mapM (\(role,view) -> do
+                      measured <- readRendererAllocation contextOwner endpoints view
+                      pure (role,view,measured)) [(Bar,bar),(Popup,popup)])
+                      :: IO (Either SomeException [(Role,Ptr Object,(Bool,Int,Int,Text))])
+                    case allocations of
+                      Left failure -> case fromException failure :: Maybe SomeAsyncException of
+                        Just _ -> throwIO failure
+                        Nothing -> writeIORef diagnosticNotIssued (T.pack "{\"status\":\"not-issued-allocation-observation-failed\"}")
+                      Right measured -> do
+                        let ready (_,_,(mapped,width,height,_)) = rendererAllocationReady mapped width height
+                            allMapped = all (\(_,_,(mapped,_,_,_)) -> mapped) measured
+                        if not (all ready measured) then
+                          writeIORef diagnosticNotIssued (T.pack (if allMapped then "{\"status\":\"not-issued-child-zero-allocation\"}" else "{\"status\":\"not-issued-child-unmapped\"}"))
+                        else do
+                          -- Reserve both one-shot requests only after real child
+                          -- mapping/allocation, never a guessed delay or top-level size.
+                          writeIORef diagnosticAttempted True
+                          forM_ measured $ \(role,view,(_,width,height,observedAt)) -> do
+                            started <- try (beginRendererDiagnostic contextOwner endpoints view width height observedAt) :: IO (Either SomeException (IO Text))
+                            case started of
+                              Right collect -> modifyIORef' rendererDiagnostics ((role,collect):)
+                              Left failure -> case fromException failure :: Maybe SomeAsyncException of
+                                Just _ -> throwIO failure
+                                Nothing -> modifyIORef' rendererDiagnostics ((role,either (ioError . userError . show) pure (rendererDiagnosticEnvelope width height observedAt (T.pack "{\"status\":\"preparation-failed\"}"))):)
+                  _ -> writeIORef diagnosticNotIssued (T.pack "{\"status\":\"not-issued-role-view-absent\"}")
           nowClosed <- mvpCloseRequested mvp
           unless nowClosed (threadDelay 1000 >> loop mvp)
       start = do
@@ -601,6 +845,17 @@ runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \resto
         case views of
           [controller,bar,popup] -> do
             mvp <- own (attachMvpWindow contextOwner (MvpViews controller bar popup)) retireMvpWindow
+            -- gtk_widget_get_display requires an actual GtkRoot hierarchy.
+            -- Initialization above still precedes every session/context/page.
+            forM_ views $ \view -> do
+              requirePhysicalDefaultContextOwner contextOwner
+              remainingForDisplay <- uiRemainingMicros endpoints
+              unless (remainingForDisplay>0) (ioError (userError "WebView display original deadline"))
+              actualDisplay <- dpiWidgetDisplay view
+              requirePhysicalDefaultContextOwner contextOwner
+              afterDisplay <- uiRemainingMicros endpoints
+              unless (actualDisplay==dpiDisplay && afterDisplay>0)
+                (ioError (userError "WebView display differs from initialized DPI display"))
             writeIORef attached True
             restore (loop mvp)
           _ -> ioError (userError "WebKit role view invariant")
@@ -618,8 +873,15 @@ runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \resto
   popupLoaded <- roleLoaded Popup
   mvpAttached <- readIORef attached
   preCleanupFault <- readIORef uncertain
-  let observation = Protocol.guiObservation controllerLoaded barLoaded popupLoaded mvpAttached
+  diagnostics <- readIORef rendererDiagnostics
+  notIssued <- readIORef diagnosticNotIssued
+  let collect role = maybe (pure notIssued) id (lookup role diagnostics)
+      originalObservation = Protocol.guiObservation controllerLoaded barLoaded popupLoaded mvpAttached
         (not preCleanupFault && either (const False) (const True) outcome)
+  barDiagnostic <- collect Bar
+  popupDiagnostic <- collect Popup
+  let observation = either (const originalObservation) id
+        (Protocol.withRendererDiagnostics (withDisplayDpiDiagnostic dpiFacts barDiagnostic) (withDisplayDpiDiagnostic dpiFacts popupDiagnostic) originalObservation)
   cleanupOutcome <- try cleanup :: IO (Either SomeException [Either SomeException ()])
   lost <- readIORef uncertain
   retained <- readIORef backings

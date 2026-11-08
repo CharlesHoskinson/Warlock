@@ -2,7 +2,7 @@
 -- PREPARATION DRAFT. Pure wire/state contract; not an authentication,
 -- deadline-enforcement, process-custody, or native-acceptance receipt.
 module Warlock.Ui.EngineProtocol
-  ( GuiObservation, guiObservation, guiObservationComplete, guiObservationJson
+  ( GuiObservation, guiObservation, withRendererDiagnostics, rendererDiagnosticText, guiObservationComplete, guiObservationJson
   , SessionId, RequestId, Startup, Scope, Box, Event(..), Projection
   , Method(..), Request(..), Reply(..), EventResult(..), ProtocolError(..)
   , Session, sessionId, requestId, startup, startupOrigins, startupDeadline
@@ -54,11 +54,23 @@ data Event = Topology Counter (Maybe (Scope, Maybe Box))
            | Reflow Scope Counter deriving (Eq, Show)
 newtype Projection = Projection J.Json deriving (Eq, Show)
 -- Bounded child observations only. Neither this type nor ACK claims cleanup.
-data GuiObservation = GuiObservation Bool Bool Bool Bool Bool deriving (Eq, Show)
+data GuiObservation = GuiObservation Bool Bool Bool Bool Bool (Maybe (Text,Text)) deriving (Eq, Show)
 guiObservation :: Bool -> Bool -> Bool -> Bool -> Bool -> GuiObservation
-guiObservation = GuiObservation
+guiObservation a b c attached returned = GuiObservation a b c attached returned Nothing
 guiObservationComplete :: GuiObservation -> Bool
-guiObservationComplete (GuiObservation a b c attached returned) = a && b && c && attached && returned
+guiObservationComplete (GuiObservation a b c attached returned _) = a && b && c && attached && returned
+-- Diagnostics are bounded inert strings, not a new projection/action constructor.
+rendererDiagnosticText :: B.ByteString -> Either ProtocolError Text
+rendererDiagnosticText diagnosticBytes = do
+ unless (B.length diagnosticBytes<=8192) (Left TooLarge)
+ text <- either (const (Left Invalid)) Right (TE.decodeUtf8' diagnosticBytes)
+ unless (not (T.any (== '\0') text)) (Left Invalid)
+ pure text
+withRendererDiagnostics :: Text -> Text -> GuiObservation -> Either ProtocolError GuiObservation
+withRendererDiagnostics bar popup (GuiObservation a b c attached returned _) = do
+ btext <- rendererDiagnosticText (TE.encodeUtf8 bar)
+ ptext <- rendererDiagnosticText (TE.encodeUtf8 popup)
+ pure (GuiObservation a b c attached returned (Just (btext,ptext)))
 data Method = Stop | Remaining | LastProjection | OwnerTopology | OwnerDismiss
             | OwnerEscape | OwnerReflow | GuiComplete deriving (Eq, Ord, Show)
 data Request = GetStop | GetRemaining | GetLastProjection | OwnerEvent Event | SubmitGuiObservation GuiObservation deriving (Eq, Show)
@@ -204,20 +216,33 @@ measure depth value = case value of
           addBound n count
 
 guiObservationJson :: GuiObservation -> J.Json
-guiObservationJson (GuiObservation a b c attached returned) = J.JObject
+guiObservationJson (GuiObservation a b c attached returned diagnostic) = J.JObject $
  [("controllerLoaded",J.JBool a),("barLoaded",J.JBool b),("popupLoaded",J.JBool c),
   ("mvpAttached",J.JBool attached),("loopReturned",J.JBool returned),
-  ("callbackCustody",J.JString "process-pinned")]
+  ("callbackCustody",J.JString "process-pinned")] ++
+ maybe [] (\(bar,popup) -> [("rendererDiagnostics",J.JObject [("bar",J.JString bar),("popup",J.JString popup)])]) diagnostic
 parseGuiObservation :: J.Json -> Either ProtocolError GuiObservation
 parseGuiObservation value = do
- fs <- exact ["controllerLoaded","barLoaded","popupLoaded","mvpAttached","loopReturned","callbackCustody"] value
+ let original = ["controllerLoaded","barLoaded","popupLoaded","mvpAttached","loopReturned","callbackCustody"]
+ fs <- case value of
+  J.JObject fields | any ((=="rendererDiagnostics") . fst) fields -> exact (original++["rendererDiagnostics"]) value
+  _ -> exact original value
  policy <- field "callbackCustody" fs
  unless (policy == J.JString "process-pinned") (Left Invalid)
  let flag key = do
       item <- field key fs
       case item of J.JBool b -> Right b; _ -> Left Invalid
- GuiObservation <$> flag "controllerLoaded" <*> flag "barLoaded" <*> flag "popupLoaded"
+ base <- guiObservation <$> flag "controllerLoaded" <*> flag "barLoaded" <*> flag "popupLoaded"
    <*> flag "mvpAttached" <*> flag "loopReturned"
+ case lookup "rendererDiagnostics" fs of
+  Nothing -> pure base
+  Just diagnostic -> do
+   entries <- exact ["bar","popup"] diagnostic
+   bar <- field "bar" entries
+   popup <- field "popup" entries
+   case (bar,popup) of
+    (J.JString btext,J.JString ptext) -> withRendererDiagnostics btext ptext base
+    _ -> Left Invalid
 
 scopeJson :: Scope -> J.Json
 scopeJson (Scope a b) = J.JObject [("id",jcounter a),("generation",jcounter b)]

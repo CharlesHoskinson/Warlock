@@ -1860,10 +1860,160 @@ def effective_delivery_authorization(record):
     return expiry
 
 
+def validate_delegated_authorization_renewal(root, record, event, previous_expiry, previous_authorized, evidence):
+    """Validate a human standing grant and actual model decision; perform no effects."""
+    fields = {'schema', 'kind', 'recordPath', 'owner', 'startedUTC', 'deliveryIdentitySha256',
+              'previousExpiresUTC', 'authorizationExpiresUTC', 'authorizedUTC', 'humanDelegation',
+              'operatingPolicy', 'policyReview', 'decisionRequest', 'delegateDecision',
+              'goalObservation', 'identityScopes'}
+    identity = delivery_identity(record)
+    if (set(evidence) != fields or type(evidence['schema']) is not int or evidence['schema'] != 1
+            or evidence['recordPath'] != record.get('_recordPath') or evidence['owner'] != record['owner']
+            or evidence['startedUTC'] != record['startedUTC']
+            or evidence['deliveryIdentitySha256'] != json_sha256(identity)
+            or evidence['previousExpiresUTC'] != previous_expiry
+            or evidence['authorizationExpiresUTC'] != event['authorizationExpiresUTC']):
+        raise ValueError('Delegated renewal differs from the same record, scope or prior deadline')
+    authorized = delivery_time(evidence['authorizedUTC'])
+    observed = delivery_time(event['atUTC'])
+    expiry = delivery_time(event['authorizationExpiresUTC'])
+    previous = delivery_time(previous_expiry)
+    if (authorized < delivery_time(identity['clockOrigin']['utc']) or authorized > observed
+            or (previous_authorized is not None and authorized <= delivery_time(previous_authorized))
+            or expiry <= observed or expiry <= previous):
+        raise ValueError('Delegated renewal chronology differs')
+
+    def retained(reference):
+        return bootstrap_json(delivery_ref(root, reference))
+
+    human = retained(evidence['humanDelegation'])
+    policy = retained(evidence['operatingPolicy'])
+    review = retained(evidence['policyReview'])
+    policy_fields = {'schema', 'kind', 'attribution', 'humanDelegation', 'maxExtensionSeconds',
+                     'noAttemptWindowsLimit', 'notAfterUTC', 'delegateSession', 'delegateModel',
+                     'goalDefinition', 'identityScopeBaseline', 'actualPolicyDecision', 'rootDisposition'}
+    if (not isinstance(human, dict) or type(human.get('schema')) is not int or human['schema'] != 1
+            or human.get('kind') != 'actual-human-standing-orchestration-delegation'):
+        raise ValueError('Actual human standing delegation required, not a model or queued message')
+    delivery_text(human.get('actualHumanText'), 'actual standing human instruction')
+    granted = delivery_time(human.get('observedAfterApprovalUTC'))
+    if (not isinstance(policy, dict) or set(policy) != policy_fields
+            or type(policy['schema']) is not int or policy['schema'] != 1
+            or policy['kind'] != 'delegate-operating-renewal-policy'
+            or policy['attribution'] != 'model-operating-policy-not-human-terms'
+            or policy['humanDelegation'] != evidence['humanDelegation']
+            or type(policy['maxExtensionSeconds']) is not int or policy['maxExtensionSeconds'] != 7200
+            or type(policy['noAttemptWindowsLimit']) is not int or policy['noAttemptWindowsLimit'] != 2
+            or policy['delegateModel'] != 'claude-opus-5-5'):
+        raise ValueError('Exact bounded delegate operating policy required')
+    delivery_text(policy['delegateSession'], 'existing delegate session')
+    cap = delivery_time(policy['notAfterUTC'])
+    if (not granted <= authorized < cap or cap > granted + dt.timedelta(hours=24)
+            or expiry > cap or expiry > authorized + dt.timedelta(seconds=7200)
+            or expiry > previous + dt.timedelta(seconds=7200)):
+        raise ValueError('Delegated renewal exceeds the model operating window or cumulative cap')
+    if (not isinstance(review, dict) or review.get('schema') != 1
+            or review.get('scope') != 'standing-delegated-renewal-policy'
+            or review.get('disposition') != 'accepted'
+            or review.get('reviewer') == record['owner']
+            or review.get('policySha256') != evidence['operatingPolicy']['sha256']
+            or review.get('humanDelegationSha256') != evidence['humanDelegation']['sha256']):
+        raise ValueError('Independent correspondence of typed policy to actual grant/decision required')
+    delivery_text(review.get('reviewer'), 'independent policy reviewer')
+    # These retained originals support the separately reviewed policy projection.
+    # The projection is explicitly not presented as verbatim human terms.
+    retained(policy['actualPolicyDecision'])
+    retained(policy['rootDisposition'])
+
+    request = retained(evidence['decisionRequest'])
+    decision = retained(evidence['delegateDecision'])
+    request_fields = {'schema', 'requestId', 'decisionKind', 'humanDelegationSha256', 'question', 'choices'}
+    answer_fields = {'schema', 'requestId', 'requestSha256', 'humanDelegationSha256',
+                     'decisionKind', 'choiceId', 'rationale'}
+    if (not isinstance(request, dict) or set(request) != request_fields or request['schema'] != 1
+            or request['decisionKind'] != 'window-selection'
+            or request['humanDelegationSha256'] != evidence['humanDelegation']['sha256']
+            or not isinstance(request['choices'], list) or not 1 <= len(request['choices']) <= 16
+            or not isinstance(decision, dict) or not answer_fields <= set(decision)
+            or decision.get('requestSha256') != json_sha256(request)
+            or decision.get('requestId') != request['requestId'] or decision.get('decisionKind') != 'window-selection'
+            or decision.get('humanDelegationSha256') != evidence['humanDelegation']['sha256']
+            or decision.get('session') != policy['delegateSession']
+            or decision.get('operatingAuthorizationExpiresUTC') != previous_expiry
+            or decision.get('nativeAuthorized') is not False or decision.get('changesAuthority') is not False
+            or decision.get('rootMustValidateAuthority') is not True or decision.get('rootSoleExecutor') is not True):
+        raise ValueError('Actual delegated decision differs from the frozen same-window request')
+    choices = request['choices']
+    if (any(not isinstance(choice, dict) or set(choice) != {'id', 'payload'}
+            or not isinstance(choice['id'], str) or not isinstance(choice['payload'], dict)
+            or set(choice['payload']) != {'proposedUntilUTC'} for choice in choices)
+            or len({choice['id'] for choice in choices}) != len(choices)):
+        raise ValueError('Exact distinct declared window choices required')
+    selected = [choice for choice in choices if choice['id'] == decision.get('choiceId')]
+    if (len(selected) != 1 or decision.get('selectedChoice') != selected[0]
+            or selected[0]['payload']['proposedUntilUTC'] != event['authorizationExpiresUTC']):
+        raise ValueError('Delegated renewal must equal the actual selected declared window')
+    terminal = retained(decision['actualTerminal'])
+    result = terminal.get('actualResult') if isinstance(terminal, dict) else None
+    if (not isinstance(terminal, dict) or terminal.get('completed') is not True
+            or type(terminal.get('exit')) is not int or terminal['exit'] != 0
+            or terminal.get('failure') is not None or terminal.get('cleanupErrors') != []
+            or terminal.get('timedOut') is not False or terminal.get('resolvedModels') != [policy['delegateModel']]
+            or not isinstance(result, dict) or result.get('is_error') is not False
+            or result.get('session_id') != policy['delegateSession']
+            or not isinstance(result.get('result'), str) or len(result['result'].encode('utf-8')) > 65536):
+        raise ValueError('Actual normal completed same-session delegate response required')
+    answer = bootstrap_json(result['result'])
+    if not isinstance(answer, dict) or set(answer) != answer_fields or answer != {key: decision[key] for key in answer_fields}:
+        raise ValueError('Retained actual model response differs from the typed decision')
+    delivery_text(answer['rationale'], 'actual delegate rationale')
+
+    goal = retained(evidence['goalObservation'])
+    definition = policy['goalDefinition']
+    if (not isinstance(definition, dict) or set(definition) != {'threadId', 'createdAt', 'objectiveSha256'}
+            or definition['threadId'] != human.get('threadId') or type(definition['createdAt']) is not int
+            or re.fullmatch('[0-9a-f]{64}', definition['objectiveSha256'] or '') is None
+            or not isinstance(goal, dict) or goal.get('schema') != 1 or goal.get('status') != 'active'
+            or goal.get('goalDefinition') != definition
+            or any(goal.get(key) is not False for key in ('humanPaused', 'humanHandoff', 'stopRequested'))
+            or not authorized <= delivery_time(goal.get('observedUTC')) <= observed):
+        raise ValueError('Fresh active same-goal and no-stop/handoff observation required')
+    baseline = retained(policy['identityScopeBaseline'])
+    scopes = retained(evidence['identityScopes'])
+    scope_fields = {'did', 'run', 'agent', 'role', 'pair', 'channels', 'claims', 'standing'}
+    if (not isinstance(baseline, dict) or not baseline or scopes != baseline
+            or any(not isinstance(row, dict) or set(row) != scope_fields for row in baseline.values())):
+        raise ValueError('Delegated renewal must retain all existing identities and scopes')
+
+    # Replay only prior canonical windows. Later events cannot qualify an earlier renewal.
+    sequence = event.get('sequence')
+    if type(sequence) is not int or sequence < 1:
+        raise ValueError('Canonical delegated renewal sequence required')
+    prefix = record['delivery']['events'][:sequence - 1]
+    windows = [[]]
+    for prior in prefix:
+        if prior.get('kind') == 'authorization-renewed':
+            windows.append([])
+        else:
+            windows[-1].append(prior)
+    attempts = [any(row.get('kind') == 'execution-started' for row in window) for window in windows]
+    current = windows[-1]
+    blocker = any(row.get('kind') in ('execution-refused', 'deferred')
+                  or (row.get('kind') == 'execution-finished' and row.get('failureSignature')) for row in current)
+    if not attempts[-1] and not blocker:
+        raise ValueError('Expiring window has neither a protected attempt nor a recorded blocker')
+    if len(attempts) >= 2 and not any(attempts[-2:]):
+        raise ValueError('Two consecutive windows without a protected attempt refuse delegated renewal')
+    return evidence['authorizedUTC']
+
+
 def validate_authorization_renewal(root, record, event, previous_expiry, previous_authorized):
     """Validate retained human/goal receipts without granting execution authority."""
     identity = delivery_identity(record)
     evidence = json.loads(delivery_ref(root, event['evidence']))
+    if isinstance(evidence, dict) and evidence.get('kind') == 'human-delegated-authorization-renewal':
+        return validate_delegated_authorization_renewal(
+            root, record, event, previous_expiry, previous_authorized, evidence)
     fields = {'schema', 'kind', 'recordPath', 'owner', 'startedUTC', 'deliveryIdentitySha256',
               'previousExpiresUTC', 'authorizationExpiresUTC', 'authorizedUTC', 'humanRequest', 'goalObservation'}
     if (not isinstance(evidence, dict) or set(evidence) != fields or

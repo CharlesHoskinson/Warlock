@@ -2,7 +2,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Production application actor. GUI policy and presentation stay in Elm.
 module Warlock.Backend
- (DirectoryPin(..),BackendConfig,loadBackendConfig,configuredNotificationBusAddress,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson,NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText,BackendCustodyException(..),BackendCustodyFailure(..),BackendApplicationCustodyException(..),BackendApplicationCustodyFailure(..)) where
+ (DirectoryPin(..),BackendConfig,loadBackendConfig,configuredNotificationBusAddress,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson,backendBootstrapFailureText,NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText,BackendCustodyException(..),BackendCustodyFailure(..),BackendApplicationCustodyException(..),BackendApplicationCustodyFailure(..)) where
 import Control.Exception (Exception(..),SomeException,SomeAsyncException,asyncExceptionFromException,asyncExceptionToException,fromException,mask,throwIO,try)
 import Control.Monad (forM_,unless)
 import qualified Data.ByteString as B
@@ -388,7 +388,7 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
   Right values -> pure values
   Left (problem :: SomeException) -> throwWithCustody problem
  let outcome=case attempted of
-      Left (_ :: SomeException) -> Left "backend conversation failed"
+      Left (problem :: SomeException) -> Left (backendBootstrapFailureText problem)
       Right (Left _) -> Left "backend root acquisition refused"
       Right (Right value) -> Right value
      attemptStage=case attempted of
@@ -416,6 +416,12 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
  pure (BackendResult (clean && success) clean count dispatched outcome observed trace selected processClean catalogClean pinClean
        attemptStage (retirementStage processRetirement,retirementStage catalogRetirement,retirementStage pinRetirement)
        (if either (const False) id notificationRetirement then Nothing else Just notificationIssuer) retainedApplication applicationObserved published submitted)
+
+-- Bounded internal failure data for the explicitly invoked QA observer only.
+-- Cap the lazy String before constructing Text; no environment, config, child
+-- stdout or cleanup exception collection is added. Ordinary JSON stays redacted.
+backendBootstrapFailureText :: SomeException -> Text
+backendBootstrapFailureText = T.pack . take 4096 . displayException
 
 retirementStage :: Either a Bool -> BackendRetirement
 retirementStage (Left _) = RetirementException

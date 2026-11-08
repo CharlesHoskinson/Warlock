@@ -302,6 +302,17 @@ guiObservationControls start = do
  assert "GUI literal typed observation accepted" (accepted == Right (SubmitGuiObservation full))
  assert "GUI partial observation is not complete" (not (guiObservationComplete partial))
  assert "GUI full bounded facts complete" (guiObservationComplete full)
+ -- Source-first literal extension controls: bounded strings cannot grant authority.
+ diagnostic <- need (withRendererDiagnostics "{\"status\":\"observed\"}" "{\"status\":\"pending-original-deadline\"}" partial)
+ assert "renderer diagnostics cannot promote partial GUI facts" (not (guiObservationComplete diagnostic))
+ let diagnosticPayload = "{\"controllerLoaded\":true,\"barLoaded\":false,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\",\"rendererDiagnostics\":{\"bar\":\"{\\\"status\\\":\\\"observed\\\"}\",\"popup\":\"{\\\"status\\\":\\\"pending-original-deadline\\\"}\"}}"
+ assert "literal renderer diagnostics accepted with original facts" (snd (acceptRequest (newSession start) (frame (requestHeader "guiObservation") diagnosticPayload)) == Right (SubmitGuiObservation diagnostic))
+ assert "renderer diagnostics reject overbound ASCII" (case withRendererDiagnostics (T.replicate 8193 "a") "ok" full of Left _ -> True; _ -> False)
+ assert "renderer diagnostics bound UTF8 rather than characters" (case withRendererDiagnostics (T.replicate 4097 "é") "ok" full of Left _ -> True; _ -> False)
+ assert "renderer diagnostics accept exact byte bound" (case withRendererDiagnostics (T.replicate 4096 "é") "ok" full of Right _ -> True; _ -> False)
+ let malformedDiagnostic = "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\",\"rendererDiagnostics\":{\"bar\":\"ok\",\"popup\":\"ok\",\"cleanup\":true}}"
+ assert "renderer diagnostic authority field refused" (case snd (acceptRequest (newSession start) (frame (requestHeader "guiObservation") malformedDiagnostic)) of Left _ -> True; _ -> False)
+
  assert "GUI observation diagnostic exact literal" (J.renderJson (guiObservationJson full) == "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\"}")
  assert "GUI observation diagnostic preserves incomplete fact" (guiObservationJson partial /= guiObservationJson full)
  encoded <- need issued

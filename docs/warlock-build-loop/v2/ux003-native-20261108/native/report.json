@@ -1,0 +1,3331 @@
+{
+  "schema": 1,
+  "kind": "ux003-native-partial-observation",
+  "passed": true,
+  "packetSha256": "f70eba0fbf00ee34b97ebb980068e58747418329c3b835725606b26c362ba15a",
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-53583aa0ad5b4c009fb550cd24f9721b.scope",
+    "coreLimit": 1
+  },
+  "clock": {
+    "origin": 124710173948763,
+    "deadline": 124738173948763,
+    "last": 124710173948763,
+    "boot": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+    "authorizationExpiresNs": 1794148200000000000,
+    "authorizationEvidenceSha256": "a78154f0c975f5b5ceea4d1a450aaf80698066e9620e7e1d4e3d5a8a99965787"
+  },
+  "steps": [
+    {
+      "step": "mapped",
+      "monotonicNs": 124715713349470,
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/mapped.png",
+      "sha256": "cceeafad51b7e37df087a5d9f4542904a16308f4c6a353125d1ece90819cd161",
+      "interpretation": "unreviewed pixels"
+    },
+    {
+      "pid": 2485218,
+      "startTicks": "12753483",
+      "exit": null,
+      "alive": true,
+      "inputHex": "6d6f7665203139382034380a627574746f6e2032373220310a627574746f6e2032373220300a73796e6320310a",
+      "ackHex": "726561647920310a",
+      "monotonicNs": 124717659437349,
+      "originalDeadlineNs": 124738173948763,
+      "meaning": "same live helper roundtrip only; not GTK or Elm delivery evidence",
+      "step": "open",
+      "targetPid": 2485227,
+      "targetStartTicks": "12753518"
+    },
+    {
+      "step": "catalog-before-search",
+      "monotonicNs": 124718600047047,
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/catalog-before-search.png",
+      "sha256": "794b9989e6458052e6d6a699aa3ec02bff2c262a8cd33b79c9c659c6990bcd2f",
+      "interpretation": "unreviewed pixels"
+    },
+    {
+      "step": "hidden-search",
+      "monotonicNs": 124719629872997,
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/hidden-search.png",
+      "sha256": "c2d0c9a4550c75f8d0cad084acab3f1128dc22fe7b55fad6fd20489fe558c5fc",
+      "interpretation": "unreviewed pixels"
+    },
+    {
+      "step": "search-cleared",
+      "monotonicNs": 124720267433898,
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/search-cleared.png",
+      "sha256": "34a661d1d6197a79c19595cbe7732dd36c75d1d68b88e3c8116543590f53ed81",
+      "interpretation": "unreviewed pixels"
+    },
+    {
+      "step": "visible-search",
+      "monotonicNs": 124721280941204,
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/visible-search.png",
+      "sha256": "82dfedd7f6351aa304c068ef49b0c6645ca3518494ac34037e1683f13aa76181",
+      "interpretation": "unreviewed pixels"
+    },
+    {
+      "pid": 2485218,
+      "startTicks": "12753483",
+      "exit": null,
+      "alive": true,
+      "inputHex": "6d6f766520333030203438300a627574746f6e2032373220310a627574746f6e2032373220300a73796e6320320a",
+      "ackHex": "726561647920320a",
+      "monotonicNs": 124721504905683,
+      "originalDeadlineNs": 124738173948763,
+      "meaning": "same live helper roundtrip only; not GTK or Elm delivery evidence",
+      "step": "visible",
+      "targetPid": 2485227,
+      "targetStartTicks": "12753518"
+    },
+    {
+      "step": "after-launch",
+      "monotonicNs": 124722439986253,
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/after-launch.png",
+      "sha256": "366b5be8d018e16d5c8beeacd4d66fd5c792e3e0b78891d1c16ffdf3612baa1e",
+      "interpretation": "unreviewed pixels"
+    },
+    {
+      "step": "close",
+      "input": [
+        "-M",
+        "alt",
+        "-k",
+        "F4",
+        "-m",
+        "alt"
+      ],
+      "targetPid": 2485227,
+      "monotonicNs": 124722741362333
+    }
+  ],
+  "commands": [
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485168,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-1.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-1.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485194,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-2.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-2.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "plugin",
+        "list",
+        "-j"
+      ],
+      "pid": 2485209,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-3.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-3.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485224,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-4.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-4.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485226,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-5.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-5.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485228,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-6.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-6.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485256,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-7.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-7.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485326,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-8.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-8.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485350,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-9.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-9.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485392,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-10.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-10.stderr"
+    },
+    {
+      "role": "grim",
+      "argv": [
+        "/usr/bin/grim",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/mapped.png"
+      ],
+      "pid": 2485397,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-11.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-11.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485401,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-12.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-12.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485414,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-13.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-13.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485428,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-14.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-14.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485455,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-15.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-15.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485496,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-16.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-16.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485517,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-17.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-17.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485537,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-18.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-18.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485540,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-19.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-19.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485541,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-20.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-20.stderr"
+    },
+    {
+      "role": "grim",
+      "argv": [
+        "/usr/bin/grim",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/opener-readiness-01.png"
+      ],
+      "pid": 2485542,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-21.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-21.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485543,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-22.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-22.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485556,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-23.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-23.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485570,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-24.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-24.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485598,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-25.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-25.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485613,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-26.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-26.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485623,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-27.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-27.stderr"
+    },
+    {
+      "role": "grim",
+      "argv": [
+        "/usr/bin/grim",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/opener-readiness-02.png"
+      ],
+      "pid": 2485624,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-28.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-28.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485625,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-29.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-29.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485634,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-30.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-30.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485635,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-31.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-31.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485638,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-32.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-32.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485649,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-33.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-33.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485667,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-34.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-34.stderr"
+    },
+    {
+      "role": "grim",
+      "argv": [
+        "/usr/bin/grim",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/catalog-before-search.png"
+      ],
+      "pid": 2485817,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-35.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-35.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485858,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-36.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-36.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485859,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-37.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-37.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485860,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-38.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-38.stderr"
+    },
+    {
+      "role": "wtype",
+      "argv": [
+        "/usr/bin/wtype",
+        "Hidden Recorder"
+      ],
+      "pid": 2485861,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-39.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-39.stderr"
+    },
+    {
+      "role": "grim",
+      "argv": [
+        "/usr/bin/grim",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/hidden-search.png"
+      ],
+      "pid": 2485937,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-40.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-40.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2485938,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-41.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-41.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2485939,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-42.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-42.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2485940,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-43.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-43.stderr"
+    },
+    {
+      "role": "wtype",
+      "argv": [
+        "/usr/bin/wtype",
+        "-M",
+        "ctrl",
+        "-k",
+        "a",
+        "-m",
+        "ctrl",
+        "-k",
+        "BackSpace"
+      ],
+      "pid": 2485941,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-44.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-44.stderr"
+    },
+    {
+      "role": "grim",
+      "argv": [
+        "/usr/bin/grim",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/search-cleared.png"
+      ],
+      "pid": 2485988,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-45.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-45.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2486019,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-46.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-46.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2486020,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-47.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-47.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2486021,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-48.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-48.stderr"
+    },
+    {
+      "role": "wtype",
+      "argv": [
+        "/usr/bin/wtype",
+        "Owned Recorder"
+      ],
+      "pid": 2486022,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-49.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-49.stderr"
+    },
+    {
+      "role": "grim",
+      "argv": [
+        "/usr/bin/grim",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/visible-search.png"
+      ],
+      "pid": 2486105,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-50.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-50.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2486107,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-51.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-51.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2486108,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-52.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-52.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2486109,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-53.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-53.stderr"
+    },
+    {
+      "role": "grim",
+      "argv": [
+        "/usr/bin/grim",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/after-launch.png"
+      ],
+      "pid": 2486187,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-54.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-54.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "clients",
+        "-j"
+      ],
+      "pid": 2486198,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-55.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-55.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "activewindow",
+        "-j"
+      ],
+      "pid": 2486209,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-56.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-56.stderr"
+    },
+    {
+      "role": "hyprctl",
+      "argv": [
+        "/usr/bin/hyprctl",
+        "-i",
+        "acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267",
+        "monitors",
+        "-j"
+      ],
+      "pid": 2486223,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-57.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-57.stderr"
+    },
+    {
+      "role": "wtype",
+      "argv": [
+        "/usr/bin/wtype",
+        "-M",
+        "alt",
+        "-k",
+        "F4",
+        "-m",
+        "alt"
+      ],
+      "pid": 2486244,
+      "exit": 0,
+      "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-58.stdout",
+      "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/command-58.stderr"
+    }
+  ],
+  "forcedCleanup": false,
+  "cleanupUnknown": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "fullJourneyAccepted": false,
+  "actualLiveStack": {
+    "origin": "actual new same-parent Popen under original journeyD",
+    "hostPid": 2484777,
+    "hostStartTicks": "12753088",
+    "nestedPid": 2485058,
+    "nestedStartTicks": "12753326",
+    "facts": {
+      "hostOutput": {
+        "name": "HEADLESS-1",
+        "description": "Headless output 1",
+        "make": null,
+        "model": null,
+        "serial": null,
+        "physical_size": {
+          "width": 0,
+          "height": 0
+        },
+        "enabled": true,
+        "modes": [
+          {
+            "width": 1280,
+            "height": 800,
+            "refresh": 60.0,
+            "preferred": false,
+            "current": true
+          }
+        ],
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "transform": "normal",
+        "scale": 1.0,
+        "adaptive_sync": false
+      },
+      "hostGeneratedRuntime": {
+        "role": "host",
+        "identity": {
+          "pid": 2484777,
+          "birth": "12753088",
+          "uid": 1000,
+          "image": "361f74c4faf75225ee9b666a4bf799783487cdc086b35d27706e8c1e95698b79",
+          "namespaces": {
+            "pid": "pid:[4026531836]",
+            "mnt": "mnt:[4026531832]",
+            "user": "user:[4026531837]",
+            "net": "net:[4026531833]"
+          },
+          "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-53583aa0ad5b4c009fb550cd24f9721b.scope\n"
+        },
+        "completeBeforeSha256": "9d9d296fa41cba4967ba63ed2dd4946e562306ed466e422caac724d2817c470f",
+        "completeAfterSha256": "9d9d296fa41cba4967ba63ed2dd4946e562306ed466e422caac724d2817c470f",
+        "mapCountBefore": 463,
+        "mapCountAfter": 463,
+        "staticMappings": [
+          "/dev/nvidia0",
+          "/dev/nvidiactl",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/font/LiberationSans-Regular.ttf",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libliftoff.so.0.5.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-basedir.so.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-desktop-file.so.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-desktop.so.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-icon.so.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libwlroots-0.20.so",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/labwc-private-build-1794087287549563684/build/labwc",
+          "/usr/lib/ld-linux-aarch64.so.1",
+          "/usr/lib/libEGL.so.1.1.0",
+          "/usr/lib/libEGL_nvidia.so.615.78.08",
+          "/usr/lib/libGLESv2.so.2.1.0",
+          "/usr/lib/libGLdispatch.so.0.0.0",
+          "/usr/lib/libX11-xcb.so.1.0.0",
+          "/usr/lib/libX11.so.6.4.0",
+          "/usr/lib/libXau.so.6.0.0",
+          "/usr/lib/libXdmcp.so.6.0.0",
+          "/usr/lib/libXext.so.6.4.0",
+          "/usr/lib/libXrender.so.1.3.0",
+          "/usr/lib/libblkid.so.1.1.0",
+          "/usr/lib/libbrotlicommon.so.1.2.1",
+          "/usr/lib/libbrotlidec.so.1.2.1",
+          "/usr/lib/libbz2.so.1.0.8",
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libcairo.so.2.11806.6",
+          "/usr/lib/libdatrie.so.1.4.1",
+          "/usr/lib/libdav1d.so.7.0.0",
+          "/usr/lib/libdbus-1.so.3.38.3",
+          "/usr/lib/libdisplay-info.so.0.3.0",
+          "/usr/lib/libdl.so.2",
+          "/usr/lib/libdrm.so.2.134.0",
+          "/usr/lib/libevdev.so.2.3.0",
+          "/usr/lib/libexpat.so.1.13.1",
+          "/usr/lib/libffi.so.8.5.0",
+          "/usr/lib/libfontconfig.so.1.17.0",
+          "/usr/lib/libfreetype.so.6.20.7",
+          "/usr/lib/libfribidi.so.0.4.0",
+          "/usr/lib/libgbm.so.1.0.0",
+          "/usr/lib/libgcc_s.so.1",
+          "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8",
+          "/usr/lib/libgio-2.0.so.0.9000.1",
+          "/usr/lib/libglib-2.0.so.0.9000.1",
+          "/usr/lib/libglycin-2.so.0",
+          "/usr/lib/libgmodule-2.0.so.0.9000.1",
+          "/usr/lib/libgobject-2.0.so.0.9000.1",
+          "/usr/lib/libgraphite2.so.3.3.1",
+          "/usr/lib/libgudev-1.0.so.0.3.0",
+          "/usr/lib/libharfbuzz.so.0.61510.0",
+          "/usr/lib/libicudata.so.78.3",
+          "/usr/lib/libicuuc.so.78.3",
+          "/usr/lib/libinput.so.10.13.0",
+          "/usr/lib/liblcms2.so.2.0.20",
+          "/usr/lib/liblua5.4.so.5.4.9",
+          "/usr/lib/libm.so.6",
+          "/usr/lib/libmount.so.1.1.0",
+          "/usr/lib/libmtdev.so.1.0.0",
+          "/usr/lib/libnvidia-allocator.so.615.78.08",
+          "/usr/lib/libnvidia-egl-gbm.so.1.1.3",
+          "/usr/lib/libnvidia-egl-wayland.so.1.1.24",
+          "/usr/lib/libnvidia-egl-wayland2.so.1.0.2",
+          "/usr/lib/libnvidia-egl-xcb.so.1.0.6",
+          "/usr/lib/libnvidia-egl-xlib.so.1.0.6",
+          "/usr/lib/libnvidia-eglcore.so.615.78.08",
+          "/usr/lib/libnvidia-glsi.so.615.78.08",
+          "/usr/lib/libnvidia-gpucomp.so.615.78.08",
+          "/usr/lib/libnvidia-rmapi-tegra.so.615.78.08",
+          "/usr/lib/libpango-1.0.so.0.5800.2",
+          "/usr/lib/libpangocairo-1.0.so.0.5800.2",
+          "/usr/lib/libpangoft2-1.0.so.0.5800.2",
+          "/usr/lib/libpcre2-8.so.0.16.1",
+          "/usr/lib/libpixman-1.so.0.46.4",
+          "/usr/lib/libpng16.so.16.59.0",
+          "/usr/lib/libpthread.so.0",
+          "/usr/lib/librsvg-2.so.2.63.4",
+          "/usr/lib/librt.so.1",
+          "/usr/lib/libseat.so.1",
+          "/usr/lib/libseccomp.so.2.6.0",
+          "/usr/lib/libstdc++.so.6.0.35",
+          "/usr/lib/libsystemd.so.0.45.0",
+          "/usr/lib/libthai.so.0.3.2",
+          "/usr/lib/libudev.so.1.7.15",
+          "/usr/lib/libvulkan.so.1.4.363",
+          "/usr/lib/libwacom.so.9.0.0",
+          "/usr/lib/libwayland-client.so.0.26.0",
+          "/usr/lib/libwayland-server.so.0.26.0",
+          "/usr/lib/libxcb-composite.so.0.0.0",
+          "/usr/lib/libxcb-dri3.so.0.1.0",
+          "/usr/lib/libxcb-errors.so.0.0.0",
+          "/usr/lib/libxcb-ewmh.so.2.0.0",
+          "/usr/lib/libxcb-icccm.so.4.0.0",
+          "/usr/lib/libxcb-present.so.0.0.0",
+          "/usr/lib/libxcb-render-util.so.0.0.0",
+          "/usr/lib/libxcb-render.so.0.0.0",
+          "/usr/lib/libxcb-res.so.0.0.0",
+          "/usr/lib/libxcb-shm.so.0.0.0",
+          "/usr/lib/libxcb-xfixes.so.0.0.0",
+          "/usr/lib/libxcb-xinput.so.0.1.0",
+          "/usr/lib/libxcb.so.1.1.0",
+          "/usr/lib/libxkbcommon.so.0.13.2",
+          "/usr/lib/libxml2.so.16.1.4",
+          "/usr/lib/libz.so.1.3.2"
+        ],
+        "staticMappingsAfter": [
+          "/dev/nvidia0",
+          "/dev/nvidiactl",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/font/LiberationSans-Regular.ttf",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libliftoff.so.0.5.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-basedir.so.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-desktop-file.so.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-desktop.so.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-icon.so.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libwlroots-0.20.so",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/labwc-private-build-1794087287549563684/build/labwc",
+          "/usr/lib/ld-linux-aarch64.so.1",
+          "/usr/lib/libEGL.so.1.1.0",
+          "/usr/lib/libEGL_nvidia.so.615.78.08",
+          "/usr/lib/libGLESv2.so.2.1.0",
+          "/usr/lib/libGLdispatch.so.0.0.0",
+          "/usr/lib/libX11-xcb.so.1.0.0",
+          "/usr/lib/libX11.so.6.4.0",
+          "/usr/lib/libXau.so.6.0.0",
+          "/usr/lib/libXdmcp.so.6.0.0",
+          "/usr/lib/libXext.so.6.4.0",
+          "/usr/lib/libXrender.so.1.3.0",
+          "/usr/lib/libblkid.so.1.1.0",
+          "/usr/lib/libbrotlicommon.so.1.2.1",
+          "/usr/lib/libbrotlidec.so.1.2.1",
+          "/usr/lib/libbz2.so.1.0.8",
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libcairo.so.2.11806.6",
+          "/usr/lib/libdatrie.so.1.4.1",
+          "/usr/lib/libdav1d.so.7.0.0",
+          "/usr/lib/libdbus-1.so.3.38.3",
+          "/usr/lib/libdisplay-info.so.0.3.0",
+          "/usr/lib/libdl.so.2",
+          "/usr/lib/libdrm.so.2.134.0",
+          "/usr/lib/libevdev.so.2.3.0",
+          "/usr/lib/libexpat.so.1.13.1",
+          "/usr/lib/libffi.so.8.5.0",
+          "/usr/lib/libfontconfig.so.1.17.0",
+          "/usr/lib/libfreetype.so.6.20.7",
+          "/usr/lib/libfribidi.so.0.4.0",
+          "/usr/lib/libgbm.so.1.0.0",
+          "/usr/lib/libgcc_s.so.1",
+          "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8",
+          "/usr/lib/libgio-2.0.so.0.9000.1",
+          "/usr/lib/libglib-2.0.so.0.9000.1",
+          "/usr/lib/libglycin-2.so.0",
+          "/usr/lib/libgmodule-2.0.so.0.9000.1",
+          "/usr/lib/libgobject-2.0.so.0.9000.1",
+          "/usr/lib/libgraphite2.so.3.3.1",
+          "/usr/lib/libgudev-1.0.so.0.3.0",
+          "/usr/lib/libharfbuzz.so.0.61510.0",
+          "/usr/lib/libicudata.so.78.3",
+          "/usr/lib/libicuuc.so.78.3",
+          "/usr/lib/libinput.so.10.13.0",
+          "/usr/lib/liblcms2.so.2.0.20",
+          "/usr/lib/liblua5.4.so.5.4.9",
+          "/usr/lib/libm.so.6",
+          "/usr/lib/libmount.so.1.1.0",
+          "/usr/lib/libmtdev.so.1.0.0",
+          "/usr/lib/libnvidia-allocator.so.615.78.08",
+          "/usr/lib/libnvidia-egl-gbm.so.1.1.3",
+          "/usr/lib/libnvidia-egl-wayland.so.1.1.24",
+          "/usr/lib/libnvidia-egl-wayland2.so.1.0.2",
+          "/usr/lib/libnvidia-egl-xcb.so.1.0.6",
+          "/usr/lib/libnvidia-egl-xlib.so.1.0.6",
+          "/usr/lib/libnvidia-eglcore.so.615.78.08",
+          "/usr/lib/libnvidia-glsi.so.615.78.08",
+          "/usr/lib/libnvidia-gpucomp.so.615.78.08",
+          "/usr/lib/libnvidia-rmapi-tegra.so.615.78.08",
+          "/usr/lib/libpango-1.0.so.0.5800.2",
+          "/usr/lib/libpangocairo-1.0.so.0.5800.2",
+          "/usr/lib/libpangoft2-1.0.so.0.5800.2",
+          "/usr/lib/libpcre2-8.so.0.16.1",
+          "/usr/lib/libpixman-1.so.0.46.4",
+          "/usr/lib/libpng16.so.16.59.0",
+          "/usr/lib/libpthread.so.0",
+          "/usr/lib/librsvg-2.so.2.63.4",
+          "/usr/lib/librt.so.1",
+          "/usr/lib/libseat.so.1",
+          "/usr/lib/libseccomp.so.2.6.0",
+          "/usr/lib/libstdc++.so.6.0.35",
+          "/usr/lib/libsystemd.so.0.45.0",
+          "/usr/lib/libthai.so.0.3.2",
+          "/usr/lib/libudev.so.1.7.15",
+          "/usr/lib/libvulkan.so.1.4.363",
+          "/usr/lib/libwacom.so.9.0.0",
+          "/usr/lib/libwayland-client.so.0.26.0",
+          "/usr/lib/libwayland-server.so.0.26.0",
+          "/usr/lib/libxcb-composite.so.0.0.0",
+          "/usr/lib/libxcb-dri3.so.0.1.0",
+          "/usr/lib/libxcb-errors.so.0.0.0",
+          "/usr/lib/libxcb-ewmh.so.2.0.0",
+          "/usr/lib/libxcb-icccm.so.4.0.0",
+          "/usr/lib/libxcb-present.so.0.0.0",
+          "/usr/lib/libxcb-render-util.so.0.0.0",
+          "/usr/lib/libxcb-render.so.0.0.0",
+          "/usr/lib/libxcb-res.so.0.0.0",
+          "/usr/lib/libxcb-shm.so.0.0.0",
+          "/usr/lib/libxcb-xfixes.so.0.0.0",
+          "/usr/lib/libxcb-xinput.so.0.1.0",
+          "/usr/lib/libxcb.so.1.1.0",
+          "/usr/lib/libxkbcommon.so.0.13.2",
+          "/usr/lib/libxml2.so.16.1.4",
+          "/usr/lib/libz.so.1.3.2"
+        ],
+        "generatedObject": {
+          "classification": "observed-owned-NVIDIA-context-generated-runtime-object",
+          "kernelDevice": [
+            0,
+            1
+          ],
+          "inode": 1560683,
+          "mappings": [
+            {
+              "address": "fadc70741000-fadc70743000",
+              "permissions": "rw-s",
+              "offset": "00000000",
+              "device": "00:01",
+              "inode": 1560683,
+              "pathname": "/memfd:/.glXXXXXX (deleted)"
+            },
+            {
+              "address": "fadc70743000-fadc70745000",
+              "permissions": "r-xs",
+              "offset": "00000000",
+              "device": "00:01",
+              "inode": 1560683,
+              "pathname": "/memfd:/.glXXXXXX (deleted)"
+            }
+          ],
+          "mappedBytesPerAlias": 8192,
+          "mutableExecutableBacking": true,
+          "creatorAttested": false,
+          "contentSha256": null,
+          "backingSize": null,
+          "seals": null,
+          "metadata": {
+            "fadc70741000-fadc70743000": {
+              "link": "/memfd:/.glXXXXXX (deleted)",
+              "backingError": "PermissionError: [Errno 1] Operation not permitted: '/proc/2484777/map_files/fadc70741000-fadc70743000'"
+            },
+            "fadc70743000-fadc70745000": {
+              "link": "/memfd:/.glXXXXXX (deleted)",
+              "backingError": "PermissionError: [Errno 1] Operation not permitted: '/proc/2484777/map_files/fadc70743000-fadc70745000'"
+            }
+          },
+          "attribution": "controlled-context inference, not creator or code-safety proof"
+        },
+        "firstGeneratedObservation": {
+          "classification": "observed-owned-NVIDIA-context-generated-runtime-object",
+          "kernelDevice": [
+            0,
+            1
+          ],
+          "inode": 1560683,
+          "mappings": [
+            {
+              "address": "fadc70741000-fadc70743000",
+              "permissions": "rw-s",
+              "offset": "00000000",
+              "device": "00:01",
+              "inode": 1560683,
+              "pathname": "/memfd:/.glXXXXXX (deleted)"
+            },
+            {
+              "address": "fadc70743000-fadc70745000",
+              "permissions": "r-xs",
+              "offset": "00000000",
+              "device": "00:01",
+              "inode": 1560683,
+              "pathname": "/memfd:/.glXXXXXX (deleted)"
+            }
+          ],
+          "mappedBytesPerAlias": 8192,
+          "mutableExecutableBacking": true,
+          "creatorAttested": false,
+          "contentSha256": null,
+          "backingSize": null,
+          "seals": null,
+          "metadata": {
+            "fadc70741000-fadc70743000": {
+              "link": "/memfd:/.glXXXXXX (deleted)",
+              "backingError": "PermissionError: [Errno 1] Operation not permitted: '/proc/2484777/map_files/fadc70741000-fadc70743000'"
+            },
+            "fadc70743000-fadc70745000": {
+              "link": "/memfd:/.glXXXXXX (deleted)",
+              "backingError": "PermissionError: [Errno 1] Operation not permitted: '/proc/2484777/map_files/fadc70743000-fadc70745000'"
+            }
+          },
+          "attribution": "controlled-context inference, not creator or code-safety proof"
+        },
+        "ownedBeforeAndAfter": true,
+        "generatedContentsRead": false,
+        "creatorAttested": false,
+        "legacyAnonymousPolicyUnchanged": true
+      },
+      "hostMappings": [
+        "/dev/nvidia0",
+        "/dev/nvidiactl",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/font/LiberationSans-Regular.ttf",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libliftoff.so.0.5.0",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-basedir.so.0",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-desktop-file.so.0",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-desktop.so.0",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libsfdo-icon.so.0",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-build-inputs/prefix/usr/lib/libwlroots-0.20.so",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/labwc-private-build-1794087287549563684/build/labwc",
+        "/usr/lib/ld-linux-aarch64.so.1",
+        "/usr/lib/libEGL.so.1.1.0",
+        "/usr/lib/libEGL_nvidia.so.615.78.08",
+        "/usr/lib/libGLESv2.so.2.1.0",
+        "/usr/lib/libGLdispatch.so.0.0.0",
+        "/usr/lib/libX11-xcb.so.1.0.0",
+        "/usr/lib/libX11.so.6.4.0",
+        "/usr/lib/libXau.so.6.0.0",
+        "/usr/lib/libXdmcp.so.6.0.0",
+        "/usr/lib/libXext.so.6.4.0",
+        "/usr/lib/libXrender.so.1.3.0",
+        "/usr/lib/libblkid.so.1.1.0",
+        "/usr/lib/libbrotlicommon.so.1.2.1",
+        "/usr/lib/libbrotlidec.so.1.2.1",
+        "/usr/lib/libbz2.so.1.0.8",
+        "/usr/lib/libc.so.6",
+        "/usr/lib/libcairo.so.2.11806.6",
+        "/usr/lib/libdatrie.so.1.4.1",
+        "/usr/lib/libdav1d.so.7.0.0",
+        "/usr/lib/libdbus-1.so.3.38.3",
+        "/usr/lib/libdisplay-info.so.0.3.0",
+        "/usr/lib/libdl.so.2",
+        "/usr/lib/libdrm.so.2.134.0",
+        "/usr/lib/libevdev.so.2.3.0",
+        "/usr/lib/libexpat.so.1.13.1",
+        "/usr/lib/libffi.so.8.5.0",
+        "/usr/lib/libfontconfig.so.1.17.0",
+        "/usr/lib/libfreetype.so.6.20.7",
+        "/usr/lib/libfribidi.so.0.4.0",
+        "/usr/lib/libgbm.so.1.0.0",
+        "/usr/lib/libgcc_s.so.1",
+        "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8",
+        "/usr/lib/libgio-2.0.so.0.9000.1",
+        "/usr/lib/libglib-2.0.so.0.9000.1",
+        "/usr/lib/libglycin-2.so.0",
+        "/usr/lib/libgmodule-2.0.so.0.9000.1",
+        "/usr/lib/libgobject-2.0.so.0.9000.1",
+        "/usr/lib/libgraphite2.so.3.3.1",
+        "/usr/lib/libgudev-1.0.so.0.3.0",
+        "/usr/lib/libharfbuzz.so.0.61510.0",
+        "/usr/lib/libicudata.so.78.3",
+        "/usr/lib/libicuuc.so.78.3",
+        "/usr/lib/libinput.so.10.13.0",
+        "/usr/lib/liblcms2.so.2.0.20",
+        "/usr/lib/liblua5.4.so.5.4.9",
+        "/usr/lib/libm.so.6",
+        "/usr/lib/libmount.so.1.1.0",
+        "/usr/lib/libmtdev.so.1.0.0",
+        "/usr/lib/libnvidia-allocator.so.615.78.08",
+        "/usr/lib/libnvidia-egl-gbm.so.1.1.3",
+        "/usr/lib/libnvidia-egl-wayland.so.1.1.24",
+        "/usr/lib/libnvidia-egl-wayland2.so.1.0.2",
+        "/usr/lib/libnvidia-egl-xcb.so.1.0.6",
+        "/usr/lib/libnvidia-egl-xlib.so.1.0.6",
+        "/usr/lib/libnvidia-eglcore.so.615.78.08",
+        "/usr/lib/libnvidia-glsi.so.615.78.08",
+        "/usr/lib/libnvidia-gpucomp.so.615.78.08",
+        "/usr/lib/libnvidia-rmapi-tegra.so.615.78.08",
+        "/usr/lib/libpango-1.0.so.0.5800.2",
+        "/usr/lib/libpangocairo-1.0.so.0.5800.2",
+        "/usr/lib/libpangoft2-1.0.so.0.5800.2",
+        "/usr/lib/libpcre2-8.so.0.16.1",
+        "/usr/lib/libpixman-1.so.0.46.4",
+        "/usr/lib/libpng16.so.16.59.0",
+        "/usr/lib/libpthread.so.0",
+        "/usr/lib/librsvg-2.so.2.63.4",
+        "/usr/lib/librt.so.1",
+        "/usr/lib/libseat.so.1",
+        "/usr/lib/libseccomp.so.2.6.0",
+        "/usr/lib/libstdc++.so.6.0.35",
+        "/usr/lib/libsystemd.so.0.45.0",
+        "/usr/lib/libthai.so.0.3.2",
+        "/usr/lib/libudev.so.1.7.15",
+        "/usr/lib/libvulkan.so.1.4.363",
+        "/usr/lib/libwacom.so.9.0.0",
+        "/usr/lib/libwayland-client.so.0.26.0",
+        "/usr/lib/libwayland-server.so.0.26.0",
+        "/usr/lib/libxcb-composite.so.0.0.0",
+        "/usr/lib/libxcb-dri3.so.0.1.0",
+        "/usr/lib/libxcb-errors.so.0.0.0",
+        "/usr/lib/libxcb-ewmh.so.2.0.0",
+        "/usr/lib/libxcb-icccm.so.4.0.0",
+        "/usr/lib/libxcb-present.so.0.0.0",
+        "/usr/lib/libxcb-render-util.so.0.0.0",
+        "/usr/lib/libxcb-render.so.0.0.0",
+        "/usr/lib/libxcb-res.so.0.0.0",
+        "/usr/lib/libxcb-shm.so.0.0.0",
+        "/usr/lib/libxcb-xfixes.so.0.0.0",
+        "/usr/lib/libxcb-xinput.so.0.1.0",
+        "/usr/lib/libxcb.so.1.1.0",
+        "/usr/lib/libxkbcommon.so.0.13.2",
+        "/usr/lib/libxml2.so.16.1.4",
+        "/usr/lib/libz.so.1.3.2"
+      ],
+      "hostGraphicsFDs": {
+        "/dev/dri/renderD128": {
+          "device": 9,
+          "inode": 203,
+          "rdev": 57984,
+          "mode": 8630,
+          "uid": 0,
+          "gid": 987
+        },
+        "/dev/nvidiactl": {
+          "device": 9,
+          "inode": 1044,
+          "rdev": 50175,
+          "mode": 8630,
+          "uid": 0,
+          "gid": 0
+        },
+        "/dev/nvidia0": {
+          "device": 9,
+          "inode": 1046,
+          "rdev": 49920,
+          "mode": 8630,
+          "uid": 0,
+          "gid": 0
+        },
+        "/dev/nvidia-modeset": {
+          "device": 9,
+          "inode": 1086,
+          "rdev": 50174,
+          "mode": 8630,
+          "uid": 0,
+          "gid": 0
+        }
+      },
+      "nestedOwnedFonts": {
+        "configuration": {
+          "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-font-config/fonts.conf",
+          "sha256": "2397ee584faa5c8300eaea185dd9e9a46495c2651a2100126dac7da7225ec140"
+        },
+        "copies": {
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/JetBrainsMonoNerdFont-Bold.ttf": "e490660ad75e0b152c93b1604c2ea1a4ea675f1b8a3fe0d005b1998568f99f1f",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/JetBrainsMonoNerdFont-BoldItalic.ttf": "19a2e3af8ccf99954941ea07e0a29df27574500f12016d86d6c4c059b825ffe1",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/JetBrainsMonoNerdFont-Italic.ttf": "71d5466cc3ab31bee38b4e2c5cc99c2b41a749c4973ed4579b814ec992b0738e",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/JetBrainsMonoNerdFont-Regular.ttf": "1c680e8cde9fcf8b88a5605ce8d1fb94dd3fb15841f7ca7bf4c55664855e5611",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/LiberationSans-Bold.ttf": "993f3d680aa2a4987c2ca7dd1eb92bcf6ddc396223ecc17800de1c2af75255fc",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/LiberationSans-BoldItalic.ttf": "5f43533898b70b83e8897b3548865bd7525400df4620cd32ebc167abd8c92262",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/LiberationSans-Italic.ttf": "2d3a426f29d02eda47d3f007d47d71aa65bb7405940cfd1096bc212beb62b7a0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/LiberationSans-Regular.ttf": "ef452d55117c6b4b8b0a51f842c1ab16362518225f6c806b0e91f18ed0e331f5",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/NotoColorEmoji.ttf": "15671215ab769fdc7162a045d56fd7d7e477c51b04e6b3c761d914d8fdd6cc44"
+        },
+        "requestedEnvironment": {
+          "FONTCONFIG_FILE": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-font-config/fonts.conf",
+          "FONTCONFIG_PATH": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-font-config",
+          "FONTCONFIG_USE_MMAP": "0"
+        }
+      },
+      "nestedRegistry": {
+        "path": "/run/user/1000/wqa/c35b/wayland-1",
+        "device": 82,
+        "inode": 10577,
+        "pid": 2485058,
+        "startTicks": "12753326",
+        "globals": {
+          "wl_seat": 9,
+          "wl_data_device_manager": 3,
+          "wl_compositor": 6,
+          "wl_subcompositor": 1,
+          "wl_shm": 2,
+          "wp_viewporter": 1,
+          "wp_tearing_control_manager_v1": 1,
+          "wp_fractional_scale_manager_v1": 1,
+          "zxdg_output_manager_v1": 3,
+          "wp_cursor_shape_manager_v1": 2,
+          "zwp_idle_inhibit_manager_v1": 1,
+          "zwp_relative_pointer_manager_v1": 1,
+          "zxdg_decoration_manager_v1": 2,
+          "wp_alpha_modifier_v1": 1,
+          "zwlr_gamma_control_manager_v1": 1,
+          "ext_foreign_toplevel_list_v1": 1,
+          "zwp_pointer_gestures_v1": 3,
+          "zwlr_foreign_toplevel_manager_v1": 3,
+          "zwp_keyboard_shortcuts_inhibit_manager_v1": 1,
+          "zwp_text_input_manager_v1": 1,
+          "zwp_text_input_manager_v3": 1,
+          "zwp_pointer_constraints_v1": 1,
+          "zwlr_output_power_manager_v1": 1,
+          "xdg_activation_v1": 1,
+          "ext_idle_notifier_v1": 2,
+          "hyprland_lock_notifier_v1": 1,
+          "ext_session_lock_manager_v1": 1,
+          "zwp_input_method_manager_v2": 1,
+          "zwp_virtual_keyboard_manager_v1": 1,
+          "zwlr_virtual_pointer_manager_v1": 2,
+          "zwlr_output_manager_v1": 4,
+          "org_kde_kwin_server_decoration_manager": 1,
+          "hyprland_focus_grab_manager_v1": 1,
+          "zwp_tablet_manager_v2": 1,
+          "zwlr_layer_shell_v1": 5,
+          "wp_presentation": 2,
+          "xdg_wm_base": 7,
+          "zwlr_data_control_manager_v1": 2,
+          "zwp_primary_selection_device_manager_v1": 1,
+          "xwayland_shell_v1": 1,
+          "hyprland_toplevel_mapping_manager_v1": 1,
+          "hyprland_global_shortcuts_manager_v1": 1,
+          "xdg_wm_dialog_v1": 1,
+          "wp_single_pixel_buffer_manager_v1": 1,
+          "wp_security_context_manager_v1": 1,
+          "hyprland_ctm_control_manager_v1": 2,
+          "hyprland_input_capture_manager_v1": 2,
+          "hyprland_surface_manager_v1": 2,
+          "wp_content_type_manager_v1": 1,
+          "xdg_toplevel_tag_manager_v1": 1,
+          "xdg_system_bell_v1": 1,
+          "vicinae_hotkey_manager_v1": 1,
+          "xx_hotkey_manager_v1": 1,
+          "ext_workspace_manager_v1": 1,
+          "ext_data_control_manager_v1": 1,
+          "wp_pointer_warp_v1": 1,
+          "wp_fifo_manager_v1": 1,
+          "zxdg_exporter_v2": 1,
+          "zxdg_importer_v2": 1,
+          "ext_background_effect_manager_v1": 1,
+          "wp_commit_timing_manager_v1": 1,
+          "zwlr_screencopy_manager_v1": 3,
+          "hyprland_toplevel_export_manager_v1": 2,
+          "ext_output_image_capture_source_manager_v1": 1,
+          "ext_foreign_toplevel_image_capture_source_manager_v1": 1,
+          "hyprland_workspace_image_capture_source_manager_v1": 1,
+          "ext_image_copy_capture_manager_v1": 1,
+          "wp_color_manager_v1": 3,
+          "wl_drm": 2,
+          "zwp_linux_dmabuf_v1": 5,
+          "wl_output": 4
+        }
+      },
+      "nestedGeneratedRuntime": {
+        "role": "nested",
+        "identity": {
+          "pid": 2485058,
+          "birth": "12753326",
+          "uid": 1000,
+          "image": "d40e2edab24c2032a7a77b4d44c3d738e5003256d7d4199950dc7001fee9b6ba",
+          "namespaces": {
+            "pid": "pid:[4026531836]",
+            "mnt": "mnt:[4026531832]",
+            "user": "user:[4026531837]",
+            "net": "net:[4026531833]"
+          },
+          "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-53583aa0ad5b4c009fb550cd24f9721b.scope\n"
+        },
+        "completeBeforeSha256": "f420ab88314e7aa07a160900ec9025364b41e6e963aef1a1daa11037775b1432",
+        "completeAfterSha256": "f420ab88314e7aa07a160900ec9025364b41e6e963aef1a1daa11037775b1432",
+        "mapCountBefore": 749,
+        "mapCountAfter": 749,
+        "staticMappings": [
+          "/dev/nvidia0",
+          "/dev/nvidiactl",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/aq-log-provider-build-1794102851345544241/build/libaquamarine.so.0.16.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/JetBrainsMonoNerdFont-Regular.ttf",
+          "/usr/bin/Hyprland",
+          "/usr/lib/gio/modules/libdconfsettings.so",
+          "/usr/lib/ld-linux-aarch64.so.1",
+          "/usr/lib/libEGL.so.1.1.0",
+          "/usr/lib/libEGL_nvidia.so.615.78.08",
+          "/usr/lib/libGLESv2.so.2.1.0",
+          "/usr/lib/libGLdispatch.so.0.0.0",
+          "/usr/lib/libSPIRV-Tools-opt.so",
+          "/usr/lib/libSPIRV-Tools.so",
+          "/usr/lib/libX11-xcb.so.1.0.0",
+          "/usr/lib/libX11.so.6.4.0",
+          "/usr/lib/libXau.so.6.0.0",
+          "/usr/lib/libXcursor.so.1.0.2",
+          "/usr/lib/libXdmcp.so.6.0.0",
+          "/usr/lib/libXext.so.6.4.0",
+          "/usr/lib/libXfixes.so.3.1.0",
+          "/usr/lib/libXrender.so.1.3.0",
+          "/usr/lib/libabsl_base.so.2608.0.0",
+          "/usr/lib/libabsl_city.so.2608.0.0",
+          "/usr/lib/libabsl_debugging_internal.so.2608.0.0",
+          "/usr/lib/libabsl_decode_rust_punycode.so.2608.0.0",
+          "/usr/lib/libabsl_demangle_internal.so.2608.0.0",
+          "/usr/lib/libabsl_demangle_rust.so.2608.0.0",
+          "/usr/lib/libabsl_examine_stack.so.2608.0.0",
+          "/usr/lib/libabsl_hash.so.2608.0.0",
+          "/usr/lib/libabsl_hashtablez_sampler.so.2608.0.0",
+          "/usr/lib/libabsl_int128.so.2608.0.0",
+          "/usr/lib/libabsl_kernel_timeout_internal.so.2608.0.0",
+          "/usr/lib/libabsl_leak_check.so.2608.0.0",
+          "/usr/lib/libabsl_log_globals.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_check_op.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_format.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_globals.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_log_sink_set.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_message.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_nullguard.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_proto.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_structured_proto.so.2608.0.0",
+          "/usr/lib/libabsl_log_sink.so.2608.0.0",
+          "/usr/lib/libabsl_malloc_internal.so.2608.0.0",
+          "/usr/lib/libabsl_raw_hash_set.so.2608.0.0",
+          "/usr/lib/libabsl_raw_logging_internal.so.2608.0.0",
+          "/usr/lib/libabsl_spinlock_wait.so.2608.0.0",
+          "/usr/lib/libabsl_stacktrace.so.2608.0.0",
+          "/usr/lib/libabsl_str_format_internal.so.2608.0.0",
+          "/usr/lib/libabsl_strerror.so.2608.0.0",
+          "/usr/lib/libabsl_strings.so.2608.0.0",
+          "/usr/lib/libabsl_strings_internal.so.2608.0.0",
+          "/usr/lib/libabsl_symbolize.so.2608.0.0",
+          "/usr/lib/libabsl_synchronization.so.2608.0.0",
+          "/usr/lib/libabsl_throw_delegate.so.2608.0.0",
+          "/usr/lib/libabsl_time.so.2608.0.0",
+          "/usr/lib/libabsl_time_zone.so.2608.0.0",
+          "/usr/lib/libabsl_tracing_internal.so.2608.0.0",
+          "/usr/lib/libabsl_utf8_for_code_point.so.2608.0.0",
+          "/usr/lib/libblkid.so.1.1.0",
+          "/usr/lib/libbrotlicommon.so.1.2.1",
+          "/usr/lib/libbrotlidec.so.1.2.1",
+          "/usr/lib/libbrotlienc.so.1.2.1",
+          "/usr/lib/libbz2.so.1.0.8",
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libcairo.so.2.11806.6",
+          "/usr/lib/libcanberra.so.0.2.5",
+          "/usr/lib/libcrypto.so.3",
+          "/usr/lib/libdatrie.so.1.4.1",
+          "/usr/lib/libdav1d.so.7.0.0",
+          "/usr/lib/libdbus-1.so.3.38.3",
+          "/usr/lib/libdisplay-info.so.0.3.0",
+          "/usr/lib/libdl.so.2",
+          "/usr/lib/libdrm.so.2.134.0",
+          "/usr/lib/libeis.so.1.6.0",
+          "/usr/lib/libevdev.so.2.3.0",
+          "/usr/lib/libexpat.so.1.13.1",
+          "/usr/lib/libffi.so.8.5.0",
+          "/usr/lib/libfontconfig.so.1.17.0",
+          "/usr/lib/libfreetype.so.6.20.7",
+          "/usr/lib/libfribidi.so.0.4.0",
+          "/usr/lib/libgbm.so.1.0.0",
+          "/usr/lib/libgcc_s.so.1",
+          "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8",
+          "/usr/lib/libgio-2.0.so.0.9000.1",
+          "/usr/lib/libglib-2.0.so.0.9000.1",
+          "/usr/lib/libglslang-default-resource-limits.so.16.6.0",
+          "/usr/lib/libglslang.so.16.6.0",
+          "/usr/lib/libglycin-2.so.0",
+          "/usr/lib/libgmodule-2.0.so.0.9000.1",
+          "/usr/lib/libgobject-2.0.so.0.9000.1",
+          "/usr/lib/libgomp.so.1.0.0",
+          "/usr/lib/libgraphite2.so.3.3.1",
+          "/usr/lib/libgudev-1.0.so.0.3.0",
+          "/usr/lib/libharfbuzz.so.0.61510.0",
+          "/usr/lib/libhwy.so.1.4.0",
+          "/usr/lib/libhyprcursor.so.0.1.13",
+          "/usr/lib/libhyprgraphics.so.0.6.0",
+          "/usr/lib/libhyprlang.so.0.6.8",
+          "/usr/lib/libhyprutils.so.0.14.3",
+          "/usr/lib/libicudata.so.78.3",
+          "/usr/lib/libicuuc.so.78.3",
+          "/usr/lib/libinput.so.10.13.0",
+          "/usr/lib/libjpeg.so.8.3.2",
+          "/usr/lib/libjxl.so.0.12.0",
+          "/usr/lib/libjxl_cms.so.0.12.0",
+          "/usr/lib/libjxl_threads.so.0.12.0",
+          "/usr/lib/liblcms2.so.2.0.20",
+          "/usr/lib/libltdl.so.7.3.5",
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9",
+          "/usr/lib/liblzma.so.5.8.4",
+          "/usr/lib/libm.so.6",
+          "/usr/lib/libmagic.so.1.0.0",
+          "/usr/lib/libmount.so.1.1.0",
+          "/usr/lib/libmtdev.so.1.0.0",
+          "/usr/lib/libmuparser.so.2.3.5",
+          "/usr/lib/libnvidia-allocator.so.615.78.08",
+          "/usr/lib/libnvidia-egl-gbm.so.1.1.3",
+          "/usr/lib/libnvidia-egl-wayland.so.1.1.24",
+          "/usr/lib/libnvidia-egl-wayland2.so.1.0.2",
+          "/usr/lib/libnvidia-egl-xcb.so.1.0.6",
+          "/usr/lib/libnvidia-egl-xlib.so.1.0.6",
+          "/usr/lib/libnvidia-eglcore.so.615.78.08",
+          "/usr/lib/libnvidia-glsi.so.615.78.08",
+          "/usr/lib/libnvidia-gpucomp.so.615.78.08",
+          "/usr/lib/libnvidia-rmapi-tegra.so.615.78.08",
+          "/usr/lib/libogg.so.0.8.6",
+          "/usr/lib/libpango-1.0.so.0.5800.2",
+          "/usr/lib/libpangocairo-1.0.so.0.5800.2",
+          "/usr/lib/libpangoft2-1.0.so.0.5800.2",
+          "/usr/lib/libpcre2-8.so.0.16.1",
+          "/usr/lib/libpixman-1.so.0.46.4",
+          "/usr/lib/libpng16.so.16.59.0",
+          "/usr/lib/libpthread.so.0",
+          "/usr/lib/libre2.so.11.0.0",
+          "/usr/lib/librsvg-2.so.2.63.4",
+          "/usr/lib/librt.so.1",
+          "/usr/lib/libsdbus-c++.so.2.3.1",
+          "/usr/lib/libseat.so.1",
+          "/usr/lib/libseccomp.so.2.6.0",
+          "/usr/lib/libsharpyuv.so.0.1.2",
+          "/usr/lib/libstdc++.so.6.0.35",
+          "/usr/lib/libsystemd.so.0.45.0",
+          "/usr/lib/libtdb.so.1.4.15",
+          "/usr/lib/libthai.so.0.3.2",
+          "/usr/lib/libtomlplusplus.so.3.4.0",
+          "/usr/lib/libudev.so.1.7.15",
+          "/usr/lib/libuuid.so.1.3.0",
+          "/usr/lib/libvorbis.so.0.4.9",
+          "/usr/lib/libvorbisfile.so.3.3.8",
+          "/usr/lib/libwacom.so.9.0.0",
+          "/usr/lib/libwayland-client.so.0.26.0",
+          "/usr/lib/libwayland-server.so.0.26.0",
+          "/usr/lib/libwebp.so.7.2.0",
+          "/usr/lib/libxcb-composite.so.0.0.0",
+          "/usr/lib/libxcb-dri3.so.0.1.0",
+          "/usr/lib/libxcb-errors.so.0.0.0",
+          "/usr/lib/libxcb-icccm.so.4.0.0",
+          "/usr/lib/libxcb-present.so.0.0.0",
+          "/usr/lib/libxcb-render.so.0.0.0",
+          "/usr/lib/libxcb-res.so.0.0.0",
+          "/usr/lib/libxcb-shm.so.0.0.0",
+          "/usr/lib/libxcb-xfixes.so.0.0.0",
+          "/usr/lib/libxcb.so.1.1.0",
+          "/usr/lib/libxkbcommon.so.0.13.2",
+          "/usr/lib/libxml2.so.16.1.4",
+          "/usr/lib/libz.so.1.3.2",
+          "/usr/lib/libzip.so.5.5",
+          "/usr/lib/libzstd.so.1.5.7",
+          "/usr/lib/locale/locale-archive",
+          "/usr/share/glib-2.0/schemas/gschemas.compiled"
+        ],
+        "staticMappingsAfter": [
+          "/dev/nvidia0",
+          "/dev/nvidiactl",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/aq-log-provider-build-1794102851345544241/build/libaquamarine.so.0.16.0",
+          "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/JetBrainsMonoNerdFont-Regular.ttf",
+          "/usr/bin/Hyprland",
+          "/usr/lib/gio/modules/libdconfsettings.so",
+          "/usr/lib/ld-linux-aarch64.so.1",
+          "/usr/lib/libEGL.so.1.1.0",
+          "/usr/lib/libEGL_nvidia.so.615.78.08",
+          "/usr/lib/libGLESv2.so.2.1.0",
+          "/usr/lib/libGLdispatch.so.0.0.0",
+          "/usr/lib/libSPIRV-Tools-opt.so",
+          "/usr/lib/libSPIRV-Tools.so",
+          "/usr/lib/libX11-xcb.so.1.0.0",
+          "/usr/lib/libX11.so.6.4.0",
+          "/usr/lib/libXau.so.6.0.0",
+          "/usr/lib/libXcursor.so.1.0.2",
+          "/usr/lib/libXdmcp.so.6.0.0",
+          "/usr/lib/libXext.so.6.4.0",
+          "/usr/lib/libXfixes.so.3.1.0",
+          "/usr/lib/libXrender.so.1.3.0",
+          "/usr/lib/libabsl_base.so.2608.0.0",
+          "/usr/lib/libabsl_city.so.2608.0.0",
+          "/usr/lib/libabsl_debugging_internal.so.2608.0.0",
+          "/usr/lib/libabsl_decode_rust_punycode.so.2608.0.0",
+          "/usr/lib/libabsl_demangle_internal.so.2608.0.0",
+          "/usr/lib/libabsl_demangle_rust.so.2608.0.0",
+          "/usr/lib/libabsl_examine_stack.so.2608.0.0",
+          "/usr/lib/libabsl_hash.so.2608.0.0",
+          "/usr/lib/libabsl_hashtablez_sampler.so.2608.0.0",
+          "/usr/lib/libabsl_int128.so.2608.0.0",
+          "/usr/lib/libabsl_kernel_timeout_internal.so.2608.0.0",
+          "/usr/lib/libabsl_leak_check.so.2608.0.0",
+          "/usr/lib/libabsl_log_globals.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_check_op.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_format.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_globals.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_log_sink_set.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_message.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_nullguard.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_proto.so.2608.0.0",
+          "/usr/lib/libabsl_log_internal_structured_proto.so.2608.0.0",
+          "/usr/lib/libabsl_log_sink.so.2608.0.0",
+          "/usr/lib/libabsl_malloc_internal.so.2608.0.0",
+          "/usr/lib/libabsl_raw_hash_set.so.2608.0.0",
+          "/usr/lib/libabsl_raw_logging_internal.so.2608.0.0",
+          "/usr/lib/libabsl_spinlock_wait.so.2608.0.0",
+          "/usr/lib/libabsl_stacktrace.so.2608.0.0",
+          "/usr/lib/libabsl_str_format_internal.so.2608.0.0",
+          "/usr/lib/libabsl_strerror.so.2608.0.0",
+          "/usr/lib/libabsl_strings.so.2608.0.0",
+          "/usr/lib/libabsl_strings_internal.so.2608.0.0",
+          "/usr/lib/libabsl_symbolize.so.2608.0.0",
+          "/usr/lib/libabsl_synchronization.so.2608.0.0",
+          "/usr/lib/libabsl_throw_delegate.so.2608.0.0",
+          "/usr/lib/libabsl_time.so.2608.0.0",
+          "/usr/lib/libabsl_time_zone.so.2608.0.0",
+          "/usr/lib/libabsl_tracing_internal.so.2608.0.0",
+          "/usr/lib/libabsl_utf8_for_code_point.so.2608.0.0",
+          "/usr/lib/libblkid.so.1.1.0",
+          "/usr/lib/libbrotlicommon.so.1.2.1",
+          "/usr/lib/libbrotlidec.so.1.2.1",
+          "/usr/lib/libbrotlienc.so.1.2.1",
+          "/usr/lib/libbz2.so.1.0.8",
+          "/usr/lib/libc.so.6",
+          "/usr/lib/libcairo.so.2.11806.6",
+          "/usr/lib/libcanberra.so.0.2.5",
+          "/usr/lib/libcrypto.so.3",
+          "/usr/lib/libdatrie.so.1.4.1",
+          "/usr/lib/libdav1d.so.7.0.0",
+          "/usr/lib/libdbus-1.so.3.38.3",
+          "/usr/lib/libdisplay-info.so.0.3.0",
+          "/usr/lib/libdl.so.2",
+          "/usr/lib/libdrm.so.2.134.0",
+          "/usr/lib/libeis.so.1.6.0",
+          "/usr/lib/libevdev.so.2.3.0",
+          "/usr/lib/libexpat.so.1.13.1",
+          "/usr/lib/libffi.so.8.5.0",
+          "/usr/lib/libfontconfig.so.1.17.0",
+          "/usr/lib/libfreetype.so.6.20.7",
+          "/usr/lib/libfribidi.so.0.4.0",
+          "/usr/lib/libgbm.so.1.0.0",
+          "/usr/lib/libgcc_s.so.1",
+          "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8",
+          "/usr/lib/libgio-2.0.so.0.9000.1",
+          "/usr/lib/libglib-2.0.so.0.9000.1",
+          "/usr/lib/libglslang-default-resource-limits.so.16.6.0",
+          "/usr/lib/libglslang.so.16.6.0",
+          "/usr/lib/libglycin-2.so.0",
+          "/usr/lib/libgmodule-2.0.so.0.9000.1",
+          "/usr/lib/libgobject-2.0.so.0.9000.1",
+          "/usr/lib/libgomp.so.1.0.0",
+          "/usr/lib/libgraphite2.so.3.3.1",
+          "/usr/lib/libgudev-1.0.so.0.3.0",
+          "/usr/lib/libharfbuzz.so.0.61510.0",
+          "/usr/lib/libhwy.so.1.4.0",
+          "/usr/lib/libhyprcursor.so.0.1.13",
+          "/usr/lib/libhyprgraphics.so.0.6.0",
+          "/usr/lib/libhyprlang.so.0.6.8",
+          "/usr/lib/libhyprutils.so.0.14.3",
+          "/usr/lib/libicudata.so.78.3",
+          "/usr/lib/libicuuc.so.78.3",
+          "/usr/lib/libinput.so.10.13.0",
+          "/usr/lib/libjpeg.so.8.3.2",
+          "/usr/lib/libjxl.so.0.12.0",
+          "/usr/lib/libjxl_cms.so.0.12.0",
+          "/usr/lib/libjxl_threads.so.0.12.0",
+          "/usr/lib/liblcms2.so.2.0.20",
+          "/usr/lib/libltdl.so.7.3.5",
+          "/usr/lib/liblua.so.5.5.1",
+          "/usr/lib/liblua5.4.so.5.4.9",
+          "/usr/lib/liblzma.so.5.8.4",
+          "/usr/lib/libm.so.6",
+          "/usr/lib/libmagic.so.1.0.0",
+          "/usr/lib/libmount.so.1.1.0",
+          "/usr/lib/libmtdev.so.1.0.0",
+          "/usr/lib/libmuparser.so.2.3.5",
+          "/usr/lib/libnvidia-allocator.so.615.78.08",
+          "/usr/lib/libnvidia-egl-gbm.so.1.1.3",
+          "/usr/lib/libnvidia-egl-wayland.so.1.1.24",
+          "/usr/lib/libnvidia-egl-wayland2.so.1.0.2",
+          "/usr/lib/libnvidia-egl-xcb.so.1.0.6",
+          "/usr/lib/libnvidia-egl-xlib.so.1.0.6",
+          "/usr/lib/libnvidia-eglcore.so.615.78.08",
+          "/usr/lib/libnvidia-glsi.so.615.78.08",
+          "/usr/lib/libnvidia-gpucomp.so.615.78.08",
+          "/usr/lib/libnvidia-rmapi-tegra.so.615.78.08",
+          "/usr/lib/libogg.so.0.8.6",
+          "/usr/lib/libpango-1.0.so.0.5800.2",
+          "/usr/lib/libpangocairo-1.0.so.0.5800.2",
+          "/usr/lib/libpangoft2-1.0.so.0.5800.2",
+          "/usr/lib/libpcre2-8.so.0.16.1",
+          "/usr/lib/libpixman-1.so.0.46.4",
+          "/usr/lib/libpng16.so.16.59.0",
+          "/usr/lib/libpthread.so.0",
+          "/usr/lib/libre2.so.11.0.0",
+          "/usr/lib/librsvg-2.so.2.63.4",
+          "/usr/lib/librt.so.1",
+          "/usr/lib/libsdbus-c++.so.2.3.1",
+          "/usr/lib/libseat.so.1",
+          "/usr/lib/libseccomp.so.2.6.0",
+          "/usr/lib/libsharpyuv.so.0.1.2",
+          "/usr/lib/libstdc++.so.6.0.35",
+          "/usr/lib/libsystemd.so.0.45.0",
+          "/usr/lib/libtdb.so.1.4.15",
+          "/usr/lib/libthai.so.0.3.2",
+          "/usr/lib/libtomlplusplus.so.3.4.0",
+          "/usr/lib/libudev.so.1.7.15",
+          "/usr/lib/libuuid.so.1.3.0",
+          "/usr/lib/libvorbis.so.0.4.9",
+          "/usr/lib/libvorbisfile.so.3.3.8",
+          "/usr/lib/libwacom.so.9.0.0",
+          "/usr/lib/libwayland-client.so.0.26.0",
+          "/usr/lib/libwayland-server.so.0.26.0",
+          "/usr/lib/libwebp.so.7.2.0",
+          "/usr/lib/libxcb-composite.so.0.0.0",
+          "/usr/lib/libxcb-dri3.so.0.1.0",
+          "/usr/lib/libxcb-errors.so.0.0.0",
+          "/usr/lib/libxcb-icccm.so.4.0.0",
+          "/usr/lib/libxcb-present.so.0.0.0",
+          "/usr/lib/libxcb-render.so.0.0.0",
+          "/usr/lib/libxcb-res.so.0.0.0",
+          "/usr/lib/libxcb-shm.so.0.0.0",
+          "/usr/lib/libxcb-xfixes.so.0.0.0",
+          "/usr/lib/libxcb.so.1.1.0",
+          "/usr/lib/libxkbcommon.so.0.13.2",
+          "/usr/lib/libxml2.so.16.1.4",
+          "/usr/lib/libz.so.1.3.2",
+          "/usr/lib/libzip.so.5.5",
+          "/usr/lib/libzstd.so.1.5.7",
+          "/usr/lib/locale/locale-archive",
+          "/usr/share/glib-2.0/schemas/gschemas.compiled"
+        ],
+        "generatedObject": {
+          "classification": "observed-owned-NVIDIA-context-generated-runtime-object",
+          "kernelDevice": [
+            0,
+            1
+          ],
+          "inode": 1559678,
+          "mappings": [
+            {
+              "address": "f578dc79c000-f578dc79e000",
+              "permissions": "rw-s",
+              "offset": "00000000",
+              "device": "00:01",
+              "inode": 1559678,
+              "pathname": "/memfd:/.glXXXXXX (deleted)"
+            },
+            {
+              "address": "f578dc79e000-f578dc7a0000",
+              "permissions": "r-xs",
+              "offset": "00000000",
+              "device": "00:01",
+              "inode": 1559678,
+              "pathname": "/memfd:/.glXXXXXX (deleted)"
+            }
+          ],
+          "mappedBytesPerAlias": 8192,
+          "mutableExecutableBacking": true,
+          "creatorAttested": false,
+          "contentSha256": null,
+          "backingSize": null,
+          "seals": null,
+          "metadata": {
+            "f578dc79c000-f578dc79e000": {
+              "link": "/memfd:/.glXXXXXX (deleted)",
+              "backingError": "PermissionError: [Errno 1] Operation not permitted: '/proc/2485058/map_files/f578dc79c000-f578dc79e000'"
+            },
+            "f578dc79e000-f578dc7a0000": {
+              "link": "/memfd:/.glXXXXXX (deleted)",
+              "backingError": "PermissionError: [Errno 1] Operation not permitted: '/proc/2485058/map_files/f578dc79e000-f578dc7a0000'"
+            }
+          },
+          "attribution": "controlled-context inference, not creator or code-safety proof"
+        },
+        "firstGeneratedObservation": {
+          "classification": "observed-owned-NVIDIA-context-generated-runtime-object",
+          "kernelDevice": [
+            0,
+            1
+          ],
+          "inode": 1559678,
+          "mappings": [
+            {
+              "address": "f578dc79c000-f578dc79e000",
+              "permissions": "rw-s",
+              "offset": "00000000",
+              "device": "00:01",
+              "inode": 1559678,
+              "pathname": "/memfd:/.glXXXXXX (deleted)"
+            },
+            {
+              "address": "f578dc79e000-f578dc7a0000",
+              "permissions": "r-xs",
+              "offset": "00000000",
+              "device": "00:01",
+              "inode": 1559678,
+              "pathname": "/memfd:/.glXXXXXX (deleted)"
+            }
+          ],
+          "mappedBytesPerAlias": 8192,
+          "mutableExecutableBacking": true,
+          "creatorAttested": false,
+          "contentSha256": null,
+          "backingSize": null,
+          "seals": null,
+          "metadata": {
+            "f578dc79c000-f578dc79e000": {
+              "link": "/memfd:/.glXXXXXX (deleted)",
+              "backingError": "PermissionError: [Errno 1] Operation not permitted: '/proc/2485058/map_files/f578dc79c000-f578dc79e000'"
+            },
+            "f578dc79e000-f578dc7a0000": {
+              "link": "/memfd:/.glXXXXXX (deleted)",
+              "backingError": "PermissionError: [Errno 1] Operation not permitted: '/proc/2485058/map_files/f578dc79e000-f578dc7a0000'"
+            }
+          },
+          "attribution": "controlled-context inference, not creator or code-safety proof"
+        },
+        "ownedBeforeAndAfter": true,
+        "generatedContentsRead": false,
+        "creatorAttested": false,
+        "legacyAnonymousPolicyUnchanged": true
+      },
+      "nestedMappings": [
+        "/dev/nvidia0",
+        "/dev/nvidiactl",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/aq-log-provider-build-1794102851345544241/build/libaquamarine.so.0.16.0",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/owned-stack/nested-fonts/JetBrainsMonoNerdFont-Regular.ttf",
+        "/usr/bin/Hyprland",
+        "/usr/lib/gio/modules/libdconfsettings.so",
+        "/usr/lib/ld-linux-aarch64.so.1",
+        "/usr/lib/libEGL.so.1.1.0",
+        "/usr/lib/libEGL_nvidia.so.615.78.08",
+        "/usr/lib/libGLESv2.so.2.1.0",
+        "/usr/lib/libGLdispatch.so.0.0.0",
+        "/usr/lib/libSPIRV-Tools-opt.so",
+        "/usr/lib/libSPIRV-Tools.so",
+        "/usr/lib/libX11-xcb.so.1.0.0",
+        "/usr/lib/libX11.so.6.4.0",
+        "/usr/lib/libXau.so.6.0.0",
+        "/usr/lib/libXcursor.so.1.0.2",
+        "/usr/lib/libXdmcp.so.6.0.0",
+        "/usr/lib/libXext.so.6.4.0",
+        "/usr/lib/libXfixes.so.3.1.0",
+        "/usr/lib/libXrender.so.1.3.0",
+        "/usr/lib/libabsl_base.so.2608.0.0",
+        "/usr/lib/libabsl_city.so.2608.0.0",
+        "/usr/lib/libabsl_debugging_internal.so.2608.0.0",
+        "/usr/lib/libabsl_decode_rust_punycode.so.2608.0.0",
+        "/usr/lib/libabsl_demangle_internal.so.2608.0.0",
+        "/usr/lib/libabsl_demangle_rust.so.2608.0.0",
+        "/usr/lib/libabsl_examine_stack.so.2608.0.0",
+        "/usr/lib/libabsl_hash.so.2608.0.0",
+        "/usr/lib/libabsl_hashtablez_sampler.so.2608.0.0",
+        "/usr/lib/libabsl_int128.so.2608.0.0",
+        "/usr/lib/libabsl_kernel_timeout_internal.so.2608.0.0",
+        "/usr/lib/libabsl_leak_check.so.2608.0.0",
+        "/usr/lib/libabsl_log_globals.so.2608.0.0",
+        "/usr/lib/libabsl_log_internal_check_op.so.2608.0.0",
+        "/usr/lib/libabsl_log_internal_format.so.2608.0.0",
+        "/usr/lib/libabsl_log_internal_globals.so.2608.0.0",
+        "/usr/lib/libabsl_log_internal_log_sink_set.so.2608.0.0",
+        "/usr/lib/libabsl_log_internal_message.so.2608.0.0",
+        "/usr/lib/libabsl_log_internal_nullguard.so.2608.0.0",
+        "/usr/lib/libabsl_log_internal_proto.so.2608.0.0",
+        "/usr/lib/libabsl_log_internal_structured_proto.so.2608.0.0",
+        "/usr/lib/libabsl_log_sink.so.2608.0.0",
+        "/usr/lib/libabsl_malloc_internal.so.2608.0.0",
+        "/usr/lib/libabsl_raw_hash_set.so.2608.0.0",
+        "/usr/lib/libabsl_raw_logging_internal.so.2608.0.0",
+        "/usr/lib/libabsl_spinlock_wait.so.2608.0.0",
+        "/usr/lib/libabsl_stacktrace.so.2608.0.0",
+        "/usr/lib/libabsl_str_format_internal.so.2608.0.0",
+        "/usr/lib/libabsl_strerror.so.2608.0.0",
+        "/usr/lib/libabsl_strings.so.2608.0.0",
+        "/usr/lib/libabsl_strings_internal.so.2608.0.0",
+        "/usr/lib/libabsl_symbolize.so.2608.0.0",
+        "/usr/lib/libabsl_synchronization.so.2608.0.0",
+        "/usr/lib/libabsl_throw_delegate.so.2608.0.0",
+        "/usr/lib/libabsl_time.so.2608.0.0",
+        "/usr/lib/libabsl_time_zone.so.2608.0.0",
+        "/usr/lib/libabsl_tracing_internal.so.2608.0.0",
+        "/usr/lib/libabsl_utf8_for_code_point.so.2608.0.0",
+        "/usr/lib/libblkid.so.1.1.0",
+        "/usr/lib/libbrotlicommon.so.1.2.1",
+        "/usr/lib/libbrotlidec.so.1.2.1",
+        "/usr/lib/libbrotlienc.so.1.2.1",
+        "/usr/lib/libbz2.so.1.0.8",
+        "/usr/lib/libc.so.6",
+        "/usr/lib/libcairo.so.2.11806.6",
+        "/usr/lib/libcanberra.so.0.2.5",
+        "/usr/lib/libcrypto.so.3",
+        "/usr/lib/libdatrie.so.1.4.1",
+        "/usr/lib/libdav1d.so.7.0.0",
+        "/usr/lib/libdbus-1.so.3.38.3",
+        "/usr/lib/libdisplay-info.so.0.3.0",
+        "/usr/lib/libdl.so.2",
+        "/usr/lib/libdrm.so.2.134.0",
+        "/usr/lib/libeis.so.1.6.0",
+        "/usr/lib/libevdev.so.2.3.0",
+        "/usr/lib/libexpat.so.1.13.1",
+        "/usr/lib/libffi.so.8.5.0",
+        "/usr/lib/libfontconfig.so.1.17.0",
+        "/usr/lib/libfreetype.so.6.20.7",
+        "/usr/lib/libfribidi.so.0.4.0",
+        "/usr/lib/libgbm.so.1.0.0",
+        "/usr/lib/libgcc_s.so.1",
+        "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8",
+        "/usr/lib/libgio-2.0.so.0.9000.1",
+        "/usr/lib/libglib-2.0.so.0.9000.1",
+        "/usr/lib/libglslang-default-resource-limits.so.16.6.0",
+        "/usr/lib/libglslang.so.16.6.0",
+        "/usr/lib/libglycin-2.so.0",
+        "/usr/lib/libgmodule-2.0.so.0.9000.1",
+        "/usr/lib/libgobject-2.0.so.0.9000.1",
+        "/usr/lib/libgomp.so.1.0.0",
+        "/usr/lib/libgraphite2.so.3.3.1",
+        "/usr/lib/libgudev-1.0.so.0.3.0",
+        "/usr/lib/libharfbuzz.so.0.61510.0",
+        "/usr/lib/libhwy.so.1.4.0",
+        "/usr/lib/libhyprcursor.so.0.1.13",
+        "/usr/lib/libhyprgraphics.so.0.6.0",
+        "/usr/lib/libhyprlang.so.0.6.8",
+        "/usr/lib/libhyprutils.so.0.14.3",
+        "/usr/lib/libicudata.so.78.3",
+        "/usr/lib/libicuuc.so.78.3",
+        "/usr/lib/libinput.so.10.13.0",
+        "/usr/lib/libjpeg.so.8.3.2",
+        "/usr/lib/libjxl.so.0.12.0",
+        "/usr/lib/libjxl_cms.so.0.12.0",
+        "/usr/lib/libjxl_threads.so.0.12.0",
+        "/usr/lib/liblcms2.so.2.0.20",
+        "/usr/lib/libltdl.so.7.3.5",
+        "/usr/lib/liblua.so.5.5.1",
+        "/usr/lib/liblua5.4.so.5.4.9",
+        "/usr/lib/liblzma.so.5.8.4",
+        "/usr/lib/libm.so.6",
+        "/usr/lib/libmagic.so.1.0.0",
+        "/usr/lib/libmount.so.1.1.0",
+        "/usr/lib/libmtdev.so.1.0.0",
+        "/usr/lib/libmuparser.so.2.3.5",
+        "/usr/lib/libnvidia-allocator.so.615.78.08",
+        "/usr/lib/libnvidia-egl-gbm.so.1.1.3",
+        "/usr/lib/libnvidia-egl-wayland.so.1.1.24",
+        "/usr/lib/libnvidia-egl-wayland2.so.1.0.2",
+        "/usr/lib/libnvidia-egl-xcb.so.1.0.6",
+        "/usr/lib/libnvidia-egl-xlib.so.1.0.6",
+        "/usr/lib/libnvidia-eglcore.so.615.78.08",
+        "/usr/lib/libnvidia-glsi.so.615.78.08",
+        "/usr/lib/libnvidia-gpucomp.so.615.78.08",
+        "/usr/lib/libnvidia-rmapi-tegra.so.615.78.08",
+        "/usr/lib/libogg.so.0.8.6",
+        "/usr/lib/libpango-1.0.so.0.5800.2",
+        "/usr/lib/libpangocairo-1.0.so.0.5800.2",
+        "/usr/lib/libpangoft2-1.0.so.0.5800.2",
+        "/usr/lib/libpcre2-8.so.0.16.1",
+        "/usr/lib/libpixman-1.so.0.46.4",
+        "/usr/lib/libpng16.so.16.59.0",
+        "/usr/lib/libpthread.so.0",
+        "/usr/lib/libre2.so.11.0.0",
+        "/usr/lib/librsvg-2.so.2.63.4",
+        "/usr/lib/librt.so.1",
+        "/usr/lib/libsdbus-c++.so.2.3.1",
+        "/usr/lib/libseat.so.1",
+        "/usr/lib/libseccomp.so.2.6.0",
+        "/usr/lib/libsharpyuv.so.0.1.2",
+        "/usr/lib/libstdc++.so.6.0.35",
+        "/usr/lib/libsystemd.so.0.45.0",
+        "/usr/lib/libtdb.so.1.4.15",
+        "/usr/lib/libthai.so.0.3.2",
+        "/usr/lib/libtomlplusplus.so.3.4.0",
+        "/usr/lib/libudev.so.1.7.15",
+        "/usr/lib/libuuid.so.1.3.0",
+        "/usr/lib/libvorbis.so.0.4.9",
+        "/usr/lib/libvorbisfile.so.3.3.8",
+        "/usr/lib/libwacom.so.9.0.0",
+        "/usr/lib/libwayland-client.so.0.26.0",
+        "/usr/lib/libwayland-server.so.0.26.0",
+        "/usr/lib/libwebp.so.7.2.0",
+        "/usr/lib/libxcb-composite.so.0.0.0",
+        "/usr/lib/libxcb-dri3.so.0.1.0",
+        "/usr/lib/libxcb-errors.so.0.0.0",
+        "/usr/lib/libxcb-icccm.so.4.0.0",
+        "/usr/lib/libxcb-present.so.0.0.0",
+        "/usr/lib/libxcb-render.so.0.0.0",
+        "/usr/lib/libxcb-res.so.0.0.0",
+        "/usr/lib/libxcb-shm.so.0.0.0",
+        "/usr/lib/libxcb-xfixes.so.0.0.0",
+        "/usr/lib/libxcb.so.1.1.0",
+        "/usr/lib/libxkbcommon.so.0.13.2",
+        "/usr/lib/libxml2.so.16.1.4",
+        "/usr/lib/libz.so.1.3.2",
+        "/usr/lib/libzip.so.5.5",
+        "/usr/lib/libzstd.so.1.5.7",
+        "/usr/lib/locale/locale-archive",
+        "/usr/share/glib-2.0/schemas/gschemas.compiled"
+      ],
+      "nestedGraphicsFDs": {
+        "/dev/dri/renderD128": {
+          "device": 9,
+          "inode": 203,
+          "rdev": 57984,
+          "mode": 8630,
+          "uid": 0,
+          "gid": 987
+        },
+        "/dev/nvidiactl": {
+          "device": 9,
+          "inode": 1044,
+          "rdev": 50175,
+          "mode": 8630,
+          "uid": 0,
+          "gid": 0
+        },
+        "/dev/nvidia0": {
+          "device": 9,
+          "inode": 1046,
+          "rdev": 49920,
+          "mode": 8630,
+          "uid": 0,
+          "gid": 0
+        },
+        "/dev/nvidia-modeset": {
+          "device": 9,
+          "inode": 1086,
+          "rdev": 50174,
+          "mode": 8630,
+          "uid": 0,
+          "gid": 0
+        }
+      }
+    }
+  },
+  "initialNestedGeometry": {
+    "width": 1280,
+    "height": 720,
+    "x": 0,
+    "y": 0,
+    "scale": 1,
+    "transform": 0
+  },
+  "actualConfigErrors": {
+    "path": "/run/user/1000/wqa/c35b/hypr/acc1aa0bfd4bd575dcb0f76c35ccf12b660a1ab9_1794145049_1320292267/.socket.sock",
+    "device": 82,
+    "inode": 10578,
+    "pid": 2485058,
+    "startTicks": "12753326",
+    "request": "j/configerrors",
+    "responseHex": "5b0a0922220a5d0a",
+    "errors": [],
+    "configSha256": "f5285bcba66500cadfd3283911456aeb381de7f711e8dab460eb0a4946ed14aa"
+  },
+  "pointerBootstrap": {
+    "pid": 2485218,
+    "startTicks": "12753483",
+    "exit": null,
+    "alive": true,
+    "inputHex": "73796e6320300a",
+    "ackHex": "726561647920300a",
+    "monotonicNs": 124714478459842,
+    "originalDeadlineNs": 124738173948763,
+    "meaning": "same live helper roundtrip only; not GTK or Elm delivery evidence"
+  },
+  "actualLaunch": {
+    "pid": 2485219,
+    "startTicks": "12753485",
+    "argv": [
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux003-dom-allocation-build-1794141179047483102/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/ux003-native-observer/build/ux003-native-observer/ux003-native-observer",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/run/backend.json"
+    ],
+    "deadlineNs": 124738173948763
+  },
+  "mappedWindow": {
+    "address": "0xc670254830f0",
+    "mapped": true,
+    "hidden": false,
+    "visible": false,
+    "acceptsInput": true,
+    "at": [
+      150,
+      20
+    ],
+    "size": [
+      980,
+      680
+    ],
+    "workspace": {
+      "address": "1",
+      "id": 1,
+      "type": "normal",
+      "name": "1"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "GTK Application",
+    "title": "",
+    "initialClass": "GTK Application",
+    "initialTitle": "",
+    "pid": 2485227,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "18000000"
+  },
+  "windowNamespace": {
+    "engine": "pid:[4026533860]",
+    "parent": "pid:[4026531836]"
+  },
+  "openerReadinessFrames": [
+    {
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/mapped.png",
+      "sha256": "cceeafad51b7e37df087a5d9f4542904a16308f4c6a353125d1ece90819cd161",
+      "monotonicNs": 124715934693633,
+      "targetPid": 2485227,
+      "targetStartTicks": "12753518",
+      "originalDeadlineNs": 124738173948763,
+      "witness": {
+        "ready": false,
+        "contract": "fixed-Night-100-enabled-Applications-interior-v1",
+        "backgroundMatches": 0,
+        "backgroundExpected": 400,
+        "textPrimaryPixels": 0,
+        "minimumTextPrimaryPixels": 100,
+        "cursorExclusionROI": [
+          44,
+          20,
+          74,
+          38
+        ],
+        "windowAt": [
+          150,
+          20
+        ],
+        "backgroundROI": [
+          24,
+          10,
+          104,
+          15
+        ],
+        "labelROI": [
+          22,
+          20,
+          118,
+          38
+        ],
+        "interpretation": "pre-input paint witness only; not eligible catalog, launch, or original acceptance"
+      }
+    },
+    {
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/opener-readiness-01.png",
+      "sha256": "a62ac92da2a22809d230616c2aa916aa5e15799a7dfdd332c3391f2cf2afa8b9",
+      "monotonicNs": 124716558740988,
+      "targetPid": 2485227,
+      "targetStartTicks": "12753518",
+      "originalDeadlineNs": 124738173948763,
+      "witness": {
+        "ready": false,
+        "contract": "fixed-Night-100-enabled-Applications-interior-v1",
+        "backgroundMatches": 0,
+        "backgroundExpected": 400,
+        "textPrimaryPixels": 0,
+        "minimumTextPrimaryPixels": 100,
+        "cursorExclusionROI": [
+          44,
+          20,
+          74,
+          38
+        ],
+        "windowAt": [
+          150,
+          20
+        ],
+        "backgroundROI": [
+          24,
+          10,
+          104,
+          15
+        ],
+        "labelROI": [
+          22,
+          20,
+          118,
+          38
+        ],
+        "interpretation": "pre-input paint witness only; not eligible catalog, launch, or original acceptance"
+      }
+    },
+    {
+      "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/opener-readiness-02.png",
+      "sha256": "27a577f3ea6bc85c82da5420c1a4728578c6ece02c787a8096076ff385030c8e",
+      "monotonicNs": 124717163950758,
+      "targetPid": 2485227,
+      "targetStartTicks": "12753518",
+      "originalDeadlineNs": 124738173948763,
+      "witness": {
+        "ready": true,
+        "contract": "fixed-Night-100-enabled-Applications-interior-v1",
+        "backgroundMatches": 400,
+        "backgroundExpected": 400,
+        "textPrimaryPixels": 127,
+        "minimumTextPrimaryPixels": 100,
+        "cursorExclusionROI": [
+          44,
+          20,
+          74,
+          38
+        ],
+        "windowAt": [
+          150,
+          20
+        ],
+        "backgroundROI": [
+          24,
+          10,
+          104,
+          15
+        ],
+        "labelROI": [
+          22,
+          20,
+          118,
+          38
+        ],
+        "interpretation": "pre-input paint witness only; not eligible catalog, launch, or original acceptance"
+      }
+    }
+  ],
+  "openerReadyFrame": {
+    "screenshot": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/opener-readiness-02.png",
+    "sha256": "27a577f3ea6bc85c82da5420c1a4728578c6ece02c787a8096076ff385030c8e",
+    "monotonicNs": 124717163950758,
+    "targetPid": 2485227,
+    "targetStartTicks": "12753518",
+    "originalDeadlineNs": 124738173948763,
+    "witness": {
+      "ready": true,
+      "contract": "fixed-Night-100-enabled-Applications-interior-v1",
+      "backgroundMatches": 400,
+      "backgroundExpected": 400,
+      "textPrimaryPixels": 127,
+      "minimumTextPrimaryPixels": 100,
+      "cursorExclusionROI": [
+        44,
+        20,
+        74,
+        38
+      ],
+      "windowAt": [
+        150,
+        20
+      ],
+      "backgroundROI": [
+        24,
+        10,
+        104,
+        15
+      ],
+      "labelROI": [
+        22,
+        20,
+        118,
+        38
+      ],
+      "interpretation": "pre-input paint witness only; not eligible catalog, launch, or original acceptance"
+    }
+  },
+  "pointerRetirement": {
+    "pid": 2485218,
+    "startTicks": "12753483",
+    "exit": 0,
+    "normal": true,
+    "groupAbsent": true,
+    "stdoutTailHex": "",
+    "monotonicNs": 124737602387688
+  },
+  "observation": {
+    "schema": 1,
+    "kind": "ux003-backend-observation",
+    "backend": {
+      "schema": 1,
+      "passed": true,
+      "cleanup": true,
+      "callbacks": 9,
+      "operations": 4,
+      "auth": "Just (FrameObserved CredentialDelivered)",
+      "credentialRows": 27,
+      "selectedPid": 2485225,
+      "attempt": "executed",
+      "checks": {
+        "bootstrapExecuted": true,
+        "selectedCustodyAvailable": true,
+        "selectedLeaderExited": true,
+        "selectedOperationSucceeded": true,
+        "processCleanup": true,
+        "catalogCleanup": true,
+        "pinCleanup": true
+      },
+      "failureStages": [],
+      "selectedOperationError": null,
+      "selectedObservedExit": {
+        "kind": "exit-code-observation",
+        "trust": "untrusted",
+        "authority": false,
+        "code": 0
+      },
+      "retirement": {
+        "process": "confirmed",
+        "catalog": "confirmed",
+        "pins": "confirmed"
+      },
+      "nativeAccepted": false,
+      "releaseAccepted": false
+    },
+    "bootstrapFailure": null,
+    "owner": {
+      "passed": true,
+      "cleanup": true,
+      "engineCleanup": true,
+      "peerPid": 2485219,
+      "requests": 682,
+      "commits": 9,
+      "actions": 3,
+      "origins": [
+        {
+          "role": "Controller",
+          "origin": "http://127.0.0.1:49941"
+        },
+        {
+          "role": "Bar",
+          "origin": "http://127.0.0.1:60795"
+        },
+        {
+          "role": "Popup",
+          "origin": "http://127.0.0.1:58461"
+        }
+      ],
+      "trace": [
+        {
+          "role": "Controller",
+          "route": "native-event",
+          "bytes": 274,
+          "sha256": "866881b984ef0c3b220d0411c339129cec4f53358caf37fca4ca0b3aafcc6913"
+        },
+        {
+          "role": "Controller",
+          "route": "Commit",
+          "bytes": 2635,
+          "sha256": "d323f78b0f99b1c1d5f935817d7be7284715cf50d9ccd01c2f38fdb746e80ee1"
+        },
+        {
+          "role": "Controller",
+          "route": "native-event",
+          "bytes": 489,
+          "sha256": "d9ebec7524dee94f9ed44288162849396c948e59946f48720d7e5f83972c9fdc"
+        },
+        {
+          "role": "Controller",
+          "route": "Commit",
+          "bytes": 2472,
+          "sha256": "5dd547a432bdd7af44b1013a557cfb8832fe1dd3d6c7d58ef055f6ba60dd0f57"
+        },
+        {
+          "role": "Bar",
+          "route": "Actions",
+          "bytes": 115,
+          "sha256": "bdfc3f4aa34ba8020c664816f71fa05e506a0501177cb73a74392ca36bf467ad"
+        },
+        {
+          "role": "Controller",
+          "route": "Commit",
+          "bytes": 3354,
+          "sha256": "b1042a1c10f036f0f826e5b86bfb16b3056d9a7cf0195615b5abd3f1a9636dff"
+        },
+        {
+          "role": "Controller",
+          "route": "native-event",
+          "bytes": 489,
+          "sha256": "fd1803375bbbc0d8a75feffe7530a1cd7921f4a0828c4e5e7f330f9ff6cf50e9"
+        },
+        {
+          "role": "Controller",
+          "route": "Commit",
+          "bytes": 4138,
+          "sha256": "fc05e1f4f70e15d2c534f4bc497d11a6e8d32b849d14eb6157b4b4b31d0457b9"
+        },
+        {
+          "role": "Bar",
+          "route": "Actions",
+          "bytes": 115,
+          "sha256": "8f2115006bcbaa6716f82ec8ed1548c2063d0065c1ace6cad8e06e98e905b30a"
+        },
+        {
+          "role": "Controller",
+          "route": "Commit",
+          "bytes": 3354,
+          "sha256": "c7fee60bce0319c97cf27d17f303d8bdf754f9c9aeca2c95454dbcf8c1df9953"
+        },
+        {
+          "role": "Controller",
+          "route": "native-event",
+          "bytes": 489,
+          "sha256": "23c56b661e79d615b90f3231e3ffd8e5d454caa1d04f2f2408de0147ba1bf143"
+        },
+        {
+          "role": "Controller",
+          "route": "Commit",
+          "bytes": 4138,
+          "sha256": "61909c35dbbe1b52afbb03d59074db70904dd1f1429535057b4675a4d25cbd60"
+        },
+        {
+          "role": "Popup",
+          "route": "Actions",
+          "bytes": 121,
+          "sha256": "766bc1cc98b2af043bc784f5184c2a4b70250073cff174060de4055980da6338"
+        },
+        {
+          "role": "Controller",
+          "route": "Commit",
+          "bytes": 4364,
+          "sha256": "a807b24b2e8cb945d6a687faf27ed3374ddf26ea567de8a4e51f00f6fb9f76bf"
+        },
+        {
+          "role": "Controller",
+          "route": "native-event",
+          "bytes": 423,
+          "sha256": "ddfc1a1cd6c15a93a027d1ab58b4808db68b1de80c5ae7d4655070e61dd576bf"
+        },
+        {
+          "role": "Controller",
+          "route": "Commit",
+          "bytes": 2438,
+          "sha256": "e90a062dc1207ee3d214e2ce25cd4ad74c3788677870e25567452a069c2da3f6"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Controller",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Bar",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "Popup",
+          "route": "Events",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "failure": null,
+      "nativeAcceptance": false,
+      "releaseAccepted": false,
+      "engineObservation": {
+        "schema": 1,
+        "kind": "owned-engine-terminal-observation",
+        "authority": false,
+        "incarnation": "124714711598289",
+        "deadlineMonotonicNs": "124738173948763",
+        "guiObservation": {
+          "controllerLoaded": true,
+          "barLoaded": true,
+          "popupLoaded": true,
+          "mvpAttached": true,
+          "loopReturned": true,
+          "callbackCustody": "process-pinned",
+          "rendererDiagnostics": {
+            "bar": "{\"displayDpi\":{\"gtkXftDpiBefore\":-1,\"gtkXftDpiAfter\":98304,\"fallbackApplied\":true,\"monitorCount\":1,\"primaryPixels\":[1280,720],\"primaryPhysicalMm\":[0,0]},\"gtkAllocation\":{\"mapped\":true,\"width\":980,\"height\":72,\"observedMonotonicNs\":\"124716234573170\"},\"dom\":{\"status\":\"first-mouseup-observed\",\"phase\":\"capture-before-target\",\"isTrusted\":true,\"installedPerformanceMs\":149,\"eventPerformanceMs\":1668,\"eventRows\":[{\"type\":\"pointerdown\",\"isTrusted\":true,\"button\":0,\"buttons\":1,\"client\":[48,28],\"timeStamp\":1557,\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"}},{\"type\":\"mousedown\",\"isTrusted\":true,\"button\":0,\"buttons\":1,\"client\":[48,28],\"timeStamp\":1557,\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"}},{\"type\":\"pointerup\",\"isTrusted\":true,\"button\":0,\"buttons\":0,\"client\":[48,28],\"timeStamp\":1557,\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"}},{\"type\":\"mouseup\",\"isTrusted\":true,\"button\":0,\"buttons\":0,\"client\":[48,28],\"timeStamp\":1557,\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"}}],\"eventLimit\":8,\"viewport\":[980,72],\"bodyText\":\"Applications\\u000aTask View\\u000aSwitch windows\\u000aNotifications\\u000aFiles\\u000aSystem\\u000aSettings\\u000aApplications connected. Window controls unavailable.\",\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"},\"control\":{\"tag\":\"BUTTON\",\"id\":\"applications:{\\\"lifetime\\\":\\\"9007199254740993\\\",\\\"session\\\":\\\"9007199254740995\\\",\\\"frontend\\\":\\\"9007199254740997\\\"}:4:control:opener\",\"control\":\"bar:applications\",\"disabled\":false,\"ariaDisabled\":\"false\",\"focusOnly\":\"false\",\"bounds\":[6,3,124.015625,50],\"pointerEvents\":\"auto\",\"display\":\"flex\",\"visibility\":\"visible\",\"opacity\":\"1\"},\"surface\":{\"publication\":\"5\",\"lease\":\"0\",\"mode\":\"\",\"theme\":\"night\",\"textScale\":\"100\"},\"activeElement\":{\"tag\":\"BUTTON\",\"id\":\"applications:{\\\"lifetime\\\":\\\"9007199254740993\\\",\\\"session\\\":\\\"9007199254740995\\\",\\\"frontend\\\":\\\"9007199254740997\\\"}:4:control:opener\",\"control\":\"bar:applications\"},\"priorScriptExceptions\":\"not-observed\",\"clickAfterMouseup\":\"not-observed\"}}",
+            "popup": "{\"displayDpi\":{\"gtkXftDpiBefore\":-1,\"gtkXftDpiAfter\":98304,\"fallbackApplied\":true,\"monitorCount\":1,\"primaryPixels\":[1280,720],\"primaryPhysicalMm\":[0,0]},\"gtkAllocation\":{\"mapped\":true,\"width\":980,\"height\":607,\"observedMonotonicNs\":\"124716240798488\"},\"dom\":{\"status\":\"first-mouseup-observed\",\"phase\":\"capture-before-target\",\"isTrusted\":true,\"installedPerformanceMs\":157,\"eventPerformanceMs\":5532,\"eventRows\":[{\"type\":\"pointerdown\",\"isTrusted\":true,\"button\":0,\"buttons\":1,\"client\":[150,388],\"timeStamp\":5403,\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"}},{\"type\":\"mousedown\",\"isTrusted\":true,\"button\":0,\"buttons\":1,\"client\":[150,388],\"timeStamp\":5403,\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"}},{\"type\":\"pointerup\",\"isTrusted\":true,\"button\":0,\"buttons\":0,\"client\":[150,388],\"timeStamp\":5403,\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"}},{\"type\":\"mouseup\",\"isTrusted\":true,\"button\":0,\"buttons\":0,\"client\":[150,388],\"timeStamp\":5403,\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"}}],\"eventLimit\":8,\"viewport\":[980,607],\"bodyText\":\"Applications\\u000a\\u000aType to search applications.\\u000a\\u000aSearch applications\\u000aClose applications\\u000aRefresh\\u000aActions for Owned Recorder\\u000aApplication actions unavailable in this session\\u000aPin Owned Recorder\\u000aAdd to taskbar\\u000aOpen Owned Recorder\",\"target\":{\"tag\":\"SPAN\",\"id\":\"\",\"control\":\"\"},\"control\":{\"tag\":\"BUTTON\",\"id\":\"applications:{\\\"lifetime\\\":\\\"9007199254740993\\\",\\\"session\\\":\\\"9007199254740995\\\",\\\"frontend\\\":\\\"9007199254740997\\\"}:8:entry:ux003-recorder\",\"control\":\"entry:ux003-recorder\",\"disabled\":false,\"ariaDisabled\":\"false\",\"focusOnly\":\"false\",\"bounds\":[14,360.453125,952,44],\"pointerEvents\":\"auto\",\"display\":\"flex\",\"visibility\":\"visible\",\"opacity\":\"1\"},\"surface\":{\"publication\":\"9\",\"lease\":\"1\",\"mode\":\"applications\",\"theme\":\"night\",\"textScale\":\"100\"},\"activeElement\":{\"tag\":\"BUTTON\",\"id\":\"applications:{\\\"lifetime\\\":\\\"9007199254740993\\\",\\\"session\\\":\\\"9007199254740995\\\",\\\"frontend\\\":\\\"9007199254740997\\\"}:8:entry:ux003-recorder\",\"control\":\"entry:ux003-recorder\"},\"priorScriptExceptions\":\"not-observed\",\"clickAfterMouseup\":\"not-observed\"}}"
+          }
+        },
+        "brokerTerminal": "GuiObservationWrittenLocally",
+        "brokerClose": "CloseConfirmed",
+        "engine": {
+          "pid": "2485227",
+          "startTicks": "12753518",
+          "namespace": "pid:[4026533860]",
+          "parentNamespace": "pid:[4026531836]",
+          "originalDeadline": "124738173948763",
+          "startupImage": {
+            "device": "58",
+            "inode": "2368210",
+            "size": "37292344",
+            "sha256": "4b8649df44d27cc80029553dbef849e250998a1655fb6d345ce6d061e5a7c46d"
+          },
+          "lastLiveImage": {
+            "image": {
+              "device": "58",
+              "inode": "2368210",
+              "size": "37292344",
+              "sha256": "4b8649df44d27cc80029553dbef849e250998a1655fb6d345ce6d061e5a7c46d"
+            },
+            "digestSampleMonotonicNs": "124714970575190",
+            "checkedMonotonicNs": "124737182799915"
+          },
+          "disposition": "EngineExitedNormally",
+          "normalExit": true,
+          "reaped": true,
+          "ownedReceiptMatches": true,
+          "waitStatus": [
+            "1",
+            "0"
+          ]
+        },
+        "backing": {
+          "path": "/tmp/warlock-ui-backing-b96c50f5d37b19d377d4782c7659c462613ae7844e2ded702fffe4e407589b10",
+          "device": "59",
+          "inode": "947319",
+          "owner": "1000",
+          "retired": true
+        }
+      }
+    },
+    "application": {
+      "request": "1",
+      "exit": 0,
+      "custody": "Available",
+      "containment": "BeforeSignalLeaderExited",
+      "stdoutHex": "5b2274776f20776f726473222c22222c226361665c323333225d0a",
+      "stderrHex": "",
+      "operationSucceeded": true
+    },
+    "publishedCatalog": {
+      "protocolVersion": 3,
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "kind": "application-catalog",
+      "requestId": "3",
+      "snapshot": {
+        "catalogProtocol": 2,
+        "lifetime": "9007199254740993",
+        "generation": "1",
+        "entries": [
+          {
+            "id": "ux003-recorder",
+            "name": "Owned Recorder",
+            "iconHint": "application-x-executable",
+            "wmclass": "",
+            "genericName": "",
+            "keywords": []
+          }
+        ]
+      },
+      "preferences": {
+        "revision": "1",
+        "identities": []
+      }
+    },
+    "publishedLaunch": {
+      "request": "1",
+      "lifetime": "9007199254740993",
+      "generation": "1",
+      "entry": "ux003-recorder",
+      "catalog": {
+        "protocolVersion": 3,
+        "binding": {
+          "lifetime": "9007199254740993",
+          "session": "9007199254740995",
+          "frontend": "9007199254740997"
+        },
+        "kind": "application-catalog",
+        "requestId": "3",
+        "snapshot": {
+          "catalogProtocol": 2,
+          "lifetime": "9007199254740993",
+          "generation": "1",
+          "entries": [
+            {
+              "id": "ux003-recorder",
+              "name": "Owned Recorder",
+              "iconHint": "application-x-executable",
+              "wmclass": "",
+              "genericName": "",
+              "keywords": []
+            }
+          ]
+        },
+        "preferences": {
+          "revision": "1",
+          "identities": []
+        }
+      }
+    },
+    "nativeAcceptance": false,
+    "originalAcceptance": false
+  },
+  "checks": {
+    "literalArgv": true,
+    "backendPassed": true,
+    "backendCleanup": true,
+    "reportedOwnerCleanup": true,
+    "reportedOwnerPassed": true,
+    "catalogRevision": "1",
+    "catalogLaunchBound": true,
+    "typedParentCompletion": true,
+    "journeyFactsObserved": true,
+    "fullJourneyAccepted": false,
+    "missingObservations": [
+      "independent review of actual captured input and screenshots"
+    ],
+    "actualRunBound": true,
+    "actualBackingAbsent": true,
+    "actualEnginePidAbsent": true
+  },
+  "ownedProcesses": [
+    {
+      "pid": 2485168,
+      "exit": 0
+    },
+    {
+      "pid": 2485194,
+      "exit": 0
+    },
+    {
+      "pid": 2485209,
+      "exit": 0
+    },
+    {
+      "pid": 2485218,
+      "exit": 0
+    },
+    {
+      "pid": 2485219,
+      "exit": 0
+    },
+    {
+      "pid": 2485224,
+      "exit": 0
+    },
+    {
+      "pid": 2485226,
+      "exit": 0
+    },
+    {
+      "pid": 2485228,
+      "exit": 0
+    },
+    {
+      "pid": 2485256,
+      "exit": 0
+    },
+    {
+      "pid": 2485326,
+      "exit": 0
+    },
+    {
+      "pid": 2485350,
+      "exit": 0
+    },
+    {
+      "pid": 2485392,
+      "exit": 0
+    },
+    {
+      "pid": 2485397,
+      "exit": 0
+    },
+    {
+      "pid": 2485401,
+      "exit": 0
+    },
+    {
+      "pid": 2485414,
+      "exit": 0
+    },
+    {
+      "pid": 2485428,
+      "exit": 0
+    },
+    {
+      "pid": 2485455,
+      "exit": 0
+    },
+    {
+      "pid": 2485496,
+      "exit": 0
+    },
+    {
+      "pid": 2485517,
+      "exit": 0
+    },
+    {
+      "pid": 2485537,
+      "exit": 0
+    },
+    {
+      "pid": 2485540,
+      "exit": 0
+    },
+    {
+      "pid": 2485541,
+      "exit": 0
+    },
+    {
+      "pid": 2485542,
+      "exit": 0
+    },
+    {
+      "pid": 2485543,
+      "exit": 0
+    },
+    {
+      "pid": 2485556,
+      "exit": 0
+    },
+    {
+      "pid": 2485570,
+      "exit": 0
+    },
+    {
+      "pid": 2485598,
+      "exit": 0
+    },
+    {
+      "pid": 2485613,
+      "exit": 0
+    },
+    {
+      "pid": 2485623,
+      "exit": 0
+    },
+    {
+      "pid": 2485624,
+      "exit": 0
+    },
+    {
+      "pid": 2485625,
+      "exit": 0
+    },
+    {
+      "pid": 2485634,
+      "exit": 0
+    },
+    {
+      "pid": 2485635,
+      "exit": 0
+    },
+    {
+      "pid": 2485638,
+      "exit": 0
+    },
+    {
+      "pid": 2485649,
+      "exit": 0
+    },
+    {
+      "pid": 2485667,
+      "exit": 0
+    },
+    {
+      "pid": 2485817,
+      "exit": 0
+    },
+    {
+      "pid": 2485858,
+      "exit": 0
+    },
+    {
+      "pid": 2485859,
+      "exit": 0
+    },
+    {
+      "pid": 2485860,
+      "exit": 0
+    },
+    {
+      "pid": 2485861,
+      "exit": 0
+    },
+    {
+      "pid": 2485937,
+      "exit": 0
+    },
+    {
+      "pid": 2485938,
+      "exit": 0
+    },
+    {
+      "pid": 2485939,
+      "exit": 0
+    },
+    {
+      "pid": 2485940,
+      "exit": 0
+    },
+    {
+      "pid": 2485941,
+      "exit": 0
+    },
+    {
+      "pid": 2485988,
+      "exit": 0
+    },
+    {
+      "pid": 2486019,
+      "exit": 0
+    },
+    {
+      "pid": 2486020,
+      "exit": 0
+    },
+    {
+      "pid": 2486021,
+      "exit": 0
+    },
+    {
+      "pid": 2486022,
+      "exit": 0
+    },
+    {
+      "pid": 2486105,
+      "exit": 0
+    },
+    {
+      "pid": 2486107,
+      "exit": 0
+    },
+    {
+      "pid": 2486108,
+      "exit": 0
+    },
+    {
+      "pid": 2486109,
+      "exit": 0
+    },
+    {
+      "pid": 2486187,
+      "exit": 0
+    },
+    {
+      "pid": 2486198,
+      "exit": 0
+    },
+    {
+      "pid": 2486209,
+      "exit": 0
+    },
+    {
+      "pid": 2486223,
+      "exit": 0
+    },
+    {
+      "pid": 2486244,
+      "exit": 0
+    }
+  ],
+  "backendExit": 0,
+  "retainedChildNamespaceDiagnostic": {
+    "status": "unknown",
+    "cleanupAuthority": false,
+    "scope": "retained observer child PID namespace; not engine topology proof",
+    "descriptorCloseStatus": "closed"
+  },
+  "stackRetirement": {
+    "normal": true,
+    "processes": [
+      {
+        "role": "nested",
+        "pid": 2485058,
+        "startTicks": "12753326",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "output-after",
+        "pid": 2484870,
+        "startTicks": "12753197",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "output-apply",
+        "pid": 2484857,
+        "startTicks": "12753166",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "output-before",
+        "pid": 2484850,
+        "startTicks": "12753135",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "host",
+        "pid": 2484777,
+        "startTicks": "12753088",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      }
+    ],
+    "originalDeadlineNs": 124738173948763,
+    "cleanupCeilingNs": 124740173948763
+  },
+  "globalRestoration": true,
+  "independentScreenshotReviewRequired": true,
+  "compositorRetirement": "actual retained same-parent nested andhost normal exit/reap/groupabsence; no retired foundationlease"
+}
