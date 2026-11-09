@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "kind": "ux024-initial-keyboard-menu-dom-focus-production-candidate",
+  "posts": [
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "beforeSha256": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/elm-production-fix/postimages/implementation/warlock/src/Desktop.elm",
+      "sha256": "8385e34a3ecf122bf51a6ca4e4fe2df302a955fe35575dca8b2e419302f6fd56"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/elm-production-fix/candidate.patch",
+    "sha256": "e188570ec23c6f6c40430b6fcd9d98c7a72a192054138270e2295c4b96d16edd"
+  },
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/tests-first-revision2-absent-scope/manifest.json",
+    "sha256": "3709fd7f783c2d65f3ea3f9c7c5349a818a8bd2f61bc075611f2e6002bc20196"
+  },
+  "actualSemanticRed": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794264903118007276/menu-initial-focus.json",
+    "sha256": "d8704cd70a8ae920f7bec0d307615b490c448a42da89981fd46f3d006a8e903d"
+  },
+  "actualRootReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794264903118007276/report.json",
+    "sha256": "edb0bc63b750a55f92cfd96dad0eb5ed7cab528de5378e9e96f0c4d5cfe3dacb"
+  },
+  "redSummary": {
+    "fixedChecks": 17,
+    "fixedFailed": 4,
+    "fixedPassed": 13,
+    "setupPassed": 5,
+    "seedCount": 32,
+    "seedFailures": 4,
+    "old18and16and34Passed": true
+  },
+  "changes": [
+    "Only OpenWindowMenu: append one Focus for the newly opened menu close DOM id when popupOrigin is KeyboardEntry. The existing unchanged-menu refusal executes before effect return.",
+    "Target uses the same Menu.menuNumber encoding as Surface.controls. Existing public SurfaceEntry establishes popupOrigin before update; frame publication remains SurfaceController responsibility."
+  ],
+  "preserved": [
+    "All existing model updates and provider/owner/availability/capture gates",
+    "Pointer opens, repeated callbacks and refresh paths receive no added focus",
+    "Deferred exact eligible taskbar-group return and fresh observation checks",
+    "Frozen 17 checks/five setup/32 seeded sequences and all old fixtures",
+    "Mvp/Haskell production unchanged pending separate actual semantic RED"
+  ],
+  "sourcePins": {
+    "implementation/warlock/src/Surface.elm": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179",
+    "implementation/warlock/src/SurfaceController.elm": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26"
+  },
+  "executedByAuthor": false,
+  "primaryWrites": false,
+  "nativeAcceptance": false,
+  "originalAccepted": false,
+  "qualification": "Root only: existing fixed managed Elm route with unchanged initial-focus and previous fixtures. No candidate compile or GREEN observed yet."
+}

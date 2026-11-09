@@ -167,6 +167,38 @@ def validate_menu_bar_context_result(result, image_sha, fixture_sha):
             or any(not isinstance(row, dict) or row.get('passed') is not True or row.get('skipped', False) for row in checks)):
         raise RuntimeError('Fixed34 rendered bar context cases/setup/artifacts missing, changed or failed')
 
+
+MENU_INITIAL_FOCUS_CASES = ('keyboard-open-one-exact-dom-focus', 'focus-in-same-current-projection-commit', 'focus-target-is-current-unique-close', 'keyboard-origin-established-before-open', 'pointer-open-no-dom-focus', 'old-open-callback-no-repeat', 'refresh-request-no-initial-focus', 'refreshed-menu-no-initial-focus', 'stale-publication-no-focus', 'stale-lease-no-focus', 'foreign-owner-no-focus', 'retired-owner-no-focus', 'disconnected-origin-no-focus', 'dismiss-does-not-immediately-restore', 'eligible-return-stays-exact-group', 'removed-return-target-refused', 'unavailable-return-target-refused')
+MENU_INITIAL_FOCUS_PRECONDITIONS = ('current-taskbar-group-eligible', 'keyboard-menu-opened', 'pointer-menu-opened', 'exact-enabled-current-menu-close', 'menu-publication-and-lease-current')
+MENU_INITIAL_FOCUS_QA_INPUTS = {'implementation/warlock/qa/MenuInitialFocusReplay.elm': '600a0f18055b1c6e222ff61f75f63d37d0135aa4afc1a997e25c5476cd5e4c64', 'implementation/warlock/qa/menu-initial-focus.cjs': 'aa138698454a0d16bea9467c01b94cca72faf8fe4c2d7cbf3f5dbd06bf8dce0b'}
+
+def validate_menu_initial_focus_result(result, image_sha, fixture_sha):
+    rows = result.get('checks')
+    observed = result.get('observed')
+    setup = observed.get('preconditions') if isinstance(observed, dict) else None
+    facts = observed.get('checks') if isinstance(observed, dict) else None
+    seeded = result.get('seeded')
+    samples = seeded.get('samples') if isinstance(seeded, dict) else None
+    if (result.get('schema') != 1 or result.get('passed') is not True
+            or result.get('classification') != 'component-pass' or result.get('caseCount') != 17
+            or result.get('nativeAcceptance') is not False or result.get('originalAccepted') is not False
+            or result.get('imageSha256') != image_sha or result.get('fixtureSha256') != fixture_sha
+            or result.get('failures') != [] or result.get('seedFailures') != [] or result.get('seedSampleCount') != 32
+            or not isinstance(setup, dict) or set(setup) != set(MENU_INITIAL_FOCUS_PRECONDITIONS)
+            or any(value is not True for value in setup.values())
+            or not isinstance(facts, dict) or set(facts) != set(MENU_INITIAL_FOCUS_CASES)
+            or any(value is not True for value in facts.values())
+            or not isinstance(rows, list) or len(rows) != 17
+            or any(not isinstance(row, dict) or set(row) != {'name', 'passed'} for row in rows)
+            or tuple(row['name'] for row in rows) != MENU_INITIAL_FOCUS_CASES
+            or any(row['passed'] is not True for row in rows)
+            or not isinstance(seeded, dict) or seeded.get('algorithm') != 'literal-seed-modulo8-public-event-sequence'
+            or seeded.get('seeds') != list(range(32)) or not isinstance(samples, list) or len(samples) != 32
+            or any(not isinstance(row, dict) for row in samples)
+            or [row.get('seed') for row in samples] != list(range(32))
+            or any(row.get('passed') is not True for row in samples)):
+        raise RuntimeError('Fixed17 initial menu focus cases/setup/32sequences/artifacts missing, changed or failed')
+
 def run_menu_tab_dom():
     import arm64_toolchain as toolchain
     from qa_cpu import menu_tab_dom_inputs
@@ -239,6 +271,13 @@ def run_menu_tab_dom():
         shutil.copyfile(REPO / MENU_BAR_CONTEXT_FIXTURE, bar_fixture)
         if source_hash(bar_fixture) != MENU_BAR_CONTEXT_FIXTURE_SHA:
             raise RuntimeError('Staged rendered bar context fixture differs')
+        for key, expected in MENU_INITIAL_FOCUS_QA_INPUTS.items():
+            if sources[key] != expected:
+                raise RuntimeError('Fixed initial focus fixture changed: ' + key)
+            target = work / 'qa' / Path(key).name
+            shutil.copyfile(REPO / key, target)
+            if source_hash(target) != expected:
+                raise RuntimeError('Staged initial focus fixture differs: ' + key)
         shutil.copytree(pinned['elmHome'], output / 'elm-home')
         if toolchain.inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
             raise RuntimeError('Staged ARM Elm cache differs')
@@ -280,6 +319,19 @@ def run_menu_tab_dom():
         if source_hash(bar_image) != bar_image_sha or source_hash(bar_fixture) != MENU_BAR_CONTEXT_FIXTURE_SHA:
             raise RuntimeError('Actual tested HttpBar image or fixture changed')
         report.update(menuBarContextCaseCount=34, menuBarContextResultSha256=source_hash(bar_result_path), menuBarContextImageSha256=bar_image_sha)
+        initial_focus_image = output / 'MenuInitialFocusReplay.js'
+        run('compile-MenuInitialFocusReplay', [pinned['elm'], 'make', 'qa/MenuInitialFocusReplay.elm', '--optimize', '--output=' + str(initial_focus_image)])
+        initial_focus_image_sha = source_hash(initial_focus_image)
+        initial_focus_fixture = work / 'qa/menu-initial-focus.cjs'
+        initial_focus_result_path = output / 'menu-initial-focus.json'
+        run('menu-initial-focus', [pinned['node'], str(initial_focus_fixture), str(initial_focus_image), str(initial_focus_result_path)])
+        validate_menu_initial_focus_result(json.loads(initial_focus_result_path.read_text()), initial_focus_image_sha, MENU_INITIAL_FOCUS_QA_INPUTS['implementation/warlock/qa/menu-initial-focus.cjs'])
+        if source_hash(initial_focus_image) != initial_focus_image_sha:
+            raise RuntimeError('Actual tested initial focus replay image changed')
+        for key, expected in MENU_INITIAL_FOCUS_QA_INPUTS.items():
+            if source_hash(work / 'qa' / Path(key).name) != expected:
+                raise RuntimeError('Staged initial focus fixture changed: ' + key)
+        report.update(menuInitialFocusCaseCount=17, menuInitialFocusSeedCount=32, menuInitialFocusResultSha256=source_hash(initial_focus_result_path), menuInitialFocusImageSha256=initial_focus_image_sha)
         for name, digest in sources.items():
             prefix = 'implementation/warlock/src/'
             if name.startswith(prefix) and source_hash(work / 'src' / name[len(prefix):]) != digest:

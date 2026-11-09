@@ -197,4 +197,52 @@ class FixedBarContextRoute(unittest.TestCase):
             self.assertIn('implementation/warlock/qa/ux024-menu-dom.cjs',inputs)
             self.assertTrue(set(elm.MENU_ESCAPE_QA_INPUTS)<=inputs)
 
+
+class FixedMenuInitialFocusRoute(unittest.TestCase):
+    def valid(self):
+        return {'schema':1,'passed':True,'classification':'component-pass','caseCount':17,
+                'nativeAcceptance':False,'originalAccepted':False,'failures':[],'seedFailures':[],'seedSampleCount':32,
+                'imageSha256':'a'*64,'fixtureSha256':'b'*64,
+                'observed':{'preconditions':{n:True for n in elm.MENU_INITIAL_FOCUS_PRECONDITIONS},'checks':{n:True for n in elm.MENU_INITIAL_FOCUS_CASES}},
+                'checks':[{'name':n,'passed':True} for n in elm.MENU_INITIAL_FOCUS_CASES],
+                'seeded':{'algorithm':'literal-seed-modulo8-public-event-sequence','seeds':list(range(32)),
+                          'samples':[{'seed':i,'passed':True} for i in range(32)]}}
+    def check(self,value):elm.validate_menu_initial_focus_result(value,'a'*64,'b'*64)
+    def test_initial_focus_exact_success(self):self.check(self.valid())
+    def test_initial_focus_missing_extra_duplicate_case_refuses(self):
+        for mode in ['missing','extra','duplicate']:
+            v=self.valid()
+            if mode=='missing':v['checks'].pop()
+            if mode=='extra':v['checks'].append({'name':'extra','passed':True})
+            if mode=='duplicate':v['checks'][-1]=copy.deepcopy(v['checks'][0])
+            with self.assertRaises(RuntimeError):self.check(v)
+    def test_initial_focus_precondition_inventory_refuses(self):
+        for mode in ['missing','false','nonbool','extra']:
+            v=self.valid();p=v['observed']['preconditions'];n=next(iter(p))
+            if mode=='missing':p.pop(n)
+            if mode=='false':p[n]=False
+            if mode=='nonbool':p[n]=1
+            if mode=='extra':p['extra']=True
+            with self.assertRaises(RuntimeError):self.check(v)
+    def test_initial_focus_failed_red_seed_loss_refuses(self):
+        for mode in ['failed','red','seedlist','samples','seedfailure','summary']:
+            v=self.valid()
+            if mode=='failed':v['checks'][0]['passed']=False
+            if mode=='red':v['classification']='semantic-red'
+            if mode=='seedlist':v['seeded']['seeds'][-1]=0
+            if mode=='samples':v['seeded']['samples'].pop()
+            if mode=='seedfailure':v['seedFailures']=[{'seed':0}]
+            if mode=='summary':v['passed']=False
+            with self.assertRaises(RuntimeError):self.check(v)
+    def test_initial_focus_wrong_artifact_acceptance_refuses(self):
+        for field,value in [('imageSha256','0'*64),('fixtureSha256','0'*64),('nativeAcceptance',True),('originalAccepted',True)]:
+            v=self.valid();v[field]=value
+            with self.assertRaises(RuntimeError):self.check(v)
+    def test_initial_focus_two_fixed_dependencies(self):
+        with tempfile.TemporaryDirectory() as temp:
+            inputs=qa.menu_tab_dom_inputs(Path(temp))
+            self.assertEqual(len(elm.MENU_INITIAL_FOCUS_QA_INPUTS),2)
+            self.assertTrue(set(elm.MENU_INITIAL_FOCUS_QA_INPUTS)<=inputs)
+            self.assertIn('implementation/warlock/qa/OutputRetirementReplay.elm',inputs)
+
 if __name__ == '__main__': unittest.main()

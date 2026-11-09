@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only-initial-keyboard-menu-dom-focus",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/elm-production-fix/manifest.json",
+    "sha256": "a3b9f0ebc52ee185bb0e08c51402c221deda694d0384fe719928a7ffa708cbf3"
+  },
+  "postimage": {
+    "path": "implementation/warlock/src/Desktop.elm",
+    "beforeSha256": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815",
+    "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/elm-production-fix/postimages/implementation/warlock/src/Desktop.elm",
+    "sha256": "8385e34a3ecf122bf51a6ca4e4fe2df302a955fe35575dca8b2e419302f6fd56"
+  },
+  "checks": [
+    "Exact full-file reversal of6added helper lines and appended effect expression equals live preimage; all model updates and other code unchanged.",
+    "Only successful changed menu branch returns new effect; existing ownerExhausted/choice/prepared/currentStamp/available/observation/owner/provider and unchanged-menu guards retained.",
+    "KeyboardEntry established by existing SurfaceEntry recursion before OpenWindowMenu; pointer emits empty initial focus. Target derived from actual resulting menu.id via Menu.menuNumber, identical current Surface.controls close domId encoding.",
+    "Existing effects precede one new Focus; OutputController.register binds focus to returned current projection, Owner validates unique enabled target/pub/lease and renderer maps DOMid. No arbitrary focus/JS/backend authority.",
+    "Deferred eligible original-group return code unchanged; no initial focus on refusal/replayed old context/refresh paths; immutable17+5/32tests preserved.",
+    "New local initialMenuFocus/openedMenu names inspected against Desktop declarations; no concrete shadowing/layout issue found. Static review only."
+  ],
+  "qualification": "Root must compile and run unchanged Elm component GREEN; Mvp/Haskell remains unchanged and requires its own actual baseline.",
+  "limits": [
+    "No actual native physical focus/GTK handoff/originalUX024 acceptance.",
+    "No reviewer tests/imports/compiler/primary writes."
+  ]
+}

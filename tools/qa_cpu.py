@@ -290,7 +290,8 @@ def menu_tab_dom_inputs(root):
              'implementation/warlock/elm.json', 'implementation/warlock/qa/ux024-menu-dom.cjs',
              'implementation/warlock/qa/MenuEscapeReplay.elm', 'implementation/warlock/qa/menu-escape.cjs',
              'implementation/warlock/qa/OutputRetirementReplay.elm',
-             'implementation/warlock/qa/ux024-bar-context-dom.cjs'}
+             'implementation/warlock/qa/ux024-bar-context-dom.cjs',
+             'implementation/warlock/qa/MenuInitialFocusReplay.elm', 'implementation/warlock/qa/menu-initial-focus.cjs'}
     names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
     return names
 
