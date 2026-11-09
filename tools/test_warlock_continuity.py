@@ -32,7 +32,7 @@ class ContinuityTests(unittest.TestCase):
         path.chmod(0o600)
 
     def write_checkpoint(self, data, age=0):
-        self.write(self.checkpoint, data)
+        self.write(self.checkpoint, {"goalStatus": "active", "externalBlocker": False, **data})
         os.utime(self.checkpoint, (self.now - age, self.now - age))
 
     def tick(self):
@@ -95,9 +95,20 @@ class ContinuityTests(unittest.TestCase):
         self.assertEqual(self.tick()["status"], "external-blocked")
         self.queue.assert_not_called()
 
-    def test_internal_blocked_goal_still_requests_repair(self):
+    def test_blocked_host_goal_never_queues_even_for_internal_failure(self):
         self.write_checkpoint({"goalStatus": "blocked", "externalBlocker": False}, age=1000)
-        self.assertTrue(self.tick()["queueAccepted"])
+        self.assertEqual(self.tick()["status"], "goal-quiescent")
+        self.queue.assert_not_called()
+
+    def test_unknown_or_missing_goal_status_never_queues(self):
+        for value in (None, "unknown", "blocked"):
+            with self.subTest(goalStatus=value):
+                self.write_checkpoint({"goalStatus": value}, age=1000)
+                self.assertEqual(self.tick()["status"], "goal-quiescent")
+        self.write(self.checkpoint, {"externalBlocker": False})
+        os.utime(self.checkpoint, (self.now - 1000, self.now - 1000))
+        self.assertEqual(self.tick()["status"], "goal-quiescent")
+        self.queue.assert_not_called()
 
     def test_checkpoint_pause_during_observation_prevents_queue(self):
         original = policy.load_config

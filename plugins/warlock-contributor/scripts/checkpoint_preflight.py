@@ -8,7 +8,7 @@ from pathlib import Path
 from owner_route_preflight import SHA, Refused, _read, _sha, _unique
 
 GUARD = 'tools/warlock_continuity.py'
-GUARD_SHA256 = '7179f110d0803792f91b87343abc8e0497ae6f17ca90e65203728d6fbe48edaf'
+GUARD_SHA256 = 'e1e65923df4c7f43d82739dd4768325d3b405a4ac98381ac24d22eb2aee13d2e'
 
 
 def inspect(root, checkpoint_relative, expected_sha256):

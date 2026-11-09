@@ -13,7 +13,7 @@ NATIVE_GUARDS = {
     'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23',
 }
 PORTABLE_WRAPPER = 'docs/warlock-build-loop/v2/loop.py'
-PORTABLE_WRAPPER_SHA256 = 'f565ce4c667eef25d087750b8dc95bff02e73d0e7d998ef623362448b0ce0a9e'
+PORTABLE_WRAPPER_SHA256 = 'e4c6e793c3552b38ed11c339c475c22f3fba96922cb4ca4ba5c93b6ae2b4b9fb'
 RUNNER = 'tools/run_webkit_provider_probe.py'
 PACKET = '.warlock-contributor/evidence/nextloop-20261106/native-provider-probe/probe-packet.json'
 

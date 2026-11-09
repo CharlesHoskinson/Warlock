@@ -21,6 +21,8 @@ class DeliveryFixture(unittest.TestCase):
         self.fixture.setUp()
         self.addCleanup(self.fixture.doCleanups)
         self.repo = self.fixture.repo
+        # Explicit isolated assignment for policy-2 starts; no broker identity is created.
+        self.fixture.env.update(AGENTBUS_AGENT='root', AGENTBUS_RUN='fixture-run')
         self.record_path = '.warlock-contributor/delivery.json'
         self.source = 'implementation/warlock/src/Desktop.elm'
         self.plan = {'schema': 1,

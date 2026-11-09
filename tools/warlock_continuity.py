@@ -146,6 +146,8 @@ def tick(path, clock=time.time, runner=subprocess.run):
         return dict(result, status="goal-quiescent")
     if checkpoint.get("externalBlocker"):
         return dict(result, status="external-blocked")
+    if checkpoint.get("goalStatus") != "active":
+        return dict(result, status="goal-quiescent")
     reason = "stale-checkpoint" if now - info.st_mtime > 300 else None
     active = checkpoint.get("activeVerification", {})
     if isinstance(active, dict) and "running" in str(active.get("status", "")).lower():

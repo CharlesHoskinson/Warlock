@@ -21,6 +21,7 @@ class DeliveryLaunchGuardTests(unittest.TestCase):
         (self.root / '.warlock-contributor').mkdir()
         (self.root / '.warlock-contributor/.records.lock').touch()
         self.checker = Mock()
+        self.checker.delivery_edit_lock.side_effect=lambda *args:contextlib.nullcontext()
         self.checker.safe.side_effect = lambda root, name: root / name
         self.checker.open_parent.side_effect = lambda path, create: (os.open(path.parent, os.O_RDONLY), path.name)
         self.checker.context.return_value = ({}, {})
@@ -69,6 +70,8 @@ class DeliveryLaunchGuardTests(unittest.TestCase):
         self.assertEqual(receipt['pid'], child.pid)
         self.assertEqual(receipt['startTicks'], '777')
         self.assertFalse(receipt['acceptanceInferred'])
+        self.checker.record_delivery_launch.assert_called_once()
+        self.assertEqual(self.checker.record_delivery_launch.call_args.args[-1],receipt)
 
     def test_post_spawn_receipt_failure_retires_owned_process(self):
         child = Mock(pid=999999)
@@ -77,6 +80,15 @@ class DeliveryLaunchGuardTests(unittest.TestCase):
             with self.assertRaisesRegex(OSError, 'birth unavailable'):
                 self.guard(Mock(return_value=child))
         kill.assert_called_once_with(child.pid, loop.signal.SIGTERM)
+        child.wait.assert_called_once_with(timeout=5)
+
+    def test_post_spawn_journal_failure_retires_exact_owned_child(self):
+        child=Mock(pid=999999)
+        stat='999999 (guarded) '+' '.join(['S']+['0']*18+['777'])
+        self.checker.record_delivery_launch.side_effect=OSError('journal fsync failed')
+        with patch.object(Path,'read_text',return_value=stat),patch.object(loop.os,'killpg')as kill:
+            with self.assertRaisesRegex(OSError,'journal fsync failed'):self.guard(Mock(return_value=child))
+        kill.assert_called_once_with(child.pid,loop.signal.SIGTERM)
         child.wait.assert_called_once_with(timeout=5)
 
     def test_supervision_requires_a_new_owned_process_group(self):

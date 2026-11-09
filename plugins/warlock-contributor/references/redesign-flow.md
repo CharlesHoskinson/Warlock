@@ -6,13 +6,13 @@ Preserve the frozen 242 requirements and 417 scenarios. Keep their original iden
 
 Keep Elm GUI policy and Haskell backend authority. Keep one owner for each effect, permission, receipt and physical resource. Preserve full-width identities, Unknown/no replay, user drafts, focus, IME and accessibility obligations.
 
-Historical participant records retain their original policies, clocks and stops. New workflow policy 2 requires an explicit new start. It cannot be attached to an old record. A stopped original pair cannot be restarted under another label. Preserve all failed evidence and foreign work.
+Historical participant records retain their original policies, clocks and stops. New workflow policy 2 requires an explicit new start. It cannot be attached to an old record. A stopped original pair cannot be restarted under another label. Preserve all failed evidence and foreign work. Repair the current record in place. Do not create a replacement record to escape ownership, selection or progress checks.
 
 ## The delivery unit
 
 Choose one useful journey with an ordered input script and observable exit condition. Read its exact original scenarios. Trace the actual source route. Identify the first missing boundary. Do not treat a source packet, a helper test or a successful build as a completed journey.
 
-The first proving journey is a walking skeleton: start an isolated current-stack session, refresh the real catalog, open the Elm launcher, launch a harmless owned application with preserved arguments, then stop cleanly. ELM-UX-003 supplies the catalog and launch oracle. Bootstrap, surface and capability work are explicit prerequisites. They do not invent new accepted requirements.
+The launcher walking skeleton remains historical proof for its recorded source tuple. The next journey is ELM-UX-023 / `keyboard-notifications`. Open, traverse, operate and dismiss the real Notifications surface with keyboard input. Retain focus pixels, the local DND result and normal cleanup. Do not invent a window or notification provider. Keep the existing native 28+2 deadline, nine transactions and sixteen-frame limit. Source review must verify the eligible focus order before freezing the route.
 
 A NoDisplay parser correction is a useful increment. It does not prove the visible launcher or real application launch. A completed journey requires every declared action in order on one frozen source/build/ABI tuple. Retain real input, visible results, literal timing and cleanup evidence. Partial observations remain partial.
 
@@ -20,7 +20,7 @@ A NoDisplay parser correction is a useful increment. It does not prove the visib
 
 Use STATE.activeContributorRecord, STATE.activeSlice and STATE.activeSelection as the current root selection. CONTINUATION and recurring checks reference that selection. They do not select another record independently.
 
-Create the record with start --workflow-policy 2 --delivery-plan-file. Select it with delivery-select and the exact current STATE SHA256. Carry the returned selection generation through operational commands. A matching record name alone does not establish current selection.
+For a genuinely new slice, use start --workflow-policy 2 --delivery-plan-file. Keep the existing participant for ongoing work. Extend its dependencies through the checked scope transaction. Preserve owner identity, history, clocks and foreign bytes. Select with delivery-select and the exact current STATE SHA256. Carry the actual returned generation through commands. Never predict a generation or replace a blocked participant.
 
 Keep the new record in the primary repository's existing ignored participant inventory. Worker branches do not create a second root record or acceptance ledger. Preserve each worker's old worktree and uncommitted files. Use a clean branch for new authored changes.
 
@@ -30,8 +30,8 @@ Keep the new record in the primary repository's existing ignored participant inv
 2. Assign disjoint owned changes under Sol's existing coordination.
 3. Have one assembler combine compatible source, fixture, runner and profile versions.
 4. Freeze one candidate manifest and its exact expected observation.
-5. Review that assembly once against the original criteria.
-6. Give Root the exact protected argv and missing prerequisites.
+5. Review that assembly once against the original criteria. A rejection must name a concrete defect and reproducing case.
+6. Give Root the exact protected argv and actual missing prerequisites. Do not add an advisory approval chain.
 7. Execute the smallest appropriate check through the unchanged protection.
 8. Record the actual job identity, terminal report and outer-handle consumption.
 9. Integrate passing, reviewed source and retain the adopted revision.
@@ -63,9 +63,9 @@ Use a `clock-reconciled` delivery event in the same participant history after a 
 
 Reconciliation keeps the original clock origin, progress baseline, failed experiments and authorization. It charges uncertain intervals to awake time without suspend exclusion. It retains measured suspend intervals within a boot. UTC before the recorded high-water mark, expired authorization or an unconsumed protected job refuses reconciliation. Reconciliation does not resume a stopped or deferred record. A second discontinuity needs fresh evidence and another event. The active-goal receipt records Root's observation; it does not replace the external goal or grant native authority.
 
-A tested integration of changed product source advances delivery progress once. Repeated same-source qualification, audits, documentation and RSI do not reset that clock. A completed unchanged-source qualification slice still requires RSI.
+Advance production code, behavioral qualification, integration or original observation in each active authorized turn. A live job permits disjoint preparation for its next product step. A tested integration of changed product source advances delivery progress once. Repeated same-source qualification, audits, documentation and RSI do not reset that clock. A completed unchanged-source qualification slice still requires RSI.
 
-Forty-five awake minutes without advance or repeated experiments with the same failure require an intervention. This prospective management intervention is distinct from a historical policy stop. Keep elapsed history. Correct the dependency or change the hypothesis in the same history. A ready candidate waiting on Root calls for execution or a specific refusal, rather than blaming the writer.
+Two consecutive qualification-only repair iterations, forty-five awake minutes without advance, or repeated experiments with the same failure require an intervention. This prospective management intervention is distinct from a historical policy stop. Keep elapsed history. Correct the dependency or change the hypothesis in the same history. A ready candidate waiting on Root calls for execution or a specific refusal. Repair the observed dependency within this budget. Return to the product action immediately. Do not select an easier journey or reset a stage to erase the stall. One unchanged refusal needs one retained diagnosis, not repeated health turns.
 
 The fixed authorization expiry and every original native/scenario deadline remain independent. A management intervention grants no native permission.
 
@@ -81,13 +81,13 @@ RSI cannot edit original oracles, waive protection, accept an EARS, erase failur
 
 ## Roles and flow
 
-Reuse the existing Sol coordinator and seventeen authenticated worker identities. Keep one product journey and one protected execution active. Admit assignments against current inputs and a named deliverable. Keep at most one ready assembly and one correcting assembly.
+Sol remains the sole coordinator. Root retains protected execution and integration. Assign existing specialists only to distinct work on the active journey. Name the source owner, deliverable and next product action. Distinguish authenticated credentials from running work. Do not start filler jobs to meet a census.
 
-The seventeen roles cover catalog semantics/corpus, Elm projection/sequence tests, host launch/identity-model correspondence, runtime integration/contract review, assembly/build review, real-input harness/lifecycle negatives, keyboard/accessibility/UX checks, and delivery/RSI. The EARS tracker follows the current derived next action and original missing observations.
+Keep one product journey and one protected job active. Keep at most one ready assembly and one correcting assembly. Reuse existing test and runner routes. Add a helper only when an observed failure cannot be expressed through the current route.
 
-Maintain at least fifteen actually working agents as requested. Use distinct current-boundary work. Report PID/birth and terminal evidence. Queues, idle seats, completed turns and the dispatcher do not meet that target. A shortfall is reported and repaired with useful work, never concealed with repeated reviews.
+Independent candidate review checks exact bytes and original criteria. Independent acceptance review checks the actual required observations. Advisors identify defects and recommend actions. They cannot add a separate veto, accept a scenario or alter human authorization. Missing advisory output does not block a ready protected check.
 
-Workers commit coherent draft source on their own clean branches. The assembler hands Root one compatible candidate. Draft commits are not passing integrations. Root preserves and reviews every merge. No worker edits another owner's source or the primary workspace.
+Workers prepare coherent owned changes. The assembler gives Root one compatible candidate. Root preserves and reviews every integration. No worker edits another owner's source or the primary workspace.
 
 ## Evidence and maintenance
 
@@ -95,7 +95,7 @@ Use applicable Quint actions, production-route properties and independent bounda
 
 Complete retrofit and documentation dispositions for the integrated journey. Record affected pages or a specific unaffected reason. Batch graph/wiki maintenance and publication with meaningful integration. They do not block a ready protected check or reset product progress.
 
-Record one current stopping point with actual pending handles and source hashes. Quiesce workers before plugin installation or hook changes. Relaunch only after plugin tests, migration checks and current authorization pass. Do not extend the unattended expiry during migration.
+Record one current stopping point with actual pending handles and source hashes. Quiesce affected writers and protected jobs before plugin installation or hook changes. Root installs the tested version and verifies migration against preserved records. Resume the same roles and thread under actual current authorization. Preserve pending work and all human pauses. Installation never extends authorization.
 
 A `journey-observed` pass binds `journeyPlanSha256` to the canonical JSON digest of the record's journey. Its `steps` array must match every `inputSteps` item in order: each row has zero-based `stepIndex`, exact `inputStep`, `outcome: "pass"` and a hash-bound `evidence` reference. A pass has no `missingObligations`. Its hash-bound `cleanup` receipt identifies the same candidate and revision with `terminal: true`, `classification: "normal"`, `exit: 0`, `timedOut: false` and `forcedCleanup: false`. Partial and failed observations remain reportable. These fields validate evidence structure, not the truth of the observation or original acceptance.
 
@@ -103,6 +103,16 @@ Keep Harness2 comparison contexts under an ignored repository evidence directory
 
 ## Renew an explicitly authorized work window
 
-Continue the same participant record. Preserve its initial expiry, clock origin, candidate, review, queue age and failed history. An `authorization-renewed` event records a later expiry only when it cites the actual human request and a subsequent active-goal observation. The original authorization remains immutable. Renewal metadata does not override a later pause, handoff, goal change or original scenario deadline. It is not product progress. Do not create a replacement participant to reset the management clock. RSI binds the authorization effective at the event being reviewed.
+Continue the same participant record. Preserve its initial expiry, clock origin, candidate, review, queue age and failed history. Perform routine AFK continuation within actual human authorization and applicable delegation. Do not invent a per-renewal human permission requirement. Do not treat a model timeout or advice as authorization. An `authorization-renewed` event records a later expiry only when it cites the actual human request and a subsequent active-goal observation. The original authorization remains immutable. Renewal metadata does not override a later pause, handoff, goal change or original scenario deadline. It is not product progress. Do not create a replacement participant to reset the management clock. RSI binds the authorization effective at the event being reviewed.
 
 If the archived coordinator was absent when the record started, renewal may record its restoration only from the exact pinned regular Git blob at the original source revision. The initial null fingerprint stays immutable. The event records the restoration; other guard changes remain refused. This repair grants no native or original acceptance.
+
+## Before changing candidate inputs
+
+All source writers and manual CAS callers must check the current canonical selection and launched-job journal before changing candidate-pinned bytes. Use `delivery-edit-precheck --expect-selection <actual-generation> --path <destination>` for a read-only observation. A passing observation is not a reservation or write permission.
+
+Use `delivery_edit_lock(root, record_path)` from the reviewed contributor core, reload canonical record/STATE, call `validate_delivery_edit_precheck`, and retain that SAME global-then-participant lock through the actual CAS. `root_bundle.py` does this for staged copies. Other authorized writers must adopt the same check and lock at their mutation boundary. The adapter cannot fence arbitrary external shell writes. Preserve ownership claims, preimages, source pins, goal/authorization and native guards.
+
+The v2 protected caller retains actual pid/birth/candidate/selection/record receipts in `<record>.launches.jsonl` before returning a launched child. A journaled launch protects its pinned inputs even when `execution-started` was never admitted or the runtime process/outer handle already finished. Admit the matching actual canonical started/terminal/consumption facts BEFORE editing those inputs. No new event or fabricated outer handle is created at spawn. New disjoint terminal evidence and exact already-applied bytes remain available. A ready candidate with NO launched job does not need a new refusal event; changing its bytes makes its old current-input precheck fail.
+
+For `execution-finished` input, use ONLY `eventId`, `kind`, `candidateSha256`, `jobId`, `outerHandleConsumed`, `report`. Put a failed result's required `failureSignature` in the terminal report; the core derives that field on the canonical event. Do not clone canonical `sequence`, `clockSample` or `atUTC` into input. Use AgentBus identity TTL as an explicit seconds duration (for example `900s`), while preserving the actual authorized expiry and scopes.

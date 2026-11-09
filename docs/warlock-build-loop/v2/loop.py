@@ -40,16 +40,9 @@ def contributor_module(root):
  return module
 
 @contextmanager
-def delivery_lock(checker,root):
- parent,name=checker.open_parent(checker.safe(root,'.warlock-contributor/.records.lock'),create=True)
- descriptor=None
- try:
-  descriptor=os.open(name,os.O_WRONLY|os.O_CREAT|os.O_NOFOLLOW|os.O_CLOEXEC,0o600,dir_fd=parent)
-  fcntl.flock(descriptor,fcntl.LOCK_EX)
-  yield
- finally:
-  if descriptor is not None:os.close(descriptor)
-  os.close(parent)
+def delivery_lock(checker,root,record_path):
+ # Same canonical global-then-participant lock remains held through real spawn.
+ with checker.delivery_edit_lock(root,record_path):yield
 
 def guarded_delivery_spawn(root,record_path,candidate,selection,scope,argv,spawn):
  """Recheck under the existing record lock at the actual spawn boundary.
@@ -59,7 +52,7 @@ def guarded_delivery_spawn(root,record_path,candidate,selection,scope,argv,spawn
  Source claims remain advisory against other processes sharing this UID.
  """
  checker=contributor_module(root)
- with delivery_lock(checker,root):
+ with delivery_lock(checker,root,record_path):
   reqs,state=checker.context(root)
   record=checker.read(checker.safe(root,record_path));record['_recordPath']=record_path
   checked=checker.validate_execution_precheck(root,record,reqs,state,candidate,scope,selection)
@@ -71,9 +64,11 @@ def guarded_delivery_spawn(root,record_path,candidate,selection,scope,argv,spawn
   try:
    stat=(pathlib.Path('/proc')/str(child.pid)/'stat').read_text()
    birth=stat.rsplit(')',1)[1].split()[19]
-   print(json.dumps({'deliveryLaunch':{'record':record_path,'candidateSha256':action['candidateSha256'],
+   receipt={'record':record_path,'candidateSha256':action['candidateSha256'],
          'selection':selection,'scope':scope,'pid':child.pid,'startTicks':birth,
-         'argv':list(argv),'acceptanceInferred':False}}),flush=True)
+         'argv':list(argv),'acceptanceInferred':False}
+   checker.record_delivery_launch(root,record,reqs,receipt)
+   print(json.dumps({'deliveryLaunch':receipt}),flush=True)
   except BaseException:
    try:os.killpg(child.pid,signal.SIGTERM)
    except ProcessLookupError:pass

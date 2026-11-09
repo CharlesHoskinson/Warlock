@@ -5,13 +5,19 @@ One shared offline Python checker and implementation skill, with thin Claude Cod
 
 ## Journey workflow and RSI
 
-Version 0.17 adds an explicit journey-delivery mode to the existing engine. Start new records with `--workflow-policy 2 --delivery-plan-file`. Historical records retain their original policies and stops.
+Version 0.18 corrects scope-extension provenance and authenticated actor binding. It keeps workflow policy 2 and all historical policies, records and stops. Start new delivery records with `--workflow-policy 2 --delivery-plan-file`. Set `--owner` to the assigned `AGENTBUS_AGENT` and supply the assigned `AGENTBUS_RUN`.
 
 Use `delivery-select` for the canonical active record. Use `delivery-event` for exact candidate, review, job, integration, journey and RSI observations. `progress-audit --expect-slice ... --expect-selection ...` derives the next Root action. `delivery-precheck` is structural and never grants execution authority.
 
 Every completed product slice requires one bounded RSI comparison before the next slice. Tested adoption, evidenced no-change and accountable blockers remain distinct. RSI never resets product progress or accepts original scenarios.
 
+Use one integrated original journey. Bound internal repairs to two iterations or 45 awake minutes. Name the product action each repair unlocks. Keep safety and source-custody checks mandatory. Advisory model output and agent census do not add execution gates. Staff distinct tasks. Record source changes, integrated behavior and original observations separately from support work.
+
+For historical logical owners, use an independently reviewed support `actorBinding` proof. Bind the existing record path and identity, logical owner, actual actor, run, DID and exact support resources. Keep the record owner unchanged. Admission confirms current live leases. Preserve historical exceptions and failed evidence.
+
 Read the [delivery procedure](references/redesign-flow.md), [workflow skill](skills/warlock-workflow/SKILL.md) and optional [Harness2 integration](references/harness2.md). The core has no Harness2 dependency. Frozen original oracles and native guards remain outside editable experiments.
+
+An explicit workflow-package update uses the same append-only support history with `purpose: "workflow-package"`. Retain the actual human instruction and a source manifest with captured, previous and current hashes for the exact batch. An independent transition review binds both artifacts and denies runtime authority. Confirm exact live actor/DID leases. Product files, original registers, protected launchers and arbitrary tools remain outside that package transition.
 
 From the repository root:
 
@@ -635,7 +641,7 @@ so captured status text is not confused with another participant record.
 If `start` captured the accountable owner's already-dirty canonical support docs as
 foreign, later updates need exact provenance; do not overwrite participant pins or
 pretend a second owner exists. `reconcile-support --transition-file <ignored-json>`
-recognizes only HANDOFF, v2 STATE, wiki log and current-status. It requires frozen
+The default metadata purpose recognizes only HANDOFF, v2 STATE, wiki log and current-status. The explicit workflow-package purpose uses the stronger package transition described above. It requires frozen
 participant/current-file snapshots, current authenticated assigned-run AgentBus
 claims and an independent accepted review of each exact transition. Evidence lives
 under `.warlock-contributor/evidence/support-custody/`; the separate sidecar retains
@@ -647,8 +653,7 @@ hashes, participant identity, same owner, accepted disposition and provenance-on
 scope. The command rechecks the live claim and all evidence before its atomic write.
 Existing foreign-owner reconciliation and product adoption rules remain unchanged.
 For publication, explicitly pass `review --include <exact-support-path>`; its
-accepted current receipt must match both working and staged bytes. Source, tools,
-arbitrary docs and genuine foreign drafts cannot use this exception. Provenance
+accepted current receipt must match both working and staged bytes. Product source, root tools, arbitrary docs and genuine foreign drafts cannot use the default metadata exception. Explicit workflow-package updates require the separate human-bound package proof. Provenance
 recognition is neither production progress nor scenario acceptance.
 
 For a newly authorized work window, use the same-record renewal event in [the delivery flow](references/redesign-flow.md#renew-an-explicitly-authorized-work-window). Preserve elapsed history and source-bound reviews. A queued continuity message grants no authorization.
@@ -767,3 +772,5 @@ actual outer handle before admitting the canonical terminal event. Report the
 observed product behavior separately from preparation, source checks and readiness.
 A successful preflight grants no execution or original-scenario acceptance.
 Existing ownership, review, launcher, deadline and acceptance rules remain in force.
+
+Version 0.17.12 adds a bounded candidate-input edit precheck. The existing v2 caller durably retains actual launched pid/birth/candidate receipts under the participant lock. Root staged copies reject byte changes to unclosed launched inputs before the first copy and recheck under that same lock through CAS. New terminal evidence and idempotent copies remain available; a never-launched ready candidate needs no new refusal event. Manual writers must use the same precheck/lock boundary. No event, acceptance or native policy is added.
