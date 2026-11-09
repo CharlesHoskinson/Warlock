@@ -3345,6 +3345,16 @@ def validate_delivery_edit_precheck(root, record, reqs, state, expected_selectio
         path=pathlib.Path(name)
         if '..'in path.parts:raise ValueError('Changed path traversal refused')
         changed.add(str(path if path.is_absolute()else safe(root,name)))
+    # Readiness references are replayed for every retained candidate, including
+    # consumed jobs. Source edits may resume after closure; these evidence paths
+    # must instead use a new versioned destination, never overwrite history.
+    retained = sorted({str(safe(root, reference['path']))
+                       for event in record['delivery']['events'] if event['kind'] == 'candidate'
+                       for reference in event['candidate'].get('nativePrerequisites', [])})
+    immutable = sorted(changed.intersection(retained))
+    if immutable:
+        raise ValueError('Retained native prerequisite edit refused; use new versioned evidence paths: '
+                         + json.dumps(immutable))
     def overlap(manifest):
         return sorted(changed.intersection(str(safe(root,name))for paths in manifest.values()for name in paths))
     blocked=[];job=delivery['job']
