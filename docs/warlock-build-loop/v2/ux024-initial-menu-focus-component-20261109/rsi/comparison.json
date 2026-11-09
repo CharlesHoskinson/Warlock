@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "7e2fa268abed43e5a6aeb1fc32e61c3bc91d46399d2d944dbcefde88da985296",
+  "baselinePluginSha256": "2e4f6057d0dceb584569481fe433377118a76df792f9a41790c122eaf4533430",
+  "baselineSnapshotSha256": "1a37c7830d58fa8d51b7fe841f0292355525ee254ecb833ef06269a82798fab3",
+  "candidateSnapshotSha256": "debd6558a20a554ac875360b1be0e9625f832a21f7ec92eba538399669b1db28",
+  "immutableHashes": {
+    "taskFiles": "e72bfbbdee67c680c6d932972d6e7a3df39a9503b363793ad26887142dc4c484",
+    "sourceFiles": "2b8aea4efaeb97b98ed81d559284b0c991eecf9303ad7dc6488f42204c72bcb4",
+    "oracleFiles": "bfbea9c632938a5d91cb58bbf4e7c896d2a1fd8b3318bc1eef7920ac95d23d46",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "ec1441d41a8ae3bf4674fd13487f29cb3fe7a61ebda796ed157bd998904db05f",
+    "pluginBaselineFiles": "2e4f6057d0dceb584569481fe433377118a76df792f9a41790c122eaf4533430"
+  },
+  "checks": [
+    {
+      "name": "FixedMenuRoute.test_exact_mode_only",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_foreign_runner_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_complete_source_membership",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_exact_success_result",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_missing_empty_extra_duplicate_case_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_failed_skipped_case_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_false_summary_or_failed_assertion_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_profile_requires_exact_parent_values",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_profile_scope_and_extra_fields_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_native_or_original_credit_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_exact_success",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_missing_extra_duplicate_case_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_setup_inventory_and_nonboolean_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_failed_red_or_skipped_result_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_wrong_artifact_or_acceptance_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_fixed_dependency_membership",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_exact_success",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_missing_extra_duplicate_case_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_failed_setup_red_inventory_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_wrong_image_or_harness_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_failed_skipped_or_acceptance_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_one_fixed_input_added",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuInitialFocusRoute.test_initial_focus_exact_success",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuInitialFocusRoute.test_initial_focus_missing_extra_duplicate_case_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuInitialFocusRoute.test_initial_focus_precondition_inventory_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuInitialFocusRoute.test_initial_focus_failed_red_seed_loss_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuInitialFocusRoute.test_initial_focus_wrong_artifact_acceptance_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuInitialFocusRoute.test_initial_focus_two_fixed_dependencies",
+      "baselinePassed": true,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/regression.json",
+    "sha256": "1743307310e47a374d976689c35dc69939aae7ac1d866c5cd67c1e1533aba6d5"
+  }
+}
