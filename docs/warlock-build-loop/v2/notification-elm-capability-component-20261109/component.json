@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "component": "Pure Elm notification capability consumer",
+  "integrationRevision": "fcffd8bfb5c2304f5c684c5d54eb75f6facf91d8",
+  "files": {
+    "implementation/warlock/src/Shell.elm": {
+      "before": "e94d200d2c4fbf1badce1e21f7be9595c79b7e4d8f77ef07f7253427fd30dec5",
+      "after": "4ef1ceaf83a5d306d8d51fc0af4e56877eefdfa66f076fef6acf18d46b23bf73"
+    },
+    "implementation/warlock/src/Desktop.elm": {
+      "before": "6a47c4e0abaaf371d61f36c36172279f760fdb477877543f67af6e897e712abb",
+      "after": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815"
+    },
+    "implementation/warlock/src/Surface.elm": {
+      "before": "268833fc35260a16dde4e8bc5db932464a03cf7e6fb42486a7eb978ea7bbc8b5",
+      "after": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179"
+    },
+    "implementation/warlock/qa/NotificationCapabilityReplay.elm": {
+      "before": null,
+      "after": "2ea941bd592c51ff063d4acad2de82bc930879ad5d646c9b71274b4f8c4b7486"
+    },
+    "implementation/warlock/qa/notification-capability.cjs": {
+      "before": null,
+      "after": "b37d9b543b100316b7463c9c03b1cbb53ac2839c0305e98fe52c29fd4541e4e9"
+    },
+    "implementation/warlock/qa/notification-capability.json": {
+      "before": null,
+      "after": "496bdc429366c6030d3de966620d16db5799ea64143872c8d1d4953fb36b0f53"
+    }
+  },
+  "validation": {
+    "baselineSemanticFailures": 10,
+    "baselinePassed": 27,
+    "candidateChecksPassed": 37,
+    "productionRootsCompiled": 6,
+    "oldNotificationChecks": 24,
+    "oldLocalPolicyChecks": 14,
+    "applicationChecks": 423,
+    "applicationSeed": 20261106,
+    "regressionInputFiles": 113,
+    "allInputsUnchanged": true,
+    "allProtectedHandlesConsumed": true
+  },
+  "rsi": {
+    "disposition": "no-change",
+    "sameTaskChecksEachRun": 3,
+    "pluginUnchanged": true,
+    "legacyPolicyUnchanged": true,
+    "path": "docs/warlock-build-loop/v2/notification-elm-capability-component-20261109/post-component-rsi.json",
+    "sha256": "dd9d2ff95e4230ce5e0629774e841f9c9edf6a6e1e3f92edf49b1ade343b41fd"
+  },
+  "oldServiceInvestigationStopPreserved": true,
+  "serviceIntegrated": false,
+  "serviceExecuted": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "releaseAccepted": false
+}
