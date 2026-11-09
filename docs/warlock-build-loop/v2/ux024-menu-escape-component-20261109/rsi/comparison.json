@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "a077ed90eb3bd4381b073ad7f09928e02a9b0906463366635bb8431e1a0a14c0",
+  "baselinePluginSha256": "67ef4cbc686cacdb48cfd1662ffd43900fc257ae3a02696c8c8fc1c24364e6c3",
+  "baselineSnapshotSha256": "945de185ba6bb3a82dc1d71a027b3d55f44da9f7cc01051beabacf66ae699337",
+  "candidateSnapshotSha256": "5336b0f57f7cd1bd5d7dfda44a554658934b0361db0e52d9534d3fec9c4f5d65",
+  "immutableHashes": {
+    "taskFiles": "9db11834f117b24430b153ab898660f6eafa220325939cabc92ae4a0be372c3e",
+    "sourceFiles": "1707afaed1c81c1c998318525b65e48fcb4b59f9733ccc4812e8f40e18f61754",
+    "oracleFiles": "0c3d31a61ba133727eec401de3ffdad707b142582ac80408b680f5e284a24434",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "f9b6e4b471fa36205e1917b9e981b9468d6e367284b8b43d1833a7cbbe96a98b",
+    "pluginBaselineFiles": "67ef4cbc686cacdb48cfd1662ffd43900fc257ae3a02696c8c8fc1c24364e6c3"
+  },
+  "checks": [
+    {
+      "name": "managed-cpu-documentation-explains-id",
+      "baselinePassed": false,
+      "candidatePassed": true
+    },
+    {
+      "name": "loop-forwards-candidate-id",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "actual-id-accepted-hash-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "other-id-and-scope-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-candidate-id-reference-v1/regression.json",
+    "sha256": "7a2a923bae5a35f9b9b215a67d19f42d801042a6162e97f65e713ec9eb9d325c"
+  }
+}

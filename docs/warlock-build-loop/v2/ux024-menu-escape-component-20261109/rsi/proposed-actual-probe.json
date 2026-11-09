@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "phase": "proposed",
+  "disposition": "observation-only",
+  "checks": [
+    {
+      "name": "managed-cpu-documentation-explains-id",
+      "passed": true
+    },
+    {
+      "name": "loop-forwards-candidate-id",
+      "passed": true
+    },
+    {
+      "name": "actual-id-accepted-hash-refused",
+      "passed": true
+    },
+    {
+      "name": "other-id-and-scope-refused",
+      "passed": true
+    }
+  ],
+  "testsRun": 3,
+  "failures": 0,
+  "errors": 0,
+  "sourceInputsVerifiedBeforeAfter": true,
+  "actualTaskCandidateSha256": "d0ddd4b830682fea8d00a19e3cd74c34516bebc77ba22ab6848627b848882a96",
+  "nativeAcceptance": false,
+  "productExecution": false
+}
