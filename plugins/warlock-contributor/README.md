@@ -9,6 +9,8 @@ Version 0.18 corrects scope-extension provenance and authenticated actor binding
 
 Use `delivery-select` for the canonical active record. Use `delivery-event` for exact candidate, review, job, integration, journey and RSI observations. `progress-audit --expect-slice ... --expect-selection ...` derives the next Root action. `delivery-precheck` is structural and never grants execution authority.
 
+See [delivery event inputs and terminal reports](references/delivery-events.md) for exact input fields, candidate hashes and failure signatures.
+
 Every completed product slice requires one bounded RSI comparison before the next slice. Tested adoption, evidenced no-change and accountable blockers remain distinct. RSI never resets product progress or accepts original scenarios.
 
 Use one integrated original journey. Bound internal repairs to two iterations or 45 awake minutes. Name the product action each repair unlocks. Keep safety and source-custody checks mandatory. Advisory model output and agent census do not add execution gates. Staff distinct tasks. Record source changes, integrated behavior and original observations separately from support work.

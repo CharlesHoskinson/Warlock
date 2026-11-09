@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "disposition": "adopted",
+  "candidateSha256": "616722e872a24f428522c620bbc5dcd7c612b55a56a966f6bff05bdf25af19b6",
+  "integrationRevision": "72ee91bb97edebaecc22e0f633b6aefc715ecea3",
+  "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+  "proposedChange": "Document exact delivery event inputs, raw-file versus canonical candidate hashes, and mandatory report failure signatures.",
+  "refutationCase": "The same frozen UX024 task must distinguish baseline missing page/link from proposed page/link while all eight actual schema examples pass on identical6835 core.",
+  "reason": "The two actual malformed payloads were correctly refused. A concise reference prevents repeated assembly mistakes without changing engine guards.",
+  "baselinePlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/baseline-plugin.json",
+    "sha256": "085fd607196febdfa6ee0d0ed8fa6066a50d86c0aa0c647853fd76fc17b6d7c4"
+  },
+  "baselineHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/baseline-harness.json",
+    "sha256": "3fc7f1627f4e616268d7a0bc2c5587f90838e7a838f51e07070327b913fcd0ea"
+  },
+  "resultPlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/actual-result-plugin.json",
+    "sha256": "1d3232ab44a37e07930d69f8357eb7ea019b77b784e945bd415614740a03981f"
+  },
+  "candidateHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/candidate-harness.json",
+    "sha256": "869c1283b4b405b2fa991b2e1d52bdb6613b3637fc5a0ad956c71cd006d9a41c"
+  },
+  "comparison": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/comparison.json",
+    "sha256": "8afb23ab30cc721e2a2275337627f1ff2679b8bbd484daaf851e739f1c4c49a8"
+  },
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/regression.json",
+    "sha256": "e393c8fa62845db2780e0635d84f277596252b4736894b4c64b7abadc44c64d2"
+  },
+  "rootReview": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/root-review.ACCEPTED.json",
+    "sha256": "7a812bcb67e3cc3c2dc5ccfd06e36b6f3ccf63d31d20a1de6fecd58deea31f06"
+  }
+}

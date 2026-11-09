@@ -1,0 +1,40 @@
+{
+  "executions": [
+    {
+      "atUTC": "2026-11-09T21:30:19.092718+00:00",
+      "phase": "baseline",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/run_same_task_probe.py",
+        "baseline"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"phase\": \"baseline\", \"checks\": 10, \"schemaTests\": 8, \"observation\": \"/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/baseline-probe.json\"}\n",
+      "stderr": "Running as unit: qa-harness-a9e3e60ac28e4460a757f5bfab443396.scope; invocation ID: ef46576ceff140199bde4436849b00e6\n"
+    },
+    {
+      "atUTC": "2026-11-09T21:30:19.347947+00:00",
+      "phase": "proposed",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/run_same_task_probe.py",
+        "proposed"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"phase\": \"proposed\", \"checks\": 10, \"schemaTests\": 8, \"observation\": \"/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/proposed-probe.json\"}\n",
+      "stderr": "Running as unit: qa-harness-10cf9bc319224b8cb5c8e6ffde60e96a.scope; invocation ID: 6ec98bb326e8480194a81991c636d86f\n"
+    }
+  ],
+  "distinctSchemaTests": 8,
+  "schemaExecutionsSoFar": 16
+}

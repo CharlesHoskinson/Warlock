@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "kind": "ux024-doc-reference-same-task-probe",
+  "phase": "proposed",
+  "checks": [
+    {
+      "name": "delivery-reference-present",
+      "passed": true
+    },
+    {
+      "name": "README-links-delivery-reference",
+      "passed": true
+    },
+    {
+      "name": "test_candidate_rejected_extra_computed_field",
+      "passed": true
+    },
+    {
+      "name": "test_candidate_corrected_exact_shape",
+      "passed": true
+    },
+    {
+      "name": "test_candidate_canonical_identity_is_not_raw_file_digest",
+      "passed": true
+    },
+    {
+      "name": "test_audit_input_fields_refuse",
+      "passed": true
+    },
+    {
+      "name": "test_failed_terminal_missing_signature_refuses",
+      "passed": true
+    },
+    {
+      "name": "test_failed_terminal_correct_signature_preserves_observation",
+      "passed": true
+    },
+    {
+      "name": "test_unknown_terminal_empty_signature_refuses",
+      "passed": true
+    },
+    {
+      "name": "test_finished_event_signature_stays_in_report",
+      "passed": true
+    }
+  ],
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-10cf9bc319224b8cb5c8e6ffde60e96a.scope",
+    "coreLimit": 1
+  },
+  "schemaTestsRun": 8,
+  "schemaFailures": 0,
+  "schemaExit": 0,
+  "recordBytesUnchanged": true,
+  "fixedInputsVerifiedBeforeAfter": true,
+  "nativeAcceptance": false,
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/validate_reference_examples.py"
+  ]
+}

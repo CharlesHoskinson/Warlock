@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "disposition": "adopted",
+  "productRevision": "72ee91bb97edebaecc22e0f633b6aefc715ecea3",
+  "candidateSha256": "616722e872a24f428522c620bbc5dcd7c612b55a56a966f6bff05bdf25af19b6",
+  "pluginBefore": "997faca4426fd851a5ffe84781d377377fd79c89c862f766b32577158e6d507d",
+  "pluginAfter": "67ef4cbc686cacdb48cfd1662ffd43900fc257ae3a02696c8c8fc1c24364e6c3",
+  "changes": [
+    "README link",
+    "Exact delivery-event/report input reference with canonical/file hash and failure-signature rules"
+  ],
+  "engineGuardOrRuntimeChanges": false,
+  "sameTaskComparisonChecks": 10,
+  "freshDistinctSchemaTests": 8,
+  "comparisonSchemaTestExecutions": 16,
+  "historicalFull597": "Retained earlier code-only regression; not rerun or relabeled as newfullsuite",
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "rsiDoesNotTriggerAnotherRsi": true
+}
