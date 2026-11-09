@@ -108,6 +108,30 @@ def verify_menu_tab_toolchain():
             'parentManifestSha256': sha(parent_path), 'scope': profile['scope']}
 
 
+
+MENU_ESCAPE_CASES = ('current-menu-escape-closes', 'dismissal-queues-current-refresh', 'no-return-before-fresh-observation', 'eligible-origin-return-once', 'duplicate-escape-no-repeat-focus', 'stale-lease-refused', 'stale-publication-refused', 'foreign-owner-scope-refused', 'retired-view-refused', 'removed-origin-no-focus', 'changed-binding-or-output-no-focus', 'pointer-origin-no-keyboard-steal', 'nonmenu-close-path-preserved', 'unavailable-origin-no-focus', 'missing-close-does-nothing', 'wrong-surface-envelope-refused')
+MENU_ESCAPE_PRECONDITIONS = ('one-current-eligible-taskbar-group', 'keyboard-menu-opened-through-renderer', 'actual-enabled-menu-close-control', 'pointer-menu-opened-through-renderer', 'applications-other-mode-opened')
+MENU_ESCAPE_QA_INPUTS = {'implementation/warlock/qa/MenuEscapeReplay.elm': 'd85c653ecab26f3d7f18d90fd54e67e2e88d688027554f0d7acd7e4e586aa982', 'implementation/warlock/qa/menu-escape.cjs': 'a70cacd14fb4c48066f2b2e18859f67d56da359cf2cf86227774d1cc1dd4de58', 'implementation/warlock/qa/OutputRetirementReplay.elm': 'fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9'}
+
+def validate_menu_escape_result(result, image_sha, fixture_sha):
+    rows = result.get('checks')
+    observed = result.get('observed')
+    setup = observed.get('preconditions') if isinstance(observed, dict) else None
+    facts = observed.get('checks') if isinstance(observed, dict) else None
+    if (result.get('passed') is not True or result.get('classification') != 'component-pass'
+            or result.get('caseCount') != 16 or result.get('nativeAcceptance') is not False
+            or result.get('originalAccepted') is not False or result.get('failures') != []
+            or result.get('imageSha256') != image_sha or result.get('fixtureSha256') != fixture_sha
+            or not isinstance(setup, dict) or set(setup) != set(MENU_ESCAPE_PRECONDITIONS)
+            or any(value is not True for value in setup.values())
+            or not isinstance(facts, dict) or set(facts) != set(MENU_ESCAPE_CASES)
+            or any(value is not True for value in facts.values())
+            or not isinstance(rows, list) or len(rows) != 16
+            or any(not isinstance(row, dict) or set(row) != {'name', 'passed'} for row in rows)
+            or tuple(row['name'] for row in rows) != MENU_ESCAPE_CASES
+            or any(row['passed'] is not True for row in rows)):
+        raise RuntimeError('Fixed16 menu Escape results/setup/artifacts missing, changed or failed')
+
 def run_menu_tab_dom():
     import arm64_toolchain as toolchain
     from qa_cpu import menu_tab_dom_inputs
@@ -159,13 +183,21 @@ def run_menu_tab_dom():
                 if source_hash(target) != digest:
                     raise RuntimeError('Staged Elm input differs')
         config = json.loads((REPO / 'implementation/warlock/elm.json').read_text())
-        config['source-directories'] = ['src']
+        config['source-directories'] = ['src', 'qa']
         (work / 'elm.json').write_text(json.dumps(config))
         fixture = work / 'ux024-menu-dom.cjs'
         fixture_key = 'implementation/warlock/qa/ux024-menu-dom.cjs'
         if sources[fixture_key] != 'cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f':
             raise RuntimeError('Fixed menu DOM fixture changed')
         shutil.copyfile(REPO / fixture_key, fixture)
+        for key, expected in MENU_ESCAPE_QA_INPUTS.items():
+            if sources[key] != expected:
+                raise RuntimeError('Fixed Escape replay dependency changed: ' + key)
+            target = work / 'qa' / Path(key).name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(REPO / key, target)
+            if source_hash(target) != expected:
+                raise RuntimeError('Staged Escape replay dependency differs: ' + key)
         shutil.copytree(pinned['elmHome'], output / 'elm-home')
         if toolchain.inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
             raise RuntimeError('Staged ARM Elm cache differs')
@@ -182,6 +214,21 @@ def run_menu_tab_dom():
         if (result['artifactHashes']['image'] != image_hash or source_hash(artifact) != image_hash
                 or source_hash(fixture) != sources[fixture_key]):
             raise RuntimeError('Actual tested menu image or fixture differs')
+        report.update(menuTabCaseCount=18, menuTabResultSha256=source_hash(result_path), menuTabImageSha256=image_hash)
+        escape_image = output / 'MenuEscapeReplay.js'
+        run('compile-MenuEscapeReplay', [pinned['elm'], 'make', 'qa/MenuEscapeReplay.elm', '--optimize', '--output=' + str(escape_image)])
+        escape_image_sha = source_hash(escape_image)
+        escape_result_path = output / 'menu-escape.json'
+        escape_fixture = work / 'qa/menu-escape.cjs'
+        run('menu-escape', [pinned['node'], str(escape_fixture), str(escape_image), str(escape_result_path)])
+        escape_result = json.loads(escape_result_path.read_text())
+        validate_menu_escape_result(escape_result, escape_image_sha, MENU_ESCAPE_QA_INPUTS['implementation/warlock/qa/menu-escape.cjs'])
+        if source_hash(escape_image) != escape_image_sha:
+            raise RuntimeError('Tested Escape replay image changed')
+        for key, expected in MENU_ESCAPE_QA_INPUTS.items():
+            if source_hash(work / 'qa' / Path(key).name) != expected:
+                raise RuntimeError('Staged Escape replay dependency changed: ' + key)
+        report.update(menuEscapeCaseCount=16, menuEscapeResultSha256=source_hash(escape_result_path), menuEscapeImageSha256=escape_image_sha)
         for name, digest in sources.items():
             prefix = 'implementation/warlock/src/'
             if name.startswith(prefix) and source_hash(work / 'src' / name[len(prefix):]) != digest:

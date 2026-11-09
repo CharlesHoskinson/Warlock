@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-actual-semantic-red",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794261997221400340/report.json",
+    "sha256": "f50e5600b4074893cd52c84636d5cfc78ad2cc7b05daede94dcdc21088e0a662"
+  },
+  "escapeResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794261997221400340/menu-escape.json",
+    "sha256": "2ecca2c803abf151c5aac334d98967d1bca993cff5f6404084166664f2fb1654"
+  },
+  "tabResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794261997221400340/menu-tab-dom.json",
+    "sha256": "1068dc9d9a80499e2f9cdde62c85f172b086c7d07961d6521a03f2bfa154c817"
+  },
+  "commandExits": [
+    0,
+    0,
+    0,
+    1
+  ],
+  "currentSources": 119,
+  "allCurrentHashesMatched": true,
+  "setup": {
+    "count": 5,
+    "allTrue": true
+  },
+  "escape": {
+    "cases": 16,
+    "failed": 7,
+    "passed": 9,
+    "failures": [
+      "current-menu-escape-closes",
+      "dismissal-queues-current-refresh",
+      "no-return-before-fresh-observation",
+      "eligible-origin-return-once",
+      "removed-origin-no-focus",
+      "pointer-origin-no-keyboard-steal",
+      "unavailable-origin-no-focus"
+    ]
+  },
+  "tab": {
+    "cases": 18,
+    "assertions": 86,
+    "allPassed": true
+  },
+  "cause": "Actual menu-close exists/enabled; trusted Escape leaves menu open and emits no refresh or returnFocus reservation, consistent with current NativeEscape control:close mismatch. No compile/setup error.",
+  "limits": [
+    "No reviewer execution.",
+    "Native input/actual focus/eligible opener return and originalUX024 acceptance remain unproven."
+  ]
+}

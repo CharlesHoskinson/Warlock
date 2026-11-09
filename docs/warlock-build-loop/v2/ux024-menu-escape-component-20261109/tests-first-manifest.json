@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "kind": "ux024-menu-escape-public-reducer-tests-first",
+  "plan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/plan.json",
+    "sha256": "5f2e1c53c029930db390bd7f293b2f6a9208caaf1b29e392fa6350ff46a67003"
+  },
+  "posts": [
+    {
+      "path": "implementation/warlock/qa/MenuEscapeReplay.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/tests-first-revision2-public-observation/postimages/implementation/warlock/qa/MenuEscapeReplay.elm",
+      "sha256": "d85c653ecab26f3d7f18d90fd54e67e2e88d688027554f0d7acd7e4e586aa982"
+    },
+    {
+      "path": "implementation/warlock/qa/menu-escape.cjs",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/tests-first-revision2-public-observation/postimages/implementation/warlock/qa/menu-escape.cjs",
+      "sha256": "a70cacd14fb4c48066f2b2e18859f67d56da359cf2cf86227774d1cc1dd4de58"
+    }
+  ],
+  "cases": 16,
+  "preconditions": 5,
+  "sourcePins": {
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/Surface.elm": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179",
+    "implementation/warlock/src/Desktop.elm": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815",
+    "implementation/warlock/src/Shell.elm": "4ef1ceaf83a5d306d8d51fc0af4e56877eefdfa66f076fef6acf18d46b23bf73",
+    "implementation/warlock/qa/OutputRetirementReplay.elm": "fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9",
+    "openspec/changes/elm-desktop-pivot/specs/elm-accessibility/spec.md": "b348a4ae2a3967b9270e07d944611379ef8aa0017f798fc2f81e4c54b7d00b51"
+  },
+  "productionEdits": false,
+  "executed": false,
+  "rootOnly": true,
+  "route": "Compile qa/MenuEscapeReplay.elm with current production src and existing qa/OutputRetirementReplay.elm dependency. Run fixed menu-escape.cjs with exact image and new report path; no support implementation in this package.",
+  "literalOracle": "Current trusted Escape must choose current enabled menu dismiss; then matching fresh observation returns exact original eligible group once. No immediate or stale focus.",
+  "modelCorrespondence": {
+    "setup": "Fixture.base public topology+attachment+projection+pointer/shortcut reducers, public Shell.Refresh with one-window observation, actual scoped Renderer surface-context keyboard/pointer. No opaque model injection.",
+    "authority": "Outputs.Escape exact scope/publication/lease. Foreign owner, wrong extra surface field, stale publication/lease and retired view refuse.",
+    "dismissal": "Existing Desktop Menu.Dismiss -> Shell.Refresh -> pending keyboard return; exact eligible current observation only.",
+    "focusOnly": "Menu codec forbids focusOnly; unrelated notification controls untouched.",
+    "disabledClose": "Surface menu constructor always emits enabled close. No fabricated disabled-menu opaque model; public missing/closed control case and unavailable origin covered instead.",
+    "escapeReceipt": "Typed Focus effect is component output, not observed native focus or original acceptance."
+  },
+  "preserved": [
+    "Current18DOM fixture byteexact",
+    "Production unchanged until Root semantic RED",
+    "Service/R4 stop retained",
+    "Original scenario and native acceptance remain unproven"
+  ],
+  "parent": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/tests-first/manifest.json",
+    "sha256": "78681e8ec363fbd2b9534748583149623cd8e3328d03e00f4e2471b49527bf5b"
+  },
+  "reviewFinding": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/tests-first/independent-tests-first-review-build.json",
+    "sha256": "3c90dd24d65d10b69b73d36ba35ae5f4022e40cc811d59d77ca867ba85edb779"
+  },
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/tests-first-revision2-public-observation/fixture.patch",
+    "sha256": "f742672865dc709a245d07ff4f1a0e5e7e9769ee30a9d38e1ae125deb25926ec"
+  },
+  "delta": "Only observation field: nonexistent private diagnostic call replaced by public returnFocus presence boolean. Same16cases/fivepreconditions and Node oracle bytes.",
+  "coverageClarification": "The changed-binding-or-output case exercises disconnect then retained observation only; replacement binding and output relocation are not independently covered."
+}

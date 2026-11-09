@@ -287,7 +287,9 @@ def menu_tab_dom_mode(runner, arguments):
 def menu_tab_dom_inputs(root):
     names = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
              'tools/arm64_toolchain.py', 'tools/arm64-toolchain.json', 'tools/menu-tab-elm-toolchain.json',
-             'implementation/warlock/elm.json', 'implementation/warlock/qa/ux024-menu-dom.cjs'}
+             'implementation/warlock/elm.json', 'implementation/warlock/qa/ux024-menu-dom.cjs',
+             'implementation/warlock/qa/MenuEscapeReplay.elm', 'implementation/warlock/qa/menu-escape.cjs',
+             'implementation/warlock/qa/OutputRetirementReplay.elm'}
     names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
     return names
 

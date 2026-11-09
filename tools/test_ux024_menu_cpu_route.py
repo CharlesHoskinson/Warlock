@@ -94,4 +94,53 @@ class FixedMenuRoute(unittest.TestCase):
             value = self.valid(); value[field] = True
             with self.assertRaises(RuntimeError): elm.validate_menu_tab_result(value)
 
+
+class FixedMenuEscapeRoute(unittest.TestCase):
+    def valid(self):
+        return {'passed': True, 'classification': 'component-pass', 'caseCount': 16,
+                'nativeAcceptance': False, 'originalAccepted': False,
+                'imageSha256': 'a'*64, 'fixtureSha256': 'b'*64,
+                'observed': {'preconditions': {n: True for n in elm.MENU_ESCAPE_PRECONDITIONS},
+                             'checks': {n: True for n in elm.MENU_ESCAPE_CASES}},
+                'checks': [{'name': n, 'passed': True} for n in elm.MENU_ESCAPE_CASES], 'failures': []}
+    def check(self,value):
+        elm.validate_menu_escape_result(value,'a'*64,'b'*64)
+    def test_escape_exact_success(self):
+        self.check(self.valid())
+    def test_escape_missing_extra_duplicate_case_refuses(self):
+        for mode in ['missing','extra','duplicate']:
+            v=self.valid()
+            if mode=='missing':v['checks'].pop()
+            if mode=='extra':v['checks'].append({'name':'extra','passed':True})
+            if mode=='duplicate':v['checks'][-1]=copy.deepcopy(v['checks'][0])
+            with self.assertRaises(RuntimeError):self.check(v)
+    def test_escape_setup_inventory_and_nonboolean_refuse(self):
+        for mode in ['missing','false','nonboolean','extra']:
+            v=self.valid();p=v['observed']['preconditions'];n=next(iter(p))
+            if mode=='missing':p.pop(n)
+            if mode=='false':p[n]=False
+            if mode=='nonboolean':p[n]=1
+            if mode=='extra':p['extra']=True
+            with self.assertRaises(RuntimeError):self.check(v)
+    def test_escape_failed_red_or_skipped_result_refuses(self):
+        for mode in ['row','red','summary','failures','skipped']:
+            v=self.valid()
+            if mode=='row':v['checks'][0]['passed']=False
+            if mode=='red':v['classification']='semantic-red'
+            if mode=='summary':v['passed']=False
+            if mode=='failures':v['failures']=[{'name':'actual failure'}]
+            if mode=='skipped':v['checks'][0]['skipped']=True
+            with self.assertRaises(RuntimeError):self.check(v)
+    def test_escape_wrong_artifact_or_acceptance_refuses(self):
+        for field,value in [('imageSha256','0'*64),('fixtureSha256','0'*64),('nativeAcceptance',True),('originalAccepted',True)]:
+            v=self.valid();v[field]=value
+            with self.assertRaises(RuntimeError):self.check(v)
+    def test_escape_fixed_dependency_membership(self):
+        with tempfile.TemporaryDirectory() as temp:
+            inputs=qa.menu_tab_dom_inputs(Path(temp))
+            self.assertTrue(set(elm.MENU_ESCAPE_QA_INPUTS)<=inputs)
+            self.assertEqual(len(elm.MENU_ESCAPE_QA_INPUTS),3)
+            self.assertIn('implementation/warlock/qa/OutputRetirementReplay.elm',inputs)
+            self.assertNotIn('implementation/warlock/qa/arbitrary.cjs',inputs)
+
 if __name__ == '__main__': unittest.main()
