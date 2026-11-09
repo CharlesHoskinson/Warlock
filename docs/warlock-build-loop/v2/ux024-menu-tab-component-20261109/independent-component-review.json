@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-cpu-menu-containment-component-only",
+  "green": {
+    "report": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794258831960935024/report.json",
+      "sha256": "060bf38cbf3a2d7e66acb864b7d28898735e45b3d0adb6eb2c7c525fad03689f"
+    },
+    "domReport": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794258831960935024/menu-tab-dom.json",
+      "sha256": "1068dc9d9a80499e2f9cdde62c85f172b086c7d07961d6521a03f2bfa154c817"
+    },
+    "image": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794258831960935024/HttpPopup.js",
+      "sha256": "0fc9b65765ba3d176338ac3f337cf7ece3b896ed37a11df3a654dfbce9bc7bfd"
+    },
+    "cases": 18,
+    "checks": 86,
+    "failures": 0,
+    "commandExits": [
+      0,
+      0
+    ],
+    "currentSourceCount": 116,
+    "allCurrentSourceHashesMatched": true,
+    "scope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2aaf0c0678bb4d059bc4dcf46b0e22eb.scope",
+      "coreLimit": 1
+    },
+    "rootOuter": 29237,
+    "rootConsumedExit": 0,
+    "rootInvocation": "2d1b367d79ce4aae87becc5f930e8e5d"
+  },
+  "baseline": {
+    "report": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794257715823634446/report.json",
+      "sha256": "318758abe4e1ffb0e82d033ec09018e39f0efb9314ca28c9676d1639dd14b7f7"
+    },
+    "domReport": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794257715823634446/menu-tab-dom.json",
+      "sha256": "ca48ade6b4410fddc1899452459ea1b5ade01d22252bc6ca09adb564e9dc3e30"
+    },
+    "containmentFailed": 8,
+    "preservationPassed": 10,
+    "failedAssertions": 16,
+    "sameOrderedCases": true,
+    "sameFixture": true
+  },
+  "intermediateCompileFailure": {
+    "report": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794258095917769752/report.json",
+      "sha256": "1a1b3ea8468905389cc5429ef77ef9e91148f8082385823492d6ee3255ca4b10"
+    },
+    "compilerStderr": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794258095917769752/compile-HttpPopup.stderr",
+      "sha256": "4866a866b90b9be44ad886b4795c37072fb0fa48500d4276dda576740c5fd68a"
+    },
+    "compileExit": 1,
+    "domExecuted": false,
+    "preserved": true
+  },
+  "sourceDelta": {
+    "implementation/warlock/src/HttpPopup.elm": {
+      "baseline": "e7a8b1d479d3b8d728bf97b5bab8a2cfee7b2a1010902d984690215574ee84e2",
+      "green": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133"
+    }
+  },
+  "assessment": "Actual compiled HttpPopup fixed all8 containment cases while preserving10 refusal/pass-through cases against unchanged fixture; source-bound CPU component accepted.",
+  "limits": [
+    "Controlled DOM/XHR synthetic keyboard events only; no simulated browser default Tab movement.",
+    "Native focus ownership/Escape and eligible original opener return remain unobserved; original UX024 not accepted.",
+    "No service execution or original requirement credit."
+  ],
+  "effects": {
+    "reviewerTests": false,
+    "reviewerCompiler": false,
+    "primaryWrites": false
+  }
+}

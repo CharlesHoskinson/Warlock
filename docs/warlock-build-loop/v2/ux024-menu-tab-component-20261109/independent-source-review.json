@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only-binder-correction",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/production-menu-traversal-revision2-binder-names/manifest.json",
+    "sha256": "e14a97a6be2e45d2fda44e9b159b0ae7ba74536b7894617c1aec2a1255d7c8dc"
+  },
+  "postimage": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/production-menu-traversal-revision2-binder-names/postimages/implementation/warlock/src/HttpPopup.elm",
+    "sha256": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133"
+  },
+  "proof": "Exact full-file comparison equals parent with only two local binder renames and matching two references; no behavioral expression/order changes.",
+  "acknowledgement": "Prior source review missed introduced control shadowing of existing top-level control. Root actual compiler failure retained; no prior compilation claim is made.",
+  "qualification": "Root compiler+unchanged18 GREEN still required; no execution by reviewer.",
+  "originalAcceptance": false,
+  "effects": {
+    "compiler": false,
+    "tests": false,
+    "imports": false,
+    "primaryWrites": false
+  }
+}

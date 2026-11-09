@@ -4,19 +4,21 @@ import Browser
 import Browser.Dom
 import Html exposing (div, input, label, text)
 import Html.Attributes exposing (attribute, for, id, readonly, type_, value)
+import Html.Events
 import Json.Decode as D
 import Json.Encode as E
 import NativePreviewRealm as Realm
 import Popup
 import Presentation
 import SurfaceRenderer
+import SurfaceSnapshot
 import SurfaceTheme
 import Task
 import UiHttp
 import UInt64
 
 type alias Model = {popup : Popup.Model,http : UiHttp.Model}
-type Msg = View Popup.Msg | Transport UiHttp.Msg | Focused
+type Msg = View Popup.Msg | Transport UiHttp.Msg | Focused | MenuTraverse D.Value
 
 -- Native control facts use the existing realm policy. No native preview
 -- producer is qualified for this HTTP profile; nonempty proposals and paint
@@ -62,6 +64,17 @@ update : Msg -> Model -> (Model,Cmd Msg)
 update message model =
     case message of
         Focused -> (model,Cmd.none)
+        MenuTraverse instruction ->
+            let target =
+                    if model.popup.composition==Popup.Idle && UiHttp.problem model.http==Nothing then
+                        Presentation.focusTarget True instruction model.popup.presentation
+                    else Nothing
+            in case (Presentation.current model.popup.presentation,target) of
+                (Just snapshot,Just domId) ->
+                    if SurfaceRenderer.mode snapshot=="menu" then
+                        (model,Browser.Dom.focus (SurfaceRenderer.controlDomId snapshot domId) |> Task.attempt (\_ -> Focused))
+                    else (model,Cmd.none)
+                _ -> (model,Cmd.none)
         View value -> viewTransition False value model
         Transport value ->
             let (http,command,event)=UiHttp.update value model.http
@@ -180,10 +193,50 @@ retainedField popup =
             else []
         Nothing -> []
 
+-- Menu rows render in snapshot order as buttons. Other modes have distinct
+-- grouping, fields and focus-only rules and do not use this traversal policy.
+menuTabTarget : SurfaceRenderer.Snapshot -> Bool -> String -> Maybe E.Value
+menuTabTarget snapshot backwards renderedId =
+    let details = SurfaceSnapshot.details snapshot
+        controls = List.filter .enabled details.popup
+        count = List.length controls
+        position = controls |> List.indexedMap Tuple.pair
+            |> List.filter (\(_,menuControl) -> SurfaceRenderer.controlDomId snapshot menuControl.domId==renderedId)
+            |> List.head |> Maybe.map Tuple.first
+    in if details.mode/="menu" || count==0 then Nothing else
+        position |> Maybe.andThen (\index ->
+            let next = modBy count (index + (if backwards then count-1 else 1))
+            in List.drop next controls |> List.head |> Maybe.map (\menuControl ->
+                E.object
+                    [("focusProtocol",E.int 1),("kind",E.string "focus"),("surface",E.string "popup")
+                    ,("publication",E.string (UInt64.string details.publication))
+                    ,("lease",E.string (UInt64.string details.lease)),("domId",E.string menuControl.domId)]))
+
+menuTabDecoder : SurfaceRenderer.Snapshot -> D.Decoder (Msg,Bool)
+menuTabDecoder snapshot =
+    D.map8 (\key shift ctrl alt meta composing code target ->
+        {key=key,shift=shift,ctrl=ctrl,alt=alt,meta=meta,composing=composing,code=code,target=target})
+        (D.field "key" D.string) (D.field "shiftKey" D.bool)
+        (D.field "ctrlKey" D.bool) (D.field "altKey" D.bool) (D.field "metaKey" D.bool)
+        (D.field "isComposing" D.bool) (D.field "keyCode" D.int) (D.at ["target","id"] D.string)
+        |> D.andThen (\event ->
+            if event.key/="Tab" || event.ctrl || event.alt || event.meta || event.composing || event.code==229 then
+                D.fail "Not a menu traversal key"
+            else case menuTabTarget snapshot event.shift event.target of
+                Just instruction -> D.succeed (MenuTraverse instruction,True)
+                Nothing -> D.fail "No current menu traversal target")
+
 view : Model -> Html.Html Msg
 view model =
     case UiHttp.problem model.http of
-        Nothing -> Html.map View (Popup.view model.popup)
+        Nothing ->
+            let rendered = Html.map View (Popup.view model.popup)
+            in case Presentation.current model.popup.presentation of
+                Just snapshot ->
+                    if SurfaceRenderer.mode snapshot=="menu" && model.popup.composition==Popup.Idle then
+                        div [Html.Events.preventDefaultOn "keydown" (menuTabDecoder snapshot)] [rendered]
+                    else rendered
+                Nothing -> rendered
         Just reason ->
             let alert = div (attribute "role" "alert" :: SurfaceTheme.transportAlertStyles True) [text (reason++" This view has stopped.")]
             in case retainedField model.popup of
