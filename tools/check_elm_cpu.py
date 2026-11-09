@@ -54,9 +54,157 @@ def run_receipt_models(node, pin, cli, run):
                                 'witnessPending', 'witnessCommitted', 'witnessRefused', 'witnessCancelled', 'witnessUnknown', 'witnessDisconnected', 'witnessNewRequest',
                                 '--max-samples=10000', '--max-steps=50', '--seed=20261031', '--verbosity=1'])
 
+MENU_TAB_CASES = ('Tab follows menu DOM order and skips disabled', 'Tab moves to next menu control', 'Tab wraps last to first', 'Shift Tab wraps first to last', 'Shift Tab skips disabled', 'One enabled control contains Tab', 'One enabled control contains Shift Tab', 'Escaped DOM identity uses existing mapping', 'composition preserved', 'IME229 preserved', 'Control Tab preserved', 'Alt Tab preserved', 'Meta Tab preserved', 'Escape native route preserved', 'Empty menu invents no focus target', 'All-disabled menu invents no focus target', 'stale publication old DOM callback refused', 'retired lease old DOM callback refused')
+
+
+def validate_menu_tab_result(result):
+    cases = result.get('cases', [])
+    checks = result.get('checks', [])
+    if (result.get('passed') is not True or result.get('failures') != []
+            or result.get('nativeAcceptance') is not False or result.get('originalAccepted') is not False
+            or not isinstance(cases, list) or len(cases) != len(MENU_TAB_CASES)
+            or any(not isinstance(row, dict) or set(row) != {'name', 'passed'} for row in cases)
+            or tuple(row['name'] for row in cases) != MENU_TAB_CASES
+            or any(row['passed'] is not True for row in cases)
+            or not isinstance(checks, list) or not checks
+            or any(not isinstance(row, dict) or row.get('passed') is not True or row.get('skipped', False) for row in checks)):
+        raise RuntimeError('Fixed18 menu DOM cases missing, changed, skipped or failed')
+
+
+MENU_TAB_PARENT_SHA = '0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb'
+
+
+def validate_menu_tab_profile(profile, parent, parent_sha):
+    if (parent_sha != MENU_TAB_PARENT_SHA or set(profile) != {'schema', 'scope', 'architecture', 'originalManifest', 'elm', 'node', 'elmHome', 'cacheInventory'}
+            or profile['schema'] != 1 or profile['scope'] != 'menu-tab-dom-cpu-only' or profile['architecture'] != 'aarch64'
+            or profile['originalManifest'] != {'path': 'tools/arm64-toolchain.json', 'sha256': MENU_TAB_PARENT_SHA}
+            or profile['elm'] != {'path': parent['elm'], 'sha256': parent['files'][parent['elm']]}
+            or profile['node'] != {'path': parent['node'], 'sha256': parent['files'][parent['node']]}
+            or profile['elmHome'] != parent['elmHome'] or profile['cacheInventory'] != parent['trees'][parent['elmHome']]):
+        raise RuntimeError('Menu Elm profile differs from exact historical compiler/cache selection')
+
+
+def verify_menu_tab_toolchain():
+    import platform
+    from arm64_toolchain import inventory
+    profile_path = REPO / 'tools/menu-tab-elm-toolchain.json'
+    parent_path = REPO / 'tools/arm64-toolchain.json'
+    for path in (profile_path, parent_path):
+        if path.is_symlink() or not path.is_file():
+            raise RuntimeError('Nonregular menu toolchain profile')
+    parent = json.loads(parent_path.read_text())
+    profile = json.loads(profile_path.read_text())
+    validate_menu_tab_profile(profile, parent, sha(parent_path))
+    if platform.machine() != 'aarch64':
+        raise RuntimeError('Menu DOM requires the reviewed ARM compiler host')
+    for name in ('elm', 'node'):
+        path = Path(profile[name]['path'])
+        if path.is_symlink() or not path.is_file() or sha(path) != profile[name]['sha256']:
+            raise RuntimeError('Menu development binary differs: ' + name)
+    if inventory(Path(profile['elmHome'])) != profile['cacheInventory']:
+        raise RuntimeError('Menu complete Elm cache differs')
+    return {'elm': profile['elm']['path'], 'node': profile['node']['path'], 'elmHome': profile['elmHome'],
+            'trees': {profile['elmHome']: profile['cacheInventory']}, 'profileSha256': sha(profile_path),
+            'parentManifestSha256': sha(parent_path), 'scope': profile['scope']}
+
+
+def run_menu_tab_dom():
+    import arm64_toolchain as toolchain
+    from qa_cpu import menu_tab_dom_inputs
+    scope = require_qa_scope()
+    runtime_base()
+    deadline = time.monotonic() + 240
+    output = REPO / '.warlock-contributor' / ('ux024-menu-dom-' + str(time.time_ns()))
+    output.mkdir(parents=True, mode=0o700)
+    work = output / 'work'
+    report = {'schema': 1, 'passed': False, 'scope': 'Fixed live-menu DOM component',
+              'nativeAcceptance': False, 'originalAccepted': False, 'protectedScope': scope, 'commands': []}
+    sources = {}
+    def source_hash(path):
+        if path.is_symlink() or not path.is_file():
+            raise RuntimeError('Nonregular menu CPU input: ' + str(path))
+        return sha(path)
+    def unchanged():
+        if set(sources) != menu_tab_dom_inputs(REPO):
+            raise RuntimeError('Menu CPU source membership changed')
+        for name, digest in sources.items():
+            if source_hash(REPO / name) != digest:
+                raise RuntimeError('Menu CPU input changed: ' + name)
+        verify_menu_tab_toolchain()
+    def run(name, argv):
+        unchanged()
+        seconds = min(120, deadline - time.monotonic())
+        if seconds <= 0:
+            raise RuntimeError('Original CPU deadline exhausted')
+        row = {'name': name, 'argv': argv, 'exit': None}
+        report['commands'].append(row)
+        with (output / (name + '.stdout')).open('wb') as stdout, (output / (name + '.stderr')).open('wb') as stderr:
+            completed = subprocess.run(argv, cwd=work, env=env, stdout=stdout, stderr=stderr, timeout=seconds)
+        row['exit'] = completed.returncode
+        unchanged()
+        if completed.returncode:
+            raise RuntimeError(name + ': exit ' + str(completed.returncode))
+    try:
+        sources = {name: source_hash(REPO / name) for name in sorted(menu_tab_dom_inputs(REPO))}
+        report['sources'] = sources
+        pinned = verify_menu_tab_toolchain()
+        report['menuElmToolchain'] = pinned
+        work.mkdir(mode=0o700)
+        for name, digest in sources.items():
+            prefix = 'implementation/warlock/src/'
+            if name.startswith(prefix):
+                target = work / 'src' / name[len(prefix):]
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(REPO / name, target)
+                if source_hash(target) != digest:
+                    raise RuntimeError('Staged Elm input differs')
+        config = json.loads((REPO / 'implementation/warlock/elm.json').read_text())
+        config['source-directories'] = ['src']
+        (work / 'elm.json').write_text(json.dumps(config))
+        fixture = work / 'ux024-menu-dom.cjs'
+        fixture_key = 'implementation/warlock/qa/ux024-menu-dom.cjs'
+        if sources[fixture_key] != 'cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f':
+            raise RuntimeError('Fixed menu DOM fixture changed')
+        shutil.copyfile(REPO / fixture_key, fixture)
+        shutil.copytree(pinned['elmHome'], output / 'elm-home')
+        if toolchain.inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
+            raise RuntimeError('Staged ARM Elm cache differs')
+        env = dict(os.environ, ELM_HOME=str(output / 'elm-home'), NO_COLOR='1')
+        for key in ('NODE_OPTIONS', 'NODE_PATH', 'FORCE_COLOR'):
+            env.pop(key, None)
+        artifact = output / 'HttpPopup.js'
+        run('compile-HttpPopup', [pinned['elm'], 'make', 'src/HttpPopup.elm', '--optimize', '--output=' + str(artifact)])
+        image_hash = source_hash(artifact)
+        result_path = output / 'menu-tab-dom.json'
+        run('menu-tab-dom', [pinned['node'], str(fixture), str(artifact), str(result_path)])
+        result = json.loads(result_path.read_text())
+        validate_menu_tab_result(result)
+        if (result['artifactHashes']['image'] != image_hash or source_hash(artifact) != image_hash
+                or source_hash(fixture) != sources[fixture_key]):
+            raise RuntimeError('Actual tested menu image or fixture differs')
+        for name, digest in sources.items():
+            prefix = 'implementation/warlock/src/'
+            if name.startswith(prefix) and source_hash(work / 'src' / name[len(prefix):]) != digest:
+                raise RuntimeError('Staged Elm input changed')
+        unchanged()
+        report.update(passed=True, caseCount=18, resultSha256=source_hash(result_path), imageSha256=image_hash)
+    except Exception as error:
+        report['error'] = str(error)
+    finally:
+        try:
+            if sources:
+                unchanged()
+        except Exception as error:
+            report.update(passed=False, finalInputError=str(error))
+        (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
+        print(json.dumps({'passed': report['passed'], 'report': str(output / 'report.json')}), flush=True)
+    return 0 if report['passed'] else 1
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group()
+    modes.add_argument('--menu-tab-dom', action='store_true', help='Fixed UX024 menu DOM containment component only')
     modes.add_argument('--browser', action='store_true', help='Separately reviewed private-network browser component checks')
     modes.add_argument('--authority', action='store_true', help='Original ARC005 owning-route authority tuple bridge checks')
     modes.add_argument('--receipts', action='store_true', help='Original ARC007 actual desktop receipt bridge and model checks')
@@ -68,6 +216,10 @@ def main():
     parser.add_argument('--arm64', action='store_true', help='Separately reviewed local ARM compiler, subscriptions mode only')
     parser.add_argument('--arm64-output', type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.menu_tab_dom:
+        if sys.argv[1:] != ['--menu-tab-dom', '--arm64']:
+            raise RuntimeError('Menu DOM mode requires exact --menu-tab-dom --arm64')
+        return run_menu_tab_dom()
     if args.application_availability and not args.arm64:
         raise RuntimeError('Fixed application availability requires reviewed ARM profile')
     if args.arm64 and not (args.subscriptions or args.application_availability):

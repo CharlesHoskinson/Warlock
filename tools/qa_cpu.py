@@ -280,6 +280,18 @@ def capi_invocation_controls_inputs(root):
             'tools/test_capi_invocation_probe.py', 'window-integration-qa/qa_launch.py'}
 
 
+def menu_tab_dom_mode(runner, arguments):
+    return runner == REPO / 'tools/check_elm_cpu.py' and arguments == ['--menu-tab-dom', '--arm64']
+
+
+def menu_tab_dom_inputs(root):
+    names = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
+             'tools/arm64_toolchain.py', 'tools/arm64-toolchain.json', 'tools/menu-tab-elm-toolchain.json',
+             'implementation/warlock/elm.json', 'implementation/warlock/qa/ux024-menu-dom.cjs'}
+    names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
+    return names
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--review', type=Path, required=True)
@@ -314,6 +326,8 @@ def main():
     team_quint = runner == REPO / 'tools/check_team_quint_cpu.py'
     allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend'], ['--persistent']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract'], ['--subscriptions']])))
+    if menu_tab_dom_mode(runner, packet['arguments']):
+        allowed = [['--menu-tab-dom', '--arm64']]
     if continuity:
         allowed = [[]]
     if arm64:
@@ -441,6 +455,8 @@ def main():
         mandatory = team_quint_inputs(REPO, packet['arguments'][0][2:])
     if capi_controls:
         mandatory = capi_invocation_controls_inputs(REPO)
+    if menu_tab_dom_mode(runner, packet['arguments']):
+        mandatory = menu_tab_dom_inputs(REPO)
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
     reviewed_inputs(packet)
