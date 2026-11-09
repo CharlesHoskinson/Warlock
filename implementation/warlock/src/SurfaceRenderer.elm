@@ -2,7 +2,7 @@ module SurfaceRenderer exposing (enabled, Snapshot, decode, encode, controlIdent
 
 import Html exposing (Html, button, div, h1, input, label, p, span, text)
 import Html.Attributes exposing (attribute, class, disabled, for, hidden, id, style, title, type_, value, placeholder)
-import Html.Events exposing (on)
+import Html.Events exposing (on, preventDefaultOn)
 import Html.Keyed as Keyed
 import Json.Decode as D
 import Json.Encode as E
@@ -401,6 +401,21 @@ unavailableControlReason isPopup isPending snap item =
                 else
                     Nothing
 
+keyboardContextDecoder : msg -> D.Decoder (msg,Bool)
+keyboardContextDecoder contextMessage =
+    D.map8 (\pressed shiftHeld controlHeld altHeld metaHeld composing legacyCode repeated ->
+        {pressed=pressed,shiftHeld=shiftHeld,controlHeld=controlHeld,altHeld=altHeld,metaHeld=metaHeld,composing=composing,legacyCode=legacyCode,repeated=repeated})
+        (D.field "key" D.string) (D.field "shiftKey" D.bool)
+        (D.field "ctrlKey" D.bool) (D.field "altKey" D.bool) (D.field "metaKey" D.bool)
+        (D.field "isComposing" D.bool) (D.field "keyCode" D.int) (D.field "repeat" D.bool)
+        |> D.andThen (\keyEvent ->
+            if not keyEvent.controlHeld && not keyEvent.altHeld && not keyEvent.metaHeld
+                && not keyEvent.composing && keyEvent.legacyCode/=229 && not keyEvent.repeated
+                && ((keyEvent.pressed=="ContextMenu" && not keyEvent.shiftHeld) || (keyEvent.pressed=="F10" && keyEvent.shiftHeld)) then
+                D.succeed (contextMessage,True)
+            else
+                D.fail "Not a taskbar keyboard context key")
+
 view : Bool -> (E.Value -> msg) -> Snapshot -> Html msg
 view popup send current = viewInternal (\_ -> Preview.Hidden) False Nothing popup send current
 
@@ -473,6 +488,14 @@ viewInternal preview pending statusScrollDomId popup send current =
                 labelAttrs = [class "control-label"] ++ SurfaceTheme.controlLabelStyles popup snapshot.mode item.identity
                 detailAttrs = [class "control-detail"] ++ SurfaceTheme.controlDetailStyles themeSpec item.detail
                 activation = SurfaceSnapshot.action popup item.identity current |> Maybe.map (\wire -> [on "click" (D.succeed (send wire))]) |> Maybe.withDefault []
+                keyboardContext =
+                    if not popup && item.enabled && List.any (\prefix -> String.startsWith prefix item.identity && String.length item.identity > String.length prefix) ["bar:group:","bar:pin:"] then
+                        let contextWire = E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-context"),("surface",E.string "bar")
+                                ,("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease))
+                                ,("id",E.string item.identity),("trigger",E.string "keyboard"),("x",E.int 0),("y",E.int 0)]
+                        in [preventDefaultOn "keydown" (keyboardContextDecoder (send contextWire))]
+                    else
+                        []
             in if popup && snapshot.mode=="settings" && (String.startsWith "settings:help:text:" item.identity || (String.startsWith "settings:shortcuts:" item.identity && String.endsWith ":state" item.identity)) then
                 p ([class "notification-text",id renderedDomId,attribute (if String.startsWith "settings:help:text:" item.identity then "data-settings-help" else "data-shortcut-state") item.identity] ++ SurfaceTheme.notificationTextStyles snapshot.appearance) [span labelAttrs [text item.label],span detailAttrs [text item.detail]]
             else if popup && snapshot.mode=="notifications" && (String.endsWith ":summary" item.identity || String.endsWith ":body" item.identity) then
@@ -484,7 +507,7 @@ viewInternal preview pending statusScrollDomId popup send current =
                     edit = D.map2 (\query composing -> packet (if composing then "surface-preedit" else "surface-query") query) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False])
                     composition inputKind = D.map (packet inputKind) (D.at ["target","value"] D.string)
                 in input ([class "launcher-search",id renderedDomId,type_ (if snapshot.mode=="files" then "text" else "search"),placeholder (if snapshot.mode=="files" then "/path/to/folder or ~/Documents" else "Search applications"),value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" edit,on "compositionstart" (composition "surface-composition-start"),on "compositionend" (composition "surface-composition-end")] ++ SurfaceTheme.searchFieldStyles snapshot.appearance item.enabled snapshot.mode snapshot.motion) []
-            else (if settingsSave then (\saveButton -> div ([class "settings-save-group"] ++ SurfaceTheme.settingsSaveGroupStyles snapshot.appearance) [saveButton,p ([class "settings-save-caption",id captionId] ++ SurfaceTheme.settingsSaveCaptionStyles snapshot.appearance) [text item.detail]]) else identity) <| button ([class kind,id renderedDomId,attribute "data-window-state" windowStateValue,attribute "aria-label" item.ariaLabel,disabled (not item.enabled && not item.focusOnly),attribute "aria-disabled" (if not item.enabled then "true" else "false"),attribute "data-focus-only" (if item.focusOnly then "true" else "false"),attribute "data-surface-control" item.identity,attribute "role" controlRole,attribute "aria-current" (if currentFlag then "true" else "false")] ++ (if overviewFilter then [attribute "aria-pressed" (if item.checked==Just True then "true" else "false")] else (item.checked |> Maybe.map (\checked -> [attribute "aria-checked" (if checked then "true" else "false")]) |> Maybe.withDefault [])) ++ (if List.isEmpty describedBy then [] else [attribute "aria-describedby" (String.join " " describedBy)]) ++ (if popup && snapshot.mode=="settings" && item.identity=="settings:help" then [attribute "aria-expanded" (if item.detail=="Expanded" then "true" else "false")] else []) ++ (if settingsToggle then [attribute "aria-pressed" (if String.startsWith "On" item.detail then "true" else "false")] else []) ++ (if not popup && kind=="control-group" then [attribute "data-active-application" (if active then "true" else "false")] else []) ++ (if switcherOption then [attribute "aria-selected" (if item.detail=="Selected" then "true" else "false")] else if not popup && kind=="control-group" then [attribute "aria-pressed" (if active then "true" else "false")] else []) ++ disabledMetaAttrs ++ loadingControlAttrs ++ SurfaceTheme.controlStyles themeSpec ++ activation) [Preview.decorativeInlineView visual,if controlRole=="menuitemcheckbox" then SurfaceTheme.checkboxIndicator item.checked else text "",span labelAttrs [text item.label],if settingsSave then text "" else span detailAttrs [text item.detail],if String.isEmpty description then text "" else span [class "preview-description",id descriptionId,hidden True,style "display" "none"] [text description],if String.isEmpty motionDescription then text "" else span [class "settings-motion-description",id motionDescriptionId,hidden True,style "display" "none"] [text motionDescription],if String.isEmpty hiddenDisabledReason then text "" else span [class "control-disabled-reason",id disabledReasonId,hidden True,style "display" "none"] [text hiddenDisabledReason]]
+            else (if settingsSave then (\saveButton -> div ([class "settings-save-group"] ++ SurfaceTheme.settingsSaveGroupStyles snapshot.appearance) [saveButton,p ([class "settings-save-caption",id captionId] ++ SurfaceTheme.settingsSaveCaptionStyles snapshot.appearance) [text item.detail]]) else identity) <| button ([class kind,id renderedDomId,attribute "data-window-state" windowStateValue,attribute "aria-label" item.ariaLabel,disabled (not item.enabled && not item.focusOnly),attribute "aria-disabled" (if not item.enabled then "true" else "false"),attribute "data-focus-only" (if item.focusOnly then "true" else "false"),attribute "data-surface-control" item.identity,attribute "role" controlRole,attribute "aria-current" (if currentFlag then "true" else "false")] ++ (if overviewFilter then [attribute "aria-pressed" (if item.checked==Just True then "true" else "false")] else (item.checked |> Maybe.map (\checked -> [attribute "aria-checked" (if checked then "true" else "false")]) |> Maybe.withDefault [])) ++ (if List.isEmpty describedBy then [] else [attribute "aria-describedby" (String.join " " describedBy)]) ++ (if popup && snapshot.mode=="settings" && item.identity=="settings:help" then [attribute "aria-expanded" (if item.detail=="Expanded" then "true" else "false")] else []) ++ (if settingsToggle then [attribute "aria-pressed" (if String.startsWith "On" item.detail then "true" else "false")] else []) ++ (if not popup && kind=="control-group" then [attribute "data-active-application" (if active then "true" else "false")] else []) ++ (if switcherOption then [attribute "aria-selected" (if item.detail=="Selected" then "true" else "false")] else if not popup && kind=="control-group" then [attribute "aria-pressed" (if active then "true" else "false")] else []) ++ disabledMetaAttrs ++ loadingControlAttrs ++ SurfaceTheme.controlStyles themeSpec ++ activation ++ keyboardContext) [Preview.decorativeInlineView visual,if controlRole=="menuitemcheckbox" then SurfaceTheme.checkboxIndicator item.checked else text "",span labelAttrs [text item.label],if settingsSave then text "" else span detailAttrs [text item.detail],if String.isEmpty description then text "" else span [class "preview-description",id descriptionId,hidden True,style "display" "none"] [text description],if String.isEmpty motionDescription then text "" else span [class "settings-motion-description",id motionDescriptionId,hidden True,style "display" "none"] [text motionDescription],if String.isEmpty hiddenDisabledReason then text "" else span [class "control-disabled-reason",id disabledReasonId,hidden True,style "display" "none"] [text hiddenDisabledReason]]
         keyedControl item =
             (if popup && List.member snapshot.mode ["applications","files"] && item.identity==fieldIdentity current then [("label:" ++ item.identity,label ([class "launcher-search-label",for (mapControlDomId item.domId)] ++ SurfaceTheme.searchLabelStyles snapshot.appearance snapshot.mode) [text item.ariaLabel])] else [])
                 ++ [("control:" ++ item.identity,control item)]

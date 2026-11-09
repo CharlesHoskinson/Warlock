@@ -1,0 +1,4751 @@
+{
+  "schema": 1,
+  "passed": false,
+  "scope": "UX024 rendered taskbar context-key component",
+  "nativeAcceptance": false,
+  "originalAccepted": false,
+  "checks": [
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "group-context-menu handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "group-context-menu emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "group-context-menu exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "group-context-menu emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "group-context-menu does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "group-shift-f10 handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "group-shift-f10 emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "group-shift-f10 exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "group-shift-f10 emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "group-shift-f10 does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "pin-context-menu handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "pin-context-menu emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "pin-context-menu exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "pin-context-menu emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "pin-context-menu does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "pin-shift-f10 handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "pin-shift-f10 emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "pin-shift-f10 exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "pin-shift-f10 emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "pin-shift-f10 does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "nested-label-bubbles-to-group handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "nested-label-bubbles-to-group emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "nested-label-bubbles-to-group exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "nested-label-bubbles-to-group emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "nested-label-bubbles-to-group does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "current-publication-wire handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "current-publication-wire emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "current-publication-wire exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "current-publication-wire emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "current-publication-wire does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "current-lease-wire handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "current-lease-wire emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "current-lease-wire exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "current-lease-wire emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "current-lease-wire does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "closed-bar-zero-lease handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "closed-bar-zero-lease emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "closed-bar-zero-lease exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "closed-bar-zero-lease emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "closed-bar-zero-lease does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "actual event target exists",
+      "passed": true
+    },
+    {
+      "name": "full-width-counter-wire handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "full-width-counter-wire emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "full-width-counter-wire exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "full-width-counter-wire emits no click action or commit",
+      "passed": true
+    },
+    {
+      "name": "full-width-counter-wire does not move local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "ordinary click handler exists",
+      "passed": true
+    },
+    {
+      "name": "ordinary click remains exact surface-action",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "disabled-group-refused preserves default",
+      "passed": true
+    },
+    {
+      "name": "disabled-group-refused emits no POST",
+      "passed": true
+    },
+    {
+      "name": "disabled-group-refused does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "disabled-pin-refused preserves default",
+      "passed": true
+    },
+    {
+      "name": "disabled-pin-refused emits no POST",
+      "passed": true
+    },
+    {
+      "name": "disabled-pin-refused does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "utility-control-refused preserves default",
+      "passed": true
+    },
+    {
+      "name": "utility-control-refused emits no POST",
+      "passed": true
+    },
+    {
+      "name": "utility-control-refused does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "plain-f10-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "plain-f10-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "plain-f10-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "shift-context-menu-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "shift-context-menu-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "shift-context-menu-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "ctrl-context-menu-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "ctrl-context-menu-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "ctrl-context-menu-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "alt-context-menu-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "alt-context-menu-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "alt-context-menu-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "meta-context-menu-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "meta-context-menu-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "meta-context-menu-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "ctrl-shift-f10-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "ctrl-shift-f10-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "ctrl-shift-f10-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "alt-shift-f10-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "alt-shift-f10-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "alt-shift-f10-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "meta-shift-f10-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "meta-shift-f10-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "meta-shift-f10-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "composition-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "composition-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "composition-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "ime229-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "ime229-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "ime229-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "repeat-refused preserves default",
+      "passed": true
+    },
+    {
+      "name": "repeat-refused emits no POST",
+      "passed": true
+    },
+    {
+      "name": "repeat-refused does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "return-preserved preserves default",
+      "passed": true
+    },
+    {
+      "name": "return-preserved emits no POST",
+      "passed": true
+    },
+    {
+      "name": "return-preserved does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "old keyed group is actually detached",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "successor node is distinct from retained old node",
+      "passed": true
+    },
+    {
+      "name": "stale-publication-refused emits no POST",
+      "passed": true
+    },
+    {
+      "name": "stale-publication-refused does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "old keyed group is actually detached",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "successor node is distinct from retained old node",
+      "passed": true
+    },
+    {
+      "name": "stale-lease-refused emits no POST",
+      "passed": true
+    },
+    {
+      "name": "stale-lease-refused does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "old keyed group is actually detached",
+      "passed": true
+    },
+    {
+      "name": "removed-group-old-callback-refused emits no POST",
+      "passed": true
+    },
+    {
+      "name": "removed-group-old-callback-refused does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "old keyed group is actually detached",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "successor node is distinct from retained old node",
+      "passed": true
+    },
+    {
+      "name": "disabled-successor-old-callback-refused emits no POST",
+      "passed": true
+    },
+    {
+      "name": "disabled-successor-old-callback-refused does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "pending actual GET exists",
+      "passed": true
+    },
+    {
+      "name": "actual HttpBar transport alert rendered",
+      "passed": true
+    },
+    {
+      "name": "foreign-role emits no POST",
+      "passed": true
+    },
+    {
+      "name": "foreign-role does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "pending actual GET exists",
+      "passed": true
+    },
+    {
+      "name": "actual HttpBar transport alert rendered",
+      "passed": true
+    },
+    {
+      "name": "transport-error emits no POST",
+      "passed": true
+    },
+    {
+      "name": "transport-error does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "one first context POST before transport failure",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "popup-only control is not rendered by HttpBar",
+      "passed": true
+    },
+    {
+      "name": "popup-only emits no POST",
+      "passed": true
+    },
+    {
+      "name": "popup-only does not change local focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 0 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 0 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 0 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 1 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 1 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 1 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 2 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 2 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 2 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 3 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 3 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 3 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 4 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 4 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 4 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 5 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 5 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 5 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 6 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 6 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 6 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 7 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 7 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 7 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 8 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 8 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 8 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 9 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 9 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 9 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 10 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 10 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 10 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 11 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 11 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 11 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 12 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 12 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 12 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 13 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 13 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 13 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 14 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 14 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 14 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 15 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 15 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 15 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 16 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 16 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 16 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 17 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 17 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 17 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 18 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 18 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 18 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 19 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 19 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 19 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 20 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 20 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 20 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 21 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 21 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 21 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 22 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 22 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 22 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 23 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 23 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 23 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 24 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 24 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 24 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 25 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 25 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 25 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 26 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 26 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 26 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 27 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 27 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 27 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 28 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 28 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 28 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 29 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 29 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 29 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 30 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 30 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 30 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "HttpBar has no authored action port",
+      "passed": true
+    },
+    {
+      "name": "HttpBar actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "actual bar root rendered",
+      "passed": true
+    },
+    {
+      "name": "rendered control exists",
+      "passed": true
+    },
+    {
+      "name": "seed 31 exact admission",
+      "passed": true
+    },
+    {
+      "name": "seed 31 default handling matches admission",
+      "passed": true
+    },
+    {
+      "name": "seed 31 never activates or moves focus",
+      "passed": true
+    },
+    {
+      "name": "exact32 reproducible keyboard samples",
+      "passed": true
+    }
+  ],
+  "failures": [
+    {
+      "name": "group-context-menu handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "group-context-menu emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "group-context-menu exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "group-shift-f10 handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "group-shift-f10 emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "group-shift-f10 exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "pin-context-menu handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "pin-context-menu emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "pin-context-menu exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "pin-shift-f10 handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "pin-shift-f10 emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "pin-shift-f10 exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "nested-label-bubbles-to-group handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "nested-label-bubbles-to-group emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "nested-label-bubbles-to-group exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "current-publication-wire handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "current-publication-wire emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "current-publication-wire exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "current-lease-wire handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "current-lease-wire emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "current-lease-wire exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "closed-bar-zero-lease handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "closed-bar-zero-lease emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "closed-bar-zero-lease exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "full-width-counter-wire handles native context-menu default",
+      "passed": false,
+      "witness": null
+    },
+    {
+      "name": "full-width-counter-wire emits exactly one context POST",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "full-width-counter-wire exact current keyboard wire",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "one first context POST before transport failure",
+      "passed": false,
+      "witness": []
+    },
+    {
+      "name": "seed 0 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 0 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 4 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 4 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 8 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 8 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 16 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 16 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    },
+    {
+      "name": "seed 24 exact admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "actual": []
+      }
+    },
+    {
+      "name": "seed 24 default handling matches admission",
+      "passed": false,
+      "witness": {
+        "eventFields": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "allowed": true,
+        "defaultPrevented": false
+      }
+    }
+  ],
+  "trace": [
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "POST",
+      "url": "/actions",
+      "headers": {
+        "X-Warlock-Api": "1",
+        "Content-Type": "application/json"
+      },
+      "bytes": 130,
+      "sha256": "b99f323a1305233d2b27172d56f096845e3942de3c2a0cc332d6e76da9fc92fc"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpBar",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "cases": [
+    {
+      "name": "group-context-menu",
+      "passed": false
+    },
+    {
+      "name": "group-shift-f10",
+      "passed": false
+    },
+    {
+      "name": "pin-context-menu",
+      "passed": false
+    },
+    {
+      "name": "pin-shift-f10",
+      "passed": false
+    },
+    {
+      "name": "nested-label-bubbles-to-group",
+      "passed": false
+    },
+    {
+      "name": "current-publication-wire",
+      "passed": false
+    },
+    {
+      "name": "current-lease-wire",
+      "passed": false
+    },
+    {
+      "name": "closed-bar-zero-lease",
+      "passed": false
+    },
+    {
+      "name": "full-width-counter-wire",
+      "passed": false
+    },
+    {
+      "name": "ordinary-click-preserved",
+      "passed": true
+    },
+    {
+      "name": "disabled-group-refused",
+      "passed": true
+    },
+    {
+      "name": "disabled-pin-refused",
+      "passed": true
+    },
+    {
+      "name": "utility-control-refused",
+      "passed": true
+    },
+    {
+      "name": "plain-f10-preserved",
+      "passed": true
+    },
+    {
+      "name": "shift-context-menu-preserved",
+      "passed": true
+    },
+    {
+      "name": "ctrl-context-menu-preserved",
+      "passed": true
+    },
+    {
+      "name": "alt-context-menu-preserved",
+      "passed": true
+    },
+    {
+      "name": "meta-context-menu-preserved",
+      "passed": true
+    },
+    {
+      "name": "ctrl-shift-f10-preserved",
+      "passed": true
+    },
+    {
+      "name": "alt-shift-f10-preserved",
+      "passed": true
+    },
+    {
+      "name": "meta-shift-f10-preserved",
+      "passed": true
+    },
+    {
+      "name": "composition-preserved",
+      "passed": true
+    },
+    {
+      "name": "ime229-preserved",
+      "passed": true
+    },
+    {
+      "name": "repeat-refused",
+      "passed": true
+    },
+    {
+      "name": "return-preserved",
+      "passed": true
+    },
+    {
+      "name": "stale-publication-refused",
+      "passed": true
+    },
+    {
+      "name": "stale-lease-refused",
+      "passed": true
+    },
+    {
+      "name": "removed-group-old-callback-refused",
+      "passed": true
+    },
+    {
+      "name": "disabled-successor-old-callback-refused",
+      "passed": true
+    },
+    {
+      "name": "foreign-role-stopped-old-callback-refused",
+      "passed": true
+    },
+    {
+      "name": "transport-error-stopped-old-callback-refused",
+      "passed": true
+    },
+    {
+      "name": "post-failure-never-replays-context",
+      "passed": false
+    },
+    {
+      "name": "popup-only-group-not-a-bar-target",
+      "passed": true
+    },
+    {
+      "name": "seeded-keyboard-admission-property",
+      "passed": false
+    }
+  ],
+  "artifactHashes": {
+    "image": "c158ea9e536a2dc76ef91a7bd0bb0b3c104abb897803d081825f81029b2be7e4",
+    "harness": "0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131"
+  },
+  "seededKeyboard": {
+    "algorithm": "xorshift32",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "sampleCount": 32,
+    "samples": [
+      {
+        "seed": 0,
+        "event": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "18067",
+        "lease": "39247",
+        "allowed": true,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 1,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "540",
+        "lease": "47366",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 2,
+        "event": {
+          "key": "Tab",
+          "code": "Tab",
+          "keyCode": 9,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": true,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 9
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "9373",
+        "lease": "8265",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 3,
+        "event": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 229,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": true,
+          "isComposing": false,
+          "repeat": true,
+          "which": 229
+        },
+        "id": "bar:group:application:documents",
+        "publication": "1079",
+        "lease": "29196",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 4,
+        "event": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "59583",
+        "lease": "60227",
+        "allowed": true,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 5,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": false,
+          "ctrlKey": true,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "58416",
+        "lease": "51978",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 6,
+        "event": {
+          "key": "Tab",
+          "code": "Tab",
+          "keyCode": 9,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 9
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "43178",
+        "lease": "21061",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 7,
+        "event": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 229,
+          "shiftKey": false,
+          "ctrlKey": true,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": true,
+          "which": 229
+        },
+        "id": "bar:group:application:documents",
+        "publication": "2190",
+        "lease": "49274",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 8,
+        "event": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "1693",
+        "lease": "22837",
+        "allowed": true,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 9,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": true,
+          "isComposing": false,
+          "repeat": false,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "19112",
+        "lease": "31100",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 10,
+        "event": {
+          "key": "Tab",
+          "code": "Tab",
+          "keyCode": 9,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 9
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "9382",
+        "lease": "57395",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 11,
+        "event": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 229,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": true,
+          "metaKey": false,
+          "isComposing": true,
+          "repeat": true,
+          "which": 229
+        },
+        "id": "bar:group:application:documents",
+        "publication": "51329",
+        "lease": "45686",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 12,
+        "event": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": true,
+          "repeat": false,
+          "which": 121
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "58503",
+        "lease": "11065",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 13,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": false,
+          "ctrlKey": true,
+          "altKey": false,
+          "metaKey": true,
+          "isComposing": false,
+          "repeat": false,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "59514",
+        "lease": "2928",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 14,
+        "event": {
+          "key": "Tab",
+          "code": "Tab",
+          "keyCode": 9,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": true,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 9
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "58481",
+        "lease": "37439",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 15,
+        "event": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": true,
+          "isComposing": true,
+          "repeat": false,
+          "which": 121
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "5276",
+        "lease": "39386",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 16,
+        "event": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 93,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 93
+        },
+        "id": "bar:group:application:documents",
+        "publication": "13853",
+        "lease": "149",
+        "allowed": true,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 17,
+        "event": {
+          "key": "Tab",
+          "code": "Tab",
+          "keyCode": 9,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 9
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "29366",
+        "lease": "8412",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 18,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "47142",
+        "lease": "47507",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 19,
+        "event": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": true,
+          "metaKey": true,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "38601",
+        "lease": "60374",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 20,
+        "event": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 229,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": true,
+          "which": 229
+        },
+        "id": "bar:group:application:documents",
+        "publication": "23121",
+        "lease": "29337",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 21,
+        "event": {
+          "key": "Tab",
+          "code": "Tab",
+          "keyCode": 9,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 9
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "54978",
+        "lease": "21200",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 22,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": false,
+          "ctrlKey": true,
+          "altKey": true,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "47675",
+        "lease": "52127",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 23,
+        "event": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": true,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "39075",
+        "lease": "22944",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 24,
+        "event": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 121
+        },
+        "id": "bar:group:application:documents",
+        "publication": "29347",
+        "lease": "49391",
+        "allowed": true,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 25,
+        "event": {
+          "key": "Tab",
+          "code": "Tab",
+          "keyCode": 9,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": true,
+          "isComposing": false,
+          "repeat": false,
+          "which": 9
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "14014",
+        "lease": "57510",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 26,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": true,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "13485",
+        "lease": "31209",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 27,
+        "event": {
+          "key": "F10",
+          "code": "F10",
+          "keyCode": 121,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": true,
+          "repeat": false,
+          "which": 121
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "54926",
+        "lease": "11180",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 28,
+        "event": {
+          "key": "ContextMenu",
+          "code": "ContextMenu",
+          "keyCode": 229,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": true,
+          "repeat": true,
+          "which": 229
+        },
+        "id": "bar:group:application:documents",
+        "publication": "53909",
+        "lease": "45795",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 29,
+        "event": {
+          "key": "Tab",
+          "code": "Tab",
+          "keyCode": 9,
+          "shiftKey": false,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": true,
+          "isComposing": false,
+          "repeat": false,
+          "which": 9
+        },
+        "id": "bar:pin:org.example.Editor",
+        "publication": "22152",
+        "lease": "37546",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 30,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": false,
+          "ctrlKey": true,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": false,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "29312",
+        "lease": "3045",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      },
+      {
+        "seed": 31,
+        "event": {
+          "key": "Enter",
+          "code": "Enter",
+          "keyCode": 13,
+          "shiftKey": true,
+          "ctrlKey": false,
+          "altKey": false,
+          "metaKey": false,
+          "isComposing": false,
+          "repeat": true,
+          "which": 13
+        },
+        "id": "bar:group:application:documents",
+        "publication": "43333",
+        "lease": "47804",
+        "allowed": false,
+        "defaultPrevented": false,
+        "posts": []
+      }
+    ]
+  },
+  "inventoryMatches": true,
+  "classification": "semantic-red",
+  "limits": [
+    "Synthetic DOM keyboard events delivered to actual compiled HttpBar callbacks; not native WebKit input.",
+    "Controlled GET presentations establish component GIVEN state; they do not authenticate a taskbar provider.",
+    "Actual POST requests are observed only; no backend/window effect is executed.",
+    "Keyboard coordinates are fixed0/0 and confer no pointer-position claim.",
+    "FocusOnly Bar controls are forbidden by existing snapshot decoder; disabled rows are not made focusOnly here.",
+    "Old callbacks after HTTP failure remain stopped; no model state is injected.",
+    "No service, native readiness, original scenario or release acceptance."
+  ]
+}

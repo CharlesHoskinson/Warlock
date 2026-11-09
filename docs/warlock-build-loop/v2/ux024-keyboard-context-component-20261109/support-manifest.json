@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "kind": "fixed-existing-menu-cpu-rendered-context-extension-final-seeded",
+  "posts": [
+    {
+      "path": "tools/qa_cpu.py",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/fixed-cpu-extension-revision3-seeded/postimages/tools/qa_cpu.py",
+      "beforeSha256": "0512ca6a726e62db09ad0a35aa21faffcdc16491060933cceb704d6498dff942",
+      "sha256": "3e883084c143f228e16632f5c9b4b23b808072c58735e39490c9bff35a6eed04"
+    },
+    {
+      "path": "tools/check_elm_cpu.py",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/fixed-cpu-extension-revision3-seeded/postimages/tools/check_elm_cpu.py",
+      "beforeSha256": "d86fec56462f3c2af1f81db5d6bb9cac21f9d1a95d0f4db1a366084f58f1a7b4",
+      "sha256": "1495bd5bd8f8760ba44e9f4693c6a25fd43e163bd28415976b1c695a57ba577d"
+    },
+    {
+      "path": "tools/test_ux024_menu_cpu_route.py",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/fixed-cpu-extension-revision3-seeded/postimages/tools/test_ux024_menu_cpu_route.py",
+      "beforeSha256": "206a37cfc8676079a0d8b115f51abaf37136988756d98bcb74968ba9946942a9",
+      "sha256": "f321e4ee62a0bab82fd764d8b7002565e606389b908d3cf1861f6bd611b6bb13"
+    }
+  ],
+  "fixtureManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/tests-first-revision3-seeded-keys/manifest.json",
+    "sha256": "981231c7e7891c1e0c4912b494c430cbc9102fbfcbc39febfa67b11d837e0c7e"
+  },
+  "fixtureSha256": "0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131",
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/fixed-cpu-extension-revision3-seeded/candidate.patch",
+    "sha256": "8eb68b51457a3e4e5a1c6b4602ed56d508b35be9bd6acab1330c8a363133ee2d"
+  },
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/fixed-cpu-extension-revision3-seeded/tests-first.json",
+    "sha256": "35af780321c20e295e1277f85f3851924d918817cf72b5b552e4ca3e6d35766c"
+  },
+  "oldRouteMethods": 16,
+  "oldClassesASTUnchanged": true,
+  "newRouteMethods": 6,
+  "totalPureControls": 22,
+  "newFixtureCases": 34,
+  "seededSampleCount": 32,
+  "seededPositiveStrata": [
+    0,
+    8,
+    16,
+    24
+  ],
+  "actualAdmissionCount": "Derived from actual samples; no4allowed/28refused assertion.",
+  "mode": [
+    "--menu-tab-dom",
+    "--arm64"
+  ],
+  "mandatoryInputCount": 120,
+  "newRequiredInput": "implementation/warlock/qa/ux024-bar-context-dom.cjs",
+  "unchangedContext": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/fixed-cpu-extension-revision3-seeded/postimages/tools/menu-tab-elm-toolchain.json",
+      "sha256": "0012df8f3c18c0f4851d2d36c97f790a5f5b990de2d9a8e88df03844bb6843c6",
+      "noCAS": true
+    }
+  ],
+  "preserved": [
+    "Existing18DOM+16Escape bytes/validators untouched.",
+    "Old modes, scopedElm/Node/cache and global240/percommand min120 unchanged.",
+    "No arbitraryargv/provider/runtime/engine change."
+  ],
+  "authorEffects": false
+}

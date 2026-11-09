@@ -1,0 +1,178 @@
+{
+  "schema": 1,
+  "kind": "ux024-rendered-taskbar-context-key-tests-first",
+  "fixture": {
+    "path": "implementation/warlock/qa/ux024-bar-context-dom.cjs",
+    "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/tests-first-revision3-seeded-keys/postimages/implementation/warlock/qa/ux024-bar-context-dom.cjs",
+    "sha256": "0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131"
+  },
+  "sourcePins": {
+    "implementation/warlock/src/HttpBar.elm": "135d13fce502e0b2e2d4b14f6e4a452a3f1a51db2f332fbd6c9b9d16e78ebab6",
+    "implementation/warlock/src/Bar.elm": "3c63a9b07829ffc113b37a74ae957bfbb2b0efd50e4da0feed0e8205c3d6e5c0",
+    "implementation/warlock/src/Presentation.elm": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+    "implementation/warlock/src/CapturedAction.elm": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+    "implementation/warlock/src/SurfaceRenderer.elm": "d5439ebf36c3624fd56a316a012177dcc20c47e883437d469e70c08ab3b1825c",
+    "implementation/warlock/src/SurfaceSnapshot.elm": "9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a",
+    "implementation/warlock/src/Surface.elm": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179",
+    "implementation/warlock/src/UiHttp.elm": "c3543e27ad787d3c84894554178121205d19b9868c250d0717989c1207cdc72f",
+    "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+  },
+  "derivedHarness": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/revision2-newline-escape/ux024-menu-dom.cjs",
+    "sha256": "cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f"
+  },
+  "caseCount": 34,
+  "caseNames": [
+    "group-context-menu",
+    "group-shift-f10",
+    "pin-context-menu",
+    "pin-shift-f10",
+    "nested-label-bubbles-to-group",
+    "current-publication-wire",
+    "current-lease-wire",
+    "closed-bar-zero-lease",
+    "full-width-counter-wire",
+    "ordinary-click-preserved",
+    "disabled-group-refused",
+    "disabled-pin-refused",
+    "utility-control-refused",
+    "plain-f10-preserved",
+    "shift-context-menu-preserved",
+    "ctrl-context-menu-preserved",
+    "alt-context-menu-preserved",
+    "meta-context-menu-preserved",
+    "ctrl-shift-f10-preserved",
+    "alt-shift-f10-preserved",
+    "meta-shift-f10-preserved",
+    "composition-preserved",
+    "ime229-preserved",
+    "repeat-refused",
+    "return-preserved",
+    "stale-publication-refused",
+    "stale-lease-refused",
+    "removed-group-old-callback-refused",
+    "disabled-successor-old-callback-refused",
+    "foreign-role-stopped-old-callback-refused",
+    "transport-error-stopped-old-callback-refused",
+    "post-failure-never-replays-context",
+    "popup-only-group-not-a-bar-target",
+    "seeded-keyboard-admission-property"
+  ],
+  "command": [
+    "node",
+    "implementation/warlock/qa/ux024-bar-context-dom.cjs",
+    "<explicit-source-bound-compiled-HttpBar.js-or-html>",
+    "<new-report.json>"
+  ],
+  "contract": {
+    "eligible": "Current enabled bar:group:* and bar:pin:* only. Utilities and popup-only identities refuse. FocusOnly bar rows are already invalid in SurfaceSnapshot; no invented focusOnly semantics.",
+    "keys": "Unmodified ContextMenu OR Shift+F10 with shift only. ctrl/alt/meta, plainF10, ShiftContextMenu, composing, keyCode229, repeat, Enter remain unchanged.",
+    "wire": {
+      "surfaceProtocol": 2,
+      "kind": "surface-context",
+      "surface": "bar",
+      "publication": "exact current decimal string",
+      "lease": "exact current decimal string including legitimate0",
+      "id": "exact current eligible group or pin",
+      "trigger": "keyboard",
+      "x": 0,
+      "y": 0
+    },
+    "coordinates": "Current Surface.resolve requires integer x/y but discards them. Fixed0/0 is not pointer location.",
+    "transport": "Actual compiled HttpBar DOM listener \u2192 Bar/Presentation \u2192 UiHttp actual POST /actions. Observe bytes and204/no replay. No authored POST, action port or Elm model mutation.",
+    "stale": "Remove old keyed group through actual GET/current model/render; verify node detached; restore same group identity under newer publication/lease and a distinct node, then invoke old detached node callback. Current Presentation must reject retained old wire. Removed and disabled-successor variants remain. No scheduler/pre-repaint or mutable listener internals assumption.",
+    "stopped": "Actual foreign-role GET or GET error stops HttpBar; retained old DOM callback cannot post. Actual POST error never retries despite further key.",
+    "preservation": "Ordinary click retains exact existing surface-action. Key emits no click action or commit/local focus command.",
+    "wideCounters": "UInt64 accepts strings through18446744073709551615; fixture does not round them throughJS numbers."
+  },
+  "reportSchema": {
+    "schema": 1,
+    "passed": "all34 case results plus all checks and exactcase inventory",
+    "classification": [
+      "fixture-setup-failed",
+      "fixture-inventory-failed",
+      "fixture-execution-failed",
+      "semantic-red",
+      "component-pass"
+    ],
+    "cases": "ordered {name,passed}[]",
+    "checks": "assertion rows",
+    "failures": "failed assertion rows",
+    "trace": "actual XHR metadata only",
+    "artifactHashes": "image and harness SHA256",
+    "nativeAcceptance": false,
+    "originalAccepted": false
+  },
+  "minimalProductionHypothesisOnly": [
+    "SurfaceRenderer actual key emitter on eligible controls",
+    "Separate opaque Context decoder/encoder in CapturedAction; preserve old action codec",
+    "Presentation context fallback with exact current pub/lease/role/membership; no generic dispatch bypass"
+  ],
+  "productionAuthored": false,
+  "executed": false,
+  "rootOnlyQualification": true,
+  "preserved": [
+    "Existing18 DOM fixture unchanged",
+    "Existing16 Escape replay and Node unchanged",
+    "Same original protected CPU deadline/profile",
+    "Native/service providers and original acceptance remain unproven"
+  ],
+  "coverageLimits": [
+    "Controlled presentations and synthetic DOM keyboard events, not native input or authenticated provider evidence",
+    "Window/backend effects are not executed; exact POST envelope is the oracle",
+    "No claim that malformed raw JSON duplicate fields can be represented by parsed DOM values",
+    "One bounded32-seed property case; no fuzz campaign expansion or native evidence."
+  ],
+  "parent": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/tests-first-revision2-detached-callback/manifest.json",
+    "sha256": "30a3168637b2b1da6dbb3e4abea5c8268f161be6dcbfa4b6d3711eedb9f84fd2"
+  },
+  "delta": "Only append one34th seeded property case and its inventory entry; original33 case bodies unchanged.",
+  "seededProperty": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "algorithm": "xorshift32 starting state seed+1, shifts13/17/5",
+    "samples": 32,
+    "positiveStrata": "seed0,8,16,24 force two unmodifiedContextMenu andtwoShiftF10; remaining28 retain allgeneratedfields",
+    "varied": [
+      "event key/code/keyCode/which",
+      "shift/ctrl/alt/meta/isComposing/repeat",
+      "group or pin",
+      "current publication and lease decimal strings"
+    ],
+    "oracle": "Independent literal key/modifier/composition/repeat predicate; exact current context POST iff allowed; matching default handling; no activation or localfocus",
+    "report": "seededKeyboard.algorithm/seeds/sampleCount/samples retained"
+  }
+}

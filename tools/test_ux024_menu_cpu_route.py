@@ -143,4 +143,58 @@ class FixedMenuEscapeRoute(unittest.TestCase):
             self.assertIn('implementation/warlock/qa/OutputRetirementReplay.elm',inputs)
             self.assertNotIn('implementation/warlock/qa/arbitrary.cjs',inputs)
 
+
+class FixedBarContextRoute(unittest.TestCase):
+    def valid(self):
+        return {'schema':1,'passed':True,'classification':'component-pass','inventoryMatches':True,
+                'nativeAcceptance':False,'originalAccepted':False,'failures':[],
+                'artifactHashes':{'image':'a'*64,'harness':'b'*64},
+                'seededKeyboard':{'algorithm':'xorshift32','seeds':list(range(32)),'sampleCount':32,
+                    'samples':[{'seed':i,'allowed':i%8==0,'defaultPrevented':i%8==0,'posts':[{}] if i%8==0 else []} for i in range(32)]},
+                'cases':[{'name':n,'passed':True} for n in elm.MENU_BAR_CONTEXT_CASES],
+                'checks':[{'name':'actual transport assertion','passed':True}]}
+    def check(self,value):elm.validate_menu_bar_context_result(value,'a'*64,'b'*64)
+    def test_bar_context_exact_success(self):self.check(self.valid())
+    def test_bar_context_missing_extra_duplicate_case_refuses(self):
+        for mode in ['missing','extra','duplicate']:
+            value=self.valid()
+            if mode=='missing':value['cases'].pop()
+            if mode=='extra':value['cases'].append({'name':'extra','passed':True})
+            if mode=='duplicate':value['cases'][-1]=copy.deepcopy(value['cases'][0])
+            with self.assertRaises(RuntimeError):self.check(value)
+    def test_bar_context_failed_setup_red_inventory_refuses(self):
+        for field,value in [('setupFailures',1),('classification','semantic-red'),('classification','fixture-setup-failed'),('inventoryMatches',False),('passed',False)]:
+            report=self.valid();report[field]=value
+            with self.assertRaises(RuntimeError):self.check(report)
+        for mode in ['missing','duplicate','short','nonbool','positive']:
+            report=self.valid();seeded=report['seededKeyboard']
+            if mode=='missing':report.pop('seededKeyboard')
+            if mode=='duplicate':seeded['seeds'][-1]=0
+            if mode=='short':seeded['samples'].pop()
+            if mode=='nonbool':seeded['samples'][1]['allowed']=0
+            if mode=='positive':seeded['samples'][0].update(allowed=False,defaultPrevented=False,posts=[])
+            with self.assertRaises(RuntimeError):self.check(report)
+    def test_bar_context_wrong_image_or_harness_refuses(self):
+        for field in ['image','harness']:
+            report=self.valid();report['artifactHashes'][field]='0'*64
+            with self.assertRaises(RuntimeError):self.check(report)
+    def test_bar_context_failed_skipped_or_acceptance_refuses(self):
+        for mode in ['case','check','skipped','empty','failures','native','original']:
+            report=self.valid()
+            if mode=='case':report['cases'][0]['passed']=False
+            if mode=='check':report['checks'][0]['passed']=False
+            if mode=='skipped':report['checks'][0]['skipped']=True
+            if mode=='empty':report['checks']=[]
+            if mode=='failures':report['failures']=[{'name':'actual failure'}]
+            if mode=='native':report['nativeAcceptance']=True
+            if mode=='original':report['originalAccepted']=True
+            with self.assertRaises(RuntimeError):self.check(report)
+    def test_bar_context_one_fixed_input_added(self):
+        with tempfile.TemporaryDirectory() as temp:
+            inputs=qa.menu_tab_dom_inputs(Path(temp))
+            self.assertIn(elm.MENU_BAR_CONTEXT_FIXTURE,inputs)
+            self.assertEqual(elm.MENU_BAR_CONTEXT_FIXTURE,'implementation/warlock/qa/ux024-bar-context-dom.cjs')
+            self.assertIn('implementation/warlock/qa/ux024-menu-dom.cjs',inputs)
+            self.assertTrue(set(elm.MENU_ESCAPE_QA_INPUTS)<=inputs)
+
 if __name__ == '__main__': unittest.main()

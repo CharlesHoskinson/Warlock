@@ -1,4 +1,4 @@
-module CapturedAction exposing (CapturedAction, decode, encode, publication, lease, surface, identity)
+module CapturedAction exposing (CapturedAction, decode, encode, publication, lease, surface, identity, Context, decodeContext, encodeContext, contextPublication, contextLease, contextIdentity)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -34,3 +34,51 @@ surface : CapturedAction -> String
 surface (CapturedAction value) = value.surface
 identity : CapturedAction -> String
 identity (CapturedAction value) = value.identity
+
+
+-- Keyboard context is a distinct envelope, never an action-kind alias.
+-- Its publication/lease are revalidated against the current Bar presentation.
+type Context = Context { publication : Counter, lease : Counter, identity : String }
+
+decodeContext : D.Value -> Result D.Error Context
+decodeContext raw =
+    let
+        contextDecoder =
+            D.keyValuePairs D.value |> D.andThen (\pairs ->
+                if List.sort (List.map Tuple.first pairs) /= ["id","kind","lease","publication","surface","surfaceProtocol","trigger","x","y"] then
+                    D.fail "Context fields"
+                else
+                    D.map8 (\version contextKind shown scoped role targetId origin coordinates ->
+                        {version=version,kind=contextKind,publication=shown,lease=scoped,role=role,targetId=targetId,origin=origin,coordinates=coordinates})
+                        (D.field "surfaceProtocol" D.int) (D.field "kind" D.string)
+                        (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder)
+                        (D.field "surface" D.string) (D.field "id" D.string)
+                        (D.field "trigger" D.string)
+                        (D.map2 Tuple.pair (D.field "x" D.int) (D.field "y" D.int))
+                        |> D.andThen (\captured ->
+                            let taskbarTarget =
+                                    List.any (\prefix -> String.startsWith prefix captured.targetId && String.length captured.targetId > String.length prefix) ["bar:group:","bar:pin:"]
+                            in if captured.version==2 && captured.kind=="surface-context" && captured.role=="bar"
+                                && captured.origin=="keyboard" && captured.coordinates==(0,0)
+                                && captured.publication/=UInt64.zero && taskbarTarget
+                                && String.length captured.targetId<=512 && not (String.any (\c -> Char.toCode c<32) captured.targetId) then
+                                D.succeed (Context {publication=captured.publication,lease=captured.lease,identity=captured.targetId})
+                            else
+                                D.fail "Context scope"))
+    in
+    D.decodeValue contextDecoder raw
+
+encodeContext : Context -> E.Value
+encodeContext (Context captured) =
+    E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-context"),("surface",E.string "bar")
+        ,("publication",E.string (UInt64.string captured.publication)),("lease",E.string (UInt64.string captured.lease))
+        ,("id",E.string captured.identity),("trigger",E.string "keyboard"),("x",E.int 0),("y",E.int 0)]
+
+contextPublication : Context -> Counter
+contextPublication (Context captured) = captured.publication
+
+contextLease : Context -> Counter
+contextLease (Context captured) = captured.lease
+
+contextIdentity : Context -> String
+contextIdentity (Context captured) = captured.identity

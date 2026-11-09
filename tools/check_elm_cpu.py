@@ -132,6 +132,41 @@ def validate_menu_escape_result(result, image_sha, fixture_sha):
             or any(row['passed'] is not True for row in rows)):
         raise RuntimeError('Fixed16 menu Escape results/setup/artifacts missing, changed or failed')
 
+
+MENU_BAR_CONTEXT_CASES = ('group-context-menu', 'group-shift-f10', 'pin-context-menu', 'pin-shift-f10', 'nested-label-bubbles-to-group', 'current-publication-wire', 'current-lease-wire', 'closed-bar-zero-lease', 'full-width-counter-wire', 'ordinary-click-preserved', 'disabled-group-refused', 'disabled-pin-refused', 'utility-control-refused', 'plain-f10-preserved', 'shift-context-menu-preserved', 'ctrl-context-menu-preserved', 'alt-context-menu-preserved', 'meta-context-menu-preserved', 'ctrl-shift-f10-preserved', 'alt-shift-f10-preserved', 'meta-shift-f10-preserved', 'composition-preserved', 'ime229-preserved', 'repeat-refused', 'return-preserved', 'stale-publication-refused', 'stale-lease-refused', 'removed-group-old-callback-refused', 'disabled-successor-old-callback-refused', 'foreign-role-stopped-old-callback-refused', 'transport-error-stopped-old-callback-refused', 'post-failure-never-replays-context', 'popup-only-group-not-a-bar-target', 'seeded-keyboard-admission-property')
+MENU_BAR_CONTEXT_FIXTURE = 'implementation/warlock/qa/ux024-bar-context-dom.cjs'
+MENU_BAR_CONTEXT_FIXTURE_SHA = '0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131'
+
+def validate_menu_bar_context_result(result, image_sha, fixture_sha):
+    cases = result.get('cases')
+    checks = result.get('checks')
+    artifacts = result.get('artifactHashes')
+    setup_failures = result.get('setupFailures', 0)
+    seeded = result.get('seededKeyboard')
+    samples = seeded.get('samples') if isinstance(seeded, dict) else None
+    if (result.get('schema') != 1 or result.get('passed') is not True
+            or result.get('classification') != 'component-pass' or result.get('inventoryMatches') is not True
+            or type(setup_failures) is not int or setup_failures != 0
+            or result.get('nativeAcceptance') is not False or result.get('originalAccepted') is not False
+            or result.get('failures') != [] or not isinstance(artifacts, dict)
+            or not isinstance(seeded, dict) or seeded.get('algorithm') != 'xorshift32'
+            or seeded.get('seeds') != list(range(32)) or seeded.get('sampleCount') != 32
+            or not isinstance(samples, list) or len(samples) != 32
+            or any(not isinstance(row, dict) for row in samples)
+            or [row.get('seed') for row in samples] != list(range(32))
+            or any(type(row.get('allowed')) is not bool or type(row.get('defaultPrevented')) is not bool
+                   or row['defaultPrevented'] != row['allowed'] or not isinstance(row.get('posts'), list)
+                   or len(row['posts']) != (1 if row['allowed'] else 0) for row in samples)
+            or any(samples[index]['allowed'] is not True for index in (0, 8, 16, 24))
+            or artifacts.get('image') != image_sha or artifacts.get('harness') != fixture_sha
+            or not isinstance(cases, list) or len(cases) != len(MENU_BAR_CONTEXT_CASES)
+            or any(not isinstance(row, dict) or set(row) != {'name', 'passed'} for row in cases)
+            or tuple(row['name'] for row in cases) != MENU_BAR_CONTEXT_CASES
+            or any(row['passed'] is not True for row in cases)
+            or not isinstance(checks, list) or not checks
+            or any(not isinstance(row, dict) or row.get('passed') is not True or row.get('skipped', False) for row in checks)):
+        raise RuntimeError('Fixed34 rendered bar context cases/setup/artifacts missing, changed or failed')
+
 def run_menu_tab_dom():
     import arm64_toolchain as toolchain
     from qa_cpu import menu_tab_dom_inputs
@@ -198,6 +233,12 @@ def run_menu_tab_dom():
             shutil.copyfile(REPO / key, target)
             if source_hash(target) != expected:
                 raise RuntimeError('Staged Escape replay dependency differs: ' + key)
+        if sources[MENU_BAR_CONTEXT_FIXTURE] != MENU_BAR_CONTEXT_FIXTURE_SHA:
+            raise RuntimeError('Fixed rendered bar context fixture changed')
+        bar_fixture = work / 'qa/ux024-bar-context-dom.cjs'
+        shutil.copyfile(REPO / MENU_BAR_CONTEXT_FIXTURE, bar_fixture)
+        if source_hash(bar_fixture) != MENU_BAR_CONTEXT_FIXTURE_SHA:
+            raise RuntimeError('Staged rendered bar context fixture differs')
         shutil.copytree(pinned['elmHome'], output / 'elm-home')
         if toolchain.inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
             raise RuntimeError('Staged ARM Elm cache differs')
@@ -229,6 +270,16 @@ def run_menu_tab_dom():
             if source_hash(work / 'qa' / Path(key).name) != expected:
                 raise RuntimeError('Staged Escape replay dependency changed: ' + key)
         report.update(menuEscapeCaseCount=16, menuEscapeResultSha256=source_hash(escape_result_path), menuEscapeImageSha256=escape_image_sha)
+        bar_image = output / 'HttpBar.js'
+        run('compile-HttpBar', [pinned['elm'], 'make', 'src/HttpBar.elm', '--optimize', '--output=' + str(bar_image)])
+        bar_image_sha = source_hash(bar_image)
+        bar_result_path = output / 'menu-bar-context.json'
+        run('menu-bar-context', [pinned['node'], str(bar_fixture), str(bar_image), str(bar_result_path)])
+        bar_result = json.loads(bar_result_path.read_text())
+        validate_menu_bar_context_result(bar_result, bar_image_sha, MENU_BAR_CONTEXT_FIXTURE_SHA)
+        if source_hash(bar_image) != bar_image_sha or source_hash(bar_fixture) != MENU_BAR_CONTEXT_FIXTURE_SHA:
+            raise RuntimeError('Actual tested HttpBar image or fixture changed')
+        report.update(menuBarContextCaseCount=34, menuBarContextResultSha256=source_hash(bar_result_path), menuBarContextImageSha256=bar_image_sha)
         for name, digest in sources.items():
             prefix = 'implementation/warlock/src/'
             if name.startswith(prefix) and source_hash(work / 'src' / name[len(prefix):]) != digest:

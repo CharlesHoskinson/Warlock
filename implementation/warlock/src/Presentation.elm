@@ -48,7 +48,16 @@ dispatch popup raw (Model model) =
     case (model.snapshot,CapturedAction.decode raw) of
         (Just snapshot,Ok event) ->
             if CapturedAction.publication event==SurfaceSnapshot.publication snapshot && CapturedAction.lease event==SurfaceSnapshot.lease snapshot && CapturedAction.surface event==(if popup then "popup" else "bar") && SurfaceSnapshot.enabled popup (CapturedAction.identity event) snapshot then Just (CapturedAction.encode event) else Nothing
-        _ -> Nothing
+        _ ->
+            case (model.snapshot,CapturedAction.decodeContext raw) of
+                (Just snapshot,Ok contextEvent) ->
+                    if not popup && CapturedAction.contextPublication contextEvent==SurfaceSnapshot.publication snapshot
+                        && CapturedAction.contextLease contextEvent==SurfaceSnapshot.lease snapshot
+                        && SurfaceSnapshot.enabled False (CapturedAction.contextIdentity contextEvent) snapshot then
+                        Just (CapturedAction.encodeContext contextEvent)
+                    else
+                        Nothing
+                _ -> Nothing
 
 query : String -> Model -> Maybe E.Value
 query value (Model model) =

@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "kind": "ux024-taskbar-keyboard-context-production-candidate",
+  "posts": [
+    {
+      "path": "implementation/warlock/src/CapturedAction.elm",
+      "beforeSha256": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/production-fix/postimages/implementation/warlock/src/CapturedAction.elm",
+      "sha256": "08efe9eacd78e9edf86ed13a5b13108d29face6ef1edf264ad711dc6c720664b"
+    },
+    {
+      "path": "implementation/warlock/src/Presentation.elm",
+      "beforeSha256": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/production-fix/postimages/implementation/warlock/src/Presentation.elm",
+      "sha256": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "beforeSha256": "d5439ebf36c3624fd56a316a012177dcc20c47e883437d469e70c08ab3b1825c",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/production-fix/postimages/implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/production-fix/candidate.patch",
+    "sha256": "f5f8c39015a3d98fec757f4c2695b42e0e0c01798a02f26196868ffb8856b8c7"
+  },
+  "contract": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/contract-fixed-fixture-path.json",
+    "sha256": "6c4773117a5dcf66de04bfc784d675470c2ff1735dabf1a0f76e66e25d2a5f80"
+  },
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/tests-first-revision3-seeded-keys/manifest.json",
+    "sha256": "981231c7e7891c1e0c4912b494c430cbc9102fbfcbc39febfa67b11d837e0c7e"
+  },
+  "actualSemanticRed": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263409567048734/menu-bar-context.json",
+    "sha256": "8eab0fe202183a9c3bc7cff544dc3e3b31c8cc73d792f1860778a3e6773213e2"
+  },
+  "actualRootReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263409567048734/report.json",
+    "sha256": "f6e72e89c082c3cb6a9d65056b2bdc878660c612b1e9c2cb458b6ec37355aa31"
+  },
+  "redSummary": {
+    "cases": 34,
+    "failedCases": 11,
+    "passedCases": 23,
+    "failedAssertions": 38,
+    "seedSamples": 32,
+    "allowedSamples": 5,
+    "refusedSamples": 27,
+    "setupFailures": 0
+  },
+  "changes": [
+    "Separate opaque Context codec; exact nine fields, keyboard/bar/0,0 only; current counter strings including lease0. Existing action functions byte-identical.",
+    "Presentation original valid-action branch unchanged. Separate context fallback requires current snapshot, exact publication/lease, bar route and enabled captured identity.",
+    "Renderer keydown only on enabled nonempty group/pin identities; exact ContextMenu or ShiftF10 guards, no IME229/composing/repeat/modifier hijack; prevent default only decoded keys. Ordinary click unchanged."
+  ],
+  "preserved": [
+    "All34 emitter cases and32seed sample definitions unchanged",
+    "Original18DOM+16Escape fixtures unchanged",
+    "Backend/provider/native gates, participant and original registers",
+    "No service capability/native focus acceptance"
+  ],
+  "qualification": "Root only: compile three current HTTP documents and execute unchanged18+16+34/32seed fixed CPU route. Compiler and semantic GREEN not yet observed for this candidate.",
+  "executedByAuthor": false,
+  "primaryWrites": false,
+  "nativeAcceptance": false,
+  "originalAccepted": false
+}
