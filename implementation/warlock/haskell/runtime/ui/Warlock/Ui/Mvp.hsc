@@ -270,6 +270,7 @@ parseMvpFocusIntent projection = do
       let destination
             | not (leasePopupOpen lease) = Just (MvpFocusBar, "bar:applications", bar)
             | mode == "applications" = Just (MvpFocusPopup, "control:search", popup)
+            | mode == "notifications" = Just (MvpFocusPopup, "control:close", popup)
             | otherwise = Nothing
       case destination of
         Nothing -> Right Nothing

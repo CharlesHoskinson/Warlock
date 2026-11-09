@@ -325,6 +325,43 @@ keyboardFocusControls = do
  unselected <- parse (field "focusOwner" J.JNull (frame 1 0 False "closed"))
  check "mapped scope without selected focus owner cannot take keyboard focus" (unselected==Nothing)
 
+-- Notifications is a separate real popup keyboard destination.
+notificationKeyboardFocusControls :: IO ()
+notificationKeyboardFocusControls = do
+ let field key value (J.JObject fields) = J.JObject [(name,if name==key then value else old) | (name,old)<-fields]
+     field _ _ value = value
+     selected = field "focusOwner" (J.JObject [("id",J.JString "7"),("generation",J.JString "3")])
+     row ident dom enabled = J.JObject [("id",J.JString ident),("domId",J.JString dom),("enabled",J.JBool enabled),("focusOnly",J.JBool False)]
+     frame pub token popup controls bar = field "frame" (J.JObject
+       [("surfaceProtocol",J.JNumber "2"),("publication",J.JString (T.pack (show pub))),("lease",J.JString (T.pack (show token))),
+        ("mode",J.JString (if popup then "notifications" else "closed")),("bar",J.JArray bar),
+        ("popup",J.JArray controls)]) (selected (projection pub token popup))
+     opener = row "bar:applications" "owned-opener" True
+     close = row "control:close" "notifications-close" True
+     parse value = either (ioError . userError . T.unpack) pure (parseMvpFocusIntent value)
+     notifications pub token = frame pub token True [close] [opener]
+ closed <- parse (frame 1 0 False [] [opener])
+ opened <- parse (notifications 2 8)
+ updated <- parse (notifications 3 8)
+ reopened <- parse (notifications 4 9)
+ check "notifications opening transfers keyboard focus into Popup" (maybe False ((==Just MvpFocusPopup) . mvpFocusTransition closed) opened)
+ check "notifications same-lease publication preserves keyboard traversal" (maybe False ((==Nothing) . mvpFocusTransition opened) updated)
+ check "notifications dismissal transfers keyboard focus back to Bar" (maybe False ((==Just MvpFocusBar) . mvpFocusTransition opened) closed)
+ check "new notifications lease transfers Popup focus once" (maybe False ((==Just MvpFocusPopup) . mvpFocusTransition opened) reopened)
+ disabled <- parse (frame 2 8 True [row "control:close" "notifications-close" False] [opener])
+ check "disabled notifications close is not a keyboard destination" (disabled==Nothing)
+ missing <- parse (frame 2 8 True [] [opener])
+ check "missing notifications close does not invent a keyboard destination" (missing==Nothing)
+ let duplicate = frame 2 8 True [close,close] [opener]
+ check "duplicate notifications controls refuse keyboard focus" (case parseMvpFocusIntent duplicate of Left _ -> True; _ -> False)
+ let crossRenderer = frame 2 8 True [close] [row "bar:applications" "notifications-close" True]
+ check "notifications target cannot alias another renderer" (case parseMvpFocusIntent crossRenderer of Left _ -> True; _ -> False)
+ let wrongOwner = field "popupOwner" (J.JObject [("id",J.JString "99"),("generation",J.JString "3")]) (notifications 2 8)
+ check "foreign notifications scope refuses physical focus" (case parseMvpFocusIntent wrongOwner of Left _ -> True; _ -> False)
+ let noSelection = field "focusOwner" J.JNull (notifications 2 8)
+ unselected <- parse noSelection
+ check "unselected notifications scope cannot take keyboard focus" (unselected==Nothing)
+
 rendererPhaseControls :: IO ()
 rendererPhaseControls = do
  let nonce = BS.replicate 64 'a'
@@ -360,6 +397,7 @@ allocationControls :: IO ()
 allocationControls = do
  rendererPhaseControls
  keyboardFocusControls
+ notificationKeyboardFocusControls
  -- Fixed passive observation cannot generate or suppress the real input.
  let script = firstMouseupDiagnosticScript
  forM_ ["new Promise", "'mouseup'", "capture:true", "passive:true", "once:true", "isTrusted", "data-surface-control", "data-publication", "data-lease"] $ \literal ->
