@@ -12,7 +12,7 @@ import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
 import GHC.Clock (getMonotonicTimeNSec)
 import Numeric (showHex)
-import System.Directory (createDirectory, listDirectory)
+import System.Directory (createDirectory, doesFileExist, listDirectory)
 import System.Environment (getArgs)
 import System.FilePath ((</>), isAbsolute, takeDirectory)
 import System.Posix.Files (deviceID, fileID, getSymbolicLinkStatus, isRegularFile, setFileMode)
@@ -100,6 +100,8 @@ main = do
       privateWrite config (encoded (obj (fields ++ opt)))
       loaded <- loadBackendConfig config >>= must
       result <- runBackend loaded
+      outputExists <- doesFileExist output
+      unless outputExists (ioError (userError ("trusted stream child output missing after " ++ label ++ ": " ++ T.unpack (TE.decodeUtf8 (backendResultJson result)))))
       raw <- B.readFile output
       limits <- must (J.bounds (8*1024*1024) 16)
       replies <- must (J.decodeStrict limits raw)
@@ -117,7 +119,7 @@ main = do
      enabled = [("applicationAttachment",J.JBool True)]
      empty = commit []
      catalogRequest = commit [request owner]
-     attachment = obj [("protocolVersion",J.JNumber "3"),("kind",txt "application-attached"),("binding",owner),("nativeOperations",J.JArray []),("applicationOperations",J.JArray [])]
+     attachment = obj [("protocolVersion",J.JNumber "3"),("kind",txt "application-attached"),("binding",owner),("nativeOperations",J.JArray []),("applicationOperations",J.JArray []),("localOperations",J.JArray [txt "notification-policy"])]
      envelope payload = obj [("bridgeProtocol",J.JNumber "1"),("kind",txt "native-event"),("payload",payload)]
  (good, replies) <- run "positive" enabled [(empty,1,False),(empty,0,False),(catalogRequest,1,False)]
  check "real authenticated empty commit emits only one attachment across repeated commits" (backendPassed good && backendCleanup good && backendCallbackCount good==3 && backendOperationCount good==1 && length replies==2 && canonical (head replies)==canonical (envelope attachment))

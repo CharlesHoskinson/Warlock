@@ -7,7 +7,7 @@ module Warlock.Protocol.Desktop
   , LaunchStatus(..), LaunchRefusal(..), launchReply, launchOutcome
   , PinSnapshot, pinSnapshot, pinRevision, pinIdentities, decodePinSnapshot, encodePinSnapshot
   , CatalogEntry, catalogEntry, CatalogSnapshot, catalogSnapshot
-  , DesktopReply, PinStatus(..), ApplicationAvailability(..), applicationAttached, applicationAttachedWithAvailability, applicationAvailability, catalogReply, pinsReply, replyBinding
+  , DesktopReply, PinStatus(..), ApplicationAvailability(..), applicationAttached, applicationAttachedWithAvailability, applicationAttachedWithLocalNotifications, applicationAvailability, catalogReply, pinsReply, replyBinding
   , decodeDesktopReply, encodeDesktopReply, decodeDesktopGateway, encodeDesktopGateway, popupControl ) where
 
 import qualified Data.ByteString as B
@@ -36,6 +36,7 @@ data DesktopReply = CatalogReply Binding Counter (Maybe CatalogSnapshot) (Maybe 
                   | PinsReply Binding Counter PinStatus (Maybe PinSnapshot)
                   | LaunchReply Binding LaunchIntent LaunchStatus
                   | ApplicationAttached Binding (Maybe ApplicationAvailability)
+                  | LocalNotificationsAttached Binding ApplicationAvailability
                   | PreviewGrant Binding Counter Int
                   | PreviewQuarantine Binding Counter
                   | PreviewClosed Binding Counter deriving (Eq, Show)
@@ -239,6 +240,7 @@ replyBinding (CatalogReply owner _ _ _) = owner
 replyBinding (PinsReply owner _ _ _) = owner
 replyBinding (LaunchReply owner _ _) = owner
 replyBinding (ApplicationAttached owner _) = owner
+replyBinding (LocalNotificationsAttached owner _) = owner
 replyBinding (PreviewGrant owner _ _) = owner
 replyBinding (PreviewQuarantine owner _) = owner
 replyBinding (PreviewClosed owner _) = owner
@@ -262,6 +264,7 @@ replyJson reply = JObject $ [("protocolVersion",JNumber "3"),("binding",bindingJ
     ++ case selected of
       Nothing -> []
       Just availability -> [("applicationOperations",JArray (case availability of ApplicationUnavailable -> []; ApplicationLaunchAvailable -> [JString "application-launch"]))]
+  LocalNotificationsAttached _ availability -> [("kind",JString "application-attached"),("nativeOperations",JArray []),("applicationOperations",JArray (case availability of ApplicationUnavailable -> []; ApplicationLaunchAvailable -> [JString "application-launch"])),("localOperations",JArray [JString "notification-policy"])]
   PreviewGrant _ epoch capacity -> [("kind",JString "native-preview-grant"),("receiverEpoch",JString (renderCounter epoch)),("capacity",JNumber (T.pack (show capacity)))]
   PreviewQuarantine _ epoch -> [("kind",JString "native-preview-quarantine"),("receiverEpoch",JString (renderCounter epoch))]
   PreviewClosed _ epoch -> [("kind",JString "native-preview-closed"),("receiverEpoch",JString (renderCounter epoch))]
@@ -323,8 +326,16 @@ applicationAttachedWithAvailability owner available = do
  let reply = ApplicationAttached owner (Just available)
  _ <- encodeDesktopReply reply
  pure reply
+-- Local UI session policy only: no notification service, producer or native authority.
+-- Keep the old constructor's exact wire behavior for legacy callers.
+applicationAttachedWithLocalNotifications :: Binding -> ApplicationAvailability -> Either Text DesktopReply
+applicationAttachedWithLocalNotifications owner available = do
+ let reply = LocalNotificationsAttached owner available
+ _ <- encodeDesktopReply reply
+ pure reply
 applicationAvailability :: DesktopReply -> Maybe ApplicationAvailability
 applicationAvailability (ApplicationAttached _ selected) = Just (maybe ApplicationUnavailable id selected)
+applicationAvailability (LocalNotificationsAttached _ selected) = Just selected
 applicationAvailability _ = Nothing
 catalogReply :: Binding -> Counter -> Maybe CatalogSnapshot -> Maybe PinSnapshot -> Either Text DesktopReply
 catalogReply owner request catalog pins = do
@@ -349,14 +360,20 @@ decodeDesktopReply raw = do
   case kind of
     "application-attached" -> do
       let present = lookup "applicationOperations" fields
-      exact <- object (["protocolVersion","kind","binding","nativeOperations"] ++ case present of Nothing -> []; Just _ -> ["applicationOperations"]) value
+          local = lookup "localOperations" fields
+      exact <- object (["protocolVersion","kind","binding","nativeOperations"] ++ (case present of Nothing -> []; Just _ -> ["applicationOperations"]) ++ (case local of Nothing -> []; Just _ -> ["localOperations"])) value
       owner <- field "binding" exact >>= parseBinding
       field "nativeOperations" exact >>= fixed (JArray [])
-      case present of
-       Nothing -> applicationAttached owner
-       Just (JArray []) -> applicationAttachedWithAvailability owner ApplicationUnavailable
-       Just (JArray [JString "application-launch"]) -> applicationAttachedWithAvailability owner ApplicationLaunchAvailable
+      availability <- case present of
+       Nothing -> Right Nothing
+       Just (JArray []) -> Right (Just ApplicationUnavailable)
+       Just (JArray [JString "application-launch"]) -> Right (Just ApplicationLaunchAvailable)
        Just _ -> Left "unsupported application operations"
+      case (local,availability) of
+       (Nothing,Nothing) -> applicationAttached owner
+       (Nothing,Just available) -> applicationAttachedWithAvailability owner available
+       (Just (JArray [JString "notification-policy"]),Just available) -> applicationAttachedWithLocalNotifications owner available
+       _ -> Left "unsupported local operations"
     "application-catalog" -> do
       exact <- object ["protocolVersion","kind","binding","requestId","preferences","snapshot"] value
       owner <- field "binding" exact >>= parseBinding

@@ -335,7 +335,7 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
        if firstAttempt then do
         producer <- issuerInCurrentAdmission
         let available = case producer of Right _ -> D.ApplicationLaunchAvailable; Left _ -> D.ApplicationUnavailable
-        construct (D.applicationAttachedWithAvailability bound available) >>= sendReply
+        construct (D.applicationAttachedWithLocalNotifications bound available) >>= sendReply
        else pure ()
        -- The shared codec/gate has validated ALL requests before this point.
        -- Presentation-only commits run this empty loop, with zero domain IO.

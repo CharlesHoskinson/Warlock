@@ -745,6 +745,10 @@ applicationGesture model message =
         SearchQuery _ _ -> True
         TogglePin _ _ -> True
         MovePin _ _ _ -> True
+        OpenNotifications _ -> Shell.localNotificationPolicyAvailable model.windows.shell
+        CloseNotifications _ -> Shell.localNotificationPolicyAvailable model.windows.shell
+        RefreshNotifications _ -> Shell.localNotificationPolicyAvailable model.windows.shell
+        ConfigureNotificationPolicy _ _ -> Shell.localNotificationPolicyAvailable model.windows.shell
         Start _ -> Shell.applicationLaunchAvailable model.windows.shell
         _ -> False
 
@@ -1029,6 +1033,7 @@ updateAvailable message model =
                                 in if menu==model.systemMenu then (model,[]) else (advance {model | systemMenu=menu},[])
                         Err _ -> (model,[])
                 Ok "notification-snapshot" ->
+                    if model.windows.shell.applicationOnly then (model,[]) else
                     let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" Notifications.decoder))
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
@@ -1039,6 +1044,7 @@ updateAvailable message model =
                                 in (next,if model.notificationsOpen && model.notificationsOpening && not failed then [Focus (key next "notifications:close")] else [])
                         Err _ -> (model,[])
                 Ok "notification-update" ->
+                    if model.windows.shell.applicationOnly then (model,[]) else
                     let decoder=strict ["protocolVersion","kind","binding","snapshot"] (D.map3 (\_ binding snapshot -> {binding=binding,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "snapshot" Notifications.decoder))
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
@@ -1047,6 +1053,7 @@ updateAvailable message model =
                                 in if notifications==model.notifications then (model,[]) else (advance {model | notifications=notifications},[])
                         Err _ -> (model,[])
                 Ok "notification-outcome" ->
+                    if model.windows.shell.applicationOnly then (model,[]) else
                     let hasReason=D.decodeValue (D.field "reason" D.value) raw |> Result.toMaybe |> (/=) Nothing
                         reasonDecoder=if hasReason then D.field "reason" (D.string |> D.andThen (\value -> if List.member value ["","expired","changed","unavailable","already-handled"] then D.succeed value else D.fail "Notification refusal reason")) else D.succeed ""
                         decoder=strict (["protocolVersion","kind","binding","requestId","status","snapshot"]++(if hasReason then ["reason"] else [])) (D.map6 (\_ binding request status reason snapshot -> {binding=binding,request=request,status=status,reason=reason,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) reasonDecoder (D.field "snapshot" Notifications.decoder))
@@ -1192,7 +1199,7 @@ updateAvailable message model =
                 let next=advance {model | systemMenuConfirmation=Nothing}
                 in (next,if next.presentation==Nothing then [] else [Focus (key next "system:close")])
         OpenNotifications stamp ->
-            if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
+            if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing || model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted || (model.windows.shell.applicationOnly && not (Shell.localNotificationPolicyAvailable model.windows.shell)) then (model,[]) else
             let windows=model.windows
                 next=advance (retireSwitcher {model | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notifications=Notifications.clearFocus model.notifications,notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                 (reading,commands)=readNotifications next
@@ -1208,10 +1215,10 @@ updateAvailable message model =
         RefreshNotifications stamp ->
             if capture model/=Just stamp || not model.notificationsOpen then (model,[]) else readNotifications model
         ConfigureNotificationPolicy stamp policy ->
-            if capture model/=Just stamp || not model.notificationsOpen || model.notifications.policy==policy then (model,[]) else
+            if capture model/=Just stamp || not model.notificationsOpen || (model.windows.shell.applicationOnly && not (Shell.localNotificationPolicyAvailable model.windows.shell)) || model.notifications.policy==policy then (model,[]) else
                 (advance {model|notifications=Notifications.configure policy model.notifications},[])
         NotificationAction stamp target ->
-            if capture model/=Just stamp || not model.notificationsOpen || model.notificationsExpected/=Nothing then (model,[]) else
+            if capture model/=Just stamp || not model.notificationsOpen || model.windows.shell.applicationOnly || model.notificationsExpected/=Nothing then (model,[]) else
             case (model.windows.shell.binding,UInt64.next model.request) of
                 (Just binding,Just request) ->
                     let (notifications,proposal)=Notifications.propose request target model.notifications
@@ -1535,7 +1542,12 @@ readSettings model =
 
 readNotifications : Model -> (Model,List Effect)
 readNotifications model =
-    if model.notificationsExpected/=Nothing then (model,[]) else
+    if model.windows.shell.applicationOnly then
+        if Shell.localNotificationPolicyAvailable model.windows.shell then
+            let notifications=model.notifications
+            in (advance {model | notifications={notifications | snapshot=Nothing,pending=Nothing,focused=Nothing,notice="Notification service unavailable. Session notification policy is available."},notificationsExpected=Nothing,notificationsOpening=False},[])
+        else (model,[])
+    else if model.notificationsExpected/=Nothing then (model,[]) else
     case (model.windows.shell.binding,UInt64.next model.request) of
         (Just binding,Just request) ->
             (advance {model | request=request,notificationsExpected=Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "notification-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])])

@@ -139,6 +139,16 @@ main = do
   let nativeHello = "{\"version\":1,\"kind\":\"hello\",\"body\":{\"binding\":" <> bound <> "}}"
   check "native positive control remains accepted" (isRight (decodeServerChecked nativeHello))
   check "desktop server cannot borrow native hello" (isLeft (decodeServerCheckedWith desktopProfile nativeHello))
+  localReply <- must (D.applicationAttachedWithLocalNotifications owner D.ApplicationUnavailable)
+  localWire <- must (D.encodeDesktopReply localReply)
+  let localEnvelope extra = B.init (attached bound "[]") <> ",\"applicationOperations\":[],\"localOperations\":" <> extra <> "}"
+  check "local policy attachment is typed and bound without native operations" (D.decodeDesktopReply (localEnvelope "[\"notification-policy\"]") == Right localReply && D.replyBinding localReply == owner)
+  check "local policy attachment roundtrips exactly" (D.decodeDesktopReply localWire == Right localReply)
+  check "local policy capability absent stays legacy" (D.decodeDesktopReply (B.init (attached bound "[]") <> ",\"applicationOperations\":[]}") /= Right localReply)
+  forM_ ["[]","[\"invented\"]","[\"notification-policy\",\"notification-policy\"]","true","null"] $ \bad ->
+    check "unknown empty duplicate or malformed local capabilities refused" (isLeft (D.decodeDesktopReply (localEnvelope bad)))
+  check "local policy cannot advertise native window authority" (isLeft (D.decodeDesktopReply (B.init (attached bound "[\"window-effect\"]") <> ",\"applicationOperations\":[],\"localOperations\":[\"notification-policy\"]}")))
+  check "local policy requires explicit application capability envelope" (isLeft (D.decodeDesktopReply (B.init (attached bound "[]") <> ",\"localOperations\":[\"notification-policy\"]}")))
   attachedReply <- must (D.applicationAttached owner)
   attachedChecked <- must (checkDesktopReply attachedReply)
   attachedWire <- must (encodeServerCheckedWith desktopProfile attachedChecked)
