@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "scope": "same17mocked-builder-admission-controls-twice; no compiler/GUI/native/fullsuite",
+  "observedUTC": "2026-11-09T23:45:29.780999+00:00",
+  "results": [
+    {
+      "phase": "baseline",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/baseline-builder.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/baseline-builder.stderr",
+        "sha256": "b886f310dec5e7c4d5b3439376b351f1a59b6d2d893bc34e5a9c6a643caa067a"
+      }
+    },
+    {
+      "phase": "baseline",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/baseline-admission.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/baseline-admission.stderr",
+        "sha256": "746a9da126c5d616301cb4261546206de94751e68cbca2a77e84eb5544013fc1"
+      }
+    },
+    {
+      "phase": "candidate",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/candidate-builder.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/candidate-builder.stderr",
+        "sha256": "2183346620f419eb3f1e8fad0702c0be3ce2f6c10535f53e308e38cc777cbebf"
+      }
+    },
+    {
+      "phase": "candidate",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/candidate-admission.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/candidate-admission.stderr",
+        "sha256": "7c521b1523ac1612d36f32106b181e5873f936c49ff6ab942e1ec06dfefb959c"
+      }
+    }
+  ]
+}

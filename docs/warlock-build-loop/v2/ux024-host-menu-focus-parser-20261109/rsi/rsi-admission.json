@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "plugins/warlock-contributor/scripts/warlock.py",
+    "--record",
+    ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "--json",
+    "delivery-event",
+    "--event-file",
+    ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-haskell-menu-focus-no-change-v1/rsi-event.json",
+    "--expect-record-sha",
+    "ef3932c67e6b963c7f877f5f41f34deae4f685a83ad2f2db68362eb4e0ed03fa",
+    "--expect-selection",
+    "27"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"record\": \".warlock-contributor/ux024-menu-tab-focus-root-20261109.json\",\n  \"nextRootAction\": {\n    \"kind\": \"exercise-journey\",\n    \"executor\": \"Root\",\n    \"candidateId\": \"ux024-haskell-menu-focus-green-20261109\",\n    \"candidateSha256\": \"1bad63f511ed931d1bec33b0671f4b2b36260e7e308bedab65d348db4aff3e6d\",\n    \"jobId\": \"pid20060-start3301735\",\n    \"argv\": [\n      \"/usr/bin/python3\",\n      \"-B\",\n      \"/home/hoskinson/Projects/Warlock/tools/qa_cpu.py\",\n      \"--review\",\n      \"/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/haskell-menu-focus-green-cpu/review-packet.json\",\n      \"--sha256\",\n      \"3396eae4964db55dc262cf229bc60a745e3ce8e60e6452579705ecfb1faa1676\"\n    ],\n    \"expectedObservation\": \"Same2targets compile/link; onlysame ui-webkit-controls --allocation-only executes. ExactunchangedMain9be oldcontrols+new13menuchecks/32seeds pass aftersoleMvp737f keyboardParent-true menuPopup branch. No GUI owner/GTK/native observation/provider execution or original acceptance. Baselinebuildpacket55df retainedimmutable; workingpacketupdatedonlyforMvp sourcehash.\",\n    \"executionAuthorized\": false,\n    \"acceptanceInferred\": false,\n    \"progress\": {\n      \"workflowPolicy\": 2,\n      \"iterationsWithoutProgress\": 0,\n      \"lastRecordedProgressUTC\": \"2026-11-09T23:10:16.385671+00:00\",\n      \"secondsSinceRecordedProgress\": 2422,\n      \"suspendedSeconds\": 0,\n      \"limits\": {\n        \"iterations\": 2,\n        \"seconds\": 2700,\n        \"sameFailureExperiments\": 2\n      },\n      \"investigationNeedsChange\": false,\n      \"planChangeRequired\": false,\n      \"reconciliationRequired\": false,\n      \"authorizationExpired\": false,\n      \"reasons\": [],\n      \"effectiveAuthorizationExpiresUTC\": \"2026-11-10T14:40:00Z\",\n      \"action\": \"Continue the selected delivery action.\",\n      \"basis\": \"Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.\"\n    }\n  },\n  \"recordSha256\": \"fb96a2c5d488222ed1ae05c5765e4147abb5a6c1759fb9871a6f2b993cf8e1f1\",\n  \"acceptanceInferred\": false,\n  \"ok\": true\n}\n",
+  "stderr": ""
+}
