@@ -1,0 +1,80 @@
+{
+  "claimSchema": 1,
+  "claims": [
+    {
+      "requirement": "ELM-UX-023",
+      "scenario": "keyboard-launcher",
+      "oracle": "each operation completes with recorded keyboard focus and no pointer events",
+      "verificationScope": "Elm replay assertion and isolated native recording: each surface can be opened, operated and dismissed without pointer events.",
+      "scope": "Only the original keyboard-launcher scenario. No acceptance for the broad ELM-UX-023 requirement, all-surfaces scenario, other surfaces, release, AT or IME. Phase labels do not establish pixel focus; final independently viewed entry focus and real launch establish this operation.",
+      "evidence": [
+        {
+          "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/adjudication-evidence.json",
+          "sha256": "624b2b0c554dbb58865f8a805ee70f2dab30a87f3e69858720e5b235c995769c"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/reviews/independent-original-keyboard-launcher-review.json",
+          "sha256": "721e7d6c752d2479272f5c39199d7e215ce53e9927813272c4f310e53e9e8bee"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/native/report.json",
+          "sha256": "0c3f74430b9db2822b451777465df6ecb4d09616303407e399f162e589b0f6ab"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/qualification/actual-owner-observer-build.json",
+          "sha256": "8bca922f414f90f2f99a84db21495e8ff2bddf07933c32c5e3646b72c184f1c9"
+        }
+      ],
+      "sourceHashes": {
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+        "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "ea4e879f9dce27e95a8f8e2c627d19732ce4508ec65e938fe058c240a0deda4e"
+      },
+      "reviewer": {
+        "name": "workflow_astra",
+        "independent": true,
+        "disposition": "accepted",
+        "evidence": {
+          "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/reviews/independent-original-keyboard-launcher-review.json",
+          "sha256": "721e7d6c752d2479272f5c39199d7e215ce53e9927813272c4f310e53e9e8bee"
+        }
+      },
+      "disposition": "accepted",
+      "missingObservations": [],
+      "sourceTuple": {
+        "sourceRevision": "0267dc94ac76cca1b01cf0897b7a068835c20165",
+        "core": {
+          "path": "plugins/warlock-contributor/scripts/warlock.py",
+          "sha256": "ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd"
+        },
+        "plugin": {
+          "version": "0.17.12",
+          "manifests": [
+            {
+              "path": "plugins/warlock-contributor/.claude-plugin/plugin.json",
+              "sha256": "e872c115710c478774096fd058fcce9f3b70d4aa4efff43893651d15a234e539"
+            },
+            {
+              "path": "plugins/warlock-contributor/.codex-plugin/plugin.json",
+              "sha256": "dbb552a3564ce50e11e3b83e3f202e969c4540732e6381658c5cc410617c2d47"
+            }
+          ]
+        },
+        "toolchain": {
+          "actualNativeBuild": {
+            "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/qualification/actual-owner-observer-build.json",
+            "sha256": "8bca922f414f90f2f99a84db21495e8ff2bddf07933c32c5e3646b72c184f1c9"
+          },
+          "replayCompilerAndSdk": {
+            "path": "docs/warlock-build-loop/v2/ux003-native-20261108/replay/compiler-and-replay-report.json",
+            "sha256": "12517ee9f549f2ae64d677a11fd5ca0e81db91c12ed5cf2a5ccdf6710dcdd80b"
+          },
+          "sourceMap": {
+            "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/current-selected-source-hashes.json",
+            "sha256": "dbd779c91f5cb695205fdb3a791903133ee8b2511627a77e256afa516f9cbe2f"
+          }
+        }
+      }
+    }
+  ]
+}

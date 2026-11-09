@@ -16176,7 +16176,7 @@
         {
           "name": "keyboard-launcher",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "partial",
+          "status": "accepted",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
@@ -16346,13 +16346,41 @@
                 "independent": false,
                 "disposition": "Owner observed scoped native pass; independent original acceptance remains open."
               }
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/adjudication-evidence.json",
+              "sha256": "624b2b0c554dbb58865f8a805ee70f2dab30a87f3e69858720e5b235c995769c"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/reviews/independent-original-keyboard-launcher-review.json",
+              "sha256": "721e7d6c752d2479272f5c39199d7e215ce53e9927813272c4f310e53e9e8bee"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/native/report.json",
+              "sha256": "0c3f74430b9db2822b451777465df6ecb4d09616303407e399f162e589b0f6ab"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/qualification/actual-owner-observer-build.json",
+              "sha256": "8bca922f414f90f2f99a84db21495e8ff2bddf07933c32c5e3646b72c184f1c9"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/accepted-original-claim.json",
+              "sha256": "06ce32b2af9dc1825e64b785ae0dd9f2dfc7c1e9cc98097bc02fffc64c0dca56"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/accepted-original-record.json",
+              "sha256": "7b62b2e2de8b4d822be0a8c46f71efd3b55527ae5fb957857e0f92dc8be0ceba"
             }
           ],
-          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.; Current explicit shortcut choice/repeated dismissal/reload/refresh native interval passes; whole-host restart and independent/AT acceptance remain separate.",
+          "missingObservation": null,
           "reviewerDisposition": {
-            "name": "root-bar-keyboard-return",
-            "independent": false,
-            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+            "name": "workflow_astra",
+            "independent": true,
+            "disposition": "accepted",
+            "evidence": {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/reviews/independent-original-keyboard-launcher-review.json",
+              "sha256": "721e7d6c752d2479272f5c39199d7e215ce53e9927813272c4f310e53e9e8bee"
+            }
           }
         },
         {
@@ -18257,5 +18285,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-08T14:12:47.355832+00:00"
+  "updatedUTC": "2026-11-09T02:44:15.650490+00:00"
 }
