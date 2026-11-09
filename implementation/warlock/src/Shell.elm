@@ -1,4 +1,4 @@
-module Shell exposing (canProveUnsent, Model, Msg(..), Phase(..), Effect(..), Stamp, stampKey, capture, stampDecoder, initial, update, encode, status, available, applicationLaunchAvailable, localNotificationPolicyAvailable, captureGeometry, resumeNotifications, matchesUnsent)
+module Shell exposing (canProveUnsent, Model, Msg(..), Phase(..), Effect(..), Stamp, stampKey, capture, stampDecoder, initial, update, encode, status, available, applicationLaunchAvailable, localNotificationPolicyAvailable, notificationServiceAvailable, captureGeometry, resumeNotifications, matchesUnsent)
 
 import UnsentOperation
 import Binding exposing (Binding)
@@ -30,10 +30,11 @@ recoveryNotice failure = case failure of
 
 type Phase = Detached | Reconciling | Ready | Exhausted
 type ApplicationAvailability = ApplicationUnavailable | ApplicationLaunchAvailable
+type NotificationAvailability = NotificationsUnavailable | NotificationsAvailable
 type Stamp = Stamp Binding Counter Counter
 type Msg = ReconciliationFull | RecoveredUnknown Int Effects.Intent | ReservationReleased Bool Binding Int Effects.Intent | Incoming D.Value | Refresh | Reconnect | Ignore | GeometryAttach | GeometryRefresh | Act Stamp Effects.Operation Counter | UnsentObservations (List (String,Counter)) | SupersedeObservations Bool | UnsentOperations (List UnsentOperation.Key) | RegistrationRefused (List UnsentOperation.Key) (List (String,Counter)) | RegistrationAvailable Bool
 type Effect = Send E.Value | RestartBackend | ArmPrepared Counter
-type alias Model = { applicationOnly : Bool, localNotificationPolicy : Bool, applicationAvailability : ApplicationAvailability, decoderRefusal : Maybe String, reconciliationFull : Bool, effects : Effects.Model, binding : Maybe Binding, request : Counter, expected : Maybe Counter, phase : Phase, reconnecting : Bool, notice : String, geometry : Maybe GeometryProjection.Snapshot, geometryCaps : Maybe GeometryProjection.Capabilities, geometryExpected : Maybe Counter, geometryAttachExpected : Maybe Counter, attachNeeded : Bool, recoveryFailure : Maybe RecoveryFailure, issued : List { binding : Binding, protocol : Int, intent : Effects.Intent }, notificationQueued : Bool, projectionRetryQueued : Bool, transportRefused : Bool, deferNotifications : Bool }
+type alias Model = { applicationOnly : Bool, localNotificationPolicy : Bool, notificationAvailability : NotificationAvailability, applicationAvailability : ApplicationAvailability, decoderRefusal : Maybe String, reconciliationFull : Bool, effects : Effects.Model, binding : Maybe Binding, request : Counter, expected : Maybe Counter, phase : Phase, reconnecting : Bool, notice : String, geometry : Maybe GeometryProjection.Snapshot, geometryCaps : Maybe GeometryProjection.Capabilities, geometryExpected : Maybe Counter, geometryAttachExpected : Maybe Counter, attachNeeded : Bool, recoveryFailure : Maybe RecoveryFailure, issued : List { binding : Binding, protocol : Int, intent : Effects.Intent }, notificationQueued : Bool, projectionRetryQueued : Bool, transportRefused : Bool, deferNotifications : Bool }
 stampKey : Stamp -> String
 stampKey (Stamp binding output revision) = E.encode 0 (Binding.encode binding) ++ ":" ++ UInt64.string output ++ ":" ++ UInt64.string revision
 capture : Model -> Maybe Stamp
@@ -48,7 +49,7 @@ stampDecoder : D.Decoder Stamp
 stampDecoder = strict ["binding","output","revision"] (D.map3 Stamp (D.field "binding" Binding.decoder) (D.field "output" positive) (D.field "revision" positive))
 
 initial : Model
-initial = { applicationOnly=False, localNotificationPolicy=False, applicationAvailability=ApplicationUnavailable, decoderRefusal=Nothing, reconciliationFull=False, effects = Effects.empty, binding = Nothing, request = UInt64.zero, expected = Nothing, phase = Detached, reconnecting = True, notice = "Connecting…", geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing,attachNeeded=False,issued=[],notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False,recoveryFailure=Nothing }
+initial = { applicationOnly=False, localNotificationPolicy=False, notificationAvailability=NotificationsUnavailable, applicationAvailability=ApplicationUnavailable, decoderRefusal=Nothing, reconciliationFull=False, effects = Effects.empty, binding = Nothing, request = UInt64.zero, expected = Nothing, phase = Detached, reconnecting = True, notice = "Connecting…", geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing,attachNeeded=False,issued=[],notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False,recoveryFailure=Nothing }
 strict : List String -> D.Decoder a -> D.Decoder a
 strict fields decoder = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs) == List.sort fields then decoder else D.fail "Unexpected fields")
 version : D.Decoder ()
@@ -75,7 +76,7 @@ refresh model =
 disconnect : Model -> Model
 disconnect model =
     let (effects,_,_) = Effects.apply (E.object [("kind",E.string "disconnect")]) model.effects
-    in {model | applicationOnly=False, localNotificationPolicy=False, applicationAvailability=ApplicationUnavailable, effects = effects, expected = Nothing, geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing, attachNeeded=False, notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False, phase = Detached, reconnecting = False, notice = Maybe.map recoveryNotice model.recoveryFailure |> Maybe.withDefault "Connection lost. Reconnect to continue."}
+    in {model | applicationOnly=False, localNotificationPolicy=False, notificationAvailability=NotificationsUnavailable, applicationAvailability=ApplicationUnavailable, effects = effects, expected = Nothing, geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing, attachNeeded=False, notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False, phase = Detached, reconnecting = False, notice = Maybe.map recoveryNotice model.recoveryFailure |> Maybe.withDefault "Connection lost. Reconnect to continue."}
 available : Model -> Bool
 available model = not model.applicationOnly && not model.reconciliationFull && not model.transportRefused && model.phase == Ready && not model.attachNeeded && not (Effects.pending model.effects) && model.geometryAttachExpected==Nothing && (not (model.geometryCaps |> Maybe.map .effects |> Maybe.withDefault False) || (model.geometryExpected==Nothing && model.geometry/=Nothing))
 applicationLaunchAvailable : Model -> Bool
@@ -86,12 +87,22 @@ localNotificationPolicyAvailable : Model -> Bool
 localNotificationPolicyAvailable model =
     model.localNotificationPolicy && model.applicationOnly && model.binding/=Nothing && model.phase/=Detached && model.phase/=Exhausted && not model.transportRefused && not model.reconciliationFull
 
-applicationAttachment : D.Decoder (Binding,ApplicationAvailability,Bool)
+-- The full native attachment keeps its existing notification route. An
+-- application-only attachment needs its separate, strictly decoded capability.
+notificationServiceAvailable : Model -> Bool
+notificationServiceAvailable model =
+    model.binding/=Nothing && model.phase/=Detached && model.phase/=Exhausted && not model.transportRefused && not model.reconciliationFull
+        && (not model.applicationOnly || model.notificationAvailability==NotificationsAvailable)
+
+type alias ApplicationAttachment = { binding : Binding, application : ApplicationAvailability, local : Bool, notifications : NotificationAvailability }
+
+applicationAttachment : D.Decoder ApplicationAttachment
 applicationAttachment =
     D.keyValuePairs D.value |> D.andThen (\pairs ->
         let hasAvailability = List.member "applicationOperations" (List.map Tuple.first pairs)
             hasLocal = List.member "localOperations" (List.map Tuple.first pairs)
-            fields = ["protocolVersion","kind","binding","nativeOperations"] ++ (if hasAvailability then ["applicationOperations"] else []) ++ (if hasLocal then ["localOperations"] else [])
+            hasNotifications = List.member "notificationOperations" (List.map Tuple.first pairs)
+            fields = ["protocolVersion","kind","binding","nativeOperations"] ++ (if hasAvailability then ["applicationOperations"] else []) ++ (if hasLocal then ["localOperations"] else []) ++ (if hasNotifications then ["notificationOperations"] else [])
             availability =
                 if hasAvailability then
                     D.field "applicationOperations" (D.list D.string |> D.andThen (\operations ->
@@ -105,10 +116,19 @@ applicationAttachment =
                     D.field "localOperations" (D.list D.string |> D.andThen (\operations -> if operations==["notification-policy"] then D.succeed True else D.fail "Local operations unavailable"))
                 else if hasLocal then D.fail "Explicit application capabilities required"
                 else D.succeed False
+            notifications =
+                if hasNotifications && hasAvailability then
+                    D.field "notificationOperations" (D.list D.string |> D.andThen (\operations ->
+                        case operations of
+                            [] -> D.succeed NotificationsUnavailable
+                            ["notification-read","notification-action"] -> D.succeed NotificationsAvailable
+                            _ -> D.fail "Notification operations unavailable"))
+                else if hasNotifications then D.fail "Explicit application capabilities required"
+                else D.succeed NotificationsUnavailable
         in strict fields
-            (D.map5 (\_ binding _ capability localPolicy -> (binding,capability,localPolicy)) version (D.field "binding" Binding.decoder)
+            (D.map6 (\_ binding _ capability localPolicy notificationCapability -> {binding=binding,application=capability,local=localPolicy,notifications=notificationCapability}) version (D.field "binding" Binding.decoder)
                 (D.field "nativeOperations" (D.list D.string |> D.andThen (\operations -> if List.isEmpty operations then D.succeed () else D.fail "Native operations unavailable")))
-                availability local))
+                availability local notifications))
 status : Model -> String
 status model =
     if model.reconciliationFull then "Window recovery history is full. Restart the shell to continue." else
@@ -210,10 +230,10 @@ update msg model =
                         Err _ -> rejectEnvelope raw model
                 Ok "application-attached" ->
                     case D.decodeValue applicationAttachment raw of
-                        Ok (binding,capability,localPolicy) ->
-                            if model.phase /= Detached || not model.reconnecting || (model.binding |> Maybe.map (Binding.replaces binding >> not) |> Maybe.withDefault False) then (model,[]) else
+                        Ok attached ->
+                            if model.phase /= Detached || not model.reconnecting || (model.binding |> Maybe.map (Binding.replaces attached.binding >> not) |> Maybe.withDefault False) then (model,[]) else
                                 let detached = disconnect model
-                                in ({detached | applicationOnly=True,localNotificationPolicy=localPolicy,applicationAvailability=capability,binding=Just binding,phase=Reconciling,reconnecting=False,recoveryFailure=Nothing,notice="Applications connected. Window controls unavailable."},[])
+                                in ({detached | applicationOnly=True,localNotificationPolicy=attached.local,notificationAvailability=attached.notifications,applicationAvailability=attached.application,binding=Just attached.binding,phase=Reconciling,reconnecting=False,recoveryFailure=Nothing,notice="Applications connected. Window controls unavailable."},[])
                         Err _ -> rejectEnvelope raw model
                 Ok "attached" ->
                     case D.decodeValue (D.map2 (\_ binding -> binding) version (D.field "binding" Binding.decoder)) raw of

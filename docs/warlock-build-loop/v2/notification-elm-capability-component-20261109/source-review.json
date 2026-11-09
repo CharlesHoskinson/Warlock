@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "reviewer": "sol-supervisor-workflow-20261109",
+  "scope": "Exact three private Elm notification capability consumer posts and corrected37-case tests-first fixture",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/revision2-literal-envelope/manifest.json",
+    "sha256": "3ee3ee6d5eb32ae48addf513caa52d032422a7125339c8e65e018bf8750d6f95"
+  },
+  "posts": [
+    {
+      "path": "implementation/warlock/src/Shell.elm",
+      "beforeSha256": "e94d200d2c4fbf1badce1e21f7be9595c79b7e4d8f77ef07f7253427fd30dec5",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/revision2-literal-envelope/postimages/implementation/warlock/src/Shell.elm",
+      "sha256": "4ef1ceaf83a5d306d8d51fc0af4e56877eefdfa66f076fef6acf18d46b23bf73"
+    },
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "beforeSha256": "6a47c4e0abaaf371d61f36c36172279f760fdb477877543f67af6e897e712abb",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/revision2-literal-envelope/postimages/implementation/warlock/src/Desktop.elm",
+      "sha256": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "beforeSha256": "268833fc35260a16dde4e8bc5db932464a03cf7e6fb42486a7eb978ea7bbc8b5",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/revision2-literal-envelope/postimages/implementation/warlock/src/Surface.elm",
+      "sha256": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179"
+    }
+  ],
+  "fixtureManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/revision2-literal-envelope/tests-first/manifest.json",
+    "sha256": "e123b0efda52c3d1baf9843d7360caad48c8f871cf4d21bad9c7ff00cbb0c20e"
+  },
+  "fixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/revision2-literal-envelope/tests-first/NotificationCapabilityReplay.elm",
+    "sha256": "2ea941bd592c51ff063d4acad2de82bc930879ad5d646c9b71274b4f8c4b7486",
+    "module": "NotificationCapabilityReplay",
+    "checks": [
+      "validApplicationOnlyReconcilingService",
+      "serviceDoesNotGrantApplicationLaunch",
+      "serviceDoesNotGrantWindowsOrOtherUtilities",
+      "actualSurfaceOpenerEmitsOneRead",
+      "readCarriesCurrentBinding",
+      "currentSnapshotEnablesActualActionControl",
+      "actualSurfaceActionEmitsOnce",
+      "literalActionIdentityPreserved",
+      "pendingCannotSendAgain",
+      "currentOutcomeSettlesTypedPending",
+      "unknownOutcomeCannotReplay",
+      "serviceWithoutLocalPolicyStillReads",
+      "serviceDoesNotGrantLocalPolicy",
+      "absentServicePreservesLocalOnlyOpen",
+      "localDndRemainsLocal",
+      "explicitEmptyServiceUnavailable",
+      "duplicateOperationsRefused",
+      "unknownOperationRefused",
+      "partialPairRefused",
+      "reversedPairRefused",
+      "unknownEnvelopeFieldRefused",
+      "wrongTypeRefused",
+      "explicitApplicationFieldRequired",
+      "nativeAuthorityStillRefused",
+      "transportRefusalBlocksActionsAndReads",
+      "reconciliationFullBlocksActionsAndReads",
+      "exhaustedBlocksActionsAndReads",
+      "detachedBlocksActionsAndReads",
+      "retiredRepliesCannotGrantOrSettle",
+      "wrongBindingSnapshotRefused",
+      "wrongBindingUpdateRefused",
+      "wrongBindingOutcomeRefused",
+      "wrongRequestSnapshotRefused",
+      "wrongRequestOutcomeRefused",
+      "stalePresentationCannotRead",
+      "retiredBindingCannotReattach",
+      "genuineNativeNotificationRoutePreserved"
+    ],
+    "count": 37
+  },
+  "committedWireProtocol": {
+    "path": "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+    "sha256": "ebb4db24c652d8e55b7000616c10a96149a124af7be110ba8c8828a7e5d579a3"
+  },
+  "checks": {
+    "strictOptionalPairMatchesCommittedHaskell": true,
+    "explicitApplicationFieldRequiredForServiceField": true,
+    "localPolicyAndServiceCapabilitiesSeparate": true,
+    "applicationOnlyTrueAndInitialReconcilingPreserved": true,
+    "disconnectRetiresServiceAvailability": true,
+    "sharedCurrentBindingPhaseRefusalFullPredicate": true,
+    "allThreeIncomingReplyKindsGuarded": true,
+    "existingBindingRequestStampPendingTargetChecksRetained": true,
+    "serviceOnlyDoesNotGrantLocalPolicyOrWindows": true,
+    "localOnlyDndPathPreserved": true,
+    "legacyNativeNotificationRouteAndPointerGatePreserved": true,
+    "fixturesUsePublicParserReducerAndSurface": true,
+    "all37FixtureCheckNamesMatchManifest": true,
+    "frozenRuntimeAndBusDraftManifestsUnchanged": true
+  },
+  "fixturePrecision": [
+    "Exhausted negative explicitly arranges the typed phase boundary; it does not claim to observe live exhaustion.",
+    "JSON D.Value cannot preserve duplicate raw object keys; unknown-envelope-field refusal is tested instead, while duplicate operation-array rejection is retained. Raw duplicate-key rejection remains Haskell strict-wire responsibility."
+  ],
+  "qualificationBoundary": "Root paired semantic RED/GREEN and proportional existing Elm regressions remain pending. No fixture run, renderer/native/bus effect or original acceptance is claimed by this review.",
+  "runtimeBoundary": "Actual Backend remains local-policy-only, rejects service requests, and advertises no notificationOperations. Valid service-capability fixture input is consumer behavior evidence only.",
+  "limits": [
+    "Stopped GIO/service/retirement investigation and frozen runtime draft remain untouched.",
+    "No authorization, participant, policy, actor, deadline or oracle change."
+  ],
+  "testsExecutedByReviewer": false,
+  "effectsByReviewer": false
+}
