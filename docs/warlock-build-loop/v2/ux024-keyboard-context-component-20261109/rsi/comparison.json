@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "4c4e0e184c86b14a3d20f5b4b2d789dd1696952e7f2754db903728f32394ff03",
+  "baselinePluginSha256": "2e4f6057d0dceb584569481fe433377118a76df792f9a41790c122eaf4533430",
+  "baselineSnapshotSha256": "fe84025543ca80a6f024a346e38014f114f301a222f637da2a3ffbf46825cd96",
+  "candidateSnapshotSha256": "1350d231ce356d821c76cc471c14e9db342cf9f60b7f82e8287d9373e777f17e",
+  "immutableHashes": {
+    "taskFiles": "8a02f66837b2768ee22badb79227ec4b5a9b5fe95a350ebfa40e8418962afb3f",
+    "sourceFiles": "01821f2384942a1adfc003b6a67d68032ccebd1e58a7239eefaaf1d42800f071",
+    "oracleFiles": "04f9ba0d2c3c81cecc07eb6a66c7a66d6755ab77232806b4b26b9eafc9579b5f",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "956cac4b64f3da6c3a8f8c9fa8c8452e3783179bbf4fad872eb528e49428b15e",
+    "pluginBaselineFiles": "2e4f6057d0dceb584569481fe433377118a76df792f9a41790c122eaf4533430"
+  },
+  "checks": [
+    {
+      "name": "FixedMenuRoute.test_exact_mode_only",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_foreign_runner_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_complete_source_membership",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_exact_success_result",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_missing_empty_extra_duplicate_case_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_failed_skipped_case_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_false_summary_or_failed_assertion_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_profile_requires_exact_parent_values",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_profile_scope_and_extra_fields_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuRoute.test_native_or_original_credit_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_exact_success",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_missing_extra_duplicate_case_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_setup_inventory_and_nonboolean_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_failed_red_or_skipped_result_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_wrong_artifact_or_acceptance_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedMenuEscapeRoute.test_escape_fixed_dependency_membership",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_exact_success",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_missing_extra_duplicate_case_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_failed_setup_red_inventory_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_wrong_image_or_harness_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_failed_skipped_or_acceptance_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "FixedBarContextRoute.test_bar_context_one_fixed_input_added",
+      "baselinePassed": true,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-context-no-change-v1/regression.json",
+    "sha256": "30d04cda746b1027a4c91fd3dda3895787b264bda46f5feba11f91fc40f8197b"
+  }
+}

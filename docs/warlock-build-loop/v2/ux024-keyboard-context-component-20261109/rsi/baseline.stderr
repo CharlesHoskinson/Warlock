@@ -1,0 +1,28 @@
+Running as unit: qa-harness-2912d3ba0a684c259f5ed33bdaf64643.scope; invocation ID: 559497ef14a24fa0ad7177ee6a306335
+test_bar_context_exact_success (__main__.FixedBarContextRoute.test_bar_context_exact_success) ... ok
+test_bar_context_failed_setup_red_inventory_refuses (__main__.FixedBarContextRoute.test_bar_context_failed_setup_red_inventory_refuses) ... ok
+test_bar_context_failed_skipped_or_acceptance_refuses (__main__.FixedBarContextRoute.test_bar_context_failed_skipped_or_acceptance_refuses) ... ok
+test_bar_context_missing_extra_duplicate_case_refuses (__main__.FixedBarContextRoute.test_bar_context_missing_extra_duplicate_case_refuses) ... ok
+test_bar_context_one_fixed_input_added (__main__.FixedBarContextRoute.test_bar_context_one_fixed_input_added) ... ok
+test_bar_context_wrong_image_or_harness_refuses (__main__.FixedBarContextRoute.test_bar_context_wrong_image_or_harness_refuses) ... ok
+test_escape_exact_success (__main__.FixedMenuEscapeRoute.test_escape_exact_success) ... ok
+test_escape_failed_red_or_skipped_result_refuses (__main__.FixedMenuEscapeRoute.test_escape_failed_red_or_skipped_result_refuses) ... ok
+test_escape_fixed_dependency_membership (__main__.FixedMenuEscapeRoute.test_escape_fixed_dependency_membership) ... ok
+test_escape_missing_extra_duplicate_case_refuses (__main__.FixedMenuEscapeRoute.test_escape_missing_extra_duplicate_case_refuses) ... ok
+test_escape_setup_inventory_and_nonboolean_refuse (__main__.FixedMenuEscapeRoute.test_escape_setup_inventory_and_nonboolean_refuse) ... ok
+test_escape_wrong_artifact_or_acceptance_refuses (__main__.FixedMenuEscapeRoute.test_escape_wrong_artifact_or_acceptance_refuses) ... ok
+test_complete_source_membership (__main__.FixedMenuRoute.test_complete_source_membership) ... ok
+test_exact_mode_only (__main__.FixedMenuRoute.test_exact_mode_only) ... ok
+test_exact_success_result (__main__.FixedMenuRoute.test_exact_success_result) ... ok
+test_failed_skipped_case_refuses (__main__.FixedMenuRoute.test_failed_skipped_case_refuses) ... ok
+test_false_summary_or_failed_assertion_refuses (__main__.FixedMenuRoute.test_false_summary_or_failed_assertion_refuses) ... ok
+test_foreign_runner_refuses (__main__.FixedMenuRoute.test_foreign_runner_refuses) ... ok
+test_missing_empty_extra_duplicate_case_refuse (__main__.FixedMenuRoute.test_missing_empty_extra_duplicate_case_refuse) ... ok
+test_native_or_original_credit_refuses (__main__.FixedMenuRoute.test_native_or_original_credit_refuses) ... ok
+test_profile_requires_exact_parent_values (__main__.FixedMenuRoute.test_profile_requires_exact_parent_values) ... ok
+test_profile_scope_and_extra_fields_refuse (__main__.FixedMenuRoute.test_profile_scope_and_extra_fields_refuse) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.002s
+
+OK
