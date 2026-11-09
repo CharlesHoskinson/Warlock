@@ -3,7 +3,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- WebKitGTK 6 boundary; no page loads before its role filter is installed.
 module Warlock.Ui.WebKit
-  (firstMouseupDiagnosticScript, finiteDpiFallbackSetting, rendererAllocationReady, rendererDiagnosticEnvelope, providerVersionQualified, runWebKitObservedWithBacking, runWebKitObserved, runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
+  (rendererPhaseFlags, rendererPhasePolling, rendererPhasePublication, rendererPhaseRequest, rendererPhaseLeaf, rendererPhaseSnapshotScript, firstMouseupDiagnosticScript, finiteDpiFallbackSetting, rendererAllocationReady, rendererDiagnosticEnvelope, providerVersionQualified, runWebKitObservedWithBacking, runWebKitObserved, runWebKit, runWebKitWithCustody, requireThreadCompatibleNamespace, DecisionHandler, newDecisionHandler, freeDecisionHandler, connectOwnedSignal, SignalDisconnectObservation, connectOwnedSignalObserved, signalDisconnectReturned, signalRetirementConfirmed, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch) where
 
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, catch, mask_, mask, onException, try, finally, bracket, toException)
 import Control.Concurrent (threadDelay)
@@ -13,9 +13,14 @@ import Data.IORef
 import GHC.Clock (getMonotonicTimeNSec)
 import System.Environment (getEnvironment)
 import System.IO.Error (isDoesNotExistError)
-import System.Posix.Files (getSymbolicLinkStatus, isDirectory, fileMode, fileOwner, deviceID, fileID)
+import System.Posix.Files (getFdStatus, isRegularFile, fileSize, linkCount, getSymbolicLinkStatus, isDirectory, fileMode, fileOwner, deviceID, fileID)
 import qualified System.Posix.Directory as PosixDirectory
 import System.Posix.User (getEffectiveUserID)
+import System.Posix.IO (fdToHandle)
+import System.Posix.Types (Fd(..))
+import System.Posix.Process (getProcessID)
+import System.IO (hClose)
+import Foreign.C.Error (throwErrnoIfMinus1, throwErrnoIfMinus1_)
 import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
 import Data.Text (Text)
@@ -32,7 +37,7 @@ import Foreign.Ptr (FunPtr, Ptr, nullPtr, freeHaskellFunPtr, plusPtr, castPtr)
 import qualified Warlock.Ui.EngineProtocol as Protocol
 import Warlock.Ui.Owner (UiEndpoints(..), TrustedOwnerEvent, EngineResult(..))
 import Warlock.Ui.Policy (Origin, Role(..), navigationAllowed, resourceAllowed, resourceFilter, documentUri)
-import Warlock.Ui.Mvp (MvpViews(..), SurfaceLease, parseProjectionLease, attachMvpWindow, stepMvpWindow, mvpCloseRequested, retireMvpWindow)
+import Warlock.Ui.Mvp (MvpViews(..), SurfaceLease, parseProjectionLease, attachMvpWindow, stepMvpWindow, stepMvpKeyboardFocus, mvpCloseRequested, retireMvpWindow)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Ui.ThreadNamespace (requireThreadCompatibleNamespace)
 import Warlock.Ui.DefaultContextOwner (PhysicalDefaultContextOwner, withPhysicalDefaultContextOwner, requirePhysicalDefaultContextOwner)
@@ -687,6 +692,185 @@ beginRendererDiagnostic contextOwner endpoints view width height observedAt = ma
     affine (callAsyncJavascript held script (fromIntegral lengthBytes) nullPtr nullPtr nullPtr cancellable callback nullPtr)
   pure status
 
+-- Fixed passive snapshot requests use only existing parent-bound backing directories.
+-- Linux AArch64 directory/nofollow flags use actual asm/fcntl.h overrides.
+-- asm-generic values alone are incorrect on this target.
+foreign import ccall unsafe "openat" phaseOpenAt :: CInt -> CString -> CInt -> CUInt -> IO CInt
+foreign import ccall unsafe "linkat" phaseLinkAt :: CInt -> CString -> CInt -> CString -> CInt -> IO CInt
+foreign import ccall unsafe "unlinkat" phaseUnlinkAt :: CInt -> CString -> CInt -> IO CInt
+
+rendererPhaseFlags :: (Int,Int,Int)
+rendererPhaseFlags = (575488,559104,559297)
+
+rendererPhasePolling :: Int -> Bool
+rendererPhasePolling remaining = remaining>500000
+
+-- Fresh original authority around every publication transition. The caller
+-- completes its pending state only after this whole sequence returns.
+rendererPhasePublication :: IO () -> IO () -> IO () -> IO () -> IO ()
+rendererPhasePublication live write publish retire = do
+  live
+  write
+  live
+  publish
+  live
+  retire
+  live
+
+rendererPhaseRequest :: B.ByteString -> Maybe Text
+rendererPhaseRequest raw
+  | B.length raw==65 && B.last raw==10 && all hex (C.unpack (B.take 64 raw)) = Just (TE.decodeUtf8 (B.take 64 raw))
+  | otherwise = Nothing
+  where hex char = (char>='0' && char<='9') || (char>='a' && char<='f')
+
+rendererPhaseLeaf :: Int -> Maybe String
+rendererPhaseLeaf sequenceNumber
+  | sequenceNumber>=1 && sequenceNumber<=16 = Just ((if sequenceNumber<10 then "0" else "") ++ show sequenceNumber)
+  | otherwise = Nothing
+
+rendererPhaseSnapshotScript :: B.ByteString
+rendererPhaseSnapshotScript = C.pack "const cap=(v)=>{if(v==null)return null;const s=String(v);if(s.length>256)throw Error('field-bound');return s;};\nconst element=e=>e?{tag:cap(e.tagName),id:cap(e.id),control:cap(e.getAttribute('data-surface-control')||e.getAttribute('data-surface-field'))}:null;\nconst root=document.querySelector('.surface-bar,.surface-popup');\nconst query=document.querySelector('input[data-surface-field=\"control:search\"]');\nconst retained=document.getElementById('http-popup-retained-query');\nconst all=Array.from(document.querySelectorAll('[data-surface-control],[data-surface-field]'));\nif(all.length>64)return JSON.stringify({status:'control-bound'});\nconst value={schema:1,documentFocused:document.hasFocus(),root:root?{mode:cap(root.getAttribute('data-mode')),pub:cap(root.getAttribute('data-publication')),lease:cap(root.getAttribute('data-lease')),loading:cap(root.getAttribute('data-surface-loading'))}:null,active:element(document.activeElement),query:query?{value:cap(query.value),disabled:query.disabled===true}:null,retained:retained?{value:cap(retained.value),state:cap(retained.getAttribute('data-retained-query-state'))}:null,controls:all.map(e=>({id:cap(e.id),control:cap(e.getAttribute('data-surface-control')||e.getAttribute('data-surface-field')),disabled:e.disabled===true,ariaDisabled:cap(e.getAttribute('aria-disabled')),focusOnly:cap(e.getAttribute('data-focus-only')),tag:cap(e.tagName)}))};\nconst text=JSON.stringify(value);return new TextEncoder().encode(text).length<=8192?text:JSON.stringify({status:'snapshot-byte-bound'});\n"
+
+data PhaseSnapshotRole = PhaseSnapshotRole Role (Ptr Object) Fd (IO ()) (IORef (Int,Bool))
+
+phaseLive :: PhysicalDefaultContextOwner -> UiEndpoints -> IO ()
+phaseLive contextOwner endpoints = do
+  requirePhysicalDefaultContextOwner contextOwner
+  phaseRemaining <- uiRemainingMicros endpoints
+  unless (phaseRemaining>500000) (ioError (userError "phase snapshot original deadline"))
+
+openPhaseRole :: PhysicalDefaultContextOwner -> UiEndpoints -> FilePath -> IO () -> IO Fd
+openPhaseRole contextOwner endpoints path recheck = do
+  phaseLive contextOwner endpoints
+  recheck
+  expected <- getSymbolicLinkStatus path
+  let (directoryFlags,_,_) = rendererPhaseFlags
+  descriptor <- withCString path $ \name -> Fd <$> throwErrnoIfMinus1 "phase directory open" (phaseOpenAt (-100) name (fromIntegral directoryFlags) 0)
+  actual <- getFdStatus descriptor
+  unless (isDirectory actual && deviceID actual==deviceID expected && fileID actual==fileID expected && fileOwner actual==fileOwner expected && fileMode actual .&. 0o7777==0o700)
+    (ioError (userError "phase directory identity differs"))
+  recheck
+  phaseLive contextOwner endpoints
+  -- Process-pinned alongside callbacks; never reused or closed while one can arrive.
+  pure descriptor
+
+readPhaseRequest :: Fd -> String -> IO (Maybe (Text,Integer,Integer))
+readPhaseRequest descriptor suffix = do
+  let (_,readFlags,_) = rendererPhaseFlags
+  opened <- try (withCString ("qa-phase-request-"++suffix) $ \name -> throwErrnoIfMinus1 "phase request open" (phaseOpenAt (phaseFd descriptor) name (fromIntegral readFlags) 0)) :: IO (Either IOError CInt)
+  case opened of
+    Left problem | isDoesNotExistError problem -> pure Nothing
+                 | otherwise -> ioError problem
+    Right value -> do
+      let fd = Fd value
+      handle <- fdToHandle fd
+      flip finally (hClose handle) $ do
+        before <- getFdStatus fd
+        uid <- getEffectiveUserID
+        unless (isRegularFile before && fileOwner before==uid && linkCount before==1 && fileSize before==65 && fileMode before .&. 0o7777==0o600)
+          (ioError (userError "phase request type/owner/size/mode"))
+        raw <- B.hGet handle 66
+        after <- getFdStatus fd
+        unless (deviceID before==deviceID after && fileID before==fileID after && fileSize after==65 && fileMode before==fileMode after)
+          (ioError (userError "phase request changed while reading"))
+        nonce <- maybe (ioError (userError "phase request nonce")) pure (rendererPhaseRequest raw)
+        pure (Just (nonce,toInteger (deviceID before),toInteger (fileID before)))
+
+phaseFd :: Fd -> CInt
+phaseFd (Fd value) = value
+
+publishPhaseResponse :: IO () -> Fd -> String -> B.ByteString -> IO ()
+publishPhaseResponse live descriptor suffix raw = mask_ $ do
+  unless (B.length raw<=9216) (ioError (userError "phase response bound"))
+  let temp = ".qa-phase-response-"++suffix++".tmp"
+      final = "qa-phase-response-"++suffix++".json"
+      (_,_,writeFlags) = rendererPhaseFlags
+      writeResponse = do
+        fd <- withCString temp $ \name -> Fd <$> throwErrnoIfMinus1 "phase response create" (phaseOpenAt (phaseFd descriptor) name (fromIntegral writeFlags) 0o600)
+        handle <- fdToHandle fd
+        B.hPut handle raw `finally` hClose handle
+      publishResponse = withCString temp $ \from -> withCString final $ \to ->
+        throwErrnoIfMinus1_ "phase response publish" (phaseLinkAt (phaseFd descriptor) from (phaseFd descriptor) to 0)
+      retireTemporary = withCString temp $ \from ->
+        throwErrnoIfMinus1_ "phase response temporary retirement" (phaseUnlinkAt (phaseFd descriptor) from 0)
+  -- Descriptor-relative no-overwrite publication. Parent accepts only nlink1;
+  -- a failed or late transition remains incomplete and never resets its clock.
+  rendererPhasePublication live writeResponse publishResponse retireTemporary
+
+beginPhaseSnapshot :: PhysicalDefaultContextOwner -> UiEndpoints -> Protocol.BackingRootBinding -> PhaseSnapshotRole -> Int -> String -> (Text,Integer,Integer) -> Integer -> IO ()
+beginPhaseSnapshot contextOwner endpoints binding (PhaseSnapshotRole role view descriptor recheck state) sequenceNumber suffix (nonce,requestDevice,requestInode) observedNs = mask_ $ do
+  result <- newCallbackState
+  let live = phaseLive contextOwner endpoints >> requireBackingRoot (uiRemainingMicros endpoints) binding >> recheck
+      affine action = live >> runCallbackOperation contextOwner result action
+  held <- affine (refSink view)
+  cancellable <- affine (cancellableNew >>= (`must` "phase snapshot cancellable"))
+  callback <- wrapReady $ \source async _ -> captureOwnedCallback contextOwner result $ do
+    live
+    unless (source==held && async/=nullPtr) (ioError (userError "phase snapshot callback source"))
+    snapshot <- alloca $ \err -> do
+      poke err nullPtr
+      value <- affine (callAsyncJavascriptFinish held async err)
+      problem <- peek err
+      when (problem/=nullPtr) $ do
+        affine (errorFree problem)
+        when (value/=nullPtr) (affine (unref value))
+        ioError (userError "phase snapshot JavaScript failure")
+      when (value==nullPtr) (ioError (userError "phase snapshot result absent"))
+      flip finally (affine (unref value)) $ do
+        stringValue <- affine (javascriptIsString value)
+        unless (stringValue/=0) (ioError (userError "phase snapshot nonstring"))
+        bytes <- affine (javascriptStringBytes value >>= (`must` "phase snapshot bytes"))
+        flip finally (affine (bytesUnref bytes)) $ alloca $ \size -> do
+          pointer <- affine (bytesData bytes size)
+          lengthBytes <- peek size
+          unless (lengthBytes<=8192 && (pointer/=nullPtr || lengthBytes==0)) (ioError (userError "phase snapshot byte bound"))
+          raw <- affine (B.packCStringLen (castPtr pointer,fromIntegral lengthBytes))
+          limits <- either (ioError . userError . show) pure (J.bounds 8192 12)
+          either (ioError . userError . show) pure (J.decodeStrict limits raw)
+    live
+    completedNs <- toInteger <$> getMonotonicTimeNSec
+    ownerPid <- getProcessID
+    let (_,rootDevice,rootInode,rootOwner) = Protocol.backingRootFields binding
+        field name value = (T.pack name,value)
+        number value = J.JString (T.pack (show value))
+        response = J.JObject
+          [field "schema" (J.JNumber (T.pack "1")),field "seq" (J.JNumber (T.pack (show sequenceNumber))),field "nonce" (J.JString nonce)
+          ,field "role" (J.JString (T.pack (case role of Bar -> "bar"; Popup -> "popup"; Controller -> "controller")))
+          ,field "root" (J.JObject [field "device" (number rootDevice),field "inode" (number rootInode),field "owner" (number rootOwner)])
+          ,field "request" (J.JObject [field "device" (number requestDevice),field "inode" (number requestInode)])
+          ,field "requestObservedNs" (number observedNs),field "completedNs" (number completedNs),field "ownerPid" (number (toInteger ownerPid)),field "snapshot" snapshot]
+    affine (publishPhaseResponse live descriptor suffix (TE.encodeUtf8 (J.renderJson response)))
+    live
+    writeIORef state (sequenceNumber,False)
+    pure (T.pack "phase snapshot published; no acceptance inferred")
+  _ <- newStablePtr (held,cancellable,callback,result,descriptor,binding)
+  B.useAsCStringLen rendererPhaseSnapshotScript $ \(script,lengthBytes) ->
+    affine (callAsyncJavascript held script (fromIntegral lengthBytes) nullPtr nullPtr nullPtr cancellable callback nullPtr)
+
+pollPhaseSnapshots :: PhysicalDefaultContextOwner -> UiEndpoints -> Protocol.BackingRootBinding -> [PhaseSnapshotRole] -> IO ()
+pollPhaseSnapshots contextOwner endpoints binding roles = forM_ roles $ \bound@(PhaseSnapshotRole _ _ descriptor recheck state) -> do
+  requirePhysicalDefaultContextOwner contextOwner
+  available <- uiRemainingMicros endpoints
+  -- An absent request must not turn ordinary near-deadline exit into failure.
+  -- Reserved operations and callbacks retain the strict original authority.
+  when (rendererPhasePolling available) $ do
+    (previous,pending) <- readIORef state
+    unless pending $ case rendererPhaseLeaf (previous+1) of
+      Nothing -> pure ()
+      Just suffix -> do
+        request <- readPhaseRequest descriptor suffix
+        case request of
+          Nothing -> pure ()
+          Just identity -> do
+            stillAvailable <- uiRemainingMicros endpoints
+            when (rendererPhasePolling stillAvailable) $ do
+              phaseLive contextOwner endpoints
+              requireBackingRoot (uiRemainingMicros endpoints) binding
+              recheck
+              writeIORef state (previous+1,True)
+              observedNs <- toInteger <$> getMonotonicTimeNSec
+              beginPhaseSnapshot contextOwner endpoints binding bound (previous+1) suffix identity observedNs
+
 runWebKitOwned :: PhysicalDefaultContextOwner -> Maybe Custody -> Maybe Protocol.BackingRootBinding -> UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (EngineResult, Protocol.GuiObservation)
 runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \restore -> do
   requirePhysicalDefaultContextOwner contextOwner
@@ -702,6 +886,7 @@ runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \resto
   backings <- newIORef ([] :: [(FilePath,Ptr Object)])
   states <- newIORef ([] :: [(Role,IORef LoadState)])
   rendererViews <- newIORef ([] :: [(Role,Ptr Object)])
+  phaseRoles <- newIORef ([] :: [PhaseSnapshotRole])
   rendererDiagnostics <- newIORef ([] :: [(Role,IO Text)])
   diagnosticAttempted <- newIORef False
   diagnosticNotIssued <- newIORef (T.pack "{\"status\":\"not-issued-load-or-projection-unready\"}")
@@ -789,7 +974,15 @@ runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \resto
         connect view "load-failed" loadFailure
         terminated <- wrapLoad $ \_ _ _ -> mask_ (failed state)
         connect view "web-process-terminated" terminated
-        when (role/=Controller) (modifyIORef' rendererViews ((role,view):))
+        when (role/=Controller) $ do
+          modifyIORef' rendererViews ((role,view):)
+          case binding of
+            Nothing -> pure ()
+            Just _ -> do
+              descriptor <- openPhaseRole contextOwner endpoints path recheckBacking
+              phaseState <- newIORef (0,False)
+              modifyIORef' phaseRoles (PhaseSnapshotRole role view descriptor recheckBacking phaseState:)
+
         B.useAsCString (documentUri origin) (viewLoad view)
         pure view
       loop mvp = do
@@ -805,6 +998,10 @@ runWebKitOwned contextOwner custody binding endpoints ownerEvent = mask $ \resto
           when (length current == 3 && all (\state -> loadStarted state && loadReady state && not (loadFailed state)) current) $ do
             result <- stepMvpWindow mvp (readMvpLease (uiLastProjection endpoints)) ownerEvent
             handleMvpDispatch result
+            stepMvpKeyboardFocus mvp (uiLastProjection endpoints) (uiRemainingMicros endpoints)
+            case binding of
+              Nothing -> pure ()
+              Just root -> readIORef phaseRoles >>= pollPhaseSnapshots contextOwner endpoints root
             projection <- uiLastProjection endpoints
             attempted <- readIORef diagnosticAttempted
             when (binding/=Nothing && not attempted) $ case projection of

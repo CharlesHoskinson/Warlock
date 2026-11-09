@@ -21,6 +21,11 @@ module Warlock.Ui.Mvp
   , leasePopupOpen
   , parseProjectionLease
   , readProjectedLease
+  , MvpFocusRole(..)
+  , MvpFocusIntent
+  , parseMvpFocusIntent
+  , mvpFocusTransition
+  , stepMvpKeyboardFocus
   , isStaleOwnerProjection
   , ViewObservation(..)
   , MvpStepState
@@ -39,7 +44,7 @@ module Warlock.Ui.Mvp
 #include <glib-object.h>
 
 import Control.Exception (SomeAsyncException, SomeException, bracket, catch, evaluate, fromException, mask, mask_, onException, throwIO, try)
-import Control.Monad (unless)
+import Control.Monad (unless, when)
 import Data.Int (Int32)
 import Data.IORef (IORef, atomicModifyIORef', modifyIORef', newIORef, readIORef, writeIORef)
 import Data.Text (Text)
@@ -235,6 +240,67 @@ parseProjectionLease projection = do
       either (Left . T.pack . show) Right (parseCounter False txt)
     parseNonNegative txt =
       either (Left . T.pack . show) Right (parseCounter True txt)
+
+-- Renderer identity is distinct from focusOwner, which identifies a view scope.
+-- DOM focus stays with the existing validated Elm focus messages. This bridge
+-- transfers physical GTK keyboard focus only when the launcher role changes.
+data MvpFocusRole = MvpFocusBar | MvpFocusPopup
+  deriving (Eq, Show)
+
+data MvpFocusIntent = MvpFocusIntent !SurfaceLease !MvpFocusRole !Text
+  deriving (Eq, Show)
+
+parseMvpFocusIntent :: J.Json -> Either Text (Maybe MvpFocusIntent)
+parseMvpFocusIntent projection = do
+  lease <- parseProjectionLease projection
+  case leaseScope lease of
+    Nothing -> Right Nothing
+    Just _ -> do
+      outer <- object projection
+      focused <- field "focusOwner" outer
+      if focused == J.JNull then Right Nothing else selectedIntent lease outer
+  where
+    selectedIntent lease outer = do
+      frame <- field "frame" outer >>= object
+      version <- field "surfaceProtocol" frame
+      unless (version == J.JNumber "2") (Left "keyboard focus requires surfaceProtocol 2")
+      mode <- field "mode" frame >>= string
+      bar <- field "bar" frame >>= rows
+      popup <- field "popup" frame >>= rows
+      let destination
+            | not (leasePopupOpen lease) = Just (MvpFocusBar, "bar:applications", bar)
+            | mode == "applications" = Just (MvpFocusPopup, "control:search", popup)
+            | otherwise = Nothing
+      case destination of
+        Nothing -> Right Nothing
+        Just (role, ident, controls) ->
+          case filter ((== Just (J.JString ident)) . lookup "id") controls of
+            [] -> Right Nothing
+            [control]
+              | eligible control -> do
+                  dom <- field "domId" control >>= string
+                  unless (not (T.null dom)) (Left "empty keyboard focus DOM target")
+                  let matches = filter (\row -> lookup "domId" row == Just (J.JString dom) && eligible row) (bar ++ popup)
+                  unless (length matches == 1) (Left "ambiguous keyboard focus DOM target")
+                  Right (Just (MvpFocusIntent lease role dom))
+              | otherwise -> Right Nothing
+            _ -> Left "ambiguous keyboard focus control"
+    object (J.JObject fields) = Right fields
+    object _ = Left "keyboard focus expected object"
+    field key fields = maybe (Left ("keyboard focus missing " <> key)) Right (lookup key fields)
+    string (J.JString value) = Right value
+    string _ = Left "keyboard focus expected string"
+    rows (J.JArray values) = traverse object values
+    rows _ = Left "keyboard focus expected controls array"
+    eligible fields = lookup "enabled" fields == Just (J.JBool True) || lookup "focusOnly" fields == Just (J.JBool True)
+
+-- Publications and query updates do not steal focus back from traversed items.
+mvpFocusTransition :: Maybe MvpFocusIntent -> MvpFocusIntent -> Maybe MvpFocusRole
+mvpFocusTransition previous current@(MvpFocusIntent _ role _)
+  | fmap key previous == Just (key current) = Nothing
+  | otherwise = Just role
+  where
+    key (MvpFocusIntent lease target _) = (leaseScope lease, target, leaseToken lease)
 
 -- | Read and validate 'UiEndpoints.uiLastProjection' into a 'SurfaceLease',
 -- failing closed on malformed JSON if present.
@@ -661,6 +727,18 @@ foreign import ccall unsafe "gdk_monitor_is_valid"
 foreign import ccall unsafe "gdk_monitor_get_geometry"
   gdkMonitorGetGeometry :: Ptr MvpObject -> Ptr CInt -> IO ()
 
+foreign import ccall unsafe "gtk_widget_get_root"
+  gtkWidgetGetRoot :: Ptr MvpObject -> IO (Ptr MvpObject)
+
+foreign import ccall unsafe "gtk_widget_get_width"
+  gtkWidgetGetWidth :: Ptr MvpObject -> IO CInt
+
+foreign import ccall unsafe "gtk_widget_get_height"
+  gtkWidgetGetHeight :: Ptr MvpObject -> IO CInt
+
+foreign import ccall safe "gtk_widget_grab_focus"
+  gtkWidgetGrabFocus :: Ptr MvpObject -> IO CInt
+
 -- | Three distinct WebKitWebView widget pointers owned by the caller.
 data MvpViews view = MvpViews
   { mvpControllerView :: !(Ptr view)
@@ -673,6 +751,9 @@ data MvpWindow = MvpWindow
   { mvpContextOwner :: !PhysicalDefaultContextOwner
   , mvpContextFaultRef :: !(IORef Bool)
   , mvpGtkWindow :: !(Ptr MvpObject)
+  , mvpBarWidget :: !(Ptr MvpObject)
+  , mvpPopupWidget :: !(Ptr MvpObject)
+  , mvpKeyboardFocusRef :: !(IORef (Maybe MvpFocusIntent))
   , mvpCloseRef :: !(IORef Bool)
   , mvpEscapeRef :: !(IORef Bool)
   , mvpStateRef :: !(IORef MvpStepState)
@@ -749,6 +830,7 @@ attachMvpWindow contextOwner views = mask $ \_ -> do
   closeRef <- newIORef False
   escapeRef <- newIORef False
   stateRef <- newIORef initialMvpState
+  keyboardFocusRef <- newIORef Nothing
   retiredRef <- newIORef False
   let checkContext = do
         requirePhysicalDefaultContextOwner contextOwner
@@ -845,6 +927,9 @@ attachMvpWindow contextOwner views = mask $ \_ -> do
           { mvpContextOwner = contextOwner
           , mvpContextFaultRef = contextFault
           , mvpGtkWindow = window
+          , mvpBarWidget = bView
+          , mvpPopupWidget = pView
+          , mvpKeyboardFocusRef = keyboardFocusRef
           , mvpCloseRef = closeRef
           , mvpEscapeRef = escapeRef
           , mvpStateRef = stateRef
@@ -1122,6 +1207,57 @@ stepMvpWindow mvp readLease emit = do
                               else Right reflowAccepted
                         Left fatal ->
                           pure (Left fatal)
+
+-- | Synchronous focus transfer on the existing owner context and deadline.
+-- Widget pointers remain borrowed from the retained window hierarchy; no new
+-- callback or independent lifetime is introduced. Other popup modes are inert.
+stepMvpKeyboardFocus :: MvpWindow -> IO (Maybe J.Json) -> IO Int -> IO ()
+stepMvpKeyboardFocus mvp fetchProjection remainingMicros = do
+  requireMvpContext mvp
+  live <- stillLive
+  when live $ do
+    original <- fetchProjection
+    intent <- traverse (either (ioError . userError . T.unpack) pure . parseMvpFocusIntent) original
+    case intent of
+      Just (Just current@(MvpFocusIntent lease _ _)) -> do
+        prior <- readIORef (mvpKeyboardFocusRef mvp)
+        state <- readIORef (mvpStateRef mvp)
+        let matches = case stateTopology state of
+              TopologyMapped scopeId gen _ -> matchingScopeLease scopeId gen (stateRevision state) (Just lease) == Just lease
+              _ -> False
+        case mvpFocusTransition prior current of
+          Just role | matches -> do
+            let widget = case role of MvpFocusBar -> mvpBarWidget mvp; MvpFocusPopup -> mvpPopupWidget mvp
+            active <- checked (gtkWindowIsActive (mvpGtkWindow mvp))
+            mapped <- checked (gtkWidgetGetMapped widget)
+            root <- checked (gtkWidgetGetRoot widget)
+            width <- checked (gtkWidgetGetWidth widget)
+            height <- checked (gtkWidgetGetHeight widget)
+            when (active /= 0 && mapped /= 0 && root == mvpGtkWindow mvp && width > 0 && height > 0) $ do
+              latest <- fetchProjection
+              allowed <- stillLive
+              when (allowed && latest == original) $ do
+                focused <- checked (gtkWidgetGrabFocus widget)
+                unless (focused /= 0) (ioError (userError "owned renderer refused keyboard focus"))
+                after <- fetchProjection
+                remains <- stillLive
+                -- A synchronous GTK callback may change projection or close the
+                -- window. Never certify a transition against that stale frame.
+                unless (remains && after == original) (ioError (userError "keyboard focus projection changed during handoff"))
+                writeIORef (mvpKeyboardFocusRef mvp) (Just current)
+          _ -> pure ()
+      _ -> pure ()
+  where
+    stillLive = do
+      requireMvpContext mvp
+      retired <- readIORef (mvpRetiredRef mvp)
+      closed <- readIORef (mvpCloseRef mvp)
+      remaining <- remainingMicros
+      pure (not retired && not closed && remaining > 500000)
+    checked action = do
+      allowed <- stillLive
+      unless allowed (ioError (userError "keyboard focus outside live owner deadline"))
+      action
 
 -- | Request owner-context disconnection, retaining callbacks and dependent
 -- GTK objects until actual owner-process death. This cannot return a complete

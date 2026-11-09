@@ -14,7 +14,7 @@ import qualified Data.ByteString.Char8 as BS
 import Warlock.Ui.Owner (retainRequestTrace)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Protocol.Identity (renderCounter)
-import Warlock.Ui.Mvp (leaseScope, leaseRevision, leasePublication, leaseToken, leasePopupOpen)
+import Warlock.Ui.Mvp (MvpFocusRole(..), parseMvpFocusIntent, mvpFocusTransition, leaseScope, leaseRevision, leasePublication, leaseToken, leasePopupOpen)
 import Foreign.C.String (CString, withCString)
 import Foreign.C.Types (CInt(..))
 import Foreign.Ptr (FunPtr, Ptr, castFunPtr, freeHaskellFunPtr, nullPtr)
@@ -27,7 +27,7 @@ import System.Posix.Signals (sigKILL, signalProcess)
 import Warlock.Capture.Process.Bootstrap (deadlineAfter, remainingMicros)
 import Warlock.Ui.EngineCustody (startCustody, stopCustody, abandonCustody)
 import Warlock.Ui.PrivateNetwork (enterPrivateNetwork)
-import Warlock.Ui.WebKit (firstMouseupDiagnosticScript, finiteDpiFallbackSetting, rendererAllocationReady, rendererDiagnosticEnvelope, providerVersionQualified, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
+import Warlock.Ui.WebKit (rendererPhaseFlags, rendererPhasePolling, rendererPhasePublication, rendererPhaseRequest, rendererPhaseLeaf, rendererPhaseSnapshotScript, firstMouseupDiagnosticScript, finiteDpiFallbackSetting, rendererAllocationReady, rendererDiagnosticEnvelope, providerVersionQualified, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
 
 data Object
 type Notify = Ptr Object -> Ptr () -> Ptr () -> IO ()
@@ -289,8 +289,77 @@ namespaceCompatibility = do
    _ <- getProcessStatus True False pid
    ioError (userError "namespace compatibility child exceeded original deadline")
 
+-- Literal current projection controls for physical GTK renderer focus.
+keyboardFocusControls :: IO ()
+keyboardFocusControls = do
+ let field key value (J.JObject fields) = J.JObject [(name,if name==key then value else old) | (name,old)<-fields]
+     field _ _ value = value
+     selected = field "focusOwner" (J.JObject [("id",J.JString "7"),("generation",J.JString "3")])
+     row ident dom enabled = J.JObject [("id",J.JString ident),("domId",J.JString dom),("enabled",J.JBool enabled),("focusOnly",J.JBool False)]
+     frame pub token popup mode = field "frame" (J.JObject
+       [("surfaceProtocol",J.JNumber "2"),("publication",J.JString (T.pack (show pub))),("lease",J.JString (T.pack (show token))),
+        ("mode",J.JString mode),("bar",J.JArray [row "bar:applications" "owned-opener" True]),
+        ("popup",J.JArray [row "control:search" "launcher-search" True])]) (selected (projection pub token popup))
+     parse value = either (ioError . userError . T.unpack) pure (parseMvpFocusIntent value)
+ closed <- parse (frame 1 0 False "menu")
+ opened <- parse (frame 2 8 True "applications")
+ typed <- parse (frame 3 8 True "applications")
+ reopened <- parse (frame 4 9 True "applications")
+ check "initial current Bar is keyboard focus destination" (maybe False ((==Just MvpFocusBar) . mvpFocusTransition Nothing) closed)
+ check "current launcher opens into Popup widget" (maybe False ((==Just MvpFocusPopup) . mvpFocusTransition closed) opened)
+ check "query publication does not refocus current popup" (maybe False ((==Nothing) . mvpFocusTransition opened) typed)
+ check "new launcher lease is a new focus transition" (maybe False ((==Just MvpFocusPopup) . mvpFocusTransition opened) reopened)
+ check "normal launcher dismissal restores Bar" (maybe False ((==Just MvpFocusBar) . mvpFocusTransition opened) closed)
+ other <- parse (frame 5 10 True "settings")
+ check "other popup policies are not inferred from scope" (other==Nothing)
+ let disabled = field "frame" (J.JObject [("surfaceProtocol",J.JNumber "2"),("publication",J.JString "1"),("lease",J.JString "0"),("mode",J.JString "menu"),("bar",J.JArray [row "bar:applications" "owned-opener" False]),("popup",J.JArray [])]) (selected (projection 1 0 False))
+ noTarget <- parse disabled
+ check "disabled opener is not a restoration destination" (noTarget==Nothing)
+ let duplicate = field "frame" (J.JObject [("surfaceProtocol",J.JNumber "2"),("publication",J.JString "2"),("lease",J.JString "8"),("mode",J.JString "applications"),("bar",J.JArray [row "bar:applications" "launcher-search" True]),("popup",J.JArray [row "control:search" "launcher-search" True])]) (selected (projection 2 8 True))
+ check "ambiguous cross-renderer dom target refuses focus" (case parseMvpFocusIntent duplicate of Left _ -> True; _ -> False)
+ let wrongOwner = field "popupOwner" (J.JObject [("id",J.JString "99"),("generation",J.JString "3")]) (frame 2 8 True "applications")
+ check "foreign popup scope refuses physical focus" (case parseMvpFocusIntent wrongOwner of Left _ -> True; _ -> False)
+ let noScope = field "views" (J.JArray []) (field "focusOwner" J.JNull (field "popupOwner" J.JNull (frame 1 0 False "menu")))
+ absent <- parse noScope
+ check "unscoped projection does not focus a widget" (absent==Nothing)
+ unselected <- parse (field "focusOwner" J.JNull (frame 1 0 False "closed"))
+ check "mapped scope without selected focus owner cannot take keyboard focus" (unselected==Nothing)
+
+rendererPhaseControls :: IO ()
+rendererPhaseControls = do
+ let nonce = BS.replicate 64 'a'
+ check "phase request exact64hex and LF" (rendererPhaseRequest (nonce <> BS.pack "\n")==Just (T.replicate 64 (T.pack "a")))
+ forM_ [BS.empty,nonce,nonce <> BS.pack "\nextra",BS.replicate 64 'g' <> BS.pack "\n",BS.replicate 63 'a' <> BS.pack "\n"] $ \raw ->
+  check "phase malformed or overbound request refuses" (rendererPhaseRequest raw==Nothing)
+ check "phase sequence fixed first and last" (rendererPhaseLeaf 1==Just "01" && rendererPhaseLeaf 16==Just "16")
+ forM_ [0,17,-1,maxBound] $ \number -> check "phase sequence outside fixed cap refuses" (rendererPhaseLeaf number==Nothing)
+ let script = rendererPhaseSnapshotScript
+ forM_ ["document.hasFocus()","document.activeElement","data-retained-query-state","http-popup-retained-query","data-publication","data-lease","data-surface-loading","control:search"] $ \literal ->
+  check "phase reads existing DOM evidence" (BS.pack literal `BS.isInfixOf` script)
+ forM_ [".focus(",".click(","dispatchEvent","setTimeout","setInterval","new Promise","fetch(","XMLHttpRequest","preventDefault"] $ \literal ->
+  check "phase fixed script cannot input wait or consume HTTP" (not (BS.pack literal `BS.isInfixOf` script))
+
+ check "phase actual ARM flags override generic directory/nofollow" (rendererPhaseFlags==(575488,559104,559297) && rendererPhaseFlags/=(722944,657408,657601))
+ check "phase passive polling soft-skips exhausted reserve" (not (rendererPhasePolling 500000) && not (rendererPhasePolling 0) && rendererPhasePolling 500001)
+ check "phase search uses actual Elm field attribute" (BS.pack "input[data-surface-field=\"control:search\"]" `BS.isInfixOf` rendererPhaseSnapshotScript && BS.pack "getAttribute('data-surface-field')" `BS.isInfixOf` rendererPhaseSnapshotScript)
+ publicationLog <- newIORef ([] :: [String])
+ publicationLive <- newIORef True
+ let live = readIORef publicationLive >>= \ok -> unless ok (ioError (userError "original phase deadline"))
+     recordStep name = modifyIORef' publicationLog (++[name])
+ latePublication <- try (rendererPhasePublication live (recordStep "write" >> writeIORef publicationLive False) (recordStep "link") (recordStep "unlink") >> recordStep "complete") :: IO (Either IOException ())
+ lateLog <- readIORef publicationLog
+ check "phase write crossing original deadline never links or completes" (case latePublication of Left _ -> lateLog==["write"]; Right _ -> False)
+ writeIORef publicationLog []
+ writeIORef publicationLive True
+ rendererPhasePublication live (recordStep "write") (recordStep "link") (recordStep "unlink")
+ recordStep "complete"
+ normalLog <- readIORef publicationLog
+ check "phase normal publication retains fixed order" (normalLog==["write","link","unlink","complete"])
+
 allocationControls :: IO ()
 allocationControls = do
+ rendererPhaseControls
+ keyboardFocusControls
  -- Fixed passive observation cannot generate or suppress the real input.
  let script = firstMouseupDiagnosticScript
  forM_ ["new Promise", "'mouseup'", "capture:true", "passive:true", "once:true", "isTrusted", "data-surface-control", "data-publication", "data-lease"] $ \literal ->
