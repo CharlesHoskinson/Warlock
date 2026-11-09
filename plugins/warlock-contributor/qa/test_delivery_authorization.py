@@ -258,7 +258,10 @@ class DeliveryAuthorizationTests(DeliveryFixture):
         self.start_delivery()
         sample = dict(self.sample(), bootId='another-boot')
         event, _, _, _ = self.renewal(sample)
-        self.append_at(event, sample, ok=False)
+        result = self.append_at(event, sample)
+        self.assertEqual(result['nextRootAction']['kind'], 'reconcile-clock')
+        self.assertFalse(result['nextRootAction']['executionAuthorized'])
+        self.assertTrue(result['nextRootAction']['progress']['reconciliationRequired'])
 
     def test_renewal_never_migrates_legacy_stopped_record(self):
         self.fixture.cli('--record', self.record_path, 'start', '--owner', 'root')

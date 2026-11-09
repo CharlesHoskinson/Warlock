@@ -4939,7 +4939,7 @@ def main():
             closing = event['kind'] in ('execution-finished', 'execution-consumed', 'execution-refused', 'deferred')
             renewal = event['kind'] == 'authorization-renewed'
             reconcile_clock = event['kind'] == 'clock-reconciled'
-            if not closing and ((progress['reconciliationRequired'] and not reconcile_clock) or
+            if not closing and ((progress['reconciliationRequired'] and not (reconcile_clock or renewal)) or
                                 (progress['authorizationExpired'] and not renewal)):
                 raise ValueError('Delivery authorization expired or clocks require reconciliation')
             if renewal:

@@ -35,6 +35,33 @@ class DeliveryRebootTests(DeliveryFixture):
         return {'eventId': 'reconcile-' + suffix, 'kind': 'clock-reconciled',
                 'evidence': self.ref('clock-evidence-' + suffix, evidence)}, evidence, goal
 
+    def test_expired_reboot_renews_before_reconciliation_but_cannot_execute(self):
+        self.start_delivery()
+        self.ready()
+        before = self.record()
+        sample = self.sample(10800)
+        module = engine()
+        progress = module.delivery_progress_status(before, sample=sample)
+        self.assertTrue(progress['authorizationExpired'])
+        self.assertTrue(progress['reconciliationRequired'])
+        event, _, _ = self.event(sample)
+        self.append_at(event, sample, ok=False)
+        renewal, _, _, _ = authorization.DeliveryAuthorizationTests.renewal(self, sample)
+        self.append_at(renewal, sample)
+        after_renewal = self.record()
+        self.assertEqual(after_renewal['delivery']['events'][:-1], before['delivery']['events'])
+        self.assertEqual(module.delivery_identity(after_renewal), module.delivery_identity(before))
+        self.assertTrue(module.delivery_progress_status(after_renewal, sample=sample)['reconciliationRequired'])
+        self.cli_at(sample, 'delivery-precheck', '--candidate', 'c1', '--scope', 'cpu',
+                    '--expect-selection', '1', ok=False)
+        event, _, _ = self.event(sample, 'after-renewal')
+        self.append_at(event, sample)
+        self.cli_at(sample, 'delivery-precheck', '--candidate', 'c1', '--scope', 'cpu',
+                    '--expect-selection', '1')
+        after = self.record()
+        self.assertEqual(after['delivery']['clockOrigin'], before['delivery']['clockOrigin'])
+        self.assertEqual(module.record_identity(after, self.record_path), module.record_identity(before, self.record_path))
+
     def test_reboot_reconciles_ready_candidate_without_reset_or_suspend_credit(self):
         self.start_delivery()
         candidate = self.ready()
