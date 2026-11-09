@@ -393,11 +393,68 @@ rendererPhaseControls = do
  normalLog <- readIORef publicationLog
  check "phase normal publication retains fixed order" (normalLog==["write","link","unlink","complete"])
 
+
+-- Menu handoff is origin-sensitive; DOM target selection stays with Elm.
+menuKeyboardFocusControls :: IO ()
+menuKeyboardFocusControls = do
+ let replace key value (J.JObject fields) = J.JObject [(name,if name==key then value else oldValue) | (name,oldValue)<-fields]
+     replace _ _ value = value
+     selected = replace "focusOwner" (J.JObject [("id",J.JString "7"),("generation",J.JString "3")])
+     row ident dom enabled = J.JObject [("id",J.JString ident),("domId",J.JString dom),("enabled",J.JBool enabled),("focusOnly",J.JBool False)]
+     frame pub token popup keyboard controls bar = replace "frame" (J.JObject
+       ([("surfaceProtocol",J.JNumber "2"),("publication",J.JString (T.pack (show pub))),("lease",J.JString (T.pack (show token)))
+        ,("mode",J.JString (if popup then "menu" else "closed")),("bar",J.JArray bar),("popup",J.JArray controls)]
+        ++ maybe [] (\value -> [("keyboardParent",J.JBool value)]) keyboard)) (selected (projection pub token popup))
+     opener = row "bar:applications" "owned-opener" True
+     menuClose = row "control:menu-close" "menu:1:close" True
+     parse value = either (ioError . userError . T.unpack) pure (parseMvpFocusIntent value)
+     menu pub token = frame pub token True (Just True) [menuClose] [opener]
+     goesPopup = maybe False ((==Just MvpFocusPopup) . mvpFocusTransition Nothing)
+     refused value = case parseMvpFocusIntent value of Left _ -> True; _ -> False
+ closed <- parse (frame 1 0 False Nothing [] [opener])
+ opened <- parse (menu 2 8)
+ updated <- parse (menu 3 8)
+ reopened <- parse (menu 4 9)
+ check "keyboard menu opening transfers physical focus into Popup" (maybe False ((==Just MvpFocusPopup) . mvpFocusTransition closed) opened)
+ check "same menu lease publication does not steal traversal" (maybe False ((==Nothing) . mvpFocusTransition opened) updated)
+ check "new keyboard menu lease is one physical transition" (maybe False ((==Just MvpFocusPopup) . mvpFocusTransition opened) reopened)
+ check "menu dismissal restores only physical Bar role" (maybe False ((==Just MvpFocusBar) . mvpFocusTransition opened) closed)
+ pointer <- parse (frame 2 8 True (Just False) [menuClose] [opener])
+ unknownOrigin <- parse (frame 2 8 True Nothing [menuClose] [opener])
+ check "pointer menu cannot steal physical keyboard focus" (pointer==Nothing)
+ check "menu without keyboard-origin witness stays inert" (unknownOrigin==Nothing)
+ disabled <- parse (frame 2 8 True (Just True) [row "control:menu-close" "menu:1:close" False] [opener])
+ missing <- parse (frame 2 8 True (Just True) [] [opener])
+ check "disabled menu close cannot authorize focus" (disabled==Nothing)
+ check "missing menu close cannot authorize focus" (missing==Nothing)
+ check "duplicate menu close ids refuse" (refused (frame 2 8 True (Just True) [menuClose,menuClose] [opener]))
+ check "cross-renderer menu DOM alias refuses" (refused (frame 2 8 True (Just True) [menuClose] [row "bar:applications" "menu:1:close" True]))
+ check "foreign menu popup owner refuses" (refused (replace "popupOwner" (J.JObject [("id",J.JString "99"),("generation",J.JString "3")]) (menu 2 8)))
+ unselected <- parse (replace "focusOwner" J.JNull (menu 2 8))
+ check "unselected menu cannot take physical focus" (unselected==Nothing)
+ unscoped <- parse (replace "views" (J.JArray []) (replace "focusOwner" J.JNull (replace "popupOwner" J.JNull (frame 1 0 False Nothing [] [opener]))))
+ check "unscoped menu state remains inert" (unscoped==Nothing)
+ -- Fixed reproducible source-only matrix, four predicates repeated at fresh counters.
+ forM_ [0..31 :: Int] $ \seed -> do
+  let pub = fromIntegral seed + 10
+      token = fromIntegral seed + 1
+      variant = seed `mod` 4
+      candidate = case variant of
+       0 -> menu pub token
+       1 -> frame pub token True (Just False) [menuClose] [opener]
+       2 -> frame pub token True (Just True) [row "control:menu-close" "menu:1:close" False] [opener]
+       _ -> replace "popupOwner" (J.JObject [("id",J.JString "99"),("generation",J.JString "3")]) (menu pub token)
+      accepted = case parseMvpFocusIntent candidate of
+       Left _ -> variant==3
+       Right intent -> if variant==0 then goesPopup intent else variant/=3 && intent==Nothing
+  check ("menu physical-focus seeded case " ++ show seed) accepted
+
 allocationControls :: IO ()
 allocationControls = do
  rendererPhaseControls
  keyboardFocusControls
  notificationKeyboardFocusControls
+ menuKeyboardFocusControls
  -- Fixed passive observation cannot generate or suppress the real input.
  let script = firstMouseupDiagnosticScript
  forM_ ["new Promise", "'mouseup'", "capture:true", "passive:true", "once:true", "isTrusted", "data-surface-control", "data-publication", "data-lease"] $ \literal ->

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "scope": "ux003-current-loader-cache-correspondence",
+  "expectedCacheSha256": "e26846bd2ef0d774afeb7f995b1dea790ca0037f13bb64df5694ee74b414d7b6",
+  "currentCacheSha256": "6a64a2d03c88c94f2efe91b376c23b1e7dfd0ab8795144490d2527a0842bc0dc",
+  "systemInventorySha256": "33b9ed73bd1d249225d228a35c8f40ae941f690bca8f3626fb2e6f5e267ac7b4",
+  "selectedResolutionManifest": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794037285027049547/native-build-stage-manifest.json",
+    "sha256": "b3c9f30dcedc626f603fc963239108fae64639ccfd03a7dc292550beb1e9aa60"
+  },
+  "edgeCount": 800,
+  "selectedResolutionMismatches": 0,
+  "requiredAbsentCandidateCount": 10,
+  "requiredAbsentNowPresent": [],
+  "systemEntryCount": 15851,
+  "systemEntryMismatches": 0,
+  "systemAudit": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/revision2-correspondence/cache-scan-actual/complete-system-inventory-audit.json",
+    "sha256": "10d75ebfdd5d4daa42860d0cf4597f66466784833a7b02418263041900ba2642"
+  },
+  "cacheEntryAudit": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/revision2-correspondence/cache-scan-actual/actual-loader-cache-entries.json",
+    "sha256": "346f4ad56d624f7026229d1759d2cc9d3b2e12ab5ea1469609700c8fda0bd28f"
+  },
+  "selectedResolutionAudit": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/revision2-correspondence/cache-scan-actual/selected-loader-resolution-correspondence.json",
+    "sha256": "33bcf65fcb5d92d986f27647aecbf3a2c8da1e5316e2c76d75fa5196ac3cf1da"
+  },
+  "currentCacheSnapshot": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/revision2-correspondence/cache-scan-actual/actual-ld.so.cache",
+    "sha256": "6a64a2d03c88c94f2efe91b376c23b1e7dfd0ab8795144490d2527a0842bc0dc"
+  },
+  "nativeExecuted": false,
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7f5ef594d38b477494aa4053d1b2c340.scope",
+    "coreLimit": 1
+  },
+  "sourceStatus": "reconstructed from reviewed retained schema; first execution only after independent review",
+  "reviewer": "sol_supervisor"
+}

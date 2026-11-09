@@ -296,6 +296,82 @@ def menu_tab_dom_inputs(root):
     return names
 
 
+
+MENU_FOCUS_BUILD_PACKET = '.warlock-contributor/evidence/nextloop-20261106/ux024-menu-focus-build-v1-20261109/packet.json'
+MENU_FOCUS_BUILD_RECORD = '.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
+MENU_FOCUS_BUILD_IDENTITY = '60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
+MENU_FOCUS_BUILD_TARGETS = ('warlock-runtime:exe:warlock-ui-owner', 'warlock-runtime:test:ui-webkit-controls')
+MENU_FOCUS_BUILD_SUPPORT = {'tools/qa_cpu.py', 'tools/run_ux024_menu_focus_build.py',
+    'tools/test_ux024_menu_focus_build.py', 'plugins/warlock-contributor/scripts/warlock.py',
+    'tools/arm64-toolchain.json', 'tools/arm64_toolchain.py', 'tools/haskell-dependencies.json',
+    'tools/haskell_test_wrapper.py', 'tools/provider_callback_build.py',
+    'window-integration-qa/qa_launch.py', 'window-integration-qa/qa_run.py'}
+
+
+def menu_focus_build_mode(runner, arguments, packet_sha):
+    return runner == REPO / 'tools/run_ux024_menu_focus_build.py' and arguments == ['--sha256', packet_sha]
+
+
+def menu_focus_build_spec(root):
+    import re
+    path = root / MENU_FOCUS_BUILD_PACKET
+    fd = os.open(path, os.O_RDONLY | os.O_CLOEXEC | os.O_NOFOLLOW | os.O_NONBLOCK)
+    with os.fdopen(fd, 'rb') as stream:
+        before = os.fstat(stream.fileno())
+        if not stat.S_ISREG(before.st_mode) or before.st_size > 4 * 1024 * 1024:
+            raise RuntimeError('Fixed menu focus packet must be bounded regular JSON')
+        body = stream.read(4 * 1024 * 1024 + 1)
+        after = os.fstat(stream.fileno())
+    identity = lambda s: (s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns, s.st_ctime_ns)
+    if identity(before) != identity(after) or len(body) != before.st_size:
+        raise RuntimeError('Fixed menu focus packet changed while reading')
+    packet = json.loads(body)
+    fields = {'schema', 'kind', 'recordPath', 'recordIdentitySha256', 'selectionGeneration',
+              'authorizationExpiresUTC', 'coreSha256', 'targets', 'behaviorSuites',
+              'sourceHashes', 'haskellFiles', 'toolchainManifest', 'cacheCorrespondence'}
+    if (not isinstance(packet, dict) or set(packet) != fields or packet['schema'] != 1
+            or packet['kind'] != 'ux024-fixed-menu-focus-build'
+            or packet['recordPath'] != MENU_FOCUS_BUILD_RECORD
+            or packet['recordIdentitySha256'] != MENU_FOCUS_BUILD_IDENTITY
+            or type(packet['selectionGeneration']) is not int or packet['selectionGeneration'] < 1
+            or packet['targets'] != list(MENU_FOCUS_BUILD_TARGETS) or packet['behaviorSuites'] != ['ui-webkit-controls']):
+        raise RuntimeError('Fixed menu focus build scope differs')
+    hs = root / 'implementation/warlock/haskell'
+    current = set()
+    for p in hs.rglob('*'):
+        if any(part in ('dist-newstyle', '__pycache__') for part in p.relative_to(hs).parts):
+            continue
+        if p.is_symlink():
+            raise RuntimeError('Haskell build source alias refused')
+        if p.is_file():
+            current.add(str(p.relative_to(hs)))
+        elif not p.is_dir():
+            raise RuntimeError('Haskell build source special file refused')
+    files, sources = packet['haskellFiles'], packet['sourceHashes']
+    if (not isinstance(files, dict) or not isinstance(sources, dict) or set(files) != current
+            or set(sources) != MENU_FOCUS_BUILD_SUPPORT | {'implementation/warlock/haskell/' + n for n in current}
+            or any(not isinstance(h, str) or re.fullmatch('[0-9a-f]{64}', h) is None for h in sources.values())
+            or any(sources['implementation/warlock/haskell/' + n] != h for n, h in files.items())
+            or packet['coreSha256'] != sources['plugins/warlock-contributor/scripts/warlock.py']):
+        raise RuntimeError('Fixed menu focus build source closure differs')
+    names = set(sources) | {MENU_FOCUS_BUILD_PACKET}
+    for key in ('toolchainManifest', 'cacheCorrespondence'):
+        ref = packet[key]
+        if not isinstance(ref, dict) or set(ref) != {'path', 'sha256'} or not isinstance(ref['sha256'], str) or re.fullmatch('[0-9a-f]{64}', ref['sha256']) is None:
+            raise RuntimeError('Fixed menu focus metadata reference differs')
+        p = Path(ref['path'])
+        try:
+            rel = p.relative_to(root) if p.is_absolute() else p
+        except ValueError as error:
+            raise RuntimeError('Fixed menu focus metadata must be inside repo') from error
+        if '..' in rel.parts or str(rel) in ('', '.'):
+            raise RuntimeError('Fixed menu focus metadata escape refused')
+        if key == 'toolchainManifest' and (str(rel) != 'tools/arm64-toolchain.json' or ref['sha256'] != sources[str(rel)]):
+            raise RuntimeError('Fixed menu focus SDK reference differs')
+        names.add(str(rel))
+    return {'inputs': names, 'packetSha256': hashlib.sha256(body).hexdigest()}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--review', type=Path, required=True)
@@ -328,10 +404,16 @@ def main():
     arm64 = runner == REPO / 'tools/check_arm64_cpu.py'
     capi_controls = runner == REPO / 'tools/test_capi_invocation_probe.py'
     team_quint = runner == REPO / 'tools/check_team_quint_cpu.py'
+    menu_focus_build = runner == REPO / 'tools/run_ux024_menu_focus_build.py'
+    menu_focus_spec = menu_focus_build_spec(REPO) if menu_focus_build else None
     allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend'], ['--persistent']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract'], ['--subscriptions']])))
     if menu_tab_dom_mode(runner, packet['arguments']):
         allowed = [['--menu-tab-dom', '--arm64']]
+    if menu_focus_build:
+        if packet['inputs'].get(MENU_FOCUS_BUILD_PACKET) != menu_focus_spec['packetSha256']:
+            raise RuntimeError('Fixed build packet hash differs from reviewed CPU inputs')
+        allowed = [['--sha256', menu_focus_spec['packetSha256']]]
     if continuity:
         allowed = [[]]
     if arm64:
@@ -342,7 +424,7 @@ def main():
                    for tail in ([], ['--tests-only'])]
     if capi_controls:
         allowed = [[]]
-    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and not capi_controls and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and not capi_controls and not menu_focus_build and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
@@ -461,6 +543,8 @@ def main():
         mandatory = capi_invocation_controls_inputs(REPO)
     if menu_tab_dom_mode(runner, packet['arguments']):
         mandatory = menu_tab_dom_inputs(REPO)
+    if menu_focus_build:
+        mandatory = menu_focus_spec['inputs']
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
     reviewed_inputs(packet)
@@ -492,7 +576,7 @@ def main():
         reviewed_inputs(packet)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
-            return child.wait(timeout=3600 if haskell or arm64 or team_quint else (600 if tea else 240))
+            return child.wait(timeout=902 if menu_focus_build else (3600 if haskell or arm64 or team_quint else (600 if tea else 240)))
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             os.killpg(child.pid, signal.SIGTERM)
             try:

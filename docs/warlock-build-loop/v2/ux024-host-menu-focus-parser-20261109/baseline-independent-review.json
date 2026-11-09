@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-actual-mvp-parser-semantic-red",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794266829245994228/report.json",
+    "sha256": "fba0ea1f5bf1ba61b7d8bed2aed17753e7dfff013eedc6f4b16544ab2681638e"
+  },
+  "buildStdout": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794266829245994228/logs/build.stdout",
+    "sha256": "d598c1554249dab17b36cb7867adceecf1667c20986f9e93bf3dc4e0c8e34d72"
+  },
+  "testStderr": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794266829245994228/logs/cpu-ui-webkit-controls.stderr",
+    "sha256": "840d6d65e3edc9a4c2b01bfe35f565b99e067b3a23a98ef6fb6b9ebb850391a1"
+  },
+  "builderControlsStderr": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794266829245994228/logs/fixed-builder-controls.stderr",
+    "sha256": "770a5a7cfd5ed30408387c611037fc3fb16dc0c5873dba409dd6aae6c67d7bb1"
+  },
+  "observations": {
+    "twoTargetsBuiltAndLinked": true,
+    "bothListBinExit0": true,
+    "builderControls": 11,
+    "builderControlsPassed": true,
+    "onlyExecutedTarget": "ui-webkit-controls --allocation-only",
+    "targetExit": 1,
+    "firstNewAssertion": "keyboard menu opening transfers physical focus into Popup",
+    "allReportedForcedCleanupFalse": true,
+    "allCurrentSourceHashesMatched": true
+  },
+  "semanticCause": "Tests establish selected scoped keyboard-origin menu with current enabled unique menu close; current parseMvpFocusIntent has no menu destination, so first new transfer predicate fails. This is semantic baseline, not compiler/SDK failure.",
+  "unreached": "Later new fixed assertions and32seed cases not all reached; no aggregate45PASS claim.",
+  "provenance": "Collector authored by this reviewer and independently accepted by Sol8173e607. This review assesses Astra test/currentMvp semantic outcome, not independent self-review of collector.",
+  "limits": [
+    "No owner executable/service/native/GTK focus API executed by this test branch.",
+    "cleanupQualified remainsfalse in raw failedreport; no invented normalcleanup or qualified compiledImages.",
+    "No tests/imports/compiler execution by reviewer, no originalUX024 acceptance."
+  ]
+}

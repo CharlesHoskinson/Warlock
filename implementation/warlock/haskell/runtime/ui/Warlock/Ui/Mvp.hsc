@@ -271,6 +271,7 @@ parseMvpFocusIntent projection = do
             | not (leasePopupOpen lease) = Just (MvpFocusBar, "bar:applications", bar)
             | mode == "applications" = Just (MvpFocusPopup, "control:search", popup)
             | mode == "notifications" = Just (MvpFocusPopup, "control:close", popup)
+            | mode == "menu" && lookup "keyboardParent" frame == Just (J.JBool True) = Just (MvpFocusPopup, "control:menu-close", popup)
             | otherwise = Nothing
       case destination of
         Nothing -> Right Nothing
