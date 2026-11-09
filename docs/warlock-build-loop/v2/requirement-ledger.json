@@ -17107,7 +17107,7 @@
         {
           "name": "keyboard-notifications",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "partial",
+          "status": "accepted",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
@@ -17191,13 +17191,37 @@
                 "independent": false,
                 "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
               }
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-notifications-native-20261109/adjudication-evidence.json",
+              "sha256": "3d6ea5c506bb8bb43f012a944cf61287a9228c22ef7029ac0aeebb9cc9eb2147"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-notifications-native-20261109/reviews/native-original-acceptance-review.json",
+              "sha256": "a8251c7646e7f50c49e884655d21c192eac8d72673a647afea04027dcada1fc6"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-notifications-native-20261109/native/report.json",
+              "sha256": "82bf1ab38fdcdf84a29554c4fcafa08e972c0ff99d98bc1a6eaa27ab3ae908d8"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-notifications-native-20261109/qualification/actual-haskell-build.json",
+              "sha256": "3cb76dcc0722013466675f91420a246d5a9d1b856d9773a9217842ac1ec37fac"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-notifications-native-20261109/qualification/actual-elm-build.json",
+              "sha256": "9e2ef34d183da3cd8e57208aa3a78e528a7b84d8848ac2561e826666eb7bb91a"
             }
           ],
-          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "missingObservation": null,
           "reviewerDisposition": {
-            "name": "root-bar-keyboard-return",
-            "independent": false,
-            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+            "name": "sol-supervisor-workflow-20261109",
+            "independent": true,
+            "disposition": "accepted",
+            "evidence": {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-notifications-native-20261109/reviews/native-original-acceptance-review.json",
+              "sha256": "a8251c7646e7f50c49e884655d21c192eac8d72673a647afea04027dcada1fc6"
+            }
           }
         },
         {
@@ -18285,5 +18309,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-09T02:44:15.650490+00:00"
+  "updatedUTC": "2026-11-09T18:27:06.770783+00:00"
 }

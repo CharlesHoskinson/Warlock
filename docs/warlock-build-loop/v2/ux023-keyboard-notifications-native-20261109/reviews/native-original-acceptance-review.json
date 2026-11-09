@@ -1,0 +1,1046 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "reviewer": "sol-supervisor-workflow-20261109",
+  "requirement": "ELM-UX-023",
+  "scenario": "keyboard-notifications",
+  "scope": "Original isolated native keyboard-notifications open/traverse/operate/dismiss scenario, local session DND operation only.",
+  "originalRequirement": {
+    "id": "ELM-UX-023",
+    "capability": "elm-accessibility",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL provide keyboard routes for launcher, taskbar groups, switcher, Task View, snap chooser, menus, settings, notifications and jump lists without requiring pointer input.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: each surface can be opened, operated and dismissed without pointer events.",
+    "legacyEvidence": "window-behavior-spec/accessibility.qnt",
+    "task": "Publish chord map and implement focus traversal for every migrated surface.",
+    "scenarios": [
+      {
+        "name": "ux-023",
+        "given": "pointer is unused",
+        "when": "keyboard-only acceptance script visits all migrated surfaces",
+        "then": "each surface can be opened, operated and dismissed without pointer events"
+      },
+      {
+        "name": "keyboard-launcher",
+        "given": "the launcher surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      },
+      {
+        "name": "keyboard-taskbar-groups",
+        "given": "the taskbar groups surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      },
+      {
+        "name": "keyboard-switcher",
+        "given": "the switcher surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      },
+      {
+        "name": "keyboard-task-view",
+        "given": "the Task View surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      },
+      {
+        "name": "keyboard-snap-chooser",
+        "given": "the snap chooser surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      },
+      {
+        "name": "keyboard-menus",
+        "given": "the menus surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      },
+      {
+        "name": "keyboard-settings",
+        "given": "the settings surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      },
+      {
+        "name": "keyboard-notifications",
+        "given": "the notifications surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      },
+      {
+        "name": "keyboard-jump-lists",
+        "given": "the jump lists surface and no pointer input",
+        "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+        "then": "each operation completes with recorded keyboard focus and no pointer events"
+      }
+    ],
+    "source": "docs/elm-roadmap/contributions/experience.json",
+    "status": "proposed",
+    "taskId": "P5-ELM-UX-023",
+    "accountableOwnerRole": "Accessibility lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "originalScenario": {
+    "name": "keyboard-notifications",
+    "given": "the notifications surface and no pointer input",
+    "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+    "then": "each operation completes with recorded keyboard focus and no pointer events"
+  },
+  "verificationScope": "Elm replay assertion and isolated native recording: each surface can be opened, operated and dismissed without pointer events.",
+  "originalInputs": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/docs/elm-roadmap/requirements.json",
+      "sha256": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/docs/elm-roadmap/baselines/requirements-pre-language-20261030.json",
+      "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+    }
+  ],
+  "candidate": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-notifications-keyboard-native-20261109-current22-runtimefix2/canonical-candidate.json",
+    "sha256": "f12d1196c0764230172bf31f1015d06acc374832f61b31debf7ace6bc75bec2e"
+  },
+  "candidateSha256": "04aead67e3ab9189fc82cbee8bc0a17d369e3e5e4c72e302d7b1951de8725519",
+  "packet": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-notifications-keyboard-native-20261109-current22-runtimefix2/packet.json",
+    "sha256": "b11389de63a0a12cf7baa7db3f85d054ec3e734e9a41e7ef65fe769f0d8762fb"
+  },
+  "actualReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/report.json",
+    "sha256": "82bf1ab38fdcdf84a29554c4fcafa08e972c0ff99d98bc1a6eaa27ab3ae908d8"
+  },
+  "actualOuterTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/final-current22-runtimefix2/actual-native-outer-terminal.json",
+    "sha256": "969771ebd8922eb9b711610e374725b014d2f46354348abce4f808282a69ee74"
+  },
+  "sourceRevision": "1c0a4ebb9fbda2c6f76b864fa836e18b957b2689",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "f02fd8bcd02bce9346eea67995199d8b192755b5fa76fb125570306c2bda8847",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "70b552a27c83bfdc50872990d2b2bd774263df2cd4f14072967ef4b05dfde099",
+    "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "2b6b5eb8b292a8c84958a571070fbaeee5b65536746953f0b5edc1c344a669dc",
+    "implementation/warlock/qa/LocalNotificationsReplay.elm": "4ccc6784a25a5fb7a1db75a2afd59c876f4606967d3ddac4eab7e114346a293e",
+    "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": "e2411ba16012e8a4c7ca657199b92427e23e73ccadc5792bcb50c4eb6c4742bd",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "b7752b288a3c7c34503fcb242b632175da85c95a0a1f7017c4e25ed189307ad2",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "d91f1f60f25537a87172791de09d390fb296414bd4063a10fdf2b4033d4eedc3",
+    "implementation/warlock/src/Shell.elm": "e94d200d2c4fbf1badce1e21f7be9595c79b7e4d8f77ef07f7253427fd30dec5",
+    "implementation/warlock/src/Desktop.elm": "6a47c4e0abaaf371d61f36c36172279f760fdb477877543f67af6e897e712abb",
+    "implementation/warlock/src/Surface.elm": "268833fc35260a16dde4e8bc5db932464a03cf7e6fb42486a7eb978ea7bbc8b5"
+  },
+  "sourceRevisionGitBlobsVerified": {
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "f02fd8bcd02bce9346eea67995199d8b192755b5fa76fb125570306c2bda8847",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "70b552a27c83bfdc50872990d2b2bd774263df2cd4f14072967ef4b05dfde099",
+    "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "2b6b5eb8b292a8c84958a571070fbaeee5b65536746953f0b5edc1c344a669dc",
+    "implementation/warlock/qa/LocalNotificationsReplay.elm": "4ccc6784a25a5fb7a1db75a2afd59c876f4606967d3ddac4eab7e114346a293e",
+    "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": "e2411ba16012e8a4c7ca657199b92427e23e73ccadc5792bcb50c4eb6c4742bd",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "b7752b288a3c7c34503fcb242b632175da85c95a0a1f7017c4e25ed189307ad2",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "d91f1f60f25537a87172791de09d390fb296414bd4063a10fdf2b4033d4eedc3",
+    "implementation/warlock/src/Shell.elm": "e94d200d2c4fbf1badce1e21f7be9595c79b7e4d8f77ef07f7253427fd30dec5",
+    "implementation/warlock/src/Desktop.elm": "6a47c4e0abaaf371d61f36c36172279f760fdb477877543f67af6e897e712abb",
+    "implementation/warlock/src/Surface.elm": "268833fc35260a16dde4e8bc5db932464a03cf7e6fb42486a7eb978ea7bbc8b5"
+  },
+  "runtimeSourceHashes": {
+    "implementation/warlock/elm.json": "8b4b79f249439797039cfb923bb99d0025d27913e50f097e1cd1da8f03c4ca63",
+    "implementation/warlock/haskell/cabal.project": "b8fc882f0e53b96dacbced3a21d292741ad2a4bcbb59627b9c1c2eb8647a5607",
+    "implementation/warlock/haskell/elf-observation/README.md": "d5d789263049e4c4ab7a677448192e70f3f8f5fb1c97c87a8de73c7af4e6b320",
+    "implementation/warlock/haskell/elf-observation/elf-observation.cabal": "9a71bb015ac1cd15f5a1cc78d5b4a1bae31d877ec132065fb7769a9126f4bdcf",
+    "implementation/warlock/haskell/elf-observation/qualification.json": "e22cb3c5429f04bcc9a5b9c34f2766a6ce9268ed9dbef4b8cb2124808f4cb72c",
+    "implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Graph.hs": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+    "implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Readelf.hs": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
+    "implementation/warlock/haskell/elf-observation/test/ElfCases.hs": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5",
+    "implementation/warlock/haskell/elf-observation/test/GoldenNames.hs": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/gcc.readelf": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/ghc.readelf": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/helper-0.readelf": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/helper-1.readelf": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/helper-2.readelf": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/jsc.readelf": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/json-glib.readelf": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/owner.readelf": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/provenance.json": "4de54e658fd54dc6a930b42433116da7cf90979bde30a2c76e96d129938d63b7",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/sframe.readelf": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/webkit.readelf": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+    "implementation/warlock/haskell/held-document/README.md": "c54e0457d05cd85c222dfcccb1c3b3d8d20013407d5d000846c691f7dce7f6ed",
+    "implementation/warlock/haskell/held-document/held-document.cabal": "fd73f544a29c114a32f6c26bcf0ef7fd810fef11d2ea75191cd988e569ad9999",
+    "implementation/warlock/haskell/held-document/qualification.json": "eef9d8ab2df193d112237b89ca5e72927b99ab914102a1f35889a71672a16fd7",
+    "implementation/warlock/haskell/held-document/src/Warlock/Http/Document.hs": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs": "4c0e9f75acfffa0413b5efc59cb592e5609d3482f032f7c3131f2048edcfea91",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": "16ccafd66cacb3835225bc9739d2a957e5e601a8819a14d99ec565224dcc1a94",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver.hs": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed",
+    "implementation/warlock/haskell/held-document/test/LeaseControls.hs": "f43f95ddb50057190aeaf07bdc2662fd9752afca3402b00f527a708097d86c80",
+    "implementation/warlock/haskell/held-document/test/Main.hs": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501",
+    "implementation/warlock/haskell/native-authority/README.md": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744",
+    "implementation/warlock/haskell/native-authority/native-authority.cabal": "0f6e8579cc148c5c5599797f33919bde411c2610539b68fc2cfb4700e8215ec3",
+    "implementation/warlock/haskell/native-authority/qualification.json": "5b537f836cc94b0779018377c693961cce8e940fcae0b482ed705573aad3893a",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": "8ae02f272b7f002128e871064b26bcaf30876a1a610065a5729c7083b7a0c346",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": "85e1ef5008c223121decf3f34a6ad083b7a26d785a2ab9f074bc7a5928056bc7",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc": "5995e5a6b5beef6412831daad6db9f8206b531cd11993c8fdf3f423d9e906976",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs": "99d5594019dd9f1e13162b56f48f9e8657a90e1dd2e200c53aa80374fa91cf47",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded",
+    "implementation/warlock/haskell/native-authority/test-child/ChildDirectoryControls.hs": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02",
+    "implementation/warlock/haskell/native-authority/test-guard/Main.hs": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
+    "implementation/warlock/haskell/native-authority/test-lifetime-independent/LifetimeOwnerControls.hs": "405b6539a99dfbf8d09502d8e60089c6dc06358c73c27ac2f362968c7f2c6893",
+    "implementation/warlock/haskell/native-authority/test-lifetime/LifetimeOwnerControls.hs": "35cf69840a1da11cde9ad962f065022e31fe81b9b991bf146fd66b9196b33e82",
+    "implementation/warlock/haskell/native-authority/test-pair-independent/Main.hs": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d",
+    "implementation/warlock/haskell/native-authority/test-pair-independent/ShapeMain.hs": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe",
+    "implementation/warlock/haskell/native-authority/test-pair-sequences/Main.hs": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f",
+    "implementation/warlock/haskell/native-authority/test-pair/Main.hs": "776bf66ca42e39370fd6c989fc00f689b3dfb12c90e219c2b529eb3402d1ee02",
+    "implementation/warlock/haskell/native-authority/test-selection/Main.hs": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be",
+    "implementation/warlock/haskell/native-authority/test-slot/SlotStoreControls.hs": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
+    "implementation/warlock/haskell/native-authority/test-storage/ForeignOwnerControls.hs": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
+    "implementation/warlock/haskell/native-authority/test-storage/Main.hs": "c06b8ed27e0e6d29ed3c6911bc5214283d22ebb5afe749c9d36187c5367ab268",
+    "implementation/warlock/haskell/native-authority/test-storage/SwapControls.hs": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b",
+    "implementation/warlock/haskell/native-authority/test/Main.hs": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
+    "implementation/warlock/haskell/process-custody/HANDOFF.md": "401861bea381583225e4ffc4f4c541ccc72fa6e8a525a9a6139a01d70995f06e",
+    "implementation/warlock/haskell/process-custody/README.md": "cdca392be058d884733e7e9d3f9241b47991247d6b7c7fb94c24895b541553da",
+    "implementation/warlock/haskell/process-custody/RETROFIT.md": "4ff2abe3e7626ef0d572e666a297bfa97f992a678d46ed411829ab3909482360",
+    "implementation/warlock/haskell/process-custody/SHA256SUMS": "aa08200922b446d3c2fad67719b0f00343c9f5ae0444838040091290cd027cf9",
+    "implementation/warlock/haskell/process-custody/SOURCE-MAP.md": "d16d0445e3d2f1f71e3f58c0cfa8c72f78b15365a1b74b04054dbfcb032aa290",
+    "implementation/warlock/haskell/process-custody/fixture-bootstrap/FacadeChild.hs": "75b3101897b3c15b71df9b32931f9e4a6aa7122d9edc2aa10790c16065b567f2",
+    "implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs": "b860aa9af6d6749e7898cacc60b10889558dadb68ee5e68dcbda1912d85caf22",
+    "implementation/warlock/haskell/process-custody/fixture-selected/Main.hs": "ddb77f498858d132315f2768854e7e74a78fbf18b7f081cf49191a1e7d3806de",
+    "implementation/warlock/haskell/process-custody/fixture/Main.hs": "3a6c1baefca82d447ff03566b254758a4f86c1386589e99e2255717d7a707610",
+    "implementation/warlock/haskell/process-custody/process-custody.cabal": "45c21dc95a43da4e9e43697e10cb31e87f840b9d89ddbdfc55e8935688284692",
+    "implementation/warlock/haskell/process-custody/qualification.json": "8dc5086cd83edd072deab11651a3e5a5f34f5d7c4f2f32dae7b14e65cf187716",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process.hs": "39a0805202bd0843affe2c32bfc0c8f9f79197231a94f1f2e6c40905dcf96fef",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": "b98d37b2bda016c82fc764114502ef19d28826c2c4086a3744eb0e7fd4c09319",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": "30b1c58267106e7e16fd2184598ea8624a4c58950f0854e6a690a6ef94e9b722",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs": "d1162d1206d0d0107a3f771c58cfc28af46b1d1b4a042634d767253cec64a5e2",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs": "c8496170eabfe8f5e3383c3cb0860630499b19052c0b5179a1a4fc7f8f7d9d8f",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs": "3f42fb3b628a0c3f93f138373f26bef28fad9d304415c37563c414a01ff4a2c7",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc": "f0e131a62284e307aa44ce58d10e84dd4c083725346ace636fa32520cc22be7a",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs": "e6ac6bf23bc5568b6a88623d23bdf9fed2a4162d2cd4966e73db31c3342f8d66",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": "de3cfc758f9ee41e3d66c917853e5e7fe9c4476acff2db4a3f36cf366a83edb6",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc": "62775261c983b9b2f8f256734c731fee492f1f4a327ceab845370bd6e82da416",
+    "implementation/warlock/haskell/process-custody/test/DeadlineStop.hs": "c11352b4e48dd7eaf3602aaea2bac4c7d1cd7b944096e03ab2c19cd328bb8dbc",
+    "implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs": "7342c6c4c38082373095e79d66c4f9dd18223173894c21aa081246cc5feed2ab",
+    "implementation/warlock/haskell/process-custody/test/FacadeControl.hs": "22cb673a3559c5dcf220e0e2d4c294ce11323e3fa85fa9ab87ed97ba89b5a52e",
+    "implementation/warlock/haskell/process-custody/test/Internal.hs": "bc7d6362bf78adf4e5badf3e2e6285ec2496d7770b1e76c5f895f84edb621aeb",
+    "implementation/warlock/haskell/process-custody/test/PersistentControls.hs": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f",
+    "implementation/warlock/haskell/process-custody/test/Public.hs": "9ab22e6705dab47416b55126104fa160fda4fec6bbec4d3635d5d254adc34600",
+    "implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808",
+    "implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs": "d631fe70075d0c8cdbd8190509d4447b68c970bac5144aeba60690480198ce1a",
+    "implementation/warlock/haskell/process-custody/test/SelectedFD.hs": "c3748e48f8e520e7a2eba6b27611b445013d8c33d0d617bd7e861fbdf2f854a8",
+    "implementation/warlock/haskell/process-custody/test/VerifiedFixture.hs": "0c0212820247927fd52c1cf770b8bd3c6c4de625cff9a2c999951a2297ad308a",
+    "implementation/warlock/haskell/process-custody/test/negative/CoreCapability.hs": "9bd073b4e08cbb179fadd0eace46cfda3ab866d9b5c0201f12c4ae86e1a91110",
+    "implementation/warlock/haskell/process-custody/test/negative/RawIssuer.hs": "1ad937597d06dbefb9ec9a5edec70f6a080684d47da6a2ddc590e3faadd5305f",
+    "implementation/warlock/haskell/process-custody/test/negative/SelectedSpawnConstructor.hs": "4c28b3897417504b9c09ed29922f798947c208237cc5a61883d334c5ab1e7314",
+    "implementation/warlock/haskell/protocol/README.md": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad",
+    "implementation/warlock/haskell/protocol/TRANSPORT.md": "47985c788f31031987aa4c9082829b20426eab83045aa74a0f17ccd989a6f98b",
+    "implementation/warlock/haskell/protocol/formal/ACQUISITION.md": "af661eb1131c7d0b5fbf815b976ad4899a19a27061bc5b8113b63cefa48d6c32",
+    "implementation/warlock/haskell/protocol/formal/README.md": "c496560993a076d6766ae37a4279e6012b9401f9a74172e1f6b77ab8e11d345b",
+    "implementation/warlock/haskell/protocol/formal/acquisition.qnt": "5e8ed18ddd56ee172f927cdde7e41fc60bb57448a9b7fb315bc8067b7151c592",
+    "implementation/warlock/haskell/protocol/formal/acquisition_test.qnt": "e0caed809f42b63b7fd07d311fe692be533a5bad9d49dcd3a5b0efb7c331cec2",
+    "implementation/warlock/haskell/protocol/formal/handler_gate.qnt": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f",
+    "implementation/warlock/haskell/protocol/formal/handler_gate_test.qnt": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "2fa2927f2cb50a586b3317a526b42d4b9ec84c8f7914cca809f6a47e8a0b1120",
+    "implementation/warlock/haskell/protocol/qualification.json": "988dd7e0c6597dd22e6d43f808eb132ff377bd52ce249814b4a5ce4c334f82d4",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary.hs": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialGuard.hs": "f6f9ace572c62a0aba9412c457d172a4a1fd7bb24f357e13ed3e30d7158239a7",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "85d91c8decf35f042c72783138df9faaad432607159d163e298a6ada0990db20",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Custody.hs": "87a8d62a378359bf52589c426ac67f0376195493a2cf9e84d02c1253bac40e01",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "b7752b288a3c7c34503fcb242b632175da85c95a0a1f7017c4e25ed189307ad2",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs": "dab80f08576f4c8897366ff55d0f724dde34132006d5be50811525a8853ef32a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Identity.hs": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PreviewControl.hs": "9afb1006cd00c8f3dd54a3b684313e3cf6435da1bea89637075327aafcc73a79",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Server.hs": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Wire.hs": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/WorkspaceNavigation.hs": "63baa4a3084f278073a218929e1a82282cc1cfa32d1cd21b2c136aa4159c3f33",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": "30cd41b3dad28cc980e48cdcb9b77e7c511cae4c3881440dd7bc0360bfb7d16c",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/SocketFlags.hsc": "dc12bd6112f1bc146123303f5b799d5e6186b03eab5277ac164b13e08b97b482",
+    "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "2b6b5eb8b292a8c84958a571070fbaeee5b65536746953f0b5edc1c344a669dc",
+    "implementation/warlock/haskell/protocol/test-preview-control/Main.hs": "185acf36f9e8688b70bb94a87b449f4cdf356d24dbfc797ae1112c32bbdb344d",
+    "implementation/warlock/haskell/protocol/test-workspace-navigation/Main.hs": "e43a06259a5ec39a12e64cd3e87886c5333c61f011b02d39e5e678a294c90c56",
+    "implementation/warlock/haskell/protocol/test-workspace-navigation/WorkspaceStandaloneLiterals.hs": "f407ff12ddd2df22ca00bb4a25c5e8ec825d5fd5b60ffa3dc2b6d14e24b8cf69",
+    "implementation/warlock/haskell/protocol/test/GuardControls.hs": "6698548053e57a128f3341017b35a222e10fcd27aa302751ebb1c6ec43ff0eb4",
+    "implementation/warlock/haskell/protocol/test/Main.hs": "4e19a493ce14da32d1b67dd152ee3c8feba1f65dea50be0df5d153be477f663c",
+    "implementation/warlock/haskell/protocol/test/OwnerControls.hs": "7757bf34257e90bf56d3c5baea54f24c28beea8a2da9820e5b04aee40d41cb3c",
+    "implementation/warlock/haskell/protocol/test/OwnerSequenceProperties.hs": "eda99bb99ef18eb59d2403071b8fdbbd2855c927d3adc9223335e9d6044558b8",
+    "implementation/warlock/haskell/protocol/test/PeerCredentialsCases.hsc": "4b132ee6e37a6cf0197ff1f934b2c68b9821f93ee7023a6c36ffceef65be45a1",
+    "implementation/warlock/haskell/protocol/test/QuarantineControls.hs": "a37aefb1d8fd54be04b95f76f2d4b84ddbbe652684cb30d1246f4a82d00a2c49",
+    "implementation/warlock/haskell/protocol/test/fixtures/history-valid-positional-key.bin": "4ab5dcab96c18db6a50b667b6d98fe773ae3ac479c594471a00acf6ed7f844fa",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-context-lifetime.bin": "5a7f6ebaef0f441407a3288b47f86e7b667ee4b543e7e3c9b6963d93770b3606",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-duplicate-key.bin": "534a4bfbbc280c837dda31c926a21821259158859ac9aa48a256e2255d51698d",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-extra-field.bin": "031fa55a5c29a3d90edbea97e40cde527d54d2514d3b0868888777da8ffbf420",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-kind-unknown.bin": "1b010a8971b514dae3cee63cb0e8df4eab82e100730ec354b723d62c1237fe84",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-version-boolean.bin": "19e7004d4f7fede867da179fc74a5140407513efe50657bb9c534fe8cf9e0297",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-version-unknown.bin": "4b15479df542ecefcaefb0bf171bd88510c3b785f1ba8d0201c5e178a280809b",
+    "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-request-live.bin": "4b4ac27237d62ded83b0439dd949c8d7eec80b92b9540da5c82bd614be426103",
+    "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-result-absent.bin": "7e5dbf851ce53812d7613cfa17b5ae6275c5d901a72acb989a19592bb2c41931",
+    "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-wrong-key.bin": "8054dd3a23c0c0b6cabec06e82de9ed6eabc54882a3fef0db27b716eee2a4e90",
+    "implementation/warlock/haskell/protocol/test/fixtures/valid-hello.bin": "cd15d1f8e15be5aaf86fefef213ba4c7ff167ae5527bd8a7195213c8f3198798",
+    "implementation/warlock/haskell/protocol/test/fixtures/valid-negotiate.bin": "80fd224e5d644eefddc92598527d3b4e0c5cd372a5d7d9327db250054b62e34e",
+    "implementation/warlock/haskell/protocol/test/fixtures/valid-prepare.bin": "0d3341e70d17fbe5967dc898efcc978ff05b9029e80d60aee971ca9cfb8f2ed1",
+    "implementation/warlock/haskell/protocol/transport-qualification.json": "47afea44d3dc724866010a7be1c975a195673f269907b343f2334c4b63fef036",
+    "implementation/warlock/haskell/runtime/README.md": "806a9a4f3e41afc100c15c24ea6ae5bfe06a8d88dfdf9bbe71ed7be79b22a215",
+    "implementation/warlock/haskell/runtime/app-notification-provision/Main.hs": "bb490273b89684339ec590673cf08a07c67c2a7a3086e1abc300ca619858405e",
+    "implementation/warlock/haskell/runtime/app/Main.hs": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+    "implementation/warlock/haskell/runtime/fixture-application-argv/Main.hs": "d44def2256ddc027e90c0f4d6d2f11796b5672d431942b2afbd453b62b90c5bf",
+    "implementation/warlock/haskell/runtime/fixture-application-owner-peer/Main.hs": "bc32dc9b97d99c64001dbcbc8410070ff4ac236978c5b89e11147f228962e767",
+    "implementation/warlock/haskell/runtime/fixture-peer/Main.hs": "00fcd03b1babc7e9c45a954871a03f0aea15b48ced03ac496906aac8ae6cef3d",
+    "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "f63550d4b9538b13afbd8a875554b56b7e3a5ece95ee1a7e76a7c3a17b795425",
+    "implementation/warlock/haskell/runtime/fixture-ux003-native-observer/Main.hs": "e563f85093bcd7261dc99aea247f1bb085ccc64a997715619b627af8ceeb7f6b",
+    "implementation/warlock/haskell/runtime/formal/README.md": "9eb7d65f0e922ff3fced324bbb054936fe8fd720817a7faa77be5c127484bc56",
+    "implementation/warlock/haskell/runtime/formal/current_registration.qnt": "f3f4cbd87ea61db42d94250361a834a037e7d4b8638f51d410859435c6186c84",
+    "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt": "157288b0e7f37e6696b6f898ea52882ae3b9f237b1065814a5b000217f363e78",
+    "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime.qnt": "cda6a2b40aeb37341266bc4be64ed76e3157a77e334e0e70cf1de9c3296260f5",
+    "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime_test.qnt": "c43aec201bf10ae1c77739de90e9cae4f0ac39df6fbb3ce27052de2a35de6d29",
+    "implementation/warlock/haskell/runtime/formal/qualification.json": "94deb979ba0e4e20b0a211ba5f0822154d441a73759cd6e99372b508a05af9d8",
+    "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime.qnt": "4d9dc045213c038d12f68c46941fd72b6357222536122e7a693f910edfc9be8d",
+    "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime_test.qnt": "2ad115151339fd2270e8282adc62f97a6eef89aa732734b4654b84d5bbd882e3",
+    "implementation/warlock/haskell/runtime/formal/ui-engine-rpc.qnt": "19d0ffa4ede4cb26aeb7ca6c0e2bc8bb278e62c130e24b41bbb36bd3c7a8ef1c",
+    "implementation/warlock/haskell/runtime/formal/ui-engine-rpc_test.qnt": "bed49b4d7b1dfdb0de8cd83eeaf773ad7da370f9457f9034a2414d660091cae9",
+    "implementation/warlock/haskell/runtime/formal/ui-engine-topology.qnt": "2d8dee2443cc0416f7c74ce15c85ce3e67702a62633579ce6bdc8a94e3915fa6",
+    "implementation/warlock/haskell/runtime/formal/ui-engine-topology_test.qnt": "b144821aad2314c5102657afebcef0185567a8e42e75ba5f7851220eb380d55c",
+    "implementation/warlock/haskell/runtime/formal/ui-frontend-delivery.qnt": "90698235d64f2a18ac80061e736a2c8491a5d2322f18398e4e378d22d708658e",
+    "implementation/warlock/haskell/runtime/formal/ui-frontend-delivery_test.qnt": "cd31602f2219f4d5f31f89463922de65572fda83c90f6753fe98f400d23c4b98",
+    "implementation/warlock/haskell/runtime/formal/ui-http-admission.qnt": "fc30a884c6858cb52bd4574fd52caf28f9cb79fdc467c62bc760eb5053c791df",
+    "implementation/warlock/haskell/runtime/formal/ui-http-admission_test.qnt": "25ba6a42ee4e4dea0978c2ce991c0cbea41703296b7b180d60b9bea748689549",
+    "implementation/warlock/haskell/runtime/formal/ui-origin.qnt": "85a9b419371f5d527409afffe90ce10ebffd042df749bf0dc177c286bca19f11",
+    "implementation/warlock/haskell/runtime/formal/ui-origin_test.qnt": "4d1451995bf95dd3155860c2d49011e790d185b24d44b6fd728897a57d53e057",
+    "implementation/warlock/haskell/runtime/formal/ui-private-network.qnt": "ce2e9444cd429f600030f5a8193c9d643838c128f1614816ba2dfe922e019955",
+    "implementation/warlock/haskell/runtime/formal/ui-private-network_test.qnt": "fdd7d248ea6ad03176aeb4d197e33ad2d5a5aea0e1297840d451d9efa56f6ce3",
+    "implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap.qnt": "0ab50a535e453613c1ae32b64e7f0958f4b79549c8a658db2d1a257548f36eab",
+    "implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt": "358ad7edbc190951e76bc097d5e611f060cccb5bb195841952133adf316323e3",
+    "implementation/warlock/haskell/runtime/qualification.json": "ccb70a02d87f851cce36f05f53a300f8146ca48ac3835a9174a1dc244fbe2b54",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "ace459e3085728e2da478254323b8a622c8d4f1acfe6b713983fb3bd5299f146",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "d91f1f60f25537a87172791de09d390fb296414bd4063a10fdf2b4033d4eedc3",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/ApplicationExecutable.hs": "a6a497bf36b00b26357a69743ed748f4b9de7f48df089d88d3a57d17e51b4e59",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/ApplicationPlanConfig.hs": "862187637d4efa8844939dce32e1fd9ec87cdab470a72d542f841ccdc95fc076",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "a9b328f7fbb0f5014354ad5a2aaada86aee5f9e9dcdd0b7ded8293af69c67adf",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/NotificationIssuer.hs": "d50ae90b7134cc1cd3d85c308fae14ff59f12dc6694be3b887e806c924242e0e",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "4a432f698c779e7d054805513f2f030b37636e9d1e29e5598e8e5c4c1987ffbe",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "694e878829fcbb35fee6e42293db5f1486da214ce512bb1345cdef09927290fa",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": "c429d59b33f2996e7e929effe717e62751c282a615c688f4d651ba6fcaf1da79",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": "4daff7fa10f919c725cb45429c1d4a6c10b404525a825e69f61c82493a4f4c7a",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Config.hs": "e737412f400ae5a9d53625152a23bbc8883bb6558d85770dd8e14bcb4bb8f969",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs": "976f459aeda27a4a6320d9207c300532d904c6a44567816d818ade00d186519c",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs": "dda839d4a8bb6d618b1ac6132bf84097d8d858e18d7bee2877b27e4a21388ca5",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs": "4818a8094e42b61521995583544f5eb02b1a162c674d57918c2e4ff26ab5f515",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs": "e4c842070ec57eea368f50519081668433a92874c93d0a13983f154c3a4b0182",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs": "92a02a80ca91949aa705979e75dbc6a36d44b8ff7310aefe0a97a66975d5ae66",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs": "1684af2c7eeee727fc3007e6dcda90da52ad48fe9926a22a9ed489bf6050b1e0",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs": "a3467864d1f675d7943c6799d5b192f7a36f5494792fb6e2cb9f1671d6053665",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs": "0bf6d868d72e312adb6a56d10920321308315622139f0091a060ba585136ff05",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc": "2205761421203a631a1dc861c55501c8356e5630e96de3206dc00f986531fd2b",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs": "3a8504a5dd8fb4dac2b7c721da5e141cf571dae18f5c814dfd11bb5ebb8f3e2f",
+    "implementation/warlock/haskell/runtime/test-application-owner-route/Main.hs": "55588e0366247dd44ec3ac886bf4207189a84203e06ae984a79de2ff346a9e90",
+    "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd",
+    "implementation/warlock/haskell/runtime/test-catalog-publication/Main.hs": "1d31248918b047422448cbf0a1c97070680b9ba92fa1079cf099a61db6a68885",
+    "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67",
+    "implementation/warlock/haskell/runtime/test-default-context-owner/Main.hs": "a03e015ee86c7f581e86fc103ecf0853bd8241add9fbae98d04c9ada4184e197",
+    "implementation/warlock/haskell/runtime/test-filter-backing-root/Main.hs": "1be7797f62e9db90b0056c1531ca61155080d6deadd10a345936a10b9dd8ddbd",
+    "implementation/warlock/haskell/runtime/test-notification-config/Main.hs": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+    "implementation/warlock/haskell/runtime/test-notification-issuer/Main.hs": "2a1b3ba1593bed25a68744e9408d209c613230e3d94ae4171abfe08882ffa711",
+    "implementation/warlock/haskell/runtime/test-owned-signal/Main.hs": "7269e40e32790f296a7d31d443b4881004fd1ace0c219b67530f335606a9f607",
+    "implementation/warlock/haskell/runtime/test-persistent/Main.hs": "9768921ea4b0990fe5dd31165c93a9d4d1dc892b47e4e238c0c9f6cc746020b0",
+    "implementation/warlock/haskell/runtime/test-ui-display/Main.hs": "13d731fb8a74cdbaeab8d7dcad2ff77350ee2b50c2f79c6e844cfffeef93f4ec",
+    "implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs": "dd27d93061fa60490b3f4c1f6f28f639e652cec4aafc8614be3db91968532c0e",
+    "implementation/warlock/haskell/runtime/test-ui-engine-exec/Main.hs": "7a5c90aec72f862a06afee78fe9d16399c2f561efe555e05f7ef7f6ddc3998b0",
+    "implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs": "b5741ca909729a17c529c24e41e47359e7b2dc02b6cbd5b506fb4fb48c1ef74a",
+    "implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs": "92960afdbea5addbec913e5a42150a6a9b269eab897828e54ac2660afdc877f8",
+    "implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs": "3e294c7a095bf5b67c5396b3f2377affb02882d7136a814d95838552dbb07759",
+    "implementation/warlock/haskell/runtime/test-ui-engine/Main.hs": "4773df5cf63c135a317738ff322bd0087de8d66674dae750e971968f63edd455",
+    "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": "e2411ba16012e8a4c7ca657199b92427e23e73ccadc5792bcb50c4eb6c4742bd",
+    "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs": "0ec52ba66edf9decf5ee45f808eee496be20302529402d17d09a8fe13c7bc0b0",
+    "implementation/warlock/haskell/runtime/test-ui-private-network/Main.hs": "9e7c5a86b2d7cdc8c3c506197ff0e7c60e03d83563068dc0a1ad0396fa33acfd",
+    "implementation/warlock/haskell/runtime/test-ui-security/Main.hs": "c373717c77ae9dab682b57c112ef5ed1d934a8e2def63fb207d9bd6d0b1ff954",
+    "implementation/warlock/haskell/runtime/test-ui-security/Parent.hs": "578448d677c41473d1c2f1095cc97d7ad791b4d0278c75dcace0a5e0d317d949",
+    "implementation/warlock/haskell/runtime/test-ui-security/Permissive.hs": "14c6006ae86679245c2e71264f0c48f0e9b13fba50ee5f3293b38cd2f9e65718",
+    "implementation/warlock/haskell/runtime/test-ui-security/fixtures/probes.js": "3f2abf6f2ca0a7aee85ba0ada522933454307f4d6ac9ce6b192166d1b8d8cce8",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "70b552a27c83bfdc50872990d2b2bd774263df2cd4f14072967ef4b05dfde099",
+    "implementation/warlock/haskell/runtime/test-ui/Main.hs": "f522408fc45e2077c41cdf262cc438f4ee9ae7afc000a316da94974ed36d3e61",
+    "implementation/warlock/haskell/runtime/test-webkit-callback-capi/Main.hs": "f74ed64d4ae856c0eb82fece3d61f23a277d14f5fef19a0a93c36a60c91ac2b6",
+    "implementation/warlock/haskell/runtime/test-webkit-callback-capi/callback-invoke.c": "8a5afb03759001f3f8313b89a3a4825e6ff6c99e3c24a80c122c4e6159005b97",
+    "implementation/warlock/haskell/runtime/test-webkit-provider-probe/Controls.hs": "be9885d27bade1400563310dc8e95078aad13d8c5227a4aaee500c576d3f7012",
+    "implementation/warlock/haskell/runtime/test-webkit-provider-probe/Main.hs": "17f47886bcc879a89856bdb773de0736392105a3112aa995199c91b396d63651",
+    "implementation/warlock/haskell/runtime/test-webkit-provider-probe/ProviderProbeContract.hs": "da1387ddd63ca62a3998d817af2c04bfea25e9c5c9343e5e6e917a5a801b6414",
+    "implementation/warlock/haskell/runtime/test-webkit-provider-probe/ProviderProbeHeaders.hsc": "bdb92d1317a30ddc62677938d232181e27a6de1f4f5b3461b5a84a0cd343ca9a",
+    "implementation/warlock/haskell/runtime/test/CurrentSessionsControls.hs": "31d4038dc700006bbb7521c4a7ceb9a3a176aef742546cad2c018bcaada31587",
+    "implementation/warlock/haskell/runtime/test/Main.hs": "98ad395210d26fe7c244c5d75056563f4d23fc707e14675d2f0df0b0e741fab1",
+    "implementation/warlock/haskell/runtime/test/OwnedControls.hs": "6e54634fa6fab03e9b830faa9d13fd7943842cd49d6b6404494d7cb260b2cf9d",
+    "implementation/warlock/haskell/runtime/test/PublicationControls.hs": "504273c7d9c7605ad79a725c22ca58158ccb67b16b3b4a7ae75b77cc39220779",
+    "implementation/warlock/haskell/runtime/test/ScopedPeerControls.hs": "07f39cc70a82eca00ff85970635175f9df39bbf2936506156ad406053b3ab52d",
+    "implementation/warlock/haskell/runtime/test/SocketHandoffControls.hs": "91ae3d484ef7ef91dc0c85822c1947b652243f3e80d8e61d8ff3ea9d1c4a4007",
+    "implementation/warlock/haskell/runtime/ui/Main.hs": "1efe1ec3625abbaabe0ba237166b2990bd2f82b034a01abd033ae8cbb9bbf497",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/CallbackRetirement.hs": "76dace5cb34d05a4e13f587615a824f73ac29297074897f065fc935ce73d25f4",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/DefaultContextOwner.hs": "7dbe4fb93a6c7bc98078c75819e43b046e1ef53c63b0946a23b3b6ef30413743",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": "5e7175ba4d90cfe622b0b382c37440bbe51496dc3b550c59fde20f840a833f8f",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs": "50b13ce201401779d135957052c5479b495148fbc482e3a34da5f121ba1d36e8",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/FilterBackingRoot.hsc": "bbc92b60813532408c686f20e694f544d5c801a8ba75e5a3dd6821826d7f1ca4",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "f02fd8bcd02bce9346eea67995199d8b192755b5fa76fb125570306c2bda8847",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/ProcessSignalOwner.hs": "01378b006b4de137fd1bd14ec172585e5559139af653280de6c145ddbde30170",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc": "8a016b2cfa837b1874019f376d7e4d1c333f3064ea48e62787565e4a616f40e8",
+    "implementation/warlock/qa/ApplicationAvailabilityReplay.elm": "311ffd0dc7b160fdf4788a6513c732ca7e8da7929a57fc5e267e143041000c0f",
+    "implementation/warlock/qa/application-availability.cjs": "0507e40ff47b7001e9450b1e1af438dc5eb7c913da59ee0bfb4c893398cd6fb8",
+    "implementation/warlock/qa/native-runtime-helpers/LICENSE.wlr-virtual-pointer.txt": "de371ae38be7b1e9e4d339d13f85dfc448f279cbe3a75640e91bedd5bf7a9557",
+    "implementation/warlock/qa/native-runtime-helpers/virtual-pointer-protocol-provenance.json": "3d8a27c0cb4075a0288fb8f6ad5a51d61c957ecf7d9947f1f8591b9c2c1f2316",
+    "implementation/warlock/qa/native-runtime-helpers/virtual_pointer.c": "6486e89894eaabae30ef50dab4b591a4e98ad6656c10a15bb8ab8e8a8fcf5d95",
+    "implementation/warlock/qa/native-runtime-helpers/wlr-virtual-pointer-unstable-v1.xml": "3ff6d540be0bc5228195bf072bde42117ea17945a5c2061add5d3cf97d6bb524",
+    "implementation/warlock/qa/omarchy_trial/test_application_staging.py": "94e36a27704d827ca9b0002b0fa4eacdc2f235f6b35daaddfc7b64fd880ab0d3",
+    "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+    "implementation/warlock/src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+    "implementation/warlock/src/Announcement.elm": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
+    "implementation/warlock/src/AnnouncementMessage.elm": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075",
+    "implementation/warlock/src/Bar.elm": "3c63a9b07829ffc113b37a74ae957bfbb2b0efd50e4da0feed0e8205c3d6e5c0",
+    "implementation/warlock/src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+    "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "implementation/warlock/src/CapturedAction.elm": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+    "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+    "implementation/warlock/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "implementation/warlock/src/Desktop.elm": "6a47c4e0abaaf371d61f36c36172279f760fdb477877543f67af6e897e712abb",
+    "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+    "implementation/warlock/src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "implementation/warlock/src/Effects.elm": "831ee16e2e49791d0604ccbf2297e242f81d0c7da5c944c2622dca5413da5661",
+    "implementation/warlock/src/Files.elm": "920722cf7c7ba4de35f165aa1891eb4749584529b8525f3423d121e7a412cb3a",
+    "implementation/warlock/src/GeometryProjection.elm": "71aa90a4d9cff4eb797b8a7ca16c5604b94684576243ed8bb961b6cb731ce841",
+    "implementation/warlock/src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+    "implementation/warlock/src/HttpBar.elm": "135d13fce502e0b2e2d4b14f6e4a452a3f1a51db2f332fbd6c9b9d16e78ebab6",
+    "implementation/warlock/src/HttpMain.elm": "c0dcd27b03b737b83be70d439944ea9741128e18dd9405b55595c559e8bef3cf",
+    "implementation/warlock/src/HttpPopup.elm": "e7a8b1d479d3b8d728bf97b5bab8a2cfee7b2a1010902d984690215574ee84e2",
+    "implementation/warlock/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "implementation/warlock/src/JumpList.elm": "62577ce4d85acde5a3f3e894236e0e72dfa29d19bdc2f97cad6b910dc9dc533c",
+    "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+    "implementation/warlock/src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "implementation/warlock/src/Main.elm": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+    "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+    "implementation/warlock/src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "implementation/warlock/src/Motion.elm": "e1e97519c6f95ed1283929a99d0fde4b76a76bfea3c1bc1429bf3eebb922b312",
+    "implementation/warlock/src/MotionPreferences.elm": "efb600fb7601644b7c68041bfb9eefeb14a2fc5247f56b06ef08a865ffac8cf0",
+    "implementation/warlock/src/NativeActorRetirement.elm": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6",
+    "implementation/warlock/src/NativeFamilyPreviewSource.elm": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321",
+    "implementation/warlock/src/NativeFamilyPreviewSourceReplay.elm": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99",
+    "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+    "implementation/warlock/src/NativePreviewAdmission.elm": "efb8f22d984e0f507a0c70b3e6d6a98c1393b82f9eb1d390b92a30d4488e0717",
+    "implementation/warlock/src/NativePreviewDetachment.elm": "39fe1ece48568a5a264d7b018df41322bab97f73cbe0f55a92559ecccb25a47a",
+    "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+    "implementation/warlock/src/NativePreviewProposalIngress.elm": "de3ff03abfee182586007234be87a663d60d29331667afed5cb407755bc27882",
+    "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+    "implementation/warlock/src/NativePreviewRealmReplay.elm": "7d68ebb6703608184c20fa17f261d553119bf1ccf637274b41d1c1ebfb22e621",
+    "implementation/warlock/src/NativePreviewReceiver.elm": "455f20e5dd675ee082d17e1dae00985f006f3273ab83c33cf33aed3202b9c4ba",
+    "implementation/warlock/src/NativePreviewReceiverReplay.elm": "27ec8515727b39be545b1d19f83bf4d25c42848ae9654c2f00e563f25b43f2b9",
+    "implementation/warlock/src/NativePreviewRenderer.elm": "299ae5f7f5edc0953a8b37fea7b3afd4ce8acfc2dc0087fbdeefcbf6b4fb9c2e",
+    "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+    "implementation/warlock/src/NativePreviewSourceReplay.elm": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8",
+    "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+    "implementation/warlock/src/NativePreviewVisualReplay.elm": "d15bc279a0cbb0af0aa0fa0f85f72f4c3608ffee73a4d68567477d1769c341c6",
+    "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "implementation/warlock/src/Notifications.elm": "e61311c370fc0367844deb21a9ba3274a64f41faabe19bec6743af71685e2201",
+    "implementation/warlock/src/OutcomeAnnouncements.elm": "e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb",
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/OutputReplay.elm": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+    "implementation/warlock/src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "implementation/warlock/src/OverviewRecovery.elm": "df247594319b088baa321ac9b5d4b5f2daeec5780298178ca0724f7ec17d8e0e",
+    "implementation/warlock/src/Pins.elm": "c44da7aa32a193fc998d4efc39af25067998adc37d67da6d0c5b834f073635a4",
+    "implementation/warlock/src/PointerOwnership.elm": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3",
+    "implementation/warlock/src/Popup.elm": "c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb",
+    "implementation/warlock/src/Presentation.elm": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+    "implementation/warlock/src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "implementation/warlock/src/PreviewCatalogReplay.elm": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129",
+    "implementation/warlock/src/PreviewFeedbackReplay.elm": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34",
+    "implementation/warlock/src/PreviewIdentity.elm": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+    "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+    "implementation/warlock/src/PreviewMetadataReplay.elm": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f",
+    "implementation/warlock/src/PreviewPaintGate.elm": "fa2194375853ba16d5c783d04d110b052c43dccc89faf9fb6c4dce7aef709d4f",
+    "implementation/warlock/src/PreviewPresenter.elm": "1bfd96b8cbe70832eadca24a4e6aa6741b81c41f6faa9b9c8bde1cfac0a6c5dc",
+    "implementation/warlock/src/PreviewPresenterReplay.elm": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+    "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+    "implementation/warlock/src/Protocol/Authority.elm": "bbf82ae6a176ed3be480df9c03af1c5f9f627357e8e9f4b24d030c08c97dad8b",
+    "implementation/warlock/src/Protocol/Session.elm": "8b765d5a2b6c0946413f7d7b4c48bac371681ab22c2c533977733a334a30ca4a",
+    "implementation/warlock/src/Protocol/Wire.elm": "b4bea849f17402b7007f4697f544b0dc0fd255bec1c3c38888c318741030d61c",
+    "implementation/warlock/src/Provider.elm": "bbc20c16113df0df6ac28986eddb805348a5c72942bdfbde915deadfb921288f",
+    "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+    "implementation/warlock/src/ReconciliationFrame.elm": "5f9480ab13609f26a3f57f37431e9eb29c658b1c009b463321e0f277d37b8ac5",
+    "implementation/warlock/src/ReconciliationTracking.elm": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+    "implementation/warlock/src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "implementation/warlock/src/RetainedLegacyPresenterReplay.elm": "f5f7bc30d5efda6629a1de4b11e13ebf25d9be80bbd8573dff9d7d0916375845",
+    "implementation/warlock/src/RetainedPreviewPresenter.elm": "7d3206e62e547af98171018a3bb65acdde0701393f35ea652bfffd1d5890810b",
+    "implementation/warlock/src/RetainedPreviewPresenterReplay.elm": "1405187825a060cb5003b66b7bf235802323fe6db2d32af6ddb04d1708577175",
+    "implementation/warlock/src/ScopedPreviewPresenterReplay.elm": "203f2b74ce723fc3c39208ff91dffde947fbdbaaf7cf1d233b606ac427ba7a05",
+    "implementation/warlock/src/SearchFold.elm": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241",
+    "implementation/warlock/src/Settings.elm": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c",
+    "implementation/warlock/src/SharedRecoveryReplay.elm": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+    "implementation/warlock/src/Shell.elm": "e94d200d2c4fbf1badce1e21f7be9595c79b7e4d8f77ef07f7253427fd30dec5",
+    "implementation/warlock/src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+    "implementation/warlock/src/ShortcutPreferences.elm": "71155bf3a1a416e05350a7473bceecdd5dcbaf581726ececd1b4882a616b07c5",
+    "implementation/warlock/src/Shortcuts.elm": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7",
+    "implementation/warlock/src/Snap.elm": "545bcccff558348f93f64bee6ebce12352ea1adc223b4f89e11570799542e7ed",
+    "implementation/warlock/src/StatusScroll.elm": "9348a397d03cd7671faad4407fa0951f8765f4c72ccf98913db3ed35857ba034",
+    "implementation/warlock/src/Surface.elm": "268833fc35260a16dde4e8bc5db932464a03cf7e6fb42486a7eb978ea7bbc8b5",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/SurfaceRenderer.elm": "d5439ebf36c3624fd56a316a012177dcc20c47e883437d469e70c08ab3b1825c",
+    "implementation/warlock/src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+    "implementation/warlock/src/SurfaceSnapshot.elm": "9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a",
+    "implementation/warlock/src/SurfaceTheme.elm": "6111e4a03940be7388b458fd303abc702e89f4b57d68c828ff29eab2a15d118e",
+    "implementation/warlock/src/Switcher.elm": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061",
+    "implementation/warlock/src/SystemMenu.elm": "070e619f3088a1c051581066ce949fb1cd64b75f5df0ebd9efb18ab589c993c5",
+    "implementation/warlock/src/TaskView.elm": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+    "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+    "implementation/warlock/src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/TaskbarShellReplay.elm": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+    "implementation/warlock/src/Transfer.elm": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+    "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "implementation/warlock/src/UiHttp.elm": "c3543e27ad787d3c84894554178121205d19b9868c250d0717989c1207cdc72f",
+    "implementation/warlock/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+    "implementation/warlock/src/WorkspaceInventory.elm": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+    "implementation/warlock/src/WorkspaceNavigation.elm": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+    "plugins/warlock-contributor/scripts/warlock.py": "e217c691d349a28c2c009f2988701a8a739e2f5996a1d250492e217b44f84a21",
+    "tools/arm64-toolchain.json": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+    "tools/arm64_native_stage.py": "d0686ec4859ed1eb97760397ea42ed37d21e11e58b08fb7e3fb968c6f2795aec",
+    "tools/arm64_toolchain.py": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796",
+    "tools/check_arm64_cpu.py": "8ddd47655c9b2dd6aa8c03ac4faeaa29801b584476fa4baaa2028238128cfe8a",
+    "tools/elm-http-dependencies.json": "ac6870371db068344a02e99ab40a45207b393d91d05cfd94e7b0cc54f4bd8f68",
+    "tools/haskell-dependencies.json": "ca6a7fe7f45cfe4baaf074c55b7c1f0faeba4accae4ee1059788f02681d75a5a",
+    "tools/haskell-toolchain.json": "7a2c7706cbf05b3e68abd661c7789cd9ce9d24a5b714091176e6e6b275ac0a76",
+    "tools/haskell_test_wrapper.py": "1b4f9961630a750fd154dd0df6525e02fe4216510c26b8c39d81a64fb207136b",
+    "tools/omarchy_ui_mvp.py": "3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc",
+    "tools/physical_context_build.py": "873fb002c272c9f4affde155e0384375c223432b5b27b7ceb357a44df0159f78",
+    "tools/provider_callback_build.py": "d2b3021866b0f6ce8403358df9fa41dc6a0a59e7d7e597a34262aada6450d7e5",
+    "tools/qa_cpu.py": "02e1739d85a75210b70702ed269d11a84c498755e8fc0b567bfe42492a656804",
+    "tools/run_arm_gl_foundation_renewed_20261107.py": "1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b",
+    "tools/run_arm_gl_foundation_renewed_20261108_0623.py": "769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2",
+    "tools/run_current_arm_ux003_generated_journey.py": "9e95a687d8cf63e656be69571192930167e2579ae7ac281e35261ecfa78ce09f",
+    "tools/run_labwc_gl_foundation_20261107.py": "7d60c7de45e9c948149063aa56bc531c95733aa6044e4a1a6620d136441acfac",
+    "tools/run_labwc_gl_foundation_ipc_20261108.py": "f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69",
+    "tools/run_labwc_gl_foundation_window_rule_20261108.py": "1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad",
+    "tools/run_ux003_display_bootstrap_build.py": "2d249ef27fa8ac2fbf1f5774d2103fea993c61b8b815eb2648c3f8ed0f0fe3d4",
+    "tools/run_ux003_mvp_fixture_retry.py": "0d1568f8ba73f75f8ebb26b3b401acd69d35251836d5a82470aa09e63ec7c60e",
+    "tools/run_ux003_native_journey.py": "32006f0d48e0f50134389dbd4cbf59897fa242dd34bb0e97dd2ba7e526c0d4fc",
+    "tools/run_webkit_provider_probe.py": "49cce4b4e0a427473ced4357367d766d964454d0de08329a5608d919ae3c8a60",
+    "tools/test_current_arm_ux003_generated_journey.py": "d1e254ca1fd3e52d29d83ddda51977e8ce7cb2c9d81a240c268b1f70a6848662",
+    "tools/test_physical_context_build.py": "fd45c2ca1d515fd9fa522cffc1543bce27bce2878762bb5abab60866b59a8ee1",
+    "tools/test_provider_callback_build.py": "4e11c1f3a561bcb291eff0d0d0522b8e0001daf60f5193d60f865df7a6e68c8a",
+    "tools/test_ux003_attempt_authorization.py": "8119b3aabc9757353644caa34652771019d69da1b80324be6ff187b3d6a844b7",
+    "tools/test_ux003_display_bootstrap_build.py": "b135ccc5366f4aa178949f9575bb066392b42b276addea6d20391846848d62a0",
+    "tools/test_ux003_mvp_fixture_retry.py": "9c710fb974cc2ff0a5bccd192589882a597cf8cfcc95fca08c043af011421b4a",
+    "tools/test_ux003_native_journey.py": "9f4199e83c12bfa1061dfe8fec612fe8222cd981518cb4e2bba90ce525641cbf",
+    "tools/ui-host-toolchain.json": "f53770c47929e28b50ddc7c2c0b5cb2315d90003983446be6c325b7dd0708a14",
+    "tools/ux003_attempt_authorization.py": "a76b44fa5ff9f6136fb87702835ad81a651ebd187feffcdf6fd0614af77af2b7",
+    "tools/ux003_cleanup_evidence.py": "9d6cf16d041a47a6a76d3aef0a4e1a50d4f06f4eed4f01355dee004257da9cda",
+    "tools/ux003_input_geometry.py": "0a10632dccea9e73fce89f082586257a126d2597ca545e9d028b5923a33be930",
+    "tools/ux003_input_geometry_720.py": "e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0",
+    "tools/ux003_owned_fonts.py": "b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3",
+    "tools/ux003_pointer_completion.py": "f3e72b4c4fcdc4166f141bb68c77714d4095bd78836723b83c6db1725b4dc1d2",
+    "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+    "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "tools/run_ux003_dom_observation_build.py": "7c9c0808e9b21054db3cc9952f443e76d168a25cbe1671734547cfd4313905eb",
+    "tools/test_ux003_dom_observation_build.py": "6b8d4c10c3d77467070100ccec0f4e3e68e9f7af54160128a2d5fde04c10a9aa",
+    "tools/run_ux003_dom_allocation_build.py": "ec6899809d46250332b03151bcd3e662c95f448a09be30d3812244edb6d6e482",
+    "tools/test_ux003_dom_allocation_build.py": "a149cb7086d90b450f43d5435fe5aaadc808c9255df4971e5a67a87848ef2d09",
+    "tools/ux003_opener_readiness.py": "e269c938dccc67f4de64b11f80ac928d6890ee122a59435e14985fc4b9bab2d5",
+    "tools/run_current_arm_ux023_keyboard_journey.py": "c91068f061f203aed36ef926f901aa4cce8806e8e38e086d8adecaaeb40454c6",
+    "tools/test_ux023_attempt_authorization.py": "3ea0a89b9b4f2da597e7c9b9b76f46298fdfb46ed514bed71cd3369694fd7e23",
+    "tools/test_ux023_keyboard_fixture.py": "b37dcd7960306cf0d348508a67586e07dcb7a4460f372994d4bdc04208a37b18",
+    "tools/ux023_attempt_authorization.py": "986a979d048cb58fb22ca8116248d80d373fe91fff7f3419f7b15aea77661433",
+    "tools/ux023_keyboard_fixture.py": "d564c58afe31b95688ec17520c6e62eb537dfa8b476c371e93fa603ef83aed2f",
+    "tools/ux023-keyboard-helper/keyboard_keepalive.c": "b4b9eaf4584e21688ed4e4a735188a72f1d2c95ef0bbf05f1518468c5670def2",
+    "tools/ux023-keyboard-helper/virtual-keyboard-unstable-v1.xml": "7ad7870003ecd592cae47dc19d277a609b7f18fd7b7be012623cf3225a7294f5",
+    "tools/run_ux023_keyboard_build.py": "f549db9b860a1ad89c2a1c2684fa04c7995c20a5f093aa7ad9807da801b17835",
+    "tools/test_ux023_keyboard_build.py": "78721b116d4bd930e953c18bfd8a7fe0c98a4dd9d1c364ecf5d05c217d8b4b64",
+    "docs/warlock-build-loop/v2/STATE.json": "dcce509ac7bc8f153221358dd1e0bda34cdca493cf7371822aa4645de7d9624c",
+    "implementation/warlock/qa/LocalNotificationsReplay.elm": "4ccc6784a25a5fb7a1db75a2afd59c876f4606967d3ddac4eab7e114346a293e",
+    "implementation/warlock/qa/AdapterAnnouncementReplay.elm": "71baa009e78ab31f74b8d9371eea57410393d0ed68f09307f1ec5333ea9b7b1b",
+    "implementation/warlock/qa/AnnouncementMessageContracts.elm": "0761e96356884698bc2c303ed26c461e8ba229e15f7c73984fc85e3f0e57a07d",
+    "implementation/warlock/qa/AnnouncementReplay.elm": "d55199bb422e26fcd10916ba9d65dfb3677c31963b64ca07c4bfc7680c4ea1d8",
+    "implementation/warlock/qa/Arc004RefusalReplay.elm": "e75589b5e6b3541a847b37916d147d1ed71c3e5c2b594b7e139223f23f543f47",
+    "implementation/warlock/qa/AttentionReplay.elm": "130696992b5e4e663d07ab532fd172da0903f0faec40e8fc1bf2c898f45879eb",
+    "implementation/warlock/qa/AuthorityTupleReplay.elm": "78a95932b297f236e50410d3b5c020bcebc2b2c3deccd663746211d24ecd28ab",
+    "implementation/warlock/qa/CatalogLocaleReplay.elm": "04c1e1d72099705a429853886e5246cc679ef21b472d4661bfd1447ff4e83737",
+    "implementation/warlock/qa/DeadlineBridgeReplay.elm": "e7a0dd41a597a8298bef90c7122ea9a63d9d982ef0ad4dade1bd078a722e5468",
+    "implementation/warlock/qa/FeedbackContextReplay.elm": "c98bb05441461e28c011c0e56e0ef6990abeda7c1dbe2ef1950dba5949e62d4f",
+    "implementation/warlock/qa/FeedbackReplay.elm": "ce41650674511acb1eb71ebe186dae0828d2799db798016a37623a0d543c4615",
+    "implementation/warlock/qa/FilesReplay.elm": "b46d8b9a99b84c4a1cb03c961d15a8e12316071233e56fd1138cff7f547fea90",
+    "implementation/warlock/qa/FullscreenExitReplay.elm": "e0dce514d5b6390cb29268bbe820d5306d7c85d47a3b82382ca57ffda0b77e49",
+    "implementation/warlock/qa/GeometryCapabilitySequences.elm": "2f0fcb6f6891cee7939e5335cbac4300920a0684bec89fae0728265aa9e62a69",
+    "implementation/warlock/qa/ImeReplay.elm": "2d7f8a1943e0c2d53a3148de4b61c3ea28f415d10d0bf54ece6384ce5efd0949",
+    "implementation/warlock/qa/JumpListReplay.elm": "53a27333b19f9820da8624a389ca84aa8988d50f5ef8afa4db2cfb4a19686b0f",
+    "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "3040bd2e8628f47adabdb227d7ac08796d59a3a001f7c8e985c2ca0c5c69565d",
+    "implementation/warlock/qa/LauncherOutcomeReplay.elm": "3eba2340f5c211a31833bad011d52d96d521b474c8e2c2529d27adc482b0b46c",
+    "implementation/warlock/qa/LayerAppearanceReplay.elm": "edecab58528556dbe44da05c325977893059551f79895131ed11d55c7c90e8ab",
+    "implementation/warlock/qa/LiveMotionReplay.elm": "cd27bb03bf426dfb06c17522b2f30decd1a9eb07cc89d594fe5eb8f4e70f4083",
+    "implementation/warlock/qa/LocalFieldReplay.elm": "d70d23bcdb9f460f24cf3b176afc1584f3c96a978f270685dd1943ab88ec78e3",
+    "implementation/warlock/qa/LosslessBridgeReplay.elm": "1394ece458cd0799ea4e03b11b08f2d8e9deff6b6ae3f21b64f1cd816809699d",
+    "implementation/warlock/qa/MotionReadRecoveryReplay.elm": "844da69838e52b4ba1cdcc636f8df7842904a611eb225fc3014f9900c4125335",
+    "implementation/warlock/qa/MotionReplay.elm": "dcdfe2a86232006b5ee17b27d57b37872787d21e343c5d5c18dae8bdcba5efdc",
+    "implementation/warlock/qa/NativePointerFixture.elm": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124",
+    "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+    "implementation/warlock/qa/NotificationAnnouncementReplay.elm": "9ea32f5578f73534d6dd94d92a519f32ddb7f317a1dd753d0e6f7e1e61e581ed",
+    "implementation/warlock/qa/NotificationRelevanceReplay.elm": "de99c29c7d40cd8cf253e54e9e960519745aab39df054465df85502c8d980466",
+    "implementation/warlock/qa/NotificationsReplay.elm": "d962a8d60b34201ae138afbfb0ff0e8ed9cb3a131a8b4cafecb74267dff7408f",
+    "implementation/warlock/qa/OutputRetirementReplay.elm": "fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9",
+    "implementation/warlock/qa/PinMaxReplay.elm": "7012e1031bae8fb246c9ca3de3477f1b64b2caf4b05aa71ada1b76c9bd0aeb75",
+    "implementation/warlock/qa/PinnedMenuReplay.elm": "d6f12ae276c3c11b531c27f142e1d982b1a997fcedf10fd26760c53e874411ae",
+    "implementation/warlock/qa/PinsPendingReplay.elm": "f877fc0061eeb0c8be2b7f32061e6e25294b1fa02924be1d8a0658afdf190999",
+    "implementation/warlock/qa/PinsReplay.elm": "5014fa611be6138bba47b3b3326e769d1a4c63db4bf463f6d85c26d2bce0f85a",
+    "implementation/warlock/qa/PointerOwnershipReplay.elm": "d4deed6ad7d1b2688c12e23fa8cf8984753481e8ae73ed12d00ca5669511405e",
+    "implementation/warlock/qa/PopupEntryReplay.elm": "a0843e1679dfe8c5aa06ab034102aa7c1de1d1a518770d328f5712cae566ae02",
+    "implementation/warlock/qa/PopupReflowReplay.elm": "348e49a8f218396d0edb725ebd5891aa59ef11c71bc83c4119a7140107777d49",
+    "implementation/warlock/qa/PreviewPaintReplay.elm": "488e33a7e09e5937385be99e7525ba45765cf195e54cf2244627a8e2c799ab18",
+    "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+    "implementation/warlock/qa/ProtocolLateCancelProperties.elm": "601c26075eb31d8fffb4f4608f9276bb3a847e346186b42ee3922eab3052cbf2",
+    "implementation/warlock/qa/ReceiptOutputLifecycleReplay.elm": "f84ee49b10aee296e88155cb734be1f07c770ca00a890fb3d1d16d38d3212a3b",
+    "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+    "implementation/warlock/qa/RestoreAnnouncementReplay.elm": "3d7f657c50dcd327073f2d3cee67f6fe9e37d8c6c8e316a9143f44efd6d37690",
+    "implementation/warlock/qa/RetirementProofReplay.elm": "eebc71f1f8c13b1baaa882c74a52cd42d5980edc0277053f7f5c9a080466c66b",
+    "implementation/warlock/qa/SearchRemovedReplay.elm": "46d3f10ec705c471e717539138fb2041eff8a6e8bc5468906a8380f5a5dd5a2f",
+    "implementation/warlock/qa/SearchReplay.elm": "a5392d9eb33e7c9f4c702ba1c5dbe6981a1df592d20c41a9d657cc53d6c0914f",
+    "implementation/warlock/qa/SettingsReplay.elm": "3bdcfbb1706ec9ee4c1b56c0fea5ea9f7fc2601a21fdcb16a4b69c6dc35c380e",
+    "implementation/warlock/qa/ShortcutDraftProperties.elm": "a1c17b9cbffd9380142e35a0842971eb828061484c2d1f0d6a79ebb0ee12f69a",
+    "implementation/warlock/qa/ShortcutDraftReplay.elm": "19f6bcc963ee512a2a6d5df9d784f23e7356663e5fd3181c4a6e4f3f516b256f",
+    "implementation/warlock/qa/ShortcutGenerationReplay.elm": "842676757ca80981e161f814a1148dd3a08204553b917c502898fe2a933dbebb",
+    "implementation/warlock/qa/ShortcutOutputReplay.elm": "50656cdc8a02afe8cfb3fedc5d175a9449ccdab9d76dc6e08a0a56ed0391543e",
+    "implementation/warlock/qa/ShortcutPreferencesReplay.elm": "f6940c7190956ddc1a28b1be2778ef186759bfaaa3d35411d9abe40a3d3db3a7",
+    "implementation/warlock/qa/SnapReplay.elm": "8c5f69c06f2cb37e971eb493f68cb7a51e8d3344dc2936c063ef62cb1c1f40d5",
+    "implementation/warlock/qa/SolFilesRebind2214.elm": "6f9e95771c9eba56ae8fbba50e7f8315974e01ded3e4fdee768195d329dc00d7",
+    "implementation/warlock/qa/SolSystemMenuIntegratedReplay2114.elm": "7b448580857a1dca22c0addd9e009a2da2af9c87b0fa78fff5fc79caa079ad5a",
+    "implementation/warlock/qa/StandaloneMvpReplay.elm": "9bbea3e907f29af8d0a5db1d464cc59f610bbceaa1b0d3028330a0ded6a364ba",
+    "implementation/warlock/qa/StatusScrollReplay.elm": "274cacb5131731b6d8fddbd37cf3886369283449489b79985ad9d29a12ef5f7d",
+    "implementation/warlock/qa/StreamCapacityReplay.elm": "6d3341047586efc479cd0292c89d3f16e76079d1d2a1433d673006d00fa98c92",
+    "implementation/warlock/qa/SurfaceSnapshotContracts.elm": "859e33eb242203120e8b2b8fb680431ff24ef707b2c43913185ae4b1d36b9d53",
+    "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+    "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+    "implementation/warlock/qa/SystemMenuReplay.elm": "9ffa00c0d0a2b4a86be91ad7aa988b46f8e2efc91b57a95900095dee97f5ba03",
+    "implementation/warlock/qa/TaskViewEscapeReplay.elm": "9f95642d106544223fcae61f3b81a684853276ed8b7de461437267d9dba33ac8",
+    "implementation/warlock/qa/TaskViewReplay.elm": "9f2a30aaecbd0069b1d297d029cfff9126c506dd39bcdcc6c871e6189c53c9b6",
+    "implementation/warlock/qa/TaskbarGroupStateReplay.elm": "39290fdf9b5f4dd93ec571f08295a40769c238242f93032ef73b83b2a8ac97bc",
+    "implementation/warlock/qa/TeaAdmissionSubscriptionsReplay.elm": "fb3d3b254337dd8c18c04e423d27af24eea649c4a3fca928df6deb50cdcce245",
+    "implementation/warlock/qa/TeaBarSubscriptionsReplay.elm": "6fe9393de64a3ba182d6af795b0625bccd29ad0df57e5a5afefd387604cef70d",
+    "implementation/warlock/qa/TeaContractReplay.elm": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+    "implementation/warlock/qa/TeaPopupSubscriptionsReplay.elm": "50aaefcb9b07504844784c206ab0a5ae6591d42140776d31e7fdecf34f3cd528",
+    "implementation/warlock/qa/TeaRendererSubscriptionsReplay.elm": "f9fa36a1e09570be3b24bcf3d689376055cac5f1611694b5f35259ba02c2e497",
+    "implementation/warlock/qa/ThreeGroupReplay.elm": "df259a03b3f221e7c6fef515a0704be6f21a792933612113cdd02ffbd53ddd9b",
+    "implementation/warlock/qa/TransferReplay.elm": "eaf198640a854600c48b6314135865dfba58b07caf7581a32a707eb542267e09",
+    "implementation/warlock/qa/UiHttpFailureReplay.elm": "d3dab516f45f00d3e2f4fad71901e2204718b4f4ec8a0c5eac9661bc47cebc70",
+    "implementation/warlock/qa/UiHttpReplay.elm": "eb0fc2636f9dcc34c9a0ea5a016b1b8a37ec5ff9d03539c4f5c88131e224bf10",
+    "implementation/warlock/qa/Workspace2IconReplay.elm": "094c10d8be17f4fb2318f70230f3546431443833283a92535f5d42306c7f2ad4",
+    "implementation/warlock/qa/WorkspaceNavigationReplay.elm": "92d2907941ebb0530b6f2d77b20fa1a8fe41bd516610daee993f352550284ffe",
+    "implementation/warlock/qa/PreviewConsumptionReplay.elm": "540c738131b689870b0b57da1b5eaea1f289d3bf6e8e4b89fffa74b25fee30f3",
+    "implementation/warlock/qa/SystemMenuFocusExtended.elm": "e8aa54c8bc77155bc9fb82238617ba6dd9a09697096048bf63c82f6fe91adc02",
+    "implementation/warlock/qa/SystemMenuFocusPipeline.elm": "23ae896be555a886b20246770779724323356fe284072f39c9236ad818aa6aba",
+    "implementation/warlock/qa/SuccessorFocusReplay.elm": "c5c37b36323cb5032871ba5378584593da7d8a7a7c6c0844e4fd3348f229321a",
+    "implementation/warlock/qa/WorkspaceOwnerLiteralReplay.elm": "5c16d6a1417227419a2ae3b47175197b6458b00021be2ee49b269c6087702309",
+    "implementation/warlock/qa/WorkspaceOwnerComponentReplay.elm": "da9f4839fa32bb3f4c90a2e569d6bfcd76d80c39e197da4ed2557f2a959e00c0",
+    "implementation/warlock/qa/WorkspaceUnsupportedDomReplay.elm": "3e0e22f15e35d766077fa48c4dbd41bfd9720eae7fab84007183786573a739d4",
+    "implementation/warlock/qa/typed-state.cjs": "87b4d7b6946211a787b6d620eb2d8662978484e702bd2ea28a10fa6d00a39014",
+    "tools/run_current_arm_ux023_notifications_keyboard_journey.py": "da79ecfcb9de1abd70d5126af08c4f979c33e4dd1a797729b0bdd5cabedbd910",
+    "tools/ux023_notifications_attempt_authorization.py": "ac02d8453d412f747b24d43e7bcab3a97743fd81ead6bd760d629fc08177f3d1",
+    "tools/test_ux023_notifications_attempt_authorization.py": "5b23c5a3f628f1d653b491be01dd6b0e323c714ec98285dde28860f06041ff30",
+    "tools/test_ux023_notifications_keyboard_fixture.py": "00a41ea08da1ca0fb5b5e9960805ea79064062b2bd69fc02c29dec9fa4a5ed9e",
+    "tools/ux023_notifications_keyboard_fixture.py": "47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3",
+    "tools/ux023_current_boot_correspondence.py": "f4be1482ecbf50844a255bd1c736a45cd02b39af79d1469c3e9e968f42275a3b"
+  },
+  "assets": {
+    "bar": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux003-dom-allocation-build-1794201544743614875/frontend/HttpBar.html",
+      "sha256": "5430a2ebb96b1d5b791e68bb88960d0a66c9fcd08acf1751a88d9b7769bea457"
+    },
+    "compositor": {
+      "path": "/usr/bin/Hyprland",
+      "sha256": "d40e2edab24c2032a7a77b4d44c3d738e5003256d7d4199950dc7001fee9b6ba"
+    },
+    "controller": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux003-dom-allocation-build-1794201544743614875/frontend/HttpMain.html",
+      "sha256": "051295883f3edfdac7745cc4c83efa1858e6ea83ca1ab1e95d95149ce242aedf"
+    },
+    "grim": {
+      "path": "/usr/bin/grim",
+      "sha256": "a979302d6e2eee18889406c36ddd3ac1adf9f894b4eb47a9f990eafeb080e6d7"
+    },
+    "hyprctl": {
+      "path": "/usr/bin/hyprctl",
+      "sha256": "22639a50c0c48e00bb0f3364fcd80aca774b1b1364e3a371658165a5cccb5938"
+    },
+    "nestedConfig": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/current-arm-ux003-window-rule-native-20261108/hyprland-owned-gtk.lua",
+      "sha256": "f5285bcba66500cadfd3283911456aeb381de7f711e8dab460eb0a4946ed14aa"
+    },
+    "observer": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux003-dom-allocation-build-1794201928702801494/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/ux003-native-observer/build/ux003-native-observer/ux003-native-observer",
+      "sha256": "d15def0aba6cdb6bc9c7618a2ee25f75558e8070b134cd160e4073200cac643d"
+    },
+    "owner": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux003-dom-allocation-build-1794201928702801494/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+      "sha256": "a389ff860099d38fe6b174a15f306a4ef132cef91e8773d5c286b5c26a5e2b85"
+    },
+    "popup": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux003-dom-allocation-build-1794201544743614875/frontend/HttpPopup.html",
+      "sha256": "59d81e6a28931701be3fe0d4a54bc9688bf1f1407f5eb908b45cd19d2427d9a5"
+    },
+    "recorder": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794037285027049547/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/application-argv-fixture/build/application-argv-fixture/application-argv-fixture",
+      "sha256": "dd13427e3e3b508aed092bd3972bac9c75e640c4256d37c5fdae88d5b59d0831"
+    },
+    "wtype": {
+      "path": "/usr/bin/wtype",
+      "sha256": "7dd85a9a6efcef3857eb59e72e9c5c259ef42d3efd88292d9cd0163314994b4e"
+    },
+    "keyboardSeat": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux023-keyboard-build-1794156614317906397/keyboard-keepalive",
+      "sha256": "21784f8953e21b0a3d7788e55de05c0bb0d7529555ef88fe98771a0b25aee618"
+    }
+  },
+  "independentlyViewedFrames": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/mapped.png",
+      "sha256": "18298f7181671ea6ca9423c7a7a3c9ac0a92fe21b181b708ae3ebb6e03a3cb4d",
+      "observation": "Initial blank mapped frame; no acceptance assertion."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/opener-readiness-01.png",
+      "sha256": "a27a8e914a88a605cd00791206251ab497d113484bb939d48a2410f38f1cb862",
+      "observation": "Waiting for desktop state; no acceptance assertion."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/opener-readiness-02.png",
+      "sha256": "f1fc1d63ed740ca83a502581ca8d3de11797fc1f4025c87fbc7ce31619d6bd92",
+      "observation": "Applications-only window controls honestly unavailable; Notifications opener visibly enabled."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/bar-notifications-keyboard-focus.png",
+      "sha256": "0b57b0b7316002e6e2839a3e2f1686f1b99a82422b9349d23ca8ab5710276581",
+      "observation": "Blue focus outline on Notifications opener after two Tabs."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/notifications-open-close-focus.png",
+      "sha256": "885ae523607fe3914f913f475816995f338503599a4f9887e2dc7674cba1feb6",
+      "observation": "Notifications surface open; Close notifications has blue focus outline. Service unavailable notice and session-policy capability both visible."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/dnd-keyboard-focus-before-operation.png",
+      "sha256": "965765d7158b280cc1067c130cbd1ca0120869206618453be9c660cacd8fe398",
+      "observation": "Blue focus outline on Do not disturb for this session; value Off."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/dnd-on-after-operation.png",
+      "sha256": "d0ee61f477eba2429083426b222120d9fe1dee42e31ae04058fd25bbcd53cf73",
+      "observation": "Same DND control visibly focused and On after the sole operate Return."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/notifications-close-keyboard-focus.png",
+      "sha256": "a460f07c51a0145522204f0a1adb1fcdb0ce5e7b5f2e2afff4cf9ca52c6c163c",
+      "observation": "Shift-Tab restored Close notifications focus; DND remains On."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/dismissed-notifications-opener-focus.png",
+      "sha256": "44a7ee68e84455cf4fdd7c83683c93a8fc73556d502d07aeb34c7be03897867b",
+      "observation": "Notifications surface dismissed; blue focus outline restored to Bar Notifications opener."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/reopened-notifications-close-focus.png",
+      "sha256": "b740261bbe9be0fb94681fbb7b24fabba5133d6b60f3b0dad630f0c42f69d8c0",
+      "observation": "Return reopens Notifications with Close focus; DND remains On."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794248115482744459/notifications-dismissed-again.png",
+      "sha256": "44a7ee68e84455cf4fdd7c83683c93a8fc73556d502d07aeb34c7be03897867b",
+      "observation": "Second Escape dismisses with Bar Notifications opener focus restored."
+    }
+  ],
+  "oracleChecklist": {
+    "openWithKeyboardAndRecordedFocus": true,
+    "traverseToEnabledDndWithVisibleFocus": true,
+    "operateDndOnceOffToOnWithVisibleFocus": true,
+    "dismissWithEscapeAndRestoreOpenerFocus": true,
+    "reopenAndSecondDismissWithRecordedFocus": true,
+    "nineRealKeyboardTransactions": true,
+    "pointerInputIssued": false,
+    "normalOwnedCleanup": true,
+    "original28Plus2And16FrameCapPreserved": true
+  },
+  "keyboardTransactions": [
+    {
+      "step": "initial-traverse",
+      "input": [
+        "-k",
+        "Tab",
+        "-k",
+        "Tab"
+      ],
+      "monotonicNs": 13828145742233
+    },
+    {
+      "step": "open",
+      "input": [
+        "-k",
+        "Return"
+      ],
+      "monotonicNs": 13829744517221
+    },
+    {
+      "step": "traverse-dnd",
+      "input": [
+        "-k",
+        "Tab"
+      ],
+      "monotonicNs": 13832024880010
+    },
+    {
+      "step": "operate",
+      "input": [
+        "-k",
+        "Return"
+      ],
+      "monotonicNs": 13833632185865
+    },
+    {
+      "step": "traverse-back",
+      "input": [
+        "-M",
+        "shift",
+        "-k",
+        "Tab",
+        "-m",
+        "shift"
+      ],
+      "monotonicNs": 13835300013628
+    },
+    {
+      "step": "dismiss",
+      "input": [
+        "-k",
+        "Escape"
+      ],
+      "monotonicNs": 13837015692844
+    },
+    {
+      "step": "reopen",
+      "input": [
+        "-k",
+        "Return"
+      ],
+      "monotonicNs": 13838608106502
+    },
+    {
+      "step": "dismiss-again",
+      "input": [
+        "-k",
+        "Escape"
+      ],
+      "monotonicNs": 13840193099294
+    },
+    {
+      "step": "close-gui",
+      "input": [
+        "-M",
+        "alt",
+        "-k",
+        "F4",
+        "-m",
+        "alt"
+      ],
+      "monotonicNs": 13841779740660
+    }
+  ],
+  "phaseFocusSupport": [
+    {
+      "beforeStep": "open",
+      "seq": 1,
+      "focusedRoles": [
+        {
+          "role": "bar",
+          "activeControl": "bar:notifications"
+        }
+      ]
+    },
+    {
+      "beforeStep": "traverse-dnd",
+      "seq": 2,
+      "focusedRoles": [
+        {
+          "role": "popup",
+          "activeControl": "control:close"
+        }
+      ]
+    },
+    {
+      "beforeStep": "traverse-dnd",
+      "seq": 3,
+      "focusedRoles": [
+        {
+          "role": "popup",
+          "activeControl": "control:close"
+        }
+      ]
+    },
+    {
+      "beforeStep": "operate",
+      "seq": 4,
+      "focusedRoles": [
+        {
+          "role": "popup",
+          "activeControl": "notifications:dnd"
+        }
+      ]
+    },
+    {
+      "beforeStep": "traverse-back",
+      "seq": 5,
+      "focusedRoles": [
+        {
+          "role": "popup",
+          "activeControl": "notifications:dnd"
+        }
+      ]
+    },
+    {
+      "beforeStep": "dismiss",
+      "seq": 6,
+      "focusedRoles": [
+        {
+          "role": "popup",
+          "activeControl": "control:close"
+        }
+      ]
+    },
+    {
+      "beforeStep": "reopen",
+      "seq": 7,
+      "focusedRoles": [
+        {
+          "role": "bar",
+          "activeControl": "bar:notifications"
+        }
+      ]
+    },
+    {
+      "beforeStep": "dismiss-again",
+      "seq": 8,
+      "focusedRoles": [
+        {
+          "role": "popup",
+          "activeControl": "control:close"
+        }
+      ]
+    },
+    {
+      "beforeStep": "close-gui",
+      "seq": 9,
+      "focusedRoles": [
+        {
+          "role": "bar",
+          "activeControl": "bar:notifications"
+        }
+      ]
+    }
+  ],
+  "normalCleanup": {
+    "keyboard": {
+      "pid": 1718529,
+      "startTicks": "1383535",
+      "exit": 0,
+      "normal": true,
+      "groupAbsent": true,
+      "stdoutTailHex": "",
+      "monotonicNs": 13846961590205
+    },
+    "backendExit": 0,
+    "stack": {
+      "normal": true,
+      "processes": [
+        {
+          "role": "nested",
+          "pid": 1718380,
+          "startTicks": "1383381",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-after",
+          "pid": 1718241,
+          "startTicks": "1383254",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-apply",
+          "pid": 1718189,
+          "startTicks": "1383224",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-before",
+          "pid": 1718139,
+          "startTicks": "1383193",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "host",
+          "pid": 1718092,
+          "startTicks": "1383147",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        }
+      ],
+      "originalDeadlineNs": 13847587861371,
+      "cleanupCeilingNs": 13849587861371
+    },
+    "typedParentCompletion": true,
+    "engineAbsent": true,
+    "backingAbsent": true,
+    "globalRestoration": true,
+    "forcedCleanup": false,
+    "cleanupUnknown": false
+  },
+  "missingObservations": [],
+  "maximumLedgerDelta": {
+    "requirements": 0,
+    "scenarios": 1
+  },
+  "rawReportFlagsPreserved": {
+    "nativeAcceptance": false,
+    "originalAcceptance": false,
+    "fullJourneyAccepted": false
+  },
+  "limits": [
+    "External independent original-scenario adjudication only; raw report flags remain false and unchanged.",
+    "No whole ELM-UX-023/all-surfaces acceptance, notification-daemon delivery/actions, other original scenario or release readiness inferred.",
+    "Retained child namespace diagnostic remains unknown and explicitly has no cleanup authority; typed owned engine/backing/stack retirement is positive."
+  ]
+}
