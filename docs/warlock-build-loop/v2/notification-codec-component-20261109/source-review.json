@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "scope": "private-pure-notification-wire-port-five-source-bundle",
+  "reviewer": "build_audit",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/manifest.json",
+    "sha256": "dadf491309f18176dc5618e3125e2344c2fe3911a29bb304408796eb7b3339bd"
+  },
+  "reviewedFiles": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": {
+      "before": "b7752b288a3c7c34503fcb242b632175da85c95a0a1f7017c4e25ed189307ad2",
+      "after": "ebb4db24c652d8e55b7000616c10a96149a124af7be110ba8c8828a7e5d579a3"
+    },
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": {
+      "before": "d91f1f60f25537a87172791de09d390fb296414bd4063a10fdf2b4033d4eedc3",
+      "after": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4"
+    },
+    "implementation/warlock/haskell/protocol/protocol.cabal": {
+      "before": "2fa2927f2cb50a586b3317a526b42d4b9ec84c8f7914cca809f6a47e8a0b1120",
+      "after": "faf6a3bd3826b17d87e1cc95413b5eda106e510da9a283b1a6ba4ed00cccf2e6"
+    },
+    "implementation/warlock/haskell/protocol/test-notification-request/Main.hs": {
+      "before": null,
+      "after": "cbac4078c8bfc8637513f28b0c2dd0efeef86a9c426c939516ec9c6a1110b069"
+    },
+    "implementation/warlock/haskell/protocol/test-notification-reply/Main.hs": {
+      "before": null,
+      "after": "001470ed1075dceec555cfb980c247b6d563301c2ec3e280a0236d18ee058ec9"
+    }
+  },
+  "requestFixtureUnmodified": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/postimages/implementation/warlock/haskell/protocol/test-notification-request/Main.hs",
+    "sha256": "cbac4078c8bfc8637513f28b0c2dd0efeef86a9c426c939516ec9c6a1110b069"
+  },
+  "replyFixtureUnmodified": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/postimages/implementation/warlock/haskell/protocol/test-notification-reply/Main.hs",
+    "sha256": "001470ed1075dceec555cfb980c247b6d563301c2ec3e280a0236d18ee058ec9"
+  },
+  "checks": {
+    "requestBoundary": "Original positive canonical Counter/uint32/producer/action/verb/exact-field validation is retained in final codec. NotificationTarget and DesktopRequest constructors remain opaque.",
+    "snapshotBounds": "Exact service/revision positive; id positive uint32/incarnation positive;128ASCII unique producer; app128/summary256/body1024/reason256UTF16;<=8unique nonempty actions/key64 label128; nonlive actions empty;<=32 entries with independently unique ids/incarnations.",
+    "textRules": "Display text permits newline/tab per Elm; action identifiers refuse C0/DEL; UTF16 caps used.",
+    "stateUrgency": "All8Elm states supported; optional urgency absent or exact numeric0/1/2; unknown values refuse.",
+    "replyAuthority": "DesktopReply constructors stay hidden; exported notification smart constructors check positive request, full snapshot and exact3outcome statuses before creating opaque values. A capability datum neither acquires a bus nor proves producer ownership.",
+    "outcome": "Optional reason membership exactly empty/expired/changed/unavailable/already-handled. Decoder validates complete shape before preserving optional reason.",
+    "capability": "Optional exact pair read/action or[] only; localOperations independently exact policy list; nativeOperations must remain[]. Legacy absence routes through unchanged constructors and retains bytes.",
+    "exhaustiveness": "replyBinding and applicationAvailability cover new constructors. Backend applyDesktopRequest now explicitly refuses both new kinds; whole commit is rejected before callbacks/attachment/earlier request effects if any new notification kind occurs.",
+    "legacy": "Existing attachment producers still call old constructors; this bundle advertises no new service capability. Existing catalog/pins/launch parse and reply paths remain unchanged.",
+    "cabal": "Two ordinary public-linked test suites use unchanged fixtures and existing base/bytestring/text/protocol dependencies; existing warning flags and suites unchanged."
+  },
+  "actualRootComponentEvidence": {
+    "replyBaseline": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/actual-reply-baseline-red/report.json",
+      "sha256": "23a9d6eddbb74408ab85920972ef3272fdb81ec72b8238fa67817ce966e34901"
+    },
+    "replyBaselineCompileExit": 0,
+    "replyBaselineSemanticExit": 1,
+    "replyGreen": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/actual-reply-candidate-green/report.json",
+      "sha256": "e9980607be18fbbd5d7c6b30bd82114ea9ed71d1508fbee839e602789c0b9602"
+    },
+    "replyGroups": 24,
+    "replyLiteralWitnesses": 90,
+    "requestRegression": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/actual-request-reply-regression/report.json",
+      "sha256": "2cb438118e4755876489cdfcb7cfbb2469be1576a5e934f0fd7f2e25397b6431"
+    },
+    "requestControls": 14
+  },
+  "defectsWithinReviewedComponent": [],
+  "remainingQualification": "Full ordinary Cabal runtime/backend compile and suites are pending; component probes do not establish full runtime or service integration. No new gate is introduced.",
+  "limits": [
+    "Pure data boundary and explicit unavailable backend handling only.",
+    "Actual bus ownership, producer identity, notification effects, complete service replies/capability consumers and native/original acceptance remain outside this bundle.",
+    "Original stopped service investigation remains stopped."
+  ],
+  "sourceAdoptionClaimed": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "reviewerImportsTestsOrEffects": false
+}

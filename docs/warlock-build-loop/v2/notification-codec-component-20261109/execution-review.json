@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "reviewer": "sol-supervisor-workflow-20261109",
+  "scope": "Actual protected ordinary runtime compilation and three pure protocol test suites for exact five-path bundle",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/manifest.json",
+    "sha256": "dadf491309f18176dc5618e3125e2344c2fe3911a29bb304408796eb7b3339bd"
+  },
+  "sourceReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/independent-backend-composition-review-sol.json",
+    "sha256": "7fa7421f2e792241929029411167153040c8dadaff38c5326335bdce273a83c9"
+  },
+  "actualReport": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/qualification/report.json",
+    "sha256": "9409640d3de8cdc01ee0e144f2ebe3c8649375b06b3e17e09030477c39f9c9ab"
+  },
+  "sourceView": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/qualification/source-view.json",
+    "sha256": "b53db1d8dfc66a8fd201dd1db5b6924364814be6f88220e3476dd1e8950984ef"
+  },
+  "baselineLiveSourceComparison": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/full-baseline-live-source-comparison.json",
+    "sha256": "c0b54fbe0b5db0ecf174de7758325515c6a3f25b155d7f57106268872e5d3627"
+  },
+  "rootObservedOuterHandle": 44379,
+  "outerHandleConsumed": true,
+  "outerOutcomeProvenance": "Root direct completion report: outer44379 consumed exit0; retained qualification report independently verified here.",
+  "commandsExitCodes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "completeRuntimeLibraryCompiled": true,
+  "inputFilesVerifiedBeforeAfterAndCurrent": 256,
+  "previousAuthoredBaselineFiles": 182,
+  "exactReviewedOverlays": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": {
+      "before": "b7752b288a3c7c34503fcb242b632175da85c95a0a1f7017c4e25ed189307ad2",
+      "after": "ebb4db24c652d8e55b7000616c10a96149a124af7be110ba8c8828a7e5d579a3"
+    },
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": {
+      "before": "d91f1f60f25537a87172791de09d390fb296414bd4063a10fdf2b4033d4eedc3",
+      "after": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4"
+    },
+    "implementation/warlock/haskell/protocol/protocol.cabal": {
+      "before": "2fa2927f2cb50a586b3317a526b42d4b9ec84c8f7914cca809f6a47e8a0b1120",
+      "after": "faf6a3bd3826b17d87e1cc95413b5eda106e510da9a283b1a6ba4ed00cccf2e6"
+    },
+    "implementation/warlock/haskell/protocol/test-notification-request/Main.hs": {
+      "before": null,
+      "after": "cbac4078c8bfc8637513f28b0c2dd0efeef86a9c426c939516ec9c6a1110b069"
+    },
+    "implementation/warlock/haskell/protocol/test-notification-reply/Main.hs": {
+      "before": null,
+      "after": "001470ed1075dceec555cfb980c247b6d563301c2ec3e280a0236d18ee058ec9"
+    }
+  },
+  "compiledTestImages": [
+    {
+      "target": "warlock-protocol:test:desktop-boundary-controls",
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/qualification/dist/build/aarch64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/desktop-boundary-controls/build/desktop-boundary-controls/desktop-boundary-controls",
+      "sha256": "0ea28890497f36989e7083fe63e67aee2b9ca0f9690ac6ee82807e5d1d172ec2",
+      "device": 57,
+      "inode": 5746100,
+      "size": 29534192,
+      "mode": 493
+    },
+    {
+      "target": "warlock-protocol:test:notification-request-codec-controls",
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/qualification/dist/build/aarch64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/notification-request-codec-controls/build/notification-request-codec-controls/notification-request-codec-controls",
+      "sha256": "347395858f7d66fe77f84319d4b1b385934cbb2b06f579345c3f2cc5b52baf42",
+      "device": 57,
+      "inode": 5746019,
+      "size": 28941928,
+      "mode": 493
+    },
+    {
+      "target": "warlock-protocol:test:notification-reply-codec-controls",
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/qualification/dist/build/aarch64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/notification-reply-codec-controls/build/notification-reply-codec-controls/notification-reply-codec-controls",
+      "sha256": "375393b16a7ca0ec1db1b84cef4536706cd4aa0796a5a500551bd8902311e0fd",
+      "device": 57,
+      "inode": 5746054,
+      "size": 29193608,
+      "mode": 493
+    }
+  ],
+  "observedSuites": {
+    "desktopBoundary": {
+      "schema": 1,
+      "suite": "desktop-boundary-controls",
+      "passed": true,
+      "checks": 2204,
+      "seed": 20261101,
+      "generatedCases": 256,
+      "mutationClasses": 16,
+      "nativeAcceptance": false
+    },
+    "notificationRequestControls": 14,
+    "notificationReplyGroups": 24,
+    "replyLiteralFixtureCases": 90
+  },
+  "nativeExecuted": false,
+  "serviceExecuted": false,
+  "originalAcceptance": false,
+  "limits": [
+    "Qualifies this pure protocol/refusal component only; no bus acquisition, producer delivery, service retirement or original EARS outcome.",
+    "Existing service-investigation stop and legacy progress warning/clocks remain unchanged.",
+    "Root may perform guarded five-path source adoption and normal scoped commit; no source edits or tests performed by reviewer."
+  ]
+}

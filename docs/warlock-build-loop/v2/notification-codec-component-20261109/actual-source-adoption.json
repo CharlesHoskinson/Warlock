@@ -1,0 +1,30 @@
+{
+  "atUTC": "2026-11-09T19:12:49.775827+00:00",
+  "completed": true,
+  "precheck": {
+    "structuralPrecheckPassed": true,
+    "changedPaths": [
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/protocol.cabal",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test-notification-reply/Main.hs",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test-notification-request/Main.hs",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs"
+    ],
+    "expectedSelection": 22,
+    "effectsPerformed": false,
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "scope": "Same participant lock must remain held through actual CAS; arbitrary external shell edits are not fenced."
+  },
+  "ownerRecordIdentitySha256": "96fe94fdfb2219f7571a68fa7ae214768da1d408307bf47f1ead84d2fe309a27",
+  "preservedWarnings": [
+    "Stop expanding this investigation; record missing observation and choose another bounded mandatory slice. Independent work remains allowed."
+  ],
+  "allFiveInstalledHashesMatch": true,
+  "ownerParticipantBytesUnchanged": true,
+  "selectedParticipantBytesUnchanged": true,
+  "oldServiceInvestigationStopPreserved": true,
+  "serviceIntegrated": false,
+  "originalAcceptance": false,
+  "nativeAcceptance": false
+}

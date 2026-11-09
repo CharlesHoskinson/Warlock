@@ -242,6 +242,8 @@ applyDesktopRequest bound catalog pins operations lastWrite catalogObservation s
       writeIORef lastWrite (Just (D.requestId request,proposal,reply))
       sendReply reply
   D.ApplicationLaunch -> ioError (userError "application launch requires current admitted context")
+  D.NotificationRead -> ioError (userError "notification service unavailable")
+  D.NotificationEffect -> ioError (userError "notification service unavailable")
  where
   construct = either (ioError . userError . T.unpack) pure
 
@@ -324,8 +326,13 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
      handler checked = case checkedDesktopCommit checked of
       Nothing -> ioError (userError "native profile reached desktop actor")
       Just commit -> do
-       modifyIORef' callbacks (+1)
        let requests=D.commitRequests commit
+       -- The pure codec knows notification wire data. This producer has not
+       -- acquired a service and advertises no service capability. Reject the
+       -- entire batch before attachment or any earlier request can take effect.
+       unless (all ((`elem` [D.CatalogRead,D.PinsWrite,D.ApplicationLaunch]) . D.requestKind) requests)
+         (ioError (userError "notification service unavailable"))
+       modifyIORef' callbacks (+1)
        unless (all ((==bound) . D.requestBinding) requests) (ioError (userError "checked commit binding mismatch"))
        -- Reserve the one attempt before enqueue/delivery. Any exception ends
        -- this authenticated session; an uncertain send is never replayed.

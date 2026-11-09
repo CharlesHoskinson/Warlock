@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "reviewer": "sol-supervisor-workflow-20261109",
+  "scope": "Frozen Backend refusal implementation and five-path pure-port package composition only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-protocol-root-implementation/pure-port-bundle/manifest.json",
+    "sha256": "dadf491309f18176dc5618e3125e2344c2fe3911a29bb304408796eb7b3339bd"
+  },
+  "files": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": {
+      "before": "b7752b288a3c7c34503fcb242b632175da85c95a0a1f7017c4e25ed189307ad2",
+      "after": "ebb4db24c652d8e55b7000616c10a96149a124af7be110ba8c8828a7e5d579a3"
+    },
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": {
+      "before": "d91f1f60f25537a87172791de09d390fb296414bd4063a10fdf2b4033d4eedc3",
+      "after": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4"
+    },
+    "implementation/warlock/haskell/protocol/protocol.cabal": {
+      "before": "2fa2927f2cb50a586b3317a526b42d4b9ec84c8f7914cca809f6a47e8a0b1120",
+      "after": "faf6a3bd3826b17d87e1cc95413b5eda106e510da9a283b1a6ba4ed00cccf2e6"
+    },
+    "implementation/warlock/haskell/protocol/test-notification-request/Main.hs": {
+      "before": null,
+      "after": "cbac4078c8bfc8637513f28b0c2dd0efeef86a9c426c939516ec9c6a1110b069"
+    },
+    "implementation/warlock/haskell/protocol/test-notification-reply/Main.hs": {
+      "before": null,
+      "after": "001470ed1075dceec555cfb980c247b6d563301c2ec3e280a0236d18ee058ec9"
+    }
+  },
+  "backendChecks": {
+    "exactTwoChangesOnly": true,
+    "exhaustiveNotificationReadAndEffectRefused": true,
+    "wholeBatchCapabilityCheckBeforeCallbacksBindingAttachmentDomainLoop": true,
+    "unsupportedMixedCommitCannotRunEarlierDomainRequests": true,
+    "actualLocalAttachmentConstructorAndWireEmissionUnchanged": true,
+    "importsAndRuntimeLinkageUnchanged": true,
+    "noServiceAcquisitionOrCapabilityAdvertising": true
+  },
+  "compositionChecks": {
+    "requestTestByteIdenticalToFrozen14CaseFixture": true,
+    "replyTestByteIdenticalToFrozen24Group90LiteralFixture": true,
+    "onlyTwoAppendedPublicLinkedCabalTestTargets": true,
+    "existingTestsAndCabalFlagsUnchanged": true,
+    "noFrozenGioDraftInBundle": true
+  },
+  "qualificationBoundary": "Source/composition accepted; Root ordinary protected full runtime compile and existing Desktop regression outcomes remain pending. Earlier codec-only results do not qualify runtime effects.",
+  "limits": [
+    "No notification service/GIO/main-bus/private-bus/native execution or capability readiness granted.",
+    "Existing UX031 service investigation stop, clocks and warnings remain unchanged.",
+    "This is no original EARS acceptance or count change; pure protocol source can be integrated independently."
+  ],
+  "testsExecutedByReviewer": false,
+  "effectsByReviewer": false
+}
