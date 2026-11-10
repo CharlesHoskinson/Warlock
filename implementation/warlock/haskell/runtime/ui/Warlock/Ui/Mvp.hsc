@@ -49,7 +49,7 @@ import Data.Int (Int32)
 import Data.IORef (IORef, atomicModifyIORef', modifyIORef', newIORef, readIORef, writeIORef)
 import Data.Text (Text)
 import qualified Data.Text as T
-import Foreign.C.String (CString, withCString)
+import Foreign.C.String (CString, peekCString, withCString)
 import Foreign.C.Types (CDouble(..), CInt(..), CUInt(..), CULong(..))
 import Foreign.Marshal.Array (allocaArray)
 import Foreign.Marshal.Utils (fillBytes)
@@ -745,6 +745,55 @@ foreign import ccall unsafe "gtk_widget_get_height"
 foreign import ccall safe "gtk_widget_grab_focus"
   gtkWidgetGrabFocus :: Ptr MvpObject -> IO CInt
 
+-- The qualified WebKit GTK4 translator is a direct GtkTextView child.
+-- Its native menu action runs during key translation before DOM dispatch.
+foreign import ccall unsafe "gtk_widget_get_first_child"
+  gtkWidgetGetFirstChild :: Ptr MvpObject -> IO (Ptr MvpObject)
+foreign import ccall unsafe "gtk_widget_get_next_sibling"
+  gtkWidgetGetNextSibling :: Ptr MvpObject -> IO (Ptr MvpObject)
+foreign import ccall unsafe "gtk_widget_get_parent"
+  gtkWidgetGetParent :: Ptr MvpObject -> IO (Ptr MvpObject)
+foreign import ccall unsafe "g_type_name_from_instance"
+  gTypeNameFromInstance :: Ptr MvpObject -> IO CString
+foreign import ccall safe "gtk_widget_action_set_enabled"
+  gtkWidgetActionSetEnabled :: Ptr MvpObject -> CString -> CInt -> IO ()
+
+-- All GUI menus belong to Elm. Disable only the translator's native popup
+-- action, leaving editor commands, IME handling and key forwarding untouched.
+-- Borrowed children are used synchronously and never retained by this host.
+suppressTranslatorPopup :: PhysicalDefaultContextOwner -> Ptr MvpObject -> Ptr MvpObject -> IO ()
+suppressTranslatorPopup owner window view = do
+  requirePhysicalDefaultContextOwner owner
+  root <- gtkWidgetGetRoot view
+  unless (root == window) (ioError (userError "translator outside owned window"))
+  first <- gtkWidgetGetFirstChild view
+  matches <- translatorChildren 32 first []
+  case matches of
+    [translator] -> do
+      requirePhysicalDefaultContextOwner owner
+      parent <- gtkWidgetGetParent translator
+      unless (parent == view) (ioError (userError "translator parent changed"))
+      withCString "menu.popup" $ \action -> gtkWidgetActionSetEnabled translator action 0
+      requirePhysicalDefaultContextOwner owner
+      afterParent <- gtkWidgetGetParent translator
+      afterRoot <- gtkWidgetGetRoot view
+      unless (afterParent == view && afterRoot == window)
+        (ioError (userError "translator ownership changed during action update"))
+    _ -> ioError (userError "expected exactly one owned GTK4 key translator")
+  where
+    translatorChildren :: Int -> Ptr MvpObject -> [Ptr MvpObject] -> IO [Ptr MvpObject]
+    translatorChildren remaining child found
+      | child == nullPtr = pure found
+      | remaining <= 0 = ioError (userError "key translator child bound")
+      | otherwise = do
+          requirePhysicalDefaultContextOwner owner
+          parent <- gtkWidgetGetParent child
+          unless (parent == view) (ioError (userError "translator child ancestry changed"))
+          namePtr <- gTypeNameFromInstance child
+          name <- if namePtr == nullPtr then pure "" else peekCString namePtr
+          next <- gtkWidgetGetNextSibling child
+          translatorChildren (remaining - 1) next (if name == "GtkTextView" then child : found else found)
+
 -- | Three distinct WebKitWebView widget pointers owned by the caller.
 data MvpViews view = MvpViews
   { mvpControllerView :: !(Ptr view)
@@ -932,6 +981,9 @@ attachMvpWindow contextOwner views = mask $ \_ -> do
       gtkBoxAppend box cView
 
       gtkWindowSetChild window box
+      checkContext
+      mapM_ (suppressTranslatorPopup contextOwner window) [bView, pView]
+      checkContext
       gtkWindowPresent window
 
       pure
