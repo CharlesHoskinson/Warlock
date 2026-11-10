@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "kind": "native54-bounded-rsi-event-evidence-doc-clarification",
+  "completedCandidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "integrationRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+  "baselinePluginSha256": "8893718c9aecd2ccac4313e95a128aa7f74e7a7fc53592984ec8b5574dde6434",
+  "posts": [
+    {
+      "path": "plugins/warlock-contributor/README.md",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/preimages/plugins/warlock-contributor/README.md",
+      "beforeSha256": "880d368e70bfc9bfa93e4ab74e4486af0d81b314b15bb067fba5362fb5a43c61",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/postimages/plugins/warlock-contributor/README.md",
+      "sha256": "0eb38013275b9f0b07599a94c00452b168d08b49e5df84e101eac212f4fb240e"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/candidate.patch",
+    "sha256": "0fb7da9d8e339d7347095078c8e926b14832122c3153b6ad2532b1ab2114b6ae"
+  },
+  "inputs": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/inputs.json",
+    "sha256": "201064d018efd05cccb15de4686a121e07a4a6bb1f8ea3f9f4e58467ffa8ce8c"
+  },
+  "comparisonProgram": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/run_event_evidence_comparison.py",
+    "sha256": "1859ad8f9f25860083fade58fc6934ed56e3be60816547b6ae97d480556cd61c"
+  },
+  "rootArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/run_event_evidence_comparison.py"
+  ],
+  "scope": "README clarification only. Reuse retained actual event/evidence stimulus and corrected helper. Compare old predicate against actual positive and existing four refusals. Run unchanged five helper controls once.",
+  "fixedCounts": {
+    "sourceFiles": 32,
+    "guardFiles": 7,
+    "pluginBaselineFiles": 73
+  },
+  "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+  "limits": "No core/policy/authority/clock/source ownership changes. No substitution for earlier deferred RSI. No results before actual protected execution. Candidate plugin snapshot is projected README-only bytes, not installed/adopted.",
+  "writingGuidance": [
+    "writing-skills reference guidance: concise generic mechanism, retained concrete refutation, no new skill/framework",
+    "my-voice README register",
+    "STE sections4/6/9"
+  ],
+  "authorExecuted": {
+    "targetImports": false,
+    "tests": false,
+    "qa": false,
+    "primaryWrites": false
+  },
+  "rootFollowup": "Root alone runs protected comparison, assesses actual results, applies reviewed README, runs required regression, binds actual projected-versus-installed plugin correspondence and admits current545480 RSI through existing route."
+}

@@ -1,0 +1,65 @@
+{
+  "expectedEvent": {
+    "eventId": "ux024-runtime-ui-source-root-deferred-blocker-rsi-20261110",
+    "kind": "rsi",
+    "candidateSha256": "175d86dd14f5d127aa83a93ca6d6d51b40e8f1f0a6bb0a20c4386e19476668d2",
+    "integrationRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+    "disposition": "deferred-blocker",
+    "evidence": {
+      "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-ui-source-root-deferred-blocker-v1/evidence.json",
+      "sha256": "40d0e77c11cd0e44cafefc1ccb8997df278586d59c69bfe1b598da0d5431ed02"
+    }
+  },
+  "admittedEvent": {
+    "eventId": "ux024-runtime-ui-source-root-deferred-blocker-rsi-20261110",
+    "kind": "rsi",
+    "candidateSha256": "175d86dd14f5d127aa83a93ca6d6d51b40e8f1f0a6bb0a20c4386e19476668d2",
+    "integrationRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+    "disposition": "deferred-blocker",
+    "evidence": {
+      "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-ui-source-root-deferred-blocker-v1/evidence.json",
+      "sha256": "40d0e77c11cd0e44cafefc1ccb8997df278586d59c69bfe1b598da0d5431ed02"
+    },
+    "sequence": 258,
+    "clockSample": {
+      "utc": "2026-11-10T12:57:05.074913+00:00",
+      "bootId": "f84d5d2d-b562-4b70-b8fb-93a7a4fcd1c5",
+      "monotonicNs": 81121910094054,
+      "boottimeNs": 81140619174086
+    },
+    "atUTC": "2026-11-10T12:57:05.074913+00:00"
+  },
+  "validatedEvidence": {
+    "schema": 1,
+    "disposition": "deferred-blocker",
+    "candidateSha256": "175d86dd14f5d127aa83a93ca6d6d51b40e8f1f0a6bb0a20c4386e19476668d2",
+    "integrationRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+    "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+    "proposedChange": "Recognize actual runtime/ui production sources through a prospective versioned authored-source identity policy.",
+    "refutationCase": "A suffix-only .hsc fix does not address the confirmed source-root omission. Directly widening authored_v6 would reinterpret historical policy6 integration/progress identities; the bounded source-only correction lacks a history-safe admission/replay transition.",
+    "reason": "Defer the plugin change at the concrete versioning dependency. Preserve actual integrated clean source, installed plugin, original guards and human window. No new comparison, regression pass, policy-only progress, historical clock reset or authority is claimed.",
+    "baselinePlugin": {
+      "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-ui-source-root-deferred-blocker-v1/baseline-plugin.json",
+      "sha256": "cd196d7504d4305ae03d9c2cf2cc3997f9efa1c2217e4888aafa67e4cf46f00c"
+    },
+    "baselineHarness": {
+      "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-ui-source-root-deferred-blocker-v1/baseline-harness.json",
+      "sha256": "94c4dfd37a208d54a8687aff7a62ef6579045a1fc7b53396c0ae06e6a1416d95"
+    },
+    "blocker": {
+      "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-ui-source-root-deferred-blocker-v1/blocker.json",
+      "sha256": "490573402f40a224c85c82eced1ed60b535fbd71f220cd742990e18be012823e"
+    },
+    "actualFinding": {
+      "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-ui-source-root-deferred-blocker-v1/actual-classifier-finding-original.json",
+      "sha256": "e38926a7f442426a63e8f823986c716f228ab55c2ada8b4e5df7eb305dbba39b"
+    },
+    "actualIntegration": {
+      "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-ui-source-root-deferred-blocker-v1/admitted-integration.json",
+      "sha256": "c928973bb09c3abbf119a9abd62ecfbcd208a2a4f8188c791367a67b4d0da3d9"
+    },
+    "newTestsExecuted": false,
+    "comparisonPerformed": false
+  },
+  "actualInitialAuthorizationExpiresUTC": "2026-11-10T14:40:00Z"
+}

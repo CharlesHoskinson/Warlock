@@ -13,6 +13,8 @@ See [delivery event inputs and terminal reports](references/delivery-events.md) 
 
 Every completed product slice requires one bounded RSI comparison before the next slice. Tested adoption, evidenced no-change and accountable blockers remain distinct. RSI never resets product progress or accepts original scenarios.
 
+`delivery_state()['rsi']` contains the validated evidence returned by `validate_rsi`. Admitted RSI event envelopes remain in `record['delivery']['events']`. Select the unique admitted event for the current candidate and integration revision. Resolve its evidence reference with `delivery_ref` and require equality with the replayed evidence. Check the disposition, candidate, integration revision and authorization expiry across these bindings. Reject missing or duplicate events, stale evidence and mismatched bindings.
+
 Use one integrated original journey. Bound internal repairs to two iterations or 45 awake minutes. Name the product action each repair unlocks. Keep safety and source-custody checks mandatory. Advisory model output and agent census do not add execution gates. Staff distinct tasks. Record source changes, integrated behavior and original observations separately from support work.
 
 For historical logical owners, use an independently reviewed support `actorBinding` proof. Bind the existing record path and identity, logical owner, actual actor, run, DID and exact support resources. Keep the record owner unchanged. Admission confirms current live leases. Preserve historical exceptions and failed evidence.

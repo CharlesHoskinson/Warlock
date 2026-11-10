@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "disposition": "adopted",
+  "candidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "integrationRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+  "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+  "proposedChange": "Document the admitted RSI event envelope versus validated replay evidence contract for preparation helpers.",
+  "refutationCase": "The actual old helper compared event fields with history.rsi evidence and refused an otherwise admitted valid case. The frozen real event/evidence fixture must pass with exact binding and reject missing, duplicate, wrong-disposition and mismatched-evidence cases.",
+  "reason": "Adopt the small contributor README clarification after protected same-task mechanism comparison and existing five-control regression, retaining all native/original guards and the prior separate deferred source-classifier probe. No README-induced runtime improvement is measured.",
+  "baselinePlugin": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/baseline-plugin.json",
+    "sha256": "cd196d7504d4305ae03d9c2cf2cc3997f9efa1c2217e4888aafa67e4cf46f00c"
+  },
+  "resultPlugin": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/result-plugin.json",
+    "sha256": "37b53978e7282b978d8678b31322dbda79dee2243e6304dff1d67d89c774757e"
+  },
+  "baselineHarness": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/baseline-harness.json",
+    "sha256": "944934ee1431847361319c2e98babe056fe5c09efa9404dfc9f10fe6ecd57dbe"
+  },
+  "candidateHarness": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/candidate-harness.json",
+    "sha256": "44fae3d9ffbb5634dd75c1412ce6e3df14e3f7bfa864fc8b806f98d7141e468e"
+  },
+  "comparison": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/comparison.json",
+    "sha256": "2b81974dfb768edc797b65ec2235f7845aef0e5aa7407b1d65d126fed9fe8e03"
+  },
+  "regression": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/regression.json",
+    "sha256": "207fb650ef5c7d36433a85aaa4e2c1cd059b1eff4e86b6c6b6a40435e5c7e812"
+  },
+  "rootReview": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/root-review.json",
+    "sha256": "80f79e8043c678049709ec3ad4b11ffc1428db610f5d2b06cc9aedb9130f2fa6"
+  }
+}

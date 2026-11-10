@@ -1,0 +1,29 @@
+--- a/prepare_clean_native9_metadata.py
++++ b/prepare_clean_native9_metadata.py
+@@ -71,6 +71,16 @@
+ 
+ 
+ 
++def validate_admitted_rsi(core,record,history,expected_event):
++    require(expected_event.get('kind')=='rsi' and expected_event.get('disposition')=='deferred-blocker','actual bounded deferred-blocker RSI event disposition required')
++    require(expected_event.get('candidateSha256')==history['candidateSha256'] and expected_event.get('integrationRevision')==history['integrated']['revision'],'RSI candidate/integration binding differs')
++    admitted=[row for row in record['delivery']['events']if all(row.get(k)==v for k,v in expected_event.items())]
++    require(len(admitted)==1,'exactly one matching admitted RSI event required')
++    evidence=json.loads(core.delivery_ref(ROOT,expected_event['evidence']))
++    require(history['rsi']==evidence and evidence.get('disposition')==expected_event['disposition'] and evidence.get('candidateSha256')==history['candidateSha256'] and evidence.get('integrationRevision')==history['integrated']['revision'] and evidence.get('authorizationExpiresUTC')==core.effective_delivery_authorization(record),'validated RSI evidence binding differs')
++    return evidence
++
++
+ def check_state(core,inputs):
+     before=read(ROOT/RECORD);record=json.loads(before);record['_recordPath']=RECORD
+     reqs,state=core.context(ROOT);core.current_selection(record,state,31);history=core.delivery_state(ROOT,record,reqs)
+@@ -79,8 +89,7 @@
+     require(canonical(document(inputs['cleanCpuCandidate']))==CANDIDATE,'actual clean CPU53 candidate differs')
+     require(history['terminal'].get('rawReport')=={'path':str(Path(inputs['haskellReport']['path']).relative_to(ROOT)),'sha256':inputs['haskellReport']['sha256']},'canonical CPU53 report differs')
+     integrated=history['integrated'];require(integrated and integrated.get('sliceCompleted') is True and integrated.get('revision')=='a8e4781a0b9c2002aa60f815b47eedfde7e8a728','actual clean source integration required')
+-    rsi=history['rsi'];expected_rsi=document(inputs['rsiEvent'])
+-    require(rsi and all(rsi.get(k)==v for k,v in expected_rsi.items()) and rsi.get('disposition')=='deferred-blocker','actual bounded deferred-blocker RSI admission required')
++    validate_admitted_rsi(core,record,history,document(inputs['rsiEvent']))
+     require(canonical(document(inputs['cpuCandidate']))==DOC_CANDIDATE,'retained CPU50 candidate differs')
+     result_review=document(inputs['cpuResultReview'])
+     require(result_review.get('reviewer')=='build_audit' and result_review.get('disposition','').startswith('accepted') and result_review.get('candidateSha256')==DOC_CANDIDATE and result_review.get('report')==inputs['documentReport'],'retained CPU50 actual result peer differs')

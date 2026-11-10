@@ -1,0 +1,29 @@
+{
+  "disposition": "accepted",
+  "role": "Root",
+  "reviewer": "root-workflow-20261109",
+  "candidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "integrationRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+  "baselinePluginSha256": "8893718c9aecd2ccac4313e95a128aa7f74e7a7fc53592984ec8b5574dde6434",
+  "resultPluginSha256": "5537d8f6bc0109746080b66614b97273c921f8f107c571a1c10bd0111c165a46",
+  "diff": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/README.patch",
+    "sha256": "0fb7da9d8e339d7347095078c8e926b14832122c3153b6ad2532b1ab2114b6ae"
+  },
+  "actualComparison": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/actual-comparison-report.json",
+    "sha256": "44c5875a9a85d713559b393371696c267e26a394641be539bce48b5b7f7e223c"
+  },
+  "independentReview": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/independent-result-review.json",
+    "sha256": "3672ebb8665b0754a68c0bf5e549a0e1a1db11b83775458b52daf568b58cd638"
+  },
+  "limits": "The comparison replays the retained actual helper mechanism; it does not measure behavior induced by README text. The README clarifies that verified contract. Core, guards, ownership, clocks and original acceptance remain unchanged.",
+  "artifactRelocation": {
+    "original": {
+      "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/original-comparison.json",
+      "sha256": "5a38e71dfd291eda70034622ebfc9cdb67ba281b9cdd1374d8f56fa27d7996fa"
+    },
+    "change": "Only comparison.regression.path is relocated to the identical public regression bytes; check observations and immutable hashes are unchanged."
+  }
+}
