@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "bfbd93f91329c51d146bfb0bd0f8248e5ce23904abb4cb1071692022c6926898",
+  "baselinePluginSha256": "1d7752984c15ae8919ca7d634e227dc6f962da5152f8f39585b912e38e187f9a",
+  "baselineSnapshotSha256": "04200925084a8b12cfeca539e5f2aee1f3c3dd7f29a24516cbda50dbedf1a565",
+  "candidateSnapshotSha256": "bf911059d17a4f34c0761f83ff8279d5197c8350042c59263cf3c8f2335d1dc0",
+  "immutableHashes": {
+    "taskFiles": "76ffa33d39eed6fcc1bad0d57ceebdb25a4979587267d4d4c3244ad5cb8f35aa",
+    "sourceFiles": "e6566fbe71c5e120c8d0402387bfd4996173f4e7ba51f0c67db9ab5426d45cbe",
+    "oracleFiles": "538ed5304320df591318c0694f0d91fb02d0c48c1470684c1aeb372d13b51842",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "a411386dba9de739d95b93b717d2762234f2dfd86192ccadfee2e2eb074740ca",
+    "pluginBaselineFiles": "1d7752984c15ae8919ca7d634e227dc6f962da5152f8f39585b912e38e187f9a"
+  },
+  "checks": [
+    {
+      "name": "retained-generated-main-entrypoint-failure",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "retained-overlapping-main-source-root-failure",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "actual-isolated-admission22-32-with-honest-at-red",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "actual-changed-engine-target-reachability",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "one-doc-overlay-keeps-runtime-core-and-plugin-membership",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "documentation-explicit-haskell-component-guidance",
+      "baselinePassed": false,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/regression.json",
+    "sha256": "02c0eb59c3d53cc411545082fa53205b23273fe7ddbb774e220ec87b8c9bd0e5"
+  }
+}

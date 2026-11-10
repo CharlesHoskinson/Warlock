@@ -43,6 +43,8 @@ Use delivery-event for candidate, review, execution, integration, journey and RS
 
 An API compiler RED is not a semantic RED. A RED/GREEN pair preserves one independent fixture and names both source manifests. Expected RED never permits integration. A missing future production file can be represented only as an explicit absent source. Fixtures and runners require actual bytes.
 
+Declare `main-is: Main.hs` when Cabal preprocesses `Main.hsc`. Keep each test component's `hs-source-dirs` separate from native entrypoint roots. Copy exact pinned shared helper modules into the isolated test tree when required. List each changed module and the component that actually compiles it. For `runtime/ui/Warlock/Ui/EngineCustody.hsc`, include existing `warlock-runtime:test:ui-engine-controls` when the three-target recipe does not reach it. An earlier build of other targets does not establish that the changed module compiles.
+
 Before freezing a fixed `--application-owner-route` candidate, run `scripts/owner_route_preflight.py` from the contributor plugin with the exact packet path and SHA256. Retain its advisory result with the candidate. It checks the three literal fixture bindings without executing the runner. A consistent result grants no readiness or execution authority; independent review and the protected launcher remain required.
 
 ### Producer counters and capture limits

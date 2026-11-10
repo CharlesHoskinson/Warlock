@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "pluginSha256": "aa37b586af99b8a62890f27c00196268428976e5fdb914b4cb972c4a11f94f7d",
+  "terminal": true,
+  "exit": 0,
+  "testsRun": 5,
+  "failures": 0,
+  "errors": 0,
+  "scope": "Five existing real isolated core regression methods in candidate phase, also run once in baseline; ten total method executions. Six source/build-artifact/document observations per phase are separate from ten actual method executions. Doc-only comparison runs identical core in both phases. No fullsuite/compiler/native or latency claim.",
+  "actualProbe": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/actual-probe-results.json",
+    "sha256": "74d87318405fb02e43b9481655d33e16d461281ef0cb188d0c52df005edc66a7"
+  },
+  "actualPhase": "candidate",
+  "methods": [
+    "test_delivery_flow.DeliveryFlowTests.test_stale_hash_duplicate_and_self_review_refuse_without_write",
+    "test_delivery_flow.DeliveryFlowTests.test_fixture_drift_and_wrong_scope_block_execution",
+    "test_delivery_flow.DeliveryFlowTests.test_second_job_and_wrong_job_terminal_refuse",
+    "test_delivery_flow.DeliveryFlowTests.test_rsi_changed_immutable_guard_refuses",
+    "test_delivery_flow.DeliveryFlowTests.test_rsi_wrong_candidate_and_untested_adoption_refuse"
+  ]
+}
