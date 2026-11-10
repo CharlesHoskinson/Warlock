@@ -250,6 +250,7 @@ applyDesktopRequest bound catalog pins operations lastWrite catalogObservation s
       sendReply reply
   D.ApplicationLaunch -> ioError (userError "application launch requires current admitted context")
   D.WindowRead -> ioError (userError "window observation unavailable")
+  D.WindowWatch -> ioError (userError "window watch unavailable")
   D.NotificationRead -> ioError (userError "notification service unavailable")
   D.NotificationEffect -> ioError (userError "notification service unavailable")
  where
@@ -312,6 +313,11 @@ runBackendWithObservation (BackendConfig bound deadlineText (UiImage image dev i
        Just reader -> do
         (scope,credential) <- readIORef admittedContext >>= maybe (ioError (userError "window read outside admission")) pure
         WindowObservation.readWindowReply reader scope credential request >>= sendReply
+      D.WindowWatch -> case observation of
+       Nothing -> ioError (userError "window watch unavailable")
+       Just reader -> do
+        (scope,credential) <- readIORef admittedContext >>= maybe (ioError (userError "window watch outside admission")) pure
+        WindowObservation.readWindowWatchReply reader scope credential request >>= sendReply
       D.ApplicationLaunch -> handleApplication request
       _ -> applyDesktopRequest bound catalog pins operations lastWrite catalogObservation sendReply request
      issuerInCurrentAdmission = do
@@ -359,7 +365,7 @@ runBackendWithObservation (BackendConfig bound deadlineText (UiImage image dev i
        -- acquired a service and advertises no service capability. Reject the
        -- entire batch before attachment or any earlier request can take effect.
        if not (all (\request -> D.requestKind request `elem` [D.CatalogRead,D.PinsWrite,D.ApplicationLaunch]
-         || (D.requestKind request==D.WindowRead && case observation of Just _ -> True; Nothing -> False)) requests)
+         || (D.requestKind request `elem` [D.WindowRead,D.WindowWatch] && case observation of Just _ -> True; Nothing -> False)) requests)
         then do
          ingress <- readIORef slot >>= maybe (ioError (userError "backend ingress not activated")) pure
          -- The in-flight Gate becomes Draining and retains the endpoint. After
@@ -387,7 +393,7 @@ runBackendWithObservation (BackendConfig bound deadlineText (UiImage image dev i
           let available = case producer of Right _ -> D.ApplicationLaunchAvailable; Left _ -> D.ApplicationUnavailable
           construct (case observation of
            Nothing -> D.applicationAttachedWithLocalNotifications bound available
-           Just _ -> D.applicationAttachedWithWindowObservation bound available) >>= sendReply
+           Just _ -> D.applicationAttachedWithWindowWatch bound available) >>= sendReply
          else pure ()
          -- The shared codec/gate has validated ALL requests before this point.
          -- After any first attachment validation, presentation-only commits run

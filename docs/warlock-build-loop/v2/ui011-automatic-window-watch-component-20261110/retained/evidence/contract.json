@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "status": "tests-first-proposal-no-production-before-protected-red",
+  "selectedTransport": "bounded automatic authenticated WindowWatch request; no user Refresh",
+  "rejectedBroaderOption": "Unsolicited push requires new ingress-idle scheduling and admission. PersistentOwnerWake retires the gate and is not a change notification. Original UI011 does not require unsolicited push.",
+  "capability": {
+    "field": "windowObservationOperations",
+    "supportedValues": [
+      [],
+      [
+        "window-read"
+      ],
+      [
+        "window-read",
+        "window-watch"
+      ]
+    ],
+    "semantics": "Only the actual configured same-binding lexical live owner may advertise watch after existing admission read. Legacy constructor and read-only attachment retain their exact wire. No watch inferred from read, generation, JSON config or appId. Exact ordering/duplicates/unknown entries rejected."
+  },
+  "request": {
+    "protocolVersion": 3,
+    "kind": "window-watch",
+    "binding": {
+      "lifetime": "1",
+      "session": "1",
+      "frontend": "1"
+    },
+    "requestId": "10",
+    "observedRevision": "7"
+  },
+  "requestRules": [
+    "Exactly five fields; nonzero decimal-string counters, strict full Binding.",
+    "Same actual authenticated Scope/PeerCredential and original AdmissionDeadline as WindowRead.",
+    "One outstanding watch in frontend; monotonic shared backend request high-water mark reserved BEFORE owner IO.",
+    "observedRevision must equal last published snapshot revision held by this Reader; stale base returns Unavailable without owner IO.",
+    "No endpoint/path/timeout/owner/thread/command arguments on the wire."
+  ],
+  "reply": {
+    "protocolVersion": 3,
+    "kind": "window-watch-result",
+    "binding": {
+      "lifetime": "1",
+      "session": "1",
+      "frontend": "1"
+    },
+    "requestId": "10",
+    "observedRevision": "7",
+    "status": "Unchanged",
+    "snapshot": null
+  },
+  "replyRules": [
+    "Exactly seven fields. Unchanged/Unknown/Unavailable require null snapshot. Changed requires strict owner-bound WindowSnapshot with revision greater than observedRevision.",
+    "Unchanged is emitted only after actual current readToplevelSnapshot returns a committed snapshot equal to the cached FT.Snapshot by opaque Handle/Output generations and full committed title/appId/state/output/parent content. No reply-counter inference.",
+    "Changed publishes the actually read snapshot through existing nonreused handle/output ordinal mapping and increments published revision once. Harmless metadata/other-window changes are Changed facts but are NOT opener closure.",
+    "Unknown consumes the request, stops watching and retains existing uncertainty/fault semantics. No replay, fallback grant or autonomous mutation.",
+    "Unchanged does not advance published revision, menu stamp, lease, menu ID or GUI publication."
+  ],
+  "backendSeam": {
+    "sameThread": "Backend.runBackend encloses runBackendWithObservation inside withForeignToplevelOwner; existing Aggregate receive/credential dispatch stays unchanged.",
+    "Reader": "Extend only Reader/Ledger with Maybe FT.Snapshot for last successfully published state. Existing readWindowReply stores that snapshot with its actual revision.",
+    "newFunction": "readWindowWatchReply :: Reader -> Scope -> PeerCredential -> DesktopRequest -> IO DesktopReply",
+    "admission": "Same withCurrentAdmission/validateReaderScope path. Shared monotonic request reservation. Existing owner read/checks; no new worker, reconnect, timer, idle admission or fresh duration.",
+    "capabilityConstructor": "applicationAttachedWithWindowWatch :: Binding -> ApplicationAvailability -> Either Text DesktopReply; existing applicationAttachedWithWindowObservation unchanged."
+  },
+  "frontendSeam": {
+    "timer": "Desktop.ArmWindowWatch opaque token -> existing DesktopPolicy.Delay 100ms -> Desktop.WindowWatchDue token. This delay is backpressure, not authorization/deadline.",
+    "token": "Captured full binding, owner generation, presentation owner, MenuId, current menu binding/fingerprint and published observation revision; token invalidated by close, supersession, stop or a newer arm.",
+    "pending": "Dedicated windowWatchExpected request/base-revision; ordinary windowExpected remains separate so in-flight watch never disables the current menu or fakes closure.",
+    "currentReply": "Only exact expected request/base revision/binding/owner and still-current keyboard scope can settle. Closed/replaced presentation ignores old result and never resurrects scope.",
+    "unchanged": "Clear watch pending, schedule one successor token, emit no Focus and no GUI Publish; existing menu and stamp remain identical.",
+    "changedEligibleOrigin": "Only the correlated watch-result branch may update actual observation and use existing Menu.rebindReady through MenuBridge, retaining MenuId/items/lease/focus when captured full fingerprint remains eligible. Refresh captured observed rows/stamp/menu binding/menuOrigin consistently. Harmless same-origin metadata and unrelated-window changes do not dismiss or restore. Ordinary explicit Refresh behavior remains unchanged.",
+    "changedClosedOrigin": "Only a successful current Changed snapshot proving the captured full group fingerprint absent/replaced/ineligible closes this keyboard scope. Create one distinct current Applications fallback intent under same binding/presentation and exact enabled identity. Do not deliver old-origin focus to the replacement, or call any Changed snapshot closure.",
+    "counterOnlyChanged": "Reject semantically unchanged Changed payload (apart from revision). Do not retire or focus. Backend never emits it.",
+    "transport": "OutputController observation bookkeeping must classify window-watch so omitted/unsent/refused batches cancel it without replay. SurfaceController must not publish solely because private watch bookkeeping changed; compare actual same-scope rendered packet. DesktopPolicy timer-only watch effect must not manufacture an empty commit. Existing non-watch publication behavior remains unchanged."
+  },
+  "bounds": {
+    "outstandingWatch": 1,
+    "delayMilliseconds": 100,
+    "nativeDeadline": "same inherited original absolute deadline, never extended",
+    "wireRequestBytes": 8192,
+    "snapshotRows": 256,
+    "snapshotOutputs": 64,
+    "ownerEventAndMemoryCaps": "unchanged existing owner caps",
+    "nativeBudgetNs": 28000000000,
+    "cleanupNs": 2000000000,
+    "nativeFrames": 16,
+    "nativePhases": 16
+  },
+  "requiredSourcePaths": [
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs",
+    "implementation/warlock/src/WindowObservation.elm",
+    "implementation/warlock/src/Shell.elm",
+    "implementation/warlock/src/MenuBridge.elm",
+    "implementation/warlock/src/Desktop.elm",
+    "implementation/warlock/src/DesktopPolicy.elm",
+    "implementation/warlock/src/SurfaceController.elm",
+    "implementation/warlock/src/OutputController.elm"
+  ],
+  "unchangedBoundaries": [
+    "ForeignToplevelOwner.hsc",
+    "Bootstrap.Aggregate",
+    "ScopedPeer",
+    "CredentialIngress",
+    "Transport.Channel",
+    "Menu.elm public rebindReady",
+    "HTTP renderer/provider authority",
+    "Root-owned independent opener fixture and Cabal stanza"
+  ],
+  "testingStages": [
+    "Existing public Haskell codec literal corpus: current baseline rejects optional watch admission/requests/replies semantically; no missing new import or constructor required.",
+    "Public DesktopPolicy/OutputController/Surface fixture drives actual emitted Delay token, watch request and typed reply; no direct model injection or manual Refresh. Baseline may lack watch capability; named capability-admission cases distinguish this from later runtime semantics.",
+    "After valid renewal, Root executes formal typecheck/runs and frozen protocol/Elm RED before any production implementation.",
+    "Backend actual same-owner read/no-IO stale request and semantic snapshot comparison need focused runtime controls after implementation; pure codec/reducer results do not prove real callback/custody IO.",
+    "Final original qualification requires independent opener close with shell alive and physical+AT fallback under renewed explicit native scope."
+  ],
+  "ownership": {
+    "productionAndTests": "workflow_astra private author; Root sole primary/effects",
+    "independentReview": "existing build_audit",
+    "openerFixtureAndCabalFragment": "Root, disjoint; no author edits",
+    "coordination": "existing sol_supervisor"
+  },
+  "specLimits": "New bounded formal abstraction of scheduling/correlation/semantic change/closure; existing menu-focus and focus-publication bytes unchanged. No formal execution or proof is claimed.",
+  "correctionsToPriorPlanReferences": {
+    "admitReader/readWindowReply": "runtime/src/Warlock/Backend/WindowObservation.hs",
+    "parseMvpFocusIntent/mvpFocusTransition": "runtime/ui/Warlock/Ui/Mvp.hsc",
+    "engineEnvironment/startUnreadyEngine": "runtime/ui/Warlock/Ui/EngineCustody.hsc"
+  }
+}

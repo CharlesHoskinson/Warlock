@@ -1,4 +1,4 @@
-module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities, menuApplication, newInstanceAvailable, applicationPageSize, applicationPageCount)
+module Desktop exposing (Effect(..), WindowWatchToken, ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities, menuApplication, newInstanceAvailable, applicationPageSize, applicationPageCount)
 
 import Menu
 import GeometryProjection
@@ -38,7 +38,8 @@ import Snap
 import UInt64 exposing (Counter)
 
 type alias Model =
-    { windows : TaskbarShell.Model
+    { windowWatch : Maybe {token : WindowWatchToken, phase : WatchPhase}
+    , windows : TaskbarShell.Model
     , choice : Maybe Choice
     , choiceNotice : String
     , popupOrigin : PopupOrigin
@@ -104,6 +105,9 @@ type alias Model =
     }
 
 type PopupOrigin = PointerEntry | KeyboardEntry
+
+type WatchPhase = WatchScheduled | WatchPending | WatchStopped
+type WindowWatchToken = WindowWatchToken {context : MenuBridge.ObservedContext, menu : Menu.MenuId, presentation : Counter, request : Counter}
 
 type FocusDestination = TaskbarGroup String | OverviewOpener | ObservedScopeRetirement String
 type alias FocusTarget = {binding : Binding.Binding, destination : FocusDestination, output : Maybe Counter, observed : Maybe MenuBridge.ObservedContext}
@@ -233,6 +237,7 @@ type Msg
     | Start Launch.Selection
     | Deadline Launch.PendingToken
     | ChoiceDeadline ChoiceToken
+    | WindowWatchDue WindowWatchToken
     | RetryWindows
     | Acknowledge Launch.Acknowledgement
 
@@ -240,13 +245,14 @@ type Effect
     = WindowEffect Shell.Effect
     | Send E.Value
     | Arm Launch.PendingToken
+    | ArmWindowWatch WindowWatchToken
     | ArmChoice ChoiceToken
     | ArmWorkspaceNavigation WorkspaceNavigation.Intent
     | Focus String
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, launchFromApplications = False, applications = Nothing, applicationPage = 0, presentationCapacity = False, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, workspaceInventory = Nothing, workspaceNavigation = WorkspaceNavigation.initial, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
+    { windowWatch=Nothing, windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, launchFromApplications = False, applications = Nothing, applicationPage = 0, presentationCapacity = False, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, workspaceInventory = Nothing, workspaceNavigation = WorkspaceNavigation.initial, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
 
 taskViewGroups : Model -> Maybe (List TaskView.Workspace)
 taskViewGroups model = TaskView.groupsWith model.workspaceInventory model.windows.shell
@@ -636,7 +642,17 @@ window message model =
 
 update : Msg -> Model -> ( Model, List Effect )
 update message model =
+    let (next,effects) = case message of
+            WindowWatchDue token -> dueWindowWatch token model
+            Incoming raw ->
+                if D.decodeValue (D.field "kind" D.string) raw==Ok "window-watch-result" then receiveWindowWatch raw model else updateEntry message model
+            _ -> updateEntry message model
+    in scheduleWindowWatch next effects
+
+updateEntry : Msg -> Model -> (Model,List Effect)
+updateEntry message model =
     case message of
+        WindowWatchDue _ -> (model,[])
         SurfaceEntry origin inner -> update inner {model|popupOrigin=origin}
         _ -> updateOrdinary message model
 
@@ -804,6 +820,7 @@ gestureAction message =
 
 updateAvailable message model =
     case message of
+        WindowWatchDue _ -> (model,[])
         OpenSnap stamp root ->
             if capture model/=Just stamp || not (Shell.available model.windows.shell)
                 || MenuBridge.blockedFor root model.windows.shell model.windows.menus then (model,[]) else
@@ -1677,3 +1694,75 @@ restoreObservedFocus matching target model effects =
                     else (retired,effects++[Focus capturedFallback])
                 _ -> if same then (retired,effects++[Focus ("group:"++Shell.stampKey stamp++":"++original.group)]) else (retired,effects)
         _ -> (retired,effects)
+
+watchScopeCurrent : WindowWatchToken -> Model -> Bool
+watchScopeCurrent (WindowWatchToken token) model =
+    model.popupOrigin==KeyboardEntry && not model.ownerExhausted && Shell.watchAvailable model.windows.shell
+        && model.presentation==Just token.presentation && model.ownerScope==Just token.context.presentation
+        && model.windows.shell.binding==Just token.context.binding && Shell.capture model.windows.shell==Just token.context.stamp
+        && MenuBridge.observedContext model.windows.menus==Just token.context
+        && ((MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.map .id)==Just token.menu
+        && (model.menuOrigin |> Maybe.andThen .observed)==Just token.context
+        && not model.open && not model.overview && not model.filesOpen && not model.notificationsOpen && not model.systemMenuOpen && not model.settingsOpen
+
+clearWindowWatch : Model -> Model
+clearWindowWatch model =
+    let windows=model.windows
+        shell=windows.shell
+    in {model|windowWatch=Nothing,windows={windows|shell={shell|windowWatchExpected=Nothing}}}
+
+scheduleWindowWatch : Model -> List Effect -> (Model,List Effect)
+scheduleWindowWatch model effects =
+    case model.windowWatch of
+        Just pending ->
+            if watchScopeCurrent pending.token model then
+                if pending.phase==WatchPending && model.windows.shell.windowWatchExpected==Nothing then
+                    ({model|windowWatch=Just {pending|phase=WatchStopped}},effects)
+                else (model,effects)
+            else scheduleWindowWatch (clearWindowWatch model) effects
+        Nothing ->
+            case (MenuBridge.observedContext model.windows.menus,(MenuBridge.menuSnapshot model.windows.menus).menu,model.presentation) of
+                (Just context,Just menu,Just presentation) ->
+                    let token=WindowWatchToken {context=context,menu=menu.id,presentation=presentation,request=model.windows.shell.request}
+                    in if not (watchScopeCurrent token model) then (model,effects) else
+                        ({model|windowWatch=Just {token=token,phase=WatchScheduled}},effects++[ArmWindowWatch token])
+                _ -> (model,effects)
+
+dueWindowWatch : WindowWatchToken -> Model -> (Model,List Effect)
+dueWindowWatch ((WindowWatchToken token) as opaque) model =
+    case model.windowWatch of
+        Just pending ->
+            if pending.token/=opaque || pending.phase/=WatchScheduled || not (watchScopeCurrent opaque model) || token.request/=model.windows.shell.request then (model,[]) else
+            case model.windows.shell.windowObservation of
+                Nothing -> (model,[])
+                Just observed ->
+                    let (shell,effects)=Shell.watchWindows observed.revision model.windows.shell
+                        windows=model.windows
+                    in ({model|windowWatch=Just {pending|phase=if shell.windowWatchExpected==Nothing then WatchStopped else WatchPending},windows={windows|shell=shell}},List.map WindowEffect effects)
+        Nothing -> (model,[])
+
+receiveWindowWatch : D.Value -> Model -> (Model,List Effect)
+receiveWindowWatch raw model =
+    case model.windowWatch of
+        Just pending ->
+            if pending.phase/=WatchPending || not (watchScopeCurrent pending.token model) then (model,[]) else
+            let (shell,_)=Shell.update (Shell.Incoming raw) model.windows.shell
+                windows=model.windows
+            in if shell.windowWatchExpected/=Nothing || model.windows.shell.windowWatchExpected==Nothing then (model,[]) else
+                case D.decodeValue WindowObservation.watchReplyDecoder raw of
+                    Err _ -> (model,[])
+                    Ok receipt ->
+                        if List.member receipt.status ["Unknown","Unavailable"] then
+                            ({model|windows={windows|shell=shell},windowWatch=Just {pending|phase=WatchStopped}},[])
+                        else if receipt.status=="Unchanged" then
+                            ({model|windows={windows|shell=shell},windowWatch=Nothing},[])
+                        else
+                            let menus=MenuBridge.reconcileWatch shell windows.menus
+                                origin=MenuBridge.observedContext menus
+                                next={model|windows={windows|shell=shell,menus=menus},windowWatch=Nothing
+                                    ,menuOrigin=Maybe.map (\current -> {binding=current.binding,destination=TaskbarGroup current.group,output=Nothing,observed=Just current}) origin}
+                            in if (MenuBridge.menuSnapshot menus).menu/=Nothing then (next,[]) else
+                                case observedRetirementTarget model of
+                                    Nothing -> (next,[])
+                                    Just target -> restoreObservedFocus True target {next|returnFocus=Just target} []
+        Nothing -> (model,[])

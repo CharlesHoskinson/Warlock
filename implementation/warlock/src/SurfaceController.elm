@@ -43,7 +43,10 @@ applyOrdinary message ((Model model) as current) =
         lease = if newLease then UInt64.next model.lease else Just model.lease
     in
     if not changed && List.isEmpty effects then (current,[]) else
-        let stableSurface = model.publication/=UInt64.zero && not newLease && List.isEmpty effects
+        let stableSurface = model.publication/=UInt64.zero && not newLease && List.all (\effect -> case effect of
+                    Desktop.ArmWindowWatch _ -> True
+                    Desktop.WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-watch"
+                    _ -> False) effects
                     && E.encode 0 (Surface.packet model.publication model.lease next)==E.encode 0 (frame current)
             stableApplications = case message of
                 Desktop.Window (TaskbarShell.Native (Shell.SupersedeObservations _)) ->
@@ -84,7 +87,7 @@ apply message ((Model model) as current) =
                 proofs=(List.filter (\slot -> not slot.released) reset.slots |> List.filterMap .proof) ++ (reset.informational |> Maybe.map List.singleton |> Maybe.withDefault []) |> List.foldl (\proof values -> if List.member proof values then values else proof::values) []
                 readyEffects=if hasReads then List.map (\proof -> DesktopEffect (Desktop.Send (E.object [("protocolVersion",E.int 3),("kind",E.string "reconciliation-ready"),("binding",Binding.encode proof.binding),("proofRequestId",E.string (UInt64.string proof.requestId)),("queriedBinding",Binding.encode proof.queriedBinding)]))) proofs else []
                 emitted=readyEffects++effects
-            in if result.desktop/=model.desktop && not (List.any (\effect -> case effect of
+            in if result.desktop/=model.desktop && not (watchBookkeeping message && E.encode 0 (frame next)==E.encode 0 (frame current)) && not (List.any (\effect -> case effect of
                 Publish _ -> True
                 _ -> False) effects) then
                     case UInt64.next result.publication of
@@ -199,3 +202,10 @@ update event ((Model model) as current) =
                     Desktop.capture model.desktop |> Maybe.map (\stamp -> apply (Desktop.CloseApplications stamp) current) |> Maybe.withDefault (current,[])
                 else
                     model.desktop.windows.picker |> Maybe.map (\picker -> apply (Desktop.Window (TaskbarShell.Close picker.scope picker.generation)) current) |> Maybe.withDefault (current,[])
+
+watchBookkeeping : Desktop.Msg -> Bool
+watchBookkeeping message =
+    case message of
+        Desktop.WindowWatchDue _ -> True
+        Desktop.Incoming raw -> D.decodeValue (D.field "kind" D.string) raw==Ok "window-watch-result"
+        _ -> False

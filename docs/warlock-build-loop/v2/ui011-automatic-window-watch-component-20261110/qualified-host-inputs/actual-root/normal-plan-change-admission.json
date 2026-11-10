@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+    "--repo",
+    "/home/hoskinson/Projects/Warlock",
+    "--record",
+    ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+    "delivery-event",
+    "--event-file",
+    ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/host-inventory-85f1-20261110/plan-changed.json",
+    "--expect-record-sha",
+    "50809d5614fc8fa5489d32d82087b9541f255ef269882b0e2866c7e09ef01b68",
+    "--expect-selection",
+    "33"
+  ],
+  "exit": 0,
+  "stdout": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\n{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"record\": \".warlock-contributor/ui011-observed-opener-closure-root-20261110.json\",\n  \"nextRootAction\": {\n    \"kind\": \"correct\",\n    \"executor\": \"Root\",\n    \"candidateId\": \"ui011-window-watch-protocol-runtime-current-20261110\",\n    \"candidateSha256\": \"9fbe3567b3fa27d08de9736276196c60cd3e6a7053494a2746fd35a4b25377c0\",\n    \"jobId\": \"pid108248-start61327\",\n    \"argv\": [\n      \"/usr/bin/python3\",\n      \"-B\",\n      \"/home/hoskinson/Projects/Warlock/tools/qa_cpu.py\",\n      \"--review\",\n      \"/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/window-watch-protocol-runtime-green-cpu/review-packet.json\",\n      \"--sha256\",\n      \"f5e3afbc448e707b8adfe23ad0e826f7b2815a29fae67740cbf0d32166529536\"\n    ],\n    \"expectedObservation\": \"Compile exact current protocol29 test and runtime library, then all29 ordered public protocol controls PASS. Existing current-cache/SDK/inventory/source/group checks, protocol300s/command120s/cleanup2s retained. No owner image, native, original or AT credit. Private RED/model evidence preserved; no managed expected-red pointer.\",\n    \"executionAuthorized\": false,\n    \"acceptanceInferred\": false,\n    \"progress\": {\n      \"workflowPolicy\": 2,\n      \"iterationsWithoutProgress\": 0,\n      \"lastRecordedProgressUTC\": \"2026-11-10T14:37:18.377336+00:00\",\n      \"secondsSinceRecordedProgress\": 13200,\n      \"suspendedSeconds\": 9,\n      \"limits\": {\n        \"iterations\": 2,\n        \"seconds\": 2700,\n        \"sameFailureExperiments\": 2\n      },\n      \"investigationNeedsChange\": false,\n      \"planChangeRequired\": true,\n      \"reconciliationRequired\": false,\n      \"authorizationExpired\": false,\n      \"reasons\": [\n        \"45-awake-minutes-without-tested-integration\"\n      ],\n      \"effectiveAuthorizationExpiresUTC\": \"2026-11-11T15:30:00Z\",\n      \"action\": \"Change the next action or defer in this same history.\",\n      \"basis\": \"Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.\"\n    }\n  },\n  \"recordSha256\": \"4783002e208e6fba3c5e0d031414956fc045ac0078717ac4b68e6e5d34a18fb4\",\n  \"acceptanceInferred\": false,\n  \"ok\": true\n}\n",
+  "stderr": ""
+}

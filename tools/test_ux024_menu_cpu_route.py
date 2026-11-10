@@ -300,4 +300,58 @@ class FixedUi011ScopeRoute(unittest.TestCase):
             self.assertNotIn('implementation/warlock/qa/arbitrary.cjs',actual)
         self.assertFalse(qa.menu_tab_dom_mode(REPOSITORY/'tools/check_elm_cpu.py',['--ui011']))
 
+
+class FixedUi011WatchRoute(unittest.TestCase):
+    def valid(self):
+        return {'schema':1,'passed':True,'classification':'component-pass','caseCount':27,
+                'nativeAcceptance':False,'originalAcceptance':False,'assistiveTechnologyAcceptance':False,'providerAcceptance':False,
+                'imageSha256':'a'*64,'fixtureSha256':'b'*64,'failures':[],'seedFailures':[],'seedSampleCount':32,
+                'checks':[{'name':name,'passed':True} for name in elm.UI011_WATCH_CASES],
+                'observed':{'preconditions':{name:True for name in elm.UI011_WATCH_PRECONDITIONS},'checks':{name:True for name in elm.UI011_WATCH_CASES},
+                    'seeded':{'seeds':list(range(32)),'samples':[{'seed':i,'variant':i%8,'contractReady':True,'expectedEligible':True,'preservedScope':True,'once':True,'noMutation':True,'actualFocus':['exact-current']if i%8 in (1,2)else[],'expectedFocus':['exact-current']if i%8 in (1,2)else[]}for i in range(32)]}}}
+    def check(self,value):elm.validate_ui011_watch_result(value,'a'*64,'b'*64)
+    def test_watch_exact_report(self):self.check(self.valid())
+    def test_watch_missing_extra_duplicate_or_reordered_case_refuses(self):
+        for mode in ('missing','extra','duplicate','order'):
+            value=self.valid()
+            if mode=='missing':value['checks'].pop()
+            if mode=='extra':value['checks'].append({'name':'extra','passed':True})
+            if mode=='duplicate':value['checks'][-1]=copy.deepcopy(value['checks'][0])
+            if mode=='order':value['checks'].reverse()
+            with self.assertRaises(RuntimeError):self.check(value)
+    def test_watch_setup_and_fact_inventory_refuses(self):
+        for field in ('preconditions','checks'):
+            for mode in ('missing','extra','false','nonboolean'):
+                value=self.valid();rows=value['observed'][field];name=next(iter(rows))
+                if mode=='missing':rows.pop(name)
+                if mode=='extra':rows['extra']=True
+                if mode=='false':rows[name]=False
+                if mode=='nonboolean':rows[name]=1
+                with self.assertRaises(RuntimeError):self.check(value)
+    def test_watch_red_artifact_and_acceptance_refuses(self):
+        for key,val in (('passed',False),('classification','watch-capability-or-scheduling-red'),('classification','semantic-red'),('imageSha256','0'*64),('fixtureSha256','0'*64),('nativeAcceptance',True),('originalAcceptance',True),('assistiveTechnologyAcceptance',True),('providerAcceptance',True)):
+            value=self.valid();value[key]=val
+            with self.assertRaises(RuntimeError):self.check(value)
+    def test_watch_seed_lifecycle_and_exact_focus_refuse(self):
+        for mode in ('short','order','variant','scope','contract','duplicate-focus','wrong-target','nonboolean','seed-failure'):
+            value=self.valid();seeded=value['observed']['seeded'];sample=seeded['samples'][1]
+            if mode=='short':seeded['samples'].pop()
+            if mode=='order':seeded['seeds'].reverse()
+            if mode=='variant':sample['variant']=7
+            if mode=='scope':sample['preservedScope']=False
+            if mode=='contract':sample['contractReady']=False
+            if mode=='duplicate-focus':sample['actualFocus']*=2
+            if mode=='wrong-target':sample['actualFocus']=['replacement']
+            if mode=='nonboolean':sample['once']=1
+            if mode=='seed-failure':value['seedFailures']=[{'actual':'failure'}]
+            with self.assertRaises(RuntimeError):self.check(value)
+    def test_watch_exact_ignored_fixture_pair_and_closed_mode(self):
+        with tempfile.TemporaryDirectory() as temp:
+            actual=qa.menu_tab_dom_inputs(Path(temp))
+            self.assertEqual(len(elm.UI011_WATCH_QA_INPUTS),2)
+            self.assertTrue(set(elm.UI011_WATCH_QA_INPUTS)<=actual)
+            self.assertTrue(all(name.startswith('.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/')for name in elm.UI011_WATCH_QA_INPUTS))
+            self.assertNotIn('implementation/warlock/qa/arbitrary.cjs',actual)
+        self.assertFalse(qa.menu_tab_dom_mode(REPOSITORY/'tools/check_elm_cpu.py',['--window-watch']))
+
 if __name__ == '__main__': unittest.main()

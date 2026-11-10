@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-watch-capability-or-scheduling-red",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/red-execution-preparation-revision2-fail-closed/actual-root-runs/elm-1794328436377979445/report.json",
+    "sha256": "9c7719f2215dca7a0ffb69583cc14e4e9e2240c040dcec575d7098809d129991"
+  },
+  "componentReport": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/red-execution-preparation-revision2-fail-closed/actual-root-runs/elm-1794328436377979445/window-watch.json",
+    "sha256": "c67f3be4f66ce7fd30326c35348481e52a280d86cc9cd7be248b2dfdf4259675"
+  },
+  "verified": {
+    "threeCurrentHtmlAndReplayCompileExitZero": true,
+    "legacySetupTrue": 3,
+    "cases": 27,
+    "legacyReadOnlyPass": 1,
+    "watchDependentFailures": 26,
+    "seedRecords": 32,
+    "sourceInputsUnchanged": true,
+    "cleanupQualified": true
+  },
+  "limits": [
+    "No reviewer execution/primary writes.",
+    "Baseline demonstrates absent watch capability/scheduling through public API, not isolated proof of every future semantic or backendIO defect.",
+    "No compiler/setup failure; first Quint attempt separately remains cache setup failure and no model result.",
+    "All failed predicates/fixture bytes retained; no native/AT/EARS credit."
+  ]
+}

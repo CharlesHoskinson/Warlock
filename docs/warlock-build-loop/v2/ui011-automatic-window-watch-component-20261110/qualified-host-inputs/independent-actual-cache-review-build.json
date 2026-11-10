@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-loader-cache-correspondence",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/correspondence-source/cache-scan-actual/cache-correspondence.PROPOSED.json",
+    "sha256": "2b8ffd25f29be8d50f2062af8417b27652c96687bdb58a3378c703d173c1ed73"
+  },
+  "verified": [
+    "Actual protected scan terminal exit0, stdout/stderr hashes exact; retained scope qa-harness-e0a0870f077e404bb9fb34c2bd6b0151/coreLimit1, reviewed120s fixed scanner.",
+    "All referenced raw audit/snapshot/selected-recipe hashes verified; complete new inventory15851 matched including1146 links, zero mismatches and cacheStableBeforeAfter true.",
+    "All800 selected edge rows and9 interpreters present; resolution/alias/node mismatches empty;10 required-absent candidates remain absent.",
+    "Current85f1 cache body equals retained snapshot; exact newly adopted inventory9984/descriptor3c1 match reviewed private bodies; descriptor onlysystemInputs changes as previously reviewed."
+  ],
+  "allowedAcceptedProofBody": {
+    "schema": 1,
+    "disposition": "accepted",
+    "scope": "ux003-current-loader-cache-correspondence",
+    "expectedCacheSha256": "e26846bd2ef0d774afeb7f995b1dea790ca0037f13bb64df5694ee74b414d7b6",
+    "currentCacheSha256": "85f1d0ec7186f21e65d355a7e0d1b9746b57e3beef652ff9532676faa89ae582",
+    "systemInventorySha256": "9984660710cec4b197733e953f00dc850b3876e77c977684e4c9605348e81f8f",
+    "selectedResolutionManifest": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794037285027049547/native-build-stage-manifest.json",
+      "sha256": "b3c9f30dcedc626f603fc963239108fae64639ccfd03a7dc292550beb1e9aa60"
+    },
+    "edgeCount": 800,
+    "selectedResolutionMismatches": 0,
+    "requiredAbsentCandidateCount": 10,
+    "requiredAbsentNowPresent": [],
+    "systemEntryCount": 15851,
+    "systemEntryMismatches": 0,
+    "systemAudit": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/correspondence-source/cache-scan-actual/complete-system-inventory-audit.json",
+      "sha256": "cbf91d819b4a79e5453db32476da73536786471366f79f8985a90e52d688017c"
+    },
+    "cacheEntryAudit": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/correspondence-source/cache-scan-actual/actual-loader-cache-entries.json",
+      "sha256": "273b2d0f4c58841a79342dbe3f35b524813755a339a6a6c5253a11e1ac9f08a4"
+    },
+    "selectedResolutionAudit": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/correspondence-source/cache-scan-actual/selected-loader-resolution-correspondence.json",
+      "sha256": "a50d7158f9c9d04b5defc550d8338a33b548835ad559c337e5a6ed0de393e433"
+    },
+    "currentCacheSnapshot": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/correspondence-source/cache-scan-actual/actual-ld.so.cache",
+      "sha256": "85f1d0ec7186f21e65d355a7e0d1b9746b57e3beef652ff9532676faa89ae582"
+    },
+    "nativeExecuted": false,
+    "passed": true,
+    "protectedScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e0a0870f077e404bb9fb34c2bd6b0151.scope",
+      "coreLimit": 1
+    },
+    "sourceStatus": "reconstructed from reviewed retained schema; first execution only after independent review",
+    "reviewer": "build_audit"
+  },
+  "limits": [
+    "New host-inventory qualification only. Old85f1 scan against33b9 with five mismatches remains FAILED and cannot be accepted retrospectively.",
+    "No SDK compiler/dependency tree, guard or ABI waiver; no compiler/product, native, AT or original UI011 verdict.",
+    "Reviewer only read/hash inspected actual evidence; no protected execution or primary writes."
+  ]
+}

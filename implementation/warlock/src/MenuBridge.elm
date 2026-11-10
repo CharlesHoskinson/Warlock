@@ -1,5 +1,5 @@
 module MenuBridge exposing
-    ( ObservedContext, observedContext, openObservation, observeReservationUnknown, releaseReservationUnknown, retireChoices, blockedFor, Model, UpdateResult, connectionLost, currentProvider, guardedAct, initial, menuEvent
+    ( reconcileWatch, ObservedContext, observedContext, openObservation, observeReservationUnknown, releaseReservationUnknown, retireChoices, blockedFor, Model, UpdateResult, connectionLost, currentProvider, guardedAct, initial, menuEvent
     , locallyRefuseUnsent, menuSnapshot, nativeFrame, open, receiptCount, reconcileWithShell, preparedSnapshot, expirePrepared, advancePrepared, cancelSelection
     )
 
@@ -502,3 +502,24 @@ openObservation presentation incarnation shell ((Model state) as model) =
                     in if (Menu.snapshot menu).menu==(Menu.snapshot state.menu).menu then model else
                         Model {state|menu=menu,provider=Nothing,observed=Just {binding=binding,stamp=stamp,owner=snapshot.owner,group=group.key,fingerprint=fingerprint,rows=rows,presentation=presentation,menuBinding=menuBinding}}
         _ -> model
+
+-- Only the Desktop's correlated watch path uses this reconciliation. Ordinary
+-- refresh and uncorrelated observations retain their existing retirement rules.
+reconcileWatch : Shell.Model -> Model -> Model
+reconcileWatch shell ((Model state) as model) =
+    case (state.observed,(Menu.snapshot state.menu).menu,shell.windowObservation) of
+        (Just captured,Just menu,Just snapshot) ->
+            if not (Shell.inspectionAvailable shell) || shell.binding/=Just captured.binding || snapshot.owner/=captured.owner
+                || WindowObservation.fingerprint captured.group snapshot/=captured.fingerprint
+                || List.isEmpty (WindowObservation.rowsFor captured.group snapshot) then reconcileWithShell shell model else
+            case Shell.capture shell of
+                Nothing -> reconcileWithShell shell model
+                Just stamp ->
+                    let rows=WindowObservation.rowsFor captured.group snapshot
+                        fresh=Menu.binding {authority=E.encode 0 (NativeBinding.encode captured.binding),revision=UInt64.string snapshot.revision
+                            ,output=Menu.outputId (UInt64.string captured.presentation.outputId),outputGeneration="presentation:"++UInt64.string captured.presentation.providerId
+                            ,target=Menu.ProviderSelection (Menu.providerId (UInt64.string captured.presentation.providerId)) ("observation:"++UInt64.string snapshot.owner) (List.map (.id >> UInt64.string) rows)}
+                        rebound=Menu.rebindReady menu.id captured.menuBinding fresh menu.items state.menu
+                    in if ((Menu.snapshot rebound).menu |> Maybe.map .binding)/=Just fresh then reconcileWithShell shell model else
+                        Model {state|menu=rebound,observed=Just {captured|stamp=stamp,rows=rows,menuBinding=fresh}}
+        _ -> reconcileWithShell shell model

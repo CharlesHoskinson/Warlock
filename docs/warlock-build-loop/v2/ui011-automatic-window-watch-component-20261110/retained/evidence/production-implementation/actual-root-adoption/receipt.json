@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "manifestSha256": "9e30799e4ebe53f5e5171ce5521d2311198c718f308f2fd6235ab663464bc1b3",
+  "independentReviewSha256": "d3c4a6ddc6fea944cdbcf0be3b68987a3f259bb6dff275bb22e1bac7890d4dd0",
+  "selection": 33,
+  "paths": [
+    {
+      "path": "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "beforeSha256": "8182a5532aae6dd252a3c02c74d0e86b40969ac4bffb335b2c43e793cb1e4c54",
+      "sha256": "78b46c625bdfb4e0781938f9fb59bd35f60df0d95bb7d1c5f48305ecbfc52b65"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs",
+      "beforeSha256": "bc812f057b7573558b491dceae9c97f5cc4a31d8c98ea1dfc45ca3950a38eb7c",
+      "sha256": "01648a3ce02bc033b4e7c682979f863240b79db95cccfb6997a636cd78b19fd0"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "beforeSha256": "f079377b94ae56ddfd7b67d3f72f94bcf708fa87029fdb064082d9bf460c87ed",
+      "sha256": "3b8f13574f28112f6aed316c778bf132e6e431be7de6a0ab36549b254083aad5"
+    },
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "beforeSha256": "ac3713ea57f7b16cf044b04f7c98ec9e752db3ea9807acd328334377d58270d0",
+      "sha256": "6bb4324cf993765fb1bc0c811d825c48d82ee89346badc7af511092942f7473a"
+    },
+    {
+      "path": "implementation/warlock/src/DesktopPolicy.elm",
+      "beforeSha256": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+      "sha256": "e8e547e2678c97bd3e4c494bd7a8a5521ef3b0cab82bdcf406f1709d3ea084c4"
+    },
+    {
+      "path": "implementation/warlock/src/MenuBridge.elm",
+      "beforeSha256": "0aca150c48310e712bc67a2bd2d3977c03ba3934666e10848b57e7c7ae3b3424",
+      "sha256": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544"
+    },
+    {
+      "path": "implementation/warlock/src/OutputController.elm",
+      "beforeSha256": "bfd7a7087abcd8456dac3793fba21708386b63171a6a6deaac306ab75bccf808",
+      "sha256": "1ccce8b97a4f770a4f1f7f2446b9eafdc07062fc099e51506bcd35268bafb614"
+    },
+    {
+      "path": "implementation/warlock/src/Shell.elm",
+      "beforeSha256": "58c0f888f890841d77f8068f50baf1024040987e2129eecbbc7c0660ac030aea",
+      "sha256": "89e00985854126b005cbb9be12d1d6afe97d402f3753f6f86544540017895baf"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceController.elm",
+      "beforeSha256": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+      "sha256": "e0a7a0861e9266e41ef3b5705f4bb42e3ec11536f69ca6a25928bf0f5ec5b6a9"
+    },
+    {
+      "path": "implementation/warlock/src/WindowObservation.elm",
+      "beforeSha256": "428c78de7dc136969594e6a5f32cb5b985d69563bbdc91df964b82d4abb89b23",
+      "sha256": "c14c481ae42b197847194c880a4de80146943158cfd21cd56c7ab6b01e839840"
+    }
+  ],
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "precheck": {
+    "structuralPrecheckPassed": true,
+    "changedPaths": [
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Desktop.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/DesktopPolicy.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/MenuBridge.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/OutputController.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Shell.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceController.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/WindowObservation.elm"
+    ],
+    "expectedSelection": 33,
+    "effectsPerformed": false,
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "scope": "Same participant lock must remain held through actual CAS; arbitrary external shell edits are not fenced."
+  },
+  "adoptedUTC": "2026-11-10T17:00:53.958000+00:00"
+}

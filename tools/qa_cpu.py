@@ -293,10 +293,54 @@ def menu_tab_dom_inputs(root):
              'implementation/warlock/qa/ux024-bar-context-dom.cjs',
              'implementation/warlock/qa/MenuInitialFocusReplay.elm', 'implementation/warlock/qa/menu-initial-focus.cjs',
              'implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm', 'implementation/warlock/qa/ui011-observed-scope-retirement.cjs'}
+    names.update({'.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/Ui011AutomaticWindowWatchReplay.elm', '.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/ui011-automatic-window-watch.cjs'} )
     names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
     return names
 
 
+
+
+WINDOW_WATCH_PROTOCOL_RUNNER = 'tools/run_ui011_window_watch_protocol_cpu.py'
+WINDOW_WATCH_PROTOCOL_CONFIG = '.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-protocol-runtime-green-v2'
+WINDOW_WATCH_PROTOCOL_SUPPORT = {'implementation/warlock/qa/focus-publication.qnt', 'tools/menu-tab-elm-toolchain.json', 'tools/haskell-dependencies.json', 'window-integration-qa/qa_run.py', 'tools/test_ui011_window_watch_protocol_cpu.py', 'window-integration-qa/qa_launch.py', 'tools/run_ux024_menu_focus_build.py', 'tools/quint-toolchain.json', 'implementation/warlock/elm.json', 'tools/arm64_toolchain.py', 'tools/qa_cpu.py', 'tools/ux024_observation_qualification.py', 'tools/team-quint-toolchain.json', 'implementation/warlock/qa/Ux024ObservedWindowMenuReplay.elm', 'tools/arm64-toolchain.json', 'plugins/warlock-contributor/scripts/warlock.py', 'tools/check_elm_cpu.py', 'tools/run_ui011_window_watch_protocol_cpu.py', 'implementation/warlock/qa/menu-focus.qnt', 'implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm', 'implementation/warlock/qa/OutputRetirementReplay.elm'}
+
+def window_watch_protocol_mode(runner, arguments, manifest_sha):
+    return runner == REPO / WINDOW_WATCH_PROTOCOL_RUNNER and arguments == ['protocol','--manifest-sha256',manifest_sha]
+
+def window_watch_protocol_spec(root):
+    base = root / WINDOW_WATCH_PROTOCOL_CONFIG
+    def fixed_json(path):
+        if path.is_symlink() or not path.is_file() or path.resolve() != path or path.stat().st_size > 4*1024*1024:
+            raise RuntimeError('Fixed protocol metadata must be canonical bounded regular JSON')
+        body=path.read_bytes();return json.loads(body),hashlib.sha256(body).hexdigest()
+    manifest,msha=fixed_json(base/'manifest.json');data,dsha=fixed_json(base/'inputs.json')
+    expected_files=[{'path':str(base/'inputs.json'),'sha256':dsha},{'path':str(root/WINDOW_WATCH_PROTOCOL_RUNNER),'sha256':data['sourceHashes'].get(WINDOW_WATCH_PROTOCOL_RUNNER)}]
+    if (set(manifest)!={'schema','kind','profiles','files','inputs'} or manifest['schema']!=1
+        or manifest['kind']!='ui011-fixed-protocol-runtime-green' or manifest['profiles']!={'protocol':300}
+        or manifest['files']!=expected_files or manifest['inputs']!={'path':str(base/'inputs.json'),'sha256':dsha}
+        or data['record']!='.warlock-contributor/ui011-observed-opener-closure-root-20261110.json'
+        or data['recordIdentitySha256']!='92c1b16592f13f61b89310cd071b2a48554bf6caf7effa4d395ca78ccb9096ad'
+        or data['profiles']!={'protocol':300} or len(data['haskellNames'])!=29 or len(set(data['haskellNames']))!=29):
+        raise RuntimeError('Closed current protocol29/runtime-library profile differs')
+    names=set(WINDOW_WATCH_PROTOCOL_SUPPORT)
+    for folder,key in [('haskell','haskellFiles'),('src','elmFiles')]:
+        top=root/'implementation/warlock'/folder;actual={}
+        for p in top.rglob('*'):
+            if any(part in ('dist-newstyle','__pycache__')for part in p.relative_to(top).parts):continue
+            if p.is_symlink()or(not p.is_dir()and not p.is_file()):raise RuntimeError('Source alias/special file')
+            if p.is_file():actual[str(p.relative_to(top))]=digest(p)
+        if actual!=data[key]:raise RuntimeError('Current complete source tree differs')
+        names.update('implementation/warlock/'+folder+'/'+n for n in actual)
+    if set(data['sourceHashes'])!=names or any(digest(root/n)!=h for n,h in data['sourceHashes'].items()):
+        raise RuntimeError('Fixed protocol complete source/support closure differs')
+    immutable=set()
+    for name,h in data['immutableFiles'].items():
+        p=Path(name)
+        try:relative=str(p.relative_to(root))
+        except ValueError:raise RuntimeError('Fixed protocol evidence outside repo')from None
+        if p.resolve()!=p or p.is_symlink()or not p.is_file()or digest(p)!=h:raise RuntimeError('Fixed protocol immutable input differs')
+        immutable.add(relative)
+    return {'manifestSha256':msha,'names':names|immutable|{WINDOW_WATCH_PROTOCOL_CONFIG+'/manifest.json',WINDOW_WATCH_PROTOCOL_CONFIG+'/inputs.json'}}
 
 MENU_FOCUS_BUILD_PACKET = '.warlock-contributor/evidence/nextloop-20261106/ux024-menu-focus-build-v1-20261109/packet.json'
 MENU_FOCUS_BUILD_RECORD = '.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
@@ -417,6 +461,8 @@ def main():
     if set(packet) != {'schema', 'runner', 'arguments', 'inputs'} or packet['schema'] != 1:
         raise RuntimeError('Unknown CPU review shape')
     runner = Path(packet['runner'])
+    window_watch_protocol = runner == REPO / WINDOW_WATCH_PROTOCOL_RUNNER
+    window_watch_spec = window_watch_protocol_spec(REPO) if window_watch_protocol else None
     registry = runner == REPO / 'tools/check_registry_cpu.py'
     haskell = runner == REPO / 'tools/check_haskell_cpu.py'
     tea = runner == REPO / 'tools/check_tea_cpu.py'
@@ -432,6 +478,8 @@ def main():
         allowed=[packet['arguments']]
     if menu_tab_dom_mode(runner, packet['arguments']):
         allowed = [['--menu-tab-dom', '--arm64']]
+    if window_watch_protocol:
+        allowed = [['protocol','--manifest-sha256',window_watch_spec['manifestSha256']]]
     if menu_focus_build:
         if packet['inputs'].get(MENU_FOCUS_BUILD_PACKET) != menu_focus_spec['packetSha256']:
             raise RuntimeError('Fixed build packet hash differs from reviewed CPU inputs')
@@ -446,7 +494,7 @@ def main():
                    for tail in ([], ['--tests-only'])]
     if capi_controls:
         allowed = [[]]
-    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and not capi_controls and not menu_focus_build and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and not capi_controls and not menu_focus_build and not window_watch_protocol and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
@@ -565,6 +613,8 @@ def main():
         mandatory = capi_invocation_controls_inputs(REPO)
     if menu_tab_dom_mode(runner, packet['arguments']):
         mandatory = menu_tab_dom_inputs(REPO)
+    if window_watch_protocol:
+        mandatory = window_watch_spec['names']
     if observation_elm_variant(runner,packet['arguments']):
         mandatory=menu_tab_dom_inputs(REPO) | OBSERVATION_SUPPORT | set(observation_inputs(REPO,observation_elm_variant(runner,packet['arguments']))['inputs'])
     if menu_focus_build:
@@ -600,7 +650,7 @@ def main():
         reviewed_inputs(packet)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
-            return child.wait(timeout=902 if menu_focus_build else (3600 if haskell or arm64 or team_quint else (600 if tea else 240)))
+            return child.wait(timeout=302 if window_watch_protocol else (902 if menu_focus_build else (3600 if haskell or arm64 or team_quint else (600 if tea else 240))))
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             os.killpg(child.pid, signal.SIGTERM)
             try:

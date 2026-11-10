@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-constrained-model-pass-and-public-wire-red",
+  "reports": {
+    "model": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/red-execution-preparation-revision3-current-cache/actual-root-runs/quint-1794329095804442871/report.json",
+      "sha256": "4328180f2155efae2bebbfa6453f38fd99375d466a8964226759d2c30ab1628f"
+    },
+    "protocol": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/red-execution-preparation-revision3-current-cache/actual-root-runs/protocol-1794329193822313880/report.json",
+      "sha256": "41f00d4d4c3790132202de6b032f549b426bcf09935be78fa8471a31eda9ff1b"
+    }
+  },
+  "verified": {
+    "modelTypecheck": true,
+    "actualNamedTraces": 13,
+    "sampledSafetySamples": 1000,
+    "sampledSafetySteps": 30,
+    "modelCommandsExitZero": 15,
+    "protocolBuildAndListExitZero": true,
+    "protocolRuntimeExit": 1,
+    "protocolOrderedCases": 29,
+    "protocolPass": 22,
+    "protocolFail": 7,
+    "failedProtocolCases": [
+      "explicit-watch-capability",
+      "public-desktop-watch-request",
+      "unchanged-null-roundtrip",
+      "changed-closed-origin-roundtrip",
+      "changed-replacement-roundtrip",
+      "unknown-null-roundtrip",
+      "unavailable-null-roundtrip"
+    ],
+    "freshProtocolImageHashExact": true,
+    "bothSourcesUnchangedAndCleanupQualified": true
+  },
+  "limits": [
+    "Actual retained artifact/log/hash review only; no reviewer execution/primary writes.",
+    "Model pass is thirteen traces plus sampled safety, not exhaustive proof or backendIO/callback/native/AT qualification. Static model limitations from8006 review remain.",
+    "Seven protocol failures establish missing optional watch capability/request/reply support through existing public wire APIs;22baseline refusals do not isolate every new semantic rule.",
+    "Actual Elm capability/schedulingRED548178 remains separate. All raw failures/setup cache refusal preserved. No EARS/native/AT/fullUI011 credit."
+  ]
+}

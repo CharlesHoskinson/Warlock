@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "kind": "ui011-automatic-window-watch-production",
+  "author": "workflow_astra",
+  "disposition": "frozen-private-production-candidate-after-actual-red-uncompiled",
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "recordIdentitySha256": "92c1b16592f13f61b89310cd071b2a48554bf6caf7effa4d395ca78ccb9096ad",
+  "originalRequirement": "ELM-UI-011",
+  "originalScenario": "focus-scope-opener closure",
+  "frozenTestsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/manifest.json",
+    "sha256": "6e22bc5f650fb356da66ec895fd83fd77476fafb738fd14ef7835351def4d685"
+  },
+  "actualElmRed": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/red-execution-preparation-revision2-fail-closed/actual-root-runs/elm-1794328436377979445/report.json",
+    "sha256": "9c7719f2215dca7a0ffb69583cc14e4e9e2240c040dcec575d7098809d129991"
+  },
+  "actualProtocolRed": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/red-execution-preparation-revision3-current-cache/actual-root-runs/protocol-1794329193822313880/report.json",
+    "sha256": "41f00d4d4c3790132202de6b032f549b426bcf09935be78fa8471a31eda9ff1b"
+  },
+  "actualQuintQualification": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/red-execution-preparation-revision3-current-cache/actual-root-runs/quint-1794329095804442871/report.json",
+    "sha256": "4328180f2155efae2bebbfa6453f38fd99375d466a8964226759d2c30ab1628f"
+  },
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "beforeSha256": "8182a5532aae6dd252a3c02c74d0e86b40969ac4bffb335b2c43e793cb1e4c54",
+      "sha256": "78b46c625bdfb4e0781938f9fb59bd35f60df0d95bb7d1c5f48305ecbfc52b65"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs",
+      "beforeSha256": "bc812f057b7573558b491dceae9c97f5cc4a31d8c98ea1dfc45ca3950a38eb7c",
+      "sha256": "01648a3ce02bc033b4e7c682979f863240b79db95cccfb6997a636cd78b19fd0"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "beforeSha256": "f079377b94ae56ddfd7b67d3f72f94bcf708fa87029fdb064082d9bf460c87ed",
+      "sha256": "3b8f13574f28112f6aed316c778bf132e6e431be7de6a0ab36549b254083aad5"
+    },
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/src/Desktop.elm",
+      "beforeSha256": "ac3713ea57f7b16cf044b04f7c98ec9e752db3ea9807acd328334377d58270d0",
+      "sha256": "6bb4324cf993765fb1bc0c811d825c48d82ee89346badc7af511092942f7473a"
+    },
+    {
+      "path": "implementation/warlock/src/DesktopPolicy.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/src/DesktopPolicy.elm",
+      "beforeSha256": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+      "sha256": "e8e547e2678c97bd3e4c494bd7a8a5521ef3b0cab82bdcf406f1709d3ea084c4"
+    },
+    {
+      "path": "implementation/warlock/src/MenuBridge.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/src/MenuBridge.elm",
+      "beforeSha256": "0aca150c48310e712bc67a2bd2d3977c03ba3934666e10848b57e7c7ae3b3424",
+      "sha256": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544"
+    },
+    {
+      "path": "implementation/warlock/src/OutputController.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/src/OutputController.elm",
+      "beforeSha256": "bfd7a7087abcd8456dac3793fba21708386b63171a6a6deaac306ab75bccf808",
+      "sha256": "1ccce8b97a4f770a4f1f7f2446b9eafdc07062fc099e51506bcd35268bafb614"
+    },
+    {
+      "path": "implementation/warlock/src/Shell.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/src/Shell.elm",
+      "beforeSha256": "58c0f888f890841d77f8068f50baf1024040987e2129eecbbc7c0660ac030aea",
+      "sha256": "89e00985854126b005cbb9be12d1d6afe97d402f3753f6f86544540017895baf"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceController.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/src/SurfaceController.elm",
+      "beforeSha256": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+      "sha256": "e0a7a0861e9266e41ef3b5705f4bb42e3ec11536f69ca6a25928bf0f5ec5b6a9"
+    },
+    {
+      "path": "implementation/warlock/src/WindowObservation.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/postimages/implementation/warlock/src/WindowObservation.elm",
+      "beforeSha256": "428c78de7dc136969594e6a5f32cb5b985d69563bbdc91df964b82d4abb89b23",
+      "sha256": "c14c481ae42b197847194c880a4de80146943158cfd21cd56c7ab6b01e839840"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/candidate.patch",
+    "sha256": "da55f2107bcc5a0ddb11a8e46622261ed87e6507f3aaaddf17675b360329cab5"
+  },
+  "modelCorrespondence": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/production-implementation/model-correspondence.json",
+    "sha256": "1bb1cda234cf89aa6fe08c0ab4f44d69a25ff3730a1fef165834c2f5b4087a5e"
+  },
+  "sourcePreimages": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "8182a5532aae6dd252a3c02c74d0e86b40969ac4bffb335b2c43e793cb1e4c54",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "f079377b94ae56ddfd7b67d3f72f94bcf708fa87029fdb064082d9bf460c87ed",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs": "bc812f057b7573558b491dceae9c97f5cc4a31d8c98ea1dfc45ca3950a38eb7c",
+    "implementation/warlock/src/WindowObservation.elm": "428c78de7dc136969594e6a5f32cb5b985d69563bbdc91df964b82d4abb89b23",
+    "implementation/warlock/src/Shell.elm": "58c0f888f890841d77f8068f50baf1024040987e2129eecbbc7c0660ac030aea",
+    "implementation/warlock/src/MenuBridge.elm": "0aca150c48310e712bc67a2bd2d3977c03ba3934666e10848b57e7c7ae3b3424",
+    "implementation/warlock/src/Desktop.elm": "ac3713ea57f7b16cf044b04f7c98ec9e752db3ea9807acd328334377d58270d0",
+    "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+    "implementation/warlock/src/SurfaceController.elm": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+    "implementation/warlock/src/OutputController.elm": "bfd7a7087abcd8456dac3793fba21708386b63171a6a6deaac306ab75bccf808",
+    "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "implementation/warlock/src/TaskbarShell.elm": "4085ed27b18358331b7a3e74e51ffa6c6f66daaa9dab48f16dc570365ce58612",
+    "implementation/warlock/src/HttpMain.elm": "c0dcd27b03b737b83be70d439944ea9741128e18dd9405b55595c559e8bef3cf",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "694e878829fcbb35fee6e42293db5f1486da214ce512bb1345cdef09927290fa",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": "4daff7fa10f919c725cb45429c1d4a6c10b404525a825e69f61c82493a4f4c7a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f",
+    "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "4a541243aa88166c97b6373b07b480a3b8e65b0e51e371d6361a22418a15bc02",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "3050e7db1b2d1c1c5f4b7089a16cffd3d72c4d96c520a81e3de279706f4c02e4",
+    "implementation/warlock/qa/Ux024ObservedWindowMenuReplay.elm": "98fd760afe5abd770577d509ee2e4f3871a09afe7bc66762f67b5ad713c29ec1",
+    "implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm": "ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273",
+    "implementation/warlock/qa/menu-focus.qnt": "87ad97e1c182b5ca98138776a6fcd50567748cb1fd67a6431d9d5be56e06d16a",
+    "implementation/warlock/qa/focus-publication.qnt": "7b02f4038a142836a81939e10f95dda7806d8c169de7a5126ddca3052132f9d0"
+  },
+  "fixtureChanges": [],
+  "runtimeCabalOrRootOpenerFixtureChanges": [],
+  "sameThreadOwnerAndDeadline": true,
+  "baselineDefaultProducerPreserved": true,
+  "legacyReadOnlyCapabilityWirePreserved": true,
+  "newProductionPaths": [],
+  "nativeAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "originalAcceptance": false,
+  "authorExecution": false,
+  "requiredQualification": "Root normal admitted fixed CPU GREEN: unchanged29 public protocol/27+3+32 public Elm; retained prior component suites and current3HTML; runtime compilation/current same-thread ownership guards. Independent native opener closure and AT remain pending.",
+  "reviewFocus": [
+    "All old RequestKind consumers exhaustive; typed watch strict exact request/reply/capability fields.",
+    "Shared high-water reserved before sole actual owner IO; stale base no owner IO, same full snapshot Unchanged, failures consume and become Unknown with existing async propagation.",
+    "Token matches binding, observed owner/stamp/fingerprint/menu binding/MenuId, presentation and captured request counter; no timer rearm after unknown/refusal/current-scope loss.",
+    "Scoped no-publication for watch bookkeeping only; old non-watch behavior preserved.",
+    "Changed same-identity menu rebind is explicit; automatic fallback only after actual origin retirement."
+  ]
+}

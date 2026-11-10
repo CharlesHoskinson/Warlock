@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "inventory": {
+    "path": "/home/hoskinson/.local/share/warlock-toolchain/system-build-inputs.json",
+    "sha256": "33b9ed73bd1d249225d228a35c8f40ae941f690bca8f3626fb2e6f5e267ac7b4"
+  },
+  "startedEpochNs": 1794333710168945630,
+  "finishedEpochNs": 1794333715751211368,
+  "totalEntries": 15851,
+  "linkEntries": 1146,
+  "matchedEntries": 15846,
+  "mismatches": [
+    {
+      "path": "/usr/bin/desktop-file-install",
+      "error": "file/mode differs"
+    },
+    {
+      "path": "/usr/bin/desktop-file-validate",
+      "error": "file/mode differs"
+    },
+    {
+      "path": "/usr/bin/update-desktop-database",
+      "error": "file/mode differs"
+    },
+    {
+      "path": "/usr/include/libstemmer.h",
+      "error": "file/mode differs"
+    },
+    {
+      "path": "/usr/lib/libstemmer.so.0.0.0",
+      "error": "file/mode differs"
+    }
+  ],
+  "cacheStableBeforeAfter": true
+}

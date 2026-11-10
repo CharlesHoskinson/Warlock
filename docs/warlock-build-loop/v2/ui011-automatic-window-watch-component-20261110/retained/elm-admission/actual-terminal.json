@@ -1,0 +1,33 @@
+{
+  "terminal": true,
+  "jobId": "pid2131079-start9653437",
+  "candidateSha256": "78e256ffd37a33714608161f6b8673d72febb2d2a36feafa60bb96ac5bcdefb8",
+  "scope": "cpu",
+  "manifestSha256": "7a0bd987827ed75096104d0d64ff9b84554a745b6a0cbcc04af685bdc324db71",
+  "fixtureSha256": "5aa19333dbebeb77c7e7745e8dc9a7d4a5502c726c484f62d2e9a33b4e7b768a",
+  "exit": 0,
+  "classification": "pass",
+  "actualOuterHandle": "35089",
+  "actualOuterHandleConsumed": true,
+  "rawReport": {
+    "path": ".warlock-contributor/ux024-menu-dom-1794330819008578544/report.json",
+    "sha256": "5f48cdf1ee9755028cec6a56c52babd2f8958011d1ac0697a34fa258003c8cc6"
+  },
+  "nodeReport": {
+    "path": ".warlock-contributor/ux024-menu-dom-1794330819008578544/ui011-automatic-window-watch.json",
+    "sha256": "9a6fb8e08ee0480335c093c28bdc310247e270ee217f31c11ce213e805601297"
+  },
+  "sourcePinsUnchanged": true,
+  "commandsPassed": 15,
+  "commandsAttempted": 15,
+  "currentInputCount": 127,
+  "ui011WatchCasesPassed": 27,
+  "ui011WatchSetupPassed": 3,
+  "ui011WatchSeedSequencesPassed": 32,
+  "originalCampaignsPreserved": true,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "providerAcceptance": false,
+  "scopeLimit": "Actual current Elm CPU only;3Haskell integrity pins notcompiled by this run. Same owner-thread runtime, original native openerclosure and accessibility focus remain unproven."
+}

@@ -1,0 +1,13 @@
+Running as unit: qa-harness-ce38e55a609140378e6bbf28fb01b42c.scope; invocation ID: 45098715129a40ef9a94cb46f6adb543
+Traceback (most recent call last):
+  File "/home/hoskinson/Projects/Warlock/tools/run_ui011_window_watch_protocol_cpu.py", line 317, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/hoskinson/Projects/Warlock/tools/run_ui011_window_watch_protocol_cpu.py", line 144, in main
+    selected = tools_for(args.profile, data, arm, build, elm)
+  File "/home/hoskinson/Projects/Warlock/tools/run_ui011_window_watch_protocol_cpu.py", line 86, in tools_for
+    selected = build.verify_inputs(data)
+  File "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py", line 182, in verify_inputs
+    or proof['selectedResolutionMismatches']!=0 or proof['requiredAbsentNowPresent']!=[]):raise ValueError('exact current cache correspondence required')
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: exact current cache correspondence required

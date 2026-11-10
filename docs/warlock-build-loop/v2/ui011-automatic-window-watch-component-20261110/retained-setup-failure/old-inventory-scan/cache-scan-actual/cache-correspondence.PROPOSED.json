@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "disposition": "proposed-pending-independent-review",
+  "scope": "ux003-current-loader-cache-correspondence",
+  "expectedCacheSha256": "e26846bd2ef0d774afeb7f995b1dea790ca0037f13bb64df5694ee74b414d7b6",
+  "currentCacheSha256": "85f1d0ec7186f21e65d355a7e0d1b9746b57e3beef652ff9532676faa89ae582",
+  "systemInventorySha256": "33b9ed73bd1d249225d228a35c8f40ae941f690bca8f3626fb2e6f5e267ac7b4",
+  "selectedResolutionManifest": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794037285027049547/native-build-stage-manifest.json",
+    "sha256": "b3c9f30dcedc626f603fc963239108fae64639ccfd03a7dc292550beb1e9aa60"
+  },
+  "edgeCount": 800,
+  "selectedResolutionMismatches": 0,
+  "requiredAbsentCandidateCount": 10,
+  "requiredAbsentNowPresent": [],
+  "systemEntryCount": 15851,
+  "systemEntryMismatches": 5,
+  "systemAudit": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/current-cache-correspondence-after-reboot-85f1/cache-scan-actual/complete-system-inventory-audit.json",
+    "sha256": "a76a24c069f243d5393ab98c3d77ef75316b34750f474ecfc76ba9ed60551225"
+  },
+  "cacheEntryAudit": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/current-cache-correspondence-after-reboot-85f1/cache-scan-actual/actual-loader-cache-entries.json",
+    "sha256": "273b2d0f4c58841a79342dbe3f35b524813755a339a6a6c5253a11e1ac9f08a4"
+  },
+  "selectedResolutionAudit": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/current-cache-correspondence-after-reboot-85f1/cache-scan-actual/selected-loader-resolution-correspondence.json",
+    "sha256": "a50d7158f9c9d04b5defc550d8338a33b548835ad559c337e5a6ed0de393e433"
+  },
+  "currentCacheSnapshot": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/current-cache-correspondence-after-reboot-85f1/cache-scan-actual/actual-ld.so.cache",
+    "sha256": "85f1d0ec7186f21e65d355a7e0d1b9746b57e3beef652ff9532676faa89ae582"
+  },
+  "nativeExecuted": false,
+  "passed": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-edae6b77e6d5430eb4d00689b9c51753.scope",
+    "coreLimit": 1
+  },
+  "sourceStatus": "reconstructed from reviewed retained schema; first execution only after independent review"
+}

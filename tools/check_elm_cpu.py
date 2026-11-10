@@ -233,6 +233,40 @@ def validate_ui011_scope_result(result, image_sha, fixture_sha):
                    or row['actualFocus'] != row['expectedFocus'] for index,row in enumerate(samples))):
         raise RuntimeError('Fixed24 UI011 scope cases/5setup/32sequences/artifacts missing, changed or failed')
 
+UI011_WATCH_CASES = ('explicit-watch-capability-is-admitted', 'legacy-read-only-menu-does-not-watch', 'keyboard-scope-arms-one-backpressure-timer', 'timer-sends-one-bound-watch-with-base', 'duplicate-timer-cannot-issue-second-watch', 'pending-watch-preserves-open-menu-frame', 'unchanged-preserves-frame-stamp-and-focus', 'unchanged-only-rearms-no-publication', 'successor-watch-request-is-distinct', 'closed-origin-automatically-restores-fallback', 'replacement-never-receives-old-focus', 'same-origin-title-change-preserves-menu', 'other-window-change-preserves-menu', 'counter-only-changed-cannot-retire', 'changed-reply-settles-once', 'unknown-stops-watch-no-fallback', 'unavailable-stops-watch-no-fallback', 'wrong-request-cannot-restore', 'wrong-base-cannot-restore', 'foreign-binding-cannot-restore', 'foreign-owner-cannot-restore', 'closed-scope-ignores-late-watch', 'closed-scope-ignores-old-timer', 'superseded-presentation-ignores-watch', 'detached-scope-ignores-watch', 'pointer-scope-does-not-arm', 'watch-never-issues-native-mutation')
+UI011_WATCH_PRECONDITIONS = ('existing-read-route-admitted', 'existing-menu-route-opens', 'actual-view-one')
+UI011_WATCH_QA_INPUTS = {'.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/Ui011AutomaticWindowWatchReplay.elm': '2784fc930db6350bd25000956784c39564b879ef7173310dc7e327ba6b1f821e', '.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/ui011-automatic-window-watch.cjs': '92ab37bb078b4e867a18f4e0b302f097f3937eb9a8b81c76bab0495f7ba99b8a'}
+
+def validate_ui011_watch_result(result, image_sha, fixture_sha):
+    observed = result.get('observed')
+    setup = observed.get('preconditions') if isinstance(observed, dict) else None
+    facts = observed.get('checks') if isinstance(observed, dict) else None
+    seeded = observed.get('seeded') if isinstance(observed, dict) else None
+    samples = seeded.get('samples') if isinstance(seeded, dict) else None
+    rows = result.get('checks')
+    if (result.get('schema') != 1 or result.get('passed') is not True
+            or result.get('classification') != 'component-pass' or result.get('caseCount') != len(UI011_WATCH_CASES)
+            or any(result.get(key) is not False for key in ('nativeAcceptance','originalAcceptance','assistiveTechnologyAcceptance','providerAcceptance'))
+            or result.get('imageSha256') != image_sha or result.get('fixtureSha256') != fixture_sha
+            or result.get('failures') != [] or result.get('seedFailures') != [] or result.get('seedSampleCount') != 32
+            or not isinstance(setup, dict) or set(setup) != set(UI011_WATCH_PRECONDITIONS)
+            or any(value is not True for value in setup.values())
+            or not isinstance(facts, dict) or set(facts) != set(UI011_WATCH_CASES)
+            or any(value is not True for value in facts.values())
+            or not isinstance(rows, list) or len(rows) != len(UI011_WATCH_CASES)
+            or any(not isinstance(row, dict) or set(row) != {'name','passed'} for row in rows)
+            or tuple(row['name'] for row in rows) != UI011_WATCH_CASES
+            or any(row['passed'] is not True for row in rows)
+            or not isinstance(seeded, dict) or seeded.get('seeds') != list(range(32))
+            or not isinstance(samples, list) or len(samples) != 32
+            or any(not isinstance(row, dict) for row in samples)
+            or any(row.get('seed') != index or row.get('variant') != index % 8
+                   or any(row.get(key) is not True for key in ('contractReady','expectedEligible','preservedScope','once','noMutation'))
+                   or not isinstance(row.get('actualFocus'),list) or not isinstance(row.get('expectedFocus'),list)
+                   or len(row['expectedFocus']) != (1 if index % 8 in (1,2) else 0)
+                   or row['actualFocus'] != row['expectedFocus'] for index,row in enumerate(samples))):
+        raise RuntimeError('Fixed27 WindowWatch cases/3setup/32sequences/artifacts missing, changed or failed')
+
 def run_menu_tab_dom(observation_variant=None):
     import arm64_toolchain as toolchain
     from qa_cpu import menu_tab_dom_inputs
@@ -335,6 +369,14 @@ def run_menu_tab_dom(observation_variant=None):
                 shutil.copyfile(REPO / key, target)
                 if source_hash(target) != expected:
                     raise RuntimeError('Staged UI011 scope fixture differs: ' + key)
+        if observation_variant is None:
+            for key, expected in UI011_WATCH_QA_INPUTS.items():
+                if sources[key] != expected:
+                    raise RuntimeError('Fixed WindowWatch fixture changed: ' + key)
+                target = work / 'qa' / Path(key).name
+                shutil.copyfile(REPO / key, target)
+                if source_hash(target) != expected:
+                    raise RuntimeError('Staged WindowWatch fixture differs: ' + key)
         if qualification:
             # Only the two new observation fixtures are absent from live qa/.
             stage_rows(qualification,work/'qa','implementation/warlock/qa/')
@@ -415,6 +457,18 @@ def run_menu_tab_dom(observation_variant=None):
             if source_hash(scope_image) != scope_image_sha or source_hash(scope_fixture) != scope_fixture_sha:
                 raise RuntimeError('Actual UI011 scope replay artifact changed')
             report.update(ui011ScopeCaseCount=24, ui011ScopeSeedCount=32, ui011ScopeResultSha256=source_hash(scope_result), ui011ScopeImageSha256=scope_image_sha)
+        if observation_variant is None:
+            watch_image = output / 'Ui011AutomaticWindowWatchReplay.js'
+            run('compile-Ui011AutomaticWindowWatchReplay', [pinned['elm'], 'make', 'qa/Ui011AutomaticWindowWatchReplay.elm', '--optimize', '--output=' + str(watch_image)])
+            watch_image_sha = source_hash(watch_image)
+            watch_fixture = work / 'qa/ui011-automatic-window-watch.cjs'
+            watch_fixture_sha = UI011_WATCH_QA_INPUTS['.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/ui011-automatic-window-watch.cjs']
+            watch_result = output / 'ui011-automatic-window-watch.json'
+            run('ui011-automatic-window-watch', [pinned['node'], str(watch_fixture), str(watch_image), str(watch_result)])
+            validate_ui011_watch_result(json.loads(watch_result.read_text()), watch_image_sha, watch_fixture_sha)
+            if source_hash(watch_image) != watch_image_sha or source_hash(watch_fixture) != watch_fixture_sha:
+                raise RuntimeError('Actual WindowWatch replay artifact changed')
+            report.update(ui011WatchCaseCount=27, ui011WatchSeedCount=32, ui011WatchResultSha256=source_hash(watch_result), ui011WatchImageSha256=watch_image_sha)
         if observation_variant is None or observation_variant=='candidate':
             documents={}
             for role,entry in (('controller','HttpMain'),('bar','HttpBar'),('popup','HttpPopup')):

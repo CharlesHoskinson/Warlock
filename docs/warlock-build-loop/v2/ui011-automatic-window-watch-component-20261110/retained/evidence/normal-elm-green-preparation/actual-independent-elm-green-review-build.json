@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-normal-elm-component-pass",
+  "candidateSha256": "78e256ffd37a33714608161f6b8673d72febb2d2a36feafa60bb96ac5bcdefb8",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794330819008578544/report.json",
+    "sha256": "5f48cdf1ee9755028cec6a56c52babd2f8958011d1ac0697a34fa258003c8cc6"
+  },
+  "watchReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794330819008578544/ui011-automatic-window-watch.json",
+    "sha256": "9a6fb8e08ee0480335c093c28bdc310247e270ee217f31c11ce213e805601297"
+  },
+  "verified": {
+    "commandsExitZero": 15,
+    "managedInputsExact": 127,
+    "currentElmSources": 109,
+    "watchCases": 27,
+    "setupTrue": 3,
+    "watchSeeds": 32,
+    "priorCases": [
+      18,
+      16,
+      34,
+      17,
+      24
+    ],
+    "currentThreeHtmlPhysicalIdentitiesExact": {
+      "controller": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794330819008578544/HttpMain.html",
+        "sha256": "a5091648cca39512f8c804a715bf1b594fcfd70fad02102f122585226301ec76",
+        "device": "57",
+        "inode": "7912476",
+        "size": "1146102",
+        "mode": 420,
+        "ancestors": [
+          {
+            "path": "/home",
+            "device": "57",
+            "inode": "256"
+          },
+          {
+            "path": "/home/hoskinson",
+            "device": "57",
+            "inode": "257"
+          },
+          {
+            "path": "/home/hoskinson/Projects",
+            "device": "57",
+            "inode": "10834"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock",
+            "device": "57",
+            "inode": "201669"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor",
+            "device": "57",
+            "inode": "248885"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794330819008578544",
+            "device": "57",
+            "inode": "7911902"
+          }
+        ]
+      },
+      "bar": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794330819008578544/HttpBar.html",
+        "sha256": "e1b7be5457bcf3bedbf13e35c4393f4781929bdae9cbd95f292ea83043585bd0",
+        "device": "57",
+        "inode": "7912485",
+        "size": "318959",
+        "mode": 420,
+        "ancestors": [
+          {
+            "path": "/home",
+            "device": "57",
+            "inode": "256"
+          },
+          {
+            "path": "/home/hoskinson",
+            "device": "57",
+            "inode": "257"
+          },
+          {
+            "path": "/home/hoskinson/Projects",
+            "device": "57",
+            "inode": "10834"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock",
+            "device": "57",
+            "inode": "201669"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor",
+            "device": "57",
+            "inode": "248885"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794330819008578544",
+            "device": "57",
+            "inode": "7911902"
+          }
+        ]
+      },
+      "popup": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794330819008578544/HttpPopup.html",
+        "sha256": "c6a599d99c5cbedefacd117ebd7a7e28406efc829e4df56aafd3035a97c194ee",
+        "device": "57",
+        "inode": "7912490",
+        "size": "587353",
+        "mode": 420,
+        "ancestors": [
+          {
+            "path": "/home",
+            "device": "57",
+            "inode": "256"
+          },
+          {
+            "path": "/home/hoskinson",
+            "device": "57",
+            "inode": "257"
+          },
+          {
+            "path": "/home/hoskinson/Projects",
+            "device": "57",
+            "inode": "10834"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock",
+            "device": "57",
+            "inode": "201669"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor",
+            "device": "57",
+            "inode": "248885"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794330819008578544",
+            "device": "57",
+            "inode": "7911902"
+          }
+        ]
+      }
+    },
+    "unchangedFrozenWatchFixtureAndRealPublicPolicyRoute": true
+  },
+  "limits": [
+    "Actual artifact/log/hash review only; no reviewer execution or primary writes.",
+    "Actual earlier Elm capability/schedulingRED remains retained. Current GREEN qualifies public reducer/scheduling/current-document component behavior only.",
+    "Three declared Haskell files integrity-pinned but not compiled/IO-qualified here. Backend owner/cache/no-read tests and normal Haskell qualification remain separate.",
+    "No native/provider/AT/originalUI011/wholeEARS acceptance; raw false acceptance flags unchanged."
+  ]
+}
