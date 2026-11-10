@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "changes-required",
+  "supersedesReadinessOfReviewSha256": "3b5e54c1bee05e89b8ebcbf7acf89c4d50cd6180d0d5b10655d1cc07004fde31",
+  "findings": [
+    {
+      "id": "INITIAL-AUTH-01",
+      "source": "tools/ux024_foreign_toplevel_attempt_authorization.py:resolve_authorization",
+      "fact": "Actual policy2 record has zero renewal events; core effective_delivery_authorization permits initial delivery.authorizationExpiresUTC. Derivative mandates renewal and refuses valid initial authorization.",
+      "minimumFix": "Separate explicit initial-authorization evidence binding from preserved latest-renewal path; retain identity/start/goal/expiry/clock/seal checks."
+    },
+    {
+      "id": "PREREQ-REF-01",
+      "source": "tools/run_current_arm_ux024_foreign_toplevel_observer.py:preflight",
+      "fact": "Packet readiness refs absolute while canonical nativePrerequisites refs repo-relative; direct dictionary membership rejects the same hash-bound file.",
+      "minimumFix": "Validate and normalize packet refs to canonical repository-relative refs before exact path/hash comparison; refuse escape/aliases."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/ux024_foreign_toplevel_attempt_authorization.py",
+      "sha256": "1a9d76785b64ee1d43fd44319da490a370aa0a913142695a832334f9b6b46f8c"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+      "sha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78"
+    }
+  ],
+  "limits": [
+    "Earlier source review missed these integration boundaries; original receipt retained unchanged.",
+    "No reviewer execution or live effects."
+  ]
+}

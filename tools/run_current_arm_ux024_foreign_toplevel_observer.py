@@ -28,7 +28,7 @@ CLOSE_ARGV=['-M','alt','-k','F4','-m','alt']
 DEADLINE_ENV='WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'
 PHASE_LIBC={'path':'/usr/lib/libc.so.6','sha256':'6ab264fb4e8df9942b0fb75b48fcd5c30b2f081d8dfaa6c25d7be1d3fce5b2ab'}
 CONTRACT_SHA='6490c0202f7377f9a768cce6a6e558b01bd32dae92eb40dc04ddd2f021dbecf5'
-HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'f4be1482ecbf50844a255bd1c736a45cd02b39af79d1469c3e9e968f42275a3b', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ux024_foreign_toplevel_attempt_authorization.py': '1a9d76785b64ee1d43fd44319da490a370aa0a913142695a832334f9b6b46f8c'}
+HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'f4be1482ecbf50844a255bd1c736a45cd02b39af79d1469c3e9e968f42275a3b', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ux024_foreign_toplevel_attempt_authorization.py': '3bbcde1e912209751c9e443349b92d98c944886a15fdee7f8953b8a4fca4a898'}
 
 def validate_generated_foundation_basis(foundation, report):
     sources=foundation.get('sourceInputs',{})
@@ -691,6 +691,17 @@ def selected_image(packet,role,current):
     return value
 
 
+def canonical_prerequisite(reference):
+    """Same file/hash represented for core's repository-relative reference API."""
+    require(isinstance(reference,dict) and set(reference)=={'path','sha256'},'exact readiness reference required')
+    path=Path(reference['path'])
+    require(path.is_absolute() and '..' not in path.parts and path.resolve()==path,'canonical absolute readiness reference required')
+    try:relative=path.relative_to(ROOT)
+    except ValueError as exc:raise ValueError('readiness reference outside repository') from exc
+    require(relative.parts and isinstance(reference['sha256'],str) and re.fullmatch('[0-9a-f]{64}',reference['sha256']),'exact readiness hash required')
+    return {'path':str(relative),'sha256':reference['sha256']}
+
+
 def preflight(expected):
     require(re.fullmatch('[0-9a-f]{64}',expected) is not None,'packet SHA required')
     require(digest(regular(PACKET))==expected,'fixed packet hash differs')
@@ -719,7 +730,7 @@ def preflight(expected):
         review=json_ref(reference)
         require(review.get('schema')==1 and review.get('disposition')=='accepted' and review.get('scope')=='ux024-connected-foreign-toplevel-observer' and review.get('role')==role,'scoped readiness missing')
         require(all(review.get(key)==packet[key] for key in ('recordPath','recordIdentitySha256','selectionGeneration','sourceHashes','guardHashes','assets','assetSources','input','binding','foundationPacket','foundationReport','reuse','buildReport','documentBuildReport','keyboardBuildReport','abi','contract','processInventory','documentFixtureOnly','authorization')) and review.get('componentOnly') is True,'readiness does not bind actual component tuple')
-        require(reference in candidate['nativePrerequisites'],'readiness not canonical prerequisite')
+        require(canonical_prerequisite(reference) in candidate['nativePrerequisites'],'readiness not canonical prerequisite')
     authority=attempt_auth.resolve_authorization(packet['authorization'],record,IDENTITY,packet['selectionGeneration'],core)
     current=boot_correspondence.CurrentBoot(packet['reuse']['currentBootCorrespondence'],pinned)
     build=json_ref(packet['buildReport']);require(build.get('passed') is True,'fresh two-target build not qualified')

@@ -122,4 +122,20 @@ class Controls(unittest.TestCase):
         pair,bound=self.close_pair();fixture=Mock();fixture.validate_phase_pair.side_effect=ValueError('wrong live owner/request')
         with patch.object(m,'keyboard_fixture',fixture):self.assertFalse(m.close_ready_matches(pair,{},bound))
 
+
+    def test_actual_core_relative_prerequisite_representation(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();path=root/'proof.json';path.write_text('{}')
+            absolute={'path':str(path),'sha256':'a'*64}
+            with patch.object(m,'ROOT',root):
+                normalized=m.canonical_prerequisite(absolute)
+                self.assertEqual(normalized,{'path':'proof.json','sha256':'a'*64})
+                self.assertIn(normalized,[{'path':'proof.json','sha256':'a'*64}])
+                self.assertNotIn(dict(normalized,sha256='b'*64),[normalized])
+                for ref in [dict(absolute,path='/etc/passwd'),dict(absolute,path=str(root/'child/../proof.json')),dict(absolute,path='proof.json')]:
+                    with self.assertRaises(ValueError):m.canonical_prerequisite(ref)
+                alias=root/'alias.json';alias.symlink_to(path)
+                with self.assertRaises(ValueError):m.canonical_prerequisite(dict(absolute,path=str(alias)))
+
 if __name__=='__main__':unittest.main(argv=[sys.argv[0],*rest])

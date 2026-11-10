@@ -77,10 +77,14 @@ class AttemptAuthorization:
     goal_definition: tuple
     participant_started_utc: str
     _seal: object
+    origin_kind: str = 'renewal'
+    initial_sha256: str = ''
 
 
 def resolve_authorization(ref, record, identity, selection, core):
     data = _read_ref(ref)
+    if isinstance(data, dict) and data.get('kind') == 'ux024-initial-attempt-authorization':
+        return _resolve_initial_authorization(ref, data, record, identity, selection, core)
     fields = {'schema', 'kind', 'recordPath', 'recordIdentitySha256', 'selectionGeneration',
               'authorizationExpiresUTC', 'authorizationEventSha256', 'coreSha256',
               'goalDefinition', 'participantStartedUTC'}
@@ -133,6 +137,66 @@ def resolve_authorization(ref, record, identity, selection, core):
     return AttemptAuthorization(expiry, horizon, ref['sha256'], identity, selection,
                                 data['authorizationEventSha256'], tuple(sorted(definition.items())),
                                 record['startedUTC'], _SEAL)
+
+
+def _resolve_initial_authorization(ref, data, record, identity, selection, core):
+    """Use the actual canonical initial window, never a synthetic renewal."""
+    fields = {'schema', 'kind', 'recordPath', 'recordIdentitySha256', 'selectionGeneration',
+              'authorizationExpiresUTC', 'coreSha256', 'goalDefinition', 'participantStartedUTC',
+              'goalObservation', 'initialAuthorization', 'initialAuthorizationSha256'}
+    if (set(data) != fields or type(data['schema']) is not int or data['schema'] != 1
+            or data['recordPath'] != RECORD or data['recordIdentitySha256'] != identity
+            or type(selection) is not int or type(data['selectionGeneration']) is not int
+            or data['selectionGeneration'] != selection):
+        raise ValueError('initial authorization record or selection differs')
+    if Path(core.__file__) != CORE or hashlib.sha256(CORE.read_bytes()).hexdigest() != data['coreSha256']:
+        raise ValueError('initial authorization core source differs')
+    if core.record_identity(record, RECORD) != identity:
+        raise ValueError('initial canonical record identity differs')
+    delivery = record.get('delivery')
+    if not isinstance(delivery, dict) or not isinstance(delivery.get('events'), list):
+        raise ValueError('canonical initial delivery missing')
+    if any(not isinstance(event, dict) or event.get('kind') == 'authorization-renewed' for event in delivery['events']):
+        raise ValueError('initial authorization cannot replace a canonical renewal')
+    expiry = core.effective_delivery_authorization(record)
+    initial = {'recordIdentitySha256': identity, 'participantStartedUTC': record.get('startedUTC'),
+               'authorizationExpiresUTC': delivery.get('authorizationExpiresUTC'),
+               'clockOrigin': delivery.get('clockOrigin')}
+    if (not isinstance(initial['participantStartedUTC'], str) or not isinstance(initial['clockOrigin'], dict)
+            or set(initial['clockOrigin']) != {'utc', 'bootId', 'monotonicNs', 'boottimeNs'}
+            or data['initialAuthorization'] != initial
+            or data['initialAuthorizationSha256'] != core.json_sha256(initial)
+            or data['participantStartedUTC'] != record['startedUTC']
+            or data['authorizationExpiresUTC'] != expiry or expiry != initial['authorizationExpiresUTC']):
+        raise ValueError('immutable initial authorization/start/clock differs')
+    actual = _read_ref(data['goalObservation'])
+    response = actual.get('actualToolResponse') if isinstance(actual, dict) else None
+    goal = response.get('goal') if isinstance(response, dict) else None
+    observed = actual.get('observedUTC') if isinstance(actual, dict) else None
+    if not isinstance(observed, str):
+        raise ValueError('initial authorization requires actual fresh goal observation')
+    if observed.endswith('+00:00'):
+        observed = observed[:-6] + 'Z'
+    _utc_ns(observed)  # Provenance timestamp only: immutable evidence has no invented age limit.
+    now = time.time_ns()
+    # Existing host workflow checks fresh ACTIVE goal/stops/handoff at launch.
+    # The sealed native horizon remains the actual canonical initial expiry.
+    if (not isinstance(goal, dict) or goal.get('status') != 'active'
+            or type(goal.get('createdAt')) is not int or goal['createdAt'] <= 0
+            or not isinstance(goal.get('threadId'), str) or not goal['threadId']
+            or not isinstance(goal.get('objective'), str) or not goal['objective']):
+        raise ValueError('actual initial active-goal definition missing')
+    definition = {'threadId': goal['threadId'], 'createdAt': goal['createdAt'],
+                  'objectiveSha256': hashlib.sha256(goal['objective'].encode('utf-8')).hexdigest()}
+    if data['goalDefinition'] != definition or type(data['goalDefinition'].get('createdAt')) is not int:
+        raise ValueError('initial active-goal definition differs')
+    horizon = _utc_ns(expiry)
+    if now + ATTEMPT_NS + CLEANUP_NS >= horizon:
+        raise TimeoutError('insufficient initial authorization for original28+cleanup2')
+    # event_sha256 is deliberately empty: initial authority is not a renewal event.
+    return AttemptAuthorization(expiry, horizon, ref['sha256'], identity, selection, '',
+                                tuple(sorted(definition.items())), record['startedUTC'], _SEAL,
+                                origin_kind='initial', initial_sha256=data['initialAuthorizationSha256'])
 
 
 def authorization_deadline_ns(authority):

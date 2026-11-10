@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "kind": "minimal-initial-start-authorization-and-canonical-reference-correction",
+  "posts": [
+    {
+      "path": "tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "beforeSha256": "52b9eed460c56461bf574f3e9703835e576fe931e89420bd3b7b2ddf1e37e15a",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/revision2-initial-auth-and-relative-reviews/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "fdae0f9f8b324b5a10e501d5605952635e183bf8b4b8329acbb3f1f79c6aba88"
+    },
+    {
+      "path": "tools/ux024_foreign_toplevel_attempt_authorization.py",
+      "beforeSha256": "1a9d76785b64ee1d43fd44319da490a370aa0a913142695a832334f9b6b46f8c",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/revision2-initial-auth-and-relative-reviews/postimages/tools/ux024_foreign_toplevel_attempt_authorization.py",
+      "sha256": "3bbcde1e912209751c9e443349b92d98c944886a15fdee7f8953b8a4fca4a898"
+    },
+    {
+      "path": "tools/test_ux024_foreign_toplevel_observer.py",
+      "beforeSha256": "020b596066cac2de350cda509370a8be1d9675fb7cfce5c9bd79fbcf173334cf",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/revision2-initial-auth-and-relative-reviews/postimages/tools/test_ux024_foreign_toplevel_observer.py",
+      "sha256": "620bea1e749b1e772f328bbcd6fcd0dbf6a133c64800c423cca0d7517589ccde"
+    },
+    {
+      "path": "tools/test_ux024_foreign_toplevel_attempt_authorization.py",
+      "beforeSha256": "b1fa832a90669c446412b35d91f9f068ef5fc95010a61fbedaf96f52436edd3b",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/revision2-initial-auth-and-relative-reviews/postimages/tools/test_ux024_foreign_toplevel_attempt_authorization.py",
+      "sha256": "216c26d21fe1879125b4798dc4f4d1b1aff7a71d5f41d1e0c57c076c5ecdaa66"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/revision2-initial-auth-and-relative-reviews/candidate.patch",
+    "sha256": "a95353898f0b164023c9b1fc3986f31319ab1beb17e5198c6fb397556e0ef68f"
+  },
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/manifest.json",
+    "sha256": "4eda10f2f09d15ddcf91dc56fd5c284793ec834c6fd4b564ad349dcb3f94bf46"
+  },
+  "changes": [
+    "Explicit initial-start auth kind; initial canonical expiry/start/clockorigin/recordidentity exacthash; mandatory actualACTIVE goaldefinition. Initialrefused ifanyrenewal exists; no fakeevent.",
+    "Existing latest-renewal branch, original28+2/seal/effectscope/humanhorizon unchanged. No staticgoalobservationageTTL; existingfreshhostgoal/stop/handoff checks remain at launch.",
+    "Native readiness ref membership normalizes only exactcanonicalinsideRoot absolute path to repo-relative withsameSHA; rejectsoutsideRoot/../symlink aliases.",
+    "Runner only oneauthhelper sourcepin update +one canonicalmembership call/newpurefunction; no systemasset waiver or other nativeflow change."
+  ],
+  "initialAuthSchema": {
+    "schema": 1,
+    "kind": "ux024-initial-attempt-authorization",
+    "recordPath": ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "recordIdentitySha256": "<actual stable60fc>",
+    "selectionGeneration": 29,
+    "authorizationExpiresUTC": "<exact delivery.authorizationExpiresUTC>",
+    "coreSha256": "<actual6835>",
+    "goalDefinition": {
+      "threadId": "<actualToolResponse.goal.threadId>",
+      "createdAt": "<same integer>",
+      "objectiveSha256": "<UTF8 actualobjective SHA>"
+    },
+    "participantStartedUTC": "<exact record.startedUTC>",
+    "goalObservation": {
+      "path": "<actual raw ACTIVE goal receipt absolute path>",
+      "sha256": "<actual file SHA>"
+    },
+    "initialAuthorization": {
+      "recordIdentitySha256": "<same60fc>",
+      "participantStartedUTC": "<same startedUTC>",
+      "authorizationExpiresUTC": "<same initial expiry>",
+      "clockOrigin": "<exact canonical record.delivery.clockOrigin object>"
+    },
+    "initialAuthorizationSha256": "<core.json_sha256(initialAuthorization)>"
+  },
+  "goalObservationSchema": "actualToolResponse.goal object + observedUTC UTC provenance stamp; no static evidence-age gate. Fresh actualgoal/stops/handoff check remains Root launch responsibility.",
+  "authorityRepresentation": "AttemptAuthorization origin_kind=initial, initial_sha256=actualstarttuplehash, event_sha256 empty; never invented renewal. Renewalconstructor defaultorigin remainsrenewal.",
+  "tests": {
+    "runnerControls": 15,
+    "authorizationControls": 35,
+    "old41BodiesAstExact": true,
+    "newControls": 9,
+    "total": 50,
+    "authorExecuted": false,
+    "ASTOnly": true
+  },
+  "RootProtectedCommands": [
+    [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/revision2-initial-auth-and-relative-reviews/postimages/tools/test_ux024_foreign_toplevel_observer.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/revision2-initial-auth-and-relative-reviews/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "-v"
+    ],
+    [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/revision2-initial-auth-and-relative-reviews/postimages/tools/test_ux024_foreign_toplevel_attempt_authorization.py",
+      "-v"
+    ]
+  ],
+  "limits": [
+    "No author QA/import/native/broker/primary writes. Existing accepted4eda and actual41PASS preserved.",
+    "No core/plugin/clock/SDK/provider/role/launcher/inputbudget changes; actual initial canonicalauthority only.",
+    "Actualconnectedcallback/window/retirement/native/original acceptance still pending protectedtrial."
+  ]
+}

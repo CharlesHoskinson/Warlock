@@ -216,5 +216,72 @@ class ActualToolGoalControls(unittest.TestCase):
         with self.assertRaises(ValueError):self.resolve()
 
 
+
+
+class InitialStartAuthorizationControls(unittest.TestCase):
+    write=AttemptAuthorizationControls.write
+    resolve=AttemptAuthorizationControls.resolve
+    clock=AttemptAuthorizationControls.clock
+    def setUp(self):
+        AttemptAuthorizationControls.setUp(self)
+        self.record['delivery']['events']=[]
+        self.record['delivery']['authorizationExpiresUTC']=self.expiry
+        self.record['delivery']['clockOrigin']={'utc':self.record['startedUTC'],'bootId':'original-boot','monotonicNs':10,'boottimeNs':11}
+        self.body['kind']='ux024-initial-attempt-authorization';self.body.pop('authorizationEventSha256')
+        self.body['initialAuthorization']={'recordIdentitySha256':self.identity,'participantStartedUTC':self.record['startedUTC'],'authorizationExpiresUTC':self.expiry,'clockOrigin':copy.deepcopy(self.record['delivery']['clockOrigin'])}
+        self.body['initialAuthorizationSha256']=self.core.json_sha256(self.body['initialAuthorization'])
+        self.tool={'observedUTC':a.datetime.fromtimestamp(self.now/1e9,a.timezone.utc).isoformat().replace('+00:00','Z'),'actualToolResponse':{'goal':copy.deepcopy(self.goal)}}
+        self.goal_path=Path(self.tmp.name)/'actual-goal.json';self.pin_goal()
+    def pin_goal(self):
+        self.goal_path.write_text(json.dumps(self.tool));self.goal_path.chmod(0o600)
+        self.body['goalObservation']={'path':str(self.goal_path),'sha256':hashlib.sha256(self.goal_path.read_bytes()).hexdigest()}
+    def test_actual_initial_start_authorization_without_fake_event(self):
+        result=self.resolve()
+        self.assertEqual(result.origin_kind,'initial');self.assertEqual(result.event_sha256,'')
+        self.assertEqual(result.initial_sha256,self.body['initialAuthorizationSha256'])
+        self.assertEqual(self.record['delivery']['events'],[])
+        self.assertEqual(a.authorization_deadline_ns(self.clock(result)),result.expires_ns)
+    def test_initial_refuses_any_renewal_including_expired(self):
+        for expiry in ['2030-01-01T00:00:00Z',self.expiry]:
+            self.record['delivery']['events']=[{'kind':'authorization-renewed','authorizationExpiresUTC':expiry}]
+            with self.assertRaises(ValueError):self.resolve()
+    def test_initial_exact_start_clock_and_identity(self):
+        for field,value in [('participantStartedUTC','foreign'),('recordIdentitySha256','0'*64),('authorizationExpiresUTC','2034-01-01T00:00:00Z'),('clockOrigin',dict(self.record['delivery']['clockOrigin'],monotonicNs=12))]:
+            before=copy.deepcopy(self.body);self.body['initialAuthorization'][field]=value
+            self.body['initialAuthorizationSha256']=self.core.json_sha256(self.body['initialAuthorization'])
+            with self.assertRaises(ValueError):self.resolve()
+            self.body=before
+    def test_initial_pin_and_no_silent_renewal_schema_fallback(self):
+        self.body['initialAuthorizationSha256']='0'*64
+        with self.assertRaises(ValueError):self.resolve()
+        self.body.pop('initialAuthorization');self.body.pop('initialAuthorizationSha256');self.body['kind']='ux003-current-attempt-authorization';self.body['authorizationEventSha256']='0'*64
+        with self.assertRaises(ValueError):self.resolve()
+    def test_initial_requires_actual_active_goal_without_static_age_gate(self):
+        for change in ['paused','missingactual']:
+            before=copy.deepcopy(self.tool)
+            if change=='paused':self.tool['actualToolResponse']['goal']['status']='paused'
+            if change=='missingactual':self.tool.pop('actualToolResponse')
+            self.pin_goal()
+            with self.assertRaises(ValueError):self.resolve()
+            self.tool=before;self.pin_goal()
+        self.tool['observedUTC']=a.datetime.fromtimestamp(self.now/1e9-86400,a.timezone.utc).isoformat().replace('+00:00','Z');self.pin_goal()
+        self.assertEqual(self.resolve().origin_kind,'initial')
+    def test_initial_goal_definition_and_typed_creation_pin(self):
+        for field,value in [('threadId','foreign'),('objectiveSha256','0'*64),('createdAt',True)]:
+            before=copy.deepcopy(self.body['goalDefinition']);self.body['goalDefinition'][field]=value
+            with self.assertRaises(ValueError):self.resolve()
+            self.body['goalDefinition']=before
+    def test_initial_expiry_and_unknown_fields_do_not_expand_authority(self):
+        self.body['authorizationExpiresUTC']='2034-01-01T00:00:00Z'
+        with self.assertRaises(ValueError):self.resolve()
+        self.body['authorizationExpiresUTC']=self.expiry;self.body['authorizationEventSha256']='0'*64
+        with self.assertRaises(ValueError):self.resolve()
+    def test_initial_expired_window_and_sealed_clock_still_refuse(self):
+        good=self.resolve()
+        with patch.object(a.time,'time_ns',return_value=good.expires_ns):
+            with self.assertRaises(TimeoutError):a.resolve_authorization(self.write(),self.record,self.identity,17,self.core)
+        clock=self.clock(good);clock['deadline']+=1
+        with self.assertRaises(ValueError):a.authorization_deadline_ns(clock)
+
 if __name__ == '__main__':
     unittest.main()
