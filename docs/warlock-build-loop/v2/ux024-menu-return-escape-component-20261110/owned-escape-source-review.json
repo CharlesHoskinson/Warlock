@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted",
+  "manifestSha256": "823d42035c5bf6d943a49e0796bacdbf3a5631024c6a2db911512816b663dca0",
+  "scope": "Owned idle menu Escape default/propagation consumption source and tests-first review",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision2-control-identity-and-18case-successor/manifest.json",
+      "sha256": "823d42035c5bf6d943a49e0796bacdbf3a5631024c6a2db911512816b663dca0"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision2-control-identity-and-18case-successor/postimages/implementation/warlock/src/HttpPopup.elm",
+      "sha256": "015440b4650ef0bc7456478cb3201c0ccf6ba0c378093be2d63b6a4df1db77e9"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision2-control-identity-and-18case-successor/postimages/implementation/warlock/qa/ux024-menu-dom.cjs",
+      "sha256": "d6b4983292ca45c94f4de56d4ebe6943c9d9e649661e08a0aa98e9c9ea2eb6a9"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/tests-first/manifest.json",
+      "sha256": "4889da540befb0d8c24d59d633fe2a84b1dd3f929ae9be2dfd28d36f9f1ed7e6"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/tests-first/ux024-owned-escape-dom.cjs",
+      "sha256": "bbc097acb99a950eb24cd25f1fb8449e06d90d96dc4b279b7ab35788b8196783"
+    }
+  ],
+  "verified": {
+    "SurfaceSnapshotControlIdentityFieldCorrect": true,
+    "currentPresentationFocusTargetRevalidation": true,
+    "uniqueEnabledTargetAndCloseRequired": true,
+    "menuIdleOnly": true,
+    "modifierComposition229RepeatRefused": true,
+    "existingTabDecoderPreserved": true,
+    "messageFocusedExistingNoop": true,
+    "noNewHttpDismissalOrFocusCommand": true,
+    "nativeOwnerEscapeSinglePolicyWireUnchanged": true,
+    "old18FixtureIdentitiesAndOtherAssertionsPreserved": true,
+    "oldOwnedEscapeDefaultExpectationIntentionallySupersededOnly": true,
+    "newDomCases": 21,
+    "seedSamples": 32,
+    "positiveSeedWitnesses": 4
+  },
+  "limits": [
+    "No reviewer compiler/imports/tests/QA/native effects or primary edits.",
+    "This changes owned eligible menu Escape only, not every Escape or native controller propagation.",
+    "Actual extra Bar Escape and secondF10 repeat are observed; async replay/retarget causal chain remains source inference.",
+    "Tests-first fixture and successor require actual compiled semantic baseline/green; no outcomes claimed here.",
+    "Current three HTML documents require fresh build after adoption; old docs cannot qualify new source.",
+    "No native original UX024/EARS/cleanup acceptance; repeat/IME/stale admission guards remain intact."
+  ]
+}

@@ -35,7 +35,7 @@ import Numeric (showHex)
 import Warlock.Ui.Owner (retainRequestTrace)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Protocol.Identity (renderCounter)
-import Warlock.Ui.Mvp (MvpFocusRole(..), initialMvpKeyHandoff, mvpKeyPressed, mvpKeyReleased, mvpKeyHandoffReady, parseMvpFocusIntent, mvpFocusTransition, leaseScope, leaseRevision, leasePublication, leaseToken, leasePopupOpen)
+import Warlock.Ui.Mvp (MvpFocusRole(..), initialMvpKeyHandoff, mvpKeyPressed, mvpKeyReleased, mvpKeyHandoffReady, mvpKeyHandoffAllows, parseMvpFocusIntent, mvpFocusTransition, leaseScope, leaseRevision, leasePublication, leaseToken, leasePopupOpen)
 import Foreign.C.String (CString, withCString)
 import Foreign.C.Types (CInt(..))
 import Foreign.Ptr (FunPtr, Ptr, castFunPtr, freeHaskellFunPtr, nullPtr)
@@ -506,6 +506,61 @@ keyboardHandoffControls = do
     (not (mvpKeyHandoffReady two) && not (mvpKeyHandoffReady one) && mvpKeyHandoffReady done
       && mvpKeyReleased 250 two==two && modifier 50 two==two)
 
+-- Directional host admission only. Closing Bar return must not depend on
+-- uncertain/replayed capture state; Popup opening keeps the release guard.
+keyboardReturnHandoffControls :: IO ()
+keyboardReturnHandoffControls = do
+ let empty = initialMvpKeyHandoff
+     press = mvpKeyPressed False
+     held = press 76 empty
+     released = mvpKeyReleased 76 held
+     lateReplay = press 76 released
+     unknown = press 0 empty
+     full = foldl (flip press) empty [1..16]
+     overflow = foldl (flip mvpKeyReleased) (press 17 full) [1..17]
+     allows = mvpKeyHandoffAllows
+ check "directional empty permits both host roles" (allows MvpFocusBar empty && allows MvpFocusPopup empty)
+ check "closing Bar return does not wait for held Escape" (allows MvpFocusBar held)
+ check "opening Popup still waits for held press" (not (allows MvpFocusPopup held))
+ check "observed release permits both host roles" (allows MvpFocusBar released && allows MvpFocusPopup released)
+ check "late replay after release cannot strand closed Bar return" (allows MvpFocusBar lateReplay && not (allows MvpFocusPopup lateReplay))
+ check "unknown key identity preserves closing return and refuses opening" (allows MvpFocusBar unknown && not (allows MvpFocusPopup unknown))
+ check "retired overflow preserves closing return and refuses opening" (allows MvpFocusBar overflow && not (allows MvpFocusPopup overflow))
+ check "modifier-only state does not delay either direction" (let state=mvpKeyPressed True 50 empty in allows MvpFocusBar state && allows MvpFocusPopup state)
+ check "unmatched release does not open Popup or block Bar" (let state=mvpKeyReleased 99 held in allows MvpFocusBar state && not (allows MvpFocusPopup state))
+ check "multiple held keys still refuse opening only" (let state=press 23 held in allows MvpFocusBar state && not (allows MvpFocusPopup state))
+ let field key value (J.JObject fields) = J.JObject [(name,if name==key then value else old) | (name,old)<-fields]
+     field _ _ value = value
+     row ident dom = J.JObject [("id",J.JString ident),("domId",J.JString dom),("enabled",J.JBool True),("focusOnly",J.JBool False)]
+     scoped = field "focusOwner" (J.JObject [("id",J.JString "7"),("generation",J.JString "3")])
+     frame pub opened = field "frame" (J.JObject
+       [("surfaceProtocol",J.JNumber "2"),("publication",J.JString pub),("lease",J.JString "1"),
+        ("mode",J.JString (if opened then "menu" else "closed")),("keyboardParent",J.JBool opened),
+        ("bar",J.JArray [row "bar:applications" "current-opener"]),
+        ("popup",J.JArray (if opened then [row "control:menu-close" "menu:1:close"] else []))])
+       (scoped (projection 1 1 opened))
+     parse value = either (ioError . userError . T.unpack) pure (parseMvpFocusIntent value)
+ opened <- parse (frame "7" True)
+ closed <- parse (frame "9" False)
+ check "current same-lease menu close parses a Bar transition despite late replay"
+   (maybe False (\intent -> mvpFocusTransition opened intent==Just MvpFocusBar && maybe False (`allows` lateReplay) (mvpFocusTransition opened intent)) closed)
+ check "same closed intent cannot repeatedly take physical focus"
+   (maybe False ((==Nothing) . mvpFocusTransition closed) closed)
+ forM_ [0..31 :: Int] $ \seed -> do
+  let keycode = fromIntegral (seed+8)
+      first = press keycode empty
+      observedRelease = mvpKeyReleased keycode first
+      replayed = press keycode observedRelease
+      state = case seed `mod` 4 of
+       0 -> first
+       1 -> replayed
+       2 -> press 0 observedRelease
+       _ -> press (keycode+80) replayed
+  check ("directional return seeded late-capture sequence " ++ show seed)
+    (allows MvpFocusBar state && not (allows MvpFocusPopup state)
+      && allows MvpFocusPopup (mvpKeyReleased keycode replayed)
+      && mvpKeyReleased 250 state==state)
+
 allocationControls :: IO ()
 allocationControls = do
  rendererPhaseControls
@@ -513,6 +568,7 @@ allocationControls = do
  notificationKeyboardFocusControls
  menuKeyboardFocusControls
  keyboardHandoffControls
+ keyboardReturnHandoffControls
  foreignToplevelControls
  -- Fixed passive observation cannot generate or suppress the real input.
  let script = firstMouseupDiagnosticScript

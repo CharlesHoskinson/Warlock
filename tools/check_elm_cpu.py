@@ -269,7 +269,7 @@ def run_menu_tab_dom(observation_variant=None):
         (work / 'elm.json').write_text(json.dumps(config))
         fixture = work / 'ux024-menu-dom.cjs'
         fixture_key = 'implementation/warlock/qa/ux024-menu-dom.cjs'
-        if sources[fixture_key] != 'cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f':
+        if sources[fixture_key] != 'd6b4983292ca45c94f4de56d4ebe6943c9d9e649661e08a0aa98e9c9ea2eb6a9':
             raise RuntimeError('Fixed menu DOM fixture changed')
         shutil.copyfile(REPO / fixture_key, fixture)
         for key, expected in MENU_ESCAPE_QA_INPUTS.items():

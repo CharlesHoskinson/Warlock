@@ -12,7 +12,7 @@ sys.dont_write_bytecode=True
 attempt_auth=boot_correspondence=owned_fonts=keyboard_fixture=geometry=None
 ROOT=Path('/home/hoskinson/Projects/Warlock')
 SELF=ROOT/'tools/run_current_arm_ux024_foreign_toplevel_observer.py'
-PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v5-key-release/packet.json'
+PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v9-clean/packet.json'
 RECORD='.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
 IDENTITY='60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
 LOG_LIMIT=4*1024*1024
@@ -214,6 +214,41 @@ def derive_live_font_stack(packet, historical, reuse):
 def birth(pid):
     fields = Path('/proc', str(pid), 'stat').read_text().rsplit(')', 1)[1].split()
     return fields[19], int(fields[1])
+
+def attest_process_image(pid, expected_birth, expected_sha):
+    """Follow only this fixed procfs magic link; retain ordinary file no-follow policy."""
+    if type(pid)is not int or pid<=0 or not isinstance(expected_birth,str) or not expected_birth.isdecimal():
+        raise ValueError('exact process PID and birth required')
+    if not isinstance(expected_sha,str) or re.fullmatch('[0-9a-f]{64}',expected_sha)is None:
+        raise ValueError('exact process image digest required')
+    def live_birth():
+        try:fields=Path('/proc',str(pid),'stat').read_text().rsplit(')',1)[1].split()
+        except FileNotFoundError as exc:raise ValueError('process image process exited') from exc
+        if len(fields)<20 or fields[19]!=expected_birth:raise ValueError('process image birth changed')
+        if fields[0] in ('Z','X','x'):raise ValueError('process image process is dead or zombie')
+    live_birth()
+    path=Path('/proc',str(pid),'exe')
+    # EngineCustody uses this same kernel executable-link contract. Do not
+    # interpret its readlink text as an ordinary pathname or apply NOFOLLOW.
+    fd=os.open(path,os.O_RDONLY|os.O_NONBLOCK|os.O_CLOEXEC)
+    try:
+        before=os.fstat(fd);named_before=os.stat(path)
+        fields=('st_dev','st_ino','st_mode','st_size','st_mtime_ns','st_ctime_ns')
+        stamp=lambda value:tuple(getattr(value,k)for k in fields)
+        if not stat.S_ISREG(before.st_mode) or not 0<before.st_size<=256*1024*1024 or stamp(before)!=stamp(named_before):
+            raise ValueError('bounded held process image identity required')
+        hashed=hashlib.sha256();total=0
+        while total<=before.st_size:
+            chunk=os.read(fd,min(1024*1024,before.st_size+1-total))
+            if not chunk:break
+            total+=len(chunk);hashed.update(chunk)
+        after=os.fstat(fd);named_after=os.stat(path)
+        if total!=before.st_size or stamp(before)!=stamp(after) or stamp(before)!=stamp(named_after):
+            raise ValueError('process image changed during bounded read')
+        live_birth()
+        if hashed.hexdigest()!=expected_sha:raise ValueError('process image digest differs')
+    finally:os.close(fd)
+
 
 def descendant(pid, ancestor, ancestor_birth):
     for _ in range(12):
@@ -1200,7 +1235,7 @@ def execute(context,packet_sha):
         receipt['callbackHandleOrdinal']=row['handleOrdinal']
         def same_window():
             current();require(birth(window['pid'])[0]==window_birth and descendant(window['pid'],producer.pid,producer_birth),'input target birth/ancestry replaced')
-            require(digest(regular(Path('/proc',str(window['pid']),'exe').resolve(),256*1024*1024))==assets['owner']['sha256'],'input target image differs')
+            attest_process_image(window['pid'],window_birth,assets['owner']['sha256'])
             values=clients();require(len(values)==1 and values[0].get('address')==window['address'] and values[0].get('pid')==window['pid'] and values[0].get('at')==window['at'] and values[0].get('size')==window['size'],'input target/geometry replaced')
             active=json.loads(command('hyprctl',['-i',stack.instance['signature'],'activewindow','-j']),object_pairs_hook=unique)
             require(active.get('address')==window['address'] and active.get('pid')==window['pid'],'owned window is not actual active keyboard target')
@@ -1214,7 +1249,7 @@ def execute(context,packet_sha):
                 command('grim',[str(frame)]);geometry.require_frame(regular(frame,32*1024*1024),(1280,720))
                 receipt['frames'].append({'path':str(frame),'sha256':digest(regular(frame,32*1024*1024)),
                     'beforeTransaction':step,'interpretation':'unreviewed actual pixels; no automatic physical focus acceptance'})
-                same_window();keyboard.attest();phase_channel.consume(step)
+                phase_channel.consume(step)
                 # Record the attempt before sending. Any failure stops; no input retry.
                 sent={'index':index,'name':step,'argv':list(transaction['argv']),
                       'originalDeadlineNs':clock['deadline'],'attempted':True,'completed':False}

@@ -226,6 +226,37 @@ menuTabDecoder snapshot =
                 Just instruction -> D.succeed (MenuTraverse instruction,True)
                 Nothing -> D.fail "No current menu traversal target")
 
+-- The native owned Escape route is the single dismissal policy wire. Consume
+-- only its current eligible menu DOM event so WebKit cannot replay an unhandled
+-- key into a different renderer after the native close changes physical focus.
+-- This handler emits no action, HTTP request, local dismissal or focus command.
+menuEscapeDecoder : Popup.Model -> SurfaceRenderer.Snapshot -> D.Decoder { message : Msg, stopPropagation : Bool, preventDefault : Bool }
+menuEscapeDecoder popupModel snapshot =
+    D.map6 (\key modifiers composing code repeated target ->
+        {key=key,modifiers=modifiers,composing=composing,code=code,repeated=repeated,target=target})
+        (D.field "key" D.string)
+        (D.map4 (\shift ctrl alt meta -> shift || ctrl || alt || meta)
+            (D.field "shiftKey" D.bool) (D.field "ctrlKey" D.bool) (D.field "altKey" D.bool) (D.field "metaKey" D.bool))
+        (D.field "isComposing" D.bool) (D.field "keyCode" D.int)
+        (D.field "repeat" D.bool) (D.at ["target","id"] D.string)
+        |> D.andThen (\event ->
+            let details = SurfaceSnapshot.details snapshot
+                closeControls = List.filter (\menuItem -> menuItem.identity=="control:menu-close" && menuItem.enabled) details.popup
+                currentTargets = List.filter (\menuItem -> menuItem.enabled && SurfaceRenderer.controlDomId snapshot menuItem.domId==event.target) details.popup
+            in if event.key/="Escape" || event.modifiers || event.composing || event.code==229 || event.repeated
+                || popupModel.composition/=Popup.Idle || details.mode/="menu" || List.length closeControls/=1 then
+                D.fail "Not an owned idle menu Escape"
+            else case currentTargets of
+                [menuItem] ->
+                    let instruction = E.object
+                            [("focusProtocol",E.int 1),("kind",E.string "focus"),("surface",E.string "popup")
+                            ,("publication",E.string (UInt64.string details.publication))
+                            ,("lease",E.string (UInt64.string details.lease)),("domId",E.string menuItem.domId)]
+                    in case Presentation.focusTarget True instruction popupModel.presentation of
+                        Just _ -> D.succeed {message=Focused,stopPropagation=True,preventDefault=True}
+                        Nothing -> D.fail "Menu Escape scope is no longer current"
+                _ -> D.fail "Menu Escape target is not uniquely eligible")
+
 view : Model -> Html.Html Msg
 view model =
     case UiHttp.problem model.http of
@@ -234,7 +265,12 @@ view model =
             in case Presentation.current model.popup.presentation of
                 Just snapshot ->
                     if SurfaceRenderer.mode snapshot=="menu" && model.popup.composition==Popup.Idle then
-                        div [Html.Events.preventDefaultOn "keydown" (menuTabDecoder snapshot)] [rendered]
+                        div [Html.Events.custom "keydown"
+                            (D.field "key" D.string |> D.andThen (\key ->
+                                if key=="Tab" then
+                                    D.map (\(message,prevent) -> {message=message,stopPropagation=False,preventDefault=prevent}) (menuTabDecoder snapshot)
+                                else
+                                    menuEscapeDecoder model.popup snapshot))] [rendered]
                     else rendered
                 Nothing -> rendered
         Just reason ->

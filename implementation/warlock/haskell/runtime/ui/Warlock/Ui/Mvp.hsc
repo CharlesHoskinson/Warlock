@@ -31,6 +31,7 @@ module Warlock.Ui.Mvp
   , mvpKeyPressed
   , mvpKeyReleased
   , mvpKeyHandoffReady
+  , mvpKeyHandoffAllows
   , isStaleOwnerProjection
   , ViewObservation(..)
   , MvpStepState
@@ -623,6 +624,13 @@ mvpKeyReleased keycode (MvpKeyHandoff held uncertain) =
 
 mvpKeyHandoffReady :: MvpKeyHandoff -> Bool
 mvpKeyHandoffReady (MvpKeyHandoff held uncertain) = null held && not uncertain
+
+-- The release witness protects opening a Popup. Closing returns to the Bar
+-- under the existing selected-scope, projection and widget checks even when a
+-- replayed capture press or uncertain key state cannot certify a release.
+mvpKeyHandoffAllows :: MvpFocusRole -> MvpKeyHandoff -> Bool
+mvpKeyHandoffAllows MvpFocusBar _ = True
+mvpKeyHandoffAllows MvpFocusPopup state = mvpKeyHandoffReady state
 
 data MvpObject
 
@@ -1355,11 +1363,11 @@ stepMvpKeyboardFocus mvp fetchProjection remainingMicros = do
             when (active /= 0 && mapped /= 0 && root == mvpGtkWindow mvp && width > 0 && height > 0) $ do
               latest <- fetchProjection
               allowed <- stillLive
-              -- Keep a key's release on its originating WebView. The intent
-              -- stays uncommitted; the existing loop retries after release.
-              -- Close/unmap handling is independent and is never delayed here.
-              released <- mvpKeyHandoffReady <$> readIORef (mvpKeyHandoffRef mvp)
-              when (allowed && latest == original && released) $ do
+              -- Wait for release only when opening Popup. A validated closed
+              -- Bar return must not wait on stale/replayed capture state.
+              -- No state is cleared and all current owner/widget gates remain.
+              handoffAllowed <- mvpKeyHandoffAllows role <$> readIORef (mvpKeyHandoffRef mvp)
+              when (allowed && latest == original && handoffAllowed) $ do
                 focused <- checked (gtkWidgetGrabFocus widget)
                 unless (focused /= 0) (ioError (userError "owned renderer refused keyboard focus"))
                 after <- fetchProjection

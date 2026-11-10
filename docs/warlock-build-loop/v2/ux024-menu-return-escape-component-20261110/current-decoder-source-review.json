@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted",
+  "manifestSha256": "0fdbdddea015d48e68a53092d29c073b88a1965abf436db2d16bdf29a447175e",
+  "scope": "Single current key decoder dispatch correction with exact retained compiled-kernel diagnosis",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision5-current-key-decoder/manifest.json",
+      "sha256": "0fdbdddea015d48e68a53092d29c073b88a1965abf436db2d16bdf29a447175e"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision5-current-key-decoder/postimages/implementation/warlock/src/HttpPopup.elm",
+      "sha256": "e3b20ed07ce33d23dfebb7d9ba368d210ec01597920f819fc061421f80d24589"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794310794850648280/HttpPopup.js",
+      "sha256": "6750f38c696efc4e5fb09cd123c2d8d040ed751974e863032ecb67cba91739e1"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/tests-first/ux024-owned-escape-dom.cjs",
+      "sha256": "bbc097acb99a950eb24cd25f1fb8449e06d90d96dc4b279b7ab35788b8196783"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision3-fresh-target-observation/actual-root-report.json",
+      "sha256": "c940a977f4f8434c473427878e11c6f085bb1bc2c233ff63723f641d4a8796b6"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision4-keyed-update-contrast/ux024-owned-escape-dom.cjs",
+      "sha256": "ffc7a807debe79ef522f0f2cc2bb3980a3047e8f31c2f57e17f72ead75e16c4b"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision4-keyed-update-contrast/actual-root-report.json",
+      "sha256": "a5d8ab249909040a0574493925330f2aa41e78b27c1c0c7bbfdb6e3facc50255"
+    }
+  ],
+  "verified": {
+    "onlyTopLevelDecoderSelectionChanged": true,
+    "existingTabEscapeGuardsAndNoopPolicyWireUnchanged": true,
+    "andThenClosureEqualityTracksCurrentSnapshot": true,
+    "oldFixtureAnd21Plus32AndFourContrastsUnchanged": true
+  },
+  "exactCompiledSourceCause": {
+    "oneOf": "_Json_oneOf stores decoders unchanged as .g; callsite provides _List_fromArray linked list.",
+    "equality": "case11 calls _Json_listEquality on .g; length fields are both undefined, inequality false and loop never runs, yielding true without nested decoder comparison.",
+    "vdom": "_VirtualDom_equalEvents uses that equality; an apparently equal old custom handler can therefore retain old snapshot closures while rendered IDs change.",
+    "localCorrection": "Top field-key/andThen uses case10 function identity comparison. New snapshot-dependent closure is reinstalled; original Tab/Escape decoders remain unchanged."
+  },
+  "limits": [
+    "This finding is grounded in this exact compiled Popup artifact, not a blanket claim about every Elm runtime/version.",
+    "No reviewer code execution/imports/compiler/tests/native or primary edits.",
+    "New actual compile and unchanged21/32/25contrast results still required; no future GREEN claimed.",
+    "No kernel upgrade, stale authority relaxation, native/original UX024/EARS acceptance."
+  ]
+}

@@ -1,0 +1,141 @@
+"use strict";
+// Uninstrumented compiled HttpPopup; controlled DOM/XHR component only.
+// No simulated default Tab movement: only the production event handler can focus.
+const fs=require('node:fs'),vm=require('node:vm'),crypto=require('node:crypto');
+const [image,output]=process.argv.slice(2);
+if(process.argv.length!==4)throw Error('Expected explicit compiled HttpPopup.js-or-html and NEW report.json');
+const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
+const report={schema:1,passed:false,scope:'UX024 owned menu Escape browser-default consumption component',nativeAcceptance:false,originalAccepted:false,checks:[],failures:[],trace:[],cases:[],artifactHashes:{image:hash(fs.readFileSync(image)),harness:hash(fs.readFileSync(__filename))}};
+function check(name,ok,witness){const row={name,passed:!!ok};if(!ok)row.witness=witness??null;report.checks.push(row);if(!ok)report.failures.push(row);}
+function need(name,ok,witness){check(name,ok,witness);if(!ok)throw Error(name);}
+function compiledSource(file){const raw=fs.readFileSync(file,'utf8');if(!raw.trimStart().startsWith('<'))return raw;
+ const scripts=[...raw.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)].map(m=>m[1]);
+ const selected=scripts.filter(s=>s.includes('_Platform_export')&&s.includes('HttpPopup'));
+ if(selected.length!==1)throw Error('Expected exactly one uninstrumented Elm HttpPopup script');
+ const start='(function(scope){',end='}(this));',body=selected[0],a=body.indexOf(start),z=body.indexOf(end);
+ if(a<0||z<a||body.indexOf(start,a+1)>=0||body.indexOf(end,z+1)>=0)throw Error('Unexpected Elm HTML wrapper');
+ return body.slice(a,z+end.length);}
+
+const environments=[];let activeNode=null;const focusLog=[];
+async function bounded(_label,promise){return promise;}
+class Node {
+  constructor(type,name,text=''){this.nodeType=type;this.tagName=name;this.nodeName=name;this.data=text;this.nodeValue=text;this.parentNode=null;this.childNodes=[];this.attributes={};this.style={setProperty(k,v){this[k]=v;},removeProperty(k){delete this[k];}};this.listeners={};}
+  get textContent(){return this.nodeType===3?this.data:this.childNodes.map(x=>x.textContent).join('');}
+  set textContent(value){if(this.nodeType===3){this.data=String(value);this.nodeValue=this.data;}else{this.childNodes=[];if(value)this.appendChild(new Node(3,'#text',String(value)));}}
+  appendChild(child){return this.insertBefore(child,null);}
+  insertBefore(child,before){if(child.nodeType===11){for(const item of [...child.childNodes])this.insertBefore(item,before);return child;}if(child.parentNode)child.parentNode.removeChild(child);let i=before?this.childNodes.indexOf(before):-1;if(i<0)i=this.childNodes.length;this.childNodes.splice(i,0,child);child.parentNode=this;return child;}
+  removeChild(child){const i=this.childNodes.indexOf(child);if(i<0)throw Error('Missing DOM child');this.childNodes.splice(i,1);child.parentNode=null;return child;}
+  replaceChild(child,old){this.insertBefore(child,old);this.removeChild(old);return old;}
+  replaceData(_offset,_count,value){this.data=String(value);this.nodeValue=this.data;}
+  setAttribute(k,v){this.attributes[k]=String(v);}
+  setAttributeNS(_ns,k,v){this.setAttribute(k,v);}
+  getAttribute(k){return this.attributes[k]??null;}
+  removeAttribute(k){delete this.attributes[k];}
+  removeAttributeNS(_ns,k){this.removeAttribute(k);}
+  addEventListener(k,fn){this.listeners[k]=fn;}
+  removeEventListener(k,fn){if(this.listeners[k]===fn)delete this.listeners[k];}
+  focus(){activeNode=this;focusLog.push(this.id??this.attributes.id??null);this.focused=true;this.focusCount=(this.focusCount??0)+1;}
+}
+function walk(node,predicate){if(predicate(node))return node;for(const child of node.childNodes){const found=walk(child,predicate);if(found)return found;}return null;}
+function domWitness(node){return {tag:node.tagName,id:node.id??node.attributes.id??null,attributes:node.attributes,disabled:node.disabled??false,listeners:Object.keys(node.listeners),children:node.childNodes.map(domWitness)};}
+function harness(file,name,flags=null){
+  const requests=[],messages=[],timers=new Map();let sequence=0;
+  class XHR {
+    constructor(){this.handlers={};this.upload={handlers:{},addEventListener(kind,handler){this.handlers[kind]=handler;}};this.headers={};this.aborted=false;this.done=false;this.abortCount=0;}
+    addEventListener(kind,handler){this.handlers[kind]=handler;}
+    open(method,url,async){this.method=method;this.url=url;this.async=async;}
+    setRequestHeader(key,value){this.headers[key]=value;}
+    getAllResponseHeaders(){return 'Content-Type: application/json\r\n';}
+    send(body){this.body=body??'';requests.push(this);report.trace.push({root:name,method:this.method,url:this.url,headers:this.headers,bytes:Buffer.byteLength(this.body),sha256:hash(this.body)});}
+    abort(){this.aborted=true;this.abortCount++;}
+    respond(status,body='',late=false){if(!late&&(this.done||this.aborted))throw Error('Response to inactive XHR');this.done=true;this.status=status;this.statusText=String(status);this.response=body;this.responseURL='http://127.0.0.1:41001'+this.url;this.handlers.load();}
+    fail(kind){if(this.done||this.aborted)throw Error('Failure to inactive XHR');this.done=true;this.handlers[kind]();}
+  }
+  const later=(fn,delay=0)=>{const id=++sequence;timers.set(id,{fn,delay});return id;};
+  const cancel=id=>timers.delete(id);
+  const container=new Node(1,'DIV'),mount=new Node(3,'#text','');container.appendChild(mount);
+  const document={body:container,documentElement:container,createTextNode:text=>new Node(3,'#text',String(text)),createElement:tag=>new Node(1,tag.toUpperCase()),createElementNS:(_ns,tag)=>new Node(1,tag.toUpperCase()),createDocumentFragment:()=>new Node(11,'#document-fragment'),addEventListener(){},removeEventListener(){},getElementById:id=>walk(container,n=>(n.id??n.attributes.id)===id)};
+  const window={document,addEventListener(){},removeEventListener(){},requestAnimationFrame:fn=>later(fn,0),cancelAnimationFrame:cancel};
+  const sandbox={console,document,window,XMLHttpRequest:XHR,setTimeout:later,clearTimeout:cancel,requestAnimationFrame:window.requestAnimationFrame,cancelAnimationFrame:cancel};
+  vm.createContext(sandbox);vm.runInContext(compiledSource(file),sandbox,{timeout:2000});
+  const app=sandbox.Elm[name].init({node:mount,flags});
+  if(app.ports?.outgoing)app.ports.outgoing.subscribe(value=>messages.push(JSON.parse(JSON.stringify(value))));
+  const env={requests,messages,container,app,
+    async flush(){for(let round=0;round<12;round++){for(const [id,row]of [...timers])if(row.delay<=0){timers.delete(id);row.fn();}await new Promise(resolve=>setImmediate(resolve));}},
+    async tick(milliseconds){for(const [id,row]of [...timers])if(row.delay<=milliseconds){timers.delete(id);row.fn();}await this.flush();},
+    gets(){return requests.filter(r=>r.method==='GET');},posts(){return requests.filter(r=>r.method==='POST');},
+    get(){return requests.find(r=>r.method==='GET'&&!r.done&&!r.aborted);},
+    latest(){return messages.at(-1);},
+    async send(value){app.ports.incoming.send(value);await bounded('worker reply',this.flush());},
+    async event(value){const request=this.get();need(name+' actual pending GET before controlled event',Boolean(request),request?undefined:{alert:walk(container,node=>node.attributes?.role==='alert')?.textContent??null,requests:requests.map(row=>({method:row.method,url:row.url,done:row.done,aborted:row.aborted}))});request.respond(200,JSON.stringify(value));await this.flush();},
+    close(){timers.clear();for(const request of requests)if(!request.done&&!request.aborted)request.abort();}
+  };
+  environments.push(env);return env;
+}
+
+const gateway=(kind,payload)=>({bridgeProtocol:1,kind,payload});
+const row=(id,enabled=true,domId=id)=>({id,domId,label:id,ariaLabel:id,detail:'',enabled});
+const rows=()=>[row('control:menu-close'),row('menu:disabled',false),row('menu:first'),row('menu:last')];
+const frame=(items=rows(),publication='7',lease='1',mode='menu')=>({surfaceProtocol:2,publication,lease,mode,status:'Ready',bar:[],popup:items});
+function control(env,id){return walk(env.container,n=>n.attributes['data-surface-control']===id||n.attributes['data-surface-field']===id);}
+function popup(env){return walk(env.container,n=>(n.className??n.attributes.class??'').split(' ').includes('surface-popup'));}
+function activate(node){if(!node)throw Error('Expected rendered control');node.focus();focusLog.length=0;}
+function dispatch(target,options={}){
+ const event={type:'keydown',key:'Tab',code:'Tab',keyCode:9,which:9,shiftKey:false,ctrlKey:false,altKey:false,metaKey:false,isComposing:false,repeat:false,target,currentTarget:target,defaultPrevented:false,cancelBubble:false,
+  preventDefault(){this.defaultPrevented=true;},stopPropagation(){this.cancelBubble=true;},...options};
+ for(let node=target;node;node=node.parentNode){event.currentTarget=node;const callback=node.listeners.keydown;if(callback)callback(event);if(event.cancelBubble)break;}
+ return event;
+}
+async function setup(shown=frame()){activeNode=null;focusLog.length=0;const env=harness(image,'HttpPopup');await env.flush();await env.event(gateway('presentation',shown));need('real menu root rendered',!!popup(env),domWitness(env.container));return env;}
+async function run(name,body){const before=report.failures.length;try{await body();report.cases.push({name,passed:report.failures.length===before});}catch(error){check(name+' completed',false,String(error.stack??error));report.cases.push({name,passed:false});}finally{for(const e of environments)e.close();}}
+function noRequests(env,name){check(name+' sends no HTTP mutation',env.posts().length===0,env.posts().map(x=>({url:x.url,body:x.body})));}
+async function traverse(name,from,to,shift=false,items=rows()){
+ await run(name,async()=>{const env=await setup(frame(items)),start=control(env,from),expected=control(env,to);activate(start);const event=dispatch(start,{shiftKey:shift});await env.flush();
+ check(name+' prevents browser escape',event.defaultPrevented);check(name+' actual DOM focus target',activeNode===expected&&focusLog.length===1,{focusLog,active:activeNode?.id,expected:expected?.id});noRequests(env,name);});
+}
+const escapeEvent={key:'Escape',code:'Escape',keyCode:27,which:27};
+const menuRows=()=>[row('control:menu-close'),row('menu:disabled',false),row('menu:refresh')];
+async function escapeCase(name,patch={},items=menuRows(),target='control:menu-close',expected=false){
+ await run(name,async()=>{const env=await setup(frame(items)),start=control(env,target)||popup(env);activate(start);const event=dispatch(start,{...escapeEvent,...patch});await env.flush();
+ check(name+' default handling',event.defaultPrevented===expected,{defaultPrevented:event.defaultPrevented,expected});
+ check(name+' propagation handling',event.cancelBubble===expected,{cancelBubble:event.cancelBubble,expected});
+ check(name+' no local focus or dismissal',activeNode===start&&focusLog.length===0&&!!popup(env),focusLog);noRequests(env,name);});
+}
+(async()=>{
+ await escapeCase('Owned close consumes Escape without another policy wire',{},menuRows(),'control:menu-close',true);
+ await escapeCase('Owned Refresh consumes Escape without activation',{},menuRows(),'menu:refresh',true);
+ for(const [name,patch] of [['Shift',{shiftKey:true}],['Control',{ctrlKey:true}],['Alt',{altKey:true}],['Meta',{metaKey:true}],['Composition',{isComposing:true}],['IME229',{keyCode:229,which:229}],['Repeat',{repeat:true}]])await escapeCase(name+' Escape preserved',patch);
+ await escapeCase('Disabled target Escape preserved',{},menuRows(),'menu:disabled');
+ await run('Foreign DOM target Escape preserved',async()=>{const env=await setup(frame(menuRows())),node=new Node(1,'BUTTON');node.id='foreign-target';popup(env).appendChild(node);activate(node);const event=dispatch(node,escapeEvent);await env.flush();check('foreign target untouched',!event.defaultPrevented&&!event.cancelBubble);noRequests(env,'foreign');});
+ await escapeCase('Empty menu Escape preserved',{},[]);
+ await escapeCase('Missing close Escape preserved',{},[row('menu:refresh')],'menu:refresh');
+ await escapeCase('Disabled close Escape preserved',{},[row('control:menu-close',false),row('menu:refresh')],'menu:refresh');
+ await run('Closed presentation Escape preserved',async()=>{const env=await setup(frame(menuRows()));await env.event(gateway('presentation',frame([],'8','1','closed')));const node=popup(env);const event=dispatch(node,escapeEvent);await env.flush();check('closed event untouched',!event.defaultPrevented&&!event.cancelBubble);noRequests(env,'closed');});
+ await run('Other popup mode Escape preserved',async()=>{const env=await setup(frame([row('control:close')],'7','1','notifications'));const node=control(env,'control:close');activate(node);const event=dispatch(node,escapeEvent);await env.flush();check('other mode untouched',!event.defaultPrevented&&!event.cancelBubble);noRequests(env,'notifications');});
+ await run('Stopped transport Escape preserved',async()=>{const env=await setup(frame(menuRows()));await env.event(gateway('unexpected',{}));const alert=walk(env.container,node=>node.attributes?.role==='alert');need('actual stopped alert',!!alert,domWitness(env.container));const event=dispatch(alert,escapeEvent);await env.flush();check('stopped event untouched',!event.defaultPrevented&&!event.cancelBubble);noRequests(env,'stopped');});
+ await run('Stale presentation cannot replace current menu scope',async()=>{const env=await setup(frame(menuRows(),'9','2'));await env.event(gateway('presentation',frame([],'8','1','closed')));const node=control(env,'control:menu-close');activate(node);const event=dispatch(node,escapeEvent);await env.flush();check('current pub and lease retained',popup(env).attributes['data-publication']==='9'&&popup(env).attributes['data-lease']==='2',domWitness(popup(env)));check('current owned Escape consumed',event.defaultPrevented&&event.cancelBubble);noRequests(env,'stale');});
+ await run('Fresh lease Escape uses current rendered target',async()=>{const env=await setup(frame(menuRows()));await env.event(gateway('presentation',frame([row('control:menu-close',true,'fresh-close'),row('menu:refresh',true,'fresh-refresh')],'8','2')));const node=control(env,'menu:refresh');activate(node);const event=dispatch(node,escapeEvent);await env.flush();check('fresh current target consumed',event.defaultPrevented&&event.cancelBubble,{event:{defaultPrevented:event.defaultPrevented,cancelBubble:event.cancelBubble,key:event.key,repeat:event.repeat,keyCode:event.keyCode},root:{attributes:popup(env)?.attributes},target:{id:node.id,attributeId:node.getAttribute('id'),identity:node.getAttribute('data-surface-control'),disabled:node.disabled},close:{id:control(env,'control:menu-close')?.id,attributeId:control(env,'control:menu-close')?.getAttribute('id')},ancestry:(()=>{const result=[];for(let at=node;at&&result.length<8;at=at.parentNode)result.push({tag:at.tagName,id:at.id,attributeId:at.getAttribute('id'),handlers:Object.keys(at.listeners)});return result;})(),dom:JSON.stringify(domWitness(popup(env))).slice(0,8192)});noRequests(env,'fresh');});
+ await traverse('Tab still traverses without stopping propagation','control:menu-close','menu:first');
+ await run('Seeded Escape decision matrix',async()=>{const env=await setup(frame(menuRows())),node=control(env,'control:menu-close');let positives=0,negatives=0;const samples=[];
+  for(let seed=0;seed<32;seed++){let state=(seed+1)>>>0;state^=state<<13;state^=state>>>17;state^=state<<5;const variant=seed%8;
+   const patch=variant===0?{}:variant===1?{shiftKey:true}:variant===2?{ctrlKey:true}:variant===3?{altKey:true}:variant===4?{metaKey:true}:variant===5?{isComposing:true}:variant===6?{keyCode:229}:{repeat:true};
+   const expected=variant===0;activate(node);const event=dispatch(node,{...escapeEvent,...patch});await env.flush();
+   check('seed '+seed+' exact consume decision',event.defaultPrevented===expected&&event.cancelBubble===expected,{seed,variant,expected,defaultPrevented:event.defaultPrevented,cancelBubble:event.cancelBubble});
+   check('seed '+seed+' no local focus',focusLog.length===0);noRequests(env,'seed '+seed);if(expected)positives++;else negatives++;samples.push({seed,mixed:state>>>0,variant,expected});
+  }report.seeded={seeds:Array.from({length:32},(_,i)=>i),samples,positiveWitnesses:positives,negativeWitnesses:negatives};check('seed matrix nonvacuous',positives===4&&negatives===28);
+ });
+ for(const [name,items,initial] of [
+  ['Keep disabled middle and rename targets',[row('control:menu-close',true,'fresh-close'),row('menu:disabled',false),row('menu:refresh',true,'fresh-refresh')],false],
+  ['Remove disabled middle and retain target IDs',[row('control:menu-close'),row('menu:refresh')],false],
+  ['Keep rows and target IDs at fresh counters',menuRows(),false],
+  ['Initial fresh frame without keyed update',[row('control:menu-close',true,'fresh-close'),row('menu:refresh',true,'fresh-refresh')],true]
+ ])await run('Contrast '+name,async()=>{
+  const env=await setup(initial?frame(items,'8','2'):frame(menuRows()));
+  if(!initial)await env.event(gateway('presentation',frame(items,'8','2')));
+  const node=control(env,'menu:refresh');activate(node);const event=dispatch(node,escapeEvent);await env.flush();
+  check('contrast fresh current target '+name,event.defaultPrevented&&event.cancelBubble,{initial,root:popup(env)?.attributes,target:{id:node.id,identity:node.getAttribute('data-surface-control'),disabled:node.disabled},close:control(env,'control:menu-close')?.id,defaultPrevented:event.defaultPrevented,cancelBubble:event.cancelBubble,dom:JSON.stringify(domWitness(popup(env))).slice(0,8192)});
+  noRequests(env,'contrast '+name);
+ });
+ report.passed=report.cases.length===25&&report.cases.every(x=>x.passed)&&report.failures.length===0;
+ report.limits=['Actual compiled HttpPopup DOM/XHR component with synthetic keys, not GTK replay proof.','Existing native OwnerEscape remains the single policy wire; this component must emit zero HTTP mutations.','The old immutable18-case Escape default-preservation assertion is superseded only by the new owned-consumption contract.','No backend, native original or release acceptance.'];
+})().catch(error=>{report.failures.push({name:'harness terminal',witness:String(error.stack??error)});}).finally(()=>{for(const env of environments)env.close();fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n',{flag:'wx'});process.exitCode=report.passed?0:1;});

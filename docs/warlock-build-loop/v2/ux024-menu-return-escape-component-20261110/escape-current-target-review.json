@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-component-green",
+  "documentReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794311785718267729/report.json",
+    "sha256": "62e48d24355a360c60e3c6c4a0d765231f8ee1836f4afffc364acddcb447d0c4"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/actual-root-original21-green-r5-current-popup.json",
+      "sha256": "7ab7ba8a688cf2d142afc003ab84db9b00861776a8c791484f707b0b189f2105"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/actual-root-original21-green-r5-execution.json",
+      "sha256": "1616cfe74a7f40bd6304b77b8d42be6e0696a6721e7c0e0a2a34fe266dd12530"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/actual-root-contrast25-green-r5-current-popup.json",
+      "sha256": "eeb1ce5baf0769898cff85e8af64cb8a66380f2bfd31c224a3eaa18f1d17c63e"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/actual-root-contrast25-green-r5-execution.json",
+      "sha256": "ab9bd1a979a65397cd923413999fae086f45ef6c792334041426ef793cb843a4"
+    }
+  ],
+  "verified": {
+    "originalFixtureUnchanged": true,
+    "originalCases": 21,
+    "contrastFixtureUnchanged": true,
+    "contrastCases": 25,
+    "seedsEach": 32,
+    "sameActualPopupSha256": "c6a599d99c5cbedefacd117ebd7a7e28406efc829e4df56aafd3035a97c194ee",
+    "allAssertionsPassed": true,
+    "protectedExecutionsExitZero": true
+  },
+  "limits": [
+    "No reviewer execution/imports/QA/native or primary effects.",
+    "Current-source document and controlled DOM qualification only; prior RED reports remain unchanged.",
+    "No actual GTK replay/native original UX024/EARS/cleanup or diagnostic integration/RSI credit."
+  ]
+}
