@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-connected-attempt-file-limit-failure",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/report.json",
+      "sha256": "026d354a31f9c88a79d59df6083c9ee6200ffbbd0a6f7320549224ae46798fbc"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/command-24.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/command-24.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "9f19ed61009083ff853bf51b4af27d6d9da32f01ab4f7e7510dc4881eaadecf5"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/run_arm_gl_foundation_renewed_20261108_0623.py",
+      "sha256": "769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux023_notifications_keyboard_journey.py",
+      "sha256": "da79ecfcb9de1abd70d5126af08c4f979c33e4dd1a797729b0bdd5cabedbd910"
+    }
+  ],
+  "observed": {
+    "READ_INITIALandREAD_WINDOW": true,
+    "closePhaseFirstPair": true,
+    "mappingDiagnosticsMissing": [
+      0,
+      0
+    ],
+    "command24Exit": -25,
+    "command24StdoutBytes": 0,
+    "command24StderrBytes": 0,
+    "pngCreated": false,
+    "framesRecorded": 0,
+    "closeInputIssued": false,
+    "cleanupUnknown": true,
+    "forcedCleanup": false,
+    "globalRestoration": true,
+    "sourceInputsUnchanged": true,
+    "passed": false
+  },
+  "cause": "Current runner genericspawn passes base.bound_output for allchildren; pinnedbase CAP65536 and bound_output sets both RLIMIT_FSIZE limits65536. After actualclosephase succeeds, nextsourcecommand is grim actual-owned-window.png; command24 getsSIGXFSZ. Incumbent Notifications command spawned grim without this64KiB preexec limit.",
+  "precision": "Installedgrim dynamically references shm_open/ftruncate64 and pngwrite. NoPNG exists, so rawcapture shared-memory growth is plausible; exact failing syscall is not retained and is not asserted. Signal/filelimit causal correspondence is concrete; successfulframe/close/retirement not observed.",
+  "limits": [
+    "No budget/guard change authorized or applied by reviewer.",
+    "Actualfailedcommand was not appended to commands list because wait_normal raises first; sourceflow plus retainedchildrole identifies nextgrimcommand, not fabricatedactualargvtelemetry.",
+    "No reviewer tests/QA/nativeeffects;0requirement/0scenario/originalacceptance."
+  ]
+}

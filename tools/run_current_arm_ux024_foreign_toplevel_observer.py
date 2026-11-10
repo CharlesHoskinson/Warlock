@@ -12,7 +12,7 @@ sys.dont_write_bytecode=True
 attempt_auth=boot_correspondence=owned_fonts=keyboard_fixture=geometry=None
 ROOT=Path('/home/hoskinson/Projects/Warlock')
 SELF=ROOT/'tools/run_current_arm_ux024_foreign_toplevel_observer.py'
-PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v2/packet.json'
+PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v6/packet.json'
 RECORD='.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
 IDENTITY='60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
 LOG_LIMIT=4*1024*1024
@@ -446,12 +446,29 @@ def close_ready_matches(pair,binding,runtime_binding):
         if bar['root']['mode'] is not None or popup['root']['mode']!='closed':return False
         if popup['documentFocused'] is not False or popup['controls']!=[]:return False
         if any(snap['query'] is not None or snap['retained'] is not None or snap['root']['loading']!='false' for snap in (bar,popup)):return False
-        if bar['root']['pub']!=popup['root']['pub'] or bar['root']['lease']!='0' or popup['root']['lease']!='0':return False
-        host=json.dumps({key:runtime_binding[key] for key in ('lifetime','session','frontend')},separators=(',',':'))
-        expected='applications:'+host+':'+bar['root']['pub']+':control:opener'
+        if bar['root']['pub']!=popup['root']['pub'] or bar['root']['lease']!='0' or popup['root']['lease']!='0' or binding['expectedLease']!=0:return False
+        counters={key:runtime_binding[key] for key in ('lifetime','session','frontend')}
+        if any(not isinstance(value,str) or re.fullmatch('[1-9][0-9]{0,19}',value) is None or int(value)>18446744073709551615 for value in counters.values()):return False
+        host=json.dumps(counters,separators=(',',':'))
+        prefix='applications:'+host+':'
         rows=[row for row in bar['controls'] if row['control']=='bar:applications']
-        return (len(rows)==1 and rows[0]['tag']=='BUTTON' and rows[0]['id']==expected
-          and rows[0]['disabled'] is False and rows[0]['ariaDisabled']=='false' and rows[0]['focusOnly']=='false')
+        if len(rows)!=1:return False
+        matched=re.fullmatch(re.escape(prefix)+r'([1-9][0-9]{0,19}):control:opener',rows[0]['id'])
+        if matched is None or int(matched.group(1))>18446744073709551615:return False
+        presentation=matched.group(1)
+        # Desktop.key uses model.presentation; Surface publication is independent.
+        # Corroborate that exact presentation against the current owning document,
+        # never against publication or a suffix-only match. Freshness/custody comes
+        # from validate_phase_pair. No independent numeric relation is claimed.
+        witnesses={'bar:applications':'control:opener','bar:overview':'control:overview-opener',
+          'bar:switcher':'control:switcher-opener','bar:notifications':'notifications:opener',
+          'bar:files':'files:opener','bar:system':'system:opener','bar:settings':'settings:opener'}
+        for identity,suffix in witnesses.items():
+            current=[row for row in bar['controls'] if row['control']==identity]
+            if (len(current)!=1 or current[0]['tag']!='BUTTON'
+                    or current[0]['id']!=prefix+presentation+':'+suffix
+                    or current[0]['focusOnly']!='false'):return False
+        return rows[0]['disabled'] is False and rows[0]['ariaDisabled']=='false'
     except (KeyError,TypeError,ValueError,OverflowError):return False
 
 
@@ -887,6 +904,36 @@ def producer_observation(raw,clock,window,window_birth,namespace,owner_sha):
     return value
 
 
+def missing_named_mappings(rows, inventory, graphics_devices):
+    """Bounded failure evidence only; never adds a path to the qualified inventory."""
+    missing = sorted({row['pathname'] for row in rows
+                      if isinstance(row.get('pathname'), str) and row['pathname'].startswith('/')
+                      and row['pathname'] not in graphics_devices
+                      and (row['pathname'].endswith(' (deleted)') or row['pathname'] not in inventory)})
+    return {'missingNamedPathCount': len(missing),
+            'missingNamedPaths': [path[:8192] for path in missing[:256]],
+            'allMissingNamesRetained': len(missing) <= 256 and all(len(path) <= 8192 for path in missing),
+            'inventoryChanged': False}
+
+
+CAPTURE_FILE_LIMIT = 32*1024*1024  # Existing maximum accepted PNG body, per file.
+
+
+def bound_capture_output():
+    # RLIMIT_FSIZE also bounds graphics memfd backing. Keep this finite and
+    # exclusive to the one exact pinned grim command; no change to base guard.
+    import resource
+    resource.setrlimit(resource.RLIMIT_FSIZE, (CAPTURE_FILE_LIMIT,CAPTURE_FILE_LIMIT))
+
+
+def command_output_bound(base, argv, assets, output):
+    if argv and argv[0] == assets['grim']['path']:
+        require(argv == [assets['grim']['path'],str(Path(output)/'actual-owned-window.png')],
+                'only exact fixed grim capture may use graphics output profile')
+        return bound_capture_output
+    return base.bound_output
+
+
 def execute(context,packet_sha):
     packet=context['packet'];assets=packet['assets'];qa=context['qa'];stage=context['stage']
     scope=qa.require_qa_scope();authority=context['authority']
@@ -920,7 +967,7 @@ def execute(context,packet_sha):
             matches=[ref['sha256'] for role,ref in assets.items() if role in {'controls','keyboardSeat','hyprctl','wtype','grim'} and ref['path']==argv[0]]
             require(len(set(matches))==1,'only fixed selected executable may spawn')
             proc=context['collector'].checked_spawn(context['base'],clock,{argv[0]:matches[0]},lambda:subprocess.Popen(argv,env=env,
-              stdin=subprocess.PIPE if pipe else subprocess.DEVNULL,stdout=out,stderr=err,close_fds=True,bufsize=0,start_new_session=True,preexec_fn=context['base'].bound_output))
+              stdin=subprocess.PIPE if pipe else subprocess.DEVNULL,stdout=out,stderr=err,close_fds=True,bufsize=0,start_new_session=True,preexec_fn=command_output_bound(context['base'],argv,assets,output)))
             born=context['base'].process_birth(proc.pid);stack.children.append((proc,born,role));return proc,born,out_path,err_path
         count=0
         def command(role,args):
@@ -941,16 +988,21 @@ def execute(context,packet_sha):
         config={'schema':1,'nonce':nonce,'binding':bound,'deadlineMonotonicNs':str(clock['deadline']),'endpoint':endpoint}
         config_path=output/'endpoint.json';write_json(config_path,config)
         observer,observer_birth,_,observer_err=spawn('connected-observer',[assets['controls']['path'],'--foreign-endpoint-observe-only',str(config_path),digest(regular(config_path))],True)
-        def process_maps(proc,born,required):
+        def process_maps(role,proc,born,required):
             current();context['base'].check_process(proc,born,assets['controls']['sha256'])
             rows,generated,_=context['collector'].generated_snapshot(context['base'],proc,clock)
             require(generated is None,'observer/producer has unexpected generated mappings')
+            snapshot_path=output/(role+'-maps-before-check.json')
+            write_json(snapshot_path,{'schema':1,'role':role,'pid':proc.pid,'birth':born,'rows':rows})
+            diagnostics=missing_named_mappings(rows,packet['processInventory'],context['foundation']['graphics']['devices'])
+            diagnostics.update(role=role,pid=proc.pid,birth=born,snapshot={'path':str(snapshot_path),'sha256':digest(regular(snapshot_path,32*1024*1024))})
+            receipt.setdefault('mappingDiagnostics',[]).append(diagnostics)
             mapped=boot_correspondence.strict_snapshot_files(context['current'],context['base'],context['foundation']['graphics'],rows,packet['processInventory'],required,None,clock)
             context['base'].check_process(proc,born,assets['controls']['sha256']);return mapped
         wire=wire_path.open('xb');logs.append(wire)
         reader=ObserverPipe(observer,clock,nonce,bound,wire)
         initial=reader.command('READ_INITIAL');require(initial['rows']==[],'actual initial snapshot not empty');receipt['snapshots'].append(initial)
-        receipt['observerMappings']=process_maps(observer,observer_birth,[assets['controls']['path'],context['abi']['library']['path']])
+        receipt['observerMappings']=process_maps('observer',observer,observer_birth,[assets['controls']['path'],context['abi']['library']['path']])
         config_path=output/'run/backend.json'
         producer,producer_birth,producer_out,producer_err=spawn('window-producer',[assets['controls']['path'],'--foreign-endpoint-window-producer',str(config_path),digest(regular(config_path))])
         window=None
@@ -967,7 +1019,7 @@ def execute(context,packet_sha):
         window_birth=birth(window['pid'])[0];namespace={'engine':os.readlink('/proc/'+str(window['pid'])+'/ns/pid'),'parent':os.readlink('/proc/'+str(producer.pid)+'/ns/pid')}
         require(namespace['engine']!=namespace['parent'],'actual engine PID namespace not distinct')
         receipt['mappedWindow']=window;receipt['windowBirth']=window_birth;receipt['windowNamespace']=namespace
-        receipt['producerMappings']=process_maps(producer,producer_birth,[assets['controls']['path']])
+        receipt['producerMappings']=process_maps('producer',producer,producer_birth,[assets['controls']['path']])
         mapped=reader.command('READ_WINDOW');row=match_mapped(mapped,window);receipt['snapshots'].append(mapped)
         receipt['callbackHandleOrdinal']=row['handleOrdinal']
         def same_window():

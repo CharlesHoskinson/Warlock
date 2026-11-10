@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-partial-connected-failure",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794284617657083219/report.json",
+      "sha256": "0da2d2dc659b83a274cc2dae736d6681b21d9350f5126f8f0fb081e30545282c"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794284617657083219/observer-wire.jsonl",
+      "sha256": "e2e5d2fc4a84837e5fe1fec5c1368d571adbcab80ff312e25621a1f0c58829a8"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794284617657083219/observer-maps-before-check.json",
+      "sha256": "7128b2a2ba42496dcf96cdb6a468379ee2a413409cbbf0c76fc63425c8f09229"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794284617657083219/producer-maps-before-check.json",
+      "sha256": "743c42cffec7f22d6863b2bf9638f39c248c878928f45762fd2e0df2ce58bdbb"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Desktop.elm",
+      "sha256": "8385e34a3ecf122bf51a6ca4e4fe2df302a955fe35575dca8b2e419302f6fd56"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Surface.elm",
+      "sha256": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+    }
+  ],
+  "observed": {
+    "readInitial": "empty/config15/one read",
+    "readWindow": {
+      "handleOrdinal": "1",
+      "identityScope": "same-owner-QA-label-not-protocol-wire-id",
+      "title": "",
+      "appId": "GTK Application",
+      "states": [
+        "activated"
+      ],
+      "outputOrdinals": [
+        "1"
+      ],
+      "parentOrdinal": null
+    },
+    "ownedIpcMetadataMatches": true,
+    "mappingDiagnosticsMissingNames": [
+      0,
+      0
+    ],
+    "phasePairs": 16,
+    "stableRootPublication": "5",
+    "stableApplicationDomPresentation": "4",
+    "closeInputIssued": false,
+    "frames": 0,
+    "passed": false,
+    "cleanupUnknown": true,
+    "forcedCleanup": false,
+    "globalRestoration": false,
+    "nonNormalProcesses": [
+      [
+        "window-producer",
+        -15
+      ],
+      [
+        "connected-observer",
+        1
+      ]
+    ]
+  },
+  "cause": "close_ready_matches invents equality between Surface global publication and Desktop.presentation embedded in Applications DOM id. All16 actual pairs are stable5 versus4. Surface.barControls uses Desktop.key(model.presentation); Surface.encode uses separately supplied publication; Renderer.controlDomId preserves raw id. This is source/oracle mismatch, not demonstrated early callback/event instability.",
+  "correctionConstraint": "Retain exact current full binding/role/request/time/lease/rootpub witness and validate actual owning presentation separately; no suffix-only match or appId-as-authority. No input until corrected source-bound predicate proven.",
+  "limits": [
+    "READ_WINDOW is an actual committed singleton metadata observation joined to owned IPC/PID/image; appId/title are descriptive, not authority.",
+    "No READ_CLOSED/Retired/normal producer/wholecleanup qualification;0requirement/0scenario credit.",
+    "GlobalRestorationfalse and cleanupUnknowntrue remain failures; no reinterpretation as clean.",
+    "No reviewer execution; Root canonical closure pending."
+  ]
+}

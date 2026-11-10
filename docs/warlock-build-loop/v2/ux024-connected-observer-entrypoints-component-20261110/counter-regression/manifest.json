@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "kind": "ux024-current-owning-document-close-readiness-correction",
+  "changes": [
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "baseline": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/baseline-run_current_arm_ux024_foreign_toplevel_observer.py",
+        "sha256": "54ad12df62cc688411993a1f13c2a220fae5d05d79a3ecb7a9c1a366a0b83e08"
+      },
+      "baselineSha256": "54ad12df62cc688411993a1f13c2a220fae5d05d79a3ecb7a9c1a366a0b83e08",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "sha256": "9f19ed61009083ff853bf51b4af27d6d9da32f01ab4f7e7510dc4881eaadecf5"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_observer.py",
+      "baseline": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/baseline-test_ux024_foreign_toplevel_observer.py",
+        "sha256": "620bea1e749b1e772f328bbcd6fcd0dbf6a133c64800c423cca0d7517589ccde"
+      },
+      "baselineSha256": "620bea1e749b1e772f328bbcd6fcd0dbf6a133c64800c423cca0d7517589ccde",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/test_ux024_foreign_toplevel_observer.py",
+        "sha256": "c911d52ea70be9c941b1b4230951415ba7af11b8559fe3e68c910519f798f5f9"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_named_mapping_diagnostics.py",
+      "baselineSha256": "acc441d01e161ce899fd210288c39d81d1e9b8ed5f6e9b0002e34a95a231759c",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/test_ux024_named_mapping_diagnostics.py",
+        "sha256": "169b2b1958ed196a87c7200090b27bac8381bfd90a4b03110f367ad919849fb2"
+      }
+    }
+  ],
+  "retainedActualPairs": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/retained-native-v4-phase-pairs.json",
+    "sha256": "c96757e47a8851ecb50b1bd526fcd8fbcef9cdd6a25a54accec68a6a87ea2d8a"
+  },
+  "sourceBindings": {
+    "implementation/warlock/src/Desktop.elm": "8385e34a3ecf122bf51a6ca4e4fe2df302a955fe35575dca8b2e419302f6fd56",
+    "implementation/warlock/src/Surface.elm": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179",
+    "implementation/warlock/src/SurfaceRenderer.elm": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672",
+    "tools/ux023_notifications_keyboard_fixture.py": "47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3"
+  },
+  "sourceContract": [
+    "Desktop.key derives DOM ids from actual full Shell.binding and model.presentation",
+    "Surface.encode independently derives rootpublication from its own argument",
+    "SurfaceRenderer.controlDomId preserves these applications IDs",
+    "Actual seven current controls share presentation4 while rootpublication5",
+    "Fresh held-owner/root/request/nonce/currentpublication lease0 validated exactly asbefore",
+    "Parse canonicalpositiveUInt64 once fromexactApplicationsID, corroborate samecounter/fullbinding withsixcurrentutilityIDs",
+    "No pub==presentation orloosesuffix acceptance",
+    "A coherentlydifferent wholecurrentdocument presentation cannot bedisproved from publicationalone; notclaimed"
+  ],
+  "newPacketPath": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v5/packet.json",
+  "qualification": {
+    "totalRunnerControls": 22,
+    "retainedPriorControls": 15,
+    "newControls": 7,
+    "actualPositivePairs": 16,
+    "boundedSeededVariants": 32,
+    "authorExecution": false,
+    "baselineArgv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/test_ux024_foreign_toplevel_observer.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/baseline-run_current_arm_ux024_foreign_toplevel_observer.py",
+      "--phase-fixture",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/retained-native-v4-phase-pairs.json",
+      "-v"
+    ],
+    "greenArgv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/test_ux024_foreign_toplevel_observer.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "--phase-fixture",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/retained-native-v4-phase-pairs.json",
+      "-v"
+    ],
+    "firstExpectedObservation": "Actual semanticRED from retained pub5/presentation4pairs; do notguess counts/outcome beforeRootexecution",
+    "diagnosticControls": 7,
+    "diagnosticArgv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/test_ux024_named_mapping_diagnostics.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "-v"
+    ]
+  },
+  "preservation": [
+    "Onlyclose_ready_matches and PACKETv5 literal changed inrunner; allotherfunctionASTsexact",
+    "Oldtestpositivefixture nowincludesrealutilitywitnesses and expectedLease0; priornegativeassertionspreserved",
+    "No renderer/Elm/Haskell/ABI/images/provider/auth/SDK/clock/budgetchange",
+    "OldV4report/phaseCompletefalse/historypreserved",
+    "No nativeoriginalacceptance fromretainedreplays",
+    "No primarywrites/imports/tests/nativeexecution byauthor"
+  ],
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/manifest.json",
+    "sha256": "e2513e5f1f6ee59a7e26bfce7c61120ba9cf06964249da100f8c125c3b189212"
+  },
+  "predecessorSourceReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/independent-source-review-build.json",
+    "sha256": "76a3ea3abc2a56f86506309180f535b74476bb9c37277e36b1e1bae68dab416b"
+  },
+  "correction": "Only relevant diagnostic namespace assertion/name v4\u2192v5; six other method ASTs exact. Existing9f19/c911 source accepted76a retained."
+}

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/manifest.json",
+    "sha256": "18d3fdafc08112b06cd1ec983bcaacc9468ff7dbe0ac3a084d132ccb225f91f1"
+  },
+  "changes": [
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "baseline": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/baseline-run_current_arm_ux024_foreign_toplevel_observer.py",
+        "sha256": "54ad12df62cc688411993a1f13c2a220fae5d05d79a3ecb7a9c1a366a0b83e08"
+      },
+      "baselineSha256": "54ad12df62cc688411993a1f13c2a220fae5d05d79a3ecb7a9c1a366a0b83e08",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "sha256": "9f19ed61009083ff853bf51b4af27d6d9da32f01ab4f7e7510dc4881eaadecf5"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_observer.py",
+      "baseline": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/baseline-test_ux024_foreign_toplevel_observer.py",
+        "sha256": "620bea1e749b1e772f328bbcd6fcd0dbf6a133c64800c423cca0d7517589ccde"
+      },
+      "baselineSha256": "620bea1e749b1e772f328bbcd6fcd0dbf6a133c64800c423cca0d7517589ccde",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/test_ux024_foreign_toplevel_observer.py",
+        "sha256": "c911d52ea70be9c941b1b4230951415ba7af11b8559fe3e68c910519f798f5f9"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_named_mapping_diagnostics.py",
+      "baselineSha256": "acc441d01e161ce899fd210288c39d81d1e9b8ed5f6e9b0002e34a95a231759c",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/revision2-diagnostic-namespace/test_ux024_named_mapping_diagnostics.py",
+        "sha256": "169b2b1958ed196a87c7200090b27bac8381bfd90a4b03110f367ad919849fb2"
+      }
+    }
+  ],
+  "findings": [],
+  "checked": [
+    "Previouslyacceptedrunner9f19/closepredicate and22runnercontrols unchanged.",
+    "Thirdpost updates diagnostic fixednamespace testname/assertion v4\u2192v5 only; sourcecoherence correction does not change diagnostic or mapper behavior.",
+    "Existingphase/binding/presentation/lease/D/input guards preserved; no newquorum."
+  ],
+  "priorSourceReviewSha256": "76a3ea3abc2a56f86506309180f535b74476bb9c37277e36b1e1bae68dab416b",
+  "limits": [
+    "No reviewer imports/tests/nativeeffects.",
+    "Actual7diagnostic+22runnercontrols and V5tuple/candidate remain Root-owned; no nativeacceptance."
+  ]
+}

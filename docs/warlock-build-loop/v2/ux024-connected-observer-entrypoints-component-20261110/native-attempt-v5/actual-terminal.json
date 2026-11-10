@@ -1,0 +1,37 @@
+{
+  "terminal": true,
+  "jobId": "pid2553816-start5127328",
+  "candidateSha256": "89c592db081d146ea82c0edfff074e4384fe978ebd4116a1dabcf246a395682a",
+  "scope": "native",
+  "manifestSha256": "f2f2d2377c50b868f9a9d10e94b368e1f1f4232dcc7ccd097a0b8e78fb57466c",
+  "fixtureSha256": "009d4d887917ade8aa3371bd11a7e6103fb0a36da99ddf5bd812dcac77e543e1",
+  "exit": 1,
+  "classification": "failed",
+  "failureSignature": "capture-grim-inherits-diagnostic-64k-file-size-limit-sigxfsz",
+  "actualOuterHandle": "49978",
+  "actualOuterHandleConsumed": true,
+  "rawReport": {
+    "path": ".warlock-contributor/ux024-connected-observer-1794285567478100266/report.json",
+    "sha256": "026d354a31f9c88a79d59df6083c9ee6200ffbbd0a6f7320549224ae46798fbc"
+  },
+  "rawWire": {
+    "path": ".warlock-contributor/ux024-connected-observer-1794285567478100266/observer-wire.jsonl",
+    "sha256": "4520b00cf04220b8dee43c82cbacb670e00932622511e7a484d9679f895e9826"
+  },
+  "nativeExecutionEntered": true,
+  "nativeDeadlineIssued": true,
+  "snapshotCount": 2,
+  "mappedWindowObserved": true,
+  "observerAndProducerMappingsPassed": true,
+  "closePhaseComplete": true,
+  "failedChildSignal": 25,
+  "exactFailedSyscallObserved": false,
+  "inputIssued": false,
+  "forcedCleanup": false,
+  "cleanupUnknown": true,
+  "globalRestoration": true,
+  "sourceInputsUnchanged": true,
+  "cleanupQualified": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

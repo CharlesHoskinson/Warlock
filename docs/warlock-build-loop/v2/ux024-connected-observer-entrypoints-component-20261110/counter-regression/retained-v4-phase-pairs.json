@@ -1,0 +1,2903 @@
+{
+  "schema": 1,
+  "sourceReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794284617657083219/report.json",
+    "sha256": "0da2d2dc659b83a274cc2dae736d6681b21d9350f5126f8f0fb081e30545282c"
+  },
+  "sourcePacket": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v4/packet.json",
+    "sha256": "8d5ac1d7a791a1cbaa706bd744ee2aca16e5db3d74a707d2b7e0be85318521a0"
+  },
+  "runtimeBinding": {
+    "lifetime": "9007199254740993",
+    "session": "9007199254740995",
+    "frontend": "9007199254740997"
+  },
+  "phaseObservations": [
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 1,
+        "nonce": "4c1cce76ba37b99ff00d714dbe995d7826688d5d358bdf0e1e5027eef108e84c",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160846"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160847"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50324229578195,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50324702570646,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "bar": {
+          "schema": 1,
+          "seq": 1,
+          "nonce": "4c1cce76ba37b99ff00d714dbe995d7826688d5d358bdf0e1e5027eef108e84c",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160846"
+          },
+          "requestObservedNs": "50324252977493",
+          "completedNs": "50324322489386",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        },
+        "popup": {
+          "schema": 1,
+          "seq": 1,
+          "nonce": "4c1cce76ba37b99ff00d714dbe995d7826688d5d358bdf0e1e5027eef108e84c",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160847"
+          },
+          "requestObservedNs": "50324241874708",
+          "completedNs": "50324302627897",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "bar",
+          "file": "qa-phase-response-01.json",
+          "sha256": "e59f6d7954fcef3054ef12b889a7ccfa57db64e122c9dd80c84d43e4aa32c6ce",
+          "device": "59",
+          "inode": "1160849"
+        },
+        {
+          "role": "popup",
+          "file": "qa-phase-response-01.json",
+          "sha256": "84852c194fabbde8dafc7f904f1af35d44e0218b30adbd91a36e7b8f3f7135a9",
+          "device": "59",
+          "inode": "1160848"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 2,
+        "nonce": "2243e98297d25e021b63c078dfb68d081177283b4f5eddaa124f0ca50d9998ac",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160854"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160855"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50325027857756,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50325462960024,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 2,
+          "nonce": "2243e98297d25e021b63c078dfb68d081177283b4f5eddaa124f0ca50d9998ac",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160855"
+          },
+          "requestObservedNs": "50325045857262",
+          "completedNs": "50325122207058",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 2,
+          "nonce": "2243e98297d25e021b63c078dfb68d081177283b4f5eddaa124f0ca50d9998ac",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160854"
+          },
+          "requestObservedNs": "50325061108303",
+          "completedNs": "50325171937158",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-02.json",
+          "sha256": "e0ffd41619331749d571d3737e6ac909ef1fc5070815018a11909ba39489b4df",
+          "device": "59",
+          "inode": "1160856"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-02.json",
+          "sha256": "5b6072ae4eddd629a4653540e7d589e5602e5be0def9b64548fdbabe5bbb1f80",
+          "device": "59",
+          "inode": "1160857"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 3,
+        "nonce": "5004e5d94293647b2187ea02e48e1385519a1e2c6f86ee6edf46dc9a877b0ca0",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160858"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160859"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50325728594601,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50326113398527,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 3,
+          "nonce": "5004e5d94293647b2187ea02e48e1385519a1e2c6f86ee6edf46dc9a877b0ca0",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160859"
+          },
+          "requestObservedNs": "50325737153354",
+          "completedNs": "50325780687084",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 3,
+          "nonce": "5004e5d94293647b2187ea02e48e1385519a1e2c6f86ee6edf46dc9a877b0ca0",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160858"
+          },
+          "requestObservedNs": "50325749490794",
+          "completedNs": "50325831885872",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-03.json",
+          "sha256": "c6f09ee4a6884c766307dc6576e009ebc8ccb3bb8cd7779f20c66e45d3348dad",
+          "device": "59",
+          "inode": "1160860"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-03.json",
+          "sha256": "18ba7f1c59beb2f0464dc6136b69c47d9d3fc4f4cab907519c1cd3594f53e926",
+          "device": "59",
+          "inode": "1160861"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 4,
+        "nonce": "c6b362c08a5e80cbff668be16cdb17d70d4d3e2f417300644d2f76d4031a2e2e",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160862"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160863"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50326384341885,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50326769546114,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "bar": {
+          "schema": 1,
+          "seq": 4,
+          "nonce": "c6b362c08a5e80cbff668be16cdb17d70d4d3e2f417300644d2f76d4031a2e2e",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160862"
+          },
+          "requestObservedNs": "50326397461422",
+          "completedNs": "50326440844384",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        },
+        "popup": {
+          "schema": 1,
+          "seq": 4,
+          "nonce": "c6b362c08a5e80cbff668be16cdb17d70d4d3e2f417300644d2f76d4031a2e2e",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160863"
+          },
+          "requestObservedNs": "50326392199934",
+          "completedNs": "50326473603586",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "bar",
+          "file": "qa-phase-response-04.json",
+          "sha256": "1cf4ab16e03a306ae39e8a6a6bf32aef3eb25e6cc6e2f566808bca43e57d524f",
+          "device": "59",
+          "inode": "1160864"
+        },
+        {
+          "role": "popup",
+          "file": "qa-phase-response-04.json",
+          "sha256": "2f5c50dd1c207daae3b071a97a9e52a3ae742538d4df0475dea06db5852fcb0c",
+          "device": "59",
+          "inode": "1160865"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 5,
+        "nonce": "066634247c1a580eead4821fe196a683054d48db673a74323b3c323cc2694fc2",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160867"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160868"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50327036851102,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50327453166816,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "bar": {
+          "schema": 1,
+          "seq": 5,
+          "nonce": "066634247c1a580eead4821fe196a683054d48db673a74323b3c323cc2694fc2",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160867"
+          },
+          "requestObservedNs": "50327049179471",
+          "completedNs": "50327115761538",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        },
+        "popup": {
+          "schema": 1,
+          "seq": 5,
+          "nonce": "066634247c1a580eead4821fe196a683054d48db673a74323b3c323cc2694fc2",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160868"
+          },
+          "requestObservedNs": "50327042800191",
+          "completedNs": "50327169578404",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "bar",
+          "file": "qa-phase-response-05.json",
+          "sha256": "b67603f2c53f4df9d1ce8d5d1140bfde35daf3841e7aee253501f5df41bcf015",
+          "device": "59",
+          "inode": "1160871"
+        },
+        {
+          "role": "popup",
+          "file": "qa-phase-response-05.json",
+          "sha256": "727a316d976dc7db8fcc4b9cff59dd1fb0b7919adfcfb020f18bcba4d3868d48",
+          "device": "59",
+          "inode": "1160872"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 6,
+        "nonce": "18ffa2658f3ae06053c07c310b7c37349a68281e1e970082ee5556bcd6c95520",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160873"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160874"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50327741500541,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50328120660587,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "bar": {
+          "schema": 1,
+          "seq": 6,
+          "nonce": "18ffa2658f3ae06053c07c310b7c37349a68281e1e970082ee5556bcd6c95520",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160873"
+          },
+          "requestObservedNs": "50327743406893",
+          "completedNs": "50327794796015",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        },
+        "popup": {
+          "schema": 1,
+          "seq": 6,
+          "nonce": "18ffa2658f3ae06053c07c310b7c37349a68281e1e970082ee5556bcd6c95520",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160874"
+          },
+          "requestObservedNs": "50327770841086",
+          "completedNs": "50327829762529",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "bar",
+          "file": "qa-phase-response-06.json",
+          "sha256": "7c623f9be21115f977fa61f13b05f91bd119fb352084d28513cf074f598bdb07",
+          "device": "59",
+          "inode": "1160875"
+        },
+        {
+          "role": "popup",
+          "file": "qa-phase-response-06.json",
+          "sha256": "e5c587e36ed652755dbab518979b10ce7e97ec360bf71f8fc9ff0f3b7f58b0ab",
+          "device": "59",
+          "inode": "1160876"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 7,
+        "nonce": "e9edc8dd7e9c8ef9a6c5420aee81f06db412d2738f19e71acccbd2e441ee9351",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160877"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160878"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50328398661460,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50328799569393,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 7,
+          "nonce": "e9edc8dd7e9c8ef9a6c5420aee81f06db412d2738f19e71acccbd2e441ee9351",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160878"
+          },
+          "requestObservedNs": "50328399973444",
+          "completedNs": "50328445908470",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 7,
+          "nonce": "e9edc8dd7e9c8ef9a6c5420aee81f06db412d2738f19e71acccbd2e441ee9351",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160877"
+          },
+          "requestObservedNs": "50328404436644",
+          "completedNs": "50328512510280",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-07.json",
+          "sha256": "e52685be51e5b62ae522836fcdd3aeff12bfc2962d4d58972c5282d20190041c",
+          "device": "59",
+          "inode": "1160879"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-07.json",
+          "sha256": "2970298e7143815ebbe5831118bee8f5d0a93b267aa14a8e9b1377487f7db089",
+          "device": "59",
+          "inode": "1160880"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 8,
+        "nonce": "e4aeb080ff5d05a864303b2668d92fb8b113e69ab688c702f48cc042d72ad213",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160881"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160882"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50329072164232,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50329462773857,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 8,
+          "nonce": "e4aeb080ff5d05a864303b2668d92fb8b113e69ab688c702f48cc042d72ad213",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160882"
+          },
+          "requestObservedNs": "50329076598808",
+          "completedNs": "50329132603962",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 8,
+          "nonce": "e4aeb080ff5d05a864303b2668d92fb8b113e69ab688c702f48cc042d72ad213",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160881"
+          },
+          "requestObservedNs": "50329081292552",
+          "completedNs": "50329166014507",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-08.json",
+          "sha256": "c117e16e8f4d8418122590b233f97e8e766313e704b5fd03056a9ce1c20a9a2f",
+          "device": "59",
+          "inode": "1160883"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-08.json",
+          "sha256": "7cf0155df8c420277e208fd0c3aa3f6410cd3799ee7b91f421f6aff9a9530fca",
+          "device": "59",
+          "inode": "1160884"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 9,
+        "nonce": "dea1bea2cdaa8a956ab4716f00edab424241a731941c79e54329078f1705a25d",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160885"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160886"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50329763540233,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50330185360383,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 9,
+          "nonce": "dea1bea2cdaa8a956ab4716f00edab424241a731941c79e54329078f1705a25d",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160886"
+          },
+          "requestObservedNs": "50329769728601",
+          "completedNs": "50329838283706",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 9,
+          "nonce": "dea1bea2cdaa8a956ab4716f00edab424241a731941c79e54329078f1705a25d",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160885"
+          },
+          "requestObservedNs": "50329778096217",
+          "completedNs": "50329879891435",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-09.json",
+          "sha256": "046d8c648e9b3f0e0a7beaa7e99599885705a772c7b81f279c614c3b27417192",
+          "device": "59",
+          "inode": "1160887"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-09.json",
+          "sha256": "bae2d63ed6f261c10d9aa0765a9bedb67595d939a3ad52936c1c37012c715b68",
+          "device": "59",
+          "inode": "1160888"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 10,
+        "nonce": "e5c23c506eae537fac63477a29f1c5070c68ffa7b7ad42374631fcd6f323a12c",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160889"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160890"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50330433128946,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50330829836360,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 10,
+          "nonce": "e5c23c506eae537fac63477a29f1c5070c68ffa7b7ad42374631fcd6f323a12c",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160890"
+          },
+          "requestObservedNs": "50330448356194",
+          "completedNs": "50330519300115",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 10,
+          "nonce": "e5c23c506eae537fac63477a29f1c5070c68ffa7b7ad42374631fcd6f323a12c",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160889"
+          },
+          "requestObservedNs": "50330459193315",
+          "completedNs": "50330550386564",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-10.json",
+          "sha256": "b092397a6ce900e05a3daeef199b5c842369f129ac4932c28b5120b57697839b",
+          "device": "59",
+          "inode": "1160891"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-10.json",
+          "sha256": "0ae593ce37f8b79f0edf13631a975dcf585552068b569775230937ab381d23b6",
+          "device": "59",
+          "inode": "1160892"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 11,
+        "nonce": "86df51d498287d74228ea0dbc968bcbbc997cff32f3638e7ed8445e7788fd441",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160893"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160894"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50331142907865,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50331547502858,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "bar": {
+          "schema": 1,
+          "seq": 11,
+          "nonce": "86df51d498287d74228ea0dbc968bcbbc997cff32f3638e7ed8445e7788fd441",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160893"
+          },
+          "requestObservedNs": "50331163860617",
+          "completedNs": "50331218024121",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        },
+        "popup": {
+          "schema": 1,
+          "seq": 11,
+          "nonce": "86df51d498287d74228ea0dbc968bcbbc997cff32f3638e7ed8445e7788fd441",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160894"
+          },
+          "requestObservedNs": "50331158764025",
+          "completedNs": "50331270650553",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "bar",
+          "file": "qa-phase-response-11.json",
+          "sha256": "2611b6542016b8e8feca06662fdcda146aed75676362154f6c8bec6e4aa8a8a5",
+          "device": "59",
+          "inode": "1160895"
+        },
+        {
+          "role": "popup",
+          "file": "qa-phase-response-11.json",
+          "sha256": "9cda1d009bdea406d9b36b1946d4d235175bd7e6121671c6faadce6b69272165",
+          "device": "59",
+          "inode": "1160896"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 12,
+        "nonce": "65055c627a1253cac101a50675bbe1f438bd6f4ff653f32c9dc86ee10f4feac0",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160898"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160899"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50331806311691,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50332168093401,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 12,
+          "nonce": "65055c627a1253cac101a50675bbe1f438bd6f4ff653f32c9dc86ee10f4feac0",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160899"
+          },
+          "requestObservedNs": "50331815827707",
+          "completedNs": "50331847904603",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 12,
+          "nonce": "65055c627a1253cac101a50675bbe1f438bd6f4ff653f32c9dc86ee10f4feac0",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160898"
+          },
+          "requestObservedNs": "50331822714955",
+          "completedNs": "50331895449147",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-12.json",
+          "sha256": "2e6aace7bb3caa407c662c20aa87e06522c72d059704cec5095a47a242f4fcd3",
+          "device": "59",
+          "inode": "1160901"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-12.json",
+          "sha256": "bc85d083a4d37fa0f90f2c1798b3b0693123e6bc821bc4b938a0e405931ed2f0",
+          "device": "59",
+          "inode": "1160902"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 13,
+        "nonce": "a791ff99cec697014071a7ee641cf32dd1f9431ee46dcc0cfe9918d83cd1ea71",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160908"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160909"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50332433060167,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50332805134709,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "bar": {
+          "schema": 1,
+          "seq": 13,
+          "nonce": "a791ff99cec697014071a7ee641cf32dd1f9431ee46dcc0cfe9918d83cd1ea71",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160908"
+          },
+          "requestObservedNs": "50332456905463",
+          "completedNs": "50332481022487",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        },
+        "popup": {
+          "schema": 1,
+          "seq": 13,
+          "nonce": "a791ff99cec697014071a7ee641cf32dd1f9431ee46dcc0cfe9918d83cd1ea71",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160909"
+          },
+          "requestObservedNs": "50332451077399",
+          "completedNs": "50332528621303",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "bar",
+          "file": "qa-phase-response-13.json",
+          "sha256": "067abe30cbcd3d44085f64b3c8b76fcea696f584216769eb29c252cb159f7b6c",
+          "device": "59",
+          "inode": "1160910"
+        },
+        {
+          "role": "popup",
+          "file": "qa-phase-response-13.json",
+          "sha256": "11e5f873a4c6608abede2c9a7e651c8ef9dffcc947fa247d9043d4c240b26fa2",
+          "device": "59",
+          "inode": "1160911"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 14,
+        "nonce": "0df74831e54d95db94e57aa3cf9b94a296b52d8b58ed6a11c54b92003535a54f",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160912"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160913"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50333085252848,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50333581251352,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "bar": {
+          "schema": 1,
+          "seq": 14,
+          "nonce": "0df74831e54d95db94e57aa3cf9b94a296b52d8b58ed6a11c54b92003535a54f",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160912"
+          },
+          "requestObservedNs": "50333087982064",
+          "completedNs": "50333139219168",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        },
+        "popup": {
+          "schema": 1,
+          "seq": 14,
+          "nonce": "0df74831e54d95db94e57aa3cf9b94a296b52d8b58ed6a11c54b92003535a54f",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160913"
+          },
+          "requestObservedNs": "50333177992255",
+          "completedNs": "50333270789389",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "bar",
+          "file": "qa-phase-response-14.json",
+          "sha256": "c08a83f3238d7baae5a64ff217fe937a5bf40bfb231f6999f547c79722758fb7",
+          "device": "59",
+          "inode": "1160914"
+        },
+        {
+          "role": "popup",
+          "file": "qa-phase-response-14.json",
+          "sha256": "6185cab5df3864629317776053aae4b00c71fecc243c1e77de6ce63474b84fea",
+          "device": "59",
+          "inode": "1160915"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 15,
+        "nonce": "004e14cf6025c3ab71c6756ca3d5e044de8cdb5a334faae03ae78e77245a06c6",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160916"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160917"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50333855891908,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50334290937960,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 15,
+          "nonce": "004e14cf6025c3ab71c6756ca3d5e044de8cdb5a334faae03ae78e77245a06c6",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160917"
+          },
+          "requestObservedNs": "50333866114947",
+          "completedNs": "50333918478434",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 15,
+          "nonce": "004e14cf6025c3ab71c6756ca3d5e044de8cdb5a334faae03ae78e77245a06c6",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160916"
+          },
+          "requestObservedNs": "50333878519763",
+          "completedNs": "50333955322065",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-15.json",
+          "sha256": "8fcb91b7370514026f1906c05281fa3069ca20d9c29d7471ec90debc12175f4f",
+          "device": "59",
+          "inode": "1160918"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-15.json",
+          "sha256": "0f90fea561eebda999f93a18a29ab98fe1c797299a2f2f9df1683a1db63bd256",
+          "device": "59",
+          "inode": "1160919"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    },
+    {
+      "beforeStep": "close-gui",
+      "binding": {
+        "seq": 16,
+        "nonce": "3386b244b4949b18720a72806356e31af2447b61a3e530183ad5deb90103a336",
+        "root": {
+          "device": "59",
+          "inode": "1160832",
+          "owner": "1000"
+        },
+        "requests": {
+          "bar": {
+            "device": "59",
+            "inode": "1160920"
+          },
+          "popup": {
+            "device": "59",
+            "inode": "1160921"
+          }
+        },
+        "ownerPid": "1",
+        "issuedNs": 50334567151985,
+        "deadlineNs": 50342568294292,
+        "nowNs": 50334980408388,
+        "minimumPublication": {
+          "bar": 1,
+          "popup": 1
+        },
+        "expectedLease": 0
+      },
+      "responses": {
+        "popup": {
+          "schema": 1,
+          "seq": 16,
+          "nonce": "3386b244b4949b18720a72806356e31af2447b61a3e530183ad5deb90103a336",
+          "role": "popup",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160921"
+          },
+          "requestObservedNs": "50334575116577",
+          "completedNs": "50334621046911",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": false,
+            "root": {
+              "mode": "closed",
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": []
+          }
+        },
+        "bar": {
+          "schema": 1,
+          "seq": 16,
+          "nonce": "3386b244b4949b18720a72806356e31af2447b61a3e530183ad5deb90103a336",
+          "role": "bar",
+          "root": {
+            "device": "59",
+            "inode": "1160832",
+            "owner": "1000"
+          },
+          "request": {
+            "device": "59",
+            "inode": "1160920"
+          },
+          "requestObservedNs": "50334582573152",
+          "completedNs": "50334644970879",
+          "ownerPid": "1",
+          "snapshot": {
+            "schema": 1,
+            "documentFocused": true,
+            "root": {
+              "mode": null,
+              "pub": "5",
+              "lease": "0",
+              "loading": "false"
+            },
+            "active": {
+              "tag": "BODY",
+              "id": "",
+              "control": null
+            },
+            "query": null,
+            "retained": null,
+            "controls": [
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+                "control": "bar:applications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:overview-opener",
+                "control": "bar:overview",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:switcher-opener",
+                "control": "bar:switcher",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:notifications:opener",
+                "control": "bar:notifications",
+                "disabled": false,
+                "ariaDisabled": "false",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:files:opener",
+                "control": "bar:files",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:system:opener",
+                "control": "bar:system",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              },
+              {
+                "id": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:settings:opener",
+                "control": "bar:settings",
+                "disabled": true,
+                "ariaDisabled": "true",
+                "focusOnly": "false",
+                "tag": "BUTTON"
+              }
+            ]
+          }
+        }
+      },
+      "files": [
+        {
+          "role": "popup",
+          "file": "qa-phase-response-16.json",
+          "sha256": "b5bcf6f50a7a8f6baf869fdde433e6ce8930699d919bbf157bce4c5448af83d6",
+          "device": "59",
+          "inode": "1160922"
+        },
+        {
+          "role": "bar",
+          "file": "qa-phase-response-16.json",
+          "sha256": "f7a5448ecbad581c6c6561132b244060eff948ea5d689d081ce2629f6bf32358",
+          "device": "59",
+          "inode": "1160923"
+        }
+      ],
+      "phaseComplete": false,
+      "originalAcceptance": false
+    }
+  ],
+  "limits": [
+    "Retained actualfailedV4requests/responses, no reconstructednativeobservations",
+    "Actualrootpublication5 differsfromactualownerdocumentpresentation4",
+    "Positivecontrols replayretainedtypedwitnesses, notnewnativeacceptance"
+  ]
+}

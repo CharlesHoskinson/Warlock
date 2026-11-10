@@ -1,0 +1,44 @@
+[
+  {
+    "label": "runner",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/test_ux024_foreign_toplevel_observer.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "--phase-fixture",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/retained-native-v4-phase-pairs.json",
+      "--capture-failure",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/report.json",
+      "-v"
+    ],
+    "startedUTC": "2026-11-10T04:49:17.651817+00:00",
+    "terminalUTC": "2026-11-10T04:49:18.039609+00:00",
+    "exit": 0,
+    "beforePrimaryAdoption": true
+  },
+  {
+    "label": "diagnostics",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/test_ux024_named_mapping_diagnostics.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "-v"
+    ],
+    "startedUTC": "2026-11-10T04:49:18.040066+00:00",
+    "terminalUTC": "2026-11-10T04:49:18.207588+00:00",
+    "exit": 0,
+    "beforePrimaryAdoption": true
+  }
+]
