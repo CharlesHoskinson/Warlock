@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "reviewer": "build_audit",
+  "tupleSha256": "416bd8b7a6f72c9323aa991e15536ce31421b896986ba122ce75ef30b0180b54",
+  "roles": [
+    "sourceAndImages",
+    "providerAndABI",
+    "nestedInput"
+  ],
+  "derivedBootSha256": "7e6e887a72cd0bb735f48fb3d6bb74e882db3fb6208ffe49604f777b88167940",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/packet.TUPLE.json",
+      "sha256": "a3f75893de5343ed327367e9e02a2be6e15627b0f04b9fa77a90a0b75b49a99e"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/preparation.json",
+      "sha256": "9169f1aa88e450a38a2d283d5144bbeed9d1285d441c7bf85373bbd1b93a5b3a"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/current-boot-correspondence.json",
+      "sha256": "7e6e887a72cd0bb735f48fb3d6bb74e882db3fb6208ffe49604f777b88167940"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/current-attempt-authorization.json",
+      "sha256": "d7baa02b20d5698ea14410144b6a7bc87a770d4b8df8f5c802efe61814ac294c"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/independent-helper-source-review-build.json",
+      "sha256": "19a6a8de1de4181ecc1a1cd1673abf3aed1ae1dd7126eb2a4dfc7e98b4dda45a"
+    }
+  ],
+  "verified": {
+    "currentSourcePins": 299,
+    "assets": 12,
+    "mappingInventory": 14720,
+    "retainedSystemRegularBodies": 14705,
+    "currentBootRegularArtifacts": 9,
+    "currentGraphicsNodes": 6,
+    "recordSelection": 29,
+    "initialAuthorizationExpiresUTC": "2026-11-10T14:40:00Z"
+  },
+  "basis": [
+    "Exact canonical tuple416bd8 verified; all299 current source/guard pins and12 asset hashes/selector reports/modes checked; fresh images/system asset physical tuples checked.",
+    "Exact14720 mapping dictionary reconstructed from retained14705 regular body inventory33b9 plus accepted artifacts/fresh images/system assets/ABI; links excluded. Runtime per-file checks retained; no new inventory scan claimed.",
+    "Derived boot changes only keyboard current-source core pin to6835; compiled keyboard source unchanged. Current boot/nine artifact stat/six graphics tuples checked.",
+    "Initial authority exact canonical record/start/clock/expiry and actual hash-bound active goal verified; zero renewals and no static TTL.",
+    "Historical schema/font/foundation/provider proofs reused immutably; documents explicitly fixture-only.",
+    "No-pointer fixed Alt+F4 close after owned active target/current closed DOM gate;28+2 and16frames preserved."
+  ],
+  "limits": [
+    "Scoped readiness only; connected callbacks/Done/Closed/Retired/whole-stack cleanup remain actual observations pending.",
+    "No reviewer imports/tests/native/identity effects.",
+    "Root normal copies/current candidate admission/preflight and fresh active-goal/stops/handoff remain required.",
+    "No original UX024 requirement/scenario/provider-action acceptance."
+  ]
+}

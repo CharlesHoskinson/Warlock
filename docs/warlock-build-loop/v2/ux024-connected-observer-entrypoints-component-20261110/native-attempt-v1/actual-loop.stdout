@@ -1,0 +1,147 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-10T01:33:39.540693+00:00",
+    "secondsSinceRecordedProgress": 3400,
+    "suspendedSeconds": 0,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": true,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [
+      "45-awake-minutes-without-tested-integration"
+    ],
+    "effectiveAuthorizationExpiresUTC": "2026-11-10T14:40:00Z",
+    "action": "Change the next action or defer in this same history.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "execute",
+    "executor": "Root",
+    "candidateId": "ux024-connected-foreign-toplevel-observer-v1-20261110",
+    "candidateSha256": "4bdd9b7891c12b4aa5817b7a9b97766956550ad83f6da87a955bb5b88814f440",
+    "jobId": null,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "--sha256",
+      "98950aad2b09cf0a211c06a76c9c18c20c9e2baf2160d6a5c0d453fe7b732474"
+    ],
+    "expectedObservation": "One fixed actual connected owner: initial empty, real owned mapped window Done, exact same handle removal after checked Alt+F4, actual retirement and whole owned normal cleanup within original28+2. Old documents are fixture only. No original UX024/provider-action acceptance or requirement/scenario credit.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-10T01:33:39.540693+00:00",
+      "secondsSinceRecordedProgress": 3401,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-10T14:40:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}
+{"deliveryLaunch": {"record": ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json", "candidateSha256": "4bdd9b7891c12b4aa5817b7a9b97766956550ad83f6da87a955bb5b88814f440", "selection": 29, "scope": "native", "pid": 1443598, "startTicks": "4354056", "argv": ["/usr/bin/python3", "-B", "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py", "--", "/usr/bin/python3", "-B", "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py", "--sha256", "98950aad2b09cf0a211c06a76c9c18c20c9e2baf2160d6a5c0d453fe7b732474"], "acceptanceInferred": false}}
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-10T01:33:39.540693+00:00",
+    "secondsSinceRecordedProgress": 3411,
+    "suspendedSeconds": 0,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": true,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [
+      "45-awake-minutes-without-tested-integration"
+    ],
+    "effectiveAuthorizationExpiresUTC": "2026-11-10T14:40:00Z",
+    "action": "Change the next action or defer in this same history.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "execute",
+    "executor": "Root",
+    "candidateId": "ux024-connected-foreign-toplevel-observer-v1-20261110",
+    "candidateSha256": "4bdd9b7891c12b4aa5817b7a9b97766956550ad83f6da87a955bb5b88814f440",
+    "jobId": null,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "--sha256",
+      "98950aad2b09cf0a211c06a76c9c18c20c9e2baf2160d6a5c0d453fe7b732474"
+    ],
+    "expectedObservation": "One fixed actual connected owner: initial empty, real owned mapped window Done, exact same handle removal after checked Alt+F4, actual retirement and whole owned normal cleanup within original28+2. Old documents are fixture only. No original UX024/provider-action acceptance or requirement/scenario credit.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-10T01:33:39.540693+00:00",
+      "secondsSinceRecordedProgress": 3412,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-10T14:40:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}
