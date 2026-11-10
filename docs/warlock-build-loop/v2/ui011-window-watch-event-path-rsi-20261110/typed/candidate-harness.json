@@ -1,0 +1,1762 @@
+{
+  "schema": 1,
+  "kind": "same-completed-ui011-fixed-artifact-and-core-probes",
+  "fixedInputs": {
+    "taskFiles": {
+      "implementation/warlock/src/Desktop.elm": {
+        "sha256": "6bb4324cf993765fb1bc0c811d825c48d82ee89346badc7af511092942f7473a"
+      },
+      "implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm": {
+        "sha256": "ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273"
+      },
+      "implementation/warlock/qa/ui011-observed-scope-retirement.cjs": {
+        "sha256": "ca51900ed2edc6b0a74403e98e0cff33cffae6b18a924f96ce5216b21342206b"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": {
+        "sha256": "78b46c625bdfb4e0781938f9fb59bd35f60df0d95bb7d1c5f48305ecbfc52b65"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": {
+        "sha256": "3b8f13574f28112f6aed316c778bf132e6e431be7de6a0ab36549b254083aad5"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs": {
+        "sha256": "01648a3ce02bc033b4e7c682979f863240b79db95cccfb6997a636cd78b19fd0"
+      },
+      "implementation/warlock/src/WindowObservation.elm": {
+        "sha256": "c14c481ae42b197847194c880a4de80146943158cfd21cd56c7ab6b01e839840"
+      },
+      "implementation/warlock/src/Shell.elm": {
+        "sha256": "89e00985854126b005cbb9be12d1d6afe97d402f3753f6f86544540017895baf"
+      },
+      "implementation/warlock/src/MenuBridge.elm": {
+        "sha256": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544"
+      },
+      "implementation/warlock/src/DesktopPolicy.elm": {
+        "sha256": "e8e547e2678c97bd3e4c494bd7a8a5521ef3b0cab82bdcf406f1709d3ea084c4"
+      },
+      "implementation/warlock/src/SurfaceController.elm": {
+        "sha256": "e0a7a0861e9266e41ef3b5705f4bb42e3ec11536f69ca6a25928bf0f5ec5b6a9"
+      },
+      "implementation/warlock/src/OutputController.elm": {
+        "sha256": "1ccce8b97a4f770a4f1f7f2446b9eafdc07062fc099e51506bcd35268bafb614"
+      },
+      "implementation/warlock/qa/OutputRetirementReplay.elm": {
+        "sha256": "fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9"
+      },
+      "implementation/warlock/qa/Ux024ObservedWindowMenuReplay.elm": {
+        "sha256": "98fd760afe5abd770577d509ee2e4f3871a09afe7bc66762f67b5ad713c29ec1"
+      },
+      "implementation/warlock/qa/focus-publication.qnt": {
+        "sha256": "7b02f4038a142836a81939e10f95dda7806d8c169de7a5126ddca3052132f9d0"
+      },
+      "implementation/warlock/qa/menu-focus.qnt": {
+        "sha256": "87ad97e1c182b5ca98138776a6fcd50567748cb1fd67a6431d9d5be56e06d16a"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/tests-first/WindowWatchProtocolControls.hs": {
+        "sha256": "189e25673f3980be477c49e2b50ae426eb84a596065c94f7f063d7d7796cc7fd"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/tests-first/protocol-test-stanza.fragment": {
+        "sha256": "aa472d1fc4d603978c43d077fe1bd284f4f0a223add115172571fc3dbbf920d6"
+      },
+      "tools/arm64_toolchain.py": {
+        "sha256": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796"
+      },
+      "tools/check_elm_cpu.py": {
+        "sha256": "c0a277e122f9cc9a06f681b45839e1c3e3900627940ce67849e67716c34f14ae"
+      },
+      "tools/qa_cpu.py": {
+        "sha256": "c20d0f4bc23294bc690619e059ad43c05394db38a56898aff61fb64c175f0636"
+      },
+      "tools/run_ui011_window_watch_protocol_cpu.py": {
+        "sha256": "58cbee7b56ca7be23053fa4d62a5399aa76931f5dd7bb1a36e0695165e10173e"
+      },
+      "tools/run_ux024_menu_focus_build.py": {
+        "sha256": "80c12ad23f99c2cfc43144a69f9b5a29d5dcce6612ef37384563ff424ea5bb69"
+      },
+      "tools/test_ui011_window_watch_protocol_cpu.py": {
+        "sha256": "54dfb0be81ef32eb1fc502da037774c77c955ead83c01d3bd98398e2fe4b7c58"
+      },
+      "tools/ux024_observation_qualification.py": {
+        "sha256": "91415e96715edca6f5e70f90d138c5437518d6517a8cd1fbfa316ca0696e792b"
+      },
+      "implementation/warlock/elm.json": {
+        "sha256": "8b4b79f249439797039cfb923bb99d0025d27913e50f097e1cd1da8f03c4ca63"
+      },
+      "plugins/warlock-contributor/scripts/warlock.py": {
+        "sha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78"
+      },
+      "tools/arm64-toolchain.json": {
+        "sha256": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb"
+      },
+      "tools/haskell-dependencies.json": {
+        "sha256": "ca6a7fe7f45cfe4baaf074c55b7c1f0faeba4accae4ee1059788f02681d75a5a"
+      },
+      "tools/menu-tab-elm-toolchain.json": {
+        "sha256": "0012df8f3c18c0f4851d2d36c97f790a5f5b990de2d9a8e88df03844bb6843c6"
+      },
+      "tools/quint-toolchain.json": {
+        "sha256": "09c0bc0338db4ee189bdbb17a9b54d53992abf442f023691eea690a4ce9bc0b4"
+      },
+      "tools/team-quint-toolchain.json": {
+        "sha256": "630effed1fc37e4c5c403818c30a7eb32e2f684024c432141b9be095b86403bd"
+      },
+      "window-integration-qa/qa_launch.py": {
+        "sha256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+      },
+      "window-integration-qa/qa_run.py": {
+        "sha256": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+      },
+      "implementation/warlock/haskell/cabal.project": {
+        "sha256": "b8fc882f0e53b96dacbced3a21d292741ad2a4bcbb59627b9c1c2eb8647a5607"
+      },
+      "implementation/warlock/haskell/elf-observation/README.md": {
+        "sha256": "d5d789263049e4c4ab7a677448192e70f3f8f5fb1c97c87a8de73c7af4e6b320"
+      },
+      "implementation/warlock/haskell/elf-observation/elf-observation.cabal": {
+        "sha256": "9a71bb015ac1cd15f5a1cc78d5b4a1bae31d877ec132065fb7769a9126f4bdcf"
+      },
+      "implementation/warlock/haskell/elf-observation/qualification.json": {
+        "sha256": "e22cb3c5429f04bcc9a5b9c34f2766a6ce9268ed9dbef4b8cb2124808f4cb72c"
+      },
+      "implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Graph.hs": {
+        "sha256": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82"
+      },
+      "implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Readelf.hs": {
+        "sha256": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103"
+      },
+      "implementation/warlock/haskell/elf-observation/test/ElfCases.hs": {
+        "sha256": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5"
+      },
+      "implementation/warlock/haskell/elf-observation/test/GoldenNames.hs": {
+        "sha256": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/gcc.readelf": {
+        "sha256": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/ghc.readelf": {
+        "sha256": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/helper-0.readelf": {
+        "sha256": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/helper-1.readelf": {
+        "sha256": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/helper-2.readelf": {
+        "sha256": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/jsc.readelf": {
+        "sha256": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/json-glib.readelf": {
+        "sha256": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/owner.readelf": {
+        "sha256": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/provenance.json": {
+        "sha256": "4de54e658fd54dc6a930b42433116da7cf90979bde30a2c76e96d129938d63b7"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/sframe.readelf": {
+        "sha256": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3"
+      },
+      "implementation/warlock/haskell/elf-observation/test/fixtures/webkit.readelf": {
+        "sha256": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045"
+      },
+      "implementation/warlock/haskell/held-document/README.md": {
+        "sha256": "c54e0457d05cd85c222dfcccb1c3b3d8d20013407d5d000846c691f7dce7f6ed"
+      },
+      "implementation/warlock/haskell/held-document/held-document.cabal": {
+        "sha256": "fd73f544a29c114a32f6c26bcf0ef7fd810fef11d2ea75191cd988e569ad9999"
+      },
+      "implementation/warlock/haskell/held-document/qualification.json": {
+        "sha256": "eef9d8ab2df193d112237b89ca5e72927b99ab914102a1f35889a71672a16fd7"
+      },
+      "implementation/warlock/haskell/held-document/src/Warlock/Http/Document.hs": {
+        "sha256": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5"
+      },
+      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs": {
+        "sha256": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64"
+      },
+      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": {
+        "sha256": "16ccafd66cacb3835225bc9739d2a957e5e601a8819a14d99ec565224dcc1a94"
+      },
+      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs": {
+        "sha256": "4c0e9f75acfffa0413b5efc59cb592e5609d3482f032f7c3131f2048edcfea91"
+      },
+      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc": {
+        "sha256": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed"
+      },
+      "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver.hs": {
+        "sha256": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0"
+      },
+      "implementation/warlock/haskell/held-document/test/LeaseControls.hs": {
+        "sha256": "f43f95ddb50057190aeaf07bdc2662fd9752afca3402b00f527a708097d86c80"
+      },
+      "implementation/warlock/haskell/held-document/test/Main.hs": {
+        "sha256": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501"
+      },
+      "implementation/warlock/haskell/native-authority/README.md": {
+        "sha256": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744"
+      },
+      "implementation/warlock/haskell/native-authority/native-authority.cabal": {
+        "sha256": "0f6e8579cc148c5c5599797f33919bde411c2610539b68fc2cfb4700e8215ec3"
+      },
+      "implementation/warlock/haskell/native-authority/qualification.json": {
+        "sha256": "5b537f836cc94b0779018377c693961cce8e940fcae0b482ed705573aad3893a"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": {
+        "sha256": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs": {
+        "sha256": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": {
+        "sha256": "8ae02f272b7f002128e871064b26bcaf30876a1a610065a5729c7083b7a0c346"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": {
+        "sha256": "85e1ef5008c223121decf3f34a6ad083b7a26d785a2ab9f074bc7a5928056bc7"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc": {
+        "sha256": "5995e5a6b5beef6412831daad6db9f8206b531cd11993c8fdf3f423d9e906976"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs": {
+        "sha256": "99d5594019dd9f1e13162b56f48f9e8657a90e1dd2e200c53aa80374fa91cf47"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": {
+        "sha256": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": {
+        "sha256": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc": {
+        "sha256": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded"
+      },
+      "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs": {
+        "sha256": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb"
+      },
+      "implementation/warlock/haskell/native-authority/test/Main.hs": {
+        "sha256": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504"
+      },
+      "implementation/warlock/haskell/native-authority/test-child/ChildDirectoryControls.hs": {
+        "sha256": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02"
+      },
+      "implementation/warlock/haskell/native-authority/test-guard/Main.hs": {
+        "sha256": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8"
+      },
+      "implementation/warlock/haskell/native-authority/test-lifetime/LifetimeOwnerControls.hs": {
+        "sha256": "35cf69840a1da11cde9ad962f065022e31fe81b9b991bf146fd66b9196b33e82"
+      },
+      "implementation/warlock/haskell/native-authority/test-lifetime-independent/LifetimeOwnerControls.hs": {
+        "sha256": "405b6539a99dfbf8d09502d8e60089c6dc06358c73c27ac2f362968c7f2c6893"
+      },
+      "implementation/warlock/haskell/native-authority/test-pair/Main.hs": {
+        "sha256": "776bf66ca42e39370fd6c989fc00f689b3dfb12c90e219c2b529eb3402d1ee02"
+      },
+      "implementation/warlock/haskell/native-authority/test-pair-independent/Main.hs": {
+        "sha256": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d"
+      },
+      "implementation/warlock/haskell/native-authority/test-pair-independent/ShapeMain.hs": {
+        "sha256": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe"
+      },
+      "implementation/warlock/haskell/native-authority/test-pair-sequences/Main.hs": {
+        "sha256": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f"
+      },
+      "implementation/warlock/haskell/native-authority/test-selection/Main.hs": {
+        "sha256": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be"
+      },
+      "implementation/warlock/haskell/native-authority/test-slot/SlotStoreControls.hs": {
+        "sha256": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8"
+      },
+      "implementation/warlock/haskell/native-authority/test-storage/ForeignOwnerControls.hs": {
+        "sha256": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9"
+      },
+      "implementation/warlock/haskell/native-authority/test-storage/Main.hs": {
+        "sha256": "c06b8ed27e0e6d29ed3c6911bc5214283d22ebb5afe749c9d36187c5367ab268"
+      },
+      "implementation/warlock/haskell/native-authority/test-storage/SwapControls.hs": {
+        "sha256": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b"
+      },
+      "implementation/warlock/haskell/process-custody/HANDOFF.md": {
+        "sha256": "401861bea381583225e4ffc4f4c541ccc72fa6e8a525a9a6139a01d70995f06e"
+      },
+      "implementation/warlock/haskell/process-custody/README.md": {
+        "sha256": "cdca392be058d884733e7e9d3f9241b47991247d6b7c7fb94c24895b541553da"
+      },
+      "implementation/warlock/haskell/process-custody/RETROFIT.md": {
+        "sha256": "4ff2abe3e7626ef0d572e666a297bfa97f992a678d46ed411829ab3909482360"
+      },
+      "implementation/warlock/haskell/process-custody/SHA256SUMS": {
+        "sha256": "aa08200922b446d3c2fad67719b0f00343c9f5ae0444838040091290cd027cf9"
+      },
+      "implementation/warlock/haskell/process-custody/SOURCE-MAP.md": {
+        "sha256": "d16d0445e3d2f1f71e3f58c0cfa8c72f78b15365a1b74b04054dbfcb032aa290"
+      },
+      "implementation/warlock/haskell/process-custody/fixture/Main.hs": {
+        "sha256": "3a6c1baefca82d447ff03566b254758a4f86c1386589e99e2255717d7a707610"
+      },
+      "implementation/warlock/haskell/process-custody/fixture-bootstrap/FacadeChild.hs": {
+        "sha256": "75b3101897b3c15b71df9b32931f9e4a6aa7122d9edc2aa10790c16065b567f2"
+      },
+      "implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs": {
+        "sha256": "b860aa9af6d6749e7898cacc60b10889558dadb68ee5e68dcbda1912d85caf22"
+      },
+      "implementation/warlock/haskell/process-custody/fixture-selected/Main.hs": {
+        "sha256": "ddb77f498858d132315f2768854e7e74a78fbf18b7f081cf49191a1e7d3806de"
+      },
+      "implementation/warlock/haskell/process-custody/process-custody.cabal": {
+        "sha256": "45c21dc95a43da4e9e43697e10cb31e87f840b9d89ddbdfc55e8935688284692"
+      },
+      "implementation/warlock/haskell/process-custody/qualification.json": {
+        "sha256": "8dc5086cd83edd072deab11651a3e5a5f34f5d7c4f2f32dae7b14e65cf187716"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": {
+        "sha256": "b98d37b2bda016c82fc764114502ef19d28826c2c4086a3744eb0e7fd4c09319"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": {
+        "sha256": "30b1c58267106e7e16fd2184598ea8624a4c58950f0854e6a690a6ef94e9b722"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs": {
+        "sha256": "d1162d1206d0d0107a3f771c58cfc28af46b1d1b4a042634d767253cec64a5e2"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs": {
+        "sha256": "c8496170eabfe8f5e3383c3cb0860630499b19052c0b5179a1a4fc7f8f7d9d8f"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs": {
+        "sha256": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs": {
+        "sha256": "3f42fb3b628a0c3f93f138373f26bef28fad9d304415c37563c414a01ff4a2c7"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc": {
+        "sha256": "f0e131a62284e307aa44ce58d10e84dd4c083725346ace636fa32520cc22be7a"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": {
+        "sha256": "de3cfc758f9ee41e3d66c917853e5e7fe9c4476acff2db4a3f36cf366a83edb6"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs": {
+        "sha256": "e6ac6bf23bc5568b6a88623d23bdf9fed2a4162d2cd4966e73db31c3342f8d66"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc": {
+        "sha256": "62775261c983b9b2f8f256734c731fee492f1f4a327ceab845370bd6e82da416"
+      },
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process.hs": {
+        "sha256": "39a0805202bd0843affe2c32bfc0c8f9f79197231a94f1f2e6c40905dcf96fef"
+      },
+      "implementation/warlock/haskell/process-custody/test/DeadlineStop.hs": {
+        "sha256": "c11352b4e48dd7eaf3602aaea2bac4c7d1cd7b944096e03ab2c19cd328bb8dbc"
+      },
+      "implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs": {
+        "sha256": "7342c6c4c38082373095e79d66c4f9dd18223173894c21aa081246cc5feed2ab"
+      },
+      "implementation/warlock/haskell/process-custody/test/FacadeControl.hs": {
+        "sha256": "22cb673a3559c5dcf220e0e2d4c294ce11323e3fa85fa9ab87ed97ba89b5a52e"
+      },
+      "implementation/warlock/haskell/process-custody/test/Internal.hs": {
+        "sha256": "bc7d6362bf78adf4e5badf3e2e6285ec2496d7770b1e76c5f895f84edb621aeb"
+      },
+      "implementation/warlock/haskell/process-custody/test/PersistentControls.hs": {
+        "sha256": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f"
+      },
+      "implementation/warlock/haskell/process-custody/test/Public.hs": {
+        "sha256": "9ab22e6705dab47416b55126104fa160fda4fec6bbec4d3635d5d254adc34600"
+      },
+      "implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs": {
+        "sha256": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808"
+      },
+      "implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs": {
+        "sha256": "d631fe70075d0c8cdbd8190509d4447b68c970bac5144aeba60690480198ce1a"
+      },
+      "implementation/warlock/haskell/process-custody/test/SelectedFD.hs": {
+        "sha256": "c3748e48f8e520e7a2eba6b27611b445013d8c33d0d617bd7e861fbdf2f854a8"
+      },
+      "implementation/warlock/haskell/process-custody/test/VerifiedFixture.hs": {
+        "sha256": "0c0212820247927fd52c1cf770b8bd3c6c4de625cff9a2c999951a2297ad308a"
+      },
+      "implementation/warlock/haskell/process-custody/test/negative/CoreCapability.hs": {
+        "sha256": "9bd073b4e08cbb179fadd0eace46cfda3ab866d9b5c0201f12c4ae86e1a91110"
+      },
+      "implementation/warlock/haskell/process-custody/test/negative/RawIssuer.hs": {
+        "sha256": "1ad937597d06dbefb9ec9a5edec70f6a080684d47da6a2ddc590e3faadd5305f"
+      },
+      "implementation/warlock/haskell/process-custody/test/negative/SelectedSpawnConstructor.hs": {
+        "sha256": "4c28b3897417504b9c09ed29922f798947c208237cc5a61883d334c5ab1e7314"
+      },
+      "implementation/warlock/haskell/protocol/README.md": {
+        "sha256": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad"
+      },
+      "implementation/warlock/haskell/protocol/TRANSPORT.md": {
+        "sha256": "47985c788f31031987aa4c9082829b20426eab83045aa74a0f17ccd989a6f98b"
+      },
+      "implementation/warlock/haskell/protocol/formal/ACQUISITION.md": {
+        "sha256": "af661eb1131c7d0b5fbf815b976ad4899a19a27061bc5b8113b63cefa48d6c32"
+      },
+      "implementation/warlock/haskell/protocol/formal/README.md": {
+        "sha256": "c496560993a076d6766ae37a4279e6012b9401f9a74172e1f6b77ab8e11d345b"
+      },
+      "implementation/warlock/haskell/protocol/formal/acquisition.qnt": {
+        "sha256": "5e8ed18ddd56ee172f927cdde7e41fc60bb57448a9b7fb315bc8067b7151c592"
+      },
+      "implementation/warlock/haskell/protocol/formal/acquisition_test.qnt": {
+        "sha256": "e0caed809f42b63b7fd07d311fe692be533a5bad9d49dcd3a5b0efb7c331cec2"
+      },
+      "implementation/warlock/haskell/protocol/formal/handler_gate.qnt": {
+        "sha256": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f"
+      },
+      "implementation/warlock/haskell/protocol/formal/handler_gate_test.qnt": {
+        "sha256": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf"
+      },
+      "implementation/warlock/haskell/protocol/protocol.cabal": {
+        "sha256": "3050e7db1b2d1c1c5f4b7089a16cffd3d72c4d96c520a81e3de279706f4c02e4"
+      },
+      "implementation/warlock/haskell/protocol/qualification.json": {
+        "sha256": "988dd7e0c6597dd22e6d43f808eb132ff377bd52ce249814b4a5ce4c334f82d4"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": {
+        "sha256": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary.hs": {
+        "sha256": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": {
+        "sha256": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialGuard.hs": {
+        "sha256": "f6f9ace572c62a0aba9412c457d172a4a1fd7bb24f357e13ed3e30d7158239a7"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": {
+        "sha256": "85d91c8decf35f042c72783138df9faaad432607159d163e298a6ada0990db20"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Custody.hs": {
+        "sha256": "87a8d62a378359bf52589c426ac67f0376195493a2cf9e84d02c1253bac40e01"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs": {
+        "sha256": "dab80f08576f4c8897366ff55d0f724dde34132006d5be50811525a8853ef32a"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs": {
+        "sha256": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs": {
+        "sha256": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Identity.hs": {
+        "sha256": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": {
+        "sha256": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs": {
+        "sha256": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs": {
+        "sha256": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs": {
+        "sha256": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PreviewControl.hs": {
+        "sha256": "9afb1006cd00c8f3dd54a3b684313e3cf6435da1bea89637075327aafcc73a79"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs": {
+        "sha256": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Server.hs": {
+        "sha256": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": {
+        "sha256": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Wire.hs": {
+        "sha256": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/WorkspaceNavigation.hs": {
+        "sha256": "63baa4a3084f278073a218929e1a82282cc1cfa32d1cd21b2c136aa4159c3f33"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": {
+        "sha256": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs": {
+        "sha256": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": {
+        "sha256": "30cd41b3dad28cc980e48cdcb9b77e7c511cae4c3881440dd7bc0360bfb7d16c"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/SocketFlags.hsc": {
+        "sha256": "dc12bd6112f1bc146123303f5b799d5e6186b03eab5277ac164b13e08b97b482"
+      },
+      "implementation/warlock/haskell/protocol/test/GuardControls.hs": {
+        "sha256": "6698548053e57a128f3341017b35a222e10fcd27aa302751ebb1c6ec43ff0eb4"
+      },
+      "implementation/warlock/haskell/protocol/test/Main.hs": {
+        "sha256": "4e19a493ce14da32d1b67dd152ee3c8feba1f65dea50be0df5d153be477f663c"
+      },
+      "implementation/warlock/haskell/protocol/test/OwnerControls.hs": {
+        "sha256": "7757bf34257e90bf56d3c5baea54f24c28beea8a2da9820e5b04aee40d41cb3c"
+      },
+      "implementation/warlock/haskell/protocol/test/OwnerSequenceProperties.hs": {
+        "sha256": "eda99bb99ef18eb59d2403071b8fdbbd2855c927d3adc9223335e9d6044558b8"
+      },
+      "implementation/warlock/haskell/protocol/test/PeerCredentialsCases.hsc": {
+        "sha256": "4b132ee6e37a6cf0197ff1f934b2c68b9821f93ee7023a6c36ffceef65be45a1"
+      },
+      "implementation/warlock/haskell/protocol/test/QuarantineControls.hs": {
+        "sha256": "a37aefb1d8fd54be04b95f76f2d4b84ddbbe652684cb30d1246f4a82d00a2c49"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/history-valid-positional-key.bin": {
+        "sha256": "4ab5dcab96c18db6a50b667b6d98fe773ae3ac479c594471a00acf6ed7f844fa"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/invalid-context-lifetime.bin": {
+        "sha256": "5a7f6ebaef0f441407a3288b47f86e7b667ee4b543e7e3c9b6963d93770b3606"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/invalid-duplicate-key.bin": {
+        "sha256": "534a4bfbbc280c837dda31c926a21821259158859ac9aa48a256e2255d51698d"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/invalid-extra-field.bin": {
+        "sha256": "031fa55a5c29a3d90edbea97e40cde527d54d2514d3b0868888777da8ffbf420"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/invalid-kind-unknown.bin": {
+        "sha256": "1b010a8971b514dae3cee63cb0e8df4eab82e100730ec354b723d62c1237fe84"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/invalid-version-boolean.bin": {
+        "sha256": "19e7004d4f7fede867da179fc74a5140407513efe50657bb9c534fe8cf9e0297"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/invalid-version-unknown.bin": {
+        "sha256": "4b15479df542ecefcaefb0bf171bd88510c3b785f1ba8d0201c5e178a280809b"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-request-live.bin": {
+        "sha256": "4b4ac27237d62ded83b0439dd949c8d7eec80b92b9540da5c82bd614be426103"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-result-absent.bin": {
+        "sha256": "7e5dbf851ce53812d7613cfa17b5ae6275c5d901a72acb989a19592bb2c41931"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-wrong-key.bin": {
+        "sha256": "8054dd3a23c0c0b6cabec06e82de9ed6eabc54882a3fef0db27b716eee2a4e90"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/valid-hello.bin": {
+        "sha256": "cd15d1f8e15be5aaf86fefef213ba4c7ff167ae5527bd8a7195213c8f3198798"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/valid-negotiate.bin": {
+        "sha256": "80fd224e5d644eefddc92598527d3b4e0c5cd372a5d7d9327db250054b62e34e"
+      },
+      "implementation/warlock/haskell/protocol/test/fixtures/valid-prepare.bin": {
+        "sha256": "0d3341e70d17fbe5967dc898efcc978ff05b9029e80d60aee971ca9cfb8f2ed1"
+      },
+      "implementation/warlock/haskell/protocol/test-desktop/Main.hs": {
+        "sha256": "4a541243aa88166c97b6373b07b480a3b8e65b0e51e371d6361a22418a15bc02"
+      },
+      "implementation/warlock/haskell/protocol/test-notification-reply/Main.hs": {
+        "sha256": "001470ed1075dceec555cfb980c247b6d563301c2ec3e280a0236d18ee058ec9"
+      },
+      "implementation/warlock/haskell/protocol/test-notification-request/Main.hs": {
+        "sha256": "cbac4078c8bfc8637513f28b0c2dd0efeef86a9c426c939516ec9c6a1110b069"
+      },
+      "implementation/warlock/haskell/protocol/test-preview-control/Main.hs": {
+        "sha256": "185acf36f9e8688b70bb94a87b449f4cdf356d24dbfc797ae1112c32bbdb344d"
+      },
+      "implementation/warlock/haskell/protocol/test-workspace-navigation/Main.hs": {
+        "sha256": "e43a06259a5ec39a12e64cd3e87886c5333c61f011b02d39e5e678a294c90c56"
+      },
+      "implementation/warlock/haskell/protocol/test-workspace-navigation/WorkspaceStandaloneLiterals.hs": {
+        "sha256": "f407ff12ddd2df22ca00bb4a25c5e8ec825d5fd5b60ffa3dc2b6d14e24b8cf69"
+      },
+      "implementation/warlock/haskell/protocol/transport-qualification.json": {
+        "sha256": "47afea44d3dc724866010a7be1c975a195673f269907b343f2334c4b63fef036"
+      },
+      "implementation/warlock/haskell/runtime/README.md": {
+        "sha256": "806a9a4f3e41afc100c15c24ea6ae5bfe06a8d88dfdf9bbe71ed7be79b22a215"
+      },
+      "implementation/warlock/haskell/runtime/app/Main.hs": {
+        "sha256": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22"
+      },
+      "implementation/warlock/haskell/runtime/app-notification-provision/Main.hs": {
+        "sha256": "bb490273b89684339ec590673cf08a07c67c2a7a3086e1abc300ca619858405e"
+      },
+      "implementation/warlock/haskell/runtime/fixture-application-argv/Main.hs": {
+        "sha256": "d44def2256ddc027e90c0f4d6d2f11796b5672d431942b2afbd453b62b90c5bf"
+      },
+      "implementation/warlock/haskell/runtime/fixture-application-owner-peer/Main.hs": {
+        "sha256": "bc32dc9b97d99c64001dbcbc8410070ff4ac236978c5b89e11147f228962e767"
+      },
+      "implementation/warlock/haskell/runtime/fixture-peer/Main.hs": {
+        "sha256": "00fcd03b1babc7e9c45a954871a03f0aea15b48ced03ac496906aac8ae6cef3d"
+      },
+      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": {
+        "sha256": "f63550d4b9538b13afbd8a875554b56b7e3a5ece95ee1a7e76a7c3a17b795425"
+      },
+      "implementation/warlock/haskell/runtime/fixture-ux003-native-observer/Main.hs": {
+        "sha256": "e563f85093bcd7261dc99aea247f1bb085ccc64a997715619b627af8ceeb7f6b"
+      },
+      "implementation/warlock/haskell/runtime/formal/README.md": {
+        "sha256": "9eb7d65f0e922ff3fced324bbb054936fe8fd720817a7faa77be5c127484bc56"
+      },
+      "implementation/warlock/haskell/runtime/formal/current_registration.qnt": {
+        "sha256": "f3f4cbd87ea61db42d94250361a834a037e7d4b8638f51d410859435c6186c84"
+      },
+      "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt": {
+        "sha256": "157288b0e7f37e6696b6f898ea52882ae3b9f237b1065814a5b000217f363e78"
+      },
+      "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime.qnt": {
+        "sha256": "cda6a2b40aeb37341266bc4be64ed76e3157a77e334e0e70cf1de9c3296260f5"
+      },
+      "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime_test.qnt": {
+        "sha256": "c43aec201bf10ae1c77739de90e9cae4f0ac39df6fbb3ce27052de2a35de6d29"
+      },
+      "implementation/warlock/haskell/runtime/formal/qualification.json": {
+        "sha256": "94deb979ba0e4e20b0a211ba5f0822154d441a73759cd6e99372b508a05af9d8"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime.qnt": {
+        "sha256": "4d9dc045213c038d12f68c46941fd72b6357222536122e7a693f910edfc9be8d"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime_test.qnt": {
+        "sha256": "2ad115151339fd2270e8282adc62f97a6eef89aa732734b4654b84d5bbd882e3"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-engine-rpc.qnt": {
+        "sha256": "19d0ffa4ede4cb26aeb7ca6c0e2bc8bb278e62c130e24b41bbb36bd3c7a8ef1c"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-engine-rpc_test.qnt": {
+        "sha256": "bed49b4d7b1dfdb0de8cd83eeaf773ad7da370f9457f9034a2414d660091cae9"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-engine-topology.qnt": {
+        "sha256": "2d8dee2443cc0416f7c74ce15c85ce3e67702a62633579ce6bdc8a94e3915fa6"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-engine-topology_test.qnt": {
+        "sha256": "b144821aad2314c5102657afebcef0185567a8e42e75ba5f7851220eb380d55c"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-frontend-delivery.qnt": {
+        "sha256": "90698235d64f2a18ac80061e736a2c8491a5d2322f18398e4e378d22d708658e"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-frontend-delivery_test.qnt": {
+        "sha256": "cd31602f2219f4d5f31f89463922de65572fda83c90f6753fe98f400d23c4b98"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-http-admission.qnt": {
+        "sha256": "fc30a884c6858cb52bd4574fd52caf28f9cb79fdc467c62bc760eb5053c791df"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-http-admission_test.qnt": {
+        "sha256": "25ba6a42ee4e4dea0978c2ce991c0cbea41703296b7b180d60b9bea748689549"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-origin.qnt": {
+        "sha256": "85a9b419371f5d527409afffe90ce10ebffd042df749bf0dc177c286bca19f11"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-origin_test.qnt": {
+        "sha256": "4d1451995bf95dd3155860c2d49011e790d185b24d44b6fd728897a57d53e057"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-private-network.qnt": {
+        "sha256": "ce2e9444cd429f600030f5a8193c9d643838c128f1614816ba2dfe922e019955"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-private-network_test.qnt": {
+        "sha256": "fdd7d248ea6ad03176aeb4d197e33ad2d5a5aea0e1297840d451d9efa56f6ce3"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap.qnt": {
+        "sha256": "0ab50a535e453613c1ae32b64e7f0958f4b79549c8a658db2d1a257548f36eab"
+      },
+      "implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt": {
+        "sha256": "358ad7edbc190951e76bc097d5e611f060cccb5bb195841952133adf316323e3"
+      },
+      "implementation/warlock/haskell/runtime/qualification.json": {
+        "sha256": "ccb70a02d87f851cce36f05f53a300f8146ca48ac3835a9174a1dc244fbe2b54"
+      },
+      "implementation/warlock/haskell/runtime/runtime.cabal": {
+        "sha256": "d82311075cb8ad80284fde52d3293a1dfbaa9a71b5819e23f762bae0a3882645"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/ApplicationExecutable.hs": {
+        "sha256": "a6a497bf36b00b26357a69743ed748f4b9de7f48df089d88d3a57d17e51b4e59"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/ApplicationPlanConfig.hs": {
+        "sha256": "862187637d4efa8844939dce32e1fd9ec87cdab470a72d542f841ccdc95fc076"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": {
+        "sha256": "a9b328f7fbb0f5014354ad5a2aaada86aee5f9e9dcdd0b7ded8293af69c67adf"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc": {
+        "sha256": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/NotificationIssuer.hs": {
+        "sha256": "d50ae90b7134cc1cd3d85c308fae14ff59f12dc6694be3b887e806c924242e0e"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": {
+        "sha256": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": {
+        "sha256": "4a432f698c779e7d054805513f2f030b37636e9d1e29e5598e8e5c4c1987ffbe"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": {
+        "sha256": "694e878829fcbb35fee6e42293db5f1486da214ce512bb1345cdef09927290fa"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": {
+        "sha256": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": {
+        "sha256": "c429d59b33f2996e7e929effe717e62751c282a615c688f4d651ba6fcaf1da79"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": {
+        "sha256": "4daff7fa10f919c725cb45429c1d4a6c10b404525a825e69f61c82493a4f4c7a"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": {
+        "sha256": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": {
+        "sha256": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Config.hs": {
+        "sha256": "e737412f400ae5a9d53625152a23bbc8883bb6558d85770dd8e14bcb4bb8f969"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs": {
+        "sha256": "976f459aeda27a4a6320d9207c300532d904c6a44567816d818ade00d186519c"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs": {
+        "sha256": "dda839d4a8bb6d618b1ac6132bf84097d8d858e18d7bee2877b27e4a21388ca5"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs": {
+        "sha256": "4818a8094e42b61521995583544f5eb02b1a162c674d57918c2e4ff26ab5f515"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs": {
+        "sha256": "e4c842070ec57eea368f50519081668433a92874c93d0a13983f154c3a4b0182"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs": {
+        "sha256": "92a02a80ca91949aa705979e75dbc6a36d44b8ff7310aefe0a97a66975d5ae66"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs": {
+        "sha256": "1684af2c7eeee727fc3007e6dcda90da52ad48fe9926a22a9ed489bf6050b1e0"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs": {
+        "sha256": "a3467864d1f675d7943c6799d5b192f7a36f5494792fb6e2cb9f1671d6053665"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs": {
+        "sha256": "0bf6d868d72e312adb6a56d10920321308315622139f0091a060ba585136ff05"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs": {
+        "sha256": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc": {
+        "sha256": "2205761421203a631a1dc861c55501c8356e5630e96de3206dc00f986531fd2b"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs": {
+        "sha256": "3a8504a5dd8fb4dac2b7c721da5e141cf571dae18f5c814dfd11bb5ebb8f3e2f"
+      },
+      "implementation/warlock/haskell/runtime/test/CurrentSessionsControls.hs": {
+        "sha256": "31d4038dc700006bbb7521c4a7ceb9a3a176aef742546cad2c018bcaada31587"
+      },
+      "implementation/warlock/haskell/runtime/test/Main.hs": {
+        "sha256": "98ad395210d26fe7c244c5d75056563f4d23fc707e14675d2f0df0b0e741fab1"
+      },
+      "implementation/warlock/haskell/runtime/test/OwnedControls.hs": {
+        "sha256": "6e54634fa6fab03e9b830faa9d13fd7943842cd49d6b6404494d7cb260b2cf9d"
+      },
+      "implementation/warlock/haskell/runtime/test/PublicationControls.hs": {
+        "sha256": "504273c7d9c7605ad79a725c22ca58158ccb67b16b3b4a7ae75b77cc39220779"
+      },
+      "implementation/warlock/haskell/runtime/test/ScopedPeerControls.hs": {
+        "sha256": "07f39cc70a82eca00ff85970635175f9df39bbf2936506156ad406053b3ab52d"
+      },
+      "implementation/warlock/haskell/runtime/test/SocketHandoffControls.hs": {
+        "sha256": "91ae3d484ef7ef91dc0c85822c1947b652243f3e80d8e61d8ff3ea9d1c4a4007"
+      },
+      "implementation/warlock/haskell/runtime/test-application-owner-route/Main.hs": {
+        "sha256": "55588e0366247dd44ec3ac886bf4207189a84203e06ae984a79de2ff346a9e90"
+      },
+      "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": {
+        "sha256": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd"
+      },
+      "implementation/warlock/haskell/runtime/test-catalog-publication/Main.hs": {
+        "sha256": "1d31248918b047422448cbf0a1c97070680b9ba92fa1079cf099a61db6a68885"
+      },
+      "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs": {
+        "sha256": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67"
+      },
+      "implementation/warlock/haskell/runtime/test-default-context-owner/Main.hs": {
+        "sha256": "a03e015ee86c7f581e86fc103ecf0853bd8241add9fbae98d04c9ada4184e197"
+      },
+      "implementation/warlock/haskell/runtime/test-filter-backing-root/Main.hs": {
+        "sha256": "1be7797f62e9db90b0056c1531ca61155080d6deadd10a345936a10b9dd8ddbd"
+      },
+      "implementation/warlock/haskell/runtime/test-notification-config/Main.hs": {
+        "sha256": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f"
+      },
+      "implementation/warlock/haskell/runtime/test-notification-issuer/Main.hs": {
+        "sha256": "2a1b3ba1593bed25a68744e9408d209c613230e3d94ae4171abfe08882ffa711"
+      },
+      "implementation/warlock/haskell/runtime/test-owned-signal/Main.hs": {
+        "sha256": "7269e40e32790f296a7d31d443b4881004fd1ace0c219b67530f335606a9f607"
+      },
+      "implementation/warlock/haskell/runtime/test-persistent/Main.hs": {
+        "sha256": "9768921ea4b0990fe5dd31165c93a9d4d1dc892b47e4e238c0c9f6cc746020b0"
+      },
+      "implementation/warlock/haskell/runtime/test-ui/Main.hs": {
+        "sha256": "f522408fc45e2077c41cdf262cc438f4ee9ae7afc000a316da94974ed36d3e61"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-display/Main.hs": {
+        "sha256": "13d731fb8a74cdbaeab8d7dcad2ff77350ee2b50c2f79c6e844cfffeef93f4ec"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-engine/Main.hs": {
+        "sha256": "4773df5cf63c135a317738ff322bd0087de8d66674dae750e971968f63edd455"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs": {
+        "sha256": "dd27d93061fa60490b3f4c1f6f28f639e652cec4aafc8614be3db91968532c0e"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-engine-exec/Main.hs": {
+        "sha256": "7a5c90aec72f862a06afee78fe9d16399c2f561efe555e05f7ef7f6ddc3998b0"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs": {
+        "sha256": "b5741ca909729a17c529c24e41e47359e7b2dc02b6cbd5b506fb4fb48c1ef74a"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs": {
+        "sha256": "92960afdbea5addbec913e5a42150a6a9b269eab897828e54ac2660afdc877f8"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs": {
+        "sha256": "3e294c7a095bf5b67c5396b3f2377affb02882d7136a814d95838552dbb07759"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": {
+        "sha256": "6aedbbb534d37f3214bbe6328682e6e7b688c09ee07d9e53e36c1b9a7cb57e49"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs": {
+        "sha256": "0ec52ba66edf9decf5ee45f808eee496be20302529402d17d09a8fe13c7bc0b0"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-private-network/Main.hs": {
+        "sha256": "9e7c5a86b2d7cdc8c3c506197ff0e7c60e03d83563068dc0a1ad0396fa33acfd"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-security/Main.hs": {
+        "sha256": "c373717c77ae9dab682b57c112ef5ed1d934a8e2def63fb207d9bd6d0b1ff954"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-security/Parent.hs": {
+        "sha256": "578448d677c41473d1c2f1095cc97d7ad791b4d0278c75dcace0a5e0d317d949"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-security/Permissive.hs": {
+        "sha256": "14c6006ae86679245c2e71264f0c48f0e9b13fba50ee5f3293b38cd2f9e65718"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-security/fixtures/probes.js": {
+        "sha256": "3f2abf6f2ca0a7aee85ba0ada522933454307f4d6ac9ce6b192166d1b8d8cce8"
+      },
+      "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": {
+        "sha256": "8d5fdc55ce3f2f996c110de1a54f648bbac33d18681e1c1c4dc095cce76c5b58"
+      },
+      "implementation/warlock/haskell/runtime/test-webkit-callback-capi/Main.hs": {
+        "sha256": "f74ed64d4ae856c0eb82fece3d61f23a277d14f5fef19a0a93c36a60c91ac2b6"
+      },
+      "implementation/warlock/haskell/runtime/test-webkit-callback-capi/callback-invoke.c": {
+        "sha256": "8a5afb03759001f3f8313b89a3a4825e6ff6c99e3c24a80c122c4e6159005b97"
+      },
+      "implementation/warlock/haskell/runtime/test-webkit-provider-probe/Controls.hs": {
+        "sha256": "be9885d27bade1400563310dc8e95078aad13d8c5227a4aaee500c576d3f7012"
+      },
+      "implementation/warlock/haskell/runtime/test-webkit-provider-probe/Main.hs": {
+        "sha256": "17f47886bcc879a89856bdb773de0736392105a3112aa995199c91b396d63651"
+      },
+      "implementation/warlock/haskell/runtime/test-webkit-provider-probe/ProviderProbeContract.hs": {
+        "sha256": "da1387ddd63ca62a3998d817af2c04bfea25e9c5c9343e5e6e917a5a801b6414"
+      },
+      "implementation/warlock/haskell/runtime/test-webkit-provider-probe/ProviderProbeHeaders.hsc": {
+        "sha256": "bdb92d1317a30ddc62677938d232181e27a6de1f4f5b3461b5a84a0cd343ca9a"
+      },
+      "implementation/warlock/haskell/runtime/ui/Main.hs": {
+        "sha256": "1efe1ec3625abbaabe0ba237166b2990bd2f82b034a01abd033ae8cbb9bbf497"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/CallbackRetirement.hs": {
+        "sha256": "76dace5cb34d05a4e13f587615a824f73ac29297074897f065fc935ce73d25f4"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/DefaultContextOwner.hs": {
+        "sha256": "7dbe4fb93a6c7bc98078c75819e43b046e1ef53c63b0946a23b3b6ef30413743"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": {
+        "sha256": "5e7175ba4d90cfe622b0b382c37440bbe51496dc3b550c59fde20f840a833f8f"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs": {
+        "sha256": "50b13ce201401779d135957052c5479b495148fbc482e3a34da5f121ba1d36e8"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/FilterBackingRoot.hsc": {
+        "sha256": "bbc92b60813532408c686f20e694f544d5c801a8ba75e5a3dd6821826d7f1ca4"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": {
+        "sha256": "6e09d795f8c88e69a922ec92c7ea5116ab7aebb1c9d64be57f4af5ba589a56e3"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/ProcessSignalOwner.hs": {
+        "sha256": "01378b006b4de137fd1bd14ec172585e5559139af653280de6c145ddbde30170"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": {
+        "sha256": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846"
+      },
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc": {
+        "sha256": "8a016b2cfa837b1874019f376d7e4d1c333f3064ea48e62787565e4a616f40e8"
+      },
+      "implementation/warlock/src/ActionProjection.elm": {
+        "sha256": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062"
+      },
+      "implementation/warlock/src/AdapterNotice.elm": {
+        "sha256": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409"
+      },
+      "implementation/warlock/src/Announcement.elm": {
+        "sha256": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f"
+      },
+      "implementation/warlock/src/AnnouncementMessage.elm": {
+        "sha256": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075"
+      },
+      "implementation/warlock/src/Bar.elm": {
+        "sha256": "3c63a9b07829ffc113b37a74ae957bfbb2b0efd50e4da0feed0e8205c3d6e5c0"
+      },
+      "implementation/warlock/src/BatchReplay.elm": {
+        "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852"
+      },
+      "implementation/warlock/src/Binding.elm": {
+        "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b"
+      },
+      "implementation/warlock/src/CapturedAction.elm": {
+        "sha256": "08efe9eacd78e9edf86ed13a5b13108d29face6ef1edf264ad711dc6c720664b"
+      },
+      "implementation/warlock/src/Catalog.elm": {
+        "sha256": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02"
+      },
+      "implementation/warlock/src/CatalogReplay.elm": {
+        "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9"
+      },
+      "implementation/warlock/src/DesktopReplay.elm": {
+        "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd"
+      },
+      "implementation/warlock/src/Effects.elm": {
+        "sha256": "831ee16e2e49791d0604ccbf2297e242f81d0c7da5c944c2622dca5413da5661"
+      },
+      "implementation/warlock/src/Files.elm": {
+        "sha256": "920722cf7c7ba4de35f165aa1891eb4749584529b8525f3423d121e7a412cb3a"
+      },
+      "implementation/warlock/src/GeometryProjection.elm": {
+        "sha256": "71aa90a4d9cff4eb797b8a7ca16c5604b94684576243ed8bb961b6cb731ce841"
+      },
+      "implementation/warlock/src/GeometrySizePolicy.elm": {
+        "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43"
+      },
+      "implementation/warlock/src/HttpBar.elm": {
+        "sha256": "135d13fce502e0b2e2d4b14f6e4a452a3f1a51db2f332fbd6c9b9d16e78ebab6"
+      },
+      "implementation/warlock/src/HttpMain.elm": {
+        "sha256": "c0dcd27b03b737b83be70d439944ea9741128e18dd9405b55595c559e8bef3cf"
+      },
+      "implementation/warlock/src/HttpPopup.elm": {
+        "sha256": "e3b20ed07ce33d23dfebb7d9ba368d210ec01597920f819fc061421f80d24589"
+      },
+      "implementation/warlock/src/Inspection.elm": {
+        "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc"
+      },
+      "implementation/warlock/src/JumpList.elm": {
+        "sha256": "62577ce4d85acde5a3f3e894236e0e72dfa29d19bdc2f97cad6b910dc9dc533c"
+      },
+      "implementation/warlock/src/Launch.elm": {
+        "sha256": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2"
+      },
+      "implementation/warlock/src/LaunchReplay.elm": {
+        "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97"
+      },
+      "implementation/warlock/src/Main.elm": {
+        "sha256": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66"
+      },
+      "implementation/warlock/src/Menu.elm": {
+        "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0"
+      },
+      "implementation/warlock/src/MenuSurfaceReplay.elm": {
+        "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39"
+      },
+      "implementation/warlock/src/Motion.elm": {
+        "sha256": "e1e97519c6f95ed1283929a99d0fde4b76a76bfea3c1bc1429bf3eebb922b312"
+      },
+      "implementation/warlock/src/MotionPreferences.elm": {
+        "sha256": "efb600fb7601644b7c68041bfb9eefeb14a2fc5247f56b06ef08a865ffac8cf0"
+      },
+      "implementation/warlock/src/NativeActorRetirement.elm": {
+        "sha256": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6"
+      },
+      "implementation/warlock/src/NativeFamilyPreviewSource.elm": {
+        "sha256": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321"
+      },
+      "implementation/warlock/src/NativeFamilyPreviewSourceReplay.elm": {
+        "sha256": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99"
+      },
+      "implementation/warlock/src/NativeOutcome.elm": {
+        "sha256": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6"
+      },
+      "implementation/warlock/src/NativePreviewAdmission.elm": {
+        "sha256": "efb8f22d984e0f507a0c70b3e6d6a98c1393b82f9eb1d390b92a30d4488e0717"
+      },
+      "implementation/warlock/src/NativePreviewDetachment.elm": {
+        "sha256": "39fe1ece48568a5a264d7b018df41322bab97f73cbe0f55a92559ecccb25a47a"
+      },
+      "implementation/warlock/src/NativePreviewPolicy.elm": {
+        "sha256": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64"
+      },
+      "implementation/warlock/src/NativePreviewProposalIngress.elm": {
+        "sha256": "de3ff03abfee182586007234be87a663d60d29331667afed5cb407755bc27882"
+      },
+      "implementation/warlock/src/NativePreviewRealm.elm": {
+        "sha256": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf"
+      },
+      "implementation/warlock/src/NativePreviewRealmReplay.elm": {
+        "sha256": "7d68ebb6703608184c20fa17f261d553119bf1ccf637274b41d1c1ebfb22e621"
+      },
+      "implementation/warlock/src/NativePreviewReceiver.elm": {
+        "sha256": "455f20e5dd675ee082d17e1dae00985f006f3273ab83c33cf33aed3202b9c4ba"
+      },
+      "implementation/warlock/src/NativePreviewReceiverReplay.elm": {
+        "sha256": "27ec8515727b39be545b1d19f83bf4d25c42848ae9654c2f00e563f25b43f2b9"
+      },
+      "implementation/warlock/src/NativePreviewRenderer.elm": {
+        "sha256": "299ae5f7f5edc0953a8b37fea7b3afd4ce8acfc2dc0087fbdeefcbf6b4fb9c2e"
+      },
+      "implementation/warlock/src/NativePreviewSource.elm": {
+        "sha256": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9"
+      },
+      "implementation/warlock/src/NativePreviewSourceReplay.elm": {
+        "sha256": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8"
+      },
+      "implementation/warlock/src/NativePreviewVisual.elm": {
+        "sha256": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d"
+      },
+      "implementation/warlock/src/NativePreviewVisualReplay.elm": {
+        "sha256": "d15bc279a0cbb0af0aa0fa0f85f72f4c3608ffee73a4d68567477d1769c341c6"
+      },
+      "implementation/warlock/src/NativeProvider.elm": {
+        "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+      },
+      "implementation/warlock/src/Notifications.elm": {
+        "sha256": "e61311c370fc0367844deb21a9ba3274a64f41faabe19bec6743af71685e2201"
+      },
+      "implementation/warlock/src/OutcomeAnnouncements.elm": {
+        "sha256": "e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb"
+      },
+      "implementation/warlock/src/OutputReplay.elm": {
+        "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff"
+      },
+      "implementation/warlock/src/OutputSurfaceReplay.elm": {
+        "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26"
+      },
+      "implementation/warlock/src/OverviewRecovery.elm": {
+        "sha256": "df247594319b088baa321ac9b5d4b5f2daeec5780298178ca0724f7ec17d8e0e"
+      },
+      "implementation/warlock/src/Pins.elm": {
+        "sha256": "c44da7aa32a193fc998d4efc39af25067998adc37d67da6d0c5b834f073635a4"
+      },
+      "implementation/warlock/src/PointerOwnership.elm": {
+        "sha256": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3"
+      },
+      "implementation/warlock/src/Popup.elm": {
+        "sha256": "c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb"
+      },
+      "implementation/warlock/src/Presentation.elm": {
+        "sha256": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851"
+      },
+      "implementation/warlock/src/PresentationReplay.elm": {
+        "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c"
+      },
+      "implementation/warlock/src/PreviewCatalogReplay.elm": {
+        "sha256": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129"
+      },
+      "implementation/warlock/src/PreviewFeedbackReplay.elm": {
+        "sha256": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34"
+      },
+      "implementation/warlock/src/PreviewIdentity.elm": {
+        "sha256": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5"
+      },
+      "implementation/warlock/src/PreviewLifecycle.elm": {
+        "sha256": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24"
+      },
+      "implementation/warlock/src/PreviewMetadataReplay.elm": {
+        "sha256": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f"
+      },
+      "implementation/warlock/src/PreviewPaintGate.elm": {
+        "sha256": "fa2194375853ba16d5c783d04d110b052c43dccc89faf9fb6c4dce7aef709d4f"
+      },
+      "implementation/warlock/src/PreviewPresenter.elm": {
+        "sha256": "1bfd96b8cbe70832eadca24a4e6aa6741b81c41f6faa9b9c8bde1cfac0a6c5dc"
+      },
+      "implementation/warlock/src/PreviewPresenterReplay.elm": {
+        "sha256": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e"
+      },
+      "implementation/warlock/src/PreviewVisual.elm": {
+        "sha256": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a"
+      },
+      "implementation/warlock/src/Protocol/Authority.elm": {
+        "sha256": "bbf82ae6a176ed3be480df9c03af1c5f9f627357e8e9f4b24d030c08c97dad8b"
+      },
+      "implementation/warlock/src/Protocol/Session.elm": {
+        "sha256": "8b765d5a2b6c0946413f7d7b4c48bac371681ab22c2c533977733a334a30ca4a"
+      },
+      "implementation/warlock/src/Protocol/Wire.elm": {
+        "sha256": "b4bea849f17402b7007f4697f544b0dc0fd255bec1c3c38888c318741030d61c"
+      },
+      "implementation/warlock/src/Provider.elm": {
+        "sha256": "bbc20c16113df0df6ac28986eddb805348a5c72942bdfbde915deadfb921288f"
+      },
+      "implementation/warlock/src/ReceiptRouter.elm": {
+        "sha256": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0"
+      },
+      "implementation/warlock/src/ReconciliationFrame.elm": {
+        "sha256": "5f9480ab13609f26a3f57f37431e9eb29c658b1c009b463321e0f277d37b8ac5"
+      },
+      "implementation/warlock/src/ReconciliationTracking.elm": {
+        "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9"
+      },
+      "implementation/warlock/src/Replay.elm": {
+        "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f"
+      },
+      "implementation/warlock/src/RetainedLegacyPresenterReplay.elm": {
+        "sha256": "f5f7bc30d5efda6629a1de4b11e13ebf25d9be80bbd8573dff9d7d0916375845"
+      },
+      "implementation/warlock/src/RetainedPreviewPresenter.elm": {
+        "sha256": "7d3206e62e547af98171018a3bb65acdde0701393f35ea652bfffd1d5890810b"
+      },
+      "implementation/warlock/src/RetainedPreviewPresenterReplay.elm": {
+        "sha256": "1405187825a060cb5003b66b7bf235802323fe6db2d32af6ddb04d1708577175"
+      },
+      "implementation/warlock/src/ScopedPreviewPresenterReplay.elm": {
+        "sha256": "203f2b74ce723fc3c39208ff91dffde947fbdbaaf7cf1d233b606ac427ba7a05"
+      },
+      "implementation/warlock/src/SearchFold.elm": {
+        "sha256": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241"
+      },
+      "implementation/warlock/src/Settings.elm": {
+        "sha256": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c"
+      },
+      "implementation/warlock/src/SharedRecoveryReplay.elm": {
+        "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b"
+      },
+      "implementation/warlock/src/ShellReplay.elm": {
+        "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca"
+      },
+      "implementation/warlock/src/ShortcutPreferences.elm": {
+        "sha256": "71155bf3a1a416e05350a7473bceecdd5dcbaf581726ececd1b4882a616b07c5"
+      },
+      "implementation/warlock/src/Shortcuts.elm": {
+        "sha256": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7"
+      },
+      "implementation/warlock/src/Snap.elm": {
+        "sha256": "545bcccff558348f93f64bee6ebce12352ea1adc223b4f89e11570799542e7ed"
+      },
+      "implementation/warlock/src/StatusScroll.elm": {
+        "sha256": "9348a397d03cd7671faad4407fa0951f8765f4c72ccf98913db3ed35857ba034"
+      },
+      "implementation/warlock/src/Surface.elm": {
+        "sha256": "2b7f117be337b7f169413f897c82049dd765ca08b472c5ee44c3fa1b84c74a6d"
+      },
+      "implementation/warlock/src/SurfaceRenderer.elm": {
+        "sha256": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+      },
+      "implementation/warlock/src/SurfaceReplay.elm": {
+        "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a"
+      },
+      "implementation/warlock/src/SurfaceSnapshot.elm": {
+        "sha256": "9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a"
+      },
+      "implementation/warlock/src/SurfaceTheme.elm": {
+        "sha256": "6111e4a03940be7388b458fd303abc702e89f4b57d68c828ff29eab2a15d118e"
+      },
+      "implementation/warlock/src/Switcher.elm": {
+        "sha256": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061"
+      },
+      "implementation/warlock/src/SystemMenu.elm": {
+        "sha256": "070e619f3088a1c051581066ce949fb1cd64b75f5df0ebd9efb18ab589c993c5"
+      },
+      "implementation/warlock/src/TaskView.elm": {
+        "sha256": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe"
+      },
+      "implementation/warlock/src/Taskbar.elm": {
+        "sha256": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519"
+      },
+      "implementation/warlock/src/TaskbarReplay.elm": {
+        "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351"
+      },
+      "implementation/warlock/src/TaskbarShell.elm": {
+        "sha256": "4085ed27b18358331b7a3e74e51ffa6c6f66daaa9dab48f16dc570365ce58612"
+      },
+      "implementation/warlock/src/TaskbarShellReplay.elm": {
+        "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130"
+      },
+      "implementation/warlock/src/Transfer.elm": {
+        "sha256": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be"
+      },
+      "implementation/warlock/src/UInt64.elm": {
+        "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+      },
+      "implementation/warlock/src/UiHttp.elm": {
+        "sha256": "c3543e27ad787d3c84894554178121205d19b9868c250d0717989c1207cdc72f"
+      },
+      "implementation/warlock/src/UnsentOperation.elm": {
+        "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea"
+      },
+      "implementation/warlock/src/WorkspaceInventory.elm": {
+        "sha256": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e"
+      },
+      "implementation/warlock/src/WorkspaceNavigation.elm": {
+        "sha256": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/host-inventory-85f1-20261110/system-build-inputs.json": {
+        "sha256": "9984660710cec4b197733e953f00dc850b3876e77c977684e4c9605348e81f8f"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-protocol-runtime-green-v2/cache-review.json": {
+        "sha256": "9c94dd09f3206f737ce9cbd221972dc4744800acb1f2c2f68bc9601e69e4f0f5"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/host-inventory-85f1-20261110/arm64-toolchain-host85.json": {
+        "sha256": "3c1d2a31b3678b2cb8bedfd5b040af56a15ec44ebc43986a5a01b3567e4958c5"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/current-loader-cache-20261110T1800/cache-correspondence.json": {
+        "sha256": "9c123a13775698f1665412a3853c4ac6b1b7d7d9a714159a74c5f0eb7c3e8f1e"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-protocol-runtime-green-v2/inputs.json": {
+        "sha256": "ac7a6fbc5acdd962d3be8e13bc52232635488e3b9d92094d810fe88e3fb1653f"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-protocol-runtime-green-v2/manifest.json": {
+        "sha256": "6fa7a6c4c24545be3b1abf07d19d743578a44af141baa68fbc58ee1975076a44"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/window-watch-protocol-runtime-green-v2-cpu/review-packet.json": {
+        "sha256": "7bd2d1d1c3419a644bfcd7039967ad332de6ce41a25e952ca79eaa3c819cf28b"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-inputs-v1/observed-absolute-refusal.json": {
+        "sha256": "fafda8eb4f625df490a9b8d7dacc647436392f908cd8ed350d664035e37ab79e"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-inputs-v1/observed-relative-admission.json": {
+        "sha256": "107cf7d4f6ca70c729a4b1dacc2a16736d117ed1fe8188d7840e4a05e1ecba7a"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-inputs-v1/proposed-delivery-events.md": {
+        "sha256": "9461ce1610c6822b09cd5757da9bb1ca045d835bb3f11ea90ee6da71e8cf69a9"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-inputs-v1/baseline-delivery-events.md": {
+        "sha256": "c58b4c98e367118036353498d0c5017265f60913545122ec0355cdf5add5f785"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/actual-probe-results.json": {
+        "sha256": "587915c9cefcc38d752146b8eb6d1d071c272d4a5edb7d31488ef8b977ebba8e"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/record-before-probes.json": {
+        "sha256": "9ccae2c1fdfbd77aeb4431d9235a009eb1183b20bc6ddb8011ef583f44bcfb04"
+      }
+    },
+    "sourceFiles": {
+      "implementation/warlock/src/Desktop.elm": {
+        "sha256": "6bb4324cf993765fb1bc0c811d825c48d82ee89346badc7af511092942f7473a"
+      },
+      "implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm": {
+        "sha256": "ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273"
+      },
+      "implementation/warlock/qa/ui011-observed-scope-retirement.cjs": {
+        "sha256": "ca51900ed2edc6b0a74403e98e0cff33cffae6b18a924f96ce5216b21342206b"
+      },
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": {
+        "sha256": "78b46c625bdfb4e0781938f9fb59bd35f60df0d95bb7d1c5f48305ecbfc52b65"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": {
+        "sha256": "3b8f13574f28112f6aed316c778bf132e6e431be7de6a0ab36549b254083aad5"
+      },
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs": {
+        "sha256": "01648a3ce02bc033b4e7c682979f863240b79db95cccfb6997a636cd78b19fd0"
+      },
+      "implementation/warlock/src/WindowObservation.elm": {
+        "sha256": "c14c481ae42b197847194c880a4de80146943158cfd21cd56c7ab6b01e839840"
+      },
+      "implementation/warlock/src/Shell.elm": {
+        "sha256": "89e00985854126b005cbb9be12d1d6afe97d402f3753f6f86544540017895baf"
+      },
+      "implementation/warlock/src/MenuBridge.elm": {
+        "sha256": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544"
+      },
+      "implementation/warlock/src/DesktopPolicy.elm": {
+        "sha256": "e8e547e2678c97bd3e4c494bd7a8a5521ef3b0cab82bdcf406f1709d3ea084c4"
+      },
+      "implementation/warlock/src/SurfaceController.elm": {
+        "sha256": "e0a7a0861e9266e41ef3b5705f4bb42e3ec11536f69ca6a25928bf0f5ec5b6a9"
+      },
+      "implementation/warlock/src/OutputController.elm": {
+        "sha256": "1ccce8b97a4f770a4f1f7f2446b9eafdc07062fc099e51506bcd35268bafb614"
+      }
+    },
+    "oracleFiles": {
+      "implementation/warlock/qa/OutputRetirementReplay.elm": {
+        "sha256": "fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9"
+      },
+      "implementation/warlock/qa/Ux024ObservedWindowMenuReplay.elm": {
+        "sha256": "98fd760afe5abd770577d509ee2e4f3871a09afe7bc66762f67b5ad713c29ec1"
+      },
+      "implementation/warlock/qa/focus-publication.qnt": {
+        "sha256": "7b02f4038a142836a81939e10f95dda7806d8c169de7a5126ddca3052132f9d0"
+      },
+      "implementation/warlock/qa/menu-focus.qnt": {
+        "sha256": "87ad97e1c182b5ca98138776a6fcd50567748cb1fd67a6431d9d5be56e06d16a"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/tests-first/WindowWatchProtocolControls.hs": {
+        "sha256": "189e25673f3980be477c49e2b50ae426eb84a596065c94f7f063d7d7796cc7fd"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-window-watch-fixtures-v1/tests-first/protocol-test-stanza.fragment": {
+        "sha256": "aa472d1fc4d603978c43d077fe1bd284f4f0a223add115172571fc3dbbf920d6"
+      },
+      "plugins/warlock-contributor/qa/fixtures/native-build-failure/helper66c.py": {
+        "sha256": "66c990e73695a89b938f163f37338c7ef92b367898bd31ba3a90d74d750245b1"
+      },
+      "plugins/warlock-contributor/qa/fixtures/native-build-failure/libc-readelf11.stdout": {
+        "sha256": "c94c0e64b6e28ba5ce6fca40a29f68d5e938baa6ab87f7977c5dc3e3630b5860"
+      },
+      "plugins/warlock-contributor/qa/test_acceptance_revision.py": {
+        "sha256": "8504942637eabbcaeeed6bc077c3dfa620213b19faf597fda6a4fcdc32768717"
+      },
+      "plugins/warlock-contributor/qa/test_adapter_progress.py": {
+        "sha256": "bb3bd685b1811c66184d6e8b2fc52b6733a956ff7206d922baad74fe0909d117"
+      },
+      "plugins/warlock-contributor/qa/test_bootstrap_classifications.py": {
+        "sha256": "9773cfe6cc1a47793e9714d96f9b4ab7a41988db5dfd7dd1fda46bfbc3179ab3"
+      },
+      "plugins/warlock-contributor/qa/test_canonicalize_review.py": {
+        "sha256": "5047cd764223dbadef6d17e03191bdf317765618e75e0a3a0e0d331e7ab0b69d"
+      },
+      "plugins/warlock-contributor/qa/test_checkpoint_preflight.py": {
+        "sha256": "f296a9ed15a7e9d44bec11c7c9e43a7fa8b7aab08b07f914ab750f717e54d548"
+      },
+      "plugins/warlock-contributor/qa/test_declaration_corrections.py": {
+        "sha256": "a615a35fde1386a182e17d684940dd87035819fdac74cde2aad0b2b4bd38ca2b"
+      },
+      "plugins/warlock-contributor/qa/test_delegated_authorization.py": {
+        "sha256": "3628a5888aec80b5e6494e09328985b3e5adddc7515e4d474bd654d5536c49bb"
+      },
+      "plugins/warlock-contributor/qa/test_delivery.py": {
+        "sha256": "34c33a9d1d793c3dd47d85577524a309834625ec8cf588f916c53ad983534730"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_authorization.py": {
+        "sha256": "6f06a087e04c848d8b084ed4fe9338213662bae90544d8970fb4fc99c02eb9af"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_clock.py": {
+        "sha256": "c7ae3ddfb6095766c5250e44d44122fa563ca3cfb0b6b5fcbe29866d24bafc01"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_flow.py": {
+        "sha256": "4c934afde2aab0b0b692233a5e9f45f6c07d07457e5207c1031d41745f9ceb18"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_launch.py": {
+        "sha256": "09d2171bf5db5dda69e11e46968a8feafa3ca1b8168db7791f26c95cf5c15a0b"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_reboot.py": {
+        "sha256": "8fd87e33c7a57f19d4f87dc8bd946ea061b58b4c949a2e962adb3ad8e59e2064"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_refusal.py": {
+        "sha256": "f18b784a243906d820a50e62952ecfb12f9599e71722d8b62540847ea65ffaaa"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_selection.py": {
+        "sha256": "6b27d087d6fb1433374bab026713b7d9e6979f6d74036022c14f258f28328904"
+      },
+      "plugins/warlock-contributor/qa/test_discovery.py": {
+        "sha256": "609e1d12eaa9a7bfe751262d1dd2e0741a8bc92fbe95aab703b67f25c8bd2831"
+      },
+      "plugins/warlock-contributor/qa/test_extensions.py": {
+        "sha256": "2144a2a220701f993a3aeca8959390df58976d94c0f487193481f880b2072be6"
+      },
+      "plugins/warlock-contributor/qa/test_foreign_introduction.py": {
+        "sha256": "55afc37b80b65dc75b217c0c00e24baba30ae502604ee17be0b33805c1ff053d"
+      },
+      "plugins/warlock-contributor/qa/test_foreign_reconciliation.py": {
+        "sha256": "c779159aee0fb6c95e99aa1422c6ccd97578186835a79d8779830a6667dde781"
+      },
+      "plugins/warlock-contributor/qa/test_harness2_adapter.py": {
+        "sha256": "3ea40f62a10842fb1bf54d3fd74087cc58ccfa6248a0ff16345b03c1088557e3"
+      },
+      "plugins/warlock-contributor/qa/test_helpers.py": {
+        "sha256": "d51c3355af1b6419ccc37728d73a42c352cb50fcfbeb7e22ce817943ebfc0659"
+      },
+      "plugins/warlock-contributor/qa/test_hosts.py": {
+        "sha256": "c85ee5f290c60840e87c5e8c16da07f3a719027c21b5d2336027f14d642cb26a"
+      },
+      "plugins/warlock-contributor/qa/test_loop.py": {
+        "sha256": "fb7eff876756ddc2b73fdea204e5cc4096b541ea150cbf3ecc9a2130296038d3"
+      },
+      "plugins/warlock-contributor/qa/test_native_build_failure.py": {
+        "sha256": "1052599310e9efc8d7b0df82909a168911757e73f18721b57ce2df0e9c5fab27"
+      },
+      "plugins/warlock-contributor/qa/test_native_command_preflight.py": {
+        "sha256": "e047f76fb6efd138df194a3915c576642cb79beba4163b9db060b29d42f756ec"
+      },
+      "plugins/warlock-contributor/qa/test_owner_route_preflight.py": {
+        "sha256": "85939c79ea661f60766e59f34445a034ec3a8296425ca9a87117bba9131b68ab"
+      },
+      "plugins/warlock-contributor/qa/test_package.py": {
+        "sha256": "644f9e94f9c3fc1cd038a77574e083e989f9cafb6bab028bc26aa81afd8e4181"
+      },
+      "plugins/warlock-contributor/qa/test_policy5.py": {
+        "sha256": "d7b35fe708f903b16f443fe570eb033aac21b45dba280c7feb2cb33f95de1262"
+      },
+      "plugins/warlock-contributor/qa/test_policy6.py": {
+        "sha256": "8dbecc80b7d4b55c41c93b93972271d7c8cb55147ed83601353a2e0d3e9fc183"
+      },
+      "plugins/warlock-contributor/qa/test_preflight.py": {
+        "sha256": "d015d2d7078615989074187d4e514961112a18c7dd8f8451534e4640220baee6"
+      },
+      "plugins/warlock-contributor/qa/test_progress_audit.py": {
+        "sha256": "41d0157036566e353e35650f6400d8d440755f284b3087e2f249d934b5aae627"
+      },
+      "plugins/warlock-contributor/qa/test_published_omissions.py": {
+        "sha256": "210616de4b77ae390f6505f5eda7a3cf3cd8bf17850e0988366676e56db72d98"
+      },
+      "plugins/warlock-contributor/qa/test_readiness_immutability.py": {
+        "sha256": "fccf2e1741545a7bb1a0229ea679564dd615eac3231e11574a432bbc0c32c51b"
+      },
+      "plugins/warlock-contributor/qa/test_record_recovery.py": {
+        "sha256": "e0e4155ec76a39f5970a3c0bae6dc442d7d6bdc9b4c8fcc916bfec84d8eded03"
+      },
+      "plugins/warlock-contributor/qa/test_report.py": {
+        "sha256": "b8432af0f93d01e79fc9f1b0acde135b72c1b6130881f583b4c16c18dfa17145"
+      },
+      "plugins/warlock-contributor/qa/test_scope_extension.py": {
+        "sha256": "554dea2b6590e57df105a2e917694c4d58ac84246b1e99f3f1049fdcc570ff9e"
+      },
+      "plugins/warlock-contributor/qa/test_stop_continuity.py": {
+        "sha256": "1e61f101af185dc292b8484d00ea610c904d70b7251b2465ea01bff567de7359"
+      },
+      "plugins/warlock-contributor/qa/test_support_actor_binding.py": {
+        "sha256": "e8e0689c48f241b796a2c01977f0f28f429ccf55dea7f6521f20e76f72fbd6c5"
+      },
+      "plugins/warlock-contributor/qa/test_support_cas_precheck.py": {
+        "sha256": "e67d859cc7c4a9ef1b609428c6fee59b7af14a0e86d898b327886c0fc34247e3"
+      },
+      "plugins/warlock-contributor/qa/test_support_custody.py": {
+        "sha256": "cdd45484704681f28bf3f45b18e67faa9935cd805b216cc7508135d8766eabdd"
+      },
+      "plugins/warlock-contributor/qa/test_support_workflow_package.py": {
+        "sha256": "ba31a58dbb6a73b4b1427011177844653fc25f58ca78d9422fc81e0e48527d6c"
+      },
+      "plugins/warlock-contributor/qa/test_verdict_progress.py": {
+        "sha256": "8d9c1d9ea6fbcc320aa9bb5461a3ab5588446598e264e7a2b9e243f8527600eb"
+      },
+      "plugins/warlock-contributor/qa/test_verification.py": {
+        "sha256": "a267524a7e8e0db90e98f6ff3a6a6e1208fd54b4bc465f373a0858e54b821201"
+      },
+      "plugins/warlock-contributor/qa/test_warlock.py": {
+        "sha256": "bc4608a2125477ec9dd050d59b167f9755563d579be84dadf189a3f3ef0d473f"
+      },
+      "plugins/warlock-contributor/qa/validation-v012.json": {
+        "sha256": "318eec9e1a3ac9dad6aa2411f5a525dcaebf0d37ec85bf7766c7f18894b9681f"
+      },
+      "plugins/warlock-contributor/qa/validation-v013.json": {
+        "sha256": "564e81b9f45810241391a2a941d6f259aaebf37abc8697dfc68f136a029a0a55"
+      },
+      "plugins/warlock-contributor/qa/validation-v014.json": {
+        "sha256": "b4c5e4b8b990d6d75ecc042b82762db0bc6103da20eea777e0465e11c02c5a25"
+      },
+      "docs/elm-roadmap/requirements.json": {
+        "sha256": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff"
+      },
+      "docs/warlock-build-loop/v2/requirement-ledger.json": {
+        "sha256": "15dd7044b356b4015c3dd43b3e99c686a97a64bf01a0889e3fdbe42baa8ff7f5"
+      }
+    },
+    "guardFiles": {
+      "docs/elm-roadmap/requirements.json": {
+        "sha256": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff"
+      },
+      "docs/elm-roadmap/baselines/requirements-pre-language-20261030.json": {
+        "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+      },
+      "docs/elm-roadmap/language-revision.json": {
+        "sha256": "d405ed8b8fd7e47420f108ed5692970734e341913a029a894b971397849b216c"
+      },
+      "docs/elm-roadmap/tools/language_revision.py": {
+        "sha256": "a792ed03d3bc7eeed978b387ee5dda8474af0738844c29caaa39cafe1d5c7e4a"
+      },
+      "implementation/elm-build-loop-v1/loop.py": {
+        "sha256": "13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6"
+      },
+      "window-integration-qa/qa_run.py": {
+        "sha256": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+      },
+      "window-integration-qa/qa_launch.py": {
+        "sha256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+      }
+    },
+    "authorizationFiles": {
+      ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/authorization.json": {
+        "sha256": "ec8a1b87bebcc2ea00f551696151fea7647d10fa0dcb7a6c09d05341a246beeb"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/renewal-evidence.json": {
+        "sha256": "4713c1636ea045f82f831374e6b35a26f2f6ccfc282434fed3f7e71278f876ff"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/human-request.json": {
+        "sha256": "53f5067d51a4228eb77ac1874dd1541f44ed692bad4b5f1863832e94d726ff1f"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/goal-observation.json": {
+        "sha256": "218a37a896a9c39af86592e8f803df6716863e88f3b32bb1cd2dd11827546fe5"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/actual-human-resumption.json": {
+        "sha256": "1105d1db9f287ac3b4d8cd86a274e2e594e84dd76c519233690e50ad05fa2215"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/actual-host-goal-observation.json": {
+        "sha256": "400332df6173daf0804b4a22cee7d15faed541a3a580fe12ea9071154ec7e0d6"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/actual-opus-result.json": {
+        "sha256": "0118100d253c34115d692a43abba5f3045e293c1fc377419d9ac8c6425ede098"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/actual-opus-terminal.json": {
+        "sha256": "040dc422951c8727e78b162e5d62d293ba7e50d7c9fbd90c9f25d035f7668f89"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/opus-operational-bound.json": {
+        "sha256": "77820ee66aad96e260ac320792487d6274b244dc2e24e012bada65a14c237811"
+      },
+      ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/authorization-resume-20261110T155534Z/renewal-event.json": {
+        "sha256": "b1b96ef49a87fd914d0ee78ce479b57ba912e816668c3b16fe4ca14a1576014b"
+      }
+    },
+    "pluginBaselineFiles": {
+      "plugins/warlock-contributor/.claude-plugin/plugin.json": {
+        "sha256": "ef0828db76f163a6ca1f4a40c4d98b05ee2e8a4bd39ab4e35172e0710e1545a5"
+      },
+      "plugins/warlock-contributor/.codex-plugin/plugin.json": {
+        "sha256": "96c0ce72b7308e7ecacb2caea0735182c4141ef55c2ca6d29e19725fa5fc4063"
+      },
+      "plugins/warlock-contributor/AGENTS.md": {
+        "sha256": "3806ed223fcdd3fbaf3641c9945e8b260cf16402e6af5408935428b979600276"
+      },
+      "plugins/warlock-contributor/README.md": {
+        "sha256": "0eb38013275b9f0b07599a94c00452b168d08b49e5df84e101eac212f4fb240e"
+      },
+      "plugins/warlock-contributor/hooks/codex.json": {
+        "sha256": "b012c42df20c797ea832b3436b3e38989e73975d01fedd4a1c951932a71d14d5"
+      },
+      "plugins/warlock-contributor/hooks/hooks.json": {
+        "sha256": "d006332032d84287e34a267f064f35143f8c22f56a965292e17639143909ea1a"
+      },
+      "plugins/warlock-contributor/qa/fixtures/native-build-failure/helper66c.py": {
+        "sha256": "66c990e73695a89b938f163f37338c7ef92b367898bd31ba3a90d74d750245b1"
+      },
+      "plugins/warlock-contributor/qa/fixtures/native-build-failure/libc-readelf11.stdout": {
+        "sha256": "c94c0e64b6e28ba5ce6fca40a29f68d5e938baa6ab87f7977c5dc3e3630b5860"
+      },
+      "plugins/warlock-contributor/qa/test_acceptance_revision.py": {
+        "sha256": "8504942637eabbcaeeed6bc077c3dfa620213b19faf597fda6a4fcdc32768717"
+      },
+      "plugins/warlock-contributor/qa/test_adapter_progress.py": {
+        "sha256": "bb3bd685b1811c66184d6e8b2fc52b6733a956ff7206d922baad74fe0909d117"
+      },
+      "plugins/warlock-contributor/qa/test_bootstrap_classifications.py": {
+        "sha256": "9773cfe6cc1a47793e9714d96f9b4ab7a41988db5dfd7dd1fda46bfbc3179ab3"
+      },
+      "plugins/warlock-contributor/qa/test_canonicalize_review.py": {
+        "sha256": "5047cd764223dbadef6d17e03191bdf317765618e75e0a3a0e0d331e7ab0b69d"
+      },
+      "plugins/warlock-contributor/qa/test_checkpoint_preflight.py": {
+        "sha256": "f296a9ed15a7e9d44bec11c7c9e43a7fa8b7aab08b07f914ab750f717e54d548"
+      },
+      "plugins/warlock-contributor/qa/test_declaration_corrections.py": {
+        "sha256": "a615a35fde1386a182e17d684940dd87035819fdac74cde2aad0b2b4bd38ca2b"
+      },
+      "plugins/warlock-contributor/qa/test_delegated_authorization.py": {
+        "sha256": "3628a5888aec80b5e6494e09328985b3e5adddc7515e4d474bd654d5536c49bb"
+      },
+      "plugins/warlock-contributor/qa/test_delivery.py": {
+        "sha256": "34c33a9d1d793c3dd47d85577524a309834625ec8cf588f916c53ad983534730"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_authorization.py": {
+        "sha256": "6f06a087e04c848d8b084ed4fe9338213662bae90544d8970fb4fc99c02eb9af"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_clock.py": {
+        "sha256": "c7ae3ddfb6095766c5250e44d44122fa563ca3cfb0b6b5fcbe29866d24bafc01"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_flow.py": {
+        "sha256": "4c934afde2aab0b0b692233a5e9f45f6c07d07457e5207c1031d41745f9ceb18"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_launch.py": {
+        "sha256": "09d2171bf5db5dda69e11e46968a8feafa3ca1b8168db7791f26c95cf5c15a0b"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_reboot.py": {
+        "sha256": "8fd87e33c7a57f19d4f87dc8bd946ea061b58b4c949a2e962adb3ad8e59e2064"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_refusal.py": {
+        "sha256": "f18b784a243906d820a50e62952ecfb12f9599e71722d8b62540847ea65ffaaa"
+      },
+      "plugins/warlock-contributor/qa/test_delivery_selection.py": {
+        "sha256": "6b27d087d6fb1433374bab026713b7d9e6979f6d74036022c14f258f28328904"
+      },
+      "plugins/warlock-contributor/qa/test_discovery.py": {
+        "sha256": "609e1d12eaa9a7bfe751262d1dd2e0741a8bc92fbe95aab703b67f25c8bd2831"
+      },
+      "plugins/warlock-contributor/qa/test_extensions.py": {
+        "sha256": "2144a2a220701f993a3aeca8959390df58976d94c0f487193481f880b2072be6"
+      },
+      "plugins/warlock-contributor/qa/test_foreign_introduction.py": {
+        "sha256": "55afc37b80b65dc75b217c0c00e24baba30ae502604ee17be0b33805c1ff053d"
+      },
+      "plugins/warlock-contributor/qa/test_foreign_reconciliation.py": {
+        "sha256": "c779159aee0fb6c95e99aa1422c6ccd97578186835a79d8779830a6667dde781"
+      },
+      "plugins/warlock-contributor/qa/test_harness2_adapter.py": {
+        "sha256": "3ea40f62a10842fb1bf54d3fd74087cc58ccfa6248a0ff16345b03c1088557e3"
+      },
+      "plugins/warlock-contributor/qa/test_helpers.py": {
+        "sha256": "d51c3355af1b6419ccc37728d73a42c352cb50fcfbeb7e22ce817943ebfc0659"
+      },
+      "plugins/warlock-contributor/qa/test_hosts.py": {
+        "sha256": "c85ee5f290c60840e87c5e8c16da07f3a719027c21b5d2336027f14d642cb26a"
+      },
+      "plugins/warlock-contributor/qa/test_loop.py": {
+        "sha256": "fb7eff876756ddc2b73fdea204e5cc4096b541ea150cbf3ecc9a2130296038d3"
+      },
+      "plugins/warlock-contributor/qa/test_native_build_failure.py": {
+        "sha256": "1052599310e9efc8d7b0df82909a168911757e73f18721b57ce2df0e9c5fab27"
+      },
+      "plugins/warlock-contributor/qa/test_native_command_preflight.py": {
+        "sha256": "e047f76fb6efd138df194a3915c576642cb79beba4163b9db060b29d42f756ec"
+      },
+      "plugins/warlock-contributor/qa/test_owner_route_preflight.py": {
+        "sha256": "85939c79ea661f60766e59f34445a034ec3a8296425ca9a87117bba9131b68ab"
+      },
+      "plugins/warlock-contributor/qa/test_package.py": {
+        "sha256": "644f9e94f9c3fc1cd038a77574e083e989f9cafb6bab028bc26aa81afd8e4181"
+      },
+      "plugins/warlock-contributor/qa/test_policy5.py": {
+        "sha256": "d7b35fe708f903b16f443fe570eb033aac21b45dba280c7feb2cb33f95de1262"
+      },
+      "plugins/warlock-contributor/qa/test_policy6.py": {
+        "sha256": "8dbecc80b7d4b55c41c93b93972271d7c8cb55147ed83601353a2e0d3e9fc183"
+      },
+      "plugins/warlock-contributor/qa/test_preflight.py": {
+        "sha256": "d015d2d7078615989074187d4e514961112a18c7dd8f8451534e4640220baee6"
+      },
+      "plugins/warlock-contributor/qa/test_progress_audit.py": {
+        "sha256": "41d0157036566e353e35650f6400d8d440755f284b3087e2f249d934b5aae627"
+      },
+      "plugins/warlock-contributor/qa/test_published_omissions.py": {
+        "sha256": "210616de4b77ae390f6505f5eda7a3cf3cd8bf17850e0988366676e56db72d98"
+      },
+      "plugins/warlock-contributor/qa/test_readiness_immutability.py": {
+        "sha256": "fccf2e1741545a7bb1a0229ea679564dd615eac3231e11574a432bbc0c32c51b"
+      },
+      "plugins/warlock-contributor/qa/test_record_recovery.py": {
+        "sha256": "e0e4155ec76a39f5970a3c0bae6dc442d7d6bdc9b4c8fcc916bfec84d8eded03"
+      },
+      "plugins/warlock-contributor/qa/test_report.py": {
+        "sha256": "b8432af0f93d01e79fc9f1b0acde135b72c1b6130881f583b4c16c18dfa17145"
+      },
+      "plugins/warlock-contributor/qa/test_scope_extension.py": {
+        "sha256": "554dea2b6590e57df105a2e917694c4d58ac84246b1e99f3f1049fdcc570ff9e"
+      },
+      "plugins/warlock-contributor/qa/test_stop_continuity.py": {
+        "sha256": "1e61f101af185dc292b8484d00ea610c904d70b7251b2465ea01bff567de7359"
+      },
+      "plugins/warlock-contributor/qa/test_support_actor_binding.py": {
+        "sha256": "e8e0689c48f241b796a2c01977f0f28f429ccf55dea7f6521f20e76f72fbd6c5"
+      },
+      "plugins/warlock-contributor/qa/test_support_cas_precheck.py": {
+        "sha256": "e67d859cc7c4a9ef1b609428c6fee59b7af14a0e86d898b327886c0fc34247e3"
+      },
+      "plugins/warlock-contributor/qa/test_support_custody.py": {
+        "sha256": "cdd45484704681f28bf3f45b18e67faa9935cd805b216cc7508135d8766eabdd"
+      },
+      "plugins/warlock-contributor/qa/test_support_workflow_package.py": {
+        "sha256": "ba31a58dbb6a73b4b1427011177844653fc25f58ca78d9422fc81e0e48527d6c"
+      },
+      "plugins/warlock-contributor/qa/test_verdict_progress.py": {
+        "sha256": "8d9c1d9ea6fbcc320aa9bb5461a3ab5588446598e264e7a2b9e243f8527600eb"
+      },
+      "plugins/warlock-contributor/qa/test_verification.py": {
+        "sha256": "a267524a7e8e0db90e98f6ff3a6a6e1208fd54b4bc465f373a0858e54b821201"
+      },
+      "plugins/warlock-contributor/qa/test_warlock.py": {
+        "sha256": "bc4608a2125477ec9dd050d59b167f9755563d579be84dadf189a3f3ef0d473f"
+      },
+      "plugins/warlock-contributor/qa/validation-v012.json": {
+        "sha256": "318eec9e1a3ac9dad6aa2411f5a525dcaebf0d37ec85bf7766c7f18894b9681f"
+      },
+      "plugins/warlock-contributor/qa/validation-v013.json": {
+        "sha256": "564e81b9f45810241391a2a941d6f259aaebf37abc8697dfc68f136a029a0a55"
+      },
+      "plugins/warlock-contributor/qa/validation-v014.json": {
+        "sha256": "b4c5e4b8b990d6d75ecc042b82762db0bc6103da20eea777e0465e11c02c5a25"
+      },
+      "plugins/warlock-contributor/references/contract.json": {
+        "sha256": "98848da1082b5476280145f482889a4a04d795286436adfc54f16ab7dd151c83"
+      },
+      "plugins/warlock-contributor/references/delivery-events.md": {
+        "sha256": "c58b4c98e367118036353498d0c5017265f60913545122ec0355cdf5add5f785"
+      },
+      "plugins/warlock-contributor/references/harness2.md": {
+        "sha256": "561cc8a08730eaafd14b67ef62c5258c9ed8353001c76a5ab12beb3be3498ac6"
+      },
+      "plugins/warlock-contributor/references/implementation.md": {
+        "sha256": "f71a8e5447b1f6de0343080625e7f28eb5e65f211d6312e8fc5dc7e245fad983"
+      },
+      "plugins/warlock-contributor/references/redesign-flow.md": {
+        "sha256": "235e5f637c5650e1a80dadca2b4b1146b6b6ddc4caaf9a08149bad6feaa1643d"
+      },
+      "plugins/warlock-contributor/references/support-cas-precheck.md": {
+        "sha256": "bf3876af9b7f8b6dbf95baec31935169593397d63088d756a52286f92539cbe0"
+      },
+      "plugins/warlock-contributor/references/warlock-contributions.yml": {
+        "sha256": "1fbe848bd23058294eb9e4ca08eda7499c33ea53e94de99948db3306cffe26ad"
+      },
+      "plugins/warlock-contributor/references/workflow.md": {
+        "sha256": "176092bbfb4b261ebcf52c45d44c6758b7527a86ccf085ddd36740a5ca9214cf"
+      },
+      "plugins/warlock-contributor/scripts/canonicalize_review.py": {
+        "sha256": "d31d56f5ec0f785ba1eb63a608b0d5a38d6e77125e5c81ebdff8b9c11e19363d"
+      },
+      "plugins/warlock-contributor/scripts/checkpoint_preflight.py": {
+        "sha256": "f2cb4e10448e16f2c3d9ad658a83754e45ab72e38d16dc3d8a101705e601fd13"
+      },
+      "plugins/warlock-contributor/scripts/harness2_adapter.py": {
+        "sha256": "af9317c78c00ab3a715552feb3624c81b81e41c59406c35c02d4ea2fe778bd99"
+      },
+      "plugins/warlock-contributor/scripts/native_command_preflight.py": {
+        "sha256": "10df2f3535408cedc9aca52475a20e353d1bb569d7466ccbf281b361902fc76a"
+      },
+      "plugins/warlock-contributor/scripts/owner_route_preflight.py": {
+        "sha256": "9aab34df155b3508231e200cd9cadc35c364b393a75d54d2878337c047eb5119"
+      },
+      "plugins/warlock-contributor/scripts/session_hook.py": {
+        "sha256": "15b4b88506d38deeff07415786fa58d50e665cc487c0dd7e5dca31950c0297e2"
+      },
+      "plugins/warlock-contributor/scripts/support_cas_precheck.py": {
+        "sha256": "f582c4206305fe7761158e13f1a963b066b16e0d488e21b8e4aa7763f7f23849"
+      },
+      "plugins/warlock-contributor/scripts/warlock.py": {
+        "sha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78"
+      },
+      "plugins/warlock-contributor/skills/warlock-contribute/SKILL.md": {
+        "sha256": "737a010d41cc87ca51f230e1e3eca771850027dab8bc948920458e934cb1f8d5"
+      },
+      "plugins/warlock-contributor/skills/warlock-workflow/SKILL.md": {
+        "sha256": "90e8157552fece9721833f4d2f91857c35e3f4a0d4dbe089286c873d50ffe66f"
+      }
+    }
+  },
+  "checkNames": [
+    "relative-valid-event-path",
+    "absolute-inside-repo-refuses",
+    "absolute-outside-repo-refuses",
+    "parent-traversal-refuses",
+    "empty-path-refuses",
+    "documentation-explicit-relative-guidance"
+  ],
+  "docOnlyRuntimeIdentical": true,
+  "observations": [
+    {
+      "name": "relative-valid-event-path",
+      "passed": true
+    },
+    {
+      "name": "absolute-inside-repo-refuses",
+      "passed": true
+    },
+    {
+      "name": "absolute-outside-repo-refuses",
+      "passed": true
+    },
+    {
+      "name": "parent-traversal-refuses",
+      "passed": true
+    },
+    {
+      "name": "empty-path-refuses",
+      "passed": true
+    },
+    {
+      "name": "documentation-explicit-relative-guidance",
+      "passed": true
+    }
+  ],
+  "actualObservations": {
+    "probe": {
+      "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/actual-probe-results.json",
+      "sha256": "587915c9cefcc38d752146b8eb6d1d071c272d4a5edb7d31488ef8b977ebba8e"
+    },
+    "phase": "candidate",
+    "regressionMethods": [
+      "test_stale_hash_duplicate_and_self_review_refuse_without_write",
+      "test_fixture_drift_and_wrong_scope_block_execution",
+      "test_second_job_and_wrong_job_terminal_refuse",
+      "test_rsi_changed_immutable_guard_refuses",
+      "test_rsi_wrong_candidate_and_untested_adoption_refuse"
+    ]
+  }
+}

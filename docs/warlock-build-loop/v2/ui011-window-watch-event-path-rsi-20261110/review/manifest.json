@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "kind": "one-bounded-doc-only-adopted-rsi-preparation",
+  "controller": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/post-integration-event-path-rsi-preparation/execution/run_fixed_rsi.py",
+    "sha256": "3a7b2a9515476f29fabb4c437b8fc87dd4b25f4fe7fb5b80eeae1b31823c0600"
+  },
+  "inputs": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/post-integration-event-path-rsi-preparation/execution/inputs.json",
+    "sha256": "ce001e5be20810088dede9f2acf76236272684aabae4331e5c4b4d100a6e6a11"
+  },
+  "inputCopyPlan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/post-integration-event-path-rsi-preparation/execution/root-input-copy-plan.json",
+    "sha256": "e4fffa709c266b77d44159e7053ad25a4b7a5b1f4eee2f8319dbd89505a52c06"
+  },
+  "proposal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/post-integration-event-path-rsi-preparation/proposal.json",
+    "sha256": "1447a8c2ea5edc859dcc46e7f3535a598bfeeaff1c3df722c50e609f2afee8bf"
+  },
+  "priorController": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/post-integration-no-change-rsi-execution/revision2-ledger-pin/run_fixed_rsi.py",
+    "sha256": "f984a3d648d66ca4c326e913429455950c0f7f45931b25eb1d4d20120431a8f5"
+  },
+  "protectedRootArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/post-integration-event-path-rsi-preparation/execution/run_fixed_rsi.py"
+  ],
+  "docSource": {
+    "path": "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/references/delivery-events.md",
+    "sha256": "c58b4c98e367118036353498d0c5017265f60913545122ec0355cdf5add5f785"
+  },
+  "docPostimage": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/post-integration-event-path-rsi-preparation/delivery-events.md",
+    "sha256": "9461ce1610c6822b09cd5757da9bb1ca045d835bb3f11ea90ee6da71e8cf69a9"
+  },
+  "budgets": {
+    "wholeControllerSeconds": 120,
+    "eachRegressionPhaseSeconds": 90,
+    "timeoutCleanupSeconds": 4
+  },
+  "comparisonScope": "Five unchanged path guards plus baseline-false/candidate-true document guidance, per phase. Five actual existing regression methods per phase execute identical runtime code. No latency claim.",
+  "checksPerPhase": 6,
+  "regressionMethodsPerPhase": 5,
+  "expectedRawObservations": 12,
+  "expectedMethodExecutions": 10,
+  "rootReviewDraftRequiresActualRootAdoption": true,
+  "candidateChangesOnlyDoc": true,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "authorExecution": false,
+  "primaryWrites": false
+}

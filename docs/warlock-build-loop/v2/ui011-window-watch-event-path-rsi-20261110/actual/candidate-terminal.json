@@ -1,0 +1,57 @@
+{
+  "phase": "candidate",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_delivery_flow.DeliveryFlowTests.test_stale_hash_duplicate_and_self_review_refuse_without_write",
+    "test_delivery_flow.DeliveryFlowTests.test_fixture_drift_and_wrong_scope_block_execution",
+    "test_delivery_flow.DeliveryFlowTests.test_second_job_and_wrong_job_terminal_refuse",
+    "test_delivery_flow.DeliveryFlowTests.test_rsi_changed_immutable_guard_refuses",
+    "test_delivery_flow.DeliveryFlowTests.test_rsi_wrong_candidate_and_untested_adoption_refuse"
+  ],
+  "exit": 0,
+  "methodNames": [
+    "test_stale_hash_duplicate_and_self_review_refuse_without_write",
+    "test_fixture_drift_and_wrong_scope_block_execution",
+    "test_second_job_and_wrong_job_terminal_refuse",
+    "test_rsi_changed_immutable_guard_refuses",
+    "test_rsi_wrong_candidate_and_untested_adoption_refuse"
+  ],
+  "artifactChecks": [
+    {
+      "name": "relative-valid-event-path",
+      "passed": true
+    },
+    {
+      "name": "absolute-inside-repo-refuses",
+      "passed": true
+    },
+    {
+      "name": "absolute-outside-repo-refuses",
+      "passed": true
+    },
+    {
+      "name": "parent-traversal-refuses",
+      "passed": true
+    },
+    {
+      "name": "empty-path-refuses",
+      "passed": true
+    },
+    {
+      "name": "documentation-explicit-relative-guidance",
+      "passed": true
+    }
+  ],
+  "stdout": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/candidate.stdout",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/candidate.stderr",
+    "sha256": "d611275bdb2da3b805977c07234802ee6cb6c65a295e4ddb897fdf7ca6ed3806"
+  }
+}

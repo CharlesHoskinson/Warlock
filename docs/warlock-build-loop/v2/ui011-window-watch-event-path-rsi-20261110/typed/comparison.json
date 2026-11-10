@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "9d8df72a08ab96ae96021ae2981dea66d1a2bd925f9629fd5fd6ad5c9f6ddd56",
+  "baselinePluginSha256": "5537d8f6bc0109746080b66614b97273c921f8f107c571a1c10bd0111c165a46",
+  "baselineSnapshotSha256": "e0a15ed1352e49e9e510fa5516d10932f91841eb605320e733d5841d7e3e7966",
+  "candidateSnapshotSha256": "b0c8f9484f3902059ea16d26eb06d9f429c9c0938dd13a4c01a180fcb07de9a0",
+  "immutableHashes": {
+    "taskFiles": "63126933efc8d687e3594b9bd74482f597fdf0e84fb1a3f68517a63b9e479382",
+    "sourceFiles": "3609df0bcc14f46c03ac80ddd7bbe4a45f2b741b779b8525eff299565e330a15",
+    "oracleFiles": "9cf6126f779508af302ffea270e596b3f847ab070b824c2eab77e5e9b37b769c",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "a411386dba9de739d95b93b717d2762234f2dfd86192ccadfee2e2eb074740ca",
+    "pluginBaselineFiles": "5537d8f6bc0109746080b66614b97273c921f8f107c571a1c10bd0111c165a46"
+  },
+  "checks": [
+    {
+      "name": "relative-valid-event-path",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "absolute-inside-repo-refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "absolute-outside-repo-refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "parent-traversal-refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "empty-path-refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "documentation-explicit-relative-guidance",
+      "baselinePassed": false,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/regression.json",
+    "sha256": "915588c3ee2ab739ba8e24a4b6bd0a050f266947c010d871a06918bc8c59f381"
+  }
+}

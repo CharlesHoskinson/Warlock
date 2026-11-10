@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+    "--repo",
+    "/home/hoskinson/Projects/Warlock",
+    "--record",
+    ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+    "delivery-event",
+    "--event-file",
+    ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/rsi-event.json",
+    "--expect-record-sha",
+    "9ccae2c1fdfbd77aeb4431d9235a009eb1183b20bc6ddb8011ef583f44bcfb04",
+    "--expect-selection",
+    "33"
+  ],
+  "exit": 0,
+  "stdout": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\n{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"record\": \".warlock-contributor/ui011-observed-opener-closure-root-20261110.json\",\n  \"nextRootAction\": {\n    \"kind\": \"exercise-journey\",\n    \"executor\": \"Root\",\n    \"candidateId\": \"ui011-window-watch-protocol-runtime-current-cache-v2-20261110\",\n    \"candidateSha256\": \"9d8df72a08ab96ae96021ae2981dea66d1a2bd925f9629fd5fd6ad5c9f6ddd56\",\n    \"jobId\": \"pid333825-start229316\",\n    \"argv\": [\n      \"/usr/bin/python3\",\n      \"-B\",\n      \"/home/hoskinson/Projects/Warlock/tools/qa_cpu.py\",\n      \"--review\",\n      \"/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/window-watch-protocol-runtime-green-v2-cpu/review-packet.json\",\n      \"--sha256\",\n      \"7bd2d1d1c3419a644bfcd7039967ad332de6ce41a25e952ca79eaa3c819cf28b\"\n    ],\n    \"expectedObservation\": \"Compile exact current protocol29 test and runtime library, then all29 ordered public protocol controls PASS. Existing current-cache/SDK/inventory/source/group checks, protocol300s/command120s/cleanup2s retained. No owner image, native, original or AT credit. Private RED/model evidence preserved; no managed expected-red pointer.\",\n    \"executionAuthorized\": false,\n    \"acceptanceInferred\": false,\n    \"progress\": {\n      \"workflowPolicy\": 2,\n      \"iterationsWithoutProgress\": 0,\n      \"lastRecordedProgressUTC\": \"2026-11-10T18:46:22.292795+00:00\",\n      \"secondsSinceRecordedProgress\": 599,\n      \"suspendedSeconds\": 0,\n      \"limits\": {\n        \"iterations\": 2,\n        \"seconds\": 2700,\n        \"sameFailureExperiments\": 2\n      },\n      \"investigationNeedsChange\": false,\n      \"planChangeRequired\": false,\n      \"reconciliationRequired\": false,\n      \"authorizationExpired\": false,\n      \"reasons\": [],\n      \"effectiveAuthorizationExpiresUTC\": \"2026-11-11T15:30:00Z\",\n      \"action\": \"Continue the selected delivery action.\",\n      \"basis\": \"Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.\"\n    }\n  },\n  \"recordSha256\": \"153f7448bbbb739dc6efb206b96971695ea501adaeabaa84c2e925d3bb983ead\",\n  \"acceptanceInferred\": false,\n  \"ok\": true\n}\n",
+  "stderr": ""
+}
