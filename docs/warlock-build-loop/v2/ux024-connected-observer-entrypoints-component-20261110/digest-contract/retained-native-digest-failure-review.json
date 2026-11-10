@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-connected-attempt-failure",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794279358065869491/report.json",
+      "sha256": "7dce6969794cde038f27d9b92db12d55e27a224af1fda422c864124799dae438"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794279358065869491/observer-wire.jsonl",
+      "sha256": "82333843345ae0362152d6661110680580c2ef8d5df45502a2cb411cff85c507"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794279358065869491/endpoint.json",
+      "sha256": "253d4e1ecfcdecfddcb34170f8caaba1e833cfc1af6c8d899e1dc4cc104932aa"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs",
+      "sha256": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64"
+    }
+  ],
+  "cause": "Main.connectedExecutable decodes canonical SHA text into32rawbytes; ForeignToplevelOwner.verifyExecutable passes that to Resolver.resolveSnapshot and Descriptor.readOwned compares against64ASCIIhex. Correct digest necessarily refuses DigestMismatch.",
+  "minimumFix": "Validate executable digest canonical lowercase64hex but pass UTF8 ASCII text to ExecutablePin. Preserve connectedReadConfig expected raw32 SHA comparison. Add positive source/public decoder contract control distinguishing representations.",
+  "observed": {
+    "snapshots": 0,
+    "actionPassed": false,
+    "ownerReportedRetirement": "Retired",
+    "cleanupUnknown": true,
+    "nativeAcceptance": false,
+    "originalAcceptance": false
+  },
+  "limits": [
+    "Retired status does not make failed action or whole cleanup qualified.",
+    "No reviewer execution; Root canonical closure pending."
+  ]
+}

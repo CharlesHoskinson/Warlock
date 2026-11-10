@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-regression-failure",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794280489380883549/report.json",
+      "sha256": "424cb99edb3c883054156af8898f1cea2723d199111ef7d9cc83012e74237fc8"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794280489380883549/logs/cpu-foreign-endpoint-refusal-controls.stderr",
+      "sha256": "6095741b2ddb1fa7a05b1bd17eb1853d9ce8c38fa349f9ddeb93d8b2a5cedd6e"
+    }
+  ],
+  "observed": "Both targets compiled/listed and old allocation passed; new public resolver fixture failed generic accepted/rawRejected pair match after ASCII64 parser assertion. No endpoint sentinel emitted.",
+  "causeStatus": "Writable temporary Handle remains open while resolver opens a second Handle; possible GHC file-lock conflict, not proven by generic failure text. Actual Either alternatives not retained.",
+  "minimumCorrection": "Close writer before resolver, retain exact positive identity/content and raw32 DigestMismatch oracles; bounded actual Either diagnostic on failure. No descriptor/production digest relaxation.",
+  "limits": [
+    "Raw passfalse/cleanupQualifiedfalse retained; no v3 readiness from failedb78.",
+    "No reviewer execution; no connected/native/original acceptance."
+  ]
+}

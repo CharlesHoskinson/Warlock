@@ -1,0 +1,67 @@
+--- a/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs
++++ b/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs
+@@ -41,7 +41,9 @@
+ import Foreign.Ptr (FunPtr, Ptr, castFunPtr, freeHaskellFunPtr, nullPtr)
+ import System.Exit (ExitCode(..))
+ import System.Environment (getArgs, getEnv)
+-import System.IO (hFlush, stdout, stdin, hClose, hGetChar, hIsEOF)
++import System.IO (hFlush, stdout, stdin, hClose, hGetChar, hIsEOF, openBinaryTempFile)
++import System.Directory (removeFile)
++import System.FilePath (takeFileName)
+ import System.IO.Error (ioeGetErrorString)
+ import System.Posix.Process (ProcessStatus(..), exitImmediately, forkProcess, getProcessStatus)
+ import System.Posix.Signals (sigKILL, signalProcess)
+@@ -638,6 +640,7 @@
+  deadline <- deadlineFromAbsoluteNs deadlineText >>= either (ioError . userError . show) pure
+  initialRemaining <- remainingMicros deadline
+  check "endpoint CPU deadline is inherited and clipped to five seconds" (initialRemaining>0 && initialRemaining<=5000000)
++ connectedExecutableDigestControls deadline
+  generation <- either (ioError . userError . show) pure (Identity.parseCounter False "1")
+  rootStatus <- EndpointFiles.getSymbolicLinkStatus "/"
+  let rootDevice=toInteger (EndpointFiles.deviceID rootStatus)
+@@ -1052,3 +1055,45 @@
+  -- parent custody bounds that cleanup/report by its existing originalD+2s.
+  BS.putStrLn (TE.encodeUtf8 (J.renderJson receipt))
+  check "actual Backend producer did not pass" (ConnectedBackend.backendPassed result)
++
++
++-- Metadata/held-file CPU regression. No endpoint, socket or compositor is used.
++-- The parser feeds the same public resolver/descriptor route as verifyExecutable.
++connectedExecutableDigestControls :: AdmissionDeadline -> IO ()
++connectedExecutableDigestControls deadline = connectedWithin deadline $ do
++ let known = "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad" :: T.Text
++     content = "abc" :: BS.ByteString
++     temporaryRoot = "/tmp"
++ check "config digest remains the raw32 SHA256 known vector"
++   (connectedDigest known==Right (SHA256.hash content) && B.length (SHA256.hash content)==32)
++ bracket (openBinaryTempFile temporaryRoot ".warlock-digest-adapter-")
++   (\(file,handle) -> hClose handle `finally` removeFile file) $ \(file,handle) -> do
++    BS.hPut handle content
++    hFlush handle
++    rootStatus <- EndpointFiles.getSymbolicLinkStatus temporaryRoot
++    fileStatus <- EndpointFiles.getSymbolicLinkStatus file
++    let natural :: Show a => a -> J.Json
++        natural = J.JString . T.pack . show
++        rootJson = J.JObject [("device",natural (EndpointFiles.deviceID rootStatus)),("inode",natural (EndpointFiles.fileID rootStatus))]
++        leaf = T.pack (takeFileName file)
++        pinJson = J.JObject [("path",J.JString ("/"<>leaf)),("device",natural (EndpointFiles.deviceID fileStatus)),("inode",natural (EndpointFiles.fileID fileStatus)),("kind",J.JString "regular")]
++        executableJson encoded = J.JObject [("root",rootJson),("pins",J.JArray [pinJson]),("path",J.JString leaf),("size",J.JString "3"),("sha256",J.JString encoded)]
++    check "executable digest rejects uppercase hex" (isLeft (connectedExecutable (executableJson (T.toUpper known))))
++    check "executable digest rejects short hex" (isLeft (connectedExecutable (executableJson (T.drop 1 known))))
++    check "executable digest rejects nonhex text" (isLeft (connectedExecutable (executableJson ("g"<>T.drop 1 known))))
++    selected <- either (ioError . userError) pure (connectedExecutable (executableJson known))
++    case selected of
++     ForeignOwner.ExecutablePin rootIdentity pins path links size expected -> do
++      check "executable parser supplies validated ASCII64 descriptor digest"
++        (expected==TE.encodeUtf8 known && B.length expected==64)
++      observed <- Resolver.withRoot (BS.pack temporaryRoot) rootIdentity $ \root -> do
++       accepted <- Resolver.resolveSnapshot root pins path links size 3 expected
++       rawRejected <- Resolver.resolveSnapshot root pins path links size 3 (SHA256.hash content)
++       pure (accepted,rawRejected)
++      case observed of
++       Right (Right (resolution,bytes),Left rejected) -> do
++        check "parsed executable known vector passes actual held descriptor"
++          (bytes==content && Resolver.resolvedIdentity resolution==Identity (toInteger (EndpointFiles.deviceID fileStatus)) (toInteger (EndpointFiles.fileID fileStatus)))
++        check "raw32 counterexample fails actual held descriptor with DigestMismatch"
++          (show rejected=="FileFailure DigestMismatch")
++       _ -> check "parser and held descriptor digest contracts must agree" False

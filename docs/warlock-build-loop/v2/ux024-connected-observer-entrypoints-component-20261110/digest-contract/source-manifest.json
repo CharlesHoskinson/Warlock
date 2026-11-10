@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "scope": "ux024-connected-executable-descriptor-digest-adapter",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "1f51f7f4affcd6a1b78765bd91f5da94bb4cf9c6781d50d4dc1b8631e17a282e",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "b6bae926a99b2f029dadd796e873b016b4d812edd2b7799fc87b686e89be847f"
+    }
+  ],
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/tests-first/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+    "sha256": "e01cfcb78ca2b86eb2e0fc52659fec29df53c620dbe2d4925b5f5d16f3c8fcbb"
+  },
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/change.patch",
+    "sha256": "70ddebacac3a4d671794a2ebc9484f4c081c92f8c052f39da553c7e82b8671fd"
+  },
+  "testsFirstPatch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/tests-first.patch",
+    "sha256": "dee348d4af75db2530fc3efb6f730fca4da4c17136fc2724b9c613e984b252e0"
+  },
+  "actualFailure": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794279358065869491/report.json",
+    "sha256": "7dce6969794cde038f27d9b92db12d55e27a224af1fda422c864124799dae438"
+  },
+  "currentContracts": {
+    "descriptor": {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs",
+      "sha256": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64"
+    },
+    "resolver": {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc",
+      "sha256": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed"
+    },
+    "runtimeOwner": {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "sha256": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55"
+    },
+    "runtimeCabal": {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "c1c1af0649b3630e8927f51673f9b4f499164b9f8aabe04aec0b324f10d9f6c2"
+    }
+  },
+  "behavior": [
+    "connectedExecutable validates the existing lowercase64 SHA syntax, then stores UTF8 ASCII64 for the held descriptor contract.",
+    "connectedDigest and connectedReadConfig retain raw32 SHA256 for configuration-file verification.",
+    "No protocol, resolver, owner, Cabal, collector, flag, timeout, source authority, or native input changes."
+  ],
+  "regression": {
+    "entrypoint": "ui-webkit-controls --foreign-endpoint-refusal-only",
+    "newChecks": 7,
+    "knownContent": "abc",
+    "knownSha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+    "route": "actual connectedExecutable -> public Resolver.withRoot/resolveSnapshot -> existing held Descriptor digest check",
+    "positive": "Parsed ASCII64 resolves actual temporary three-byte file and exact held identity/content.",
+    "counterexample": "Same public resolver rejects raw32 for the same actual held file with FileFailure DigestMismatch.",
+    "refusals": [
+      "uppercase",
+      "short",
+      "nonhex"
+    ],
+    "rawConfigPositive": "unchanged connectedDigest literal decodes to SHA256.hash abc and length32",
+    "scope": "Real private temporary-file/FD IO in existing metadata/FD-only branch, under its one inherited deadline; no socket/connect/display/GUI.",
+    "oldRefusals": 17,
+    "oldSeeds": 32,
+    "exactStdout": "foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect\n",
+    "allocationBranchUnchanged": true,
+    "nativeConfigChecks": 15,
+    "nativeConfigBodyUnchanged": true,
+    "executedByAuthor": false,
+    "testsFirstBaselineMeaning": "Would fail ASCII64 parser check against old caller; actual V2 native DigestMismatch is separately retained semantic evidence. No new regression execution claimed."
+  },
+  "limits": [
+    "Root must canonically close/consume native job21 before Main CAS.",
+    "Root alone runs existing proportional two-target compile and unchanged two CPU suites.",
+    "Actual connected observer retry still requires fresh images and normal current native readiness/candidate; no acceptance from this source patch."
+  ]
+}

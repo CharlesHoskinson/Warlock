@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/manifest.json",
+    "sha256": "04db110f4693946f08544b37591e32f5ad54860ae384abe865a4a9d1c699a2fd"
+  },
+  "reviewedPosts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "1f51f7f4affcd6a1b78765bd91f5da94bb4cf9c6781d50d4dc1b8631e17a282e",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "b6bae926a99b2f029dadd796e873b016b4d812edd2b7799fc87b686e89be847f"
+    }
+  ],
+  "findings": [],
+  "checked": [
+    "Actual Descriptor.readOwned compares ASCII64 hexDigest; connectedExecutable now validates original lowercase64 and passes TE.encodeUtf8 original text to ExecutablePin.",
+    "connectedDigest and connectedReadConfig raw32 verification unchanged.",
+    "Tests-first vs final exact byte comparison isolates adapter fix; seven regression checks use literal abc vector through actual parser/public Resolver.withRoot/resolveSnapshot on bounded3byte held file.",
+    "Raw32 same-file counterexample must produce FileFailure DigestMismatch; uppercase/short/nonhex refused; identity/content positive required.",
+    "Existing preconnect branch retains one inherited deadline,17refusals/32seeds/exactsentinel; old allocation/native15/producer/runtime/Cabal/flags untouched."
+  ],
+  "limits": [
+    "No reviewer compiler/imports/tests/FD/native execution.",
+    "Root must verify actual regression and fresh linked images; no connected/native/original acceptance from source review."
+  ]
+}
