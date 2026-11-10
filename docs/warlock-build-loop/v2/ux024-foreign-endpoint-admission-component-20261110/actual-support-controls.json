@@ -1,0 +1,82 @@
+{
+  "observedUTC": "2026-11-10T00:43:09.072839+00:00",
+  "scope": "Rootprotectedmockedcollector/admissioncontrols; no compiler/client/nativeeffects",
+  "results": [
+    {
+      "phase": "baseline",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "ef0539c0ff103d7a85776ebe2b7d4d7d7ad52d02b40e0960ac15bb8e0ebb8f15"
+    },
+    {
+      "phase": "baseline",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "6d49d1f66fcc0b58c5c0eb748d17a0d90df4f66ba82d383b92ef94c02bb31a53"
+    },
+    {
+      "phase": "candidate",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "61f1b600d44d67851b5da6a88f122043461c4ab038722788d41425681683702e"
+    },
+    {
+      "phase": "candidate",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "5d08d49d4e7869c279cb4d1a62a979a9610765f2e41e81474d3dde5ad4034abb"
+    }
+  ]
+}

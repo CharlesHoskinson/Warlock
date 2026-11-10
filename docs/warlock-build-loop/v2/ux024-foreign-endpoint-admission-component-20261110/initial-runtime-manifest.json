@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "kind": "private-real-wayland-v3-observation-owner-candidate",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/candidate/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "sha256": "20cda3c8626b84e3d881ad301681d9d59f1c2d6366fb6f42d9297d36fc03e985"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/runtime.cabal",
+      "beforeSha256": "ace459e3085728e2da478254323b8a622c8d4f1acfe6b713983fb3bd5299f146",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/candidate/postimages/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "01a559ad7f641eb412b2aece13e2b530dd75b7920a1db82c44276db7e65657ed"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/candidate/candidate.patch",
+    "sha256": "4d164d26c8559023adb9e83012bf3b838fe62e2867802969d30837c05ee69ced"
+  },
+  "interface": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/candidate/interface-and-custody.json",
+    "sha256": "a66861457fbb6133183164c62b6c0374b933b54ed2f60d17278cdd72fe0b673a"
+  },
+  "proposedQualification": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/candidate/qualification-cases.PROPOSED.json",
+    "sha256": "e9f9bf1de8ada2e9e34c55f227c4a5e643c8f1cb3d122846b15625e21ea608ef"
+  },
+  "abi": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/abi-source-pins.json",
+    "sha256": "1bc8bd57ec37cdf80cb1e2b698e4533acaf17eedfe9277578c8dfd1fa9ab5a0f"
+  },
+  "upstream": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/source-evidence/wayland-client.c",
+    "sha256": "c3536111c4fae59f9379a5927d79b80ef9bc4d0fe42054d54ce49027747d4c60"
+  },
+  "protocolXml": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/standard-protocol-evidence/wlr-foreign-toplevel-management-unstable-v1.xml",
+    "sha256": "ea1008781ec4af7a5ceb131914081405c71336fdd7e600103bcc940c15fc741f"
+  },
+  "sourcePins": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "4a432f698c779e7d054805513f2f030b37636e9d1e29e5598e8e5c4c1987ffbe",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": "b98d37b2bda016c82fc764114502ef19d28826c2c4086a3744eb0e7fd4c09319",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f"
+  },
+  "currentBackendUnchanged": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4",
+  "executedByAuthor": false,
+  "compiled": false,
+  "nativeObserved": false,
+  "capabilityGranted": false,
+  "integrationClaimed": false,
+  "limits": [
+    "Backend wiring and capability/projection adapter are not included.",
+    "No native action API; no compositor stop/kill; client connection only.",
+    "Current accumulator dependency is actual qualified 8d528b41; older candidate bytes remain immutable.",
+    "No changes to prior service lane or its stop, native guards, budgets or historical observations."
+  ]
+}

@@ -1,0 +1,33 @@
+Warning: Specifying an absolute path to the project file is deprecated. Use
+--project-dir to set the project's directory.
+Warning: No remote package servers have been specified. Usually you would have
+one specified in the config file.
+
+src/Crypto/Hash/SHA256.hs:144:19: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+144 | copyCtx dst src = memcpy (castPtr dst) (castPtr src) (fromIntegral sizeCtx)
+    |                   ^^^^^^
+
+src/Crypto/Hash/SHA256.hs:336:53: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+336 |                    withByteStringPtr t' $ \tptr' -> memcpy p tptr' 32
+    |                                                     ^^^^^^
+configure: WARNING: unrecognized options: --with-compiler
+configure: WARNING: unrecognized options: --with-compiler
+
+src/Warlock/Backend/ForeignToplevelOwner.hsc:26:1: error: [-Wunused-imports, Werror=unused-imports]
+    The import of ‘Data.Bits’ is redundant
+      except perhaps to import instances from ‘Data.Bits’
+    To import instances alone, use: import Data.Bits()
+   |
+26 | import Data.Bits ((.|.),(.&.))
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: [Cabal-7125]
+Failed to build warlock-runtime-0.1.0.0 (which is required by exe:warlock-ui-owner from warlock-runtime-0.1.0.0 and test:ui-webkit-controls from warlock-runtime-0.1.0.0).
+

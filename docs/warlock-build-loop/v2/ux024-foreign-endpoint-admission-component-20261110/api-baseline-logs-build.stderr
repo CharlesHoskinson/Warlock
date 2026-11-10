@@ -1,0 +1,28 @@
+Warning: Specifying an absolute path to the project file is deprecated. Use
+--project-dir to set the project's directory.
+Warning: No remote package servers have been specified. Usually you would have
+one specified in the config file.
+
+src/Crypto/Hash/SHA256.hs:144:19: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+144 | copyCtx dst src = memcpy (castPtr dst) (castPtr src) (fromIntegral sizeCtx)
+    |                   ^^^^^^
+
+src/Crypto/Hash/SHA256.hs:336:53: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+336 |                    withByteStringPtr t' $ \tptr' -> memcpy p tptr' 32
+    |                                                     ^^^^^^
+configure: WARNING: unrecognized options: --with-compiler
+configure: WARNING: unrecognized options: --with-compiler
+Error: [Cabal-7554]
+can't find source for Warlock/Backend/ForeignToplevelOwner in src, /home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794272022347142968/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/autogen, /home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794272022347142968/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/build/global-autogen
+
+Error: [Cabal-7125]
+Failed to build warlock-runtime-0.1.0.0 (which is required by exe:warlock-ui-owner from warlock-runtime-0.1.0.0 and test:ui-webkit-controls from warlock-runtime-0.1.0.0).
+

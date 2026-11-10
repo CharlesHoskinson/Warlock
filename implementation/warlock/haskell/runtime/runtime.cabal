@@ -10,9 +10,10 @@ flag vm-security
 
 library
   hs-source-dirs: src
-  exposed-modules: Warlock.Bootstrap, Warlock.Backend, Warlock.Backend.Catalog, Warlock.Backend.PinStore, Warlock.Ui.Http, Warlock.Ui.Owner, Warlock.Ui.Native, Warlock.Ui.Config, Warlock.Ui.Policy, Warlock.Ui.PrivateNetwork, Warlock.Ui.Display, Warlock.Ui.ThreadNamespace, Warlock.Ui.EngineProtocol, Warlock.Ui.EngineAdapter, Warlock.Ui.EngineDeadline, Warlock.Ui.EngineBroker
+  exposed-modules: Warlock.Backend.ForeignToplevelOwner, Warlock.Bootstrap, Warlock.Backend, Warlock.Backend.Catalog, Warlock.Backend.PinStore, Warlock.Ui.Http, Warlock.Ui.Owner, Warlock.Ui.Native, Warlock.Ui.Config, Warlock.Ui.Policy, Warlock.Ui.PrivateNetwork, Warlock.Ui.Display, Warlock.Ui.ThreadNamespace, Warlock.Ui.EngineProtocol, Warlock.Ui.EngineAdapter, Warlock.Ui.EngineDeadline, Warlock.Ui.EngineBroker
   other-modules: Warlock.Backend.ApplicationExecutable, Warlock.Backend.ApplicationPlanConfig, Warlock.Backend.NotificationIssuer, Warlock.Bootstrap.Aggregate, Warlock.Bootstrap.CurrentSessions, Warlock.Bootstrap.ScopedPeer, Warlock.Bootstrap.SocketOwner, Warlock.Bootstrap.CredentialScopeGuard, Warlock.Backend.Store
   build-depends: base >=4.18 && <5, bytestring, text, containers, network ==3.2.0.0, unix, process ==1.6.19.0, directory, filepath, cryptohash-sha256 ==0.11.102.1, warlock-held-document-proposal, warlock-process-custody, warlock-protocol
+  extra-libraries: wayland-client
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
@@ -145,9 +146,9 @@ test-suite ui-webkit-controls
   other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp, Warlock.Ui.DefaultContextOwner, Warlock.Ui.CallbackRetirement, Warlock.Ui.ProcessSignalOwner
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, javascriptcoregtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
-  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, warlock-held-document-proposal, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
   default-language: Haskell2010
-  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0 -threaded
 
 executable ui-security-permissive
   if !flag(vm-security)

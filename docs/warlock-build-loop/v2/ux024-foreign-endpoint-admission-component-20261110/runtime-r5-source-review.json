@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision5-threaded-test-link/manifest.json",
+    "sha256": "225ccd10ad24178aa533a09b1c0db1157c15278c9aee5ae79efbe2c9f7b8bd6b"
+  },
+  "reviewedPosts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "beforeSha256": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision5-threaded-test-link/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "sha256": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55",
+      "changedFromParent": false
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/runtime.cabal",
+      "beforeSha256": "6a483a0f0f8ef8a607239b83846aa2e3da9323e78ca74291275c8bee1c747c23",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision5-threaded-test-link/postimages/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "c1c1af0649b3630e8927f51673f9b4f499164b9f8aabe04aec0b324f10d9f6c2",
+      "changedFromParent": true
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "e8b5581842aa4b1f94d9fd37b8b2b532a7b6d5f1cf3711813cd78cd4c185e0c5",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision5-threaded-test-link/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "e8b5581842aa4b1f94d9fd37b8b2b532a7b6d5f1cf3711813cd78cd4c185e0c5",
+      "changedFromParent": false
+    }
+  ],
+  "verifiedDelta": "Only ui-webkit-controls ghc-options adds -threaded; runtime and Main byte-identical to R4. Production owner and warning flags unchanged.",
+  "findings": [],
+  "evidence": {
+    "actualFailureReviewSha256": "dfbbae20f2f0971165a55d9530ac07880ec4c72c78182bd125670f7a24be61d3"
+  },
+  "limits": [
+    "No reviewer compiler, imports, tests or runtime execution.",
+    "Connected runtime/provider retirement remains unexecuted.",
+    "Future production consumer invoking runInBoundThread must link threaded RTS; this test-only fix does not establish production integration readiness."
+  ]
+}

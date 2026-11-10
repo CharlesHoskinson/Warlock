@@ -56,4 +56,16 @@ class Admission(unittest.TestCase):
   with patch.object(q,'REPO',REPO):
    self.assertTrue(q.menu_tab_dom_mode(REPO/'tools/check_elm_cpu.py',['--menu-tab-dom','--arm64']))
    self.assertFalse(q.menu_tab_dom_mode(REPO/'tools/run_ux024_menu_focus_build.py',['--menu-tab-dom','--arm64']))
+
+ def test_exact_endpoint_cpu_pair_admitted_with_same_closed_inputs(self):
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);p=self.packet(root);p['behaviorSuites']=['ui-webkit-controls','foreign-endpoint-refusal-controls'];self.write(root,p)
+   value=q.menu_focus_build_spec(root)
+   self.assertEqual(value['inputs'],set(p['sourceHashes'])|{q.MENU_FOCUS_BUILD_PACKET,'tools/arm64-toolchain.json','.warlock-contributor/evidence/cache-proof.json'})
+ def test_endpoint_single_reverse_duplicate_extra_and_command_fields_refuse(self):
+  for suites in [['foreign-endpoint-refusal-controls'],['foreign-endpoint-refusal-controls','ui-webkit-controls'],['ui-webkit-controls','foreign-endpoint-refusal-controls','foreign-endpoint-refusal-controls'],['ui-webkit-controls','ordinary-controls'],['ui-webkit-controls','--command','sh']]:
+   with tempfile.TemporaryDirectory() as temp:
+    root=Path(temp);p=self.packet(root);p['behaviorSuites']=suites;self.write(root,p)
+    with self.assertRaises(RuntimeError):q.menu_focus_build_spec(root)
+
 if __name__=='__main__':unittest.main()

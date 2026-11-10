@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Fixed bounded UX024 owner/control build; only pure allocation controls execute."""
+"""Fixed bounded UX024 owner/control build; fixed allocation and explicit pre-connect endpoint CPU controls only."""
 import argparse
 import datetime
 import hashlib
@@ -22,6 +22,8 @@ HASKELL=ROOT/'implementation/warlock/haskell'
 TARGETS=(('warlock-ui-owner','warlock-runtime:exe:warlock-ui-owner'),
  ('ui-webkit-controls','warlock-runtime:test:ui-webkit-controls'))
 BEHAVIOR=('ui-webkit-controls',)
+ENDPOINT_BEHAVIOR=('ui-webkit-controls','foreign-endpoint-refusal-controls')
+ENDPOINT_DEADLINE_ENV='WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'
 
 
 def digest(path):
@@ -94,9 +96,33 @@ def command_plan(packet,output,stage):
       *[('list-'+name,common+['list-bin']+flags+[target]) for name,target in TARGETS]]
 
 
+def behavior_suites(value):
+    if value not in (list(BEHAVIOR),list(ENDPOINT_BEHAVIOR)):
+        raise ValueError('only exact allocation or explicit endpoint CPU suite pair permitted')
+    return tuple(value)
+
+
 def behavior_command(suite,images):
-    if suite not in BEHAVIOR:raise ValueError('only fixed pure allocation branch may execute')
-    return [images[suite]['path'],'--allocation-only']
+    if suite=='ui-webkit-controls':return [images[suite]['path'],'--allocation-only']
+    if suite=='foreign-endpoint-refusal-controls':return [images['ui-webkit-controls']['path'],'--foreign-endpoint-refusal-only']
+    raise ValueError('only fixed CPU control branches may execute')
+
+
+def require_behavior_receipt(suite,observed):
+    expected={'ui-webkit-controls':'allocation-controls: PASS\n',
+      'foreign-endpoint-refusal-controls':'foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect\n'}
+    if suite not in expected or observed!=expected[suite]:raise ValueError('fixed CPU branch receipt refused')
+
+
+def behavior_environment(suite,env,deadline,expires):
+    if suite not in ENDPOINT_BEHAVIOR:raise ValueError('unknown fixed CPU suite')
+    result=dict(env);result.pop(ENDPOINT_DEADLINE_ENV,None)
+    if suite=='foreign-endpoint-refusal-controls':
+        now=time.monotonic_ns()
+        inherited=min(deadline,now+5_000_000_000,now+expires-time.time_ns())
+        if inherited<=now:raise TimeoutError('endpoint CPU deadline or authorization expired')
+        result[ENDPOINT_DEADLINE_ENV]=str(inherited)
+    return result
 
 
 def sandbox_command(toolchain,output,sha):
@@ -156,7 +182,8 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--sha256',required=True);parser.add_argument('--inside-private',type=Path);args=parser.parse_args()
     if digest(PACKET)!=args.sha256:raise ValueError('fixed build packet differs')
     packet=json.loads(PACKET.read_text())
-    if packet['schema']!=1 or packet['kind']!='ux024-fixed-menu-focus-build' or packet['targets']!=[t for _,t in TARGETS] or packet['behaviorSuites']!=list(BEHAVIOR):raise ValueError('closed build scope required')
+    if packet['schema']!=1 or packet['kind']!='ux024-fixed-menu-focus-build' or packet['targets']!=[t for _,t in TARGETS]:raise ValueError('closed build scope required')
+    suites=behavior_suites(packet['behaviorSuites'])
     qa=load_module('fixed_build_scope',ROOT/'window-integration-qa/qa_launch.py',packet['sourceHashes']['window-integration-qa/qa_launch.py']);scope=qa.require_qa_scope()
     expires=authorization(packet)
     if args.inside_private is None:
@@ -213,15 +240,16 @@ def main():
             lines=run(label,argv,cwd=stage).strip().splitlines()
             if len(lines)!=1:raise ValueError('single actual image path required')
             images[name]=callback.pin_image(Path(lines[0]),output/'dist',name)
-        for suite in BEHAVIOR:
-            observed=run('cpu-'+suite,behavior_command(suite,images),cwd=stage)
-            if observed!='allocation-controls: PASS\n':raise ValueError('fixed pure allocation branch receipt refused')
+        for suite in suites:
+            child_env=behavior_environment(suite,env,deadline,expires)
+            observed=run('cpu-'+suite,behavior_command(suite,images),cwd=stage,extra=child_env)
+            require_behavior_receipt(suite,observed)
         for name,pin in images.items():
             if callback.pin_image(Path(pin['path']),output/'dist',name)!=pin:raise ValueError('compiled image changed')
         verify_inputs(packet);left(deadline,expires)
         qualified={name:dict(pin,executed=(name in BEHAVIOR)) for name,pin in images.items()}
-        component={'targets':[t for _,t in TARGETS],'compiledImages':qualified,'behaviorSuites':list(BEHAVIOR),'ordinaryCpuFixturesPassed':True}
-        report.update(passed=True,compiledImages=qualified,physicalContextBuild=component,targets=component['targets'],behaviorSuites=list(BEHAVIOR),ordinaryCpuFixturesPassed=True)
+        component={'targets':[t for _,t in TARGETS],'compiledImages':qualified,'behaviorSuites':list(suites),'ordinaryCpuFixturesPassed':True}
+        report.update(passed=True,compiledImages=qualified,physicalContextBuild=component,targets=component['targets'],behaviorSuites=list(suites),ordinaryCpuFixturesPassed=True)
     except Exception as error:report['error']=str(error);raise
     finally:save(output/'report.json',report)
     return 0

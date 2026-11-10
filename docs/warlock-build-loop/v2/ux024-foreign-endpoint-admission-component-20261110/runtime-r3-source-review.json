@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/manifest.json",
+    "sha256": "a898dca33d694111740f4e2928f0f06bd584781f8d9f7de82199e2b097b96e08"
+  },
+  "reviewedPosts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "sha256": "c7ae842eeb4c17678963f853c7378b45081eba0516b4d6ad4e9dbc7fb59d1dec"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/runtime.cabal",
+      "beforeSha256": "ace459e3085728e2da478254323b8a622c8d4f1acfe6b713983fb3bd5299f146",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/postimages/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "6a483a0f0f8ef8a607239b83846aa2e3da9323e78ca74291275c8bee1c747c23"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "67b42959060ed6e62809d8498f1540a01dbac863200cf5bbc39f6599ff27a8af",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "e8b5581842aa4b1f94d9fd37b8b2b532a7b6d5f1cf3711813cd78cd4c185e0c5"
+    }
+  ],
+  "findings": [],
+  "resolved": [
+    "WL-RETIRE-01: sticky connected-operation fault plus private prepare_read_queue/immediate cancel precedes destruction; no subsequent reads/dispatch.",
+    "R2 caller-caught read failure: public readToplevelSnapshot now marks connected ownerFault atomically before rethrow, so catching the exception cannot restore retirement eligibility.",
+    "Old allocationControls body/sentinel remains separate from explicit endpoint-refusal CPU IO entrypoint."
+  ],
+  "limits": [
+    "No compiler, imports, tests, endpoint connection, service, GTK or native execution performed by reviewer.",
+    "Source acceptance supports compile/link and separately authorized fixed pre-connect CPU refusal qualification only.",
+    "Connected callback, fatal demarshal, pending queue and real provider retirement behavior remain unexecuted obligations; no native readiness or capability granted."
+  ],
+  "evidence": {
+    "upstreamWaylandClientSha256": "c3536111c4fae59f9379a5927d79b80ef9bc4d0fe42054d54ce49027747d4c60",
+    "priorChangesRequired": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/runtime-and-qualification-review-build.json",
+    "deltaSha256": "5ff44bd67501e5356bf9064e0caba8c1189d05a3fc70571a4d1e261ff6091e64"
+  }
+}

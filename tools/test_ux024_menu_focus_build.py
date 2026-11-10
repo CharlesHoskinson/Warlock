@@ -72,6 +72,40 @@ class Controls(unittest.TestCase):
             with self.assertRaises(ValueError):b.require_group_absent(child)
         probe.assert_called_once_with(123,0)
 
+
+    def test_exact_endpoint_suite_pair_and_old_default_preserved(self):
+        self.assertEqual(b.behavior_suites(['ui-webkit-controls']),b.BEHAVIOR)
+        self.assertEqual(b.behavior_suites(['ui-webkit-controls','foreign-endpoint-refusal-controls']),('ui-webkit-controls','foreign-endpoint-refusal-controls'))
+        for value in [[],['foreign-endpoint-refusal-controls'],['foreign-endpoint-refusal-controls','ui-webkit-controls'],['ui-webkit-controls']*2,['ui-webkit-controls','ordinary'], 'ui-webkit-controls']:
+            with self.assertRaises(ValueError):b.behavior_suites(value)
+    def test_endpoint_uses_only_same_control_image_and_exact_receipt(self):
+        images={'ui-webkit-controls':{'path':'/images/fresh-controls'}}
+        self.assertEqual(b.behavior_command('foreign-endpoint-refusal-controls',images),['/images/fresh-controls','--foreign-endpoint-refusal-only'])
+        sentinel='foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect\n'
+        b.require_behavior_receipt('foreign-endpoint-refusal-controls',sentinel)
+        b.require_behavior_receipt('ui-webkit-controls','allocation-controls: PASS\n')
+        for wrong in ['',sentinel+'allocation-controls: PASS\n','allocation-controls: PASS\n']:
+            with self.assertRaises(ValueError):b.require_behavior_receipt('foreign-endpoint-refusal-controls',wrong)
+    def test_endpoint_inherits_parent_authorization_and_five_second_limit(self):
+        env={'PATH':'/usr/bin','WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS':'999999999999999999'}
+        with patch.object(b.time,'monotonic_ns',return_value=100),patch.object(b.time,'time_ns',return_value=1000):
+            def selected(parent,expiry):return int(b.behavior_environment('foreign-endpoint-refusal-controls',env,parent,expiry)[b.ENDPOINT_DEADLINE_ENV])
+            self.assertEqual(selected(200,9000),200)
+            self.assertEqual(selected(9000,1050),150)
+            self.assertEqual(selected(9_000_000_000,9_000_000_000),5_000_000_100)
+            for parent,expiry in [(100,9000),(9000,1000)]:
+                with self.assertRaises(TimeoutError):selected(parent,expiry)
+        self.assertEqual(env['WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'],'999999999999999999')
+        self.assertNotIn(b.ENDPOINT_DEADLINE_ENV,b.behavior_environment('ui-webkit-controls',env,0,0))
+    def test_main_dispatches_only_validated_suites_before_build_or_spawn(self):
+        import ast
+        tree=ast.parse(Path(b.__file__).read_text());main=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='main')
+        validated=next(n.lineno for n in ast.walk(main) if isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='behavior_suites')
+        scope=next(n.lineno for n in ast.walk(main) if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='require_qa_scope')
+        self.assertLess(validated,scope)
+        loops=[n for n in ast.walk(main) if isinstance(n,ast.For) and isinstance(n.target,ast.Name) and n.target.id=='suite']
+        self.assertEqual(len(loops),1);self.assertIsInstance(loops[0].iter,ast.Name);self.assertEqual(loops[0].iter.id,'suites')
+
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--module',required=True);a,rest=p.parse_known_args()
     spec=importlib.util.spec_from_file_location('fixed_display_build',a.module);b=importlib.util.module_from_spec(spec);spec.loader.exec_module(b)

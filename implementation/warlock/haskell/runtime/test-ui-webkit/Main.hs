@@ -12,6 +12,11 @@ import Data.IORef
 import Data.Either (isLeft)
 import qualified Warlock.Protocol.Identity as Identity
 import qualified Warlock.Protocol.ForeignToplevel as FT
+import qualified Warlock.Backend.ForeignToplevelOwner as ForeignOwner
+import Warlock.Backend (DirectoryPin(..))
+import Warlock.Platform.Resolver (Identity(..))
+import qualified System.Posix.Files as EndpointFiles
+import Data.Bits ((.&.))
 import qualified Data.Text as T
 import qualified Data.ByteString.Char8 as BS
 import Warlock.Ui.Owner (retainRequestTrace)
@@ -22,12 +27,12 @@ import Foreign.C.String (CString, withCString)
 import Foreign.C.Types (CInt(..))
 import Foreign.Ptr (FunPtr, Ptr, castFunPtr, freeHaskellFunPtr, nullPtr)
 import System.Exit (ExitCode(..))
-import System.Environment (getArgs)
+import System.Environment (getArgs, getEnv)
 import System.IO (hFlush, stdout)
 import System.IO.Error (ioeGetErrorString)
 import System.Posix.Process (ProcessStatus(..), exitImmediately, forkProcess, getProcessStatus)
 import System.Posix.Signals (sigKILL, signalProcess)
-import Warlock.Capture.Process.Bootstrap (deadlineAfter, remainingMicros)
+import Warlock.Capture.Process.Bootstrap (deadlineAfter, deadlineFromAbsoluteNs, remainingMicros)
 import Warlock.Ui.EngineCustody (startCustody, stopCustody, abandonCustody)
 import Warlock.Ui.PrivateNetwork (enterPrivateNetwork)
 import Warlock.Ui.WebKit (rendererPhaseFlags, rendererPhasePolling, rendererPhasePublication, rendererPhaseRequest, rendererPhaseLeaf, rendererPhaseSnapshotScript, firstMouseupDiagnosticScript, finiteDpiFallbackSetting, rendererAllocationReady, rendererDiagnosticEnvelope, providerVersionQualified, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
@@ -504,8 +509,9 @@ main = do
  args <- getArgs
  case args of
   ["--allocation-only"] -> allocationControls
+  ["--foreign-endpoint-refusal-only"] -> foreignEndpointAdmissionControls
   [] -> ordinaryControls
-  _ -> ioError (userError "expected no arguments or fixed --allocation-only")
+  _ -> ioError (userError "expected no arguments, --allocation-only or --foreign-endpoint-refusal-only")
 
 ordinaryControls :: IO ()
 ordinaryControls = do
@@ -606,3 +612,88 @@ foreignToplevelControls = do
    else do
      retired <- checked (FT.applyEvent (FT.Closed handle) draft)
      check ("foreign toplevel seed closed "<>show seed) (isLeft (FT.applyEvent (FT.Done handle) retired) && fmap FT.toplevels (FT.snapshot retired)==Right [])
+
+
+-- CPU IO controls, not pure accumulator or provider/GTK controls. Invalid
+-- selections below fail before socket creation/connect. The root-only cases
+-- open/read/close actual directory FDs; none creates a display or a socket.
+foreignEndpointAdmissionControls :: IO ()
+foreignEndpointAdmissionControls = do
+ deadlineText <- getEnv "WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS"
+ deadline <- deadlineFromAbsoluteNs deadlineText >>= either (ioError . userError . show) pure
+ initialRemaining <- remainingMicros deadline
+ check "endpoint CPU deadline is inherited and clipped to five seconds" (initialRemaining>0 && initialRemaining<=5000000)
+ generation <- either (ioError . userError . show) pure (Identity.parseCounter False "1")
+ rootStatus <- EndpointFiles.getSymbolicLinkStatus "/"
+ let rootDevice=toInteger (EndpointFiles.deviceID rootStatus)
+     rootInode=toInteger (EndpointFiles.fileID rootStatus)
+     rootUid=toInteger (EndpointFiles.fileOwner rootStatus)
+     rootMode=toInteger (EndpointFiles.fileMode rootStatus .&. 0o7777)
+     rootPin=ForeignOwner.AncestorPin (DirectoryPin "/" rootDevice rootInode) rootUid rootMode
+     base=ForeignOwner.EndpointSelection
+       { ForeignOwner.endpointBootId="00000000-0000-0000-0000-000000000000"
+       , ForeignOwner.endpointDirectory=[]
+       , ForeignOwner.endpointName="never-connected"
+       , ForeignOwner.endpointSocketIdentity=Identity 0 0
+       , ForeignOwner.endpointSocketUid=rootUid
+       , ForeignOwner.endpointSocketMode=0o600
+       , ForeignOwner.endpointProcesses=[]
+       , ForeignOwner.endpointExecutable=ForeignOwner.ExecutablePin (Identity 0 0) [] "never-read" [] 0 ""
+       , ForeignOwner.endpointGeneration=generation
+       }
+     one pin=base {ForeignOwner.endpointDirectory=[pin]}
+     alteredRoot uid mode=ForeignOwner.AncestorPin (DirectoryPin "/" rootDevice rootInode) uid mode
+     named value=base {ForeignOwner.endpointDirectory=[rootPin],ForeignOwner.endpointName=value}
+     refused name fragment selection=do
+       entered <- newIORef False
+       result <- ForeignOwner.withForeignToplevelOwner selection deadline (\_ -> writeIORef entered True)
+       called <- readIORef entered
+       check (name++": callback never entered") (not called)
+       case result of
+        ForeignOwner.ObservationResult (Left problem) ForeignOwner.Retired ->
+         check (name++": exact pre-connect refusal and confirmed cleanup")
+           (T.pack fragment `T.isInfixOf` T.pack (displayException problem))
+        _ -> check (name++": refusal must retire all acquired resources") False
+ check "endpoint CPU setup uses actual safe root directory" (EndpointFiles.isDirectory rootStatus && rootMode .&. 0o022==0)
+ refused "endpoint-empty-ancestors" "ancestor bound" base
+ refused "endpoint-ancestor-count" "ancestor bound" (base {ForeignOwner.endpointDirectory=replicate 65 rootPin})
+ refused "endpoint-root-not-first" "unsafe ancestor selection"
+   (one (ForeignOwner.AncestorPin (DirectoryPin "/not-the-root" rootDevice rootInode) rootUid rootMode))
+ refused "endpoint-negative-uid" "unsafe ancestor selection" (one (alteredRoot (-1) rootMode))
+ refused "endpoint-negative-mode" "unsafe ancestor selection" (one (alteredRoot rootUid (-1)))
+ refused "endpoint-mode-range" "unsafe ancestor selection" (one (alteredRoot rootUid 0o10000))
+ refused "endpoint-group-write" "unsafe ancestor selection" (one (alteredRoot rootUid 0o775))
+ refused "endpoint-other-write" "unsafe ancestor selection" (one (alteredRoot rootUid 0o757))
+ refused "endpoint-held-root-mismatch" "ancestor changed"
+   (one (ForeignOwner.AncestorPin (DirectoryPin "/" rootDevice 0) rootUid rootMode))
+ refused "endpoint-noncontiguous-chain" "ancestor chain differs"
+   (base {ForeignOwner.endpointDirectory=[rootPin,ForeignOwner.AncestorPin (DirectoryPin "/not/contiguous" 0 0) rootUid rootMode]})
+ forM_ [("empty",""),("slash","wayland/1"),("dot","."),("dotdot","..")
+       ,("overlong",replicate 65 'w'),("nul","wayland\0x"),("non-ascii","wayland\233")] $ \(name,value) ->
+   refused ("endpoint-socket-name-"++name) "socket name refused" (named value)
+ -- Literal reproducible seeds exercise different invalid names, never a
+ -- guessed valid endpoint. Successful retirement is the positive witness.
+ forM_ ([0..31] :: [Int]) $ \seed -> do
+  let sample=(toInteger seed*1103515245+12345) `mod` 2147483648
+      value=case sample `mod` 4 of
+       0 -> "x/"++show sample
+       1 -> "x\0"++show sample
+       2 -> replicate (65+fromInteger (sample `mod` 16)) 'w'
+       _ -> "x\233"++show sample
+  refused ("endpoint-invalid-name-seed-"++show seed) "socket name refused" (named value)
+ -- Expire the SAME inherited deadline, rather than making a fresh deadline
+ -- per attempt. No display or callback dispatcher can be created after it.
+ let awaitExpiry=do
+      left <- remainingMicros deadline
+      if left==0 then pure () else threadDelay left >> awaitExpiry
+ awaitExpiry
+ entered <- newIORef False
+ result <- ForeignOwner.withForeignToplevelOwner base deadline (\_ -> writeIORef entered True)
+ called <- readIORef entered
+ check "expired endpoint never enters user callback" (not called)
+ case result of
+  ForeignOwner.ObservationResult (Left _) (ForeignOwner.Retained owner) -> do
+   retried <- try (ForeignOwner.readToplevelSnapshot owner) :: IO (Either SomeException FT.Snapshot)
+   check "expired retained owner refuses observation reuse" (isLeft retried)
+  _ -> check "expired deadline cannot claim confirmed retirement" False
+ putStrLn "foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect"

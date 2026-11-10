@@ -334,7 +334,7 @@ def menu_focus_build_spec(root):
             or packet['recordPath'] != MENU_FOCUS_BUILD_RECORD
             or packet['recordIdentitySha256'] != MENU_FOCUS_BUILD_IDENTITY
             or type(packet['selectionGeneration']) is not int or packet['selectionGeneration'] < 1
-            or packet['targets'] != list(MENU_FOCUS_BUILD_TARGETS) or packet['behaviorSuites'] != ['ui-webkit-controls']):
+            or packet['targets'] != list(MENU_FOCUS_BUILD_TARGETS) or packet['behaviorSuites'] not in (['ui-webkit-controls'], ['ui-webkit-controls', 'foreign-endpoint-refusal-controls'])):
         raise RuntimeError('Fixed menu focus build scope differs')
     hs = root / 'implementation/warlock/haskell'
     current = set()
