@@ -105,7 +105,7 @@ type alias Model =
 
 type PopupOrigin = PointerEntry | KeyboardEntry
 
-type FocusDestination = TaskbarGroup String | OverviewOpener
+type FocusDestination = TaskbarGroup String | OverviewOpener | ObservedScopeRetirement String
 type alias FocusTarget = {binding : Binding.Binding, destination : FocusDestination, output : Maybe Counter, observed : Maybe MenuBridge.ObservedContext}
 
 type alias NativeChord = {generation : Counter, roots : List Counter, history : List Counter, origin : Maybe Counter, steps : List Switcher.Direction, released : Bool, cancelled : Bool, consumed : Bool}
@@ -549,7 +549,14 @@ window message model =
             let base=case message of
                     TaskbarShell.Native (Shell.Incoming _) -> model
                     _ -> {model | returnFocus=Nothing}
-                (updated,ordinaryEffects)=windowBase message base
+                (windowUpdated,ordinaryEffects)=windowBase message base
+                updated=case message of
+                    TaskbarShell.Native Shell.Refresh ->
+                        if model.windows.shell.windowExpected==Nothing && windowUpdated.windows.shell.windowExpected/=Nothing
+                            && (MenuBridge.menuSnapshot windowUpdated.windows.menus).menu==Nothing then
+                            {windowUpdated|returnFocus=observedRetirementTarget model}
+                        else windowUpdated
+                    _ -> windowUpdated
                 matchingProjection = case message of
                     TaskbarShell.Native (Shell.Incoming raw) ->
                         D.decodeValue (D.map2 Tuple.pair (D.field "kind" D.string) (D.field "requestId" UInt64.decoder)) raw |> Result.map (\(kind,request) -> kind=="action-projection" && model.windows.shell.expected==Just request) |> Result.withDefault False
@@ -576,14 +583,17 @@ window message model =
                         let blocked=case target.destination of
                                 TaskbarGroup groupKey -> TaskbarShell.groups updated.windows |> List.filter (\group -> group.key==groupKey) |> List.concatMap .families |> List.any (\family -> MenuBridge.blockedFor family.root updated.windows.shell updated.windows.menus)
                                 OverviewOpener -> False
+                                ObservedScopeRetirement _ -> True
                         in if not matchingObservation || not (Shell.available updated.windows.shell) || blocked then (updated,ordinaryEffects) else
                             let retired={updated | returnFocus=Nothing}
                                 exists=case target.destination of
                                     TaskbarGroup groupKey -> TaskbarShell.groups retired.windows |> List.any (\group -> group.key==groupKey && List.any .available group.families)
                                     OverviewOpener -> retired.choice==Nothing
+                                    ObservedScopeRetirement _ -> False
                                 focus=case target.destination of
                                     TaskbarGroup groupKey -> Shell.capture retired.windows.shell |> Maybe.map (\scope -> "group:" ++ Shell.stampKey scope ++ ":" ++ groupKey)
                                     OverviewOpener -> Just (key retired "control:overview-opener")
+                                    ObservedScopeRetirement _ -> Nothing
                             in if retired.open || retired.overview || retired.windows.picker/=Nothing || (MenuBridge.menuSnapshot retired.windows.menus).menu/=Nothing || retired.windows.shell.binding/=Just target.binding || target.output==Nothing || (retired.windows.shell.effects.observed |> Maybe.map (.context >> .output))/=target.output || geometryOutput/=target.output || not exists then (retired,ordinaryEffects) else
                                 (retired,ordinaryEffects++(focus |> Maybe.map (Focus >> List.singleton) |> Maybe.withDefault []))
                     Nothing -> (updated,ordinaryEffects)
@@ -1625,6 +1635,21 @@ openObservedWindow stamp root model =
             in if (MenuBridge.menuSnapshot menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
                 (retireSwitcher {model|windows={windows|menus=menus,picker=Nothing},open=False,overview=False,snap=Nothing,expected=Nothing,returnFocus=Nothing,menuOrigin=target,jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False},focus)
 
+-- Automatic retirement has its own restoration cause. Explicit dismissal
+-- keeps its exact-origin-only policy; a retired popup intent is never revived.
+observedRetirementTarget : Model -> Maybe FocusTarget
+observedRetirementTarget model =
+    if model.popupOrigin/=KeyboardEntry || model.ownerExhausted || model.presentation==Nothing
+        || not (Shell.inspectionAvailable model.windows.shell) then Nothing else
+    case (model.menuOrigin,MenuBridge.observedContext model.windows.menus,(MenuBridge.menuSnapshot model.windows.menus).menu) of
+        (Just target,Just observed,Just menu) ->
+            if target.observed==Just observed && target.binding==observed.binding
+                && model.windows.shell.binding==Just observed.binding && model.ownerScope==Just observed.presentation
+                && Shell.capture model.windows.shell==Just observed.stamp && menu.binding==observed.menuBinding then
+                Just {target|destination=ObservedScopeRetirement (key model "control:opener")}
+            else Nothing
+        _ -> Nothing
+
 restoreObservedFocus : Bool -> FocusTarget -> Model -> List Effect -> (Model,List Effect)
 restoreObservedFocus matching target model effects =
     if not matching then (model,effects) else
@@ -1637,5 +1662,18 @@ restoreObservedFocus matching target model effects =
                     && WindowObservation.fingerprint original.group snapshot==original.fingerprint
                     && exists && not model.ownerExhausted && not model.open && not model.overview
                     && model.windows.picker==Nothing && (MenuBridge.menuSnapshot model.windows.menus).menu==Nothing
-            in if same then (retired,effects++[Focus ("group:"++Shell.stampKey stamp++":"++original.group)]) else (retired,effects)
+                automaticCurrent capturedFallback =
+                    Shell.inspectionAvailable model.windows.shell && model.windows.shell.binding==Just original.binding
+                        && model.ownerScope==Just original.presentation && snapshot.owner==original.owner
+                        && not model.ownerExhausted && model.presentation/=Nothing
+                        && capturedFallback==key model "control:opener"
+                        && not model.open && not model.overview && model.choice==Nothing
+                        && not model.filesOpen && not model.systemMenuOpen && not model.notificationsOpen && not model.settingsOpen
+                        && model.windows.picker==Nothing && (MenuBridge.menuSnapshot model.windows.menus).menu==Nothing
+            in case target.destination of
+                ObservedScopeRetirement capturedFallback ->
+                    if not (automaticCurrent capturedFallback) then (retired,effects)
+                    else if same then (retired,effects++[Focus ("group:"++Shell.stampKey stamp++":"++original.group)])
+                    else (retired,effects++[Focus capturedFallback])
+                _ -> if same then (retired,effects++[Focus ("group:"++Shell.stampKey stamp++":"++original.group)]) else (retired,effects)
         _ -> (retired,effects)

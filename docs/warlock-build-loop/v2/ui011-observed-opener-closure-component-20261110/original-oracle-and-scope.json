@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "requirement": {
+    "id": "ELM-UI-011",
+    "capability": "elm-accessibility",
+    "phase": "P3",
+    "pattern": "event-driven",
+    "priority": "must",
+    "ears": "WHEN a shell focus scope closes, the host SHALL restore its eligible identity-bound opener or the declared eligible fallback, restore surviving parent scopes for nested dismissal, reject replacement incarnations and let lock security supersede ordinary restoration.",
+    "task": "Implement scope-stack focus restoration and fallback.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "focus-scope-nested dismissal",
+        "given": "an open shell focus scope",
+        "when": "nested dismissal occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-opener closure",
+        "given": "an open shell focus scope",
+        "when": "opener closure occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-workspace change",
+        "given": "an open shell focus scope",
+        "when": "workspace change occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-opener minimize",
+        "given": "an open shell focus scope",
+        "when": "opener minimize occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-renderer restart",
+        "given": "an open shell focus scope",
+        "when": "renderer restart occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-address reuse",
+        "given": "an open shell focus scope",
+        "when": "address reuse occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      }
+    ],
+    "source": "docs/elm-roadmap/coordinator-requirements.json",
+    "status": "proposed",
+    "taskId": "P3-ELM-UI-011",
+    "accountableOwnerRole": "Accessibility lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "source": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff"
+  },
+  "selectedScenario": "focus-scope-opener closure",
+  "componentScope": "Automatic retirement of current keyboard observed-menu during refresh, with exact eligible group or distinct current Applications fallback after authenticated successful reply. Existing Escape behavior unchanged.",
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "providerAcceptance": false,
+  "originalCountsUnchanged": {
+    "requirements": 21,
+    "scenarios": 47
+  }
+}

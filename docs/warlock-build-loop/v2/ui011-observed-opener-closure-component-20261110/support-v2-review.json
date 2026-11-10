@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted",
+  "manifestSha256": "0fde1fb632d500a08f20ad56dcd5870b38ddcfe97c6dc03da2c17ab0f844d7e9",
+  "verified": {
+    "soleFixtureHashScalarAllFunctionAstsExact": true,
+    "correctedRefusalFixtureAndProductionSourceReviewsBound": true,
+    "actualFailedConsumedBaselineRequired": true,
+    "onlyExactDesktopFixtureElmAndCheckElmChangesAllowed": true,
+    "noExpectedRedBaselineCandidateLink": true,
+    "same125InputClosureAndCpuModeBounds": true,
+    "appendOnlyPrivateMetadataAndNormalCorePrecheck": true,
+    "priorFailedReportAndAllUnrelatedPinsPreserved": true
+  },
+  "requiredChanges": [],
+  "limits": [
+    "Source review only; no imports/tests/QA or primary writes.",
+    "Original baseline with two diagnostic oracle defects remains failed; corrected candidate is not claimed as same-fixture strict RED/GREEN.",
+    "Actual candidate assembly and result still unobserved. No native/provider/AT/original acceptance."
+  ]
+}

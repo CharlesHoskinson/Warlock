@@ -245,4 +245,59 @@ class FixedMenuInitialFocusRoute(unittest.TestCase):
             self.assertTrue(set(elm.MENU_INITIAL_FOCUS_QA_INPUTS)<=inputs)
             self.assertIn('implementation/warlock/qa/OutputRetirementReplay.elm',inputs)
 
+
+class FixedUi011ScopeRoute(unittest.TestCase):
+    def valid(self):
+        return {'schema':1,'passed':True,'classification':'component-pass','caseCount':24,
+                'nativeAcceptance':False,'originalAcceptance':False,'assistiveTechnologyAcceptance':False,'providerAcceptance':False,
+                'imageSha256':'a'*64,'fixtureSha256':'b'*64,'failures':[],'seedFailures':[],'seedSampleCount':32,
+                'checks':[{'name':name,'passed':True} for name in elm.UI011_SCOPE_CASES],
+                'observed':{'preconditions':{name:True for name in elm.UI011_SCOPE_PRECONDITIONS},
+                            'checks':{name:True for name in elm.UI011_SCOPE_CASES},
+                            'seeded':{'seeds':list(range(32)),'samples':[{'seed':i,'variant':i%8,'prepared':True,'expectedEligible':True,'once':True,'noMutation':True,'actualFocus':['exact-current']if i%8<=2 else[],'expectedFocus':['exact-current']if i%8<=2 else[]}for i in range(32)]}}}
+    def check(self,value):elm.validate_ui011_scope_result(value,'a'*64,'b'*64)
+    def test_ui011_exact_report(self):self.check(self.valid())
+    def test_ui011_missing_extra_duplicate_ordered_case_refuses(self):
+        for mode in ('missing','extra','duplicate','order'):
+            value=self.valid()
+            if mode=='missing':value['checks'].pop()
+            if mode=='extra':value['checks'].append({'name':'extra','passed':True})
+            if mode=='duplicate':value['checks'][-1]=copy.deepcopy(value['checks'][0])
+            if mode=='order':value['checks'].reverse()
+            with self.assertRaises(RuntimeError):self.check(value)
+    def test_ui011_setup_and_fact_failures_refuse(self):
+        for field in ('preconditions','checks'):
+            for mode in ('missing','extra','false','nonboolean'):
+                value=self.valid();rows=value['observed'][field];name=next(iter(rows))
+                if mode=='missing':rows.pop(name)
+                if mode=='extra':rows['extra']=True
+                if mode=='false':rows[name]=False
+                if mode=='nonboolean':rows[name]=1
+                with self.assertRaises(RuntimeError):self.check(value)
+    def test_ui011_red_artifact_and_acceptance_refuse(self):
+        for key,val in (('passed',False),('classification','semantic-red'),('imageSha256','0'*64),('fixtureSha256','0'*64),('nativeAcceptance',True),('originalAcceptance',True),('assistiveTechnologyAcceptance',True),('providerAcceptance',True)):
+            value=self.valid();value[key]=val
+            with self.assertRaises(RuntimeError):self.check(value)
+        value=self.valid();value['checks'][0]['passed']=False
+        with self.assertRaises(RuntimeError):self.check(value)
+    def test_ui011_seed_and_exact_focus_refuse(self):
+        for mode in ('short','order','variant','mutation','duplicate-focus','wrong-target','nonboolean','seed-failure'):
+            value=self.valid();seeded=value['observed']['seeded'];sample=seeded['samples'][0]
+            if mode=='short':seeded['samples'].pop()
+            if mode=='order':seeded['seeds'].reverse()
+            if mode=='variant':sample['variant']=7
+            if mode=='mutation':sample['noMutation']=False
+            if mode=='duplicate-focus':sample['actualFocus']*=2
+            if mode=='wrong-target':sample['actualFocus']=['replacement']
+            if mode=='nonboolean':sample['once']=1
+            if mode=='seed-failure':value['seedFailures']=[{'actual':'failure'}]
+            with self.assertRaises(RuntimeError):self.check(value)
+    def test_ui011_only_two_literal_inputs_and_unchanged_closed_mode(self):
+        with tempfile.TemporaryDirectory() as temp:
+            actual=qa.menu_tab_dom_inputs(Path(temp))
+            self.assertEqual(set(elm.UI011_SCOPE_QA_INPUTS),{'implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm','implementation/warlock/qa/ui011-observed-scope-retirement.cjs'})
+            self.assertTrue(set(elm.UI011_SCOPE_QA_INPUTS)<=actual)
+            self.assertNotIn('implementation/warlock/qa/arbitrary.cjs',actual)
+        self.assertFalse(qa.menu_tab_dom_mode(REPOSITORY/'tools/check_elm_cpu.py',['--ui011']))
+
 if __name__ == '__main__': unittest.main()

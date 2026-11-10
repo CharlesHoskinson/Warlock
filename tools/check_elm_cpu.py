@@ -199,6 +199,40 @@ def validate_menu_initial_focus_result(result, image_sha, fixture_sha):
             or any(row.get('passed') is not True for row in samples)):
         raise RuntimeError('Fixed17 initial menu focus cases/setup/32sequences/artifacts missing, changed or failed')
 
+UI011_SCOPE_CASES = ('public-refresh-retires-menu-and-reads-once', 'pending-read-never-focuses', 'same-incarnation-restores-current-group', 'closed-origin-restores-declared-fallback', 'replacement-restores-only-declared-fallback', 'fallback-keeps-captured-control-identity', 'duplicate-reply-does-not-refocus', 'wrong-request-cannot-settle', 'old-revision-cannot-settle', 'foreign-binding-cannot-settle', 'foreign-owner-cannot-settle', 'unknown-does-not-grant-fallback', 'unavailable-does-not-grant-fallback', 'detached-ineligible-fallback-cannot-focus', 'transport-refusal-cannot-focus', 'reconciliation-full-cannot-focus', 'retired-presentation-cannot-focus', 'changed-presentation-cannot-focus', 'pointer-refresh-does-not-focus', 'post-escape-removed-origin-still-no-focus', 'post-escape-replacement-still-no-focus', 'refresh-without-open-scope-does-not-focus', 'stale-refresh-callback-does-not-issue', 'all-routes-preserve-no-native-mutation')
+UI011_SCOPE_PRECONDITIONS = ('current-view-one', 'current-observed-keyboard-menu', 'actual-enabled-refresh-control', 'actual-enabled-applications-fallback', 'application-only-no-native-authority')
+UI011_SCOPE_QA_INPUTS = {'implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm': 'ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273', 'implementation/warlock/qa/ui011-observed-scope-retirement.cjs': 'ca51900ed2edc6b0a74403e98e0cff33cffae6b18a924f96ce5216b21342206b'}
+
+def validate_ui011_scope_result(result, image_sha, fixture_sha):
+    observed = result.get('observed')
+    setup = observed.get('preconditions') if isinstance(observed, dict) else None
+    facts = observed.get('checks') if isinstance(observed, dict) else None
+    seeded = observed.get('seeded') if isinstance(observed, dict) else None
+    samples = seeded.get('samples') if isinstance(seeded, dict) else None
+    rows = result.get('checks')
+    if (result.get('schema') != 1 or result.get('passed') is not True
+            or result.get('classification') != 'component-pass' or result.get('caseCount') != len(UI011_SCOPE_CASES)
+            or any(result.get(key) is not False for key in ('nativeAcceptance','originalAcceptance','assistiveTechnologyAcceptance','providerAcceptance'))
+            or result.get('imageSha256') != image_sha or result.get('fixtureSha256') != fixture_sha
+            or result.get('failures') != [] or result.get('seedFailures') != [] or result.get('seedSampleCount') != 32
+            or not isinstance(setup, dict) or set(setup) != set(UI011_SCOPE_PRECONDITIONS)
+            or any(value is not True for value in setup.values())
+            or not isinstance(facts, dict) or set(facts) != set(UI011_SCOPE_CASES)
+            or any(value is not True for value in facts.values())
+            or not isinstance(rows, list) or len(rows) != len(UI011_SCOPE_CASES)
+            or any(not isinstance(row, dict) or set(row) != {'name','passed'} for row in rows)
+            or tuple(row['name'] for row in rows) != UI011_SCOPE_CASES
+            or any(row['passed'] is not True for row in rows)
+            or not isinstance(seeded, dict) or seeded.get('seeds') != list(range(32))
+            or not isinstance(samples, list) or len(samples) != 32
+            or any(not isinstance(row, dict) for row in samples)
+            or any(row.get('seed') != index or row.get('variant') != index % 8
+                   or any(row.get(key) is not True for key in ('prepared','expectedEligible','once','noMutation'))
+                   or not isinstance(row.get('actualFocus'),list) or not isinstance(row.get('expectedFocus'),list)
+                   or len(row['expectedFocus']) != (1 if index % 8 <= 2 else 0)
+                   or row['actualFocus'] != row['expectedFocus'] for index,row in enumerate(samples))):
+        raise RuntimeError('Fixed24 UI011 scope cases/5setup/32sequences/artifacts missing, changed or failed')
+
 def run_menu_tab_dom(observation_variant=None):
     import arm64_toolchain as toolchain
     from qa_cpu import menu_tab_dom_inputs
@@ -293,6 +327,14 @@ def run_menu_tab_dom(observation_variant=None):
             shutil.copyfile(REPO / key, target)
             if source_hash(target) != expected:
                 raise RuntimeError('Staged initial focus fixture differs: ' + key)
+        if observation_variant is None:
+            for key, expected in UI011_SCOPE_QA_INPUTS.items():
+                if sources[key] != expected:
+                    raise RuntimeError('Fixed UI011 scope fixture changed: ' + key)
+                target = work / 'qa' / Path(key).name
+                shutil.copyfile(REPO / key, target)
+                if source_hash(target) != expected:
+                    raise RuntimeError('Staged UI011 scope fixture differs: ' + key)
         if qualification:
             # Only the two new observation fixtures are absent from live qa/.
             stage_rows(qualification,work/'qa','implementation/warlock/qa/')
@@ -361,6 +403,18 @@ def run_menu_tab_dom(observation_variant=None):
             validate_elm_result(json.loads(observation_result.read_text()),observation_sha,observation_fixture_sha)
             if source_hash(observation_image)!=observation_sha or source_hash(observation_fixture)!=observation_fixture_sha:raise RuntimeError('Observation tested artifact changed')
             report.update(observedWindowMenuCaseCount=30,observedWindowMenuSeedCount=32,observedWindowMenuResultSha256=source_hash(observation_result),observedWindowMenuImageSha256=observation_sha)
+        if observation_variant is None:
+            scope_image = output / 'Ui011ObservedScopeRetirementReplay.js'
+            run('compile-Ui011ObservedScopeRetirementReplay', [pinned['elm'], 'make', 'qa/Ui011ObservedScopeRetirementReplay.elm', '--optimize', '--output=' + str(scope_image)])
+            scope_image_sha = source_hash(scope_image)
+            scope_fixture = work / 'qa/ui011-observed-scope-retirement.cjs'
+            scope_fixture_sha = UI011_SCOPE_QA_INPUTS['implementation/warlock/qa/ui011-observed-scope-retirement.cjs']
+            scope_result = output / 'ui011-observed-scope-retirement.json'
+            run('ui011-observed-scope-retirement', [pinned['node'], str(scope_fixture), str(scope_image), str(scope_result)])
+            validate_ui011_scope_result(json.loads(scope_result.read_text()), scope_image_sha, scope_fixture_sha)
+            if source_hash(scope_image) != scope_image_sha or source_hash(scope_fixture) != scope_fixture_sha:
+                raise RuntimeError('Actual UI011 scope replay artifact changed')
+            report.update(ui011ScopeCaseCount=24, ui011ScopeSeedCount=32, ui011ScopeResultSha256=source_hash(scope_result), ui011ScopeImageSha256=scope_image_sha)
         if observation_variant is None or observation_variant=='candidate':
             documents={}
             for role,entry in (('controller','HttpMain'),('bar','HttpBar'),('popup','HttpPopup')):

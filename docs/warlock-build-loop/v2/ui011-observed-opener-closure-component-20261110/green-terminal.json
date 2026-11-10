@@ -1,0 +1,33 @@
+{
+  "terminal": true,
+  "jobId": "pid379132-start8655901",
+  "candidateSha256": "baff7ec268fbf27824d1316fc9f42ae1100195c3a4ae5d9b463901646dcb149a",
+  "scope": "cpu",
+  "manifestSha256": "7080d92a6a8e89af676ccec99a04603352508d0938137b4603564c4754532c64",
+  "fixtureSha256": "29479d3897265ade1b123f4374ebf5b33f910c4791d09e0b1593397eae1e9f01",
+  "exit": 0,
+  "classification": "pass",
+  "actualOuterHandle": "57574",
+  "actualOuterHandleConsumed": true,
+  "rawReport": {
+    "path": ".warlock-contributor/ux024-menu-dom-1794320843624561445/report.json",
+    "sha256": "b2fa3251b55f463789190985221a68070e93fc616f2a6ce00cb0d477b32fdfbe"
+  },
+  "nodeReport": {
+    "path": ".warlock-contributor/ux024-menu-dom-1794320843624561445/ui011-observed-scope-retirement.json",
+    "sha256": "adb2ec242923cb7c712067163c52b8527e2648b988a0d74e7d98b34e23813d27"
+  },
+  "sourcePinsUnchanged": true,
+  "commandsPassed": 13,
+  "commandsAttempted": 13,
+  "currentInputCount": 125,
+  "ui011CasesPassed": 24,
+  "ui011SetupPassed": 5,
+  "ui011SeedSequencesPassed": 32,
+  "originalCampaignsPreserved": true,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "providerAcceptance": false,
+  "scopeLimit": "CPU public reducer restoration component only. No original UI011/native/AT credit. First FAILED baseline and corrected diagnostic oracle remain immutable."
+}

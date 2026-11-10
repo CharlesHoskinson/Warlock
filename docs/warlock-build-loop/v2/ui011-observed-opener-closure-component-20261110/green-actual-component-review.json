@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-component-pass",
+  "candidateSha256": "baff7ec268fbf27824d1316fc9f42ae1100195c3a4ae5d9b463901646dcb149a",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320843624561445/report.json",
+    "sha256": "b2fa3251b55f463789190985221a68070e93fc616f2a6ce00cb0d477b32fdfbe"
+  },
+  "componentReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320843624561445/ui011-observed-scope-retirement.json",
+    "sha256": "adb2ec242923cb7c712067163c52b8527e2648b988a0d74e7d98b34e23813d27"
+  },
+  "verified": {
+    "commandsExitZero": 13,
+    "managedInputsLiveExact": 125,
+    "currentElmSources": 109,
+    "ui011Cases": 24,
+    "setupTrue": 5,
+    "seeds": 32,
+    "allPositiveAndNegativeChecksPass": true,
+    "diagnosticRefusalAuthorityUnchangedAndNoFocus": true,
+    "oldMenuCases": [
+      18,
+      16,
+      34,
+      17
+    ],
+    "oldInitialFocusSeeds": 32,
+    "currentThreeHtmlPhysicalIdentitiesExact": {
+      "controller": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320843624561445/HttpMain.html",
+        "sha256": "ec3f4d5f8380b317ee3a9b7373df536bd975c5dec132d86e43f0864f0784392a",
+        "device": "57",
+        "inode": "7828656",
+        "size": "1125439",
+        "mode": 420,
+        "ancestors": [
+          {
+            "path": "/home",
+            "device": "57",
+            "inode": "256"
+          },
+          {
+            "path": "/home/hoskinson",
+            "device": "57",
+            "inode": "257"
+          },
+          {
+            "path": "/home/hoskinson/Projects",
+            "device": "57",
+            "inode": "10834"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock",
+            "device": "57",
+            "inode": "201669"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor",
+            "device": "57",
+            "inode": "248885"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320843624561445",
+            "device": "57",
+            "inode": "7828100"
+          }
+        ]
+      },
+      "bar": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320843624561445/HttpBar.html",
+        "sha256": "e1b7be5457bcf3bedbf13e35c4393f4781929bdae9cbd95f292ea83043585bd0",
+        "device": "57",
+        "inode": "7828664",
+        "size": "318959",
+        "mode": 420,
+        "ancestors": [
+          {
+            "path": "/home",
+            "device": "57",
+            "inode": "256"
+          },
+          {
+            "path": "/home/hoskinson",
+            "device": "57",
+            "inode": "257"
+          },
+          {
+            "path": "/home/hoskinson/Projects",
+            "device": "57",
+            "inode": "10834"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock",
+            "device": "57",
+            "inode": "201669"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor",
+            "device": "57",
+            "inode": "248885"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320843624561445",
+            "device": "57",
+            "inode": "7828100"
+          }
+        ]
+      },
+      "popup": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320843624561445/HttpPopup.html",
+        "sha256": "c6a599d99c5cbedefacd117ebd7a7e28406efc829e4df56aafd3035a97c194ee",
+        "device": "57",
+        "inode": "7828669",
+        "size": "587353",
+        "mode": 420,
+        "ancestors": [
+          {
+            "path": "/home",
+            "device": "57",
+            "inode": "256"
+          },
+          {
+            "path": "/home/hoskinson",
+            "device": "57",
+            "inode": "257"
+          },
+          {
+            "path": "/home/hoskinson/Projects",
+            "device": "57",
+            "inode": "10834"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock",
+            "device": "57",
+            "inode": "201669"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor",
+            "device": "57",
+            "inode": "248885"
+          },
+          {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320843624561445",
+            "device": "57",
+            "inode": "7828100"
+          }
+        ]
+      }
+    },
+    "desktopPost": "ac3713ea57f7b16cf044b04f7c98ec9e752db3ea9807acd328334377d58270d0"
+  },
+  "causalScope": "The unchanged three restoration-positive predicates and12seed deficits from actual first baseline now pass. Two malformed-envelope negative predicates were independently corrected from whole-frame equality to exact read-authority/refusal/noFocus; original failed baseline remains immutable. This is not strict whole-fixture same-oracle RED/GREEN.",
+  "limits": [
+    "CPU reducer/component and current-document qualification only. No native, AT, provider, original UI011 or whole-requirement acceptance.",
+    "No reviewer execution or primary writes. Root owns canonical closure, commit/integration and bounded RSI.",
+    "No native source/ABI/provider qualification transfer from current three HTML compilation."
+  ]
+}
