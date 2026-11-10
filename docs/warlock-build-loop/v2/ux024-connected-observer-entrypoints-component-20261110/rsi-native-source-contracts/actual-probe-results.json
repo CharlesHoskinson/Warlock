@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "candidateSha256": "2e51eedefc96a0c91da23072d085a6c5ee4da371526e363a84f45723e6883fdb",
+  "integrationRevision": "3f3565fc1a4ded0bf2faa5657b4fc8633203205c",
+  "results": [
+    {
+      "phase": "baseline",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/baseline-builder.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/baseline-builder.stderr",
+        "sha256": "1b65b918739e3d867767c4cc562673c93651c756c8634c5851c38d951f1ad2ff"
+      }
+    },
+    {
+      "phase": "baseline",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/baseline-admission.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/baseline-admission.stderr",
+        "sha256": "c9797a86fa00e9134ade1992288bc9256e6e1b116e7d8945c92d7378b205e117"
+      }
+    },
+    {
+      "phase": "candidate",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/candidate-builder.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/candidate-builder.stderr",
+        "sha256": "648a4c2a78a061c01e2ae4bb317d2fe74701f8a4d4ad6ca190a3a31e7e5dc7f0"
+      }
+    },
+    {
+      "phase": "candidate",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/candidate-admission.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/candidate-admission.stderr",
+        "sha256": "8e14377ca1e2f3f1cd40edd937375cc4c5026547a4c90cd97af0947a4084dce1"
+      }
+    }
+  ],
+  "distinctCodeControls": 23,
+  "codeControlExecutions": 46,
+  "documentationObservationsPerPhase": 2
+}

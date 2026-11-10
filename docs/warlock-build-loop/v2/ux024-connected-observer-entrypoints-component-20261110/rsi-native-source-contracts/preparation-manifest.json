@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "kind": "one-bounded-post-native-documentation-rsi-preparation",
+  "sourceManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/source-manifest.json",
+    "sha256": "2b1263a87e8e0b49abed0007bc87f4ace9bd177847e2976e6183c338f7704853"
+  },
+  "helper": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/prepare_native_contract_rsi.py",
+    "sha256": "aa9328627fe71d21d7cb14d0ca3ae3e590151d32a332da5121ec32dec6b3c879"
+  },
+  "sourceOnly": true,
+  "rootExecutionOnly": true,
+  "documentationChanges": 1,
+  "runtimeChanges": 0,
+  "existingProtectedControls": {
+    "builder": 15,
+    "admission": 8,
+    "distinct": 23,
+    "phaseExecutions": 46
+  },
+  "sameTaskComparisonChecks": {
+    "codeControls": 23,
+    "documentationChecks": 2,
+    "total": 25
+  },
+  "rootArgv": {
+    "prepare": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/prepare_native_contract_rsi.py",
+      "--prepare"
+    ],
+    "probesAfterExactEvidenceCopies": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/prepare_native_contract_rsi.py",
+      "--probes"
+    ],
+    "finalizeAfterRootDocCASAndReview": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/prepare_native_contract_rsi.py",
+      "--finalize"
+    ]
+  },
+  "sequence": [
+    "Root records actualV6normalintegration aftercommit; preparederivesactualcandidate/revision/pluginbaseline",
+    "Root copies exactprivatepreparedstage byroot-copy-plan undernormalclaims/precheck/locks",
+    "Run fourunchangedprotected23-control commands total acrossbaseline/candidate withfrozendocpost; retainactualoutputs",
+    "Root reviewsdiff, adoptsONLYexactdocument bytes undernormalguard/lock/CAS, verifiesactualpluginsnapshot",
+    "Root writesactualacceptedreviewfromtemplate; finalizerbindsactualresult/typed25rowcomparison/23-controlregression anddryvalidatesinstalledcore",
+    "Root admitsnormalrsi-event, thenreturnsproductwork; no recursiveRSI"
+  ],
+  "prerequisites": [
+    "Sameexistingrecord/actualselection29",
+    "ActualV6pass/consumed/integratedsliceCompleted andnoRSIforintegration",
+    "Actualpluginbaseline mapfromintegrationequalscurrent73snapshot beforedocadoption; aggregatehashnotpredictedfromhistory",
+    "Originalsources18/guards7/actualhumanec8/authorization14:40 fixed",
+    "No primaryqa_cpu changes untilthisbaselinecomparison completes"
+  ],
+  "limits": [
+    "Author read/hash/ASTparse/privatewrites only; no imports/tests/QA/native/primarymutations",
+    "Pluginengine/version/guard/budget/oracle/role/advisorychain unchanged",
+    "RetainedV4/V5failures unchanged, no sourceclockreset",
+    "No newnative/originalacceptance fromRSI",
+    "Rootmandatoryacceptedreview isexistingvalidate_rsi requirement, notanewreviewtier"
+  ],
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/manifest.json",
+    "sha256": "00b94b55816b522b3fe981907107d34dfa070650821e46eb46759aa1977b7690"
+  },
+  "predecessorReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/independent-source-helper-review-build.json",
+    "sha256": "066ee2ba666165805f1b783dd2aaf14e3be0006ec7b8dd817f14c2d65062c434"
+  },
+  "correction": "Only two paragraph splits and published frame\u2192published surface snapshot; no rule, example, predicate, or budget change."
+}

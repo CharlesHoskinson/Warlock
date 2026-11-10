@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/manifest.json",
+    "sha256": "b53f105397f9e4bd627d0cdafa7f9edda3a3ea9728892c6cdd8fd0adc25e9699"
+  },
+  "sourceManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/source-manifest.json",
+    "sha256": "2b1263a87e8e0b49abed0007bc87f4ace9bd177847e2976e6183c338f7704853"
+  },
+  "helper": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/prepare_native_contract_rsi.py",
+    "sha256": "aa9328627fe71d21d7cb14d0ca3ae3e590151d32a332da5121ec32dec6b3c879"
+  },
+  "findings": [],
+  "verifiedDelta": [
+    "Doc onlysplitsparagraphs and corrects publishedframe\u2192publishedsurfacesnapshot; factual scope/oracles/instructions unchanged.",
+    "Helper onlySOURCE_SHA changes; allfunction/class ASTs identical to acceptedf1f0, sameprobe/counts/finalizer."
+  ],
+  "priorReviewSha256": "066ee2ba666165805f1b783dd2aaf14e3be0006ec7b8dd817f14c2d65062c434",
+  "limits": [
+    "No reviewer imports/probes/tests/sourceeffects.",
+    "ActualRootprobes/DocCAS/review/snapshot/RSIadmission remainrequired; no adoptedresult claimed."
+  ]
+}

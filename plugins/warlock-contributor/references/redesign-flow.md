@@ -45,6 +45,16 @@ An API compiler RED is not a semantic RED. A RED/GREEN pair preserves one indepe
 
 Before freezing a fixed `--application-owner-route` candidate, run `scripts/owner_route_preflight.py` from the contributor plugin with the exact packet path and SHA256. Retain its advisory result with the candidate. It checks the three literal fixture bindings without executing the runner. A consistent result grants no readiness or execution authority; independent review and the protected launcher remain required.
 
+### Producer counters and capture limits
+
+Keep counters from different producers separate. A DOM presentation counter identifies the owning document's controls. A surface publication counter identifies the published surface snapshot. Publication 5 and presentation 4 can both be current. Parse the full binding and canonical counter. Check the presentation against the current document's control identities.
+
+Keep publication, lease, owner, request and replay checks independent. Do not infer counter equality from similar names or values.
+
+Set output limits for a fixed executable and exact argv. The fixed observer runner keeps its 64 KiB diagnostic limit for small command children. Only its pinned `grim` command and exact capture path use the reviewed 32 MiB per-file profile. Graphics shared-memory backing can exceed a diagnostic limit before a PNG exists.
+
+Retain the failure and identify the specific limit. Keep the 32 MiB frame-read cap, sixteen-frame limit and original 28+2 deadline. Refuse alternate capture arguments. These examples add no permission, review role or preflight step.
+
 ## Scoped protection
 
 Root retains protected execution and integration authority. Sol does not become a second executor. Writers prepare executable tests and reviewed commands. They do not run raw compilers, native effects or substitute an unprotected shell command.

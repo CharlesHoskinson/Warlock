@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "plugins/warlock-contributor/scripts/warlock.py",
+    "--record",
+    ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "--json",
+    "delivery-event",
+    "--event-file",
+    ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-native-source-contracts-v1/rsi-event.json",
+    "--expect-record-sha",
+    "c913d18e510c789dc70544f2f756d41b2f648b33005186a2786262b63617bd42",
+    "--expect-selection",
+    "29"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"record\": \".warlock-contributor/ux024-menu-tab-focus-root-20261109.json\",\n  \"nextRootAction\": {\n    \"kind\": \"change-plan\",\n    \"executor\": \"Root\",\n    \"candidateId\": \"ux024-connected-foreign-toplevel-observer-v6-20261110\",\n    \"candidateSha256\": \"2e51eedefc96a0c91da23072d085a6c5ee4da371526e363a84f45723e6883fdb\",\n    \"jobId\": \"pid2681464-start5220256\",\n    \"argv\": [\n      \"/usr/bin/python3\",\n      \"-B\",\n      \"/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py\",\n      \"--\",\n      \"/usr/bin/python3\",\n      \"-B\",\n      \"/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py\",\n      \"--sha256\",\n      \"9f548483ffbe0321f9c09d39a2d0a09c0a79b3c6db9330f6e2b2710e1c23d76a\"\n    ],\n    \"expectedObservation\": \"One fixed actual connected owner: initial empty, real owned mapped window Done, exact same handle removal after checked Alt+F4, actual retirement and whole owned normal cleanup within original28+2. Old documents are fixture only. No original UX024/provider-action acceptance or requirement/scenario credit.\",\n    \"executionAuthorized\": false,\n    \"acceptanceInferred\": false,\n    \"progress\": {\n      \"workflowPolicy\": 2,\n      \"iterationsWithoutProgress\": 0,\n      \"lastRecordedProgressUTC\": \"2026-11-10T01:33:39.540693+00:00\",\n      \"secondsSinceRecordedProgress\": 13223,\n      \"suspendedSeconds\": 0,\n      \"limits\": {\n        \"iterations\": 2,\n        \"seconds\": 2700,\n        \"sameFailureExperiments\": 2\n      },\n      \"investigationNeedsChange\": false,\n      \"planChangeRequired\": true,\n      \"reconciliationRequired\": false,\n      \"authorizationExpired\": false,\n      \"reasons\": [\n        \"45-awake-minutes-without-tested-integration\"\n      ],\n      \"effectiveAuthorizationExpiresUTC\": \"2026-11-10T14:40:00Z\",\n      \"action\": \"Change the next action or defer in this same history.\",\n      \"basis\": \"Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.\"\n    }\n  },\n  \"recordSha256\": \"acde29c791ae44886b4c96e440e36aade760b5c0771c6694c1cb980fa03d0bcb\",\n  \"acceptanceInferred\": false,\n  \"ok\": true\n}\n",
+  "stderr": ""
+}
