@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-private-source-for-qualification-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision5-observed-inspection-gesture/manifest.json",
+    "sha256": "027e50a0fdba6556426c691d2c7738ea14bbdda6c84a7cbc5e760041c8f4bdc8"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision5-observed-inspection-gesture/postimages/implementation/warlock/src/Desktop.elm",
+      "sha256": "23b5ef3c0224754ffac5bf884ace75b922b3e76dc8c03b95f251bbe401225b0d"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/elm-candidate-actual-failure-review-build.json",
+      "sha256": "e64fd81e926adbac3c4b64553285df36cdd6c98c07f801490936435c017b95ac"
+    }
+  ],
+  "verified": [
+    "Only applicationGesture adds two explicit local observation-only cases; all other Desktop bytes and14posts/fixtures are unchanged.",
+    "Open requires inspectionAvailable, exact current stamp, live presentation scope/no exhaustion/no choice, and current observed family root. TaskbarShell.groups uses WindowObservation.groups when observation capability is enabled.",
+    "Dismiss requires current observed context/menuID/binding/stamp/presentation/full group fingerprint. No stale/absent/native context receives this exception.",
+    "Exception is used only by existing applicationOnly conjunction in Desktop.updateOrdinary. Native pointer ownership gate, motion/workspace gates and native actions remain unchanged.",
+    "Real openObservedWindow/MenuBridge validation and keyboard-origin focus remain; dismissal uses existing fresh-read exact-incarnation return path. No fabricated idle pointer observation or modified oracle."
+  ],
+  "limits": [
+    "Static source-only; exact unchanged30checks/3setup/32seeds and old campaigns need Root execution.",
+    "No claim that all later menu/focus/return controls now pass or that native/original UX024 is accepted.",
+    "No reviewer QA/import/compiler/primary effects."
+  ]
+}

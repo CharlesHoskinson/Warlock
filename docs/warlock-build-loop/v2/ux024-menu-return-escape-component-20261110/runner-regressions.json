@@ -1,0 +1,64 @@
+{
+  "sourceManifestSha256": "d4e0f88e65e45b06ad8ef28a138092abeea46bf8c4b246951e5e908154d7a711",
+  "results": [
+    {
+      "label": "test_proc_executable_attestation",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native51-proc-executable-attestation/revision2-live-process-state/tests-first/test_proc_executable_attestation.py",
+        "--module",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native51-proc-executable-attestation/revision3-coalesced-fresh-attestation/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "-q"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-efc28d092ba54c1d9f2bdefa09860a84.scope; invocation ID: 513d530b12e24444b8c37087ee6872af\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n"
+    },
+    {
+      "label": "test_fresh_input_attestation_order",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native51-proc-executable-attestation/revision3-coalesced-fresh-attestation/tests-first/test_fresh_input_attestation_order.py",
+        "--module",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native51-proc-executable-attestation/revision3-coalesced-fresh-attestation/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "-q"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-af8c8748bd0640d4b3dc8e64c4d6c94b.scope; invocation ID: 1932249203d541238d9af6bebab3a410\n----------------------------------------------------------------------\nRan 1 test in 0.027s\n\nOK\n"
+    },
+    {
+      "label": "original30",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_observer.py",
+        "--module",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native51-proc-executable-attestation/revision3-coalesced-fresh-attestation/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "--phase-fixture",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/retained-native-v4-phase-pairs.json",
+        "--capture-failure",
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/report.json",
+        "-q"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-a6075e2a3f8642ae938f06399314308e.scope; invocation ID: 7adce66f002442a88d0a7856da27d4fd\n----------------------------------------------------------------------\nRan 30 tests in 0.319s\n\nOK\n"
+    }
+  ],
+  "nativeAcceptance": false
+}

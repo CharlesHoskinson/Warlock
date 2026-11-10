@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "reviewer": "continuity-arm64",
+  "verdict": "source-ready-for-exact-protected-daemon-only-observation",
+  "candidateSHA256": "d2b4a8cab7a07323d6f8039b02538b4f61d9612ab683a6f367ca7abc78f8f32c",
+  "runnerBindings": {
+    "check_arm64_cpu.py": {
+      "baseSHA256": "69dfbe726ca89fa09b90bcaa98f1e830b5e99f1ff97076a1dd6371c33ceecdb8",
+      "candidateSHA256": "1f2778426f3ce64c60d26df59c4d97671e4b42bcf350e979738555e36449ffdc",
+      "changedFunctions": [
+        "main"
+      ]
+    },
+    "qa_cpu.py": {
+      "baseSHA256": "026bc18ff385681573c1f69b2323d12a0545c57e5c7a81e447e65a0686142cfe",
+      "candidateSHA256": "e0dcceee525bab9ccabcabc265aca017108676d358910251b80933c9a84b01b4",
+      "changedFunctions": [
+        "arm64_inputs",
+        "main"
+      ]
+    }
+  },
+  "staticELFReviewSHA256": "ef17a5671d46aac6870bf82a8c70c691f2824e2ed700f57a11606c7a9d1f5044",
+  "exactNineELFPinsAndManifestMatchStaticArtifact": true,
+  "findings": [],
+  "sourceFindings": [
+    "Deferred SIGTERM/SIGINT handlers only append observations; cleanup executes without asynchronous injected Python exception, and restores original handlers at end. Parentless SIGKILL remains outside cooperative guarantee.",
+    "Only retained Popen child is sent SIGTERM/SIGKILL. Parsed printed PID is checked against child.pid and never used as signal target. killpg(child.pid,0) is observation-only; it is not cleanup authority or PID-birth proof.",
+    "Failure/stream overflow/early exit routes go through finally, try bounded termination, wait/reap, pipe close, closure/config postchecks and namespace snapshot. Forced cleanup/unknown survivor/missing EOF/nonzero exit cannot pass.",
+    "Existing private bwrap unshare-pid/unshare-net/private proc,tmp,run and read-only SDK/source mounts are reused. Snapshot baseline/during/final compares birth ticks for new PIDs and rejects survivors but samples only three instants; transient children between snapshots are not excluded. Snapshot is not full descendant/cgroup history or renderer custody evidence.",
+    "Exact nine canonical ELF bodies and system manifest pinned before/after with identities, hash and static-review digest in receipt; static dependencies alone do not prove actual dynamic loader/NSS resolution or ABI.",
+    "Fixed explicit daemon argv/env; fresh0700 bus directory and0400 config, controlled socket path, bounded stdout/stderr; no host bus clients, arbitrary CLI or credentials. Config auth/reply rules are not EXTERNAL/Hello/notification-action evidence.",
+    "qa input closure selects exact seven support files and outer/inner uses identical daemon_only flag; full SDK verification retained before/after. Existing function AST changes are only main(checkARM) and main+arm64_inputs(qaCPU); old branches/body behavior unchanged."
+  ],
+  "limits": {
+    "daemonRun": false,
+    "compilerOrQAExecuted": false,
+    "sharedAdoption": false,
+    "originalUX031Accepted": false,
+    "nativeAccepted": false,
+    "authorizationExpiryUnchanged": "2026-11-06T19:07:31.942628+00:00",
+    "namespaceCensus": "Three sampled birth snapshots only; no transient-child absence proof. Outer private-PID namespace teardown is separate protected contract, must be observed in actual run."
+  },
+  "readinessAfterRepair": "Root must independently review exact guard change, freeze support/config/current closure and execute only protected daemon-only observation. No client/service or notification/current-incarnation correctness inferred from daemon config/load/listen.",
+  "predecessorReviewSHA256": "6a5532fc6d5cae5fd9c2de77f8f2fb69a0451648065bd76af6d942d542012af8",
+  "predecessorCandidateSHA256": "b9f4a3c54696cf94ad8aadce3799695162360843ada8c4b5180e75145b2bb9ca",
+  "resolvedFinding": "Immediately before Popen candidate rejects monotonic>=original start+5, alongside deferred signal and absolute expiry. Startup includes all preparation, no deadline reset; expired preparation cannot spawn. Existing20s total/cleanup bounds unchanged.",
+  "onlyChangedGuardAndErrorMessageVerifiedByPredecessorReconstruction": true
+}

@@ -1,0 +1,48 @@
+{
+  "terminal": true,
+  "jobId": "pid244629-start8579738",
+  "candidateSha256": "1d9d9a2f41fe3b4b769722d4d3f25df5952e1b0f7b3ace1180a98df919526dc1",
+  "scope": "cpu",
+  "manifestSha256": "e5d4a3d71fcfadde3c2259593218893e7ca7baee7770a7ab419b9f1c67649250",
+  "fixtureSha256": "29479d3897265ade1b123f4374ebf5b33f910c4791d09e0b1593397eae1e9f01",
+  "exit": 1,
+  "classification": "failed",
+  "failureSignature": "ui011-baseline-restoration-missing-and-foreign-rebind-oracle-unresolved",
+  "actualOuterHandle": "83314",
+  "actualOuterHandleConsumed": true,
+  "rawReport": {
+    "path": ".warlock-contributor/ux024-menu-dom-1794320082023027137/report.json",
+    "sha256": "a5a73609452b49c17233b1cd3d93e25cf214e275fe679404fb6993b5a9b30e10"
+  },
+  "nodeReport": {
+    "path": ".warlock-contributor/ux024-menu-dom-1794320082023027137/ui011-observed-scope-retirement.json",
+    "sha256": "8281e3a64c8da89cc6229fcf85e820902b3f7c4f23de9bb38e2e4380f6b16ce4"
+  },
+  "actualExecutionReceipt": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/prepared-baseline/actual-root-baseline-execution.json",
+    "sha256": "73e9bdf864d6ab72caeffb2e447cede3ce058e5658da964305eaefe19759ada9"
+  },
+  "sourcePinsUnchanged": true,
+  "commandsPassed": 9,
+  "commandsAttempted": 10,
+  "caseCount": 24,
+  "failedCaseNames": [
+    "same-incarnation-restores-current-group",
+    "closed-origin-restores-declared-fallback",
+    "replacement-restores-only-declared-fallback",
+    "foreign-binding-cannot-settle",
+    "foreign-owner-cannot-settle"
+  ],
+  "seedFailureCount": 12,
+  "setupPreconditions": {
+    "current-view-one": true,
+    "current-observed-keyboard-menu": true,
+    "actual-enabled-refresh-control": true,
+    "actual-enabled-applications-fallback": true,
+    "application-only-no-native-authority": true
+  },
+  "failureAssessment": "Three expected restoration positives and two foreign-rebind no-focus checks fail. Preserve actual result; independent source/fixture diagnosis determines whether rebind diagnostics are legitimate. No blanket expected-red classification.",
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "scopeLimit": "CPU public reducer component only; no native/provider/AT acceptance."
+}

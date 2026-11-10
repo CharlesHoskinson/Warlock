@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-api-absence-and-separate-cleanup-refusal",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794268842126799857/report.json",
+    "sha256": "4fe5abd34059066045cfd76eabcbb3f8dcb7d727ee69ad6d73437ea3480a579a"
+  },
+  "buildStderr": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794268842126799857/logs/build.stderr",
+    "sha256": "eae165033fafef6f9b1e0079978145deec4bcf938dd6e96f6b1ae0ab04d50b0d"
+  },
+  "builderControlsStderr": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794268842126799857/logs/fixed-builder-controls.stderr",
+    "sha256": "1607edbfae007ff56d6138df5d24d28abfe4b1ef27902563e1bb9ad258e5c4ec"
+  },
+  "outerStdout": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/foreign-toplevel-v3-api-baseline-cpu/actual-loop.stdout",
+    "sha256": "54057f74e86a350cb1a4b0dc05e03772269ad9ac9db0e94cedbb5f9978e3b9b3"
+  },
+  "outerStderr": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/foreign-toplevel-v3-api-baseline-cpu/actual-loop.stderr",
+    "sha256": "b1877626b2c45ce61aa9678b25cf88da0da65e13aa072b533afca17b40421941"
+  },
+  "observed": {
+    "builderControls": 11,
+    "builderControlsPassed": true,
+    "buildExit": 1,
+    "exactMissingModule": "Warlock.Protocol.ForeignToplevel",
+    "allocationExecuted": false,
+    "outerExit": 1,
+    "cleanupRefusal": "require_group_absent refused retained process group after bwrap leader reap",
+    "reportCleanupQualified": false,
+    "reportForcedCleanupFlags": [
+      false,
+      false
+    ]
+  },
+  "classification": "Declared API availability baseline failure only; no semantic test RED, native result or clean retirement claim. Both independent failure facts retained unchanged.",
+  "rootLaterObservation": "Root reports protected scope inactive/dead Resultsuccess and no observed GHC/Cabal/bwrap process; no forcedkill. This is attributed Root observation, not retroactive erasure of immediate group-absence refusal.",
+  "nextSourceAssessment": "Adding independently reviewed new ForeignToplevel module and Cabal exposure against the exact same fixture is the minimal source response to missingAPI; justified as a new candidate qualification, not unchanged rerun or guard waiver. Root retains normal failed closure and all existing custody/deadline/cleanup checks.",
+  "pending": "Actual candidate compile/control completion and normal canonical closure; no result fabricated.",
+  "effects": {
+    "reviewerTests": false,
+    "imports": false,
+    "compiler": false,
+    "primaryWrites": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "reviewer": "continuity-arm64",
+  "verdict": "SOURCE_READY_FOR_BOUNDED_ORDINARY_IO_RED_GREEN",
+  "scope": "Exact I6r66 standalone issuer/store/backend-lifetime component only; no GIO/service/native/originalUX031 approval.",
+  "bindings": {
+    "candidate/src/Warlock/Backend.hs": "cbb4776f1f5e3b75754dc552ff0de9cede7363a124641523f8d30a2a110ee7dd",
+    "candidate/src/Warlock/Backend/NotificationIssuer.hs": "d50ae90b7134cc1cd3d85c308fae14ff59f12dc6694be3b887e806c924242e0e",
+    "candidate/src/Warlock/Backend/Store.hsc": "4a432f698c779e7d054805513f2f030b37636e9d1e29e5598e8e5c4c1987ffbe",
+    "candidate/runtime.cabal": "a2eed6a1d82c0168ed86a495fd70c811c5442a9c94482674e6b9c15118e8caaf",
+    "candidate/app-notification-provision/Main.hs": "bb490273b89684339ec590673cf08a07c67c2a7a3086e1abc300ca619858405e",
+    "test/Main.hs": "6f805f3ac203390e8b0002761e5ffa33cefd8b93995711b678b96998d8eae416",
+    "ROOT-REVIEW.md": "32fd767c9d55c9dc4dfbbd6d3b65d68ebef82ac5643991bef3257a465c599777"
+  },
+  "currentBaseBackendSHA256": "a857be418b684cfcb967564a9004331d5f95e752f3e9ccfeae5e21fafabbb0ab",
+  "currentBaseCabalSHA256": "17e60a7a8e6e021535311a4d4628e6bdb541e0a0c36513a8c9bbc36fdf92d5a4",
+  "definiteCompileDataCustodyFaultsFound": [],
+  "reviewedSourceTraces": [
+    "Opaque issuer added as private runtime module; public Backend facade exposes abstract generation/issuer and custody-bearing failure types. Current eight-field config, address accessor/parser and existing config test stanza remain preserved. New Cabal executable/suite dependencies supply public ordinary runtime linkage; suite needs its explicitly supplied fixture-root argument.",
+    "Provision creates permanent exclusive witness first and fsyncs file/parent; creates lifetime file then fixed transaction lock, provisioning marker, epoch0 and ready record; fsyncs checkpoints and removes marker only after readiness. Existing witness forbids accidental reprovision/reset after partial failure. No automatic recovery from incomplete provision claimed.",
+    "Reservation requires existing fixed lock, deployment+ready records, no provisioning marker or staged transaction. Canonical UInt64 epoch/read bounds checked, exhaustion refused. Original committed records receive file+directory durability barriers before exclusive temporary write/fsync/rename/directory fsync/reopen barrier. Crash uncertainty refuses instead of rolling epoch back.",
+    "Live issuer holds exact lifetime-flocked FD across reservations; checker independently reopens pinned directory/name and compares inode/device before transaction and after resource settlement. Transaction/checker/lifetime owners remain distinct; failure retains same owners in Poisoned state, no replay, no generation reconstructed from text.",
+    "Acquisition publishes resource cell before syscall; explicit negative acquisition alone marks Closed. Physical close attempted once, exception marks Uncertain and no later close retry or cleanup-success inference. Retirement false retains exact issuer custody; actual standalone Main failure exit is fail-stop rather than affirmative close proof.",
+    "Same parsed original absolute deadline checked before IO, after work, and after checker settlement before success publication. Final clock/check exceptions are captured and poison owners; async exception classification and exact issuer escape through typed failure wrappers. No new timeout/deadline origin.",
+    "Literal ordinary fixture exercises successful provisioning/reservation1/2, second live sameprocess issuer refusal, witness/no-reset, missing/corrupt/exhausted slots, changed lifetime inode refusal/no epoch advance, expired absolute deadline/no advance; all through public Backend API and real disposable root. No compiled/runtime result exists yet."
+  ],
+  "integrationConditions": [
+    "Adopt only Root-approved exact source tuple under claims, copy selected test/Main.hs into declared test-notification-issuer/Main.hs, retain exact fixed fixture-root wrapper and complete mandatory closure.",
+    "Root executes bounded protected compiler/API RED and matching GREEN under existing absolute authorization/QA budgets; compiler preparation failures are not semantic runtime RED.",
+    "Keep config30 regression when composing issuer tuple, because current a857/17e60 parser support is preserved but not automatically requalified by static review."
+  ],
+  "knownLimits": [
+    "Cooperating writers/pinned-root checkpoint identity only; hostile sameUID inode replacement between checkpoints is not prevented.",
+    "Provisioning-before-lifetime acquisition and crash/crossprocess durability need actual future observations; absence of those observations does not prevent this fixed disposable ordinary IO probe.",
+    "Original deadline checks cannot bound arbitrary kernel filesystem stalls; no kernel/crash/hostile-caller guarantee.",
+    "Singleprocess fixture is not I1 crossprocess or crash-injection proof; lifetime inode replacement test is named source-controlled checkpoint evidence only.",
+    "Future sameprocess adapter must retain custody-bearing failures/unconfirmed retirement or fail-stop; cannot continue as if cleanup succeeded.",
+    "No authentication/Hello/GIO/notification identity/exactly-once producer/native action/AT/IME/paint/resource/release acceptance."
+  ],
+  "executed": false,
+  "sharedMutation": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "configLoaderDecoderHelpersByteIdenticalToCurrentA857": true
+}

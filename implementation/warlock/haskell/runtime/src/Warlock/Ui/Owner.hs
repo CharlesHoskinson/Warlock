@@ -3,7 +3,7 @@
 -- Actual local UI owner: roles originate in separate bound listeners, never in
 -- browser-supplied tags. Native authority remains on the inherited Unix peer.
 module Warlock.Ui.Owner
- (UiEndpoints(..),TrustedOwnerEvent(..),EngineResult(..),UiResult(..),runUiOwner,runUiOwnerPrepared,uiResultJson) where
+ (retainRequestTrace,UiEndpoints(..),TrustedOwnerEvent(..),EngineResult(..),UiResult(..),runUiOwner,runUiOwnerPrepared,uiResultJson) where
 import Control.Concurrent (ThreadId,forkFinally,killThread)
 import Control.Concurrent.MVar
 import Control.Exception (SomeException,SomeAsyncException,fromException,mask,mask_,throwIO,try,finally)
@@ -29,6 +29,17 @@ import Warlock.Ui.Http
 import Warlock.Ui.Native
 import Warlock.Ui.Policy
 import Warlock.Ui.PrivateNetwork (PeerNetwork, verifyPrivateNetwork)
+
+-- Redacted diagnostic rows only. Keep recent non-poll requests from being
+-- immediately evicted by successful polling; no admission/count changes.
+retainRequestTrace :: J.Json -> [J.Json] -> [J.Json]
+retainRequestTrace newest prior =
+ let indexed=zip [(0::Int)..] (take 65 (newest:prior))
+     isEvents (J.JObject fields)=lookup "route" fields==Just (J.JString "Events")
+     isEvents _=False
+     polls=take 48 [index | (index,row)<-indexed,isEvents row]
+     other=take 16 [index | (index,row)<-indexed,not (isEvents row)]
+ in [row | (index,row)<-indexed,index `elem` polls || index `elem` other]
 
 data UiEndpoints = UiEndpoints {controllerOrigin :: Origin,barOrigin :: Origin,popupOrigin :: Origin,uiShouldStop :: IO Bool,uiRemainingMicros :: IO Int,uiLastProjection :: IO (Maybe J.Json)}
 data TrustedOwnerEvent = OwnerTopology J.Json | OwnerDismiss J.Json | OwnerEscape J.Json | OwnerReflow J.Json deriving (Eq,Show)
@@ -138,7 +149,7 @@ runUiOwnerPrepared witness config prepareEngine = mask $ \restore -> do
      record role route bytes = atomicModifyIORef' trace $ \rows ->
       let digest=C.pack (concatMap (\octet -> let hex=showHex octet "" in if length hex==1 then '0':hex else hex) (B.unpack (SHA.hash bytes)))
           row=J.JObject [("role",J.JString (T.pack (show role))),("route",J.JString route),("bytes",J.JNumber (T.pack (show (B.length bytes)))),("sha256",J.JString (TE.decodeUtf8 digest))]
-      in (take 64 (row:rows),())
+      in (retainRequestTrace row rows,())
      enqueue rows = modifyMVar queues $ \old -> do
       let updated=[(role,existing++[bytes | (destination,bytes)<-rows,destination==role]) | (role,existing)<-old]
           valid=all (\(_,items) -> length items<=16 && all ((<=1048704) . B.length) items) updated

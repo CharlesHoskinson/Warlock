@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "repository": "https://github.com/swaywm/wlr-protocols",
+  "commit": "b010a03648b88d143236de193bddbfea0c08bc84",
+  "commitResponseSha256": "88814b8b15bfb449fed4cb1d49dd9ffa22bbd33a7d798fe560af368b06561fa1",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/swaywm/wlr-protocols/b010a03648b88d143236de193bddbfea0c08bc84/unstable/wlr-virtual-pointer-unstable-v1.xml",
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/nextloop-20261106/virtual-pointer-cpu-preparation/upstream/wlr-virtual-pointer-unstable-v1.xml",
+      "sha256": "3ff6d540be0bc5228195bf072bde42117ea17945a5c2061add5d3cf97d6bb524",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swaywm/wlr-protocols/b010a03648b88d143236de193bddbfea0c08bc84/README.md",
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/nextloop-20261106/virtual-pointer-cpu-preparation/upstream/README.md",
+      "sha256": "a36246531919b4a3148de98aad7a789ece2ad484a8baf4e9427f4aac416fa9dc",
+      "status": 200
+    }
+  ],
+  "license": "MIT-style copyright license embedded in XML; retain exact copyright element with generated sources",
+  "execution": false,
+  "canonicalFetch": {
+    "url": "https://gitlab.freedesktop.org/wlroots/wlr-protocols/-/raw/b010a03648b88d143236de193bddbfea0c08bc84/unstable/wlr-virtual-pointer-unstable-v1.xml",
+    "status": 200,
+    "bodySha256": "b816b1e598a3762d0919852df18741f9cc23fd62411aafc63bb6d3207a0701f7",
+    "sameAsMaintainerMirror": false,
+    "contentQualification": "HTTP200 is an HTML anti-bot challenge, NOTXML; not accepted as source. XML comes from exact original-maintainer primary GitHub repository commit."
+  },
+  "protocolName": "wlr_virtual_pointer_unstable_v1",
+  "interfaces": {
+    "zwlr_virtual_pointer_v1": "2",
+    "zwlr_virtual_pointer_manager_v1": "2"
+  }
+}

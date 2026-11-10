@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "changes-required-runtime-proxy-retirement-ledger",
+  "runtimeManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/candidate/manifest.json",
+    "sha256": "097c1a7a54c6a78e90c596b1463df9921c0f0dc7a3ca590292c1517373f9e525"
+  },
+  "qualificationOriginal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/qualification-source/manifest.json",
+    "sha256": "0aa70393704d164bc111c092d5662f604687215fc5273030169081e6e80af60e"
+  },
+  "qualificationSeparated": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/qualification-source/revision2-separated-entrypoint/manifest.json",
+    "sha256": "99429751a59a72a03d561521a3211a4b7d974172acbdd50b98c890ac8701d3a2"
+  },
+  "primarySource": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/source-evidence/wayland-client.c",
+    "sha256": "c3536111c4fae59f9379a5927d79b80ef9bc4d0fe42054d54ce49027747d4c60"
+  },
+  "finding": {
+    "id": "WL-RETIRE-01",
+    "source": "ForeignToplevelOwner.hsc dispatch/eventFor/retire; upstream create_proxies1512,queue_event1653\u20131665,destroy_queued_closure281\u2013305,event_queue_release309\u2013345,disconnect1392\u20131405",
+    "counterexample": "read_events demarshals a manager new_id into a real proxy before user dispatch. A queued toplevel after sync barrier or a guard/budget callback failure before eventFor tracking leaves that proxy absent ownerProxies. Retire currently ignores ownerFault/private queue and destroys only known proxies; queue release unrefs/detaches, disconnect only frees zombies. Retired/freeing metadata can be asserted despite untracked live proxy. Fatal demarshal can also allocate before queue insertion, so empty queue alone is insufficient.",
+    "minimumCorrection": "Before any destruction under exclusive owner gate require no sticky callback/escaped connected-operation fault AND private prepare_read_queue success, cancel immediately; any failure/pending queue retains owner/resources. Mark escaped failure once display acquired sticky before retire, including read/initialize failures; no read/dispatch between empty proof and release. Root/Astra own source successor."
+  },
+  "positiveSourceChecks": [
+    "FFI dispatcher signature/array marshal metadata matches installed headers/v3 XML; callbacks dispatched by safe pending_single, physical PID/TID and original Haskell ThreadId checks separated.",
+    "Exact existing endpoint/process/socket/Resolver pin checks, nonblockingconnect/SO_ERROR/peer credentials and inheriteddeadline/noambientdiscovery used.",
+    "connect_to_fd consumesFD even failure, transfer ledger removesownedFD beforecall; queue/proxy/display metadata kept during callbacks; no free callback data inside callback.",
+    "Successful prepareRead paths have exactlyreadEvents orcancelRead, including onException; no blocking roundtrip/new independent timeout.",
+    "Bounded text/state reads beforecopy, finite proxy/event/request budgets, true perhandleDone/publicaccumulator semantics; no workspace/availability/effects orBackendwiring."
+  ],
+  "qualificationAssessment": {
+    "oldBranch": "Original0aa added real FD IO and extra sentinel to allocation-only, so not accepted under old pure collector contract. Retain original proposal.",
+    "separatedR2": "Source accepted for isolated no-connect CPU IO design, conditional on corrected runtime and independently reviewed new fixed support route. Old allocationControls body/output preserved; exact --foreign-endpoint-refusal-only dispatch/sentinel only.",
+    "boundary": "17 invalid selections and32invalidname seeds fail before socketC/connectDisplay. Some open/read/close actual root directoryFDs, so not pure. Expiredsame inheriteddeadline deliberately returnsRetained and readreuse refusal; no actualcallback/display/provider positives.",
+    "deadline": "Reads exactly one WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS through existing deadlineFromAbsoluteNs; requirespositive<=5s and reuses same deadline acrossallcases/expiry. Collector must supply clipped actualabsolute deadline, no borrowed caller override.",
+    "controlClaims": "No percallback/lifetime/actualprovider success claimed; controls unexecuted."
+  },
+  "typeReadiness": "No concrete ABI/signature mismatch found in static pass; broad Foreign plus explicit Data.Word Word32 may cause redundant-import warning and should be addressed/confirmed by Root compiler without warning relaxation. No compiler execution by reviewer.",
+  "limits": [
+    "Changes-required applies frozen20cda; no approval of runtime execution or native readiness.",
+    "Root alone executes compile/CPU IO under new fixed route; no display/socket/provider/GTK/service execution authorized by this review."
+  ],
+  "effects": {
+    "tests": false,
+    "targetImports": false,
+    "compiler": false,
+    "primaryWrites": false
+  }
+}

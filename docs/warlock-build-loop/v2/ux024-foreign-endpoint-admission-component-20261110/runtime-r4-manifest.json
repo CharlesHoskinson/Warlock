@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "kind": "private-runtime-one-import-compile-correction",
+  "parentRuntime": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/candidate/manifest.json",
+    "sha256": "097c1a7a54c6a78e90c596b1463df9921c0f0dc7a3ca590292c1517373f9e525"
+  },
+  "parentFixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/qualification-source/revision2-separated-entrypoint/manifest.json",
+    "sha256": "99429751a59a72a03d561521a3211a4b7d974172acbdd50b98c890ac8701d3a2"
+  },
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "sha256": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/runtime.cabal",
+      "beforeSha256": "ace459e3085728e2da478254323b8a622c8d4f1acfe6b713983fb3bd5299f146",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/postimages/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "6a483a0f0f8ef8a607239b83846aa2e3da9323e78ca74291275c8bee1c747c23"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "67b42959060ed6e62809d8498f1540a01dbac863200cf5bbc39f6599ff27a8af",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "e8b5581842aa4b1f94d9fd37b8b2b532a7b6d5f1cf3711813cd78cd4c185e0c5"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/candidate.patch",
+    "sha256": "93cafdd2dfa08dbe6b5228cdbe46483eb438af382bf0b79a733fc17b1c873089"
+  },
+  "runtimeDelta": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/runtime-delta.patch",
+    "sha256": "93cafdd2dfa08dbe6b5228cdbe46483eb438af382bf0b79a733fc17b1c873089"
+  },
+  "qualificationPlan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/qualification-source/revision2-separated-entrypoint/qualification-plan.json",
+    "sha256": "046f84a431500eb1abe92b7aa1687ae6da80292ab8187cee9dde9e00846c05b2"
+  },
+  "retirementProof": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision2-queue-retirement-and-cpu-entry/retirement-proof-and-limits.json",
+    "sha256": "488019b56420bf726fac175f1665042cddc8d5243c1b699762edd40c92058459"
+  },
+  "abi": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/abi-source-pins.json",
+    "sha256": "1bc8bd57ec37cdf80cb1e2b698e4533acaf17eedfe9277578c8dfd1fa9ab5a0f"
+  },
+  "compiled": false,
+  "executedByAuthor": false,
+  "primaryWrites": false,
+  "nativeAcceptance": false,
+  "capabilityGranted": false,
+  "backendUnchanged": {
+    "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+    "sha256": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4"
+  },
+  "parent": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/manifest.json",
+    "sha256": "a898dca33d694111740f4e2928f0f06bd584781f8d9f7de82199e2b097b96e08"
+  },
+  "publicReadFaultRationale": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/public-read-fault-rationale.json",
+    "sha256": "987ae46139f574669cd2253957b5feb820512de0df4bb4a2a99950a31b830a29"
+  },
+  "delta": "Remove ONLY redundant Data.Bits import reported by actual Root GHC -Werror. Foreign supplies the same operators. No flags or behavior change; Main/Cabal byte-identical."
+}

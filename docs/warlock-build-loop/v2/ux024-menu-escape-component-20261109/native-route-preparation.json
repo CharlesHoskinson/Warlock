@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "kind": "ux024-native-route-source-preparation",
+  "disposition": "not-ready-existing-route-has-production-reachability-gaps",
+  "sourceOnly": true,
+  "executionPerformed": false,
+  "nativeAcceptance": false,
+  "productionChanges": false,
+  "original": {
+    "requirement": "ELM-UX-024",
+    "scenario": "ux-024",
+    "given": "taskbar menu has focus",
+    "when": "Tab traversal then Escape occurs",
+    "then": "focus follows menu order and returns to original eligible target",
+    "source": "openspec/changes/elm-desktop-pivot/specs/elm-accessibility/spec.md:317"
+  },
+  "graphCheck": "Existing warlock-ctx query reported three stale inputs. All findings below checked against actual source; no graph update or target import.",
+  "reusableRoute": {
+    "runner": "tools/run_current_arm_ux023_notifications_keyboard_journey.py",
+    "heldKeyboard": "Lines1430-1440: one existing noninput keyboard seat before GTK; real wtype commands only, once-only key sequence and no pointer assets. Keep actual birth/image/group custody and EOF normal0.",
+    "observations": "_PhaseSnapshots uses existing owned descriptor ancestry, exact request nonce/sequence/root/role/PID/deadline and paired DOM observations. Keep at most16 pairs; snapshots schedule inputs, independent pixels adjudicate focus.",
+    "bounds": "Keep issued28s monotonic original deadline +2s cleanup, at most9 fixed input transactions,16 total screenshots including readiness. Do not extend/restart/replay on incomplete phase.",
+    "cleanup": "Keep typed whole-engine/backing/stack/input retirement, final group absence and global restoration; unknown/forced is not normal.",
+    "preflight": "Reuse current-boot graphics wrappers and complete preflight, but rebind actual current source/images/participant/selection/authorization with new immutable packet namespace. Never mutate retained nativePrerequisites."
+  },
+  "blockingPrerequisites": [
+    {
+      "id": "real-window-observation",
+      "source": "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs:330-345",
+      "finding": "Current Backend allows only CatalogRead/PinsWrite/ApplicationLaunch and publishes applicationAttachedWithLocalNotifications. Config applicationAttachment false only suppresses that message; it does not add a native window observation producer.",
+      "consequence": "Shell.available at Shell.elm81 explicitly rejects applicationOnly. No genuine taskbar group/menu/fresh post-dismissal refresh is established by the Notifications fixture.",
+      "needed": "A source-reviewed existing configured authenticated window observation/refresh producer plus a real owned eligible window. NativeProvider.elm consumes already admitted Shell.Ready observations; it is not a transport producer. No such runnable producer was established in this bounded inspection. Do not fabricate attachment/projection or substitute pinned application menu."
+    },
+    {
+      "id": "real-menu-key-emitter",
+      "source": "implementation/warlock/src/SurfaceRenderer.elm:486-487",
+      "finding": "Actual shared renderer button binds click only; bounded search across current src and runtime/ui finds surface-context only in Surface.elm decoder. No ContextMenu/Shift-F10 emitter was found in HttpBar/SurfaceRenderer.",
+      "needed": "A genuine keyboard event path on the current eligible taskbar group that emits existing exact-publication/lease surface-context with keyboard trigger. Pure replay constructs that public event and does not prove native event production. No JavaScript event injection or direct HTTP POST."
+    },
+    {
+      "id": "gtk-menu-focus",
+      "source": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc:253-286",
+      "finding": "parseMvpFocusIntent selects Popup for applications/notifications only; menu returns Nothing. Closed branch selects Bar using bar:applications, not proof of restored taskbar group.",
+      "needed": "Prove or minimally implement menu Popup focus handoff under existing selected-owner/scope/publication/lease/eligible/root/currentD checks. Preserve Elm focus to exact original group after fresh observation; Gtk grab-focus alone is not DOM focus."
+    },
+    {
+      "id": "escape-dispatch",
+      "source": "implementation/warlock/src/SurfaceController.elm:155",
+      "finding": "Current trusted NativeEscape selects control:close but menu emits control:menu-close.",
+      "needed": "Pending Root semantic RED and one-field mode-specific production correction; no production candidate authorized by this preparation."
+    }
+  ],
+  "conditionalFixedJourney": {
+    "status": "design only; literal argv not armed because actual taskbar group/provider and focus order are not established",
+    "transactions": [
+      "1: fixed real keyboard traversal to sole known eligible taskbar group; record original identity and visible focus",
+      "2: real keyboard context-menu key through production emitter; await same-owner menu Popup and first eligible control focus",
+      "3: Tab to next enabled menu control",
+      "4: Shift-Tab back to first eligible control",
+      "5: Shift-Tab wraps first to last eligible control",
+      "6: Tab wraps last to first eligible control",
+      "7: Tab follows next eligible control again without activation",
+      "8: Escape through existing native scoped Escape route; await actual matching fresh observation and focus on original eligible group",
+      "9: existing real Alt-F4 closes owned GUI; normal held-keyboard EOF then existing cleanup"
+    ],
+    "frames": "Use existing16 total frame cap, with images at original group, menu entry, each traversal endpoint and restored group. Every wait shares originalD; no extra readiness loop budget.",
+    "order": "Menu-only sequential rendered popup order after enabled filtering. Require at least2 eligible controls for nontrivial traversal. Do not infer order from overview/switcher raw lists or add disabled/focusOnly menu controls that codec forbids.",
+    "return": "Desktop.elm514-522 stores keyboard origin and issues Shell.Refresh; lines565 onward require matching fresh observation, same binding/output, eligible existing group and no successor popup. Preserve request correlation and single-use return. Compare semantic group identity across revision-dependent DOM ids; never accept same literal DOM id as sufficient."
+  },
+  "preciseProspectiveDiffs": [
+    "New QA-only UX024 version of runner/key fixture/attempt authorization with existing participant23 and new immutable packet; update current source/image bindings, not old evidence.",
+    "Replace only Notifications-specific sequence, expected phase controls/lease transitions, screenshot labels and operation checks with menu/origin witnesses. Preserve9/16/28+2 and all current provider/cleanup guards.",
+    "Compile actual current HttpBar/HttpPopup/HttpMain assets and any reviewed Haskell host change. Existing Notifications images cannot certify added keyboard context or menu GTK focus.",
+    "Real window observation producer is an unresolved product prerequisite, not a justified fixture-only change. Root must choose its actual source route before native preparation can be executable."
+  ],
+  "excluded": [
+    "No synthetic attachment, window projection, DOM input or HTTP action",
+    "No service/GIO resumption",
+    "No old participant replacement or authority inference from source prep",
+    "No native acceptance from sender exit, callback ACK, JSON focus or CPU reducer effects"
+  ],
+  "sourcePins": {
+    "openspec/changes/elm-desktop-pivot/specs/elm-accessibility/spec.md": "b348a4ae2a3967b9270e07d944611379ef8aa0017f798fc2f81e4c54b7d00b51",
+    "tools/run_current_arm_ux023_notifications_keyboard_journey.py": "da79ecfcb9de1abd70d5126af08c4f979c33e4dd1a797729b0bdd5cabedbd910",
+    "tools/ux023_notifications_keyboard_fixture.py": "47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3",
+    "tools/ux023_notifications_attempt_authorization.py": "ac02d8453d412f747b24d43e7bcab3a97743fd81ead6bd760d629fc08177f3d1",
+    "tools/ux023_current_boot_correspondence.py": "f4be1482ecbf50844a255bd1c736a45cd02b39af79d1469c3e9e968f42275a3b",
+    "tools/omarchy_ui_mvp.py": "3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "f02fd8bcd02bce9346eea67995199d8b192755b5fa76fb125570306c2bda8847",
+    "implementation/warlock/src/Surface.elm": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179",
+    "implementation/warlock/src/SurfaceRenderer.elm": "d5439ebf36c3624fd56a316a012177dcc20c47e883437d469e70c08ab3b1825c",
+    "implementation/warlock/src/HttpBar.elm": "135d13fce502e0b2e2d4b14f6e4a452a3f1a51db2f332fbd6c9b9d16e78ebab6",
+    "implementation/warlock/src/HttpPopup.elm": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133",
+    "implementation/warlock/src/Shell.elm": "4ef1ceaf83a5d306d8d51fc0af4e56877eefdfa66f076fef6acf18d46b23bf73",
+    "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "implementation/warlock/src/Desktop.elm": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815",
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998"
+  }
+}

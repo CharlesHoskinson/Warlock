@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "scope": "ux024-existing-qualified-named-map-data-and-failure-diagnostics",
+  "changes": [
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "baselineSha256": "67f95421252c16af8421623a63bbbcc63f128c1bf32bbb4fc2d856692c770800",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/source-successor/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "sha256": "54ad12df62cc688411993a1f13c2a220fae5d05d79a3ecb7a9c1a366a0b83e08"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_named_mapping_diagnostics.py",
+      "baselineSha256": null,
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/source-successor/test_ux024_named_mapping_diagnostics.py",
+        "sha256": "acc441d01e161ce899fd210288c39d81d1e9b8ed5f6e9b0002e34a95a231759c"
+      }
+    }
+  ],
+  "namedDataProposal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/named-mapping-data.PROPOSED.json",
+    "sha256": "edda5df0d33ca07e49a999ccd8c9992918bfcf42994714c49e62775df8374be6"
+  },
+  "finiteAnalysis": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/foundation-minus-process-inventory.json",
+    "sha256": "f325a32b9430476ff49a17d076d773c404765a8fca2eec2ca36f549659c36f25"
+  },
+  "newPacketPath": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v4/packet.json",
+  "qualification": {
+    "newPureControls": 7,
+    "existingRunnerControls": 15,
+    "authorExecution": false,
+    "rootArgv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/source-successor/test_ux024_named_mapping_diagnostics.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/source-successor/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "-v"
+    ]
+  },
+  "metadataComposition": {
+    "addExactNamedDataInputsTo": "packet.processInventory",
+    "newPacketFields": false,
+    "newProofConsumer": false,
+    "additionalDataPins": 12,
+    "retainedProcessInventoryPins": 14720,
+    "noCallerOrRuntimeAutobless": true
+  },
+  "limits": [
+    "No primary writes, imports,QA/native/compiler execution byauthor",
+    "Existing strict_snapshot_files call AST unchanged and noexceptioncaught",
+    "ActualfailedV3firstlocaleobservationretained; oldfullmaprowsnotinvented",
+    "FullrawmapssavedunderoriginalD beforestrictcheck; diagnosticsmax256names8192characters each, reportsactualtotal+truncation",
+    "No localeenvironmentchange/ELFoverride/globalcacheexception",
+    "Same Main1698/current2ELFimages/ABI/providerproof/auth/29/28+2/16frames",
+    "FailedV3canonicalconsumedclosure beforeRootadoption"
+  ]
+}

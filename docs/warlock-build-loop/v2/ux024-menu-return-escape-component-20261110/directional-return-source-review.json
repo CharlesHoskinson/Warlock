@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted",
+  "scope": "Bounded directional explicit focus handoff source review; compile/runtime pending",
+  "manifestSha256": "d282c7d40768be45d4bd90555b5862dbde4493016ce7fc91053ae6e25bf01490",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/revision2-native-v7-namespace/manifest.json",
+      "sha256": "d282c7d40768be45d4bd90555b5862dbde4493016ce7fc91053ae6e25bf01490"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "6e09d795f8c88e69a922ec92c7ea5116ab7aebb1c9d64be57f4af5ba589a56e3"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "8d5fdc55ce3f2f996c110de1a54f648bbac33d18681e1c1c4dc095cce76c5b58"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/revision2-native-v7-namespace/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "d19de9e67e35b4c4fdcc0e5561a7c3e3c7d208f10fde11c5caa7dad7ec5fd72f"
+    }
+  ],
+  "verified": {
+    "typedRolePredicate": "Bar allows existing validated return regardless of held/uncertain capture state; Popup retains exact release-ready predicate",
+    "existingProjectionTopologyScopeWidgetRootActiveMappedDimensionsDeadlineAndPostchecksUnchanged": true,
+    "noHeldStateResetOrSyntheticInput": true,
+    "focusIntentCommittedOnlyAfterSuccessfulCheckedFocus": true,
+    "newPureCases": 12,
+    "seededSequences": 32,
+    "oldControlsPreserved": true,
+    "sameLeaseParsedPopupToBarAndRepeatedClosedIntentCovered": true,
+    "runnerNamespaceOnly": true,
+    "WebKitPassiveDiagnosticUnchanged": true
+  },
+  "limits": [
+    "No reviewer imports/tests/compiler/native effects or primary edits.",
+    "Actual46 capture-state readiness and transition decision were not observed; source correction does not prove which gate caused failure.",
+    "Bar return may occur while a key remains held; the previous all-directions release requirement is deliberately narrowed to Popup entry, not a general release-preservation guarantee.",
+    "New API baseline compile absence is not semantic RED.",
+    "Pure role controls cannot certify GTK return/key delivery, native journey, cleanup or original UX024/EARS acceptance."
+  ]
+}

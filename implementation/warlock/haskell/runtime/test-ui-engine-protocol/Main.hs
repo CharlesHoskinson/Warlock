@@ -201,7 +201,9 @@ main :: IO ()
 main = do
  DesktopIdleControls.run
  ProtocolBoundary.run
+ backingStartupControls
  start <- initial
+ guiObservationControls start
  let startupLiteral = "{\"version\":1,\"controller\":12001,\"bar\":12002,\"popup\":12003,\"deadline\":\"123456789\",\"incarnation\":\"91\"}"
  assert "literal startup accepted" (decodeStartup startupLiteral == Right start)
  assert "encoded startup remains readable" (decodeStartup (encodeStartup start) == Right start)
@@ -287,3 +289,89 @@ main = do
  assert "wrong reply method poisons client" (wrong == Left WrongReply && isPoisoned failed)
  when (not (isPoisoned failed)) (ioError (userError "unreachable"))
  putStrLn ("engine protocol replay draft seed=" ++ show seed)
+
+-- Literal completion bytes carry no cleanup/pass authority.
+guiObservationControls :: Startup -> IO ()
+guiObservationControls start = do
+ let full = guiObservation True True True True True
+     partial = guiObservation True False True True True
+     payload = "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\"}"
+     raw = frame (requestHeader "guiObservation") payload
+     (clientWaiting, issued) = beginRequest (newSession start) (SubmitGuiObservation full)
+     (serverPending, accepted) = acceptRequest (newSession start) raw
+ assert "GUI literal typed observation accepted" (accepted == Right (SubmitGuiObservation full))
+ assert "GUI partial observation is not complete" (not (guiObservationComplete partial))
+ assert "GUI full bounded facts complete" (guiObservationComplete full)
+ -- Source-first literal extension controls: bounded strings cannot grant authority.
+ diagnostic <- need (withRendererDiagnostics "{\"status\":\"observed\"}" "{\"status\":\"pending-original-deadline\"}" partial)
+ assert "renderer diagnostics cannot promote partial GUI facts" (not (guiObservationComplete diagnostic))
+ let diagnosticPayload = "{\"controllerLoaded\":true,\"barLoaded\":false,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\",\"rendererDiagnostics\":{\"bar\":\"{\\\"status\\\":\\\"observed\\\"}\",\"popup\":\"{\\\"status\\\":\\\"pending-original-deadline\\\"}\"}}"
+ assert "literal renderer diagnostics accepted with original facts" (snd (acceptRequest (newSession start) (frame (requestHeader "guiObservation") diagnosticPayload)) == Right (SubmitGuiObservation diagnostic))
+ assert "renderer diagnostics reject overbound ASCII" (case withRendererDiagnostics (T.replicate 8193 "a") "ok" full of Left _ -> True; _ -> False)
+ assert "renderer diagnostics bound UTF8 rather than characters" (case withRendererDiagnostics (T.replicate 4097 "é") "ok" full of Left _ -> True; _ -> False)
+ assert "renderer diagnostics accept exact byte bound" (case withRendererDiagnostics (T.replicate 4096 "é") "ok" full of Right _ -> True; _ -> False)
+ let malformedDiagnostic = "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\",\"rendererDiagnostics\":{\"bar\":\"ok\",\"popup\":\"ok\",\"cleanup\":true}}"
+ assert "renderer diagnostic authority field refused" (case snd (acceptRequest (newSession start) (frame (requestHeader "guiObservation") malformedDiagnostic)) of Left _ -> True; _ -> False)
+
+ assert "GUI observation diagnostic exact literal" (J.renderJson (guiObservationJson full) == "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"process-pinned\"}")
+ assert "GUI observation diagnostic preserves incomplete fact" (guiObservationJson partial /= guiObservationJson full)
+ encoded <- need issued
+ assert "GUI literal request exact" (encoded == raw)
+ let (sending, response) = finishRequest serverPending GuiObservationAck
+ ack <- need response
+ assert "GUI literal ACK exact" (ack == frame (replyHeader "guiObservation") "\"observed\"")
+ let (serverDone, confirmed) = confirmReplySent sending
+     (clientDone, acknowledged) = acceptReply clientWaiting ack
+ assert "GUI ACK confirmed" (confirmed == Right () && acknowledged == Right GuiObservationAck)
+ assert "GUI no subsequent client request" (case snd (beginRequest clientDone GetStop) of Left _ -> True; _ -> False)
+ assert "GUI no terminal replay" (case snd (acceptRequest serverDone raw) of Left _ -> True; _ -> False)
+ let foreignRaw = frame "{\"version\":1,\"direction\":\"request\",\"session\":\"92\",\"request\":\"1\",\"method\":\"guiObservation\"}" payload
+ assert "GUI foreign session refused" (snd (acceptRequest (newSession start) foreignRaw) == Left ForeignSession)
+ let bad = frame (requestHeader "guiObservation") "{\"controllerLoaded\":true,\"barLoaded\":true,\"popupLoaded\":true,\"mvpAttached\":true,\"loopReturned\":true,\"callbackCustody\":\"freed\"}"
+ assert "GUI nonpinned custody malformed" (case snd (acceptRequest (newSession start) bad) of Left _ -> True; _ -> False)
+ let lost = poisonSession clientWaiting
+ assert "GUI EOF before valid ACK refuses" (case snd (acceptReply clientWaiting B.empty) of Left _ -> True; _ -> False)
+ assert "GUI ACK loss cannot replay" (snd (beginRequest lost (SubmitGuiObservation full)) == Left Poisoned)
+ let (a,b,c) = startupOrigins start
+     endpoints = Owner.UiEndpoints a b c (pure False) (pure 1) (pure Nothing)
+ direct <- Adapter.serveRequest endpoints (const (pure (Right ()))) (SubmitGuiObservation full)
+ assert "GUI direct adapter cannot manufacture ACK" (direct == Left InvalidState)
+
+-- Literal startup v2 metadata is not host-path ownership or cleanup evidence.
+backingStartupControls :: IO ()
+backingStartupControls = do
+ let root = "/tmp/warlock-ui-backing-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+     literal = "{\"version\":2,\"controller\":12001,\"bar\":12002,\"popup\":12003,\"deadline\":\"18446744073709551615\",\"incarnation\":\"18446744073709551614\",\"backingRoot\":{\"path\":\"/tmp/warlock-ui-backing-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\",\"device\":\"18446744073709551615\",\"inode\":\"18446744073709551614\",\"owner\":\"4294967295\"}}"
+ sid <- need (sessionId "18446744073709551614")
+ binding <- need (backingRootBinding root 18446744073709551615 18446744073709551614 4294967295)
+ selected <- need (startupWithBacking 12001 12002 12003 "18446744073709551615" sid binding)
+ assert "backing literal full-width metadata accepted" (decodeStartup literal == Right selected)
+ assert "backing startup exact literal bytes" (encodeStartup selected == literal)
+ assert "backing stays within original startup cap" (B.length literal <= maxHeaderBytes)
+ assert "backing binding retained without host cleanup grant" (startupBackingRoot selected == Just binding)
+ assert "backing metadata retains full-width device inode uid"
+   (backingRootFields binding == (root,18446744073709551615,18446744073709551614,4294967295))
+ assert "backing original D and SID retained"
+   (startupDeadline selected == "18446744073709551615" && startupIncarnation selected == sid)
+ legacy <- initial
+ assert "legacy startup carries no parent backing" (startupBackingRoot legacy == Nothing)
+ assert "legacy startup wire unchanged"
+   (encodeStartup legacy == "{\"version\":1,\"controller\":12001,\"bar\":12002,\"popup\":12003,\"deadline\":\"123456789\",\"incarnation\":\"91\"}")
+ forM_ ["/tmp/other",root <> "/controller",root <> "/../foreign",T.toUpper root,T.dropEnd 1 root,root <> "0"] $ \bad ->
+   assert "backing rejects arbitrary or malformed root" (case backingRootBinding bad 1 2 1000 of Left _ -> True; _ -> False)
+ forM_ [(-1,2,1000),(18446744073709551616,2,1000),(1,0,1000),(1,18446744073709551616,1000),(1,2,-1),(1,2,4294967296)] $ \(dev,ino,uid) ->
+   assert "backing rejects truncated identity range" (case backingRootBinding root dev ino uid of Left _ -> True; _ -> False)
+ let replace old new = C.pack . T.unpack . T.replace old new . T.pack . C.unpack
+ forM_ [replace "\"version\":2" "\"version\":1" literal
+       ,replace "\"version\":2" "\"version\":3" literal
+       ,replace "\"owner\":\"4294967295\"" "\"owner\":\"4294967296\"" literal
+       ,replace "\"device\":\"18446744073709551615\"" "\"device\":\"01\"" literal
+       ,replace "\"inode\":\"18446744073709551614\"" "\"inode\":\"0\"" literal
+       ,replace "\"owner\":\"4294967295\"" "\"owner\":4294967295" literal
+       ,replace "\"owner\":\"4294967295\"" "\"owner\":\"4294967295\",\"cleanup\":true" literal
+       ,replace "\"owner\":\"4294967295\"" "\"owner\":\"4294967295\",\"owner\":\"4294967295\"" literal] $ \bad ->
+   assert "backing literal malformed identity or authority field refused" (case decodeStartup bad of Left _ -> True; _ -> False)
+ let (_,request) = beginRequest (newSession selected) GetStop
+ raw <- need request
+ let (_,foreignReply) = acceptRequest (newSession legacy) raw
+ assert "backing startup cannot cross incarnation" (foreignReply == Left ForeignSession)

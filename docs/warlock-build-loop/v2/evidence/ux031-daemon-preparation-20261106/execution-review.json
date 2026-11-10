@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "reviewer": "continuity-arm64",
+  "verdict": "accepted-bounded-daemon-config-load-listen-normal-cleanup-observation",
+  "reportSHA256": "9ffe41a5a65ffd9b3765385aa71d9d0023d14ef4387566481e2eead03d92e59d",
+  "daemonReceiptSHA256": "9bb0e6711b20fa040b5cba02879ae3140c407582f4a221cf0b1b4d8f37d6abd7",
+  "allSevenCurrentSourcePinsMatchPacket": true,
+  "inlineSupervisorCommandList": [],
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-aa3ec19296b340e6b073ca1fae5f752c.scope",
+    "coreLimit": 1
+  },
+  "readinessRecords": [
+    "unix:path=/tmp/warlock-ux031/bus,guid=02ac977e26de8ae8290a9fac6aedddbc",
+    "3"
+  ],
+  "childNamespacePID": 3,
+  "childBirthTicks": "7153630",
+  "normalCleanup": {
+    "terminationRequested": "SIGTERM",
+    "exit": 0,
+    "forcedCleanup": false,
+    "pipeEOF": [
+      "stderr",
+      "stdout"
+    ],
+    "stderrEmpty": true,
+    "errors": [],
+    "elapsedSeconds": 0.11554303099546814
+  },
+  "nineELFIdentityAndHashPinsCurrentlyMatch": {
+    "/usr/lib/ld-linux-aarch64.so.1": true,
+    "/usr/bin/dbus-daemon": true,
+    "/usr/lib/libc.so.6": true,
+    "/usr/lib/libsystemd.so.0.45.0": true,
+    "/usr/lib/libgcc_s.so.1": true,
+    "/usr/lib/libcap-ng.so.0.0.0": true,
+    "/usr/lib/libaudit.so.1.0.0": true,
+    "/usr/lib/libexpat.so.1.13.1": true,
+    "/usr/lib/libdbus-1.so.3.38.3": true
+  },
+  "manifestAndAllNineBeforeAfterExactlyEqual": true,
+  "sampledNamespaceBeforeAfterExactlyEqual": true,
+  "baselineNamespace": {
+    "1": {
+      "birth": "7153377",
+      "ppid": "0"
+    },
+    "2": {
+      "birth": "7153378",
+      "ppid": "1"
+    }
+  },
+  "outerLifecycle": {
+    "rootHandle": 8366,
+    "rootObservedExit": 0,
+    "rootHandleConsumed": true,
+    "evidenceBoundary": "Root actual terminal observation supplied in assignment; no separate independently read outer terminal receipt. Inner report/daemon receipt independently read and hashed."
+  },
+  "sourceGuardScope": "Reviewed runner performs full SDK verify/source closure checks before and after private execution; report passed true only after those postchecks. Seven current inputs independently rehashed; full SDK tree validator was not rerun by reviewer.",
+  "limits": [
+    "Daemon config/load/listen and100ms live observation only; no client connection, EXTERNAL authentication, Hello, GIO, notification method, notification identity/action or originalUX031 oracle executed.",
+    "commands[] is expected: fixed supervisor runs inline, not compiler or model commands.",
+    "Namespace before/during/final snapshots establish sampled baseline restoration only, not absence of transient children between samples or complete process history. Normal protected outer terminal exit is Root attestation, not a new native custody qualification.",
+    "Known nine ELF identities match static pinned closure; dynamic loading success of daemon does not independently qualify every future NSS/GIO/service path.",
+    "No current frontend239-input regression inferred from this new support tuple.",
+    "No original/native/release acceptance or timer/history reset."
+  ],
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "reviewExecutedQA": false
+}

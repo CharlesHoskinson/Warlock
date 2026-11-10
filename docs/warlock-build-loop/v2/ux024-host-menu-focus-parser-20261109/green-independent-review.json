@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-mvp-parser-transition-component-only",
+  "greenReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794267306085310550/report.json",
+    "sha256": "4679c1e50d0ff253333280f09fe7b52ea27718f458c2ecb266a279504077cf95"
+  },
+  "redReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794266829245994228/report.json",
+    "sha256": "fba0ea1f5bf1ba61b7d8bed2aed17753e7dfff013eedc6f4b16544ab2681638e"
+  },
+  "allocationStdout": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794267306085310550/logs/cpu-ui-webkit-controls.stdout",
+    "sha256": "d9c76485e7c20ca1f2692b9b7a0015752b5c5db1306cf0fc810ea16a7e167d9f"
+  },
+  "allocationStderr": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794267306085310550/logs/cpu-ui-webkit-controls.stderr",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "buildStdout": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794267306085310550/logs/build.stdout",
+    "sha256": "ccfd26fb7fbd93a5c3424602df9336d4ed7c3353f10d9eba845697a967d58d47"
+  },
+  "commands": {
+    "count": 5,
+    "allExit0": true,
+    "allForcedCleanupFalse": true
+  },
+  "sourceHashCount": 268,
+  "haskellFileCount": 257,
+  "allLiveSourceHashesMatched": true,
+  "soleSourceDelta": {
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": {
+      "red": "f02fd8bcd02bce9346eea67995199d8b192755b5fa76fb125570306c2bda8847",
+      "green": "737fe6ccebccfbbf43ca6dc926fa028bdda6102cb98f38a504b84b74866ac860"
+    }
+  },
+  "actualImages": {
+    "warlock-ui-owner": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794267306085310550/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+      "device": "57",
+      "inode": "6196231",
+      "size": "37644232",
+      "sha256": "9aff4a2da406ab61db77778244859ed56cf274981e2b91211f6ba2412b122d2c",
+      "executed": false
+    },
+    "ui-webkit-controls": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794267306085310550/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+      "device": "57",
+      "inode": "6196229",
+      "size": "37249776",
+      "sha256": "0837d2832d1ea351a6da7f4b94efe3d9577ee10437b657c0e0b6313179546560",
+      "executed": true
+    }
+  },
+  "actualImageHashesAndTuplesMatched": true,
+  "sentinel": "allocation-controls: PASS\n",
+  "controlAccounting": "Source flow calls new menuKeyboardFocusControls containing13 fixed checks and32 seeded predicates before final sentinel. Successful unmodified branch and sentinel establish completion; no per-control stdout count is claimed. Existing parser/phase/notification checks also remain in same branch.",
+  "semantics": "Current selected scoped keyboardParenttrue menu admits unique eligible Popup/menu-close; false/absent origin inert, publication-only updates do not refocus, newlease transitions allowed; disabled/missing/alias/foreignscope negatives and32source matrix completed.",
+  "provenance": "Collector authored by reviewer separately source-reviewed by Sol8173e607; this is independent review of nonauthor Mvp/test semantic result, not collector self-approval.",
+  "rootExecution": {
+    "outer": 13287,
+    "consumedExit": 0,
+    "jobPid": 20060,
+    "jobStart": 3301735
+  },
+  "limits": [
+    "Raw cleanupQualifiedfalse preserved; no native/global restoration claim.",
+    "Owner linked only, not executed; only fresh ui-webkit-controls --allocation-only ran.",
+    "No actual GTK grab-focus/native key/focus or originalUX024 acceptance established.",
+    "No reviewer tests/imports/compiler effects."
+  ]
+}

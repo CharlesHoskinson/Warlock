@@ -1,0 +1,220 @@
+--- a/tools/run_current_arm_ux024_foreign_toplevel_observer.py
++++ b/tools/run_current_arm_ux024_foreign_toplevel_observer.py
+@@ -28,7 +28,7 @@
+ DEADLINE_ENV='WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'
+ PHASE_LIBC={'path':'/usr/lib/libc.so.6','sha256':'6ab264fb4e8df9942b0fb75b48fcd5c30b2f081d8dfaa6c25d7be1d3fce5b2ab'}
+ CONTRACT_SHA='6490c0202f7377f9a768cce6a6e558b01bd32dae92eb40dc04ddd2f021dbecf5'
+-HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'f4be1482ecbf50844a255bd1c736a45cd02b39af79d1469c3e9e968f42275a3b', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ux024_foreign_toplevel_attempt_authorization.py': '1a9d76785b64ee1d43fd44319da490a370aa0a913142695a832334f9b6b46f8c'}
++HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'f4be1482ecbf50844a255bd1c736a45cd02b39af79d1469c3e9e968f42275a3b', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ux024_foreign_toplevel_attempt_authorization.py': '3bbcde1e912209751c9e443349b92d98c944886a15fdee7f8953b8a4fca4a898'}
+ 
+ def validate_generated_foundation_basis(foundation, report):
+     sources=foundation.get('sourceInputs',{})
+@@ -691,6 +691,17 @@
+     return value
+ 
+ 
++def canonical_prerequisite(reference):
++    """Same file/hash represented for core's repository-relative reference API."""
++    require(isinstance(reference,dict) and set(reference)=={'path','sha256'},'exact readiness reference required')
++    path=Path(reference['path'])
++    require(path.is_absolute() and '..' not in path.parts and path.resolve()==path,'canonical absolute readiness reference required')
++    try:relative=path.relative_to(ROOT)
++    except ValueError as exc:raise ValueError('readiness reference outside repository') from exc
++    require(relative.parts and isinstance(reference['sha256'],str) and re.fullmatch('[0-9a-f]{64}',reference['sha256']),'exact readiness hash required')
++    return {'path':str(relative),'sha256':reference['sha256']}
++
++
+ def preflight(expected):
+     require(re.fullmatch('[0-9a-f]{64}',expected) is not None,'packet SHA required')
+     require(digest(regular(PACKET))==expected,'fixed packet hash differs')
+@@ -719,7 +730,7 @@
+         review=json_ref(reference)
+         require(review.get('schema')==1 and review.get('disposition')=='accepted' and review.get('scope')=='ux024-connected-foreign-toplevel-observer' and review.get('role')==role,'scoped readiness missing')
+         require(all(review.get(key)==packet[key] for key in ('recordPath','recordIdentitySha256','selectionGeneration','sourceHashes','guardHashes','assets','assetSources','input','binding','foundationPacket','foundationReport','reuse','buildReport','documentBuildReport','keyboardBuildReport','abi','contract','processInventory','documentFixtureOnly','authorization')) and review.get('componentOnly') is True,'readiness does not bind actual component tuple')
+-        require(reference in candidate['nativePrerequisites'],'readiness not canonical prerequisite')
++        require(canonical_prerequisite(reference) in candidate['nativePrerequisites'],'readiness not canonical prerequisite')
+     authority=attempt_auth.resolve_authorization(packet['authorization'],record,IDENTITY,packet['selectionGeneration'],core)
+     current=boot_correspondence.CurrentBoot(packet['reuse']['currentBootCorrespondence'],pinned)
+     build=json_ref(packet['buildReport']);require(build.get('passed') is True,'fresh two-target build not qualified')
+--- a/tools/ux024_foreign_toplevel_attempt_authorization.py
++++ b/tools/ux024_foreign_toplevel_attempt_authorization.py
+@@ -77,10 +77,14 @@
+     goal_definition: tuple
+     participant_started_utc: str
+     _seal: object
++    origin_kind: str = 'renewal'
++    initial_sha256: str = ''
+ 
+ 
+ def resolve_authorization(ref, record, identity, selection, core):
+     data = _read_ref(ref)
++    if isinstance(data, dict) and data.get('kind') == 'ux024-initial-attempt-authorization':
++        return _resolve_initial_authorization(ref, data, record, identity, selection, core)
+     fields = {'schema', 'kind', 'recordPath', 'recordIdentitySha256', 'selectionGeneration',
+               'authorizationExpiresUTC', 'authorizationEventSha256', 'coreSha256',
+               'goalDefinition', 'participantStartedUTC'}
+@@ -135,6 +139,66 @@
+                                 record['startedUTC'], _SEAL)
+ 
+ 
++def _resolve_initial_authorization(ref, data, record, identity, selection, core):
++    """Use the actual canonical initial window, never a synthetic renewal."""
++    fields = {'schema', 'kind', 'recordPath', 'recordIdentitySha256', 'selectionGeneration',
++              'authorizationExpiresUTC', 'coreSha256', 'goalDefinition', 'participantStartedUTC',
++              'goalObservation', 'initialAuthorization', 'initialAuthorizationSha256'}
++    if (set(data) != fields or type(data['schema']) is not int or data['schema'] != 1
++            or data['recordPath'] != RECORD or data['recordIdentitySha256'] != identity
++            or type(selection) is not int or type(data['selectionGeneration']) is not int
++            or data['selectionGeneration'] != selection):
++        raise ValueError('initial authorization record or selection differs')
++    if Path(core.__file__) != CORE or hashlib.sha256(CORE.read_bytes()).hexdigest() != data['coreSha256']:
++        raise ValueError('initial authorization core source differs')
++    if core.record_identity(record, RECORD) != identity:
++        raise ValueError('initial canonical record identity differs')
++    delivery = record.get('delivery')
++    if not isinstance(delivery, dict) or not isinstance(delivery.get('events'), list):
++        raise ValueError('canonical initial delivery missing')
++    if any(not isinstance(event, dict) or event.get('kind') == 'authorization-renewed' for event in delivery['events']):
++        raise ValueError('initial authorization cannot replace a canonical renewal')
++    expiry = core.effective_delivery_authorization(record)
++    initial = {'recordIdentitySha256': identity, 'participantStartedUTC': record.get('startedUTC'),
++               'authorizationExpiresUTC': delivery.get('authorizationExpiresUTC'),
++               'clockOrigin': delivery.get('clockOrigin')}
++    if (not isinstance(initial['participantStartedUTC'], str) or not isinstance(initial['clockOrigin'], dict)
++            or set(initial['clockOrigin']) != {'utc', 'bootId', 'monotonicNs', 'boottimeNs'}
++            or data['initialAuthorization'] != initial
++            or data['initialAuthorizationSha256'] != core.json_sha256(initial)
++            or data['participantStartedUTC'] != record['startedUTC']
++            or data['authorizationExpiresUTC'] != expiry or expiry != initial['authorizationExpiresUTC']):
++        raise ValueError('immutable initial authorization/start/clock differs')
++    actual = _read_ref(data['goalObservation'])
++    response = actual.get('actualToolResponse') if isinstance(actual, dict) else None
++    goal = response.get('goal') if isinstance(response, dict) else None
++    observed = actual.get('observedUTC') if isinstance(actual, dict) else None
++    if not isinstance(observed, str):
++        raise ValueError('initial authorization requires actual fresh goal observation')
++    if observed.endswith('+00:00'):
++        observed = observed[:-6] + 'Z'
++    _utc_ns(observed)  # Provenance timestamp only: immutable evidence has no invented age limit.
++    now = time.time_ns()
++    # Existing host workflow checks fresh ACTIVE goal/stops/handoff at launch.
++    # The sealed native horizon remains the actual canonical initial expiry.
++    if (not isinstance(goal, dict) or goal.get('status') != 'active'
++            or type(goal.get('createdAt')) is not int or goal['createdAt'] <= 0
++            or not isinstance(goal.get('threadId'), str) or not goal['threadId']
++            or not isinstance(goal.get('objective'), str) or not goal['objective']):
++        raise ValueError('actual initial active-goal definition missing')
++    definition = {'threadId': goal['threadId'], 'createdAt': goal['createdAt'],
++                  'objectiveSha256': hashlib.sha256(goal['objective'].encode('utf-8')).hexdigest()}
++    if data['goalDefinition'] != definition or type(data['goalDefinition'].get('createdAt')) is not int:
++        raise ValueError('initial active-goal definition differs')
++    horizon = _utc_ns(expiry)
++    if now + ATTEMPT_NS + CLEANUP_NS >= horizon:
++        raise TimeoutError('insufficient initial authorization for original28+cleanup2')
++    # event_sha256 is deliberately empty: initial authority is not a renewal event.
++    return AttemptAuthorization(expiry, horizon, ref['sha256'], identity, selection, '',
++                                tuple(sorted(definition.items())), record['startedUTC'], _SEAL,
++                                origin_kind='initial', initial_sha256=data['initialAuthorizationSha256'])
++
++
+ def authorization_deadline_ns(authority):
+     if isinstance(authority, SealedClock):
+         return clock_authorization_deadline_ns(authority)
+--- a/tools/test_ux024_foreign_toplevel_observer.py
++++ b/tools/test_ux024_foreign_toplevel_observer.py
+@@ -122,4 +122,20 @@
+         pair,bound=self.close_pair();fixture=Mock();fixture.validate_phase_pair.side_effect=ValueError('wrong live owner/request')
+         with patch.object(m,'keyboard_fixture',fixture):self.assertFalse(m.close_ready_matches(pair,{},bound))
+ 
++
++    def test_actual_core_relative_prerequisite_representation(self):
++        import tempfile
++        with tempfile.TemporaryDirectory() as tmp:
++            root=Path(tmp).resolve();path=root/'proof.json';path.write_text('{}')
++            absolute={'path':str(path),'sha256':'a'*64}
++            with patch.object(m,'ROOT',root):
++                normalized=m.canonical_prerequisite(absolute)
++                self.assertEqual(normalized,{'path':'proof.json','sha256':'a'*64})
++                self.assertIn(normalized,[{'path':'proof.json','sha256':'a'*64}])
++                self.assertNotIn(dict(normalized,sha256='b'*64),[normalized])
++                for ref in [dict(absolute,path='/etc/passwd'),dict(absolute,path=str(root/'child/../proof.json')),dict(absolute,path='proof.json')]:
++                    with self.assertRaises(ValueError):m.canonical_prerequisite(ref)
++                alias=root/'alias.json';alias.symlink_to(path)
++                with self.assertRaises(ValueError):m.canonical_prerequisite(dict(absolute,path=str(alias)))
++
+ if __name__=='__main__':unittest.main(argv=[sys.argv[0],*rest])
+--- a/tools/test_ux024_foreign_toplevel_attempt_authorization.py
++++ b/tools/test_ux024_foreign_toplevel_attempt_authorization.py
+@@ -216,5 +216,72 @@
+         with self.assertRaises(ValueError):self.resolve()
+ 
+ 
++
++
++class InitialStartAuthorizationControls(unittest.TestCase):
++    write=AttemptAuthorizationControls.write
++    resolve=AttemptAuthorizationControls.resolve
++    clock=AttemptAuthorizationControls.clock
++    def setUp(self):
++        AttemptAuthorizationControls.setUp(self)
++        self.record['delivery']['events']=[]
++        self.record['delivery']['authorizationExpiresUTC']=self.expiry
++        self.record['delivery']['clockOrigin']={'utc':self.record['startedUTC'],'bootId':'original-boot','monotonicNs':10,'boottimeNs':11}
++        self.body['kind']='ux024-initial-attempt-authorization';self.body.pop('authorizationEventSha256')
++        self.body['initialAuthorization']={'recordIdentitySha256':self.identity,'participantStartedUTC':self.record['startedUTC'],'authorizationExpiresUTC':self.expiry,'clockOrigin':copy.deepcopy(self.record['delivery']['clockOrigin'])}
++        self.body['initialAuthorizationSha256']=self.core.json_sha256(self.body['initialAuthorization'])
++        self.tool={'observedUTC':a.datetime.fromtimestamp(self.now/1e9,a.timezone.utc).isoformat().replace('+00:00','Z'),'actualToolResponse':{'goal':copy.deepcopy(self.goal)}}
++        self.goal_path=Path(self.tmp.name)/'actual-goal.json';self.pin_goal()
++    def pin_goal(self):
++        self.goal_path.write_text(json.dumps(self.tool));self.goal_path.chmod(0o600)
++        self.body['goalObservation']={'path':str(self.goal_path),'sha256':hashlib.sha256(self.goal_path.read_bytes()).hexdigest()}
++    def test_actual_initial_start_authorization_without_fake_event(self):
++        result=self.resolve()
++        self.assertEqual(result.origin_kind,'initial');self.assertEqual(result.event_sha256,'')
++        self.assertEqual(result.initial_sha256,self.body['initialAuthorizationSha256'])
++        self.assertEqual(self.record['delivery']['events'],[])
++        self.assertEqual(a.authorization_deadline_ns(self.clock(result)),result.expires_ns)
++    def test_initial_refuses_any_renewal_including_expired(self):
++        for expiry in ['2030-01-01T00:00:00Z',self.expiry]:
++            self.record['delivery']['events']=[{'kind':'authorization-renewed','authorizationExpiresUTC':expiry}]
++            with self.assertRaises(ValueError):self.resolve()
++    def test_initial_exact_start_clock_and_identity(self):
++        for field,value in [('participantStartedUTC','foreign'),('recordIdentitySha256','0'*64),('authorizationExpiresUTC','2034-01-01T00:00:00Z'),('clockOrigin',dict(self.record['delivery']['clockOrigin'],monotonicNs=12))]:
++            before=copy.deepcopy(self.body);self.body['initialAuthorization'][field]=value
++            self.body['initialAuthorizationSha256']=self.core.json_sha256(self.body['initialAuthorization'])
++            with self.assertRaises(ValueError):self.resolve()
++            self.body=before
++    def test_initial_pin_and_no_silent_renewal_schema_fallback(self):
++        self.body['initialAuthorizationSha256']='0'*64
++        with self.assertRaises(ValueError):self.resolve()
++        self.body.pop('initialAuthorization');self.body.pop('initialAuthorizationSha256');self.body['kind']='ux003-current-attempt-authorization';self.body['authorizationEventSha256']='0'*64
++        with self.assertRaises(ValueError):self.resolve()
++    def test_initial_requires_actual_active_goal_without_static_age_gate(self):
++        for change in ['paused','missingactual']:
++            before=copy.deepcopy(self.tool)
++            if change=='paused':self.tool['actualToolResponse']['goal']['status']='paused'
++            if change=='missingactual':self.tool.pop('actualToolResponse')
++            self.pin_goal()
++            with self.assertRaises(ValueError):self.resolve()
++            self.tool=before;self.pin_goal()
++        self.tool['observedUTC']=a.datetime.fromtimestamp(self.now/1e9-86400,a.timezone.utc).isoformat().replace('+00:00','Z');self.pin_goal()
++        self.assertEqual(self.resolve().origin_kind,'initial')
++    def test_initial_goal_definition_and_typed_creation_pin(self):
++        for field,value in [('threadId','foreign'),('objectiveSha256','0'*64),('createdAt',True)]:
++            before=copy.deepcopy(self.body['goalDefinition']);self.body['goalDefinition'][field]=value
++            with self.assertRaises(ValueError):self.resolve()
++            self.body['goalDefinition']=before
++    def test_initial_expiry_and_unknown_fields_do_not_expand_authority(self):
++        self.body['authorizationExpiresUTC']='2034-01-01T00:00:00Z'
++        with self.assertRaises(ValueError):self.resolve()
++        self.body['authorizationExpiresUTC']=self.expiry;self.body['authorizationEventSha256']='0'*64
++        with self.assertRaises(ValueError):self.resolve()
++    def test_initial_expired_window_and_sealed_clock_still_refuse(self):
++        good=self.resolve()
++        with patch.object(a.time,'time_ns',return_value=good.expires_ns):
++            with self.assertRaises(TimeoutError):a.resolve_authorization(self.write(),self.record,self.identity,17,self.core)
++        clock=self.clock(good);clock['deadline']+=1
++        with self.assertRaises(ValueError):a.authorization_deadline_ns(clock)
++
+ if __name__ == '__main__':
+     unittest.main()

@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "kind": "ux024-owned-menu-escape-prevents-browser-replay",
+  "posts": [
+    {
+      "path": "implementation/warlock/src/HttpPopup.elm",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision2-control-identity-and-18case-successor/preimages/implementation/warlock/src/HttpPopup.elm",
+      "beforeSha256": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision2-control-identity-and-18case-successor/postimages/implementation/warlock/src/HttpPopup.elm",
+      "sha256": "015440b4650ef0bc7456478cb3201c0ccf6ba0c378093be2d63b6a4df1db77e9"
+    },
+    {
+      "path": "implementation/warlock/qa/ux024-menu-dom.cjs",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision2-control-identity-and-18case-successor/preimages/implementation/warlock/qa/ux024-menu-dom.cjs",
+      "beforeSha256": "cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision2-control-identity-and-18case-successor/postimages/implementation/warlock/qa/ux024-menu-dom.cjs",
+      "sha256": "d6b4983292ca45c94f4de56d4ebe6943c9d9e649661e08a0aa98e9c9ea2eb6a9"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision2-control-identity-and-18case-successor/candidate.patch",
+    "sha256": "1e63f8fd355e16911be5c8ce805ba17625f729f7198efd857918cf30099c0801"
+  },
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/tests-first/manifest.json",
+    "sha256": "4889da540befb0d8c24d59d633fe2a84b1dd3f929ae9be2dfd28d36f9f1ed7e6"
+  },
+  "actualNative48": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794309810284391686/report.json",
+    "sha256": "ff54185085206e7e3cf6540ba7ceaa04651f457515e97ada2bd8811c87c1081b"
+  },
+  "actualFacts": [
+    "Bar firstF10 down/up flags196 atpub6. Extra Bar Escape down flags64 atpub7 without BarEscapeup. SecondF10 down flags197 atpub9/lease1; up196. PopupEscape down/up flags192 atpub7. No retained trace loss/errors/omissions."
+  ],
+  "causalInference": "WebKit async unhandled Escape replay to newly focused Bar plus per-WebView same-hardware-code repeat state explains observed extra Bar event and repeated secondF10. Exact GDK replay callback was not instrumented.",
+  "scope": "HttpPopup production only plus existing18-case fixture one intentional Escape default assertion successor; all18case identities and every other assertion retained. Single native policy wire/zero HTTP; no native/EARS oracle change.",
+  "qualificationRequirements": [
+    "Root semantic baseline/new DOM21 cases+32seed matrix using exact current compiled image.",
+    "Rebuild actual current109Elm inputs/current3HTML after production adoption; preserve olddocument reports and refresh exact provider correspondence as required.",
+    "Existing public native Escape replay unchanged. Existing18DOM successor strengthens only owned Escape default/propagation assertion, retaining all18case identities/otherchecks and oldartifact hash.",
+    "Original actual9keys/28+2/16phases/16frames unchanged; native sufficiency still requires actual observation."
+  ],
+  "unchangedSourceRefs": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Popup.elm",
+      "sha256": "c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/OutputController.elm",
+      "sha256": "bfd7a7087abcd8456dac3793fba21708386b63171a6a6deaac306ab75bccf808"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "6e09d795f8c88e69a922ec92c7ea5116ab7aebb1c9d64be57f4af5ba589a56e3"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "sha256": "f1af886d0e6278aefc488d818faadcdfccec55f1f2ee3a12ab063484ac984915"
+    }
+  ],
+  "authorExecuted": {
+    "tests": false,
+    "compiler": false,
+    "targetImport": false,
+    "native": false,
+    "primaryWrites": false
+  },
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/manifest.json",
+    "sha256": "580e03a426de885b130e5f7d253d2d06080984bbea2b2994ae33a096c707fbdb"
+  },
+  "predecessorStatus": "Unexecuted private first draft superseded: SurfaceSnapshot.Control uses identity, not wire id. This successor fixes that exact field and includes authorized narrow original18 fixture expectation change."
+}

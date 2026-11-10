@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "scope": "same23 mocked builder/admission controls twice; no compiler/native/fullsuite",
+  "candidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa",
+  "integrationRevision": "edfd42685de72a3c2d70729436f11e63e69dbbc4",
+  "recordSha256": "86bf8b91722459c1765293fd376ebcccf43abe61ed74c3381302068ac96bbb92",
+  "results": [
+    {
+      "phase": "baseline",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/baseline-builder.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/baseline-builder.stderr",
+        "sha256": "6cecbd91b53374a5e07d444c399c9a848d6c18dab445e35cba0653c9129648c4"
+      }
+    },
+    {
+      "phase": "baseline",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/baseline-admission.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/baseline-admission.stderr",
+        "sha256": "3305724cc65cc0810cb3ec8c3e1928d86c8aedb3512848447993266985bdffaa"
+      }
+    },
+    {
+      "phase": "candidate",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/candidate-builder.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/candidate-builder.stderr",
+        "sha256": "a557d9ac9153fe6f0e9c17c1da2671c69507cf8745e436d6758b2bbcaa6f7dbb"
+      }
+    },
+    {
+      "phase": "candidate",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/candidate-admission.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/candidate-admission.stderr",
+        "sha256": "dd3fa2f90f4d986f739e53bcf64ed17cb462a7911faa843b81acceb1ade1afd7"
+      }
+    }
+  ],
+  "observedUTC": "2026-11-10T02:02:23.513632+00:00"
+}

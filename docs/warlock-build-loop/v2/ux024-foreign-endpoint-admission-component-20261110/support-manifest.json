@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "kind": "fixed-explicit-endpoint-cpu-branch-support",
+  "posts": [
+    {
+      "path": "tools/run_ux024_menu_focus_build.py",
+      "beforeSha256": "ca112894fbbbb3fa3c5ef2ba4c5fd109d5812b1e9bfffc3e6e82d71e080604eb",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/run_ux024_menu_focus_build.py",
+      "sha256": "588dc4e6b79632ae3ba132262c3cec2292885f0e62b6f7139f39289325ea8116"
+    },
+    {
+      "path": "tools/test_ux024_menu_focus_build.py",
+      "beforeSha256": "243daacf79bae6d4f10a2b81712a4cb4d014890855c538326c68aae2ccc60e3a",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/test_ux024_menu_focus_build.py",
+      "sha256": "36659432e73990a0f7b516e151957a0049f7e66c9029c56ec0decb8e941050e9"
+    },
+    {
+      "path": "tools/qa_cpu.py",
+      "beforeSha256": "80973dc298ae2c965cc45bd74ddb053ea3faa16ed43de7527fe96d236d5fb110",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/qa_cpu.py",
+      "sha256": "efbd361b826826d9a87681ec9cfcd8ce3ed4b0779d6bf52702f2329eb53e10d8"
+    },
+    {
+      "path": "tools/test_ux024_menu_focus_admission.py",
+      "beforeSha256": "f574df42608ea8ee31ee58cc7e2372acb2dce17d46a3a0d5550aa2d1fe600c26",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/postimages/tools/test_ux024_menu_focus_admission.py",
+      "sha256": "4a6ab9275170f3fed77b0c706c0935d4e01d4e38e13e910b684759d5d45ea3b9"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/support-preparation/candidate.patch",
+    "sha256": "b598e0a8587806b6c6c4f7fc3d323856a3a1bc1b33a8f986e640774f5784ea83"
+  },
+  "fixedSuites": [
+    [
+      "ui-webkit-controls"
+    ],
+    [
+      "ui-webkit-controls",
+      "foreign-endpoint-refusal-controls"
+    ]
+  ],
+  "endpointArgv": [
+    "<fresh-ui-webkit-controls>",
+    "--foreign-endpoint-refusal-only"
+  ],
+  "endpointSentinel": "foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect\\n",
+  "deadlineEnvironment": "WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS",
+  "deadlineRule": "Single absolute monotonic min(parentD, now+5s, canonical authorization remaining); no caller-supplied value retained. Same inheritedD for all endpoint controls/expiry, outer900+2 unchanged.",
+  "builderControls": 15,
+  "admissionControls": 8,
+  "newControls": 6,
+  "oldControlBodiesPreserved": true,
+  "executed": false,
+  "limits": [
+    "Explicit metadata/held-FD pre-connect CPU IO, no socket creation/connect, callbacks or provider readiness inferred.",
+    "Same2targets, source closure, SDK/cache, current authorization, private /run, groupabsence, timeout and guards; no engine change.",
+    "Root must observe source-only support tests-first before CAS and install Main successor with exact separatebranch contract."
+  ]
+}

@@ -1,0 +1,41 @@
+Running as unit: qa-harness-7ca6fdf57d374cb09a66f254f9e02d46.scope; invocation ID: 1386a39f1bce4054a1b7b84b3e5e81aa
+test_actual_tool_goal_and_unchanged_canonical_receipt_resolve (__main__.ActualToolGoalControls.test_actual_tool_goal_and_unchanged_canonical_receipt_resolve) ... ok
+test_inactive_actual_goal_refuses (__main__.ActualToolGoalControls.test_inactive_actual_goal_refuses) ... ok
+test_inactive_canonical_goal_refuses (__main__.ActualToolGoalControls.test_inactive_canonical_goal_refuses) ... ok
+test_missing_created_at_refuses (__main__.ActualToolGoalControls.test_missing_created_at_refuses) ... ok
+test_wrong_actual_reference_hash_refuses (__main__.ActualToolGoalControls.test_wrong_actual_reference_hash_refuses) ... ok
+test_wrong_canonical_event_refuses (__main__.ActualToolGoalControls.test_wrong_canonical_event_refuses) ... ok
+test_wrong_horizon_refuses (__main__.ActualToolGoalControls.test_wrong_horizon_refuses) ... ok
+test_wrong_objective_refuses (__main__.ActualToolGoalControls.test_wrong_objective_refuses) ... ok
+test_wrong_participant_start_refuses (__main__.ActualToolGoalControls.test_wrong_participant_start_refuses) ... ok
+test_wrong_thread_refuses (__main__.ActualToolGoalControls.test_wrong_thread_refuses) ... ok
+test_budget_is_original_28_seconds_not_new_clock (__main__.AttemptAuthorizationControls.test_budget_is_original_28_seconds_not_new_clock) ... ok
+test_clock_extension_and_reboot_refuse (__main__.AttemptAuthorizationControls.test_clock_extension_and_reboot_refuse) ... ok
+test_copied_clock_retains_seal_and_deadline (__main__.AttemptAuthorizationControls.test_copied_clock_retains_seal_and_deadline) ... ok
+test_current_canonical_authorization_resolves (__main__.AttemptAuthorizationControls.test_current_canonical_authorization_resolves) ... ok
+test_current_event_and_effective_expiry_must_match (__main__.AttemptAuthorizationControls.test_current_event_and_effective_expiry_must_match) ... ok
+test_effect_left_uses_sealed_horizon_not_old_base_expiry (__main__.AttemptAuthorizationControls.test_effect_left_uses_sealed_horizon_not_old_base_expiry) ... ok
+test_exact_data_hash_required (__main__.AttemptAuthorizationControls.test_exact_data_hash_required) ... ok
+test_expired_and_insufficient_window_refuse (__main__.AttemptAuthorizationControls.test_expired_and_insufficient_window_refuse) ... ok
+test_goal_definition_and_participant_binding_refuse_drift (__main__.AttemptAuthorizationControls.test_goal_definition_and_participant_binding_refuse_drift) ... ok
+test_goal_usage_updates_do_not_change_stable_definition (__main__.AttemptAuthorizationControls.test_goal_usage_updates_do_not_change_stable_definition) ... ok
+test_issued_authority_is_immutable_and_data_change_does_not_extend (__main__.AttemptAuthorizationControls.test_issued_authority_is_immutable_and_data_change_does_not_extend) ... ok
+test_missing_or_inactive_canonical_goal_evidence_refuses (__main__.AttemptAuthorizationControls.test_missing_or_inactive_canonical_goal_evidence_refuses) ... ok
+test_old_main_and_expiry_are_not_delegated (__main__.AttemptAuthorizationControls.test_old_main_and_expiry_are_not_delegated) ... ok
+test_registry_uses_adapter_left_before_connect (__main__.AttemptAuthorizationControls.test_registry_uses_adapter_left_before_connect) ... ok
+test_symlink_and_duplicate_json_refuse (__main__.AttemptAuthorizationControls.test_symlink_and_duplicate_json_refuse) ... ok
+test_unknown_fields_wrong_identity_selection_and_core_refuse (__main__.AttemptAuthorizationControls.test_unknown_fields_wrong_identity_selection_and_core_refuse) ... ok
+test_unsealed_or_different_authority_clock_refuses (__main__.AttemptAuthorizationControls.test_unsealed_or_different_authority_clock_refuses) ... ok
+test_actual_initial_start_authorization_without_fake_event (__main__.InitialStartAuthorizationControls.test_actual_initial_start_authorization_without_fake_event) ... ok
+test_initial_exact_start_clock_and_identity (__main__.InitialStartAuthorizationControls.test_initial_exact_start_clock_and_identity) ... ok
+test_initial_expired_window_and_sealed_clock_still_refuse (__main__.InitialStartAuthorizationControls.test_initial_expired_window_and_sealed_clock_still_refuse) ... ok
+test_initial_expiry_and_unknown_fields_do_not_expand_authority (__main__.InitialStartAuthorizationControls.test_initial_expiry_and_unknown_fields_do_not_expand_authority) ... ok
+test_initial_goal_definition_and_typed_creation_pin (__main__.InitialStartAuthorizationControls.test_initial_goal_definition_and_typed_creation_pin) ... ok
+test_initial_pin_and_no_silent_renewal_schema_fallback (__main__.InitialStartAuthorizationControls.test_initial_pin_and_no_silent_renewal_schema_fallback) ... ok
+test_initial_refuses_any_renewal_including_expired (__main__.InitialStartAuthorizationControls.test_initial_refuses_any_renewal_including_expired) ... ok
+test_initial_requires_actual_active_goal_without_static_age_gate (__main__.InitialStartAuthorizationControls.test_initial_requires_actual_active_goal_without_static_age_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.259s
+
+OK

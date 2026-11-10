@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-dedicated-connected-capability-qualification",
+  "candidateSha256": "2e51eedefc96a0c91da23072d085a6c5ee4da371526e363a84f45723e6883fdb",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794286494083914542/report.json",
+      "sha256": "d23359a01dd449e7a2b600912b109356c46dcb9e3f7987152a1a625273e1d875"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v6/packet.json",
+      "sha256": "9f548483ffbe0321f9c09d39a2d0a09c0a79b3c6db9330f6e2b2710e1c23d76a"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794286494083914542/observer-wire.jsonl",
+      "sha256": "5382528ebb633d6b8579c509615616d52e603a93e8db2743aa5d9210e6a459e9"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794286494083914542/actual-owned-window.png",
+      "sha256": "8490556a7ad560f6b18695d2676f53bcee191db23403e32bf5905656bf06741d"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794286494083914542/observer-maps-before-check.json",
+      "sha256": "0a9547b0728bd34487bf8dd4ee4bca339493e3ff8aa90f5e8b29f8e052d7c717"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794286494083914542/producer-maps-before-check.json",
+      "sha256": "a4eb3a419fe258de1fb1903a99a1481f7ba6eeb05b84cb1cfc7cb514a6f64185"
+    }
+  ],
+  "verified": {
+    "sourcePins": 301,
+    "assets": 12,
+    "observerMappings": 159,
+    "producerMappings": 159,
+    "phases": [
+      "READ_INITIAL-empty",
+      "READ_WINDOW-singletonDone",
+      "READ_CLOSED-sameOwnerAbsent",
+      "RETIRE-actualRetired"
+    ],
+    "snapshotReads": [
+      1,
+      1,
+      1
+    ],
+    "frames": 1,
+    "frameGeometry": [
+      1280,
+      720
+    ],
+    "input": [
+      "-M",
+      "alt",
+      "-k",
+      "F4",
+      "-m",
+      "alt"
+    ],
+    "normalRetiredChildren": 38,
+    "originalDeadlineSeconds": 28,
+    "cleanupCeilingSeconds": 2,
+    "cleanupUnknown": false,
+    "globalRestoration": true,
+    "sourceUnchanged": true
+  },
+  "conclusion": "Actual selected libwayland owner produced committed singleton metadata matching independently owned IPC/PID/image, then same lexical owner observed removal after checked AltF4 and returned Retired; actual producer/engine/broker/backing/seat/stack closed normally.",
+  "limits": [
+    "Dedicated observation capability qualification only using declared oldfixture documents; appId/title descriptive, no action/catalogauthority inferred.",
+    "No originalmenu traversal/Escape-opener/AT/IME/EARS/release acceptance or requirement/scenario credit; raw nativeAcceptance/originalAcceptance/fullJourneyAccepted flags unchangedfalse.",
+    "Frame hash/PNGgeometry checked, pixels not independently adjudicated as UX acceptance.",
+    "No reviewer imports/tests/nativeeffects. Root reports outer51353consumed0; canonicalclosure pending at request."
+  ]
+}

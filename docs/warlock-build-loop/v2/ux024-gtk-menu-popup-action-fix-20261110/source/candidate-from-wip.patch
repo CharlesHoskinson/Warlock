@@ -1,0 +1,360 @@
+--- a/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc
++++ b/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc
+@@ -43,7 +43,7 @@
+ 
+ #include <glib-object.h>
+ 
+-import Control.Exception (IOException, SomeAsyncException, SomeException, bracket, catch, evaluate, fromException, mask, mask_, onException, throwIO, try)
++import Control.Exception (SomeAsyncException, SomeException, bracket, catch, evaluate, fromException, mask, mask_, onException, throwIO, try)
+ import Control.Monad (unless, when)
+ import Data.Int (Int32)
+ import Data.IORef (IORef, atomicModifyIORef', modifyIORef', newIORef, readIORef, writeIORef)
+@@ -745,76 +745,54 @@
+ foreign import ccall safe "gtk_widget_grab_focus"
+   gtkWidgetGrabFocus :: Ptr MvpObject -> IO CInt
+ 
+--- Read-only GTK/GObject telemetry ABI, from the installed GTK4 headers.
+-foreign import ccall unsafe "gtk_window_get_focus"
+-  diagnosticWindowFocus :: Ptr MvpObject -> IO (Ptr MvpObject)
++-- The qualified WebKit GTK4 translator is a direct GtkTextView child.
++-- Its native menu action runs during key translation before DOM dispatch.
++foreign import ccall unsafe "gtk_widget_get_first_child"
++  gtkWidgetGetFirstChild :: Ptr MvpObject -> IO (Ptr MvpObject)
++foreign import ccall unsafe "gtk_widget_get_next_sibling"
++  gtkWidgetGetNextSibling :: Ptr MvpObject -> IO (Ptr MvpObject)
+ foreign import ccall unsafe "gtk_widget_get_parent"
+-  diagnosticParent :: Ptr MvpObject -> IO (Ptr MvpObject)
+-foreign import ccall unsafe "gtk_widget_get_first_child"
+-  diagnosticFirstChild :: Ptr MvpObject -> IO (Ptr MvpObject)
+-foreign import ccall unsafe "gtk_widget_get_next_sibling"
+-  diagnosticNextSibling :: Ptr MvpObject -> IO (Ptr MvpObject)
++  gtkWidgetGetParent :: Ptr MvpObject -> IO (Ptr MvpObject)
+ foreign import ccall unsafe "g_type_name_from_instance"
+-  diagnosticTypeName :: Ptr MvpObject -> IO CString
+-
+--- Fixed ASCII records only. Reserve the full budget before writing; a failed
+--- write consumes its reservation and cannot change callback policy or custody.
+-emitMvpDiagnostic :: IORef (Int, Int) -> (String -> IO ()) -> String -> IO ()
+-emitMvpDiagnostic budget sink body = do
+-  let record = "MVP-DIAG " ++ body
+-      size = length record + 1
+-  admitted <- atomicModifyIORef' budget $ \(count, bytes) ->
+-    if count >= 16 || bytes + size > 8192 || size > 512
+-      then ((count, bytes), False)
+-      else ((count + 1, bytes + size), True)
+-  when admitted $
+-    sink record `catch` (\(_ :: IOException) -> pure ())
+-
+--- All widget pointers below are borrowed for this synchronous owner-context
+--- observation only. No pointer, class string or user content enters a record.
+-snapshotMvpDiagnostic :: PhysicalDefaultContextOwner -> IORef (Int, Int) -> (String -> IO ())
+-  -> Ptr MvpObject -> Ptr MvpObject -> Ptr MvpObject -> String -> IO ()
+-snapshotMvpDiagnostic owner budget sink window bar popup event = do
++  gTypeNameFromInstance :: Ptr MvpObject -> IO CString
++foreign import ccall safe "gtk_widget_action_set_enabled"
++  gtkWidgetActionSetEnabled :: Ptr MvpObject -> CString -> CInt -> IO ()
++
++-- All GUI menus belong to Elm. Disable only the translator's native popup
++-- action, leaving editor commands, IME handling and key forwarding untouched.
++-- Borrowed children are used synchronously and never retained by this host.
++suppressTranslatorPopup :: PhysicalDefaultContextOwner -> Ptr MvpObject -> Ptr MvpObject -> IO ()
++suppressTranslatorPopup owner window view = do
+   requirePhysicalDefaultContextOwner owner
+-  (count, _) <- readIORef budget
+-  when (count < 16) $ do
+-    focused <- diagnosticWindowFocus window
+-    focusType <- fixedType focused
+-    focusRole <- roleOf focused
+-    popover <- scan 128 [window]
+-    emitMvpDiagnostic budget sink (event ++ " focus=" ++ focusType ++ "/" ++ focusRole ++ " popover=" ++ popover)
++  root <- gtkWidgetGetRoot view
++  unless (root == window) (ioError (userError "translator outside owned window"))
++  first <- gtkWidgetGetFirstChild view
++  matches <- translatorChildren 32 first []
++  case matches of
++    [translator] -> do
++      requirePhysicalDefaultContextOwner owner
++      parent <- gtkWidgetGetParent translator
++      unless (parent == view) (ioError (userError "translator parent changed"))
++      withCString "menu.popup" $ \action -> gtkWidgetActionSetEnabled translator action 0
++      requirePhysicalDefaultContextOwner owner
++      afterParent <- gtkWidgetGetParent translator
++      afterRoot <- gtkWidgetGetRoot view
++      unless (afterParent == view && afterRoot == window)
++        (ioError (userError "translator ownership changed during action update"))
++    _ -> ioError (userError "expected exactly one owned GTK4 key translator")
+   where
+-    fixedType widget
+-      | widget == nullPtr = pure "none"
++    translatorChildren :: Int -> Ptr MvpObject -> [Ptr MvpObject] -> IO [Ptr MvpObject]
++    translatorChildren remaining child found
++      | child == nullPtr = pure found
++      | remaining <= 0 = ioError (userError "key translator child bound")
+       | otherwise = do
+-          namePtr <- diagnosticTypeName widget
+-          name <- if namePtr == nullPtr then pure "other" else peekCString namePtr
+-          pure $ if name `elem` ["GtkWindow", "GtkBox", "WebKitWebView", "GtkText", "GtkEntry", "GtkPopover", "GtkPopoverMenu", "GtkLabel", "GtkButton"] then name else "other"
+-    roleOf widget = parents 16 widget
+-    parents :: Int -> Ptr MvpObject -> IO String
+-    parents left widget
+-      | widget == nullPtr = pure "none"
+-      | widget == bar = pure "bar"
+-      | widget == popup = pure "popup"
+-      | widget == window = pure "window"
+-      | left <= 0 = pure "bounded"
+-      | otherwise = diagnosticParent widget >>= parents (left - 1)
+-    scan :: Int -> [Ptr MvpObject] -> IO String
+-    scan _ [] = pure "none"
+-    scan left _ | left <= 0 = pure "bounded"
+-    scan left (widget : rest)
+-      | widget == nullPtr = scan left rest
+-      | otherwise = do
+-          kind <- fixedType widget
+-          mapped <- gtkWidgetGetMapped widget
+-          if kind `elem` ["GtkPopover", "GtkPopoverMenu"] && mapped /= 0
+-            then do
+-              role <- roleOf widget
+-              pure (kind ++ "/" ++ role)
+-            else do
+-              child <- diagnosticFirstChild widget
+-              sibling <- diagnosticNextSibling widget
+-              scan (left - 1) (child : sibling : rest)
++          requirePhysicalDefaultContextOwner owner
++          parent <- gtkWidgetGetParent child
++          unless (parent == view) (ioError (userError "translator child ancestry changed"))
++          namePtr <- gTypeNameFromInstance child
++          name <- if namePtr == nullPtr then pure "" else peekCString namePtr
++          next <- gtkWidgetGetNextSibling child
++          translatorChildren (remaining - 1) next (if name == "GtkTextView" then child : found else found)
+ 
+ -- | Three distinct WebKitWebView widget pointers owned by the caller.
+ data MvpViews view = MvpViews
+@@ -831,9 +809,6 @@
+   , mvpBarWidget :: !(Ptr MvpObject)
+   , mvpPopupWidget :: !(Ptr MvpObject)
+   , mvpKeyboardFocusRef :: !(IORef (Maybe MvpFocusIntent))
+-  , mvpDiagnosticSink :: !(String -> IO ())
+-  , mvpDiagnosticBudget :: !(IORef (Int, Int))
+-  , mvpDiagnosticPending :: !(IORef (Maybe String))
+   , mvpCloseRef :: !(IORef Bool)
+   , mvpEscapeRef :: !(IORef Bool)
+   , mvpStateRef :: !(IORef MvpStepState)
+@@ -889,8 +864,8 @@
+ -- | Pack the three role WebKitWebViews into one undecorated GTK4 window
+ -- (zero GTK headerbar, title text, or buttons; all GUI is rendered in Elm).
+ -- Runs masked so no async exception can separate acquisition from release registration.
+-attachMvpWindow :: PhysicalDefaultContextOwner -> MvpViews view -> (String -> IO ()) -> IO MvpWindow
+-attachMvpWindow contextOwner views diagnosticSink = mask $ \_ -> do
++attachMvpWindow :: PhysicalDefaultContextOwner -> MvpViews view -> IO MvpWindow
++attachMvpWindow contextOwner views = mask $ \_ -> do
+   requirePhysicalDefaultContextOwner contextOwner
+   contextFault <- newIORef False
+   let cView = castPtr (mvpControllerView views) :: Ptr MvpObject
+@@ -911,8 +886,6 @@
+   escapeRef <- newIORef False
+   stateRef <- newIORef initialMvpState
+   keyboardFocusRef <- newIORef Nothing
+-  diagnosticBudget <- newIORef (0, 0)
+-  diagnosticPending <- newIORef Nothing
+   retiredRef <- newIORef False
+   let checkContext = do
+         requirePhysicalDefaultContextOwner contextOwner
+@@ -960,18 +933,8 @@
+       -- WebKit's stock browser menu is not shell policy. The borrowed menu and
+       -- hit-test objects are valid only during emission; neither is retained.
+       -- TRUE suppresses the stock popover, including on a context fault.
+-      mapM_ (\(role, visibleView) -> do
+-        entries <- newIORef (0 :: Int)
+-        acquireSignal visibleView "context-menu"
+-          (wrapContextMenu $ \_ _ _ _ -> callback 1 $ do
+-            entry <- atomicModifyIORef' entries (\old -> let next = min 16 (old + 1) in (next, next))
+-            returned <- callback 1 $ do
+-              snapshotMvpDiagnostic contextOwner diagnosticBudget diagnosticSink window bView pView ("context-entry-" ++ role ++ " count=" ++ show entry)
+-              pure 1
+-            fault <- readIORef contextFault
+-            emitMvpDiagnostic diagnosticBudget diagnosticSink ("context-return-" ++ role ++ " count=" ++ show entry ++ " value=" ++ show returned ++ " fault=" ++ (if fault then "yes" else "no"))
+-            pure returned)
+-        emitMvpDiagnostic diagnosticBudget diagnosticSink ("registered-" ++ role)) [("bar", bView), ("popup", pView)]
++      mapM_ (\visibleView -> acquireSignal visibleView "context-menu"
++        (wrapContextMenu $ \_ _ _ _ -> callback 1 (pure 1))) [bView, pView]
+ 
+       -- Capture-phase key observation sees physical Escape before WebKit can
+       -- consume it, while returning 0 (GDK_EVENT_PROPAGATE) so normal typing
+@@ -982,15 +945,6 @@
+         keyCtrl
+         "key-pressed"
+         ( wrapKeyPressed $ \_ keyval _ _ _ -> callback 0 $ do
+-            let interesting = if keyval == 0xffc7 then Just "F10"
+-                  else if keyval == 0xff09 then Just "Tab"
+-                  else if keyval == 0xff67 then Just "Menu"
+-                  else if keyval == gdkKeyEscape then Just "Escape" else Nothing
+-            case interesting of
+-              Nothing -> pure ()
+-              Just keyName -> do
+-                snapshotMvpDiagnostic contextOwner diagnosticBudget diagnosticSink window bView pView ("key-" ++ keyName)
+-                writeIORef diagnosticPending (Just keyName)
+             if keyval == gdkKeyEscape
+               then writeIORef escapeRef True
+               else pure ()
+@@ -1027,6 +981,9 @@
+       gtkBoxAppend box cView
+ 
+       gtkWindowSetChild window box
++      checkContext
++      mapM_ (suppressTranslatorPopup contextOwner window) [bView, pView]
++      checkContext
+       gtkWindowPresent window
+ 
+       pure
+@@ -1037,9 +994,6 @@
+           , mvpBarWidget = bView
+           , mvpPopupWidget = pView
+           , mvpKeyboardFocusRef = keyboardFocusRef
+-          , mvpDiagnosticSink = diagnosticSink
+-          , mvpDiagnosticBudget = diagnosticBudget
+-          , mvpDiagnosticPending = diagnosticPending
+           , mvpCloseRef = closeRef
+           , mvpEscapeRef = escapeRef
+           , mvpStateRef = stateRef
+@@ -1326,11 +1280,6 @@
+   requireMvpContext mvp
+   live <- stillLive
+   when live $ do
+-    pending <- atomicModifyIORef' (mvpDiagnosticPending mvp) (\old -> (Nothing, old))
+-    case pending of
+-      Nothing -> pure ()
+-      Just keyName -> snapshotMvpDiagnostic (mvpContextOwner mvp) (mvpDiagnosticBudget mvp) (mvpDiagnosticSink mvp)
+-        (mvpGtkWindow mvp) (mvpBarWidget mvp) (mvpPopupWidget mvp) ("after-key-" ++ keyName)
+     original <- fetchProjection
+     intent <- traverse (either (ioError . userError . T.unpack) pure . parseMvpFocusIntent) original
+     case intent of
+--- a/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs
++++ b/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs
+@@ -16,10 +16,10 @@
+ import System.Posix.Files (getFdStatus, isRegularFile, fileSize, linkCount, getSymbolicLinkStatus, isDirectory, fileMode, fileOwner, deviceID, fileID)
+ import qualified System.Posix.Directory as PosixDirectory
+ import System.Posix.User (getEffectiveUserID)
+-import System.Posix.IO (fdToHandle, closeFd)
++import System.Posix.IO (fdToHandle)
+ import System.Posix.Types (Fd(..))
+ import System.Posix.Process (getProcessID)
+-import System.IO (hClose, hSetBuffering, BufferMode(NoBuffering))
++import System.IO (hClose)
+ import Foreign.C.Error (throwErrnoIfMinus1, throwErrnoIfMinus1_)
+ import qualified Data.ByteString as B
+ import qualified Data.ByteString.Char8 as C
+@@ -796,38 +796,6 @@
+   -- Descriptor-relative no-overwrite publication. Parent accepts only nlink1;
+   -- a failed or late transition remains incomplete and never resets its clock.
+   rendererPhasePublication live writeResponse publishResponse retireTemporary
+-
+--- Diagnostic-only fixed leaf under the already held Bar backing directory.
+--- The handle stays process-pinned with the native callbacks; closing it while
+--- a callback can arrive would make a reused descriptor an unsafe sink.
+-openMvpDiagnosticSink :: PhysicalDefaultContextOwner -> UiEndpoints
+-  -> Protocol.BackingRootBinding -> [PhaseSnapshotRole] -> IO (String -> IO ())
+-openMvpDiagnosticSink contextOwner endpoints binding roles = mask_ $ do
+-  case [ (descriptor,recheck) | PhaseSnapshotRole Bar _ descriptor recheck _ <- roles ] of
+-    [(descriptor,recheck)] -> do
+-      let live = phaseLive contextOwner endpoints >> requireBackingRoot (uiRemainingMicros endpoints) binding >> recheck
+-          (_,_,writeFlags) = rendererPhaseFlags
+-      live
+-      fd <- withCString "qa-mvp-diagnostic.log" $ \name -> Fd <$> throwErrnoIfMinus1 "MVP diagnostic leaf create" (phaseOpenAt (phaseFd descriptor) name (fromIntegral writeFlags) 0o600)
+-      handle <- fdToHandle fd `onException` closeFd fd
+-      (do
+-        initial <- getFdStatus fd
+-        uid <- getEffectiveUserID
+-        let same current = isRegularFile current && fileOwner current==uid && linkCount current==1
+-              && fileMode current .&. 0o7777==0o600 && deviceID current==deviceID initial && fileID current==fileID initial
+-        unless (same initial && fileSize initial==0) (ioError (userError "MVP diagnostic leaf custody"))
+-        hSetBuffering handle NoBuffering
+-        live
+-        _ <- newStablePtr handle
+-        pure $ \record -> do
+-          live
+-          current <- getFdStatus fd
+-          let raw = C.pack (record ++ "\n")
+-          unless (same current && B.length raw<=512 && fileSize current+fromIntegral (B.length raw)<=8192)
+-            (ioError (userError "MVP diagnostic leaf write bound"))
+-          B.hPut handle raw
+-          live) `onException` hClose handle
+-    _ -> ioError (userError "MVP diagnostic requires exact held Bar role")
+ 
+ beginPhaseSnapshot :: PhysicalDefaultContextOwner -> UiEndpoints -> Protocol.BackingRootBinding -> PhaseSnapshotRole -> Int -> String -> (Text,Integer,Integer) -> Integer -> IO ()
+ beginPhaseSnapshot contextOwner endpoints binding (PhaseSnapshotRole role view descriptor recheck state) sequenceNumber suffix (nonce,requestDevice,requestInode) observedNs = mask_ $ do
+@@ -1073,10 +1041,7 @@
+         views <- mapM setup [(Controller,controllerOrigin endpoints),(Bar,barOrigin endpoints),(Popup,popupOrigin endpoints)]
+         case views of
+           [controller,bar,popup] -> do
+-            diagnosticSink <- case binding of
+-              Nothing -> pure (\_ -> pure ())
+-              Just boundRoot -> readIORef phaseRoles >>= openMvpDiagnosticSink contextOwner endpoints boundRoot
+-            mvp <- own (attachMvpWindow contextOwner (MvpViews controller bar popup) diagnosticSink) retireMvpWindow
++            mvp <- own (attachMvpWindow contextOwner (MvpViews controller bar popup)) retireMvpWindow
+             -- gtk_widget_get_display requires an actual GtkRoot hierarchy.
+             -- Initialization above still precedes every session/context/page.
+             forM_ views $ \view -> do
+--- a/tools/run_current_arm_ux024_foreign_toplevel_observer.py
++++ b/tools/run_current_arm_ux024_foreign_toplevel_observer.py
+@@ -12,7 +12,7 @@
+ attempt_auth=boot_correspondence=owned_fonts=keyboard_fixture=geometry=None
+ ROOT=Path('/home/hoskinson/Projects/Warlock')
+ SELF=ROOT/'tools/run_current_arm_ux024_foreign_toplevel_observer.py'
+-PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v3-diagnostic/packet.json'
++PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v4-action-fix/packet.json'
+ RECORD='.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
+ IDENTITY='60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
+ LOG_LIMIT=4*1024*1024
+@@ -567,30 +567,6 @@
+                 'groupDomId':group['id'],'phaseSchedulingOnly':True}
+     except (KeyError,TypeError,ValueError,OverflowError):return None
+ 
+-
+-def read_mvp_diagnostic(dirfd, expected_pin, writer_live):
+-    """Bounded raw evidence only; live/changed prefixes never certify completion."""
+-    directory=os.fstat(dirfd)
+-    if (not stat.S_ISDIR(directory.st_mode) or stat.S_IMODE(directory.st_mode)!=0o700
+-            or directory.st_uid!=os.getuid() or
+-            (directory.st_dev,directory.st_ino,directory.st_uid)!=expected_pin):
+-        raise ValueError('diagnostic held Bar identity differs')
+-    fd=os.open('qa-mvp-diagnostic.log',os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=dirfd)
+-    try:
+-        before=os.fstat(fd)
+-        valid=lambda s:(stat.S_ISREG(s.st_mode) and s.st_uid==os.getuid() and s.st_dev==directory.st_dev
+-            and stat.S_IMODE(s.st_mode)==0o600 and s.st_nlink==1 and 0<=s.st_size<=8192)
+-        if not valid(before):raise ValueError('diagnostic leaf type/owner/mode/size')
+-        raw=os.read(fd,min(before.st_size,8192))
+-        after=os.fstat(fd)
+-        identity=lambda s:(s.st_dev,s.st_ino,s.st_uid,s.st_mode,s.st_nlink)
+-        if not valid(after) or identity(before)!=identity(after):raise ValueError('diagnostic leaf identity changed')
+-        stable=(before.st_size==after.st_size==len(raw) and before.st_mtime_ns==after.st_mtime_ns and before.st_ctime_ns==after.st_ctime_ns)
+-        complete=stable and not writer_live
+-        return raw,{'status':'stable-prefix' if complete else 'live-or-unstable-prefix-unknown',
+-            'writerLiveOrUnknown':writer_live,'stableDuringRead':stable,'complete':complete,'bytes':len(raw),
+-            'acceptanceAuthority':False}
+-    finally:os.close(fd)
+ 
+ class _ObserverCloseSnapshots:
+     """Finite scheduling evidence from the exact live owner's held backing root."""
+@@ -1265,20 +1241,7 @@
+         receipt['error']={'type':type(exc).__name__,'message':str(exc)[:2048]};receipt['componentObservationsComplete']=False
+     finally:
+         # Failure EOF is never interpreted as Retired. One existing original cleanup ceiling covers all children.
+-        if phase_channel is not None:
+-            try:
+-                require(time.monotonic_ns()<=clock['deadline']+CLEANUP_NS and time.time_ns()<attempt_auth.clock_authorization_deadline_ns(clock),'diagnostic capture original cleanup ceiling')
+-                require('bar' in phase_channel.role_fds,'diagnostic held Bar unavailable')
+-                # Capture before held-role close and process/backing retirement.
+-                # No writer-retirement proof yet: every captured prefix remains unknown.
+-                raw,observation=read_mvp_diagnostic(phase_channel.role_fds['bar'],phase_channel.role_pins['bar'],True)
+-                diagnostic_path=output/'mvp-diagnostic.raw'
+-                with diagnostic_path.open('xb') as target:target.write(raw)
+-                observation.update(path=str(diagnostic_path),sha256=digest(raw))
+-                receipt['mvpDiagnosticCapture']=observation
+-            except Exception as exc:
+-                receipt['mvpDiagnosticCapture']={'status':'unknown','error':type(exc).__name__,'acceptanceAuthority':False}
+-            receipt['phaseChannelRetirement']=phase_channel.close()
++        if phase_channel is not None:receipt['phaseChannelRetirement']=phase_channel.close()
+         if observer is not None and observer.stdin is not None:
+             try:observer.stdin.close()
+             except OSError:receipt['observerPipeCloseUnknown']=True

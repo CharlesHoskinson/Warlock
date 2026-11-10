@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "kind": "ui011-observed-scope-retirement-production",
+  "author": "workflow_astra",
+  "disposition": "private-source-awaiting-root-qualification",
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "recordIdentitySha256": "92c1b16592f13f61b89310cd071b2a48554bf6caf7effa4d395ca78ccb9096ad",
+  "selectionGeneration": 32,
+  "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+  "posts": [
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/production-fix/postimages/implementation/warlock/src/Desktop.elm",
+      "beforeSha256": "23b5ef3c0224754ffac5bf884ace75b922b3e76dc8c03b95f251bbe401225b0d",
+      "sha256": "ac3713ea57f7b16cf044b04f7c98ec9e752db3ea9807acd328334377d58270d0"
+    }
+  ],
+  "plan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/plan.json",
+    "sha256": "0bce02b643a8c9b9a7ffea211066511041a605d943481741ab1fb86174015c35"
+  },
+  "fixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/tests-first-revision2-refusal-diagnostics/manifest.json",
+    "sha256": "3acc77a644b0befca0276ccb0c0a2d84e6a16b34f671b9740bde14e3ca715efe"
+  },
+  "actualSemanticRed": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320082023027137/ui011-observed-scope-retirement.json",
+    "sha256": "8281e3a64c8da89cc6229fcf85e820902b3f7c4f23de9bb38e2e4380f6b16ce4",
+    "positives": "same origin, removed and replaced origin emitted no focus; 12 seeded cases failed",
+    "unexpectedNegatives": "Malformed owner/frontend envelopes changed refusal diagnostics, not authority; immutable fixture R2 fixes frame-equality premise."
+  },
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/production-fix/Desktop.patch",
+    "sha256": "49f3dd9cc0329bd7c20fa9f6ec6e5a782f0f1f15f81d2617c35d8f59eac91776"
+  },
+  "behavior": [
+    "A fresh WindowRead from an actual current keyboard-owned observed menu arms a distinct automatic-retirement target only after the menu retires and request exists.",
+    "The matching successful reply consumes the target once. Same full binding/owner/presentation and exact eligible captured Applications key required.",
+    "Exact unchanged group fingerprint restores current group; absent or replaced incarnation receives only new declared Applications fallback.",
+    "Explicit Escape and pointer behavior unchanged; no command/effect/capability changes."
+  ],
+  "limits": [
+    "Source only; no author imports/tests/compiler or primary edits.",
+    "No native/AT/original acceptance claim.",
+    "Existing adjacent Quint models unchanged; this is a distinct current bar intent, not resurrection of a retired popup lease."
+  ],
+  "primaryWrites": false,
+  "authorExecution": false
+}

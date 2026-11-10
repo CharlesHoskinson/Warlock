@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-private-support-and-root-metadata-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision2-graceful-batch-source-v2/manifest.json",
+    "sha256": "e54ccfd7ca739d7972bdac9efdaca2da4d943d9349e342d57509355eb01b1776"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision2-graceful-batch-source-v2/metadata-assembly/manifest.ACTUAL-TERMINAL.json",
+      "sha256": "785c9ac5da70156681683a52f5f30b6102d46531420eeaa7507764834c4560de"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision2-graceful-batch-source-v2/metadata-assembly/prepare_component_qualification_actual_terminal.py",
+      "sha256": "43c9836a931348493dec38d8eb94a1d33b8ba6b3df72459a6604c9285438a1c8"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision2-graceful-batch-source-v2/root-evidence-copy-plan.json",
+      "sha256": "c6850c99cce4d49c0aeac900abad35dc525ac5d42e3c58749e55cd4d608c2ad9"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-observation-component-qualification-v1/haskell-candidate-4efac07a7138/actual-terminal.json",
+      "sha256": "ca1caaf58ab1a25cfc4a9d62bbc71f3836d0ac6347c5cebe6b34360d3208b2a9"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/postimages/tools/check_elm_cpu.py",
+      "sha256": "faaa6ea3e2466f3c7e3b6ef7aa8a9828f920ce916e9a75f28bdc84ae4deab0e9"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/postimages/tools/qa_cpu.py",
+      "sha256": "33c8c99c9810542fda561f883d11fc038c990790ceb123168466c0aeac582ee7"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/postimages/tools/run_ux024_menu_focus_build.py",
+      "sha256": "80c12ad23f99c2cfc43144a69f9b5a29d5dcce6612ef37384563ff424ea5bb69"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/postimages/tools/test_ux024_observation_qualification.py",
+      "sha256": "49cdfaa1d17d2d763a266e539d12e5062e3fa82fdedded585e70cc514271166c"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision2-graceful-batch-source-v2/postimages/tools/ux024_observation_qualification.py",
+      "sha256": "41160001abf18a3cd1d62c9e5f747bb57f1ed2bec106ece0587c77faa1b905c5"
+    }
+  ],
+  "verified": [
+    "Only OQ PREFIX/sourceManifest/Backend post constants change; all functions/classes AST-identical. Other four support sources exactly current installed bytes.",
+    "Sixteen new source-v2 evidence rows hash-verified, destinations absent; source-v1 immutable. R4 sole Backend production delta retains other14posts/fixtures.",
+    "Final helper43c9836 changes fail\u2192failed only from preserved unexecutedc521, matching actual pinned c32 consumed failed terminal.",
+    "Helper requires latest terminal+consumed/current selection/identity under installed lock and normal edit precheck/journal. No source CAS/events/target execution by helper.",
+    "Support phase emits one OQ CAS plus16new ignored evidence copies, preserving four support sources. Component phases retain3targets/2suites/freshchild/Elm oracles/budgets and private-only reports.",
+    "Actual independent support review SHA required; no future result/adoption fabricated. Current schema/guard/native history unchanged."
+  ],
+  "limits": [
+    "Source-only qualification preparation; Root executes protected controls and normal claims/locked CAS. No reviewer target imports/tests/QA/effects.",
+    "No production15post adoption, configured Backend/native/original acceptance. Elm candidate failure and its subsequent source correction remain separate."
+  ]
+}

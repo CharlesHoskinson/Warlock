@@ -1,0 +1,10 @@
+--- a/implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs
++++ b/implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs
+@@ -151,7 +151,6 @@
+     (Done _,_) -> Left Incomplete
+     (Closed _,_) -> case held of
+       Handle _ wire _ -> Right (Owner generation serial live (Map.delete wire entries) outputs)
+-    (ManagerFinished,_) -> Left Retired
+ 
+ -- ManagerFinished is normally handled before token lookup; remain total.
+ eventHandle :: Event -> Either Error Handle

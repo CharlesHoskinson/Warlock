@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-component-integration-only",
+  "rootCopyPlan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/clean-integration-archive-preparation/root-copy-plan.json",
+    "sha256": "1634ca86519256c662b7f2022aaf0233bab041e955db3cfaa91e7ec52c45c8b9"
+  },
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "6e09d795f8c88e69a922ec92c7ea5116ab7aebb1c9d64be57f4af5ba589a56e3",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "8d5fdc55ce3f2f996c110de1a54f648bbac33d18681e1c1c4dc095cce76c5b58",
+    "implementation/warlock/src/HttpPopup.elm": "e3b20ed07ce33d23dfebb7d9ba368d210ec01597920f819fc061421f80d24589",
+    "implementation/warlock/qa/ux024-menu-dom.cjs": "d6b4983292ca45c94f4de56d4ebe6943c9d9e649661e08a0aa98e9c9ea2eb6a9",
+    "tools/check_elm_cpu.py": "02cc8aff76c624cbe44cb84396e4eedd4508a645f87326b9e5706c08a3b00eee",
+    "tools/run_current_arm_ux024_foreign_toplevel_observer.py": "daffaa93eb4afb08bc3f1e6b8faa7e86cfc4e4e14e5f6d0d3359121920650d71"
+  },
+  "reviewedSixSourceDiffSha256": "e57e987255519dbd31dd4a63acdc2411ba9071767e38a8d6f88393689aec5321",
+  "verified": {
+    "archiveCopies": 27,
+    "allSourceAndEvidenceHashesExact": true,
+    "componentEvidenceRefsMatchPlannedDestinations": true,
+    "rootReadme21Requirements46ScenariosMatchesLedger": true,
+    "rootReadmeHistoricalNovember3CutoffNotCurrentAuthority": true,
+    "cleanCpu53Cpu50Original21Contrast25ClaimsBounded": true,
+    "originalAndTargetUpdateRedPreserved": true,
+    "diagnostic52ExplicitlySeparateFromCleanImages": true,
+    "sixDiffsMatchPriorSourceReviews": true,
+    "procHeldFdLiveStateAndCoalescedFreshInputGuardsPreserved": true,
+    "passiveTraceRemovedWebKitDde468Restored": true,
+    "originalDeadlinesAndNineInputsUnchanged": true
+  },
+  "requiredChanges": [],
+  "limits": [
+    "Read-only source/artifact review; no QA or primary writes.",
+    "Root owns actual53 normal closure, exact copies, source commit and integration.",
+    "Clean component/CPU qualification does not establish clean native, original UX024/EARS, accessibility or release acceptance.",
+    "Diagnostic52 frames precede transactions and can lag paired DOM; no synchronized physical-focus inference."
+  ]
+}

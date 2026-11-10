@@ -1,0 +1,26 @@
+{
+  "signal": "WebKitWebView::context-menu",
+  "installedGir": {
+    "path": "/usr/share/gir-1.0/WebKit-6.0.gir",
+    "sha256": "b9b52e80b392004248b36bb47e522ce7e5fbbedd95a3e72c05f362a27285f9d0"
+  },
+  "installedHeader": {
+    "path": "/usr/include/webkitgtk-6.0/webkit/WebKitWebView.h",
+    "sha256": "86ca10a63de9d8c0830635508f3cb7dc5218f3ab963cc1910ad45e30cfb03749"
+  },
+  "headerNativeParameters": [
+    "WebKitWebView*",
+    "WebKitContextMenu*",
+    "WebKitHitTestResult*"
+  ],
+  "callbackParameters": [
+    "WebKitWebView*",
+    "WebKitContextMenu*",
+    "WebKitHitTestResult*",
+    "gpointer"
+  ],
+  "return": "gboolean / CInt",
+  "suppressReturn": 1,
+  "borrowedArguments": "Ignored; neither dereferenced nor retained.",
+  "evidence": "GIR signal context-menu lines28801-28849; installed header context_menu vfunc lines284-286. Return TRUE suppresses stock menu. No GTK3 GdkEvent argument."
+}

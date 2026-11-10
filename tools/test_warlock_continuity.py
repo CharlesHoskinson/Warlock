@@ -32,7 +32,7 @@ class ContinuityTests(unittest.TestCase):
         path.chmod(0o600)
 
     def write_checkpoint(self, data, age=0):
-        self.write(self.checkpoint, data)
+        self.write(self.checkpoint, {"goalStatus": "active", "externalBlocker": False, **data})
         os.utime(self.checkpoint, (self.now - age, self.now - age))
 
     def tick(self):
@@ -62,8 +62,12 @@ class ContinuityTests(unittest.TestCase):
         self.assertTrue(result["queueAccepted"])
         self.assertFalse(result["restartVerified"])
         args, kwargs = self.queue.call_args
-        self.assertEqual(args[0], ["/bin/true", "queue", "--thread", self.config["thread"],
-                                  "--message", policy.PROMPT, "--resume", "-C", str(self.root)])
+        nonce = result["wakeNonce"]
+        self.assertTrue(args[0][5].startswith(policy.PROMPT))
+        self.assertIn(nonce, args[0][5])
+        self.assertIn("continuityWakeAcknowledgment", args[0][5])
+        self.assertEqual(args[0][:5], ["/bin/true", "queue", "--thread", self.config["thread"], "--message"])
+        self.assertEqual(args[0][6:], ["--resume", "-C", str(self.root)])
         self.assertNotIn("shell", kwargs)
         self.assertEqual(kwargs["timeout"], 20)
 
@@ -91,9 +95,20 @@ class ContinuityTests(unittest.TestCase):
         self.assertEqual(self.tick()["status"], "external-blocked")
         self.queue.assert_not_called()
 
-    def test_internal_blocked_goal_still_requests_repair(self):
+    def test_blocked_host_goal_never_queues_even_for_internal_failure(self):
         self.write_checkpoint({"goalStatus": "blocked", "externalBlocker": False}, age=1000)
-        self.assertTrue(self.tick()["queueAccepted"])
+        self.assertEqual(self.tick()["status"], "goal-quiescent")
+        self.queue.assert_not_called()
+
+    def test_unknown_or_missing_goal_status_never_queues(self):
+        for value in (None, "unknown", "blocked"):
+            with self.subTest(goalStatus=value):
+                self.write_checkpoint({"goalStatus": value}, age=1000)
+                self.assertEqual(self.tick()["status"], "goal-quiescent")
+        self.write(self.checkpoint, {"externalBlocker": False})
+        os.utime(self.checkpoint, (self.now - 1000, self.now - 1000))
+        self.assertEqual(self.tick()["status"], "goal-quiescent")
+        self.queue.assert_not_called()
 
     def test_checkpoint_pause_during_observation_prevents_queue(self):
         original = policy.load_config
@@ -140,21 +155,25 @@ class ContinuityTests(unittest.TestCase):
             self.assertEqual(policy.main(), 4)
 
     def test_cooldown_persists_and_reserves_failed_attempt(self):
-        self.queue.side_effect = subprocess.TimeoutExpired("codex", 20)
-        self.assertEqual(self.tick()["queueFailure"], "TimeoutExpired")
+        self.queue.side_effect = FileNotFoundError("fixed queue executable unavailable before dispatch")
+        self.assertEqual(self.tick()["queueFailure"], "FileNotFoundError")
         self.assertEqual(self.tick()["status"], "cooldown")
         self.now += 300
-        self.assertEqual(self.tick()["queueFailure"], "TimeoutExpired")
+        self.assertEqual(self.tick()["queueFailure"], "FileNotFoundError")
         self.assertEqual(self.queue.call_count, 2)
 
     def test_warning_exit_zero_and_nonzero_are_unconfirmed(self):
         for code, stdout, stderr in [(0, "", "WARN resume failed"), (1, "", "refused")]:
             with self.subTest(code=code):
+                # Separate owned fixture configs, not deletion of a pending live state.
+                self.path = self.root / ("unconfirmed-" + str(code) + ".json")
+                self.write(self.path, self.config)
                 self.queue.return_value = subprocess.CompletedProcess([], code, stdout, stderr)
                 result = self.tick()
                 self.assertFalse(result["queueAccepted"])
                 self.assertFalse(result["restartVerified"])
                 self.now += 300
+                self.assertFalse(self.tick()["queueAttempted"])
 
     def test_singleton_second_watcher_cannot_dispatch(self):
         with policy.singleton(self.path):
@@ -180,6 +199,123 @@ class ContinuityTests(unittest.TestCase):
             self.assertEqual(policy.tick(self.path, clock=clock, runner=self.queue)["status"],
                              "config-changed-or-expired")
         self.queue.assert_not_called()
+
+
+    def acknowledge(self, selected_nonce, **overrides):
+        ack = {"nonce": selected_nonce, "thread": self.config["thread"], "observedGoalStatus": "active",
+               "acknowledgedUTC": datetime.fromtimestamp(self.now, timezone.utc).isoformat()}
+        ack.update(overrides)
+        self.write_checkpoint({"goalStatus": "active", "externalBlocker": False,
+                               "continuityWakeAcknowledgment": ack})
+
+    def test_accepted_wake_remains_pending_after_cooldown(self):
+        first = self.tick()
+        self.now += 301
+        result = self.tick()
+        self.assertFalse(result["queueAttempted"])
+        self.assertEqual(result["wakeNonce"], first["wakeNonce"])
+        self.assertIn(result["status"], ("wake-pending", "wake-pending-attention"))
+        self.queue.assert_called_once()
+        self.assertFalse(result["restartVerified"])
+
+    def test_exact_fresh_active_root_ack_releases_latch_without_self_ack(self):
+        first = self.tick()
+        self.now += 1
+        self.acknowledge(first["wakeNonce"])
+        result = self.tick()
+        self.assertEqual(result["status"], "wake-acknowledged")
+        self.assertTrue(result["rootWakeAcknowledged"])
+        self.assertFalse(result["queueAttempted"])
+        self.assertFalse(result["restartVerified"])
+        self.assertNotIn("pendingWake", json.loads(Path(str(self.path) + ".state.json").read_text()))
+        self.queue.assert_called_once()
+
+    def test_wrong_nonce_thread_stale_and_paused_ack_do_not_release(self):
+        first = self.tick()
+        self.now += 1
+        for overrides in ({"nonce": "wrong"}, {"thread": "00000000-0000-0000-0000-000000000000"},
+                          {"observedGoalStatus": "paused"}):
+            with self.subTest(overrides=overrides):
+                self.acknowledge(first["wakeNonce"], **overrides)
+                self.assertEqual(self.tick()["status"], "wake-pending")
+        self.acknowledge(first["wakeNonce"])
+        os.utime(self.checkpoint, (self.now - 301, self.now - 301))
+        self.assertEqual(self.tick()["status"], "wake-pending")
+        self.write_checkpoint({"goalStatus": "paused", "continuityWakeAcknowledgment": {
+            "nonce": first["wakeNonce"], "thread": self.config["thread"], "observedGoalStatus": "active",
+            "acknowledgedUTC": datetime.fromtimestamp(self.now, timezone.utc).isoformat()}})
+        self.assertEqual(self.tick()["status"], "goal-quiescent")
+        self.assertIn("pendingWake", json.loads(Path(str(self.path) + ".state.json").read_text()))
+        self.queue.assert_called_once()
+
+    def test_pending_attention_is_recorded_once_without_requeue(self):
+        self.tick()
+        self.now += 300
+        first = self.tick()
+        self.assertEqual(first["status"], "wake-pending-attention")
+        self.assertTrue(first["attentionRequired"])
+        self.now += 60
+        second = self.tick()
+        self.assertEqual(second["status"], "wake-pending")
+        self.assertFalse(second["attentionRequired"])
+        self.queue.assert_called_once()
+
+    def test_failed_attempt_receipt_is_retained_and_retry_stays_bounded(self):
+        self.queue.side_effect = FileNotFoundError("fixed queue executable unavailable before dispatch")
+        first = self.tick()
+        receipt = Path(first["attemptReceipt"])
+        first_bytes = receipt.read_bytes()
+        self.assertFalse(json.loads(first_bytes)["queueAccepted"])
+        self.assertEqual(self.tick()["status"], "cooldown")
+        self.now += 300
+        second = self.tick()
+        self.assertNotEqual(first["wakeNonce"], second["wakeNonce"])
+        self.assertEqual(receipt.read_bytes(), first_bytes)
+        self.assertFalse(second["queueAccepted"])
+        self.assertEqual(self.queue.call_count, 2)
+
+    def test_expiry_with_pending_wake_never_requeues(self):
+        self.tick()
+        self.now += 1001
+        self.assertEqual(self.tick()["status"], "expired")
+        self.queue.assert_called_once()
+
+    def test_explicit_owner_resolution_requires_exact_nonce_and_reason(self):
+        first = self.tick()
+        self.now += 301
+        resolution = {"nonce": first["wakeNonce"], "thread": self.config["thread"],
+                      "resolvedUTC": datetime.fromtimestamp(self.now, timezone.utc).isoformat(),
+                      "action": "retry", "reason": "Root reviewed the exact unacknowledged attempt"}
+        self.write_checkpoint({"goalStatus": "active", "externalBlocker": False,
+                               "continuityWakeResolution": dict(resolution, nonce="wrong")})
+        self.assertEqual(self.tick()["status"], "wake-pending-attention")
+        self.write_checkpoint({"goalStatus": "active", "externalBlocker": False,
+                               "continuityWakeResolution": resolution})
+        self.assertEqual(self.tick()["status"], "wake-owner-resolved")
+        self.queue.assert_called_once()
+        self.write_checkpoint({"goalStatus": "active"}, age=301)
+        self.assertTrue(self.tick()["queueAttempted"])
+        self.assertEqual(self.queue.call_count, 2)
+
+
+    def test_timeout_after_possible_acceptance_retains_one_pending_nonce(self):
+        submitted = []
+
+        def accept_then_lose_reply(argv, **kwargs):
+            submitted.append(argv)  # Mock boundary only; no actual queue execution.
+            raise subprocess.TimeoutExpired(argv, kwargs["timeout"])
+
+        self.queue.side_effect = accept_then_lose_reply
+        first = self.tick()
+        self.assertFalse(first["queueAccepted"])
+        self.now += 301
+        second = self.tick()
+        self.assertFalse(second["queueAttempted"])
+        self.assertEqual(second["wakeNonce"], first["wakeNonce"])
+        self.assertEqual(len(submitted), 1)
+        receipt = json.loads(Path(first["attemptReceipt"]).read_text())
+        self.assertTrue(receipt["dispatchUncertain"])
+        self.assertEqual(receipt["outcome"], "dispatch-uncertain")
 
 
 if __name__ == "__main__":

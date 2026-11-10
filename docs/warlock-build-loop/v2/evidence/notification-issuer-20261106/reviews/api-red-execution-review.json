@@ -1,0 +1,48 @@
+{
+  "reviewedNs": 1793978837011618386,
+  "verdict": "EXPECTED_PUBLIC_API_COMPILER_RED_OBSERVED_BOUNDED_R66_GREEN_NEXT",
+  "reportPath": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793978754021684393/report.json",
+  "reportSHA256": "1f88e93aad4151219751ec7932684403b5ba7790beeb46786d28f79ed348f596",
+  "reviewPacketSHA256": "db53525934fcb56d42838eadec0e6cf536cb345b9d1ba75b572de15d0de45002",
+  "inputCount": 241,
+  "reportPinsEqualReviewedPacket": true,
+  "currentPinsAtFirstTerminalObservation": "All241matchedRoot before GREENadoption; no sourceprojection",
+  "MainSHA256": "2a1b3ba1593bed25a68744e9408d209c613230e3d94ae4171abfe08882ffa711",
+  "commands": [
+    {
+      "name": "notification-issuer-build",
+      "exit": 1
+    }
+  ],
+  "compilerErrors": {
+    "file": "test-notification-issuer/Main.hs",
+    "line": 11,
+    "missingPublicBackendExports": [
+      "newNotificationIssuer",
+      "provisionNotificationIssuer",
+      "reserveNotificationGeneration",
+      "retireNotificationIssuer",
+      "notificationGenerationText"
+    ],
+    "otherCompilerErrorsFound": false
+  },
+  "logsSHA256": {
+    "notification-issuer-build.stdout": "9a31e9c9f1b4e9b56ce0c9539e592a9cf6a7be6bc67f801f454e6e2243ab5213",
+    "notification-issuer-build.stderr": "8286c078bca6e60394bf4f6ada3cfb07d75faf7f38f6d7e430980efa6317ea8d"
+  },
+  "warningsPreserved": "Cabalabsoluteproject/noremotes, dependencydeprecatedmemcpy/configurewithcompiler warnings remaininrawstderr; no cleanwarningclaim",
+  "runtimeIssuerChecksExecuted": false,
+  "normalSuiteReceiptExists": false,
+  "notSemanticRuntimeRed": true,
+  "nextRootAction": "Adopt exactlyindependentlyreviewedr66productmerge while retaininghardMain2a1b3ba/config30/strictR68Cabalstanza and current support; freezefullnewtuple and runfixed protected --notification-issuer. Compiler/runtimeGREENremainsunproven.",
+  "boundedGreenReadiness": "Productfullstaticreview+profileAPIcompatibility ready; no GIO/native/crossprocess prerequisite for this singleprocessIO scope. Rootactualclaims/admission/deadline stillapply; review itself grantsno execution authority.",
+  "outerHandle": "Root54090 owns terminalconsumption; reviewer didnotpollorconsumeexecutionhandle",
+  "deadline": "Original15:28:57 progressclock and absoluteauthorizationexpiry preserved; no timerreset",
+  "sourceReviews": {
+    "ux031-issuer-r66-full-static-integration-independent-review.json": "c4ad961145ed9bf6a5d9c90449ebc9df1b12406009b6957e9642fef1991ea3b3",
+    "ux031-notification-issuer-r68-review/review.json": "f5b77d473fd76083bc8c878dade9d932a64af25c8521446eb77dabd0ce6cd50e"
+  },
+  "qaCompilerServiceAuthExecutedByReviewer": false,
+  "sharedWrites": false,
+  "nativeWholeIssuerOriginalReleaseAcceptance": false
+}

@@ -1,0 +1,1476 @@
+{
+  "schema": 1,
+  "scope": "Minimal exact selector-admission support regression evidence; excludes separate readiness runs",
+  "files": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793938803926098059/report.json",
+      "sha256": "fe38c7edf4d3480f431f0bc7c4d1ba9c07fef5a7eb407bfd0f604c05ae1bdc91",
+      "bytes": 7985,
+      "role": "actual expected admission RED ordinary report;13controls;zeroQuint",
+      "archiveMember": "000/report.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/report.json",
+      "sha256": "a336f5d64625b4fed7d1d008f758b75a6fd012b957904b8cb0dccf921d8ac483",
+      "bytes": 81650,
+      "role": "actual GREEN ordinary report;13controls;old14test sampled regression",
+      "archiveMember": "001/report.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/typecheck-model.json",
+      "sha256": "3af8b7bcb6f0b44a9b510526953368ab3be5f157dedcf078ea993f5a30d234ed",
+      "bytes": 265616,
+      "role": "exact structured Quint command result: typecheck-model",
+      "archiveMember": "002/typecheck-model.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/typecheck-model.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: typecheck-model",
+      "archiveMember": "003/typecheck-model.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/typecheck-model.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: typecheck-model",
+      "archiveMember": "004/typecheck-model.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/typecheck-tests.json",
+      "sha256": "9cf6809fa43b2198437d3ec369521ef3d4bdcacfd395ebd6610954c834ac9b22",
+      "bytes": 474481,
+      "role": "exact structured Quint command result: typecheck-tests",
+      "archiveMember": "005/typecheck-tests.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/typecheck-tests.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: typecheck-tests",
+      "archiveMember": "006/typecheck-tests.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/typecheck-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: typecheck-tests",
+      "archiveMember": "007/typecheck-tests.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-refusalThenValidTest-20261105.json",
+      "sha256": "023e2926a031ca17c1c59c18151b045cc32798275b768c67855d70f2ee61a06f",
+      "bytes": 474535,
+      "role": "exact structured Quint command result: test-refusalThenValidTest-20261105",
+      "archiveMember": "008/test-refusalThenValidTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-refusalThenValidTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-refusalThenValidTest-20261105",
+      "archiveMember": "009/test-refusalThenValidTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-refusalThenValidTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-refusalThenValidTest-20261105",
+      "archiveMember": "010/test-refusalThenValidTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerCannotIssueTest-20261105.json",
+      "sha256": "0b914aec817497b38415cd62348141c4536f074ee75d281a118cb8901380a63b",
+      "bytes": 474543,
+      "role": "exact structured Quint command result: test-rejectedOwnerCannotIssueTest-20261105",
+      "archiveMember": "011/test-rejectedOwnerCannotIssueTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerCannotIssueTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-rejectedOwnerCannotIssueTest-20261105",
+      "archiveMember": "012/test-rejectedOwnerCannotIssueTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerCannotIssueTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-rejectedOwnerCannotIssueTest-20261105",
+      "archiveMember": "013/test-rejectedOwnerCannotIssueTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-http204PreservesIntentTest-20261105.json",
+      "sha256": "56ce659084437a1cd84ea6be25f1234058be8f34f09088fea30cf5f40055a327",
+      "bytes": 474541,
+      "role": "exact structured Quint command result: test-http204PreservesIntentTest-20261105",
+      "archiveMember": "014/test-http204PreservesIntentTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-http204PreservesIntentTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-http204PreservesIntentTest-20261105",
+      "archiveMember": "015/test-http204PreservesIntentTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-http204PreservesIntentTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-http204PreservesIntentTest-20261105",
+      "archiveMember": "016/test-http204PreservesIntentTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactRetryPreservesIdentityTest-20261105.json",
+      "sha256": "7b5b571fe8e032d5e90f98b846c38de01bb121b66e8942eb46030a24f2f03fda",
+      "bytes": 474546,
+      "role": "exact structured Quint command result: test-exactRetryPreservesIdentityTest-20261105",
+      "archiveMember": "017/test-exactRetryPreservesIdentityTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactRetryPreservesIdentityTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-exactRetryPreservesIdentityTest-20261105",
+      "archiveMember": "018/test-exactRetryPreservesIdentityTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactRetryPreservesIdentityTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-exactRetryPreservesIdentityTest-20261105",
+      "archiveMember": "019/test-exactRetryPreservesIdentityTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredTicketPreservesIntentTest-20261105.json",
+      "sha256": "d73c463632828d2deca619b6e36fdfb077a94303c68329c900cb70eb059c0596",
+      "bytes": 474547,
+      "role": "exact structured Quint command result: test-alteredTicketPreservesIntentTest-20261105",
+      "archiveMember": "020/test-alteredTicketPreservesIntentTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredTicketPreservesIntentTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredTicketPreservesIntentTest-20261105",
+      "archiveMember": "021/test-alteredTicketPreservesIntentTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredTicketPreservesIntentTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredTicketPreservesIntentTest-20261105",
+      "archiveMember": "022/test-alteredTicketPreservesIntentTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-delayedTicketPreservesIntentTest-20261105.json",
+      "sha256": "06d00eb559d45fdc25a58f6d341ba95f6f0fee0b892fb3afaeea87e380b1c39a",
+      "bytes": 474547,
+      "role": "exact structured Quint command result: test-delayedTicketPreservesIntentTest-20261105",
+      "archiveMember": "023/test-delayedTicketPreservesIntentTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-delayedTicketPreservesIntentTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-delayedTicketPreservesIntentTest-20261105",
+      "archiveMember": "024/test-delayedTicketPreservesIntentTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-delayedTicketPreservesIntentTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-delayedTicketPreservesIntentTest-20261105",
+      "archiveMember": "025/test-delayedTicketPreservesIntentTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactAcceptanceConfirmsTest-20261105.json",
+      "sha256": "e0844eabcb99d5bb8306b0cfe021e6590302b1ca9fd4b10e2791eb00d72c4e7a",
+      "bytes": 474542,
+      "role": "exact structured Quint command result: test-exactAcceptanceConfirmsTest-20261105",
+      "archiveMember": "026/test-exactAcceptanceConfirmsTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactAcceptanceConfirmsTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-exactAcceptanceConfirmsTest-20261105",
+      "archiveMember": "027/test-exactAcceptanceConfirmsTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactAcceptanceConfirmsTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-exactAcceptanceConfirmsTest-20261105",
+      "archiveMember": "028/test-exactAcceptanceConfirmsTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateCannotReconfirmTest-20261105.json",
+      "sha256": "bf658c3073cfe7a80cd1d5dfa0d90263ae818dd4dc0adfd8e96367fb0b5bcb0b",
+      "bytes": 474543,
+      "role": "exact structured Quint command result: test-duplicateCannotReconfirmTest-20261105",
+      "archiveMember": "029/test-duplicateCannotReconfirmTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateCannotReconfirmTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-duplicateCannotReconfirmTest-20261105",
+      "archiveMember": "030/test-duplicateCannotReconfirmTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateCannotReconfirmTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-duplicateCannotReconfirmTest-20261105",
+      "archiveMember": "031/test-duplicateCannotReconfirmTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationRejectedTest-20261105.json",
+      "sha256": "37f11fb1b63b410cac581b2443aba2a92ce9c0720b731b0237e3d90e8529f8b7",
+      "bytes": 474546,
+      "role": "exact structured Quint command result: test-alteredConfirmationRejectedTest-20261105",
+      "archiveMember": "032/test-alteredConfirmationRejectedTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationRejectedTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredConfirmationRejectedTest-20261105",
+      "archiveMember": "033/test-alteredConfirmationRejectedTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationRejectedTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredConfirmationRejectedTest-20261105",
+      "archiveMember": "034/test-alteredConfirmationRejectedTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownRecoveryNoReplayTest-20261105.json",
+      "sha256": "f3e691132c5f0311b4178aae25c65eb20f922f953f21f6e5753067daad834e4e",
+      "bytes": 474542,
+      "role": "exact structured Quint command result: test-unknownRecoveryNoReplayTest-20261105",
+      "archiveMember": "035/test-unknownRecoveryNoReplayTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownRecoveryNoReplayTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-unknownRecoveryNoReplayTest-20261105",
+      "archiveMember": "036/test-unknownRecoveryNoReplayTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownRecoveryNoReplayTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-unknownRecoveryNoReplayTest-20261105",
+      "archiveMember": "037/test-unknownRecoveryNoReplayTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerActionDisabledTest-20261105.json",
+      "sha256": "32a64e3c8e59691784eb893d4466421a87885b9d7c7deee519ef77cc283a9fc2",
+      "bytes": 474546,
+      "role": "exact structured Quint command result: test-rejectedOwnerActionDisabledTest-20261105",
+      "archiveMember": "038/test-rejectedOwnerActionDisabledTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerActionDisabledTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-rejectedOwnerActionDisabledTest-20261105",
+      "archiveMember": "039/test-rejectedOwnerActionDisabledTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerActionDisabledTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-rejectedOwnerActionDisabledTest-20261105",
+      "archiveMember": "040/test-rejectedOwnerActionDisabledTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateConfirmationActionDisabledTest-20261105.json",
+      "sha256": "b2a807a51e18ac7fc88ba39a10c25124dac78fa1d6a38f2253c06aaa16539252",
+      "bytes": 474554,
+      "role": "exact structured Quint command result: test-duplicateConfirmationActionDisabledTest-20261105",
+      "archiveMember": "041/test-duplicateConfirmationActionDisabledTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateConfirmationActionDisabledTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-duplicateConfirmationActionDisabledTest-20261105",
+      "archiveMember": "042/test-duplicateConfirmationActionDisabledTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateConfirmationActionDisabledTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-duplicateConfirmationActionDisabledTest-20261105",
+      "archiveMember": "043/test-duplicateConfirmationActionDisabledTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationActionDisabledTest-20261105.json",
+      "sha256": "6973f6fa44c35fa3003961cc43463c3489118da23f5b790c3ed3dc22007b591e",
+      "bytes": 474552,
+      "role": "exact structured Quint command result: test-alteredConfirmationActionDisabledTest-20261105",
+      "archiveMember": "044/test-alteredConfirmationActionDisabledTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationActionDisabledTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredConfirmationActionDisabledTest-20261105",
+      "archiveMember": "045/test-alteredConfirmationActionDisabledTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationActionDisabledTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredConfirmationActionDisabledTest-20261105",
+      "archiveMember": "046/test-alteredConfirmationActionDisabledTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownReinvocationActionDisabledTest-20261105.json",
+      "sha256": "420c2b50422fdeb1d20a1ebe7085b01bd76461723eac1f15ff8c0b41251b2dfe",
+      "bytes": 474552,
+      "role": "exact structured Quint command result: test-unknownReinvocationActionDisabledTest-20261105",
+      "archiveMember": "047/test-unknownReinvocationActionDisabledTest-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownReinvocationActionDisabledTest-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-unknownReinvocationActionDisabledTest-20261105",
+      "archiveMember": "048/test-unknownReinvocationActionDisabledTest-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownReinvocationActionDisabledTest-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-unknownReinvocationActionDisabledTest-20261105",
+      "archiveMember": "049/test-unknownReinvocationActionDisabledTest-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-refusalThenValidTest-20261106.json",
+      "sha256": "023e2926a031ca17c1c59c18151b045cc32798275b768c67855d70f2ee61a06f",
+      "bytes": 474535,
+      "role": "exact structured Quint command result: test-refusalThenValidTest-20261106",
+      "archiveMember": "050/test-refusalThenValidTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-refusalThenValidTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-refusalThenValidTest-20261106",
+      "archiveMember": "051/test-refusalThenValidTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-refusalThenValidTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-refusalThenValidTest-20261106",
+      "archiveMember": "052/test-refusalThenValidTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerCannotIssueTest-20261106.json",
+      "sha256": "0b914aec817497b38415cd62348141c4536f074ee75d281a118cb8901380a63b",
+      "bytes": 474543,
+      "role": "exact structured Quint command result: test-rejectedOwnerCannotIssueTest-20261106",
+      "archiveMember": "053/test-rejectedOwnerCannotIssueTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerCannotIssueTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-rejectedOwnerCannotIssueTest-20261106",
+      "archiveMember": "054/test-rejectedOwnerCannotIssueTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerCannotIssueTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-rejectedOwnerCannotIssueTest-20261106",
+      "archiveMember": "055/test-rejectedOwnerCannotIssueTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-http204PreservesIntentTest-20261106.json",
+      "sha256": "56ce659084437a1cd84ea6be25f1234058be8f34f09088fea30cf5f40055a327",
+      "bytes": 474541,
+      "role": "exact structured Quint command result: test-http204PreservesIntentTest-20261106",
+      "archiveMember": "056/test-http204PreservesIntentTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-http204PreservesIntentTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-http204PreservesIntentTest-20261106",
+      "archiveMember": "057/test-http204PreservesIntentTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-http204PreservesIntentTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-http204PreservesIntentTest-20261106",
+      "archiveMember": "058/test-http204PreservesIntentTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactRetryPreservesIdentityTest-20261106.json",
+      "sha256": "7b5b571fe8e032d5e90f98b846c38de01bb121b66e8942eb46030a24f2f03fda",
+      "bytes": 474546,
+      "role": "exact structured Quint command result: test-exactRetryPreservesIdentityTest-20261106",
+      "archiveMember": "059/test-exactRetryPreservesIdentityTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactRetryPreservesIdentityTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-exactRetryPreservesIdentityTest-20261106",
+      "archiveMember": "060/test-exactRetryPreservesIdentityTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactRetryPreservesIdentityTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-exactRetryPreservesIdentityTest-20261106",
+      "archiveMember": "061/test-exactRetryPreservesIdentityTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredTicketPreservesIntentTest-20261106.json",
+      "sha256": "d73c463632828d2deca619b6e36fdfb077a94303c68329c900cb70eb059c0596",
+      "bytes": 474547,
+      "role": "exact structured Quint command result: test-alteredTicketPreservesIntentTest-20261106",
+      "archiveMember": "062/test-alteredTicketPreservesIntentTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredTicketPreservesIntentTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredTicketPreservesIntentTest-20261106",
+      "archiveMember": "063/test-alteredTicketPreservesIntentTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredTicketPreservesIntentTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredTicketPreservesIntentTest-20261106",
+      "archiveMember": "064/test-alteredTicketPreservesIntentTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-delayedTicketPreservesIntentTest-20261106.json",
+      "sha256": "06d00eb559d45fdc25a58f6d341ba95f6f0fee0b892fb3afaeea87e380b1c39a",
+      "bytes": 474547,
+      "role": "exact structured Quint command result: test-delayedTicketPreservesIntentTest-20261106",
+      "archiveMember": "065/test-delayedTicketPreservesIntentTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-delayedTicketPreservesIntentTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-delayedTicketPreservesIntentTest-20261106",
+      "archiveMember": "066/test-delayedTicketPreservesIntentTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-delayedTicketPreservesIntentTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-delayedTicketPreservesIntentTest-20261106",
+      "archiveMember": "067/test-delayedTicketPreservesIntentTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactAcceptanceConfirmsTest-20261106.json",
+      "sha256": "e0844eabcb99d5bb8306b0cfe021e6590302b1ca9fd4b10e2791eb00d72c4e7a",
+      "bytes": 474542,
+      "role": "exact structured Quint command result: test-exactAcceptanceConfirmsTest-20261106",
+      "archiveMember": "068/test-exactAcceptanceConfirmsTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactAcceptanceConfirmsTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-exactAcceptanceConfirmsTest-20261106",
+      "archiveMember": "069/test-exactAcceptanceConfirmsTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-exactAcceptanceConfirmsTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-exactAcceptanceConfirmsTest-20261106",
+      "archiveMember": "070/test-exactAcceptanceConfirmsTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateCannotReconfirmTest-20261106.json",
+      "sha256": "bf658c3073cfe7a80cd1d5dfa0d90263ae818dd4dc0adfd8e96367fb0b5bcb0b",
+      "bytes": 474543,
+      "role": "exact structured Quint command result: test-duplicateCannotReconfirmTest-20261106",
+      "archiveMember": "071/test-duplicateCannotReconfirmTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateCannotReconfirmTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-duplicateCannotReconfirmTest-20261106",
+      "archiveMember": "072/test-duplicateCannotReconfirmTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateCannotReconfirmTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-duplicateCannotReconfirmTest-20261106",
+      "archiveMember": "073/test-duplicateCannotReconfirmTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationRejectedTest-20261106.json",
+      "sha256": "37f11fb1b63b410cac581b2443aba2a92ce9c0720b731b0237e3d90e8529f8b7",
+      "bytes": 474546,
+      "role": "exact structured Quint command result: test-alteredConfirmationRejectedTest-20261106",
+      "archiveMember": "074/test-alteredConfirmationRejectedTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationRejectedTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredConfirmationRejectedTest-20261106",
+      "archiveMember": "075/test-alteredConfirmationRejectedTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationRejectedTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredConfirmationRejectedTest-20261106",
+      "archiveMember": "076/test-alteredConfirmationRejectedTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownRecoveryNoReplayTest-20261106.json",
+      "sha256": "f3e691132c5f0311b4178aae25c65eb20f922f953f21f6e5753067daad834e4e",
+      "bytes": 474542,
+      "role": "exact structured Quint command result: test-unknownRecoveryNoReplayTest-20261106",
+      "archiveMember": "077/test-unknownRecoveryNoReplayTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownRecoveryNoReplayTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-unknownRecoveryNoReplayTest-20261106",
+      "archiveMember": "078/test-unknownRecoveryNoReplayTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownRecoveryNoReplayTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-unknownRecoveryNoReplayTest-20261106",
+      "archiveMember": "079/test-unknownRecoveryNoReplayTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerActionDisabledTest-20261106.json",
+      "sha256": "32a64e3c8e59691784eb893d4466421a87885b9d7c7deee519ef77cc283a9fc2",
+      "bytes": 474546,
+      "role": "exact structured Quint command result: test-rejectedOwnerActionDisabledTest-20261106",
+      "archiveMember": "080/test-rejectedOwnerActionDisabledTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerActionDisabledTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-rejectedOwnerActionDisabledTest-20261106",
+      "archiveMember": "081/test-rejectedOwnerActionDisabledTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-rejectedOwnerActionDisabledTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-rejectedOwnerActionDisabledTest-20261106",
+      "archiveMember": "082/test-rejectedOwnerActionDisabledTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateConfirmationActionDisabledTest-20261106.json",
+      "sha256": "b2a807a51e18ac7fc88ba39a10c25124dac78fa1d6a38f2253c06aaa16539252",
+      "bytes": 474554,
+      "role": "exact structured Quint command result: test-duplicateConfirmationActionDisabledTest-20261106",
+      "archiveMember": "083/test-duplicateConfirmationActionDisabledTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateConfirmationActionDisabledTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-duplicateConfirmationActionDisabledTest-20261106",
+      "archiveMember": "084/test-duplicateConfirmationActionDisabledTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-duplicateConfirmationActionDisabledTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-duplicateConfirmationActionDisabledTest-20261106",
+      "archiveMember": "085/test-duplicateConfirmationActionDisabledTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationActionDisabledTest-20261106.json",
+      "sha256": "6973f6fa44c35fa3003961cc43463c3489118da23f5b790c3ed3dc22007b591e",
+      "bytes": 474552,
+      "role": "exact structured Quint command result: test-alteredConfirmationActionDisabledTest-20261106",
+      "archiveMember": "086/test-alteredConfirmationActionDisabledTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationActionDisabledTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredConfirmationActionDisabledTest-20261106",
+      "archiveMember": "087/test-alteredConfirmationActionDisabledTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-alteredConfirmationActionDisabledTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-alteredConfirmationActionDisabledTest-20261106",
+      "archiveMember": "088/test-alteredConfirmationActionDisabledTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownReinvocationActionDisabledTest-20261106.json",
+      "sha256": "420c2b50422fdeb1d20a1ebe7085b01bd76461723eac1f15ff8c0b41251b2dfe",
+      "bytes": 474552,
+      "role": "exact structured Quint command result: test-unknownReinvocationActionDisabledTest-20261106",
+      "archiveMember": "089/test-unknownReinvocationActionDisabledTest-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownReinvocationActionDisabledTest-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-unknownReinvocationActionDisabledTest-20261106",
+      "archiveMember": "090/test-unknownReinvocationActionDisabledTest-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/test-unknownReinvocationActionDisabledTest-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: test-unknownReinvocationActionDisabledTest-20261106",
+      "archiveMember": "091/test-unknownReinvocationActionDisabledTest-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/safety-20261105.json",
+      "sha256": "9ed628f60313ad8b349c1c9423e7d0c46ba5008290bf43fae405c0914868d6e5",
+      "bytes": 312997,
+      "role": "exact structured Quint command result: safety-20261105",
+      "archiveMember": "092/safety-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/safety-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: safety-20261105",
+      "archiveMember": "093/safety-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/safety-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: safety-20261105",
+      "archiveMember": "094/safety-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noProposal-20261105.json",
+      "sha256": "1d688e1182fa5d94a17f861f73c0cacb14a6b52d139af6f5be705ceafb155856",
+      "bytes": 272367,
+      "role": "exact structured Quint command result: witness-noProposal-20261105",
+      "archiveMember": "095/witness-noProposal-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noProposal-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noProposal-20261105",
+      "archiveMember": "096/witness-noProposal-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noProposal-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noProposal-20261105",
+      "archiveMember": "097/witness-noProposal-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noProposal-20261105-0.itf.json",
+      "sha256": "a503e10473a037cb7e182831b719105ed71fc11ac674b8ca4140e25e91364bca",
+      "bytes": 1378,
+      "role": "exact selected negated reachability ITF: noProposal",
+      "archiveMember": "098/witness-noProposal-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusal-20261105.json",
+      "sha256": "77dee71bb8b1d0636423d4832aa29fc8f97b1537d9c6c573ca9bd5dbc6d62d97",
+      "bytes": 271034,
+      "role": "exact structured Quint command result: witness-noRefusal-20261105",
+      "archiveMember": "099/witness-noRefusal-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusal-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRefusal-20261105",
+      "archiveMember": "100/witness-noRefusal-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusal-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRefusal-20261105",
+      "archiveMember": "101/witness-noRefusal-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noRefusal-20261105-0.itf.json",
+      "sha256": "b6fe193049754e93b60b606cec66006391f8f8ba180830bdd21a7ef2aabecd42",
+      "bytes": 1022,
+      "role": "exact selected negated reachability ITF: noRefusal",
+      "archiveMember": "102/witness-noRefusal-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noIssuance-20261105.json",
+      "sha256": "f7bfccdb064b04890d76b7a20e8ad877b9be67cf06db572163d2699eb56dbcda",
+      "bytes": 283011,
+      "role": "exact structured Quint command result: witness-noIssuance-20261105",
+      "archiveMember": "103/witness-noIssuance-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noIssuance-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noIssuance-20261105",
+      "archiveMember": "104/witness-noIssuance-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noIssuance-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noIssuance-20261105",
+      "archiveMember": "105/witness-noIssuance-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noIssuance-20261105-0.itf.json",
+      "sha256": "ac9f836f24777e13dd94cf52b5e19acde58f36f1cc636c3aebb7b53ba38d1049",
+      "bytes": 4223,
+      "role": "exact selected negated reachability ITF: noIssuance",
+      "archiveMember": "106/witness-noIssuance-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noUnknown-20261105.json",
+      "sha256": "bb7dd6d44360f6d051e7737f5ac83dba004f01df4d864c90fda1a8445c9c8d8f",
+      "bytes": 285664,
+      "role": "exact structured Quint command result: witness-noUnknown-20261105",
+      "archiveMember": "107/witness-noUnknown-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noUnknown-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noUnknown-20261105",
+      "archiveMember": "108/witness-noUnknown-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noUnknown-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noUnknown-20261105",
+      "archiveMember": "109/witness-noUnknown-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noUnknown-20261105-0.itf.json",
+      "sha256": "cc0a42522f369e7123af13cee1b59de64799c70e0d5351d68dd18db30669f840",
+      "bytes": 4930,
+      "role": "exact selected negated reachability ITF: noUnknown",
+      "archiveMember": "110/witness-noUnknown-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusalThenValid-20261105.json",
+      "sha256": "fd11317b8e52ee5f4850e8316d2101a55c62cd87896a9411efcf4a5590bd39c9",
+      "bytes": 283027,
+      "role": "exact structured Quint command result: witness-noRefusalThenValid-20261105",
+      "archiveMember": "111/witness-noRefusalThenValid-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusalThenValid-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRefusalThenValid-20261105",
+      "archiveMember": "112/witness-noRefusalThenValid-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusalThenValid-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRefusalThenValid-20261105",
+      "archiveMember": "113/witness-noRefusalThenValid-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noRefusalThenValid-20261105-0.itf.json",
+      "sha256": "166be6491c6c43e8d21e0c032c96dcb72a58b0255d21f1c9e9490bdceab8f693",
+      "bytes": 4223,
+      "role": "exact selected negated reachability ITF: noRefusalThenValid",
+      "archiveMember": "114/witness-noRefusalThenValid-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRetry-20261105.json",
+      "sha256": "8161d93e399915cce4ebff708543a92e79f1ae8517cbddf2fc5c3d2e2f484579",
+      "bytes": 289637,
+      "role": "exact structured Quint command result: witness-noRetry-20261105",
+      "archiveMember": "115/witness-noRetry-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRetry-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRetry-20261105",
+      "archiveMember": "116/witness-noRetry-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRetry-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRetry-20261105",
+      "archiveMember": "117/witness-noRetry-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noRetry-20261105-0.itf.json",
+      "sha256": "3f3ae73f90f076e2d8873e35b3fb3da0c2bfa7c1c208ee798106c675293a7390",
+      "bytes": 5985,
+      "role": "exact selected negated reachability ITF: noRetry",
+      "archiveMember": "118/witness-noRetry-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noAccepted-20261105.json",
+      "sha256": "356926612f53fd37b6d66ea21f3e37330090e62225f9a13f72bef485861a57c5",
+      "bytes": 304211,
+      "role": "exact structured Quint command result: witness-noAccepted-20261105",
+      "archiveMember": "119/witness-noAccepted-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noAccepted-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noAccepted-20261105",
+      "archiveMember": "120/witness-noAccepted-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noAccepted-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noAccepted-20261105",
+      "archiveMember": "121/witness-noAccepted-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noAccepted-20261105-0.itf.json",
+      "sha256": "996e684e3467cae0352988440109a539920cb0ac55b6479c5ce56dd99d9d6d33",
+      "bytes": 9839,
+      "role": "exact selected negated reachability ITF: noAccepted",
+      "archiveMember": "122/witness-noAccepted-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noHttp204-20261105.json",
+      "sha256": "c387b93ab59ca53d4c13aa1d356d52b194c7a951570f415acf66d98ade3c0fc4",
+      "bytes": 280350,
+      "role": "exact structured Quint command result: witness-noHttp204-20261105",
+      "archiveMember": "123/witness-noHttp204-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noHttp204-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noHttp204-20261105",
+      "archiveMember": "124/witness-noHttp204-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noHttp204-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noHttp204-20261105",
+      "archiveMember": "125/witness-noHttp204-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noHttp204-20261105-0.itf.json",
+      "sha256": "619a6f82418c39589fb5055e4df7a1740358e82b0ac43910b390d29b5620d3e7",
+      "bytes": 3513,
+      "role": "exact selected negated reachability ITF: noHttp204",
+      "archiveMember": "126/witness-noHttp204-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRecovery-20261105.json",
+      "sha256": "a801d38b89b0d9ea1c73f66095f276388ec616e3d0bb0fa97e92c9648e73f214",
+      "bytes": 300242,
+      "role": "exact structured Quint command result: witness-noRecovery-20261105",
+      "archiveMember": "127/witness-noRecovery-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRecovery-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRecovery-20261105",
+      "archiveMember": "128/witness-noRecovery-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRecovery-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRecovery-20261105",
+      "archiveMember": "129/witness-noRecovery-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noRecovery-20261105-0.itf.json",
+      "sha256": "e90bb0f441d80c742a8a9612833e44ed477ca6cb8115f05a01b9d95ec841cb95",
+      "bytes": 8792,
+      "role": "exact selected negated reachability ITF: noRecovery",
+      "archiveMember": "130/witness-noRecovery-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noDuplicate-20261105.json",
+      "sha256": "b9c3a07d7292794f8559b8827304d9b5fc37c586912640091059d6ab618eb519",
+      "bytes": 302891,
+      "role": "exact structured Quint command result: witness-noDuplicate-20261105",
+      "archiveMember": "131/witness-noDuplicate-20261105.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noDuplicate-20261105.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noDuplicate-20261105",
+      "archiveMember": "132/witness-noDuplicate-20261105.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noDuplicate-20261105.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noDuplicate-20261105",
+      "archiveMember": "133/witness-noDuplicate-20261105.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noDuplicate-20261105-0.itf.json",
+      "sha256": "7f979196d2791537bdf52660a5895baf1c153d43c9f76f2ad5ff5165bd6d264f",
+      "bytes": 9491,
+      "role": "exact selected negated reachability ITF: noDuplicate",
+      "archiveMember": "134/witness-noDuplicate-20261105-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/safety-20261106.json",
+      "sha256": "457772c04af45be88d4faf384aaa7af729444fd00289cadc8e969527a3d6da3c",
+      "bytes": 312978,
+      "role": "exact structured Quint command result: safety-20261106",
+      "archiveMember": "135/safety-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/safety-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: safety-20261106",
+      "archiveMember": "136/safety-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/safety-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: safety-20261106",
+      "archiveMember": "137/safety-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noProposal-20261106.json",
+      "sha256": "ae0b3b74c69c3970f031cad3ed905b1ce84b6febe91954f96e5a23e3ba404451",
+      "bytes": 271036,
+      "role": "exact structured Quint command result: witness-noProposal-20261106",
+      "archiveMember": "138/witness-noProposal-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noProposal-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noProposal-20261106",
+      "archiveMember": "139/witness-noProposal-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noProposal-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noProposal-20261106",
+      "archiveMember": "140/witness-noProposal-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noProposal-20261106-0.itf.json",
+      "sha256": "97f95e9801a37e8b3de821bdd97e025a2ae5bdded5b531542ea078aab66fb018",
+      "bytes": 1022,
+      "role": "exact selected negated reachability ITF: noProposal",
+      "archiveMember": "141/witness-noProposal-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusal-20261106.json",
+      "sha256": "2ec0d6e084c5cd5936c53b6c0fbcf3dce3bba60162910a6cd5c12b5e225f1a95",
+      "bytes": 273695,
+      "role": "exact structured Quint command result: witness-noRefusal-20261106",
+      "archiveMember": "142/witness-noRefusal-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusal-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRefusal-20261106",
+      "archiveMember": "143/witness-noRefusal-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusal-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRefusal-20261106",
+      "archiveMember": "144/witness-noRefusal-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noRefusal-20261106-0.itf.json",
+      "sha256": "58a2e4caf2f9497b97fff17ac2f757675fde566cc1894751511500f8146ec0a1",
+      "bytes": 1733,
+      "role": "exact selected negated reachability ITF: noRefusal",
+      "archiveMember": "145/witness-noRefusal-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noIssuance-20261106.json",
+      "sha256": "dedfe16030f817bd5b9cc7374ae340e9194541cf4a1b79c2746040636337fe29",
+      "bytes": 272367,
+      "role": "exact structured Quint command result: witness-noIssuance-20261106",
+      "archiveMember": "146/witness-noIssuance-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noIssuance-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noIssuance-20261106",
+      "archiveMember": "147/witness-noIssuance-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noIssuance-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noIssuance-20261106",
+      "archiveMember": "148/witness-noIssuance-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noIssuance-20261106-0.itf.json",
+      "sha256": "1261ab5fa9da22ce3d75cb4edee3476e229f4b0cc737ac19bda1de484c5c7af5",
+      "bytes": 1378,
+      "role": "exact selected negated reachability ITF: noIssuance",
+      "archiveMember": "149/witness-noIssuance-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noUnknown-20261106.json",
+      "sha256": "0aa0fbde1510bfe50134fd92c4e5e887ac0d50cb997646ca80f736cbb08ed098",
+      "bytes": 297580,
+      "role": "exact structured Quint command result: witness-noUnknown-20261106",
+      "archiveMember": "150/witness-noUnknown-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noUnknown-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noUnknown-20261106",
+      "archiveMember": "151/witness-noUnknown-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noUnknown-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noUnknown-20261106",
+      "archiveMember": "152/witness-noUnknown-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noUnknown-20261106-0.itf.json",
+      "sha256": "36d33d2b4c75122f36f032a70210c02dce41bba73211ff50219fd1510497dbce",
+      "bytes": 8080,
+      "role": "exact selected negated reachability ITF: noUnknown",
+      "archiveMember": "153/witness-noUnknown-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusalThenValid-20261106.json",
+      "sha256": "2ffbcce186296eebfed60fbb4f726fa1f4dc9684512ddf924b19ace0620aa507",
+      "bytes": 273713,
+      "role": "exact structured Quint command result: witness-noRefusalThenValid-20261106",
+      "archiveMember": "154/witness-noRefusalThenValid-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusalThenValid-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRefusalThenValid-20261106",
+      "archiveMember": "155/witness-noRefusalThenValid-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRefusalThenValid-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRefusalThenValid-20261106",
+      "archiveMember": "156/witness-noRefusalThenValid-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noRefusalThenValid-20261106-0.itf.json",
+      "sha256": "6f3e6eb761bea5d8dbbdba9e86a9406788fc0956bf60072d633a270982aa666c",
+      "bytes": 1733,
+      "role": "exact selected negated reachability ITF: noRefusalThenValid",
+      "archiveMember": "157/witness-noRefusalThenValid-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRetry-20261106.json",
+      "sha256": "63cb3c0c3af2c212f27ab0797bbe82427c602b956ab24b1abddb11fd03e0173d",
+      "bytes": 285645,
+      "role": "exact structured Quint command result: witness-noRetry-20261106",
+      "archiveMember": "158/witness-noRetry-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRetry-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRetry-20261106",
+      "archiveMember": "159/witness-noRetry-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRetry-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRetry-20261106",
+      "archiveMember": "160/witness-noRetry-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noRetry-20261106-0.itf.json",
+      "sha256": "4b912454be33aa1631bde362631647399bdd0055ce62129fbb5374bf73511311",
+      "bytes": 4915,
+      "role": "exact selected negated reachability ITF: noRetry",
+      "archiveMember": "161/witness-noRetry-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noAccepted-20261106.json",
+      "sha256": "04717a341e20c038b279cf71c39614f067c406bbb6aa022e2a968fc69e04be7f",
+      "bytes": 281671,
+      "role": "exact structured Quint command result: witness-noAccepted-20261106",
+      "archiveMember": "162/witness-noAccepted-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noAccepted-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noAccepted-20261106",
+      "archiveMember": "163/witness-noAccepted-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noAccepted-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noAccepted-20261106",
+      "archiveMember": "164/witness-noAccepted-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noAccepted-20261106-0.itf.json",
+      "sha256": "c703964a369ef4cde7061840892ff8d0c1c99df6e559b44a8b2143d44b3afb0c",
+      "bytes": 3857,
+      "role": "exact selected negated reachability ITF: noAccepted",
+      "archiveMember": "165/witness-noAccepted-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noHttp204-20261106.json",
+      "sha256": "86f23d0b47c16015370385c3a33838837f3f64298700b1d55b4441f0ddafab41",
+      "bytes": 273697,
+      "role": "exact structured Quint command result: witness-noHttp204-20261106",
+      "archiveMember": "166/witness-noHttp204-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noHttp204-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noHttp204-20261106",
+      "archiveMember": "167/witness-noHttp204-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noHttp204-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noHttp204-20261106",
+      "archiveMember": "168/witness-noHttp204-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noHttp204-20261106-0.itf.json",
+      "sha256": "b3b26cecf061b4b677b160a93cdb13da3c1b964a14ea82d4779337a6e1937b0b",
+      "bytes": 1735,
+      "role": "exact selected negated reachability ITF: noHttp204",
+      "archiveMember": "169/witness-noHttp204-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRecovery-20261106.json",
+      "sha256": "76c0608331613a1f06436d6ccab7391c1f27d379f7393ae037578eef2858be09",
+      "bytes": 298904,
+      "role": "exact structured Quint command result: witness-noRecovery-20261106",
+      "archiveMember": "170/witness-noRecovery-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRecovery-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRecovery-20261106",
+      "archiveMember": "171/witness-noRecovery-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noRecovery-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noRecovery-20261106",
+      "archiveMember": "172/witness-noRecovery-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noRecovery-20261106-0.itf.json",
+      "sha256": "0e6f5cba3d3ab066f32bdce7d7bf17966cda37468f48fd14f7232054aa26aa8d",
+      "bytes": 8428,
+      "role": "exact selected negated reachability ITF: noRecovery",
+      "archiveMember": "173/witness-noRecovery-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noDuplicate-20261106.json",
+      "sha256": "a0e728450fcd2f93fd54f5829375180b644b5738be25966be40e5fcda75a9884",
+      "bytes": 283000,
+      "role": "exact structured Quint command result: witness-noDuplicate-20261106",
+      "archiveMember": "174/witness-noDuplicate-20261106.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noDuplicate-20261106.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noDuplicate-20261106",
+      "archiveMember": "175/witness-noDuplicate-20261106.stdout"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/logs/witness-noDuplicate-20261106.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "retained actual command stream: witness-noDuplicate-20261106",
+      "archiveMember": "176/witness-noDuplicate-20261106.stderr"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/traces/witness-noDuplicate-20261106-0.itf.json",
+      "sha256": "0e891e7e5b6e65c8fbd7bab3b86c5328235a962622657ba6b2fdb3749d5b3d99",
+      "bytes": 4210,
+      "role": "exact selected negated reachability ITF: noDuplicate",
+      "archiveMember": "177/witness-noDuplicate-20261106-0.itf.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/plan.json",
+      "sha256": "ce06dde0637ff2d5a640c4f2c174ce012bdc39158a7825b3d0e09abf3671a5a1",
+      "bytes": 1212,
+      "role": "frozen old14 regression input; not current readiness source",
+      "archiveMember": "178/plan.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/request.json",
+      "sha256": "6c0f52ae3640fb804841d13a9518f8bb05a4570e73c14cfe8bb271d04eff9fff",
+      "bytes": 26167,
+      "role": "frozen old14 regression input; not current readiness source",
+      "archiveMember": "179/request.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/snapshot.json",
+      "sha256": "aa2c8b8ca2256a1d2a4bab9584c397d2257331a8eef9e6ddb2c89e703133f854",
+      "bytes": 1179,
+      "role": "frozen old14 regression input; not current readiness source",
+      "archiveMember": "180/snapshot.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/tea004-preview-schema.qnt",
+      "sha256": "94f36260dcca4148cf1d58c0b23cda40c144d807616c57e429163e954d3ad831",
+      "bytes": 5393,
+      "role": "frozen old14 regression input; not current readiness source",
+      "archiveMember": "181/tea004-preview-schema.qnt"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/tea004-preview-schema_test.qnt",
+      "sha256": "95cefc2f2e7dddb7cfc6cb325838d1935354f8413356f5c15989205cc522bfc0",
+      "bytes": 2810,
+      "role": "frozen old14 regression input; not current readiness source",
+      "archiveMember": "182/tea004-preview-schema_test.qnt"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-green/green/tools/check_team_quint_cpu.py",
+      "sha256": "c9cb63c68bc683538127a4bcbfd317e162104fbb6994a0049eaadf0401a59807",
+      "bytes": 19260,
+      "role": "actual GREEN support runner source snapshot",
+      "archiveMember": "183/check_team_quint_cpu.py"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "sha256": "b7623b42a07c57e9c6c7989786cf99b557d8863179ddf1f658384d30f53c37f9",
+      "bytes": 23053,
+      "role": "exact source/tool metadata input bound by actual GREEN report",
+      "archiveMember": "184/qa_cpu.py"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/quint-toolchain.json",
+      "sha256": "09c0bc0338db4ee189bdbb17a9b54d53992abf442f023691eea690a4ce9bc0b4",
+      "bytes": 498,
+      "role": "exact source/tool metadata input bound by actual GREEN report",
+      "archiveMember": "185/quint-toolchain.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/team-quint-toolchain.json",
+      "sha256": "630effed1fc37e4c5c403818c30a7eb32e2f684024c432141b9be095b86403bd",
+      "bytes": 1328,
+      "role": "exact source/tool metadata input bound by actual GREEN report",
+      "archiveMember": "186/team-quint-toolchain.json"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_launch.py",
+      "sha256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+      "bytes": 4662,
+      "role": "exact source/tool metadata input bound by actual GREEN report",
+      "archiveMember": "187/qa_launch.py"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-green/red/tools/check_team_quint_cpu.py",
+      "sha256": "f1dfba712b0fe948c64beed7e8e8f86908b507d200a201b59deecfa3bbcaa2ba",
+      "bytes": 19260,
+      "role": "actual RED runner source snapshot;cap32",
+      "archiveMember": "188/check_team_quint_cpu.py"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-team-quint-admission-red-green-review.json",
+      "sha256": "d20035924202f18a6b65b3fb1dab293fdee62846785ae2dfd02ab3bc9288668e",
+      "bytes": 1768,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "189/continuity-team-quint-admission-red-green-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-team-quint-admission-red-execution-review.json",
+      "sha256": "5254ed0b1d96152f9101304a8664fd183f95ff5883ece852c78badc24cbc8b97",
+      "bytes": 915,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "190/continuity-team-quint-admission-red-execution-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-team-quint-admission-green-execution-review.json",
+      "sha256": "5175957dad8846903601309691afac0a9f595ff76e5648deaece2327e5259730",
+      "bytes": 2603,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "191/continuity-team-quint-admission-green-execution-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-team-quint-admission-red-packet-review.json",
+      "sha256": "02ffb7d375afa4b238b6967d03789d256e77931f416cfd3609bec52783a10d3b",
+      "bytes": 536,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "192/continuity-team-quint-admission-red-packet-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-team-quint-red-cache-fixed-packet-review.json",
+      "sha256": "8e2b4c7a6732f99c123a59842b0f5659f6455994f0573ef39cbbd5a7b73c33df",
+      "bytes": 520,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "193/continuity-team-quint-red-cache-fixed-packet-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-team-quint-admission-green-packet-review.json",
+      "sha256": "605aa5cf61b6da61902bceb610b0a153b74a180ee06fe77dcf787bd036823315",
+      "bytes": 528,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "194/continuity-team-quint-admission-green-packet-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-review.json",
+      "sha256": "6511c784bdcbbb5a40620d4ec8ac362cd8c5d4231feeefeb02a1245b8a60d98e",
+      "bytes": 1365,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "195/team-quint-admission-red-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-cache-fixed-review.json",
+      "sha256": "7c426dc3e88f61833acbb190cba633f62bf6b9562cd4f6df09d389589ba4cfa1",
+      "bytes": 1365,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "196/team-quint-admission-red-cache-fixed-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-green-review.json",
+      "sha256": "cf758ea0a4ee8967bf00cdf404613173e12a79e6516c298c2702308a656f59b6",
+      "bytes": 1365,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "197/team-quint-admission-green-review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-root-adoption.json",
+      "sha256": "ed23914bfea74f3bc7dd2f9ef2740c2a26354f457e520dfebc602bc4e4d23858",
+      "bytes": 450,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "198/team-quint-admission-red-root-adoption.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-green-root-adoption.json",
+      "sha256": "b6d365c1b00c752aaa03ecf814e34302597a7055c0efb3eca59736dd44317ab7",
+      "bytes": 626,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "199/team-quint-admission-green-root-adoption.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-preflight-failure.json",
+      "sha256": "f833ac12c052b2ca08bda034d6d1c8a7a5543bea891a5b45e475e41db91bb9c7",
+      "bytes": 449,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "200/team-quint-admission-red-preflight-failure.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-cache-pin-root-adoption.json",
+      "sha256": "2f6e528fb7f8764f2f0b04ad4126de06936804a76024d2faaf22828e3478a0ea",
+      "bytes": 259,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "201/team-quint-cache-pin-root-adoption.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-cache-pin-refresh/review.json",
+      "sha256": "db4852575226bf645ddf008b719edfb00558fd25f05fd7400f48eefa37984649",
+      "bytes": 2633,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "202/review.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-cache-pin-refresh/cache-pin.patch",
+      "sha256": "2209ddbdbde915c1991f837ca658cc5b6390b6784e7c824d3f758d7319deac1d",
+      "bytes": 852,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "203/cache-pin.patch"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-cache-pin-refresh/old-team-quint-toolchain.json",
+      "sha256": "5e996ee27ebf216ef869cea90f0cbc1e1fabea87127303f032dabcc9f5e29ebf",
+      "bytes": 1328,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "204/old-team-quint-toolchain.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-green/source-preservation.json",
+      "sha256": "7608806313e8880205ddf7b201fc7d6f3d982ee062c80b81f5aafb5db11a3139",
+      "bytes": 265,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "205/source-preservation.json"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-green/red-startup-controls.patch",
+      "sha256": "5cbd4b5e4351d02c7491e60695b92dbf727ae70265fd470e0a1fc4138431c32a",
+      "bytes": 7831,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "206/red-startup-controls.patch"
+    },
+    {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-green/green-cap64-only.patch",
+      "sha256": "cb49998f9ea1e77b3430b5405450d2b0359f1da4616c01ec045810dd5ddea5c2",
+      "bytes": 230,
+      "role": "source/adoption/review/failure history",
+      "archiveMember": "207/green-cap64-only.patch"
+    }
+  ],
+  "fileCount": 208,
+  "totalBytes": 20647918,
+  "preserveSeparately": [
+    "Existing locked external Node/Quint0.32 tool tree/system input inventory identified by tools/team-quint-toolchain.json; package bytes are not duplicated in this minimal evidence capsule."
+  ],
+  "notIncluded": [
+    "Current49/40/36 readiness model plans/results; they are a separate qualification.",
+    "Generated or invented preflight report: the environment preflight produced no report and no model invocation."
+  ],
+  "archive": {
+    "path": "docs/warlock-build-loop/v2/evidence/team-quint-admission-20261106/checks.tar.gz",
+    "sha256": "1fd4e12abcc05c3bab44dc1f41740817ee1731b79dcbcf6a75292c0b1c5e6e2f",
+    "bytes": 970538
+  }
+}

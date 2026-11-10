@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "scope": "CPU component only",
+  "candidateSha256": "baff7ec268fbf27824d1316fc9f42ae1100195c3a4ae5d9b463901646dcb149a",
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "selectionGeneration": 32,
+  "ownedSourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "ac3713ea57f7b16cf044b04f7c98ec9e752db3ea9807acd328334377d58270d0",
+    "implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm": "ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273",
+    "implementation/warlock/qa/ui011-observed-scope-retirement.cjs": "ca51900ed2edc6b0a74403e98e0cff33cffae6b18a924f96ce5216b21342206b",
+    "tools/qa_cpu.py": "3baa82ca42660a21be368be4b9b5c30d04face8dc9ca1209ba4931827d90e3c4",
+    "tools/check_elm_cpu.py": "9bb6a566614513bd2a44a015ae4a94043a23f3ae72dfe2e6a5da88c15e9326d1",
+    "tools/test_ux024_menu_cpu_route.py": "5fbd50c7ad68985b50fd2f004c62f1a7b70d1af8ac8bb77ea111985d5900ebe4"
+  },
+  "evidence": [
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/production-manifest.json",
+      "sha256": "b72db3ba2cc44b55d2962f949eadfd291f8119c647a7379b8f6baaaf82af2366"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/production-source-review.json",
+      "sha256": "205a3097fc09a2843ee00a1ffe6bf35a7f5fb332e970659d04fe19cdea6ead09"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/green-actual-component-review.json",
+      "sha256": "ec64f768a4ef4adbf849436367bbad47cc74ad13eea77168ee9f5782da51d4e9"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/Desktop.patch",
+      "sha256": "49f3dd9cc0329bd7c20fa9f6ec6e5a782f0f1f15f81d2617c35d8f59eac91776"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/fixture-v1-manifest.json",
+      "sha256": "2e8841c25ac31da000256f47e4915e7f4a39fd087103e99bfda2f930a8e3434a"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/fixture-v1-review.json",
+      "sha256": "bc24ff8f1904eecacff648dcd97556a5994d0b17a5c107a0af4833c6cf136425"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/fixture-v2-manifest.json",
+      "sha256": "3acc77a644b0befca0276ccb0c0a2d84e6a16b34f671b9740bde14e3ca715efe"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/fixture-v2-review.json",
+      "sha256": "b2fd342c58a8e80f18efb8b6cf55d1032a46107522970aa7ba09a32bf6c0f8df"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/support-v1-manifest.json",
+      "sha256": "5db2df448f92274aa15b5c2f099ee1d81d48cca527144aed297552367bfe05da"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/support-v1-review.json",
+      "sha256": "68db2535830c68dee0e343c40e2d128e7413b9f3dcc9697aba45150335225420"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/support-v2-manifest.json",
+      "sha256": "0fde1fb632d500a08f20ad56dcd5870b38ddcfe97c6dc03da2c17ab0f844d7e9"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/support-v2-review.json",
+      "sha256": "811d33da1d2c1ce74803476dc11c3b08780df7e8079711ad0b76b17e7f503812"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/baseline-actual-review.json",
+      "sha256": "3ec672e67b86fbdcc465ae4c9e6a9af545c6c1a34bc42eaf95d3bd4308bd0a9a"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/actual-protected-support-controls.json",
+      "sha256": "29d621e582acfc595e928f64d317c39e5acd917e8eb7452cdd3eb91613bbcd49"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/baseline-candidate.json",
+      "sha256": "74517ada08ac1ef12d5ebce7110ba2214cf2335186c62c1760b6b685112393b1"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/green-candidate.json",
+      "sha256": "78f0f26936eb536c96fea145127ef7663d5bc2b4f086bf45d80cae08b57d8571"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/baseline-terminal.json",
+      "sha256": "2c1a0fd5284ee319bb3a1b9ff8fce0d7463e57e03ce7f3090bcd8bfeb85430ff"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/green-terminal.json",
+      "sha256": "ae84899fe6778d349d517d382d0bd641ee4fa22c5639bf915f97a78b94ff0772"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/baseline-report.json",
+      "sha256": "a5a73609452b49c17233b1cd3d93e25cf214e275fe679404fb6993b5a9b30e10"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/baseline-node-report.json",
+      "sha256": "8281e3a64c8da89cc6229fcf85e820902b3f7c4f23de9bb38e2e4380f6b16ce4"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/green-report.json",
+      "sha256": "b2fa3251b55f463789190985221a68070e93fc616f2a6ce00cb0d477b32fdfbe"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/green-node-report.json",
+      "sha256": "adb2ec242923cb7c712067163c52b8527e2648b988a0d74e7d98b34e23813d27"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/corrected-diagnostic-oracle.patch",
+      "sha256": "55edb52e70564491374d781afb476d620c6e53ff713d99ec99a7af7c60e24d3d"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/fixed-route-support.patch",
+      "sha256": "0a3bd2e73f983f9c808a0ba9aa315c522be6eba02a7634c6e5aa3811f6702b34"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/original-oracle-and-scope.json",
+      "sha256": "e6fb3bc9aafbbe3a41a01e78ad4ac09aa3136b7e8fad8edb0664a86aacb71638"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ui011-observed-opener-closure-component-20261110/README.md",
+      "sha256": "0c73782d456fb93f2797811cd7b984ec686a0aeeb2cdf572a9ff031f4a28cb46"
+    }
+  ],
+  "sourceCommit": "Root creates actual owned source/evidence commit; no predicted revision.",
+  "countsUnchanged": "21/47",
+  "originalAcceptance": false
+}

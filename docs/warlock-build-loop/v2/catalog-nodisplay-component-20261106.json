@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "component": "Catalog NoDisplay masking and ordinary linked controls",
+  "requirement": "ELM-UX-003",
+  "scenario": "ux-003",
+  "scope": "A higher-priority NoDisplay=true entry masks its lower-priority duplicate. Fixed controls cover invalid UTF8 refusal/recovery, visibility restoration, generation transitions and raw Exec source-byte retention.",
+  "candidateSha256": "66df4515d737fccd5c0352dbbb726aacfcfc88aa985ee247258771de6e5cd0b8",
+  "sourceHashes": {
+    "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+    "implementation/warlock/src/Desktop.elm": "2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db",
+    "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "e82b9e87fd5b7e9ce9ca0d6252023676885cc8023bfa269c6415884e7fbb5deb",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "cbb4776f1f5e3b75754dc552ff0de9cede7363a124641523f8d30a2a110ee7dd",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "3fd09246a4bf94ed461fb94821092fa925b573864bc23fc6b0aaaf5504b8efbb",
+    "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd"
+  },
+  "fixtureSha256": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd",
+  "protectedEvidence": {
+    "semanticRed": {
+      "report": ".warlock-contributor/arm64-cpu-1793998050385011487/report.json",
+      "compileAndListExits": [
+        0,
+        0
+      ],
+      "fixtureExit": 1,
+      "failure": "nodisplay-masks-lower-generation-2",
+      "timeout": false,
+      "forcedCleanup": false
+    },
+    "green": {
+      "report": ".warlock-contributor/arm64-cpu-1793998586760839884/report.json",
+      "inputs": 244,
+      "commandExits": [
+        0,
+        0,
+        0
+      ],
+      "fixtureExit": 0,
+      "timeout": false,
+      "forcedCleanup": false
+    }
+  },
+  "independentSourceAndCandidateReviews": [
+    "workflow-relaunch-20261106/impl1-actual-source-proposal.md",
+    "nextloop-20261106/catalog-green-independent-review.json"
+  ],
+  "initialAuthorizationAndClockPreserved": true,
+  "sameRecord": ".warlock-contributor/ux003-walking-skeleton-root.json",
+  "selectionGeneration": 2,
+  "remaining": [
+    "OnlyShowIn/NotShowIn/TryExec and complete desktop-file eligibility semantics",
+    "Argument parsing, actual owned native launch and exact recipient argv",
+    "Real Elm input, catalog refresh and full current-stack isolated journey",
+    "Native keyboard, accessibility and cleanup observations required by original scope"
+  ],
+  "localEvidenceOnly": true,
+  "rawBinaryArchivesPublished": false,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false
+}

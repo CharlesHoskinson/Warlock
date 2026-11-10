@@ -1,0 +1,3939 @@
+{
+  "schema": 1,
+  "archive": "checks.tar.gz",
+  "archiveSHA256": "657975558bc54784ad1199cc8569728fa5719ab8191c59188ea16345733557fa",
+  "archiveBytes": 7532190,
+  "memberCount": 780,
+  "uncompressedBytes": 42636831,
+  "members": {
+    "controls/profile-r67/Main.hs": {
+      "sha256": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+      "size": 16873,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/ROOT-PACKET.md": {
+      "sha256": "a8854b60c52390f758a7392d18f1455ba0ad0db278229a898bd574dcc158594a",
+      "size": 1250,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/Root-verification-request.json": {
+      "sha256": "19a45f9174a5efbcb7ea8dce5af786b71637931ab0e71296e5296044ab1bdf82",
+      "size": 3855,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/cabal-append.patch": {
+      "sha256": "f826f6fe2ad0a69287dfe9473ff79448ad97e1ccf490f8306127a2986bcc9b1d",
+      "size": 835,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/check_arm64_cpu.candidate.py": {
+      "sha256": "70107bb407371e838869daa77492fb475c305412e5fab785e3f4926515d61bdb",
+      "size": 119550,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/expected-green-literals.txt": {
+      "sha256": "904284d58e19174d362cb949c181caee2b3d33beecb506c95d8c4e39e8a43114",
+      "size": 842,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/fixture.patch": {
+      "sha256": "a729193e2d031f7c4adf5c95f03e5e48c21e0f4f7eb96ca2d57191918e1437a7",
+      "size": 17044,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/handoff.json": {
+      "sha256": "6a493bde45098006b868ba7ec8575a67abf3da5e9e153ffe0b9feefc341ac540",
+      "size": 3908,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/haskell_test_wrapper.candidate.py": {
+      "sha256": "78283ea59b3a57ef3eb5a25f799af39cad8a69581ddb1d6410a126fc99001940",
+      "size": 10273,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/helper-profile.patch": {
+      "sha256": "3ccfdc8ca780f7d1d174cad321f9fce7e4e4c5c3ef71aa546303cd51979fec80",
+      "size": 10411,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/notification-config-support.patch": {
+      "sha256": "ec62c9224eab7a65e864e0031e00dc8de2671dd49f8f43d329c4cefa3707dad2",
+      "size": 32469,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/prior-terminal-consumption.json": {
+      "sha256": "056fcd7601c91070b8f407751538ad3475aaeed4904db054809df0504cc8c140",
+      "size": 7340,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/qa-profile.patch": {
+      "sha256": "9de3cc2d35d13658dc866f56dacbc4130ed0b95d76ac108b8fc822fbb0ee1286",
+      "size": 2031,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/qa_cpu.candidate.py": {
+      "sha256": "d5ed617e60f184cb61d50de5964a1ec1ce0fd0a0c974b8d403b2d5d8c2fb036c",
+      "size": 27566,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/runtime.candidate.cabal": {
+      "sha256": "17e60a7a8e6e021535311a4d4628e6bdb541e0a0c36513a8c9bbc36fdf92d5a4",
+      "size": 10816,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/source-after.json": {
+      "sha256": "0c7b69829da8f21e91d41bd0756084c86b98b8d2f9964ece6e6ba5619c8504ce",
+      "size": 1311,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/source-before.json": {
+      "sha256": "0c7b69829da8f21e91d41bd0756084c86b98b8d2f9964ece6e6ba5619c8504ce",
+      "size": 1311,
+      "sourceMode": 420
+    },
+    "controls/profile-r67/wrapper-copy.patch": {
+      "sha256": "44929175156473f5df26b6bacf98ae44a81aaa38e626304d0aa4a87e2a1f972e",
+      "size": 2148,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-before-red-loop-check.json": {
+      "sha256": "7b371f18ffe881a79de13324e6e1b71316babd5558b37acc5fb2b6b1d2cd2c2c",
+      "size": 1141,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-green-independent-execution-review.json": {
+      "sha256": "ffa0982365e580ee51b2659b4d6fea96eba03c4b2e2e6aa061402d5aea07d871",
+      "size": 6410,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-green-protected-review.json": {
+      "sha256": "bac48046f5ffc0db0dc2e5d73a3c43486611bd9f58cb88b5bfa74e81665d4f96",
+      "size": 35046,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-green-root-execution-review.json": {
+      "sha256": "b00c257a0fe629480facb8e94bac30410d58cf882f3d09416af40b0bba948ce4",
+      "size": 1642,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-packet-construction-reconciliation.json": {
+      "sha256": "931bb449d2f256face043fa7b48ef1bd996214156855972b9cd341ca673a6fff",
+      "size": 280,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-red-green-binding.json": {
+      "sha256": "38a58be634ac4fa1cbf887268655ff8cc6b80443822469a65f7bb63322287290",
+      "size": 325,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-red-independent-execution-review.json": {
+      "sha256": "e5cc1e466da9b7e55992191031b4492724362bae8ab8c453c57946e72aebc184",
+      "size": 2955,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-red-packet-independent-review.json": {
+      "sha256": "12ec2518f915d0e1a70f8f30d27cdff1085fffd89bf43a08b41f648322cbe49d",
+      "size": 1377,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-red-protected-review.json": {
+      "sha256": "ba2b745217166667381b6eda7c6b53f66ef9332bf38ebc4f0195f15fd6cac26b",
+      "size": 35046,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-red-root-execution-review.json": {
+      "sha256": "8640769f6bab6fc49d230f56d4678edbe90136629bae96c4a3c390c43282831d",
+      "size": 1718,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-red-support-adoption.json": {
+      "sha256": "a7b8858a27567cc2c806a5f8a5f372b01efcbe54d2004c33fdd58970b4fb173f",
+      "size": 849,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-source-claim-grants.json": {
+      "sha256": "2551158ad218f96a6a574adaa8f77070489daf94f5f83384ebfa97d3ac58a433",
+      "size": 1610,
+      "sourceMode": 420
+    },
+    "controls/ux031-config-support-qa-claim-grants.json": {
+      "sha256": "42963f758f654ef2935753e833bdd9f8713d55e545ec80a5ab73b4365360a4a8",
+      "size": 1765,
+      "sourceMode": 420
+    },
+    "controls/ux031-notification-config-r67-review/review.json": {
+      "sha256": "1c133fa47b649c3b49fc5ddb8aa63e99ac7247ef4c1e48b1d4dcd17fd9b54707",
+      "size": 4574,
+      "sourceMode": 420
+    },
+    "controls/ux031-root-bus-config-candidate/Backend.hs": {
+      "sha256": "a857be418b684cfcb967564a9004331d5f95e752f3e9ccfeae5e21fafabbb0ab",
+      "size": 21064,
+      "sourceMode": 420
+    },
+    "controls/ux031-root-bus-config-candidate/ConfigControls.hs": {
+      "sha256": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+      "size": 16873,
+      "sourceMode": 420
+    },
+    "controls/ux031-root-bus-config-candidate/bus-config.patch": {
+      "sha256": "294def32b4836dea7eebcf954fc6ed0687cca41757593db3466e023cd573a73b",
+      "size": 4755,
+      "sourceMode": 420
+    },
+    "controls/ux031-root-bus-config-candidate/manifest.json": {
+      "sha256": "79aaa78ecf9c14322eb5bc58d840addcc5bac3426803d5d2b96b40f0fda170f0",
+      "size": 1490,
+      "sourceMode": 420
+    },
+    "controls/ux031-root-bus-config-independent-source-review.json": {
+      "sha256": "4e84dc677c5dc46a2f3859ad2ddcd9c1cf1cfce969655c7ee02743d4e818696f",
+      "size": 2798,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/cabal.project": {
+      "sha256": "b8fc882f0e53b96dacbced3a21d292741ad2a4bcbb59627b9c1c2eb8647a5607",
+      "size": 233,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/README.md": {
+      "sha256": "d5d789263049e4c4ab7a677448192e70f3f8f5fb1c97c87a8de73c7af4e6b320",
+      "size": 3331,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/elf-observation.cabal": {
+      "sha256": "9a71bb015ac1cd15f5a1cc78d5b4a1bae31d877ec132065fb7769a9126f4bdcf",
+      "size": 925,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/qualification.json": {
+      "sha256": "e22cb3c5429f04bcc9a5b9c34f2766a6ce9268ed9dbef4b8cb2124808f4cb72c",
+      "size": 5807,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Graph.hs": {
+      "sha256": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+      "size": 15046,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Readelf.hs": {
+      "sha256": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
+      "size": 18211,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/ElfCases.hs": {
+      "sha256": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5",
+      "size": 23450,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/GoldenNames.hs": {
+      "sha256": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed",
+      "size": 1481,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/gcc.readelf": {
+      "sha256": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+      "size": 11939,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/ghc.readelf": {
+      "sha256": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+      "size": 32916,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/helper-0.readelf": {
+      "sha256": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/helper-1.readelf": {
+      "sha256": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/helper-2.readelf": {
+      "sha256": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/jsc.readelf": {
+      "sha256": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+      "size": 120972,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/json-glib.readelf": {
+      "sha256": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+      "size": 19476,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/owner.readelf": {
+      "sha256": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+      "size": 31276,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/provenance.json": {
+      "sha256": "4de54e658fd54dc6a930b42433116da7cf90979bde30a2c76e96d129938d63b7",
+      "size": 3213,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/sframe.readelf": {
+      "sha256": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+      "size": 37149,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/webkit.readelf": {
+      "sha256": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+      "size": 156304,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/README.md": {
+      "sha256": "c54e0457d05cd85c222dfcccb1c3b3d8d20013407d5d000846c691f7dce7f6ed",
+      "size": 2775,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/held-document.cabal": {
+      "sha256": "fd73f544a29c114a32f6c26bcf0ef7fd810fef11d2ea75191cd988e569ad9999",
+      "size": 1695,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/qualification.json": {
+      "sha256": "eef9d8ab2df193d112237b89ca5e72927b99ab914102a1f35889a71672a16fd7",
+      "size": 5003,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/src/Warlock/Http/Document.hs": {
+      "sha256": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+      "size": 5223,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs": {
+      "sha256": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
+      "size": 5194,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs": {
+      "sha256": "7036e66facf7b8e41fa451f227d9dc9a420a3e8bcd60741cc6adea742fa2959e",
+      "size": 561,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": {
+      "sha256": "fa6f26c2de463b703971c31758e6e509dfd2e90ac2bf94cf2afb16a4bcce7187",
+      "size": 16526,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver.hs": {
+      "sha256": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
+      "size": 274,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc": {
+      "sha256": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed",
+      "size": 14326,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/test/LeaseControls.hs": {
+      "sha256": "f43f95ddb50057190aeaf07bdc2662fd9752afca3402b00f527a708097d86c80",
+      "size": 5707,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/held-document/test/Main.hs": {
+      "sha256": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501",
+      "size": 5716,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/README.md": {
+      "sha256": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744",
+      "size": 6744,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/native-authority.cabal": {
+      "sha256": "0f6e8579cc148c5c5599797f33919bde411c2610539b68fc2cfb4700e8215ec3",
+      "size": 6549,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/qualification.json": {
+      "sha256": "5b537f836cc94b0779018377c693961cce8e940fcae0b482ed705573aad3893a",
+      "size": 26740,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs": {
+      "sha256": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
+      "size": 1570,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": {
+      "sha256": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e",
+      "size": 5318,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs": {
+      "sha256": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241",
+      "size": 10082,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": {
+      "sha256": "8ae02f272b7f002128e871064b26bcaf30876a1a610065a5729c7083b7a0c346",
+      "size": 13590,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": {
+      "sha256": "85e1ef5008c223121decf3f34a6ad083b7a26d785a2ab9f074bc7a5928056bc7",
+      "size": 23411,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc": {
+      "sha256": "5995e5a6b5beef6412831daad6db9f8206b531cd11993c8fdf3f423d9e906976",
+      "size": 9660,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs": {
+      "sha256": "99d5594019dd9f1e13162b56f48f9e8657a90e1dd2e200c53aa80374fa91cf47",
+      "size": 16986,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": {
+      "sha256": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38",
+      "size": 10639,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": {
+      "sha256": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d",
+      "size": 28501,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc": {
+      "sha256": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded",
+      "size": 14892,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-child/ChildDirectoryControls.hs": {
+      "sha256": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02",
+      "size": 7118,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-guard/Main.hs": {
+      "sha256": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
+      "size": 4236,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-lifetime-independent/LifetimeOwnerControls.hs": {
+      "sha256": "405b6539a99dfbf8d09502d8e60089c6dc06358c73c27ac2f362968c7f2c6893",
+      "size": 10528,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-lifetime/LifetimeOwnerControls.hs": {
+      "sha256": "35cf69840a1da11cde9ad962f065022e31fe81b9b991bf146fd66b9196b33e82",
+      "size": 2689,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-pair-independent/Main.hs": {
+      "sha256": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d",
+      "size": 16147,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-pair-independent/ShapeMain.hs": {
+      "sha256": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe",
+      "size": 3562,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-pair-sequences/Main.hs": {
+      "sha256": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f",
+      "size": 6849,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-pair/Main.hs": {
+      "sha256": "776bf66ca42e39370fd6c989fc00f689b3dfb12c90e219c2b529eb3402d1ee02",
+      "size": 10232,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-selection/Main.hs": {
+      "sha256": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be",
+      "size": 11356,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-slot/SlotStoreControls.hs": {
+      "sha256": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
+      "size": 8720,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-storage/ForeignOwnerControls.hs": {
+      "sha256": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
+      "size": 2419,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-storage/Main.hs": {
+      "sha256": "c06b8ed27e0e6d29ed3c6911bc5214283d22ebb5afe749c9d36187c5367ab268",
+      "size": 13381,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test-storage/SwapControls.hs": {
+      "sha256": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b",
+      "size": 1470,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/native-authority/test/Main.hs": {
+      "sha256": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
+      "size": 19652,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/HANDOFF.md": {
+      "sha256": "401861bea381583225e4ffc4f4c541ccc72fa6e8a525a9a6139a01d70995f06e",
+      "size": 2562,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/README.md": {
+      "sha256": "cdca392be058d884733e7e9d3f9241b47991247d6b7c7fb94c24895b541553da",
+      "size": 7385,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/RETROFIT.md": {
+      "sha256": "4ff2abe3e7626ef0d572e666a297bfa97f992a678d46ed411829ab3909482360",
+      "size": 883,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/SHA256SUMS": {
+      "sha256": "aa08200922b446d3c2fad67719b0f00343c9f5ae0444838040091290cd027cf9",
+      "size": 1823,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/SOURCE-MAP.md": {
+      "sha256": "d16d0445e3d2f1f71e3f58c0cfa8c72f78b15365a1b74b04054dbfcb032aa290",
+      "size": 2595,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/fixture-bootstrap/FacadeChild.hs": {
+      "sha256": "75b3101897b3c15b71df9b32931f9e4a6aa7122d9edc2aa10790c16065b567f2",
+      "size": 312,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs": {
+      "sha256": "b860aa9af6d6749e7898cacc60b10889558dadb68ee5e68dcbda1912d85caf22",
+      "size": 1439,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/fixture-selected/Main.hs": {
+      "sha256": "ddb77f498858d132315f2768854e7e74a78fbf18b7f081cf49191a1e7d3806de",
+      "size": 3323,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/fixture/Main.hs": {
+      "sha256": "3a6c1baefca82d447ff03566b254758a4f86c1386589e99e2255717d7a707610",
+      "size": 922,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/process-custody.cabal": {
+      "sha256": "45c21dc95a43da4e9e43697e10cb31e87f840b9d89ddbdfc55e8935688284692",
+      "size": 3077,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/qualification.json": {
+      "sha256": "8dc5086cd83edd072deab11651a3e5a5f34f5d7c4f2f32dae7b14e65cf187716",
+      "size": 4904,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process.hs": {
+      "sha256": "39a0805202bd0843affe2c32bfc0c8f9f79197231a94f1f2e6c40905dcf96fef",
+      "size": 704,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": {
+      "sha256": "b98d37b2bda016c82fc764114502ef19d28826c2c4086a3744eb0e7fd4c09319",
+      "size": 1413,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": {
+      "sha256": "30b1c58267106e7e16fd2184598ea8624a4c58950f0854e6a690a6ef94e9b722",
+      "size": 42865,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs": {
+      "sha256": "d1162d1206d0d0107a3f771c58cfc28af46b1d1b4a042634d767253cec64a5e2",
+      "size": 342,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs": {
+      "sha256": "c8496170eabfe8f5e3383c3cb0860630499b19052c0b5179a1a4fc7f8f7d9d8f",
+      "size": 19474,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs": {
+      "sha256": "3f42fb3b628a0c3f93f138373f26bef28fad9d304415c37563c414a01ff4a2c7",
+      "size": 2753,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs": {
+      "sha256": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e",
+      "size": 118856,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs": {
+      "sha256": "e6ac6bf23bc5568b6a88623d23bdf9fed2a4162d2cd4966e73db31c3342f8d66",
+      "size": 297,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": {
+      "sha256": "de3cfc758f9ee41e3d66c917853e5e7fe9c4476acff2db4a3f36cf366a83edb6",
+      "size": 5442,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc": {
+      "sha256": "62775261c983b9b2f8f256734c731fee492f1f4a327ceab845370bd6e82da416",
+      "size": 10827,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/DeadlineStop.hs": {
+      "sha256": "c11352b4e48dd7eaf3602aaea2bac4c7d1cd7b944096e03ab2c19cd328bb8dbc",
+      "size": 8212,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs": {
+      "sha256": "7342c6c4c38082373095e79d66c4f9dd18223173894c21aa081246cc5feed2ab",
+      "size": 12899,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/Internal.hs": {
+      "sha256": "bc7d6362bf78adf4e5badf3e2e6285ec2496d7770b1e76c5f895f84edb621aeb",
+      "size": 18659,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/PersistentControls.hs": {
+      "sha256": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f",
+      "size": 74510,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/Public.hs": {
+      "sha256": "9ab22e6705dab47416b55126104fa160fda4fec6bbec4d3635d5d254adc34600",
+      "size": 397,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs": {
+      "sha256": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808",
+      "size": 2968,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs": {
+      "sha256": "d631fe70075d0c8cdbd8190509d4447b68c970bac5144aeba60690480198ce1a",
+      "size": 9157,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/SelectedFD.hs": {
+      "sha256": "c3748e48f8e520e7a2eba6b27611b445013d8c33d0d617bd7e861fbdf2f854a8",
+      "size": 7862,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/VerifiedFixture.hs": {
+      "sha256": "0c0212820247927fd52c1cf770b8bd3c6c4de625cff9a2c999951a2297ad308a",
+      "size": 1509,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/negative/CoreCapability.hs": {
+      "sha256": "9bd073b4e08cbb179fadd0eace46cfda3ab866d9b5c0201f12c4ae86e1a91110",
+      "size": 152,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/negative/RawIssuer.hs": {
+      "sha256": "1ad937597d06dbefb9ec9a5edec70f6a080684d47da6a2ddc590e3faadd5305f",
+      "size": 154,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/process-custody/test/negative/SelectedSpawnConstructor.hs": {
+      "sha256": "4c28b3897417504b9c09ed29922f798947c208237cc5a61883d334c5ab1e7314",
+      "size": 257,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/README.md": {
+      "sha256": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad",
+      "size": 4639,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/TRANSPORT.md": {
+      "sha256": "47985c788f31031987aa4c9082829b20426eab83045aa74a0f17ccd989a6f98b",
+      "size": 5368,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/formal/ACQUISITION.md": {
+      "sha256": "af661eb1131c7d0b5fbf815b976ad4899a19a27061bc5b8113b63cefa48d6c32",
+      "size": 2863,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/formal/README.md": {
+      "sha256": "c496560993a076d6766ae37a4279e6012b9401f9a74172e1f6b77ab8e11d345b",
+      "size": 2165,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/formal/acquisition.qnt": {
+      "sha256": "5e8ed18ddd56ee172f927cdde7e41fc60bb57448a9b7fb315bc8067b7151c592",
+      "size": 7669,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/formal/acquisition_test.qnt": {
+      "sha256": "e0caed809f42b63b7fd07d311fe692be533a5bad9d49dcd3a5b0efb7c331cec2",
+      "size": 7869,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/formal/handler_gate.qnt": {
+      "sha256": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f",
+      "size": 5681,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/formal/handler_gate_test.qnt": {
+      "sha256": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf",
+      "size": 17484,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/protocol.cabal": {
+      "sha256": "2fa2927f2cb50a586b3317a526b42d4b9ec84c8f7914cca809f6a47e8a0b1120",
+      "size": 6043,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/qualification.json": {
+      "sha256": "988dd7e0c6597dd22e6d43f808eb132ff377bd52ce249814b4a5ce4c334f82d4",
+      "size": 5256,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary.hs": {
+      "sha256": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee",
+      "size": 368,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": {
+      "sha256": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a",
+      "size": 9514,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": {
+      "sha256": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+      "size": 6395,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialGuard.hs": {
+      "sha256": "f6f9ace572c62a0aba9412c457d172a4a1fd7bb24f357e13ed3e30d7158239a7",
+      "size": 438,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": {
+      "sha256": "85d91c8decf35f042c72783138df9faaad432607159d163e298a6ada0990db20",
+      "size": 1110,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Custody.hs": {
+      "sha256": "87a8d62a378359bf52589c426ac67f0376195493a2cf9e84d02c1253bac40e01",
+      "size": 1839,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": {
+      "sha256": "1eaeadc26acfc423ff114fa3b1d383e53b7c641dfc9b062ed4063ab17d482890",
+      "size": 16993,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs": {
+      "sha256": "dab80f08576f4c8897366ff55d0f724dde34132006d5be50811525a8853ef32a",
+      "size": 1704,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs": {
+      "sha256": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+      "size": 872,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Identity.hs": {
+      "sha256": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a",
+      "size": 2697,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs": {
+      "sha256": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+      "size": 556,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": {
+      "sha256": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9",
+      "size": 42714,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs": {
+      "sha256": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86",
+      "size": 2541,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs": {
+      "sha256": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+      "size": 546,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/PreviewControl.hs": {
+      "sha256": "9afb1006cd00c8f3dd54a3b684313e3cf6435da1bea89637075327aafcc73a79",
+      "size": 8537,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs": {
+      "sha256": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+      "size": 542,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Server.hs": {
+      "sha256": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126",
+      "size": 16363,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": {
+      "sha256": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+      "size": 6740,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Wire.hs": {
+      "sha256": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd",
+      "size": 6668,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/WorkspaceNavigation.hs": {
+      "sha256": "63baa4a3084f278073a218929e1a82282cc1cfa32d1cd21b2c136aa4159c3f33",
+      "size": 6256,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": {
+      "sha256": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8",
+      "size": 24636,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs": {
+      "sha256": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+      "size": 2426,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": {
+      "sha256": "30cd41b3dad28cc980e48cdcb9b77e7c511cae4c3881440dd7bc0360bfb7d16c",
+      "size": 14890,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/src/Warlock/Transport/SocketFlags.hsc": {
+      "sha256": "dc12bd6112f1bc146123303f5b799d5e6186b03eab5277ac164b13e08b97b482",
+      "size": 2026,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test-desktop/Main.hs": {
+      "sha256": "44e2b847e566a98b62278a4e534244e6c1b878683046d7ecb65d4bcbb09c2ac0",
+      "size": 20679,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test-preview-control/Main.hs": {
+      "sha256": "185acf36f9e8688b70bb94a87b449f4cdf356d24dbfc797ae1112c32bbdb344d",
+      "size": 13551,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test-workspace-navigation/Main.hs": {
+      "sha256": "e43a06259a5ec39a12e64cd3e87886c5333c61f011b02d39e5e678a294c90c56",
+      "size": 4184,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test-workspace-navigation/WorkspaceStandaloneLiterals.hs": {
+      "sha256": "f407ff12ddd2df22ca00bb4a25c5e8ec825d5fd5b60ffa3dc2b6d14e24b8cf69",
+      "size": 48763,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/GuardControls.hs": {
+      "sha256": "6698548053e57a128f3341017b35a222e10fcd27aa302751ebb1c6ec43ff0eb4",
+      "size": 5500,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/Main.hs": {
+      "sha256": "4e19a493ce14da32d1b67dd152ee3c8feba1f65dea50be0df5d153be477f663c",
+      "size": 7749,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/OwnerControls.hs": {
+      "sha256": "7757bf34257e90bf56d3c5baea54f24c28beea8a2da9820e5b04aee40d41cb3c",
+      "size": 21608,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/OwnerSequenceProperties.hs": {
+      "sha256": "eda99bb99ef18eb59d2403071b8fdbbd2855c927d3adc9223335e9d6044558b8",
+      "size": 5267,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/PeerCredentialsCases.hsc": {
+      "sha256": "4b132ee6e37a6cf0197ff1f934b2c68b9821f93ee7023a6c36ffceef65be45a1",
+      "size": 13915,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/QuarantineControls.hs": {
+      "sha256": "a37aefb1d8fd54be04b95f76f2d4b84ddbbe652684cb30d1246f4a82d00a2c49",
+      "size": 1305,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/history-valid-positional-key.bin": {
+      "sha256": "4ab5dcab96c18db6a50b667b6d98fe773ae3ac479c594471a00acf6ed7f844fa",
+      "size": 1522,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-context-lifetime.bin": {
+      "sha256": "5a7f6ebaef0f441407a3288b47f86e7b667ee4b543e7e3c9b6963d93770b3606",
+      "size": 308,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-duplicate-key.bin": {
+      "sha256": "534a4bfbbc280c837dda31c926a21821259158859ac9aa48a256e2255d51698d",
+      "size": 108,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-extra-field.bin": {
+      "sha256": "031fa55a5c29a3d90edbea97e40cde527d54d2514d3b0868888777da8ffbf420",
+      "size": 103,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-kind-unknown.bin": {
+      "sha256": "1b010a8971b514dae3cee63cb0e8df4eab82e100730ec354b723d62c1237fe84",
+      "size": 95,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-version-boolean.bin": {
+      "sha256": "19e7004d4f7fede867da179fc74a5140407513efe50657bb9c534fe8cf9e0297",
+      "size": 96,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-version-unknown.bin": {
+      "sha256": "4b15479df542ecefcaefb0bf171bd88510c3b785f1ba8d0201c5e178a280809b",
+      "size": 93,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-request-live.bin": {
+      "sha256": "4b4ac27237d62ded83b0439dd949c8d7eec80b92b9540da5c82bd614be426103",
+      "size": 697,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-result-absent.bin": {
+      "sha256": "7e5dbf851ce53812d7613cfa17b5ae6275c5d901a72acb989a19592bb2c41931",
+      "size": 748,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-wrong-key.bin": {
+      "sha256": "8054dd3a23c0c0b6cabec06e82de9ed6eabc54882a3fef0db27b716eee2a4e90",
+      "size": 750,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/valid-hello.bin": {
+      "sha256": "cd15d1f8e15be5aaf86fefef213ba4c7ff167ae5527bd8a7195213c8f3198798",
+      "size": 93,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/valid-negotiate.bin": {
+      "sha256": "80fd224e5d644eefddc92598527d3b4e0c5cd372a5d7d9327db250054b62e34e",
+      "size": 113,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/test/fixtures/valid-prepare.bin": {
+      "sha256": "0d3341e70d17fbe5967dc898efcc978ff05b9029e80d60aee971ca9cfb8f2ed1",
+      "size": 308,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/protocol/transport-qualification.json": {
+      "sha256": "47afea44d3dc724866010a7be1c975a195673f269907b343f2334c4b63fef036",
+      "size": 9459,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/README.md": {
+      "sha256": "806a9a4f3e41afc100c15c24ea6ae5bfe06a8d88dfdf9bbe71ed7be79b22a215",
+      "size": 6597,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/app/Main.hs": {
+      "sha256": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+      "size": 689,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/fixture-peer/Main.hs": {
+      "sha256": "00fcd03b1babc7e9c45a954871a03f0aea15b48ced03ac496906aac8ae6cef3d",
+      "size": 12443,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/fixture-ui/Main.hs": {
+      "sha256": "f63550d4b9538b13afbd8a875554b56b7e3a5ece95ee1a7e76a7c3a17b795425",
+      "size": 6109,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/README.md": {
+      "sha256": "9eb7d65f0e922ff3fced324bbb054936fe8fd720817a7faa77be5c127484bc56",
+      "size": 2895,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/current_registration.qnt": {
+      "sha256": "f3f4cbd87ea61db42d94250361a834a037e7d4b8638f51d410859435c6186c84",
+      "size": 8171,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/current_registration_test.qnt": {
+      "sha256": "157288b0e7f37e6696b6f898ea52882ae3b9f237b1065814a5b000217f363e78",
+      "size": 5918,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime.qnt": {
+      "sha256": "cda6a2b40aeb37341266bc4be64ed76e3157a77e334e0e70cf1de9c3296260f5",
+      "size": 12242,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime_test.qnt": {
+      "sha256": "c43aec201bf10ae1c77739de90e9cae4f0ac39df6fbb3ce27052de2a35de6d29",
+      "size": 7308,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/qualification.json": {
+      "sha256": "94deb979ba0e4e20b0a211ba5f0822154d441a73759cd6e99372b508a05af9d8",
+      "size": 2139,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-lifetime.qnt": {
+      "sha256": "4d9dc045213c038d12f68c46941fd72b6357222536122e7a693f910edfc9be8d",
+      "size": 10088,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-lifetime_test.qnt": {
+      "sha256": "2ad115151339fd2270e8282adc62f97a6eef89aa732734b4654b84d5bbd882e3",
+      "size": 8739,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-rpc.qnt": {
+      "sha256": "19d0ffa4ede4cb26aeb7ca6c0e2bc8bb278e62c130e24b41bbb36bd3c7a8ef1c",
+      "size": 10969,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-rpc_test.qnt": {
+      "sha256": "bed49b4d7b1dfdb0de8cd83eeaf773ad7da370f9457f9034a2414d660091cae9",
+      "size": 7388,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-topology.qnt": {
+      "sha256": "2d8dee2443cc0416f7c74ce15c85ce3e67702a62633579ce6bdc8a94e3915fa6",
+      "size": 17763,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-topology_test.qnt": {
+      "sha256": "b144821aad2314c5102657afebcef0185567a8e42e75ba5f7851220eb380d55c",
+      "size": 9642,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-frontend-delivery.qnt": {
+      "sha256": "90698235d64f2a18ac80061e736a2c8491a5d2322f18398e4e378d22d708658e",
+      "size": 6628,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-frontend-delivery_test.qnt": {
+      "sha256": "cd31602f2219f4d5f31f89463922de65572fda83c90f6753fe98f400d23c4b98",
+      "size": 7340,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-http-admission.qnt": {
+      "sha256": "fc30a884c6858cb52bd4574fd52caf28f9cb79fdc467c62bc760eb5053c791df",
+      "size": 8552,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-http-admission_test.qnt": {
+      "sha256": "25ba6a42ee4e4dea0978c2ce991c0cbea41703296b7b180d60b9bea748689549",
+      "size": 7677,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-origin.qnt": {
+      "sha256": "85a9b419371f5d527409afffe90ce10ebffd042df749bf0dc177c286bca19f11",
+      "size": 11116,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-origin_test.qnt": {
+      "sha256": "4d1451995bf95dd3155860c2d49011e790d185b24d44b6fd728897a57d53e057",
+      "size": 7113,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-private-network.qnt": {
+      "sha256": "ce2e9444cd429f600030f5a8193c9d643838c128f1614816ba2dfe922e019955",
+      "size": 6916,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-private-network_test.qnt": {
+      "sha256": "fdd7d248ea6ad03176aeb4d197e33ad2d5a5aea0e1297840d451d9efa56f6ce3",
+      "size": 3852,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap.qnt": {
+      "sha256": "0ab50a535e453613c1ae32b64e7f0958f4b79549c8a658db2d1a257548f36eab",
+      "size": 6637,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt": {
+      "sha256": "358ad7edbc190951e76bc097d5e611f060cccb5bb195841952133adf316323e3",
+      "size": 5492,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/qualification.json": {
+      "sha256": "ccb70a02d87f851cce36f05f53a300f8146ca48ac3835a9174a1dc244fbe2b54",
+      "size": 13607,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/runtime.cabal": {
+      "sha256": "17e60a7a8e6e021535311a4d4628e6bdb541e0a0c36513a8c9bbc36fdf92d5a4",
+      "size": 10816,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": {
+      "sha256": "a857be418b684cfcb967564a9004331d5f95e752f3e9ccfeae5e21fafabbb0ab",
+      "size": 21064,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": {
+      "sha256": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+      "size": 7168,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": {
+      "sha256": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6",
+      "size": 4351,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": {
+      "sha256": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+      "size": 17247,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": {
+      "sha256": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+      "size": 842,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": {
+      "sha256": "fdf9b224707611600919b349e868fd2883dbc637e9d5707750191dbd21a9a824",
+      "size": 13717,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": {
+      "sha256": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+      "size": 1675,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": {
+      "sha256": "6047f19ea3020c0860a54e0666c2866846aa77cd8643fc550f145bb66efe2a39",
+      "size": 5448,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": {
+      "sha256": "9836f7e5020efbbe917b8c2de4dd0de015174f28eb0484a554f98abfff0d7f18",
+      "size": 7126,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": {
+      "sha256": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219",
+      "size": 16397,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Config.hs": {
+      "sha256": "e737412f400ae5a9d53625152a23bbc8883bb6558d85770dd8e14bcb4bb8f969",
+      "size": 6252,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs": {
+      "sha256": "960d6ad3b82f5d7f06bf2ab26973e8cdcda509f23394ab6ca629a19d0432f1ba",
+      "size": 3255,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs": {
+      "sha256": "c16a52b5d63a4a9000d5bcde40d0f4b37fdd52eba943a34b924a20ee319bda79",
+      "size": 5593,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs": {
+      "sha256": "63cebd1a5ec38b7faa6b713dacec64f62b1e15e5cda8dbc1284dd757e6d29a04",
+      "size": 18764,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs": {
+      "sha256": "e4c842070ec57eea368f50519081668433a92874c93d0a13983f154c3a4b0182",
+      "size": 5028,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs": {
+      "sha256": "c9191618a8006b9bfb1f62b09a918bd1bde409cfa7a4b9771a928493af977105",
+      "size": 21259,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs": {
+      "sha256": "1684af2c7eeee727fc3007e6dcda90da52ad48fe9926a22a9ed489bf6050b1e0",
+      "size": 4938,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs": {
+      "sha256": "a3467864d1f675d7943c6799d5b192f7a36f5494792fb6e2cb9f1671d6053665",
+      "size": 4625,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs": {
+      "sha256": "3585e3ca0f8fbca8dc9b66d54821e8e60707b6798550945ea983c81a4181926f",
+      "size": 26664,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs": {
+      "sha256": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40",
+      "size": 6185,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc": {
+      "sha256": "2205761421203a631a1dc861c55501c8356e5630e96de3206dc00f986531fd2b",
+      "size": 15528,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs": {
+      "sha256": "3a8504a5dd8fb4dac2b7c721da5e141cf571dae18f5c814dfd11bb5ebb8f3e2f",
+      "size": 879,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-notification-config/Main.hs": {
+      "sha256": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+      "size": 16873,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-persistent/Main.hs": {
+      "sha256": "9768921ea4b0990fe5dd31165c93a9d4d1dc892b47e4e238c0c9f6cc746020b0",
+      "size": 30529,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-display/Main.hs": {
+      "sha256": "2b020a41d0884f0341e7f02cea74ecb6f48a821b32b95c87f1c594a72d24501e",
+      "size": 4535,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs": {
+      "sha256": "25fb10fe6f63630454da88f7cdd956c068a6d534dd6c159a27fd142a3903d0d1",
+      "size": 13153,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-engine-exec/Main.hs": {
+      "sha256": "7a5c90aec72f862a06afee78fe9d16399c2f561efe555e05f7ef7f6ddc3998b0",
+      "size": 22804,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs": {
+      "sha256": "b5741ca909729a17c529c24e41e47359e7b2dc02b6cbd5b506fb4fb48c1ef74a",
+      "size": 16905,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs": {
+      "sha256": "155fe0122a876ad0a8044db45f0eb9c366c0a3d5521b55028817166408628083",
+      "size": 18901,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs": {
+      "sha256": "3e294c7a095bf5b67c5396b3f2377affb02882d7136a814d95838552dbb07759",
+      "size": 4528,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-engine/Main.hs": {
+      "sha256": "4773df5cf63c135a317738ff322bd0087de8d66674dae750e971968f63edd455",
+      "size": 8763,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": {
+      "sha256": "ba1012199a4bed25875541fbd2591f13c25448da7da9506c613cbcd23f6d7141",
+      "size": 12756,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-origin/Main.hs": {
+      "sha256": "0ec52ba66edf9decf5ee45f808eee496be20302529402d17d09a8fe13c7bc0b0",
+      "size": 58099,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-private-network/Main.hs": {
+      "sha256": "9e7c5a86b2d7cdc8c3c506197ff0e7c60e03d83563068dc0a1ad0396fa33acfd",
+      "size": 15512,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-security/Main.hs": {
+      "sha256": "c373717c77ae9dab682b57c112ef5ed1d934a8e2def63fb207d9bd6d0b1ff954",
+      "size": 6636,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-security/Parent.hs": {
+      "sha256": "578448d677c41473d1c2f1095cc97d7ad791b4d0278c75dcace0a5e0d317d949",
+      "size": 11195,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-security/Permissive.hs": {
+      "sha256": "14c6006ae86679245c2e71264f0c48f0e9b13fba50ee5f3293b38cd2f9e65718",
+      "size": 14027,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-security/fixtures/probes.js": {
+      "sha256": "3f2abf6f2ca0a7aee85ba0ada522933454307f4d6ac9ce6b192166d1b8d8cce8",
+      "size": 5210,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": {
+      "sha256": "03f6e7e341690b68b174db411182cbb5fa4ae0e099ec38f8c3a32f473998b2f2",
+      "size": 14470,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test-ui/Main.hs": {
+      "sha256": "f522408fc45e2077c41cdf262cc438f4ee9ae7afc000a316da94974ed36d3e61",
+      "size": 24606,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test/CurrentSessionsControls.hs": {
+      "sha256": "31d4038dc700006bbb7521c4a7ceb9a3a176aef742546cad2c018bcaada31587",
+      "size": 9456,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test/Main.hs": {
+      "sha256": "98ad395210d26fe7c244c5d75056563f4d23fc707e14675d2f0df0b0e741fab1",
+      "size": 5488,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test/OwnedControls.hs": {
+      "sha256": "6e54634fa6fab03e9b830faa9d13fd7943842cd49d6b6404494d7cb260b2cf9d",
+      "size": 15662,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test/PublicationControls.hs": {
+      "sha256": "504273c7d9c7605ad79a725c22ca58158ccb67b16b3b4a7ae75b77cc39220779",
+      "size": 6294,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test/ScopedPeerControls.hs": {
+      "sha256": "07f39cc70a82eca00ff85970635175f9df39bbf2936506156ad406053b3ab52d",
+      "size": 4167,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/test/SocketHandoffControls.hs": {
+      "sha256": "91ae3d484ef7ef91dc0c85822c1947b652243f3e80d8e61d8ff3ea9d1c4a4007",
+      "size": 2337,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/ui/Main.hs": {
+      "sha256": "50d9ebd707026536cb95054414cf587602adb2c845ca8f207145e999c757eda7",
+      "size": 4815,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": {
+      "sha256": "5028eed1eae2df6f066d3868777af686aa0ddb889a651159b26cb3369c4129de",
+      "size": 45199,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs": {
+      "sha256": "941d77695c96f5456cfff9a2d5d452088a2668df58f0c96c0e3c830901f17080",
+      "size": 18905,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": {
+      "sha256": "57b150fd2b9652049141a911d75126d1e88452cc14b57462104e327067e5dce6",
+      "size": 44152,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": {
+      "sha256": "b1f00b0db2370fee7442cbfa30ebfb6ed06911a704b4299a4f1f61f3650ea79a",
+      "size": 30099,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc": {
+      "sha256": "8a016b2cfa837b1874019f376d7e4d1c333f3064ea48e62787565e4a616f40e8",
+      "size": 270,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/tools/arm64-toolchain.json": {
+      "sha256": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+      "size": 3138,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/tools/arm64_toolchain.py": {
+      "sha256": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796",
+      "size": 4495,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/tools/check_arm64_cpu.py": {
+      "sha256": "70107bb407371e838869daa77492fb475c305412e5fab785e3f4926515d61bdb",
+      "size": 119550,
+      "sourceMode": 493
+    },
+    "current-matching-inputs/tools/elm-http-dependencies.json": {
+      "sha256": "ac6870371db068344a02e99ab40a45207b393d91d05cfd94e7b0cc54f4bd8f68",
+      "size": 6660,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/tools/haskell-dependencies.json": {
+      "sha256": "ca6a7fe7f45cfe4baaf074c55b7c1f0faeba4accae4ee1059788f02681d75a5a",
+      "size": 1574,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/tools/haskell-toolchain.json": {
+      "sha256": "7a2c7706cbf05b3e68abd661c7789cd9ce9d24a5b714091176e6e6b275ac0a76",
+      "size": 3544,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/tools/haskell_test_wrapper.py": {
+      "sha256": "78283ea59b3a57ef3eb5a25f799af39cad8a69581ddb1d6410a126fc99001940",
+      "size": 10273,
+      "sourceMode": 493
+    },
+    "current-matching-inputs/tools/qa_cpu.py": {
+      "sha256": "d5ed617e60f184cb61d50de5964a1ec1ce0fd0a0c974b8d403b2d5d8c2fb036c",
+      "size": 27566,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/tools/ui-host-toolchain.json": {
+      "sha256": "f53770c47929e28b50ddc7c2c0b5cb2315d90003983446be6c325b7dd0708a14",
+      "size": 79915,
+      "sourceMode": 420
+    },
+    "current-matching-inputs/window-integration-qa/qa_launch.py": {
+      "sha256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+      "size": 4662,
+      "sourceMode": 420
+    },
+    "inventory/scope.json": {
+      "sha256": "cf672713a47cc5149e0c28ce68c14eae5c9ca05949f819c6edf6ebc21d79de84",
+      "size": 1184,
+      "sourceMode": 420
+    },
+    "inventory/source-binding-review.json": {
+      "sha256": "5811ebad9098b372633fb3833b65b28b290fef48952072979b4f36906cc2e10a",
+      "size": 241882,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/cabal.config": {
+      "sha256": "d26d8356d4b6275f1bd8da3adce056c6eee67fdddc69f92b19a71b86db1d660b",
+      "size": 242,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/cabal.project": {
+      "sha256": "6e708d3f04b88f143c08238bb901c2868eb643d04fcba44f38889365fed6c9d2",
+      "size": 622,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/README.md": {
+      "sha256": "d5d789263049e4c4ab7a677448192e70f3f8f5fb1c97c87a8de73c7af4e6b320",
+      "size": 3331,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/elf-observation.cabal": {
+      "sha256": "9a71bb015ac1cd15f5a1cc78d5b4a1bae31d877ec132065fb7769a9126f4bdcf",
+      "size": 925,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/qualification.json": {
+      "sha256": "e22cb3c5429f04bcc9a5b9c34f2766a6ce9268ed9dbef4b8cb2124808f4cb72c",
+      "size": 5807,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/src/Warlock/Elf/Graph.hs": {
+      "sha256": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+      "size": 15046,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/src/Warlock/Elf/Readelf.hs": {
+      "sha256": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
+      "size": 18211,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/ElfCases.hs": {
+      "sha256": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5",
+      "size": 23450,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/GoldenNames.hs": {
+      "sha256": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed",
+      "size": 1481,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/gcc.readelf": {
+      "sha256": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+      "size": 11939,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/ghc.readelf": {
+      "sha256": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+      "size": 32916,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/helper-0.readelf": {
+      "sha256": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/helper-1.readelf": {
+      "sha256": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/helper-2.readelf": {
+      "sha256": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/jsc.readelf": {
+      "sha256": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+      "size": 120972,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/json-glib.readelf": {
+      "sha256": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+      "size": 19476,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/owner.readelf": {
+      "sha256": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+      "size": 31276,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/provenance.json": {
+      "sha256": "4de54e658fd54dc6a930b42433116da7cf90979bde30a2c76e96d129938d63b7",
+      "size": 3213,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/sframe.readelf": {
+      "sha256": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+      "size": 37149,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/elf-observation/test/fixtures/webkit.readelf": {
+      "sha256": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+      "size": 156304,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/README.md": {
+      "sha256": "c54e0457d05cd85c222dfcccb1c3b3d8d20013407d5d000846c691f7dce7f6ed",
+      "size": 2775,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/held-document.cabal": {
+      "sha256": "fd73f544a29c114a32f6c26bcf0ef7fd810fef11d2ea75191cd988e569ad9999",
+      "size": 1695,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/qualification.json": {
+      "sha256": "eef9d8ab2df193d112237b89ca5e72927b99ab914102a1f35889a71672a16fd7",
+      "size": 5003,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/src/Warlock/Http/Document.hs": {
+      "sha256": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+      "size": 5223,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/src/Warlock/Platform/Descriptor.hs": {
+      "sha256": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
+      "size": 5194,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/src/Warlock/Platform/Executable.hs": {
+      "sha256": "7036e66facf7b8e41fa451f227d9dc9a420a3e8bcd60741cc6adea742fa2959e",
+      "size": 561,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": {
+      "sha256": "fa6f26c2de463b703971c31758e6e509dfd2e90ac2bf94cf2afb16a4bcce7187",
+      "size": 16526,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/src/Warlock/Platform/Resolver.hs": {
+      "sha256": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
+      "size": 274,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc": {
+      "sha256": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed",
+      "size": 14326,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/test/LeaseControls.hs": {
+      "sha256": "f43f95ddb50057190aeaf07bdc2662fd9752afca3402b00f527a708097d86c80",
+      "size": 5707,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/held-document/test/Main.hs": {
+      "sha256": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501",
+      "size": 5716,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/README.md": {
+      "sha256": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744",
+      "size": 6744,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/native-authority.cabal": {
+      "sha256": "0f6e8579cc148c5c5599797f33919bde411c2610539b68fc2cfb4700e8215ec3",
+      "size": 6549,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/qualification.json": {
+      "sha256": "5b537f836cc94b0779018377c693961cce8e940fcae0b482ed705573aad3893a",
+      "size": 26740,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation.hs": {
+      "sha256": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
+      "size": 1570,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": {
+      "sha256": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e",
+      "size": 5318,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs": {
+      "sha256": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241",
+      "size": 10082,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": {
+      "sha256": "8ae02f272b7f002128e871064b26bcaf30876a1a610065a5729c7083b7a0c346",
+      "size": 13590,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": {
+      "sha256": "85e1ef5008c223121decf3f34a6ad083b7a26d785a2ab9f074bc7a5928056bc7",
+      "size": 23411,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc": {
+      "sha256": "5995e5a6b5beef6412831daad6db9f8206b531cd11993c8fdf3f423d9e906976",
+      "size": 9660,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs": {
+      "sha256": "99d5594019dd9f1e13162b56f48f9e8657a90e1dd2e200c53aa80374fa91cf47",
+      "size": 16986,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": {
+      "sha256": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38",
+      "size": 10639,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": {
+      "sha256": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d",
+      "size": 28501,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc": {
+      "sha256": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded",
+      "size": 14892,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-child/ChildDirectoryControls.hs": {
+      "sha256": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02",
+      "size": 7118,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-guard/Main.hs": {
+      "sha256": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
+      "size": 4236,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-lifetime-independent/LifetimeOwnerControls.hs": {
+      "sha256": "405b6539a99dfbf8d09502d8e60089c6dc06358c73c27ac2f362968c7f2c6893",
+      "size": 10528,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-lifetime/LifetimeOwnerControls.hs": {
+      "sha256": "35cf69840a1da11cde9ad962f065022e31fe81b9b991bf146fd66b9196b33e82",
+      "size": 2689,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-pair-independent/Main.hs": {
+      "sha256": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d",
+      "size": 16147,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-pair-independent/ShapeMain.hs": {
+      "sha256": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe",
+      "size": 3562,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-pair-sequences/Main.hs": {
+      "sha256": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f",
+      "size": 6849,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-pair/Main.hs": {
+      "sha256": "776bf66ca42e39370fd6c989fc00f689b3dfb12c90e219c2b529eb3402d1ee02",
+      "size": 10232,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-selection/Main.hs": {
+      "sha256": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be",
+      "size": 11356,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-slot/SlotStoreControls.hs": {
+      "sha256": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
+      "size": 8720,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-storage/ForeignOwnerControls.hs": {
+      "sha256": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
+      "size": 2419,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-storage/Main.hs": {
+      "sha256": "c06b8ed27e0e6d29ed3c6911bc5214283d22ebb5afe749c9d36187c5367ab268",
+      "size": 13381,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test-storage/SwapControls.hs": {
+      "sha256": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b",
+      "size": 1470,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/native-authority/test/Main.hs": {
+      "sha256": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
+      "size": 19652,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/HANDOFF.md": {
+      "sha256": "401861bea381583225e4ffc4f4c541ccc72fa6e8a525a9a6139a01d70995f06e",
+      "size": 2562,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/README.md": {
+      "sha256": "cdca392be058d884733e7e9d3f9241b47991247d6b7c7fb94c24895b541553da",
+      "size": 7385,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/RETROFIT.md": {
+      "sha256": "4ff2abe3e7626ef0d572e666a297bfa97f992a678d46ed411829ab3909482360",
+      "size": 883,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/SHA256SUMS": {
+      "sha256": "aa08200922b446d3c2fad67719b0f00343c9f5ae0444838040091290cd027cf9",
+      "size": 1823,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/SOURCE-MAP.md": {
+      "sha256": "d16d0445e3d2f1f71e3f58c0cfa8c72f78b15365a1b74b04054dbfcb032aa290",
+      "size": 2595,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/fixture-bootstrap/FacadeChild.hs": {
+      "sha256": "75b3101897b3c15b71df9b32931f9e4a6aa7122d9edc2aa10790c16065b567f2",
+      "size": 312,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/fixture-graceful/Main.hs": {
+      "sha256": "b860aa9af6d6749e7898cacc60b10889558dadb68ee5e68dcbda1912d85caf22",
+      "size": 1439,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/fixture-selected/Main.hs": {
+      "sha256": "ddb77f498858d132315f2768854e7e74a78fbf18b7f081cf49191a1e7d3806de",
+      "size": 3323,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/fixture/Main.hs": {
+      "sha256": "3a6c1baefca82d447ff03566b254758a4f86c1386589e99e2255717d7a707610",
+      "size": 922,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/process-custody.cabal": {
+      "sha256": "45c21dc95a43da4e9e43697e10cb31e87f840b9d89ddbdfc55e8935688284692",
+      "size": 3077,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/qualification.json": {
+      "sha256": "8dc5086cd83edd072deab11651a3e5a5f34f5d7c4f2f32dae7b14e65cf187716",
+      "size": 4904,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process.hs": {
+      "sha256": "39a0805202bd0843affe2c32bfc0c8f9f79197231a94f1f2e6c40905dcf96fef",
+      "size": 704,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": {
+      "sha256": "b98d37b2bda016c82fc764114502ef19d28826c2c4086a3744eb0e7fd4c09319",
+      "size": 1413,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": {
+      "sha256": "30b1c58267106e7e16fd2184598ea8624a4c58950f0854e6a690a6ef94e9b722",
+      "size": 42865,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs": {
+      "sha256": "d1162d1206d0d0107a3f771c58cfc28af46b1d1b4a042634d767253cec64a5e2",
+      "size": 342,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs": {
+      "sha256": "c8496170eabfe8f5e3383c3cb0860630499b19052c0b5179a1a4fc7f8f7d9d8f",
+      "size": 19474,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs": {
+      "sha256": "3f42fb3b628a0c3f93f138373f26bef28fad9d304415c37563c414a01ff4a2c7",
+      "size": 2753,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs": {
+      "sha256": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e",
+      "size": 118856,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs": {
+      "sha256": "e6ac6bf23bc5568b6a88623d23bdf9fed2a4162d2cd4966e73db31c3342f8d66",
+      "size": 297,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": {
+      "sha256": "de3cfc758f9ee41e3d66c917853e5e7fe9c4476acff2db4a3f36cf366a83edb6",
+      "size": 5442,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc": {
+      "sha256": "62775261c983b9b2f8f256734c731fee492f1f4a327ceab845370bd6e82da416",
+      "size": 10827,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/DeadlineStop.hs": {
+      "sha256": "c11352b4e48dd7eaf3602aaea2bac4c7d1cd7b944096e03ab2c19cd328bb8dbc",
+      "size": 8212,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/ExitRaceControls.hs": {
+      "sha256": "7342c6c4c38082373095e79d66c4f9dd18223173894c21aa081246cc5feed2ab",
+      "size": 12899,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/Internal.hs": {
+      "sha256": "bc7d6362bf78adf4e5badf3e2e6285ec2496d7770b1e76c5f895f84edb621aeb",
+      "size": 18659,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/PersistentControls.hs": {
+      "sha256": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f",
+      "size": 74510,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/Public.hs": {
+      "sha256": "9ab22e6705dab47416b55126104fa160fda4fec6bbec4d3635d5d254adc34600",
+      "size": 397,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/SeededBatchHarness.hs": {
+      "sha256": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808",
+      "size": 2968,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/SeededBatchLifecycle.hs": {
+      "sha256": "d631fe70075d0c8cdbd8190509d4447b68c970bac5144aeba60690480198ce1a",
+      "size": 9157,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/SelectedFD.hs": {
+      "sha256": "c3748e48f8e520e7a2eba6b27611b445013d8c33d0d617bd7e861fbdf2f854a8",
+      "size": 7862,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/VerifiedFixture.hs": {
+      "sha256": "0c0212820247927fd52c1cf770b8bd3c6c4de625cff9a2c999951a2297ad308a",
+      "size": 1509,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/negative/CoreCapability.hs": {
+      "sha256": "9bd073b4e08cbb179fadd0eace46cfda3ab866d9b5c0201f12c4ae86e1a91110",
+      "size": 152,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/negative/RawIssuer.hs": {
+      "sha256": "1ad937597d06dbefb9ec9a5edec70f6a080684d47da6a2ddc590e3faadd5305f",
+      "size": 154,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/process-custody/test/negative/SelectedSpawnConstructor.hs": {
+      "sha256": "4c28b3897417504b9c09ed29922f798947c208237cc5a61883d334c5ab1e7314",
+      "size": 257,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/README.md": {
+      "sha256": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad",
+      "size": 4639,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/TRANSPORT.md": {
+      "sha256": "47985c788f31031987aa4c9082829b20426eab83045aa74a0f17ccd989a6f98b",
+      "size": 5368,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/formal/ACQUISITION.md": {
+      "sha256": "af661eb1131c7d0b5fbf815b976ad4899a19a27061bc5b8113b63cefa48d6c32",
+      "size": 2863,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/formal/README.md": {
+      "sha256": "c496560993a076d6766ae37a4279e6012b9401f9a74172e1f6b77ab8e11d345b",
+      "size": 2165,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/formal/acquisition.qnt": {
+      "sha256": "5e8ed18ddd56ee172f927cdde7e41fc60bb57448a9b7fb315bc8067b7151c592",
+      "size": 7669,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/formal/acquisition_test.qnt": {
+      "sha256": "e0caed809f42b63b7fd07d311fe692be533a5bad9d49dcd3a5b0efb7c331cec2",
+      "size": 7869,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/formal/handler_gate.qnt": {
+      "sha256": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f",
+      "size": 5681,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/formal/handler_gate_test.qnt": {
+      "sha256": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf",
+      "size": 17484,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/protocol.cabal": {
+      "sha256": "2fa2927f2cb50a586b3317a526b42d4b9ec84c8f7914cca809f6a47e8a0b1120",
+      "size": 6043,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/qualification.json": {
+      "sha256": "988dd7e0c6597dd22e6d43f808eb132ff377bd52ce249814b4a5ce4c334f82d4",
+      "size": 5256,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Boundary.hs": {
+      "sha256": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee",
+      "size": 368,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": {
+      "sha256": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a",
+      "size": 9514,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Codec.hs": {
+      "sha256": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+      "size": 6395,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/CredentialGuard.hs": {
+      "sha256": "f6f9ace572c62a0aba9412c457d172a4a1fd7bb24f357e13ed3e30d7158239a7",
+      "size": 438,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": {
+      "sha256": "85d91c8decf35f042c72783138df9faaad432607159d163e298a6ada0990db20",
+      "size": 1110,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Custody.hs": {
+      "sha256": "87a8d62a378359bf52589c426ac67f0376195493a2cf9e84d02c1253bac40e01",
+      "size": 1839,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Desktop.hs": {
+      "sha256": "1eaeadc26acfc423ff114fa3b1d383e53b7c641dfc9b062ed4063ab17d482890",
+      "size": 16993,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs": {
+      "sha256": "dab80f08576f4c8897366ff55d0f724dde34132006d5be50811525a8853ef32a",
+      "size": 1704,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Framing.hs": {
+      "sha256": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+      "size": 872,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Identity.hs": {
+      "sha256": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a",
+      "size": 2697,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Ingress.hs": {
+      "sha256": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+      "size": 556,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": {
+      "sha256": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9",
+      "size": 42714,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs": {
+      "sha256": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86",
+      "size": 2541,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs": {
+      "sha256": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+      "size": 546,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/PreviewControl.hs": {
+      "sha256": "9afb1006cd00c8f3dd54a3b684313e3cf6435da1bea89637075327aafcc73a79",
+      "size": 8537,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Profile.hs": {
+      "sha256": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+      "size": 542,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Server.hs": {
+      "sha256": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126",
+      "size": 16363,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": {
+      "sha256": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+      "size": 6740,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/Wire.hs": {
+      "sha256": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd",
+      "size": 6668,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Protocol/WorkspaceNavigation.hs": {
+      "sha256": "63baa4a3084f278073a218929e1a82282cc1cfa32d1cd21b2c136aa4159c3f33",
+      "size": 6256,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Transport/Channel.hs": {
+      "sha256": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8",
+      "size": 24636,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Transport/Frame.hs": {
+      "sha256": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+      "size": 2426,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": {
+      "sha256": "30cd41b3dad28cc980e48cdcb9b77e7c511cae4c3881440dd7bc0360bfb7d16c",
+      "size": 14890,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/src/Warlock/Transport/SocketFlags.hsc": {
+      "sha256": "dc12bd6112f1bc146123303f5b799d5e6186b03eab5277ac164b13e08b97b482",
+      "size": 2026,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test-desktop/Main.hs": {
+      "sha256": "44e2b847e566a98b62278a4e534244e6c1b878683046d7ecb65d4bcbb09c2ac0",
+      "size": 20679,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test-preview-control/Main.hs": {
+      "sha256": "185acf36f9e8688b70bb94a87b449f4cdf356d24dbfc797ae1112c32bbdb344d",
+      "size": 13551,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test-workspace-navigation/Main.hs": {
+      "sha256": "e43a06259a5ec39a12e64cd3e87886c5333c61f011b02d39e5e678a294c90c56",
+      "size": 4184,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test-workspace-navigation/WorkspaceStandaloneLiterals.hs": {
+      "sha256": "f407ff12ddd2df22ca00bb4a25c5e8ec825d5fd5b60ffa3dc2b6d14e24b8cf69",
+      "size": 48763,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/GuardControls.hs": {
+      "sha256": "6698548053e57a128f3341017b35a222e10fcd27aa302751ebb1c6ec43ff0eb4",
+      "size": 5500,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/Main.hs": {
+      "sha256": "4e19a493ce14da32d1b67dd152ee3c8feba1f65dea50be0df5d153be477f663c",
+      "size": 7749,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/OwnerControls.hs": {
+      "sha256": "7757bf34257e90bf56d3c5baea54f24c28beea8a2da9820e5b04aee40d41cb3c",
+      "size": 21608,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/OwnerSequenceProperties.hs": {
+      "sha256": "eda99bb99ef18eb59d2403071b8fdbbd2855c927d3adc9223335e9d6044558b8",
+      "size": 5267,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/PeerCredentialsCases.hsc": {
+      "sha256": "4b132ee6e37a6cf0197ff1f934b2c68b9821f93ee7023a6c36ffceef65be45a1",
+      "size": 13915,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/QuarantineControls.hs": {
+      "sha256": "a37aefb1d8fd54be04b95f76f2d4b84ddbbe652684cb30d1246f4a82d00a2c49",
+      "size": 1305,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/history-valid-positional-key.bin": {
+      "sha256": "4ab5dcab96c18db6a50b667b6d98fe773ae3ac479c594471a00acf6ed7f844fa",
+      "size": 1522,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/invalid-context-lifetime.bin": {
+      "sha256": "5a7f6ebaef0f441407a3288b47f86e7b667ee4b543e7e3c9b6963d93770b3606",
+      "size": 308,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/invalid-duplicate-key.bin": {
+      "sha256": "534a4bfbbc280c837dda31c926a21821259158859ac9aa48a256e2255d51698d",
+      "size": 108,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/invalid-extra-field.bin": {
+      "sha256": "031fa55a5c29a3d90edbea97e40cde527d54d2514d3b0868888777da8ffbf420",
+      "size": 103,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/invalid-kind-unknown.bin": {
+      "sha256": "1b010a8971b514dae3cee63cb0e8df4eab82e100730ec354b723d62c1237fe84",
+      "size": 95,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/invalid-version-boolean.bin": {
+      "sha256": "19e7004d4f7fede867da179fc74a5140407513efe50657bb9c534fe8cf9e0297",
+      "size": 96,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/invalid-version-unknown.bin": {
+      "sha256": "4b15479df542ecefcaefb0bf171bd88510c3b785f1ba8d0201c5e178a280809b",
+      "size": 93,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/lookup-v2-request-live.bin": {
+      "sha256": "4b4ac27237d62ded83b0439dd949c8d7eec80b92b9540da5c82bd614be426103",
+      "size": 697,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/lookup-v2-result-absent.bin": {
+      "sha256": "7e5dbf851ce53812d7613cfa17b5ae6275c5d901a72acb989a19592bb2c41931",
+      "size": 748,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/lookup-v2-wrong-key.bin": {
+      "sha256": "8054dd3a23c0c0b6cabec06e82de9ed6eabc54882a3fef0db27b716eee2a4e90",
+      "size": 750,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/valid-hello.bin": {
+      "sha256": "cd15d1f8e15be5aaf86fefef213ba4c7ff167ae5527bd8a7195213c8f3198798",
+      "size": 93,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/valid-negotiate.bin": {
+      "sha256": "80fd224e5d644eefddc92598527d3b4e0c5cd372a5d7d9327db250054b62e34e",
+      "size": 113,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/test/fixtures/valid-prepare.bin": {
+      "sha256": "0d3341e70d17fbe5967dc898efcc978ff05b9029e80d60aee971ca9cfb8f2ed1",
+      "size": 308,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/protocol/transport-qualification.json": {
+      "sha256": "47afea44d3dc724866010a7be1c975a195673f269907b343f2334c4b63fef036",
+      "size": 9459,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/README.md": {
+      "sha256": "806a9a4f3e41afc100c15c24ea6ae5bfe06a8d88dfdf9bbe71ed7be79b22a215",
+      "size": 6597,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/app/Main.hs": {
+      "sha256": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+      "size": 689,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/fixture-peer/Main.hs": {
+      "sha256": "00fcd03b1babc7e9c45a954871a03f0aea15b48ced03ac496906aac8ae6cef3d",
+      "size": 12443,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/fixture-ui/Main.hs": {
+      "sha256": "f63550d4b9538b13afbd8a875554b56b7e3a5ece95ee1a7e76a7c3a17b795425",
+      "size": 6109,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/README.md": {
+      "sha256": "9eb7d65f0e922ff3fced324bbb054936fe8fd720817a7faa77be5c127484bc56",
+      "size": 2895,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/current_registration.qnt": {
+      "sha256": "f3f4cbd87ea61db42d94250361a834a037e7d4b8638f51d410859435c6186c84",
+      "size": 8171,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/current_registration_test.qnt": {
+      "sha256": "157288b0e7f37e6696b6f898ea52882ae3b9f237b1065814a5b000217f363e78",
+      "size": 5918,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/desktop-idle-lifetime.qnt": {
+      "sha256": "cda6a2b40aeb37341266bc4be64ed76e3157a77e334e0e70cf1de9c3296260f5",
+      "size": 12242,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/desktop-idle-lifetime_test.qnt": {
+      "sha256": "c43aec201bf10ae1c77739de90e9cae4f0ac39df6fbb3ce27052de2a35de6d29",
+      "size": 7308,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/qualification.json": {
+      "sha256": "94deb979ba0e4e20b0a211ba5f0822154d441a73759cd6e99372b508a05af9d8",
+      "size": 2139,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-engine-lifetime.qnt": {
+      "sha256": "4d9dc045213c038d12f68c46941fd72b6357222536122e7a693f910edfc9be8d",
+      "size": 10088,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-engine-lifetime_test.qnt": {
+      "sha256": "2ad115151339fd2270e8282adc62f97a6eef89aa732734b4654b84d5bbd882e3",
+      "size": 8739,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-engine-rpc.qnt": {
+      "sha256": "19d0ffa4ede4cb26aeb7ca6c0e2bc8bb278e62c130e24b41bbb36bd3c7a8ef1c",
+      "size": 10969,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-engine-rpc_test.qnt": {
+      "sha256": "bed49b4d7b1dfdb0de8cd83eeaf773ad7da370f9457f9034a2414d660091cae9",
+      "size": 7388,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-engine-topology.qnt": {
+      "sha256": "2d8dee2443cc0416f7c74ce15c85ce3e67702a62633579ce6bdc8a94e3915fa6",
+      "size": 17763,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-engine-topology_test.qnt": {
+      "sha256": "b144821aad2314c5102657afebcef0185567a8e42e75ba5f7851220eb380d55c",
+      "size": 9642,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-frontend-delivery.qnt": {
+      "sha256": "90698235d64f2a18ac80061e736a2c8491a5d2322f18398e4e378d22d708658e",
+      "size": 6628,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-frontend-delivery_test.qnt": {
+      "sha256": "cd31602f2219f4d5f31f89463922de65572fda83c90f6753fe98f400d23c4b98",
+      "size": 7340,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-http-admission.qnt": {
+      "sha256": "fc30a884c6858cb52bd4574fd52caf28f9cb79fdc467c62bc760eb5053c791df",
+      "size": 8552,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-http-admission_test.qnt": {
+      "sha256": "25ba6a42ee4e4dea0978c2ce991c0cbea41703296b7b180d60b9bea748689549",
+      "size": 7677,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-origin.qnt": {
+      "sha256": "85a9b419371f5d527409afffe90ce10ebffd042df749bf0dc177c286bca19f11",
+      "size": 11116,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-origin_test.qnt": {
+      "sha256": "4d1451995bf95dd3155860c2d49011e790d185b24d44b6fd728897a57d53e057",
+      "size": 7113,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-private-network.qnt": {
+      "sha256": "ce2e9444cd429f600030f5a8193c9d643838c128f1614816ba2dfe922e019955",
+      "size": 6916,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-private-network_test.qnt": {
+      "sha256": "fdd7d248ea6ad03176aeb4d197e33ad2d5a5aea0e1297840d451d9efa56f6ce3",
+      "size": 3852,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-standalone-bootstrap.qnt": {
+      "sha256": "0ab50a535e453613c1ae32b64e7f0958f4b79549c8a658db2d1a257548f36eab",
+      "size": 6637,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt": {
+      "sha256": "358ad7edbc190951e76bc097d5e611f060cccb5bb195841952133adf316323e3",
+      "size": 5492,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/qualification.json": {
+      "sha256": "ccb70a02d87f851cce36f05f53a300f8146ca48ac3835a9174a1dc244fbe2b54",
+      "size": 13607,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/runtime.cabal": {
+      "sha256": "17e60a7a8e6e021535311a4d4628e6bdb541e0a0c36513a8c9bbc36fdf92d5a4",
+      "size": 10816,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Backend.hs": {
+      "sha256": "e2b8b5253b2c458a0c4d529d52e2331e125741aa1ee4287c67a46b103927e023",
+      "size": 19622,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Backend/Catalog.hs": {
+      "sha256": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+      "size": 7168,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Backend/PinStore.hs": {
+      "sha256": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6",
+      "size": 4351,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Backend/Store.hsc": {
+      "sha256": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+      "size": 17247,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Bootstrap.hs": {
+      "sha256": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+      "size": 842,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": {
+      "sha256": "fdf9b224707611600919b349e868fd2883dbc637e9d5707750191dbd21a9a824",
+      "size": 13717,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": {
+      "sha256": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+      "size": 1675,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": {
+      "sha256": "6047f19ea3020c0860a54e0666c2866846aa77cd8643fc550f145bb66efe2a39",
+      "size": 5448,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": {
+      "sha256": "9836f7e5020efbbe917b8c2de4dd0de015174f28eb0484a554f98abfff0d7f18",
+      "size": 7126,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": {
+      "sha256": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219",
+      "size": 16397,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/Config.hs": {
+      "sha256": "e737412f400ae5a9d53625152a23bbc8883bb6558d85770dd8e14bcb4bb8f969",
+      "size": 6252,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/Display.hs": {
+      "sha256": "960d6ad3b82f5d7f06bf2ab26973e8cdcda509f23394ab6ca629a19d0432f1ba",
+      "size": 3255,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs": {
+      "sha256": "c16a52b5d63a4a9000d5bcde40d0f4b37fdd52eba943a34b924a20ee319bda79",
+      "size": 5593,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/EngineBroker.hs": {
+      "sha256": "63cebd1a5ec38b7faa6b713dacec64f62b1e15e5cda8dbc1284dd757e6d29a04",
+      "size": 18764,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs": {
+      "sha256": "e4c842070ec57eea368f50519081668433a92874c93d0a13983f154c3a4b0182",
+      "size": 5028,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs": {
+      "sha256": "c9191618a8006b9bfb1f62b09a918bd1bde409cfa7a4b9771a928493af977105",
+      "size": 21259,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/Http.hs": {
+      "sha256": "1684af2c7eeee727fc3007e6dcda90da52ad48fe9926a22a9ed489bf6050b1e0",
+      "size": 4938,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/Native.hs": {
+      "sha256": "a3467864d1f675d7943c6799d5b192f7a36f5494792fb6e2cb9f1671d6053665",
+      "size": 4625,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/Owner.hs": {
+      "sha256": "3585e3ca0f8fbca8dc9b66d54821e8e60707b6798550945ea983c81a4181926f",
+      "size": 26664,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/Policy.hs": {
+      "sha256": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40",
+      "size": 6185,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc": {
+      "sha256": "2205761421203a631a1dc861c55501c8356e5630e96de3206dc00f986531fd2b",
+      "size": 15528,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs": {
+      "sha256": "3a8504a5dd8fb4dac2b7c721da5e141cf571dae18f5c814dfd11bb5ebb8f3e2f",
+      "size": 879,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-notification-config/Main.hs": {
+      "sha256": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+      "size": 16873,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-persistent/Main.hs": {
+      "sha256": "9768921ea4b0990fe5dd31165c93a9d4d1dc892b47e4e238c0c9f6cc746020b0",
+      "size": 30529,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-display/Main.hs": {
+      "sha256": "2b020a41d0884f0341e7f02cea74ecb6f48a821b32b95c87f1c594a72d24501e",
+      "size": 4535,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-engine-broker/Main.hs": {
+      "sha256": "25fb10fe6f63630454da88f7cdd956c068a6d534dd6c159a27fd142a3903d0d1",
+      "size": 13153,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-engine-exec/Main.hs": {
+      "sha256": "7a5c90aec72f862a06afee78fe9d16399c2f561efe555e05f7ef7f6ddc3998b0",
+      "size": 22804,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs": {
+      "sha256": "b5741ca909729a17c529c24e41e47359e7b2dc02b6cbd5b506fb4fb48c1ef74a",
+      "size": 16905,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-engine-protocol/Main.hs": {
+      "sha256": "155fe0122a876ad0a8044db45f0eb9c366c0a3d5521b55028817166408628083",
+      "size": 18901,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs": {
+      "sha256": "3e294c7a095bf5b67c5396b3f2377affb02882d7136a814d95838552dbb07759",
+      "size": 4528,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-engine/Main.hs": {
+      "sha256": "4773df5cf63c135a317738ff322bd0087de8d66674dae750e971968f63edd455",
+      "size": 8763,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-mvp/Main.hs": {
+      "sha256": "ba1012199a4bed25875541fbd2591f13c25448da7da9506c613cbcd23f6d7141",
+      "size": 12756,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-origin/Main.hs": {
+      "sha256": "0ec52ba66edf9decf5ee45f808eee496be20302529402d17d09a8fe13c7bc0b0",
+      "size": 58099,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-private-network/Main.hs": {
+      "sha256": "9e7c5a86b2d7cdc8c3c506197ff0e7c60e03d83563068dc0a1ad0396fa33acfd",
+      "size": 15512,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-security/Main.hs": {
+      "sha256": "c373717c77ae9dab682b57c112ef5ed1d934a8e2def63fb207d9bd6d0b1ff954",
+      "size": 6636,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-security/Parent.hs": {
+      "sha256": "578448d677c41473d1c2f1095cc97d7ad791b4d0278c75dcace0a5e0d317d949",
+      "size": 11195,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-security/Permissive.hs": {
+      "sha256": "14c6006ae86679245c2e71264f0c48f0e9b13fba50ee5f3293b38cd2f9e65718",
+      "size": 14027,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-security/fixtures/probes.js": {
+      "sha256": "3f2abf6f2ca0a7aee85ba0ada522933454307f4d6ac9ce6b192166d1b8d8cce8",
+      "size": 5210,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui-webkit/Main.hs": {
+      "sha256": "03f6e7e341690b68b174db411182cbb5fa4ae0e099ec38f8c3a32f473998b2f2",
+      "size": 14470,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test-ui/Main.hs": {
+      "sha256": "f522408fc45e2077c41cdf262cc438f4ee9ae7afc000a316da94974ed36d3e61",
+      "size": 24606,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test/CurrentSessionsControls.hs": {
+      "sha256": "31d4038dc700006bbb7521c4a7ceb9a3a176aef742546cad2c018bcaada31587",
+      "size": 9456,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test/Main.hs": {
+      "sha256": "98ad395210d26fe7c244c5d75056563f4d23fc707e14675d2f0df0b0e741fab1",
+      "size": 5488,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test/OwnedControls.hs": {
+      "sha256": "6e54634fa6fab03e9b830faa9d13fd7943842cd49d6b6404494d7cb260b2cf9d",
+      "size": 15662,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test/PublicationControls.hs": {
+      "sha256": "504273c7d9c7605ad79a725c22ca58158ccb67b16b3b4a7ae75b77cc39220779",
+      "size": 6294,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test/ScopedPeerControls.hs": {
+      "sha256": "07f39cc70a82eca00ff85970635175f9df39bbf2936506156ad406053b3ab52d",
+      "size": 4167,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/test/SocketHandoffControls.hs": {
+      "sha256": "91ae3d484ef7ef91dc0c85822c1947b652243f3e80d8e61d8ff3ea9d1c4a4007",
+      "size": 2337,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/ui/Main.hs": {
+      "sha256": "50d9ebd707026536cb95054414cf587602adb2c845ca8f207145e999c757eda7",
+      "size": 4815,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": {
+      "sha256": "5028eed1eae2df6f066d3868777af686aa0ddb889a651159b26cb3369c4129de",
+      "size": 45199,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs": {
+      "sha256": "941d77695c96f5456cfff9a2d5d452088a2668df58f0c96c0e3c830901f17080",
+      "size": 18905,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": {
+      "sha256": "57b150fd2b9652049141a911d75126d1e88452cc14b57462104e327067e5dce6",
+      "size": 44152,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/ui/Warlock/Ui/WebKit.hs": {
+      "sha256": "b1f00b0db2370fee7442cbfa30ebfb6ed06911a704b4299a4f1f61f3650ea79a",
+      "size": 30099,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc": {
+      "sha256": "8a016b2cfa837b1874019f376d7e4d1c333f3064ea48e62787565e4a616f40e8",
+      "size": 270,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/logs/notification-config-build.stderr": {
+      "sha256": "0b255423ee1b4b49538bf9915410e683590b54bc2f2cb22822bae08bdf60b606",
+      "size": 1544,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/logs/notification-config-build.stdout": {
+      "sha256": "65035b02563018130ba7c1d704593ad29dee320e99efc96d3d4e157007852476",
+      "size": 51885,
+      "sourceMode": 420
+    },
+    "runs/1793976028837131648/report.json": {
+      "sha256": "60c4c33610489c2bdc7d54e52bc1263bca974c3fcdc7192cfd686c9b4a078682",
+      "size": 36869,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/cabal.config": {
+      "sha256": "d0a2b8a24056b5821e55c9e5f4bb019cfde376953b5fbd85c380592912d83ff8",
+      "size": 242,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/dispatch.json": {
+      "sha256": "82769bdcac9aa315155999378f317329e820d8782c10e505795d15789f91deb0",
+      "size": 926,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/cabal.project": {
+      "sha256": "7303cc3263e6202e19423ad4196efa37ca6a727f24ad464a1b6b4fd4f7dc07a2",
+      "size": 622,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/README.md": {
+      "sha256": "d5d789263049e4c4ab7a677448192e70f3f8f5fb1c97c87a8de73c7af4e6b320",
+      "size": 3331,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/elf-observation.cabal": {
+      "sha256": "9a71bb015ac1cd15f5a1cc78d5b4a1bae31d877ec132065fb7769a9126f4bdcf",
+      "size": 925,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/qualification.json": {
+      "sha256": "e22cb3c5429f04bcc9a5b9c34f2766a6ce9268ed9dbef4b8cb2124808f4cb72c",
+      "size": 5807,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/src/Warlock/Elf/Graph.hs": {
+      "sha256": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+      "size": 15046,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/src/Warlock/Elf/Readelf.hs": {
+      "sha256": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
+      "size": 18211,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/ElfCases.hs": {
+      "sha256": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5",
+      "size": 23450,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/GoldenNames.hs": {
+      "sha256": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed",
+      "size": 1481,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/gcc.readelf": {
+      "sha256": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+      "size": 11939,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/ghc.readelf": {
+      "sha256": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+      "size": 32916,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/helper-0.readelf": {
+      "sha256": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/helper-1.readelf": {
+      "sha256": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/helper-2.readelf": {
+      "sha256": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b",
+      "size": 5145,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/jsc.readelf": {
+      "sha256": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+      "size": 120972,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/json-glib.readelf": {
+      "sha256": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+      "size": 19476,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/owner.readelf": {
+      "sha256": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+      "size": 31276,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/provenance.json": {
+      "sha256": "4de54e658fd54dc6a930b42433116da7cf90979bde30a2c76e96d129938d63b7",
+      "size": 3213,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/sframe.readelf": {
+      "sha256": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+      "size": 37149,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/elf-observation/test/fixtures/webkit.readelf": {
+      "sha256": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+      "size": 156304,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/README.md": {
+      "sha256": "c54e0457d05cd85c222dfcccb1c3b3d8d20013407d5d000846c691f7dce7f6ed",
+      "size": 2775,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/held-document.cabal": {
+      "sha256": "fd73f544a29c114a32f6c26bcf0ef7fd810fef11d2ea75191cd988e569ad9999",
+      "size": 1695,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/qualification.json": {
+      "sha256": "eef9d8ab2df193d112237b89ca5e72927b99ab914102a1f35889a71672a16fd7",
+      "size": 5003,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/src/Warlock/Http/Document.hs": {
+      "sha256": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+      "size": 5223,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/src/Warlock/Platform/Descriptor.hs": {
+      "sha256": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
+      "size": 5194,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/src/Warlock/Platform/Executable.hs": {
+      "sha256": "7036e66facf7b8e41fa451f227d9dc9a420a3e8bcd60741cc6adea742fa2959e",
+      "size": 561,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": {
+      "sha256": "fa6f26c2de463b703971c31758e6e509dfd2e90ac2bf94cf2afb16a4bcce7187",
+      "size": 16526,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/src/Warlock/Platform/Resolver.hs": {
+      "sha256": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
+      "size": 274,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc": {
+      "sha256": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed",
+      "size": 14326,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/test/LeaseControls.hs": {
+      "sha256": "f43f95ddb50057190aeaf07bdc2662fd9752afca3402b00f527a708097d86c80",
+      "size": 5707,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/held-document/test/Main.hs": {
+      "sha256": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501",
+      "size": 5716,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/README.md": {
+      "sha256": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744",
+      "size": 6744,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/native-authority.cabal": {
+      "sha256": "0f6e8579cc148c5c5599797f33919bde411c2610539b68fc2cfb4700e8215ec3",
+      "size": 6549,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/qualification.json": {
+      "sha256": "5b537f836cc94b0779018377c693961cce8e940fcae0b482ed705573aad3893a",
+      "size": 26740,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation.hs": {
+      "sha256": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
+      "size": 1570,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": {
+      "sha256": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e",
+      "size": 5318,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs": {
+      "sha256": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241",
+      "size": 10082,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": {
+      "sha256": "8ae02f272b7f002128e871064b26bcaf30876a1a610065a5729c7083b7a0c346",
+      "size": 13590,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": {
+      "sha256": "85e1ef5008c223121decf3f34a6ad083b7a26d785a2ab9f074bc7a5928056bc7",
+      "size": 23411,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc": {
+      "sha256": "5995e5a6b5beef6412831daad6db9f8206b531cd11993c8fdf3f423d9e906976",
+      "size": 9660,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs": {
+      "sha256": "99d5594019dd9f1e13162b56f48f9e8657a90e1dd2e200c53aa80374fa91cf47",
+      "size": 16986,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": {
+      "sha256": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38",
+      "size": 10639,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": {
+      "sha256": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d",
+      "size": 28501,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc": {
+      "sha256": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded",
+      "size": 14892,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-child/ChildDirectoryControls.hs": {
+      "sha256": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02",
+      "size": 7118,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-guard/Main.hs": {
+      "sha256": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
+      "size": 4236,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-lifetime-independent/LifetimeOwnerControls.hs": {
+      "sha256": "405b6539a99dfbf8d09502d8e60089c6dc06358c73c27ac2f362968c7f2c6893",
+      "size": 10528,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-lifetime/LifetimeOwnerControls.hs": {
+      "sha256": "35cf69840a1da11cde9ad962f065022e31fe81b9b991bf146fd66b9196b33e82",
+      "size": 2689,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-pair-independent/Main.hs": {
+      "sha256": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d",
+      "size": 16147,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-pair-independent/ShapeMain.hs": {
+      "sha256": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe",
+      "size": 3562,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-pair-sequences/Main.hs": {
+      "sha256": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f",
+      "size": 6849,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-pair/Main.hs": {
+      "sha256": "776bf66ca42e39370fd6c989fc00f689b3dfb12c90e219c2b529eb3402d1ee02",
+      "size": 10232,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-selection/Main.hs": {
+      "sha256": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be",
+      "size": 11356,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-slot/SlotStoreControls.hs": {
+      "sha256": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
+      "size": 8720,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-storage/ForeignOwnerControls.hs": {
+      "sha256": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
+      "size": 2419,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-storage/Main.hs": {
+      "sha256": "c06b8ed27e0e6d29ed3c6911bc5214283d22ebb5afe749c9d36187c5367ab268",
+      "size": 13381,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test-storage/SwapControls.hs": {
+      "sha256": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b",
+      "size": 1470,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/native-authority/test/Main.hs": {
+      "sha256": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
+      "size": 19652,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/HANDOFF.md": {
+      "sha256": "401861bea381583225e4ffc4f4c541ccc72fa6e8a525a9a6139a01d70995f06e",
+      "size": 2562,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/README.md": {
+      "sha256": "cdca392be058d884733e7e9d3f9241b47991247d6b7c7fb94c24895b541553da",
+      "size": 7385,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/RETROFIT.md": {
+      "sha256": "4ff2abe3e7626ef0d572e666a297bfa97f992a678d46ed411829ab3909482360",
+      "size": 883,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/SHA256SUMS": {
+      "sha256": "aa08200922b446d3c2fad67719b0f00343c9f5ae0444838040091290cd027cf9",
+      "size": 1823,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/SOURCE-MAP.md": {
+      "sha256": "d16d0445e3d2f1f71e3f58c0cfa8c72f78b15365a1b74b04054dbfcb032aa290",
+      "size": 2595,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/fixture-bootstrap/FacadeChild.hs": {
+      "sha256": "75b3101897b3c15b71df9b32931f9e4a6aa7122d9edc2aa10790c16065b567f2",
+      "size": 312,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/fixture-graceful/Main.hs": {
+      "sha256": "b860aa9af6d6749e7898cacc60b10889558dadb68ee5e68dcbda1912d85caf22",
+      "size": 1439,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/fixture-selected/Main.hs": {
+      "sha256": "ddb77f498858d132315f2768854e7e74a78fbf18b7f081cf49191a1e7d3806de",
+      "size": 3323,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/fixture/Main.hs": {
+      "sha256": "3a6c1baefca82d447ff03566b254758a4f86c1386589e99e2255717d7a707610",
+      "size": 922,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/process-custody.cabal": {
+      "sha256": "45c21dc95a43da4e9e43697e10cb31e87f840b9d89ddbdfc55e8935688284692",
+      "size": 3077,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/qualification.json": {
+      "sha256": "8dc5086cd83edd072deab11651a3e5a5f34f5d7c4f2f32dae7b14e65cf187716",
+      "size": 4904,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process.hs": {
+      "sha256": "39a0805202bd0843affe2c32bfc0c8f9f79197231a94f1f2e6c40905dcf96fef",
+      "size": 704,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": {
+      "sha256": "b98d37b2bda016c82fc764114502ef19d28826c2c4086a3744eb0e7fd4c09319",
+      "size": 1413,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": {
+      "sha256": "30b1c58267106e7e16fd2184598ea8624a4c58950f0854e6a690a6ef94e9b722",
+      "size": 42865,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs": {
+      "sha256": "d1162d1206d0d0107a3f771c58cfc28af46b1d1b4a042634d767253cec64a5e2",
+      "size": 342,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs": {
+      "sha256": "c8496170eabfe8f5e3383c3cb0860630499b19052c0b5179a1a4fc7f8f7d9d8f",
+      "size": 19474,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs": {
+      "sha256": "3f42fb3b628a0c3f93f138373f26bef28fad9d304415c37563c414a01ff4a2c7",
+      "size": 2753,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs": {
+      "sha256": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e",
+      "size": 118856,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs": {
+      "sha256": "e6ac6bf23bc5568b6a88623d23bdf9fed2a4162d2cd4966e73db31c3342f8d66",
+      "size": 297,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": {
+      "sha256": "de3cfc758f9ee41e3d66c917853e5e7fe9c4476acff2db4a3f36cf366a83edb6",
+      "size": 5442,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc": {
+      "sha256": "62775261c983b9b2f8f256734c731fee492f1f4a327ceab845370bd6e82da416",
+      "size": 10827,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/DeadlineStop.hs": {
+      "sha256": "c11352b4e48dd7eaf3602aaea2bac4c7d1cd7b944096e03ab2c19cd328bb8dbc",
+      "size": 8212,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/ExitRaceControls.hs": {
+      "sha256": "7342c6c4c38082373095e79d66c4f9dd18223173894c21aa081246cc5feed2ab",
+      "size": 12899,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/Internal.hs": {
+      "sha256": "bc7d6362bf78adf4e5badf3e2e6285ec2496d7770b1e76c5f895f84edb621aeb",
+      "size": 18659,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/PersistentControls.hs": {
+      "sha256": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f",
+      "size": 74510,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/Public.hs": {
+      "sha256": "9ab22e6705dab47416b55126104fa160fda4fec6bbec4d3635d5d254adc34600",
+      "size": 397,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/SeededBatchHarness.hs": {
+      "sha256": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808",
+      "size": 2968,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/SeededBatchLifecycle.hs": {
+      "sha256": "d631fe70075d0c8cdbd8190509d4447b68c970bac5144aeba60690480198ce1a",
+      "size": 9157,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/SelectedFD.hs": {
+      "sha256": "c3748e48f8e520e7a2eba6b27611b445013d8c33d0d617bd7e861fbdf2f854a8",
+      "size": 7862,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/VerifiedFixture.hs": {
+      "sha256": "0c0212820247927fd52c1cf770b8bd3c6c4de625cff9a2c999951a2297ad308a",
+      "size": 1509,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/negative/CoreCapability.hs": {
+      "sha256": "9bd073b4e08cbb179fadd0eace46cfda3ab866d9b5c0201f12c4ae86e1a91110",
+      "size": 152,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/negative/RawIssuer.hs": {
+      "sha256": "1ad937597d06dbefb9ec9a5edec70f6a080684d47da6a2ddc590e3faadd5305f",
+      "size": 154,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/process-custody/test/negative/SelectedSpawnConstructor.hs": {
+      "sha256": "4c28b3897417504b9c09ed29922f798947c208237cc5a61883d334c5ab1e7314",
+      "size": 257,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/README.md": {
+      "sha256": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad",
+      "size": 4639,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/TRANSPORT.md": {
+      "sha256": "47985c788f31031987aa4c9082829b20426eab83045aa74a0f17ccd989a6f98b",
+      "size": 5368,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/formal/ACQUISITION.md": {
+      "sha256": "af661eb1131c7d0b5fbf815b976ad4899a19a27061bc5b8113b63cefa48d6c32",
+      "size": 2863,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/formal/README.md": {
+      "sha256": "c496560993a076d6766ae37a4279e6012b9401f9a74172e1f6b77ab8e11d345b",
+      "size": 2165,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/formal/acquisition.qnt": {
+      "sha256": "5e8ed18ddd56ee172f927cdde7e41fc60bb57448a9b7fb315bc8067b7151c592",
+      "size": 7669,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/formal/acquisition_test.qnt": {
+      "sha256": "e0caed809f42b63b7fd07d311fe692be533a5bad9d49dcd3a5b0efb7c331cec2",
+      "size": 7869,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/formal/handler_gate.qnt": {
+      "sha256": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f",
+      "size": 5681,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/formal/handler_gate_test.qnt": {
+      "sha256": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf",
+      "size": 17484,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/protocol.cabal": {
+      "sha256": "2fa2927f2cb50a586b3317a526b42d4b9ec84c8f7914cca809f6a47e8a0b1120",
+      "size": 6043,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/qualification.json": {
+      "sha256": "988dd7e0c6597dd22e6d43f808eb132ff377bd52ce249814b4a5ce4c334f82d4",
+      "size": 5256,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Boundary.hs": {
+      "sha256": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee",
+      "size": 368,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": {
+      "sha256": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a",
+      "size": 9514,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Codec.hs": {
+      "sha256": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+      "size": 6395,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/CredentialGuard.hs": {
+      "sha256": "f6f9ace572c62a0aba9412c457d172a4a1fd7bb24f357e13ed3e30d7158239a7",
+      "size": 438,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": {
+      "sha256": "85d91c8decf35f042c72783138df9faaad432607159d163e298a6ada0990db20",
+      "size": 1110,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Custody.hs": {
+      "sha256": "87a8d62a378359bf52589c426ac67f0376195493a2cf9e84d02c1253bac40e01",
+      "size": 1839,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Desktop.hs": {
+      "sha256": "1eaeadc26acfc423ff114fa3b1d383e53b7c641dfc9b062ed4063ab17d482890",
+      "size": 16993,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs": {
+      "sha256": "dab80f08576f4c8897366ff55d0f724dde34132006d5be50811525a8853ef32a",
+      "size": 1704,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Framing.hs": {
+      "sha256": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+      "size": 872,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Identity.hs": {
+      "sha256": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a",
+      "size": 2697,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Ingress.hs": {
+      "sha256": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+      "size": 556,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": {
+      "sha256": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9",
+      "size": 42714,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs": {
+      "sha256": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86",
+      "size": 2541,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs": {
+      "sha256": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+      "size": 546,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/PreviewControl.hs": {
+      "sha256": "9afb1006cd00c8f3dd54a3b684313e3cf6435da1bea89637075327aafcc73a79",
+      "size": 8537,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Profile.hs": {
+      "sha256": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+      "size": 542,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Server.hs": {
+      "sha256": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126",
+      "size": 16363,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": {
+      "sha256": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+      "size": 6740,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/Wire.hs": {
+      "sha256": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd",
+      "size": 6668,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Protocol/WorkspaceNavigation.hs": {
+      "sha256": "63baa4a3084f278073a218929e1a82282cc1cfa32d1cd21b2c136aa4159c3f33",
+      "size": 6256,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Transport/Channel.hs": {
+      "sha256": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8",
+      "size": 24636,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Transport/Frame.hs": {
+      "sha256": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+      "size": 2426,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": {
+      "sha256": "30cd41b3dad28cc980e48cdcb9b77e7c511cae4c3881440dd7bc0360bfb7d16c",
+      "size": 14890,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/src/Warlock/Transport/SocketFlags.hsc": {
+      "sha256": "dc12bd6112f1bc146123303f5b799d5e6186b03eab5277ac164b13e08b97b482",
+      "size": 2026,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test-desktop/Main.hs": {
+      "sha256": "44e2b847e566a98b62278a4e534244e6c1b878683046d7ecb65d4bcbb09c2ac0",
+      "size": 20679,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test-preview-control/Main.hs": {
+      "sha256": "185acf36f9e8688b70bb94a87b449f4cdf356d24dbfc797ae1112c32bbdb344d",
+      "size": 13551,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test-workspace-navigation/Main.hs": {
+      "sha256": "e43a06259a5ec39a12e64cd3e87886c5333c61f011b02d39e5e678a294c90c56",
+      "size": 4184,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test-workspace-navigation/WorkspaceStandaloneLiterals.hs": {
+      "sha256": "f407ff12ddd2df22ca00bb4a25c5e8ec825d5fd5b60ffa3dc2b6d14e24b8cf69",
+      "size": 48763,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/GuardControls.hs": {
+      "sha256": "6698548053e57a128f3341017b35a222e10fcd27aa302751ebb1c6ec43ff0eb4",
+      "size": 5500,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/Main.hs": {
+      "sha256": "4e19a493ce14da32d1b67dd152ee3c8feba1f65dea50be0df5d153be477f663c",
+      "size": 7749,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/OwnerControls.hs": {
+      "sha256": "7757bf34257e90bf56d3c5baea54f24c28beea8a2da9820e5b04aee40d41cb3c",
+      "size": 21608,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/OwnerSequenceProperties.hs": {
+      "sha256": "eda99bb99ef18eb59d2403071b8fdbbd2855c927d3adc9223335e9d6044558b8",
+      "size": 5267,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/PeerCredentialsCases.hsc": {
+      "sha256": "4b132ee6e37a6cf0197ff1f934b2c68b9821f93ee7023a6c36ffceef65be45a1",
+      "size": 13915,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/QuarantineControls.hs": {
+      "sha256": "a37aefb1d8fd54be04b95f76f2d4b84ddbbe652684cb30d1246f4a82d00a2c49",
+      "size": 1305,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/history-valid-positional-key.bin": {
+      "sha256": "4ab5dcab96c18db6a50b667b6d98fe773ae3ac479c594471a00acf6ed7f844fa",
+      "size": 1522,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/invalid-context-lifetime.bin": {
+      "sha256": "5a7f6ebaef0f441407a3288b47f86e7b667ee4b543e7e3c9b6963d93770b3606",
+      "size": 308,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/invalid-duplicate-key.bin": {
+      "sha256": "534a4bfbbc280c837dda31c926a21821259158859ac9aa48a256e2255d51698d",
+      "size": 108,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/invalid-extra-field.bin": {
+      "sha256": "031fa55a5c29a3d90edbea97e40cde527d54d2514d3b0868888777da8ffbf420",
+      "size": 103,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/invalid-kind-unknown.bin": {
+      "sha256": "1b010a8971b514dae3cee63cb0e8df4eab82e100730ec354b723d62c1237fe84",
+      "size": 95,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/invalid-version-boolean.bin": {
+      "sha256": "19e7004d4f7fede867da179fc74a5140407513efe50657bb9c534fe8cf9e0297",
+      "size": 96,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/invalid-version-unknown.bin": {
+      "sha256": "4b15479df542ecefcaefb0bf171bd88510c3b785f1ba8d0201c5e178a280809b",
+      "size": 93,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/lookup-v2-request-live.bin": {
+      "sha256": "4b4ac27237d62ded83b0439dd949c8d7eec80b92b9540da5c82bd614be426103",
+      "size": 697,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/lookup-v2-result-absent.bin": {
+      "sha256": "7e5dbf851ce53812d7613cfa17b5ae6275c5d901a72acb989a19592bb2c41931",
+      "size": 748,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/lookup-v2-wrong-key.bin": {
+      "sha256": "8054dd3a23c0c0b6cabec06e82de9ed6eabc54882a3fef0db27b716eee2a4e90",
+      "size": 750,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/valid-hello.bin": {
+      "sha256": "cd15d1f8e15be5aaf86fefef213ba4c7ff167ae5527bd8a7195213c8f3198798",
+      "size": 93,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/valid-negotiate.bin": {
+      "sha256": "80fd224e5d644eefddc92598527d3b4e0c5cd372a5d7d9327db250054b62e34e",
+      "size": 113,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/test/fixtures/valid-prepare.bin": {
+      "sha256": "0d3341e70d17fbe5967dc898efcc978ff05b9029e80d60aee971ca9cfb8f2ed1",
+      "size": 308,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/protocol/transport-qualification.json": {
+      "sha256": "47afea44d3dc724866010a7be1c975a195673f269907b343f2334c4b63fef036",
+      "size": 9459,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/README.md": {
+      "sha256": "806a9a4f3e41afc100c15c24ea6ae5bfe06a8d88dfdf9bbe71ed7be79b22a215",
+      "size": 6597,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/app/Main.hs": {
+      "sha256": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+      "size": 689,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/fixture-peer/Main.hs": {
+      "sha256": "00fcd03b1babc7e9c45a954871a03f0aea15b48ced03ac496906aac8ae6cef3d",
+      "size": 12443,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/fixture-ui/Main.hs": {
+      "sha256": "f63550d4b9538b13afbd8a875554b56b7e3a5ece95ee1a7e76a7c3a17b795425",
+      "size": 6109,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/README.md": {
+      "sha256": "9eb7d65f0e922ff3fced324bbb054936fe8fd720817a7faa77be5c127484bc56",
+      "size": 2895,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/current_registration.qnt": {
+      "sha256": "f3f4cbd87ea61db42d94250361a834a037e7d4b8638f51d410859435c6186c84",
+      "size": 8171,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/current_registration_test.qnt": {
+      "sha256": "157288b0e7f37e6696b6f898ea52882ae3b9f237b1065814a5b000217f363e78",
+      "size": 5918,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/desktop-idle-lifetime.qnt": {
+      "sha256": "cda6a2b40aeb37341266bc4be64ed76e3157a77e334e0e70cf1de9c3296260f5",
+      "size": 12242,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/desktop-idle-lifetime_test.qnt": {
+      "sha256": "c43aec201bf10ae1c77739de90e9cae4f0ac39df6fbb3ce27052de2a35de6d29",
+      "size": 7308,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/qualification.json": {
+      "sha256": "94deb979ba0e4e20b0a211ba5f0822154d441a73759cd6e99372b508a05af9d8",
+      "size": 2139,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-engine-lifetime.qnt": {
+      "sha256": "4d9dc045213c038d12f68c46941fd72b6357222536122e7a693f910edfc9be8d",
+      "size": 10088,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-engine-lifetime_test.qnt": {
+      "sha256": "2ad115151339fd2270e8282adc62f97a6eef89aa732734b4654b84d5bbd882e3",
+      "size": 8739,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-engine-rpc.qnt": {
+      "sha256": "19d0ffa4ede4cb26aeb7ca6c0e2bc8bb278e62c130e24b41bbb36bd3c7a8ef1c",
+      "size": 10969,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-engine-rpc_test.qnt": {
+      "sha256": "bed49b4d7b1dfdb0de8cd83eeaf773ad7da370f9457f9034a2414d660091cae9",
+      "size": 7388,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-engine-topology.qnt": {
+      "sha256": "2d8dee2443cc0416f7c74ce15c85ce3e67702a62633579ce6bdc8a94e3915fa6",
+      "size": 17763,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-engine-topology_test.qnt": {
+      "sha256": "b144821aad2314c5102657afebcef0185567a8e42e75ba5f7851220eb380d55c",
+      "size": 9642,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-frontend-delivery.qnt": {
+      "sha256": "90698235d64f2a18ac80061e736a2c8491a5d2322f18398e4e378d22d708658e",
+      "size": 6628,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-frontend-delivery_test.qnt": {
+      "sha256": "cd31602f2219f4d5f31f89463922de65572fda83c90f6753fe98f400d23c4b98",
+      "size": 7340,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-http-admission.qnt": {
+      "sha256": "fc30a884c6858cb52bd4574fd52caf28f9cb79fdc467c62bc760eb5053c791df",
+      "size": 8552,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-http-admission_test.qnt": {
+      "sha256": "25ba6a42ee4e4dea0978c2ce991c0cbea41703296b7b180d60b9bea748689549",
+      "size": 7677,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-origin.qnt": {
+      "sha256": "85a9b419371f5d527409afffe90ce10ebffd042df749bf0dc177c286bca19f11",
+      "size": 11116,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-origin_test.qnt": {
+      "sha256": "4d1451995bf95dd3155860c2d49011e790d185b24d44b6fd728897a57d53e057",
+      "size": 7113,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-private-network.qnt": {
+      "sha256": "ce2e9444cd429f600030f5a8193c9d643838c128f1614816ba2dfe922e019955",
+      "size": 6916,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-private-network_test.qnt": {
+      "sha256": "fdd7d248ea6ad03176aeb4d197e33ad2d5a5aea0e1297840d451d9efa56f6ce3",
+      "size": 3852,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-standalone-bootstrap.qnt": {
+      "sha256": "0ab50a535e453613c1ae32b64e7f0958f4b79549c8a658db2d1a257548f36eab",
+      "size": 6637,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt": {
+      "sha256": "358ad7edbc190951e76bc097d5e611f060cccb5bb195841952133adf316323e3",
+      "size": 5492,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/qualification.json": {
+      "sha256": "ccb70a02d87f851cce36f05f53a300f8146ca48ac3835a9174a1dc244fbe2b54",
+      "size": 13607,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/runtime.cabal": {
+      "sha256": "17e60a7a8e6e021535311a4d4628e6bdb541e0a0c36513a8c9bbc36fdf92d5a4",
+      "size": 10816,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Backend.hs": {
+      "sha256": "a857be418b684cfcb967564a9004331d5f95e752f3e9ccfeae5e21fafabbb0ab",
+      "size": 21064,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Backend/Catalog.hs": {
+      "sha256": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+      "size": 7168,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Backend/PinStore.hs": {
+      "sha256": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6",
+      "size": 4351,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Backend/Store.hsc": {
+      "sha256": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+      "size": 17247,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Bootstrap.hs": {
+      "sha256": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+      "size": 842,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": {
+      "sha256": "fdf9b224707611600919b349e868fd2883dbc637e9d5707750191dbd21a9a824",
+      "size": 13717,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": {
+      "sha256": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+      "size": 1675,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": {
+      "sha256": "6047f19ea3020c0860a54e0666c2866846aa77cd8643fc550f145bb66efe2a39",
+      "size": 5448,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": {
+      "sha256": "9836f7e5020efbbe917b8c2de4dd0de015174f28eb0484a554f98abfff0d7f18",
+      "size": 7126,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": {
+      "sha256": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219",
+      "size": 16397,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/Config.hs": {
+      "sha256": "e737412f400ae5a9d53625152a23bbc8883bb6558d85770dd8e14bcb4bb8f969",
+      "size": 6252,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/Display.hs": {
+      "sha256": "960d6ad3b82f5d7f06bf2ab26973e8cdcda509f23394ab6ca629a19d0432f1ba",
+      "size": 3255,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs": {
+      "sha256": "c16a52b5d63a4a9000d5bcde40d0f4b37fdd52eba943a34b924a20ee319bda79",
+      "size": 5593,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/EngineBroker.hs": {
+      "sha256": "63cebd1a5ec38b7faa6b713dacec64f62b1e15e5cda8dbc1284dd757e6d29a04",
+      "size": 18764,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs": {
+      "sha256": "e4c842070ec57eea368f50519081668433a92874c93d0a13983f154c3a4b0182",
+      "size": 5028,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs": {
+      "sha256": "c9191618a8006b9bfb1f62b09a918bd1bde409cfa7a4b9771a928493af977105",
+      "size": 21259,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/Http.hs": {
+      "sha256": "1684af2c7eeee727fc3007e6dcda90da52ad48fe9926a22a9ed489bf6050b1e0",
+      "size": 4938,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/Native.hs": {
+      "sha256": "a3467864d1f675d7943c6799d5b192f7a36f5494792fb6e2cb9f1671d6053665",
+      "size": 4625,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/Owner.hs": {
+      "sha256": "3585e3ca0f8fbca8dc9b66d54821e8e60707b6798550945ea983c81a4181926f",
+      "size": 26664,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/Policy.hs": {
+      "sha256": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40",
+      "size": 6185,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc": {
+      "sha256": "2205761421203a631a1dc861c55501c8356e5630e96de3206dc00f986531fd2b",
+      "size": 15528,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs": {
+      "sha256": "3a8504a5dd8fb4dac2b7c721da5e141cf571dae18f5c814dfd11bb5ebb8f3e2f",
+      "size": 879,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-notification-config/Main.hs": {
+      "sha256": "75acf70ffbb678c0679bbb23e7ca4be86e9d9859b5888b9fbf040327c3c5f72f",
+      "size": 16873,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-persistent/Main.hs": {
+      "sha256": "9768921ea4b0990fe5dd31165c93a9d4d1dc892b47e4e238c0c9f6cc746020b0",
+      "size": 30529,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-display/Main.hs": {
+      "sha256": "2b020a41d0884f0341e7f02cea74ecb6f48a821b32b95c87f1c594a72d24501e",
+      "size": 4535,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-engine-broker/Main.hs": {
+      "sha256": "25fb10fe6f63630454da88f7cdd956c068a6d534dd6c159a27fd142a3903d0d1",
+      "size": 13153,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-engine-exec/Main.hs": {
+      "sha256": "7a5c90aec72f862a06afee78fe9d16399c2f561efe555e05f7ef7f6ddc3998b0",
+      "size": 22804,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs": {
+      "sha256": "b5741ca909729a17c529c24e41e47359e7b2dc02b6cbd5b506fb4fb48c1ef74a",
+      "size": 16905,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-engine-protocol/Main.hs": {
+      "sha256": "155fe0122a876ad0a8044db45f0eb9c366c0a3d5521b55028817166408628083",
+      "size": 18901,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs": {
+      "sha256": "3e294c7a095bf5b67c5396b3f2377affb02882d7136a814d95838552dbb07759",
+      "size": 4528,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-engine/Main.hs": {
+      "sha256": "4773df5cf63c135a317738ff322bd0087de8d66674dae750e971968f63edd455",
+      "size": 8763,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-mvp/Main.hs": {
+      "sha256": "ba1012199a4bed25875541fbd2591f13c25448da7da9506c613cbcd23f6d7141",
+      "size": 12756,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-origin/Main.hs": {
+      "sha256": "0ec52ba66edf9decf5ee45f808eee496be20302529402d17d09a8fe13c7bc0b0",
+      "size": 58099,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-private-network/Main.hs": {
+      "sha256": "9e7c5a86b2d7cdc8c3c506197ff0e7c60e03d83563068dc0a1ad0396fa33acfd",
+      "size": 15512,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-security/Main.hs": {
+      "sha256": "c373717c77ae9dab682b57c112ef5ed1d934a8e2def63fb207d9bd6d0b1ff954",
+      "size": 6636,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-security/Parent.hs": {
+      "sha256": "578448d677c41473d1c2f1095cc97d7ad791b4d0278c75dcace0a5e0d317d949",
+      "size": 11195,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-security/Permissive.hs": {
+      "sha256": "14c6006ae86679245c2e71264f0c48f0e9b13fba50ee5f3293b38cd2f9e65718",
+      "size": 14027,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-security/fixtures/probes.js": {
+      "sha256": "3f2abf6f2ca0a7aee85ba0ada522933454307f4d6ac9ce6b192166d1b8d8cce8",
+      "size": 5210,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui-webkit/Main.hs": {
+      "sha256": "03f6e7e341690b68b174db411182cbb5fa4ae0e099ec38f8c3a32f473998b2f2",
+      "size": 14470,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test-ui/Main.hs": {
+      "sha256": "f522408fc45e2077c41cdf262cc438f4ee9ae7afc000a316da94974ed36d3e61",
+      "size": 24606,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test/CurrentSessionsControls.hs": {
+      "sha256": "31d4038dc700006bbb7521c4a7ceb9a3a176aef742546cad2c018bcaada31587",
+      "size": 9456,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test/Main.hs": {
+      "sha256": "98ad395210d26fe7c244c5d75056563f4d23fc707e14675d2f0df0b0e741fab1",
+      "size": 5488,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test/OwnedControls.hs": {
+      "sha256": "6e54634fa6fab03e9b830faa9d13fd7943842cd49d6b6404494d7cb260b2cf9d",
+      "size": 15662,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test/PublicationControls.hs": {
+      "sha256": "504273c7d9c7605ad79a725c22ca58158ccb67b16b3b4a7ae75b77cc39220779",
+      "size": 6294,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test/ScopedPeerControls.hs": {
+      "sha256": "07f39cc70a82eca00ff85970635175f9df39bbf2936506156ad406053b3ab52d",
+      "size": 4167,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/test/SocketHandoffControls.hs": {
+      "sha256": "91ae3d484ef7ef91dc0c85822c1947b652243f3e80d8e61d8ff3ea9d1c4a4007",
+      "size": 2337,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/ui/Main.hs": {
+      "sha256": "50d9ebd707026536cb95054414cf587602adb2c845ca8f207145e999c757eda7",
+      "size": 4815,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": {
+      "sha256": "5028eed1eae2df6f066d3868777af686aa0ddb889a651159b26cb3369c4129de",
+      "size": 45199,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs": {
+      "sha256": "941d77695c96f5456cfff9a2d5d452088a2668df58f0c96c0e3c830901f17080",
+      "size": 18905,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": {
+      "sha256": "57b150fd2b9652049141a911d75126d1e88452cc14b57462104e327067e5dce6",
+      "size": 44152,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/ui/Warlock/Ui/WebKit.hs": {
+      "sha256": "b1f00b0db2370fee7442cbfa30ebfb6ed06911a704b4299a4f1f61f3650ea79a",
+      "size": 30099,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc": {
+      "sha256": "8a016b2cfa837b1874019f376d7e4d1c333f3064ea48e62787565e4a616f40e8",
+      "size": 270,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/logs/list-notification-config-controls.stderr": {
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+      "size": 122,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/logs/list-notification-config-controls.stdout": {
+      "sha256": "2d003a6165c7fe23b31854ac75e2a84f752cbcf09cf0770163dbcebc9f695c14",
+      "size": 238,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/logs/notification-config-build.stderr": {
+      "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5",
+      "size": 1133,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/logs/notification-config-build.stdout": {
+      "sha256": "a2aa02b0cacf6cee1c3944aa8ff9cab8c8236fd76e1777ef114f362315663729",
+      "size": 52140,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/logs/notification-config-controls.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/logs/notification-config-controls.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/report.json": {
+      "sha256": "51add481c502c63639eeb9898c872ffb4a1a78090abaa3f34f1830e188a07832",
+      "size": 39767,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/default.log": {
+      "sha256": "904284d58e19174d362cb949c181caee2b3d33beecb506c95d8c4e39e8a43114",
+      "size": 842,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/image/notification-config-controls": {
+      "sha256": "55fa179fe06c9d75821199a82930de58b7dccc3b28c678ac78d0c54c7e8ca1c2",
+      "size": 33697864,
+      "sourceMode": 493
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/results.json": {
+      "sha256": "8035ef17cde7ec5c619d0165e308de56d0399202fd8e6a168f1e47ca452c091d",
+      "size": 712,
+      "sourceMode": 420
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/abstract-refused.json": {
+      "sha256": "a2359c5f1e5c22fef9b03914c139c467838699bd537b455f7f85344f48eeee65",
+      "size": 397,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/array-refused.json": {
+      "sha256": "5e27f12456329de31bc6eeba73c85338ac18b7626f1600421f193c47f7a361c8",
+      "size": 376,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/attachment-and-address.json": {
+      "sha256": "b06ae7c29e35e20c4abeca8fbb1736228ca854c88f128dcc71cee4284478f854",
+      "size": 437,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/bool-refused.json": {
+      "sha256": "7aaea6b6a081bff40ba166d5b58dd530ecf353764b196980043dcacdd211dc19",
+      "size": 378,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/control-refused.json": {
+      "sha256": "24f9eed329c0cf7ef03cd8e1300f001317464eb690f233edc8dd70a8d993a1f3",
+      "size": 397,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/dot-refused.json": {
+      "sha256": "2328f76c1fc85d6cb58c5ed2dc81e61881345d0cf8d7d77000b0ed096dd987c9",
+      "size": 396,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/duplicate-guid-refused.json": {
+      "sha256": "285a56d63249c28048e7b74699d0674aa5327f9ad4f90d006ecc0d2b2b222d70",
+      "size": 484,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/duplicate-selection-refused.json": {
+      "sha256": "ea39fc85f8dcfe82fdb5100638de3f15103feba141b807163c039f54e739a51b",
+      "size": 468,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/empty-segment-refused.json": {
+      "sha256": "86f782bea4711ab725f1633ef8753141324534a49124ae07725f1063908bd746",
+      "size": 395,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/explicit-guid-preserved.json": {
+      "sha256": "bef4021307726b3717295798e6ab8798192e6319036e16c65a786b6be4a901f8",
+      "size": 446,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/explicit-private-address.json": {
+      "sha256": "1a72cd28e823bc8fe65db80cc1a26c5726e604ed6e4017a7bc92d071f9c638d8",
+      "size": 408,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/guid-length-refused.json": {
+      "sha256": "b8d06fbbe9407b031466a9d5ba76d06601b6f749853b622a147015a3bf804528",
+      "size": 445,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/guid-uppercase-refused.json": {
+      "sha256": "8f86d4882c3ebdfc90639c57adbe74e4c5d5b69ba9921fc8e693d17e8c118011",
+      "size": 446,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/list-refused.json": {
+      "sha256": "a9a548c27417ebc4f1137521a7024e2072d1da23079c0c46daf8f952f6fc1e25",
+      "size": 441,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/long-path-refused.json": {
+      "sha256": "e0651fba8dcfa9acaf360010e85478a410a6d6978dbc049440f42c244e684324",
+      "size": 4483,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/null-refused.json": {
+      "sha256": "89771ff6fe881c09f36160c9eeecc4dbb5a58bd83c220d8acb399dbb9abec9b0",
+      "size": 378,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/number-refused.json": {
+      "sha256": "044219cf279dc0c6f19aecfd30336fa74fe76ab2d33d62094f6d1ca810406bb4",
+      "size": 375,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/object-refused.json": {
+      "sha256": "1f15de49c991d9a5f071b01b28b7b0cf62fdf39bf0fd0ef76a4977affbaaec52",
+      "size": 376,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/old-attachment-unconfigured.json": {
+      "sha256": "583d4f22df4c89647df9bbbcc03adafefecd087b3882930c1e6e8174868c27db",
+      "size": 377,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/old-config-unconfigured.json": {
+      "sha256": "b252035170597050e5ce4bb21db69c6cd543f15ea94652af47f9946c343c8a25",
+      "size": 348,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/parent-refused.json": {
+      "sha256": "0cd7118c5f8d44fb55c14a11329483abca5cf69eb793f46884038e6c72a491cc",
+      "size": 397,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/percent-refused.json": {
+      "sha256": "a6a7b40d148ec81ae52f2ad7a2eaea2bbf2411e356c70043a157e52c155ff754",
+      "size": 396,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/relative-refused.json": {
+      "sha256": "35ef381cd9000d1e5ccebc22f472adc5c8237b3fae31534170cbf543ee93c5d3",
+      "size": 393,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/root-refused.json": {
+      "sha256": "44b9bf1afe88770940378020c414b159a14d85721c06cac3bb6687d86214ab61",
+      "size": 387,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/space-refused.json": {
+      "sha256": "bcf95eb90ad468c95914e13beea786cf7afce1e90f43a1ade48f14f11badac6f",
+      "size": 396,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/tcp-refused.json": {
+      "sha256": "bb42597be031fb9a7e62c71851bebfe2c4f3126e14ae03fc7aae8e93e47e506b",
+      "size": 401,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/trailing-slash-refused.json": {
+      "sha256": "61374e80c95099885c4e3f3dbbe52d097f3f445f0f8a6ec2461eac7b5cdf56ce",
+      "size": 395,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/trusted-path-data-boundary.json": {
+      "sha256": "5d769d671739b85052bcedcca12c31fd8ba571204b7fbbec92bd032af115ec4f",
+      "size": 4482,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/unknown-config-field-refused.json": {
+      "sha256": "aedf9ade0c374d86e409426a8844eb5a0ef68d4ad1d704eb67a762e445594958",
+      "size": 364,
+      "sourceMode": 384
+    },
+    "runs/1793976156916010396/runs/notification-config-controls/storage/unknown-key-refused.json": {
+      "sha256": "3f0f53361a19d160035b0a5d9e388323a29741d9d50cf4df68a975e3d6652340",
+      "size": 416,
+      "sourceMode": 384
+    },
+    "inventory/manifest.json": {
+      "sha256": "7dee3723849a5e58a409a1e93de4bc10a11c213c8a8daa979e0fe03684eb7911",
+      "size": 176423,
+      "sourceMode": 420
+    }
+  },
+  "everyMemberRehashed": true,
+  "safeUniqueRelativeRegularMembers": true,
+  "internalManifestSHA256": "7dee3723849a5e58a409a1e93de4bc10a11c213c8a8daa979e0fe03684eb7911",
+  "scope": {
+    "schema": 1,
+    "red": {
+      "run": "1793976028837131648",
+      "classification": "MissingconfiguredNotificationBusAddress API/compilerRED",
+      "thirtyChecksRan": false
+    },
+    "green": {
+      "run": "1793976156916010396",
+      "classification": "Bounded config data parserGREEN",
+      "exactOrderedTrueChecks": 30,
+      "normalExitRequired": true,
+      "timeout": false,
+      "forcedCleanup": false
+    },
+    "sourceBodyLimits": "238of240nonforeignexactbodies perrun; bothforeignbodies omitted,pinsretained. No240bodycompletenessclaim or ownershipadoption.",
+    "generatedProject": "Offline rewritten cabal.project remains generated artifact; no sourceequivalence claim",
+    "binaryPolicy": "Retained copied33MB executable included from wrapperrun; originaldist image bytes excluded, originalpin retained inreport.",
+    "retainedWarnings": "All selected stdout/stderr/build/linkerlogs preserved verbatim, no cleanwarningclaim",
+    "SDK": "Manifest/pinreferences only; no SDK/cachetrees or fullSDK reconstructionclaim",
+    "nativeAcceptance": false,
+    "fullSchemaAcceptance": false,
+    "originalAcceptance": false,
+    "releaseAccepted": false,
+    "qaCompilerAuthServicesOrRepositoryWrites": false
+  }
+}

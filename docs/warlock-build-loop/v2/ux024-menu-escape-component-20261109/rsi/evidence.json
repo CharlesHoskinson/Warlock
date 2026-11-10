@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "disposition": "adopted",
+  "candidateSha256": "a077ed90eb3bd4381b073ad7f09928e02a9b0906463366635bb8431e1a0a14c0",
+  "integrationRevision": "c36c2e693edc4acabd77359827d3e2a0b485fcee",
+  "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+  "proposedChange": "Document candidate.id for managed CPU invocation and candidateSha256 for event identity.",
+  "refutationCase": "The same actual refused51017/correct66252 task distinguishes missing versus present ID example while3actual installed predicate/forwarding controls pass.",
+  "reason": "Prevent repetition of the observed pre-spawn ID/SHA mixup without changing runtime guards.",
+  "baselinePlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-candidate-id-reference-v1/baseline-plugin.json",
+    "sha256": "1d3232ab44a37e07930d69f8357eb7ea019b77b784e945bd415614740a03981f"
+  },
+  "baselineHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-candidate-id-reference-v1/baseline-harness.json",
+    "sha256": "29c6d6be3c85e12203aa23f5731d94661489650f72e5d9af4b127e4f0ab70940"
+  },
+  "resultPlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-candidate-id-reference-v1/result-plugin.json",
+    "sha256": "46a823592993ce74b97a0d4231b100921bd7ec545480df9a188f8cf60003bb98"
+  },
+  "candidateHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-candidate-id-reference-v1/candidate-harness.json",
+    "sha256": "25d6d44036fc0aedf028af943e7fbf3203f7f51f61356da0434b6d94f5e7aae9"
+  },
+  "comparison": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-candidate-id-reference-v1/comparison.json",
+    "sha256": "fe61fa379e42a4e3bba46ac846c21241528d1eb9ff0a0d651a527fc055524f7b"
+  },
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-candidate-id-reference-v1/regression.json",
+    "sha256": "7a2a923bae5a35f9b9b215a67d19f42d801042a6162e97f65e713ec9eb9d325c"
+  },
+  "rootReview": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-candidate-id-reference-v1/root-review.json",
+    "sha256": "dfa460540b531dfaef5f46e6219a03107d7d1adc6749d220f7b85d933865adff"
+  }
+}

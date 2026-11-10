@@ -108,14 +108,123 @@ def team_quint_inputs(root, pair):
             prefix + 'tea004-preview-' + pair + '_test.qnt'}
 
 
-def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False):
+def arm64_inputs(root, subscriptions=False, preview_control=False, protocol_only=False, consumption=False, successor_focus=False, workspace_owner_baseline=False, workspace_owner_component=False, workspace_owner_component_red=False, workspace_original=False, workspace_dom=False, daemon_only=False, application_availability=False, native_stage_build=False, provider_probe_build=False, provider_callback_build=False, physical_context_owner_build=False, physical_context_owner_bridge=False, physical_context_owner_backing=False, virtual_pointer_build=False, ux003_journey_build=False, aquamarine_build=False):
+    if aquamarine_build:
+        manifest_name = '.warlock-contributor/evidence/nextloop-20261106/aquamarine-build-inputs/inputs.json'
+        manifest_path = root / manifest_name
+        if manifest_path.is_symlink() or digest(manifest_path) != '9e7347b8903b162c9042b5be6d3b6f52b3caac962fcb3d9b194c4d444ba9feb6':
+            raise RuntimeError('Aquamarine supplemental manifest changed')
+        manifest = json.loads(manifest_path.read_text())
+        names = {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
+                 'tools/aquamarine_build.py', 'tools/test_aquamarine_build.py',
+                 'tools/run_arm_nested_foundation.py', 'tools/test_arm_nested_foundation.py',
+                 'tools/run_arm_gl_foundation.py', 'tools/test_arm_gl_foundation.py',
+                 'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
+                 'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
+                 'tools/haskell-dependencies.json',
+                 'window-integration-qa/qa_launch.py', manifest_name}
+        names.update(name for name, entry in manifest['files'].items() if 'sha256' in entry)
+        if any(Path(name).is_absolute() or '..' in Path(name).parts for name in names):
+            raise RuntimeError('Aquamarine supplemental input escaped repository')
+        return names
+    if ux003_journey_build:
+        names = arm64_inputs(root, physical_context_owner_backing=True)
+        names.update({'implementation/warlock/haskell/runtime/fixture-ux003-native-observer/Main.hs',
+                      'implementation/warlock/haskell/runtime/src/Warlock/Backend.hs',
+                      'implementation/warlock/haskell/runtime/test-application-owner-route/Main.hs',
+                      'tools/run_ux003_native_journey.py', 'tools/test_ux003_native_journey.py'})
+        return names
+    if virtual_pointer_build:
+        return {'tools/haskell-toolchain.json', 'tools/check_arm64_cpu.py', 'implementation/warlock/qa/native-runtime-helpers/wlr-virtual-pointer-unstable-v1.xml', 'implementation/warlock/qa/native-runtime-helpers/virtual-pointer-protocol-provenance.json', 'tools/ui-host-toolchain.json', 'tools/provider_callback_build.py', 'tools/qa_cpu.py', 'tools/elm-http-dependencies.json', 'implementation/warlock/qa/native-runtime-helpers/LICENSE.wlr-virtual-pointer.txt', 'implementation/warlock/qa/native-runtime-helpers/virtual_pointer.c', 'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py', 'tools/arm64-toolchain.json', 'tools/arm64_toolchain.py', 'tools/virtual_pointer_build.py', 'tools/test_virtual_pointer_build.py'}
+    if physical_context_owner_backing:
+        names = arm64_inputs(root, physical_context_owner_bridge=True)
+        names.update({'implementation/warlock/haskell/runtime/ui/Warlock/Ui/FilterBackingRoot.hsc',
+                      'implementation/warlock/haskell/runtime/test-filter-backing-root/Main.hs'})
+        return names
+    if physical_context_owner_bridge:
+        names = arm64_inputs(root, physical_context_owner_build=True)
+        names.update({'tools/haskell_test_wrapper.py', 'implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs','implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs','implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs','implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs','implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs','implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs','implementation/warlock/haskell/runtime/ui/Main.hs','implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc','implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs','implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs'})
+        return names
+    if physical_context_owner_build:
+        # Finite compile/link-only extension; all original callback mode guards remain.
+        names = arm64_inputs(root, provider_callback_build=True)
+        names.update({'tools/physical_context_build.py', 'tools/test_physical_context_build.py',
+                      'implementation/warlock/haskell/runtime/ui/Warlock/Ui/DefaultContextOwner.hs',
+                      'implementation/warlock/haskell/runtime/ui/Warlock/Ui/CallbackRetirement.hs',
+                      'implementation/warlock/haskell/runtime/ui/Warlock/Ui/ProcessSignalOwner.hs',
+                      'implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs',
+                      'implementation/warlock/haskell/runtime/test-default-context-owner/Main.hs'})
+        return names
+    if provider_callback_build:
+        # Fixed compile/link-only closure. No Elm frontend or native-stage campaigns.
+        names = {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
+                 'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
+                 'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
+                 'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py',
+                 'tools/provider_callback_build.py', 'tools/test_provider_callback_build.py',
+                 'implementation/warlock/haskell/runtime/test-webkit-callback-capi/callback-invoke.c'}
+        names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/haskell').rglob('*')
+                     if p.is_file() and not any(part in ('dist-newstyle', '__pycache__') for part in p.parts))
+        return names
+    if daemon_only:
+        return {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
+                'tools/arm64-toolchain.json', 'tools/ux031_daemon_only.py',
+                'tools/ux031-private-bus.conf', 'window-integration-qa/qa_launch.py'}
     names = {'tools/qa_cpu.py', 'tools/check_arm64_cpu.py', 'tools/arm64_toolchain.py',
              'tools/arm64-toolchain.json', 'tools/haskell-toolchain.json',
              'tools/ui-host-toolchain.json', 'tools/elm-http-dependencies.json',
              'tools/haskell-dependencies.json', 'window-integration-qa/qa_launch.py',
              'implementation/warlock/elm.json'}
     names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
-    if consumption:
+    if native_stage_build or provider_probe_build:
+        names.update({'tools/arm64_native_stage.py', 'tools/test_arm64_native_stage.py',
+                      'tools/omarchy_ui_mvp.py',
+                      'implementation/warlock/qa/omarchy_trial/test_application_staging.py'})
+    if provider_probe_build:
+        names.update({'tools/run_webkit_provider_probe.py', 'tools/test_webkit_provider_probe_runner.py'})
+    if application_availability:
+        names.add('tools/check_elm_cpu.py')
+        names.add('tools/elm_http_dependencies.py')
+        names.update('implementation/warlock/qa/' + name for name in ('ApplicationAvailabilityReplay.elm', 'application-availability.cjs', 'NativePointerFixture.elm', 'StandaloneMvpReplay.elm', 'standalone-mvp.cjs'))
+    elif workspace_original:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'TaskViewReplay.elm', 'TaskViewEscapeReplay.elm', 'WorkspaceNavigationReplay.elm',
+            'OutputRetirementReplay.elm', 'NativePointerFixture.elm', 'task-view-original-fixed.cjs'))
+    elif workspace_dom:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'WorkspaceUnsupportedDomReplay.elm', 'workspace-unsupported-dom-fixed.cjs',
+            'ui006-dom-guard.js', 'ui006-dom-guard.html',
+            'OutputRetirementReplay.elm', 'NativePointerFixture.elm'))
+    elif workspace_owner_component_red:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'WorkspaceOwnerComponentReplay.elm', 'Desktop-test-observer.txt',
+            'workspace-owner-component-red-fixed.cjs', 'OutputRetirementReplay.elm', 'NativePointerFixture.elm'))
+    elif workspace_owner_component:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'WorkspaceOwnerComponentReplay.elm', 'Desktop-test-observer.txt',
+            'workspace-owner-component-fixed.cjs', 'OutputRetirementReplay.elm', 'NativePointerFixture.elm'))
+    elif workspace_owner_baseline:
+        names.update({'docs/elm-roadmap/INTERACTION.md', 'docs/elm-roadmap/requirements.json',
+                      'openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md'})
+        names.update('implementation/warlock/qa/' + name for name in (
+            'WorkspaceOwnerLiteralReplay.elm', 'Desktop-test-observer.txt',
+            'workspace-owner-literal-fixed.cjs', 'workspace-owner-baseline-fixed.cjs',
+            'OutputRetirementReplay.elm', 'NativePointerFixture.elm'))
+    elif successor_focus:
+        names.update('implementation/warlock/qa/' + name for name in (
+            'SystemMenuReplay.elm', 'SolSystemMenuIntegratedReplay2114.elm',
+            'SystemMenuFocusPipeline.elm', 'SuccessorFocusReplay.elm', 'SystemMenuFocusExtended.elm',
+            'NativePointerFixture.elm', 'system-menu-typed-state.cjs', 'successor-focus-harness.cjs',
+            'check-search.py'))
+    elif consumption:
         names.update('implementation/warlock/qa/' + name for name in (
             'PreviewConsumptionReplay.elm', 'preview-consumption.cjs', 'LocalFieldReplay.elm',
             'NotificationsReplay.elm', 'JumpListReplay.elm', 'NotificationRelevanceReplay.elm',
@@ -165,6 +274,124 @@ def tea_inputs(root):
     return names
 
 
+def capi_invocation_controls_inputs(root):
+    # Only pure unittest/mocked-runner code; no compiler, SDK build or native target.
+    return {'tools/qa_cpu.py', 'tools/run_capi_invocation_probe.py',
+            'tools/test_capi_invocation_probe.py', 'window-integration-qa/qa_launch.py'}
+
+
+def menu_tab_dom_mode(runner, arguments):
+    return runner == REPO / 'tools/check_elm_cpu.py' and arguments == ['--menu-tab-dom', '--arm64']
+
+
+def menu_tab_dom_inputs(root):
+    names = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
+             'tools/arm64_toolchain.py', 'tools/arm64-toolchain.json', 'tools/menu-tab-elm-toolchain.json',
+             'implementation/warlock/elm.json', 'implementation/warlock/qa/ux024-menu-dom.cjs',
+             'implementation/warlock/qa/MenuEscapeReplay.elm', 'implementation/warlock/qa/menu-escape.cjs',
+             'implementation/warlock/qa/OutputRetirementReplay.elm',
+             'implementation/warlock/qa/ux024-bar-context-dom.cjs',
+             'implementation/warlock/qa/MenuInitialFocusReplay.elm', 'implementation/warlock/qa/menu-initial-focus.cjs',
+             'implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm', 'implementation/warlock/qa/ui011-observed-scope-retirement.cjs'}
+    names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
+    return names
+
+
+
+MENU_FOCUS_BUILD_PACKET = '.warlock-contributor/evidence/nextloop-20261106/ux024-menu-focus-build-v1-20261109/packet.json'
+MENU_FOCUS_BUILD_RECORD = '.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
+MENU_FOCUS_BUILD_IDENTITY = '60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
+MENU_FOCUS_BUILD_TARGETS = ('warlock-runtime:exe:warlock-ui-owner', 'warlock-runtime:test:ui-webkit-controls')
+OBSERVATION_SUPPORT={'tools/ux024_observation_qualification.py','tools/test_ux024_observation_qualification.py'}
+OBSERVATION_TARGETS=('warlock-protocol:test:desktop-boundary-controls','warlock-runtime:test:ui-mvp-controls','warlock-runtime:exe:ui-stream-child')
+
+def observation_elm_variant(runner,arguments):
+    if runner!=REPO/'tools/check_elm_cpu.py':return None
+    for variant in ('baseline','candidate'):
+        if arguments==['--observed-window-menu-'+variant,'--arm64']:return variant
+    return None
+
+def observation_inputs(root,variant):
+    from ux024_observation_qualification import load
+    return load(root,variant)
+
+MENU_FOCUS_BUILD_SUPPORT = {'tools/qa_cpu.py', 'tools/run_ux024_menu_focus_build.py',
+    'tools/test_ux024_menu_focus_build.py', 'plugins/warlock-contributor/scripts/warlock.py',
+    'tools/arm64-toolchain.json', 'tools/arm64_toolchain.py', 'tools/haskell-dependencies.json',
+    'tools/haskell_test_wrapper.py', 'tools/provider_callback_build.py',
+    'window-integration-qa/qa_launch.py', 'window-integration-qa/qa_run.py'}
+
+
+def menu_focus_build_mode(runner, arguments, packet_sha):
+    return runner == REPO / 'tools/run_ux024_menu_focus_build.py' and arguments == ['--sha256', packet_sha]
+
+
+def menu_focus_build_spec(root):
+    import re
+    path = root / MENU_FOCUS_BUILD_PACKET
+    fd = os.open(path, os.O_RDONLY | os.O_CLOEXEC | os.O_NOFOLLOW | os.O_NONBLOCK)
+    with os.fdopen(fd, 'rb') as stream:
+        before = os.fstat(stream.fileno())
+        if not stat.S_ISREG(before.st_mode) or before.st_size > 4 * 1024 * 1024:
+            raise RuntimeError('Fixed menu focus packet must be bounded regular JSON')
+        body = stream.read(4 * 1024 * 1024 + 1)
+        after = os.fstat(stream.fileno())
+    identity = lambda s: (s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns, s.st_ctime_ns)
+    if identity(before) != identity(after) or len(body) != before.st_size:
+        raise RuntimeError('Fixed menu focus packet changed while reading')
+    packet = json.loads(body)
+    fields = {'schema', 'kind', 'recordPath', 'recordIdentitySha256', 'selectionGeneration',
+              'authorizationExpiresUTC', 'coreSha256', 'targets', 'behaviorSuites',
+              'sourceHashes', 'haskellFiles', 'toolchainManifest', 'cacheCorrespondence'}
+    observation = observation_inputs(root,packet['observationQualification']) if isinstance(packet,dict) and 'observationQualification' in packet else None
+    if observation:fields.add('observationQualification')
+    expected_targets=OBSERVATION_TARGETS if observation else MENU_FOCUS_BUILD_TARGETS
+    expected_suites=(['desktop-boundary-controls','ui-mvp-controls'],) if observation else (['ui-webkit-controls'], ['ui-webkit-controls','foreign-endpoint-refusal-controls'])
+    if (not isinstance(packet, dict) or set(packet) != fields or packet['schema'] != 1
+            or packet['kind'] != 'ux024-fixed-menu-focus-build'
+            or packet['recordPath'] != MENU_FOCUS_BUILD_RECORD
+            or packet['recordIdentitySha256'] != MENU_FOCUS_BUILD_IDENTITY
+            or type(packet['selectionGeneration']) is not int or packet['selectionGeneration'] < 1
+            or packet['targets'] != list(expected_targets) or packet['behaviorSuites'] not in expected_suites):
+        raise RuntimeError('Fixed menu focus build scope differs')
+    hs = root / 'implementation/warlock/haskell'
+    current = set()
+    for p in hs.rglob('*'):
+        if any(part in ('dist-newstyle', '__pycache__') for part in p.relative_to(hs).parts):
+            continue
+        if p.is_symlink():
+            raise RuntimeError('Haskell build source alias refused')
+        if p.is_file():
+            current.add(str(p.relative_to(hs)))
+        elif not p.is_dir():
+            raise RuntimeError('Haskell build source special file refused')
+    files, sources = packet['haskellFiles'], packet['sourceHashes']
+    additional=(OBSERVATION_SUPPORT | set(observation['inputs'])) if observation else set()
+    if (not isinstance(files, dict) or not isinstance(sources, dict) or set(files) != current
+            or set(sources) != MENU_FOCUS_BUILD_SUPPORT | additional | {'implementation/warlock/haskell/' + n for n in current}
+            or any(not isinstance(h, str) or re.fullmatch('[0-9a-f]{64}', h) is None for h in sources.values())
+            or any(sources['implementation/warlock/haskell/' + n] != h for n, h in files.items())
+            or packet['coreSha256'] != sources['plugins/warlock-contributor/scripts/warlock.py']):
+        raise RuntimeError('Fixed menu focus build source closure differs')
+    if observation and any(sources.get(name)!=sha for name,sha in observation['inputs'].items()):raise RuntimeError('Frozen observation source pin differs')
+    names = set(sources) | {MENU_FOCUS_BUILD_PACKET}
+    for key in ('toolchainManifest', 'cacheCorrespondence'):
+        ref = packet[key]
+        if not isinstance(ref, dict) or set(ref) != {'path', 'sha256'} or not isinstance(ref['sha256'], str) or re.fullmatch('[0-9a-f]{64}', ref['sha256']) is None:
+            raise RuntimeError('Fixed menu focus metadata reference differs')
+        p = Path(ref['path'])
+        try:
+            rel = p.relative_to(root) if p.is_absolute() else p
+        except ValueError as error:
+            raise RuntimeError('Fixed menu focus metadata must be inside repo') from error
+        if '..' in rel.parts or str(rel) in ('', '.'):
+            raise RuntimeError('Fixed menu focus metadata escape refused')
+        if key == 'toolchainManifest' and (str(rel) != 'tools/arm64-toolchain.json' or ref['sha256'] != sources[str(rel)]):
+            raise RuntimeError('Fixed menu focus SDK reference differs')
+        names.add(str(rel))
+    return {'inputs': names, 'packetSha256': hashlib.sha256(body).hexdigest()}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--review', type=Path, required=True)
@@ -195,18 +422,31 @@ def main():
     tea = runner == REPO / 'tools/check_tea_cpu.py'
     continuity = runner == REPO / 'tools/check_continuity_cpu.py'
     arm64 = runner == REPO / 'tools/check_arm64_cpu.py'
+    capi_controls = runner == REPO / 'tools/test_capi_invocation_probe.py'
     team_quint = runner == REPO / 'tools/check_team_quint_cpu.py'
+    menu_focus_build = runner == REPO / 'tools/run_ux024_menu_focus_build.py'
+    menu_focus_spec = menu_focus_build_spec(REPO) if menu_focus_build else None
     allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend'], ['--persistent']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract'], ['--subscriptions']])))
+    if observation_elm_variant(runner,packet['arguments']):
+        allowed=[packet['arguments']]
+    if menu_tab_dom_mode(runner, packet['arguments']):
+        allowed = [['--menu-tab-dom', '--arm64']]
+    if menu_focus_build:
+        if packet['inputs'].get(MENU_FOCUS_BUILD_PACKET) != menu_focus_spec['packetSha256']:
+            raise RuntimeError('Fixed build packet hash differs from reviewed CPU inputs')
+        allowed = [['--sha256', menu_focus_spec['packetSha256']]]
     if continuity:
         allowed = [[]]
     if arm64:
         allowed = [['--subscriptions'], ['--owner-build'], ['--owner'], ['--preview-control'], ['--protocol'],
-                   ['--preview-consumption'], ['--preview-schema']]
+                   ['--preview-consumption'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--successor-focus'], ['--workspace-owner-baseline'], ['--workspace-owner-component'], ['--workspace-owner-component-red'], ['--workspace-original'], ['--workspace-dom'], ['--workspace-navigation-protocol'], ['--ux031-daemon-only'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route'], ['--application-availability'], ['--native-stage-build'], ['--provider-probe-build'], ['--provider-callback-build'], ['--physical-context-owner-build'], ['--physical-context-owner-bridge'], ['--physical-context-owner-backing'], ['--virtual-pointer-build'], ['--ux003-journey-build'], ['--aquamarine-build']]
     if team_quint:
         allowed = [[flag] + tail for flag in ('--' + pair for pair in TEAM_QUINT_PAIRS)
                    for tail in ([], ['--tests-only'])]
-    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+    if capi_controls:
+        allowed = [[]]
+    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and not capi_controls and not menu_focus_build and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
@@ -308,12 +548,27 @@ def main():
     if continuity:
         mandatory = continuity_inputs(REPO)
     if arm64:
-        mandatory = arm64_inputs(REPO, subscriptions=packet['arguments'] == ['--subscriptions'],
+        mandatory = arm64_inputs(REPO, aquamarine_build=packet['arguments'] == ['--aquamarine-build'], ux003_journey_build=packet['arguments'] == ['--ux003-journey-build'], virtual_pointer_build=packet['arguments'] == ['--virtual-pointer-build'], physical_context_owner_backing=packet['arguments'] == ['--physical-context-owner-backing'], physical_context_owner_bridge=packet['arguments'] == ['--physical-context-owner-bridge'], physical_context_owner_build=packet['arguments'] == ['--physical-context-owner-build'], provider_callback_build=packet['arguments'] == ['--provider-callback-build'], provider_probe_build=packet['arguments'] == ['--provider-probe-build'], native_stage_build=packet['arguments'] == ['--native-stage-build'], application_availability=packet['arguments'] == ['--application-availability'], subscriptions=packet['arguments'] == ['--subscriptions'],
                                  preview_control=packet['arguments'] == ['--preview-control'],
-                                 protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema']),
-                                 consumption=packet['arguments'] == ['--preview-consumption'])
+                                 protocol_only=packet['arguments'] in (['--protocol'], ['--preview-schema'], ['--held-executable'], ['--peer-role'], ['--workspace-navigation-protocol'], ['--notification-config'], ['--notification-issuer'], ['--catalog-nodisplay'], ['--catalog-source-revision'], ['--catalog-publication'], ['--application-owner-route']),
+                                 consumption=packet['arguments'] == ['--preview-consumption'],
+                                 successor_focus=packet['arguments'] == ['--successor-focus'],
+                                 workspace_owner_baseline=packet['arguments'] == ['--workspace-owner-baseline'],
+                                 workspace_owner_component=packet['arguments'] == ['--workspace-owner-component'],
+                                 workspace_owner_component_red=packet['arguments'] == ['--workspace-owner-component-red'],
+                                 workspace_original=packet['arguments'] == ['--workspace-original'],
+                                 workspace_dom=packet['arguments'] == ['--workspace-dom'],
+                                 daemon_only=packet['arguments'] == ['--ux031-daemon-only'])
     if team_quint:
         mandatory = team_quint_inputs(REPO, packet['arguments'][0][2:])
+    if capi_controls:
+        mandatory = capi_invocation_controls_inputs(REPO)
+    if menu_tab_dom_mode(runner, packet['arguments']):
+        mandatory = menu_tab_dom_inputs(REPO)
+    if observation_elm_variant(runner,packet['arguments']):
+        mandatory=menu_tab_dom_inputs(REPO) | OBSERVATION_SUPPORT | set(observation_inputs(REPO,observation_elm_variant(runner,packet['arguments']))['inputs'])
+    if menu_focus_build:
+        mandatory = menu_focus_spec['inputs']
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
     reviewed_inputs(packet)
@@ -339,11 +594,13 @@ def main():
         for name in ('DISPLAY', 'WAYLAND_DISPLAY', 'WAYLAND_SOCKET', 'XAUTHORITY',
                      'HYPRLAND_INSTANCE_SIGNATURE', 'AQ_DRM_DEVICES', 'AQ_BACKENDS', 'AT_SPI_BUS_ADDRESS'):
             env.pop(name, None)
+        if capi_controls:
+            env.pop('WARLOCK_CAPI_RUNNER_UNDER_TEST', None)
         reviewed(review, args.sha256)
         reviewed_inputs(packet)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
-            return child.wait(timeout=3600 if haskell or arm64 or team_quint else (600 if tea else 240))
+            return child.wait(timeout=902 if menu_focus_build else (3600 if haskell or arm64 or team_quint else (600 if tea else 240)))
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             os.killpg(child.pid, signal.SIGTERM)
             try:

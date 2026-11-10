@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "kind": "ux024-fixed-grim-finite-capture-output-profile",
+  "changes": [
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "baselineSha256": "9f19ed61009083ff853bf51b4af27d6d9da32f01ab4f7e7510dc4881eaadecf5",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "sha256": "53564afcfb520d10d590d7318d8a85705c0b0debdc117fe1de3997e5c18b51b8"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_observer.py",
+      "baselineSha256": "c911d52ea70be9c941b1b4230951415ba7af11b8559fe3e68c910519f798f5f9",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/test_ux024_foreign_toplevel_observer.py",
+        "sha256": "c8ae4ce75e7de8b337465c733e0ab2565b97673c3c1f586dc031f531bf0baed0"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_named_mapping_diagnostics.py",
+      "baselineSha256": "169b2b1958ed196a87c7200090b27bac8381bfd90a4b03110f367ad919849fb2",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/test_ux024_named_mapping_diagnostics.py",
+        "sha256": "f6764e358deafae9b87f64aa8c11be2628bb33b6784fe6c0d5c176f694c7eeaf"
+      }
+    }
+  ],
+  "retainedNativeFailure": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/report.json",
+    "sha256": "026d354a31f9c88a79d59df6083c9ee6200ffbbd0a6f7320549224ae46798fbc"
+  },
+  "retainedPhaseFixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/retained-native-v4-phase-pairs.json",
+    "sha256": "c96757e47a8851ecb50b1bd526fcd8fbcef9cdd6a25a54accec68a6a87ea2d8a"
+  },
+  "frozenBaseGuard": {
+    "path": "/home/hoskinson/Projects/Warlock/tools/run_arm_gl_foundation_renewed_20261108_0623.py",
+    "sha256": "769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2"
+  },
+  "newPacketPath": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v6/packet.json",
+  "sourceContract": {
+    "fixedCaptureArgv": [
+      "packet.assets.grim.path",
+      "owned-output/actual-owned-window.png"
+    ],
+    "capturePerFileLimit": 33554432,
+    "reason": "SameexistingmaximumPNGreadbytes; RLIMIT_FSIZE alsoaffectsgraphicsmemfd. Exactnativefaultingsyscallunobserved.",
+    "allOtherChildren": "Exactexistingbase.bound_output64KiB",
+    "alternateGrimArgv": "refused; no genericcaptureflag",
+    "frameLimit": 16,
+    "deadlineSeconds": 28,
+    "cleanupSeconds": 2
+  },
+  "qualification": {
+    "totalRunnerControls": 30,
+    "priorRunnerMethods": 22,
+    "newCaptureControls": 8,
+    "diagnosticControls": 7,
+    "boundedSeedVariants": 32,
+    "OSChildControls": [
+      "Frozen64KiBguard ftruncate3,686,400\u21d2SIGXFSZ",
+      "Capture32MiBguard ftruncate3,686,400\u21d2exit0+literalPASS",
+      "Capture32MiBguard ftruncate32MiB+1\u21d2SIGXFSZ"
+    ],
+    "OSControlMeaning": "Fixedmemfdmechanism/control only, notclaimactualgrimfaultingsyscallknown. Children bounded5s, reapedbyRootunitrunner.",
+    "rootRunnerArgv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/test_ux024_foreign_toplevel_observer.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "--phase-fixture",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/retained-native-v4-phase-pairs.json",
+      "--capture-failure",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/report.json",
+      "-v"
+    ],
+    "rootDiagnosticsArgv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/test_ux024_named_mapping_diagnostics.py",
+      "--module",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "-v"
+    ],
+    "authorExecution": false
+  },
+  "limits": [
+    "Onlyfixedcapturegetsfinite32MiB; no qa_run/baseguard/SDK/provider/mapchanges",
+    "All22oldrunner testmethodASTsexact; diagnosticlastassertionv5\u2192v6 sixothersASTexact",
+    "No compiler/Main/images/initialauth/nativebudgets/framecap changes",
+    "ActualV5SIGXFSZfailure/noPNG/noinput/cleanupUnknown retained",
+    "No primarywrites/imports/QA/nativeexecutionbyauthor",
+    "RootactualfailedV5consumedclosure+sourcepeer+protectedcontrols beforeCAS/newmetadata"
+  ]
+}

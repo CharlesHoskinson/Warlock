@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-mixed-diagnostic-run",
+  "candidateSha256": "2720c360fc0c629da388db78a600d8eb31d6420725638f6fe70d1cd0f1ba1400",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/report.json",
+    "sha256": "0611b709a6de3a6dfefa5c0790c91c330adb8794c39f7b2bdc2eaaa700fd0d13"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native51-proc-executable-attestation/revision3-coalesced-fresh-attestation/native8b-metadata-preparation/prepared/final/candidate.json",
+      "sha256": "055f1c11172f6daba1112bf2a17373b9c5f7db030f60808ec55bf0f74591cf26"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native51-proc-executable-attestation/revision3-coalesced-fresh-attestation/native8b-metadata-preparation/prepared/final/packet.json",
+      "sha256": "b18e961f87ad5d32704fb2d845779ebac4af3d98f19a2a1afd75dbb84706583e"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-00-current-group.png",
+      "sha256": "dcf12bbefec4abff35d0187d7a3cf620338169096991e4317ea70957db4912c4",
+      "beforeTransaction": "current-group",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-01-open-menu.png",
+      "sha256": "1632882494efd875d4719e712086a30d3dc4ae47c977fd67000068517fd03c56",
+      "beforeTransaction": "open-menu",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-02-tab-forward.png",
+      "sha256": "84761aa2e920aa75f4f1cca427d704f1b57ec964afb305efd2c24343de8568dc",
+      "beforeTransaction": "tab-forward",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-03-tab-wrap.png",
+      "sha256": "976c4851f861b907783b272e9085c4159832a18414c075e91fd741e6bf8cc958",
+      "beforeTransaction": "tab-wrap",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-04-tab-reverse-wrap.png",
+      "sha256": "58179dae2ca6e45a499fd5339f3880f87cb9c74c75c05a717ce79e6554c604bf",
+      "beforeTransaction": "tab-reverse-wrap",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-05-dismiss.png",
+      "sha256": "20c59fe9f15166917fedaa30bd8ab9225e21d332094f66dafa93b4fa62874881",
+      "beforeTransaction": "dismiss",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-06-reopen.png",
+      "sha256": "9840ef7a4f32ffae458c93ab0dea3811c55e8c912e5c0bf4d3264633d6d9d120",
+      "beforeTransaction": "reopen",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-07-dismiss-again.png",
+      "sha256": "237263ef9b63aea458090ab5ba64b0a827b61b3908db1a28c43a57ff9b96c7b2",
+      "beforeTransaction": "dismiss-again",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/menu-08-close-owned-gui.png",
+      "sha256": "e891ed4e18f1b5a08116f551872b0646f5ea4af85191e6656d4285dc59f5be81",
+      "beforeTransaction": "close-owned-gui",
+      "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/observer-wire.jsonl",
+      "sha256": "83e0e77e4f66e409386c387551fa2db828445ad1b7ad25f41707b46cbedccce0"
+    }
+  ],
+  "verified": {
+    "literalNineTransactionsExact": [
+      {
+        "name": "current-group",
+        "argv": [
+          "-k",
+          "Tab"
+        ]
+      },
+      {
+        "name": "open-menu",
+        "argv": [
+          "-M",
+          "shift",
+          "-k",
+          "F10",
+          "-m",
+          "shift"
+        ]
+      },
+      {
+        "name": "tab-forward",
+        "argv": [
+          "-k",
+          "Tab"
+        ]
+      },
+      {
+        "name": "tab-wrap",
+        "argv": [
+          "-k",
+          "Tab"
+        ]
+      },
+      {
+        "name": "tab-reverse-wrap",
+        "argv": [
+          "-M",
+          "shift",
+          "-k",
+          "Tab",
+          "-m",
+          "shift"
+        ]
+      },
+      {
+        "name": "dismiss",
+        "argv": [
+          "-k",
+          "Escape"
+        ]
+      },
+      {
+        "name": "reopen",
+        "argv": [
+          "-M",
+          "shift",
+          "-k",
+          "F10",
+          "-m",
+          "shift"
+        ]
+      },
+      {
+        "name": "dismiss-again",
+        "argv": [
+          "-k",
+          "Escape"
+        ]
+      },
+      {
+        "name": "close-owned-gui",
+        "argv": [
+          "-M",
+          "alt",
+          "-k",
+          "F4",
+          "-m",
+          "alt"
+        ]
+      }
+    ],
+    "pairedPhases": 12,
+    "actualFrames": 9,
+    "configuredPhaseFrameLimit": 16,
+    "noPointerInput": true,
+    "originalDeadlineSeconds": 28,
+    "cleanupExtensionSeconds": 2,
+    "lastPairedPhaseSeconds": 20.909905379,
+    "keyboardNormalRetirementSeconds": 27.768041946,
+    "normalCommands": 105,
+    "normalStackReapedGroupsAbsentUnforced": true,
+    "observerSameOwnerClosedThenRetired": true,
+    "cleanupUnknown": false,
+    "globalRestoration": true,
+    "source411AndGuards7Rehashed": true,
+    "assetHashesRechecked": true
+  },
+  "visibleEvidence": {
+    "allNineFramesViewed": true,
+    "observations": "01 observed bar group outline;02 menu Close;03 Refresh;04 Close;05 Refresh;06 group with menu closed;07 reopened menu Close;08 group with menu closed. No stock editing popover visible.",
+    "limits": "02 and07 both visibly outline Close. Frames are beforeTransaction scheduling captures immediately following earlier key, while paired DOM arrives later. No synchronized paint/focus guarantee or all-literal-visible-oracle acceptance follows from DOM checks."
+  },
+  "limits": [
+    "Mixed diagnostic scope only: raw nativeAcceptance/originalAcceptance/fullJourneyAccepted and requirement/scenario credits remain false/zero.",
+    "Clean removal must preserve proc/lifecycle/coalesced guards and obtain fresh clean qualification; no diagnostic relabel.",
+    "No reviewer execution/imports/QA/native/primary edits.",
+    "Normal retirement supports this attempt only; earlier cleanupUnknown flags remain unchanged."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "candidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "revision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+  "stepIndex": 2,
+  "inputStep": "Press Escape to dismiss and restore the original eligible focus target.",
+  "outcome": "pass",
+  "physicalTransactions": [
+    {
+      "index": 5,
+      "name": "dismiss",
+      "argv": [
+        "-k",
+        "Escape"
+      ],
+      "originalDeadlineNs": 82249760387154,
+      "attempted": true,
+      "completed": true
+    },
+    {
+      "index": 6,
+      "name": "reopen",
+      "argv": [
+        "-M",
+        "shift",
+        "-k",
+        "F10",
+        "-m",
+        "shift"
+      ],
+      "originalDeadlineNs": 82249760387154,
+      "attempted": true,
+      "completed": true
+    },
+    {
+      "index": 7,
+      "name": "dismiss-again",
+      "argv": [
+        "-k",
+        "Escape"
+      ],
+      "originalDeadlineNs": 82249760387154,
+      "attempted": true,
+      "completed": true
+    },
+    {
+      "index": 8,
+      "name": "close-owned-gui",
+      "argv": [
+        "-M",
+        "alt",
+        "-k",
+        "F4",
+        "-m",
+        "alt"
+      ],
+      "originalDeadlineNs": 82249760387154,
+      "attempted": true,
+      "completed": true
+    }
+  ],
+  "observedBehavior": [
+    "first Escape closes and returns to same eligible group after fresh revision2",
+    "second opening has new menu identity/lease",
+    "second Escape returns to same eligible group after fresh revision3",
+    "literal owned close and normal retirement complete"
+  ],
+  "frames": [
+    {
+      "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/native/menu-05-dismiss.png",
+      "sha256": "1a5e123b0cbfd4fb86737483ec1e0aeb8c29efea94b90992b91a96fec04fc02f",
+      "beforeTransaction": "dismiss"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/native/menu-06-reopen.png",
+      "sha256": "57f13bb07b75867dc0158a858d5f100a6ccc6af4f64cf1e45d07e3b746c651e8",
+      "beforeTransaction": "reopen"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/native/menu-07-dismiss-again.png",
+      "sha256": "89d0270896eb4a78dfe3d1d5dc7765205e2d9b4f98c001242600889169b68846",
+      "beforeTransaction": "dismiss-again"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/native/menu-08-close-owned-gui.png",
+      "sha256": "e891ed4e18f1b5a08116f551872b0646f5ea4af85191e6656d4285dc59f5be81",
+      "beforeTransaction": "close-owned-gui"
+    }
+  ],
+  "pairedPhaseEvidence": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/native/report.json",
+    "sha256": "3e25904f416c27b8abce766d47a58b98f2a1213f30c6606cc6689c7f3584a839"
+  },
+  "independentReview": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/reviews/independent-clean-native54-original-case-review-build.json",
+    "sha256": "bd627bdb365ceca85f7feae7fa51d9b7c428d9b04e379bd7114f82c44bd0b9a9"
+  },
+  "snapshotSchedulingIsNotStandaloneAcceptance": true
+}

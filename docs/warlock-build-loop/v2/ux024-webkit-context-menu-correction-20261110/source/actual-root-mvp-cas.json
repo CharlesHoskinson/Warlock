@@ -1,0 +1,68 @@
+{
+  "selection": 30,
+  "post": {
+    "path": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "beforeSha256": "737fe6ccebccfbbf43ca6dc926fa028bdda6102cb98f38a504b84b74866ac860",
+    "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "sha256": "bcc6c6f9f750fa8bd7ca254762208f2147697a5238ccb63ff29f4364712f7242"
+  },
+  "tests": [
+    {
+      "label": "baseline",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/tests-first/test_mvp_context_menu_source.py",
+        "--module",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+        "--baseline",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+        "--gir",
+        "/usr/share/gir-1.0/WebKit-6.0.gir",
+        "--header",
+        "/usr/include/webkitgtk-6.0/webkit/WebKitWebView.h",
+        "--renderer",
+        "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+        "--renderer-sha256",
+        "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-bd93ae59ae3d4a5faf98ba4c1276a250.scope; invocation ID: 0a9bb3f7f2cb403a983b6b5a0bf65bc1\nFF....FF\n======================================================================\nFAIL: test_all_prior_source_bytes_and_retirement_are_preserved (__main__.Controls.test_all_prior_source_bytes_and_retirement_are_preserved)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/tests-first/test_mvp_context_menu_source.py\", line 48, in test_all_prior_source_bytes_and_retirement_are_preserved\n    self.assertTrue(callback_contract(source))\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true\n\n======================================================================\nFAIL: test_bounded_wrong_abi_role_return_and_registration_mutations_refuse (__main__.Controls.test_bounded_wrong_abi_role_return_and_registration_mutations_refuse)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/tests-first/test_mvp_context_menu_source.py\", line 66, in test_bounded_wrong_abi_role_return_and_registration_mutations_refuse\n    source=Path(args.module).read_text();self.assertTrue(callback_contract(source))\n                                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true\n\n======================================================================\nFAIL: test_return_true_suppresses_borrowed_default_menu_by_installed_contract (__main__.Controls.test_return_true_suppresses_borrowed_default_menu_by_installed_contract)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/tests-first/test_mvp_context_menu_source.py\", line 40, in test_return_true_suppresses_borrowed_default_menu_by_installed_contract\n    self.assertTrue(callback_contract(Path(args.module).read_text()))\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true\n\n======================================================================\nFAIL: test_visible_roles_registered_before_present_via_owned_masked_path (__main__.Controls.test_visible_roles_registered_before_present_via_owned_masked_path)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/tests-first/test_mvp_context_menu_source.py\", line 43, in test_visible_roles_registered_before_present_via_owned_masked_path\n    self.assertIn(HANDLER,source[start:end]);self.assertNotIn('[cView',HANDLER)\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '      -- WebKit\\'s stock browser menu is not shell policy. The borrowed menu and\\n      -- hit-test objects are valid only during emission; neither is retained.\\n      -- TRUE suppresses the stock popover, including on a context fault.\\n      mapM_ (\\\\visibleView -> acquireSignal visibleView \"context-menu\"\\n        (wrapContextMenu $ \\\\_ _ _ _ -> callback 1 (pure 1))) [bView, pView]\\n\\n' not found in 'attachMvpWindow contextOwner views = mask $ \\\\_ -> do\\n  requirePhysicalDefaultContextOwner contextOwner\\n  contextFault <- newIORef False\\n  let cView = castPtr (mvpControllerView views) :: Ptr MvpObject\\n      bView = castPtr (mvpBarView views) :: Ptr MvpObject\\n      pView = castPtr (mvpPopupView views) :: Ptr MvpObject\\n  unless\\n    ( cView /= nullPtr\\n        && bView /= nullPtr\\n        && pView /= nullPtr\\n        && cView /= bView\\n        && cView /= pView\\n        && bView /= pView\\n    )\\n    (ioError (userError \"MVP requires three distinct non-null WebKitWebView pointers\"))\\n  sigReleases <- newIORef ([] :: [IO ()])\\n  objReleases <- newIORef ([] :: [IO ()])\\n  closeRef <- newIORef False\\n  escapeRef <- newIORef False\\n  stateRef <- newIORef initialMvpState\\n  keyboardFocusRef <- newIORef Nothing\\n  retiredRef <- newIORef False\\n  let checkContext = do\\n        requirePhysicalDefaultContextOwner contextOwner\\n        fault <- readIORef contextFault\\n        unless (not fault) (ioError (userError \"MVP callback context uncertain\"))\\n      callback fallback action = mask_ $\\n        (checkContext >> action >>= evaluate) `catch` (\\\\(_ :: SomeException) -> do\\n          atomicModifyIORef\\' contextFault (\\\\_ -> (True, ()))\\n          pure fallback)\\n      acquireObj acquire release = mask_ $ do\\n        checkContext\\n        val <- acquire\\n        modifyIORef\\' objReleases ((checkContext >> release val) :)\\n        pure val\\n      acquireSignal obj sigName mkCb = mask_ $ do\\n        checkContext\\n        disconnect <- connectOwnedMvpSignal contextOwner obj sigName mkCb\\n        modifyIORef\\' sigReleases ((checkContext >> disconnect) :)\\n      abortAttach = mask_ $ do\\n        checkContext\\n        writeIORef retiredRef True\\n        errs <- runCleanupSequence sigReleases objReleases\\n        case [e | e <- errs, Just _ <- [fromException e :: Maybe SomeAsyncException]] of\\n          asyncErr : _ -> throwIO asyncErr\\n          [] -> pure ()\\n  ( do\\n      vertical <- resolveEnumValue gtkOrientationGetType \"GTK_ORIENTATION_VERTICAL\"\\n      capturePhase <- resolveEnumValue gtkPropagationPhaseGetType \"GTK_PHASE_CAPTURE\"\\n      box <- acquireObj (gtkBoxNew vertical 0 >>= (`mustPtr` \"MVP GtkBox\") >>= gObjectRefSink) gObjectUnref\\n      window <-\\n        acquireObj\\n          (gtkWindowNew >>= (`mustPtr` \"MVP GtkWindow\") >>= gObjectRefSink)\\n          (\\\\win -> gtkWindowDestroy win >> gObjectUnref win)\\n\\n      -- Undecorated: suppresses GTK4 client-side headerbar, title label, and buttons.\\n      gtkWindowSetDecorated window 0\\n      gtkWindowSetResizable window 1\\n      gtkWindowSetDefaultSize window 980 680\\n\\n      acquireSignal\\n        window\\n        \"close-request\"\\n        (wrapCloseRequest $ \\\\_ _ -> callback 1 (writeIORef closeRef True >> pure 1))\\n\\n      -- Capture-phase key observation sees physical Escape before WebKit can\\n      -- consume it, while returning 0 (GDK_EVENT_PROPAGATE) so normal typing\\n      -- and IME composition reach the focused WebKitWebView untouched.\\n      keyCtrl <- acquireObj (gtkEventControllerKeyNew >>= (`mustPtr` \"MVP GtkEventControllerKey\")) gObjectUnref\\n      gtkEventControllerSetPropagationPhase keyCtrl capturePhase\\n      acquireSignal\\n        keyCtrl\\n        \"key-pressed\"\\n        ( wrapKeyPressed $ \\\\_ keyval _ _ _ -> callback 0 $ do\\n            if keyval == gdkKeyEscape\\n              then writeIORef escapeRef True\\n              else pure ()\\n            pure 0\\n        )\\n\\n      -- gtk_widget_add_controller is [transfer full]; pass an extra ref inside\\n      -- this masked region so objReleases retains ownership until signal retirement.\\n      transferredCtrl <- gObjectRef keyCtrl >>= (`mustPtr` \"MVP key controller ref\")\\n      gtkWidgetAddController window transferredCtrl\\n\\n      -- Bar strip at top of window.\\n      gtkWidgetSetHexpand bView 1\\n      gtkWidgetSetVexpand bView 0\\n      gtkWidgetSetSizeRequest bView (-1) 72\\n      gtkWidgetSetVisible bView 1\\n      gtkBoxAppend box bView\\n\\n      -- Popup/Applications workspace fills primary window body.\\n      gtkWidgetSetHexpand pView 1\\n      gtkWidgetSetVexpand pView 1\\n      gtkWidgetSetSizeRequest pView 640 480\\n      gtkWidgetSetVisible pView 1\\n      gtkBoxAppend box pView\\n\\n      -- Controller runs HttpMain policy loop in a realized 1x1 untargetable cell.\\n      gtkWidgetSetHexpand cView 0\\n      gtkWidgetSetVexpand cView 0\\n      gtkWidgetSetSizeRequest cView 1 1\\n      gtkWidgetSetOpacity cView (CDouble 0.0)\\n      gtkWidgetSetFocusable cView 0\\n      gtkWidgetSetCanTarget cView 0\\n      gtkWidgetSetVisible cView 1\\n      gtkBoxAppend box cView\\n\\n      gtkWindowSetChild window box\\n'\n\n----------------------------------------------------------------------\nRan 8 tests in 0.035s\n\nFAILED (failures=4)\n"
+    },
+    {
+      "label": "candidate",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/tests-first/test_mvp_context_menu_source.py",
+        "--module",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+        "--baseline",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+        "--gir",
+        "/usr/share/gir-1.0/WebKit-6.0.gir",
+        "--header",
+        "/usr/include/webkitgtk-6.0/webkit/WebKitWebView.h",
+        "--renderer",
+        "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+        "--renderer-sha256",
+        "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: qa-harness-3447641939ff4e40bd1d8453e3f59ff9.scope; invocation ID: 4d3ad009ed224e8399df393683fb6b2a\n........\n----------------------------------------------------------------------\nRan 8 tests in 0.036s\n\nOK\n"
+    }
+  ],
+  "recordSha256": "04d43fb2a6e8f3b103fab72a6bd67b0c77dcac5079ff1beb1138ac7b08a0b1ac",
+  "nativeAcceptance": false
+}

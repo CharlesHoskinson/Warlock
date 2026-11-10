@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "kind": "source-bound-ux024-menu-tab-cpu-component",
+  "originalRequirement": "ELM-UX-024",
+  "originalScenario": "ux-024",
+  "originalOracle": "focus follows menu order and returns to original eligible target",
+  "scope": "Actual compiled HttpPopup controlledDOM/XHR; healthy menu Tab/ShiftTab containment only",
+  "sourceBefore": "e7a8b1d479d3b8d728bf97b5bab8a2cfee7b2a1010902d984690215574ee84e2",
+  "intermediateFailedSource": "1212c534cf45dac6f260af371037b61fd772489e27ad1f619b8bb0e23f0e1b1e",
+  "sourceAfter": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133",
+  "fixtureSha256": "cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f",
+  "baseline": {
+    "compileExit": 0,
+    "failedCases": 8,
+    "preservationCasesPassed": 10,
+    "handle": "79243",
+    "consumed": true
+  },
+  "intermediateFailure": {
+    "compileExit": 1,
+    "casesExecuted": 0,
+    "handle": "77348",
+    "consumed": true,
+    "cause": "Two introduced local control binders shadowed existing top-level control; rename-only correction retained."
+  },
+  "green": {
+    "compileExit": 0,
+    "casesPassed": 18,
+    "assertionsPassed": 86,
+    "inputFiles": 116,
+    "handle": "29237",
+    "consumed": true,
+    "jobId": "pid2947281-start2454730",
+    "candidateSha256": "616722e872a24f428522c620bbc5dcd7c612b55a56a966f6bff05bdf25af19b6",
+    "imageSha256": "0fc9b65765ba3d176338ac3f337cf7ece3b896ed37a11df3a654dfbce9bc7bfd"
+  },
+  "checks": [
+    "Forward/reverse menu order and endpoint wrap",
+    "Disabled skipping and one/zero eligible control cases",
+    "Injected reserved DOM identity mapping remains disjoint",
+    "Modifier/IME and stale publication/lease refusals",
+    "No HTTP action dispatch; Escape remains native"
+  ],
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "releaseAcceptance": false,
+  "countsChanged": false,
+  "missingOriginalObservations": [
+    "Real native menu keyboard and AT order",
+    "Escape restores original eligible opener; control:close versus control:menu-close mismatch remains",
+    "Full original focus lifecycle/race and release gates"
+  ],
+  "evidenceFiles": {
+    "baseline-report.json": "318758abe4e1ffb0e82d033ec09018e39f0efb9314ca28c9676d1639dd14b7f7",
+    "baseline-dom.json": "ca48ade6b4410fddc1899452459ea1b5ade01d22252bc6ca09adb564e9dc3e30",
+    "failed-compiler-report.json": "1a1b3ea8468905389cc5429ef77ef9e91148f8082385823492d6ee3255ca4b10",
+    "failed-compiler.stderr": "4866a866b90b9be44ad886b4795c37072fb0fa48500d4276dda576740c5fd68a",
+    "green-report.json": "060bf38cbf3a2d7e66acb864b7d28898735e45b3d0adb6eb2c7c525fad03689f",
+    "green-dom.json": "1068dc9d9a80499e2f9cdde62c85f172b086c7d07961d6521a03f2bfa154c817",
+    "independent-source-review.json": "37ea74f4adc7d53b6e231e51f40c3f458b3e82243236cd918514e707605bf427",
+    "independent-component-review.json": "59e5f71abf0725ddcbf6e037baff14ecfa8e0af03ea0ee8765e75d36caa65f19",
+    "baseline-candidate.json": "5647d82fe90aa202366b56835fadaf30416de15d94cfbe969e165920d3ac390c",
+    "failed-compiler-candidate.json": "2274dec9a9f8a85b9ab15a1e08da2c1759ba8373be412bff5addf9d8ee25d5f7",
+    "green-candidate.json": "ba3c550755dda66e4c8ac4cad8972e33d3ebaf0cfa2cd1da34cc81aaaf447bb4",
+    "compiled-HttpPopup.js.gz": "b59e6a4ba74733babadbf141304c296301b0365911f3526ab11c70a12743eb7e"
+  }
+}

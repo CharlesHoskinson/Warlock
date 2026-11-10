@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "disposition": "no-change",
+  "candidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa",
+  "integrationRevision": "edfd42685de72a3c2d70729436f11e63e69dbbc4",
+  "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+  "proposedChange": "Add a new CPU admission path for the connected-owner qualification flags.",
+  "refutationCase": "The existing two-suite CPU route compiles the fixed connected entrypoints while executing only unchanged allocation and pre-connect controls. It does not admit native flags. Fresh23 builder/admission controls in each protected phase preserve that boundary; no adapter, compiler rerun or permission expansion is needed.",
+  "reason": "No new adapter, warning suppression or framework is justified. Preserve the UI-hsc classifier issue as a prospective separate lesson; do not reset source clocks or rewrite historical events.",
+  "baselinePlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/baseline-plugin.json",
+    "sha256": "46a823592993ce74b97a0d4231b100921bd7ec545480df9a188f8cf60003bb98"
+  },
+  "baselineHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/baseline-harness.json",
+    "sha256": "c3c287df174f22aefbdf804a21e4e654875ea1cb537db4f3223a278badf1e627"
+  },
+  "resultPlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/result-plugin.json",
+    "sha256": "46a823592993ce74b97a0d4231b100921bd7ec545480df9a188f8cf60003bb98"
+  },
+  "candidateHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/candidate-harness.json",
+    "sha256": "00f27e2c5a6bde03af72edd1629abcaf6c3a771ff2bba45252fb3c13fc5baa4b"
+  },
+  "comparison": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/comparison.json",
+    "sha256": "aa7234b018cb5f54ef5a4711f108a82b135ed4fff285bcb173eabdc7371b8e0e"
+  },
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/regression.json",
+    "sha256": "c269540cebd9b08aa87bbe0819724a7b148839a374018f4146d7e6a467f60a85"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "scope": "Pure fixed admission and unchanged Elm controls; no compiler/native execution",
+  "results": [
+    {
+      "phase": "baseline",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-fixed-admission-preparation/postimages/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 1
+    },
+    {
+      "phase": "candidate",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-fixed-admission-preparation/postimages/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-fixed-admission-preparation/postimages/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0
+    },
+    {
+      "phase": "old-elm-controls",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_cpu_route.py",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-fixed-admission-preparation/postimages/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock/tools/check_elm_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0
+    }
+  ]
+}

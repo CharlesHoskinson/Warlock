@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "phase": "baseline",
+  "candidateSha256": "2e51eedefc96a0c91da23072d085a6c5ee4da371526e363a84f45723e6883fdb",
+  "integrationRevision": "3f3565fc1a4ded0bf2faa5657b4fc8633203205c",
+  "checks": [
+    {
+      "name": "separate-producer-counters-documented",
+      "passed": false
+    },
+    {
+      "name": "exact-role-capture-limits-documented",
+      "passed": false
+    },
+    {
+      "name": "builder:test_only_two_closed_build_targets_and_no_cabal_execution",
+      "passed": true
+    },
+    {
+      "name": "builder:test_only_fixed_pure_allocation_branch_executes",
+      "passed": true
+    },
+    {
+      "name": "builder:test_source_tree_rejects_symlink_and_extra_membership",
+      "passed": true
+    },
+    {
+      "name": "builder:test_source_tree_rejects_actual_changed_body",
+      "passed": true
+    },
+    {
+      "name": "builder:test_sandbox_hides_host_run_and_binds_source_readonly",
+      "passed": true
+    },
+    {
+      "name": "builder:test_external_system_inventory_is_mounted_readonly",
+      "passed": true
+    },
+    {
+      "name": "builder:test_pinned_standard_inventory_alias_precedes_callback_import",
+      "passed": true
+    },
+    {
+      "name": "builder:test_reaped_leader_is_never_signalled",
+      "passed": true
+    },
+    {
+      "name": "builder:test_live_leader_timeout_is_explicit_forced_failure",
+      "passed": true
+    },
+    {
+      "name": "builder:test_deadline_clips_to_authorization_and_never_extends",
+      "passed": true
+    },
+    {
+      "name": "builder:test_retained_group_after_leader_reap_refuses_without_signalling",
+      "passed": true
+    },
+    {
+      "name": "builder:test_exact_endpoint_suite_pair_and_old_default_preserved",
+      "passed": true
+    },
+    {
+      "name": "builder:test_endpoint_uses_only_same_control_image_and_exact_receipt",
+      "passed": true
+    },
+    {
+      "name": "builder:test_endpoint_inherits_parent_authorization_and_five_second_limit",
+      "passed": true
+    },
+    {
+      "name": "builder:test_main_dispatches_only_validated_suites_before_build_or_spawn",
+      "passed": true
+    },
+    {
+      "name": "admission:test_exact_hash_argument_and_literal_runner_only",
+      "passed": true
+    },
+    {
+      "name": "admission:test_complete_fixed_closure_and_metadata",
+      "passed": true
+    },
+    {
+      "name": "admission:test_scope_targets_unknown_fields_and_actor_record_refuse",
+      "passed": true
+    },
+    {
+      "name": "admission:test_incomplete_extra_haskell_or_support_hashes_refuse",
+      "passed": true
+    },
+    {
+      "name": "admission:test_reference_escape_symlink_and_oversize_refuse",
+      "passed": true
+    },
+    {
+      "name": "admission:test_old_elm_mode_unchanged",
+      "passed": true
+    },
+    {
+      "name": "admission:test_exact_endpoint_cpu_pair_admitted_with_same_closed_inputs",
+      "passed": true
+    },
+    {
+      "name": "admission:test_endpoint_single_reverse_duplicate_extra_and_command_fields_refuse",
+      "passed": true
+    }
+  ],
+  "testsRun": 23,
+  "failures": 0,
+  "fixedInputsUnchanged": true,
+  "recordBytesUnchanged": true,
+  "nativeAcceptance": false
+}

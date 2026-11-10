@@ -1,0 +1,3675 @@
+{
+  "schema": 1,
+  "scope": "Immutable source, expected compiler RED, lifecycle GREEN and separate shared-launcher regression evidence; no native/original acceptance.",
+  "files": [
+    {
+      "member": "green-inputs/implementation/warlock/haskell/cabal.project",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/cabal.project",
+      "sha256": "b8fc882f0e53b96dacbced3a21d292741ad2a4bcbb59627b9c1c2eb8647a5607",
+      "bytes": 233
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/README.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/README.md",
+      "sha256": "d5d789263049e4c4ab7a677448192e70f3f8f5fb1c97c87a8de73c7af4e6b320",
+      "bytes": 3331
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/elf-observation.cabal",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/elf-observation.cabal",
+      "sha256": "9a71bb015ac1cd15f5a1cc78d5b4a1bae31d877ec132065fb7769a9126f4bdcf",
+      "bytes": 925
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/qualification.json",
+      "sha256": "e22cb3c5429f04bcc9a5b9c34f2766a6ce9268ed9dbef4b8cb2124808f4cb72c",
+      "bytes": 5807
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Graph.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Graph.hs",
+      "sha256": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+      "bytes": 15046
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Readelf.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Readelf.hs",
+      "sha256": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
+      "bytes": 18211
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/ElfCases.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/ElfCases.hs",
+      "sha256": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5",
+      "bytes": 23450
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/GoldenNames.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/GoldenNames.hs",
+      "sha256": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed",
+      "bytes": 1481
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/gcc.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/gcc.readelf",
+      "sha256": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+      "bytes": 11939
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/ghc.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/ghc.readelf",
+      "sha256": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+      "bytes": 32916
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/helper-0.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/helper-0.readelf",
+      "sha256": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+      "bytes": 5145
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/helper-1.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/helper-1.readelf",
+      "sha256": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+      "bytes": 5145
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/helper-2.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/helper-2.readelf",
+      "sha256": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b",
+      "bytes": 5145
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/jsc.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/jsc.readelf",
+      "sha256": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+      "bytes": 120972
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/json-glib.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/json-glib.readelf",
+      "sha256": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+      "bytes": 19476
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/owner.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/owner.readelf",
+      "sha256": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+      "bytes": 31276
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/provenance.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/provenance.json",
+      "sha256": "4de54e658fd54dc6a930b42433116da7cf90979bde30a2c76e96d129938d63b7",
+      "bytes": 3213
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/sframe.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/sframe.readelf",
+      "sha256": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+      "bytes": 37149
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/elf-observation/test/fixtures/webkit.readelf",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/elf-observation/test/fixtures/webkit.readelf",
+      "sha256": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+      "bytes": 156304
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/README.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/README.md",
+      "sha256": "c54e0457d05cd85c222dfcccb1c3b3d8d20013407d5d000846c691f7dce7f6ed",
+      "bytes": 2775
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/held-document.cabal",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/held-document.cabal",
+      "sha256": "fd73f544a29c114a32f6c26bcf0ef7fd810fef11d2ea75191cd988e569ad9999",
+      "bytes": 1695
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/qualification.json",
+      "sha256": "eef9d8ab2df193d112237b89ca5e72927b99ab914102a1f35889a71672a16fd7",
+      "bytes": 5003
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/src/Warlock/Http/Document.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Http/Document.hs",
+      "sha256": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+      "bytes": 5223
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs",
+      "sha256": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
+      "bytes": 5194
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs",
+      "sha256": "7036e66facf7b8e41fa451f227d9dc9a420a3e8bcd60741cc6adea742fa2959e",
+      "bytes": 561
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs",
+      "sha256": "fa6f26c2de463b703971c31758e6e509dfd2e90ac2bf94cf2afb16a4bcce7187",
+      "bytes": 16526
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver.hs",
+      "sha256": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
+      "bytes": 274
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc",
+      "sha256": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed",
+      "bytes": 14326
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/test/LeaseControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/test/LeaseControls.hs",
+      "sha256": "f43f95ddb50057190aeaf07bdc2662fd9752afca3402b00f527a708097d86c80",
+      "bytes": 5707
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/held-document/test/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/held-document/test/Main.hs",
+      "sha256": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501",
+      "bytes": 5716
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/README.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/README.md",
+      "sha256": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744",
+      "bytes": 6744
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/native-authority.cabal",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/native-authority.cabal",
+      "sha256": "0f6e8579cc148c5c5599797f33919bde411c2610539b68fc2cfb4700e8215ec3",
+      "bytes": 6549
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/qualification.json",
+      "sha256": "5b537f836cc94b0779018377c693961cce8e940fcae0b482ed705573aad3893a",
+      "bytes": 26740
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs",
+      "sha256": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
+      "bytes": 1570
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs",
+      "sha256": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e",
+      "bytes": 5318
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs",
+      "sha256": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241",
+      "bytes": 10082
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc",
+      "sha256": "8ae02f272b7f002128e871064b26bcaf30876a1a610065a5729c7083b7a0c346",
+      "bytes": 13590
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs",
+      "sha256": "85e1ef5008c223121decf3f34a6ad083b7a26d785a2ab9f074bc7a5928056bc7",
+      "bytes": 23411
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc",
+      "sha256": "5995e5a6b5beef6412831daad6db9f8206b531cd11993c8fdf3f423d9e906976",
+      "bytes": 9660
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs",
+      "sha256": "99d5594019dd9f1e13162b56f48f9e8657a90e1dd2e200c53aa80374fa91cf47",
+      "bytes": 16986
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc",
+      "sha256": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38",
+      "bytes": 10639
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc",
+      "sha256": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d",
+      "bytes": 28501
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc",
+      "sha256": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded",
+      "bytes": 14892
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-child/ChildDirectoryControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-child/ChildDirectoryControls.hs",
+      "sha256": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02",
+      "bytes": 7118
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-guard/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-guard/Main.hs",
+      "sha256": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
+      "bytes": 4236
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-lifetime-independent/LifetimeOwnerControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-lifetime-independent/LifetimeOwnerControls.hs",
+      "sha256": "405b6539a99dfbf8d09502d8e60089c6dc06358c73c27ac2f362968c7f2c6893",
+      "bytes": 10528
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-lifetime/LifetimeOwnerControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-lifetime/LifetimeOwnerControls.hs",
+      "sha256": "35cf69840a1da11cde9ad962f065022e31fe81b9b991bf146fd66b9196b33e82",
+      "bytes": 2689
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-pair-independent/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-pair-independent/Main.hs",
+      "sha256": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d",
+      "bytes": 16147
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-pair-independent/ShapeMain.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-pair-independent/ShapeMain.hs",
+      "sha256": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe",
+      "bytes": 3562
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-pair-sequences/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-pair-sequences/Main.hs",
+      "sha256": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f",
+      "bytes": 6849
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-pair/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-pair/Main.hs",
+      "sha256": "776bf66ca42e39370fd6c989fc00f689b3dfb12c90e219c2b529eb3402d1ee02",
+      "bytes": 10232
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-selection/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-selection/Main.hs",
+      "sha256": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be",
+      "bytes": 11356
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-slot/SlotStoreControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-slot/SlotStoreControls.hs",
+      "sha256": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
+      "bytes": 8720
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-storage/ForeignOwnerControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-storage/ForeignOwnerControls.hs",
+      "sha256": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
+      "bytes": 2419
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-storage/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-storage/Main.hs",
+      "sha256": "c06b8ed27e0e6d29ed3c6911bc5214283d22ebb5afe749c9d36187c5367ab268",
+      "bytes": 13381
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test-storage/SwapControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test-storage/SwapControls.hs",
+      "sha256": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b",
+      "bytes": 1470
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/native-authority/test/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/native-authority/test/Main.hs",
+      "sha256": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
+      "bytes": 19652
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/HANDOFF.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/HANDOFF.md",
+      "sha256": "401861bea381583225e4ffc4f4c541ccc72fa6e8a525a9a6139a01d70995f06e",
+      "bytes": 2562
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/README.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/README.md",
+      "sha256": "cdca392be058d884733e7e9d3f9241b47991247d6b7c7fb94c24895b541553da",
+      "bytes": 7385
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/RETROFIT.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/RETROFIT.md",
+      "sha256": "4ff2abe3e7626ef0d572e666a297bfa97f992a678d46ed411829ab3909482360",
+      "bytes": 883
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/SHA256SUMS",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/SHA256SUMS",
+      "sha256": "aa08200922b446d3c2fad67719b0f00343c9f5ae0444838040091290cd027cf9",
+      "bytes": 1823
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/SOURCE-MAP.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/SOURCE-MAP.md",
+      "sha256": "d16d0445e3d2f1f71e3f58c0cfa8c72f78b15365a1b74b04054dbfcb032aa290",
+      "bytes": 2595
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/fixture-bootstrap/FacadeChild.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/fixture-bootstrap/FacadeChild.hs",
+      "sha256": "75b3101897b3c15b71df9b32931f9e4a6aa7122d9edc2aa10790c16065b567f2",
+      "bytes": 312
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs",
+      "sha256": "b860aa9af6d6749e7898cacc60b10889558dadb68ee5e68dcbda1912d85caf22",
+      "bytes": 1439
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/fixture-selected/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/fixture-selected/Main.hs",
+      "sha256": "ddb77f498858d132315f2768854e7e74a78fbf18b7f081cf49191a1e7d3806de",
+      "bytes": 3323
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/fixture/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/fixture/Main.hs",
+      "sha256": "3a6c1baefca82d447ff03566b254758a4f86c1386589e99e2255717d7a707610",
+      "bytes": 922
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/process-custody.cabal",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/process-custody.cabal",
+      "sha256": "45c21dc95a43da4e9e43697e10cb31e87f840b9d89ddbdfc55e8935688284692",
+      "bytes": 3077
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/qualification.json",
+      "sha256": "8dc5086cd83edd072deab11651a3e5a5f34f5d7c4f2f32dae7b14e65cf187716",
+      "bytes": 4904
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process.hs",
+      "sha256": "39a0805202bd0843affe2c32bfc0c8f9f79197231a94f1f2e6c40905dcf96fef",
+      "bytes": 704
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
+      "sha256": "b98d37b2bda016c82fc764114502ef19d28826c2c4086a3744eb0e7fd4c09319",
+      "bytes": 1413
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
+      "sha256": "30b1c58267106e7e16fd2184598ea8624a4c58950f0854e6a690a6ef94e9b722",
+      "bytes": 42865
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs",
+      "sha256": "d1162d1206d0d0107a3f771c58cfc28af46b1d1b4a042634d767253cec64a5e2",
+      "bytes": 342
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs",
+      "sha256": "c8496170eabfe8f5e3383c3cb0860630499b19052c0b5179a1a4fc7f8f7d9d8f",
+      "bytes": 19474
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent.hs",
+      "sha256": "3f42fb3b628a0c3f93f138373f26bef28fad9d304415c37563c414a01ff4a2c7",
+      "bytes": 2753
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Persistent/Internal.hs",
+      "sha256": "26d8254a63fba4e9ad70b3b5d735c9ce2188710e7bbfa93b3a7fb77f1761e72e",
+      "bytes": 118856
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc",
+      "sha256": "f0e131a62284e307aa44ce58d10e84dd4c083725346ace636fa32520cc22be7a",
+      "bytes": 14905
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs",
+      "sha256": "e6ac6bf23bc5568b6a88623d23bdf9fed2a4162d2cd4966e73db31c3342f8d66",
+      "bytes": 297
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs",
+      "sha256": "de3cfc758f9ee41e3d66c917853e5e7fe9c4476acff2db4a3f36cf366a83edb6",
+      "bytes": 5442
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc",
+      "sha256": "62775261c983b9b2f8f256734c731fee492f1f4a327ceab845370bd6e82da416",
+      "bytes": 10827
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/DeadlineStop.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/DeadlineStop.hs",
+      "sha256": "c11352b4e48dd7eaf3602aaea2bac4c7d1cd7b944096e03ab2c19cd328bb8dbc",
+      "bytes": 8212
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/ExitRaceControls.hs",
+      "sha256": "7342c6c4c38082373095e79d66c4f9dd18223173894c21aa081246cc5feed2ab",
+      "bytes": 12899
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/FacadeControl.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/FacadeControl.hs",
+      "sha256": "4948dd410e463023570345ed66d5939a67e80a1fd1ccd78500285355b449dd91",
+      "bytes": 3845
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/Internal.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/Internal.hs",
+      "sha256": "bc7d6362bf78adf4e5badf3e2e6285ec2496d7770b1e76c5f895f84edb621aeb",
+      "bytes": 18659
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/PersistentControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/PersistentControls.hs",
+      "sha256": "2dc30140eb9452a2441135ef7f70e20b2a96987ee4ba319d74a9cc357028c89f",
+      "bytes": 74510
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/Public.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/Public.hs",
+      "sha256": "9ab22e6705dab47416b55126104fa160fda4fec6bbec4d3635d5d254adc34600",
+      "bytes": 397
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/SeededBatchHarness.hs",
+      "sha256": "ca5528c40b9f43a96d086f3ee1c48c6266483a428dd1dbb3bcb4c090892f3808",
+      "bytes": 2968
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/SeededBatchLifecycle.hs",
+      "sha256": "d631fe70075d0c8cdbd8190509d4447b68c970bac5144aeba60690480198ce1a",
+      "bytes": 9157
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/SelectedFD.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/SelectedFD.hs",
+      "sha256": "c3748e48f8e520e7a2eba6b27611b445013d8c33d0d617bd7e861fbdf2f854a8",
+      "bytes": 7862
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/VerifiedFixture.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/VerifiedFixture.hs",
+      "sha256": "0c0212820247927fd52c1cf770b8bd3c6c4de625cff9a2c999951a2297ad308a",
+      "bytes": 1509
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/negative/CoreCapability.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/negative/CoreCapability.hs",
+      "sha256": "9bd073b4e08cbb179fadd0eace46cfda3ab866d9b5c0201f12c4ae86e1a91110",
+      "bytes": 152
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/negative/RawIssuer.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/negative/RawIssuer.hs",
+      "sha256": "1ad937597d06dbefb9ec9a5edec70f6a080684d47da6a2ddc590e3faadd5305f",
+      "bytes": 154
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/process-custody/test/negative/SelectedSpawnConstructor.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/process-custody/test/negative/SelectedSpawnConstructor.hs",
+      "sha256": "4c28b3897417504b9c09ed29922f798947c208237cc5a61883d334c5ab1e7314",
+      "bytes": 257
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/README.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/README.md",
+      "sha256": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad",
+      "bytes": 4639
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/TRANSPORT.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/TRANSPORT.md",
+      "sha256": "47985c788f31031987aa4c9082829b20426eab83045aa74a0f17ccd989a6f98b",
+      "bytes": 5368
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/formal/ACQUISITION.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/formal/ACQUISITION.md",
+      "sha256": "af661eb1131c7d0b5fbf815b976ad4899a19a27061bc5b8113b63cefa48d6c32",
+      "bytes": 2863
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/formal/README.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/formal/README.md",
+      "sha256": "c496560993a076d6766ae37a4279e6012b9401f9a74172e1f6b77ab8e11d345b",
+      "bytes": 2165
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/formal/acquisition.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/formal/acquisition.qnt",
+      "sha256": "5e8ed18ddd56ee172f927cdde7e41fc60bb57448a9b7fb315bc8067b7151c592",
+      "bytes": 7669
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/formal/acquisition_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/formal/acquisition_test.qnt",
+      "sha256": "e0caed809f42b63b7fd07d311fe692be533a5bad9d49dcd3a5b0efb7c331cec2",
+      "bytes": 7869
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/formal/handler_gate.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/formal/handler_gate.qnt",
+      "sha256": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f",
+      "bytes": 5681
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/formal/handler_gate_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/formal/handler_gate_test.qnt",
+      "sha256": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf",
+      "bytes": 17484
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/protocol.cabal",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/protocol.cabal",
+      "sha256": "8a5e155c5732790566a1b5aa530ae2e3b3810dea9e7c225ca57267fe18782d7d",
+      "bytes": 5568
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/qualification.json",
+      "sha256": "988dd7e0c6597dd22e6d43f808eb132ff377bd52ce249814b4a5ce4c334f82d4",
+      "bytes": 5256
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary.hs",
+      "sha256": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee",
+      "bytes": 368
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+      "sha256": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a",
+      "bytes": 9514
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+      "sha256": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+      "bytes": 6395
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialGuard.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialGuard.hs",
+      "sha256": "f6f9ace572c62a0aba9412c457d172a4a1fd7bb24f357e13ed3e30d7158239a7",
+      "bytes": 438
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "sha256": "85d91c8decf35f042c72783138df9faaad432607159d163e298a6ada0990db20",
+      "bytes": 1110
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Custody.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Custody.hs",
+      "sha256": "87a8d62a378359bf52589c426ac67f0376195493a2cf9e84d02c1253bac40e01",
+      "bytes": 1839
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "sha256": "1eaeadc26acfc423ff114fa3b1d383e53b7c641dfc9b062ed4063ab17d482890",
+      "bytes": 16993
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/EngineTransport.hs",
+      "sha256": "dab80f08576f4c8897366ff55d0f724dde34132006d5be50811525a8853ef32a",
+      "bytes": 1704
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs",
+      "sha256": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+      "bytes": 872
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Identity.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Identity.hs",
+      "sha256": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a",
+      "bytes": 2697
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs",
+      "sha256": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+      "bytes": 556
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "sha256": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9",
+      "bytes": 42714
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs",
+      "sha256": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86",
+      "bytes": 2541
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs",
+      "sha256": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+      "bytes": 546
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/PreviewControl.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/PreviewControl.hs",
+      "sha256": "9afb1006cd00c8f3dd54a3b684313e3cf6435da1bea89637075327aafcc73a79",
+      "bytes": 8537
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs",
+      "sha256": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+      "bytes": 542
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Server.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Server.hs",
+      "sha256": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126",
+      "bytes": 16363
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs",
+      "sha256": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+      "bytes": 6740
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Wire.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Wire.hs",
+      "sha256": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd",
+      "bytes": 6668
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+      "sha256": "5cc935b5045b73e0f90b36c34e79424a10eba26253b1f639ed301e65512cf2c8",
+      "bytes": 24636
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs",
+      "sha256": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+      "bytes": 2426
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
+      "sha256": "30cd41b3dad28cc980e48cdcb9b77e7c511cae4c3881440dd7bc0360bfb7d16c",
+      "bytes": 14890
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/src/Warlock/Transport/SocketFlags.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Transport/SocketFlags.hsc",
+      "sha256": "dc12bd6112f1bc146123303f5b799d5e6186b03eab5277ac164b13e08b97b482",
+      "bytes": 2026
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test-desktop/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test-desktop/Main.hs",
+      "sha256": "44e2b847e566a98b62278a4e534244e6c1b878683046d7ecb65d4bcbb09c2ac0",
+      "bytes": 20679
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test-preview-control/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test-preview-control/Main.hs",
+      "sha256": "185acf36f9e8688b70bb94a87b449f4cdf356d24dbfc797ae1112c32bbdb344d",
+      "bytes": 13551
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/GuardControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/GuardControls.hs",
+      "sha256": "6698548053e57a128f3341017b35a222e10fcd27aa302751ebb1c6ec43ff0eb4",
+      "bytes": 5500
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/Main.hs",
+      "sha256": "4e19a493ce14da32d1b67dd152ee3c8feba1f65dea50be0df5d153be477f663c",
+      "bytes": 7749
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/OwnerControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/OwnerControls.hs",
+      "sha256": "7757bf34257e90bf56d3c5baea54f24c28beea8a2da9820e5b04aee40d41cb3c",
+      "bytes": 21608
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/OwnerSequenceProperties.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/OwnerSequenceProperties.hs",
+      "sha256": "eda99bb99ef18eb59d2403071b8fdbbd2855c927d3adc9223335e9d6044558b8",
+      "bytes": 5267
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/PeerCredentialsCases.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/PeerCredentialsCases.hsc",
+      "sha256": "4b132ee6e37a6cf0197ff1f934b2c68b9821f93ee7023a6c36ffceef65be45a1",
+      "bytes": 13915
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/QuarantineControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/QuarantineControls.hs",
+      "sha256": "a37aefb1d8fd54be04b95f76f2d4b84ddbbe652684cb30d1246f4a82d00a2c49",
+      "bytes": 1305
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/history-valid-positional-key.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/history-valid-positional-key.bin",
+      "sha256": "4ab5dcab96c18db6a50b667b6d98fe773ae3ac479c594471a00acf6ed7f844fa",
+      "bytes": 1522
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-context-lifetime.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/invalid-context-lifetime.bin",
+      "sha256": "5a7f6ebaef0f441407a3288b47f86e7b667ee4b543e7e3c9b6963d93770b3606",
+      "bytes": 308
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-duplicate-key.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/invalid-duplicate-key.bin",
+      "sha256": "534a4bfbbc280c837dda31c926a21821259158859ac9aa48a256e2255d51698d",
+      "bytes": 108
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-extra-field.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/invalid-extra-field.bin",
+      "sha256": "031fa55a5c29a3d90edbea97e40cde527d54d2514d3b0868888777da8ffbf420",
+      "bytes": 103
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-kind-unknown.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/invalid-kind-unknown.bin",
+      "sha256": "1b010a8971b514dae3cee63cb0e8df4eab82e100730ec354b723d62c1237fe84",
+      "bytes": 95
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-version-boolean.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/invalid-version-boolean.bin",
+      "sha256": "19e7004d4f7fede867da179fc74a5140407513efe50657bb9c534fe8cf9e0297",
+      "bytes": 96
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/invalid-version-unknown.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/invalid-version-unknown.bin",
+      "sha256": "4b15479df542ecefcaefb0bf171bd88510c3b785f1ba8d0201c5e178a280809b",
+      "bytes": 93
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-request-live.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-request-live.bin",
+      "sha256": "4b4ac27237d62ded83b0439dd949c8d7eec80b92b9540da5c82bd614be426103",
+      "bytes": 697
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-result-absent.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-result-absent.bin",
+      "sha256": "7e5dbf851ce53812d7613cfa17b5ae6275c5d901a72acb989a19592bb2c41931",
+      "bytes": 748
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-wrong-key.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-wrong-key.bin",
+      "sha256": "8054dd3a23c0c0b6cabec06e82de9ed6eabc54882a3fef0db27b716eee2a4e90",
+      "bytes": 750
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/valid-hello.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/valid-hello.bin",
+      "sha256": "cd15d1f8e15be5aaf86fefef213ba4c7ff167ae5527bd8a7195213c8f3198798",
+      "bytes": 93
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/valid-negotiate.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/valid-negotiate.bin",
+      "sha256": "80fd224e5d644eefddc92598527d3b4e0c5cd372a5d7d9327db250054b62e34e",
+      "bytes": 113
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/test/fixtures/valid-prepare.bin",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/test/fixtures/valid-prepare.bin",
+      "sha256": "0d3341e70d17fbe5967dc898efcc978ff05b9029e80d60aee971ca9cfb8f2ed1",
+      "bytes": 308
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/protocol/transport-qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/transport-qualification.json",
+      "sha256": "47afea44d3dc724866010a7be1c975a195673f269907b343f2334c4b63fef036",
+      "bytes": 9459
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/README.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/README.md",
+      "sha256": "806a9a4f3e41afc100c15c24ea6ae5bfe06a8d88dfdf9bbe71ed7be79b22a215",
+      "bytes": 6597
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/app/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/app/Main.hs",
+      "sha256": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+      "bytes": 689
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
+      "sha256": "00fcd03b1babc7e9c45a954871a03f0aea15b48ced03ac496906aac8ae6cef3d",
+      "bytes": 12443
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+      "sha256": "f63550d4b9538b13afbd8a875554b56b7e3a5ece95ee1a7e76a7c3a17b795425",
+      "bytes": 6109
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/README.md",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/README.md",
+      "sha256": "9eb7d65f0e922ff3fced324bbb054936fe8fd720817a7faa77be5c127484bc56",
+      "bytes": 2895
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/current_registration.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/current_registration.qnt",
+      "sha256": "f3f4cbd87ea61db42d94250361a834a037e7d4b8638f51d410859435c6186c84",
+      "bytes": 8171
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/current_registration_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/current_registration_test.qnt",
+      "sha256": "157288b0e7f37e6696b6f898ea52882ae3b9f237b1065814a5b000217f363e78",
+      "bytes": 5918
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime.qnt",
+      "sha256": "cda6a2b40aeb37341266bc4be64ed76e3157a77e334e0e70cf1de9c3296260f5",
+      "bytes": 12242
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime_test.qnt",
+      "sha256": "c43aec201bf10ae1c77739de90e9cae4f0ac39df6fbb3ce27052de2a35de6d29",
+      "bytes": 7308
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/qualification.json",
+      "sha256": "94deb979ba0e4e20b0a211ba5f0822154d441a73759cd6e99372b508a05af9d8",
+      "bytes": 2139
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-lifetime.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-engine-lifetime.qnt",
+      "sha256": "4d9dc045213c038d12f68c46941fd72b6357222536122e7a693f910edfc9be8d",
+      "bytes": 10088
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-lifetime_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-engine-lifetime_test.qnt",
+      "sha256": "2ad115151339fd2270e8282adc62f97a6eef89aa732734b4654b84d5bbd882e3",
+      "bytes": 8739
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-rpc.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-engine-rpc.qnt",
+      "sha256": "19d0ffa4ede4cb26aeb7ca6c0e2bc8bb278e62c130e24b41bbb36bd3c7a8ef1c",
+      "bytes": 10969
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-rpc_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-engine-rpc_test.qnt",
+      "sha256": "bed49b4d7b1dfdb0de8cd83eeaf773ad7da370f9457f9034a2414d660091cae9",
+      "bytes": 7388
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-topology.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-engine-topology.qnt",
+      "sha256": "2d8dee2443cc0416f7c74ce15c85ce3e67702a62633579ce6bdc8a94e3915fa6",
+      "bytes": 17763
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-engine-topology_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-engine-topology_test.qnt",
+      "sha256": "b144821aad2314c5102657afebcef0185567a8e42e75ba5f7851220eb380d55c",
+      "bytes": 9642
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-frontend-delivery.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-frontend-delivery.qnt",
+      "sha256": "90698235d64f2a18ac80061e736a2c8491a5d2322f18398e4e378d22d708658e",
+      "bytes": 6628
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-frontend-delivery_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-frontend-delivery_test.qnt",
+      "sha256": "cd31602f2219f4d5f31f89463922de65572fda83c90f6753fe98f400d23c4b98",
+      "bytes": 7340
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-http-admission.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-http-admission.qnt",
+      "sha256": "fc30a884c6858cb52bd4574fd52caf28f9cb79fdc467c62bc760eb5053c791df",
+      "bytes": 8552
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-http-admission_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-http-admission_test.qnt",
+      "sha256": "25ba6a42ee4e4dea0978c2ce991c0cbea41703296b7b180d60b9bea748689549",
+      "bytes": 7677
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-origin.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-origin.qnt",
+      "sha256": "85a9b419371f5d527409afffe90ce10ebffd042df749bf0dc177c286bca19f11",
+      "bytes": 11116
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-origin_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-origin_test.qnt",
+      "sha256": "4d1451995bf95dd3155860c2d49011e790d185b24d44b6fd728897a57d53e057",
+      "bytes": 7113
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-private-network.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-private-network.qnt",
+      "sha256": "ce2e9444cd429f600030f5a8193c9d643838c128f1614816ba2dfe922e019955",
+      "bytes": 6916
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-private-network_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-private-network_test.qnt",
+      "sha256": "fdd7d248ea6ad03176aeb4d197e33ad2d5a5aea0e1297840d451d9efa56f6ce3",
+      "bytes": 3852
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap.qnt",
+      "sha256": "0ab50a535e453613c1ae32b64e7f0958f4b79549c8a658db2d1a257548f36eab",
+      "bytes": 6637
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt",
+      "sha256": "358ad7edbc190951e76bc097d5e611f060cccb5bb195841952133adf316323e3",
+      "bytes": 5492
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/qualification.json",
+      "sha256": "ccb70a02d87f851cce36f05f53a300f8146ca48ac3835a9174a1dc244fbe2b54",
+      "bytes": 13607
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/runtime.cabal",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "9239ad36d5111a1a73e8c82f2d83631525a9cf9bb63cef874462dc46396a103f",
+      "bytes": 10412
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "sha256": "e2b8b5253b2c458a0c4d529d52e2331e125741aa1ee4287c67a46b103927e023",
+      "bytes": 19622
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+      "sha256": "023ae55ef72184dcd178542533560f4f56ac31fa1e2e0dd52ee126a005b2c9e0",
+      "bytes": 7168
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
+      "sha256": "7d2e532a64657b08dfaba0482c268b62fa4295da51f3a19c5cbf6d9e1e5e1de6",
+      "bytes": 4351
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
+      "sha256": "8a46bb60ec5815df1aced28ec8b24c0ebf52de7e8daecc008fb49ef56178a68d",
+      "bytes": 17247
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+      "sha256": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+      "bytes": 842
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+      "sha256": "fdf9b224707611600919b349e868fd2883dbc637e9d5707750191dbd21a9a824",
+      "bytes": 13717
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs",
+      "sha256": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+      "bytes": 1675
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs",
+      "sha256": "6047f19ea3020c0860a54e0666c2866846aa77cd8643fc550f145bb66efe2a39",
+      "bytes": 5448
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs",
+      "sha256": "9836f7e5020efbbe917b8c2de4dd0de015174f28eb0484a554f98abfff0d7f18",
+      "bytes": 7126
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc",
+      "sha256": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219",
+      "bytes": 16397
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Config.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/Config.hs",
+      "sha256": "e737412f400ae5a9d53625152a23bbc8883bb6558d85770dd8e14bcb4bb8f969",
+      "bytes": 6252
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
+      "sha256": "960d6ad3b82f5d7f06bf2ab26973e8cdcda509f23394ab6ca629a19d0432f1ba",
+      "bytes": 3255
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineAdapter.hs",
+      "sha256": "c16a52b5d63a4a9000d5bcde40d0f4b37fdd52eba943a34b924a20ee319bda79",
+      "bytes": 5593
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineBroker.hs",
+      "sha256": "63cebd1a5ec38b7faa6b713dacec64f62b1e15e5cda8dbc1284dd757e6d29a04",
+      "bytes": 18764
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineDeadline.hs",
+      "sha256": "e4c842070ec57eea368f50519081668433a92874c93d0a13983f154c3a4b0182",
+      "bytes": 5028
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineProtocol.hs",
+      "sha256": "c9191618a8006b9bfb1f62b09a918bd1bde409cfa7a4b9771a928493af977105",
+      "bytes": 21259
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs",
+      "sha256": "1684af2c7eeee727fc3007e6dcda90da52ad48fe9926a22a9ed489bf6050b1e0",
+      "bytes": 4938
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
+      "sha256": "a3467864d1f675d7943c6799d5b192f7a36f5494792fb6e2cb9f1671d6053665",
+      "bytes": 4625
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+      "sha256": "3585e3ca0f8fbca8dc9b66d54821e8e60707b6798550945ea983c81a4181926f",
+      "bytes": 26664
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
+      "sha256": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40",
+      "bytes": 6185
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc",
+      "sha256": "2205761421203a631a1dc861c55501c8356e5630e96de3206dc00f986531fd2b",
+      "bytes": 15528
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs",
+      "sha256": "3a8504a5dd8fb4dac2b7c721da5e141cf571dae18f5c814dfd11bb5ebb8f3e2f",
+      "bytes": 879
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-persistent/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-persistent/Main.hs",
+      "sha256": "9768921ea4b0990fe5dd31165c93a9d4d1dc892b47e4e238c0c9f6cc746020b0",
+      "bytes": 30529
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-display/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-display/Main.hs",
+      "sha256": "2b020a41d0884f0341e7f02cea74ecb6f48a821b32b95c87f1c594a72d24501e",
+      "bytes": 4535
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs",
+      "sha256": "25fb10fe6f63630454da88f7cdd956c068a6d534dd6c159a27fd142a3903d0d1",
+      "bytes": 13153
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-engine-exec/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-engine-exec/Main.hs",
+      "sha256": "7a5c90aec72f862a06afee78fe9d16399c2f561efe555e05f7ef7f6ddc3998b0",
+      "bytes": 22804
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs",
+      "sha256": "b5741ca909729a17c529c24e41e47359e7b2dc02b6cbd5b506fb4fb48c1ef74a",
+      "bytes": 16905
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-engine-protocol/Main.hs",
+      "sha256": "155fe0122a876ad0a8044db45f0eb9c366c0a3d5521b55028817166408628083",
+      "bytes": 18901
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-engine-protocol/ProtocolBoundary.hs",
+      "sha256": "3e294c7a095bf5b67c5396b3f2377affb02882d7136a814d95838552dbb07759",
+      "bytes": 4528
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-engine/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-engine/Main.hs",
+      "sha256": "4773df5cf63c135a317738ff322bd0087de8d66674dae750e971968f63edd455",
+      "bytes": 8763
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs",
+      "sha256": "ba1012199a4bed25875541fbd2591f13c25448da7da9506c613cbcd23f6d7141",
+      "bytes": 12756
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
+      "sha256": "0ec52ba66edf9decf5ee45f808eee496be20302529402d17d09a8fe13c7bc0b0",
+      "bytes": 58099
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-private-network/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-private-network/Main.hs",
+      "sha256": "9e7c5a86b2d7cdc8c3c506197ff0e7c60e03d83563068dc0a1ad0396fa33acfd",
+      "bytes": 15512
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-security/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-security/Main.hs",
+      "sha256": "c373717c77ae9dab682b57c112ef5ed1d934a8e2def63fb207d9bd6d0b1ff954",
+      "bytes": 6636
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-security/Parent.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-security/Parent.hs",
+      "sha256": "578448d677c41473d1c2f1095cc97d7ad791b4d0278c75dcace0a5e0d317d949",
+      "bytes": 11195
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-security/Permissive.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-security/Permissive.hs",
+      "sha256": "14c6006ae86679245c2e71264f0c48f0e9b13fba50ee5f3293b38cd2f9e65718",
+      "bytes": 14027
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-security/fixtures/probes.js",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-security/fixtures/probes.js",
+      "sha256": "3f2abf6f2ca0a7aee85ba0ada522933454307f4d6ac9ce6b192166d1b8d8cce8",
+      "bytes": 5210
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "03f6e7e341690b68b174db411182cbb5fa4ae0e099ec38f8c3a32f473998b2f2",
+      "bytes": 14470
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test-ui/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui/Main.hs",
+      "sha256": "f522408fc45e2077c41cdf262cc438f4ee9ae7afc000a316da94974ed36d3e61",
+      "bytes": 24606
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test/CurrentSessionsControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test/CurrentSessionsControls.hs",
+      "sha256": "31d4038dc700006bbb7521c4a7ceb9a3a176aef742546cad2c018bcaada31587",
+      "bytes": 9456
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test/Main.hs",
+      "sha256": "98ad395210d26fe7c244c5d75056563f4d23fc707e14675d2f0df0b0e741fab1",
+      "bytes": 5488
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test/OwnedControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test/OwnedControls.hs",
+      "sha256": "6e54634fa6fab03e9b830faa9d13fd7943842cd49d6b6404494d7cb260b2cf9d",
+      "bytes": 15662
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test/PublicationControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test/PublicationControls.hs",
+      "sha256": "504273c7d9c7605ad79a725c22ca58158ccb67b16b3b4a7ae75b77cc39220779",
+      "bytes": 6294
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test/ScopedPeerControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test/ScopedPeerControls.hs",
+      "sha256": "07f39cc70a82eca00ff85970635175f9df39bbf2936506156ad406053b3ab52d",
+      "bytes": 4167
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/test/SocketHandoffControls.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test/SocketHandoffControls.hs",
+      "sha256": "91ae3d484ef7ef91dc0c85822c1947b652243f3e80d8e61d8ff3ea9d1c4a4007",
+      "bytes": 2337
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/ui/Main.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Main.hs",
+      "sha256": "50d9ebd707026536cb95054414cf587602adb2c845ca8f207145e999c757eda7",
+      "bytes": 4815
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+      "sha256": "5028eed1eae2df6f066d3868777af686aa0ddb889a651159b26cb3369c4129de",
+      "bytes": 45199
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineEntrypoint.hs",
+      "sha256": "941d77695c96f5456cfff9a2d5d452088a2668df58f0c96c0e3c830901f17080",
+      "bytes": 18905
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "57b150fd2b9652049141a911d75126d1e88452cc14b57462104e327067e5dce6",
+      "bytes": 44152
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "sha256": "b1f00b0db2370fee7442cbfa30ebfb6ed06911a704b4299a4f1f61f3650ea79a",
+      "bytes": 30099
+    },
+    {
+      "member": "green-inputs/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc",
+      "sha256": "8a016b2cfa837b1874019f376d7e4d1c333f3064ea48e62787565e4a616f40e8",
+      "bytes": 270
+    },
+    {
+      "member": "green-inputs/tools/arm64-toolchain.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/arm64-toolchain.json",
+      "sha256": "e0f136b2205d96eee5220861631d144cdf3280fc2406db110c23a2d94e95a734",
+      "bytes": 3138
+    },
+    {
+      "member": "green-inputs/tools/arm64_toolchain.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/arm64_toolchain.py",
+      "sha256": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796",
+      "bytes": 4495
+    },
+    {
+      "member": "green-inputs/tools/check_arm64_cpu.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/check_arm64_cpu.py",
+      "sha256": "99a4eb9947462503f8733b07d881a2aba01a99363c9438223d55cc15c8494655",
+      "bytes": 27431
+    },
+    {
+      "member": "green-inputs/tools/elm-http-dependencies.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/elm-http-dependencies.json",
+      "sha256": "ac6870371db068344a02e99ab40a45207b393d91d05cfd94e7b0cc54f4bd8f68",
+      "bytes": 6660
+    },
+    {
+      "member": "green-inputs/tools/haskell-dependencies.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/haskell-dependencies.json",
+      "sha256": "ca6a7fe7f45cfe4baaf074c55b7c1f0faeba4accae4ee1059788f02681d75a5a",
+      "bytes": 1574
+    },
+    {
+      "member": "green-inputs/tools/haskell-toolchain.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/haskell-toolchain.json",
+      "sha256": "7a2c7706cbf05b3e68abd661c7789cd9ce9d24a5b714091176e6e6b275ac0a76",
+      "bytes": 3544
+    },
+    {
+      "member": "green-inputs/tools/haskell_test_wrapper.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/haskell_test_wrapper.py",
+      "sha256": "cd22df6c8df61b4cc58e032bae6a98a8e95dbbbf0d35cab30f9ce2c2bc50a988",
+      "bytes": 9418
+    },
+    {
+      "member": "green-inputs/tools/qa_cpu.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "sha256": "ffbac2add6122de986aba11792ca3cac2a276266ddb7e411843fee5479894ec2",
+      "bytes": 23099
+    },
+    {
+      "member": "green-inputs/tools/ui-host-toolchain.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/ui-host-toolchain.json",
+      "sha256": "f53770c47929e28b50ddc7c2c0b5cb2315d90003983446be6c325b7dd0708a14",
+      "bytes": 79915
+    },
+    {
+      "member": "green-inputs/window-integration-qa/qa_launch.py",
+      "origin": "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_launch.py",
+      "sha256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+      "bytes": 4662
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/elm.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/elm.json",
+      "sha256": "8b4b79f249439797039cfb923bb99d0025d27913e50f097e1cd1da8f03c4ca63",
+      "bytes": 364
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+      "sha256": "3585e3ca0f8fbca8dc9b66d54821e8e60707b6798550945ea983c81a4181926f",
+      "bytes": 26664
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/AdapterAnnouncementReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/AdapterAnnouncementReplay.elm",
+      "sha256": "71baa009e78ab31f74b8d9371eea57410393d0ed68f09307f1ec5333ea9b7b1b",
+      "bytes": 11963
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/AnnouncementMessageContracts.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/AnnouncementMessageContracts.elm",
+      "sha256": "0761e96356884698bc2c303ed26c461e8ba229e15f7c73984fc85e3f0e57a07d",
+      "bytes": 2504
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/AnnouncementReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/AnnouncementReplay.elm",
+      "sha256": "d55199bb422e26fcd10916ba9d65dfb3677c31963b64ca07c4bfc7680c4ea1d8",
+      "bytes": 7845
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/Arc004RefusalReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/Arc004RefusalReplay.elm",
+      "sha256": "e75589b5e6b3541a847b37916d147d1ed71c3e5c2b594b7e139223f23f543f47",
+      "bytes": 5100
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/AttentionReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/AttentionReplay.elm",
+      "sha256": "130696992b5e4e663d07ab532fd172da0903f0faec40e8fc1bf2c898f45879eb",
+      "bytes": 5108
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/AuthorityTupleReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/AuthorityTupleReplay.elm",
+      "sha256": "78a95932b297f236e50410d3b5c020bcebc2b2c3deccd663746211d24ecd28ab",
+      "bytes": 21910
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/CatalogLocaleReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/CatalogLocaleReplay.elm",
+      "sha256": "04c1e1d72099705a429853886e5246cc679ef21b472d4661bfd1447ff4e83737",
+      "bytes": 1368
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/DeadlineBridgeReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/DeadlineBridgeReplay.elm",
+      "sha256": "e7a0dd41a597a8298bef90c7122ea9a63d9d982ef0ad4dade1bd078a722e5468",
+      "bytes": 1828
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/FeedbackContextReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/FeedbackContextReplay.elm",
+      "sha256": "c98bb05441461e28c011c0e56e0ef6990abeda7c1dbe2ef1950dba5949e62d4f",
+      "bytes": 12248
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/FeedbackReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/FeedbackReplay.elm",
+      "sha256": "ce41650674511acb1eb71ebe186dae0828d2799db798016a37623a0d543c4615",
+      "bytes": 1480
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/FilesReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/FilesReplay.elm",
+      "sha256": "b46d8b9a99b84c4a1cb03c961d15a8e12316071233e56fd1138cff7f547fea90",
+      "bytes": 11431
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/FullscreenExitReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/FullscreenExitReplay.elm",
+      "sha256": "e0dce514d5b6390cb29268bbe820d5306d7c85d47a3b82382ca57ffda0b77e49",
+      "bytes": 7884
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/GeometryCapabilitySequences.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/GeometryCapabilitySequences.elm",
+      "sha256": "2f0fcb6f6891cee7939e5335cbac4300920a0684bec89fae0728265aa9e62a69",
+      "bytes": 22809
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ImeReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ImeReplay.elm",
+      "sha256": "2d7f8a1943e0c2d53a3148de4b61c3ea28f415d10d0bf54ece6384ce5efd0949",
+      "bytes": 4911
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/JumpListReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/JumpListReplay.elm",
+      "sha256": "53a27333b19f9820da8624a389ca84aa8988d50f5ef8afa4db2cfb4a19686b0f",
+      "bytes": 11817
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/KeyboardShortcutsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/KeyboardShortcutsReplay.elm",
+      "sha256": "3040bd2e8628f47adabdb227d7ac08796d59a3a001f7c8e985c2ca0c5c69565d",
+      "bytes": 6513
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/LauncherOutcomeReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/LauncherOutcomeReplay.elm",
+      "sha256": "3eba2340f5c211a31833bad011d52d96d521b474c8e2c2529d27adc482b0b46c",
+      "bytes": 6469
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/LayerAppearanceReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/LayerAppearanceReplay.elm",
+      "sha256": "edecab58528556dbe44da05c325977893059551f79895131ed11d55c7c90e8ab",
+      "bytes": 3763
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/LiveMotionReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/LiveMotionReplay.elm",
+      "sha256": "cd27bb03bf426dfb06c17522b2f30decd1a9eb07cc89d594fe5eb8f4e70f4083",
+      "bytes": 11226
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/LocalFieldReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/LocalFieldReplay.elm",
+      "sha256": "d70d23bcdb9f460f24cf3b176afc1584f3c96a978f270685dd1943ab88ec78e3",
+      "bytes": 21717
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/LosslessBridgeReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/LosslessBridgeReplay.elm",
+      "sha256": "1394ece458cd0799ea4e03b11b08f2d8e9deff6b6ae3f21b64f1cd816809699d",
+      "bytes": 1198
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/MotionReadRecoveryReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/MotionReadRecoveryReplay.elm",
+      "sha256": "844da69838e52b4ba1cdcc636f8df7842904a611eb225fc3014f9900c4125335",
+      "bytes": 6480
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/MotionReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/MotionReplay.elm",
+      "sha256": "dcdfe2a86232006b5ee17b27d57b37872787d21e343c5d5c18dae8bdcba5efdc",
+      "bytes": 6554
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/NativePointerFixture.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/NativePointerFixture.elm",
+      "sha256": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124",
+      "bytes": 954
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/NewInstanceReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/NewInstanceReplay.elm",
+      "sha256": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+      "bytes": 8286
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/NotificationAnnouncementReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/NotificationAnnouncementReplay.elm",
+      "sha256": "9ea32f5578f73534d6dd94d92a519f32ddb7f317a1dd753d0e6f7e1e61e581ed",
+      "bytes": 9107
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/NotificationRelevanceReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/NotificationRelevanceReplay.elm",
+      "sha256": "de99c29c7d40cd8cf253e54e9e960519745aab39df054465df85502c8d980466",
+      "bytes": 9501
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/NotificationsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/NotificationsReplay.elm",
+      "sha256": "d962a8d60b34201ae138afbfb0ff0e8ed9cb3a131a8b4cafecb74267dff7408f",
+      "bytes": 8911
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/OutputRetirementReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/OutputRetirementReplay.elm",
+      "sha256": "fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9",
+      "bytes": 6596
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PinMaxReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PinMaxReplay.elm",
+      "sha256": "7012e1031bae8fb246c9ca3de3477f1b64b2caf4b05aa71ada1b76c9bd0aeb75",
+      "bytes": 14639
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PinnedMenuReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PinnedMenuReplay.elm",
+      "sha256": "d6f12ae276c3c11b531c27f142e1d982b1a997fcedf10fd26760c53e874411ae",
+      "bytes": 6030
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PinsPendingReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PinsPendingReplay.elm",
+      "sha256": "f877fc0061eeb0c8be2b7f32061e6e25294b1fa02924be1d8a0658afdf190999",
+      "bytes": 16995
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PinsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PinsReplay.elm",
+      "sha256": "5014fa611be6138bba47b3b3326e769d1a4c63db4bf463f6d85c26d2bce0f85a",
+      "bytes": 6439
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PointerOwnershipReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PointerOwnershipReplay.elm",
+      "sha256": "d4deed6ad7d1b2688c12e23fa8cf8984753481e8ae73ed12d00ca5669511405e",
+      "bytes": 6214
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PopupEntryReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PopupEntryReplay.elm",
+      "sha256": "a0843e1679dfe8c5aa06ab034102aa7c1de1d1a518770d328f5712cae566ae02",
+      "bytes": 4450
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PopupReflowReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PopupReflowReplay.elm",
+      "sha256": "348e49a8f218396d0edb725ebd5891aa59ef11c71bc83c4119a7140107777d49",
+      "bytes": 9698
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PreviewConsumptionReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PreviewConsumptionReplay.elm",
+      "sha256": "540c738131b689870b0b57da1b5eaea1f289d3bf6e8e4b89fffa74b25fee30f3",
+      "bytes": 4516
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PreviewPaintReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PreviewPaintReplay.elm",
+      "sha256": "488e33a7e09e5937385be99e7525ba45765cf195e54cf2244627a8e2c799ab18",
+      "bytes": 3109
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/PreviewStateReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/PreviewStateReplay.elm",
+      "sha256": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+      "bytes": 9363
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ProtocolLateCancelProperties.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ProtocolLateCancelProperties.elm",
+      "sha256": "601c26075eb31d8fffb4f4608f9276bb3a847e346186b42ee3922eab3052cbf2",
+      "bytes": 5983
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ReceiptOutputLifecycleReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ReceiptOutputLifecycleReplay.elm",
+      "sha256": "f84ee49b10aee296e88155cb734be1f07c770ca00a890fb3d1d16d38d3212a3b",
+      "bytes": 10438
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ReceiptStateReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ReceiptStateReplay.elm",
+      "sha256": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+      "bytes": 19879
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/RestoreAnnouncementReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/RestoreAnnouncementReplay.elm",
+      "sha256": "3d7f657c50dcd327073f2d3cee67f6fe9e37d8c6c8e316a9143f44efd6d37690",
+      "bytes": 9044
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/RetirementProofReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/RetirementProofReplay.elm",
+      "sha256": "eebc71f1f8c13b1baaa882c74a52cd42d5980edc0277053f7f5c9a080466c66b",
+      "bytes": 22081
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SearchRemovedReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SearchRemovedReplay.elm",
+      "sha256": "46d3f10ec705c471e717539138fb2041eff8a6e8bc5468906a8380f5a5dd5a2f",
+      "bytes": 8317
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SearchReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SearchReplay.elm",
+      "sha256": "a5392d9eb33e7c9f4c702ba1c5dbe6981a1df592d20c41a9d657cc53d6c0914f",
+      "bytes": 5300
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SettingsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SettingsReplay.elm",
+      "sha256": "3bdcfbb1706ec9ee4c1b56c0fea5ea9f7fc2601a21fdcb16a4b69c6dc35c380e",
+      "bytes": 10990
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ShortcutDraftProperties.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ShortcutDraftProperties.elm",
+      "sha256": "a1c17b9cbffd9380142e35a0842971eb828061484c2d1f0d6a79ebb0ee12f69a",
+      "bytes": 10321
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ShortcutDraftReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ShortcutDraftReplay.elm",
+      "sha256": "19f6bcc963ee512a2a6d5df9d784f23e7356663e5fd3181c4a6e4f3f516b256f",
+      "bytes": 6600
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ShortcutGenerationReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ShortcutGenerationReplay.elm",
+      "sha256": "842676757ca80981e161f814a1148dd3a08204553b917c502898fe2a933dbebb",
+      "bytes": 3052
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ShortcutOutputReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ShortcutOutputReplay.elm",
+      "sha256": "50656cdc8a02afe8cfb3fedc5d175a9449ccdab9d76dc6e08a0a56ed0391543e",
+      "bytes": 5172
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ShortcutPreferencesReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ShortcutPreferencesReplay.elm",
+      "sha256": "f6940c7190956ddc1a28b1be2778ef186759bfaaa3d35411d9abe40a3d3db3a7",
+      "bytes": 10893
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SnapReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SnapReplay.elm",
+      "sha256": "8c5f69c06f2cb37e971eb493f68cb7a51e8d3344dc2936c063ef62cb1c1f40d5",
+      "bytes": 23369
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SolFilesRebind2214.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SolFilesRebind2214.elm",
+      "sha256": "6f9e95771c9eba56ae8fbba50e7f8315974e01ded3e4fdee768195d329dc00d7",
+      "bytes": 15212
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SolSystemMenuIntegratedReplay2114.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SolSystemMenuIntegratedReplay2114.elm",
+      "sha256": "7b448580857a1dca22c0addd9e009a2da2af9c87b0fa78fff5fc79caa079ad5a",
+      "bytes": 23565
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/StandaloneMvpReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/StandaloneMvpReplay.elm",
+      "sha256": "9bbea3e907f29af8d0a5db1d464cc59f610bbceaa1b0d3028330a0ded6a364ba",
+      "bytes": 5545
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/StatusScrollReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/StatusScrollReplay.elm",
+      "sha256": "274cacb5131731b6d8fddbd37cf3886369283449489b79985ad9d29a12ef5f7d",
+      "bytes": 2525
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/StreamCapacityReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/StreamCapacityReplay.elm",
+      "sha256": "6d3341047586efc479cd0292c89d3f16e76079d1d2a1433d673006d00fa98c92",
+      "bytes": 19524
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SurfaceSnapshotContracts.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SurfaceSnapshotContracts.elm",
+      "sha256": "859e33eb242203120e8b2b8fb680431ff24ef707b2c43913185ae4b1d36b9d53",
+      "bytes": 4926
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SwitcherFocusReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SwitcherFocusReplay.elm",
+      "sha256": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+      "bytes": 5481
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SwitcherReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SwitcherReplay.elm",
+      "sha256": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+      "bytes": 12852
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/SystemMenuReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/SystemMenuReplay.elm",
+      "sha256": "9ffa00c0d0a2b4a86be91ad7aa988b46f8e2efc91b57a95900095dee97f5ba03",
+      "bytes": 12178
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TaskViewEscapeReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TaskViewEscapeReplay.elm",
+      "sha256": "9f95642d106544223fcae61f3b81a684853276ed8b7de461437267d9dba33ac8",
+      "bytes": 2926
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TaskViewReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TaskViewReplay.elm",
+      "sha256": "9f2a30aaecbd0069b1d297d029cfff9126c506dd39bcdcc6c871e6189c53c9b6",
+      "bytes": 37806
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TaskbarGroupStateReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TaskbarGroupStateReplay.elm",
+      "sha256": "39290fdf9b5f4dd93ec571f08295a40769c238242f93032ef73b83b2a8ac97bc",
+      "bytes": 2861
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TeaAdmissionSubscriptionsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TeaAdmissionSubscriptionsReplay.elm",
+      "sha256": "fb3d3b254337dd8c18c04e423d27af24eea649c4a3fca928df6deb50cdcce245",
+      "bytes": 4401
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TeaBarSubscriptionsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TeaBarSubscriptionsReplay.elm",
+      "sha256": "6fe9393de64a3ba182d6af795b0625bccd29ad0df57e5a5afefd387604cef70d",
+      "bytes": 4611
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TeaContractReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TeaContractReplay.elm",
+      "sha256": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+      "bytes": 6805
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TeaPopupSubscriptionsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TeaPopupSubscriptionsReplay.elm",
+      "sha256": "50aaefcb9b07504844784c206ab0a5ae6591d42140776d31e7fdecf34f3cd528",
+      "bytes": 7359
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TeaRendererSubscriptionsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TeaRendererSubscriptionsReplay.elm",
+      "sha256": "f9fa36a1e09570be3b24bcf3d689376055cac5f1611694b5f35259ba02c2e497",
+      "bytes": 4809
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ThreeGroupReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ThreeGroupReplay.elm",
+      "sha256": "df259a03b3f221e7c6fef515a0704be6f21a792933612113cdd02ffbd53ddd9b",
+      "bytes": 5031
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/TransferReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/TransferReplay.elm",
+      "sha256": "eaf198640a854600c48b6314135865dfba58b07caf7581a32a707eb542267e09",
+      "bytes": 5635
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/UiHttpFailureReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/UiHttpFailureReplay.elm",
+      "sha256": "d3dab516f45f00d3e2f4fad71901e2204718b4f4ec8a0c5eac9661bc47cebc70",
+      "bytes": 5515
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/UiHttpReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/UiHttpReplay.elm",
+      "sha256": "eb0fc2636f9dcc34c9a0ea5a016b1b8a37ec5ff9d03539c4f5c88131e224bf10",
+      "bytes": 12007
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/Workspace2IconReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/Workspace2IconReplay.elm",
+      "sha256": "094c10d8be17f4fb2318f70230f3546431443833283a92535f5d42306c7f2ad4",
+      "bytes": 7270
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/WorkspaceNavigationReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/WorkspaceNavigationReplay.elm",
+      "sha256": "92d2907941ebb0530b6f2d77b20fa1a8fe41bd516610daee993f352550284ffe",
+      "bytes": 7824
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/announcement-message-contracts.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/announcement-message-contracts.cjs",
+      "sha256": "5183abd77dad75f63ca264df346810bb0c96619ed790c92f45cfd4a8aa37c932",
+      "bytes": 2273
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/authority-tuple.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/authority-tuple.cjs",
+      "sha256": "3033b7c84d667af2566439d7e2e01644df3a171fa332be142388b8d92cdec68a",
+      "bytes": 21454
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/closed-topology-after-dismiss-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/closed-topology-after-dismiss-literals.cjs",
+      "sha256": "8435b31ad6790fddc0750f6b5926388f36f394de9f58de9238c3944d45db6740",
+      "bytes": 7175
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/current-feedback-build.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/current-feedback-build.json",
+      "sha256": "6bbb059e99362d59c33ef511c1d91eedd5243c169744da7505431877286eb773",
+      "bytes": 535
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/current-focus-core.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/current-focus-core.json",
+      "sha256": "1a113161f65ee02b73a4a5e122c72446b82df78e068d0a4fea7f19203bbd8d21",
+      "bytes": 308
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/current-max-core.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/current-max-core.json",
+      "sha256": "887b06db4872f4cb835ece06dade787b9086e794e6df944d5740541842431db3",
+      "bytes": 306
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/current-native-pair.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/current-native-pair.json",
+      "sha256": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd",
+      "bytes": 4633
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/current-pin-core.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/current-pin-core.json",
+      "sha256": "36c2ab91e342791794f297abb4272195889292823491eff4740cc5ee55c1d082",
+      "bytes": 306
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/current-scene-core.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/current-scene-core.json",
+      "sha256": "d8caf7b564ee4cd4e3ce0413f6d93ee6178041f462bc9936891320a39f061be8",
+      "bytes": 319
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/current-search-build.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/current-search-build.json",
+      "sha256": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+      "bytes": 457
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/deadline-bridge-replay.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/deadline-bridge-replay.cjs",
+      "sha256": "bd6632d1da77611874ec07b27e41b90f7743747b9aac49303625fc2d93c41753",
+      "bytes": 906
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/decoder-refusal.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/decoder-refusal.cjs",
+      "sha256": "173a08e43289f8c58ef4d8c398cb33ada5892c2496b044058bf65030700da8ea",
+      "bytes": 2958
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/evidence/persistent-auth-20261101/cpu-review.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/evidence/persistent-auth-20261101/cpu-review.json",
+      "sha256": "7251f65ae67d9774a459a8f615254f91b480de24517ade2f63fee96da30f9d2f",
+      "bytes": 23999
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/evidence/persistent-auth-20261101/report.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/evidence/persistent-auth-20261101/report.json",
+      "sha256": "22c018c3de6ac6aca3a0cddc14aa2755c1fc173920546c9b95e50ac9f417e072",
+      "bytes": 452135
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/fd-lease/observer-map.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/fd-lease/observer-map.json",
+      "sha256": "c73cd603b2baadf141652b6b2cf68105084955194a1b938ade1830e63c4b2d8b",
+      "bytes": 1009
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/fd-lease/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/fd-lease/qualification.json",
+      "sha256": "2d95773f15aa0293d8908cc63e6f3c400a5f52a4144c0c01fa4f58e24d3f1519",
+      "bytes": 2337
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/feedback-context.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/feedback-context.cjs",
+      "sha256": "7fff0511c7e1aca4a40a145a74ca191b00f5f2df0798c06422e7bd51118c0710",
+      "bytes": 6528
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/files-typed-state.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/files-typed-state.cjs",
+      "sha256": "7e4739a6438653d596aaa8a5e994e9ef95c3f90fb716b011c441a76b8dfc45fd",
+      "bytes": 7926
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/first-elm-haskell-capture.selection.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/first-elm-haskell-capture.selection.json",
+      "sha256": "e64c56d3ad9a477428e9778caa2d536fa345bae1aa22d8d5cb4cd9f77d5c32ef",
+      "bytes": 2954
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/TeaAdmissionSubscriptionsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/TeaAdmissionSubscriptionsReplay.elm",
+      "sha256": "fb3d3b254337dd8c18c04e423d27af24eea649c4a3fca928df6deb50cdcce245",
+      "bytes": 4401
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/TeaBarSubscriptionsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/TeaBarSubscriptionsReplay.elm",
+      "sha256": "6fe9393de64a3ba182d6af795b0625bccd29ad0df57e5a5afefd387604cef70d",
+      "bytes": 4611
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/TeaPopupSubscriptionsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/TeaPopupSubscriptionsReplay.elm",
+      "sha256": "50aaefcb9b07504844784c206ab0a5ae6591d42140776d31e7fdecf34f3cd528",
+      "bytes": 7359
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/TeaRendererSubscriptionsReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/TeaRendererSubscriptionsReplay.elm",
+      "sha256": "f9fa36a1e09570be3b24bcf3d689376055cac5f1611694b5f35259ba02c2e497",
+      "bytes": 4809
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/full-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/full-literals.cjs",
+      "sha256": "2a06a440db4d00303865e35d0dbe58a21bfa60199cee081a09b79250e35ea54d",
+      "bytes": 6347
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/full-manifest.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/full-manifest.json",
+      "sha256": "6b640da6245de51aa257772367f66ab364f2478aabd570bab4d58594ca4e7122",
+      "bytes": 7961
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/full-negative.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/full-negative.cjs",
+      "sha256": "c3b3520f59d110c4461ef2eb7f490430508afabaf0525890242bfb12fd5535bb",
+      "bytes": 5068
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/full-observer.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/full-observer.cjs",
+      "sha256": "dee19a907df4b41d6bedec2355d19ee64290f947ed3902c08be2b6cdcba68dbb",
+      "bytes": 39978
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/literals.cjs",
+      "sha256": "cbc7970e0426da7de3a4d0fb4891fd6ccfb5d201a6bb6a84670bc3cd054793a1",
+      "bytes": 7739
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/closed-topology-after-dismiss-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/closed-topology-after-dismiss-literals.cjs",
+      "sha256": "65b20a6c150bd746f04e740e5ca4affc51de27e556355b77acf15f8f75328411",
+      "bytes": 7129
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/http-popup-control-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/http-popup-control-literals.cjs",
+      "sha256": "381f050118de2739e0d53bbe1399584d54b44a1ab24751f3e85734b64eef449a",
+      "bytes": 6128
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/http-root-cases-guard.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/http-root-cases-guard.cjs",
+      "sha256": "ef413d508edc938599f20ba34c20f379da79cb9dca60b5a48ef9a624cc85cc48",
+      "bytes": 2828
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/http-root-cases-manifest.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/http-root-cases-manifest.json",
+      "sha256": "8beb60943bd2480b52151a009db7fee2c7759383482de19b3bc09ee79ef2faf8",
+      "bytes": 2820
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/http-root-cases-negative.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/http-root-cases-negative.cjs",
+      "sha256": "ebb1417540ad1bbe4f8516140c02e802ff2545057722c91c7346d00e2141230b",
+      "bytes": 5059
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/httpbar-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/httpbar-literals.cjs",
+      "sha256": "6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173",
+      "bytes": 5929
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/joined-control-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/joined-control-literals.cjs",
+      "sha256": "8119bc53603a9db9fae4bafd1d79075e8f18258f72afa3f8d4e268e48d120abd",
+      "bytes": 8000
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/sol-http-popup-literals-0525.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/sol-http-popup-literals-0525.cjs",
+      "sha256": "ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1",
+      "bytes": 10746
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/parents/tea-contract-cases.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/parents/tea-contract-cases.cjs",
+      "sha256": "41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7",
+      "bytes": 168992
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/tea-subscriptions-cases.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/tea-subscriptions-cases.cjs",
+      "sha256": "906cf3c7b6aea0ca4501ef928cdb84ae5b1df124cad5d633bbba204f7c7168dd",
+      "bytes": 53576
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-full-subscriptions-v2/tea-subscriptions.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-full-subscriptions-v2/tea-subscriptions.cjs",
+      "sha256": "b1685b8e293d8839a1d33226f6c5b7fb484149a08f7617b47db6845e044da421",
+      "bytes": 59180
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-owner/qualification.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-owner/qualification.json",
+      "sha256": "7aa73395721c5672234f162bf7f0b3ec2facb54e505c992edb111f94330d7da2",
+      "bytes": 2469
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-popup-control-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-popup-control-literals.cjs",
+      "sha256": "8fb6d1ec0eba318b70fa0e4617c30ee20fe0a2e39a2f7b8e2822dd8c21cebf55",
+      "bytes": 6174
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-preview-control-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-preview-control-literals.cjs",
+      "sha256": "627b1c6fddb27607bd5d3f54bb931055dcab14c0b46feee701a1a89a10915d39",
+      "bytes": 6075
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-preview-control-replay.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-preview-control-replay.cjs",
+      "sha256": "8578ab78cc1ca91c1f7834d322c0ec4d11815837d76c1533019cef63c71cfd99",
+      "bytes": 2096
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-root-cases-guard.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-root-cases-guard.cjs",
+      "sha256": "ef413d508edc938599f20ba34c20f379da79cb9dca60b5a48ef9a624cc85cc48",
+      "bytes": 2828
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-root-cases-manifest.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-root-cases-manifest.json",
+      "sha256": "8beb60943bd2480b52151a009db7fee2c7759383482de19b3bc09ee79ef2faf8",
+      "bytes": 2820
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/http-root-cases-negative.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/http-root-cases-negative.cjs",
+      "sha256": "ebb1417540ad1bbe4f8516140c02e802ff2545057722c91c7346d00e2141230b",
+      "bytes": 5059
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/httpbar-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/httpbar-literals.cjs",
+      "sha256": "6f645e235c119e2a8069d9a6d7542c1f45cd95d667ddbe5e3f6129f83a255173",
+      "bytes": 5929
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/joined-control-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/joined-control-literals.cjs",
+      "sha256": "6cb3275f6bb551d5ab100a0e8cc3e0880e2756344fbc6ea63b78a523109d47b6",
+      "bytes": 8046
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/launcher-outcome-replay.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/launcher-outcome-replay.cjs",
+      "sha256": "3544c3d1ec2a358c264c5a2e0af30bac582e20832d4ecb3c9981e1dab6ecce3e",
+      "bytes": 499
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/legacy-controls-budget.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/legacy-controls-budget.json",
+      "sha256": "bb62c56218f7eec07f9971d2fb0d9a39274aec4a24f962be6ffdc218357a411b",
+      "bytes": 2281
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/legacy-controls-supplement.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/legacy-controls-supplement.cjs",
+      "sha256": "de421a54d1a10ae25e156d61a84df3a02f7d36599e8be99becbd03f8f1034182",
+      "bytes": 10713
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/lossless-bridge-replay.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/lossless-bridge-replay.cjs",
+      "sha256": "271cae6c105ad4e8f084ded9f59f4b4948c8dd2e65455cb80d15924a63a36328",
+      "bytes": 901
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/motion-read-recovery.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/motion-read-recovery.cjs",
+      "sha256": "8b8283d29a8d1a6d7645a1dc35bd1e3fc5d28dd7fb0bfd1e1a2402e163bfbe18",
+      "bytes": 3432
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/motion-typed-state.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/motion-typed-state.cjs",
+      "sha256": "960a71375f01a679caf76917866a78d5bbcbe9cbc54a94c0c29bfb6ebd7383c9",
+      "bytes": 8296
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/native-runtime-helpers/inputs-lock.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/native-runtime-helpers/inputs-lock.json",
+      "sha256": "35fd5b47cdefb62769ae092fad7d5985dde8baf1f8957ef8c1dc9983ed8970d7",
+      "bytes": 43692
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/pins-pending.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/pins-pending.cjs",
+      "sha256": "359164591f48becc0f99b1389039aec0c2738e6763127e39babba6075ac837b6",
+      "bytes": 20777
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/preview-consumption.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/preview-consumption.cjs",
+      "sha256": "6c2a5664abd684d0ae778f4da975067163565d968ae1f506680c51420dfb7e0d",
+      "bytes": 10687
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/reachable-legacy/reachable-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/reachable-legacy/reachable-literals.cjs",
+      "sha256": "97fde2ebe21362922dcaa3968c103069b59053584ae51a3cd48fa1eca01a09e6",
+      "bytes": 7419
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/reachable-legacy/reachable-observer.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/reachable-legacy/reachable-observer.cjs",
+      "sha256": "2c93be152b21b6bce7641b16f9eb68d0725eb742446f432accc2bd398b481eff",
+      "bytes": 40465
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/reachable-legacy/run-reachable.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/reachable-legacy/run-reachable.cjs",
+      "sha256": "7b107124c7163f1249179c6b14b618a694b784ed526d5dd9135dff50a3e8c408",
+      "bytes": 12091
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/receipt-sequences.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/receipt-sequences.cjs",
+      "sha256": "c24a78d84381d62b9f78320881604a0398a95e348ff8da7f7fa06af53bcdc8d5",
+      "bytes": 3402
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/receipt-state.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/receipt-state.cjs",
+      "sha256": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+      "bytes": 20820
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/restore-announcement.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/restore-announcement.cjs",
+      "sha256": "c1e57940e7da6daf3ab0a8459c657d61273661fecd5b1179c93a150c43ea3f3d",
+      "bytes": 3182
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/search-removed-replay.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/search-removed-replay.cjs",
+      "sha256": "ae12f1dc6b6c6116d098dbffaf40e530a7b7988aea9c06d7aa3d44874ea1ba5b",
+      "bytes": 497
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/shortcut-draft-contracts.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/shortcut-draft-contracts.cjs",
+      "sha256": "6ef1d6df9236c3b201221225eddb22939b8d064bff2eb30966b16567cb3b5d2d",
+      "bytes": 2282
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/shortcut-draft-strict.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/shortcut-draft-strict.cjs",
+      "sha256": "145f2109d556f6711f2601923728044007b30966b24b8258a780a2dbe11969c7",
+      "bytes": 8859
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/sitemain-root-literals.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/sitemain-root-literals.cjs",
+      "sha256": "04151053b079b4dba16656d71680d8eec9ebed709285c695e8270f3e57478cb3",
+      "bytes": 12572
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/sitemain-root-manifest.json",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/sitemain-root-manifest.json",
+      "sha256": "35c43b1af218669b033eacb6f754efcf28982f21a1c6a7215f288231f12fcac5",
+      "bytes": 1170
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/sitemain-root-negative.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/sitemain-root-negative.cjs",
+      "sha256": "0bb0d6b118b258aa56d5fa764d392968f4be03219f96d220e3ef77d49dbaa7b2",
+      "bytes": 3458
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/sitemain-root-observer.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/sitemain-root-observer.cjs",
+      "sha256": "0a0ec6efc3c14bee29b055532775ecc567f2e96f1b0d43d2d6c7f2306b5bc643",
+      "bytes": 33878
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/snapshot-contracts.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/snapshot-contracts.cjs",
+      "sha256": "95f69e25bb5552f46bd301189ad478a66243b140cde87695f1d0eeeb4f7450c9",
+      "bytes": 3826
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/sol-files-rebind-result-2214.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/sol-files-rebind-result-2214.cjs",
+      "sha256": "94469fd4a43262b57d4114afae255c589f7e53f4a93e222ee61002609efbef4b",
+      "bytes": 8594
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/sol-http-popup-literals-0525.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/sol-http-popup-literals-0525.cjs",
+      "sha256": "ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1",
+      "bytes": 10746
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/sol-http-root-observer-0535.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/sol-http-root-observer-0535.cjs",
+      "sha256": "a5e3bd62f0ccf39d3e16da9117e6cacb6a3f497e43eca8157666d7d5bef6d854",
+      "bytes": 37246
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/standalone-mvp.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/standalone-mvp.cjs",
+      "sha256": "8b8056964e616fea592a95c81f5baef63855def42cddd6d053298266818f8b45",
+      "bytes": 21854
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/status-scroll.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/status-scroll.cjs",
+      "sha256": "a839694bae44468d002ed0bd364f7c6a2fea8db3a3671872ecb1de6631420ce9",
+      "bytes": 5990
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/system-menu-typed-state.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/system-menu-typed-state.cjs",
+      "sha256": "5bc6f3c784bbd5a6dc80a9e8c40bfc37975b2bbdd4bc853dc288e9cda5c5e158",
+      "bytes": 12042
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/tea-contract-cases.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/tea-contract-cases.cjs",
+      "sha256": "41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7",
+      "bytes": 168992
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/tea-contract.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/tea-contract.cjs",
+      "sha256": "15597108de923405823578f89f2c667988f8602f12ddb68f449c365bb17319b8",
+      "bytes": 16490
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/tea-subscriptions-cases.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/tea-subscriptions-cases.cjs",
+      "sha256": "a7f7cf418977cd4f49d2c6cb70f9313fd4992ea18e82c4289b0985026ae2c930",
+      "bytes": 51842
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/tea-subscriptions.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/tea-subscriptions.cjs",
+      "sha256": "4f90286490ec806f2b3f9c7ac00f4d494bf6ddfd36b1709b822649e3b1335ec8",
+      "bytes": 58660
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/tea001-extra-typed.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/tea001-extra-typed.cjs",
+      "sha256": "14c1657a16b58702bea4ebcfa9124f6c2069a28d7f3252da7863024a0684e9c8",
+      "bytes": 16628
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/typed-state.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/typed-state.cjs",
+      "sha256": "87b4d7b6946211a787b6d620eb2d8662978484e702bd2ea28a10fa6d00a39014",
+      "bytes": 12117
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ui-backend-port.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ui-backend-port.cjs",
+      "sha256": "20bb06c1f4dd3537cf3a25a58acb13edf263311415464a1e113ac9dd0cebee6b",
+      "bytes": 33057
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ui-http-failure-typed.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ui-http-failure-typed.cjs",
+      "sha256": "5c1297cadaeecb34a49a1e3de90ea57e78dc40a535cfb51b50d38b36e9d3fc28",
+      "bytes": 8153
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/qa/ui-http.cjs",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ui-http.cjs",
+      "sha256": "11ba46628c54b83486af54173849a5868d770c3e462b39907cdd87a5a2b78cc1",
+      "bytes": 95127
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/ActionProjection.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/ActionProjection.elm",
+      "sha256": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+      "bytes": 4384
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/AdapterNotice.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/AdapterNotice.elm",
+      "sha256": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+      "bytes": 2566
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Announcement.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Announcement.elm",
+      "sha256": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
+      "bytes": 4349
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/AnnouncementMessage.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/AnnouncementMessage.elm",
+      "sha256": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075",
+      "bytes": 425
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Bar.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Bar.elm",
+      "sha256": "3c63a9b07829ffc113b37a74ae957bfbb2b0efd50e4da0feed0e8205c3d6e5c0",
+      "bytes": 6899
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/BatchReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/BatchReplay.elm",
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "bytes": 8901
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Binding.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "bytes": 1480
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/CapturedAction.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/CapturedAction.elm",
+      "sha256": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+      "bytes": 2682
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Catalog.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Catalog.elm",
+      "sha256": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+      "bytes": 4293
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/CatalogReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/CatalogReplay.elm",
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "bytes": 1300
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Desktop.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Desktop.elm",
+      "sha256": "a07c15be51b5875921ef24a235e45f57a0b52745cec971740af3a7fdc3adfb3f",
+      "bytes": 131947
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/DesktopPolicy.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/DesktopPolicy.elm",
+      "sha256": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+      "bytes": 3322
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/DesktopReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/DesktopReplay.elm",
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "bytes": 3077
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Effects.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Effects.elm",
+      "sha256": "831ee16e2e49791d0604ccbf2297e242f81d0c7da5c944c2622dca5413da5661",
+      "bytes": 19558
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Files.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Files.elm",
+      "sha256": "920722cf7c7ba4de35f165aa1891eb4749584529b8525f3423d121e7a412cb3a",
+      "bytes": 6918
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/GeometryProjection.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/GeometryProjection.elm",
+      "sha256": "71aa90a4d9cff4eb797b8a7ca16c5604b94684576243ed8bb961b6cb731ce841",
+      "bytes": 13038
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/GeometrySizePolicy.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/GeometrySizePolicy.elm",
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "bytes": 6205
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/HttpBar.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/HttpBar.elm",
+      "sha256": "135d13fce502e0b2e2d4b14f6e4a452a3f1a51db2f332fbd6c9b9d16e78ebab6",
+      "bytes": 3186
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/HttpMain.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/HttpMain.elm",
+      "sha256": "c0dcd27b03b737b83be70d439944ea9741128e18dd9405b55595c559e8bef3cf",
+      "bytes": 2725
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/HttpPopup.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/HttpPopup.elm",
+      "sha256": "e7a8b1d479d3b8d728bf97b5bab8a2cfee7b2a1010902d984690215574ee84e2",
+      "bytes": 11989
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Inspection.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Inspection.elm",
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "bytes": 3570
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/JumpList.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/JumpList.elm",
+      "sha256": "62577ce4d85acde5a3f3e894236e0e72dfa29d19bdc2f97cad6b910dc9dc533c",
+      "bytes": 5768
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Launch.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Launch.elm",
+      "sha256": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+      "bytes": 9117
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/LaunchReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/LaunchReplay.elm",
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "bytes": 4031
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Main.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Main.elm",
+      "sha256": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+      "bytes": 928
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Menu.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Menu.elm",
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+      "bytes": 18993
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/MenuBridge.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/MenuBridge.elm",
+      "sha256": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+      "bytes": 27382
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/MenuSurfaceReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/MenuSurfaceReplay.elm",
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "bytes": 5461
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Motion.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Motion.elm",
+      "sha256": "e1e97519c6f95ed1283929a99d0fde4b76a76bfea3c1bc1429bf3eebb922b312",
+      "bytes": 5222
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/MotionPreferences.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/MotionPreferences.elm",
+      "sha256": "efb600fb7601644b7c68041bfb9eefeb14a2fc5247f56b06ef08a865ffac8cf0",
+      "bytes": 4219
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativeActorRetirement.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativeActorRetirement.elm",
+      "sha256": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6",
+      "bytes": 8765
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativeFamilyPreviewSource.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativeFamilyPreviewSource.elm",
+      "sha256": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321",
+      "bytes": 10126
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativeFamilyPreviewSourceReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativeFamilyPreviewSourceReplay.elm",
+      "sha256": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99",
+      "bytes": 695
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativeOutcome.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativeOutcome.elm",
+      "sha256": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+      "bytes": 2356
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewAdmission.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewAdmission.elm",
+      "sha256": "efb8f22d984e0f507a0c70b3e6d6a98c1393b82f9eb1d390b92a30d4488e0717",
+      "bytes": 1895
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewDetachment.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewDetachment.elm",
+      "sha256": "39fe1ece48568a5a264d7b018df41322bab97f73cbe0f55a92559ecccb25a47a",
+      "bytes": 4249
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewPolicy.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewPolicy.elm",
+      "sha256": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+      "bytes": 3035
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewProposalIngress.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewProposalIngress.elm",
+      "sha256": "de3ff03abfee182586007234be87a663d60d29331667afed5cb407755bc27882",
+      "bytes": 6885
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewRealm.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewRealm.elm",
+      "sha256": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+      "bytes": 3070
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewRealmReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewRealmReplay.elm",
+      "sha256": "7d68ebb6703608184c20fa17f261d553119bf1ccf637274b41d1c1ebfb22e621",
+      "bytes": 1639
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewReceiver.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewReceiver.elm",
+      "sha256": "455f20e5dd675ee082d17e1dae00985f006f3273ab83c33cf33aed3202b9c4ba",
+      "bytes": 4947
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewReceiverReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewReceiverReplay.elm",
+      "sha256": "27ec8515727b39be545b1d19f83bf4d25c42848ae9654c2f00e563f25b43f2b9",
+      "bytes": 644
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewRenderer.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewRenderer.elm",
+      "sha256": "299ae5f7f5edc0953a8b37fea7b3afd4ce8acfc2dc0087fbdeefcbf6b4fb9c2e",
+      "bytes": 1526
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewSource.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewSource.elm",
+      "sha256": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+      "bytes": 4709
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewSourceReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewSourceReplay.elm",
+      "sha256": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8",
+      "bytes": 650
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewVisual.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewVisual.elm",
+      "sha256": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+      "bytes": 3044
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativePreviewVisualReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativePreviewVisualReplay.elm",
+      "sha256": "d15bc279a0cbb0af0aa0fa0f85f72f4c3608ffee73a4d68567477d1769c341c6",
+      "bytes": 1104
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/NativeProvider.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "bytes": 5100
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Notifications.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Notifications.elm",
+      "sha256": "e61311c370fc0367844deb21a9ba3274a64f41faabe19bec6743af71685e2201",
+      "bytes": 12479
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/OutcomeAnnouncements.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/OutcomeAnnouncements.elm",
+      "sha256": "e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb",
+      "bytes": 9423
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/OutputController.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/OutputController.elm",
+      "sha256": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+      "bytes": 30498
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/OutputReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/OutputReplay.elm",
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "bytes": 2289
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/OutputSurfaceReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/OutputSurfaceReplay.elm",
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "bytes": 3244
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/OverviewRecovery.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/OverviewRecovery.elm",
+      "sha256": "df247594319b088baa321ac9b5d4b5f2daeec5780298178ca0724f7ec17d8e0e",
+      "bytes": 3098
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Pins.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Pins.elm",
+      "sha256": "c44da7aa32a193fc998d4efc39af25067998adc37d67da6d0c5b834f073635a4",
+      "bytes": 6701
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PointerOwnership.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PointerOwnership.elm",
+      "sha256": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3",
+      "bytes": 2371
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Popup.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Popup.elm",
+      "sha256": "c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb",
+      "bytes": 17429
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Presentation.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Presentation.elm",
+      "sha256": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+      "bytes": 6685
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PresentationReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PresentationReplay.elm",
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "bytes": 1234
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewCatalogReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewCatalogReplay.elm",
+      "sha256": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129",
+      "bytes": 1392
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewFeedbackReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewFeedbackReplay.elm",
+      "sha256": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34",
+      "bytes": 1345
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewIdentity.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewIdentity.elm",
+      "sha256": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+      "bytes": 1586
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewLifecycle.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewLifecycle.elm",
+      "sha256": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+      "bytes": 28299
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewMetadataReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewMetadataReplay.elm",
+      "sha256": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f",
+      "bytes": 1345
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewPaintGate.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewPaintGate.elm",
+      "sha256": "fa2194375853ba16d5c783d04d110b052c43dccc89faf9fb6c4dce7aef709d4f",
+      "bytes": 4920
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewPresenter.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewPresenter.elm",
+      "sha256": "1bfd96b8cbe70832eadca24a4e6aa6741b81c41f6faa9b9c8bde1cfac0a6c5dc",
+      "bytes": 44324
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewPresenterReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewPresenterReplay.elm",
+      "sha256": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+      "bytes": 1302
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/PreviewVisual.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/PreviewVisual.elm",
+      "sha256": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+      "bytes": 7701
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Protocol/Authority.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Protocol/Authority.elm",
+      "sha256": "bbf82ae6a176ed3be480df9c03af1c5f9f627357e8e9f4b24d030c08c97dad8b",
+      "bytes": 5149
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Protocol/Session.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Protocol/Session.elm",
+      "sha256": "8b765d5a2b6c0946413f7d7b4c48bac371681ab22c2c533977733a334a30ca4a",
+      "bytes": 16280
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Protocol/Wire.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Protocol/Wire.elm",
+      "sha256": "b4bea849f17402b7007f4697f544b0dc0fd255bec1c3c38888c318741030d61c",
+      "bytes": 10984
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Provider.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Provider.elm",
+      "sha256": "bbc20c16113df0df6ac28986eddb805348a5c72942bdfbde915deadfb921288f",
+      "bytes": 18320
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/ReceiptRouter.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/ReceiptRouter.elm",
+      "sha256": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+      "bytes": 11330
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/ReconciliationFrame.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/ReconciliationFrame.elm",
+      "sha256": "5f9480ab13609f26a3f57f37431e9eb29c658b1c009b463321e0f277d37b8ac5",
+      "bytes": 8502
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/ReconciliationTracking.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/ReconciliationTracking.elm",
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "bytes": 7152
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Replay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Replay.elm",
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "bytes": 1001
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/RetainedLegacyPresenterReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/RetainedLegacyPresenterReplay.elm",
+      "sha256": "f5f7bc30d5efda6629a1de4b11e13ebf25d9be80bbd8573dff9d7d0916375845",
+      "bytes": 1317
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/RetainedPreviewPresenter.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/RetainedPreviewPresenter.elm",
+      "sha256": "7d3206e62e547af98171018a3bb65acdde0701393f35ea652bfffd1d5890810b",
+      "bytes": 7625
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/RetainedPreviewPresenterReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/RetainedPreviewPresenterReplay.elm",
+      "sha256": "1405187825a060cb5003b66b7bf235802323fe6db2d32af6ddb04d1708577175",
+      "bytes": 2834
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/ScopedPreviewPresenterReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/ScopedPreviewPresenterReplay.elm",
+      "sha256": "203f2b74ce723fc3c39208ff91dffde947fbdbaaf7cf1d233b606ac427ba7a05",
+      "bytes": 2440
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/SearchFold.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SearchFold.elm",
+      "sha256": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241",
+      "bytes": 4132
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Settings.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Settings.elm",
+      "sha256": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c",
+      "bytes": 5125
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/SharedRecoveryReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SharedRecoveryReplay.elm",
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "bytes": 3457
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Shell.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Shell.elm",
+      "sha256": "6f6a63168d1d39da6e85290b564074ca21f7c719140aacee939973e3706ad094",
+      "bytes": 33826
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/ShellReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/ShellReplay.elm",
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "bytes": 2054
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/ShortcutPreferences.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/ShortcutPreferences.elm",
+      "sha256": "71155bf3a1a416e05350a7473bceecdd5dcbaf581726ececd1b4882a616b07c5",
+      "bytes": 11006
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Shortcuts.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Shortcuts.elm",
+      "sha256": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7",
+      "bytes": 4558
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Snap.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Snap.elm",
+      "sha256": "545bcccff558348f93f64bee6ebce12352ea1adc223b4f89e11570799542e7ed",
+      "bytes": 6462
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/StatusScroll.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/StatusScroll.elm",
+      "sha256": "9348a397d03cd7671faad4407fa0951f8765f4c72ccf98913db3ed35857ba034",
+      "bytes": 4745
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Surface.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Surface.elm",
+      "sha256": "175d4432e2a28c18cfa18e72f2effc61bf8d551ddce0679e14e25681fc78ec1c",
+      "bytes": 71016
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/SurfaceController.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceController.elm",
+      "sha256": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+      "bytes": 16058
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/SurfaceRenderer.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "d5439ebf36c3624fd56a316a012177dcc20c47e883437d469e70c08ab3b1825c",
+      "bytes": 36201
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/SurfaceReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceReplay.elm",
+      "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "bytes": 2781
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/SurfaceSnapshot.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceSnapshot.elm",
+      "sha256": "9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a",
+      "bytes": 10457
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/SurfaceTheme.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceTheme.elm",
+      "sha256": "6111e4a03940be7388b458fd303abc702e89f4b57d68c828ff29eab2a15d118e",
+      "bytes": 50499
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Switcher.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Switcher.elm",
+      "sha256": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061",
+      "bytes": 9407
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/SystemMenu.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SystemMenu.elm",
+      "sha256": "070e619f3088a1c051581066ce949fb1cd64b75f5df0ebd9efb18ab589c993c5",
+      "bytes": 9016
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/TaskView.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/TaskView.elm",
+      "sha256": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+      "bytes": 4688
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Taskbar.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Taskbar.elm",
+      "sha256": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+      "bytes": 2653
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/TaskbarReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/TaskbarReplay.elm",
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "bytes": 1658
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/TaskbarShell.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/TaskbarShell.elm",
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "bytes": 6429
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/TaskbarShellReplay.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/TaskbarShellReplay.elm",
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "bytes": 2239
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/Transfer.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Transfer.elm",
+      "sha256": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+      "bytes": 2210
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/UInt64.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "bytes": 1459
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/UiHttp.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/UiHttp.elm",
+      "sha256": "c3543e27ad787d3c84894554178121205d19b9868c250d0717989c1207cdc72f",
+      "bytes": 16662
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/UnsentOperation.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/UnsentOperation.elm",
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "bytes": 1426
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/WorkspaceInventory.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/WorkspaceInventory.elm",
+      "sha256": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+      "bytes": 3381
+    },
+    {
+      "member": "shared-inputs/implementation/warlock/src/WorkspaceNavigation.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/WorkspaceNavigation.elm",
+      "sha256": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+      "bytes": 8707
+    },
+    {
+      "member": "shared-inputs/site/elm.json",
+      "origin": "/home/hoskinson/Projects/Warlock/site/elm.json",
+      "sha256": "ffe9bc4f6811166a7bbafca49540bf7b8af214118dd9aff2f4707890eb9824dc",
+      "bytes": 517
+    },
+    {
+      "member": "shared-inputs/site/src/SiteMain.elm",
+      "origin": "/home/hoskinson/Projects/Warlock/site/src/SiteMain.elm",
+      "sha256": "f05a3768eb4573161544099917ce009f8df7eb57b8c9408f5266001980cafcfb",
+      "bytes": 68121
+    },
+    {
+      "member": "shared-inputs/tools/arm64-toolchain.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/arm64-toolchain.json",
+      "sha256": "e0f136b2205d96eee5220861631d144cdf3280fc2406db110c23a2d94e95a734",
+      "bytes": 3138
+    },
+    {
+      "member": "shared-inputs/tools/arm64_toolchain.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/arm64_toolchain.py",
+      "sha256": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796",
+      "bytes": 4495
+    },
+    {
+      "member": "shared-inputs/tools/check_arm64_cpu.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/check_arm64_cpu.py",
+      "sha256": "99a4eb9947462503f8733b07d881a2aba01a99363c9438223d55cc15c8494655",
+      "bytes": 27431
+    },
+    {
+      "member": "shared-inputs/tools/check_elm_cpu.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/check_elm_cpu.py",
+      "sha256": "4376afa95279af6ce02f444bb6b393eb228ad9a3a68422be2a9ba44bee678869",
+      "bytes": 87876
+    },
+    {
+      "member": "shared-inputs/tools/check_http_reachable_cpu.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/check_http_reachable_cpu.py",
+      "sha256": "294f012db21110abf738acdab472179af5b7312a4a3cd331ebb1ba2d9cfcd63d",
+      "bytes": 7901
+    },
+    {
+      "member": "shared-inputs/tools/elm-http-dependencies.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/elm-http-dependencies.json",
+      "sha256": "ac6870371db068344a02e99ab40a45207b393d91d05cfd94e7b0cc54f4bd8f68",
+      "bytes": 6660
+    },
+    {
+      "member": "shared-inputs/tools/elm_http_dependencies.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/elm_http_dependencies.py",
+      "sha256": "11182bdb4735f9f2e9b27b3bbe57a7f9c51ce5735e745447890d56533985a951",
+      "bytes": 2918
+    },
+    {
+      "member": "shared-inputs/tools/haskell-dependencies.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/haskell-dependencies.json",
+      "sha256": "ca6a7fe7f45cfe4baaf074c55b7c1f0faeba4accae4ee1059788f02681d75a5a",
+      "bytes": 1574
+    },
+    {
+      "member": "shared-inputs/tools/haskell-toolchain.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/haskell-toolchain.json",
+      "sha256": "7a2c7706cbf05b3e68abd661c7789cd9ce9d24a5b714091176e6e6b275ac0a76",
+      "bytes": 3544
+    },
+    {
+      "member": "shared-inputs/tools/qa_cpu.py",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "sha256": "ffbac2add6122de986aba11792ca3cac2a276266ddb7e411843fee5479894ec2",
+      "bytes": 23099
+    },
+    {
+      "member": "shared-inputs/tools/ui-host-toolchain.json",
+      "origin": "/home/hoskinson/Projects/Warlock/tools/ui-host-toolchain.json",
+      "sha256": "f53770c47929e28b50ddc7c2c0b5cb2315d90003983446be6c325b7dd0708a14",
+      "bytes": 79915
+    },
+    {
+      "member": "shared-inputs/window-integration-qa/qa_launch.py",
+      "origin": "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_launch.py",
+      "sha256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+      "bytes": 4662
+    },
+    {
+      "member": "red-originals/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/held-role-product-before/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs",
+      "sha256": "1393f348fb2cdfd42cdf29fbdf16c2c026c11abb616ccfd1c42ebdbd9283a2ff",
+      "bytes": 544
+    },
+    {
+      "member": "red-originals/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/held-role-product-before/implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs",
+      "sha256": "176f1f5190726f057da3692d944f4e2635e6a392670d3cbeca1e1b9456056370",
+      "bytes": 16129
+    },
+    {
+      "member": "red/report.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942332975679145/report.json",
+      "sha256": "bfffcb4eb080ed01dc5f14b8c185d4042416bc44959f2f61beaf7f1dee11f074",
+      "bytes": 36550
+    },
+    {
+      "member": "red/logs/held-executable-build.stderr",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942332975679145/logs/held-executable-build.stderr",
+      "sha256": "33f3780e884d17205315add01e489afc54db9e41df64b4f4150eb627330ddc41",
+      "bytes": 2673
+    },
+    {
+      "member": "red/logs/held-executable-build.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942332975679145/logs/held-executable-build.stdout",
+      "sha256": "cf77b1e6025467673285d0d21ff4d1384f0106734760bc88825f5d646643924b",
+      "bytes": 7411
+    },
+    {
+      "member": "green/report.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/report.json",
+      "sha256": "3668a133b246e6fa9c343271eac219c73b215aed5c7f2d60f17a718ccbc2be0e",
+      "bytes": 40678
+    },
+    {
+      "member": "green/logs/held-executable-build.stderr",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/logs/held-executable-build.stderr",
+      "sha256": "d1d372fc9077bcb6af1b332b5b71b51027dfa0e86f40a950470c1f81572f8e25",
+      "bytes": 1017
+    },
+    {
+      "member": "green/logs/held-executable-build.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/logs/held-executable-build.stdout",
+      "sha256": "d513782ba8b4f1723ad86d8b3089f31d8dc5d18240ef553d9920d1a94dde6bbe",
+      "bytes": 8389
+    },
+    {
+      "member": "green/logs/held-executable-controls.stderr",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/logs/held-executable-controls.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "member": "green/logs/held-executable-controls.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/logs/held-executable-controls.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "member": "green/logs/list-custody-child.stderr",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/logs/list-custody-child.stderr",
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+      "bytes": 122
+    },
+    {
+      "member": "green/logs/list-custody-child.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/logs/list-custody-child.stdout",
+      "sha256": "e6092afeb109ee686ee667711ba08549d0c90912e87f4071c2b749746649ac90",
+      "bytes": 201
+    },
+    {
+      "member": "green/logs/list-held-executable-controls.stderr",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/logs/list-held-executable-controls.stderr",
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6",
+      "bytes": 122
+    },
+    {
+      "member": "green/logs/list-held-executable-controls.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/logs/list-held-executable-controls.stdout",
+      "sha256": "158cfe7c6b4cf5bc8215ee94f4858cc99e203fef728e619326588ec2d9991daa",
+      "bytes": 241
+    },
+    {
+      "member": "green/images/held-executable-controls",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/dist/build/aarch64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/t/held-executable-controls/build/held-executable-controls/held-executable-controls",
+      "sha256": "3dfbbba684b956a4ab4a1070e9b00b0dec8b2427c7c6b4d30d6afea8d09d52e6",
+      "bytes": 24874640
+    },
+    {
+      "member": "green/images/custody-child",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/dist/build/aarch64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/x/custody-child/build/custody-child/custody-child",
+      "sha256": "791a18fc44119868e8322b2ec880909a5535bc20aef9a4d8a7e379da1342f5a9",
+      "bytes": 12977464
+    },
+    {
+      "member": "green/suite-results.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/runs/held-executable-controls/results.json",
+      "sha256": "d2ec8bc7fdfbd69227b979423d3ebb200ba6ee57eba59efc2e820c00ce0ac916",
+      "bytes": 503
+    },
+    {
+      "member": "green/suite.log",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942536867455576/runs/held-executable-controls/default.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "member": "shared/report.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/report.json",
+      "sha256": "b68d5bed1dfc50bb5f98d32e6518679eb2400b37a917c150dc1741ebd9683fab",
+      "bytes": 37165
+    },
+    {
+      "member": "shared/subscriptions-report.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/report.json",
+      "sha256": "bc7e363a5d2ea507c4dd4f027c70eee7a2161656dcf36c5070ec222dab19cc0f",
+      "bytes": 441932
+    },
+    {
+      "member": "shared/images/Main.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/Main.js",
+      "sha256": "081eaa0c117790f93c0c62c061ea32fc5760cb3ac865aa6a75fb8161e55b5437",
+      "bytes": 1043731
+    },
+    {
+      "member": "shared/images/Bar.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/Bar.js",
+      "sha256": "b9b6a53d927748c1bdd0b6640ac268ac8d9af7220e972840a267c38604305db9",
+      "bytes": 267271
+    },
+    {
+      "member": "shared/images/Popup.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/Popup.js",
+      "sha256": "5c8fa61768ab778a0527468b8fd5d159af6d32d21ed76a78e1b95b556a6c533a",
+      "bytes": 516169
+    },
+    {
+      "member": "shared/images/HttpMain.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpMain.js",
+      "sha256": "c2b10f5dbf946d4465f991ceab6e3e478a96c4f6294a76c6fc4271dc516a1b56",
+      "bytes": 1080698
+    },
+    {
+      "member": "shared/images/HttpBar.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpBar.js",
+      "sha256": "c158ea9e536a2dc76ef91a7bd0bb0b3c104abb897803d081825f81029b2be7e4",
+      "bytes": 310359
+    },
+    {
+      "member": "shared/images/HttpPopup.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpPopup.js",
+      "sha256": "1c02723e8da6b742891afab560065b32485ca993613e885f76dedc14112d09f3",
+      "bytes": 569506
+    },
+    {
+      "member": "shared/images/NativePreviewAdmission.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/NativePreviewAdmission.js",
+      "sha256": "7202a3110017b8805a8afbf950958fc87ee59c519ffcd3b6193fc755f1688191",
+      "bytes": 248967
+    },
+    {
+      "member": "shared/images/NativePreviewRenderer.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/NativePreviewRenderer.js",
+      "sha256": "34056d5b449d00461af1cd7cf13c72a1159232d9ee16b4a0535608824099a10d",
+      "bytes": 270676
+    },
+    {
+      "member": "shared/images/UiHttpReplay.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/UiHttpReplay.js",
+      "sha256": "3d8f0c3f3f6c411b74c539770130ceed91541d2a77c678dd0fbd026ce8f6e710",
+      "bytes": 1069976
+    },
+    {
+      "member": "shared/images/HttpMain.plain.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpMain.plain.js",
+      "sha256": "9434a560fca58461fc7e06132f9322a4cf72dd3530a61ce5d5e82e8ced862573",
+      "bytes": 1176742
+    },
+    {
+      "member": "shared/images/HttpBar.plain.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpBar.plain.js",
+      "sha256": "c719e75aa9b7f7c2ed20c6170a8735374bb143ce91d110e34e781c92d9d943c0",
+      "bytes": 323398
+    },
+    {
+      "member": "shared/images/HttpPopup.plain.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpPopup.plain.js",
+      "sha256": "03f6df28020baf71ba29e8c7cc34f4cd476f4875141a8dfdba6e9f0c91d7a253",
+      "bytes": 596495
+    },
+    {
+      "member": "shared/images/SiteMain.plain.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/SiteMain.plain.js",
+      "sha256": "4bf943b9f6ebf085d27a4fc13024061b596886395db16867a7ae08f495df5563",
+      "bytes": 202016
+    },
+    {
+      "member": "shared/images/TeaPopupSubscriptionsReplay.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/TeaPopupSubscriptionsReplay.js",
+      "sha256": "12cf8e63167b06c2f21f51bececa6ac77ce7899ca2f8efed1140b97bd0b04cc0",
+      "bytes": 379627
+    },
+    {
+      "member": "shared/images/TeaBarSubscriptionsReplay.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/TeaBarSubscriptionsReplay.js",
+      "sha256": "9229d106c90381fda045a5f100733fbd85b34048ecd4ff1d43d4899e25b258be",
+      "bytes": 115837
+    },
+    {
+      "member": "shared/images/TeaAdmissionSubscriptionsReplay.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/TeaAdmissionSubscriptionsReplay.js",
+      "sha256": "20fef2789287a4a7feacd534080d4db58f04d320676893b04c1cbcb436f7e10b",
+      "bytes": 100577
+    },
+    {
+      "member": "shared/images/TeaRendererSubscriptionsReplay.js",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/TeaRendererSubscriptionsReplay.js",
+      "sha256": "6b10fb0a82c7fa2e60b612dbcd1da2803405bc3278e3bb8acb2807a201473100",
+      "bytes": 125894
+    },
+    {
+      "member": "shared/images/HttpMain.html",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpMain.html",
+      "sha256": "ae0477a3142ead713cbe61ebdd06ba98d80fe4f9d594fb215120322553c1833c",
+      "bytes": 1081321
+    },
+    {
+      "member": "shared/images/HttpBar.html",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpBar.html",
+      "sha256": "5430a2ebb96b1d5b791e68bb88960d0a66c9fcd08acf1751a88d9b7769bea457",
+      "bytes": 310980
+    },
+    {
+      "member": "shared/images/HttpPopup.html",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/HttpPopup.html",
+      "sha256": "59d81e6a28931701be3fe0d4a54bc9688bf1f1407f5eb908b45cd19d2427d9a5",
+      "bytes": 570131
+    },
+    {
+      "member": "shared/results/compile-Bar.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-Bar.stdout",
+      "sha256": "83ceb6f92fec1e33eac28c5e6f854aea17e13e0f7e14e633a3abac95f4da11ec",
+      "bytes": 281
+    },
+    {
+      "member": "shared/results/compile-HttpBar.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-HttpBar.stdout",
+      "sha256": "8f5df0c6a0633cc914ac44ee8684341abcee01b3a4ac49bd262b0c66e737e18e",
+      "bytes": 190
+    },
+    {
+      "member": "shared/results/compile-HttpMain.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-HttpMain.stdout",
+      "sha256": "58f4ffc9f2671cf1332b47a78d2cbfe3e021621de9744dd880453cc7910ebbcf",
+      "bytes": 207
+    },
+    {
+      "member": "shared/results/compile-HttpPopup.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-HttpPopup.stdout",
+      "sha256": "ae77bcb4af9db39d38223f96e0568982a4496a6a9639143d097f3307f439acd3",
+      "bytes": 194
+    },
+    {
+      "member": "shared/results/compile-Main.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-Main.stdout",
+      "sha256": "0ed38d563b61772eef1e2e7640309fe9da82bb097a45eb9768b6a4718f294bf0",
+      "bytes": 1281
+    },
+    {
+      "member": "shared/results/compile-NativePreviewAdmission.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-NativePreviewAdmission.stdout",
+      "sha256": "03445e78f0380f35caae2d2d523ae998ff7033d62da51ce7874b31d91311b931",
+      "bytes": 220
+    },
+    {
+      "member": "shared/results/compile-NativePreviewRenderer.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-NativePreviewRenderer.stdout",
+      "sha256": "cb2ab975cb6e5fda6c34e3cbdfaa474675c1f9cb9143242368436d08dce95227",
+      "bytes": 247
+    },
+    {
+      "member": "shared/results/compile-Popup.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-Popup.stdout",
+      "sha256": "f17d689e0de329feda9aed9385540efa89227c73469e46d9091f15faef295995",
+      "bytes": 345
+    },
+    {
+      "member": "shared/results/compile-TeaAdmissionSubscriptionsReplay.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-TeaAdmissionSubscriptionsReplay.stdout",
+      "sha256": "dca8d1d22466b93fc709e47f13f3fded642fb5e66a88fb9074e41360977c556a",
+      "bytes": 238
+    },
+    {
+      "member": "shared/results/compile-TeaBarSubscriptionsReplay.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-TeaBarSubscriptionsReplay.stdout",
+      "sha256": "6df1ba48481f0392aca4f16aa851db2c96fb0179bc9e3015b5a081c5958485a2",
+      "bytes": 226
+    },
+    {
+      "member": "shared/results/compile-TeaPopupSubscriptionsReplay.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-TeaPopupSubscriptionsReplay.stdout",
+      "sha256": "035072b9e3bff6a1132224d502a17649c304b9b831162f28ac03b1164f14d1b1",
+      "bytes": 230
+    },
+    {
+      "member": "shared/results/compile-TeaRendererSubscriptionsReplay.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-TeaRendererSubscriptionsReplay.stdout",
+      "sha256": "bbfa0f4b5780214c3ccae15e569bb1e1e9bb3b76b4113ed75cd34853a8877e51",
+      "bytes": 236
+    },
+    {
+      "member": "shared/results/compile-html-HttpBar.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-html-HttpBar.stdout",
+      "sha256": "ba3f6e52fa111e7a051e215307a029e4c53e7882fae1b29ee4ee8406c58673b7",
+      "bytes": 173
+    },
+    {
+      "member": "shared/results/compile-html-HttpMain.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-html-HttpMain.stdout",
+      "sha256": "cb09c577b4013c8bec373d1190899a85bc96e1c05a702696cc9611f09983b8be",
+      "bytes": 175
+    },
+    {
+      "member": "shared/results/compile-html-HttpPopup.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-html-HttpPopup.stdout",
+      "sha256": "100a2db02e6b99ae1b1fbee97c76eccf62a802ffb4b8850ac6cef5b73df86e6d",
+      "bytes": 177
+    },
+    {
+      "member": "shared/results/compile-plain-HttpBar.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-plain-HttpBar.stdout",
+      "sha256": "0ec875591e0160ecefe8951d2f630855d4d0016ebc3ab1e1e25b05a64cdb309a",
+      "bytes": 177
+    },
+    {
+      "member": "shared/results/compile-plain-HttpMain.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-plain-HttpMain.stdout",
+      "sha256": "9665b21a99929eacfd8b90116a6a8a49a9eeb3a28541e42c3a6c8c7c7a466801",
+      "bytes": 179
+    },
+    {
+      "member": "shared/results/compile-plain-HttpPopup.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-plain-HttpPopup.stdout",
+      "sha256": "6a48699644f8bf0efb7a05e45a303d4d6a4ca255a18e601faf890b0693e775ce",
+      "bytes": 181
+    },
+    {
+      "member": "shared/results/compile-plain-SiteMain.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-plain-SiteMain.stdout",
+      "sha256": "0b0a3ae6d1fb5f814c6f94ef1857859bfd64957cb1c1307c15af08be516f9ba5",
+      "bytes": 480
+    },
+    {
+      "member": "shared/results/compile-ui-http-replay.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compile-ui-http-replay.stdout",
+      "sha256": "eb6fc1f53e455f05a7c4d5e20c4fc464d6048b579da74906e2062d457341fd38",
+      "bytes": 200
+    },
+    {
+      "member": "shared/results/compiler-version.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/compiler-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "member": "shared/results/http-root-cases-negative.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/http-root-cases-negative.stdout",
+      "sha256": "9a741f30ea8aacbae8117ab7afbda9b9626bfd1a07ad2e1d9564259331aaaea8",
+      "bytes": 507
+    },
+    {
+      "member": "shared/results/http-root-observer.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/http-root-observer.stdout",
+      "sha256": "43792d9d0425f290a583d3cf889a0f02ab5c3002e417e25c044e8f62eb33dafd",
+      "bytes": 19174
+    },
+    {
+      "member": "shared/results/legacy-controls-supplement.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/legacy-controls-supplement.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "member": "shared/results/legacy-controls-syntax.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/legacy-controls-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "member": "shared/results/node-version.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/node-version.stdout",
+      "sha256": "d4b8a831ea4925f1c54be7746ec0b846cb04bbc35295b64ccdb2101bfcf5d70c",
+      "bytes": 9
+    },
+    {
+      "member": "shared/results/reachable-legacy.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/reachable-legacy.stdout",
+      "sha256": "8393f4e773e7ab1d8fca28306dbdacb5e348b6276a833509c74216b0b7b930dd",
+      "bytes": 78382
+    },
+    {
+      "member": "shared/results/sitemain-root-negative.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/sitemain-root-negative.stdout",
+      "sha256": "b024306410186e59a70a237c0638d2e9d8fa705e50d4f7c3ad73495d3d1bdfd0",
+      "bytes": 459
+    },
+    {
+      "member": "shared/results/sitemain-root-observer.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/sitemain-root-observer.stdout",
+      "sha256": "68519f8a589c25513bc3102071c2748220c71e7709f72411379f7de58b78e8ef",
+      "bytes": 5920
+    },
+    {
+      "member": "shared/results/tea-subscriptions.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/tea-subscriptions.stdout",
+      "sha256": "1d1672e03cd1146327e46f85be64435ac2fd5969d8dad5336818a11f2a0a1ecd",
+      "bytes": 7176
+    },
+    {
+      "member": "shared/results/ui-http.stdout",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/ui-http.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "member": "shared/results/legacy-controls-supplement.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/legacy-controls-supplement.json",
+      "sha256": "8a1aceb2825c65a22bfafe61273153f4b1c9c6de8cfa0bc6dd8d0987ddf651b1",
+      "bytes": 15961
+    },
+    {
+      "member": "shared/results/reachable-closure.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/reachable-closure.json",
+      "sha256": "b25af6540ae99ee75fa3a5a6a6524eeec9e2d1c7b80267e8233b64f1c6a5be14",
+      "bytes": 124743
+    },
+    {
+      "member": "shared/results/reachable-compilation-context.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/reachable-compilation-context.json",
+      "sha256": "a90014d6836cb1f18a9eed0ac32561502e8c702c4e834439d12e2a4c207260f5",
+      "bytes": 32408
+    },
+    {
+      "member": "shared/results/reachable-compile-receipt.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/reachable-compile-receipt.json",
+      "sha256": "612607abbac3938dece46f33f61e300c1f80a07a2b2fdde2c076c0e5c7088c75",
+      "bytes": 54231
+    },
+    {
+      "member": "shared/results/tea-subscriptions.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/tea-subscriptions.json",
+      "sha256": "1d1672e03cd1146327e46f85be64435ac2fd5969d8dad5336818a11f2a0a1ecd",
+      "bytes": 7176
+    },
+    {
+      "member": "shared/results/ui-http.json",
+      "origin": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1793942668689406651/subscriptions/ui-http.json",
+      "sha256": "0c7b0fa152755700c79d3aca216edbaa0ae5b616b9ce36f81d650f8d2476b975",
+      "bytes": 1237916
+    },
+    {
+      "member": "reviews/held-role-missing-api-red-review.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/held-role-missing-api-red-review.json",
+      "sha256": "9abf3eb93bed706acc804b1ad85b86fd20c6f558afe68b5c2f704fea15c610ba",
+      "bytes": 34415
+    },
+    {
+      "member": "reviews/held-role-lifecycle-green-review.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/held-role-lifecycle-green-review.json",
+      "sha256": "ecff8da14ec538b6dc3db11ad3dafa37fad265716c21752fee82fdf3c8045fbf",
+      "bytes": 34415
+    },
+    {
+      "member": "reviews/held-role-shared-launcher-subscriptions-review.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/held-role-shared-launcher-subscriptions-review.json",
+      "sha256": "22db82819d70aead60f9166e92cf90261220a913479ea963ed68a4671c0f58cc",
+      "bytes": 36135
+    },
+    {
+      "member": "reviews/continuity-held-executable-profile-review.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-held-executable-profile-review.json",
+      "sha256": "49a67dc9b1f32f03c3eac90c76567efd0260e681aca40721527b0920d8f27e2f",
+      "bytes": 1994
+    },
+    {
+      "member": "reviews/continuity-held-role-shared-launcher-execution-review.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-held-role-shared-launcher-execution-review.json",
+      "sha256": "884fdcd1978821c3e1791a6878073dfb54f67ff8958db2971ced97163657ecde",
+      "bytes": 2036
+    },
+    {
+      "member": "reviews/terra-team/held-role-red-and-two-source-readiness-review.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/terra-team/held-role-red-and-two-source-readiness-review.json",
+      "sha256": "4d0f8d45118cb8a15e4c32a67dbedea02575cdd17a6e768b3d67c7bc66bc761e",
+      "bytes": 6676
+    },
+    {
+      "member": "reviews/terra-team/held-role-lifecycle-green-execution-review.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/terra-team/held-role-lifecycle-green-execution-review.json",
+      "sha256": "bd0271117b718a623e5f64cc25404c1d6e9265819c71b247e523167bd2401fac",
+      "bytes": 12289
+    },
+    {
+      "member": "reviews/held-role-public-lifecycle-tests/case-inventory.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/held-role-public-lifecycle-tests/case-inventory.json",
+      "sha256": "0fa5e8527d16085b8297d43ee433d6a850102335a03965d76784569e4644c3f5",
+      "bytes": 1895
+    },
+    {
+      "member": "reviews/held-role-public-lifecycle-tests/test-only.patch",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/held-role-public-lifecycle-tests/test-only.patch",
+      "sha256": "2f50c6b33b3da91ae44ed1c82d2eee68a0b644cd65784ae01d0644c477da029b",
+      "bytes": 4493
+    },
+    {
+      "member": "reviews/arm64-held-executable-profile/bindings.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/arm64-held-executable-profile/bindings.json",
+      "sha256": "7b766ab85be33ca94f4e1093f1f2903e79b5f25375090701de10d7abc37aa30d",
+      "bytes": 941
+    },
+    {
+      "member": "reviews/arm64-held-executable-profile/held-executable-profile.patch",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/arm64-held-executable-profile/held-executable-profile.patch",
+      "sha256": "aef28b565414c319703b37a67bd2db1bc1344cc0e8c8bd1961342b7dc931d4ce",
+      "bytes": 11102
+    },
+    {
+      "member": "reviews/arm64-held-executable-profile/source-budget-review.json",
+      "origin": "/home/hoskinson/.local/state/warlock-team/20261105/arm64-held-executable-profile/source-budget-review.json",
+      "sha256": "27e8dd22d7ff9c4f9ff72ec0a7526156b96056040da7c392eb27d88819188b8c",
+      "bytes": 1616
+    }
+  ],
+  "archiveSHA256": "fe16501206ea6aa5fb008db9ab6b0352081f7e56df671e5ca7114ded0f389185",
+  "archiveBytes": 9331994,
+  "allMembersRehashed": true
+}

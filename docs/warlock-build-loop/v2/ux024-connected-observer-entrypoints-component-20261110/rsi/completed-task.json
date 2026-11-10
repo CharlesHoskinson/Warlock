@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "candidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa",
+  "candidateFile": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/runtime-foreign-toplevel-connected-entrypoints-cpu/candidate.json",
+    "sha256": "6dec714442a8e55bced96c565bee23fe02c179864dcdcf84bca9d9d739ed2c63"
+  },
+  "integrationRevision": "edfd42685de72a3c2d70729436f11e63e69dbbc4",
+  "sourceFiles": {
+    "implementation/warlock/src/HttpPopup.elm": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133",
+    "implementation/warlock/src/SurfaceRenderer.elm": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672",
+    "implementation/warlock/qa/ux024-menu-dom.cjs": "cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f",
+    "implementation/warlock/src/SurfaceController.elm": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+    "implementation/warlock/qa/MenuEscapeReplay.elm": "d85c653ecab26f3d7f18d90fd54e67e2e88d688027554f0d7acd7e4e586aa982",
+    "implementation/warlock/qa/menu-escape.cjs": "a70cacd14fb4c48066f2b2e18859f67d56da359cf2cf86227774d1cc1dd4de58",
+    "implementation/warlock/src/CapturedAction.elm": "08efe9eacd78e9edf86ed13a5b13108d29face6ef1edf264ad711dc6c720664b",
+    "implementation/warlock/src/Presentation.elm": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851",
+    "implementation/warlock/qa/ux024-bar-context-dom.cjs": "0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131",
+    "implementation/warlock/src/Desktop.elm": "8385e34a3ecf122bf51a6ca4e4fe2df302a955fe35575dca8b2e419302f6fd56",
+    "implementation/warlock/qa/MenuInitialFocusReplay.elm": "600a0f18055b1c6e222ff61f75f63d37d0135aa4afc1a997e25c5476cd5e4c64",
+    "implementation/warlock/qa/menu-initial-focus.cjs": "aa138698454a0d16bea9467c01b94cca72faf8fe4c2d7cbf3f5dbd06bf8dce0b",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "737fe6ccebccfbbf43ca6dc926fa028bdda6102cb98f38a504b84b74866ac860",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "1f51f7f4affcd6a1b78765bd91f5da94bb4cf9c6781d50d4dc1b8631e17a282e",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "3050e7db1b2d1c1c5f4b7089a16cffd3d72c4d96c520a81e3de279706f4c02e4",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "c1c1af0649b3630e8927f51673f9b4f499164b9f8aabe04aec0b324f10d9f6c2"
+  },
+  "fixedBuildBehavior": "Compile/link only owner and ui-webkit targets including reviewed fixed connected-entrypoint source; execute ONLY unchanged allocation and pre-connect refusal branches. New connected and producer flags/config15 remain unexecuted. No actual Wayland/provider/GUI qualification.",
+  "actualComparison": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/actual-probe-results.json",
+    "sha256": "e0545be0d3fbc5d2bb18f0d7193f0b15aefe0223999488862aeb6cb43831be94"
+  },
+  "distinctControlCounts": {
+    "builder": 15,
+    "admission": 8
+  },
+  "phaseExecutions": {
+    "baseline": 23,
+    "candidate": 23
+  },
+  "priorFailuresPreserved": [
+    "runtime-foreign-toplevel-owner-public-api-absent",
+    "runtime-owner-ghc-redundant-data-bits-import",
+    "runtime-endpoint-controls-require-threaded-rts"
+  ],
+  "prospectiveClassifierLimitation": "Authored_v6 excludes runtime/ui and test-ui-webkit source paths. This remains a prospective separate policy issue; no clock reset, historical migration or admission relaxation. This integration changes only the Main fixture; product-source identity and delivery advancement clock remain unchanged. Do not invent progress or reset clocks.",
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

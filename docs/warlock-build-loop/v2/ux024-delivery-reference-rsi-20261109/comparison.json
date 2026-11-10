@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "616722e872a24f428522c620bbc5dcd7c612b55a56a966f6bff05bdf25af19b6",
+  "baselinePluginSha256": "997faca4426fd851a5ffe84781d377377fd79c89c862f766b32577158e6d507d",
+  "baselineSnapshotSha256": "9ecbd5471aefa552459f6fb53b8ee2142b18ab1739213640f0ff7d5246cf81d1",
+  "candidateSnapshotSha256": "9bb45184b63af5e2515dd7f0628de2cf114b0842aa0bdc3a253baee879121801",
+  "immutableHashes": {
+    "taskFiles": "1edaca0fe62b13458309a33456c1fc7e37335aa4c40e67fe1df109f3bb25c2d3",
+    "sourceFiles": "4598ecf31d38848f00bca4588c43e846a229959372e023f44eeb06a32ff7a981",
+    "oracleFiles": "8ef7208af31a9803ce2fd9be30755b72ad35da4e20610ed2004cfe5b41ff7463",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "2d9257e1fd6cb446824709725070c7f0dc707a4ba16c8e7f025dd1ac902459c6",
+    "pluginBaselineFiles": "997faca4426fd851a5ffe84781d377377fd79c89c862f766b32577158e6d507d"
+  },
+  "checks": [
+    {
+      "name": "delivery-reference-present",
+      "baselinePassed": false,
+      "candidatePassed": true
+    },
+    {
+      "name": "README-links-delivery-reference",
+      "baselinePassed": false,
+      "candidatePassed": true
+    },
+    {
+      "name": "test_candidate_rejected_extra_computed_field",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "test_candidate_corrected_exact_shape",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "test_candidate_canonical_identity_is_not_raw_file_digest",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "test_audit_input_fields_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "test_failed_terminal_missing_signature_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "test_failed_terminal_correct_signature_preserves_observation",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "test_unknown_terminal_empty_signature_refuses",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "test_finished_event_signature_stays_in_report",
+      "baselinePassed": true,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/regression.json",
+    "sha256": "e393c8fa62845db2780e0635d84f277596252b4736894b4c64b7abadc44c64d2"
+  }
+}

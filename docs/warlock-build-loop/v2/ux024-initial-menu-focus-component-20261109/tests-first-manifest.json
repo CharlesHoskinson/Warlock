@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "kind": "ux024-initial-menu-focus-tests-first",
+  "posts": [
+    {
+      "path": "implementation/warlock/qa/MenuInitialFocusReplay.elm",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/tests-first-revision2-absent-scope/postimages/implementation/warlock/qa/MenuInitialFocusReplay.elm",
+      "sha256": "600a0f18055b1c6e222ff61f75f63d37d0135aa4afc1a997e25c5476cd5e4c64"
+    },
+    {
+      "path": "implementation/warlock/qa/menu-initial-focus.cjs",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/tests-first-revision2-absent-scope/postimages/implementation/warlock/qa/menu-initial-focus.cjs",
+      "sha256": "aa138698454a0d16bea9467c01b94cca72faf8fe4c2d7cbf3f5dbd06bf8dce0b"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "70b552a27c83bfdc50872990d2b2bd774263df2cd4f14072967ef4b05dfde099",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/tests-first-revision2-absent-scope/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "9be7ef93c55b408a42088c6cae192f0d9c4b56da589e1de46cfda88e4c970fb1"
+    }
+  ],
+  "sourcePins": {
+    "implementation/warlock/src/Desktop.elm": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815",
+    "implementation/warlock/src/Surface.elm": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179",
+    "implementation/warlock/src/SurfaceController.elm": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/HttpPopup.elm": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133",
+    "implementation/warlock/src/HttpBar.elm": "135d13fce502e0b2e2d4b14f6e4a452a3f1a51db2f332fbd6c9b9d16e78ebab6",
+    "implementation/warlock/src/Presentation.elm": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851",
+    "implementation/warlock/qa/OutputRetirementReplay.elm": "fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "f02fd8bcd02bce9346eea67995199d8b192755b5fa76fb125570306c2bda8847"
+  },
+  "elm": {
+    "checks": [
+      "keyboard-open-one-exact-dom-focus",
+      "focus-in-same-current-projection-commit",
+      "focus-target-is-current-unique-close",
+      "keyboard-origin-established-before-open",
+      "pointer-open-no-dom-focus",
+      "old-open-callback-no-repeat",
+      "refresh-request-no-initial-focus",
+      "refreshed-menu-no-initial-focus",
+      "stale-publication-no-focus",
+      "stale-lease-no-focus",
+      "foreign-owner-no-focus",
+      "retired-owner-no-focus",
+      "disconnected-origin-no-focus",
+      "dismiss-does-not-immediately-restore",
+      "eligible-return-stays-exact-group",
+      "removed-return-target-refused",
+      "unavailable-return-target-refused"
+    ],
+    "checkCount": 17,
+    "preconditions": [
+      "current-taskbar-group-eligible",
+      "keyboard-menu-opened",
+      "pointer-menu-opened",
+      "exact-enabled-current-menu-close",
+      "menu-publication-and-lease-current"
+    ],
+    "preconditionCount": 5,
+    "seedCount": 32,
+    "seedAlgorithm": "literal seeds0..31 modulo8 public event sequences",
+    "nodeArgv": [
+      "node",
+      "implementation/warlock/qa/menu-initial-focus.cjs",
+      "<compiled MenuInitialFocusReplay.js>",
+      "<new-report.json>"
+    ],
+    "observation": "Capture Outputs.update effects and Outputs.register commit; require focus exactlymenu:1:close in same currentprojection. No effect-discarding helper on observed operation.",
+    "sourceOriginTiming": "Desktop.update SurfaceEntry sets popupOrigin before recursively calling inner update at624. Actual renderer Surface.resolve supplies this wrapper; no fixture record rewrite.",
+    "refreshMeaning": "Native refresh may rebind menu identity; assertion means no new opening DOM Focus from refresh, not immutable menu identity.",
+    "seeds": "keyboard,pointer,stalepub,stalelease,foreignscope,unavailable,removed,retired; each followed by replayed old context. Four positive sequences;28 nofocus sequences."
+  },
+  "haskell": {
+    "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+    "newFixedChecks": 13,
+    "seedChecks": 32,
+    "argv": [
+      "<fresh ui-webkit-controls>",
+      "--allocation-only"
+    ],
+    "baselineExpected": "First new parser assertion fails: keyboard menu opening transfers physical focus into Popup. No targetGTK call in new tests.",
+    "keyboardOrigin": "Menu-only parser must require keyboardParent true; false/absent inert, oldapplications/notifications behavior unchanged.",
+    "scope": "Existing borrowed/root/context/runtime guards remain production constraints; pure tests do not execute gtkWidgetGrabFocus."
+  },
+  "fixtureOnly": true,
+  "productionChanges": false,
+  "executed": false,
+  "primaryWrites": false,
+  "originalAccepted": false,
+  "preserve": [
+    "Immutable old18DOM/16Escape/34emitter and32seed fixtures unchanged",
+    "No production hooks/opaque model injection",
+    "No native/provider/GIO/service permission",
+    "Root must observe semanticRED before production"
+  ],
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/tests-first/manifest.json",
+    "sha256": "f3cbe703bc7c126b22fed8e5273270b7c6b0dbf187c7fce7dbbcc6a376eda15f"
+  },
+  "correction": "Only two foreign-scope fixture literals change from live view2 to absent view99. OutputController.Renderer permits live bar owner relocation; its view-membership guard refuses scope99. Existing 17 cases, five preconditions, 32 seeds and Haskell/Node bytes unchanged.",
+  "reviewFinding": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/tests-first/independent-tests-first-review-build.json",
+    "sha256": "53987f7f4844657438bcfdbee019be437004eba6830ca42369086f327cf9e1bf"
+  }
+}

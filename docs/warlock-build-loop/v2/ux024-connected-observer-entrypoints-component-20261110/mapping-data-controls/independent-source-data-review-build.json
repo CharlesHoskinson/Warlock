@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/source-successor/manifest.json",
+    "sha256": "fd8ad73980efada3759ed17b7934a1383977b919f2266d676b0810c217abddd6"
+  },
+  "changes": [
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "baselineSha256": "67f95421252c16af8421623a63bbbcc63f128c1bf32bbb4fc2d856692c770800",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/source-successor/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "sha256": "54ad12df62cc688411993a1f13c2a220fae5d05d79a3ecb7a9c1a366a0b83e08"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_named_mapping_diagnostics.py",
+      "baselineSha256": null,
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/source-successor/test_ux024_named_mapping_diagnostics.py",
+        "sha256": "acc441d01e161ce899fd210288c39d81d1e9b8ed5f6e9b0002e34a95a231759c"
+      }
+    }
+  ],
+  "acceptedData": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/named-mapping-data.ACCEPTED.json",
+    "sha256": "84a46aab648b344df648921797a2f9718f3c24615bd1134bfd72a2d03de00b92"
+  },
+  "findings": [],
+  "checked": [
+    "Twelve actual regular data files hash/stat/mode/UID/GID verified against exact foundation/current strict-schema provenance; oldschema not substituted.",
+    "Source delta only PACKETv4 plus raw map rows saved before unchanged strict_snapshot_files and bounded missing-name diagnostics; no admission/mapper override.",
+    "Full finite foundation-minus-inventory analysis distinguishes105unchangedELFs notadded/12dataadded/10globalfontcachesexcluded.",
+    "No locale/environment narrowing, generatedfontcache exception, executable/provider capability or Haskell change."
+  ],
+  "limits": [
+    "No reviewer tests/imports/native effects.",
+    "Root7controls and actual new tuple/currentcandidate review pending; no claim allfuture mappings are known or native success.",
+    "PriorV3 initialsnapshot+failure retained; unavailable oldmaprows not invented."
+  ]
+}

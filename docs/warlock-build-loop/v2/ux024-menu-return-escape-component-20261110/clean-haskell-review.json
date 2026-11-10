@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-clean-cpu-pass",
+  "candidateSha256": "175d86dd14f5d127aa83a93ca6d6d51b40e8f1f0a6bb0a20c4386e19476668d2",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794314613032051761/report.json",
+    "sha256": "d075020ff981989f014bbbceb1cbc3272dba1c44aad45f4c428c9849b0136c18"
+  },
+  "verified": {
+    "commandsExitZeroUnforced": 6,
+    "ownedSources": 32,
+    "haskellLivePins": 260,
+    "stageByteExactFiles": 259,
+    "stageCabalProject": "original prefix plus offline dependency overlay",
+    "builderPins": 271,
+    "managedInputs": 273,
+    "images": {
+      "warlock-ui-owner": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794314613032051761/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+        "device": "57",
+        "inode": "7769759",
+        "size": "37755256",
+        "sha256": "0dcc14bac645741fd60fad77c6192096f31dfb9bfa9941469202d7fa9f4c3e0e",
+        "executed": false
+      },
+      "ui-webkit-controls": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794314613032051761/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+        "device": "57",
+        "inode": "7769785",
+        "size": "41192928",
+        "sha256": "54b9b79f68c91489afff529cde69a3f30037fa58bcae7f43e184887d4f0f5307",
+        "executed": true
+      }
+    },
+    "sentinels": {
+      "cpu-ui-webkit-controls.stdout": "allocation-controls: PASS\n",
+      "cpu-foreign-endpoint-refusal-controls.stdout": "foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect\n"
+    },
+    "retainedProductFixesAndCleanWebKit": true
+  },
+  "limits": [
+    "No reviewer execution; CPU artifact review only.",
+    "Owner compiled but unexecuted. Only allocation and endpoint-refusal controls executed.",
+    "Raw cleanupQualified false preserved; no native/original/EARS credit. Root canonical closure, commit/integration and RSI remain separate."
+  ]
+}

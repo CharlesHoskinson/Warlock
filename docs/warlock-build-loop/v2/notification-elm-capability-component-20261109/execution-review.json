@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "reviewer": "sol-supervisor-workflow-20261109",
+  "scope": "Actual paired pure Elm consumer qualification and exact six-file integration composition",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/integration-bundle/manifest.json",
+    "sha256": "a729c3f8bccfdab6b91418c698b2b1628568874534376e3b6b09bb48b0928a22"
+  },
+  "sourceReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/revision2-literal-envelope/independent-source-review-sol.json",
+    "sha256": "cd57777d9fcf35a4c375a3724a181611f313dbcad02b1be49c0111ea572d430e"
+  },
+  "reports": {
+    "baseline-red": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/baseline-red/report.json",
+      "sha256": "4cfd63e60436a16c525ba2c5d7c70ec07e8aae40cc691db4ea50479f343ad9f3"
+    },
+    "candidate-green": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/candidate-green/report.json",
+      "sha256": "cb513d59f0e94cd26e68c677b7c82196a549ae91943b3020cedbc524b2a18729"
+    },
+    "full-regression": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/full-regression/report.json",
+      "sha256": "e8d0dc0b761044736e28f5e61947ad3fac862de109d6d61d7ad8f59d13138fe3"
+    }
+  },
+  "rootReportedConsumedHandles": {
+    "baselineRed": 60238,
+    "candidateGreen": 86331,
+    "fullRegression": 81057
+  },
+  "actualResults": {
+    "baselineCompilerExit": 0,
+    "baselineSemanticFailed": 10,
+    "baselineSemanticPassed": 27,
+    "candidate37Pass": true,
+    "notificationsReplay": 24,
+    "localPolicyReplay": 14,
+    "applicationAvailabilityChecks": 423,
+    "productionRootsCompiled": 6,
+    "publicInventory37AllTrue": true
+  },
+  "pairedInputsOnlyThreeProductionElmHashesDiffer": true,
+  "fixedFixtureCompilerNodeControllerSame": true,
+  "currentInputHashesVerified": {
+    "baseline": 110,
+    "candidate": 110,
+    "full": 113
+  },
+  "sixFileComposition": {
+    "implementation/warlock/src/Shell.elm": {
+      "before": "e94d200d2c4fbf1badce1e21f7be9595c79b7e4d8f77ef07f7253427fd30dec5",
+      "after": "4ef1ceaf83a5d306d8d51fc0af4e56877eefdfa66f076fef6acf18d46b23bf73"
+    },
+    "implementation/warlock/src/Desktop.elm": {
+      "before": "6a47c4e0abaaf371d61f36c36172279f760fdb477877543f67af6e897e712abb",
+      "after": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815"
+    },
+    "implementation/warlock/src/Surface.elm": {
+      "before": "268833fc35260a16dde4e8bc5db932464a03cf7e6fb42486a7eb978ea7bbc8b5",
+      "after": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179"
+    },
+    "implementation/warlock/qa/NotificationCapabilityReplay.elm": {
+      "before": null,
+      "after": "2ea941bd592c51ff063d4acad2de82bc930879ad5d646c9b71274b4f8c4b7486"
+    },
+    "implementation/warlock/qa/notification-capability.cjs": {
+      "before": null,
+      "after": "b37d9b543b100316b7463c9c03b1cbb53ac2839c0305e98fe52c29fd4541e4e9"
+    },
+    "implementation/warlock/qa/notification-capability.json": {
+      "before": null,
+      "after": "496bdc429366c6030d3de966620d16db5799ea64143872c8d1d4953fb36b0f53"
+    }
+  },
+  "compiledPairedImages": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/baseline-red/replay.js",
+      "sha256": "39b997679fee5f1ab8248f6379721e39c47fef00f09cfd249e6db2072a8b4f9f"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/candidate-green/replay.js",
+      "sha256": "f255cde67f160dc8ad50399551027ebfe87c8487db59b38e730347fe295ad3d2"
+    }
+  ],
+  "compiledProductionImages": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/full-regression/Main.js",
+      "sha256": "812c444ce1982535d39f98226bc4129666d65ea665851bfbad6e845886fd1405"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/full-regression/Bar.js",
+      "sha256": "b9b6a53d927748c1bdd0b6640ac268ac8d9af7220e972840a267c38604305db9"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/full-regression/Popup.js",
+      "sha256": "5c8fa61768ab778a0527468b8fd5d159af6d32d21ed76a78e1b95b556a6c533a"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/full-regression/HttpMain.html",
+      "sha256": "b008e8d5bef2778ff996d800022c01c3c6fafc872ea2293c306838fa17d2764b"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/full-regression/HttpBar.html",
+      "sha256": "5430a2ebb96b1d5b791e68bb88960d0a66c9fcd08acf1751a88d9b7769bea457"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/full-regression/HttpPopup.html",
+      "sha256": "59d81e6a28931701be3fe0d4a54bc9688bf1f1407f5eb908b45cd19d2427d9a5"
+    }
+  ],
+  "publicCollectorChecks": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/notification-elm-capability-consumer/root-qualification/public-controller-checks.json",
+    "sha256": "30847be1dc09c228130c41ee34feb7bebb2e5b8ff9946c7d08031bbdb61830f9"
+  },
+  "collectorByteIdenticalToPairedController": true,
+  "minimalInventoryMatchesAll37LiteralNames": true,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "serviceIntegrated": false,
+  "limits": [
+    "Qualifies pure parser/reducer/surface code and component regressions only; simulated service-capability input is not a live service readiness claim.",
+    "Actual Backend still publishes local-policy only and rejects service requests. Frozen GIO/bus draft and service investigation stop remain untouched.",
+    "Root guarded six-path adoption and normal scoped commit may proceed; no execution, source edits or tests performed by reviewer."
+  ]
+}

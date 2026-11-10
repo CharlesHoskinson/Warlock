@@ -1,0 +1,345 @@
+{
+  "schema": 1,
+  "scope": "ux024-existing-foundation-named-mapping-data",
+  "disposition": "accepted",
+  "reviewer": "build_audit",
+  "previousPacket": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v3/packet.json",
+    "sha256": "82e0526652336925f88cde6fe81d412735570c56b4ab7ce06a89cbde90d1cd84"
+  },
+  "foundationPacket": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+    "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+  },
+  "currentSchemaCorrespondence": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-notifications-keyboard-native-20261109-current22/current-schema-correspondence.json",
+    "sha256": "03acc6a112d76976fef5f88d5aaa394fa2e162e65548b4ce39f76baf4fe74082"
+  },
+  "namedDataInputs": {
+    "/usr/share/fonts/liberation/LiberationSans-Regular.ttf": "ef452d55117c6b4b8b0a51f842c1ab16362518225f6c806b0e91f18ed0e331f5",
+    "/usr/share/glvnd/egl_vendor.d/10_nvidia.json": "9e6f14afaa7523370ad96e6675d3357441ee3985e60405cb3e0ced30b2ddaf76",
+    "/usr/lib/locale/locale-archive": "74336f094157053703fe153f9fe4efa9efd7589bfc4e9695ac8195cf8d5fa4c4",
+    "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Bold.ttf": "e490660ad75e0b152c93b1604c2ea1a4ea675f1b8a3fe0d005b1998568f99f1f",
+    "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-BoldItalic.ttf": "19a2e3af8ccf99954941ea07e0a29df27574500f12016d86d6c4c059b825ffe1",
+    "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Italic.ttf": "71d5466cc3ab31bee38b4e2c5cc99c2b41a749c4973ed4579b814ec992b0738e",
+    "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Regular.ttf": "1c680e8cde9fcf8b88a5605ce8d1fb94dd3fb15841f7ca7bf4c55664855e5611",
+    "/usr/share/fonts/liberation/LiberationSans-Bold.ttf": "993f3d680aa2a4987c2ca7dd1eb92bcf6ddc396223ecc17800de1c2af75255fc",
+    "/usr/share/fonts/liberation/LiberationSans-BoldItalic.ttf": "5f43533898b70b83e8897b3548865bd7525400df4620cd32ebc167abd8c92262",
+    "/usr/share/fonts/liberation/LiberationSans-Italic.ttf": "2d3a426f29d02eda47d3f007d47d71aa65bb7405940cfd1096bc212beb62b7a0",
+    "/usr/share/fonts/noto/NotoColorEmoji.ttf": "15671215ab769fdc7162a045d56fd7d7e477c51b04e6b3c761d914d8fdd6cc44",
+    "/usr/share/glib-2.0/schemas/gschemas.compiled": "d4bf642fb9ff967f63b8cf94da0763f7cfd30e903269f97f283659de4ac344e7"
+  },
+  "currentObservations": {
+    "/usr/share/fonts/liberation/LiberationSans-Regular.ttf": {
+      "sha256": "ef452d55117c6b4b8b0a51f842c1ab16362518225f6c806b0e91f18ed0e331f5",
+      "device": 36,
+      "inode": 43690,
+      "size": 410820,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "hostInputs",
+            "/usr/share/fonts/liberation/LiberationSans-Regular.ttf"
+          ]
+        },
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/liberation/LiberationSans-Regular.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/glvnd/egl_vendor.d/10_nvidia.json": {
+      "sha256": "9e6f14afaa7523370ad96e6675d3357441ee3985e60405cb3e0ced30b2ddaf76",
+      "device": 36,
+      "inode": 301193,
+      "size": 107,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "hostInputs",
+            "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+          ]
+        },
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+          ]
+        }
+      ]
+    },
+    "/usr/lib/locale/locale-archive": {
+      "sha256": "74336f094157053703fe153f9fe4efa9efd7589bfc4e9695ac8195cf8d5fa4c4",
+      "device": 36,
+      "inode": 239281,
+      "size": 3064432,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/lib/locale/locale-archive"
+          ]
+        }
+      ]
+    },
+    "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Bold.ttf": {
+      "sha256": "e490660ad75e0b152c93b1604c2ea1a4ea675f1b8a3fe0d005b1998568f99f1f",
+      "device": 36,
+      "inode": 189818,
+      "size": 2575364,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Bold.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-BoldItalic.ttf": {
+      "sha256": "19a2e3af8ccf99954941ea07e0a29df27574500f12016d86d6c4c059b825ffe1",
+      "device": 36,
+      "inode": 189819,
+      "size": 2576592,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-BoldItalic.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Italic.ttf": {
+      "sha256": "71d5466cc3ab31bee38b4e2c5cc99c2b41a749c4973ed4579b814ec992b0738e",
+      "device": 36,
+      "inode": 189820,
+      "size": 2573684,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Italic.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Regular.ttf": {
+      "sha256": "1c680e8cde9fcf8b88a5605ce8d1fb94dd3fb15841f7ca7bf4c55664855e5611",
+      "device": 36,
+      "inode": 189821,
+      "size": 2571596,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Regular.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/fonts/liberation/LiberationSans-Bold.ttf": {
+      "sha256": "993f3d680aa2a4987c2ca7dd1eb92bcf6ddc396223ecc17800de1c2af75255fc",
+      "device": 36,
+      "inode": 43687,
+      "size": 414568,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/liberation/LiberationSans-Bold.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/fonts/liberation/LiberationSans-BoldItalic.ttf": {
+      "sha256": "5f43533898b70b83e8897b3548865bd7525400df4620cd32ebc167abd8c92262",
+      "device": 36,
+      "inode": 43688,
+      "size": 409108,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/liberation/LiberationSans-BoldItalic.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/fonts/liberation/LiberationSans-Italic.ttf": {
+      "sha256": "2d3a426f29d02eda47d3f007d47d71aa65bb7405940cfd1096bc212beb62b7a0",
+      "device": 36,
+      "inode": 43689,
+      "size": 415920,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/liberation/LiberationSans-Italic.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/fonts/noto/NotoColorEmoji.ttf": {
+      "sha256": "15671215ab769fdc7162a045d56fd7d7e477c51b04e6b3c761d914d8fdd6cc44",
+      "device": 36,
+      "inode": 351097,
+      "size": 10730124,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json",
+            "sha256": "ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0"
+          },
+          "selector": [
+            "nested",
+            "inputs",
+            "/usr/share/fonts/noto/NotoColorEmoji.ttf"
+          ]
+        }
+      ]
+    },
+    "/usr/share/glib-2.0/schemas/gschemas.compiled": {
+      "sha256": "d4bf642fb9ff967f63b8cf94da0763f7cfd30e903269f97f283659de4ac344e7",
+      "device": 36,
+      "inode": 940908,
+      "size": 60304,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "provenance": [
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-notifications-keyboard-native-20261109-current22/current-schema-provider-readiness.json",
+            "sha256": "1c113a9b9d8095ff34f6e986c582efefe233bf31cb98e37d66fbee673047036f"
+          },
+          "selector": [
+            "inputs",
+            "/usr/share/glib-2.0/schemas/gschemas.compiled"
+          ]
+        },
+        {
+          "reference": {
+            "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-notifications-keyboard-native-20261109-current22/current-schema-correspondence.json",
+            "sha256": "03acc6a112d76976fef5f88d5aaa394fa2e162e65548b4ce39f76baf4fe74082"
+          },
+          "selector": [
+            "currentProviderReadiness"
+          ]
+        }
+      ]
+    }
+  },
+  "completeFiniteAnalysis": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/named-mapping-data-correspondence/foundation-minus-process-inventory.json",
+    "sha256": "f325a32b9430476ff49a17d076d773c404765a8fca2eec2ca36f549659c36f25"
+  },
+  "coverage": {
+    "historicalPathsAbsentFromProcessInventory": 127,
+    "unchangedElfPathsNotAdded": 105,
+    "nonElfDataCandidates": 22,
+    "currentQualifiedDataAdded": 12,
+    "oldGlobalFontCachesExcluded": 10
+  },
+  "limits": [
+    "Exactexistingfoundation-qualifieddata, notnew executable/providercapability",
+    "Oldschema21b7 isnotaccepted; currentd4bf comesfromexistingstrictqualification",
+    "No localeenvironmentchange; no mapguardoverride orautomaticunknownpathadmission",
+    "Failedce3b firstlocaleobservationretained; alloldactualmaprowsunavailable, notinvented",
+    "Currentprivatefontlayout hasFONTCONFIG_USE_MMAP0; no generatedfontcacheexception",
+    "No nativeoriginalacceptance"
+  ]
+}

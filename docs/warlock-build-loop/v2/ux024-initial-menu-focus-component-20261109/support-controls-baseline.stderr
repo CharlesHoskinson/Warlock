@@ -1,0 +1,99 @@
+Running as unit: qa-harness-e0f7d47b457c4d379a35b7115525583d.scope; invocation ID: 33366c4ff7d74ffaa6f01b309fc7120f
+test_bar_context_exact_success (__main__.FixedBarContextRoute.test_bar_context_exact_success) ... ok
+test_bar_context_failed_setup_red_inventory_refuses (__main__.FixedBarContextRoute.test_bar_context_failed_setup_red_inventory_refuses) ... ok
+test_bar_context_failed_skipped_or_acceptance_refuses (__main__.FixedBarContextRoute.test_bar_context_failed_skipped_or_acceptance_refuses) ... ok
+test_bar_context_missing_extra_duplicate_case_refuses (__main__.FixedBarContextRoute.test_bar_context_missing_extra_duplicate_case_refuses) ... ok
+test_bar_context_one_fixed_input_added (__main__.FixedBarContextRoute.test_bar_context_one_fixed_input_added) ... ok
+test_bar_context_wrong_image_or_harness_refuses (__main__.FixedBarContextRoute.test_bar_context_wrong_image_or_harness_refuses) ... ok
+test_escape_exact_success (__main__.FixedMenuEscapeRoute.test_escape_exact_success) ... ok
+test_escape_failed_red_or_skipped_result_refuses (__main__.FixedMenuEscapeRoute.test_escape_failed_red_or_skipped_result_refuses) ... ok
+test_escape_fixed_dependency_membership (__main__.FixedMenuEscapeRoute.test_escape_fixed_dependency_membership) ... ok
+test_escape_missing_extra_duplicate_case_refuses (__main__.FixedMenuEscapeRoute.test_escape_missing_extra_duplicate_case_refuses) ... ok
+test_escape_setup_inventory_and_nonboolean_refuse (__main__.FixedMenuEscapeRoute.test_escape_setup_inventory_and_nonboolean_refuse) ... ok
+test_escape_wrong_artifact_or_acceptance_refuses (__main__.FixedMenuEscapeRoute.test_escape_wrong_artifact_or_acceptance_refuses) ... ok
+test_initial_focus_exact_success (__main__.FixedMenuInitialFocusRoute.test_initial_focus_exact_success) ... ERROR
+test_initial_focus_failed_red_seed_loss_refuses (__main__.FixedMenuInitialFocusRoute.test_initial_focus_failed_red_seed_loss_refuses) ... ERROR
+test_initial_focus_missing_extra_duplicate_case_refuses (__main__.FixedMenuInitialFocusRoute.test_initial_focus_missing_extra_duplicate_case_refuses) ... ERROR
+test_initial_focus_precondition_inventory_refuses (__main__.FixedMenuInitialFocusRoute.test_initial_focus_precondition_inventory_refuses) ... ERROR
+test_initial_focus_two_fixed_dependencies (__main__.FixedMenuInitialFocusRoute.test_initial_focus_two_fixed_dependencies) ... ERROR
+test_initial_focus_wrong_artifact_acceptance_refuses (__main__.FixedMenuInitialFocusRoute.test_initial_focus_wrong_artifact_acceptance_refuses) ... ERROR
+test_complete_source_membership (__main__.FixedMenuRoute.test_complete_source_membership) ... ok
+test_exact_mode_only (__main__.FixedMenuRoute.test_exact_mode_only) ... ok
+test_exact_success_result (__main__.FixedMenuRoute.test_exact_success_result) ... ok
+test_failed_skipped_case_refuses (__main__.FixedMenuRoute.test_failed_skipped_case_refuses) ... ok
+test_false_summary_or_failed_assertion_refuses (__main__.FixedMenuRoute.test_false_summary_or_failed_assertion_refuses) ... ok
+test_foreign_runner_refuses (__main__.FixedMenuRoute.test_foreign_runner_refuses) ... ok
+test_missing_empty_extra_duplicate_case_refuse (__main__.FixedMenuRoute.test_missing_empty_extra_duplicate_case_refuse) ... ok
+test_native_or_original_credit_refuses (__main__.FixedMenuRoute.test_native_or_original_credit_refuses) ... ok
+test_profile_requires_exact_parent_values (__main__.FixedMenuRoute.test_profile_requires_exact_parent_values) ... ok
+test_profile_scope_and_extra_fields_refuse (__main__.FixedMenuRoute.test_profile_scope_and_extra_fields_refuse) ... ok
+
+======================================================================
+ERROR: test_initial_focus_exact_success (__main__.FixedMenuInitialFocusRoute.test_initial_focus_exact_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 211, in test_initial_focus_exact_success
+    def test_initial_focus_exact_success(self):self.check(self.valid())
+                                                          ~~~~~~~~~~^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 206, in valid
+    'observed':{'preconditions':{n:True for n in elm.MENU_INITIAL_FOCUS_PRECONDITIONS},'checks':{n:True for n in elm.MENU_INITIAL_FOCUS_CASES}},
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'menu_test_check_elm' has no attribute 'MENU_INITIAL_FOCUS_PRECONDITIONS'
+
+======================================================================
+ERROR: test_initial_focus_failed_red_seed_loss_refuses (__main__.FixedMenuInitialFocusRoute.test_initial_focus_failed_red_seed_loss_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 229, in test_initial_focus_failed_red_seed_loss_refuses
+    v=self.valid()
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 206, in valid
+    'observed':{'preconditions':{n:True for n in elm.MENU_INITIAL_FOCUS_PRECONDITIONS},'checks':{n:True for n in elm.MENU_INITIAL_FOCUS_CASES}},
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'menu_test_check_elm' has no attribute 'MENU_INITIAL_FOCUS_PRECONDITIONS'
+
+======================================================================
+ERROR: test_initial_focus_missing_extra_duplicate_case_refuses (__main__.FixedMenuInitialFocusRoute.test_initial_focus_missing_extra_duplicate_case_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 214, in test_initial_focus_missing_extra_duplicate_case_refuses
+    v=self.valid()
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 206, in valid
+    'observed':{'preconditions':{n:True for n in elm.MENU_INITIAL_FOCUS_PRECONDITIONS},'checks':{n:True for n in elm.MENU_INITIAL_FOCUS_CASES}},
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'menu_test_check_elm' has no attribute 'MENU_INITIAL_FOCUS_PRECONDITIONS'
+
+======================================================================
+ERROR: test_initial_focus_precondition_inventory_refuses (__main__.FixedMenuInitialFocusRoute.test_initial_focus_precondition_inventory_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 221, in test_initial_focus_precondition_inventory_refuses
+    v=self.valid();p=v['observed']['preconditions'];n=next(iter(p))
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 206, in valid
+    'observed':{'preconditions':{n:True for n in elm.MENU_INITIAL_FOCUS_PRECONDITIONS},'checks':{n:True for n in elm.MENU_INITIAL_FOCUS_CASES}},
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'menu_test_check_elm' has no attribute 'MENU_INITIAL_FOCUS_PRECONDITIONS'
+
+======================================================================
+ERROR: test_initial_focus_two_fixed_dependencies (__main__.FixedMenuInitialFocusRoute.test_initial_focus_two_fixed_dependencies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 244, in test_initial_focus_two_fixed_dependencies
+    self.assertEqual(len(elm.MENU_INITIAL_FOCUS_QA_INPUTS),2)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'menu_test_check_elm' has no attribute 'MENU_INITIAL_FOCUS_QA_INPUTS'
+
+======================================================================
+ERROR: test_initial_focus_wrong_artifact_acceptance_refuses (__main__.FixedMenuInitialFocusRoute.test_initial_focus_wrong_artifact_acceptance_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 239, in test_initial_focus_wrong_artifact_acceptance_refuses
+    v=self.valid();v[field]=value
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/fixed-elm-cpu-extension/postimages/tools/test_ux024_menu_cpu_route.py", line 206, in valid
+    'observed':{'preconditions':{n:True for n in elm.MENU_INITIAL_FOCUS_PRECONDITIONS},'checks':{n:True for n in elm.MENU_INITIAL_FOCUS_CASES}},
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'menu_test_check_elm' has no attribute 'MENU_INITIAL_FOCUS_PRECONDITIONS'
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.004s
+
+FAILED (errors=6)

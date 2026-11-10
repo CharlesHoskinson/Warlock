@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-elm-initial-menu-focus-component-only",
+  "greenReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794265452297452227/report.json",
+    "sha256": "377776c23e51aa6306e6bb2eb6add4d0b37a6e3e4b5f8f251ca34ed7d76acbdd"
+  },
+  "greenResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794265452297452227/menu-initial-focus.json",
+    "sha256": "a5b4ed8e9b7c8cce23ac242c92d1642d2cbbf9b89c59fe10f7aca851410549a8"
+  },
+  "redReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794264903118007276/report.json",
+    "sha256": "edb0bc63b750a55f92cfd96dad0eb5ed7cab528de5378e9e96f0c4d5cfe3dacb"
+  },
+  "redResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794264903118007276/menu-initial-focus.json",
+    "sha256": "d8704cd70a8ae920f7bec0d307615b490c448a42da89981fd46f3d006a8e903d"
+  },
+  "commandExits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "sourceCount": 122,
+  "allLiveHashesMatched": true,
+  "soleSourceDelta": {
+    "implementation/warlock/src/Desktop.elm": {
+      "red": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815",
+      "green": "8385e34a3ecf122bf51a6ca4e4fe2df302a955fe35575dca8b2e419302f6fd56"
+    }
+  },
+  "counts": {
+    "initialFocus": 17,
+    "setup": 5,
+    "publicSequences": 32,
+    "allPassed": true,
+    "oldDOM": 18,
+    "oldDOMAssertions": 86,
+    "oldEscape": 16,
+    "oldContext": 34,
+    "oldContextAssertions": 503
+  },
+  "guarantees": [
+    "Successful keyboard menu open emits one literal menu:1:close in update effects and same current projection commit; actual unique enabled close matches target.",
+    "Pointer/refused/stale/nonmember/retired/disconnected/refresh/replayed paths do not emit initial opening focus.",
+    "Dismissal does not immediately restore; matching fresh observation still emits exact original eligible group, missing/unavailable targets refuse.",
+    "32 fixed public sequences include4positive openings,28 nofocus variants, all repeatFocus empty."
+  ],
+  "rootExecution": {
+    "outer": 71915,
+    "consumedExit": 0,
+    "jobPid": 3940661,
+    "jobStart": 3116765
+  },
+  "limits": [
+    "Elm effects/commit component only; Haskell Mvp and physical GTK handoff remain unqualified by this result.",
+    "No real native key/focus ownership or originalUX024 acceptance."
+  ],
+  "effects": {
+    "reviewerTests": false,
+    "compiler": false,
+    "imports": false,
+    "primaryWrites": false
+  }
+}

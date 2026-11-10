@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "changes-required-one-human-pin",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/manifest.json",
+    "sha256": "cc21fafd5a38a7759f8735cba855d64097ecfb4566363dfbe0b2a0151b0cbba8"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/prepare_current_production_no_change_rsi.py",
+      "sha256": "a8bc6e6b95f28a2a24c623b80416afefab5c7677727b1ab379127edcb2a1829b"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/run_fixed_probes_and_prepare.py",
+      "sha256": "d5630e0d06d69d27ef303514f602527f562ea6bd341390df96801aace80abe42"
+    }
+  ],
+  "finding": {
+    "id": "RSI-HUMAN-BEFORE-AFTER-01",
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/run_fixed_probes_and_prepare.py",
+    "counterexample": "Manifest promises exact human ec8 before/after every probe, but wrapper fixed/PINS omit human authorization and candidate manifest has no ec8 ref. Assembler checks human only after probes; transient change during probes is not detected.",
+    "minimumFix": "Add exact existing rsi-initial-focus-no-change-v1/authorization.json ec8 hash to wrapper PINS or explicit unchanged() check before/after each probe. No test/probe/authority changes."
+  },
+  "reviewedOtherwise": [
+    "Actual current bd3 pass/consumed/integration69c and no prior RSI required under installed lock.",
+    "Four literal qa_run commands only, same15builder+8admission methods twice; per-test names/count/OK/loghash and return0 required before typed results.",
+    "Same73plugin snapshot/31source/7guards/expiry; final assembler recomputes complete plugin membership and all fixed maps, no new plugin change.",
+    "Historical event extra-field refusal/correction preserved; typed no-change event has normal fields and no invented execution/adoption. Root stages/adopts separately."
+  ],
+  "limits": [
+    "No author/reviewer target execution; proposed receipt does not assert probes passed. No native/fullsuite/original acceptance."
+  ]
+}

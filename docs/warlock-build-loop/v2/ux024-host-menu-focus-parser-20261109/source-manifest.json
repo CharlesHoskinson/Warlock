@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "kind": "ux024-keyboard-menu-gtk-handoff-production-candidate",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "beforeSha256": "f02fd8bcd02bce9346eea67995199d8b192755b5fa76fb125570306c2bda8847",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-production-fix/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "737fe6ccebccfbbf43ca6dc926fa028bdda6102cb98f38a504b84b74866ac860"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-production-fix/candidate.patch",
+    "sha256": "f2df3223e0f37d6db3f084e33af94074b0e5c58ef1732eaa8acdafa30387b2d2"
+  },
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/tests-first-revision2-absent-scope/manifest.json",
+    "sha256": "3709fd7f783c2d65f3ea3f9c7c5349a818a8bd2f61bc075611f2e6002bc20196"
+  },
+  "actualSemanticRedReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794266829245994228/report.json",
+    "sha256": "fba0ea1f5bf1ba61b7d8bed2aed17753e7dfff013eedc6f4b16544ab2681638e"
+  },
+  "actualSemanticRedStderr": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794266829245994228/logs/cpu-ui-webkit-controls.stderr",
+    "sha256": "840d6d65e3edc9a4c2b01bfe35f565b99e067b3a23a98ef6fb6b9ebb850391a1"
+  },
+  "redMeaning": "Root actual compile and both list-bin operations passed; only ui-webkit-controls --allocation-only ran and failed on first new menu assertion. Later new cases/seeds were not reached. No compiler/setup failure.",
+  "change": "One destination guard: current open menu with explicit keyboardParent true selects Popup/control:menu-close. Missing/false/non-boolean parent does not select menu destination. Existing applications/notifications/closed behavior unchanged.",
+  "preserved": [
+    "parseProjectionLease/current selected focusOwner and popup owner gates",
+    "Exact unique eligible control and nonempty unique DOM target checks",
+    "Transition suppression by current scope/role/lease; no per-publication refocus",
+    "Rooted mapped allocated GTK child/current owner/original deadline checks around existing grab_focus call",
+    "Main fixture and all other source functions unchanged",
+    "No callback, timer, input, process or provider additions"
+  ],
+  "frozenFixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/tests-first-revision2-absent-scope/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+    "sha256": "9be7ef93c55b408a42088c6cae192f0d9c4b56da589e1de46cfda88e4c970fb1"
+  },
+  "sourceChecks": {
+    "soleAddedLine": true,
+    "allOtherBytesIdentical": true
+  },
+  "qualification": "Root only: same source-bound compile/list and --allocation-only route. Candidate compiler/GREEN/actual GTK delivery not observed by author.",
+  "executedByAuthor": false,
+  "primaryWrites": false,
+  "nativeAcceptance": false,
+  "originalAccepted": false
+}

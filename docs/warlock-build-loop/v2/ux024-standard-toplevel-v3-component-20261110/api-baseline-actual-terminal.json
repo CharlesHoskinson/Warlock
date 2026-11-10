@@ -1,0 +1,36 @@
+{
+  "terminal": true,
+  "jobId": "pid317251-start3455284",
+  "candidateSha256": "377934b56d4b48c5b87ab697f9b350ffc067a0b5a1310b6bfb902e6d41cedbc5",
+  "scope": "cpu",
+  "manifestSha256": "20d38f29da97f3d22d803b4db43add584e34706ade395c4c4bb1bd1ba02a891e",
+  "fixtureSha256": "fb29eeab996f3901a4b3c705900609b86e79056a37c08714acb58ae3ff9d5a96",
+  "exit": 1,
+  "classification": "failed",
+  "failureSignature": "foreign-toplevel-api-absent-and-outer-group-absence-refused",
+  "actualOuterHandle": "45322",
+  "actualOuterHandleConsumed": true,
+  "apiAbsenceObserved": true,
+  "semanticControlsExecuted": false,
+  "guiOwnerExecuted": false,
+  "rawReport": {
+    "path": ".warlock-contributor/ux024-menu-focus-build-1794268842126799857/report.json",
+    "sha256": "4fe5abd34059066045cfd76eabcbb3f8dcb7d727ee69ad6d73437ea3480a579a"
+  },
+  "actualBuildStderr": {
+    "path": ".warlock-contributor/ux024-menu-focus-build-1794268842126799857/logs/build.stderr",
+    "sha256": "eae165033fafef6f9b1e0079978145deec4bcf938dd6e96f6b1ae0ab04d50b0d"
+  },
+  "outerLoopStderr": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/foreign-toplevel-v3-api-baseline-cpu/actual-loop.stderr",
+    "sha256": "b1877626b2c45ce61aa9678b25cf88da0da65e13aa072b533afca17b40421941"
+  },
+  "groupAbsenceRefused": true,
+  "scopeNowObserved": "ActiveState=inactive\nSubState=dead\nResult=success\nControlGroup=\n",
+  "scopeObservedUTC": "2026-11-10T00:02:52.155757+00:00",
+  "forcedKillUsedByRoot": false,
+  "normalCleanupClaimed": false,
+  "cleanupQualified": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

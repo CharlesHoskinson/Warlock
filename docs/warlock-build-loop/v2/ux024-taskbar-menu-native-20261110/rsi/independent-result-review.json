@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-bounded-rsi-comparison",
+  "candidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/actual-comparison/report.json",
+    "sha256": "44c5875a9a85d713559b393371696c267e26a394641be539bce48b5b7f7e223c"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/actual-comparison/comparison.json",
+      "sha256": "5a38e71dfd291eda70034622ebfc9cdb67ba281b9cdd1374d8f56fa27d7996fa"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/actual-comparison/regression.json",
+      "sha256": "207fb650ef5c7d36433a85aaa4e2c1cd059b1eff4e86b6c6b6a40435e5c7e812"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/actual-comparison/baseline-plugin.json",
+      "sha256": "cd196d7504d4305ae03d9c2cf2cc3997f9efa1c2217e4888aafa67e4cf46f00c"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native54-rsi-event-evidence-readme/actual-comparison/candidate-plugin.PROPOSED.json",
+      "sha256": "37b53978e7282b978d8678b31322dbda79dee2243e6304dff1d67d89c774757e"
+    }
+  ],
+  "verified": {
+    "actualFiveComparisonRows": true,
+    "baselinePositiveRefusedCorrectedPositiveAccepted": true,
+    "fourNegativesPreserved": true,
+    "originalFiveTestsPassed": true,
+    "sixSameTaskRoleMapsUnchanged": true,
+    "currentRecordUnchanged": true,
+    "source32Guard7Plugin73": true,
+    "baselinePluginSha256": "8893718c9aecd2ccac4313e95a128aa7f74e7a7fc53592984ec8b5574dde6434",
+    "projectedReadmeOnlyPluginSha256": "5537d8f6bc0109746080b66614b97273c921f8f107c571a1c10bd0111c165a46",
+    "candidate545IntegrationA8And1440WindowBound": true
+  },
+  "limits": [
+    "Actual retained predicate/validator mechanism comparison, not measurement of README-induced autonomous or runtime behavior.",
+    "README projected snapshot not installed/adopted at review; Root owns exact README application, actual plugin correspondence and normal adopted RSI admission.",
+    "No duplicate regression requested; actual five-test evidence is accepted as bounded regression.",
+    "Native54 accepted named-case verdict unchanged; no new native/whole-requirement/authority/clock claim.",
+    "No reviewer execution or primary writes."
+  ]
+}

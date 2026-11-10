@@ -2,8 +2,8 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 -- Production application actor. GUI policy and presentation stay in Elm.
 module Warlock.Backend
- (DirectoryPin(..),BackendConfig,loadBackendConfig,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson) where
-import Control.Exception (SomeException,SomeAsyncException,fromException,mask,throwIO,try)
+ (DirectoryPin(..),BackendConfig,loadBackendConfig,configuredNotificationBusAddress,BackendResult(..),BackendAttemptStage(..),BackendRetirement(..),runBackend,backendResultJson,backendBootstrapFailureText,NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newNotificationIssuer,provisionNotificationIssuer,reserveNotificationGeneration,retireNotificationIssuer,notificationGenerationText,BackendCustodyException(..),BackendCustodyFailure(..),BackendApplicationCustodyException(..),BackendApplicationCustodyFailure(..)) where
+import Control.Exception (Exception(..),SomeException,SomeAsyncException,asyncExceptionFromException,asyncExceptionToException,fromException,mask,throwIO,try)
 import Control.Monad (forM_,unless)
 import qualified Data.ByteString as B
 import Data.IORef
@@ -13,12 +13,19 @@ import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
 import System.Posix.Files (deviceID,fileID,getSymbolicLinkStatus)
 import Text.Read (readMaybe)
+import qualified Warlock.Backend.ApplicationExecutable as App
+import Warlock.Backend.ApplicationPlanConfig (decodeApplicationPlans)
+import Warlock.Protocol.PeerCredential (PeerCredential)
+import Warlock.Bootstrap.Aggregate (runBootstrapWithArgumentsContext)
+import qualified Warlock.Backend.ForeignToplevelOwner as ForeignOwner
+import qualified Warlock.Backend.WindowObservation as WindowObservation
 import Warlock.Backend.Catalog
+import Warlock.Backend.NotificationIssuer (NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newIssuer,provisionIssuer,reserveGeneration,retireIssuer,generationText)
 import Warlock.Backend.PinStore
 import Warlock.Backend.Store
 import Warlock.Ui.Display (readDisplayEnvironment)
 import Warlock.Bootstrap
-import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),ToolError(..),deadlineFromAbsoluteNs,selectedCustody,selectedContainment,selectedOperation,selectedObservedExit)
+import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),ToolError(..),deadlineFromAbsoluteNs,SelectedOutcome,selectedCustody,selectedContainment,selectedOperation,selectedObservedExit)
 import Warlock.Platform.Resolver (Identity(..),Kind(..),Pin(..),withRoot)
 import Warlock.Protocol.Codec (checkedDesktopCommit,checkDesktopReply,desktopProfile,encodeServerCheckedWith)
 import Warlock.Protocol.CredentialIngress
@@ -28,7 +35,58 @@ import Warlock.Protocol.Ingress (Direction(..),Priority(..),ingressBinding)
 import Warlock.Protocol.StrictJson
 
 data UiImage = UiImage FilePath Integer Integer Integer B.ByteString [String] [DirectoryPin]
-data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool
+data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool (Maybe Text) [App.ApplicationPlan] (Maybe ForeignOwner.EndpointSelection)
+
+-- Selected startup data only. Actual bus authentication, ownership, deadline
+-- and lifecycle checks remain necessary before any notification operation.
+configuredNotificationBusAddress :: BackendConfig -> Maybe Text
+configuredNotificationBusAddress (BackendConfig _ _ _ _ _ _ _ address _ _) = address
+
+notificationAddress :: Text -> Either Text Text
+notificationAddress raw = do
+ body <- maybe (Left "notification bus must use one explicit unix path") Right (T.stripPrefix "unix:path=" raw)
+ let (path,suffix) = T.breakOn ",guid=" body
+     asciiPath c = (c>='a' && c<='z') || (c>='A' && c<='Z') || (c>='0' && c<='9') || c `elem` ("/_-." :: String)
+     parts = T.splitOn "/" path
+     guidValid = case T.stripPrefix ",guid=" suffix of
+      Nothing -> T.null suffix
+      Just guid -> T.length guid==32 && T.all (\c -> (c>='0' && c<='9') || (c>='a' && c<='f')) guid
+ require (T.isPrefixOf "/" path && T.length path<=4096 && T.all asciiPath path
+   && length parts>=2 && all (\part -> not (T.null part) && part/="." && part/="..") (drop 1 parts)
+   && guidValid) "invalid explicit notification bus address"
+ pure raw
+-- The exception remains asynchronously classified, and retains the original
+-- exception and issuer whenever ordinary result custody cannot be returned.
+data BackendCustodyException = BackendCustodyException SomeException NotificationIssuer
+instance Show BackendCustodyException where show _ = "backend interrupted with issuer custody"
+instance Exception BackendCustodyException where
+ toException = asyncExceptionToException
+ fromException = asyncExceptionFromException
+-- Synchronous observation errors retain custody without being misclassified.
+data BackendCustodyFailure = BackendCustodyFailure SomeException NotificationIssuer
+instance Show BackendCustodyFailure where show _ = "backend observation failed with issuer custody"
+instance Exception BackendCustodyFailure
+-- Both independent resource owners remain reachable on unconfirmed retirement.
+data BackendApplicationCustodyException = BackendApplicationCustodyException SomeException NotificationIssuer App.ApplicationIssuer
+instance Show BackendApplicationCustodyException where show _ = "backend interrupted with application custody"
+instance Exception BackendApplicationCustodyException where
+ toException = asyncExceptionToException
+ fromException = asyncExceptionFromException
+data BackendApplicationCustodyFailure = BackendApplicationCustodyFailure SomeException NotificationIssuer App.ApplicationIssuer
+instance Show BackendApplicationCustodyFailure where show _ = "backend failed with application custody"
+instance Exception BackendApplicationCustodyFailure
+
+newNotificationIssuer :: BackendConfig -> IO NotificationIssuer
+newNotificationIssuer (BackendConfig _ deadlineText _ _ pin _ _ _ _ _) = newIssuer pin deadlineText
+provisionNotificationIssuer :: NotificationIssuer -> IO (Either IssuerFailure ())
+provisionNotificationIssuer = provisionIssuer
+reserveNotificationGeneration :: NotificationIssuer -> IO (Either IssuerFailure NotificationGeneration)
+reserveNotificationGeneration = reserveGeneration
+retireNotificationIssuer :: NotificationIssuer -> IO Bool
+retireNotificationIssuer = retireIssuer
+notificationGenerationText :: NotificationGeneration -> Text
+notificationGenerationText = generationText
+
 -- Closed diagnostic classifications only; none is a grant or success proof.
 data BackendAttemptStage = AttemptConversationException | AttemptRootRefused
  | AttemptBootstrapRefused | AttemptPendingCustody | AttemptExecuted deriving (Eq,Show)
@@ -40,7 +98,10 @@ data BackendResult = BackendResult
  ,backendCredentialTrace :: [CredentialObservation],backendSelectedPid :: Maybe Integer
  ,backendProcessCleanup :: Bool,backendCatalogCleanup :: Bool,backendPinCleanup :: Bool
  ,backendAttemptStage :: BackendAttemptStage
- ,backendRetirements :: (BackendRetirement,BackendRetirement,BackendRetirement)} deriving (Eq,Show)
+ ,backendRetirements :: (BackendRetirement,BackendRetirement,BackendRetirement)
+ ,backendNotificationCustody :: Maybe NotificationIssuer,backendApplicationCustody :: Maybe App.ApplicationIssuer,backendApplicationReceipt :: Maybe (Counter,SelectedOutcome)
+ ,backendCatalogObservation :: Maybe D.DesktopReply
+ ,backendApplicationObservation :: Maybe (D.LaunchIntent,Maybe D.DesktopReply)} deriving (Eq,Show)
 
 loadBackendConfig :: FilePath -> IO (Either Text BackendConfig)
 loadBackendConfig path = mask $ \restore -> do
@@ -61,15 +122,26 @@ decodeConfig bytes = do
  limits <- failure (bounds 131072 16)
  raw <- failure (decodeStrict limits bytes)
  let names=["schema","binding","deadlineMonotonicNs","ui","catalogRoots","pinsRoot","locale"]
- fields <- case raw of
-  JObject pairs | any ((=="applicationAttachment") . fst) pairs -> object ("applicationAttachment":names) raw
-  _ -> object names raw
+ let optionalNames = case raw of
+      JObject pairs -> [name | name <- ["applicationAttachment","notificationBusAddress","applicationPlans","compositorObservation"], any ((==name) . fst) pairs]
+      _ -> []
+ fields <- object (names++optionalNames) raw
  attachment <- case lookup "applicationAttachment" fields of
   Nothing -> Right False
   Just (JBool value) -> Right value
   _ -> Left "invalid application attachment opt-in"
+ notificationBus <- case lookup "notificationBusAddress" fields of
+  Nothing -> Right Nothing
+  Just (JString address) -> Just <$> notificationAddress address
+  _ -> Left "invalid notification bus selection"
+ plans <- decodeApplicationPlans (lookup "applicationPlans" fields)
  require (lookup "schema" fields==Just (JNumber "1")) "unsupported startup schema"
  bound <- key "binding" fields >>= bindingConfig
+ observation <- case lookup "compositorObservation" fields of
+  Nothing -> Right Nothing
+  Just selected -> do
+   require attachment "window observation requires application attachment"
+   Just <$> WindowObservation.decodeSelection bound selected
  deadline <- key "deadlineMonotonicNs" fields >>= string
  _ <- failure (parseCounter False deadline)
  image <- key "ui" fields >>= imageConfig
@@ -78,7 +150,7 @@ decodeConfig bytes = do
  pins <- key "pinsRoot" fields >>= directoryConfig
  locale <- key "locale" fields >>= string
  require (T.length locale<=128 && not (T.any (< ' ') locale)) "invalid trusted locale"
- pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment)
+ pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment notificationBus plans observation)
  where
   bindingConfig raw = do
    fields <- object ["lifetime","session","frontend"] raw
@@ -136,22 +208,27 @@ positive value = string value >>= failure . parseCounter False
 applyDesktopRequest
  :: Binding -> Catalog -> PinStore -> IORef Int
  -> IORef (Maybe (Counter,D.PinSnapshot,D.DesktopReply))
- -> (D.DesktopReply -> IO ()) -> D.DesktopRequest -> IO ()
-applyDesktopRequest bound catalog pins operations lastWrite sendReply request = case D.requestKind request of
+ -> IORef (Maybe D.DesktopReply) -> (D.DesktopReply -> IO ()) -> D.DesktopRequest -> IO ()
+applyDesktopRequest bound catalog pins operations lastWrite catalogObservation sendReply request = case D.requestKind request of
   D.CatalogRead -> do
    modifyIORef' operations (+1)
-   actual <- readCatalog catalog
+   actual <- prepareCatalogPublication catalog
    preferences <- either (const Nothing) Just <$> readPins pins
    case actual of
     Left _ -> do
      construct (D.catalogReply bound (D.requestId request) Nothing preferences) >>= sendReply
-    Right (snapshot,_) -> do
-     -- Check complete envelope including preferences. Overflow exposes
-     -- explicit unavailable, never a truncated subset of the catalog.
+    Right (snapshot,_,publication) -> do
+     -- Only the actual successful write of this exact constructed reply may
+     -- publish its revision for data resolution. Overflow/failed writes never
+     -- publish, and an uncertain write is not followed by a fallback replay.
      case D.catalogReply bound (D.requestId request) (Just snapshot) preferences of
       Left _ -> do
        construct (D.catalogReply bound (D.requestId request) Nothing preferences) >>= sendReply
-      Right reply -> sendReply reply
+      Right reply -> do
+       catalogPublicationResult <- publishCatalog publication (sendReply reply)
+       case catalogPublicationResult of
+        Left _ -> ioError (userError "catalog reply publication unconfirmed")
+        Right () -> writeIORef catalogObservation (Just reply)
   D.PinsWrite -> case D.pinProposal request of
    Nothing -> ioError (userError "checked pin proposal missing")
    Just proposal -> do
@@ -171,14 +248,38 @@ applyDesktopRequest bound catalog pins operations lastWrite sendReply request = 
       reply <- construct (D.pinsReply bound (D.requestId request) status snapshot)
       writeIORef lastWrite (Just (D.requestId request,proposal,reply))
       sendReply reply
+  D.ApplicationLaunch -> ioError (userError "application launch requires current admitted context")
+  D.WindowRead -> ioError (userError "window observation unavailable")
+  D.NotificationRead -> ioError (userError "notification service unavailable")
+  D.NotificationEffect -> ioError (userError "notification service unavailable")
  where
   construct = either (ioError . userError . T.unpack) pure
 
 runBackend :: BackendConfig -> IO BackendResult
-runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled) = mask $ \restore -> do
+runBackend config@(BackendConfig bound deadlineText _ _ _ _ _ _ _ observation) = case observation of
+ Nothing -> runBackendWithObservation config Nothing
+ Just selected -> do
+  deadline <- deadlineFromAbsoluteNs deadlineText >>= either (ioError . userError . show) pure
+  result <- ForeignOwner.withForeignToplevelOwner selected deadline $ \owner -> do
+   reader <- WindowObservation.newReader bound deadline owner
+   runBackendWithObservation config (Just reader)
+  case result of
+   ForeignOwner.ObservationResult (Left problem) _ -> throwIO problem
+   ForeignOwner.ObservationResult (Right value) ForeignOwner.Retired -> pure value
+   ForeignOwner.ObservationResult (Right value) (ForeignOwner.Retained _) ->
+    -- The owner's stable reference retains uncertain callback resources.
+    pure value {backendPassed=False,backendCleanup=False}
+
+runBackendWithObservation :: BackendConfig -> Maybe WindowObservation.Reader -> IO BackendResult
+runBackendWithObservation (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled _ applicationPlans _) observation = mask $ \restore -> do
  catalog <- newCatalog roots locale (lifetime bound)
  pins <- newPinStore pinsRoot
+ notificationIssuer <- newIssuer pinsRoot deadlineText
  attachmentAttempted <- newIORef False
+ -- Bounded diagnostics retain actual successful publication/operation values.
+ -- They do not participate in admission, resolution, success or retirement.
+ catalogObservation <- newIORef (Nothing :: Maybe D.DesktopReply)
+ applicationObservation <- newIORef (Nothing :: Maybe (D.LaunchIntent,Maybe D.DesktopReply))
  callbacks <- newIORef 0
  operations <- newIORef 0
  -- One bounded last-disposition cell plus a high-water mark prevents replay
@@ -187,6 +288,14 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
  current <- newCurrentSessions
  owner <- newBootstrapOwner current
  slot <- newIORef Nothing
+ admittedContext <- newIORef (Nothing :: Maybe (Scope,PeerCredential))
+ applicationIssuer <- newIORef (Nothing :: Maybe App.ApplicationIssuer)
+ let installContext scope credential = do
+      installed <- atomicModifyIORef' admittedContext $ \old -> case old of
+       Nothing -> (Just (scope,credential),True)
+       Just _ -> (old,False)
+      unless installed (ioError (userError "overlapping admitted callback"))
+      pure (writeIORef admittedContext Nothing)
  ingressBound <- either (ioError . userError . show) pure (ingressBinding (renderCounter (lifetime bound)) (renderCounter (session bound)) (renderCounter (frontend bound)))
  let sendReply reply = do
       checked <- either (ioError . userError . T.unpack) pure (checkDesktopReply reply)
@@ -197,22 +306,93 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
       sent <- sendCredentialIngress ingress
       unless (sent==Right ()) (ioError (userError "backend reply delivery unconfirmed"))
      construct = either (ioError . userError . T.unpack) pure
-     handle = applyDesktopRequest bound catalog pins operations lastWrite sendReply
+     handle request = case D.requestKind request of
+      D.WindowRead -> case observation of
+       Nothing -> ioError (userError "window observation unavailable")
+       Just reader -> do
+        (scope,credential) <- readIORef admittedContext >>= maybe (ioError (userError "window read outside admission")) pure
+        WindowObservation.readWindowReply reader scope credential request >>= sendReply
+      D.ApplicationLaunch -> handleApplication request
+      _ -> applyDesktopRequest bound catalog pins operations lastWrite catalogObservation sendReply request
+     issuerInCurrentAdmission = do
+      active <- readIORef admittedContext >>= maybe (ioError (userError "application request outside admission")) pure
+      let (scope,credential) = active
+      if null applicationPlans then pure (Left App.ImageUnconfigured) else do
+       existing <- readIORef applicationIssuer
+       case existing of
+        Just issuer -> pure (Right issuer)
+        Nothing -> do
+         created <- App.newApplicationIssuer scope credential catalog applicationPlans 1048576
+         case created of Right issuer -> writeIORef applicationIssuer (Just issuer); Left _ -> pure ()
+         pure created
+     handleApplication request = do
+      active <- readIORef admittedContext >>= maybe (ioError (userError "application request outside admission")) pure
+      let (_,credential) = active
+      intent <- maybe (ioError (userError "checked application intent missing")) pure (D.launchIntent request)
+      let reply state = construct (D.launchReply bound intent state) >>= sendReply
+      if D.launchLifetime intent/=lifetime bound then reply (D.LaunchRefused D.RetiredAuthority) else do
+       selected <- issuerInCurrentAdmission
+       case selected of
+        Left _ -> reply (D.LaunchRefused D.NativeEntryUnavailable)
+        Right issuer -> do
+         issued <- App.issueApplicationImage issuer credential bound (D.launchRequest intent) (D.launchGeneration intent) (D.launchEntry intent)
+         case issued of
+          Left App.ReplayRefused -> reply (D.LaunchRefused D.RequestReuse)
+          Left _ -> reply (D.LaunchRefused D.NativeEntryUnavailable)
+          Right held -> do
+           modifyIORef' operations (+1)
+           result <- App.runApplicationImage issuer credential held
+           settled <- App.settleApplicationImage issuer held
+           case (result,settled) of
+            (Right observed,App.ApplicationRetired)
+             | selectedCustody observed==Available && either (const False) (const True) (selectedOperation observed) -> do
+              reply D.LaunchSubmitted
+              published <- readIORef catalogObservation
+              writeIORef applicationObservation (Just (intent,published))
+            (Left App.RevalidationRefused,App.ApplicationRetired) -> reply (D.LaunchRefused D.DesktopEntryRaced)
+            _ -> reply D.LaunchUnknown
      handler checked = case checkedDesktopCommit checked of
       Nothing -> ioError (userError "native profile reached desktop actor")
       Just commit -> do
-       modifyIORef' callbacks (+1)
        let requests=D.commitRequests commit
-       unless (all ((==bound) . D.requestBinding) requests) (ioError (userError "checked commit binding mismatch"))
-       -- Reserve the one attempt before enqueue/delivery. Any exception ends
-       -- this authenticated session; an uncertain send is never replayed.
-       firstAttempt <- if attachmentEnabled
-        then atomicModifyIORef' attachmentAttempted (\attempted -> (True,not attempted))
-        else pure False
-       if firstAttempt then construct (D.applicationAttached bound) >>= sendReply else pure ()
-       -- The shared codec/gate has validated ALL requests before this point.
-       -- Presentation-only commits run this empty loop, with zero domain IO.
-       forM_ requests handle
+       -- The pure codec knows notification wire data. This producer has not
+       -- acquired a service and advertises no service capability. Reject the
+       -- entire batch before attachment or any earlier request can take effect.
+       if not (all (\request -> D.requestKind request `elem` [D.CatalogRead,D.PinsWrite,D.ApplicationLaunch]
+         || (D.requestKind request==D.WindowRead && case observation of Just _ -> True; Nothing -> False)) requests)
+        then do
+         ingress <- readIORef slot >>= maybe (ioError (userError "backend ingress not activated")) pure
+         -- The in-flight Gate becomes Draining and retains the endpoint. After
+         -- this callback unwinds, Aggregate observes CredentialNotLive and uses
+         -- its original-deadline refuseAfterExit/awaitLeader path. No domain
+         -- callback, attachment or earlier request in this batch is performed.
+         _ <- retireCredentialIngress ingress
+         pure ()
+        else do
+         unless (all ((==bound) . D.requestBinding) requests) (ioError (userError "checked commit binding mismatch"))
+         announced <- readIORef attachmentAttempted
+         case observation of
+          Just reader | attachmentEnabled && not announced -> do
+           (scope,credential) <- readIORef admittedContext >>= maybe (ioError (userError "window attachment outside admission")) pure
+           WindowObservation.admitReader reader scope credential
+          _ -> pure ()
+         modifyIORef' callbacks (+1)
+         -- Reserve the one attempt before enqueue/delivery. Any exception ends
+         -- this authenticated session; an uncertain send is never replayed.
+         firstAttempt <- if attachmentEnabled
+          then atomicModifyIORef' attachmentAttempted (\attempted -> (True,not attempted))
+          else pure False
+         if firstAttempt then do
+          producer <- issuerInCurrentAdmission
+          let available = case producer of Right _ -> D.ApplicationLaunchAvailable; Left _ -> D.ApplicationUnavailable
+          construct (case observation of
+           Nothing -> D.applicationAttachedWithLocalNotifications bound available
+           Just _ -> D.applicationAttachedWithWindowObservation bound available) >>= sendReply
+         else pure ()
+         -- The shared codec/gate has validated ALL requests before this point.
+         -- After any first attachment validation, presentation-only commits run
+         -- this empty loop with zero domain operations.
+         forM_ requests handle
  ingress <- newDesktopCredentialIngress ingressBound FromElm handler (\_ -> ioError (userError "unexpected server input"))
  writeIORef slot (Just ingress)
  attempted <- try $ restore $ do
@@ -222,17 +402,46 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
   let imagePins=[Pin (TE.encodeUtf8 (T.pack (directoryPath parent))) (Identity (directoryDevice parent) (directoryInode parent)) Directory | parent <- parents]
        ++[Pin (TE.encodeUtf8 (T.pack image)) (Identity dev ino) Regular]
   withRoot "/" (Identity (toInteger (deviceID rootStat)) (toInteger (fileID rootStat))) $ \root ->
-   runBootstrapWithArguments owner root imagePins (TE.encodeUtf8 (T.pack (drop 1 image))) [] size digest arguments deadline ([("LANG","C"),("LC_ALL","C")] ++ displayEnvironment) ingress
+   runBootstrapWithArgumentsContext bound installContext owner root imagePins (TE.encodeUtf8 (T.pack (drop 1 image))) [] size digest arguments deadline ([("LANG","C"),("LC_ALL","C")] ++ displayEnvironment) ingress
  processRetirement <- try (retireBootstrap owner) :: IO (Either SomeException Bool)
+ applicationIssuerForObservation <- readIORef applicationIssuer
+ applicationRetirement <- try $ do
+  retained <- readIORef applicationIssuer
+  case retained of
+   Nothing -> pure True
+   Just issuer -> do
+    result <- App.retireApplicationIssuer issuer
+    case result of
+     App.ApplicationRetired -> writeIORef applicationIssuer Nothing >> pure True
+     App.ApplicationRetained _ -> pure False
  catalogRetirement <- try (retireCatalog catalog) :: IO (Either SomeException Bool)
  pinRetirement <- try (retirePinStore pins) :: IO (Either SomeException Bool)
- observed <- bootstrapAuthObservation owner
- trace <- bootstrapCredentialTrace owner
- selected <- bootstrapSelectedPid owner
- count <- readIORef callbacks
- dispatched <- readIORef operations
+ notificationRetirement <- try (retireIssuer notificationIssuer) :: IO (Either SomeException Bool)
+ let throwWithCustody problem = do
+      retained <- readIORef applicationIssuer
+      case retained of
+       Just issuer -> case fromException problem :: Maybe SomeAsyncException of
+        Just _ -> throwIO (BackendApplicationCustodyException problem notificationIssuer issuer)
+        Nothing -> throwIO (BackendApplicationCustodyFailure problem notificationIssuer issuer)
+       Nothing -> if either (const False) id notificationRetirement then throwIO problem
+        else case fromException problem :: Maybe SomeAsyncException of
+         Just _ -> throwIO (BackendCustodyException problem notificationIssuer)
+         Nothing -> throwIO (BackendCustodyFailure problem notificationIssuer)
+ observations <- try $ do
+  observed <- bootstrapAuthObservation owner
+  trace <- bootstrapCredentialTrace owner
+  selected <- bootstrapSelectedPid owner
+  count <- readIORef callbacks
+  dispatched <- readIORef operations
+  applicationObserved <- maybe (pure Nothing) App.applicationReceipt applicationIssuerForObservation
+  published <- readIORef catalogObservation
+  submitted <- readIORef applicationObservation
+  pure (observed,trace,selected,count,dispatched,applicationObserved,published,submitted)
+ (observed,trace,selected,count,dispatched,applicationObserved,published,submitted) <- case observations of
+  Right values -> pure values
+  Left (problem :: SomeException) -> throwWithCustody problem
  let outcome=case attempted of
-      Left (_ :: SomeException) -> Left "backend conversation failed"
+      Left (problem :: SomeException) -> Left (backendBootstrapFailureText problem)
       Right (Left _) -> Left "backend root acquisition refused"
       Right (Right value) -> Right value
      attemptStage=case attempted of
@@ -244,18 +453,28 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
      processClean=either (const False) id processRetirement
      catalogClean=either (const False) id catalogRetirement
      pinClean=either (const False) id pinRetirement
-     clean=processClean && catalogClean && pinClean
+     clean=processClean && catalogClean && pinClean && either (const False) id notificationRetirement && either (const False) id applicationRetirement
      success=case outcome of
       Right (Executed result) -> selectedCustody result==Available && selectedContainment result==BeforeSignalLeaderExited && either (const False) (const True) (selectedOperation result)
       _ -> False
  let originals=case attempted of Left (problem :: SomeException) -> [problem]; _ -> []
-     cleanupProblems=[problem | Left problem <- [processRetirement,catalogRetirement,pinRetirement]]
+     cleanupProblems=[problem | Left problem <- [processRetirement,catalogRetirement,pinRetirement,notificationRetirement,applicationRetirement]]
      asynchronous=[problem | problem <- originals++cleanupProblems,Just _ <- [fromException problem :: Maybe SomeAsyncException]]
  -- Every independent owner was attempted before an asynchronous failure can
  -- escape. Prefer the original asynchronous exception over cleanup failures.
- case asynchronous of problem:_ -> throwIO problem; [] -> pure ()
+ case asynchronous of
+  problem:_ -> throwWithCustody problem
+  [] -> pure ()
+ retainedApplication <- readIORef applicationIssuer
  pure (BackendResult (clean && success) clean count dispatched outcome observed trace selected processClean catalogClean pinClean
-       attemptStage (retirementStage processRetirement,retirementStage catalogRetirement,retirementStage pinRetirement))
+       attemptStage (retirementStage processRetirement,retirementStage catalogRetirement,retirementStage pinRetirement)
+       (if either (const False) id notificationRetirement then Nothing else Just notificationIssuer) retainedApplication applicationObserved published submitted)
+
+-- Bounded internal failure data for the explicitly invoked QA observer only.
+-- Cap the lazy String before constructing Text; no environment, config, child
+-- stdout or cleanup exception collection is added. Ordinary JSON stays redacted.
+backendBootstrapFailureText :: SomeException -> Text
+backendBootstrapFailureText = T.pack . take 4096 . displayException
 
 retirementStage :: Either a Bool -> BackendRetirement
 retirementStage (Left _) = RetirementException

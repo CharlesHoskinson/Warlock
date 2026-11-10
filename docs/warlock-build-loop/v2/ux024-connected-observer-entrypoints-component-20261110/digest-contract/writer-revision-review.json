@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/revision2-retired-fixture-writer/manifest.json",
+    "sha256": "38762f30cb303b736a32c50322fdf0c5a75ca3148f077408b535de7d723d2fa5"
+  },
+  "reviewedPosts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "b6bae926a99b2f029dadd796e873b016b4d812edd2b7799fc87b686e89be847f",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/revision2-retired-fixture-writer/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "1698d4aaf3d016f2b4cae709984e97318412c92706995c8c0293a0039e8e74dd"
+    }
+  ],
+  "findings": [],
+  "checked": [
+    "Temporary writer writes/flushes/closes before stat/parser/Resolver reads; acquisition exception removes file, successful acquisition outer bracket removes after use.",
+    "Only writer lifecycle span and bounded1024 actual Either diagnostic changed.",
+    "All seven literal/parser/descriptor assertions unchanged, including positive bytes/identity and raw32 DigestMismatch refusal.",
+    "Production ASCII64 adapter/configraw32/old17+32/sentinel/native15/ordinary allocation/deadline unchanged."
+  ],
+  "limits": [
+    "Writer-lock cause remains hypothesis until actual execution; this review does not claim fix passed.",
+    "No reviewer imports/tests/compiler/FD/native execution.",
+    "Failedb78 and V3 refusal retained; no readiness/native/original acceptance."
+  ]
+}

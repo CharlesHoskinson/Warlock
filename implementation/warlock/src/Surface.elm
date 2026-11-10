@@ -174,7 +174,7 @@ controls model =
                     textRow identity label detail={id=identity,domId=Desktop.key model identity,label=clean label,ariaLabel=clean label,detail=detail,enabled=False,message=Nothing}
                     action verb key label=
                         let target=Notifications.target snapshot entry verb key
-                            ready=Notifications.live target model.notifications && model.notifications.pending==Nothing && model.notificationsExpected==Nothing
+                            ready=Shell.notificationServiceAvailable model.windows.shell && Notifications.live target model.notifications && model.notifications.pending==Nothing && model.notificationsExpected==Nothing
                         in control (Notifications.identity target) (clean label) "" ready (\stamp -> Desktop.NotificationAction stamp target)
                 in [textRow (prefix++":summary") (entry.app++": "++entry.summary) (if entry.state==Notifications.EntryLive then "Live" else "History · "++Notifications.entryStateName entry.state)]
                    ++ (if String.isEmpty entry.body then [] else [textRow (prefix++":body") entry.body ""])
@@ -185,9 +185,9 @@ controls model =
                     state=snapshot.entries |> List.filter (\entry -> entry.id==selected.target.id && entry.incarnation==selected.target.incarnation && entry.producer==selected.target.producer) |> List.head |> Maybe.map (.state >> Notifications.entryStateName) |> Maybe.withDefault "unavailable"
                 in if exists then [] else [{id=Notifications.identity selected.target,domId=Desktop.key model (Notifications.identity selected.target),label=selected.label,ariaLabel=selected.label++"; unavailable",detail=state++" · Action unavailable",enabled=False,message=Nothing}])) |> Maybe.withDefault []
         in [control "control:close" "Close notifications" "" True Desktop.CloseNotifications
-           ,control "notifications:refresh" "Refresh notifications" (if model.notificationsExpected/=Nothing then "Reading current targets…" else "Read current targets; no action is repeated") True Desktop.RefreshNotifications]
-           ++ [control "notifications:dnd" "Do not disturb for this session" (if model.notifications.policy.doNotDisturb then "On · History still updates" else "Off") True (\stamp -> Desktop.ConfigureNotificationPolicy stamp {doNotDisturb=not model.notifications.policy.doNotDisturb,interruptCritical=model.notifications.policy.interruptCritical})
-              ,control "notifications:critical-interrupt" "Allow critical notification interruptions for this session" (if model.notifications.policy.interruptCritical then "On · Only when Do not disturb is off" else "Off · New notifications are polite") True (\stamp -> Desktop.ConfigureNotificationPolicy stamp {doNotDisturb=model.notifications.policy.doNotDisturb,interruptCritical=not model.notifications.policy.interruptCritical})]
+           ,control "notifications:refresh" "Refresh notifications" (if not (Shell.notificationServiceAvailable model.windows.shell) then "Notification service unavailable" else if model.notificationsExpected/=Nothing then "Reading current targets…" else "Read current targets; no action is repeated") (Shell.notificationServiceAvailable model.windows.shell) Desktop.RefreshNotifications]
+           ++ [control "notifications:dnd" "Do not disturb for this session" (if model.notifications.policy.doNotDisturb then "On · History still updates" else "Off") (not model.windows.shell.applicationOnly || Shell.localNotificationPolicyAvailable model.windows.shell) (\stamp -> Desktop.ConfigureNotificationPolicy stamp {doNotDisturb=not model.notifications.policy.doNotDisturb,interruptCritical=model.notifications.policy.interruptCritical})
+              ,control "notifications:critical-interrupt" "Allow critical notification interruptions for this session" (if model.notifications.policy.interruptCritical then "On · Only when Do not disturb is off" else "Off · New notifications are polite") (not model.windows.shell.applicationOnly || Shell.localNotificationPolicyAvailable model.windows.shell) (\stamp -> Desktop.ConfigureNotificationPolicy stamp {doNotDisturb=model.notifications.policy.doNotDisturb,interruptCritical=not model.notifications.policy.interruptCritical})]
            ++ (model.notifications.snapshot |> Maybe.map (\snapshot -> List.concatMap (entryRows snapshot) snapshot.entries) |> Maybe.withDefault []) ++ retained
     else if model.settingsOpen then
         let scoped message=Desktop.capture model |> Maybe.map message
@@ -302,16 +302,20 @@ controls model =
                 ++ (model.overviewTransfer |> Maybe.map destinationRows |> Maybe.withDefault [])
         else [{id="control:close",domId=Desktop.key model "overview:close",label="Close Task View",ariaLabel="Close Task View and return to windows",detail="",enabled=True,message=scoped Desktop.CloseOverview}
            ,{id="overview:all",domId=Desktop.key model "overview:all",label="All windows",ariaLabel="Browse all workspaces",detail=if model.overviewWorkspace==Nothing then "Selected" else "",enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp Nothing)}]
-            ++ List.concatMap workspaceRows groups ++ [recoveryControl "overview:refresh" model] ++ (if WorkspaceNavigation.blocked model.workspaceNavigation then [{id="overview:workspace-refresh",domId=Desktop.key model "overview:workspace-refresh",label="Refresh workspace status",ariaLabel="Read workspace switch status without repeating the action",detail="",enabled=not model.workspaceNavigation.recovering,message=scoped Desktop.RefreshWorkspaceNavigation}] else [])
+            ++ List.concatMap workspaceRows groups
+            ++ List.map (\(identity,label) ->
+                {id=identity,domId=Desktop.key model identity,label=label,ariaLabel=label ++ "; unavailable",detail="Not supported",enabled=False,message=Nothing})
+                [("overview:workspace-create","Create workspace"),("overview:workspace-delete","Delete workspace"),("overview:workspace-rename","Rename workspace")]
+            ++ [recoveryControl "overview:refresh" model] ++ (if WorkspaceNavigation.blocked model.workspaceNavigation then [{id="overview:workspace-refresh",domId=Desktop.key model "overview:workspace-refresh",label="Refresh workspace status",ariaLabel="Read workspace switch status without repeating the action",detail="",enabled=not model.workspaceNavigation.recovering,message=scoped Desktop.RefreshWorkspaceNavigation}] else [])
     else if model.open then
         let
             scoped build = Desktop.capture model |> Maybe.map build
             entries = model.applications |> Maybe.map (Catalog.search model.query) |> Maybe.withDefault []
-            ready = not model.windows.shell.applicationOnly && not (List.member (Launch.status model.launch) ["Pending","Unknown"])
+            ready = (not model.windows.shell.applicationOnly || Shell.applicationLaunchAvailable model.windows.shell) && not (List.member (Launch.status model.launch) ["Pending","Unknown"])
             entryControl entry =
                 let choice = if ready then Launch.select (Catalog.id entry.identity) model.launch |> Maybe.map Desktop.Start else Nothing
                     label="Open "++entry.name
-                    detail = if model.windows.shell.applicationOnly then "Opening unavailable in this session" else ""
+                    detail = if model.windows.shell.applicationOnly && not (Shell.applicationLaunchAvailable model.windows.shell) then "Opening unavailable in this session" else ""
                 in {id="entry:" ++ Catalog.id entry.identity,domId=Desktop.key model ("entry:" ++ Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail=detail,enabled=choice/=Nothing,message=choice}
             pinIds = Desktop.pinIdentities model
             pinAction suffix name label detail allowed message = {id=suffix,domId=Desktop.key model suffix,label=displayLabel label,ariaLabel=actionName label name,detail=detail,enabled=Pins.writable model.pins && allowed,message=if Pins.writable model.pins && allowed then scoped message else Nothing}
@@ -362,7 +366,12 @@ controls model =
                     applicationActions = Desktop.menuApplication model |> Maybe.map (\entry ->
                         {id="jump:open:"++Catalog.id entry.identity,domId=prefix++"application-actions",label="Application actions",ariaLabel="Actions for "++entry.name,detail="Declared actions and recent files",enabled=ready,message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity)) else Nothing})
                     newInstance = Desktop.menuApplication model |> Maybe.map (newInstanceControl model (prefix++"new-instance"))
-                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (newInstance |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (applicationActions |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
+                    inspection = MenuBridge.observedContext model.windows.menus |> Maybe.map (\current ->
+                        let fact index observed =
+                                {id=prefix++"fact:"++String.fromInt index,domId=prefix++"fact:"++String.fromInt index,label=observed.title++" · "++observed.appId,ariaLabel=observed.title++" · "++observed.appId,detail=String.join ", " observed.states,enabled=False,message=Nothing}
+                            refresh={id="control:observation-refresh",domId=prefix++"refresh",label="Refresh",ariaLabel="Refresh observed windows",detail="Read only; native actions unavailable",enabled=Shell.inspectionAvailable model.windows.shell,message=if Shell.inspectionAvailable model.windows.shell then Just (Desktop.Window (TaskbarShell.Native Shell.Refresh)) else Nothing}
+                        in List.indexedMap fact current.rows++[refresh]) |> Maybe.withDefault []
+                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: inspection ++ List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (newInstance |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (applicationActions |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
     else
         case model.windows.picker of
             Just picker ->
@@ -385,8 +394,9 @@ barControls model =
                 blocked = case Taskbar.primary False group.families of
                     Taskbar.Apply _ incarnation -> familyBlocked model incarnation
                     _ -> False
-                ready = Shell.available model.windows.shell && Taskbar.primary False group.families/=Taskbar.Unavailable && not blocked
-                operation = case Taskbar.primary False group.families of
+                inspect = Shell.inspectionAvailable model.windows.shell && String.startsWith "observed:" group.key
+                ready = inspect || (Shell.available model.windows.shell && Taskbar.primary False group.families/=Taskbar.Unavailable && not blocked)
+                operation = if inspect then "Inspect " else case Taskbar.primary False group.families of
                     Taskbar.Apply Effects.Minimize _ -> "Minimize "
                     Taskbar.Apply Effects.Restore _ -> "Restore "
                     Taskbar.Apply Effects.Activate _ -> "Activate "
@@ -401,13 +411,14 @@ barControls model =
                         else "Open"
                     _ -> (if List.any .active group.families then "Active; " else "") ++ String.fromInt (List.length group.families) ++ " windows"
                 observedState = if attention then "Attention; "++state else state
-            in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label ++ "; " ++ observedState ++ (if blocked then "; awaiting native confirmation" else ""),detail=if blocked then "Awaiting native confirmation; " ++ observedState else observedState,enabled=ready,message=if ready then scoped |> Maybe.map (\stamp -> Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing}
+            in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label ++ "; " ++ observedState ++ (if blocked then "; awaiting native confirmation" else ""),detail=if blocked then "Awaiting native confirmation; " ++ observedState else observedState,enabled=ready,message=if ready then scoped |> Maybe.andThen (\stamp -> if inspect then List.head group.families |> Maybe.map (\family -> Desktop.OpenWindowMenu stamp family.root) else Just (Desktop.Window (TaskbarShell.Primary stamp group.key))) else Nothing}
         pinIds = Desktop.pinIdentities model
         owners group = pinIds |> List.filter (\identity -> Desktop.pinnedGroup identity model |> Maybe.map (\matched -> matched.key==group.key) |> Maybe.withDefault False)
         pinControl identity =
             let entry=model.applications |> Maybe.andThen (Catalog.lookup identity)
                 label=entry |> Maybe.map .name |> Maybe.withDefault identity
-                choice=if Shell.available model.windows.shell then Launch.select identity model.launch |> Maybe.map Desktop.Start else Nothing
+                launchReady=if model.windows.shell.applicationOnly then Shell.applicationLaunchAvailable model.windows.shell else Shell.available model.windows.shell
+                choice=if launchReady then Launch.select identity model.launch |> Maybe.map Desktop.Start else Nothing
                 disabled reason={id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName (reason ++ label) label,detail=reason,enabled=False,message=Nothing}
             in case Desktop.pinnedGroup identity model of
                 Just group ->
@@ -417,12 +428,12 @@ barControls model =
                     else disabled "Ambiguous application identity: "
                 Nothing ->
                     if entry==Nothing then disabled "Unavailable application: " else if not (List.isEmpty (Desktop.pinGroups identity model)) then disabled "Ambiguous application identity: " else
-                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName ("Open " ++ label) label,detail=if model.windows.shell.applicationOnly then "Pinned · Opening unavailable in this session" else "Pinned launcher",enabled=choice/=Nothing,message=choice}
+                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName ("Open " ++ label) label,detail=if model.windows.shell.applicationOnly && not (Shell.applicationLaunchAvailable model.windows.shell) then "Pinned · Opening unavailable in this session" else "Pinned launcher",enabled=choice/=Nothing,message=choice}
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
-        utilities = (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state==Notifications.EntryLive) snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:files",domId=Desktop.key model "files:opener",label="Files",ariaLabel="Open Files menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenFiles} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: []
-        supportedUtilities = if model.windows.shell.applicationOnly then List.map (\control -> if List.member control.id ["bar:notifications","bar:files","bar:system","bar:settings"] then {control | enabled=False,message=Nothing} else control) utilities else utilities
+        utilities = (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state==Notifications.EntryLive) snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing && model.windows.shell.phase/=Shell.Detached && model.windows.shell.phase/=Shell.Exhausted,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:files",domId=Desktop.key model "files:opener",label="Files",ariaLabel="Open Files menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenFiles} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: []
+        supportedUtilities = if model.windows.shell.applicationOnly then List.map (\control -> if (List.member control.id ["bar:files","bar:system","bar:settings"] || (control.id=="bar:notifications" && not (Shell.localNotificationPolicyAvailable model.windows.shell || Shell.notificationServiceAvailable model.windows.shell))) then {control | enabled=False,message=Nothing} else control) utilities else utilities
         applications = List.map pinControl pinIds ++ List.map groupControl ordinaryGroups
         recovery = if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else []
         workspaceRecovery =
@@ -590,6 +601,7 @@ resolveBase publication lease raw model =
                                 in if List.member entryId (Desktop.pinIdentities model) && List.isEmpty (Desktop.pinGroups entryId model) then model.applications |> Maybe.andThen (Catalog.lookup entryId) |> Maybe.andThen (\_ -> Desktop.capture model |> Maybe.map (\current -> Desktop.OpenJumpList current entryId)) else Nothing
                                 else Nothing
                         in if group==Nothing then emptyPin else (if enabled then group else Nothing) |> Maybe.andThen (\current ->
+                            if Shell.inspectionAvailable model.windows.shell && String.startsWith "observed:" current.key then List.head current.families |> Maybe.map (\family -> Desktop.OpenWindowMenu stamp family.root) else
                             case current.families of
                                 [family] -> if family.available then Just (Desktop.OpenWindowMenu stamp family.root) else Nothing
                                 _ -> if Taskbar.primary False current.families==Taskbar.Picker then Just (Desktop.Window (TaskbarShell.Primary stamp current.key)) else Nothing)

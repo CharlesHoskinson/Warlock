@@ -1,0 +1,27 @@
+{
+  "label": "candidate",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/tests-first/test_mvp_context_menu_source.py",
+    "--module",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "--baseline",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "--gir",
+    "/usr/share/gir-1.0/WebKit-6.0.gir",
+    "--header",
+    "/usr/include/webkitgtk-6.0/webkit/WebKitWebView.h",
+    "--renderer",
+    "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+    "--renderer-sha256",
+    "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "Running as unit: qa-harness-3447641939ff4e40bd1d8453e3f59ff9.scope; invocation ID: 4d3ad009ed224e8399df393683fb6b2a\n........\n----------------------------------------------------------------------\nRan 8 tests in 0.036s\n\nOK\n"
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-bounded-no-change-rsi-root-recipe",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/manifest.HUMAN-PINNED.json",
+    "sha256": "10c178b01435081ae7f4724df75290a63463939e06ffe9c526b77eb2b60bd576"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/run_fixed_probes_and_prepare.py",
+      "sha256": "d5630e0d06d69d27ef303514f602527f562ea6bd341390df96801aace80abe42"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/run_fixed_probes_and_prepare_human_pinned.py",
+      "sha256": "c06ecde97b1a95fc1e6308a1ad44330dfb9f7e3993063c5b1cf76c9dde7de248"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/prepare_current_production_no_change_rsi.py",
+      "sha256": "a8bc6e6b95f28a2a24c623b80416afefab5c7677727b1ab379127edcb2a1829b"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/independent-source-review-build.json",
+      "sha256": "f1e015fad7d62bb16d9ef246652621287daef5413d830e91a9dcd62a0b4990a6"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/authorization.json",
+      "sha256": "ec8a1b87bebcc2ea00f551696151fea7647d10fa0dcb7a6c09d05341a246beeb"
+    }
+  ],
+  "resolution": {
+    "id": "RSI-HUMAN-BEFORE-AFTER-01",
+    "resolved": true,
+    "proof": "Entire wrapper AST equal after removing PINS assignment; sole map addition exact existing human authorization ec8. Initial and every before/after unchanged() PINS checks now cover that input."
+  },
+  "verified": [
+    "All four literal protected qa_run commands,23fixedcontrols twice/46executions, deadlines, output handling and assembler bytes unchanged.",
+    "Prior reviewed integration/pass/consumption/no-priorRSI,73plugin/31source/7guard/expiry checks and complete final typed fixed-map validation retained.",
+    "Original manifest/wrapper/changes-required receipt preserved; no plugin change or new authority."
+  ],
+  "limits": [
+    "Accepted source/recipe only. Root executes actual probes and stages normal typed RSI after actual results; no future pass/adoption asserted.",
+    "No reviewer target execution/imports/native effects/primary writes."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only-menu-escape-selector",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/production-fix/manifest.json",
+    "sha256": "d708264dc9b84029e45d178ded0eda72fb2c69749b10ee026b88fe206d989726"
+  },
+  "postimage": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/production-fix/postimages/implementation/warlock/src/SurfaceController.elm",
+    "sha256": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6"
+  },
+  "checks": [
+    "Exact full-file comparison proves one selector expression changed; no other production statement or test bytes changed.",
+    "Current Surface.mode menu chooses actual always-enabled menu dismiss identity control:menu-close; all other modes retain control:close. Selection still drawn solely from current Surface.controls and current message.",
+    "Exhausted state/no-op, current lease, enabled control, Maybe message and existing apply pipeline unchanged. OutputController owner/view/publication validation untouched.",
+    "Existing Desktop Menu.Dismiss closes then Shell.Refresh reserves current request and pending keyboard return; actual matching observation/binding/output/existence/availability guards remain sole focus return path. No immediate native focus effect added.",
+    "Actual RED verified separately:5 setup true,7fail9pass,18DOM86pass,119 sourcepins exact."
+  ],
+  "limits": [
+    "Root actual unchanged18+16 GREEN pending; no reviewer compiler/tests/imports.",
+    "Component typed Focus does not establish physical key delivery/GTK/WebKit eligible opener restoration or originalUX024 acceptance.",
+    "No service investigation restart or native authority change."
+  ],
+  "effects": {
+    "tests": false,
+    "compiler": false,
+    "imports": false,
+    "primaryWrites": false
+  }
+}

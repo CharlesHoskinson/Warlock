@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "date": "2026-11-06",
+  "component": "Catalog revision identity across pinned desktop-entry roots",
+  "status": "Verified bounded CPU component; original and native acceptance remain open",
+  "requirement": "ELM-UX-003",
+  "scenario": "ux-003",
+  "selectionGeneration": 3,
+  "participantIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
+  "sourceChange": {
+    "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+    "beforeSha256": "e82b9e87fd5b7e9ce9ca0d6252023676885cc8023bfa269c6415884e7fbb5deb",
+    "afterSha256": "8c5aebcb096f7b3d68b0abc5964f39c4f3ea557ca0aeb9e1e3c1ae022ccb1ec4",
+    "behavior": "Include the pinned-root index in the catalog source fingerprint. Moving identical desktop-entry bytes between roots advances the revision."
+  },
+  "testedManifest": {
+    "sources": {
+      "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+      "implementation/warlock/src/Desktop.elm": "2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db",
+      "implementation/warlock/src/DesktopPolicy.elm": "018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "8c5aebcb096f7b3d68b0abc5964f39c4f3ea557ca0aeb9e1e3c1ae022ccb1ec4",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "cbb4776f1f5e3b75754dc552ff0de9cede7363a124641523f8d30a2a110ee7dd",
+      "implementation/warlock/haskell/runtime/runtime.cabal": "28053fb1f6f0988e66e3dca65c5f101423a91e48e9ec1f93970db92e82e8e551",
+      "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd",
+      "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67"
+    },
+    "fixtures": {
+      "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd",
+      "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67"
+    },
+    "runners": {
+      "tools/qa_cpu.py": "94c8461911ca4ed655a1b297af359f36a9cdef9ffcd918887f76884b775183e1",
+      "tools/check_arm64_cpu.py": "47d9f41e2f7cf5719e36eeb68ad06ce9b3ff997aa35163c9ad3ed2160d4942d4",
+      "tools/haskell_test_wrapper.py": "8ab7ce58dbcfdfb60b5ca9b2ac88aa5ccda3c399d4c100f2feacc9118b431d5b"
+    },
+    "profiles": {
+      "tools/arm64-toolchain.json": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+      ".warlock-contributor/evidence/nextloop-20261106/catalog-source-revision/green-qa-review.json": "55fd2418fe4a88e264224da26a9dbe27a9f9c103ebcdde8ee7840ae46f516abc"
+    }
+  },
+  "fixedFixture": {
+    "path": "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs",
+    "sha256": "2d4d858dcaeaaf494016b31a0cbd6bc0cb491d9d756570facb51ec3b77a0ea67"
+  },
+  "unchangedNoDisplayFixture": {
+    "path": "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs",
+    "sha256": "6463ae3d439fa99517522cca8837bd52a0e3b52d899d17c98e84937130b4cecd"
+  },
+  "red": {
+    "candidateSha256": "58d3474b69cfd29ea676c86a52973a465e261d3a2fd222cb4688580cf865bda1",
+    "report": {
+      "path": ".warlock-contributor/arm64-cpu-1794002434154143870/report.json",
+      "sha256": "a7b36b48b416cbc9e68834aaf3549cdddfcd1a87438850dedee44acca614791c"
+    },
+    "commandsExit": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "observation": "Ordinary runtime and both fixtures compile. NoDisplay passes. Adversarial fixture reaches the identical-bytes root-move assertion and exits1 normally. Its later retirement control does not run.",
+    "independentReview": {
+      "path": "local-state:nextloop-20261106/catalog-source-profile-preparation/red-independent-execution-review.json",
+      "sha256": "fb0f3f1c24a410772117615eb68010eb35923a753ab103e6c83de5d8a56896cf"
+    },
+    "outerHandleConsumed": true
+  },
+  "green": {
+    "candidateSha256": "a125fa9b060695da765b64b2c09039132149907f4e51e773d80e4889d92fcab2",
+    "report": {
+      "path": ".warlock-contributor/arm64-cpu-1794002983299558476/report.json",
+      "sha256": "d6df342e2e4385ccd111cf6c5adb6e7208f48c2b586e2d427be53a741321d3ae"
+    },
+    "commandsExit": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "currentInputHashesMatched": 245,
+    "allInputHashesSha256": "b54e6ba660a29de5f2c7c76967ab58c8fc695e036256fda1435b98204fe5c152",
+    "suites": {
+      "catalog-nodisplay-controls": [
+        {
+          "mode": "default",
+          "argv": [
+            "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794002983299558476/runs/catalog-nodisplay-controls/storage"
+          ],
+          "exit": 0,
+          "timeout": false,
+          "forcedCleanup": false,
+          "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794002983299558476/runs/catalog-nodisplay-controls/default.log",
+          "image": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794002983299558476/runs/catalog-nodisplay-controls/image/catalog-nodisplay-controls",
+          "imagePin": [
+            "56",
+            "1208001",
+            "32114160",
+            "bc6adb0bbc1ac917c733a3ad93e5133a697ce2c98e44ee1e35d3db5d3a4f5d4a"
+          ]
+        }
+      ],
+      "catalog-source-revision-adversarial": [
+        {
+          "mode": "default",
+          "argv": [
+            "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794002983299558476/runs/catalog-source-revision-adversarial/storage"
+          ],
+          "exit": 0,
+          "timeout": false,
+          "forcedCleanup": false,
+          "log": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794002983299558476/runs/catalog-source-revision-adversarial/default.log",
+          "image": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794002983299558476/runs/catalog-source-revision-adversarial/image/catalog-source-revision-adversarial",
+          "imagePin": [
+            "56",
+            "1208013",
+            "32112648",
+            "31bb6c8aaf75d21e2811045a8a1ba7611dfb6e7eb853307a4052bcec4e830c46"
+          ]
+        }
+      ]
+    },
+    "ordinaryRuntimeLibraryCompiled": true,
+    "frontendRootsCompiled": 0,
+    "independentReview": {
+      "path": "local-state:nextloop-20261106/catalog-source-profile-preparation/green-independent-execution-review.json",
+      "sha256": "5da3702abde63d9dba1269c849d31dc52685f7a6cff5e22ca6fe27951127c246"
+    },
+    "outerHandleConsumed": true
+  },
+  "sourceAndProfileReview": {
+    "path": "local-state:nextloop-20261106/catalog-source-profile-preparation/independent-review.json",
+    "sha256": "65e6be8901c0d43ef20185404e96330f81cfcaf2d99176cbcb38c2fac079da8f"
+  },
+  "greenCandidateReview": {
+    "path": "local-state:nextloop-20261106/catalog-source-profile-preparation/green-independent-candidate-review-canonical.json",
+    "sha256": "3cad9aa51cf522d1ed00ee02f5d4cbc0f42f477aa8bc70ac9dbcce2f2379ce60"
+  },
+  "originalCountsChanged": false,
+  "acceptedRequirementsDelta": 0,
+  "acceptedScenariosDelta": 0,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "remaining": [
+    "Current-stack Elm input and actual application launch with exact argv and owned cleanup.",
+    "Published catalog and immutable Exec producer integration, held application-image custody and backend launch dispatch.",
+    "Original scenario, native presentation, input, accessibility, performance and release observations."
+  ],
+  "evidenceLimits": "Source hashes bind all245 inputs. Only the ordinary runtime library and two fixed CPU fixtures execute. Earlier failed reports, source ownership and participant clocks remain unchanged. New automatic wake acknowledgment is separate continuity evidence."
+}

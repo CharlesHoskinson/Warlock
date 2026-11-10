@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+    "--repo",
+    "/home/hoskinson/Projects/Warlock",
+    "--record",
+    ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "--json",
+    "record",
+    "--outcome",
+    "scenario-verdict",
+    "--summary",
+    "Independent clean native54 accepts original ux-024 taskbar menu focus; whole ELM-UX-024 remains partial.",
+    "--claim-file",
+    "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/accepted-original-claim.json"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"record\": \".warlock-contributor/ux024-menu-tab-focus-root-20261109.json\",\n  \"progress\": {\n    \"workflowPolicy\": 2,\n    \"iterationsWithoutProgress\": 0,\n    \"lastRecordedProgressUTC\": \"2026-11-10T12:52:38.916646+00:00\",\n    \"secondsSinceRecordedProgress\": 2058,\n    \"suspendedSeconds\": 0,\n    \"limits\": {\n      \"iterations\": 2,\n      \"seconds\": 2700,\n      \"sameFailureExperiments\": 2\n    },\n    \"investigationNeedsChange\": false,\n    \"planChangeRequired\": false,\n    \"reconciliationRequired\": false,\n    \"authorizationExpired\": false,\n    \"reasons\": [],\n    \"effectiveAuthorizationExpiresUTC\": \"2026-11-10T14:40:00Z\",\n    \"action\": \"Continue the selected delivery action.\",\n    \"basis\": \"Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.\"\n  },\n  \"ok\": true\n}\n",
+  "stderr": ""
+}

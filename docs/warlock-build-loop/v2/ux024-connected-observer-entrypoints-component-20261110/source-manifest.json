@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "kind": "fixed-native-connected-owner-qualification-source",
+  "status": "private-unexecuted",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "e8b5581842aa4b1f94d9fd37b8b2b532a7b6d5f1cf3711813cd78cd4c185e0c5",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/revision2-arm64-open-flags/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "1f51f7f4affcd6a1b78765bd91f5da94bb4cf9c6781d50d4dc1b8631e17a282e"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/revision2-arm64-open-flags/candidate.patch",
+    "sha256": "d1ea1b9ba7f93405afd94996a6710668c797f15b65feebf7f4106add65b16d25"
+  },
+  "contract": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/revision2-arm64-open-flags/contract.json",
+    "sha256": "6490c0202f7377f9a768cce6a6e558b01bd32dae92eb40dc04ddd2f021dbecf5"
+  },
+  "basis": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision5-threaded-test-link/manifest.json",
+    "sha256": "225ccd10ad24178aa533a09b1c0db1157c15278c9aee5ae79efbe2c9f7b8bd6b"
+  },
+  "runtimeUnchanged": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision5-threaded-test-link/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+    "sha256": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55"
+  },
+  "cabalRequired": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision5-threaded-test-link/postimages/implementation/warlock/haskell/runtime/runtime.cabal",
+    "sha256": "c1c1af0649b3630e8927f51673f9b4f499164b9f8aabe04aec0b324f10d9f6c2"
+  },
+  "incumbentProducer": {
+    "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/fixture-ux003-native-observer/Main.hs",
+    "sha256": "e563f85093bcd7261dc99aea247f1bb085ccc64a997715619b627af8ceeb7f6b"
+  },
+  "plan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-preparation/revision2-existing-close-route/plan.json",
+    "sha256": "d02c9c4bfb6aba23a67dcaa91f70222daa1721440bb0beba547e4b7d44458e85"
+  },
+  "sourcePreservation": [
+    "allocationControls byte-exact",
+    "foreignEndpointAdmissionControls byte-exact",
+    "ordinaryControls byte-exact",
+    "all other old function bodies unchanged; imports/closed main dispatch extended"
+  ],
+  "limits": [
+    "No author compiler, tests, imports, GTK, compositor or bus execution.",
+    "Parent independently binds current endpoint/child ownership and window data; v3 has no PID/address.",
+    "Same lexical owner and original deadline, no reconnect or generation reuse.",
+    "RetainedUnknown remains failed/unqualified; no free or replay after uncertainty.",
+    "Connected source does not wire Backend window capability, change original UX024 acceptance, or resume notification service.",
+    "Paired fixture c5aa remains held."
+  ],
+  "parent": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/manifest.json",
+    "sha256": "b52ba0c1a840c41cbc713f2b5c36943f30b9339d07fbf58879b0aee8d176f02d"
+  },
+  "parentReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/independent-source-review-build.json",
+    "sha256": "5043267b659601030c3ccdd6c23108b98fd89e09222fc6de1af0b3e13d174cf7"
+  },
+  "deltaPatch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/revision2-arm64-open-flags/delta.patch",
+    "sha256": "65423591b2dc20f5d03108b6678f667a377e2846e91790ee5814f5503f1788df"
+  },
+  "openFlagHeaders": [
+    {
+      "path": "/usr/include/asm/fcntl.h",
+      "sha256": "67f89387e4e4aee86afadf2b9f0ac96117a9aa6af94c7d19baefbfe0b2a14206"
+    },
+    {
+      "path": "/usr/include/bits/fcntl.h",
+      "sha256": "fdfba4a3e1d7f6ce33fcab50a6c2ef80917a1c1bbd97f22deadfb697defe477d"
+    },
+    {
+      "path": "/usr/include/asm-generic/fcntl.h",
+      "sha256": "b56fbe3b81f4670b85384e933b02b67bdfa95629c6686544e090eb14c99f09ba"
+    }
+  ],
+  "delta": "Actual ARM64 O_NOFOLLOW override plus two functional flag predicates; retain bounded real Left exception text in existing QA terminal. No runtime, command, deadline, phase, owner, producer or ordinary-branch changes."
+}

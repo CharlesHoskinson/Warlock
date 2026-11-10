@@ -1,0 +1,25 @@
+{
+  "phase": "candidate",
+  "label": "builder",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+    "--module",
+    "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+    "-v"
+  ],
+  "exit": 0,
+  "stdout": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/candidate-builder.stdout",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/candidate-builder.stderr",
+    "sha256": "a557d9ac9153fe6f0e9c17c1da2671c69507cf8745e436d6758b2bbcaa6f7dbb"
+  }
+}

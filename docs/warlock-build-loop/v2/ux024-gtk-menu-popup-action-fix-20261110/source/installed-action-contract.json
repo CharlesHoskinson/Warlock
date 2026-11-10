@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "headers": [
+    {
+      "path": "/usr/include/gtk-4.0/gtk/gtkwidget.h",
+      "sha256": "724366e9e64971dce05a171d2d9cfc240fbacd37234779aa3c4516d880d7ecf0"
+    },
+    {
+      "path": "/usr/include/glib-2.0/gobject/gtype.h",
+      "sha256": "95b6ef1a2c4e08ed67938aac771a13dd6c90678f4d0032b1e3136aca6994f1b6"
+    }
+  ],
+  "action": "void gtk_widget_action_set_enabled(GtkWidget*, const char*, gboolean)",
+  "ffi": "safe ccall (action state notifications may call back); getters unsafe ccall",
+  "bounds": "32 direct children, exact GtkTextView class name, unique match, parent/root checks before and after action call, existing physical owner context",
+  "borrowed": "Pointers are used synchronously during attach only; no new callback or retained pointer."
+}

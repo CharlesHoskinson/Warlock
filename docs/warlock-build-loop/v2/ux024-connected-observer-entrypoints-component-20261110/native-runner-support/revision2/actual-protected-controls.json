@@ -1,0 +1,82 @@
+[
+  {
+    "phase": "baseline",
+    "name": "runner",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_observer.py",
+      "--module",
+      "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "-v"
+    ],
+    "startedUTC": "2026-11-10T02:20:41.077740+00:00",
+    "terminalUTC": "2026-11-10T02:20:41.282375+00:00",
+    "exit": 1,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "ae7646daf8336a15078175d9736fd357899b8484bd9e865b3617ff6ba82629bb"
+  },
+  {
+    "phase": "baseline",
+    "name": "authorization",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_attempt_authorization.py",
+      "-v"
+    ],
+    "startedUTC": "2026-11-10T02:20:41.282743+00:00",
+    "terminalUTC": "2026-11-10T02:20:41.686126+00:00",
+    "exit": 1,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "ae04f570b3bf41a70228f19e62ebb1c98f666b3b970b00c23103781a1dc29b35"
+  },
+  {
+    "phase": "candidate",
+    "name": "runner",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_observer.py",
+      "--module",
+      "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "-v"
+    ],
+    "startedUTC": "2026-11-10T02:20:43.175811+00:00",
+    "terminalUTC": "2026-11-10T02:20:43.362694+00:00",
+    "exit": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "0edea7f4b3cc9a278ae216ec627b84c5e591ba3ef2fbcd5ffc05f293638d550b"
+  },
+  {
+    "phase": "candidate",
+    "name": "authorization",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_attempt_authorization.py",
+      "-v"
+    ],
+    "startedUTC": "2026-11-10T02:20:43.363175+00:00",
+    "terminalUTC": "2026-11-10T02:20:43.782975+00:00",
+    "exit": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "b6d7664edacaf10ecc1ab172b8c31470c4d4f904862f056f805a2f3c262391fd"
+  }
+]

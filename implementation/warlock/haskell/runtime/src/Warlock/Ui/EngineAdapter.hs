@@ -33,6 +33,7 @@ safeCallback action = do
 serveRequest :: UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ()))
              -> P.Request -> IO (Either P.ProtocolError P.Reply)
 serveRequest endpoints owner request = safeCallback $ case request of
+  P.SubmitGuiObservation _ -> ioError (userError "GUI observation requires broker custody admission")
   P.GetStop -> P.StopReply <$> uiShouldStop endpoints
   P.GetRemaining -> do
     value <- uiRemainingMicros endpoints

@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "kind": "bounded-post-native-doc-rsi-source",
+  "changes": [
+    {
+      "destination": "plugins/warlock-contributor/references/redesign-flow.md",
+      "baseline": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/baseline-redesign-flow.md",
+        "sha256": "485e52f00e6c2dff5ad8c1323c327cb543abc0e01e974f709d8d1d42295654f4"
+      },
+      "baselineSha256": "485e52f00e6c2dff5ad8c1323c327cb543abc0e01e974f709d8d1d42295654f4",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/postimage/plugins/warlock-contributor/references/redesign-flow.md",
+        "sha256": "235e5f637c5650e1a80dadca2b4b1146b6b6ddc4caaf9a08149bad6feaa1643d"
+      }
+    }
+  ],
+  "diff": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/revision2-counter-wording-and-paragraphs/documentation.patch",
+    "sha256": "4c15e5836a213b006130faab3aa58261f650133ab358b3bf0b9db6702dd1b1a3"
+  },
+  "retainedFailures": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794284617657083219/report.json",
+      "sha256": "0da2d2dc659b83a274cc2dae736d6681b21d9350f5126f8f0fb081e30545282c"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/report.json",
+      "sha256": "026d354a31f9c88a79d59df6083c9ee6200ffbbd0a6f7320549224ae46798fbc"
+    }
+  ],
+  "documentChecks": [
+    "Producer counters and capture limits",
+    "Publication 5 and presentation 4 can both be current.",
+    "64 KiB diagnostic limit",
+    "reviewed 32 MiB per-file profile",
+    "original 28+2 deadline",
+    "add no permission, review role or preflight step."
+  ],
+  "limits": [
+    "One existing documentation file only",
+    "No engine/guards/budgets/roles/version change",
+    "No primarywrite/QA byauthor",
+    "NewRSI mustderiveactualV6integrationrevision/pluginbaseline atRootexecution"
+  ],
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/post-native-contract-rsi/source-manifest.json",
+    "sha256": "0a0cdba4d3638b8f12ca82a16a31bc6edb19f57ba616292c0febc5afd3cce6e9"
+  },
+  "correction": "Only two paragraph splits and published frame\u2192published surface snapshot; no rule, example, predicate, or budget change."
+}

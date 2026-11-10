@@ -1,0 +1,30 @@
+[
+  {
+    "name": "baseline",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/post-component-rsi-candidate-id-reference/run_fixed_reference_probe.py",
+      "baseline"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "proposed",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/post-component-rsi-candidate-id-reference/run_fixed_reference_probe.py",
+      "proposed"
+    ],
+    "exit": 0
+  }
+]

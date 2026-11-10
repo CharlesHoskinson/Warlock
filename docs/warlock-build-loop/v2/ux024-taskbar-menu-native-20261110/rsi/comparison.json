@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "baselinePluginSha256": "8893718c9aecd2ccac4313e95a128aa7f74e7a7fc53592984ec8b5574dde6434",
+  "baselineSnapshotSha256": "1b7bc821d5a85b0b841404d228d5970226f2c46c182d6417aa4523e9b863500a",
+  "candidateSnapshotSha256": "bdb386b82b50298bad33effd22722af341baf9a5c3c0da22e1e2bd4c1eeb3238",
+  "immutableHashes": {
+    "taskFiles": "8ba40945d0942464751edb846581140d27e1ea49efed42c5a31ef577c7a6aa04",
+    "sourceFiles": "7dde547fed12bccf020266a82d533dea4624f9e2d215302a336fbb0791533a95",
+    "oracleFiles": "b968b1f425aa7ce97cbed5a88ee08d97aa52c4d1df5ccd8ec09f8f67c9d1e380",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "d37863b087d85a7efc5a3a38672ae1b4b3f44e32e8b90d90f2c53107423f8d8f",
+    "pluginBaselineFiles": "8893718c9aecd2ccac4313e95a128aa7f74e7a7fc53592984ec8b5574dde6434"
+  },
+  "checks": [
+    {
+      "name": "actual-positive-event-evidence-binding",
+      "baselinePassed": false,
+      "candidatePassed": true
+    },
+    {
+      "name": "mismatched-replay-evidence-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "missing-admitted-event-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "wrong-disposition-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "duplicate-admitted-event-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/rsi/regression.json",
+    "sha256": "207fb650ef5c7d36433a85aaa4e2c1cd059b1eff4e86b6c6b6a40435e5c7e812"
+  },
+  "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+  "fixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/native9-clean-diagnostic-removal/revision2-preserve-proc-guard/native9-metadata-preparation/revision2-rsi-evidence-binding/tests-first/actual-event-evidence.json",
+    "sha256": "f5f8d3fe0b490a3c7fd4ba2bef614c946c3c17b7169a36f20cb00894bff2f5ec"
+  },
+  "comparisonLimit": "Actual retained helper contract replay. This does not measure autonomous behavior caused by README text.",
+  "candidateInstalled": false,
+  "metadataAdmitted": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-5b664e1b49f946e399abde9608fa8bf3.scope",
+    "coreLimit": 1
+  }
+}

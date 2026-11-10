@@ -1,0 +1,29 @@
+--- a/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs
++++ b/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs
+@@ -1068,10 +1068,16 @@
+      temporaryRoot = "/tmp"
+  check "config digest remains the raw32 SHA256 known vector"
+    (connectedDigest known==Right (SHA256.hash content) && B.length (SHA256.hash content)==32)
+- bracket (openBinaryTempFile temporaryRoot ".warlock-digest-adapter-")
+-   (\(file,handle) -> hClose handle `finally` removeFile file) $ \(file,handle) -> do
+-    BS.hPut handle content
+-    hFlush handle
++ bracket
++   (do
++     (file,writer) <- openBinaryTempFile temporaryRoot ".warlock-digest-adapter-"
++     (do
++       BS.hPut writer content
++       hFlush writer
++       hClose writer
++       pure file)
++       `onException` (hClose writer `finally` removeFile file))
++   removeFile $ \file -> do
+     rootStatus <- EndpointFiles.getSymbolicLinkStatus temporaryRoot
+     fileStatus <- EndpointFiles.getSymbolicLinkStatus file
+     let natural :: Show a => a -> J.Json
+@@ -1098,4 +1104,4 @@
+           (bytes==content && Resolver.resolvedIdentity resolution==Identity (toInteger (EndpointFiles.deviceID fileStatus)) (toInteger (EndpointFiles.fileID fileStatus)))
+         check "raw32 counterexample fails actual held descriptor with DigestMismatch"
+           (show rejected=="FileFailure DigestMismatch")
+-       _ -> check "parser and held descriptor digest contracts must agree" False
++       _ -> check ("parser and held descriptor digest contracts must agree: "++take 1024 (show observed)) False

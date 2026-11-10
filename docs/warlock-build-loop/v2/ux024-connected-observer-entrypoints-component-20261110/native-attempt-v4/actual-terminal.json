@@ -1,0 +1,36 @@
+{
+  "terminal": true,
+  "jobId": "pid2415416-start5032794",
+  "candidateSha256": "774d00dff944e804af0979d53a3e6a444475bf9ae497b150002e46ee8819f3f4",
+  "scope": "native",
+  "manifestSha256": "4688573d41c5f83a5cdc5c91f6761160900fe2e44058a5ae9f4ddb43d8383f25",
+  "fixtureSha256": "009d4d887917ade8aa3371bd11a7e6103fb0a36da99ddf5bd812dcac77e543e1",
+  "exit": 1,
+  "classification": "failed",
+  "failureSignature": "close-ready-publication-counter-confused-with-desktop-presentation",
+  "actualOuterHandle": "52937",
+  "actualOuterHandleConsumed": true,
+  "rawReport": {
+    "path": ".warlock-contributor/ux024-connected-observer-1794284617657083219/report.json",
+    "sha256": "0da2d2dc659b83a274cc2dae736d6681b21d9350f5126f8f0fb081e30545282c"
+  },
+  "rawWire": {
+    "path": ".warlock-contributor/ux024-connected-observer-1794284617657083219/observer-wire.jsonl",
+    "sha256": "e2e5d2fc4a84837e5fe1fec5c1368d571adbcab80ff312e25621a1f0c58829a8"
+  },
+  "nativeExecutionEntered": true,
+  "nativeDeadlineIssued": true,
+  "initialConnectedSnapshotObserved": true,
+  "snapshotCount": 2,
+  "mappedWindowObserved": true,
+  "observerAndProducerMappingsPassed": true,
+  "fullMappingAbiProviderQualification": false,
+  "inputIssued": false,
+  "forcedCleanup": false,
+  "cleanupUnknown": true,
+  "globalRestoration": false,
+  "sourceInputsUnchanged": true,
+  "cleanupQualified": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

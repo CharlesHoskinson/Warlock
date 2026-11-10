@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-component-cpu-result",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794274035172488781/report.json",
+      "sha256": "751c3cd61cb0c84de8a00047b13795440d79c78cbdba3f2dd78728d04be9b973"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794274035172488781/logs/cpu-foreign-endpoint-refusal-controls.stdout",
+      "sha256": "f3c72cf35b99432f6903b9eacaa190e31ba1c47f86288e955d99fbbf64475cea"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794274035172488781/logs/cpu-ui-webkit-controls.stdout",
+      "sha256": "d9c76485e7c20ca1f2692b9b7a0015752b5c5db1306cf0fc810ea16a7e167d9f"
+    }
+  ],
+  "observed": {
+    "sixCommandsExitZeroUnforced": true,
+    "selectionGeneration": 29,
+    "currentSourcePins": 270,
+    "currentHaskellTreeFiles": 259,
+    "currentSourceMismatches": 0,
+    "compiledImages": {
+      "warlock-ui-owner": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794274035172488781/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+        "device": "57",
+        "inode": "6251562",
+        "size": "37644248",
+        "sha256": "de2500e7e626ccab3334fe18e1f206f2d802e6e5e325ad61a2bb3ae5fe37d165",
+        "executed": false,
+        "currentMode": 493
+      },
+      "ui-webkit-controls": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794274035172488781/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+        "device": "57",
+        "inode": "6251566",
+        "size": "37974448",
+        "sha256": "9d4c36152f2717f032e07f95672e4b952c28361e100f5b82125cda2996416bbd",
+        "executed": true,
+        "currentMode": 493
+      }
+    },
+    "endpointSentinel": "foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect",
+    "oldAllocationPassed": true,
+    "sourceControlFlowCompleted": "17 pre-connect refusal cases, 32 invalid-name seeds and same-deadline expired Retained/refused reuse completed through exact final sentinel; no per-control stdout counts asserted."
+  },
+  "deadlineEvidence": "Pinned collector behavior_environment removes caller deadline and supplies min(parent monotonic D, now+5s, authorization remaining); fixture parses one absolute D and reuses it throughout. Actual child value is not separately logged.",
+  "sourceReviewSha256": "ad71946594b12cd3f44527d6365d51da85cfd6920b3bf2ae5c3a4cf3fa9e09b4",
+  "limits": [
+    "Reviewer did not execute tests, imports, compiler or runtime client.",
+    "Report source closure is 270=259 Haskell+11 support; Root-managed 272 includes two metadata inputs, not two additional compiled files.",
+    "CPU qualification includes real FD/metadata IO and no-connect refusal paths; no successful display connection, callback retirement or provider observation demonstrated.",
+    "GUI owner compiled only and unexecuted; native/original acceptance false, raw cleanupQualified false preserved.",
+    "Root reports outer30925 consumed0; canonical start/finish closure pending at request."
+  ]
+}

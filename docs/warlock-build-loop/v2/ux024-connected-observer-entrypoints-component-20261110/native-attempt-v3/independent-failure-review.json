@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-partial-connected-failure",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794283005283420552/report.json",
+      "sha256": "11f7efeb4bbea100237bb8f09ac1811ba711381adb2f933e0c6225484654f03a"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794283005283420552/observer-wire.jsonl",
+      "sha256": "58ce38009091f95585baf6926bc679c6f50fac50e7848c7ba471a2e2928e8ddf"
+    }
+  ],
+  "observed": {
+    "initialConnectedSnapshot": "READ_INITIAL sequence1/one read/empty rows/fullbinding/config15",
+    "failure": "strict_snapshot_files unqualified locale-archive mapping",
+    "producerStarted": false,
+    "windowInputIssued": false,
+    "frames": 0,
+    "observerExit": -15,
+    "cleanupUnknown": true,
+    "forcedCleanup": false,
+    "globalRestoration": true,
+    "passed": false
+  },
+  "limits": [
+    "Initial connected read is not Done/Closed/Retired/wholecleanup success or original UX024 acceptance.",
+    "Locale/data correction must bind existing real provenance and actual body hashes without mapper exemption or locale narrowing.",
+    "No reviewer execution; Root canonical closure pending."
+  ]
+}

@@ -1,0 +1,16 @@
+Running as unit: qa-harness-68c182a1fbe54a06b6f480afd5335549.scope; invocation ID: 14d04188e91e4aa8993615d4e4d9f3fb
+Traceback (most recent call last):
+  File "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py", line 1036, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py", line 1029, in main
+    context=preflight(args.sha256)
+  File "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py", line 766, in preflight
+    boot_correspondence.verify_private_provider(current,collector,base,foundation['nested'])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/Projects/Warlock/tools/ux023_current_boot_correspondence.py", line 151, in verify_private_provider
+    base.regular(collector.ROOT / relative, pin_sha)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/Projects/Warlock/tools/run_arm_gl_foundation_renewed_20261108_0623.py", line 73, in regular
+    raise ValueError('input changed: ' + str(path))
+ValueError: input changed: /home/hoskinson/Projects/Warlock/tools/qa_cpu.py

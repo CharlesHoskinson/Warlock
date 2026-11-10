@@ -7,11 +7,11 @@ const crypto=require('node:crypto');
 const pins={
  'implementation/warlock/qa/tea-contract-cases.cjs':'41e3ccabc5843153b604205dd937c56890f659e294929788a959951d39b7bcb7',
  'implementation/warlock/qa/sol-http-popup-literals-0525.cjs':'ab7af2abe53a36eae18c90762001a7f3647b47ed400b15bdd5aaba56f49f21f1',
- 'implementation/warlock/src/Desktop.elm':'a07c15be51b5875921ef24a235e45f57a0b52745cec971740af3a7fdc3adfb3f',
+ 'implementation/warlock/src/Desktop.elm':'2ef557760c8405dd5dce7172ca29a5d81525fc6738d017cec0008a09b10a08db',
  'implementation/warlock/src/DesktopPolicy.elm':'018934fe4762e8357665ce7c37cb289883c6cdd1bad31d6592402b369d7bad3e',
  'implementation/warlock/src/OutputController.elm':'fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae',
  'implementation/warlock/src/SurfaceController.elm':'2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998',
- 'implementation/warlock/src/Surface.elm':'175d4432e2a28c18cfa18e72f2effc61bf8d551ddce0679e14e25681fc78ec1c',
+ 'implementation/warlock/src/Surface.elm':'9b49b673cde2d2a9252e3b461b1fb8d3229fb5a4d5ed0321af03f74178d5869e',
  'implementation/warlock/src/OutcomeAnnouncements.elm':'e1160f27432b3869ceb3627224d07cfdbfc9a996d83bf063f9563ec5c29216bb',
  'implementation/warlock/src/Popup.elm':'c87f2b149b5bceae178484752a4ac75d869238026c6c4debe1b2ec6c7fd961eb',
  'implementation/warlock/src/Presentation.elm':'745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396',

@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "kind": "ux024-closing-bar-return-with-append-only-native-v7",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "beforeSha256": "7ba94dcc19d1b3e2b436231b483e18c816fbdcaf926ed5ea31676b01ca8d6b5a",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "6e09d795f8c88e69a922ec92c7ea5116ab7aebb1c9d64be57f4af5ba589a56e3"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/preimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "dfa176fcb31386fdda0921b429ba785c7610ecb36d12adbeab61dcd799264cb5",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "8d5fdc55ce3f2f996c110de1a54f648bbac33d18681e1c1c4dc095cce76c5b58"
+    },
+    {
+      "path": "tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/revision2-native-v7-namespace/preimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "beforeSha256": "4d220f1891b468a26f41d65ae8003d0595172dcdea7013daa41bdfe2f5881318",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/revision2-native-v7-namespace/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "d19de9e67e35b4c4fdcc0e5561a7c3e3c7d208f10fde11c5caa7dad7ec5fd72f"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/revision2-native-v7-namespace/candidate.patch",
+    "sha256": "4e4461c9516be19904bc98a40cb376204bace99927196a40be15efb46031cf62"
+  },
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/tests-first/manifest.json",
+    "sha256": "aca83361d5d9410e0ee79ea07517ab36afa519b96a51fd2eacc3ca4b36581059"
+  },
+  "sourceEvidence": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/source-cause-and-limits.json",
+    "sha256": "de6a0331b7752a09dc4c4d7d237b1cbbc534b76638ceb26016fbeedc59069e7e"
+  },
+  "fixedPureCases": 12,
+  "seededPureSequences": 32,
+  "limits": {
+    "keys": 9,
+    "nativeSeconds": 28,
+    "cleanupSeconds": 2,
+    "phases": 16,
+    "frames": 16
+  },
+  "unchanged": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "sha256": "f1af886d0e6278aefc488d818faadcdfccec55f1f2ee3a12ab063484ac984915"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "d82311075cb8ad80284fde52d3293a1dfbaa9a71b5819e23f762bae0a3882645"
+    }
+  ],
+  "productionScope": "Only Mvp directional predicate at existing final focus guard; Main existing allocation-only controls. No new module/mode/ABI/callback/diagnostic/authority. Temporary WebKit trace remains exact. Runner changes only the append-only V7 packet namespace; all function/class ASTs identical.",
+  "nativeSufficiency": "Unproven until Root protected actual native observation; source defect and correction are directional, not a claim that GDK replay was observed.",
+  "authorExecuted": {
+    "tests": false,
+    "compiler": false,
+    "targetImport": false,
+    "native": false,
+    "primaryWrites": false
+  },
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native42-reopen-investigation/native46-bar-return-fix/manifest.json",
+    "sha256": "17279c60cf60fc754659c3859c8e50a1d0dbc5f9405318061fd969fda7a7ffa0"
+  },
+  "nativePacket": ".warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v7-bar-return/packet.json",
+  "runnerFunctionClassAstIdentical": true,
+  "diagnosticWip": true,
+  "productIntegrationRequired": false
+}

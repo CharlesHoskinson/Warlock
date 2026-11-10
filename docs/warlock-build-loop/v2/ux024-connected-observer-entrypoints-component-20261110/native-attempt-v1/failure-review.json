@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-preflight-source-correspondence-failure",
+  "candidateSha256": "4bdd9b7891c12b4aa5817b7a9b97766956550ad83f6da87a955bb5b88814f440",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/final/actual-native-loop.stderr",
+      "sha256": "5d639666358dc6afb2066953fa0e067d88495841ea5efeb11344019174fa59c1"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/final/actual-native-outer-terminal.json",
+      "sha256": "b2dfafdade2887f7abb80675a3f504e25af22b0fe54d5300bab797470892b5fc"
+    }
+  ],
+  "cause": "CurrentBoot.verify_private_provider iterates immutable historical provider report.sourceHashes and base.regular rejects current qa_cpu bytes. This gate was reached in preflight before execute().",
+  "limits": [
+    "No native D/display/input issued per control flow and Root observation; no connected behavior result.",
+    "No reviewer execution; Root canonical closure pending.",
+    "Historical provider/SDK reports must remain immutable; no generic regular override or skipped source gate accepted."
+  ],
+  "correctionRequirement": "Any source correspondence must classify exact noncompiled orchestration delta and retain provider sourceInputs/logger/generatedProtocols/compile-command/library/dependency/physical checks. Compiled provider source change requires fresh qualification."
+}

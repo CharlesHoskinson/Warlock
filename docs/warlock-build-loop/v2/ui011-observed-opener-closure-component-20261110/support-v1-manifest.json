@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "status": "private-source-only-fixed-UI011-support",
+  "posts": [
+    {
+      "path": "tools/qa_cpu.py",
+      "beforeSha256": "33c8c99c9810542fda561f883d11fc038c990790ceb123168466c0aeac582ee7",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/postimages/tools/qa_cpu.py",
+      "sha256": "3baa82ca42660a21be368be4b9b5c30d04face8dc9ca1209ba4931827d90e3c4",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/preimages/tools/qa_cpu.py"
+    },
+    {
+      "path": "tools/check_elm_cpu.py",
+      "beforeSha256": "02cc8aff76c624cbe44cb84396e4eedd4508a645f87326b9e5706c08a3b00eee",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/postimages/tools/check_elm_cpu.py",
+      "sha256": "f0252919c57ed2e06b9349075ebb1e6e5b911f10fcc2a753a56e480403eb392e",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/preimages/tools/check_elm_cpu.py"
+    },
+    {
+      "path": "tools/test_ux024_menu_cpu_route.py",
+      "beforeSha256": "cbae0c08bc7966a768acc05c679ac2beb1b4da699dd5651ec24331c1d4892eae",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/postimages/tools/test_ux024_menu_cpu_route.py",
+      "sha256": "5fbd50c7ad68985b50fd2f004c62f1a7b70d1af8ac8bb77ea111985d5900ebe4",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/preimages/tools/test_ux024_menu_cpu_route.py"
+    }
+  ],
+  "fixtureManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/tests-first/manifest.json",
+    "sha256": "2e8841c25ac31da000256f47e4915e7f4a39fd087103e99bfda2f930a8e3434a"
+  },
+  "sourceBoundary": "Only literal pair registration, staging, compile/Node and exact24/5/32 result validation in ordinary --menu-tab-dom --arm64. Old functions/classes AST unchanged except menu_tab_dom_inputs/run_menu_tab_dom; old tests/classes exact.",
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "recordIdentitySha256": "92c1b16592f13f61b89310cd071b2a48554bf6caf7effa4d395ca78ccb9096ad",
+  "selectionGeneration": 32,
+  "cpuInputs": 125,
+  "currentElmSources": 109,
+  "budgets": {
+    "wholeRouteSeconds": 240,
+    "perCommandSeconds": 120,
+    "outerCPUSeconds": 240
+  },
+  "protectedControlsArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/postimages/tools/test_ux024_menu_cpu_route.py",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/postimages/tools/qa_cpu.py",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/postimages/tools/check_elm_cpu.py",
+    "/home/hoskinson/Projects/Warlock"
+  ],
+  "controlsPreparation": "Root copy exact existing tools/menu-tab-elm-toolchain.json alongside private check_elm post before controls; profile bytes unchanged. Existing28 +6new controls; author executed none.",
+  "candidateHelper": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/prepare_cpu_candidate.py",
+    "sha256": "277496373daa8ee648997fed3cf987f3482be858450b5b603b48495e9c466778"
+  },
+  "candidatePrepareArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/prepare_cpu_candidate.py",
+    "baseline"
+  ],
+  "greenPrepareArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/prepare_cpu_candidate.py",
+    "green"
+  ],
+  "candidatePrerequisites": "Root reviewed support+exact fixtures actual CAS first; baseline untouched new delivery history/current Desktop23b; Green requires actual closed/consumed expected-red baseline and no non-Desktop input change. No private output before actual CAS.",
+  "nativeProviderProof": "Old qa_cpu33c8 proof cannot qualify changed qa_cpu; CPU component only. No SDK/native inheritance.",
+  "authorExecution": false,
+  "primaryWrites": false,
+  "unchangedProfileCopy": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/postimages/tools/menu-tab-elm-toolchain.json",
+    "sha256": "0012df8f3c18c0f4851d2d36c97f790a5f5b990de2d9a8e88df03844bb6843c6"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "status": "frozen-conditional-root-only-unexecuted",
+  "author": "sol_supervisor",
+  "candidateSha256": "bd3f64ed0433d84703b92063b9788a943a7a5d473c72032e4c51e4a3dd9e3926",
+  "requiredActualRevision": "69c7837691e6a9eea4432e892cdb43266b586302",
+  "requiredSelection": 30,
+  "requiredPluginBaseline": "8893718c9aecd2ccac4313e95a128aa7f74e7a7fc53592984ec8b5574dde6434",
+  "pluginFiles": 73,
+  "completedSourceFiles": 31,
+  "guardFiles": 7,
+  "humanSha256": "ec8a1b87bebcc2ea00f551696151fea7647d10fa0dcb7a6c09d05341a246beeb",
+  "distinctControls": 23,
+  "protectedPhaseExecutions": 46,
+  "programs": {
+    "prepare_current_production_no_change_rsi.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/prepare_current_production_no_change_rsi.py",
+      "sha256": "a8bc6e6b95f28a2a24c623b80416afefab5c7677727b1ab379127edcb2a1829b"
+    },
+    "run_fixed_probes_and_prepare_human_pinned.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/run_fixed_probes_and_prepare_human_pinned.py",
+      "sha256": "c06ecde97b1a95fc1e6308a1ad44330dfb9f7e3993063c5b1cf76c9dde7de248"
+    }
+  },
+  "rootArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/run_fixed_probes_and_prepare_human_pinned.py"
+  ],
+  "actualProbeOutput": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-observed-production-no-change-v1/actual-probe-results.json",
+  "privateTypedOutput": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/prepared-current-production-rsi",
+  "oldTemplatesRetained": true,
+  "templateAssembler": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/rsi-preparation/prepare_runtime_no_change_rsi_current29.py",
+    "sha256": "66ab5e7d040fc9d48128f319e019ec0ed559e1d7f88cea1249b8023c819bdeb9"
+  },
+  "templateProbes": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-rsi-preparation/run_fixed_probes_and_prepare.py",
+    "sha256": "bf15b4a033b7f909f9ff39a79da0c8d8a81c120e503182bc65ff229812828a79"
+  },
+  "pins": {
+    "tools/test_ux024_menu_focus_build.py": "36659432e73990a0f7b516e151957a0049f7e66c9029c56ec0decb8e941050e9",
+    "tools/test_ux024_menu_focus_admission.py": "4a6ab9275170f3fed77b0c706c0935d4e01d4e38e13e910b684759d5d45ea3b9",
+    "tools/run_ux024_menu_focus_build.py": "80c12ad23f99c2cfc43144a69f9b5a29d5dcce6612ef37384563ff424ea5bb69",
+    "tools/qa_cpu.py": "33c8c99c9810542fda561f883d11fc038c990790ceb123168466c0aeac582ee7",
+    "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/authorization.json": "ec8a1b87bebcc2ea00f551696151fea7647d10fa0dcb7a6c09d05341a246beeb"
+  },
+  "preconditions": [
+    "Actual bd3f64 candidate terminal class pass, canonical consumption and integration required; no RSI already admitted.",
+    "Same73-file plugin889,31sourcefiles,7guards,exacthumanec8 and current14:40 window before/after each protected probe.",
+    "All four fixed qa_run rows must return0 with exact15+8 per-test names before typed comparison can be emitted.",
+    "No compiler/native/fullsuite/original acceptance claim. No new plugin rule for the retained candidate-event extra-field refusal."
+  ],
+  "effectsByAuthor": false,
+  "authorChecks": "AST syntax and complete AST equality after removing PINS only; no imports/tests/execution.",
+  "supersedes": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-rsi-no-change-preparation/manifest.json",
+    "sha256": "cc21fafd5a38a7759f8735cba855d64097ecfb4566363dfbe0b2a0151b0cbba8"
+  },
+  "correction": "Add only the exact existing human authorization reference to wrapper PINS. Existing startup and before/after unchanged() now hash it for every fixed protected probe. All probe commands, oracle checks, budgets, assembler bytes and authority remain unchanged."
+}

@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only-redundant-pattern-removal",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate-revision2/manifest.json",
+    "sha256": "b6653b2344e8d31ea2b48a0e6d01d5dc76f86e7c0a05d8df87473407f9b03fd6"
+  },
+  "postimage": {
+    "path": "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs",
+    "beforeSha256": "9747ccc1ff0b601bbcc9988095b4efe3d8c8f34eb09c767a45c314d5e642acf6",
+    "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate-revision2/postimages/implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs",
+    "sha256": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f"
+  },
+  "proof": "Exact full-file comparison proves sole deletion of unreachable inner (ManagerFinished,_) branch. Earlier top-level applyEvent ManagerFinished handles both live and retired owners, so behavior and totality are unchanged.",
+  "acknowledgement": "Initial source/type-readiness review missed overlapping-pattern warning; actual strict compiler failure retained and no semantic test pass asserted.",
+  "unchanged": [
+    "Cabal3050/Main67b and all34fixed/32seedcontrols.",
+    "Warning/error flags and original lifetime/parent/output/state guards.",
+    "Frozen original9747 source and failed actual9318 report."
+  ],
+  "qualification": "Root same fixture compiler/control retry pending; no reviewer execution or primary source mutation.",
+  "limits": [
+    "Not a connected provider/authentication or native readiness claim.",
+    "No allocation controls were reached in failed first GREEN; outer immediate group-absence succeeded this run per Root observation, distinct from prior API-baseline cleanup refusal."
+  ]
+}

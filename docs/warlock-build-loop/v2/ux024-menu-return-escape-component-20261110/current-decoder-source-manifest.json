@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "kind": "ux024-current-menu-key-decoder-not-stale-oneof",
+  "posts": [
+    {
+      "path": "implementation/warlock/src/HttpPopup.elm",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision5-current-key-decoder/preimages/implementation/warlock/src/HttpPopup.elm",
+      "beforeSha256": "015440b4650ef0bc7456478cb3201c0ccf6ba0c378093be2d63b6a4df1db77e9",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision5-current-key-decoder/postimages/implementation/warlock/src/HttpPopup.elm",
+      "sha256": "e3b20ed07ce33d23dfebb7d9ba368d210ec01597920f819fc061421f80d24589"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision5-current-key-decoder/candidate.patch",
+    "sha256": "1d99d3fa27298fd510847b1a4d1ffce41f99e5f4b927d05652bc5b5b7cb98af9"
+  },
+  "sourceCause": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision5-current-key-decoder/source-cause.json",
+    "sha256": "b398b3b4adf5e3414162741eed60a75d25a5192297199c496c3ae8fa87c8f972"
+  },
+  "testsFirst": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/tests-first/ux024-owned-escape-dom.cjs",
+      "sha256": "bbc097acb99a950eb24cd25f1fb8449e06d90d96dc4b279b7ab35788b8196783"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision3-fresh-target-observation/actual-root-report.json",
+      "sha256": "c940a977f4f8434c473427878e11c6f085bb1bc2c233ff63723f641d4a8796b6"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision4-keyed-update-contrast/ux024-owned-escape-dom.cjs",
+      "sha256": "ffc7a807debe79ef522f0f2cc2bb3980a3047e8f31c2f57e17f72ead75e16c4b"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/revision4-keyed-update-contrast/actual-root-report.json",
+      "sha256": "a5d8ab249909040a0574493925330f2aa41e78b27c1c0c7bbfdb6e3facc50255"
+    }
+  ],
+  "unchangedFixture": {
+    "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ux024-menu-dom.cjs",
+    "sha256": "d6b4983292ca45c94f4de56d4ebe6943c9d9e649661e08a0aa98e9c9ea2eb6a9"
+  },
+  "exactDelta": "Only top-level custom key decoder selection: replace D.oneOf with field-key/andThen. Existing menuTabDecoder/menuEscapeDecoder/update/native wire/guards byte-identical.",
+  "qualification": "Rebuild current123input/109Elm threeHTML; unchanged original21+32 and four contrast additions must pass. No fixture relaxation/kernel upgrade/native acceptance.",
+  "authorExecuted": {
+    "tests": false,
+    "compiler": false,
+    "targetImport": false,
+    "native": false,
+    "primaryWrites": false
+  }
+}

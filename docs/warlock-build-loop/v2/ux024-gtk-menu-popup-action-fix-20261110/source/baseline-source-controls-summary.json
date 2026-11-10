@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "rawActualReceipt": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/actual-root-baseline-source-controls.json",
+    "sha256": "91caa39851198df010a8c4542c6a83cccf3c1120cdcd1a218ada18c811696ed8"
+  },
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/tests-first/test_translator_action_contract.py",
+    "--candidate",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "--baseline",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "--evidence",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence",
+    "-v"
+  ],
+  "exit": 1,
+  "testsRun": 8,
+  "failures": 4,
+  "errors": 0,
+  "rawBytesPreserved": true,
+  "notCopiedReason": "Raw failure text repeats entire source files; retained immutable original by exact hash. No assertion or output rewritten."
+}

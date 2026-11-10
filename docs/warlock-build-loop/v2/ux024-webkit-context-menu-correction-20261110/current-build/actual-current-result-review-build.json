@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-current-mvp-build-and-bounded-cpu-controls",
+  "candidateSha256": "d5b5d7c8c866d5679205cb9a7fc79e3bc2af51e30e3ff7bd451baa336fd9edea",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/report.json",
+    "sha256": "63389766709141a6226d7685c1df482ec8ae9657bf082b5aa125bff215187222"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/build.stderr",
+      "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/build.stdout",
+      "sha256": "269784e16865747f411835dae15e779a6566876d448e13ac60422cfd303021db"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/cpu-foreign-endpoint-refusal-controls.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/cpu-foreign-endpoint-refusal-controls.stdout",
+      "sha256": "f3c72cf35b99432f6903b9eacaa190e31ba1c47f86288e955d99fbbf64475cea"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/cpu-ui-webkit-controls.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/cpu-ui-webkit-controls.stdout",
+      "sha256": "d9c76485e7c20ca1f2692b9b7a0015752b5c5db1306cf0fc810ea16a7e167d9f"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/fixed-builder-controls.stderr",
+      "sha256": "2fdf7a432a53fceb691486981be60fcb65192fbaa6b7627e6b3fe3a0c95917bf"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/fixed-builder-controls.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/list-ui-webkit-controls.stderr",
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/list-ui-webkit-controls.stdout",
+      "sha256": "5b7d9a0b8a188463335d59d12071e454ad36b3f96c9979c0f0c09c31602e6e80"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/list-warlock-ui-owner.stderr",
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/logs/list-warlock-ui-owner.stdout",
+      "sha256": "01c02986701cd4c34fd013d0f613e5c16ec5988a4e7cd29a6d26d027d3644b47"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/installed-signal-contract.json",
+      "sha256": "3c240f857fb1c326c1d5543eebc3cd37c2d3fa6bd480fbd7c7637128855f9bdb"
+    }
+  ],
+  "observations": {
+    "allSixCommandsExit0": true,
+    "forcedCleanup": false,
+    "managedInputsChecked": 273,
+    "rawSourcePinsChecked": 271,
+    "liveAndStageHaskellCount": 260,
+    "mvpSha256": "bcc6c6f9f750fa8bd7ca254762208f2147697a5238ccb63ff29f4364712f7242",
+    "freshCompiledImages": {
+      "warlock-ui-owner": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+        "device": "57",
+        "inode": "7251286",
+        "size": "37741456",
+        "sha256": "53edd3008bef79e2d2946321750c9ea2a0ded775e43df8efabac32ee84d43966",
+        "executed": false
+      },
+      "ui-webkit-controls": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794296597664071866/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+        "device": "57",
+        "inode": "7251300",
+        "size": "41164256",
+        "sha256": "015d5ef48349a5dfc9445102e60a75d2487018f53ee4683ca5bb7f42baf579fa",
+        "executed": true
+      }
+    },
+    "installedWebKitHeaderGirUnchanged": true,
+    "twoExactCpuSentinelsReached": true,
+    "rawCleanupQualified": false
+  },
+  "limits": [
+    "Fresh owner and controls compiled; owner not executed. Only allocation and endpoint-refusal CPU modes ran, no stock-context-menu callback behavior observed.",
+    "Prior current3HTML/provider/ABI proofs remain separate unchanged source evidence; actual new native recording still required.",
+    "Raw cleanupQualified=false preserved; no native/originalUX024/EARS/release acceptance. No reviewerQA or effects."
+  ]
+}

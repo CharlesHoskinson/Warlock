@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "kind": "foreign-toplevel-strict-ghc-source-correction",
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate/manifest.json",
+    "sha256": "c5622f3520481cf43362aeae8aa08361dbc459c80977746d02cad26a4b0cf8fb"
+  },
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs",
+      "beforeSha256": "9747ccc1ff0b601bbcc9988095b4efe3d8c8f34eb09c767a45c314d5e642acf6",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate-revision2/postimages/implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs",
+      "sha256": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate-revision2/source.patch",
+    "sha256": "373720b484aa808f743a92cd86a0aadfd9d7767a0efcddf9be0fd9b7d22c2943"
+  },
+  "reason": "Actual strict GHC rejects unreachable ManagerFinished inner case; existing first function equation handles it. Remove only redundant case; no warning flag change or behavioral/oracle change.",
+  "unchangedCabalSha256": "3050e7db1b2d1c1c5f4b7089a16cffd3d72c4d96c520a81e3de279706f4c02e4",
+  "unchangedFixtureSha256": "67b42959060ed6e62809d8498f1540a01dbac863200cf5bbc39f6599ff27a8af",
+  "actualFailingReport": ".warlock-contributor/ux024-menu-focus-build-1794269316726004398/report.json",
+  "testsExecutedByPreparer": false,
+  "nativeAcceptance": false
+}

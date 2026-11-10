@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "role": "Root",
+  "reviewer": "root-workflow-20261109",
+  "disposition": "accepted",
+  "candidateSha256": "616722e872a24f428522c620bbc5dcd7c612b55a56a966f6bff05bdf25af19b6",
+  "integrationRevision": "72ee91bb97edebaecc22e0f633b6aefc715ecea3",
+  "baselinePluginSha256": "997faca4426fd851a5ffe84781d377377fd79c89c862f766b32577158e6d507d",
+  "resultPluginSha256": "67ef4cbc686cacdb48cfd1662ffd43900fc257ae3a02696c8c8fc1c24364e6c3",
+  "diff": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-doc-reference-v1/documentation.patch",
+    "sha256": "8406a9a5ae3026f17e088568bb6e68f2c56fe949013001fae118658cd0a46532"
+  },
+  "reviewedUTC": "2026-11-09T21:32:13.555853+00:00",
+  "reason": "Reviewed exact two-doc diff against installed6835 schema and actual refused/corrected payloads. Protected before/proposed probes observed missing reference/link becoming present, with same8 schemaexamples passing and same product/guards/authorization. No runtime/guard/version change."
+}

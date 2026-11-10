@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "candidateSha256": "00394dea1d3945770baaedce62d6e9ca0db2d8070b862860ced4386de2e5f0ca",
+  "scope": "cpu",
+  "disposition": "accepted",
+  "reviewer": "build_audit",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/digest-writer-v2-after-cpu-failure/prepared-digest-writer-v2-cpu/assembly.json",
+      "sha256": "06cfce1899f20832979cb1eeecf43d0509b1b5cbe2a2785086bcf5db80507330"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/digest-writer-v2-after-cpu-failure/prepared-digest-writer-v2-cpu/actual-root-copy.json",
+      "sha256": "2069f23f211ed5563cadde2cde67d778a4494074d75c865cbab2ee960144ed43"
+    }
+  ],
+  "limits": [
+    "Five actual copies/272 current inputs/259 Haskell/current18 owned sources verified.",
+    "Same2targets/2fixedCPU suites; Main1698 writer lifecycle+failure diagnostic only, seven existing assertions retained.",
+    "Failedb78 preserved without expected-red link; no observedpass or native result inferred.",
+    "Reviewer performed no imports/tests/FD/native effects."
+  ]
+}

@@ -1,3 +1,11 @@
+# Current delivery workflow
+
+Use the contributor journey procedure in `plugins/warlock-contributor/references/redesign-flow.md`. The current human instruction authorizes workflow correction followed by productive rearming within actual authorization.
+
+Sol remains the sole coordinator. Root owns integration and protected execution. Assign existing roles to distinct tasks on one active journey. No staffing floor, advisor quorum or timer receipt blocks a ready protected action.
+
+Keep original requirement and scenario identities, literal oracles, deadlines, acceptance obligations and protected launchers unchanged. Preserve records, foreign work, failed evidence, stops and clocks. Workflow repair cannot accept EARS or create new authorization.
+
 # Warlock implementation loop
 
 Effective October 7, 2026, following the [nine-reviewer AAR](../../warlock-workflow-review/20261007/AAR.md). These instructions supersede v1's scheduling, derivative-copying, reporting and automatic validation sequence. Preserve historical source and evidence. The user requested implementation, not another research or infrastructure program.
@@ -23,24 +31,9 @@ Do not transfer acceptance to a port or hide an authored forbidden-language
 implementation behind a wrapper. Preserve original242/417 text/identities and
 all stop histories; evidence remains bound to its original source tuple.
 
-The user authorized ten agents to design the architecture, map dependencies and
-best practices, author/verify the interface, align EARS/OpenSpec and deliver the
-full workflow plugin. All use Scrapling for online research and unique living-wiki
-notes, coordinated by AgentBus. Root serializes protected compiler/model/native
-QA. The user explicitly authorized a Muse-supervised preparation loop to finish
-the readiness work needed to arm the final loop. Preparation mode is now armed;
-it permits architecture/interface source development, tooling/plugin delivery,
-model correspondence and meaningful fuzz/property preparation with root-owned
-protected checks. Final product implementation and native acceptance campaigns
-remain gated by independently reviewed readiness under the user's existing
-conditional rearm authorization. To establish readiness, root may conduct bounded
-isolated native capability trials after reviewing actual source, current
-provider/ABI, private runtime and owned cleanup. Use a dedicated original-scenario
-record and the unchanged serial native launcher, safety guards and stop histories;
-do not change the main desktop or accept unobserved obligations. Future pauses
-remain binding.
-Readiness, preparation checks and timer operation do not accept native behavior
-or a release. See STATE.preparationLoop for the actual activation receipts.
+Historical design and preparation campaigns remain evidence. They do not prohibit currently authorized production implementation. Native execution requires actual source, provider, ABI, private runtime and owned cleanup. Review readiness at the operation that needs it. Missing native readiness does not block independent CPU work.
+
+A CPU, model or preparation receipt cannot accept native behavior or a release. Respect human pauses and the actual operating deadline.
 
 ## Current source and inputs
 
@@ -66,44 +59,22 @@ Use [quint-llm-kit](https://github.com/quint-co/quint-llm-kit) for behavioral mo
 5. **Record the result.** Add the source revision, immutable evidence reference/hash, exact oracle, evidence scope, missing observations and reviewer disposition to the scenario row. Close a scenario only when its own obligations pass, and a requirement only when all applicable scenarios and verification obligations pass. Source changes invalidate only relevant evidence, not every unrelated accepted scenario.
 6. **Commit the actual delta and continue.** Publish owned changes in a normal batch under existing authorization. No separate publication-receipt commit, no copied QA trees, no new public version counters. Retain failed reports locally and commit the minimal auditable report/evidence needed by the claim. Do not discard evidence required for reproducibility.
 
-## Hourly EARS delivery target
+## Delivery evidence
 
-User instruction, November 1: target two to three whole original EARS closures
-per hour. Aim for three and plan for at least two, selecting complete user-visible
-requirements whose actual implementation and original verification can finish.
-Keep the full 242-requirement / 417-scenario goal and existing WIP limits.
+Report the original journey step now working, the exact failed observation and the next product action. Derive accepted totals from the canonical ledger. Keep whole-requirement acceptance separate from scenario verdicts and current-source requalification.
 
-Record hourly actuals against the baseline in `STATE.earsDeliveryTarget`.
-Count a whole requirement only after every applicable original scenario and
-verification obligation is met, with immutable source-bound evidence and an
-independent accepted review. Report scenario verdicts, partial observations and
-whole current-stack requalifications separately. Requalifying a previously
-accepted original does not increase the net-new whole count. Builds, commits,
-models, setup and documentation are not EARS closures.
-
-Root and the Sol advisor keep the next complete requirements ready; the UX and
-performance owner supplies the relevant criteria. If the target is missed,
-report the actual count and exact missing observations, then reprioritize concrete
-implementation or original acceptance work. Preserve all original deadlines,
-failed evidence, native/AT/IME/hardware/resource/release obligations and stopped
-histories. Do not weaken acceptance, manufacture progress, add a new approval
-council or pause the active goal to satisfy a throughput target.
+Historical hourly targets remain management context. Do not use a numeric closure quota to select easy CPU work or weaken an original oracle. Builds, commits, models, documentation, health and agent counts do not constitute EARS closure.
 
 ## Live usability cadence
 
 User instruction, November 1: usability must be checked regularly in the actual
 built product. After each integrated user-visible slice, exercise the applicable
 current Elm/Haskell build in the available Omarchy environment using real input
-and inspect the rendered result. During sustained implementation, run a bounded
-live MVP journey at least hourly when the test environment is usable. Record the
+and inspect the rendered result. During sustained implementation, prioritize the next bounded native journey when its actual prerequisites hold. Record the
 exact built source, input route, visible behavior, failures and next fix. Compile,
 model and replay results alone do not establish a usable product.
 
-Keep all fifteen authenticated roles active through bounded reconciliation and
-resumption: ten base Terra workers (five using Quint Kit), three Gemini workers,
-the Sol HIGH advisor and the UX/performance owner. Root retains sole integration
-and protected compiler/model/native/VM execution while workers continue assigned
-source, QA, EARS, UX and MVP work in parallel.
+Assign existing authenticated roles to distinct source, QA, EARS or UX tasks on the active journey. Record actual running work only when a process birth or managed handle establishes it. Do not resume idle identities merely to satisfy a staffing count. Root retains protected execution and integration.
 
 Use the existing preservation, ownership, readiness and protected execution rules.
 Retain every original deadline and failed attempt; never lengthen an old trial to
@@ -152,9 +123,9 @@ User authorization added October 29, 2026: keep the [Astra-supervised architectu
 
 ## Stop waste, preserve progress
 
-After two consecutive qualification-only iterations, or 45 minutes without a production fix or an original-scenario verdict, stop expanding that investigation. Record the exact missing observation and pick another bounded mandatory product slice. The timer never authorizes bypassing a safety boundary. A failed scenario is useful diagnosis, not a delivered feature.
+After two consecutive qualification-only iterations, or 45 minutes without a production fix or an original-scenario verdict, stop expanding that investigation. Record the exact missing observation. Correct the dependency or hypothesis in the same journey. Return to its next product action. Preserve every elapsed clock, failed attempt and stop. The timer never authorizes bypassing a safety boundary. A failed scenario is useful diagnosis, not a delivered feature.
 
-Do not mark the whole goal blocked merely because this threshold was reached. Follow the host tool's repeated-blocker rule; continue independent required product work where possible. Do not pause the goal without an explicit user request. No new review council, skill installation, plugin or broad research unless it resolves a concrete implementation obstacle or the user requests it.
+An internal repair must reproduce the blocker and include a regression. Use the existing two-iteration or 45-awake-minute intervention. Do not expand into another repair framework. Do not mark the whole goal blocked merely because this threshold was reached. Follow the host tool's repeated-blocker rule; continue independent required product work where possible. Do not pause the goal without an explicit user request. No new review council, skill installation, plugin or broad research unless it resolves a concrete implementation obstacle or the user requests it.
 
 Reports lead with what the user can now see/do, original IDs/scenarios advanced, what failed, and the next code change. Report available incremental time/token telemetry; call unavailable figures unavailable. Count neither commits, copied files, models, check totals nor administrative closures as GUI features. Report at least every 30 minutes across the loop, and keep active-turn commentary timely.
 
@@ -196,104 +167,20 @@ Maintain core limit 1, valid parent Wayland socket, private owned session direct
 Only the host goal tool arms automatic continuation. These files are instructions, not a daemon. Keep the full goal active until achieved, explicitly paused/cancelled, budget-limited, or blocked under the tool's actual rule.
 
 
-## Recurring team advisor
+## Advice, staffing and recovery
 
-User instruction, November 1: keep GPT-6.1 Sol with high reasoning as the 14th
-external agent alongside ten Terra agents (five Quint-LLM-Kit roles) and three
-Gemini Argon agents. Sol advises across the work threads on architecture,
-delivery priorities, original EARS evidence and integration; Root remains the
-sole coordinator, integrator and protected executor. Advisory findings are not
-acceptance or an additional approval gate.
+Sol remains the sole coordinator. Root owns protected execution and integration. Use architecture, UX/performance and EARS specialists for named deliverables. Independent candidate and acceptance reviews retain their required evidence boundaries. Advisory findings must identify a concrete defect. They do not add a second approval chain.
 
-Include the advisor in every team liveness reconciliation and bounded resumption.
-Reuse the existing authenticated `sol-docs` identity and its recorded persistent
-session; check the previous actual CLI process and terminal log before resuming.
-Record the new live handle and cutoff, and distinguish running jobs from queued
-assignments or completed turns. Keep canonical STATE/HANDOFF and the team brief
-current. Preserve keys, the single coordinator, exact path ownership and all
-original source/evidence boundaries. A bounded turn ending does not remove this
-recurring role from the active goal.
+Read available advice at a relevant product boundary. A missing, stale or repeated audit does not block authorized work on a known gap. Preserve prior regulator and model decisions as historical evidence. Do not require expired schedules or a new routine model decision before every product step.
 
-## Recurring UX and performance owner
+Keep one journey and one protected job active. Match staffing to distinct tasks. Separate credential permission, a working process and an accepted deliverable. A census, credential renewal or wake acknowledgement is not progress.
 
-User instruction, November 1: keep an additional 15th external agent responsible
-for smoothness, UX and latency across the work threads. This specialist owns and
-maintains `UX-PERFORMANCE-ACCEPTANCE.md`, with measurable interaction, visual
-feedback, startup, frame pacing and whole-process resource criteria. Use the
-original frozen workload budgets and QA022/023, REN022 and REV020/021 obligations;
-preserve existing numeric limits, deadlines and evidence. Distinguish binding
-criteria, proposed targets and unmeasured results explicitly.
+Resume the existing thread after capacity or process failure. Preserve drafts, pending handles, source pins, selection history and actual authorization. Check process births when needed to prevent duplicates. Do not create another coordinator or relabel a stopped record.
 
-Include cold/warm state, hardware/output metadata, p50/p95/p99, raw samples,
-sample counts, instrumentation overhead, stress/soak conditions and regressions.
-Renderer, HTTP or queue receipts are separate from independent presentation.
-Software VM results do not certify native hardware, high-refresh, AT/IME or
-release performance. Missing required data is not a pass.
+Operate while AFK within actual human authorization and applicable delegation. Respect a later pause, deadline or scope change. A model timeout supplies no authorization. Routine legal renewal does not require invented per-renewal human permission. Do not reuse expired credentials or silently extend a deadline.
 
-Keep this owner in every census and bounded resumption, using the recorded
-`terra-browser` identity/session with role `ux-performance`. Root remains sole
-coordinator and protected executor; the specialist sets criteria, reviews actual
-work and prioritizes concrete fixes through the existing contributor and QA
-workflow. The ten base Terra agents, five Quint roles, three Gemini agents and
-Sol HIGH advisor remain in the loop. Revalidate prior process/terminal state
-before resuming; preserve keys and avoid duplicate sessions or coordinators.
+After each completed slice, perform one bounded RSI probe. Record tested adoption, evidenced no-change or a concrete blocker. Preserve its comparison and regression evidence. RSI does not trigger itself, reset delivery clocks or replace the next product action.
 
-## Muse regulation and recovery
+The canonical journey procedure governs intervention and current operation. Earlier staffing floors, preparation-only campaigns and expired regulator-consumption schedules remain historical context.
 
-Standing user instruction, October30: Muse regulates original EARS fidelity and
-checks continuity every20minutes through an independent user systemd timer.
-Adopt the three reviews in the machine-local `muse-supervision` runtime described
-in AGENTS.md. Each check names original requirement/scenario/oracle, actual source
-delta, evidence tier, next implementation/original-acceptance action, remaining
-observations and preserved stop history. Whole-EARS and release gates remain
-separate from named scenarios and component/model success.
-
-Reconcile STATE selection with the actual participant record and current source.
-The regulator review found the accepted UX009 selection stale; it was corrected
-to the current cancellation participant without changing an oracle or resetting
-progress. The superseding user language decision requires replacement Elm/Haskell
-components against the same cancellation/admission/settlement contracts. Existing historical prototype snapshots remain reference evidence; reviewed Elm
-GUI source is eligible for reuse with current-source qualification.
-Do not repeat stopped helper/model qualifications or continue forbidden-language
-production integration. Preserve all source-bound historical verdicts; qualify
-replacement behavior rather than transferring those verdicts automatically.
-
-Muse owns no product integration or acceptance authority. Its dedicated AgentBus
-identity publishes findings. Ordinary recovery uses exact-thread `codex queue`,
-not arbitrary keystrokes or a second coordinator. A retained nonce must be
-acknowledged by the configured root and correlated with actual transcript input.
-The separately observed initial UI steering test is a continuation test, not a
-Codex-process replacement or proof of recovery from every capacity failure.
-Preserve drafts, live handles, protected QA ownership and original deadlines.
-Model capacity remains an external limit; retry only with bounded backoff and
-never override a user pause. Local timer operations and lint are support evidence.
-
-### Current ARM EARS delivery regulator
-
-User instruction, November 5: include the independent EARS regulator in every
-completion-loop iteration. The current machine-local timer is
-`warlock-muse-ears-20261105.timer`. It runs a bounded, read-only
-`muse-wonder-1.0` HIGH audit every 20 minutes, with Contributor mode off.
-Its runtime and receipts are in
-`~/.local/state/warlock-team/20261105/ears-regulator/`. It expires at
-2026-11-06T19:07:31.942628+00:00 and respects user pause and stop instructions.
-
-Root and Sol must consume the latest completed audit before selecting the next
-implementation action or reporting closure. Record each finding's disposition
-and link the original requirement ID, scenario and unchanged oracle to the
-actual source delta, current-source build and behavioral evidence. Turn confirmed
-gaps into concrete implementation or verification tasks. Diagnose uncertain
-findings before changing code. A missing or failed audit remains an open review
-obligation and must not prevent work that repairs a known gap.
-
-Keep implementation, model checks, compiled component checks, original EARS
-acceptance, native observations and release acceptance distinct. A passing build
-or Quint model cannot close a whole EARS requirement. Root remains the sole
-integrator and protected QA executor. The regulator requests attention and
-reports findings. It cannot approve integration or grant acceptance. Queued
-attention alone does not prove that automatic recovery reached the root.
-
-The first completed audit on November 5 reported stalled delivery for
-ELM-TEA-004. Its source-bound findings and Sol's response are retained in the
-machine-local audit and `terra-team/ears-audit-response.json`. Preserve those
-findings until actual implementation and verification resolve them.
+All source writers, including manual CAS, must follow the [canonical candidate-input edit boundary](../../../plugins/warlock-contributor/references/redesign-flow.md#before-changing-candidate-inputs). Use actual selection and launched-job receipts, retain the same participant lock through CAS, and close matching canonical terminal/consumption before changing launched inputs. Disjoint new terminal evidence and idempotent copies stay available. This boundary does not fence arbitrary external shell edits.

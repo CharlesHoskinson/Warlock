@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted",
+  "manifestSha256": "3b3d7513bcc58c4ed485a08ce9191e8a434e833ca588f2ab805502176f68b53a",
+  "scope": "Exact passive diagnostic cleanup preserving reviewed proc/lifecycle and input guards",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/native9-clean-diagnostic-removal/revision2-preserve-proc-guard/manifest.json",
+      "sha256": "3b3d7513bcc58c4ed485a08ce9191e8a434e833ca588f2ab805502176f68b53a"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/native9-clean-diagnostic-removal/revision2-preserve-proc-guard/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "sha256": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/native9-clean-diagnostic-removal/revision2-preserve-proc-guard/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "daffaa93eb4afb08bc3f1e6b8faa7e86cfc4e4e14e5f6d0d3359121920650d71"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/native9-clean-diagnostic-removal/revision2-preserve-proc-guard/source-correspondence.json",
+      "sha256": "776f641a82c9900a695f52fda50bfabe29e8ac080c1e32906520430ad01153a3"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/native9-clean-diagnostic-removal/revision2-preserve-proc-guard/claims-copy-plan.json",
+      "sha256": "e3bb96db2e713670968274d06171c212a5818920cc0112aeb4d50699671107f2"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794313984207426649/report.json",
+      "sha256": "0611b709a6de3a6dfefa5c0790c91c330adb8794c39f7b2bdc2eaaa700fd0d13"
+    }
+  ],
+  "verified": {
+    "WebKitRestoredExactDdeCleanBaseline": true,
+    "procHeldFdAndLiveStateFunctionExact": true,
+    "ordinaryRegularExact": true,
+    "consumeAttestAndOtherPhaseMethodsExact": true,
+    "coalescedFinalPreInputAttestationRetained": true,
+    "onlyTraceExtractorResponseTelemetryReceiptKeysAndPacketNamespaceRemovedOrChanged": true,
+    "allProductAndSupportPinsPreserved": true,
+    "deadlinesNineInputsSixteenPhaseFrameLimitsUnchanged": true,
+    "oldD63CleanupSuperseded": true
+  },
+  "limits": [
+    "Root must consume/canonically close native52 and assess its mixed diagnostic result before live CAS.",
+    "No reviewer imports/tests/QA/native or primary effects.",
+    "Fresh clean images and actual qualification required; diagnostic images cannot be relabeled.",
+    "No original/native UX024/EARS acceptance follows from cleanup source or diagnostic52 pass."
+  ]
+}

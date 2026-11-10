@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "rawRun": ".warlock-contributor/current-arm-ux003-journey-1794145047017965984",
+  "catalogRoots": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux003-journey-1794145047017965984/run/ux003-catalog",
+      "device": "58",
+      "inode": "2378763"
+    }
+  ],
+  "desktopEntries": [
+    {
+      "name": "ux003-hidden.desktop",
+      "sha256": "a5b65df9e0de27ad9a72b13aafb8e5b62c21d757a95c88bd6ed077e702b82029",
+      "contents": "[Desktop Entry]\nType=Application\nName=Hidden Recorder\nExec=fixture-recorder\nNoDisplay=true\nTerminal=false\n"
+    },
+    {
+      "name": "ux003-recorder.desktop",
+      "sha256": "999a90aec9d80ee70e2caa8175ae37dcd4a9b537feaadcb579ec2581f1c2141b",
+      "contents": "[Desktop Entry]\nType=Application\nName=Owned Recorder\nExec=fixture-recorder\nTerminal=false\n"
+    }
+  ],
+  "applicationPlans": [
+    {
+      "entry": "ux003-recorder",
+      "sourceSha256": "999a90aec9d80ee70e2caa8175ae37dcd4a9b537feaadcb579ec2581f1c2141b",
+      "exec": "fixture-recorder",
+      "argv": [
+        "two words",
+        "",
+        "café"
+      ],
+      "root": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794037285027049547/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/application-argv-fixture/build/application-argv-fixture",
+      "rootDevice": "58",
+      "rootInode": "1520187",
+      "pins": [
+        {
+          "path": "/application-argv-fixture",
+          "device": "58",
+          "inode": "1520195",
+          "kind": "regular"
+        }
+      ],
+      "path": "application-argv-fixture",
+      "links": [],
+      "size": "12900272",
+      "sha256": "dd13427e3e3b508aed092bd3972bac9c75e640c4256d37c5fdae88d5b59d0831"
+    }
+  ],
+  "applicationAttachment": true,
+  "publishedCatalog": {
+    "protocolVersion": 3,
+    "binding": {
+      "lifetime": "9007199254740993",
+      "session": "9007199254740995",
+      "frontend": "9007199254740997"
+    },
+    "kind": "application-catalog",
+    "requestId": "3",
+    "snapshot": {
+      "catalogProtocol": 2,
+      "lifetime": "9007199254740993",
+      "generation": "1",
+      "entries": [
+        {
+          "id": "ux003-recorder",
+          "name": "Owned Recorder",
+          "iconHint": "application-x-executable",
+          "wmclass": "",
+          "genericName": "",
+          "keywords": []
+        }
+      ]
+    },
+    "preferences": {
+      "revision": "1",
+      "identities": []
+    }
+  },
+  "publishedLaunch": {
+    "request": "1",
+    "lifetime": "9007199254740993",
+    "generation": "1",
+    "entry": "ux003-recorder",
+    "catalog": {
+      "protocolVersion": 3,
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "kind": "application-catalog",
+      "requestId": "3",
+      "snapshot": {
+        "catalogProtocol": 2,
+        "lifetime": "9007199254740993",
+        "generation": "1",
+        "entries": [
+          {
+            "id": "ux003-recorder",
+            "name": "Owned Recorder",
+            "iconHint": "application-x-executable",
+            "wmclass": "",
+            "genericName": "",
+            "keywords": []
+          }
+        ]
+      },
+      "preferences": {
+        "revision": "1",
+        "identities": []
+      }
+    }
+  },
+  "application": {
+    "request": "1",
+    "exit": 0,
+    "custody": "Available",
+    "containment": "BeforeSignalLeaderExited",
+    "stdoutHex": "5b2274776f20776f726473222c22222c226361665c323333225d0a",
+    "stderrHex": "",
+    "operationSucceeded": true
+  },
+  "recordedArguments": [
+    "two words",
+    "",
+    "café"
+  ],
+  "actualRecorderStdoutHex": "5b2274776f20776f726473222c22222c226361665c323333225d0a",
+  "stdoutInterpretation": "Haskell getArgs Show list uses decimal escape233 for é; raw bytes bind the actual three recorded arguments, not JSON syntax.",
+  "searchTypingObserved": false,
+  "noSensitiveUiConfigCopied": true
+}

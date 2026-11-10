@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "kind": "ux024-owned-key-translator-native-popup-product-fix",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "beforeSha256": "d985c257af1e3660507b6311db8dc09ad431ee856c1d76dc9c91a4357e58c56f",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "f00f74e72151e8863121be563c934e1251d67a2e27ba7e51258f5fccd0902a92"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "beforeSha256": "612981e8250cc7c1bc42da9a5d37d81f51ce6544e027f8565bdda59ffb0552c1",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "sha256": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846"
+    },
+    {
+      "path": "tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "beforeSha256": "0a516b5bee2e31e65424c1c97269bfc87df418530da1dc582a5ab02dafec687f",
+      "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/preimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "733b3a5c894d9b4ce2805385892f098d4f15d33946466a76cae6f3746dcfe65a"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/candidate.patch",
+    "sha256": "eca82ff2f35662f109167a8163daddc39eb40edbfeb0ca54b63a48f155bf510a"
+  },
+  "productionOnlyDelta": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/production-base-to-fix.patch",
+    "sha256": "8510699873c33e3a12a1f6e1957e4b445dc1a14a658b44d9fce43048bc457d4b"
+  },
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/tests-first/manifest.json",
+    "sha256": "06d29e62fc67f0c83524de956ac0232a56e61ba5983b8e47b24c14a575228968"
+  },
+  "sourceRoute": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/source-route-and-rationale.json",
+    "sha256": "9c84eb44247aa1427d62c74989fb48ef2eb46df0b69c7436ad6e5c77216829be"
+  },
+  "installedAbi": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/installed-action-contract.json",
+    "sha256": "440d1bd80eabe319755a43d1f574650fbf9ebd0011f17d1cda5abf7d59c7c1bc"
+  },
+  "productionBaselineMvp": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "sha256": "bcc6c6f9f750fa8bd7ca254762208f2147697a5238ccb63ff29f4364712f7242"
+  },
+  "temporaryRollback": {
+    "WebKitSha256": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+    "WebKitExactOriginalDDE": true,
+    "runnerAllFunctionClassAstsEqualD14": true,
+    "runnerOnlyScalarComparedToD14": "PACKET ux024-original-menu-focus-v2 -> ux024-original-menu-focus-v4-action-fix",
+    "Mvp": "Restore BCC production API and existing context-menu policy, add only qualified translator discovery/action suppression. No diagnostic sink/counters/logging remains."
+  },
+  "packetPath": ".warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v4-action-fix/packet.json",
+  "preserved": [
+    "All Elm GUI/menu policy, DOM preventDefault and exact scope/lease/publication checks",
+    "GTK key propagation and Escape capture; translator editor/IME operations unchanged",
+    "Existing process-pinned callback custody and borrowed view lifetime",
+    "Original9 transactions/28+2/16frames/phasebudget and all native acceptance oracles",
+    "Failed36/38/40 reports/pixels/diagnostic bytes and WIPsource artifacts",
+    "No Main/Desktop/renderer input or native action availability change"
+  ],
+  "authorTestsExecuted": false,
+  "authorCompilerExecuted": false,
+  "authorNativeExecuted": false,
+  "primaryWrites": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

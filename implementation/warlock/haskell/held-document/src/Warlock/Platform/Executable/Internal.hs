@@ -1,10 +1,12 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 module Warlock.Platform.Executable.Internal
  (ExecutableLease, HeldExecutable, LeaseRole(..), LeaseState(..), LeaseError(..)
- ,newExecutableLease, acquireExecutableLease, acquireExecutableLeaseWithHooks, issueReadyExecutable, retireExecutableLease
- ,executableLeaseState, HeldBorrow, prepareHeldBorrow, activateHeldBorrowWhile, tryHeldBorrowNotAcquired, tryReleaseHeld, releaseHeldBorrow, borrowHeld, borrowHeldInterruptible, borrowHeldWhile, retireHeld) where
+ ,newExecutableLease, acquireExecutableLease, acquireApplicationExecutableLease, acquireExecutableLeaseWithHooks, issueReadyExecutable, retireExecutableLease
+ ,executableLeaseState, observeHeldRole, HeldBorrow, prepareHeldBorrow, activateHeldBorrowWhile, tryHeldBorrowNotAcquired, tryReleaseHeld, releaseHeldBorrow, borrowHeld, borrowHeldInterruptible, borrowHeldWhile, retireHeld) where
 
 import Control.Concurrent.MVar
+import Data.Bits ((.&.))
+import System.Posix.Files (getFdStatus,fileMode)
 import Control.Exception (SomeException, SomeAsyncException, fromException, mask, onException, throwIO, try, uninterruptibleMask_)
 import qualified Data.ByteString as B
 import System.Posix.IO (closeFd)
@@ -12,7 +14,7 @@ import System.Posix.Process (getProcessID)
 import System.Posix.Types (Fd(..))
 import Warlock.Platform.Resolver.Internal (Root,Pin,Link,Resolution,ResolveError(..),Hooks,clone,noHooks,resolveSnapshotVia)
 
-data LeaseRole = UiImage deriving (Eq,Show)
+data LeaseRole = UiImage | ApplicationImage deriving (Eq,Show)
 data LeaseState = EmptyLease | BuildingLease | PendingLease | ReadyLease | ClosingLease | ClosedLease | MovedLease | UncertainLease deriving (Eq,Show)
 data LeaseError = LeaseBusy | LeaseClosed | LeaseCloseUncertain deriving (Eq,Show)
 data Slot = Empty | Building | Pending Fd | Ready Fd Resolution LeaseRole | Closing Fd | Closed | Moved HeldExecutable | Unknown Fd
@@ -20,7 +22,7 @@ newtype ExecutableLease = ExecutableLease (MVar Slot)
 data HeldState = Live Integer | HeldClosing | HeldClosed | HeldUnknown
 data BorrowRelease = BorrowNew | BorrowActivating | BorrowNotAcquired | BorrowPending | BorrowReleased | BorrowUnknown
 -- Exactly one package-private owner; no external constructor from an FD.
-data HeldExecutable = HeldExecutable Fd (MVar HeldState)
+data HeldExecutable = HeldExecutable Fd (MVar HeldState) !LeaseRole
 -- Opaque per-acquisition release state; constructor never leaves this module.
 data HeldBorrow = HeldBorrow Fd (MVar BorrowRelease) (MVar HeldState)
 
@@ -43,6 +45,12 @@ acquireExecutableLease :: ExecutableLease -> Root -> [Pin] -> B.ByteString -> [L
 acquireExecutableLease lease root pins path links size digest role =
  acquireExecutableLeaseWithHooks lease root pins path links size digest role noHooks (pure ())
 
+-- Fixed application purpose acquisition. Callers cannot supply a role tag.
+-- This proves physical inode ownership only; runtime admission stays separate.
+acquireApplicationExecutableLease :: ExecutableLease -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> IO (Either ResolveError ())
+acquireApplicationExecutableLease lease root pins path links size digest =
+ acquireExecutableLeaseWithHooks lease root pins path links size digest ApplicationImage noHooks (pure ())
+
 -- Package-private source fixture hook after Pending; no raw FD is exposed.
 acquireExecutableLeaseWithHooks :: ExecutableLease -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> LeaseRole -> Hooks -> IO () -> IO (Either ResolveError ())
 acquireExecutableLeaseWithHooks lease@(ExecutableLease gate) root pins path links size digest role hooks afterPending = mask $ \restore -> do
@@ -61,7 +69,18 @@ acquireExecutableLeaseWithHooks lease@(ExecutableLease gate) root pins path link
      (_,Left c) -> case (fromException c :: Maybe SomeAsyncException) of Just _ -> throwIO c; Nothing -> pure (Left OsFailure)
      _ -> pure (Left OsFailure)
  where
-  consume readFd _ = mask $ \_ -> do
+  consume readFd bytes = mask $ \_ -> do
+   if role==ApplicationImage
+    then do
+     metadata <- getFdStatus readFd
+     let elf=B.length bytes>=64 && B.take 7 bytes==B.pack [127,69,76,70,2,1,1]
+          && B.index bytes 18==183 && B.index bytes 19==0
+          && B.index bytes 16 `elem` [2,3] && B.index bytes 17==0
+          && B.take 4 (B.drop 20 bytes)==B.pack [1,0,0,0]
+          && B.index bytes 52==64 && B.index bytes 53==0
+     if elf && (fileMode metadata .&. 0o111)/=0 then pure ()
+      else ioError (userError "application image must be executable ELF64LE AArch64")
+    else pure ()
    fd <- clone readFd
    let publish = do
         accepted <- transition gate $ \s -> case s of Building -> (Pending fd,True); _ -> (s,False)
@@ -124,8 +143,16 @@ issueReadyExecutable :: ExecutableLease -> IO (Maybe (HeldExecutable,Resolution,
 issueReadyExecutable (ExecutableLease gate) = mask $ \_ -> do
  holder <- newMVar (Live 0)
  transition gate $ \s -> case s of
-  Ready fd receipt role -> let held = HeldExecutable fd holder in (Moved held,Just (held,receipt,role))
+  Ready fd receipt role -> let held = HeldExecutable fd holder role in (Moved held,Just (held,receipt,role))
   _ -> (s,Nothing)
+
+-- Checked data snapshot only; this does not create a borrow or authority.
+observeHeldRole :: HeldExecutable -> IO (Either LeaseError LeaseRole)
+observeHeldRole (HeldExecutable _ gate role) = observe gate $ \state -> case state of
+ Live _ -> Right role
+ HeldClosing -> Left LeaseBusy
+ HeldClosed -> Left LeaseClosed
+ HeldUnknown -> Left LeaseCloseUncertain
 
 borrowHeld :: HeldExecutable -> IO (Either LeaseError (FilePath,IO ()))
 borrowHeld held = mask $ \_ -> do
@@ -200,7 +227,7 @@ tryReleaseHeld (HeldBorrow _ released gate) = mask $ \_ -> do
 -- Allocate the unique owner-retainable capability BEFORE any borrow count
 -- changes. Owner must retain it before calling activateHeldBorrowWhile.
 prepareHeldBorrow :: HeldExecutable -> IO HeldBorrow
-prepareHeldBorrow (HeldExecutable fd gate) = HeldBorrow fd <$> newMVar BorrowNew <*> pure gate
+prepareHeldBorrow (HeldExecutable fd gate _) = HeldBorrow fd <$> newMVar BorrowNew <*> pure gate
 
 -- True is a terminal receipt for this exact capability: activation returned
 -- without acquiring. Busy, new, in-flight, successful and uncertain are False.
@@ -253,7 +280,7 @@ activateHeldBorrowWhile (HeldBorrow (Fd fd) released gate) cancelled pause = mas
 
 borrowHeldWith :: (MVar HeldState -> IO (Maybe Bool)) -> HeldExecutable
  -> IO (Maybe (Either LeaseError (FilePath,IO Bool,IO (),HeldBorrow)))
-borrowHeldWith acquire (HeldExecutable (Fd fd) gate) = mask $ \_ -> do
+borrowHeldWith acquire (HeldExecutable (Fd fd) gate _) = mask $ \_ -> do
  released <- newMVar BorrowPending
  pid <- getProcessID
  let capability = HeldBorrow (Fd fd) released gate
@@ -296,7 +323,7 @@ borrowHeldWhile held cancelled pause = borrowHeldWith acquire held
    in loop
 
 retireHeld :: HeldExecutable -> IO (Either LeaseError ())
-retireHeld (HeldExecutable fd gate) = mask $ \_ -> do
+retireHeld (HeldExecutable fd gate _) = mask $ \_ -> do
  chosen <- transition gate $ \s -> case s of
   Live 0 -> (HeldClosing,Right ()); Live _ -> (s,Left LeaseBusy)
   HeldUnknown -> (s,Left LeaseCloseUncertain); HeldClosed -> (s,Left LeaseClosed)

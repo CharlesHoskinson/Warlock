@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-component-cpu-result",
+  "candidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794275742328804070/report.json",
+      "sha256": "e986cbcd2d0abb9f394c7e0b967fc4199fbcc1282f8889c493d27ee38aca58fb"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/prepared-connected-entrypoints-cpu/candidate.json",
+      "sha256": "6dec714442a8e55bced96c565bee23fe02c179864dcdcf84bca9d9d739ed2c63"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794275742328804070/logs/cpu-ui-webkit-controls.stdout",
+      "sha256": "d9c76485e7c20ca1f2692b9b7a0015752b5c5db1306cf0fc810ea16a7e167d9f"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794275742328804070/logs/cpu-foreign-endpoint-refusal-controls.stdout",
+      "sha256": "f3c72cf35b99432f6903b9eacaa190e31ba1c47f86288e955d99fbbf64475cea"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/prepared-connected-entrypoints-cpu/actual-outer-terminal.json",
+      "sha256": "97016a42503953e8a4ebb27a8d7815ea6f795f12ee36a3eb9963ebb95038ea53"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/prepared-connected-entrypoints-cpu/actual-loop.stdout",
+      "sha256": "7d96421e7da7cb8a6c02f15ec2f5b48a446a0a1d7715d4c7745005855b12ce9b"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/prepared-connected-entrypoints-cpu/actual-loop.stderr",
+      "sha256": "29ad42e98fcba1033d8332710e1671b580335d86419bd9d936241a672899409c"
+    }
+  ],
+  "observed": {
+    "commands": 6,
+    "allExitZero": true,
+    "forcedCleanup": false,
+    "currentSourcePins": 270,
+    "haskellFiles": 259,
+    "sourceMismatches": 0,
+    "compiledImages": {
+      "warlock-ui-owner": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794275742328804070/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+        "device": "57",
+        "inode": "6258528",
+        "size": "37644248",
+        "sha256": "de2500e7e626ccab3334fe18e1f206f2d802e6e5e325ad61a2bb3ae5fe37d165",
+        "executed": false,
+        "currentMode": 493
+      },
+      "ui-webkit-controls": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794275742328804070/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+        "device": "57",
+        "inode": "6258538",
+        "size": "40858000",
+        "sha256": "6cdbe73d0bdac410a322ca3d52b6deb9b435d5ae074c7fd4010b4e3ca38bef3c",
+        "executed": true,
+        "currentMode": 493
+      }
+    },
+    "executedFlags": [
+      "--allocation-only",
+      "--foreign-endpoint-refusal-only"
+    ],
+    "connectedFlagsExecuted": false
+  },
+  "limits": [
+    "Compiled connected/producer entrypoints only; no successful display connection/provider observation demonstrated.",
+    "No reviewer execution; no GUI owner execution/native/original acceptance.",
+    "Raw cleanupQualified=false preserved.",
+    "Root reports outer34228 consumed0; canonical closure pending at request."
+  ]
+}

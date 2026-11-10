@@ -1,0 +1,280 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-11-06T04:42:57.147581+00:00",
+  "component": "fixed-team-model-selector-admission-cap64-and-cache-pin",
+  "disposition": "source-bound support admission RED/GREEN and old-schema regression independently reviewed",
+  "supportsReadinessFor": {
+    "requirement": "ELM-REV-034",
+    "scenario": "protocol-schema-complete",
+    "acceptanceGranted": false
+  },
+  "scope": "Development support only: tests-selector cap64,13shared pure startup controls and one external cache hash refresh. Actual model regression uses the unchanged old14-test schema pair.",
+  "changedSupportSources": {
+    "tools/check_team_quint_cpu.py": {
+      "baseline": "507ab12447b78f58dd6815cfcb69efddc37eec2aab1b38f2033706700025cae3",
+      "red": "f1dfba712b0fe948c64beed7e8e8f86908b507d200a201b59deecfa3bbcaa2ba",
+      "green": "c9cb63c68bc683538127a4bcbfd317e162104fbb6994a0049eaadf0401a59807",
+      "redSource": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-green/red/tools/check_team_quint_cpu.py",
+        "sha256": "f1dfba712b0fe948c64beed7e8e8f86908b507d200a201b59deecfa3bbcaa2ba"
+      },
+      "greenSource": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-green/green/tools/check_team_quint_cpu.py",
+        "sha256": "c9cb63c68bc683538127a4bcbfd317e162104fbb6994a0049eaadf0401a59807"
+      },
+      "redToGreen": "Only TEST_SELECTOR_LIMIT32to64; invariant/witness caps32 and all other scalar/source/tool/argv/deadline guards retained."
+    },
+    "tools/team-quint-toolchain.json": {
+      "before": "5e996ee27ebf216ef869cea90f0cbc1e1fabea87127303f032dabcc9f5e29ebf",
+      "after": "630effed1fc37e4c5c403818c30a7eb32e2f684024c432141b9be095b86403bd",
+      "onlyChangedField": "files[/etc/ld.so.cache]",
+      "cacheHashBefore": "397b09c9d3d0b0e215bd5cf5624dc64d48a58db28bdba6bdfc009bb831545b92",
+      "cacheHashAfter": "e26846bd2ef0d774afeb7f995b1dea790ca0037f13bb64df5694ee74b414d7b6",
+      "allOtherManifestValuesEqual": true,
+      "quintVersion": "0.32.0",
+      "backend": "typescript",
+      "independentReview": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-cache-pin-refresh/review.json",
+        "sha256": "db4852575226bf645ddf008b719edfb00558fd25f05fd7400f48eefa37984649"
+      },
+      "adoption": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-cache-pin-root-adoption.json",
+        "sha256": "2f6e528fb7f8764f2f0b04ad4126de06936804a76024d2faaf22828e3478a0ea"
+      }
+    }
+  },
+  "environmentPreflightFailure": {
+    "record": {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-preflight-failure.json",
+      "sha256": "f833ac12c052b2ca08bda034d6d1c8a7a5543bea891a5b45e475e41db91bb9c7"
+    },
+    "phase": "verify_tools before report/admission/private child",
+    "exitCode": 1,
+    "reportCreated": false,
+    "modelInvoked": false,
+    "admissionRedObserved": false,
+    "cause": "External /etc/ld.so.cache hash differed; no toolchain/version/model/permission/budget bypass."
+  },
+  "admissionRed": {
+    "report": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793938803926098059/report.json",
+      "sha256": "fe38c7edf4d3480f431f0bc7c4d1ba9c07fef5a7eb407bfd0f604c05ae1bdc91"
+    },
+    "controls": 13,
+    "passed": false,
+    "expectedFailedControls": [
+      "complete-49",
+      "complete-40",
+      "complete-36",
+      "complete-64"
+    ],
+    "otherControlsPassed": 9,
+    "quintCommands": 0,
+    "classification": "Expected selector-cap RED, not a compiler/model failure.",
+    "independentReview": {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-team-quint-admission-red-execution-review.json",
+      "sha256": "5254ed0b1d96152f9101304a8664fd183f95ff5883ece852c78badc24cbc8b97"
+    }
+  },
+  "admissionGreen": {
+    "report": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/team-quint-schema-1793939020875091800/report.json",
+      "sha256": "a336f5d64625b4fed7d1d008f758b75a6fd012b957904b8cb0dccf921d8ac483"
+    },
+    "startupControlsPassed": 13,
+    "actualRegressionTests": 14,
+    "classifiedCommands": 52,
+    "classification": {
+      "typecheckExit0": 2,
+      "exactNamedTestExit0": 28,
+      "sampledSafetyExit0": 2,
+      "expectedNegatedReachabilityExit1WithValidITF": 20
+    },
+    "all52CommandsValidlyClassified": true,
+    "allCommandsExitZeroClaim": false,
+    "independentReview": {
+      "path": "/home/hoskinson/.local/state/warlock-team/20261105/continuity-team-quint-admission-green-execution-review.json",
+      "sha256": "5175957dad8846903601309691afac0a9f595ff76e5648deaece2327e5259730"
+    }
+  },
+  "oldRegressionTuple": {
+    "plan": {
+      "schema": 1,
+      "pair": "schema",
+      "sourceBase": "fa3ce898d5b6698580eeb6d25b6b38c9a0fd798a",
+      "modelModule": "tea004PreviewSchema",
+      "testModule": "tea004PreviewSchemaTests",
+      "tests": [
+        "refusalThenValidTest",
+        "rejectedOwnerCannotIssueTest",
+        "http204PreservesIntentTest",
+        "exactRetryPreservesIdentityTest",
+        "alteredTicketPreservesIntentTest",
+        "delayedTicketPreservesIntentTest",
+        "exactAcceptanceConfirmsTest",
+        "duplicateCannotReconfirmTest",
+        "alteredConfirmationRejectedTest",
+        "unknownRecoveryNoReplayTest",
+        "rejectedOwnerActionDisabledTest",
+        "duplicateConfirmationActionDisabledTest",
+        "alteredConfirmationActionDisabledTest",
+        "unknownReinvocationActionDisabledTest"
+      ],
+      "invariants": [
+        "schemaBeforeIssue",
+        "retainedExactIdentity",
+        "acceptanceHasTicket",
+        "clearHasAcceptance",
+        "confirmationHasAcceptance",
+        "unknownNoReplay"
+      ],
+      "witnesses": [
+        "noProposal",
+        "noRefusal",
+        "noIssuance",
+        "noUnknown",
+        "noRefusalThenValid",
+        "noRetry",
+        "noAccepted",
+        "noHttp204",
+        "noRecovery",
+        "noDuplicate"
+      ],
+      "seeds": [
+        20261105,
+        20261106
+      ],
+      "maxSamples": 10000,
+      "maxSteps": 30
+    },
+    "sourceHashes": {
+      ".warlock-contributor/team-quint-inputs/schema/plan.json": "ce06dde0637ff2d5a640c4f2c174ce012bdc39158a7825b3d0e09abf3671a5a1",
+      ".warlock-contributor/team-quint-inputs/schema/request.json": "6c0f52ae3640fb804841d13a9518f8bb05a4570e73c14cfe8bb271d04eff9fff",
+      ".warlock-contributor/team-quint-inputs/schema/snapshot.json": "aa2c8b8ca2256a1d2a4bab9584c397d2257331a8eef9e6ddb2c89e703133f854",
+      ".warlock-contributor/team-quint-inputs/schema/tea004-preview-schema.qnt": "94f36260dcca4148cf1d58c0b23cda40c144d807616c57e429163e954d3ad831",
+      ".warlock-contributor/team-quint-inputs/schema/tea004-preview-schema_test.qnt": "95cefc2f2e7dddb7cfc6cb325838d1935354f8413356f5c15989205cc522bfc0",
+      "tools/check_team_quint_cpu.py": "c9cb63c68bc683538127a4bcbfd317e162104fbb6994a0049eaadf0401a59807",
+      "tools/qa_cpu.py": "b7623b42a07c57e9c6c7989786cf99b557d8863179ddf1f658384d30f53c37f9",
+      "tools/quint-toolchain.json": "09c0bc0338db4ee189bdbb17a9b54d53992abf442f023691eea690a4ce9bc0b4",
+      "tools/team-quint-toolchain.json": "630effed1fc37e4c5c403818c30a7eb32e2f684024c432141b9be095b86403bd",
+      "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+    },
+    "frozenInputFiles": {
+      ".warlock-contributor/team-quint-inputs/schema/plan.json": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/plan.json",
+        "sha256": "ce06dde0637ff2d5a640c4f2c174ce012bdc39158a7825b3d0e09abf3671a5a1"
+      },
+      ".warlock-contributor/team-quint-inputs/schema/request.json": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/request.json",
+        "sha256": "6c0f52ae3640fb804841d13a9518f8bb05a4570e73c14cfe8bb271d04eff9fff"
+      },
+      ".warlock-contributor/team-quint-inputs/schema/snapshot.json": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/snapshot.json",
+        "sha256": "aa2c8b8ca2256a1d2a4bab9584c397d2257331a8eef9e6ddb2c89e703133f854"
+      },
+      ".warlock-contributor/team-quint-inputs/schema/tea004-preview-schema.qnt": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/tea004-preview-schema.qnt",
+        "sha256": "94f36260dcca4148cf1d58c0b23cda40c144d807616c57e429163e954d3ad831"
+      },
+      ".warlock-contributor/team-quint-inputs/schema/tea004-preview-schema_test.qnt": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-before-readiness-20261106T0440/schema/tea004-preview-schema_test.qnt",
+        "sha256": "95cefc2f2e7dddb7cfc6cb325838d1935354f8413356f5c15989205cc522bfc0"
+      },
+      "tools/check_team_quint_cpu.py": {
+        "path": "/home/hoskinson/.local/state/warlock-team/20261105/team-quint-admission-red-green/green/tools/check_team_quint_cpu.py",
+        "sha256": "c9cb63c68bc683538127a4bcbfd317e162104fbb6994a0049eaadf0401a59807"
+      },
+      "tools/qa_cpu.py": {
+        "path": "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "sha256": "b7623b42a07c57e9c6c7989786cf99b557d8863179ddf1f658384d30f53c37f9"
+      },
+      "tools/quint-toolchain.json": {
+        "path": "/home/hoskinson/Projects/Warlock/tools/quint-toolchain.json",
+        "sha256": "09c0bc0338db4ee189bdbb17a9b54d53992abf442f023691eea690a4ce9bc0b4"
+      },
+      "tools/team-quint-toolchain.json": {
+        "path": "/home/hoskinson/Projects/Warlock/tools/team-quint-toolchain.json",
+        "sha256": "630effed1fc37e4c5c403818c30a7eb32e2f684024c432141b9be095b86403bd"
+      },
+      "window-integration-qa/qa_launch.py": {
+        "path": "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_launch.py",
+        "sha256": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+      }
+    },
+    "redGreenActualPlanAndOtherSourceHashesIdentical": true,
+    "identityLimit": "Exact working-source/tool/input hashes; sourceBase in old plan does not establish current application HEAD acceptance."
+  },
+  "protectedExecution": {
+    "coreLimit": 1,
+    "redScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-de73c734544c4bda991833f1d6d12d19.scope",
+      "coreLimit": 1
+    },
+    "greenScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1346b86a309c4c7c81a03deb19b930da.scope",
+      "coreLimit": 1
+    },
+    "perCommandSeconds": 180,
+    "privateDeadlineSeconds": 3500,
+    "seeds": [
+      20261105,
+      20261106
+    ],
+    "maxSamples": 10000,
+    "maxSteps": 30,
+    "witnessLimit": "Witness runs may terminate on first classified counterexample; maxSamples is a bound, not a claim all10000 samples ran."
+  },
+  "preservedBudgetRecords": {
+    "historicalQ2RawRequest": {
+      "maxSamples": 5000,
+      "maxSteps": 20
+    },
+    "approvedQ2Normalization": {
+      "maxSamples": 10000,
+      "maxSteps": 30
+    },
+    "approvedQ3Budget": {
+      "maxSamples": 10000,
+      "maxSteps": 80
+    },
+    "scope": "Not executed/changed by this old schema14 regression; retain original request and approval artifacts separately."
+  },
+  "readinessSeparation": {
+    "new49TestModelRunAttributed": false,
+    "new40Or36TestModelRunAttributed": false,
+    "currentReadinessRun": "Separate source snapshots and protected results; excluded from this support receipt.",
+    "selectorControlsAreModelTests": false
+  },
+  "staticAnalysis": {
+    "ruff": "backlog-open; no clean claim",
+    "ty": "backlog-open; no clean claim",
+    "checksRunByReceiptAuthor": false,
+    "details": "Existing Ruff/ty backlog is preserved. No detailed diagnostic counts are invented or inferred from these execution reports."
+  },
+  "limitations": [
+    "Pure selector controls establish only admission predicates; they are not Quint model tests.",
+    "GREEN is the old14-test schema regression and sampled TypeScript safety/witness campaign, not new readiness model qualification.",
+    "Expected20exit1 witness commands are exact negative-predicate reachability successes with bound traces, not unclassified errors or all-zero exits.",
+    "No production source/behavior, originalREV034, native, release, exhaustive proof or whole-EARS acceptance is granted.",
+    "One cache hash refresh does not authorize new external dependencies or replace the historical toolchain parent.",
+    "Previously failed environment preflight and expected admissionRED evidence remain preserved.",
+    "No Ruff/ty cleanliness claim."
+  ],
+  "acceptanceAuthority": false,
+  "implementationAcceptance": false,
+  "readinessQualification": false,
+  "exhaustiveProof": false,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "evidenceCapsule": {
+    "manifest": "docs/warlock-build-loop/v2/evidence/team-quint-admission-20261106/manifest.json",
+    "manifestSHA256": "fd9d73d2fbd6bcc705237b49abd0eba17c90a42060633192410225996e6a9c35",
+    "path": "docs/warlock-build-loop/v2/evidence/team-quint-admission-20261106/checks.tar.gz",
+    "sha256": "1fd4e12abcc05c3bab44dc1f41740817ee1731b79dcbcf6a75292c0b1c5e6e2f",
+    "bytes": 970538,
+    "fileCount": 208,
+    "allArchivedMembersIndependentlyRehashedByRoot": true
+  },
+  "rootAdoption": "Root adopted reviewed support sources and retained immutable historical evidence; no product or original requirement acceptance."
+}

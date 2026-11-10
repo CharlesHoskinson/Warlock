@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "scope": "Pure fixed-recipe mocked controls only; no compiler or GTK execution",
+  "results": [
+    {
+      "phase": "baseline",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-two-target-preparation/postimages/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux003_dom_allocation_build.py",
+        "-v"
+      ],
+      "exit": 1
+    },
+    {
+      "phase": "candidate",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-two-target-preparation/postimages/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-two-target-preparation/postimages/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0
+    }
+  ]
+}

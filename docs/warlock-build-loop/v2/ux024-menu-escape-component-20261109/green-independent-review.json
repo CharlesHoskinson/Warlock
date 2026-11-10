@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-cpu-menu-escape-return-component-only",
+  "greenReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794262233860897402/report.json",
+    "sha256": "4dcbcfdaa0eca9c382964d729358247fc9b28682ca2e7e9427ce3dfeaac3c85e"
+  },
+  "escapeResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794262233860897402/menu-escape.json",
+    "sha256": "de029404c0c32f6b8557d4a270131624a5f55b17293020ad590a189fce170ae6"
+  },
+  "tabResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794262233860897402/menu-tab-dom.json",
+    "sha256": "1068dc9d9a80499e2f9cdde62c85f172b086c7d07961d6521a03f2bfa154c817"
+  },
+  "redReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794261997221400340/report.json",
+    "sha256": "f50e5600b4074893cd52c84636d5cfc78ad2cc7b05daede94dcdc21088e0a662"
+  },
+  "redEscapeResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794261997221400340/menu-escape.json",
+    "sha256": "2ecca2c803abf151c5aac334d98967d1bca993cff5f6404084166664f2fb1654"
+  },
+  "commandExits": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "sourceCount": 119,
+  "allLiveSourceHashesMatched": true,
+  "soleSourceDelta": {
+    "implementation/warlock/src/SurfaceController.elm": {
+      "red": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+      "green": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6"
+    }
+  },
+  "actualCases": {
+    "escape": 16,
+    "escapeSetup": 5,
+    "escapeAllPassed": true,
+    "tab": 18,
+    "tabAssertions": 86,
+    "tabAllPassed": true
+  },
+  "guarantees": [
+    "Trusted current menu Escape selects existing enabled menu dismiss; closes and queues projection refresh.",
+    "No Focus before matching fresh observation; exact eligible original application:documents group target emitted once with binding1/1/1,output1,revision3.",
+    "Duplicate/stale lease/stale publication/foreignowner/retiredview/wrong envelope/missing-close cases pass without repeated focus.",
+    "Removed/unavailable/disconnected origins do not focus; pointer-origin dismissal does not steal keyboard; nonmenu close remains intact."
+  ],
+  "literalReturnTarget": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:3:application:documents",
+  "rootExecution": {
+    "outer": 20801,
+    "consumedExit": 0,
+    "jobPid": 3377259,
+    "jobStart": 2794920
+  },
+  "limits": [
+    "Public Elm reducer and controlled DOM component only.",
+    "Actual native Escape delivery and physical eligible-opener restoration remain unproven; originalUX024 not accepted.",
+    "Disconnect case does not separately prove every replacement binding/output relocation."
+  ],
+  "effects": {
+    "reviewerTests": false,
+    "compiler": false,
+    "imports": false,
+    "primaryWrites": false
+  }
+}

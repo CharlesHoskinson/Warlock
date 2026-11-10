@@ -54,12 +54,416 @@ def run_receipt_models(node, pin, cli, run):
                                 'witnessPending', 'witnessCommitted', 'witnessRefused', 'witnessCancelled', 'witnessUnknown', 'witnessDisconnected', 'witnessNewRequest',
                                 '--max-samples=10000', '--max-steps=50', '--seed=20261031', '--verbosity=1'])
 
+MENU_TAB_CASES = ('Tab follows menu DOM order and skips disabled', 'Tab moves to next menu control', 'Tab wraps last to first', 'Shift Tab wraps first to last', 'Shift Tab skips disabled', 'One enabled control contains Tab', 'One enabled control contains Shift Tab', 'Escaped DOM identity uses existing mapping', 'composition preserved', 'IME229 preserved', 'Control Tab preserved', 'Alt Tab preserved', 'Meta Tab preserved', 'Escape native route preserved', 'Empty menu invents no focus target', 'All-disabled menu invents no focus target', 'stale publication old DOM callback refused', 'retired lease old DOM callback refused')
+
+
+def validate_menu_tab_result(result):
+    cases = result.get('cases', [])
+    checks = result.get('checks', [])
+    if (result.get('passed') is not True or result.get('failures') != []
+            or result.get('nativeAcceptance') is not False or result.get('originalAccepted') is not False
+            or not isinstance(cases, list) or len(cases) != len(MENU_TAB_CASES)
+            or any(not isinstance(row, dict) or set(row) != {'name', 'passed'} for row in cases)
+            or tuple(row['name'] for row in cases) != MENU_TAB_CASES
+            or any(row['passed'] is not True for row in cases)
+            or not isinstance(checks, list) or not checks
+            or any(not isinstance(row, dict) or row.get('passed') is not True or row.get('skipped', False) for row in checks)):
+        raise RuntimeError('Fixed18 menu DOM cases missing, changed, skipped or failed')
+
+
+MENU_TAB_PARENT_SHA = '0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb'
+
+
+def validate_menu_tab_profile(profile, parent, parent_sha):
+    if (parent_sha != MENU_TAB_PARENT_SHA or set(profile) != {'schema', 'scope', 'architecture', 'originalManifest', 'elm', 'node', 'elmHome', 'cacheInventory'}
+            or profile['schema'] != 1 or profile['scope'] != 'menu-tab-dom-cpu-only' or profile['architecture'] != 'aarch64'
+            or profile['originalManifest'] != {'path': 'tools/arm64-toolchain.json', 'sha256': MENU_TAB_PARENT_SHA}
+            or profile['elm'] != {'path': parent['elm'], 'sha256': parent['files'][parent['elm']]}
+            or profile['node'] != {'path': parent['node'], 'sha256': parent['files'][parent['node']]}
+            or profile['elmHome'] != parent['elmHome'] or profile['cacheInventory'] != parent['trees'][parent['elmHome']]):
+        raise RuntimeError('Menu Elm profile differs from exact historical compiler/cache selection')
+
+
+def verify_menu_tab_toolchain():
+    import platform
+    from arm64_toolchain import inventory
+    profile_path = REPO / 'tools/menu-tab-elm-toolchain.json'
+    parent_path = REPO / 'tools/arm64-toolchain.json'
+    for path in (profile_path, parent_path):
+        if path.is_symlink() or not path.is_file():
+            raise RuntimeError('Nonregular menu toolchain profile')
+    parent = json.loads(parent_path.read_text())
+    profile = json.loads(profile_path.read_text())
+    validate_menu_tab_profile(profile, parent, sha(parent_path))
+    if platform.machine() != 'aarch64':
+        raise RuntimeError('Menu DOM requires the reviewed ARM compiler host')
+    for name in ('elm', 'node'):
+        path = Path(profile[name]['path'])
+        if path.is_symlink() or not path.is_file() or sha(path) != profile[name]['sha256']:
+            raise RuntimeError('Menu development binary differs: ' + name)
+    if inventory(Path(profile['elmHome'])) != profile['cacheInventory']:
+        raise RuntimeError('Menu complete Elm cache differs')
+    return {'elm': profile['elm']['path'], 'node': profile['node']['path'], 'elmHome': profile['elmHome'],
+            'trees': {profile['elmHome']: profile['cacheInventory']}, 'profileSha256': sha(profile_path),
+            'parentManifestSha256': sha(parent_path), 'scope': profile['scope']}
+
+
+
+MENU_ESCAPE_CASES = ('current-menu-escape-closes', 'dismissal-queues-current-refresh', 'no-return-before-fresh-observation', 'eligible-origin-return-once', 'duplicate-escape-no-repeat-focus', 'stale-lease-refused', 'stale-publication-refused', 'foreign-owner-scope-refused', 'retired-view-refused', 'removed-origin-no-focus', 'changed-binding-or-output-no-focus', 'pointer-origin-no-keyboard-steal', 'nonmenu-close-path-preserved', 'unavailable-origin-no-focus', 'missing-close-does-nothing', 'wrong-surface-envelope-refused')
+MENU_ESCAPE_PRECONDITIONS = ('one-current-eligible-taskbar-group', 'keyboard-menu-opened-through-renderer', 'actual-enabled-menu-close-control', 'pointer-menu-opened-through-renderer', 'applications-other-mode-opened')
+MENU_ESCAPE_QA_INPUTS = {'implementation/warlock/qa/MenuEscapeReplay.elm': 'd85c653ecab26f3d7f18d90fd54e67e2e88d688027554f0d7acd7e4e586aa982', 'implementation/warlock/qa/menu-escape.cjs': 'a70cacd14fb4c48066f2b2e18859f67d56da359cf2cf86227774d1cc1dd4de58', 'implementation/warlock/qa/OutputRetirementReplay.elm': 'fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9'}
+
+def validate_menu_escape_result(result, image_sha, fixture_sha):
+    rows = result.get('checks')
+    observed = result.get('observed')
+    setup = observed.get('preconditions') if isinstance(observed, dict) else None
+    facts = observed.get('checks') if isinstance(observed, dict) else None
+    if (result.get('passed') is not True or result.get('classification') != 'component-pass'
+            or result.get('caseCount') != 16 or result.get('nativeAcceptance') is not False
+            or result.get('originalAccepted') is not False or result.get('failures') != []
+            or result.get('imageSha256') != image_sha or result.get('fixtureSha256') != fixture_sha
+            or not isinstance(setup, dict) or set(setup) != set(MENU_ESCAPE_PRECONDITIONS)
+            or any(value is not True for value in setup.values())
+            or not isinstance(facts, dict) or set(facts) != set(MENU_ESCAPE_CASES)
+            or any(value is not True for value in facts.values())
+            or not isinstance(rows, list) or len(rows) != 16
+            or any(not isinstance(row, dict) or set(row) != {'name', 'passed'} for row in rows)
+            or tuple(row['name'] for row in rows) != MENU_ESCAPE_CASES
+            or any(row['passed'] is not True for row in rows)):
+        raise RuntimeError('Fixed16 menu Escape results/setup/artifacts missing, changed or failed')
+
+
+MENU_BAR_CONTEXT_CASES = ('group-context-menu', 'group-shift-f10', 'pin-context-menu', 'pin-shift-f10', 'nested-label-bubbles-to-group', 'current-publication-wire', 'current-lease-wire', 'closed-bar-zero-lease', 'full-width-counter-wire', 'ordinary-click-preserved', 'disabled-group-refused', 'disabled-pin-refused', 'utility-control-refused', 'plain-f10-preserved', 'shift-context-menu-preserved', 'ctrl-context-menu-preserved', 'alt-context-menu-preserved', 'meta-context-menu-preserved', 'ctrl-shift-f10-preserved', 'alt-shift-f10-preserved', 'meta-shift-f10-preserved', 'composition-preserved', 'ime229-preserved', 'repeat-refused', 'return-preserved', 'stale-publication-refused', 'stale-lease-refused', 'removed-group-old-callback-refused', 'disabled-successor-old-callback-refused', 'foreign-role-stopped-old-callback-refused', 'transport-error-stopped-old-callback-refused', 'post-failure-never-replays-context', 'popup-only-group-not-a-bar-target', 'seeded-keyboard-admission-property')
+MENU_BAR_CONTEXT_FIXTURE = 'implementation/warlock/qa/ux024-bar-context-dom.cjs'
+MENU_BAR_CONTEXT_FIXTURE_SHA = '0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131'
+
+def validate_menu_bar_context_result(result, image_sha, fixture_sha):
+    cases = result.get('cases')
+    checks = result.get('checks')
+    artifacts = result.get('artifactHashes')
+    setup_failures = result.get('setupFailures', 0)
+    seeded = result.get('seededKeyboard')
+    samples = seeded.get('samples') if isinstance(seeded, dict) else None
+    if (result.get('schema') != 1 or result.get('passed') is not True
+            or result.get('classification') != 'component-pass' or result.get('inventoryMatches') is not True
+            or type(setup_failures) is not int or setup_failures != 0
+            or result.get('nativeAcceptance') is not False or result.get('originalAccepted') is not False
+            or result.get('failures') != [] or not isinstance(artifacts, dict)
+            or not isinstance(seeded, dict) or seeded.get('algorithm') != 'xorshift32'
+            or seeded.get('seeds') != list(range(32)) or seeded.get('sampleCount') != 32
+            or not isinstance(samples, list) or len(samples) != 32
+            or any(not isinstance(row, dict) for row in samples)
+            or [row.get('seed') for row in samples] != list(range(32))
+            or any(type(row.get('allowed')) is not bool or type(row.get('defaultPrevented')) is not bool
+                   or row['defaultPrevented'] != row['allowed'] or not isinstance(row.get('posts'), list)
+                   or len(row['posts']) != (1 if row['allowed'] else 0) for row in samples)
+            or any(samples[index]['allowed'] is not True for index in (0, 8, 16, 24))
+            or artifacts.get('image') != image_sha or artifacts.get('harness') != fixture_sha
+            or not isinstance(cases, list) or len(cases) != len(MENU_BAR_CONTEXT_CASES)
+            or any(not isinstance(row, dict) or set(row) != {'name', 'passed'} for row in cases)
+            or tuple(row['name'] for row in cases) != MENU_BAR_CONTEXT_CASES
+            or any(row['passed'] is not True for row in cases)
+            or not isinstance(checks, list) or not checks
+            or any(not isinstance(row, dict) or row.get('passed') is not True or row.get('skipped', False) for row in checks)):
+        raise RuntimeError('Fixed34 rendered bar context cases/setup/artifacts missing, changed or failed')
+
+
+MENU_INITIAL_FOCUS_CASES = ('keyboard-open-one-exact-dom-focus', 'focus-in-same-current-projection-commit', 'focus-target-is-current-unique-close', 'keyboard-origin-established-before-open', 'pointer-open-no-dom-focus', 'old-open-callback-no-repeat', 'refresh-request-no-initial-focus', 'refreshed-menu-no-initial-focus', 'stale-publication-no-focus', 'stale-lease-no-focus', 'foreign-owner-no-focus', 'retired-owner-no-focus', 'disconnected-origin-no-focus', 'dismiss-does-not-immediately-restore', 'eligible-return-stays-exact-group', 'removed-return-target-refused', 'unavailable-return-target-refused')
+MENU_INITIAL_FOCUS_PRECONDITIONS = ('current-taskbar-group-eligible', 'keyboard-menu-opened', 'pointer-menu-opened', 'exact-enabled-current-menu-close', 'menu-publication-and-lease-current')
+MENU_INITIAL_FOCUS_QA_INPUTS = {'implementation/warlock/qa/MenuInitialFocusReplay.elm': '600a0f18055b1c6e222ff61f75f63d37d0135aa4afc1a997e25c5476cd5e4c64', 'implementation/warlock/qa/menu-initial-focus.cjs': 'aa138698454a0d16bea9467c01b94cca72faf8fe4c2d7cbf3f5dbd06bf8dce0b'}
+
+def validate_menu_initial_focus_result(result, image_sha, fixture_sha):
+    rows = result.get('checks')
+    observed = result.get('observed')
+    setup = observed.get('preconditions') if isinstance(observed, dict) else None
+    facts = observed.get('checks') if isinstance(observed, dict) else None
+    seeded = result.get('seeded')
+    samples = seeded.get('samples') if isinstance(seeded, dict) else None
+    if (result.get('schema') != 1 or result.get('passed') is not True
+            or result.get('classification') != 'component-pass' or result.get('caseCount') != 17
+            or result.get('nativeAcceptance') is not False or result.get('originalAccepted') is not False
+            or result.get('imageSha256') != image_sha or result.get('fixtureSha256') != fixture_sha
+            or result.get('failures') != [] or result.get('seedFailures') != [] or result.get('seedSampleCount') != 32
+            or not isinstance(setup, dict) or set(setup) != set(MENU_INITIAL_FOCUS_PRECONDITIONS)
+            or any(value is not True for value in setup.values())
+            or not isinstance(facts, dict) or set(facts) != set(MENU_INITIAL_FOCUS_CASES)
+            or any(value is not True for value in facts.values())
+            or not isinstance(rows, list) or len(rows) != 17
+            or any(not isinstance(row, dict) or set(row) != {'name', 'passed'} for row in rows)
+            or tuple(row['name'] for row in rows) != MENU_INITIAL_FOCUS_CASES
+            or any(row['passed'] is not True for row in rows)
+            or not isinstance(seeded, dict) or seeded.get('algorithm') != 'literal-seed-modulo8-public-event-sequence'
+            or seeded.get('seeds') != list(range(32)) or not isinstance(samples, list) or len(samples) != 32
+            or any(not isinstance(row, dict) for row in samples)
+            or [row.get('seed') for row in samples] != list(range(32))
+            or any(row.get('passed') is not True for row in samples)):
+        raise RuntimeError('Fixed17 initial menu focus cases/setup/32sequences/artifacts missing, changed or failed')
+
+UI011_SCOPE_CASES = ('public-refresh-retires-menu-and-reads-once', 'pending-read-never-focuses', 'same-incarnation-restores-current-group', 'closed-origin-restores-declared-fallback', 'replacement-restores-only-declared-fallback', 'fallback-keeps-captured-control-identity', 'duplicate-reply-does-not-refocus', 'wrong-request-cannot-settle', 'old-revision-cannot-settle', 'foreign-binding-cannot-settle', 'foreign-owner-cannot-settle', 'unknown-does-not-grant-fallback', 'unavailable-does-not-grant-fallback', 'detached-ineligible-fallback-cannot-focus', 'transport-refusal-cannot-focus', 'reconciliation-full-cannot-focus', 'retired-presentation-cannot-focus', 'changed-presentation-cannot-focus', 'pointer-refresh-does-not-focus', 'post-escape-removed-origin-still-no-focus', 'post-escape-replacement-still-no-focus', 'refresh-without-open-scope-does-not-focus', 'stale-refresh-callback-does-not-issue', 'all-routes-preserve-no-native-mutation')
+UI011_SCOPE_PRECONDITIONS = ('current-view-one', 'current-observed-keyboard-menu', 'actual-enabled-refresh-control', 'actual-enabled-applications-fallback', 'application-only-no-native-authority')
+UI011_SCOPE_QA_INPUTS = {'implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm': 'ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273', 'implementation/warlock/qa/ui011-observed-scope-retirement.cjs': 'ca51900ed2edc6b0a74403e98e0cff33cffae6b18a924f96ce5216b21342206b'}
+
+def validate_ui011_scope_result(result, image_sha, fixture_sha):
+    observed = result.get('observed')
+    setup = observed.get('preconditions') if isinstance(observed, dict) else None
+    facts = observed.get('checks') if isinstance(observed, dict) else None
+    seeded = observed.get('seeded') if isinstance(observed, dict) else None
+    samples = seeded.get('samples') if isinstance(seeded, dict) else None
+    rows = result.get('checks')
+    if (result.get('schema') != 1 or result.get('passed') is not True
+            or result.get('classification') != 'component-pass' or result.get('caseCount') != len(UI011_SCOPE_CASES)
+            or any(result.get(key) is not False for key in ('nativeAcceptance','originalAcceptance','assistiveTechnologyAcceptance','providerAcceptance'))
+            or result.get('imageSha256') != image_sha or result.get('fixtureSha256') != fixture_sha
+            or result.get('failures') != [] or result.get('seedFailures') != [] or result.get('seedSampleCount') != 32
+            or not isinstance(setup, dict) or set(setup) != set(UI011_SCOPE_PRECONDITIONS)
+            or any(value is not True for value in setup.values())
+            or not isinstance(facts, dict) or set(facts) != set(UI011_SCOPE_CASES)
+            or any(value is not True for value in facts.values())
+            or not isinstance(rows, list) or len(rows) != len(UI011_SCOPE_CASES)
+            or any(not isinstance(row, dict) or set(row) != {'name','passed'} for row in rows)
+            or tuple(row['name'] for row in rows) != UI011_SCOPE_CASES
+            or any(row['passed'] is not True for row in rows)
+            or not isinstance(seeded, dict) or seeded.get('seeds') != list(range(32))
+            or not isinstance(samples, list) or len(samples) != 32
+            or any(not isinstance(row, dict) for row in samples)
+            or any(row.get('seed') != index or row.get('variant') != index % 8
+                   or any(row.get(key) is not True for key in ('prepared','expectedEligible','once','noMutation'))
+                   or not isinstance(row.get('actualFocus'),list) or not isinstance(row.get('expectedFocus'),list)
+                   or len(row['expectedFocus']) != (1 if index % 8 <= 2 else 0)
+                   or row['actualFocus'] != row['expectedFocus'] for index,row in enumerate(samples))):
+        raise RuntimeError('Fixed24 UI011 scope cases/5setup/32sequences/artifacts missing, changed or failed')
+
+def run_menu_tab_dom(observation_variant=None):
+    import arm64_toolchain as toolchain
+    from qa_cpu import menu_tab_dom_inputs
+    scope = require_qa_scope()
+    runtime_base()
+    deadline = time.monotonic() + 240
+    output = REPO / '.warlock-contributor' / ('ux024-menu-dom-' + str(time.time_ns()))
+    output.mkdir(parents=True, mode=0o700)
+    work = output / 'work'
+    report = {'schema': 1, 'passed': False, 'scope': 'Fixed live-menu DOM component',
+              'nativeAcceptance': False, 'originalAccepted': False, 'protectedScope': scope, 'commands': []}
+    sources = {}
+    qualification = None
+    if observation_variant is not None:
+        from ux024_observation_qualification import load,stage_rows,validate_elm_result
+        qualification=load(REPO,observation_variant)
+        report.update(candidateOnly=True,liveSourcesAdopted=False,integrationClaimed=False,qualificationVariant=observation_variant,sourceManifestSha256=qualification['sourceManifestSha256'])
+    def input_names():
+        names=menu_tab_dom_inputs(REPO)
+        if qualification:names |= {'tools/ux024_observation_qualification.py','tools/test_ux024_observation_qualification.py'} | set(load(REPO,observation_variant)['inputs'])
+        return names
+    def source_hash(path):
+        if path.is_symlink() or not path.is_file():
+            raise RuntimeError('Nonregular menu CPU input: ' + str(path))
+        return sha(path)
+    def unchanged():
+        if set(sources) != input_names():
+            raise RuntimeError('Menu CPU source membership changed')
+        for name, digest in sources.items():
+            if source_hash(REPO / name) != digest:
+                raise RuntimeError('Menu CPU input changed: ' + name)
+        verify_menu_tab_toolchain()
+    def run(name, argv):
+        unchanged()
+        seconds = min(120, deadline - time.monotonic())
+        if seconds <= 0:
+            raise RuntimeError('Original CPU deadline exhausted')
+        row = {'name': name, 'argv': argv, 'exit': None}
+        report['commands'].append(row)
+        with (output / (name + '.stdout')).open('wb') as stdout, (output / (name + '.stderr')).open('wb') as stderr:
+            completed = subprocess.run(argv, cwd=work, env=env, stdout=stdout, stderr=stderr, timeout=seconds)
+        row['exit'] = completed.returncode
+        unchanged()
+        if completed.returncode:
+            raise RuntimeError(name + ': exit ' + str(completed.returncode))
+    try:
+        sources = {name: source_hash(REPO / name) for name in sorted(input_names())}
+        report['sources'] = sources
+        pinned = verify_menu_tab_toolchain()
+        report['menuElmToolchain'] = pinned
+        work.mkdir(mode=0o700)
+        for name, digest in sources.items():
+            prefix = 'implementation/warlock/src/'
+            if name.startswith(prefix):
+                target = work / 'src' / name[len(prefix):]
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(REPO / name, target)
+                if source_hash(target) != digest:
+                    raise RuntimeError('Staged Elm input differs')
+        projected_elm={name[len('implementation/warlock/src/'):]:sha for name,sha in sources.items() if name.startswith('implementation/warlock/src/')}
+        if qualification:
+            from ux024_observation_qualification import projected
+            stage_rows(qualification,work/'src','implementation/warlock/src/')
+            projected_elm=projected(qualification,projected_elm,'implementation/warlock/src/')
+            report['candidateElmSources']=projected_elm
+        config = json.loads((REPO / 'implementation/warlock/elm.json').read_text())
+        config['source-directories'] = ['src', 'qa']
+        (work / 'elm.json').write_text(json.dumps(config))
+        fixture = work / 'ux024-menu-dom.cjs'
+        fixture_key = 'implementation/warlock/qa/ux024-menu-dom.cjs'
+        if sources[fixture_key] != 'd6b4983292ca45c94f4de56d4ebe6943c9d9e649661e08a0aa98e9c9ea2eb6a9':
+            raise RuntimeError('Fixed menu DOM fixture changed')
+        shutil.copyfile(REPO / fixture_key, fixture)
+        for key, expected in MENU_ESCAPE_QA_INPUTS.items():
+            if sources[key] != expected:
+                raise RuntimeError('Fixed Escape replay dependency changed: ' + key)
+            target = work / 'qa' / Path(key).name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(REPO / key, target)
+            if source_hash(target) != expected:
+                raise RuntimeError('Staged Escape replay dependency differs: ' + key)
+        if sources[MENU_BAR_CONTEXT_FIXTURE] != MENU_BAR_CONTEXT_FIXTURE_SHA:
+            raise RuntimeError('Fixed rendered bar context fixture changed')
+        bar_fixture = work / 'qa/ux024-bar-context-dom.cjs'
+        shutil.copyfile(REPO / MENU_BAR_CONTEXT_FIXTURE, bar_fixture)
+        if source_hash(bar_fixture) != MENU_BAR_CONTEXT_FIXTURE_SHA:
+            raise RuntimeError('Staged rendered bar context fixture differs')
+        for key, expected in MENU_INITIAL_FOCUS_QA_INPUTS.items():
+            if sources[key] != expected:
+                raise RuntimeError('Fixed initial focus fixture changed: ' + key)
+            target = work / 'qa' / Path(key).name
+            shutil.copyfile(REPO / key, target)
+            if source_hash(target) != expected:
+                raise RuntimeError('Staged initial focus fixture differs: ' + key)
+        if observation_variant is None:
+            for key, expected in UI011_SCOPE_QA_INPUTS.items():
+                if sources[key] != expected:
+                    raise RuntimeError('Fixed UI011 scope fixture changed: ' + key)
+                target = work / 'qa' / Path(key).name
+                shutil.copyfile(REPO / key, target)
+                if source_hash(target) != expected:
+                    raise RuntimeError('Staged UI011 scope fixture differs: ' + key)
+        if qualification:
+            # Only the two new observation fixtures are absent from live qa/.
+            stage_rows(qualification,work/'qa','implementation/warlock/qa/')
+        shutil.copytree(pinned['elmHome'], output / 'elm-home')
+        if toolchain.inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
+            raise RuntimeError('Staged ARM Elm cache differs')
+        env = dict(os.environ, ELM_HOME=str(output / 'elm-home'), NO_COLOR='1')
+        for key in ('NODE_OPTIONS', 'NODE_PATH', 'FORCE_COLOR'):
+            env.pop(key, None)
+        artifact = output / 'HttpPopup.js'
+        run('compile-HttpPopup', [pinned['elm'], 'make', 'src/HttpPopup.elm', '--optimize', '--output=' + str(artifact)])
+        image_hash = source_hash(artifact)
+        result_path = output / 'menu-tab-dom.json'
+        run('menu-tab-dom', [pinned['node'], str(fixture), str(artifact), str(result_path)])
+        result = json.loads(result_path.read_text())
+        validate_menu_tab_result(result)
+        if (result['artifactHashes']['image'] != image_hash or source_hash(artifact) != image_hash
+                or source_hash(fixture) != sources[fixture_key]):
+            raise RuntimeError('Actual tested menu image or fixture differs')
+        report.update(menuTabCaseCount=18, menuTabResultSha256=source_hash(result_path), menuTabImageSha256=image_hash)
+        escape_image = output / 'MenuEscapeReplay.js'
+        run('compile-MenuEscapeReplay', [pinned['elm'], 'make', 'qa/MenuEscapeReplay.elm', '--optimize', '--output=' + str(escape_image)])
+        escape_image_sha = source_hash(escape_image)
+        escape_result_path = output / 'menu-escape.json'
+        escape_fixture = work / 'qa/menu-escape.cjs'
+        run('menu-escape', [pinned['node'], str(escape_fixture), str(escape_image), str(escape_result_path)])
+        escape_result = json.loads(escape_result_path.read_text())
+        validate_menu_escape_result(escape_result, escape_image_sha, MENU_ESCAPE_QA_INPUTS['implementation/warlock/qa/menu-escape.cjs'])
+        if source_hash(escape_image) != escape_image_sha:
+            raise RuntimeError('Tested Escape replay image changed')
+        for key, expected in MENU_ESCAPE_QA_INPUTS.items():
+            if source_hash(work / 'qa' / Path(key).name) != expected:
+                raise RuntimeError('Staged Escape replay dependency changed: ' + key)
+        report.update(menuEscapeCaseCount=16, menuEscapeResultSha256=source_hash(escape_result_path), menuEscapeImageSha256=escape_image_sha)
+        bar_image = output / 'HttpBar.js'
+        run('compile-HttpBar', [pinned['elm'], 'make', 'src/HttpBar.elm', '--optimize', '--output=' + str(bar_image)])
+        bar_image_sha = source_hash(bar_image)
+        bar_result_path = output / 'menu-bar-context.json'
+        run('menu-bar-context', [pinned['node'], str(bar_fixture), str(bar_image), str(bar_result_path)])
+        bar_result = json.loads(bar_result_path.read_text())
+        validate_menu_bar_context_result(bar_result, bar_image_sha, MENU_BAR_CONTEXT_FIXTURE_SHA)
+        if source_hash(bar_image) != bar_image_sha or source_hash(bar_fixture) != MENU_BAR_CONTEXT_FIXTURE_SHA:
+            raise RuntimeError('Actual tested HttpBar image or fixture changed')
+        report.update(menuBarContextCaseCount=34, menuBarContextResultSha256=source_hash(bar_result_path), menuBarContextImageSha256=bar_image_sha)
+        initial_focus_image = output / 'MenuInitialFocusReplay.js'
+        run('compile-MenuInitialFocusReplay', [pinned['elm'], 'make', 'qa/MenuInitialFocusReplay.elm', '--optimize', '--output=' + str(initial_focus_image)])
+        initial_focus_image_sha = source_hash(initial_focus_image)
+        initial_focus_fixture = work / 'qa/menu-initial-focus.cjs'
+        initial_focus_result_path = output / 'menu-initial-focus.json'
+        run('menu-initial-focus', [pinned['node'], str(initial_focus_fixture), str(initial_focus_image), str(initial_focus_result_path)])
+        validate_menu_initial_focus_result(json.loads(initial_focus_result_path.read_text()), initial_focus_image_sha, MENU_INITIAL_FOCUS_QA_INPUTS['implementation/warlock/qa/menu-initial-focus.cjs'])
+        if source_hash(initial_focus_image) != initial_focus_image_sha:
+            raise RuntimeError('Actual tested initial focus replay image changed')
+        for key, expected in MENU_INITIAL_FOCUS_QA_INPUTS.items():
+            if source_hash(work / 'qa' / Path(key).name) != expected:
+                raise RuntimeError('Staged initial focus fixture changed: ' + key)
+        report.update(menuInitialFocusCaseCount=17, menuInitialFocusSeedCount=32, menuInitialFocusResultSha256=source_hash(initial_focus_result_path), menuInitialFocusImageSha256=initial_focus_image_sha)
+        if qualification:
+            observation_image=output/'Ux024ObservedWindowMenuReplay.js'
+            run('compile-Ux024ObservedWindowMenuReplay',[pinned['elm'],'make','qa/Ux024ObservedWindowMenuReplay.elm','--optimize','--output='+str(observation_image)])
+            observation_sha=source_hash(observation_image)
+            observation_fixture=work/'qa/ux024-observed-window-menu.cjs'
+            observation_fixture_sha=source_hash(observation_fixture)
+            observation_result=output/'observed-window-menu.json'
+            run('observed-window-menu',[pinned['node'],str(observation_fixture),str(observation_image),str(observation_result)])
+            validate_elm_result(json.loads(observation_result.read_text()),observation_sha,observation_fixture_sha)
+            if source_hash(observation_image)!=observation_sha or source_hash(observation_fixture)!=observation_fixture_sha:raise RuntimeError('Observation tested artifact changed')
+            report.update(observedWindowMenuCaseCount=30,observedWindowMenuSeedCount=32,observedWindowMenuResultSha256=source_hash(observation_result),observedWindowMenuImageSha256=observation_sha)
+        if observation_variant is None:
+            scope_image = output / 'Ui011ObservedScopeRetirementReplay.js'
+            run('compile-Ui011ObservedScopeRetirementReplay', [pinned['elm'], 'make', 'qa/Ui011ObservedScopeRetirementReplay.elm', '--optimize', '--output=' + str(scope_image)])
+            scope_image_sha = source_hash(scope_image)
+            scope_fixture = work / 'qa/ui011-observed-scope-retirement.cjs'
+            scope_fixture_sha = UI011_SCOPE_QA_INPUTS['implementation/warlock/qa/ui011-observed-scope-retirement.cjs']
+            scope_result = output / 'ui011-observed-scope-retirement.json'
+            run('ui011-observed-scope-retirement', [pinned['node'], str(scope_fixture), str(scope_image), str(scope_result)])
+            validate_ui011_scope_result(json.loads(scope_result.read_text()), scope_image_sha, scope_fixture_sha)
+            if source_hash(scope_image) != scope_image_sha or source_hash(scope_fixture) != scope_fixture_sha:
+                raise RuntimeError('Actual UI011 scope replay artifact changed')
+            report.update(ui011ScopeCaseCount=24, ui011ScopeSeedCount=32, ui011ScopeResultSha256=source_hash(scope_result), ui011ScopeImageSha256=scope_image_sha)
+        if observation_variant is None or observation_variant=='candidate':
+            documents={}
+            for role,entry in (('controller','HttpMain'),('bar','HttpBar'),('popup','HttpPopup')):
+                document=output/(entry+'.html')
+                run('compile-current-'+entry,[pinned['elm'],'make','src/'+entry+'.elm','--optimize','--output='+str(document)])
+                body_sha=source_hash(document);before=document.stat()
+                if document.resolve()!=document or before.st_size<=0:raise RuntimeError('Current document must be nonempty canonical regular file')
+                parents=list(reversed(document.parents))
+                if any(parent.is_symlink() or not parent.is_dir() for parent in parents):raise RuntimeError('Current document ancestor differs')
+                row={'path':str(document),'sha256':body_sha,'device':str(before.st_dev),'inode':str(before.st_ino),
+                     'size':str(before.st_size),'mode':before.st_mode & 0o7777,
+                     'ancestors':[{'path':str(parent),'device':str(parent.stat().st_dev),'inode':str(parent.stat().st_ino)} for parent in parents if parent!=parent.parent]}
+                after=document.stat()
+                if (before.st_dev,before.st_ino,before.st_size,before.st_mtime_ns,before.st_ctime_ns)!=(after.st_dev,after.st_ino,after.st_size,after.st_mtime_ns,after.st_ctime_ns) or source_hash(document)!=body_sha:raise RuntimeError('Current document changed while pinning')
+                documents[role]=row
+            for row in documents.values():
+                document=Path(row['path']);status=document.stat()
+                if source_hash(document)!=row['sha256'] or (str(status.st_dev),str(status.st_ino),str(status.st_size),status.st_mode & 0o7777)!=(row['device'],row['inode'],row['size'],row['mode']):raise RuntimeError('Current document changed after compilation')
+            report.update(currentHttpDocuments=documents,currentDocumentSourceHashes=projected_elm,documentFixtureOnly=False)
+            if observation_variant is None:
+                report.update(currentDocumentProvenance='installed-current-source',candidateOnly=False,liveSourcesAdopted=True,qualificationVariant=None)
+
+        actual_elm={str(path.relative_to(work/'src')):source_hash(path) for path in (work/'src').rglob('*.elm')}
+        if actual_elm!=projected_elm:raise RuntimeError('Staged Elm membership or bytes changed')
+        unchanged()
+        report.update(passed=True, caseCount=18, resultSha256=source_hash(result_path), imageSha256=image_hash)
+    except Exception as error:
+        report['error'] = str(error)
+    finally:
+        try:
+            if sources:
+                unchanged()
+        except Exception as error:
+            report.update(passed=False, finalInputError=str(error))
+        (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
+        print(json.dumps({'passed': report['passed'], 'report': str(output / 'report.json')}), flush=True)
+    return 0 if report['passed'] else 1
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group()
+    modes.add_argument('--observed-window-menu-baseline',action='store_true',help='Fixed private observation fixtures against unchanged live source')
+    modes.add_argument('--observed-window-menu-candidate',action='store_true',help='Fixed reviewed private observation source and fixtures')
+    modes.add_argument('--menu-tab-dom', action='store_true', help='Fixed UX024 menu DOM containment component only')
     modes.add_argument('--browser', action='store_true', help='Separately reviewed private-network browser component checks')
     modes.add_argument('--authority', action='store_true', help='Original ARC005 owning-route authority tuple bridge checks')
     modes.add_argument('--receipts', action='store_true', help='Original ARC007 actual desktop receipt bridge and model checks')
+    modes.add_argument('--application-availability', action='store_true', help='Fixed public Desktop application capability replay with unchanged legacy standalone regression')
     modes.add_argument('--standalone-mvp', action='store_true', help='Fixed actual standalone MVP replay and six production roots')
     modes.add_argument('--status-scroll', action='store_true', help='Fixed UI007 status scroll replay and model')
     modes.add_argument('--tea-contract', action='store_true', help='Original TEA001/002 complete-model and typed-effect component fixture')
@@ -67,9 +471,19 @@ def main():
     parser.add_argument('--arm64', action='store_true', help='Separately reviewed local ARM compiler, subscriptions mode only')
     parser.add_argument('--arm64-output', type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
-    if args.arm64 and not args.subscriptions:
+    for variant,selected in (('baseline',args.observed_window_menu_baseline),('candidate',args.observed_window_menu_candidate)):
+        if selected:
+            if sys.argv[1:]!=['--observed-window-menu-'+variant,'--arm64']:raise RuntimeError('Exact closed observation mode required')
+            return run_menu_tab_dom(variant)
+    if args.menu_tab_dom:
+        if sys.argv[1:] != ['--menu-tab-dom', '--arm64']:
+            raise RuntimeError('Menu DOM mode requires exact --menu-tab-dom --arm64')
+        return run_menu_tab_dom()
+    if args.application_availability and not args.arm64:
+        raise RuntimeError('Fixed application availability requires reviewed ARM profile')
+    if args.arm64 and not (args.subscriptions or args.application_availability):
         raise RuntimeError('ARM Elm selection is restricted to subscriptions')
-    if args.arm64_output is not None and (not args.arm64 or args.arm64_output.name != 'subscriptions'
+    if args.arm64_output is not None and (not args.arm64 or args.arm64_output.name != ('application-availability' if args.application_availability else 'subscriptions')
             or args.arm64_output.parent.parent != REPO / '.warlock-contributor'
             or not re.fullmatch('arm64-cpu-[0-9]+', args.arm64_output.parent.name)):
         raise RuntimeError('Unexpected private ARM subscription output')
@@ -118,7 +532,7 @@ def main():
     (work / 'elm.json').write_text(json.dumps(config))
     staged_elm_manifest_sha = sha(work / 'elm.json')
     env = dict(os.environ, ELM_HOME=str(output / 'elm-home'))
-    if args.receipts or args.status_scroll or args.tea_contract or args.subscriptions:
+    if args.receipts or args.status_scroll or args.tea_contract or args.subscriptions or args.application_availability:
         for key in ('NODE_OPTIONS', 'NODE_PATH', 'FORCE_COLOR'):
             env.pop(key, None)
         env['NO_COLOR'] = '1'
@@ -143,6 +557,60 @@ def main():
         if not args.authority:
             for name in ['Main', 'Bar', 'Popup', 'HttpMain', 'HttpBar', 'HttpPopup']:
                 run('compile-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize', '--output=' + str(output / (name + '.js'))])
+        if args.application_availability:
+            for filename in ('NativePointerFixture.elm', 'StandaloneMvpReplay.elm', 'standalone-mvp.cjs'):
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Standalone MVP fixture is required')
+                sources[str(source.relative_to(REPO))] = sha(source)
+                shutil.copy2(source, work / 'qa' / filename)
+            run('compile-standalone-mvp', [compiler, 'make', 'qa/StandaloneMvpReplay.elm', '--optimize',
+                                           '--output=' + str(output / 'standalone-mvp.js')])
+            run('standalone-mvp', [str(node), 'qa/standalone-mvp.cjs', str(output / 'standalone-mvp.js'),
+                                   str(output / 'standalone-mvp.json')])
+            replay_result = json.loads((output / 'standalone-mvp.json').read_text())
+            if (replay_result.get('passed') is not True or not replay_result.get('checks')
+                    or replay_result.get('failures') or any(row.get('passed') is not True for row in replay_result['checks'])):
+                raise RuntimeError('Standalone MVP replay incomplete or failed')
+            report['standaloneMvp'] = {'checks': len(replay_result['checks']), 'seed': replay_result.get('seed'),
+                                       'resultSHA256': sha(output / 'standalone-mvp.json')}
+            fixture_pins = {'ApplicationAvailabilityReplay.elm': '311ffd0dc7b160fdf4788a6513c732ca7e8da7929a57fc5e267e143041000c0f', 'application-availability.cjs': '0507e40ff47b7001e9450b1e1af438dc5eb7c913da59ee0bfb4c893398cd6fb8'}
+            for filename, expected in fixture_pins.items():
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file() or sha(source) != expected:
+                    raise RuntimeError('Fixed application availability fixture changed: ' + filename)
+                sources[str(source.relative_to(REPO))] = expected
+                shutil.copy2(source, work / 'qa' / filename)
+            run('compile-application-availability', [compiler, 'make', 'qa/ApplicationAvailabilityReplay.elm', '--optimize',
+                                                     '--output=' + str(output / 'application-availability.js')])
+            run('application-availability', [str(node), 'qa/application-availability.cjs', str(output / 'application-availability.js'),
+                                              str(output / 'application-availability.json')])
+            result = json.loads((output / 'application-availability.json').read_text())
+            expected_names = ['seed0/positive-capability-attach', 'seed0/positive-catalog-request', 'seed0/foreign-catalog-refused', 'seed0/positive-current-catalog', 'seed0/positive-query', 'seed0/positive-entry-enabled', 'seed0/jump-guard', 'seed0/stale-surface-refused', 'seed0/positive-single-surface-start', 'seed0/pending-duplicate-blocked', 'seed0/foreign-outcome-refused', 'seed0/stale-outcome-refused', 'seed0/pending-to-unknown', 'seed0/unknown-duplicate-blocked', 'seed0/disconnect-clears-authority', 'seed0/late-catalog-after-disconnect', 'seed0/positive-direct-start', 'seed0/positive-current-outcome', 'seed0/positive-app-pin-enabled', 'seed0/positive-app-pin-single-start', 'seed0/positive-app-pin-pending-duplicate', 'seed0/native-reconciling-pin-disabled', 'seed0/native-reconciling-pin-no-effect', 'seed0/native-transport-refused-pin-disabled', 'seed0/native-transport-refused-pin-no-effect', 'seed1/positive-capability-attach', 'seed1/positive-catalog-request', 'seed1/foreign-catalog-refused', 'seed1/positive-current-catalog', 'seed1/positive-query', 'seed1/positive-entry-enabled', 'seed1/jump-guard', 'seed1/stale-surface-refused', 'seed1/positive-single-surface-start', 'seed1/pending-duplicate-blocked', 'seed1/foreign-outcome-refused', 'seed1/stale-outcome-refused', 'seed1/pending-to-unknown', 'seed1/unknown-duplicate-blocked', 'seed1/disconnect-clears-authority', 'seed1/late-catalog-after-disconnect', 'seed1/positive-direct-start', 'seed1/positive-current-outcome', 'seed1/positive-app-pin-enabled', 'seed1/positive-app-pin-single-start', 'seed1/positive-app-pin-pending-duplicate', 'seed1/native-reconciling-pin-disabled', 'seed1/native-reconciling-pin-no-effect', 'seed1/native-transport-refused-pin-disabled', 'seed1/native-transport-refused-pin-no-effect', 'seed2/positive-capability-attach', 'seed2/positive-catalog-request', 'seed2/foreign-catalog-refused', 'seed2/positive-current-catalog', 'seed2/positive-query', 'seed2/positive-entry-enabled', 'seed2/jump-guard', 'seed2/stale-surface-refused', 'seed2/positive-single-surface-start', 'seed2/pending-duplicate-blocked', 'seed2/foreign-outcome-refused', 'seed2/stale-outcome-refused', 'seed2/pending-to-unknown', 'seed2/unknown-duplicate-blocked', 'seed2/disconnect-clears-authority', 'seed2/late-catalog-after-disconnect', 'seed2/positive-direct-start', 'seed2/positive-current-outcome', 'seed2/positive-app-pin-enabled', 'seed2/positive-app-pin-single-start', 'seed2/positive-app-pin-pending-duplicate', 'seed2/native-reconciling-pin-disabled', 'seed2/native-reconciling-pin-no-effect', 'seed2/native-transport-refused-pin-disabled', 'seed2/native-transport-refused-pin-no-effect', 'seed3/positive-capability-attach', 'seed3/positive-catalog-request', 'seed3/foreign-catalog-refused', 'seed3/positive-current-catalog', 'seed3/positive-query', 'seed3/positive-entry-enabled', 'seed3/jump-guard', 'seed3/stale-surface-refused', 'seed3/positive-single-surface-start', 'seed3/pending-duplicate-blocked', 'seed3/foreign-outcome-refused', 'seed3/stale-outcome-refused', 'seed3/pending-to-unknown', 'seed3/unknown-duplicate-blocked', 'seed3/disconnect-clears-authority', 'seed3/late-catalog-after-disconnect', 'seed3/positive-direct-start', 'seed3/positive-current-outcome', 'seed3/positive-app-pin-enabled', 'seed3/positive-app-pin-single-start', 'seed3/positive-app-pin-pending-duplicate', 'seed3/native-reconciling-pin-disabled', 'seed3/native-reconciling-pin-no-effect', 'seed3/native-transport-refused-pin-disabled', 'seed3/native-transport-refused-pin-no-effect', 'seed4/positive-capability-attach', 'seed4/positive-catalog-request', 'seed4/foreign-catalog-refused', 'seed4/positive-current-catalog', 'seed4/positive-query', 'seed4/positive-entry-enabled', 'seed4/jump-guard', 'seed4/stale-surface-refused', 'seed4/positive-single-surface-start', 'seed4/pending-duplicate-blocked', 'seed4/foreign-outcome-refused', 'seed4/stale-outcome-refused', 'seed4/pending-to-unknown', 'seed4/unknown-duplicate-blocked', 'seed4/disconnect-clears-authority', 'seed4/late-catalog-after-disconnect', 'seed4/positive-direct-start', 'seed4/positive-current-outcome', 'seed4/positive-app-pin-enabled', 'seed4/positive-app-pin-single-start', 'seed4/positive-app-pin-pending-duplicate', 'seed4/native-reconciling-pin-disabled', 'seed4/native-reconciling-pin-no-effect', 'seed4/native-transport-refused-pin-disabled', 'seed4/native-transport-refused-pin-no-effect', 'seed5/positive-capability-attach', 'seed5/positive-catalog-request', 'seed5/foreign-catalog-refused', 'seed5/positive-current-catalog', 'seed5/positive-query', 'seed5/positive-entry-enabled', 'seed5/jump-guard', 'seed5/stale-surface-refused', 'seed5/positive-single-surface-start', 'seed5/pending-duplicate-blocked', 'seed5/foreign-outcome-refused', 'seed5/stale-outcome-refused', 'seed5/pending-to-unknown', 'seed5/unknown-duplicate-blocked', 'seed5/disconnect-clears-authority', 'seed5/late-catalog-after-disconnect', 'seed5/positive-direct-start', 'seed5/positive-current-outcome', 'seed5/positive-app-pin-enabled', 'seed5/positive-app-pin-single-start', 'seed5/positive-app-pin-pending-duplicate', 'seed5/native-reconciling-pin-disabled', 'seed5/native-reconciling-pin-no-effect', 'seed5/native-transport-refused-pin-disabled', 'seed5/native-transport-refused-pin-no-effect', 'seed6/positive-capability-attach', 'seed6/positive-catalog-request', 'seed6/foreign-catalog-refused', 'seed6/positive-current-catalog', 'seed6/positive-query', 'seed6/positive-entry-enabled', 'seed6/jump-guard', 'seed6/stale-surface-refused', 'seed6/positive-single-surface-start', 'seed6/pending-duplicate-blocked', 'seed6/foreign-outcome-refused', 'seed6/stale-outcome-refused', 'seed6/pending-to-unknown', 'seed6/unknown-duplicate-blocked', 'seed6/disconnect-clears-authority', 'seed6/late-catalog-after-disconnect', 'seed6/positive-direct-start', 'seed6/positive-current-outcome', 'seed6/positive-app-pin-enabled', 'seed6/positive-app-pin-single-start', 'seed6/positive-app-pin-pending-duplicate', 'seed6/native-reconciling-pin-disabled', 'seed6/native-reconciling-pin-no-effect', 'seed6/native-transport-refused-pin-disabled', 'seed6/native-transport-refused-pin-no-effect', 'seed7/positive-capability-attach', 'seed7/positive-catalog-request', 'seed7/foreign-catalog-refused', 'seed7/positive-current-catalog', 'seed7/positive-query', 'seed7/positive-entry-enabled', 'seed7/jump-guard', 'seed7/stale-surface-refused', 'seed7/positive-single-surface-start', 'seed7/pending-duplicate-blocked', 'seed7/foreign-outcome-refused', 'seed7/stale-outcome-refused', 'seed7/pending-to-unknown', 'seed7/unknown-duplicate-blocked', 'seed7/disconnect-clears-authority', 'seed7/late-catalog-after-disconnect', 'seed7/positive-direct-start', 'seed7/positive-current-outcome', 'seed7/positive-app-pin-enabled', 'seed7/positive-app-pin-single-start', 'seed7/positive-app-pin-pending-duplicate', 'seed7/native-reconciling-pin-disabled', 'seed7/native-reconciling-pin-no-effect', 'seed7/native-transport-refused-pin-disabled', 'seed7/native-transport-refused-pin-no-effect', 'seed8/positive-capability-attach', 'seed8/positive-catalog-request', 'seed8/foreign-catalog-refused', 'seed8/positive-current-catalog', 'seed8/positive-query', 'seed8/positive-entry-enabled', 'seed8/jump-guard', 'seed8/stale-surface-refused', 'seed8/positive-single-surface-start', 'seed8/pending-duplicate-blocked', 'seed8/foreign-outcome-refused', 'seed8/stale-outcome-refused', 'seed8/pending-to-unknown', 'seed8/unknown-duplicate-blocked', 'seed8/disconnect-clears-authority', 'seed8/late-catalog-after-disconnect', 'seed8/positive-direct-start', 'seed8/positive-current-outcome', 'seed8/positive-app-pin-enabled', 'seed8/positive-app-pin-single-start', 'seed8/positive-app-pin-pending-duplicate', 'seed8/native-reconciling-pin-disabled', 'seed8/native-reconciling-pin-no-effect', 'seed8/native-transport-refused-pin-disabled', 'seed8/native-transport-refused-pin-no-effect', 'seed9/positive-capability-attach', 'seed9/positive-catalog-request', 'seed9/foreign-catalog-refused', 'seed9/positive-current-catalog', 'seed9/positive-query', 'seed9/positive-entry-enabled', 'seed9/jump-guard', 'seed9/stale-surface-refused', 'seed9/positive-single-surface-start', 'seed9/pending-duplicate-blocked', 'seed9/foreign-outcome-refused', 'seed9/stale-outcome-refused', 'seed9/pending-to-unknown', 'seed9/unknown-duplicate-blocked', 'seed9/disconnect-clears-authority', 'seed9/late-catalog-after-disconnect', 'seed9/positive-direct-start', 'seed9/positive-current-outcome', 'seed9/positive-app-pin-enabled', 'seed9/positive-app-pin-single-start', 'seed9/positive-app-pin-pending-duplicate', 'seed9/native-reconciling-pin-disabled', 'seed9/native-reconciling-pin-no-effect', 'seed9/native-transport-refused-pin-disabled', 'seed9/native-transport-refused-pin-no-effect', 'seed10/positive-capability-attach', 'seed10/positive-catalog-request', 'seed10/foreign-catalog-refused', 'seed10/positive-current-catalog', 'seed10/positive-query', 'seed10/positive-entry-enabled', 'seed10/jump-guard', 'seed10/stale-surface-refused', 'seed10/positive-single-surface-start', 'seed10/pending-duplicate-blocked', 'seed10/foreign-outcome-refused', 'seed10/stale-outcome-refused', 'seed10/pending-to-unknown', 'seed10/unknown-duplicate-blocked', 'seed10/disconnect-clears-authority', 'seed10/late-catalog-after-disconnect', 'seed10/positive-direct-start', 'seed10/positive-current-outcome', 'seed10/positive-app-pin-enabled', 'seed10/positive-app-pin-single-start', 'seed10/positive-app-pin-pending-duplicate', 'seed10/native-reconciling-pin-disabled', 'seed10/native-reconciling-pin-no-effect', 'seed10/native-transport-refused-pin-disabled', 'seed10/native-transport-refused-pin-no-effect', 'seed11/positive-capability-attach', 'seed11/positive-catalog-request', 'seed11/foreign-catalog-refused', 'seed11/positive-current-catalog', 'seed11/positive-query', 'seed11/positive-entry-enabled', 'seed11/jump-guard', 'seed11/stale-surface-refused', 'seed11/positive-single-surface-start', 'seed11/pending-duplicate-blocked', 'seed11/foreign-outcome-refused', 'seed11/stale-outcome-refused', 'seed11/pending-to-unknown', 'seed11/unknown-duplicate-blocked', 'seed11/disconnect-clears-authority', 'seed11/late-catalog-after-disconnect', 'seed11/positive-direct-start', 'seed11/positive-current-outcome', 'seed11/positive-app-pin-enabled', 'seed11/positive-app-pin-single-start', 'seed11/positive-app-pin-pending-duplicate', 'seed11/native-reconciling-pin-disabled', 'seed11/native-reconciling-pin-no-effect', 'seed11/native-transport-refused-pin-disabled', 'seed11/native-transport-refused-pin-no-effect', 'seed12/positive-capability-attach', 'seed12/positive-catalog-request', 'seed12/foreign-catalog-refused', 'seed12/positive-current-catalog', 'seed12/positive-query', 'seed12/positive-entry-enabled', 'seed12/jump-guard', 'seed12/stale-surface-refused', 'seed12/positive-single-surface-start', 'seed12/pending-duplicate-blocked', 'seed12/foreign-outcome-refused', 'seed12/stale-outcome-refused', 'seed12/pending-to-unknown', 'seed12/unknown-duplicate-blocked', 'seed12/disconnect-clears-authority', 'seed12/late-catalog-after-disconnect', 'seed12/positive-direct-start', 'seed12/positive-current-outcome', 'seed12/positive-app-pin-enabled', 'seed12/positive-app-pin-single-start', 'seed12/positive-app-pin-pending-duplicate', 'seed12/native-reconciling-pin-disabled', 'seed12/native-reconciling-pin-no-effect', 'seed12/native-transport-refused-pin-disabled', 'seed12/native-transport-refused-pin-no-effect', 'seed13/positive-capability-attach', 'seed13/positive-catalog-request', 'seed13/foreign-catalog-refused', 'seed13/positive-current-catalog', 'seed13/positive-query', 'seed13/positive-entry-enabled', 'seed13/jump-guard', 'seed13/stale-surface-refused', 'seed13/positive-single-surface-start', 'seed13/pending-duplicate-blocked', 'seed13/foreign-outcome-refused', 'seed13/stale-outcome-refused', 'seed13/pending-to-unknown', 'seed13/unknown-duplicate-blocked', 'seed13/disconnect-clears-authority', 'seed13/late-catalog-after-disconnect', 'seed13/positive-direct-start', 'seed13/positive-current-outcome', 'seed13/positive-app-pin-enabled', 'seed13/positive-app-pin-single-start', 'seed13/positive-app-pin-pending-duplicate', 'seed13/native-reconciling-pin-disabled', 'seed13/native-reconciling-pin-no-effect', 'seed13/native-transport-refused-pin-disabled', 'seed13/native-transport-refused-pin-no-effect', 'seed14/positive-capability-attach', 'seed14/positive-catalog-request', 'seed14/foreign-catalog-refused', 'seed14/positive-current-catalog', 'seed14/positive-query', 'seed14/positive-entry-enabled', 'seed14/jump-guard', 'seed14/stale-surface-refused', 'seed14/positive-single-surface-start', 'seed14/pending-duplicate-blocked', 'seed14/foreign-outcome-refused', 'seed14/stale-outcome-refused', 'seed14/pending-to-unknown', 'seed14/unknown-duplicate-blocked', 'seed14/disconnect-clears-authority', 'seed14/late-catalog-after-disconnect', 'seed14/positive-direct-start', 'seed14/positive-current-outcome', 'seed14/positive-app-pin-enabled', 'seed14/positive-app-pin-single-start', 'seed14/positive-app-pin-pending-duplicate', 'seed14/native-reconciling-pin-disabled', 'seed14/native-reconciling-pin-no-effect', 'seed14/native-transport-refused-pin-disabled', 'seed14/native-transport-refused-pin-no-effect', 'seed15/positive-capability-attach', 'seed15/positive-catalog-request', 'seed15/foreign-catalog-refused', 'seed15/positive-current-catalog', 'seed15/positive-query', 'seed15/positive-entry-enabled', 'seed15/jump-guard', 'seed15/stale-surface-refused', 'seed15/positive-single-surface-start', 'seed15/pending-duplicate-blocked', 'seed15/foreign-outcome-refused', 'seed15/stale-outcome-refused', 'seed15/pending-to-unknown', 'seed15/unknown-duplicate-blocked', 'seed15/disconnect-clears-authority', 'seed15/late-catalog-after-disconnect', 'seed15/positive-direct-start', 'seed15/positive-current-outcome', 'seed15/positive-app-pin-enabled', 'seed15/positive-app-pin-single-start', 'seed15/positive-app-pin-pending-duplicate', 'seed15/native-reconciling-pin-disabled', 'seed15/native-reconciling-pin-no-effect', 'seed15/native-transport-refused-pin-disabled', 'seed15/native-transport-refused-pin-no-effect', 'legacy-absent/attach', 'legacy-absent/surface-blocked', 'legacy-absent/direct-bypass-blocked', 'explicit-empty/attach', 'explicit-empty/surface-blocked', 'explicit-empty/direct-bypass-blocked', 'malformed-null/attachment-refused', 'malformed-null/no-bypass', 'malformed-string/attachment-refused', 'malformed-string/no-bypass', 'malformed-unknown/attachment-refused', 'malformed-unknown/no-bypass', 'malformed-duplicate/attachment-refused', 'malformed-duplicate/no-bypass', 'foreign-repeat-attachment-stutters', 'stale-repeat-attachment-stutters', 'same-binding-repeat-stutters', 'bar:notifications/native-utility-guard', 'bar:files/native-utility-guard', 'bar:system/native-utility-guard', 'bar:settings/native-utility-guard', 'bar:overview/native-utility-guard', 'bar:switcher/native-utility-guard']
+            if (result.get('passed') is not True or result.get('error') or result.get('failures')
+                    or [row.get('name') for row in result.get('checks', [])] != expected_names
+                    or any(row.get('passed') is not True for row in result['checks'])
+                    or result.get('seed') != 20261106 or result.get('sequences') != 16
+                    or result.get('imageSHA256') != sha(output / 'application-availability.js')
+                    or result.get('scriptSHA256') != fixture_pins['application-availability.cjs']
+                    or any(result.get(key) is not False for key in ('nativeAcceptance','originalAcceptance','guiAcceptance'))):
+                raise RuntimeError('Application availability literal result differs; raw report retained')
+            if any(sha(REPO / key) != value for key, value in sources.items()):
+                raise RuntimeError('Application availability source changed')
+            if any(sha(work / key.removeprefix('implementation/warlock/')) != value for key, value in sources.items() if key.endswith('.elm')):
+                raise RuntimeError('Application availability staged source changed')
+            if any(sha(work / 'qa' / filename) != expected for filename, expected in fixture_pins.items()):
+                raise RuntimeError('Application availability staged fixture changed')
+            if arm_inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
+                raise RuntimeError('Application availability cache changed')
+            toolchain.verify()
+            if any(sha(Path(tool['path'])) != tool['sha256'] for tool in report['developmentTools'].values()):
+                raise RuntimeError('Application availability interpreter changed')
+            report['applicationAvailability'] = {'checks': len(expected_names), 'resultSHA256': sha(output / 'application-availability.json'),
+                                                  'nativeAcceptance': False, 'originalAcceptance': False}
+            report['artifacts'] = {p.name: sha(p) for p in output.glob('*.js')}
+            report['passed'] = True
+            return 0
         if args.subscriptions:
             for name in ('NativePreviewAdmission', 'NativePreviewRenderer'):
                 run('compile-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize',

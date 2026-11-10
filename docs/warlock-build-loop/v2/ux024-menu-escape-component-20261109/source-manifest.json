@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "kind": "ux024-current-menu-native-escape-selector-candidate",
+  "productionPath": "implementation/warlock/src/SurfaceController.elm",
+  "beforeSha256": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+  "postimage": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/production-fix/postimages/implementation/warlock/src/SurfaceController.elm",
+    "sha256": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6"
+  },
+  "preimage": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/production-fix/preimages/implementation/warlock/src/SurfaceController.elm",
+    "sha256": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998"
+  },
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/production-fix/candidate.patch",
+    "sha256": "a0428b043df0ad811d3233029fca7f34fd40d865b8cd03ce4524674d62217b4c"
+  },
+  "testsFirstManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-original-escape-step/tests-first-revision2-public-observation/manifest.json",
+    "sha256": "4acb1e874ef7e734d8ba9a9191aa546e25ccaccca695b4f725afa25bf7ec1a18"
+  },
+  "actualSemanticRed": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794261997221400340/menu-escape.json",
+    "sha256": "2ecca2c803abf151c5aac334d98967d1bca993cff5f6404084166664f2fb1654"
+  },
+  "actualRootReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794261997221400340/report.json",
+    "sha256": "f50e5600b4074893cd52c84636d5cfc78ad2cc7b05daede94dcdc21088e0a662"
+  },
+  "actualRedSummary": {
+    "preconditionsPassed": 5,
+    "checksFailed": 7,
+    "checksPassed": 9,
+    "cases": 16,
+    "fixtureChanged": false
+  },
+  "change": "Only NativeEscape control identity expression: menu selects control:menu-close; all other modes retain control:close. Existing exhaustion/lease/enabled/current-message apply gates unchanged.",
+  "unchanged": [
+    "OutputController owner/view/publication validation",
+    "Desktop deferred eligible origin return after fresh matching observation",
+    "All production files except SurfaceController.elm",
+    "Original18 DOM and16 Escape fixture bytes",
+    "Native keyboard and service runtime"
+  ],
+  "qualification": "Root must compile and run the unchanged source-bound18 DOM +16 Escape cases. No tests/imports/compilers or primary writes by author.",
+  "executedByAuthor": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

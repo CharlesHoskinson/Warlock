@@ -1,0 +1,263 @@
+{
+  "schema": 1,
+  "preparedUTC": "2026-11-06T11:24:16.166756+00:00",
+  "disposition": "Verified Elm policy and controlled structural component; no original, native, real browser or release acceptance",
+  "supportsOriginal": [
+    {
+      "requirement": "ELM-UI-006",
+      "scenarios": [
+        "overview-empty",
+        "overview-cancel"
+      ],
+      "scope": "Frozen workspace-management unsupported controls and local owner/dismissal dependency only",
+      "acceptanceGranted": false
+    }
+  ],
+  "productionSource": {
+    "path": "implementation/warlock/src/Surface.elm",
+    "beforeSHA256": "175d4432e2a28c18cfa18e72f2effc61bf8d551ddce0679e14e25681fc78ec1c",
+    "afterSHA256": "9b49b673cde2d2a9252e3b461b1fb8d3229fb5a4d5ed0321af03f74178d5869e",
+    "before": "Task View omitted create/delete/rename controls required by frozen workspace policy",
+    "after": "Task View exposes the three labeled unavailable controls, with Not supported detail, disabled state and no action message; close and existing owner guards remain usable"
+  },
+  "policy": {
+    "path": "docs/elm-roadmap/INTERACTION.md",
+    "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4",
+    "meaning": "Workspace create/delete/rename without adapter declaration expose labeled unsupported state; exact English detail is independently reviewed product copy"
+  },
+  "record": {
+    "path": ".warlock-contributor/ui006-workspace-unsupported-root.json",
+    "owner": "root-agentbus",
+    "startUTC": "2026-11-06T10:29:32.106290+00:00",
+    "productionFixUTC": "2026-11-06T10:54:56.271707+00:00",
+    "canonicalPreflight": "No prior matching/stopped record or history errors; clean legitimate record",
+    "historyReset": false,
+    "qualificationRecorded": true,
+    "publicationDeclarations": {
+      "mistakenNeverCreatedPaths": [
+        "implementation/warlock/docs/warlock-build-loop/v2/ui006-workspace-controls-component-20261106.json",
+        "implementation/warlock/docs/warlock-build-loop/v2/evidence/ui006-workspace-controls-20261106/manifest.json",
+        "implementation/warlock/docs/warlock-build-loop/v2/evidence/ui006-workspace-controls-20261106/checks.tar.gz"
+      ],
+      "actualExplicitSupportPaths": [
+        "docs/warlock-build-loop/v2/ui006-workspace-controls-component-20261106.json",
+        "docs/warlock-build-loop/v2/evidence/ui006-workspace-controls-20261106/manifest.json",
+        "docs/warlock-build-loop/v2/evidence/ui006-workspace-controls-20261106/checks.tar.gz"
+      ],
+      "review": "Normal record staged review uses --include for the exact three Root-owned publication support files. Mistaken implementation-relative declarations are preserved as non-delivered history, not evidence.",
+      "recordBytesUnchanged": true,
+      "noGhostFilesCreated": true
+    }
+  },
+  "runs": [
+    {
+      "id": "1793961124796047725",
+      "report": ".warlock-contributor/arm64-cpu-1793961124796047725/report.json",
+      "reportSHA256": "eeac68969031572a9e0723a33ab64218ca70ae886013ea5f7f990ea39440dfe8",
+      "mode": "--workspace-owner-baseline",
+      "harnessPassed": true,
+      "classification": "old127 baseline expected-negative harness; not matching-oracle semantic proof",
+      "sourceInputs": 127,
+      "commands": 2
+    },
+    {
+      "id": "1793962215188204390",
+      "report": ".warlock-contributor/arm64-cpu-1793962215188204390/report.json",
+      "reportSHA256": "0a2c0411616374436b7fea4a452dc0ec7a5838747c682bc0016f5b8e28f050ca",
+      "mode": "--workspace-owner-component-red",
+      "harnessPassed": true,
+      "classification": "matching126 semantic RED expected-negative harness",
+      "sourceInputs": 126,
+      "commands": 2
+    },
+    {
+      "id": "1793962388343517265",
+      "report": ".warlock-contributor/arm64-cpu-1793962388343517265/report.json",
+      "reportSHA256": "2a855355f0130b7d0cd8737f0214e61f3628554b3a1d303ef3489c748de50d99",
+      "mode": "--workspace-owner-component",
+      "harnessPassed": true,
+      "classification": "matching126 component GREEN",
+      "sourceInputs": 126,
+      "commands": 2
+    },
+    {
+      "id": "1793962570223435542",
+      "report": ".warlock-contributor/arm64-cpu-1793962570223435542/report.json",
+      "reportSHA256": "fc78b24d77636cd61a84317b5f2d6dde0a04f71d72d24f0748669e624928321d",
+      "mode": "--subscriptions",
+      "harnessPassed": false,
+      "classification": "shared296 failed source pin before literals; failed evidence retained",
+      "sourceInputs": 296,
+      "commands": 1
+    },
+    {
+      "id": "1793962755985265227",
+      "report": ".warlock-contributor/arm64-cpu-1793962755985265227/report.json",
+      "reportSHA256": "6ebe9a011aa32c74cdcdf261284d85ef7352e688486e6b5f19d94760258d79ca",
+      "mode": "--subscriptions",
+      "harnessPassed": true,
+      "classification": "shared296 GREEN on then-tooltuple",
+      "sourceInputs": 296,
+      "commands": 1
+    },
+    {
+      "id": "1793963586389263010",
+      "report": ".warlock-contributor/arm64-cpu-1793963586389263010/report.json",
+      "reportSHA256": "b0b61a17bab300d202dd5cf7ad920d2e92a70fb9facb6899dc9f929a260555bd",
+      "mode": "--workspace-original",
+      "harnessPassed": true,
+      "classification": "original101 component execution;127inputs",
+      "sourceInputs": 127,
+      "commands": 4
+    },
+    {
+      "id": "1793963647327702236",
+      "report": ".warlock-contributor/arm64-cpu-1793963647327702236/report.json",
+      "reportSHA256": "1efd91ef3dee2aea04d9c51da6adce184806e2ffd8df5f77be9c0dfad52d8063",
+      "mode": "--workspace-dom",
+      "harnessPassed": true,
+      "classification": "Node structural DOM19 execution;127inputs, no real browser",
+      "sourceInputs": 127,
+      "commands": 2
+    },
+    {
+      "id": "1793963720419191904",
+      "report": ".warlock-contributor/arm64-cpu-1793963720419191904/report.json",
+      "reportSHA256": "b3ce33841c483acda1647cfb4133ffb68d1733ce8e15ee957c2a69ded9439a60",
+      "mode": "--subscriptions",
+      "harnessPassed": true,
+      "classification": "final299 combined-tooltuple shared GREEN",
+      "sourceInputs": 299,
+      "commands": 1
+    }
+  ],
+  "pairedOracle": {
+    "old127FixtureSHA256": "5c16d6a1417227419a2ae3b47175197b6458b00021be2ee49b269c6087702309",
+    "matchingFixtureSHA256": "da9f4839fa32bb3f4c90a2e569d6bfcd76d80c39e197da4ed2557f2a959e00c0",
+    "change": "Module name and three expected detail strings change from Not supported by the workspace adapter to Not supported; old127 RED retained for its older oracle",
+    "matchingRED": "1793962215188204390",
+    "matchingGREEN": "1793962388343517265",
+    "orderedChecks": 24,
+    "redTrue": 23,
+    "redOnlyFalse": "overviewOwnerAndLiteralUnsupportedControls",
+    "greenTrue": 24,
+    "commonInputs": 125,
+    "commonDifferenceOnly": "Surface.elm175d to9b49; fixed mode-specific runners separately bound",
+    "chronology": "Independent actual matching RED attestation precedes candidate adoption and GREEN",
+    "scope": "Paired tests bind the then-current95e/ce39 tools; later combined5af/e706 tool modes have separate source review and fresh original101/DOM19/final299 executions"
+  },
+  "originalRegression": {
+    "run": "1793963586389263010",
+    "unchangedFixtures": {
+      "TaskViewReplay": 78,
+      "TaskViewEscapeReplay": 7,
+      "WorkspaceNavigationReplay": 16
+    },
+    "allTrue": 101,
+    "compiledWorkers": 3,
+    "commands": 4,
+    "scope": "Original synthetic component workers; no native scenario acceptance",
+    "observationWindowMs": 25
+  },
+  "controlledDOM": {
+    "run": "1793963647327702236",
+    "checksAllTrue": 19,
+    "classification": "CONTROLLED_DOM_GREEN",
+    "scope": "Node structural DOM: control order/identities/labels/detail, disabled role, absent click handlers, enabled close and stale/refusal local callbacks",
+    "closeContrastMeaning": "Contrasts enabled close with disabled unsupported controls; not measured visual color contrast",
+    "browserObserved": false,
+    "browserGuardExecuted": false,
+    "nativeFocusObserved": false,
+    "observationWindowMs": 1000,
+    "unexecutedBrowserGuardSource": "Included as frozen support inputs only; browser inline-priority/finally observations remain unqualified"
+  },
+  "finalSharedRegression": {
+    "run": "1793963720419191904",
+    "inputs": 299,
+    "nestedCommands": 31,
+    "allNestedExit0": true,
+    "artifactPins": 20,
+    "productionRootsCompiled": 6,
+    "productionRoots": [
+      "Main",
+      "Bar",
+      "Popup",
+      "HttpMain",
+      "HttpBar",
+      "HttpPopup"
+    ],
+    "otherOptimizedComponents": [
+      "NativePreviewAdmission",
+      "NativePreviewRenderer"
+    ],
+    "httpCampaigns": 16,
+    "httpChecks": 7394,
+    "legacySupplementCases": 22,
+    "legacySupplementChecks": 50,
+    "literalRoutes": 13,
+    "literalSteps": 87,
+    "freshWorkers": 2,
+    "joinedHistories": [
+      5,
+      11
+    ],
+    "negativeControls": 34,
+    "closureEntries": 708,
+    "retainedRehashed": 458,
+    "cleanedStagingRuntimeAttestationOnly": 250,
+    "currentToolSHA256": {
+      "tools/check_arm64_cpu.py": "5af4a8d1bea7cb5271be40242f8ac60b7a7ff9fce0be8d1e6b698ecbb1d00fed",
+      "tools/qa_cpu.py": "e7060c4349ba702ddcec4a5d5d8cf8d634a281ecc50bb80a3585c621f23753d1"
+    }
+  },
+  "activeBindingRefresh": {
+    "failedRun": "1793962570223435542",
+    "reason": "Surface pin guard refused before literal oracle comparison",
+    "changed": "Two active parent Surface SHA scalars and three manifest source/dependent bundle SHA scalars only",
+    "historicalModelsEffectsCasesInventoriesSeedsBudgetsChanged": false,
+    "failureRelabeled": false
+  },
+  "evidence": {
+    "archive": "docs/warlock-build-loop/v2/evidence/ui006-workspace-controls-20261106/checks.tar.gz",
+    "archiveSHA256": "0f48e4fc4ae8f6ce76b987710bb5804f2b5387504d2594c8452bff8b41b0477f",
+    "archiveBytes": 11026588,
+    "manifest": "docs/warlock-build-loop/v2/evidence/ui006-workspace-controls-20261106/manifest.json",
+    "manifestSHA256": "d384eda2b4ff5ba555c5abfd0ce745db1ef197ca6bed88868e8f9d70630cb658",
+    "regularMembers": 1706,
+    "allMembersRootRehashed": true,
+    "all8RunSourceBindingsComplete": true,
+    "recordSnapshotSHA256": "d55563ea28dd648204dcd509b64374dff5f8aac92ed746712caf956da4e8f09c"
+  },
+  "independentReviews": {
+    "pairedRED": "ui006-matching-red-independent-attestation.json",
+    "pairedGREEN": "ui006-matching-green-independent-execution-review.json",
+    "original101AndNode19": "ui006-original101-dom19-independent-execution-review.json",
+    "final299": "ui006-final299-shared-independent-execution-review.json",
+    "location": "Corresponding exact files included in evidence archive"
+  },
+  "limits": {
+    "acceptedRequirementsDelta": 0,
+    "acceptedScenariosDelta": 0,
+    "acceptedRequirements": 20,
+    "originalRequirements": 242,
+    "acceptedScenarios": 43,
+    "originalScenarios": 417,
+    "originalAcceptance": false,
+    "nativeAcceptance": false,
+    "releaseAccepted": false,
+    "wholeUI006Accepted": false,
+    "fullIndependentInitialModel": false,
+    "opaqueCmdASTObserved": false,
+    "capacity2150And131072Qualification": false,
+    "nativeKeyboardPointerATIMEAndPhysicalFocusObserved": false,
+    "nativeTrialArmed": false,
+    "automaticWakeRoundTripVerified": false,
+    "historicalWebKitATTraversalFailure": "Retained unresolved; no Node result reclassifies it",
+    "oldUI011AndDEL010Stops": "Preserved; no resumption or deadline reset",
+    "foreignWorktreeFilesExcluded": [
+      "implementation/warlock/haskell/process-custody/test/FacadeControl.hs",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc"
+    ],
+    "publication": "Prepared locally; no GitHub push/PR/merge or CI pass claimed"
+  }
+}

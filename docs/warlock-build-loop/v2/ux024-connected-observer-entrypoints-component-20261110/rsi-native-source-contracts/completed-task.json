@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "record": ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+  "candidateSha256": "2e51eedefc96a0c91da23072d085a6c5ee4da371526e363a84f45723e6883fdb",
+  "integrationRevision": "3f3565fc1a4ded0bf2faa5657b4fc8633203205c",
+  "sourceFiles": {
+    "implementation/warlock/src/HttpPopup.elm": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133",
+    "implementation/warlock/src/SurfaceRenderer.elm": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672",
+    "implementation/warlock/qa/ux024-menu-dom.cjs": "cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f",
+    "implementation/warlock/src/SurfaceController.elm": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+    "implementation/warlock/qa/MenuEscapeReplay.elm": "d85c653ecab26f3d7f18d90fd54e67e2e88d688027554f0d7acd7e4e586aa982",
+    "implementation/warlock/qa/menu-escape.cjs": "a70cacd14fb4c48066f2b2e18859f67d56da359cf2cf86227774d1cc1dd4de58",
+    "implementation/warlock/src/CapturedAction.elm": "08efe9eacd78e9edf86ed13a5b13108d29face6ef1edf264ad711dc6c720664b",
+    "implementation/warlock/src/Presentation.elm": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851",
+    "implementation/warlock/qa/ux024-bar-context-dom.cjs": "0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131",
+    "implementation/warlock/src/Desktop.elm": "8385e34a3ecf122bf51a6ca4e4fe2df302a955fe35575dca8b2e419302f6fd56",
+    "implementation/warlock/qa/MenuInitialFocusReplay.elm": "600a0f18055b1c6e222ff61f75f63d37d0135aa4afc1a997e25c5476cd5e4c64",
+    "implementation/warlock/qa/menu-initial-focus.cjs": "aa138698454a0d16bea9467c01b94cca72faf8fe4c2d7cbf3f5dbd06bf8dce0b",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "737fe6ccebccfbbf43ca6dc926fa028bdda6102cb98f38a504b84b74866ac860",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "1698d4aaf3d016f2b4cae709984e97318412c92706995c8c0293a0039e8e74dd",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "3050e7db1b2d1c1c5f4b7089a16cffd3d72c4d96c520a81e3de279706f4c02e4",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "c1c1af0649b3630e8927f51673f9b4f499164b9f8aabe04aec0b324f10d9f6c2"
+  },
+  "actualTerminal": {
+    "terminal": true,
+    "jobId": "pid2681464-start5220256",
+    "candidateSha256": "2e51eedefc96a0c91da23072d085a6c5ee4da371526e363a84f45723e6883fdb",
+    "scope": "native",
+    "manifestSha256": "3ceb0236eb9cc9ad3508559ff86af4dbbbf81de506182c0be5f021313ebc52a8",
+    "fixtureSha256": "009d4d887917ade8aa3371bd11a7e6103fb0a36da99ddf5bd812dcac77e543e1",
+    "exit": 0,
+    "classification": "pass",
+    "actualOuterHandle": "51353",
+    "actualOuterHandleConsumed": true,
+    "rawReport": {
+      "path": ".warlock-contributor/ux024-connected-observer-1794286494083914542/report.json",
+      "sha256": "d23359a01dd449e7a2b600912b109356c46dcb9e3f7987152a1a625273e1d875"
+    },
+    "rawWire": {
+      "path": ".warlock-contributor/ux024-connected-observer-1794286494083914542/observer-wire.jsonl",
+      "sha256": "5382528ebb633d6b8579c509615616d52e603a93e8db2743aa5d9210e6a459e9"
+    },
+    "componentQualificationPassed": true,
+    "providerActionAuthorityQualified": false,
+    "nativeDeadlineIssued": true,
+    "snapshotCount": 3,
+    "mappedWindowObserved": true,
+    "observerAndProducerMappingsPassed": true,
+    "closePhaseComplete": true,
+    "inputIssued": true,
+    "observerRetired": true,
+    "forcedCleanup": false,
+    "cleanupUnknown": false,
+    "globalRestoration": true,
+    "sourceInputsUnchanged": true,
+    "cleanupQualified": true,
+    "nativeAcceptance": false,
+    "originalAcceptance": false,
+    "requirementsCredit": 0,
+    "scenariosCredit": 0
+  },
+  "retainedFailures": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794284617657083219/report.json",
+      "sha256": "0da2d2dc659b83a274cc2dae736d6681b21d9350f5126f8f0fb081e30545282c"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/report.json",
+      "sha256": "026d354a31f9c88a79d59df6083c9ee6200ffbbd0a6f7320549224ae46798fbc"
+    }
+  ],
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "meaning": "Actual connected observer qualification; no taskbar menu/focus acceptance."
+}

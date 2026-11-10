@@ -5,6 +5,7 @@
 -- namespace; its subsequently forked children enter the new PID namespace.
 module Warlock.Ui.EngineCustody
   ( EngineProcess, ImageFacts(..), startUnreadyEngine, takeEngineChannel, enginePid, engineImageFacts, engineExpectedIds, engineLiveChild, engineCredentialGuard, stopEngineProcess
+  , EngineExitReceipt, EngineExitDisposition(..), finishEngineProcess, engineNormalExit, engineExitReaped, engineExitDisposition, engineExitFacts, engineExitLiveImageFacts, engineExitMatches
   , Custody, startCustody, stopCustody, abandonCustody, verifyChild, openPidfd, pidfdExited, fdReady
   , Setup(..), NamespaceExit(..), CallbackRetirement(..), OwnerIdentity(..)
   , ProviderRoute(..), CleanupFacts(..), CleanupIssue(..), cleanupIssues
@@ -30,10 +31,12 @@ module Warlock.Ui.EngineCustody
 
 import Control.Concurrent (threadDelay)
 import Control.Concurrent.MVar (MVar, newMVar, withMVar)
-import Control.Exception (IOException, SomeException, bracket, mask, mask_, onException, try, throwIO)
+import Control.Exception (IOException, SomeException, SomeAsyncException, fromException, bracket, mask, mask_, onException, try, throwIO)
 import Control.Monad (unless, when)
 import Data.Bits ((.|.), (.&.), complement)
 import Data.Word (Word32, Word64)
+import Data.List (elemIndices)
+import GHC.Clock (getMonotonicTimeNSec)
 import qualified Data.ByteString as B
 import qualified Data.Text as T
 import qualified Crypto.Hash.SHA256 as SHA256
@@ -41,7 +44,7 @@ import qualified Network.Socket as S
 import Text.Read (readMaybe)
 import System.IO (hClose)
 import System.Timeout (timeout)
-import System.Posix.Files (FileStatus, getFdStatus, isRegularFile, isNamedPipe, isSocket, deviceID, fileID, fileSize)
+import System.Posix.Files (FileStatus, getFdStatus, isRegularFile, isNamedPipe, isSocket, deviceID, fileID, fileSize, readSymbolicLink)
 import System.Posix.IO (FdOption(CloseOnExec,NonBlockingRead), OpenMode(ReadOnly), closeFd, createPipe, defaultFileFlags, fdToHandle, openFd, setFdOption)
 import System.Posix.Types (Fd(..))
 import System.Posix.User (getEffectiveUserID, getEffectiveGroupID)
@@ -249,17 +252,23 @@ stopCustody remaining custody@(Custody _ pidfdCell) = mask $ \_ -> do
   Just pidfd -> do
    owned <- verifyChild pidfd
    if not owned then pure False else do
-    -- pidfd targets exactly the verified child, never a numeric PID or a
-    -- process group. This also closes the fork-before-exec lifeline leak gap.
-    _ <- c_pidfdSignal #{const SYS_pidfd_send_signal} pidfd #{const SIGKILL} nullPtr 0
     let loop = do
          left <- remaining
          if left <= 200000 then pure False else do
           flags <- pollFlags pidfd
           if flags .&. #{const POLLIN} /= 0 then reapChild pidfd else
            if flags /= 0 then pure False else threadDelay (min 1000 (left-200000)) >> loop
-    outcome <- try loop :: IO (Either IOException Bool)
-    pure (either (const False) id outcome)
+    -- A normal lifeline EOF must be allowed to retire PID1 first. This old
+    -- Bool reports only observed reap, NEVER the new normal-exit receipt.
+    natural <- try loop :: IO (Either IOException Bool)
+    case natural of
+     Right True -> pure True
+     _ -> do
+      direct <- verifyChild pidfd
+      if not direct then pure False else do
+       _ <- c_pidfdSignal #{const SYS_pidfd_send_signal} pidfd #{const SIGKILL} nullPtr 0
+       fallback <- try loop :: IO (Either IOException Bool)
+       pure (either (const False) id fallback)
 
 -- Safe even if called repeatedly. No wait/reap here.
 abandonCustody :: Custody -> IO ()
@@ -614,18 +623,248 @@ childSetupExec p = do
 -- Before starting workers or returning a passing result, the caller must
 -- validate peer credentials on every fragment, held image, namespace/PID1,
 -- post-exec lifeline and capability facts and original deadline.
-data EngineProcess = EngineProcess Custody (IORef (Maybe S.Socket)) CInt ImageFacts (Integer,Integer) AdmissionDeadline (MVar ())
+-- Private implementation fragment composed into EngineCustody below ImageFacts.
+-- These are observations, never factories for child or page-supplied authority.
+data EngineExitDisposition = EngineExitedNormally | EngineExitedAbnormally
+  | EngineForcedFallback | EngineExitUnknown deriving (Eq,Show)
+
+data OwnedEngineIdentity = OwnedEngineIdentity !CInt !Integer !FilePath !FilePath
+  deriving (Eq,Show)
+
+-- Constructor remains package-private. The only issuer owns the exact pidfd,
+-- serializes against every SCM admission, and consumes its wait status once.
+data LiveImageEvidence = LiveImageEvidence !ImageFacts !Integer !Integer
+
+data EngineExitReceipt = EngineExitReceipt !EngineExitDisposition !Bool
+  !OwnedEngineIdentity !ImageFacts !String !(Maybe (CInt,CInt)) !Bool !Bool !Bool !(Maybe LiveImageEvidence) !(IORef (Maybe EngineExitReceipt))
+
+engineExitDisposition :: EngineExitReceipt -> EngineExitDisposition
+engineExitDisposition (EngineExitReceipt value _ _ _ _ _ _ _ _ _ _) = value
+
+engineNormalExit :: EngineExitReceipt -> Bool
+engineNormalExit receipt = engineExitDisposition receipt == EngineExitedNormally
+
+engineExitReaped :: EngineExitReceipt -> Bool
+engineExitReaped (EngineExitReceipt _ value _ _ _ _ _ _ _ _ _) = value
+
+-- ImageFacts below is the STARTUP held image, never a post-exit executable
+-- claim: exec can change an image without changing pidfd/PID/birth.
+-- Data-only diagnostics contain no descriptor, constructor or reaping right.
+-- A normal receipt concerns this PID1's process memory, not pathname cleanup,
+-- WebKit helper-thread provenance, provider admission or original acceptance.
+engineExitFacts :: EngineExitReceipt -> (CInt,Integer,FilePath,FilePath,ImageFacts,String,Maybe (CInt,CInt))
+engineExitFacts (EngineExitReceipt _ _ (OwnedEngineIdentity pid start namespace parentNamespace) image originalD status _ _ _ _ _) =
+  (pid,start,namespace,parentNamespace,image,originalD,status)
+
+-- Separate full-digest sampling time from subsequent live metadata checks.
+-- None of these data claim that an executable can be observed after exit.
+engineExitLiveImageFacts :: EngineExitReceipt -> Maybe (ImageFacts,Integer,Integer)
+engineExitLiveImageFacts (EngineExitReceipt _ _ _ _ _ _ _ _ _ sample _) =
+  case sample of
+    Nothing -> Nothing
+    Just (LiveImageEvidence image digestAt checkedAt) -> Just (image,digestAt,checkedAt)
+
+-- Called only while the SAME credential-admission gate is held. The first
+-- live /proc executable is hashed. Subsequent checks bind it to the same
+-- regular executable inode as the still-executing parent: Linux executable
+-- write-denial pins that inode, so rehashing the full ELF on every UI RPC is
+-- unnecessary. The timestamp is a live-sample diagnostic, not a new deadline.
+engineExitMatches :: EngineProcess -> EngineExitReceipt -> Bool
+engineExitMatches (EngineProcess _ _ _ _ _ _ _ _ issuer _)
+  (EngineExitReceipt _ _ _ _ _ _ _ _ _ _ issuedBy) = issuer == issuedBy
+
+validateLiveEngineImage :: EngineProcess -> IO Bool
+validateLiveEngineImage (EngineProcess _ _ expected expectedImage _ _ _ _ _ cell) = do
+  let sameIdentity status (ImageFacts dev ino size _) = isRegularFile status
+        && toInteger (deviceID status) == dev && toInteger (fileID status) == ino
+        && toInteger (fileSize status) == size
+      openImage path = do
+        fd <- openFd path ReadOnly defaultFileFlags
+        setFdOption fd CloseOnExec True `onException` closeFd fd
+        pure fd
+      check = bracket (openImage "/proc/self/exe") closeFd $ \parent ->
+        bracket (openImage ("/proc/" ++ show expected ++ "/exe")) closeFd $ \childImage -> do
+          parentBefore <- getFdStatus parent
+          before <- getFdStatus childImage
+          require (sameIdentity parentBefore expectedImage && sameIdentity before expectedImage)
+            "engine live executable identity differs"
+          cached <- readIORef cell
+          digestAt <- case cached of
+            Nothing -> do
+              observed <- hashHeld childImage
+              require (observed == expectedImage) "engine live executable digest differs"
+              toInteger <$> getMonotonicTimeNSec
+            Just (LiveImageEvidence measured at _) -> do
+              require (measured == expectedImage) "engine live digest cache differs"
+              pure at
+          parentAfter <- getFdStatus parent
+          after <- getFdStatus childImage
+          require (sameFile parentBefore parentAfter && sameFile before after
+                && sameIdentity parentAfter expectedImage && sameIdentity after expectedImage)
+            "engine image changed during live validation"
+          checkedAt <- toInteger <$> getMonotonicTimeNSec
+          writeIORef cell (Just (LiveImageEvidence expectedImage digestAt checkedAt))
+  outcome <- try check :: IO (Either IOException ())
+  case outcome of
+    Right () -> pure True
+    Left _ -> writeIORef cell Nothing >> pure False
+
+observeEngineIdentity :: CInt -> IO OwnedEngineIdentity
+observeEngineIdentity pid = do
+  let base = "/proc/" ++ show pid
+  raw <- B.readFile (base ++ "/stat")
+  require (B.length raw <= 16384) "engine proc identity too large"
+  let text = map (toEnum . fromEnum) (B.unpack raw) :: String
+      closing = elemIndices ')' text
+  require (not (null closing)) "engine proc identity malformed"
+  let fields = words (drop (last closing + 1) text)
+  require (length fields > 19) "engine proc birth missing"
+  actualPid <- maybe (ioError (userError "engine proc PID invalid")) pure
+    (readMaybe (takeWhile (/= ' ') text) :: Maybe CInt)
+  start <- maybe (ioError (userError "engine proc birth invalid")) pure
+    (readMaybe (fields !! 19) :: Maybe Integer)
+  namespace <- readSymbolicLink (base ++ "/ns/pid")
+  parentNamespace <- readSymbolicLink "/proc/self/ns/pid"
+  selectedNamespace <- readSymbolicLink "/proc/self/ns/pid_for_children"
+  require (actualPid == pid && start > 0 && namespace == selectedNamespace
+        && namespace /= parentNamespace) "engine namespace/birth identity refused"
+  pure (OwnedEngineIdentity pid start namespace parentNamespace)
+
+captureEngineIdentity :: CInt -> CInt -> IO OwnedEngineIdentity
+captureEngineIdentity pidfd pid = do
+  owned <- verifyChild pidfd
+  flags <- pollFlags pidfd
+  require (owned && flags == 0) "engine birth unavailable before capture"
+  first <- observeEngineIdentity pid
+  second <- observeEngineIdentity pid
+  still <- verifyChild pidfd
+  after <- pollFlags pidfd
+  require (first == second && still && after == 0) "engine identity changed during capture"
+  pure first
+
+-- Inspect first with WNOWAIT; only the exact already-exited direct child may
+-- then be reaped. No waitpid(-1), raw-PID signal, second waiter or status oracle.
+reapOwnedEngine :: CInt -> CInt -> IO (Maybe (CInt,CInt))
+reapOwnedEngine pidfd expected = do
+  let sample waitOptions = allocaBytes #{size siginfo_t} $ \storage -> do
+        fillBytes storage 0 #{size siginfo_t}
+        result <- c_waitid #{const P_PIDFD} (fromIntegral pidfd) storage waitOptions
+        if result /= 0 then pure Nothing else do
+          pid <- peekByteOff storage #{offset siginfo_t, si_pid} :: IO CInt
+          code <- peekByteOff storage #{offset siginfo_t, si_code} :: IO CInt
+          status <- peekByteOff storage #{offset siginfo_t, si_status} :: IO CInt
+          pure (if pid == expected then Just (code,status) else Nothing)
+      flags = #{const WEXITED} .|. #{const WNOHANG}
+  before <- sample (flags .|. #{const WNOWAIT})
+  case before of
+    Nothing -> pure Nothing
+    Just value -> do
+      after <- sample flags
+      pure (if after == Just value then after else Nothing)
+
+waitOwnedEngine :: IO Int -> Int -> CInt -> CInt -> IO (Maybe (CInt,CInt))
+waitOwnedEngine remaining reserve pidfd expected = do
+  left <- remaining
+  if left <= reserve then pure Nothing else do
+    flags <- pollFlags pidfd
+    if flags .&. #{const POLLIN} /= 0 then reapOwnedEngine pidfd expected else do
+      require (flags == 0) "engine pidfd observation uncertain"
+      threadDelay (min 1000 (left-reserve))
+      waitOwnedEngine remaining reserve pidfd expected
+
+closeLifeObserved :: Custody -> IO Bool
+closeLifeObserved (Custody life _) = do
+  current <- withdraw life
+  case current of
+    Nothing -> pure False -- No new proof from an earlier/unknown close.
+    Just fd -> (== 0) <$> c_close fd
+
+closePidfdObserved :: Custody -> IO Bool
+closePidfdObserved (Custody _ cell) = do
+  current <- withdraw cell
+  case current of
+    Nothing -> pure False
+    Just fd -> (== 0) <$> c_close fd
+
+-- The selected engine IS PID1. One observed status is not two independent
+-- engine/custodian receipts. Keep its lifeline open during natural exit.
+-- The existing 200ms stop reserve is the fallback boundary; fallback never
+-- obtains a new deadline and is always explicitly unclean.
+finishEngineProcess :: EngineProcess -> IO EngineExitReceipt
+finishEngineProcess (EngineProcess custody@(Custody _ pidCell) socketCell expected image _ deadline gate identity cache liveImage) =
+ mask_ $ withMVar gate $ \_ -> do
+  previous <- readIORef cache
+  case previous of
+    Just receipt -> pure receipt
+    Nothing -> do
+      lastLive <- readIORef liveImage
+      let unknown = EngineExitReceipt EngineExitUnknown False identity image
+            (deadlineAbsoluteNs deadline) Nothing False False False lastLive cache
+          perform = do
+            current <- readIORef pidCell
+            pidfd <- maybe (ioError (userError "engine pidfd unavailable")) pure current
+            owned <- verifyChild pidfd
+            require owned "engine sole-wait ownership unavailable"
+            flags <- pollFlags pidfd
+            -- The held pidfd anchors the startup-recorded birth/namespace.
+            -- Requiring a second live /proc sample here would race a valid
+            -- post-ACK exit. Current PID-namespace membership/start ticks do
+            -- not change during this same process lifetime. The consuming
+            -- wait below still requires the exact owned si_pid and status.
+            require (flags == 0 || flags .&. #{const POLLIN} /= 0)
+              "engine exit flags uncertain"
+            natural <- waitOwnedEngine (remainingMicros deadline) 200000 pidfd expected
+            (status,forced,lifeClosed) <- case natural of
+              Just value -> do
+                closed <- closeLifeObserved custody
+                pure (Just value,False,closed)
+              Nothing -> do
+                closed <- closeLifeObserved custody
+                direct <- verifyChild pidfd
+                require direct "engine fallback custody unavailable"
+                -- The signal result cannot turn a fallback into normal exit.
+                _ <- c_pidfdSignal #{const SYS_pidfd_send_signal} pidfd #{const SIGKILL} nullPtr 0
+                reaped <- waitOwnedEngine (remainingMicros deadline) 0 pidfd expected
+                pure (reaped,True,closed)
+            left <- remainingMicros deadline
+            socketResult <- closeCell S.close socketCell
+            pidfdClosed <- case status of
+              Just _ -> closePidfdObserved custody
+              Nothing -> pure False -- Retain the exact reference on uncertainty.
+            after <- remainingMicros deadline
+            let reaped = case status of Just _ -> True; Nothing -> False
+                socketClosed = either (const False) (const True) socketResult
+                confirmed = left > 0 && after > 0 && lifeClosed && socketClosed && pidfdClosed
+                disposition
+                  | forced = EngineForcedFallback
+                  | not reaped || not confirmed = EngineExitUnknown
+                  | status == Just (#{const CLD_EXITED},0) = EngineExitedNormally
+                  | otherwise = EngineExitedAbnormally
+            pure (EngineExitReceipt disposition reaped identity image
+              (deadlineAbsoluteNs deadline) status lifeClosed socketClosed pidfdClosed lastLive cache)
+      outcome <- try perform :: IO (Either SomeException EngineExitReceipt)
+      case outcome of
+        Right receipt -> writeIORef cache (Just receipt) >> pure receipt
+        Left problem -> do
+          -- Quarantine this uncertain attempt; a repeated call must not
+          -- perform a second wait/close or reinterpret partial work as clean.
+          writeIORef cache (Just unknown)
+          case fromException problem :: Maybe SomeAsyncException of
+            Just _ -> throwIO problem
+            Nothing -> pure unknown
+
+data EngineProcess = EngineProcess Custody (IORef (Maybe S.Socket)) CInt ImageFacts (Integer,Integer) AdmissionDeadline (MVar ()) OwnedEngineIdentity (IORef (Maybe EngineExitReceipt)) (IORef (Maybe LiveImageEvidence))
 
 enginePid :: EngineProcess -> CInt
-enginePid (EngineProcess _ _ pid _ _ _ _) = pid
+enginePid (EngineProcess _ _ pid _ _ _ _ _ _ _) = pid
 
 engineImageFacts :: EngineProcess -> ImageFacts
-engineImageFacts (EngineProcess _ _ _ facts _ _ _) = facts
+engineImageFacts (EngineProcess _ _ _ facts _ _ _ _ _ _) = facts
 
 -- Source is the actual parent identity captured after entering the user
 -- namespace, never a request body or caller-supplied credential string.
 engineExpectedIds :: EngineProcess -> (Integer,Integer)
-engineExpectedIds (EngineProcess _ _ _ _ ids _ _) = ids
+engineExpectedIds (EngineProcess _ _ _ _ ids _ _ _ _ _) = ids
 
 -- Package-internal ownership TRANSFER, not a borrow: atomically withdraw once
 -- under the same gate used by stop. The trusted Broker takes sole close
@@ -636,18 +875,18 @@ engineExpectedIds (EngineProcess _ _ _ _ ids _ _) = ids
 -- never repeat close after Broker has adopted/closed it on failure. Never
 -- expose this channel to page content or bypass SCM/ready checks.
 takeEngineChannel :: EngineProcess -> IO S.Socket
-takeEngineChannel (EngineProcess _ cell _ _ _ _ gate) = mask_ $ withMVar gate $ \_ -> do
-  current <- withdraw cell
-  maybe (ioError (userError "engine channel already transferred or retired")) pure current
+takeEngineChannel (EngineProcess _ cell _ _ _ _ gate _ cache _) = mask_ $ withMVar gate $ \_ -> do
+  finished <- readIORef cache
+  case finished of
+    Just _ -> ioError (userError "engine process already retired or uncertain")
+    Nothing -> do
+      current <- withdraw cell
+      maybe (ioError (userError "engine channel already transferred or retired")) pure current
 
 -- Original D bounds stopping/reaping. A failed close or unobserved reap is
 -- false; no finalizer, second waiter or unrelated PID is used.
 stopEngineProcess :: EngineProcess -> IO Bool
-stopEngineProcess (EngineProcess custody socketCell _ _ _ deadline gate) = mask_ $ withMVar gate $ \_ -> do
-  stopped <- stopCustody (remainingMicros deadline) custody
-  closed <- closeCell S.close socketCell
-  abandonCustody custody
-  pure (stopped && either (const False) (const True) closed)
+stopEngineProcess process = engineNormalExit <$> finishEngineProcess process
 
 -- Trusted transport checks this around each bounded SCM-credential-bearing
 -- receive. This is a nonreaping owned-pidfd check, not PID authentication by
@@ -656,11 +895,12 @@ stopEngineProcess (EngineProcess custody socketCell _ _ _ deadline gate) = mask_
 -- and this observation serialize through the same gate; transport must check
 -- again after each receive because the peer can exit immediately afterward.
 engineLiveChild :: EngineProcess -> CInt -> IO Bool
-engineLiveChild (EngineProcess (Custody _ pidCell) _ expected _ _ _ gate) sender =
+engineLiveChild (EngineProcess (Custody _ pidCell) _ expected _ _ _ gate _ cache _) sender =
  withMVar gate $ \_ -> do
+  finished <- readIORef cache
   current <- readIORef pidCell
-  case current of
-   Just pidfd | sender == expected -> do
+  case (finished,current) of
+   (Nothing,Just pidfd) | sender == expected -> do
     ownedChild <- verifyChild pidfd
     flags <- pollFlags pidfd
     pure (ownedChild && flags == 0)
@@ -671,18 +911,20 @@ engineLiveChild (EngineProcess (Custody _ pidCell) _ expected _ _ _ gate) sender
 -- Kernel SCM credentials and the held child pidfd are both required. The
 -- pidfd owns process birth; expected IDs come from trusted parent sampling.
 checkCredentialHeld :: EngineProcess -> Credential.PeerCredential -> IO (Either T.Text ())
-checkCredentialHeld (EngineProcess (Custody _ pidCell) _ expected _ (uid,gid) deadline _) credential = do
+checkCredentialHeld process@(EngineProcess (Custody _ pidCell) _ expected _ (uid,gid) deadline _ _ cache _) credential = do
  left <- remainingMicros deadline
+ finished <- readIORef cache
  current <- readIORef pidCell
- case current of
-  Just pidfd | left > 0
+ case (finished,current) of
+  (Nothing,Just pidfd) | left > 0
              && Credential.credentialPid credential == toInteger expected
              && Credential.credentialUid credential == uid
              && Credential.credentialGid credential == gid -> do
    owned <- verifyChild pidfd
    flags <- pollFlags pidfd
+   image <- if owned && flags == 0 then validateLiveEngineImage process else pure False
    after <- remainingMicros deadline
-   pure (if owned && flags == 0 && after > 0 then Right () else Left (T.pack "engine child unavailable"))
+   pure (if owned && flags == 0 && image && after > 0 then Right () else Left (T.pack "engine child/image unavailable"))
   _ -> pure (Left (T.pack "engine credential refused"))
 
 -- Only the package-owned process can construct this paired guard. Every recv
@@ -695,7 +937,7 @@ checkCredentialHeld (EngineProcess (Custody _ pidCell) _ expected _ (uid,gid) de
 -- timeout cannot interrupt an unsafe/blocking FFI; review actual callback and
 -- provider scheduling rather than treating this as hard real-time proof.
 engineCredentialGuard :: EngineProcess -> CredentialGuard T.Text
-engineCredentialGuard process@(EngineProcess _ _ _ _ _ deadline gate) = CredentialGuard
+engineCredentialGuard process@(EngineProcess _ _ _ _ _ deadline gate _ _ _) = CredentialGuard
   (\credential -> withMVar gate (\_ -> checkCredentialHeld process credential))
   (\credential action -> withMVar gate $ \_ -> do
     before <- checkCredentialHeld process credential
@@ -759,6 +1001,8 @@ engineEnvironment pairs = do
 -- behavior require independent review. No default success replaces them.
 startUnreadyEngine :: AdmissionDeadline -> Word64 -> [(String,String)] -> IO EngineProcess
 startUnreadyEngine deadline session envPairs = mask $ \_ -> do
+  retirement <- newIORef Nothing
+  liveImage <- newIORef Nothing
   requireForkOwnership
   require (session > 0) "engine session must be positive"
   env <- engineEnvironment envPairs
@@ -829,6 +1073,7 @@ startUnreadyEngine deadline session envPairs = mask $ \_ -> do
                writeIORef pidCell (Just pidfd)
                verified <- verifyChild pidfd
                unless verified (ioError (userError "engine child ownership uncertain"))
+               identity <- captureEngineIdentity pidfd (fromIntegral pid)
                originalWriter <- withdraw (preparedLifeWrite prepared)
                case originalWriter of
                  Nothing -> ioError (userError "engine lifeline ownership missing")
@@ -841,7 +1086,7 @@ startUnreadyEngine deadline session envPairs = mask $ \_ -> do
                either throwIO pure closed
                still <- remainingMicros deadline
                when (still <= 0) (ioError (userError "engine fork exceeded deadline"))
-               pure (EngineProcess custody transferredSocket (fromIntegral pid) (heldImageFacts prepared) (uid,gid) deadline gate)
+               pure (EngineProcess custody transferredSocket (fromIntegral pid) (heldImageFacts prepared) (uid,gid) deadline gate identity retirement liveImage)
   runFork `onException` failOwned
 
 -- Integration remains incomplete: validate trusted procfs AND selected-held

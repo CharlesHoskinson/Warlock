@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-rendered-keyboard-context-component-only",
+  "greenReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263730714062157/report.json",
+    "sha256": "7e5f71b0e388f17e64f08143a97f9a1bb7a0bf39606c16fa6c2d68c4df652c7c"
+  },
+  "contextResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263730714062157/menu-bar-context.json",
+    "sha256": "0dad791546997593590d3a85e84d5b9be2d327bf62e92aeef83d1e6a7610f398"
+  },
+  "oldTabResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263730714062157/menu-tab-dom.json",
+    "sha256": "a79ae9918471777d9e807ad480e417bb88070ee7472fff30283fc37d93492c2b"
+  },
+  "oldEscapeResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263730714062157/menu-escape.json",
+    "sha256": "de029404c0c32f6b8557d4a270131624a5f55b17293020ad590a189fce170ae6"
+  },
+  "redReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263409567048734/report.json",
+    "sha256": "f6e72e89c082c3cb6a9d65056b2bdc878660c612b1e9c2cb458b6ec37355aa31"
+  },
+  "redContextResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263409567048734/menu-bar-context.json",
+    "sha256": "8eab0fe202183a9c3bc7cff544dc3e3b31c8cc73d792f1860778a3e6773213e2"
+  },
+  "commandExits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "sourceCount": 120,
+  "allLiveHashesMatched": true,
+  "soleReviewedSourceDelta": {
+    "implementation/warlock/src/CapturedAction.elm": {
+      "red": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+      "green": "08efe9eacd78e9edf86ed13a5b13108d29face6ef1edf264ad711dc6c720664b"
+    },
+    "implementation/warlock/src/Presentation.elm": {
+      "red": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+      "green": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851"
+    },
+    "implementation/warlock/src/SurfaceRenderer.elm": {
+      "red": "d5439ebf36c3624fd56a316a012177dcc20c47e883437d469e70c08ab3b1825c",
+      "green": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+    }
+  },
+  "counts": {
+    "contextCases": 34,
+    "contextAssertions": 503,
+    "seededSamples": 32,
+    "allowed": 5,
+    "refused": 27,
+    "tabCases": 18,
+    "tabAssertions": 86,
+    "escapeCases": 16,
+    "failures": 0
+  },
+  "guarantees": [
+    "Actual compiled HttpBar keyboard ContextMenu/ShiftF10 emits exactly one current scoped group/pin surface-context POST, preserving legitimate lease0 and full-width counters.",
+    "Ordinary click stays legacy surface-action; disabled/utility/popup-only, modifiers/composition229/repeat/noncontext keys preserved/refused without local focus.",
+    "Detached old callbacks after publication/lease/removal/disable and stopped HTTP do not post; POST failure does not replay.",
+    "32 literal fixed-seed witnesses satisfy independent admission/default handling and no-activation predicate; five positive27 negative.",
+    "Original18 DOM and16 reducer Escape components remain passing with unchanged fixtures."
+  ],
+  "rootExecution": {
+    "outer": 25839,
+    "consumedExit": 0,
+    "jobPid": 3642060,
+    "jobStart": 2944609
+  },
+  "limits": [
+    "Controlled DOM/XHR and public reducer component only.",
+    "No native physical key, authenticated provider, actual backend/menu opening or eligible opener focus-return evidence. Original UX024 remains unaccepted."
+  ],
+  "effects": {
+    "reviewerTests": false,
+    "compiler": false,
+    "imports": false,
+    "primaryWrites": false
+  }
+}

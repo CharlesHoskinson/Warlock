@@ -2,6 +2,27 @@
 
 One shared offline Python checker and implementation skill, with thin Claude Code, Codex and Grok packaging. It helps contributors deliver actual GUI behavior against Warlock's original requirements. It cannot certify a physical/native/AT oracle or release acceptance. Linux, Python 3.9+ and Git in the repository are sufficient for checker use; product builds retain their existing protected QA tools.
 
+
+## Journey workflow and RSI
+
+Version 0.18 corrects scope-extension provenance and authenticated actor binding. It keeps workflow policy 2 and all historical policies, records and stops. Start new delivery records with `--workflow-policy 2 --delivery-plan-file`. Set `--owner` to the assigned `AGENTBUS_AGENT` and supply the assigned `AGENTBUS_RUN`.
+
+Use `delivery-select` for the canonical active record. Use `delivery-event` for exact candidate, review, job, integration, journey and RSI observations. `progress-audit --expect-slice ... --expect-selection ...` derives the next Root action. `delivery-precheck` is structural and never grants execution authority.
+
+See [delivery event inputs and terminal reports](references/delivery-events.md) for exact input fields, candidate hashes and failure signatures.
+
+Every completed product slice requires one bounded RSI comparison before the next slice. Tested adoption, evidenced no-change and accountable blockers remain distinct. RSI never resets product progress or accepts original scenarios.
+
+`delivery_state()['rsi']` contains the validated evidence returned by `validate_rsi`. Admitted RSI event envelopes remain in `record['delivery']['events']`. Select the unique admitted event for the current candidate and integration revision. Resolve its evidence reference with `delivery_ref` and require equality with the replayed evidence. Check the disposition, candidate, integration revision and authorization expiry across these bindings. Reject missing or duplicate events, stale evidence and mismatched bindings.
+
+Use one integrated original journey. Bound internal repairs to two iterations or 45 awake minutes. Name the product action each repair unlocks. Keep safety and source-custody checks mandatory. Advisory model output and agent census do not add execution gates. Staff distinct tasks. Record source changes, integrated behavior and original observations separately from support work.
+
+For historical logical owners, use an independently reviewed support `actorBinding` proof. Bind the existing record path and identity, logical owner, actual actor, run, DID and exact support resources. Keep the record owner unchanged. Admission confirms current live leases. Preserve historical exceptions and failed evidence.
+
+Read the [delivery procedure](references/redesign-flow.md), [workflow skill](skills/warlock-workflow/SKILL.md) and optional [Harness2 integration](references/harness2.md). The core has no Harness2 dependency. Frozen original oracles and native guards remain outside editable experiments.
+
+An explicit workflow-package update uses the same append-only support history with `purpose: "workflow-package"`. Retain the actual human instruction and a source manifest with captured, previous and current hashes for the exact batch. An independent transition review binds both artifacts and denies runtime authority. Confirm exact live actor/DID leases. Product files, original registers, protected launchers and arbitrary tools remain outside that package transition.
+
 From the repository root:
 
 ```sh
@@ -12,6 +33,44 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py inspect --requirement 
 ```
 
 These commands inspect the repository without adopting the active work. Before implementation, follow `plan` → `preflight --slice-file` → `start --slice-file` below, selecting your own record. Bare `start --owner` resumes the selected `STATE.activeSlice`; use it only when you own that slice. Carry the same global `--record` through the loop. Then use `verify-plan`, implement, `record`, ending loop `check`, `report` and `review`. `self-test` is optional plugin regression testing after package changes, not a prerequisite for every GUI contribution.
+
+## Coordinate the implementation loop
+
+Load [warlock-workflow](skills/warlock-workflow/SKILL.md) for an authorized multi-agent continuation. Use the existing contributor engine for its participant record. Select that record explicitly from the current human instructions and handoff. An old default record does not identify current work.
+
+Follow [progress review and stall correction](references/redesign-flow.md#progress-review-and-stall-correction) when original acceptance stalls. Identify the next missing execution or integration step. Assign it to its existing owner. Compare the expected observation with the next actual terminal result. Preserve policy stops and original deadlines.
+
+Count original acceptance separately from component checks and agent activity. A reviewed source packet needs protected execution or a specific blocking prerequisite. Another review of unchanged bytes does not complete that step.
+
+## Canonical review receipts
+
+The optional `scripts/canonicalize_review.py` helper copies an existing review decision into the core's `disposition` field.
+It accepts only `accepted` or `changes-required`. It preserves the original fields and adds the original receipt path and SHA256.
+Conflicting decisions, mismatched context, self-review, duplicate JSON fields, symbolic links and output overwrites are refused.
+
+Use absolute paths. Read the reviewer, candidate, scope and owner from the exact review and selected record.
+Select a new output path in an existing directory owned by your UID.
+The output directory must not permit group or other writes.
+Output ancestors must belong to root or your UID and reject group or other writes.
+Root-owned sticky temporary ancestors, such as `/tmp`, are allowed. Symbolic links remain refused.
+The helper trusts root and same-UID actors. It does not isolate evidence from those actors.
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/canonicalize_review.py \
+  --input /absolute/original-review.json --sha256 ORIGINAL_RECEIPT_SHA256 \
+  --candidate-sha256 FULL_CANDIDATE_SHA256 --reviewer EXACT_REVIEWER \
+  --owner SELECTED_RECORD_OWNER --scope cpu --output /absolute/canonical-review.json
+```
+
+The helper reports the new receipt hash. Keep the original receipt unchanged.
+Submit the canonical receipt through the existing `delivery-event` review procedure.
+The helper does not grant review independence, source adoption, execution permission or original acceptance. The unchanged core checks admission.
+
+Run the isolated helper regression with:
+
+```sh
+python3 -B -m unittest discover -s plugins/warlock-contributor/qa -p test_canonicalize_review.py -q
+```
 
 ## Scaffold and resume
 
@@ -76,6 +135,9 @@ it reports which client executables are on PATH without launching or installing
 them. It does not establish client trust, enabled hooks or product-toolchain
 readiness. Missing client executables do not prevent direct checker use.
 
+
+Standing delegated renewals use a separate evidence type from explicit human renewals. Each renewal binds the retained human delegation, reviewed operating policy and actual same-session Opus decision. The decision must select the exact declared expiry. The checker preserves the goal, identity scopes, participant start and original attempt clocks. Root retains credential operations and protected execution. A model decision does not count as a new human request or native acceptance.
+
 `self-test` explicitly runs the plugin's regression suite using temporary Git
 fixtures. It returns a nonzero exit on failure, missing tests, zero discovered
 tests or a five-minute timeout, and includes captured test output in its JSON
@@ -84,6 +146,23 @@ ordinary GUI slices do not require it. It runs no product compiler or native GUI
 campaign and installs no client plugin. Test fixtures do not modify participant
 records, the real Git index or the delivery ledger. Review the repository test
 code before executing it, as with any contributed code.
+
+For a fixed `--application-owner-route` packet, inspect its three embedded fixture
+pins before freezing the candidate:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/owner_route_preflight.py \
+  --root "$PWD" --review "$PWD/.warlock-contributor/owner-review.json" \
+  --sha256 REVIEW_SHA256
+```
+
+Use the exact packet path and digest. Retain the result with the candidate.
+The utility reads the runner AST and compares its literal fixture map with the
+packet and current fixture bytes. It refuses mismatches, dynamic maps and
+ambiguous bindings without importing or executing the runner. A
+`consistent-advisory-only` result leaves source review, complete QA, caller
+ownership and native gates required. Literal consistency does not prove the
+runner's control flow or establish SourceReady.
 
 `plan` builds a slice from original IDs and scenarios and includes their unchanged
 oracles and verification obligations. It does not choose the next feature, change
@@ -470,6 +549,19 @@ The v2 product-loop wrapper requires a participant record before and after nativ
 
 Local records are self-attested, not a tamper-proof audit or proof of independent review. The checker detects contradictions and stale/current evidence but cannot tell whether changed code improves behavior, whether a reviewer is honest, or whether pixels/AT match the original oracle. Work in separate Git worktrees when concurrent ownership is unclear. Record reports must describe observable behavior and unresolved obligations.
 
+## Audit current progress
+
+Use an explicit participant and expected slice ID. A mismatch fails. The command reads the existing ledger and participant history.
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py \
+  --repo /absolute/path/to/Warlock \
+  --record .warlock-contributor/your-slice.json --json \
+  progress-audit --expect-slice your-slice-id
+```
+
+The result separates recorded original acceptance from participant iteration counts. It includes the original progress clock, stopped records and a suggested Root action. A stopped selected record returns an error. The command does not write records, reset clocks, verify readiness, grant execution or infer acceptance.
+
 ## Prepare a delivery note
 
 `report` produces a read-only packet from the selected participant record. Use
@@ -553,7 +645,7 @@ so captured status text is not confused with another participant record.
 If `start` captured the accountable owner's already-dirty canonical support docs as
 foreign, later updates need exact provenance; do not overwrite participant pins or
 pretend a second owner exists. `reconcile-support --transition-file <ignored-json>`
-recognizes only HANDOFF, v2 STATE, wiki log and current-status. It requires frozen
+The default metadata purpose recognizes only HANDOFF, v2 STATE, wiki log and current-status. The explicit workflow-package purpose uses the stronger package transition described above. It requires frozen
 participant/current-file snapshots, current authenticated assigned-run AgentBus
 claims and an independent accepted review of each exact transition. Evidence lives
 under `.warlock-contributor/evidence/support-custody/`; the separate sidecar retains
@@ -565,6 +657,124 @@ hashes, participant identity, same owner, accepted disposition and provenance-on
 scope. The command rechecks the live claim and all evidence before its atomic write.
 Existing foreign-owner reconciliation and product adoption rules remain unchanged.
 For publication, explicitly pass `review --include <exact-support-path>`; its
-accepted current receipt must match both working and staged bytes. Source, tools,
-arbitrary docs and genuine foreign drafts cannot use this exception. Provenance
+accepted current receipt must match both working and staged bytes. Product source, root tools, arbitrary docs and genuine foreign drafts cannot use the default metadata exception. Explicit workflow-package updates require the separate human-bound package proof. Provenance
 recognition is neither production progress nor scenario acceptance.
+
+For a newly authorized work window, use the same-record renewal event in [the delivery flow](references/redesign-flow.md#renew-an-explicitly-authorized-work-window). Preserve elapsed history and source-bound reviews. A queued continuity message grants no authorization.
+
+Version 0.17.6 adds a mocked outer-builder regression for retained child failure evidence. A nonempty string child error remains in `error`; the outer failure is recorded in `outerError`. Missing, empty or malformed child errors use the outer error. This does not change protected execution guards or native acceptance.
+
+Version 0.17.7 adds `execution-refused` for an accepted candidate whose protected
+invocation was refused before any job started. Root supplies the candidate hash,
+unique consumed outer handle, strict report reference and independent review
+reference through the existing `delivery-event` CAS/selection command. The
+report binds the exact candidate manifest, fixtures, nonzero exit and retained
+raw evidence; `actualLaunch` and `jobId` must both be null. The independent
+review binds that report and concludes `no-process-started`. Copy raw evidence
+into repository evidence storage before referencing it; preserve original bytes.
+
+This closing observation keeps the accepted review and all history, creates no
+job or terminal, and disqualifies the refused candidate. Root can assemble a new
+unique candidate; the refused candidate cannot execute or integrate. A refusal
+does not advance progress, clear deferral, extend authorization or satisfy RSI.
+Closing evidence can be recorded after expiry or a clock discontinuity; further
+work still requires the existing authorization and clock checks.
+
+Version 0.17.8 adds a read-only advisory for the fixed WebKit metadata candidate:
+`python3 -B plugins/warlock-contributor/scripts/native_command_preflight.py
+--root /absolute/repository --candidate /absolute/candidate.json --sha256 FILE_SHA`.
+It checks the exact portable protected command, three original native guard
+hashes, the reviewed portable wrapper, and candidate-bound runner/packet bytes.
+The archived launcher's old host alias is refused. This is a pre-freeze check,
+not candidate validation, execution permission, provider qualification or an
+execution lease. Existing source, identity, goal, scope and native checks remain
+required. Other native commands are outside this advisory's fixed scope.
+
+Version 0.17.9 adds a read-only Boolean preflight for a Root checkpoint draft:
+`python3 -B plugins/warlock-contributor/scripts/checkpoint_preflight.py
+--root /absolute/repository --checkpoint /absolute/repository/.warlock-contributor/evidence/checkpoint-draft.json
+--sha256 FILE_SHA`.
+Run it on the exact proposed bytes before Root's existing atomic checkpoint
+refresh. The draft must be a bounded regular file inside the repository.
+`externalBlocker` must be a JSON Boolean: null, strings and numbers are refused.
+A genuine blocker stays `true`; the helper does not choose or coerce its value.
+
+A successful preflight checks only that field's representation against the pinned
+continuity protocol. It writes nothing and does not validate the full checkpoint,
+observe a goal, acknowledge a nonce or clear the watcher's pending wake. Root must
+still receive the actual wake, freshly observe the active authorized goal, preserve
+its exact thread/nonce and truthful blocker state, and use the existing ownership
+and atomic-refresh procedure. The unchanged continuity guard checks the published
+checkpoint and its freshness. Do not treat this advisory as publication or permission.
+
+
+### Retain complete managed QA receipts
+
+Version 0.17.10 requires file retention before managed QA output reaches a tool display limit.
+
+Before each authorized managed QA invocation, select new evidence files under
+`.warlock-contributor/evidence/` within the current claim scope. Refuse an existing
+file or symlink. Redirect complete stdout and stderr to those files before the
+invocation starts. Keep the exact protected command and its argument boundaries.
+A tool output limit must apply only to the displayed summary. It must not limit
+the retained streams. Keep the files when the command fails or is refused.
+
+After the invocation ends, hash the complete retained bytes. Read the actual
+`deliveryLaunch` object from those bytes. Preserve its record, candidate digest,
+selection, scope, PID, birth ticks and exact argv. Preserve the actual runner
+summary and its referenced report. For a pure unittest route, preserve the
+literal test summary. Do not substitute the final precheck result for either
+execution summary.
+
+Display a compact receipt with the evidence paths, hashes and exact byte ranges.
+Bind the launch and summary to the frozen candidate, fixtures, runners and profile.
+Verify the referenced report and current source bindings through the existing
+review gates. Retain the actual outer tool handle and terminal exit separately.
+Consume that actual handle through the existing workflow after it becomes terminal.
+A recorded summary does not consume the outer handle.
+
+If output is truncated and complete receipt files are unavailable, label the
+observation **truncated and unqualified**. Preserve the available output and the
+actual outer terminal receipt. Do not invent a PID, birth tick, handle or summary.
+Do not infer a passing observation from exit zero alone. A guarded retry needs
+its own actual launch and receipt. Keep the first attempt in the same history.
+
+This procedure improves evidence retention. The existing core already refuses
+missing or invalid execution evidence. Receipt retention grants no execution,
+source, native or original-scenario acceptance. Current goal, ownership, protected
+launcher, deadline and independent review requirements still apply.
+
+### Activate reviewers and check the complete execution path
+
+Use `followup_task` to assign work to a completed reviewer. `send_message` does
+not start a turn. Confirm the actual turn status before reporting active review.
+Queued work and waiting time are not progress evidence.
+
+Use one resumable Root entry point for approved materialization and canonical
+event admission. Between its stage and admit phases, run the actual shared
+read-only preflight command it emits. The utility verifies the report and does
+not run that command. Emit one exact existing protected execution command for
+Root to run separately. The bundle utility does not execute it.
+Preserve each completed step and its exact byte hashes.
+Resume from the first incomplete step. Reject conflicting destination bytes.
+Keep claims, current authorization and canonical UTF-8 candidate hashing in that path.
+
+Run the complete read-only preflight on final materialized bytes before effect
+admission or a current execution-readiness receipt. Share the normal runner's
+pre-effect validators. Check helper membership, compiled/current correspondence,
+system inventory, aliases, loader selection and every remaining prerequisite.
+Collect all current blockers in one structured report. Do not start the operation
+clock, launch product or QA effect children, or stage GUI input during a blocked
+preflight. Read-only goal checks may start their fixed client.
+
+Fix the reported blockers as one bounded change. Review only the changed bindings
+and their effects on the existing predicates. Preserve all failed attempts.
+Do not use repeated native attempts to discover checks available before execution.
+
+Retain raw terminal output and logs as soon as they are available. Consume the
+actual outer handle before admitting the canonical terminal event. Report the
+observed product behavior separately from preparation, source checks and readiness.
+A successful preflight grants no execution or original-scenario acceptance.
+Existing ownership, review, launcher, deadline and acceptance rules remain in force.
+
+Version 0.17.12 adds a bounded candidate-input edit precheck. The existing v2 caller durably retains actual launched pid/birth/candidate receipts under the participant lock. Root staged copies reject byte changes to unclosed launched inputs before the first copy and recheck under that same lock through CAS. New terminal evidence and idempotent copies remain available; a never-launched ready candidate needs no new refusal event. Manual writers must use the same precheck/lock boundary. No event, acceptance or native policy is added.

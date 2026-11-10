@@ -1,0 +1,34 @@
+{
+  "terminal": true,
+  "jobId": "pid1443598-start4354056",
+  "candidateSha256": "4bdd9b7891c12b4aa5817b7a9b97766956550ad83f6da87a955bb5b88814f440",
+  "scope": "native",
+  "manifestSha256": "cb7c98c485df8456588a0dc1e3b7ee6275b0930e18ad5858dbcb1d3aee60a823",
+  "fixtureSha256": "0d5b73895b7529c5e45f2e8ad0c3facffa6aa03641990b6e494f6314bab64520",
+  "exit": 1,
+  "classification": "failed",
+  "failureSignature": "native-provider-historical-qa-cpu-source-pin-mismatch",
+  "actualOuterHandle": "98283",
+  "actualOuterHandleConsumed": true,
+  "actualOuterTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/final/actual-native-outer-terminal.json",
+    "sha256": "b2dfafdade2887f7abb80675a3f504e25af22b0fe54d5300bab797470892b5fc"
+  },
+  "rawStderr": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/final/actual-native-loop.stderr",
+    "sha256": "5d639666358dc6afb2066953fa0e067d88495841ea5efeb11344019174fa59c1"
+  },
+  "rawStdout": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/metadata-preparation/prepared/final/actual-native-loop.stdout",
+    "sha256": "f7c2a274d099f9dd7d6672647e91c2beeccc95f0eb5d28b35f41f7103a270ac5"
+  },
+  "nativeExecutionEntered": false,
+  "displayStarted": false,
+  "inputIssued": false,
+  "nativeDeadlineIssued": false,
+  "forcedCleanup": false,
+  "cleanupQualified": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "retainedProviderReportsUnchanged": true
+}

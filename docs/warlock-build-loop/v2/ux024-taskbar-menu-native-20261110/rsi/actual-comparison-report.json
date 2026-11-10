@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "passed": true,
+  "checks": [
+    {
+      "name": "actual-positive-event-evidence-binding",
+      "baselinePassed": false,
+      "candidatePassed": true
+    },
+    {
+      "name": "mismatched-replay-evidence-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "missing-admitted-event-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "wrong-disposition-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "duplicate-admitted-event-refused",
+      "baselinePassed": true,
+      "candidatePassed": true
+    }
+  ],
+  "testsRun": 5,
+  "regressionPassed": true,
+  "currentCandidate": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "integrationRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+  "pluginBaseline": "8893718c9aecd2ccac4313e95a128aa7f74e7a7fc53592984ec8b5574dde6434",
+  "proposedPlugin": "5537d8f6bc0109746080b66614b97273c921f8f107c571a1c10bd0111c165a46",
+  "primaryUnchanged": true,
+  "adoptionClaimed": false,
+  "nativeCredit": false
+}

@@ -1,3 +1,15 @@
+# Current delivery workflow
+
+Use the contributor journey workflow to close the original EARS. Follow `plugins/warlock-contributor/references/redesign-flow.md`.
+
+Sol is the sole coordinator. Root owns integration and protected execution. Keep one active product journey and one protected job. Assign existing roles to distinct current work. Do not use a minimum process count as an execution prerequisite.
+
+Advance production code, behavioral qualification, integration or original observation in each active authorized turn. Health, census, timers and advice are supporting observations. They do not reset progress.
+
+Perform one bounded RSI step after each completed slice. Record tested adoption, evidenced no-change or a concrete blocker. RSI does not trigger itself or accept EARS.
+
+Preserve original 242/417 identities, literal oracles, ownership, failed evidence and stops. For the selected Notifications runner, keep its 28+2 deadline, nine transactions and sixteen-frame limit unchanged. Preserve each other scenario's own bounds. Respect human authorization and pauses.
+
 # Current production architecture
 
 Warlock-authored production code uses Elm and Haskell only. All GUI elements
@@ -8,14 +20,7 @@ No Python runtime may ship. Development QA/formal tools remain separate.
 Preserve original242 requirements/417 scenarios and all frozen evidence; ports
 need their own source-bound acceptance. Use authenticated AgentBus, Scrapling for
 online research, and the living LLM wiki for ideas, designs and verified outcomes.
-The ten-agent design/interface campaign and Muse-supervised preparation loop
-are explicitly authorized and armed in preparation mode. Preparation includes
-architecture, interface/source development, tooling, workflow plugins, models and
-meaningful fuzz/property checks needed for readiness. Root serializes protected
-checks. Final product implementation and native acceptance campaigns remain gated
-on independent readiness review under the user's existing conditional rearm
-authorization. A preparation
-receipt is not original-scenario or release acceptance. Respect future user pauses.
+The current human instruction authorizes workflow correction and productive rearming within actual authorization. Historical preparation campaigns do not prohibit authorized production implementation. Native execution still requires the actual source, provider, ABI, private runtime and owned cleanup. Component receipts do not accept original scenarios or a release.
 
 Root may run bounded isolated native capability trials needed to establish
 readiness after reviewing the actual source, current provider/ABI, private runtime
@@ -77,7 +82,7 @@ RTX 5080 acceleration, and a living LLM Wiki journal. On this host:
   Make at most two graph calls per question, then read at most three bounded
   source windows with `warlock-ctx show relative/path:LINE`.
 - After each code/model wave, run `warlock-ctx update`, then `warlock-ctx eval`
-  before the integration gate. Check `stats` and stale warnings. Graph artifacts
+  with the integration batch. Record `stats` and stale warnings. Retrieval maintenance does not block an otherwise ready check. Graph artifacts
   live outside this checkout at `~/.local/share/warlock-graph/graphify-out/`.
   Serialize updates. A retrieval smoke pass is not a correctness proof.
 - Source beats the graph. Verify pointers and use bounded `rg` when extraction
@@ -91,46 +96,17 @@ RTX 5080 acceleration, and a living LLM Wiki journal. On this host:
   Distinguish proposed ideas, implementation, bounded checks and original
   acceptance. Store neither credentials nor full conversation transcripts.
 
-## Muse EARS regulation and continuity
+## Advice and same-thread continuity
 
-For an unattended run, a collection of bounded worker turns is not a durable
-development loop. Run `tools/warlock_continuity.py` independently of the lead,
-with a private, explicitly expiring unattended configuration and a verified
-existing-thread wake route. Establish a fresh lead checkpoint after a wake
-before reporting that recovery works. Keep the guard disarmed for manual work,
-remote handoff, paused/completed goals and actual external blockers. It never
-starts a new coordinator or relaxes source ownership, authentication or QA.
+Read available architecture, UX and EARS findings at the relevant boundary. A finding must identify a concrete source or acceptance defect. Advisory output does not grant authority or add an approval gate. Missing or stale advice does not block authorized product work.
 
-Clear the previous report reference when starting a new QA job. Distinguish an
-actual terminal report from an unconsumed outer tool handle. Internal test and
-tooling failures require repair or a concrete handoff; they are not external
-blockers. Preserve failed evidence and investigation stops. See
-`docs/warlock-build-loop/v2/remote-handoff-20261102/README.md` for the tested guard
-and the November 2 stall findings.
+Recover the existing thread and canonical selection. Preserve pending jobs, drafts, history and actual authorization. Use actual process births when needed to prevent duplicate execution. Do not count credential health, queued tasks or idle identities as working agents.
 
-Charles appointed Muse as regulator, with an independent user timer checking every
-20 minutes. The machine-local runtime is
-`/home/charles/.local/state/warlock-team/20261028/muse-supervision/`;
-`regulator.py status` reports actual state. Read its three `review-*.md` reports
-and `REGULATOR.md` when continuing work. Preserve original 242 requirements,
-417 scenarios, literal oracles, whole-EARS obligations and all stopped histories.
-Select a real implementation or original-acceptance action; documentation, model
-counts, audits and timers do not reset production progress or accept GUI behavior.
+Keep continuity disarmed on a human pause, handoff or completed goal. A wake does not authorize product effects. An unchanged internal refusal needs one retained diagnosis and a bounded correction. Do not repeat censuses or nonce acknowledgements as product progress.
 
-With Codex collaboration tools, `send_message` queues information but does not
-activate an idle or completed agent. Use `followup_task` to resume that agent's
-coordination turn. Confirm actual source-worker launch receipts and live handles;
-queued assignments are not running jobs. Resume external persistent threads only
-after their prior process and terminal log have been revalidated.
+Use `followup_task` to activate an assigned completed agent. `send_message` only queues information. Resume a persistent external session only after its prior process and terminal state are verified. Keep the existing coordinator and executor roles.
 
-Muse uses its own authenticated `muse-regulator` AgentBus identity. Scheduled
-continuations target this exact root thread through `codex queue`, preserving
-terminal input drafts. The initial UI test separately verified physical Enter
-and exact-root nonce acknowledgement; it did not replace the Codex process.
-On a `MUSE_REGULATOR_RESTART` message, acknowledge its exact nonce using the
-documented helper before continuing actual EARS work. Do not restart live workers
-or interpret silence as a terminal process. If the user explicitly pauses/stops
-the goal, disarm the regulator as well; its timer must not override the user.
+Historical Muse timer and regulator receipts remain evidence. Their expired schedules are not prerequisites for current execution.
 
 ## Research and contract testing
 

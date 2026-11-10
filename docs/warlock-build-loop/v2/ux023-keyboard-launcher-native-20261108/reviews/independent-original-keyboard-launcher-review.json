@@ -1,0 +1,518 @@
+{
+  "schema": 1,
+  "scope": "ELM-UX-023/keyboard-launcher-original-native-evidence",
+  "reviewer": "workflow_astra",
+  "disposition": "accepted",
+  "requirementId": "ELM-UX-023",
+  "scenario": "keyboard-launcher",
+  "originalScenario": {
+    "name": "keyboard-launcher",
+    "given": "the launcher surface and no pointer input",
+    "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+    "then": "each operation completes with recorded keyboard focus and no pointer events"
+  },
+  "requirementsSource": {
+    "path": "/home/hoskinson/Projects/Warlock/docs/elm-roadmap/requirements.json",
+    "sha256": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff"
+  },
+  "rawReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/report.json",
+    "sha256": "0c3f74430b9db2822b451777465df6ecb4d09616303407e399f162e589b0f6ab"
+  },
+  "candidateSha256": "7c8caed3927894b0628c07d989a5ce30ca0489f113ed515b9ac83edf50e2cb2e",
+  "packet": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/packet.json",
+    "sha256": "5e7ddb62b8051cc752a4408f17cb75f7c2b907671282f88c42885bb006a76e34"
+  },
+  "verdict": {
+    "keyboardLauncherScenario": "accepted",
+    "broadRequirement": "not-accepted-by-this-review",
+    "aggregateUx023Scenario": "not-accepted-by-this-review",
+    "maximumOriginalDelta": {
+      "requirements": 0,
+      "scenarios": 1
+    },
+    "basis": "Independent inspection of all ten actual PNGs plus exact keyboard command, current owner, launch and retirement evidence; not the runner passed flag or scheduling phase booleans."
+  },
+  "oracleParts": [
+    {
+      "part": "open with recorded keyboard focus",
+      "verdict": "observed",
+      "evidence": [
+        "bar-keyboard-focus.png",
+        "launcher-open-search-focus.png"
+      ],
+      "explanation": "Tab visibly focuses Applications; Return opens the launcher with search focused."
+    },
+    {
+      "part": "traverse and operate with recorded keyboard focus",
+      "verdict": "observed",
+      "evidence": [
+        "reopened-search-keyboard-focus.png",
+        "entry-keyboard-focus-before-operation.png",
+        "after-keyboard-operation.png"
+      ],
+      "explanation": "After reopening, real Tab traversal visibly reaches Open Owned Recorder. Return submits a bound launch and the real recorder exits0 with its literal three arguments."
+    },
+    {
+      "part": "dismiss and restore focus",
+      "verdict": "observed",
+      "evidence": [
+        "dismissed-bar-keyboard-focus.png",
+        "after-keyboard-operation.png"
+      ],
+      "explanation": "Escape dismisses the open launcher and visibly returns keyboard focus to Applications. The successful operation also returns to the closed surface."
+    },
+    {
+      "part": "no pointer input required",
+      "verdict": "observed-in-this-isolated-route",
+      "explanation": "Exactly nine recorded wtype commands match the reviewed keyboard-only fixture. The held helper creates only keyboard capability; all retained command roles are wtype, read-only hyprctl queries and grim. No pointer sender or synthetic DOM input is used. A visible stationary cursor and pending first-mouseup diagnostics are not independently treated as proof of absence."
+    }
+  ],
+  "images": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/mapped.png",
+      "sha256": "2157b444f3bdb9052dc9013dc38028f93f2c039b744d880891394226d9d4639e",
+      "visuallyInspected": true,
+      "observation": "Initially blank white mapped window. No focus or readiness inferred."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/opener-readiness-01.png",
+      "sha256": "24a958fe32910adff0c32857b93bd6009c119493a20a0df9f8f92e4dee4bee90",
+      "visuallyInspected": true,
+      "observation": "Connecting state with Reconnect; no enabled Applications readiness yet."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/opener-readiness-02.png",
+      "sha256": "9598a718076ed377b94006fb38d1662a248be5208a8c8c2819084f2981535816",
+      "visuallyInspected": true,
+      "observation": "Applications and closed-body Choose a window are painted. No keyboard focus inferred from this frame."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/bar-keyboard-focus.png",
+      "sha256": "4e3082570d9ebdefcff9047b17c774c83d3e3ca5cd4cce390606ca6b3d5d504e",
+      "visuallyInspected": true,
+      "observation": "Visible blue keyboard focus outline surrounds Applications after real Tab."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/launcher-open-search-focus.png",
+      "sha256": "558247da808287a97edf443d649c4abbba5175e43af24249a9d811f0e9a7499f",
+      "visuallyInspected": true,
+      "observation": "Applications launcher is open; visible blue focus outline and caret are in the empty Search applications input."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/entry-keyboard-focus-query.png",
+      "sha256": "783325abbccdba6e1379ffd749fe40e3df0925839ca5b73b83428fbbcab2f47e",
+      "visuallyInspected": true,
+      "observation": "Full Owned Recorder query is visible. Blue focus outline is on Refresh, NOT the recorder entry. Filename and earlier phase active-element sample do not override these pixels."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/dismissed-bar-keyboard-focus.png",
+      "sha256": "387b7cfd81dabfb8a3b6d6bca318c5e921bada531a7ab559a3c792ec34182f2c",
+      "visuallyInspected": true,
+      "observation": "Applications body is dismissed to Choose a window; blue focus outline has returned to Applications after Escape."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/reopened-search-keyboard-focus.png",
+      "sha256": "76014dfe8f0d6925b8c44556fdba7e2abdcdc4f011d4c38978b9f8c98ddeca45",
+      "visuallyInspected": true,
+      "observation": "Launcher reopened with full Owned Recorder query retained; blue outline and caret show search focus."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/entry-keyboard-focus-before-operation.png",
+      "sha256": "b383091ff42cb857125eae19cde28fff12e4439e250cf618db906601cc57e2be",
+      "visuallyInspected": true,
+      "observation": "Blue keyboard focus outline visibly surrounds Open Owned Recorder before the second Return operation."
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/after-keyboard-operation.png",
+      "sha256": "561430255082b209e9a1f5420e26fd9afc6c179f320aaef48c327e33de1c99e9",
+      "visuallyInspected": true,
+      "observation": "Launcher closes; Launch submitted is visible and the blue keyboard focus outline has returned to Applications."
+    }
+  ],
+  "inputEvidence": {
+    "commands": [
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "-k",
+          "Tab"
+        ],
+        "pid": 2563343,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-41.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-41.stderr",
+        "startTicks": "15383926",
+        "groupAbsent": true
+      },
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "-k",
+          "Return"
+        ],
+        "pid": 2563554,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-58.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-58.stderr",
+        "startTicks": "15384081",
+        "groupAbsent": true
+      },
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "Owned Recorder"
+        ],
+        "pid": 2563739,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-75.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-75.stderr",
+        "startTicks": "15384246",
+        "groupAbsent": true
+      },
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "-k",
+          "Tab",
+          "-k",
+          "Tab",
+          "-k",
+          "Tab",
+          "-k",
+          "Tab"
+        ],
+        "pid": 2564036,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-103.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-103.stderr",
+        "startTicks": "15384548",
+        "groupAbsent": true
+      },
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "-k",
+          "Escape"
+        ],
+        "pid": 2564263,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-120.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-120.stderr",
+        "startTicks": "15384708",
+        "groupAbsent": true
+      },
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "-k",
+          "Return"
+        ],
+        "pid": 2564447,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-137.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-137.stderr",
+        "startTicks": "15384873",
+        "groupAbsent": true
+      },
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "-k",
+          "Tab",
+          "-k",
+          "Tab",
+          "-k",
+          "Tab",
+          "-k",
+          "Tab"
+        ],
+        "pid": 2564602,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-154.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-154.stderr",
+        "startTicks": "15385028",
+        "groupAbsent": true
+      },
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "-k",
+          "Return"
+        ],
+        "pid": 2564816,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-171.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-171.stderr",
+        "startTicks": "15385188",
+        "groupAbsent": true
+      },
+      {
+        "role": "wtype",
+        "argv": [
+          "/usr/bin/wtype",
+          "-M",
+          "alt",
+          "-k",
+          "F4",
+          "-m",
+          "alt"
+        ],
+        "pid": 2565066,
+        "exit": 0,
+        "stdout": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-194.stdout",
+        "stderr": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/command-194.stderr",
+        "startTicks": "15385415",
+        "groupAbsent": true
+      }
+    ],
+    "heldKeyboard": {
+      "pid": 2562726,
+      "startTicks": "15383536",
+      "exit": null,
+      "alive": true,
+      "inputHex": "73796e6320300a",
+      "ackHex": "726561647920300a",
+      "monotonicNs": 151015015285109,
+      "originalDeadlineNs": 151038657157822,
+      "meaning": "Own compositor roundtrip and keyboard capability only; not GTK delivery, not DOM focus."
+    },
+    "normalRetirement": {
+      "pid": 2562726,
+      "startTicks": "15383536",
+      "exit": 0,
+      "normal": true,
+      "groupAbsent": true,
+      "stdoutTailHex": "",
+      "monotonicNs": 151038055465474
+    },
+    "sameLiveRecipient": {
+      "pid": 2562769,
+      "startTicks": "15383570"
+    },
+    "allNineStepsSameRecipient": true,
+    "liveAcknowledgmentsRemainExitNull": true
+  },
+  "phaseEvidence": {
+    "pairs": 11,
+    "completedSequences": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "incompleteSequences": [
+      3,
+      4,
+      10
+    ],
+    "meaning": "Scheduling and request-custody corroboration only; screenshots establish the visible focus claims.",
+    "discrepancy": "Sequence6 sampled the recorder entry as active before the first dismissal, but entry-keyboard-focus-query.png later paints Refresh focus. This review does not claim first-pass entry focus from that PNG. The independent second traversal frame before actual operation visibly establishes entry focus."
+  },
+  "operationEvidence": {
+    "publishedLaunch": {
+      "request": "1",
+      "lifetime": "9007199254740993",
+      "generation": "1",
+      "entry": "ux003-recorder",
+      "catalog": {
+        "protocolVersion": 3,
+        "binding": {
+          "lifetime": "9007199254740993",
+          "session": "9007199254740995",
+          "frontend": "9007199254740997"
+        },
+        "kind": "application-catalog",
+        "requestId": "3",
+        "snapshot": {
+          "catalogProtocol": 2,
+          "lifetime": "9007199254740993",
+          "generation": "1",
+          "entries": [
+            {
+              "id": "ux003-recorder",
+              "name": "Owned Recorder",
+              "iconHint": "application-x-executable",
+              "wmclass": "",
+              "genericName": "",
+              "keywords": []
+            }
+          ]
+        },
+        "preferences": {
+          "revision": "1",
+          "identities": []
+        }
+      }
+    },
+    "application": {
+      "request": "1",
+      "exit": 0,
+      "custody": "Available",
+      "containment": "BeforeSignalLeaderExited",
+      "stdoutHex": "5b2274776f20776f726473222c22222c226361665c323333225d0a",
+      "stderrHex": "",
+      "operationSucceeded": true
+    },
+    "logicalArguments": [
+      "two words",
+      "",
+      "café"
+    ],
+    "recordedHaskellShow": "[\"two words\",\"\",\"caf\\233\"]\n",
+    "backendConfiguration": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/current-arm-ux023-keyboard-journey-1794171347605787014/run/backend.json",
+      "sha256": "74332d856819d11e90b16c6c1f1347a604d46739d3e97001f8e11e1ae39ab99c"
+    },
+    "visibleStatusLimitation": "Before operation, the surface status says opening is unavailable in this session despite the visible enabled entry and successful actual operation. This review does not certify that status text as correct."
+  },
+  "custodyAndCleanup": {
+    "ownerEngine": {
+      "pid": "2562769",
+      "startTicks": "15383570",
+      "namespace": "pid:[4026533863]",
+      "parentNamespace": "pid:[4026531836]",
+      "originalDeadline": "151038657157822",
+      "startupImage": {
+        "device": "58",
+        "inode": "3041497",
+        "size": "37428280",
+        "sha256": "996b2015222d3bd91dbc1b3c961e215ce5ce936ceecaa8436782e00f7584612e"
+      },
+      "lastLiveImage": {
+        "image": {
+          "device": "58",
+          "inode": "3041497",
+          "size": "37428280",
+          "sha256": "996b2015222d3bd91dbc1b3c961e215ce5ce936ceecaa8436782e00f7584612e"
+        },
+        "digestSampleMonotonicNs": "151015498021989",
+        "checkedMonotonicNs": "151037668783222"
+      },
+      "disposition": "EngineExitedNormally",
+      "normalExit": true,
+      "reaped": true,
+      "ownedReceiptMatches": true,
+      "waitStatus": [
+        "1",
+        "0"
+      ]
+    },
+    "backing": {
+      "path": "/tmp/warlock-ui-backing-23264932063ac4016ff7829d8101a36f7c57720f8e3c3b0eb5e545bda8632afb",
+      "device": "59",
+      "inode": "1930842",
+      "owner": "1000",
+      "retired": true
+    },
+    "brokerClose": "CloseConfirmed",
+    "backendExit": 0,
+    "backendRetirement": {
+      "process": "confirmed",
+      "catalog": "confirmed",
+      "pins": "confirmed"
+    },
+    "phaseChannel": {
+      "status": "closed",
+      "errors": [],
+      "cleanupAuthority": false
+    },
+    "stackRetirement": {
+      "normal": true,
+      "processes": [
+        {
+          "role": "nested",
+          "pid": 2562518,
+          "startTicks": "15383380",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-after",
+          "pid": 2562407,
+          "startTicks": "15383252",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-apply",
+          "pid": 2562353,
+          "startTicks": "15383221",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "output-before",
+          "pid": 2562352,
+          "startTicks": "15383190",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        },
+        {
+          "role": "host",
+          "pid": 2562271,
+          "startTicks": "15383136",
+          "exit": 0,
+          "reaped": true,
+          "groupAbsent": true,
+          "forced": false,
+          "normal": true
+        }
+      ],
+      "originalDeadlineNs": 151038657157822,
+      "cleanupCeilingNs": 151040657157822
+    },
+    "globalRestoration": true,
+    "forcedCleanup": false,
+    "cleanupUnknown": false,
+    "actualBackingAbsent": true,
+    "actualEnginePidAbsent": true,
+    "basis": "Retained normal child exits/reaps, process-group absence and typed engine/backing retirement; not an empty process census alone."
+  },
+  "deadlineEvidence": {
+    "originalClock": {
+      "origin": 151010657157822,
+      "deadline": 151038657157822,
+      "last": 151010657157822,
+      "boot": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+      "authorizationExpiresNs": 1794171600000000000,
+      "authorizationEvidenceSha256": "4d1f60a25471871996d7bb72f1759aeb65f57533d55e8eff7644221357dd7b18"
+    },
+    "allRecordedStepsBeforeOriginalDeadline": true,
+    "lastInputElapsedSeconds": 23.418465862,
+    "keyboardNormalRetirementElapsedSeconds": 27.398307652,
+    "cleanupCeilingNs": 151040657157822,
+    "limit": "Stack terminal rows have no independent final timestamp; the report retains the original cleanup ceiling and successful unchanged deadline guards, not a fabricated terminal time."
+  },
+  "limits": [
+    "Only original keyboard-launcher is accepted. No claim for the all-surfaces ux-023 scenario, other nine surfaces, broad ELM-UX-023, AT, IME or release acceptance.",
+    "Raw nativeAcceptance/originalAcceptance/fullJourneyAccepted remain false and keyboardFocusObserved remains null; this external review does not rewrite raw evidence.",
+    "Historical4852 report40a6 remains failed with forced/unknown cleanup; no retroactive acceptance.",
+    "No tests, GUI, source changes, model calls or other effects by reviewer. Read-only adjudication after the attempt window is not renewed execution authority."
+  ]
+}

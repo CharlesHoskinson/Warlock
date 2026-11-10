@@ -75,3 +75,32 @@ main = S.withSocketsDo $ do
    accepted <- resolveDisplayEnvironment (Just runtime) (Just boundary)
    check "64-character owned socket accepted" (either (const False) (const True) accepted)
    refused "65-character socket name refused" (Just runtime) (Just (boundary ++ "a"))
+
+  let privateParent = runtime ++ "/warlock-display-controls"
+      privateRuntime = privateParent ++ "/session"
+      privateName = "wayland-private"
+  createDirectory privateParent
+  setFileMode privateParent 0o700
+  createDirectory privateRuntime
+  setFileMode privateRuntime 0o700
+  bracket (S.socket S.AF_UNIX S.Stream S.defaultProtocol) S.close $ \socket -> do
+   S.bind socket (S.SockAddrUnix (privateRuntime ++ "/" ++ privateName))
+   accepted <- resolveDisplayEnvironment (Just privateRuntime) (Just privateName)
+   check "owned0700 canonical runtime descendant with relative endpoint accepted"
+     (accepted == Right [("XDG_RUNTIME_DIR",privateRuntime),("WAYLAND_DISPLAY",privateName)])
+   forM_ [privateRuntime ++ "/",privateParent ++ "//session",privateParent ++ "/./session",
+          privateParent ++ "/../warlock-display-controls/session",runtime ++ "/../" ++ show uid,
+          runtime ++ "/" ++ replicate 65 'x',runtime ++ concat (replicate 9 "/deep")] $ \bad ->
+    refused "noncanonical or unbounded descendant refused" (Just bad) (Just privateName)
+   refused "absolute display remains refused for owned descendant" (Just privateRuntime) (Just (privateRuntime ++ "/" ++ privateName))
+   setFileMode privateParent 0o755
+   refused "shared intermediate runtime ancestor refused" (Just privateRuntime) (Just privateName)
+   setFileMode privateParent 0o700
+   setFileMode privateRuntime 0o755
+   refused "shared descendant runtime refused" (Just privateRuntime) (Just privateName)
+   setFileMode privateRuntime 0o700
+   createSymbolicLink "session" (privateParent ++ "/linked")
+   refused "symlink intermediate descendant refused" (Just (privateParent ++ "/linked")) (Just privateName)
+   removeLink (privateParent ++ "/linked")
+   writeFile (privateParent ++ "/regular") "not a directory"
+   refused "regular intermediate ancestor refused" (Just (privateParent ++ "/regular/child")) (Just privateName)

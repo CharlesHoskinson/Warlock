@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "atUTC": "2026-11-09T19:15:30.495169+00:00",
+  "disposition": "no-change",
+  "integrationRevision": "4e88f28b3c698de408889a126d43aadeb3e1547c",
+  "proposedChange": "Allow an independent owned pure product increment after a consumed native job without allowing retained readiness edits.",
+  "refutationCase": "The same selected participant must refuse an actual retained readiness destination and allow both the exact five product paths and a new evidence namespace.",
+  "reason": "The installed policy already provides the required distinction. Both same-task probes pass without a source change; no further plugin modification is justified.",
+  "baselinePluginSha256": "997faca4426fd851a5ffe84781d377377fd79c89c862f766b32577158e6d507d",
+  "resultPluginSha256": "997faca4426fd851a5ffe84781d377377fd79c89c862f766b32577158e6d507d",
+  "fixedProductHashes": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "ebb4db24c652d8e55b7000616c10a96149a124af7be110ba8c8828a7e5d579a3",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "faf6a3bd3826b17d87e1cc95413b5eda106e510da9a283b1a6ba4ed00cccf2e6",
+    "implementation/warlock/haskell/protocol/test-notification-request/Main.hs": "cbac4078c8bfc8637513f28b0c2dd0efeef86a9c426c939516ec9c6a1110b069",
+    "implementation/warlock/haskell/protocol/test-notification-reply/Main.hs": "001470ed1075dceec555cfb980c247b6d563301c2ec3e280a0236d18ee058ec9"
+  },
+  "fixedGuardHashes": {
+    "docs/elm-roadmap/requirements.json": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff",
+    "docs/elm-roadmap/baselines/requirements-pre-language-20261030.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/elm-roadmap/language-revision.json": "d405ed8b8fd7e47420f108ed5692970734e341913a029a894b971397849b216c",
+    "docs/elm-roadmap/tools/language_revision.py": "a792ed03d3bc7eeed978b387ee5dda8474af0738844c29caaa39cafe1d5c7e4a",
+    "implementation/elm-build-loop-v1/loop.py": "13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6",
+    "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  },
+  "before": {
+    "retainedReadinessEditRefused": true,
+    "completedJobAllowsOwnedProductIncrement": true,
+    "newVersionedEvidencePathAllowed": true
+  },
+  "after": {
+    "retainedReadinessEditRefused": true,
+    "completedJobAllowsOwnedProductIncrement": true,
+    "newVersionedEvidencePathAllowed": true
+  },
+  "sourceAndParticipantBytesUnchanged": true,
+  "legacyRecordPolicyUnchanged": true,
+  "typedPolicy2EventClaimed": false,
+  "nativeEffects": false,
+  "originalAcceptance": false,
+  "rsiTriggersAnotherRsi": false
+}

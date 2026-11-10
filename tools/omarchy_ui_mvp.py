@@ -587,11 +587,112 @@ def cmd_source_manifest(args: argparse.Namespace) -> int:
     return 0
 
 
+# A closed QA fixture, not a desktop-file Exec interpreter or a launch grant.
+UX003_RECORDER_ARGV = ("two words", "", "caf\u00e9")
+UX003_VISIBLE_SOURCE = b"[Desktop Entry]\nType=Application\nName=Owned Recorder\nExec=fixture-recorder\nTerminal=false\n"
+UX003_HIDDEN_SOURCE = b"[Desktop Entry]\nType=Application\nName=Hidden Recorder\nExec=fixture-recorder\nNoDisplay=true\nTerminal=false\n"
+
+
+def ux003_recorder_options(args: argparse.Namespace) -> tuple[str, str] | None:
+    image = getattr(args, "ux003_recorder_image", "")
+    digest = getattr(args, "ux003_recorder_sha256", "")
+    if not image and not digest:
+        return None
+    if not isinstance(image, str) or not image or not isinstance(digest, str):
+        raise ValueError("UX003 recorder image and SHA-256 must be supplied together")
+    if len(digest) != 64 or any(char not in "0123456789abcdef" for char in digest):
+        raise ValueError("UX003 recorder requires the reviewed lowercase SHA-256")
+    split_canonical_abs(image)
+    if str(Path(image)) != image:
+        raise ValueError("UX003 recorder image path must be canonical")
+    if not args.application_attachment:
+        raise ValueError("UX003 recorder requires application attachment")
+    if args.catalog_root:
+        raise ValueError("UX003 fixed catalog cannot be combined with catalog roots")
+    return image, digest
+
+
+def prepare_ux003_application_fixture(
+    run_dir_fd: int, run_dir_path: Path, image_path: str, expected_sha256: str,
+) -> tuple[list[dict[str, str]], dict[str, Any], dict[str, Any], dict[str, Any]]:
+    """Bind startup data to the selected image. Never load or execute that image.
+
+    Root must independently bind expected_sha256 to its compiled recorder source.
+    ELF/header checks alone do not prove a valid or harmless executable.
+    """
+    parts = split_canonical_abs(image_path)
+    if not parts:
+        raise ValueError("UX003 recorder must be a regular file")
+    parent = Path("/" + "/".join(parts[:-1])) if len(parts) > 1 else Path("/")
+    parent_fd, _, parent_pin = walk_open_existing_dir(parent)
+    try:
+        before = stat_fingerprint(os.fstat(parent_fd))
+        image, digest, content = read_and_hash_regular_at(
+            parent_fd, parts[-1], image_path, retain_bytes=True,
+        )
+        if before != stat_fingerprint(os.fstat(parent_fd)):
+            raise ValueError("UX003 recorder directory changed during pinning")
+        if digest != expected_sha256:
+            raise ValueError("UX003 recorder differs from the reviewed SHA-256")
+        if not image.st_mode & stat.S_IXUSR or image.st_mode & 0o6000:
+            raise ValueError("UX003 recorder must be owner-executable and not set-id")
+        if (len(content) < 64 or content[:7] != b"\x7fELF\x02\x01\x01"
+                or int.from_bytes(content[16:18], "little") not in (2, 3)
+                or int.from_bytes(content[18:20], "little") != 183
+                or int.from_bytes(content[20:24], "little") != 1
+                or int.from_bytes(content[52:54], "little") != 64):
+            raise ValueError("UX003 recorder requires an ELF64 little-endian AArch64 header")
+    finally:
+        os.close(parent_fd)
+
+    catalog_name = "ux003-catalog"
+    catalog_path = str(run_dir_path / catalog_name)
+    # Never reuse a directory, symlink, stale fixture or an earlier trial.
+    os.mkdir(catalog_name, 0o700, dir_fd=run_dir_fd)
+    catalog_fd = os.open(catalog_name, DIR_OPEN_FLAGS, dir_fd=run_dir_fd)
+    try:
+        catalog = os.fstat(catalog_fd)
+        if (not stat.S_ISDIR(catalog.st_mode) or catalog.st_uid != os.geteuid()
+                or stat.S_IMODE(catalog.st_mode) != 0o700):
+            raise ValueError("UX003 catalog is not a private owned directory")
+        catalog_pin = {"path": catalog_path, "device": str(catalog.st_dev), "inode": str(catalog.st_ino)}
+        write_private_bytes_at(catalog_fd, "ux003-recorder.desktop", UX003_VISIBLE_SOURCE)
+        write_private_bytes_at(catalog_fd, "ux003-hidden.desktop", UX003_HIDDEN_SOURCE)
+    finally:
+        os.close(catalog_fd)
+
+    plan = {
+        "entry": "ux003-recorder",
+        "sourceSha256": hashlib.sha256(UX003_VISIBLE_SOURCE).hexdigest(),
+        "exec": "fixture-recorder",
+        "argv": list(UX003_RECORDER_ARGV),
+        "root": str(parent), "rootDevice": parent_pin["device"], "rootInode": parent_pin["inode"],
+        "pins": [{"path": "/" + parts[-1], "device": str(image.st_dev),
+                  "inode": str(image.st_ino), "kind": "regular"}],
+        "path": parts[-1], "links": [], "size": str(image.st_size), "sha256": digest,
+    }
+    provenance = {
+        "schema": 1, "mode": "ux003-fixed-owned-recorder",
+        "selectedImagePath": image_path, "selectedImageSHA256": digest,
+        "expectedArgv": list(UX003_RECORDER_ARGV),
+        "visibleDesktopSHA256": hashlib.sha256(UX003_VISIBLE_SOURCE).hexdigest(),
+        "hiddenDesktopSHA256": hashlib.sha256(UX003_HIDDEN_SOURCE).hexdigest(),
+        "elfHeaderMachine": 183, "imageExecutionObserved": False,
+        "authorityGranted": False,
+        "scope": "Pinned startup DATA only; Root must bind the actual compiled recorder. No shell or Exec expansion.",
+    }
+    catalog_meta = {"roots": [{"requested": catalog_path,
+        "mode": "ux003-owned-literal-fixture", "effectivePath": catalog_path,
+        "desktopFileCount": 2, "skippedSymlinks": []}]}
+    return [catalog_pin], catalog_meta, plan, provenance
+
+
 def cmd_guest_config(args: argparse.Namespace) -> int:
     if args.duration_seconds < 1 or args.duration_seconds > 28:
         raise ValueError(
             "duration_seconds must be in 1..28 (Warlock bootstrap enforces <= 30s CLOCK_MONOTONIC)"
         )
+    recorder = ux003_recorder_options(args)
     run_dir = Path(args.run_dir)
     run_dir_fd, _ = open_or_create_private_run_dir(run_dir)
     try:
@@ -605,8 +706,15 @@ def cmd_guest_config(args: argparse.Namespace) -> int:
         ui_owner_pin = pin_regular_asset(Path(args.ui_owner_bin))
         ui_backend_pin = pin_regular_asset(Path(args.ui_backend_bin))
 
-        effective_roots = args.catalog_root if args.catalog_root else ["/usr/share/applications"]
-        catalog_pins, catalog_meta = prepare_catalog_roots(run_dir_fd, run_dir, effective_roots)
+        application_plan = None
+        application_provenance = None
+        if recorder is None:
+            effective_roots = args.catalog_root if args.catalog_root else ["/usr/share/applications"]
+            catalog_pins, catalog_meta = prepare_catalog_roots(run_dir_fd, run_dir, effective_roots)
+        else:
+            catalog_pins, catalog_meta, application_plan, application_provenance = prepare_ux003_application_fixture(
+                run_dir_fd, run_dir, recorder[0], recorder[1],
+            )
 
         binding = {
             "lifetime": args.lifetime,
@@ -652,6 +760,9 @@ def cmd_guest_config(args: argparse.Namespace) -> int:
             "applicationAttachment": bool(args.application_attachment),
         }
 
+        if application_plan is not None:
+            backend_config["applicationPlans"] = [application_plan]
+
         write_private_json_at(run_dir_fd, "ui.json", ui_config, replace_existing=False)
         write_private_json_at(run_dir_fd, "backend.json", backend_config, replace_existing=False)
 
@@ -678,6 +789,11 @@ def cmd_guest_config(args: argparse.Namespace) -> int:
             "releaseAccepted": False,
             "protectedQaAccepted": False,
         }
+        if application_provenance is not None:
+            guest_manifest["applicationPlanProvenance"] = application_provenance
+            guest_manifest["honestyNotes"].append(
+                "The fixed recorder plan is startup data only. Actual same-peer Scope and current catalog/image/deadline checks still gate availability and every launch."
+            )
         write_private_json_at(run_dir_fd, "mvp-guest-manifest.json", guest_manifest, replace_existing=False)
         sys.stdout.write(json.dumps(guest_manifest, indent=2) + "\n")
         return 0
@@ -965,6 +1081,14 @@ def build_parser() -> argparse.ArgumentParser:
     p_guest.add_argument("--popup-html", required=True)
     p_guest.add_argument("--ui-owner-bin", required=True)
     p_guest.add_argument("--ui-backend-bin", required=True)
+    p_guest.add_argument(
+        "--ux003-recorder-image", default="",
+        help="Root-reviewed recorder ELF absolute path for the closed visible/hidden UX003 fixture (paired with its SHA-256).",
+    )
+    p_guest.add_argument(
+        "--ux003-recorder-sha256", default="",
+        help="Exact lowercase SHA-256 from the independently reviewed compiled recorder artifact; staging grants no authority.",
+    )
     p_guest.add_argument(
         "--catalog-root",
         action="append",

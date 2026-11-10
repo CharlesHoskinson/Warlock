@@ -1,0 +1,30 @@
+{
+  "atUTC": "2026-11-09T19:35:47.606207+00:00",
+  "completed": true,
+  "precheck": {
+    "structuralPrecheckPassed": true,
+    "changedPaths": [
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/NotificationCapabilityReplay.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/notification-capability.cjs",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/notification-capability.json",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Desktop.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Shell.elm",
+      "/home/hoskinson/Projects/Warlock/implementation/warlock/src/Surface.elm"
+    ],
+    "expectedSelection": 22,
+    "effectsPerformed": false,
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "scope": "Same participant lock must remain held through actual CAS; arbitrary external shell edits are not fenced."
+  },
+  "ownerRecordIdentitySha256": "96fe94fdfb2219f7571a68fa7ae214768da1d408307bf47f1ead84d2fe309a27",
+  "preservedWarnings": [],
+  "allInstalledHashesMatch": true,
+  "installedFiles": 6,
+  "ownerParticipantBytesUnchanged": true,
+  "selectedParticipantBytesUnchanged": true,
+  "oldServiceInvestigationStopPreserved": true,
+  "serviceIntegrated": false,
+  "originalAcceptance": false,
+  "nativeAcceptance": false
+}

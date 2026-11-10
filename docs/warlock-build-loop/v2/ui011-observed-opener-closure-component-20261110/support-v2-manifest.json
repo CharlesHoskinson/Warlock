@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "status": "private-source-only-after-actual-failed-baseline",
+  "posts": [
+    {
+      "path": "tools/check_elm_cpu.py",
+      "beforeSha256": "f0252919c57ed2e06b9349075ebb1e6e5b911f10fcc2a753a56e480403eb392e",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/revision2-refusal-diagnostics-green/postimages/tools/check_elm_cpu.py",
+      "sha256": "9bb6a566614513bd2a44a015ae4a94043a23f3ae72dfe2e6a5da88c15e9326d1"
+    }
+  ],
+  "fixtureManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/tests-first-revision2-refusal-diagnostics/manifest.json",
+    "sha256": "3acc77a644b0befca0276ccb0c0a2d84e6a16b34f671b9740bde14e3ca715efe"
+  },
+  "fixtureReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/tests-first-revision2-refusal-diagnostics/independent-tests-first-review-build.json",
+    "sha256": "b2fd342c58a8e80f18efb8b6cf55d1032a46107522970aa7ba09a32bf6c0f8df"
+  },
+  "productionManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/production-fix/manifest.json",
+    "sha256": "b72db3ba2cc44b55d2962f949eadfd291f8119c647a7379b8f6baaaf82af2366"
+  },
+  "sourceDelta": "Exactly one UI011 Elm fixture hash scalar57dd->ace920; all check_elm function/class ASTs exact, Node/inventory/oracles/modes/commands/budgets exact. Two malformed-envelope diagnostics assertions corrected by independently reviewed fixture; source restoration-positive predicates untouched.",
+  "baselineClosure": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/baseline-failed-closure/manifest.json",
+    "sha256": "c093955fe82211c8892571f1d44dc78dbe82a06b9683a1f7c479ba6d3ffdcf70"
+  },
+  "candidateHelper": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/revision2-refusal-diagnostics-green/prepare_corrected_green.py",
+    "sha256": "69aef908a48fb0f866cabe35414053ab6e5cf8d0c19c3d7f70f49f329fbb69e3"
+  },
+  "prepareArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/revision2-refusal-diagnostics-green/prepare_corrected_green.py"
+  ],
+  "controlsArgv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/revision2-refusal-diagnostics-green/postimages/tools/test_ux024_menu_cpu_route.py",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/revision2-refusal-diagnostics-green/postimages/tools/qa_cpu.py",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/support-preparation/revision2-refusal-diagnostics-green/postimages/tools/check_elm_cpu.py",
+    "/home/hoskinson/Projects/Warlock"
+  ],
+  "candidatePrecondition": "Actual baseline1d9d closed FAILED+consumed, exact new Desktopac3713 and corrected QAElmace920 installed along with this one support scalar after source reviews. No expected-red baseline pointer; all unrelated pins exact.",
+  "qaCpuHash": "3baa82ca42660a21be368be4b9b5c30d04face8dc9ca1209ba4931827d90e3c4",
+  "currentInputs": 125,
+  "elmSources": 109,
+  "oldNamespacesUnchanged": true,
+  "primaryWrites": false,
+  "authorTestsOrImports": false
+}

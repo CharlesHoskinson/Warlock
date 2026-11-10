@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-component-cpu-result",
+  "candidateSha256": "00394dea1d3945770baaedce62d6e9ca0db2d8070b862860ced4386de2e5f0ca",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794281623194913219/report.json",
+      "sha256": "c045b8376d29e7272d20ab7d392bbdbb00ecc85c8e8565f1101dedddf0f08d3c"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794281623194913219/logs/cpu-foreign-endpoint-refusal-controls.stdout",
+      "sha256": "f3c72cf35b99432f6903b9eacaa190e31ba1c47f86288e955d99fbbf64475cea"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794281623194913219/logs/cpu-ui-webkit-controls.stdout",
+      "sha256": "d9c76485e7c20ca1f2692b9b7a0015752b5c5db1306cf0fc810ea16a7e167d9f"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/digest-writer-v2-after-cpu-failure/prepared-digest-writer-v2-cpu/candidate.json",
+      "sha256": "d5dcdb50865ce7ee64050e50e3596ec8c9431e7584d9d62129f5b75b714f02bb"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/digest-writer-v2-after-cpu-failure/prepared-digest-writer-v2-cpu/actual-outer-terminal.json",
+      "sha256": "d49d3852d206cfec5b3f96c3520a1d24f8cb874a5dde3f5535efd6dae87d9f74"
+    }
+  ],
+  "verified": {
+    "commands": 6,
+    "allZeroUnforced": true,
+    "currentManagedInputs": 272,
+    "currentReportSourcePins": 270,
+    "haskellFiles": 259,
+    "compiledImages": {
+      "warlock-ui-owner": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794281623194913219/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+        "device": "57",
+        "inode": "6608859",
+        "size": "37644248",
+        "sha256": "de2500e7e626ccab3334fe18e1f206f2d802e6e5e325ad61a2bb3ae5fe37d165",
+        "executed": false,
+        "currentMode": 493
+      },
+      "ui-webkit-controls": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794281623194913219/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+        "device": "57",
+        "inode": "6608866",
+        "size": "40939040",
+        "sha256": "ea88ef53c0dd631b65acbcd40e2629214464e1c10ab8752c19462c1cb86e04ad",
+        "executed": true,
+        "currentMode": 493
+      }
+    },
+    "executedFlags": [
+      "--allocation-only",
+      "--foreign-endpoint-refusal-only"
+    ]
+  },
+  "conclusion": "Exact final sentinel establishes program flow completed seven public parser/held-descriptor checks then existing17refusals/32seeds/expiredRetained checks. No per-case telemetry/count stdout claimed.",
+  "limits": [
+    "Earlierb78 failure retained; GHC writer-lock cause remains unproven and is not retroactively asserted.",
+    "CPU FD/metadata no-connect qualification only; connected/producer flags and GUI owner not executed.",
+    "No reviewer imports/tests/compiler/native effects; raw cleanupQualifiedfalse/nativefalse/originalfalse preserved.",
+    "Root canonical closure/integration/RSI pending at request; no nativeV3 readiness inferred."
+  ]
+}

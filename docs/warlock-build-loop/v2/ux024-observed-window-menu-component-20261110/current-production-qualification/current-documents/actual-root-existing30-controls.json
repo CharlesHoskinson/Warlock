@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_observer.py",
+    "--module",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-documents-provider-preparation/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+    "--phase-fixture",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-close-readiness-correction/retained-native-v4-phase-pairs.json",
+    "--capture-failure",
+    "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794285567478100266/report.json"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "Running as unit: qa-harness-9d2a2a0cc219497a8f59c023a586381e.scope; invocation ID: 9856d6edbdfe4b24930fc51f24639862\n..............................\n----------------------------------------------------------------------\nRan 30 tests in 0.224s\n\nOK\n"
+}

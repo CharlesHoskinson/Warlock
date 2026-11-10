@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "plugins/warlock-contributor/scripts/warlock.py",
+    "--record",
+    ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "--json",
+    "delivery-event",
+    "--event-file",
+    ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/observed-production-current-build-cpu/candidate-event-normal-fields.json",
+    "--expect-record-sha",
+    "c21f447ad16bf84babc8e91213f1045cb5d31a1ec7dc4a163cb190f18da9c3a3",
+    "--expect-selection",
+    "30"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"record\": \".warlock-contributor/ux024-menu-tab-focus-root-20261109.json\",\n  \"nextRootAction\": {\n    \"kind\": \"change-plan\",\n    \"executor\": \"Root\",\n    \"candidateId\": \"ux024-observed-production-current-build-selection30-20261110\",\n    \"candidateSha256\": \"bd3f64ed0433d84703b92063b9788a943a7a5d473c72032e4c51e4a3dd9e3926\",\n    \"jobId\": null,\n    \"argv\": [\n      \"/usr/bin/python3\",\n      \"-B\",\n      \"/home/hoskinson/Projects/Warlock/tools/qa_cpu.py\",\n      \"--review\",\n      \"/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/observed-production-current-build-cpu/review-packet.json\",\n      \"--sha256\",\n      \"863f2e8e51ddc51c40616494be93c99eab55436d8b453bed85c4d6c32eba19df\"\n    ],\n    \"expectedObservation\": \"Build actual adopted R5 runtime library into current warlock-ui-owner and ui-webkit-controls, then run the unchanged allocation-only and pre-connect endpoint-refusal suites. Prior exact private R4 Haskell and R5 Elm component passes are reused as source correspondence; protocol/MVP/30-case Elm suites are not repeated. Fresh native images establish build readiness only. Original UX024/native acceptance remains pending.\",\n    \"executionAuthorized\": false,\n    \"acceptanceInferred\": false,\n    \"progress\": {\n      \"workflowPolicy\": 2,\n      \"iterationsWithoutProgress\": 0,\n      \"lastRecordedProgressUTC\": \"2026-11-10T01:33:39.540693+00:00\",\n      \"secondsSinceRecordedProgress\": 18639,\n      \"suspendedSeconds\": 0,\n      \"limits\": {\n        \"iterations\": 2,\n        \"seconds\": 2700,\n        \"sameFailureExperiments\": 2\n      },\n      \"investigationNeedsChange\": false,\n      \"planChangeRequired\": true,\n      \"reconciliationRequired\": false,\n      \"authorizationExpired\": false,\n      \"reasons\": [\n        \"45-awake-minutes-without-tested-integration\"\n      ],\n      \"effectiveAuthorizationExpiresUTC\": \"2026-11-10T14:40:00Z\",\n      \"action\": \"Change the next action or defer in this same history.\",\n      \"basis\": \"Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.\"\n    }\n  },\n  \"recordSha256\": \"eb799db69e4e2a79a19d8da807f850f5b8aaac4766429a7683072bbe3a9c0637\",\n  \"acceptanceInferred\": false,\n  \"ok\": true\n}\n",
+  "stderr": ""
+}

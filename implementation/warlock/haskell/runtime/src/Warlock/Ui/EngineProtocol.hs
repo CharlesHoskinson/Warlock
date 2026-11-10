@@ -2,9 +2,11 @@
 -- PREPARATION DRAFT. Pure wire/state contract; not an authentication,
 -- deadline-enforcement, process-custody, or native-acceptance receipt.
 module Warlock.Ui.EngineProtocol
-  ( SessionId, RequestId, Startup, Scope, Box, Event(..), Projection
+  ( GuiObservation, guiObservation, withRendererDiagnostics, rendererDiagnosticText, guiObservationComplete, guiObservationJson
+  , SessionId, RequestId, Startup, Scope, Box, Event(..), Projection
   , Method(..), Request(..), Reply(..), EventResult(..), ProtocolError(..)
   , Session, sessionId, requestId, startup, startupOrigins, startupDeadline
+  , BackingRootBinding, backingRootBinding, backingRootFields, startupWithBacking, startupBackingRoot
   , startupIncarnation, scope, box, projection, projectionJson, eventJson, parseEvent
   , newSession, isPoisoned, beginRequest, acceptRequest, finishRequest, confirmReplySent
   , acceptReply, poisonSession, encodeStartup, decodeStartup
@@ -37,7 +39,10 @@ data ProtocolError = Invalid | TooLarge | InvalidState | ForeignSession
 newtype SessionId = SessionId Counter deriving (Eq, Ord, Show)
 newtype RequestId = RequestId Counter deriving (Eq, Ord, Show)
 -- The numeric port representation is private; Origin validation stays in Policy.
-data Startup = Startup Origin Origin Origin Int Int Int Counter SessionId deriving (Eq, Show)
+-- Root identity is metadata, never a child cleanup capability. Only an
+-- authenticated Startup binds it to the selected incarnation and original D.
+data BackingRootBinding = BackingRootBinding Text Integer Integer Integer deriving (Eq, Show)
+data Startup = Startup Origin Origin Origin Int Int Int Counter SessionId (Maybe BackingRootBinding) deriving (Eq, Show)
 data Scope = Scope Counter Counter deriving (Eq, Show)
 data Box = Box Int32 Int32 Int32 Int32 deriving (Eq, Show)
 -- These constructors carry typed fields, never owner/gateway JSON constructors.
@@ -48,12 +53,30 @@ data Event = Topology Counter (Maybe (Scope, Maybe Box))
            | Dismiss Scope Counter | Escape Scope Counter Counter
            | Reflow Scope Counter deriving (Eq, Show)
 newtype Projection = Projection J.Json deriving (Eq, Show)
+-- Bounded child observations only. Neither this type nor ACK claims cleanup.
+data GuiObservation = GuiObservation Bool Bool Bool Bool Bool (Maybe (Text,Text)) deriving (Eq, Show)
+guiObservation :: Bool -> Bool -> Bool -> Bool -> Bool -> GuiObservation
+guiObservation a b c attached returned = GuiObservation a b c attached returned Nothing
+guiObservationComplete :: GuiObservation -> Bool
+guiObservationComplete (GuiObservation a b c attached returned _) = a && b && c && attached && returned
+-- Diagnostics are bounded inert strings, not a new projection/action constructor.
+rendererDiagnosticText :: B.ByteString -> Either ProtocolError Text
+rendererDiagnosticText diagnosticBytes = do
+ unless (B.length diagnosticBytes<=8192) (Left TooLarge)
+ text <- either (const (Left Invalid)) Right (TE.decodeUtf8' diagnosticBytes)
+ unless (not (T.any (== '\0') text)) (Left Invalid)
+ pure text
+withRendererDiagnostics :: Text -> Text -> GuiObservation -> Either ProtocolError GuiObservation
+withRendererDiagnostics bar popup (GuiObservation a b c attached returned _) = do
+ btext <- rendererDiagnosticText (TE.encodeUtf8 bar)
+ ptext <- rendererDiagnosticText (TE.encodeUtf8 popup)
+ pure (GuiObservation a b c attached returned (Just (btext,ptext)))
 data Method = Stop | Remaining | LastProjection | OwnerTopology | OwnerDismiss
-            | OwnerEscape | OwnerReflow deriving (Eq, Ord, Show)
-data Request = GetStop | GetRemaining | GetLastProjection | OwnerEvent Event deriving (Eq, Show)
+            | OwnerEscape | OwnerReflow | GuiComplete deriving (Eq, Ord, Show)
+data Request = GetStop | GetRemaining | GetLastProjection | OwnerEvent Event | SubmitGuiObservation GuiObservation deriving (Eq, Show)
 data EventResult = Accepted | Stale | Refused deriving (Eq, Show)
 data Reply = StopReply Bool | RemainingReply Int | ProjectionReply (Maybe Projection)
-           | EventReply EventResult deriving (Eq, Show)
+           | EventReply EventResult | GuiObservationAck deriving (Eq, Show)
 data Pending = AwaitReply | NeedReply | SendingReply deriving (Eq, Show)
 data Session = Session SessionId (Maybe Counter) (Maybe (RequestId, Method, Pending)) Bool deriving (Eq, Show)
 
@@ -79,13 +102,34 @@ startup a b c deadline incarnation = do
   ob <- either (const (Left Invalid)) Right (makeOrigin b)
   oc <- either (const (Left Invalid)) Right (makeOrigin c)
   d <- counter False deadline
-  pure (Startup oa ob oc a b c d incarnation)
+  pure (Startup oa ob oc a b c d incarnation Nothing)
 startupOrigins :: Startup -> (Origin, Origin, Origin)
-startupOrigins (Startup a b c _ _ _ _ _) = (a,b,c)
+startupOrigins (Startup a b c _ _ _ _ _ _) = (a,b,c)
 startupDeadline :: Startup -> Text
-startupDeadline (Startup _ _ _ _ _ _ d _) = renderCounter d
+startupDeadline (Startup _ _ _ _ _ _ d _ _) = renderCounter d
 startupIncarnation :: Startup -> SessionId
-startupIncarnation (Startup _ _ _ _ _ _ _ i) = i
+startupIncarnation (Startup _ _ _ _ _ _ _ i _) = i
+
+
+backingRootBinding :: Text -> Integer -> Integer -> Integer -> Either ProtocolError BackingRootBinding
+backingRootBinding path dev ino uid = do
+  suffix <- maybe (Left Invalid) Right (T.stripPrefix "/tmp/warlock-ui-backing-" path)
+  unless (T.length suffix == 64 && T.all (\c -> (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f')) suffix) (Left Invalid)
+  unless (dev >= 0 && dev <= 18446744073709551615
+       && ino > 0 && ino <= 18446744073709551615
+       && uid >= 0 && uid <= 4294967295) (Left Invalid)
+  pure (BackingRootBinding path dev ino uid)
+backingRootFields :: BackingRootBinding -> (Text,Integer,Integer,Integer)
+backingRootFields (BackingRootBinding path dev ino uid) = (path,dev,ino,uid)
+startupWithBacking :: Int -> Int -> Int -> Text -> SessionId -> BackingRootBinding -> Either ProtocolError Startup
+startupWithBacking a b c deadline incarnation binding = do
+  legacy <- startup a b c deadline incarnation
+  let selected = case legacy of
+        Startup oa ob oc pa pb pc d sid _ -> Startup oa ob oc pa pb pc d sid (Just binding)
+  when (B.length (encodeStartup selected) > maxHeaderBytes) (Left TooLarge)
+  pure selected
+startupBackingRoot :: Startup -> Maybe BackingRootBinding
+startupBackingRoot (Startup _ _ _ _ _ _ _ _ binding) = binding
 
 bytes :: J.Json -> B.ByteString
 bytes = TE.encodeUtf8 . J.renderJson
@@ -171,6 +215,35 @@ measure depth value = case value of
                     | otherwise = 4
           addBound n count
 
+guiObservationJson :: GuiObservation -> J.Json
+guiObservationJson (GuiObservation a b c attached returned diagnostic) = J.JObject $
+ [("controllerLoaded",J.JBool a),("barLoaded",J.JBool b),("popupLoaded",J.JBool c),
+  ("mvpAttached",J.JBool attached),("loopReturned",J.JBool returned),
+  ("callbackCustody",J.JString "process-pinned")] ++
+ maybe [] (\(bar,popup) -> [("rendererDiagnostics",J.JObject [("bar",J.JString bar),("popup",J.JString popup)])]) diagnostic
+parseGuiObservation :: J.Json -> Either ProtocolError GuiObservation
+parseGuiObservation value = do
+ let original = ["controllerLoaded","barLoaded","popupLoaded","mvpAttached","loopReturned","callbackCustody"]
+ fs <- case value of
+  J.JObject fields | any ((=="rendererDiagnostics") . fst) fields -> exact (original++["rendererDiagnostics"]) value
+  _ -> exact original value
+ policy <- field "callbackCustody" fs
+ unless (policy == J.JString "process-pinned") (Left Invalid)
+ let flag key = do
+      item <- field key fs
+      case item of J.JBool b -> Right b; _ -> Left Invalid
+ base <- guiObservation <$> flag "controllerLoaded" <*> flag "barLoaded" <*> flag "popupLoaded"
+   <*> flag "mvpAttached" <*> flag "loopReturned"
+ case lookup "rendererDiagnostics" fs of
+  Nothing -> pure base
+  Just diagnostic -> do
+   entries <- exact ["bar","popup"] diagnostic
+   bar <- field "bar" entries
+   popup <- field "popup" entries
+   case (bar,popup) of
+    (J.JString btext,J.JString ptext) -> withRendererDiagnostics btext ptext base
+    _ -> Left Invalid
+
 scopeJson :: Scope -> J.Json
 scopeJson (Scope a b) = J.JObject [("id",jcounter a),("generation",jcounter b)]
 parseScope :: J.Json -> Either ProtocolError Scope
@@ -232,29 +305,34 @@ method :: Request -> Method
 method GetStop = Stop
 method GetRemaining = Remaining
 method GetLastProjection = LastProjection
+method (SubmitGuiObservation _) = GuiComplete
 method (OwnerEvent event) = case event of Topology _ _ -> OwnerTopology; Dismiss _ _ -> OwnerDismiss; Escape _ _ _ -> OwnerEscape; Reflow _ _ -> OwnerReflow
 methodName :: Method -> Text
-methodName m = case m of Stop -> "stop"; Remaining -> "remaining"; LastProjection -> "lastProjection"; OwnerTopology -> "topology"; OwnerDismiss -> "dismiss"; OwnerEscape -> "escape"; OwnerReflow -> "reflow"
+methodName m = case m of Stop -> "stop"; Remaining -> "remaining"; LastProjection -> "lastProjection"; OwnerTopology -> "topology"; OwnerDismiss -> "dismiss"; OwnerEscape -> "escape"; OwnerReflow -> "reflow"; GuiComplete -> "guiObservation"
 parseMethod :: Text -> Either ProtocolError Method
-parseMethod value = case [m | m <- [Stop,Remaining,LastProjection,OwnerTopology,OwnerDismiss,OwnerEscape,OwnerReflow], methodName m == value] of
+parseMethod value = case [m | m <- [Stop,Remaining,LastProjection,OwnerTopology,OwnerDismiss,OwnerEscape,OwnerReflow,GuiComplete], methodName m == value] of
   [m] -> Right m
   _ -> Left Invalid
 requestBody :: Request -> J.Json
 requestBody (OwnerEvent e) = eventJson e
+requestBody (SubmitGuiObservation value) = guiObservationJson value
 requestBody _ = J.JNull
 parseRequestBody :: Method -> J.Json -> Either ProtocolError Request
 parseRequestBody Stop J.JNull = Right GetStop
 parseRequestBody Remaining J.JNull = Right GetRemaining
 parseRequestBody LastProjection J.JNull = Right GetLastProjection
+parseRequestBody GuiComplete value = SubmitGuiObservation <$> parseGuiObservation value
 parseRequestBody m value = OwnerEvent <$> parseEvent m value
 replyBody :: Reply -> J.Json
 replyBody r = case r of
+  GuiObservationAck -> J.JString "observed"
   StopReply value -> J.JBool value
   RemainingReply n -> J.JNumber (T.pack (show n))
   ProjectionReply Nothing -> J.JNull
   ProjectionReply (Just p) -> projectionJson p
   EventReply result -> J.JString (case result of Accepted -> "accepted"; Stale -> "stale"; Refused -> "refused")
 parseReplyBody :: Method -> J.Json -> Either ProtocolError Reply
+parseReplyBody GuiComplete (J.JString "observed") = Right GuiObservationAck
 parseReplyBody Stop (J.JBool b) = Right (StopReply b)
 parseReplyBody Remaining value = RemainingReply <$> number 0 30000000 value
 parseReplyBody LastProjection J.JNull = Right (ProjectionReply Nothing)
@@ -264,6 +342,7 @@ parseReplyBody m (J.JString value) | m `elem` [OwnerTopology,OwnerDismiss,OwnerE
 parseReplyBody _ _ = Left Invalid
 replyMatches :: Method -> Reply -> Bool
 replyMatches m r = case (m,r) of
+  (GuiComplete,GuiObservationAck) -> True
   (Stop,StopReply _) -> True; (Remaining,RemainingReply n) -> n >= 0 && n <= 30000000
   (LastProjection,ProjectionReply _) -> True
   (OwnerTopology,EventReply Stale) -> False
@@ -303,19 +382,45 @@ readWire direction raw = do
 -- Startup is a separate broker-to-engine one-time object. The transport must
 -- bind it to the validated exec and never accept it as an engine request.
 encodeStartup :: Startup -> B.ByteString
-encodeStartup (Startup _ _ _ a b c d s) = bytes (J.JObject [("version",J.JNumber "1"),("controller",J.JNumber (T.pack (show a))),("bar",J.JNumber (T.pack (show b))),("popup",J.JNumber (T.pack (show c))),("deadline",jcounter d),("incarnation",J.JString (sidText s))])
+encodeStartup (Startup _ _ _ a b c d s binding) = bytes (J.JObject
+  ([ ("version",J.JNumber (case binding of Nothing -> "1"; Just _ -> "2"))
+   , ("controller",J.JNumber (T.pack (show a))), ("bar",J.JNumber (T.pack (show b)))
+   , ("popup",J.JNumber (T.pack (show c))), ("deadline",jcounter d)
+   , ("incarnation",J.JString (sidText s)) ] ++ case binding of
+    Nothing -> []
+    Just (BackingRootBinding path dev ino uid) ->
+      [("backingRoot",J.JObject [("path",J.JString path)
+       ,("device",J.JString (T.pack (show dev))), ("inode",J.JString (T.pack (show ino)))
+       ,("owner",J.JString (T.pack (show uid)))])]))
 decodeStartup :: B.ByteString -> Either ProtocolError Startup
 decodeStartup raw = do
   value <- parse maxHeaderBytes 3 raw
-  fs <- exact ["version","controller","bar","popup","deadline","incarnation"] value
-  v <- field "version" fs
-  unless (v == J.JNumber "1") (Left Invalid)
+  version <- case value of J.JObject entries -> field "version" entries; _ -> Left Invalid
+  let ordinary = ["version","controller","bar","popup","deadline","incarnation"]
+  keys <- case version of
+    J.JNumber "1" -> Right ordinary
+    J.JNumber "2" -> Right (ordinary ++ ["backingRoot"])
+    _ -> Left Invalid
+  fs <- exact keys value
   a <- field "controller" fs >>= number 1024 65535
   b <- field "bar" fs >>= number 1024 65535
   c <- field "popup" fs >>= number 1024 65535
   d <- field "deadline" fs >>= textValue
   s <- field "incarnation" fs >>= textValue >>= sessionId
-  startup a b c d s
+  case version of
+    J.JNumber "1" -> startup a b c d s
+    _ -> do
+      root <- field "backingRoot" fs >>= exact ["path","device","inode","owner"]
+      path <- field "path" root >>= textValue
+      dev <- field "device" root >>= textValue >>= backingNumber 0 18446744073709551615
+      ino <- field "inode" root >>= textValue >>= backingNumber 1 18446744073709551615
+      uid <- field "owner" root >>= textValue >>= backingNumber 0 4294967295
+      binding <- backingRootBinding path dev ino uid
+      startupWithBacking a b c d s binding
+  where
+    backingNumber low high text = case reads (T.unpack text) of
+      [(value,"")] | value >= low && value <= high && T.pack (show (value :: Integer)) == text -> Right value
+      _ -> Left Invalid
 
 newSession :: Startup -> Session
 newSession initial = Session (startupIncarnation initial) (either (const Nothing) Just (parseCounter False "1")) Nothing False
@@ -379,7 +484,7 @@ confirmReplySent :: Session -> (Session, Either ProtocolError ())
 confirmReplySent state@(Session s n pending bad)
   | bad = (state,Left Poisoned)
   | otherwise = case pending of
-      Just (_,_,SendingReply) -> (Session s n Nothing False,Right ())
+      Just (_,m,SendingReply) -> (Session s (if m == GuiComplete then Nothing else n) Nothing False,Right ())
       _ -> failClosed state InvalidState
 acceptReply :: Session -> B.ByteString -> (Session, Either ProtocolError Reply)
 acceptReply state@(Session s n pending bad) raw
@@ -393,5 +498,5 @@ acceptReply state@(Session s n pending bad) raw
           | r /= expected || m /= expectedMethod -> failClosed state WrongReply
           | otherwise -> case parseReplyBody m p of
               Left err -> failClosed state err
-              Right reply -> (Session s n Nothing False,Right reply)
+              Right reply -> (Session s (if m == GuiComplete then Nothing else n) Nothing False,Right reply)
       Just _ -> failClosed state InvalidState

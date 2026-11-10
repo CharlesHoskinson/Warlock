@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only-keyboard-menu-mvp-destination",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-production-fix/manifest.json",
+    "sha256": "94f79b83de0ada01cf31555e2d37756236bbd7c27028517a0d542a27d15531a9"
+  },
+  "postimage": {
+    "path": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "beforeSha256": "f02fd8bcd02bce9346eea67995199d8b192755b5fa76fb125570306c2bda8847",
+    "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-native-menu-focus/haskell-production-fix/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+    "sha256": "737fe6ccebccfbbf43ca6dc926fa028bdda6102cb98f38a504b84b74866ac860"
+  },
+  "proof": "Exact full-file comparison proves sole additional destination guard; no other bytes changed.",
+  "checks": [
+    "Only menu with exact keyboardParent JSONtrue selects Popup/control:menu-close; pointerfalse/missing/malformed origin inert. Existing applications/notifications/closed destinations unchanged.",
+    "Existing parseProjectionLease selectedscope/owner validation and unique enabled-or-focusOnly target/rawDOM alias checks apply unchanged.",
+    "Existing transition key(scope,role,lease) unchanged, so publication-only changes do not steal traversed focus; newlease can produce new handoff.",
+    "Existing physical context/original deadline+reserve/topology+revision/livewindow/active/rooted/mapped/positiveallocation/projection-before+after GTK guards untouched.",
+    "No new callback/FFI/import/binder or lifetime; borrowed existing Popup widget only.",
+    "Main9be fixture remains byte-identical; actual RED reached first meaningful new parser assertion, remaining controls require Root GREEN."
+  ],
+  "qualification": "Root same2target compile+fresh --allocation-only GREEN required. This review is of nonauthor Mvp code, not self-approval of authored collector.",
+  "limits": [
+    "Parser/transition GREEN alone does not establish actual gtkWidgetGrabFocus/native key/focus behavior or originalUX024 acceptance.",
+    "No reviewer compiler/tests/imports or primary writes."
+  ]
+}

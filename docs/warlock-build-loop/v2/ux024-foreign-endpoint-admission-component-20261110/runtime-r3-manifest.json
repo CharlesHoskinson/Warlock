@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "kind": "private-runtime-public-read-sticky-fault-successor",
+  "parentRuntime": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/candidate/manifest.json",
+    "sha256": "097c1a7a54c6a78e90c596b1463df9921c0f0dc7a3ca590292c1517373f9e525"
+  },
+  "parentFixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/qualification-source/revision2-separated-entrypoint/manifest.json",
+    "sha256": "99429751a59a72a03d561521a3211a4b7d974172acbdd50b98c890ac8701d3a2"
+  },
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "sha256": "c7ae842eeb4c17678963f853c7378b45081eba0516b4d6ad4e9dbc7fb59d1dec"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/runtime.cabal",
+      "beforeSha256": "ace459e3085728e2da478254323b8a622c8d4f1acfe6b713983fb3bd5299f146",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/postimages/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "6a483a0f0f8ef8a607239b83846aa2e3da9323e78ca74291275c8bee1c747c23"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "67b42959060ed6e62809d8498f1540a01dbac863200cf5bbc39f6599ff27a8af",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "e8b5581842aa4b1f94d9fd37b8b2b532a7b6d5f1cf3711813cd78cd4c185e0c5"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/candidate.patch",
+    "sha256": "3a809c02e80c29e8a22ce12810eae1653d65780ad3a45470f16bccc5559f2bde"
+  },
+  "runtimeDelta": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/runtime-delta.patch",
+    "sha256": "5ff44bd67501e5356bf9064e0caba8c1189d05a3fc70571a4d1e261ff6091e64"
+  },
+  "qualificationPlan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/qualification-source/revision2-separated-entrypoint/qualification-plan.json",
+    "sha256": "046f84a431500eb1abe92b7aa1687ae6da80292ab8187cee9dde9e00846c05b2"
+  },
+  "retirementProof": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision2-queue-retirement-and-cpu-entry/retirement-proof-and-limits.json",
+    "sha256": "488019b56420bf726fac175f1665042cddc8d5243c1b699762edd40c92058459"
+  },
+  "abi": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/abi-source-pins.json",
+    "sha256": "1bc8bd57ec37cdf80cb1e2b698e4533acaf17eedfe9277578c8dfd1fa9ab5a0f"
+  },
+  "compiled": false,
+  "executedByAuthor": false,
+  "primaryWrites": false,
+  "nativeAcceptance": false,
+  "capabilityGranted": false,
+  "backendUnchanged": {
+    "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+    "sha256": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4"
+  },
+  "parent": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision2-queue-retirement-and-cpu-entry/manifest.json",
+    "sha256": "3d844cee8a7609997f1a710839a3d88d47c787357bb6befac8af3b0b35d45568"
+  },
+  "publicReadFaultRationale": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision3-public-read-sticky-fault/public-read-fault-rationale.json",
+    "sha256": "987ae46139f574669cd2253957b5feb820512de0df4bb4a2a99950a31b830a29"
+  }
+}

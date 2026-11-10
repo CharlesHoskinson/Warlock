@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UX-023",
+  "scenario": "keyboard-launcher",
+  "maximumOriginalDelta": {
+    "requirements": 0,
+    "scenarios": 1
+  },
+  "actualRawReport": {
+    "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/native/report.json",
+    "sha256": "0c3f74430b9db2822b451777465df6ecb4d09616303407e399f162e589b0f6ab"
+  },
+  "independentReview": {
+    "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/reviews/independent-original-keyboard-launcher-review.json",
+    "sha256": "721e7d6c752d2479272f5c39199d7e215ce53e9927813272c4f310e53e9e8bee"
+  },
+  "limits": [
+    "Only original keyboard-launcher is accepted. No claim for the all-surfaces ux-023 scenario, other nine surfaces, broad ELM-UX-023, AT, IME or release acceptance.",
+    "Raw nativeAcceptance/originalAcceptance/fullJourneyAccepted remain false and keyboardFocusObserved remains null; this external review does not rewrite raw evidence.",
+    "Historical4852 report40a6 remains failed with forced/unknown cleanup; no retroactive acceptance.",
+    "No tests, GUI, source changes, model calls or other effects by reviewer. Read-only adjudication after the attempt window is not renewed execution authority."
+  ],
+  "phaseLabelDiscrepancy": "Sequence6 sampled the recorder entry as active before the first dismissal, but entry-keyboard-focus-query.png later paints Refresh focus. This review does not claim first-pass entry focus from that PNG. The independent second traversal frame before actual operation visibly establishes entry focus.",
+  "actualSourceHashes": {
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "ea4e879f9dce27e95a8f8e2c627d19732ce4508ec65e938fe058c240a0deda4e"
+  },
+  "nativeRawFlagsPreserved": true,
+  "canonicalAdoptionPending": true
+}

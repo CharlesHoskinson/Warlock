@@ -1,0 +1,280 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-original-named-scenario-only",
+  "candidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/report.json",
+    "sha256": "3e25904f416c27b8abce766d47a58b98f2a1213f30c6606cc6689c7f3584a839"
+  },
+  "sourceRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+  "requirement": "ELM-UX-024",
+  "scenario": "ux-024",
+  "oracle": "focus follows menu order and returns to original eligible target",
+  "scenarioVerdict": "accepted",
+  "requirementAccepted": false,
+  "requirementDisposition": "partial",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/original-native-metadata-preparation/original-ux024-adjudication-guide.json",
+      "sha256": "e5bb3144594dda8efa6396556194277646a53dd7d18c1159604257e794723c54"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native51-proc-executable-attestation/revision3-coalesced-fresh-attestation/native8b-metadata-preparation/native52-conditional-clean-adjudication-checklist.json",
+      "sha256": "2700df1d8fe009218bded50bb7755f52e47615ea38d3b7835467b948020e1fc3"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/native9-clean-diagnostic-removal/revision2-preserve-proc-guard/native9-metadata-preparation/revision2-rsi-evidence-binding/prepared/final/packet.json",
+      "sha256": "4763373638331b27bd8792c387c9246dbb8d750f1c636362963347d42320140f"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/native48-owned-escape-consumption/native9-clean-diagnostic-removal/revision2-preserve-proc-guard/native9-metadata-preparation/revision2-rsi-evidence-binding/prepared/final/current-candidate-review-build.json",
+      "sha256": "d2f7992b6a9893af37e67d21460178b7b4646cd85db788030fa29de9dad52ffb"
+    }
+  ],
+  "actual": {
+    "keyboardTransactions": [
+      {
+        "index": 0,
+        "name": "current-group",
+        "argv": [
+          "-k",
+          "Tab"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 1,
+        "name": "open-menu",
+        "argv": [
+          "-M",
+          "shift",
+          "-k",
+          "F10",
+          "-m",
+          "shift"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 2,
+        "name": "tab-forward",
+        "argv": [
+          "-k",
+          "Tab"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 3,
+        "name": "tab-wrap",
+        "argv": [
+          "-k",
+          "Tab"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 4,
+        "name": "tab-reverse-wrap",
+        "argv": [
+          "-M",
+          "shift",
+          "-k",
+          "Tab",
+          "-m",
+          "shift"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 5,
+        "name": "dismiss",
+        "argv": [
+          "-k",
+          "Escape"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 6,
+        "name": "reopen",
+        "argv": [
+          "-M",
+          "shift",
+          "-k",
+          "F10",
+          "-m",
+          "shift"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 7,
+        "name": "dismiss-again",
+        "argv": [
+          "-k",
+          "Escape"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 8,
+        "name": "close-owned-gui",
+        "argv": [
+          "-M",
+          "alt",
+          "-k",
+          "F4",
+          "-m",
+          "alt"
+        ],
+        "originalDeadlineNs": 82249760387154,
+        "attempted": true,
+        "completed": true
+      }
+    ],
+    "phaseObservations": 11,
+    "frames": [
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-00-current-group.png",
+        "sha256": "7fadc85d52845aff57a8b1a4d3400168603d79f4e382c4dbfc38ccd0754354a6",
+        "beforeTransaction": "current-group",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-01-open-menu.png",
+        "sha256": "b5a5cc5ae204bdc324e060cd6739af0e574b4d3f310ecd0dc8776c7546ec7001",
+        "beforeTransaction": "open-menu",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-02-tab-forward.png",
+        "sha256": "60f0fe463ca6eac47590baec5077d27e63e9c01a462bcdef7702f237279196e1",
+        "beforeTransaction": "tab-forward",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-03-tab-wrap.png",
+        "sha256": "1fe5b3a1f4eba692b965a84a8d0d4c5075feea1136d2b728351671b6448edcf4",
+        "beforeTransaction": "tab-wrap",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-04-tab-reverse-wrap.png",
+        "sha256": "79ca8668573ad05098cf9cff861f1acbf8a8409dd9dbd38f10f2b1188f868c8e",
+        "beforeTransaction": "tab-reverse-wrap",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-05-dismiss.png",
+        "sha256": "1a5e123b0cbfd4fb86737483ec1e0aeb8c29efea94b90992b91a96fec04fc02f",
+        "beforeTransaction": "dismiss",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-06-reopen.png",
+        "sha256": "57f13bb07b75867dc0158a858d5f100a6ccc6af4f64cf1e45d07e3b746c651e8",
+        "beforeTransaction": "reopen",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-07-dismiss-again.png",
+        "sha256": "89d0270896eb4a78dfe3d1d5dc7765205e2d9b4f98c001242600889169b68846",
+        "beforeTransaction": "dismiss-again",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794316524852325198/menu-08-close-owned-gui.png",
+        "sha256": "e891ed4e18f1b5a08116f551872b0646f5ea4af85191e6656d4285dc59f5be81",
+        "beforeTransaction": "close-owned-gui",
+        "interpretation": "unreviewed actual pixels; no automatic physical focus acceptance"
+      }
+    ],
+    "commandsNormalExitZero": 101,
+    "lastPairedPhaseSeconds": 18.552550897,
+    "keyboardRetirementSeconds": 27.622831341,
+    "observerRetirement": {
+      "schema": 1,
+      "nonce": "9efc48b6a3349e1839ca538958d0f9e2ebec79a9f666671a2a689538e3fa8f00",
+      "sequence": 4,
+      "phase": "RETIRE",
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "configChecks": 15,
+      "nativeAcceptance": false,
+      "completedPhases": 4,
+      "actionPassed": true,
+      "error": null,
+      "status": "Retired",
+      "passed": true
+    },
+    "sameEligibleGroupFreshReadRevisions": [
+      1,
+      2,
+      3
+    ],
+    "returnedDomIds": [
+      "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+      "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:2:observed:application:GTK Application",
+      "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:3:observed:application:GTK Application"
+    ],
+    "sourcePins": 411,
+    "guardPins": 7,
+    "mappingCount": 14732
+  },
+  "pixelReview": {
+    "viewedAllNineActualPngs": true,
+    "beforeTransactionOrder": [
+      "BODY/no group outline",
+      "original Active group outline",
+      "menu Close outline",
+      "menu Refresh outline",
+      "menu Close outline",
+      "menu Refresh outline",
+      "original Active group outline/menu closed",
+      "reopened menu Close outline",
+      "original Active group outline/menu closed"
+    ],
+    "disabledFactRowSkipped": true,
+    "stockEditingPopoverAbsent": true,
+    "interpretation": "Images are before the named transaction, not after it. Their actual sequence corroborates declared order and both returns; paired current document focus/current scope provides correlation, not a universal paint-synchronization guarantee."
+  },
+  "originalCaseReason": "The genuine current observed-window taskbar menu receives real keyboard focus. Actual Tab forward, forward wrap and Shift-Tab reverse follow Close/Refresh and stay within the menu. Both Escape dismissals restore the same still-eligible logical group through fresh revisions2/3 under the same full binding/owner/presentation, corroborated by actual outlines and subsequent key delivery. All nine fixed inputs complete without pointer/retry and owned Closed/Retired normal cleanup is recorded. Read-only menu content does not invalidate the literal focus case.",
+  "rawFlagsPreserved": {
+    "nativeAcceptance": false,
+    "originalAcceptance": false,
+    "fullJourneyAccepted": false,
+    "requirementsCredit": 0,
+    "scenariosCredit": 0,
+    "forcedCleanup": false,
+    "cleanupUnknown": false,
+    "globalRestoration": true
+  },
+  "limits": [
+    "Independent external named-case adjudication only; raw flags and zero credits remain unchanged. Root owns canonical closure and any normal scenario verdict/ledger update.",
+    "Whole ELM-UX-024 remains partial: other shell-popup modes/nested eligibility/retirement paths are not adjudicated by this taskbar case.",
+    "No AT, speech/braille, broad popup, release, deployment or whole-EARS acceptance.",
+    "All earlier failures and diagnostic52 remain immutable; clean54 is the accepted case evidence.",
+    "No protected QA, target execution, or primary writes by reviewer."
+  ]
+}

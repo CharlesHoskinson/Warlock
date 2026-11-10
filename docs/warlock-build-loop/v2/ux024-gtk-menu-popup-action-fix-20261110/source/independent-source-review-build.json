@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-private-production-fix-for-protected-qualification",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/manifest.json",
+    "sha256": "8aea5962971a9503233ca430b3d0b80f4027269f181c2a3ab117298024b64e78"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "f00f74e72151e8863121be563c934e1251d67a2e27ba7e51258f5fccd0902a92"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "sha256": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "733b3a5c894d9b4ce2805385892f098d4f15d33946466a76cae6f3746dcfe65a"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/installed-action-contract.json",
+      "sha256": "440d1bd80eabe319755a43d1f574650fbf9ebd0011f17d1cda5abf7d59c7c1bc"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/KeyBindingTranslator.cpp.response",
+      "sha256": "2d4a7a163f1d7c51caad05d8528c690efda5a3f592ce6505ffce18240fb96524"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/WebKitWebViewBase.cpp.response",
+      "sha256": "208fcce5a570221147dcda99967c835d3672b4913b10b13d88f3117247f6a2e3"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/gtktextview.c.response",
+      "sha256": "85b2e589c6368acf044b500c69ccbfbdace0aeaa83ab7aaf73cfbe8f5e561024"
+    }
+  ],
+  "verified": [
+    "ExactWebKit2.54.2source KeyBindingTranslator160-176 constructsGtkTextView and excludes GTK3popup-menu interception underGTK4. commandsForKeyEvent231-240 forwards totranslator before WebProcess eventhandling; WebKitWebViewBase2365parentsitdirectlyunderWebView.",
+    "GTK4source GtkTextView1682-1693installs menu.popup withShiftF10/Menu shortcut. This provides concrete source-backed native editing action path matching actualbarpopover ancestry; actualtype remains inferred, not observed.",
+    "Installedgtk_widget_action_set_enabled signature void(GtkWidget*,constchar*,gboolean) matches safeFFI. Borrowed directchild GtkTextView unique within32siblings,exactparent/root/physicalowner checked before/after; only menu.popup disabled.",
+    "No keyconsumption/synthesizedinput/focusrouting/IME/othereditoraction change. WebKit forwards originalkeyboardevent regardless translatorcommand vector; originalElm scopedmenu path preserved.",
+    "Action applied tobar/popup afterownedrootattachment beforepresent. Existingattachabort/signalprocesspinning preserved; no newcallback/pointerretention.",
+    "AlltemporarydiagnosticMvpfields/sink/WebKitwriter/runnercapture removed. WebKitexactDDEbaseline; runnerrestoresD14logic withappend-onlyV4packetliteral only. Original9keys28+2/16frames/phase/oracles remain."
+  ],
+  "limits": [
+    "Rootprotectedsourcecontrols/strictcompile andactualnativeobservation required. Publicactioncall returnsvoid; no claimed actualenabledstate or physicalmenuoutcome fromsource alone.",
+    "No diagnosticWIPcommit or RSI inference; retainednative36/38/40failedtraces immutable.",
+    "No reviewer targetimports/tests/compiler/nativeeffects orprimarychanges. No originalUX024/EARS/releaseacceptance."
+  ]
+}

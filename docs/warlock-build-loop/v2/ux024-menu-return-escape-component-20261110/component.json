@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UX-024",
+  "scenario": "ux-024",
+  "status": "clean-source-component-qualified-original-native-pending",
+  "behavior": [
+    "Return native focus to the bar after a validated menu close even when capture state cannot certify release. Opening a popup still requires release.",
+    "Consume the current eligible menu Escape browser default without an extra close, HTTP or focus command.",
+    "Refresh the Elm event decoder when current menu control identities change.",
+    "Attest the fixed live GUI process through a held executable descriptor, and retain fresh checks before every input without duplicate adjacent checks."
+  ],
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "6e09d795f8c88e69a922ec92c7ea5116ab7aebb1c9d64be57f4af5ba589a56e3",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "8d5fdc55ce3f2f996c110de1a54f648bbac33d18681e1c1c4dc095cce76c5b58",
+    "implementation/warlock/src/HttpPopup.elm": "e3b20ed07ce33d23dfebb7d9ba368d210ec01597920f819fc061421f80d24589",
+    "implementation/warlock/qa/ux024-menu-dom.cjs": "d6b4983292ca45c94f4de56d4ebe6943c9d9e649661e08a0aa98e9c9ea2eb6a9",
+    "tools/check_elm_cpu.py": "02cc8aff76c624cbe44cb84396e4eedd4508a645f87326b9e5706c08a3b00eee",
+    "tools/run_current_arm_ux024_foreign_toplevel_observer.py": "daffaa93eb4afb08bc3f1e6b8faa7e86cfc4e4e14e5f6d0d3359121920650d71"
+  },
+  "evidence": {
+    "clean-haskell-report.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/clean-haskell-report.json",
+      "sha256": "d075020ff981989f014bbbceb1cbc3272dba1c44aad45f4c428c9849b0136c18"
+    },
+    "clean-haskell-review.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/clean-haskell-review.json",
+      "sha256": "ca9055bd39d16f6c5c8646060e3babd386c256ac23186532f8e000f44d10bd07"
+    },
+    "elm-document-report.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/elm-document-report.json",
+      "sha256": "62e48d24355a360c60e3c6c4a0d765231f8ee1836f4afffc364acddcb447d0c4"
+    },
+    "escape-current-target-review.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/escape-current-target-review.json",
+      "sha256": "facb98d6e63859f04e67cb076a96088c79642296a06b8441917b8e5f388a0806"
+    },
+    "escape-baseline-red.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/escape-baseline-red.json",
+      "sha256": "9b6bddad5251c2dac1093680cc95eff504992f354a508325fe53910af1818fc2"
+    },
+    "escape-target-update-red.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/escape-target-update-red.json",
+      "sha256": "22faa85325f13c0900b6f2e1b41d32445039ba0919616a80395da4c699caf8a2"
+    },
+    "escape-current-target-green.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/escape-current-target-green.json",
+      "sha256": "7ab7ba8a688cf2d142afc003ab84db9b00861776a8c791484f707b0b189f2105"
+    },
+    "escape-current-target-execution.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/escape-current-target-execution.json",
+      "sha256": "1616cfe74a7f40bd6304b77b8d42be6e0696a6721e7c0e0a2a34fe266dd12530"
+    },
+    "escape-keyed-contrasts-green.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/escape-keyed-contrasts-green.json",
+      "sha256": "eeb1ce5baf0769898cff85e8af64cb8a66380f2bfd31c224a3eaa18f1d17c63e"
+    },
+    "escape-keyed-contrasts-execution.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/escape-keyed-contrasts-execution.json",
+      "sha256": "ab9bd1a979a65397cd923413999fae086f45ef6c792334041426ef793cb843a4"
+    },
+    "tests/owned-escape-dom.cjs": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/tests/owned-escape-dom.cjs",
+      "sha256": "bbc097acb99a950eb24cd25f1fb8449e06d90d96dc4b279b7ab35788b8196783"
+    },
+    "tests/owned-escape-keyed-contrasts.cjs": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/tests/owned-escape-keyed-contrasts.cjs",
+      "sha256": "ffc7a807debe79ef522f0f2cc2bb3980a3047e8f31c2f57e17f72ead75e16c4b"
+    },
+    "tests/test_proc_executable_attestation.py": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/tests/test_proc_executable_attestation.py",
+      "sha256": "37824e0901926e68aad28eb744597bea918850a6a01260488298165e52d27ff9"
+    },
+    "tests/test_fresh_input_attestation_order.py": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/tests/test_fresh_input_attestation_order.py",
+      "sha256": "1e723a9de586e8a4ea99158d3bdc959fd5521097c661aa5586cf764b9d8d786d"
+    },
+    "directional-return-source-manifest.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/directional-return-source-manifest.json",
+      "sha256": "d282c7d40768be45d4bd90555b5862dbde4493016ce7fc91053ae6e25bf01490"
+    },
+    "directional-return-source-review.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/directional-return-source-review.json",
+      "sha256": "6f24773135821b26c5773793f7eb1074b1d46bed660eb0a69afe6f8355e770ef"
+    },
+    "owned-escape-source-manifest.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/owned-escape-source-manifest.json",
+      "sha256": "823d42035c5bf6d943a49e0796bacdbf3a5631024c6a2db911512816b663dca0"
+    },
+    "owned-escape-source-review.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/owned-escape-source-review.json",
+      "sha256": "d2f4b434cce67f6219a92ee07896a0a694da851b8d0411d74a6caacb31dbbc88"
+    },
+    "current-decoder-source-manifest.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/current-decoder-source-manifest.json",
+      "sha256": "0fdbdddea015d48e68a53092d29c073b88a1965abf436db2d16bdf29a447175e"
+    },
+    "current-decoder-source-review.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/current-decoder-source-review.json",
+      "sha256": "230135bfe22f410f72fb9e9600d866186d1c76279f7a4bfbfabdf224346f3ed9"
+    },
+    "diagnostic-native52-review.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/diagnostic-native52-review.json",
+      "sha256": "61d676a60159665fb921d54fa2e7c3eaa0ca0eb6bd9e1113a71244e26bcd017a"
+    },
+    "diagnostic-native52-assessment.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/diagnostic-native52-assessment.json",
+      "sha256": "df5babd7751cbb965cbe511a095c1fcd90cb52acbe945611f3da7f826211526e"
+    },
+    "diagnostic-cleanup-review.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/diagnostic-cleanup-review.json",
+      "sha256": "a357fd98297aaaebb4fbf5d98a627189d85fd0e5c42bed71b8875d5c375f49c9"
+    },
+    "runner-regressions.json": {
+      "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/runner-regressions.json",
+      "sha256": "13802d63b3cfaa60f394c198751d7b85ca6b25b55777b407a0cc20dbf3ea1e85"
+    }
+  },
+  "verificationScope": {
+    "cleanHaskell": "Fresh owner and controls compilation; both targeted control suites; six commands exit0. The owner has not been run in this CPU qualification.",
+    "elm": "Actual controller/bar/popup compilation; existing18/16/34/17 component cases plus32 initial-focus seeds; independent unchanged21/25 Escape regressions and32 seeds on the same popup.",
+    "diagnosticNative": "Nine fixed keyboard inputs and normal unforced cleanup on earlier diagnostic images. This does not qualify the clean images.",
+    "runner": "Process-image negative controls, per-input ordering controls and original30 runner tests on the retained guard-bearing source. Cleanup review confirms those guard functions are unchanged."
+  },
+  "limits": [
+    "No original scenario or whole requirement acceptance.",
+    "A clean native run and original-case independent adjudication remain required.",
+    "All earlier failed runs and cleanup-unknown flags remain unchanged.",
+    "Component reports retain original machine-local SDK, asset and command paths. These archive copies do not make the SDK or native images portable."
+  ],
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "releaseAcceptance": false
+}

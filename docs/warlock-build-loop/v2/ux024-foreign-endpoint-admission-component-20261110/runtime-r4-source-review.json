@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/manifest.json",
+    "sha256": "cdb10d9aa73b107226e70c95ca16cd9dbac929f6309e37ccc318dcfb245e6fdb"
+  },
+  "reviewedPosts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "sha256": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/runtime.cabal",
+      "beforeSha256": "ace459e3085728e2da478254323b8a622c8d4f1acfe6b713983fb3bd5299f146",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/postimages/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "6a483a0f0f8ef8a607239b83846aa2e3da9323e78ca74291275c8bee1c747c23"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "67b42959060ed6e62809d8498f1540a01dbac863200cf5bbc39f6599ff27a8af",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/revision4-redundant-bits-import/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "e8b5581842aa4b1f94d9fd37b8b2b532a7b6d5f1cf3711813cd78cd4c185e0c5"
+    }
+  ],
+  "verifiedDelta": "Exact byte comparison: only import Data.Bits ((.|.),(.&.)) removed from R3; Main and Cabal byte-identical.",
+  "findings": [],
+  "preserved": [
+    "All runtime functions, sticky fault boundaries, private queue retirement proof, deadline/thread/FD/callback guards unchanged.",
+    "Separate fixed endpoint CPU IO branch and old allocation-only body unchanged."
+  ],
+  "evidence": {
+    "actualCompilerFailureReview": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/actual-r3-import-failure-review-build.json",
+      "sha256": "b118b2e569dc75c93e7f12057206bf2db2141d9a7403e11fa06c50276382c857"
+    },
+    "r3SourceReviewSha256": "6edcb2cbbdbe406ac9b1846d70d38b48992028add795c4611af38f1116d9237b"
+  },
+  "limits": [
+    "No compiler, imports, tests or runtime execution performed by reviewer.",
+    "Acceptance is source-only; no successful compilation, connected-provider retirement or native acceptance claimed."
+  ]
+}

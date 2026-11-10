@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-semantic-red-with-two-fixture-oracle-defects",
+  "candidateSha256": "1d9d9a2f41fe3b4b769722d4d3f25df5952e1b0f7b3ace1180a98df919526dc1",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320082023027137/report.json",
+    "sha256": "a5a73609452b49c17233b1cd3d93e25cf214e275fe679404fb6993b5a9b30e10"
+  },
+  "componentReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794320082023027137/ui011-observed-scope-retirement.json",
+    "sha256": "8281e3a64c8da89cc6229fcf85e820902b3f7c4f23de9bb38e2e4380f6b16ce4"
+  },
+  "classification": {
+    "setupPassed": 5,
+    "cases": 24,
+    "failedCases": 5,
+    "positiveRestorationFailures": 3,
+    "seedFailures": 12,
+    "unexpectedWholeFrameEqualityFailures": 2,
+    "compilerFailure": false
+  },
+  "finding": "WindowObservation.replyDecoder lines47\u201349 requires snapshot.owner==binding.frontend. The two foreign fixtures violate that envelope, so Shell263 rejects it and rejectReason71 sets decoderRefusal. Whole Outputs.frame equality is not the authority/no-focus contract because diagnostic model changes can publish. Seeded equivalent malformed variants5/6 record empty actualFocus and noMutation. These failures do not show old-intent settlement or a legitimate binding rebind.",
+  "minimumFixtureCorrection": "Keep old failed predicates/report immutable. New version must require exact binding/windowExpected/windowObservation/cap unchanged, an explicit decoder refusal and no Focus/no mutation; diagnostic frame differences may remain. Do not remove the three positive restoration or twelve seed failures.",
+  "limits": [
+    "No QA or primary writes. Actual original24 fixture failure retained.",
+    "Semantic RED is established for three restoration positives and12seed witnesses; two negative failures are overbroad frame-equality oracles, not accepted product defects.",
+    "No native/AT/provider/original acceptance."
+  ]
+}

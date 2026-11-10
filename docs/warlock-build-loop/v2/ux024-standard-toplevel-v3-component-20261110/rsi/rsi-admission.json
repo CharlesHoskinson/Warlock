@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "plugins/warlock-contributor/scripts/warlock.py",
+    "--record",
+    ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "--json",
+    "delivery-event",
+    "--event-file",
+    ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-foreign-toplevel-v3-no-change-v1/rsi-event.json",
+    "--expect-record-sha",
+    "39df6ed66d2080ee94d953fd8888c3ef74658538da0ee18fd9cc8d658749367d",
+    "--expect-selection",
+    "28"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"record\": \".warlock-contributor/ux024-menu-tab-focus-root-20261109.json\",\n  \"nextRootAction\": {\n    \"kind\": \"exercise-journey\",\n    \"executor\": \"Root\",\n    \"candidateId\": \"ux024-standard-v3-green-v2-20261109\",\n    \"candidateSha256\": \"78ec06caa70f7b646612f5c0d1695d5522109b33e916e1d298aae68b5c87e4a5\",\n    \"jobId\": \"pid476969-start3568693\",\n    \"argv\": [\n      \"/usr/bin/python3\",\n      \"-B\",\n      \"/home/hoskinson/Projects/Warlock/tools/qa_cpu.py\",\n      \"--review\",\n      \"/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/foreign-toplevel-v3-green-v2-cpu/review-packet.json\",\n      \"--sha256\",\n      \"759be939eb4c79fd29288cb087ee24a6d1ebdc9eee5db94ca45c3492f8bc9d03\"\n    ],\n    \"expectedObservation\": \"Actual9318 failed compilation with foreign-toplevel-ghc-overlapping-managerfinished-case. The sole module source correction removes the compiler-rejected redundant ManagerFinished alternative; Cabal3050 and Main67b remain unchanged. Earlier API-absence plus group-refusal failure remains preserved. Compile/link fixed owner+ui-webkit targets, execute only allocation-only; require34callback-accumulator controls and32seed sequences plus prior parser regressions. No native/provider/backend service or original acceptance inferred.\",\n    \"executionAuthorized\": false,\n    \"acceptanceInferred\": false,\n    \"progress\": {\n      \"workflowPolicy\": 2,\n      \"iterationsWithoutProgress\": 0,\n      \"lastRecordedProgressUTC\": \"2026-11-10T00:23:51.544888+00:00\",\n      \"secondsSinceRecordedProgress\": 195,\n      \"suspendedSeconds\": 0,\n      \"limits\": {\n        \"iterations\": 2,\n        \"seconds\": 2700,\n        \"sameFailureExperiments\": 2\n      },\n      \"investigationNeedsChange\": false,\n      \"planChangeRequired\": false,\n      \"reconciliationRequired\": false,\n      \"authorizationExpired\": false,\n      \"reasons\": [],\n      \"effectiveAuthorizationExpiresUTC\": \"2026-11-10T14:40:00Z\",\n      \"action\": \"Continue the selected delivery action.\",\n      \"basis\": \"Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.\"\n    }\n  },\n  \"recordSha256\": \"706199603c0a0b64324b0c474b4576c213c3b58cfd5527def2043f5b31b41d07\",\n  \"acceptanceInferred\": false,\n  \"ok\": true\n}\n",
+  "stderr": ""
+}

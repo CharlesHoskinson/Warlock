@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only-scoped-keyboard-context-emitter",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/production-fix/manifest.json",
+    "sha256": "4e8bc4bbf4910bdb1bdbbb8e6223f4a009317d24af9f43efb5bee2687d91e781"
+  },
+  "posts": [
+    {
+      "path": "implementation/warlock/src/CapturedAction.elm",
+      "beforeSha256": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/production-fix/postimages/implementation/warlock/src/CapturedAction.elm",
+      "sha256": "08efe9eacd78e9edf86ed13a5b13108d29face6ef1edf264ad711dc6c720664b"
+    },
+    {
+      "path": "implementation/warlock/src/Presentation.elm",
+      "beforeSha256": "745a143ac94ab15a27a2c8d494bf66c167a42816cdddd71ffe877ba3627b3396",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/production-fix/postimages/implementation/warlock/src/Presentation.elm",
+      "sha256": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "beforeSha256": "d5439ebf36c3624fd56a316a012177dcc20c47e883437d469e70c08ab3b1825c",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/next-keyboard-menu-emitter/production-fix/postimages/implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+    }
+  ],
+  "checks": [
+    "Exactly3production files; old CapturedAction import/type/action decoder/encoder/getters prefix identical apart from export list extension. NewContext distinct opaque constructor unexported.",
+    "Context exact9fields rejects missing/extra/duplicate shape; protocol2/surface-context/bar/keyboard/fixedinteger0,0, positivepublication, fullUInt64 leaseincluding0, nonempty group/pin suffix and boundedcontrol-freeidentity required.",
+    "Presentation retains original action success/refusal branch; fallback separately decodes Context and requires notpopup plus exact currentpub/lease and current enabledBar membership before reencoding. No query same-lease rebase, generic wire passthrough or origin authority claim.",
+    "Renderer attaches key handler only current enabled bar group/pin; plainContextMenu orShiftF10 with noCtrl/Alt/Meta, noIME229/composition/repeat. Fixedkeyboardwire with capturedscope, no inventedpointercoords.",
+    "Click activation expression unchanged; no keyhandler for disabled/utility/popup; nativeEscape/Popup/UiHttp transport code untouched.",
+    "Actualthreefile exported signatures, map8 shape and new binders inspected against enclosing/top-level names; no concrete shadowing/layout issue found. This is static review, not compiler result.",
+    "Frozen34fixture32seeds/old18+16 unchanged; actualbaselineRED independentlyverified120sourcepins and11fail23pass."
+  ],
+  "qualification": "Root must compile actual unchanged34+32samples and old18+16 GREEN; no author/reviewer execution.",
+  "limits": [
+    "Controlled contextPOST does not authenticate nativekey/confirmbackendmenu effect or actualfocusreturn/originalUX024 acceptance.",
+    "Transporterrors retain existing UiHttp stop/no replay path, not new acknowledgement authority."
+  ],
+  "effects": {
+    "tests": false,
+    "imports": false,
+    "compiler": false,
+    "primaryWrites": false
+  }
+}

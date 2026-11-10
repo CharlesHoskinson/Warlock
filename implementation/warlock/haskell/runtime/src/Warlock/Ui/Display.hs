@@ -7,9 +7,10 @@ module Warlock.Ui.Display
 import Control.Exception (IOException, try)
 import Control.Monad (unless)
 import Data.Bits ((.&.))
+import Data.List (intercalate, inits, isPrefixOf)
 import Data.Text (Text)
 import System.Environment (lookupEnv)
-import System.Posix.Files (fileMode, fileOwner, getSymbolicLinkStatus, isDirectory, isSocket)
+import System.Posix.Files (fileMode, fileOwner, getSymbolicLinkStatus, isDirectory, isSocket, deviceID, fileID)
 import System.Posix.User (getRealUserID, getEffectiveUserID)
 
 -- Capture before entering the private user namespace. Its single UID mapping
@@ -44,14 +45,32 @@ resolveDisplayEnvironment (Just runtime) (Just display) = do
       validName = take 8 display == "wayland-" && not (null suffix) && length display <= 64
                && all (\c -> ascii c || c == '-' || c == '_') suffix
       require good = unless good (ioError (userError "private UI display transport refused"))
-  require (uid /= 0 && uid == effective && runtime == "/run/user/" ++ show uid && validName)
+      base = "/run/user/" ++ show uid
+      splitComponents value = case break (=='/') value of
+       (part,[]) -> [part]
+       (part,_:rest) -> part : splitComponents rest
+      components = if runtime == base then [] else splitComponents (drop (length base + 1) runtime)
+      validComponent part = not (null part) && length part <= 64 && all (\c -> ascii c || c == '-' || c == '_') part
+      validRuntime = runtime == base || (base ++ "/") `isPrefixOf` runtime
+                      && length components <= 8 && all validComponent components
+      privatePaths = base : [base ++ "/" ++ intercalate "/" prefix | prefix <- tail (inits components)]
+      inspectPrivate path = do
+       status <- getSymbolicLinkStatus path
+       require (isDirectory status && fileOwner status == uid && fileMode status .&. 0o777 == 0o700)
+       pure (deviceID status,fileID status)
+      inspectSocket = do
+       status <- getSymbolicLinkStatus (runtime ++ "/" ++ display)
+       require (isSocket status && fileOwner status == uid)
+       pure (deviceID status,fileID status)
+  require (uid /= 0 && uid == effective && validRuntime && validName)
   mapM_ (\path -> do
     status <- getSymbolicLinkStatus path
     require (isDirectory status && fileOwner status `elem` [0,uid] && fileMode status .&. 0o022 == 0)) ["/run", "/run/user"]
-  directory <- getSymbolicLinkStatus runtime
-  require (isDirectory directory && fileOwner directory == uid && fileMode directory .&. 0o777 == 0o700)
-  socket <- getSymbolicLinkStatus (runtime ++ "/" ++ display)
-  require (isSocket socket && fileOwner socket == uid)
+  before <- mapM inspectPrivate privatePaths
+  endpoint <- inspectSocket
+  after <- mapM inspectPrivate privatePaths
+  endpointAfter <- inspectSocket
+  require (before == after && endpoint == endpointAfter)
   pure [("XDG_RUNTIME_DIR",runtime),("WAYLAND_DISPLAY",display)]
  pure (either (const (Left "private UI display transport unavailable")) Right (observed :: Either IOException [(String,String)]))
 resolveDisplayEnvironment _ _ = pure (Left "incomplete private UI display transport")

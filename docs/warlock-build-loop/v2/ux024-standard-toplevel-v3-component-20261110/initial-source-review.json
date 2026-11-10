@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only-bounded-standard-v3-accumulator",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate/manifest.json",
+    "sha256": "c5622f3520481cf43362aeae8aa08361dbc459c80977746d02cad26a4b0cf8fb"
+  },
+  "protocol": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/standard-protocol-evidence/wlr-foreign-toplevel-management-unstable-v1.xml",
+    "sha256": "ea1008781ec4af7a5ceb131914081405c71336fdd7e600103bcc940c15fc741f"
+  },
+  "checks": [
+    "Exactly3paths: pure public module, Cabal exposed-module entry and existing test fixture. Existing containers/text/Identity/StrictJson dependencies already present; new APIs exported with opaque Owner/Handle/Output/Snapshot/Toplevel constructors.",
+    "Title/app_id/state initial details and changes staged; per-handle Done atomically replaces committedrow. Initial incomplete Done refuses, pending updates preserve prior committed facts. XML state enums0..3 and parent sincev3 match.",
+    "Connection generation+wireID+checked monotone serial prevent stalehandle/output reuse; closed removes row, lateoldtoken refuses, managerfinished retires data owner. No capability/attachment/authentication semantics added.",
+    "Outputenter/leave require current tokens/validmembership; registryremoval removes known-goneoutput fromdraft+committed without inventingreplacement. Parent currenttoken/selfcheck; snapshot traverses committedgraph with staleparent/cycle refusal and currentoutput validation.",
+    "Capacity256handles/64outputs and boundedUTF16text/statearrays/uint64 serial constrain work. Parentwalk at most256 with cycle set, no unbounded recursive graph.",
+    "New module/type signatures and test polymorphic checked helper source inspected; no concrete shadowing/layout/ambiguoustype issue found. Actual compiler remains Root qualification.",
+    "Existing Main functions retained except allocation-only appended call;34fixed controls+32literal samples(twochecks each) source-inspected, not executed. Backend/nativeprofile/windoweffects untouched."
+  ],
+  "parityLimits": [
+    "This is a bounded validating client data model, not complete acceptance of every protocol string/sequence: text policy and unknownstate/duplicate events failclosed explicitly.",
+    "ManagerFinished data retirement is conservative policy, NOT a destroy-notify/Wayland callback quiescence fence. Future client must retain/destroy actual proxies/callbacks under separate custody proof.",
+    "Closedparent leaves childsnapshot unavailable until actual Parent null+Done, not invented repair. Per-handle Done is not global scene atomicity.",
+    "Actual supported nestedHyprland v3 endpoint exists in retained registry; this puremodel is not a connected Haskell producer or authenticated output/window authority."
+  ],
+  "qualification": "Root compiler+existing --allocation-only controls pending; no reviewer imports/tests/FFI/native effects.",
+  "nativeAcceptance": false,
+  "originalAccepted": false
+}

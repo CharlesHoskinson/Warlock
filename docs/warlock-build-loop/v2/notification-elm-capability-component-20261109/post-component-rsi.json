@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "atUTC": "2026-11-09T19:38:56.914380+00:00",
+  "disposition": "no-change",
+  "integrationRevision": "fcffd8bfb5c2304f5c684c5d54eb75f6facf91d8",
+  "proposedChange": "Allow an independent owned pure product increment after a consumed native job without allowing retained readiness edits.",
+  "refutationCase": "The same selected participant must refuse an actual retained readiness destination and allow both the exact six product and replay paths and a new evidence namespace.",
+  "reason": "The installed policy already provides the required distinction. Both same-task probes pass without a source change; no further plugin modification is justified.",
+  "baselinePluginSha256": "997faca4426fd851a5ffe84781d377377fd79c89c862f766b32577158e6d507d",
+  "resultPluginSha256": "997faca4426fd851a5ffe84781d377377fd79c89c862f766b32577158e6d507d",
+  "fixedProductHashes": {
+    "implementation/warlock/src/Shell.elm": "4ef1ceaf83a5d306d8d51fc0af4e56877eefdfa66f076fef6acf18d46b23bf73",
+    "implementation/warlock/src/Desktop.elm": "35a782712e38a074a32af0d1c693c08296601f72caa39b981a87c08524d77815",
+    "implementation/warlock/src/Surface.elm": "b1d6eea10f44bfa627f0912d79a5670f2642ccd638de844d89270151f140a179",
+    "implementation/warlock/qa/NotificationCapabilityReplay.elm": "2ea941bd592c51ff063d4acad2de82bc930879ad5d646c9b71274b4f8c4b7486",
+    "implementation/warlock/qa/notification-capability.cjs": "b37d9b543b100316b7463c9c03b1cbb53ac2839c0305e98fe52c29fd4541e4e9",
+    "implementation/warlock/qa/notification-capability.json": "496bdc429366c6030d3de966620d16db5799ea64143872c8d1d4953fb36b0f53"
+  },
+  "fixedGuardHashes": {
+    "docs/elm-roadmap/requirements.json": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff",
+    "docs/elm-roadmap/baselines/requirements-pre-language-20261030.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/elm-roadmap/language-revision.json": "d405ed8b8fd7e47420f108ed5692970734e341913a029a894b971397849b216c",
+    "docs/elm-roadmap/tools/language_revision.py": "a792ed03d3bc7eeed978b387ee5dda8474af0738844c29caaa39cafe1d5c7e4a",
+    "implementation/elm-build-loop-v1/loop.py": "13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6",
+    "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  },
+  "before": {
+    "retainedReadinessEditRefused": true,
+    "completedJobAllowsOwnedProductIncrement": true,
+    "newVersionedEvidencePathAllowed": true
+  },
+  "after": {
+    "retainedReadinessEditRefused": true,
+    "completedJobAllowsOwnedProductIncrement": true,
+    "newVersionedEvidencePathAllowed": true
+  },
+  "sourceAndParticipantBytesUnchanged": true,
+  "legacyRecordPolicyUnchanged": true,
+  "typedPolicy2EventClaimed": false,
+  "nativeEffects": false,
+  "originalAcceptance": false,
+  "rsiTriggersAnotherRsi": false
+}

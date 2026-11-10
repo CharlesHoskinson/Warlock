@@ -6,6 +6,7 @@
 -- NOT evidence of an owned engine child, pidfd, namespace, reaper or GTK.
 module Main (main) where
 
+import Control.Concurrent (threadDelay)
 import Control.Exception (finally, onException)
 import Control.Monad (unless, void, when)
 import qualified Data.ByteString as B
@@ -69,10 +70,18 @@ data Fixture = Fixture
   }
 
 withFixture :: GuardMode -> (Fixture -> IO a) -> IO a
-withFixture mode action = do
-  deadline <- deadlineAfter 5000000 >>= must
+withFixture = withFixtureBudget 5000000
+
+withFixtureBudget :: Int -> GuardMode -> (Fixture -> IO a) -> IO a
+withFixtureBudget budget = withFixtureBacking budget Nothing
+
+withFixtureBacking :: Int -> Maybe P.BackingRootBinding -> GuardMode -> (Fixture -> IO a) -> IO a
+withFixtureBacking budget binding mode action = do
+  deadline <- deadlineAfter budget >>= must
   sid <- must (P.sessionId "42")
-  startup <- must (P.startup 21101 21102 21103 (T.pack (deadlineAbsoluteNs deadline)) sid)
+  startup <- must $ case binding of
+    Nothing -> P.startup 21101 21102 21103 (T.pack (deadlineAbsoluteNs deadline)) sid
+    Just root -> P.startupWithBacking 21101 21102 21103 (T.pack (deadlineAbsoluteNs deadline)) sid root
   controller <- must (makeOrigin 21101)
   bar <- must (makeOrigin 21102)
   popup <- must (makeOrigin 21103)
@@ -253,6 +262,98 @@ negativeControls = do
 
 main :: IO ()
 main = do
+  backingStartupSocketControl
   positiveControls
+  guiCompletionControls
+  terminalByteControl
   negativeControls
   putStrLn "engine broker socketpair controls passed; mock guard is not owned-process evidence"
+
+guiCompletionControls :: IO ()
+guiCompletionControls = do
+  withFixture ParentOnly $ \fixture -> do
+    startFixture fixture
+    let observation = P.guiObservation True True True True True
+        (pending, encoded) = P.beginRequest (P.newSession (fixtureStartup fixture)) (P.SubmitGuiObservation observation)
+    raw <- must encoded
+    framed <- must (Transport.enginePrefix raw)
+    N.sendAll (fixturePeer fixture) framed
+    result <- Broker.serveBrokerOnce (fixtureBroker fixture)
+    check "GUI terminal ACK written" (result == Broker.GuiObservationWrittenLocally)
+    ack <- readBoundedFrame (fixtureDeadline fixture) Transport.engineHeaderLength (fixturePeer fixture)
+    check "GUI child receives explicit ACK" (snd (P.acceptReply pending ack) == Right P.GuiObservationAck)
+    stored <- Broker.brokerGuiObservation (fixtureBroker fixture)
+    check "GUI exact admitted observation stored" (stored == Just observation)
+    repeated <- Broker.serveBrokerOnce (fixtureBroker fixture)
+    check "GUI terminal cannot dispatch again" (repeated == Broker.Closed)
+    reader <- Transport.newCredentialReader
+    Transport.enablePassCredentials (fixturePeer fixture)
+    stillOpen <- timeout 1000 (Transport.receiveCredentialChunk reader (fixturePeer fixture) 1)
+    check "GUI post-ACK peer remains open through broker publication" (stillOpen == Nothing)
+    closed <- Broker.closeBroker (fixtureBroker fixture)
+    check "GUI parent close explicitly confirmed" (closed == Broker.CloseConfirmed)
+    left <- remainingMicros (fixtureDeadline fixture)
+    check "GUI terminal barrier original D remains live" (left > 0)
+    terminal <- timeout left (Transport.receiveCredentialChunk reader (fixturePeer fixture) 1)
+    check "GUI ACK then confirmed parent close yields terminal EOF" (terminal == Just (Right Transport.EndOfStream))
+    retained <- Broker.brokerGuiObservation (fixtureBroker fixture)
+    check "GUI observation survives close as evidence only" (retained == Just observation)
+  withFixture ParentOnly $ \fixture -> do
+    startFixture fixture
+    let observation = P.guiObservation True False True True True
+        (_, encoded) = P.beginRequest (P.newSession (fixtureStartup fixture)) (P.SubmitGuiObservation observation)
+    raw <- must encoded
+    framed <- must (Transport.enginePrefix raw)
+    N.sendAll (fixturePeer fixture) framed
+    result <- Broker.serveBrokerOnce (fixtureBroker fixture)
+    check "GUI partial observation ACK is not qualification" (result == Broker.GuiObservationWrittenLocally && not (P.guiObservationComplete observation))
+  withFixture ParentOnly $ \fixture -> do
+    startFixture fixture
+    let (_, encoded) = P.beginRequest (P.newSession (fixtureStartup fixture)) (P.SubmitGuiObservation (P.guiObservation True True True True True))
+    raw <- must encoded
+    framed <- must (Transport.enginePrefix raw)
+    N.sendAll (fixturePeer fixture) framed
+    S.shutdown (fixturePeer fixture) S.ShutdownReceive
+    result <- Broker.serveBrokerOnce (fixtureBroker fixture)
+    stored <- Broker.brokerGuiObservation (fixtureBroker fixture)
+    check "GUI failed ACK write has no completion receipt" (result == Broker.Indeterminate && stored == Nothing)
+  withFixtureBudget 1000000 ParentOnly $ \fixture -> do
+    startFixture fixture
+    threadDelay 1100000
+    left <- remainingMicros (fixtureDeadline fixture)
+    check "GUI late-D control actually expired" (left <= 0)
+    result <- Broker.serveBrokerOnce (fixtureBroker fixture)
+    stored <- Broker.brokerGuiObservation (fixtureBroker fixture)
+    check "GUI late D cannot manufacture completion" (result == Broker.Indeterminate && stored == Nothing)
+
+-- The child source uses this same existing credential-reader primitive only
+-- after a decoded ACK. This fixture does not invoke EngineEntrypoint or GTK.
+terminalByteControl :: IO ()
+terminalByteControl = do
+  (sender, receiver) <- S.socketPair S.AF_UNIX S.Stream S.defaultProtocol
+  (do
+    Transport.enablePassCredentials receiver
+    reader <- Transport.newCredentialReader
+    N.sendAll sender "x"
+    extra <- Transport.receiveCredentialChunk reader receiver 1
+    check "GUI terminal extra byte is data not EOF" (case extra of
+      Right (Transport.CredentialChunk bytes _) -> bytes == "x"
+      _ -> False)) `finally` (S.close sender >> S.close receiver)
+
+-- Same actual SCM socket/guard path, with metadata only: no directories or GUI.
+backingStartupSocketControl :: IO ()
+backingStartupSocketControl = do
+  root <- must (P.backingRootBinding
+    "/tmp/warlock-ui-backing-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    18446744073709551615 18446744073709551614 1000)
+  withFixtureBacking 5000000 (Just root) ParentOnly $ \fixture -> do
+    startFixture fixture
+    check "socket startup parent backing preserved" (P.startupBackingRoot (fixtureStartup fixture) == Just root)
+    check "socket startup original deadline preserved"
+      (P.startupDeadline (fixtureStartup fixture) == T.pack (deadlineAbsoluteNs (fixtureDeadline fixture)))
+    admissions <- readIORef (fixtureAdmissions fixture)
+    check "socket backing metadata needs existing admission" (admissions > 0)
+  withFixtureBacking 5000000 (Just root) WrongParent $ \fixture -> do
+    sendStartupReady fixture
+    result <- Broker.completeStartup (fixtureBroker fixture)
+    check "socket backing cannot bypass foreign credential refusal" (result /= Broker.StartupWrittenLocally)

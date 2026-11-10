@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-actual-elm-initial-menu-focus-semantic-red",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794264903118007276/report.json",
+    "sha256": "edb0bc63b750a55f92cfd96dad0eb5ed7cab528de5378e9e96f0c4d5cfe3dacb"
+  },
+  "result": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794264903118007276/menu-initial-focus.json",
+    "sha256": "d8704cd70a8ae920f7bec0d307615b490c448a42da89981fd46f3d006a8e903d"
+  },
+  "commandExits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "currentSourceCount": 122,
+  "allLiveSourceHashesMatched": true,
+  "cases": 17,
+  "failedCases": 4,
+  "passedCases": 13,
+  "setupCount": 5,
+  "allSetupTrue": true,
+  "seedCount": 32,
+  "failedSeeds": [
+    0,
+    8,
+    16,
+    24
+  ],
+  "actualCause": "Keyboard menu is open with current unique enabled menu:1:close. Actual Outputs.update effects and Outputs.register commit focus are empty; commit projection is current. No compiler/setup defect.",
+  "expectedLiteral": "menu:1:close",
+  "oldComponents": "18DOM,16Escape,34emitter all remain passing; raw reports retained.",
+  "limits": [
+    "Root observed execution; no tests/imports/compilers by reviewer.",
+    "Elm-only result does not qualify pending Mvp/GTK physical handoff or native/originalUX024 acceptance."
+  ]
+}

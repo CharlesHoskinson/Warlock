@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-tests-first-corrected-refusal-oracle",
+  "manifestSha256": "3acc77a644b0befca0276ccb0c0a2d84e6a16b34f671b9740bde14e3ca715efe",
+  "verified": {
+    "onlyTwoWholeFramePredicatesReplacedByExactReadAuthorityRefusalAndNoFocus": true,
+    "boundedPublicWitnessesAdded": true,
+    "nodeInventory24Setup5Seeds32Unchanged": true,
+    "allPositiveRestorationOraclesAndInputsUnchanged": true,
+    "noProductionOrOpaqueModelChanges": true
+  },
+  "limits": [
+    "Source-only review, no execution. Prior actual baseline remains immutable and is not relabeled as passing negatives.",
+    "Both envelopes are malformed owner/frontend combinations, not valid foreign-session rebinding cases. This fixture scopes those refusals honestly.",
+    "No native/AT/original acceptance."
+  ]
+}

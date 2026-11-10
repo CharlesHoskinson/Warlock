@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "disposition": "no-change",
+  "candidateSha256": "7e2fa268abed43e5a6aeb1fc32e61c3bc91d46399d2d944dbcefde88da985296",
+  "integrationRevision": "bb8bf1394bbadcb4f09687bda295de88c9c7ad93",
+  "authorizationExpiresUTC": "2026-11-10T14:40:00Z",
+  "proposedChange": "Add a further workflow admission rule for initial-menu-focus fixtures.",
+  "refutationCase": "Existing source review identified incorrect foreign-scope assumptions before QA. The corrected fixedpublicfixture then produced semanticRED and actualGREEN without a new plugin rule. After Rootactualintegration, run the same28 route/admission/result controls twice on identical finalDesktop/task/oracles/guards/auth and unchangedplugin.",
+  "reason": "The corrected workflow already supported the bounded currentproduct task and caught the fixture issue. No additional engine, documentation or helper rule is justified.",
+  "baselinePlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/baseline-plugin.json",
+    "sha256": "46a823592993ce74b97a0d4231b100921bd7ec545480df9a188f8cf60003bb98"
+  },
+  "baselineHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/baseline-harness.json",
+    "sha256": "d9858dc25824846204531939708356f482dbc82fda6c5c1c632ddc3a68b76ed7"
+  },
+  "resultPlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/result-plugin.json",
+    "sha256": "46a823592993ce74b97a0d4231b100921bd7ec545480df9a188f8cf60003bb98"
+  },
+  "candidateHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/candidate-harness.json",
+    "sha256": "264f0cb9a3ef7bf6adc94e15c98df150440fccd4e2c45506443c3148c0d3ec8c"
+  },
+  "comparison": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/comparison.json",
+    "sha256": "64433b8a55af02a95fe56bc0d102f03ded31a7b84a667bc96074dae6590d2d12"
+  },
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-initial-focus-no-change-v1/regression.json",
+    "sha256": "1743307310e47a374d976689c35dc69939aae7ac1d866c5cd67c1e1533aba6d5"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "reviewer": "Root",
+  "author": "sol_supervisor",
+  "disposition": "accepted-project-only-fixed-endpoint-cpu-support",
+  "observedUTC": "2026-11-10T00:44:55.112319+00:00",
+  "manifestSha256": "1d5aa0555fc4fd3711984e0e5f23efc6b9bbb97b4cc4dc655e055a9c5db939dd",
+  "postimages": [
+    {
+      "path": "tools/run_ux024_menu_focus_build.py",
+      "sha256": "588dc4e6b79632ae3ba132262c3cec2292885f0e62b6f7139f39289325ea8116"
+    },
+    {
+      "path": "tools/test_ux024_menu_focus_build.py",
+      "sha256": "36659432e73990a0f7b516e151957a0049f7e66c9029c56ec0decb8e941050e9"
+    },
+    {
+      "path": "tools/qa_cpu.py",
+      "sha256": "efbd361b826826d9a87681ec9cfcd8ce3ed4b0779d6bf52702f2329eb53e10d8"
+    },
+    {
+      "path": "tools/test_ux024_menu_focus_admission.py",
+      "sha256": "4a6ab9275170f3fed77b0c706c0935d4e01d4e38e13e910b684759d5d45ea3b9"
+    }
+  ],
+  "old17ControlBodiesAstUnchanged": true,
+  "actualControls": {
+    "builderTotal": 15,
+    "admissionTotal": 8,
+    "baselineBuilderMissingApiErrors": 4,
+    "baselineAdmissionMissingVariantErrors": 1,
+    "candidateFailures": 0,
+    "scope": "mocked command/admission boundaries only; no compiler/runtime/provider/native result"
+  },
+  "checks": [
+    "Exactly one old suite or ordered old+new pair; arbitrary/duplicate/reversed/standalone variants refused.",
+    "New branch uses only same freshly pinned controls image and literal flag/sentinel; owner cannot execute.",
+    "New test deadline generated internally as min(parent deadline, authorization, now+5s); caller deadline value discarded.",
+    "Old allocation argv/sentinel retained, two buildtargets unchanged; old900+2 bounds and source/cgroup/ELF guards unchanged.",
+    "No plugin core, frozen native launcher, SDK inventory or original requirements changed."
+  ],
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

@@ -3,6 +3,7 @@
 -- trusted framed child; no browser, renderer stub or synthetic actor callback.
 module Main (main) where
 
+import Control.Exception (ErrorCall(..), toException)
 import Control.Monad (forM_, unless)
 import qualified Crypto.Hash.SHA256 as SHA
 import qualified Data.ByteString as B
@@ -11,7 +12,7 @@ import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
 import GHC.Clock (getMonotonicTimeNSec)
 import Numeric (showHex)
-import System.Directory (createDirectory, listDirectory)
+import System.Directory (createDirectory, doesFileExist, listDirectory)
 import System.Environment (getArgs)
 import System.FilePath ((</>), isAbsolute, takeDirectory)
 import System.Posix.Files (deviceID, fileID, getSymbolicLinkStatus, isRegularFile, setFileMode)
@@ -65,6 +66,11 @@ pin path = do
 
 main :: IO ()
 main = do
+ let failureText message = backendBootstrapFailureText (toException (ErrorCall message))
+ check "bootstrap diagnostic retains the actual exception text" (failureText "display environment refused"=="display environment refused")
+ check "bootstrap diagnostic caps a long exception before Text allocation" (failureText (replicate 4096 'x' ++ "PRIVATE_TAIL")==T.replicate 4096 "x")
+ check "bootstrap diagnostic preserves Unicode at the character boundary" (failureText (replicate 4095 'x' ++ "éPRIVATE_TAIL")==T.replicate 4095 "x" <> "é")
+ check "bootstrap diagnostic permits an empty actual exception without invented detail" (T.null (failureText ""))
  args <- getArgs
  (child, supplied, root) <- case args of
   [path,dev,ino,size,digest,directory] | isAbsolute path && isAbsolute directory -> pure (path,[dev,ino,size,digest],directory)
@@ -94,6 +100,8 @@ main = do
       privateWrite config (encoded (obj (fields ++ opt)))
       loaded <- loadBackendConfig config >>= must
       result <- runBackend loaded
+      outputExists <- doesFileExist output
+      unless outputExists (ioError (userError ("trusted stream child output missing after " ++ label ++ ": " ++ T.unpack (TE.decodeUtf8 (backendResultJson result)))))
       raw <- B.readFile output
       limits <- must (J.bounds (8*1024*1024) 16)
       replies <- must (J.decodeStrict limits raw)
@@ -111,7 +119,7 @@ main = do
      enabled = [("applicationAttachment",J.JBool True)]
      empty = commit []
      catalogRequest = commit [request owner]
-     attachment = obj [("protocolVersion",J.JNumber "3"),("kind",txt "application-attached"),("binding",owner),("nativeOperations",J.JArray [])]
+     attachment = obj [("protocolVersion",J.JNumber "3"),("kind",txt "application-attached"),("binding",owner),("nativeOperations",J.JArray []),("applicationOperations",J.JArray []),("localOperations",J.JArray [txt "notification-policy"])]
      envelope payload = obj [("bridgeProtocol",J.JNumber "1"),("kind",txt "native-event"),("payload",payload)]
  (good, replies) <- run "positive" enabled [(empty,1,False),(empty,0,False),(catalogRequest,1,False)]
  check "real authenticated empty commit emits only one attachment across repeated commits" (backendPassed good && backendCleanup good && backendCallbackCount good==3 && backendOperationCount good==1 && length replies==2 && canonical (head replies)==canonical (envelope attachment))
@@ -149,4 +157,12 @@ main = do
  forM_ [0..19 :: Int] $ \n -> do
   (bad, observed) <- run ("hostile-20261101-"++show n) enabled [(malformed n,0,True)]
   check ("whole frame refuses before attachment and domain IO seed 20261101 case "++show n) (not (backendPassed bad) && backendCleanup bad && backendCallbackCount bad==0 && backendOperationCount bad==0 && null observed)
+ -- A syntactically valid window read still has no authority without an actual
+ -- configured owner. The whole batch must refuse before catalog I/O/attachment.
+ let observedRead boundValue= obj [("protocolVersion",J.JNumber "3"),("kind",txt "window-read"),("binding",boundValue),("requestId",txt "77")]
+ forM_ [("observation-unconfigured",commit [observedRead owner]),
+        ("observation-unconfigured-after-catalog",commit [request owner,observedRead owner])] $ \(label,wire) -> do
+  (unconfigured,unconfiguredReplies) <- run label enabled [(wire,0,True)]
+  check (label ++ " refuses complete batch without endpoint authority")
+   (not (backendPassed unconfigured) && backendCleanup unconfigured && backendOperationCount unconfigured==0 && null unconfiguredReplies)
  putStrLn "ui-mvp authenticated attachment controls passed"

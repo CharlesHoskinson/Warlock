@@ -1,0 +1,37 @@
+{
+  "atUTC": "2026-11-09T19:34:47.630629+00:00",
+  "baselineChecks": 37,
+  "baselineFailures": [
+    "validApplicationOnlyReconcilingService",
+    "actualSurfaceOpenerEmitsOneRead",
+    "readCarriesCurrentBinding",
+    "currentSnapshotEnablesActualActionControl",
+    "actualSurfaceActionEmitsOnce",
+    "literalActionIdentityPreserved",
+    "currentOutcomeSettlesTypedPending",
+    "unknownOutcomeCannotReplay",
+    "serviceWithoutLocalPolicyStillReads",
+    "explicitEmptyServiceUnavailable"
+  ],
+  "candidateChecks": 37,
+  "candidateFailures": [],
+  "sameFixtureControllerCompilerNode": true,
+  "changedSources": [
+    "src/Desktop.elm",
+    "src/Shell.elm",
+    "src/Surface.elm"
+  ],
+  "sixRootsCompiled": true,
+  "regressionCommands": 11,
+  "regressionSourceInputs": 113,
+  "oldNotificationChecks": 38,
+  "oldApplicationChecks": 423,
+  "oldApplicationSeed": 20261106,
+  "outerHandlesConsumed": {
+    "baseline60238": 1,
+    "candidate86331": 0,
+    "fullRegression81057": 0,
+    "publicController41512": 0
+  },
+  "allNativeAndOriginalAcceptanceFalse": true
+}

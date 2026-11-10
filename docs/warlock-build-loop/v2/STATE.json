@@ -1,50 +1,35 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-06T03:29:52.842944+00:00",
+  "updatedUTC": "2026-11-06T18:36:26.814770+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "tea-subscriptions-visible-beta",
+    "id": "ux003-walking-skeleton",
     "requirements": [
-      "ELM-TEA-004"
+      "ELM-UX-003"
     ],
     "scenarios": [
-      "tea-subscriptions"
+      "ux-003"
     ],
     "paths": [
-      "implementation/warlock/qa/StandaloneMvpReplay.elm",
-      "implementation/warlock/qa/TeaAdmissionSubscriptionsReplay.elm",
-      "implementation/warlock/qa/TeaBarSubscriptionsReplay.elm",
-      "implementation/warlock/qa/TeaPopupSubscriptionsReplay.elm",
-      "implementation/warlock/qa/TeaRendererSubscriptionsReplay.elm",
-      "implementation/warlock/qa/preview-description-browser.mjs",
-      "implementation/warlock/qa/standalone-mvp.cjs",
-      "implementation/warlock/qa/tea-contract-cases.cjs",
-      "implementation/warlock/qa/tea-subscriptions-cases.cjs",
-      "implementation/warlock/qa/tea-subscriptions.cjs",
-      "implementation/warlock/qa/ui-http.cjs",
-      "implementation/warlock/src/Bar.elm",
-      "implementation/warlock/src/HttpBar.elm",
-      "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/src/NativePreviewAdmission.elm",
-      "implementation/warlock/src/NativePreviewReceiver.elm",
-      "implementation/warlock/src/NativePreviewRenderer.elm",
-      "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/PreviewPaintGate.elm",
-      "implementation/warlock/src/PreviewPresenter.elm",
-      "implementation/warlock/src/RetainedPreviewPresenter.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/src/SurfaceTheme.elm"
+      "implementation/warlock/src/Catalog.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/DesktopPolicy.elm",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "implementation/warlock/haskell/runtime/runtime.cabal",
+      "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs",
+      "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs",
+      "implementation/warlock/haskell/runtime/test-catalog-publication/Main.hs"
     ],
-    "before": "Bar and Popup subscribe regardless of visible/active demand; Popup paint gate drops actual protocol3 object proposals, and beta explanations obscure unavailable appOnly actions.",
-    "after": "Derive recurring demand from visible consumers and retained transactions; preserve ordered revocation and scoped paint proposals even while closed, with truthful visible beta state feedback.",
+    "before": "Original catalog eligibility and argument-preserving launch have not been adjudicated in a complete current-stack user journey.",
+    "after": "An isolated current-stack session refreshes eligible desktop entries, launches a harmless owned application with preserved recorded arguments, and cleans up normally.",
     "verification": [
-      "Protected actual optimized roots and literal model/effect/subscription boundary fixtures, synchronous/delayed callbacks, current-source Omarchy visible journey. Complete HTTP wrapper model/effect AST remains mandatory before wholeTEA004 verdict; native qualified separately."
+      "Protected current-source Elm replay, independent literal desktop-file and argv cases, and isolated native recording of the complete ordered journey including cleanup. Native, keyboard, AT and release acceptance remain separately scoped."
     ]
   },
   "nextSlices": [
@@ -3348,6 +3333,146 @@
       "selectedSlice": "backend-private-failure-diagnostics",
       "record": ".warlock-contributor/backend-private-failure-diagnostics.json",
       "reason": "Distinct actual diagnostics/privacy behavior after completed001, preserving all stopped engine/native histories. Actual Haskellsource and real synthetic nonzero/privacy controls implemented and protectedqualified."
+    },
+    {
+      "atUTC": "2026-11-06T18:44:06.892804+00:00",
+      "activeContributorRecord": ".warlock-contributor/tea-subscriptions-root.json",
+      "activeSlice": {
+        "id": "tea-subscriptions-visible-beta",
+        "requirements": [
+          "ELM-TEA-004"
+        ],
+        "scenarios": [
+          "tea-subscriptions"
+        ],
+        "paths": [
+          "implementation/warlock/qa/StandaloneMvpReplay.elm",
+          "implementation/warlock/qa/TeaAdmissionSubscriptionsReplay.elm",
+          "implementation/warlock/qa/TeaBarSubscriptionsReplay.elm",
+          "implementation/warlock/qa/TeaPopupSubscriptionsReplay.elm",
+          "implementation/warlock/qa/TeaRendererSubscriptionsReplay.elm",
+          "implementation/warlock/qa/preview-description-browser.mjs",
+          "implementation/warlock/qa/standalone-mvp.cjs",
+          "implementation/warlock/qa/tea-contract-cases.cjs",
+          "implementation/warlock/qa/tea-subscriptions-cases.cjs",
+          "implementation/warlock/qa/tea-subscriptions.cjs",
+          "implementation/warlock/qa/ui-http.cjs",
+          "implementation/warlock/src/Bar.elm",
+          "implementation/warlock/src/HttpBar.elm",
+          "implementation/warlock/src/HttpPopup.elm",
+          "implementation/warlock/src/NativePreviewAdmission.elm",
+          "implementation/warlock/src/NativePreviewReceiver.elm",
+          "implementation/warlock/src/NativePreviewRenderer.elm",
+          "implementation/warlock/src/Popup.elm",
+          "implementation/warlock/src/PreviewPaintGate.elm",
+          "implementation/warlock/src/PreviewPresenter.elm",
+          "implementation/warlock/src/RetainedPreviewPresenter.elm",
+          "implementation/warlock/src/Surface.elm",
+          "implementation/warlock/src/SurfaceRenderer.elm",
+          "implementation/warlock/src/SurfaceTheme.elm"
+        ],
+        "before": "Bar and Popup subscribe regardless of visible/active demand; Popup paint gate drops actual protocol3 object proposals, and beta explanations obscure unavailable appOnly actions.",
+        "after": "Derive recurring demand from visible consumers and retained transactions; preserve ordered revocation and scoped paint proposals even while closed, with truthful visible beta state feedback.",
+        "verification": [
+          "Protected actual optimized roots and literal model/effect/subscription boundary fixtures, synchronous/delayed callbacks, current-source Omarchy visible journey. Complete HTTP wrapper model/effect AST remains mandatory before wholeTEA004 verdict; native qualified separately."
+        ]
+      },
+      "activeSelection": null
+    },
+    {
+      "atUTC": "2026-11-06T18:58:20.017130+00:00",
+      "activeContributorRecord": ".warlock-contributor/ux003-walking-skeleton-root.json",
+      "activeSlice": {
+        "id": "ux003-walking-skeleton",
+        "requirements": [
+          "ELM-UX-003"
+        ],
+        "scenarios": [
+          "ux-003"
+        ],
+        "paths": [
+          "implementation/warlock/src/Catalog.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/DesktopPolicy.elm",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs"
+        ],
+        "before": "Original catalog eligibility and argument-preserving launch have not been adjudicated in a complete current-stack user journey.",
+        "after": "An isolated current-stack session refreshes eligible desktop entries, launches a harmless owned application with preserved recorded arguments, and cleans up normally.",
+        "verification": [
+          "Protected current-source Elm replay, independent literal desktop-file and argv cases, and isolated native recording of the complete ordered journey including cleanup. Native, keyboard, AT and release acceptance remain separately scoped."
+        ]
+      },
+      "activeSelection": {
+        "generation": 1,
+        "recordIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
+        "selectedUTC": "2026-11-06T18:44:06.892836+00:00"
+      }
+    },
+    {
+      "atUTC": "2026-11-06T21:56:58.991679+00:00",
+      "activeContributorRecord": ".warlock-contributor/ux003-walking-skeleton-root.json",
+      "activeSlice": {
+        "id": "ux003-walking-skeleton",
+        "requirements": [
+          "ELM-UX-003"
+        ],
+        "scenarios": [
+          "ux-003"
+        ],
+        "paths": [
+          "implementation/warlock/src/Catalog.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/DesktopPolicy.elm",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+          "implementation/warlock/haskell/runtime/runtime.cabal",
+          "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs"
+        ],
+        "before": "Original catalog eligibility and argument-preserving launch have not been adjudicated in a complete current-stack user journey.",
+        "after": "An isolated current-stack session refreshes eligible desktop entries, launches a harmless owned application with preserved recorded arguments, and cleans up normally.",
+        "verification": [
+          "Protected current-source Elm replay, independent literal desktop-file and argv cases, and isolated native recording of the complete ordered journey including cleanup. Native, keyboard, AT and release acceptance remain separately scoped."
+        ]
+      },
+      "activeSelection": {
+        "generation": 2,
+        "recordIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
+        "selectedUTC": "2026-11-06T18:58:20.017178+00:00"
+      }
+    },
+    {
+      "atUTC": "2026-11-06T23:09:56.048917+00:00",
+      "activeContributorRecord": ".warlock-contributor/ux003-walking-skeleton-root.json",
+      "activeSlice": {
+        "id": "ux003-walking-skeleton",
+        "requirements": [
+          "ELM-UX-003"
+        ],
+        "scenarios": [
+          "ux-003"
+        ],
+        "paths": [
+          "implementation/warlock/src/Catalog.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/DesktopPolicy.elm",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+          "implementation/warlock/haskell/runtime/runtime.cabal",
+          "implementation/warlock/haskell/runtime/test-catalog-nodisplay/Main.hs",
+          "implementation/warlock/haskell/runtime/test-catalog-source-revision-adversarial/Main.hs"
+        ],
+        "before": "Original catalog eligibility and argument-preserving launch have not been adjudicated in a complete current-stack user journey.",
+        "after": "An isolated current-stack session refreshes eligible desktop entries, launches a harmless owned application with preserved recorded arguments, and cleans up normally.",
+        "verification": [
+          "Protected current-source Elm replay, independent literal desktop-file and argv cases, and isolated native recording of the complete ordered journey including cleanup. Native, keyboard, AT and release acceptance remain separately scoped."
+        ]
+      },
+      "activeSelection": {
+        "generation": 3,
+        "recordIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
+        "selectedUTC": "2026-11-06T21:56:58.991795+00:00"
+      }
     }
   ],
   "museRegulator": {
@@ -4174,7 +4299,7 @@
       "outcome": "Persistent custody foundation published6e6ad828c; component verified, fullARC002original remains incomplete, no acceptedcountincrease."
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/tea-subscriptions-root.json",
+  "activeContributorRecord": ".warlock-contributor/ux003-walking-skeleton-root.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -5253,5 +5378,45 @@
         "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json"
       }
     }
-  ]
+  ],
+  "tea004AcceptanceScopeReconciliation20261106": {
+    "requirement": "ELM-TEA-004",
+    "scenario": "tea-subscriptions",
+    "historicalAcceptanceRetained": true,
+    "historicalSourceRevision": "c3c1c893bb9962ed4e2319f37df387efa99c3615",
+    "historicalScope": "Independent original named typed-frontend fixture contract: exact owning models, subscriptions, typed effect descriptions and transport returns. Returned Cmd manager/leaf controls are additional checks, not a complete opaque Cmd AST serializer.",
+    "acceptanceReview": "docs/warlock-build-loop/v2/tea-subscriptions-review-20261106.json",
+    "acceptanceReviewSHA256": "a895b553471a4d917baf1c6f626f295bf49bfc26e0c35ad4505388033e01c499",
+    "currentFullOpaqueCmdASTProven": false,
+    "currentWholeWrapperComplete": false,
+    "mandatoryGateRetained": "Protected actual optimized roots and literal model/effect/subscription boundary fixtures, synchronous/delayed callbacks, current-source Omarchy visible journey. Complete HTTP wrapper model/effect AST remains mandatory before wholeTEA004 verdict; native qualified separately.",
+    "remaining": "Complete independently defined opaque returned-Cmd AST observations for required five-step/eleven-step histories and independent current-scope disposition remain open. Native provider/purpose/ticket/paint, physical delivery/retirement, AT/IME, resource and release obligations remain separate.",
+    "interpretation": "Historical accepted flags do not prove every current wrapper/effect obligation complete. The original named oracle asks for effect descriptions, not full opaque Cmd AST serialization. This note does not waive the stronger recorded completion gate. If that gate was intended as a prerequisite of the historical decision itself, obtain explicit reconsideration preserving that decision and its evidence; do not silently deaccept or alter totals.",
+    "nativeAcceptance": false,
+    "releaseAccepted": false,
+    "investigationRestarted": false,
+    "timerReset": false
+  },
+  "journeyWorkflowMigration": {
+    "schema": 1,
+    "pluginVersion": "0.17.0",
+    "workflowPolicy": 2,
+    "status": "selected",
+    "previousSelectionPreserved": true,
+    "authorizationExpiresUTC": "2026-11-06T19:07:31.942628+00:00",
+    "postSliceRSI": "required",
+    "firstJourney": {
+      "requirement": "ELM-UX-003",
+      "scenario": "ux-003",
+      "acceptance": false
+    },
+    "historicalStopsUnchanged": true,
+    "commit": "a09595173ed3464bb124c85596106e132313db6a",
+    "selectionGeneration": 1
+  },
+  "activeSelection": {
+    "generation": 4,
+    "recordIdentitySha256": "cd0fba4b68a96d3cfa8ea9986e2b836a6678a759e8e2db74b8ee824ecb236d0f",
+    "selectedUTC": "2026-11-06T23:09:56.048947+00:00"
+  }
 }

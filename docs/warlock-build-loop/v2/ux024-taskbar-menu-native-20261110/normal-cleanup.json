@@ -1,0 +1,1161 @@
+{
+  "schema": 1,
+  "candidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "revision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+  "terminal": true,
+  "classification": "normal",
+  "exit": 0,
+  "timedOut": false,
+  "forcedCleanup": false,
+  "cleanupUnknown": false,
+  "globalRestoration": true,
+  "report": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/native/report.json",
+    "sha256": "3e25904f416c27b8abce766d47a58b98f2a1213f30c6606cc6689c7f3584a839"
+  },
+  "rawScopeClock": {
+    "origin": 82221760387154,
+    "deadline": 82249760387154,
+    "last": 82221760387154,
+    "boot": "f84d5d2d-b562-4b70-b8fb-93a7a4fcd1c5",
+    "authorizationExpiresNs": 1794321600000000000,
+    "authorizationEvidenceSha256": "fffd343959a2d3828569eacb5f00dedc4f30c0f528d71443f9e23c18ae23d1a7"
+  },
+  "stackRetirement": {
+    "normal": true,
+    "processes": [
+      {
+        "role": "command-101",
+        "pid": 3813753,
+        "startTicks": "8226796",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-100",
+        "pid": 3812212,
+        "startTicks": "8225939",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-99",
+        "pid": 3812211,
+        "startTicks": "8225930",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-98",
+        "pid": 3812210,
+        "startTicks": "8225924",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-97",
+        "pid": 3812209,
+        "startTicks": "8225907",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-96",
+        "pid": 3812208,
+        "startTicks": "8225898",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-95",
+        "pid": 3812207,
+        "startTicks": "8225892",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-94",
+        "pid": 3812111,
+        "startTicks": "8225859",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-93",
+        "pid": 3812110,
+        "startTicks": "8225852",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-92",
+        "pid": 3812108,
+        "startTicks": "8225836",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-91",
+        "pid": 3812106,
+        "startTicks": "8225829",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-90",
+        "pid": 3812053,
+        "startTicks": "8225797",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-89",
+        "pid": 3812032,
+        "startTicks": "8225790",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-88",
+        "pid": 3812002,
+        "startTicks": "8225776",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-87",
+        "pid": 3811999,
+        "startTicks": "8225767",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-86",
+        "pid": 3811998,
+        "startTicks": "8225760",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-85",
+        "pid": 3811997,
+        "startTicks": "8225741",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-84",
+        "pid": 3811996,
+        "startTicks": "8225732",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-83",
+        "pid": 3811994,
+        "startTicks": "8225725",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-82",
+        "pid": 3811885,
+        "startTicks": "8225694",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-81",
+        "pid": 3811857,
+        "startTicks": "8225687",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-80",
+        "pid": 3811855,
+        "startTicks": "8225672",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-79",
+        "pid": 3811797,
+        "startTicks": "8225661",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-78",
+        "pid": 3811795,
+        "startTicks": "8225654",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-77",
+        "pid": 3811682,
+        "startTicks": "8225628",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-76",
+        "pid": 3811663,
+        "startTicks": "8225619",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-75",
+        "pid": 3811652,
+        "startTicks": "8225612",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-74",
+        "pid": 3811650,
+        "startTicks": "8225580",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-73",
+        "pid": 3811642,
+        "startTicks": "8225574",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-72",
+        "pid": 3811606,
+        "startTicks": "8225558",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-71",
+        "pid": 3811578,
+        "startTicks": "8225551",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-70",
+        "pid": 3811542,
+        "startTicks": "8225520",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-69",
+        "pid": 3811541,
+        "startTicks": "8225513",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-68",
+        "pid": 3811537,
+        "startTicks": "8225498",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-67",
+        "pid": 3811534,
+        "startTicks": "8225490",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-66",
+        "pid": 3811499,
+        "startTicks": "8225483",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-65",
+        "pid": 3811450,
+        "startTicks": "8225463",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-64",
+        "pid": 3811432,
+        "startTicks": "8225454",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-63",
+        "pid": 3811431,
+        "startTicks": "8225447",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-62",
+        "pid": 3811428,
+        "startTicks": "8225418",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-61",
+        "pid": 3811427,
+        "startTicks": "8225411",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-60",
+        "pid": 3811402,
+        "startTicks": "8225396",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-59",
+        "pid": 3811331,
+        "startTicks": "8225381",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-58",
+        "pid": 3811298,
+        "startTicks": "8225374",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-57",
+        "pid": 3811249,
+        "startTicks": "8225352",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-56",
+        "pid": 3811228,
+        "startTicks": "8225342",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-55",
+        "pid": 3811227,
+        "startTicks": "8225335",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-54",
+        "pid": 3811113,
+        "startTicks": "8225299",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-53",
+        "pid": 3811100,
+        "startTicks": "8225292",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-52",
+        "pid": 3811084,
+        "startTicks": "8225277",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-51",
+        "pid": 3811083,
+        "startTicks": "8225268",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-50",
+        "pid": 3811082,
+        "startTicks": "8225261",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-49",
+        "pid": 3811060,
+        "startTicks": "8225241",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-48",
+        "pid": 3811051,
+        "startTicks": "8225232",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-47",
+        "pid": 3811030,
+        "startTicks": "8225225",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-46",
+        "pid": 3810975,
+        "startTicks": "8225195",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-45",
+        "pid": 3810972,
+        "startTicks": "8225189",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-44",
+        "pid": 3810946,
+        "startTicks": "8225174",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-43",
+        "pid": 3810945,
+        "startTicks": "8225165",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-42",
+        "pid": 3810944,
+        "startTicks": "8225158",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-41",
+        "pid": 3810898,
+        "startTicks": "8225142",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-40",
+        "pid": 3810880,
+        "startTicks": "8225133",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-39",
+        "pid": 3810862,
+        "startTicks": "8225126",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-38",
+        "pid": 3810858,
+        "startTicks": "8225087",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-37",
+        "pid": 3810857,
+        "startTicks": "8225080",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-36",
+        "pid": 3810794,
+        "startTicks": "8225063",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-35",
+        "pid": 3810745,
+        "startTicks": "8225053",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-34",
+        "pid": 3810730,
+        "startTicks": "8225047",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-33",
+        "pid": 3810661,
+        "startTicks": "8225022",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-32",
+        "pid": 3810652,
+        "startTicks": "8225012",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-31",
+        "pid": 3810602,
+        "startTicks": "8225003",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-30",
+        "pid": 3810551,
+        "startTicks": "8224973",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-29",
+        "pid": 3810540,
+        "startTicks": "8224966",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-28",
+        "pid": 3810521,
+        "startTicks": "8224951",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-27",
+        "pid": 3810520,
+        "startTicks": "8224942",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-26",
+        "pid": 3810500,
+        "startTicks": "8224935",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-25",
+        "pid": 3810491,
+        "startTicks": "8224915",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-24",
+        "pid": 3810488,
+        "startTicks": "8224906",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-23",
+        "pid": 3810465,
+        "startTicks": "8224899",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-22",
+        "pid": 3810375,
+        "startTicks": "8224870",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-21",
+        "pid": 3810374,
+        "startTicks": "8224862",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-20",
+        "pid": 3810363,
+        "startTicks": "8224846",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-19",
+        "pid": 3810362,
+        "startTicks": "8224839",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-18",
+        "pid": 3810339,
+        "startTicks": "8224818",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-17",
+        "pid": 3810320,
+        "startTicks": "8224811",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-16",
+        "pid": 3810289,
+        "startTicks": "8224797",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-15",
+        "pid": 3810262,
+        "startTicks": "8224790",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-14",
+        "pid": 3810070,
+        "startTicks": "8224727",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-13",
+        "pid": 3810013,
+        "startTicks": "8224716",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-12",
+        "pid": 3809943,
+        "startTicks": "8224701",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-11",
+        "pid": 3809917,
+        "startTicks": "8224689",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-10",
+        "pid": 3809903,
+        "startTicks": "8224678",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-9",
+        "pid": 3809879,
+        "startTicks": "8224667",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-8",
+        "pid": 3809865,
+        "startTicks": "8224656",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-7",
+        "pid": 3809830,
+        "startTicks": "8224645",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-6",
+        "pid": 3809801,
+        "startTicks": "8224633",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-5",
+        "pid": 3809767,
+        "startTicks": "8224621",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-4",
+        "pid": 3809766,
+        "startTicks": "8224610",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "window-producer",
+        "pid": 3809762,
+        "startTicks": "8224601",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "connected-observer",
+        "pid": 3809651,
+        "startTicks": "8224528",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "held-keyboard",
+        "pid": 3809648,
+        "startTicks": "8224515",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-3",
+        "pid": 3809637,
+        "startTicks": "8224510",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-2",
+        "pid": 3809635,
+        "startTicks": "8224504",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "command-1",
+        "pid": 3809619,
+        "startTicks": "8224497",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "nested",
+        "pid": 3809086,
+        "startTicks": "8224337",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "output-after",
+        "pid": 3808894,
+        "startTicks": "8224203",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "output-apply",
+        "pid": 3808870,
+        "startTicks": "8224171",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "output-before",
+        "pid": 3808817,
+        "startTicks": "8224139",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      },
+      {
+        "role": "host",
+        "pid": 3808695,
+        "startTicks": "8224087",
+        "exit": 0,
+        "reaped": true,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": true
+      }
+    ],
+    "originalDeadlineNs": 82249760387154,
+    "cleanupCeilingNs": 82251760387154
+  },
+  "observerRetirement": {
+    "schema": 1,
+    "nonce": "9efc48b6a3349e1839ca538958d0f9e2ebec79a9f666671a2a689538e3fa8f00",
+    "sequence": 4,
+    "phase": "RETIRE",
+    "binding": {
+      "lifetime": "9007199254740993",
+      "session": "9007199254740995",
+      "frontend": "9007199254740997"
+    },
+    "configChecks": 15,
+    "nativeAcceptance": false,
+    "completedPhases": 4,
+    "actionPassed": true,
+    "error": null,
+    "status": "Retired",
+    "passed": true
+  },
+  "keyboardRetirement": {
+    "pid": 3809648,
+    "startTicks": "8224515",
+    "exit": 0,
+    "normal": true,
+    "groupAbsent": true,
+    "stdoutTailHex": "",
+    "monotonicNs": 82249383218495
+  },
+  "phaseChannelRetirement": {
+    "status": "closed",
+    "errors": [],
+    "cleanupAuthority": false
+  },
+  "endpointDescriptorRetirement": {
+    "closed": true,
+    "errors": []
+  },
+  "independentReview": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/reviews/independent-clean-native54-original-case-review-build.json",
+    "sha256": "bd627bdb365ceca85f7feae7fa51d9b7c428d9b04e379bd7114f82c44bd0b9a9"
+  }
+}

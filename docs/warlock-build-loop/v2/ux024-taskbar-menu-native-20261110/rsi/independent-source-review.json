@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted",
+  "manifestSha256": "ec35fb0540ad62d0ab778348ee3a7b6196564868896568aebb49819cc4fa5963",
+  "verified": {
+    "readmeOnlySixSentenceClarificationMatchesCoreReturnSemantics": true,
+    "retainedOldPredicateComparedToCorrectedValidatorOnActualFixture": true,
+    "positiveAndFourNegativeContractCasesMeaningful": true,
+    "originalFiveTestsUnchanged": true,
+    "comparisonExplicitlyNotBehaviorCausedByReadme": true,
+    "allSixFixedRoleMapsPinned": true,
+    "sourceFiles": 32,
+    "guardFiles": 7,
+    "pluginBaselineFiles": 73,
+    "baselinePluginSha256": "8893718c9aecd2ccac4313e95a128aa7f74e7a7fc53592984ec8b5574dde6434",
+    "projectedReadmeOnlyPluginSha256": "5537d8f6bc0109746080b66614b97273c921f8f107c571a1c10bd0111c165a46",
+    "installedPluginMembershipAndBytesExact": true,
+    "privateExclusiveOutputsOnlyNoPrimaryOrRecordMutation": true,
+    "sameCandidate545AndAuthorization1440": true
+  },
+  "requiredChanges": [],
+  "limits": [
+    "Reviewer read/hash/static inspection only; no comparison/test/helper imports or execution.",
+    "Projected snapshot is not installed/adopted. Actual results and Root review/adoption must be bound after protected execution.",
+    "Comparison measures retained helper contract replay, not an experimentally demonstrated README-induced autonomous improvement.",
+    "No core/authority/clock/guard/native acceptance changes; native54 named-case verdict remains separate and unchanged."
+  ]
+}

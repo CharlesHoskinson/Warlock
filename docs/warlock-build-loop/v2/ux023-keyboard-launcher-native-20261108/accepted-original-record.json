@@ -1,0 +1,989 @@
+{
+  "schema": 1,
+  "owner": "root-agentbus",
+  "slice": {
+    "id": "ux023-keyboard-launcher-focus",
+    "requirements": [
+      "ELM-UX-023"
+    ],
+    "scenarios": [
+      "keyboard-launcher"
+    ],
+    "before": "DOM focus packets exist, but current engine has no transition-bound native GTK focus handoff between retained Bar and Popup views.",
+    "after": "Current owned Bar and launcher Popup receive correlated native widget focus, and normal launcher dismissal returns focus, with unchanged domain authority.",
+    "paths": [
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs"
+    ],
+    "verification": [
+      "Pure controls for current scope/revision/publication/lease and unique enabled focus target; stale/disabled/ambiguous targets refuse.",
+      "Existing selected GTK source/APIs and proportional owner/observer/ui-webkit compile and pure control branch.",
+      "Original Elm replay and isolated native keyboard-only opens, traverses, operates and dismisses with recorded keyboard focus and zero pointer events."
+    ]
+  },
+  "explicitSliceOverride": true,
+  "baseline": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+  "startedUTC": "2026-11-08T15:21:48.868426+00:00",
+  "sourceRevision": "7ed158c704e3deeeff0319f6f02a1f823f2d5081",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "54f22a62eb9ef59d2bc25710ad11dc79265c4a2ab44b2ac147ffb9799015723d",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "46843721b482bd49463cd047449f8480099350fcb7294970988918e593b34a03",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "6df03794ebcb66a3c2d2d7690eeada73fa744407f28d871a00c6f312adc24c11"
+  },
+  "foreignDirty": {
+    "docs/warlock-build-loop/v2/INSTRUCTIONS.md": "15dca2464df92be8d10aa9adf321223581ec2aa9f96e0206a156d7eeabe13638",
+    "docs/warlock-build-loop/v2/STATE.json": "0a93407ff6ce2188c7ce34c4059c4da0552b6b471ee0290bfc17cd26bdc070fc",
+    "docs/warlock-build-loop/v2/loop.py": "e4c6e793c3552b38ed11c339c475c22f3fba96922cb4ca4ba5c93b6ae2b4b9fb",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/SelectedPeer/Credentials.hsc": "f0e131a62284e307aa44ce58d10e84dd4c083725346ace636fa32520cc22be7a",
+    "implementation/warlock/haskell/process-custody/test/FacadeControl.hs": "22cb673a3559c5dcf220e0e2d4c294ce11323e3fa85fa9ab87ed97ba89b5a52e",
+    "plugins/warlock-contributor/.claude-plugin/plugin.json": "e872c115710c478774096fd058fcce9f3b70d4aa4efff43893651d15a234e539",
+    "plugins/warlock-contributor/.codex-plugin/plugin.json": "dbb552a3564ce50e11e3b83e3f202e969c4540732e6381658c5cc410617c2d47",
+    "plugins/warlock-contributor/README.md": "86c7a006ece0efbd3c1591ee2f91dee5e1d4353144820f9569dae8457bddb929",
+    "plugins/warlock-contributor/qa/test_delivery.py": "2624ff6304f9d2d07195fb7500dd12ad2cba9f2ae9794eec94a484bab74e2193",
+    "plugins/warlock-contributor/qa/test_delivery_launch.py": "09d2171bf5db5dda69e11e46968a8feafa3ca1b8168db7791f26c95cf5c15a0b",
+    "plugins/warlock-contributor/references/redesign-flow.md": "a5f7d1e9ad69421e306ca53a47c9be644ccca19ae62150598bdce1d63cfa3dcb",
+    "plugins/warlock-contributor/scripts/native_command_preflight.py": "10df2f3535408cedc9aca52475a20e353d1bb569d7466ccbf281b361902fc76a",
+    "plugins/warlock-contributor/scripts/warlock.py": "97a9f4ef4c5fd3ac130ceda8840472b945fd28b00b78af64f21ee07b8cf836c9",
+    "plugins/warlock-contributor/skills/warlock-contribute/SKILL.md": "056e55c2ef69cd33296344cc0cdcff819468b7d8e84b33ea7192817a1d2ab901",
+    "plugins/warlock-contributor/skills/warlock-workflow/SKILL.md": "be41d2761c8b9642b01de900a8a7e9cd164de3aa2578116fa317e4781835796c",
+    "window-integration-qa/__pycache__/qa_launch.cpython-314.pyc": "c81c41c836115b81f4a8e60027663d2909ba4d917a2478932fa7a7094d5c624a"
+  },
+  "adoptedDirty": {
+    "paths": [],
+    "ownershipNote": null
+  },
+  "iterations": [
+    {
+      "atUTC": "2026-11-09T02:42:08.291652+00:00",
+      "outcome": "scenario-verdict",
+      "summary": "Original keyboard-launcher scenario accepted narrowly; broad ELM-UX-023 remains partial.",
+      "sourceHashes": {
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+        "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "ea4e879f9dce27e95a8f8e2c627d19732ce4508ec65e938fe058c240a0deda4e"
+      },
+      "meaningfulProgress": true,
+      "progressPolicy": 6,
+      "claims": [
+        {
+          "requirement": "ELM-UX-023",
+          "scenario": "keyboard-launcher",
+          "oracle": "each operation completes with recorded keyboard focus and no pointer events",
+          "verificationScope": "Elm replay assertion and isolated native recording: each surface can be opened, operated and dismissed without pointer events.",
+          "scope": "Only the original keyboard-launcher scenario. No acceptance for the broad ELM-UX-023 requirement, all-surfaces scenario, other surfaces, release, AT or IME. Phase labels do not establish pixel focus; final independently viewed entry focus and real launch establish this operation.",
+          "evidence": [
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/adjudication-evidence.json",
+              "sha256": "624b2b0c554dbb58865f8a805ee70f2dab30a87f3e69858720e5b235c995769c"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/reviews/independent-original-keyboard-launcher-review.json",
+              "sha256": "721e7d6c752d2479272f5c39199d7e215ce53e9927813272c4f310e53e9e8bee"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/native/report.json",
+              "sha256": "0c3f74430b9db2822b451777465df6ecb4d09616303407e399f162e589b0f6ab"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/qualification/actual-owner-observer-build.json",
+              "sha256": "8bca922f414f90f2f99a84db21495e8ff2bddf07933c32c5e3646b72c184f1c9"
+            }
+          ],
+          "sourceHashes": {
+            "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+            "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+            "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "ea4e879f9dce27e95a8f8e2c627d19732ce4508ec65e938fe058c240a0deda4e"
+          },
+          "reviewer": {
+            "name": "workflow_astra",
+            "independent": true,
+            "disposition": "accepted",
+            "evidence": {
+              "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/reviews/independent-original-keyboard-launcher-review.json",
+              "sha256": "721e7d6c752d2479272f5c39199d7e215ce53e9927813272c4f310e53e9e8bee"
+            }
+          },
+          "disposition": "accepted",
+          "missingObservations": [],
+          "sourceTuple": {
+            "sourceRevision": "0267dc94ac76cca1b01cf0897b7a068835c20165",
+            "core": {
+              "path": "plugins/warlock-contributor/scripts/warlock.py",
+              "sha256": "ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd"
+            },
+            "plugin": {
+              "version": "0.17.12",
+              "manifests": [
+                {
+                  "path": "plugins/warlock-contributor/.claude-plugin/plugin.json",
+                  "sha256": "e872c115710c478774096fd058fcce9f3b70d4aa4efff43893651d15a234e539"
+                },
+                {
+                  "path": "plugins/warlock-contributor/.codex-plugin/plugin.json",
+                  "sha256": "dbb552a3564ce50e11e3b83e3f202e969c4540732e6381658c5cc410617c2d47"
+                }
+              ]
+            },
+            "toolchain": {
+              "actualNativeBuild": {
+                "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/qualification/actual-owner-observer-build.json",
+                "sha256": "8bca922f414f90f2f99a84db21495e8ff2bddf07933c32c5e3646b72c184f1c9"
+              },
+              "replayCompilerAndSdk": {
+                "path": "docs/warlock-build-loop/v2/ux003-native-20261108/replay/compiler-and-replay-report.json",
+                "sha256": "12517ee9f549f2ae64d677a11fd5ca0e81db91c12ed5cf2a5ccdf6710dcdd80b"
+              },
+              "sourceMap": {
+                "path": "docs/warlock-build-loop/v2/ux023-keyboard-launcher-native-20261108/current-selected-source-hashes.json",
+                "sha256": "dbd779c91f5cb695205fdb3a791903133ee8b2511627a77e256afa516f9cbe2f"
+              }
+            }
+          }
+        }
+      ],
+      "sourceRevision": "0267dc94ac76cca1b01cf0897b7a068835c20165"
+    }
+  ],
+  "workflowPolicy": 2,
+  "delivery": {
+    "schema": 1,
+    "authorizationExpiresUTC": "2026-11-08T15:30:00Z",
+    "journey": {
+      "userOutcome": "Open, traverse, operate and dismiss the launcher using only the keyboard.",
+      "originalPairs": [
+        {
+          "requirement": "ELM-UX-023",
+          "scenario": "keyboard-launcher"
+        }
+      ],
+      "inputSteps": [
+        "Establish the owned current launcher surface with no virtual pointer or pointer events.",
+        "Use real keyboard input to open, traverse and operate the launcher while retaining keyboard focus evidence.",
+        "Dismiss through the keyboard and retain normal focus restoration and cleanup."
+      ],
+      "expectedObservation": "Each operation completes with recorded keyboard focus and no pointer events. No typing/search success from UX003 is reused."
+    },
+    "clockOrigin": {
+      "utc": "2026-11-08T15:21:48.871658+00:00",
+      "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+      "monotonicNs": 130971960480069,
+      "boottimeNs": 133792315575365
+    },
+    "events": [
+      {
+        "eventId": "ux023-compile-held-for-current-operating-window",
+        "kind": "deferred",
+        "reason": "Current15:30 operatingwindow cannot accommodate the existing bounded three-target build; prior same collector actualbuild requiredabout9minutes and currentremainingwindow is shorter. Actual3sourceimplemented; no protected compile launched and no failedexecution fabricated. ActualOpus85 selected17:00 subjecttocanonicalvalidation.",
+        "owner": "root-agentbus",
+        "nextAction": "Admit actual85 standingdelegated17:00 window, thenfreeze onlynewauthorization binding andrun reviewed3targetbuild/11focuscontrols; preserveoriginaldeadlines and no nativeacceptance.",
+        "sequence": 1,
+        "clockSample": {
+          "utc": "2026-11-08T16:22:55.227076+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 134638315852869,
+          "boottimeNs": 137458670946853
+        },
+        "atUTC": "2026-11-08T16:22:55.227076+00:00"
+      },
+      {
+        "eventId": "opus85-standing-delegation-ux023-window-20261108T1700-post-rotation",
+        "kind": "authorization-renewed",
+        "authorizationExpiresUTC": "2026-11-08T17:00:00Z",
+        "evidence": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/delegated-renewal-opus85-ux023-post-rotation-20261108/actual-delegated-renewal-evidence.FRESH.json",
+          "sha256": "5b68d4b69bd846a90e6249dbc113a01348c690a2965532915d8948c059427713"
+        },
+        "sequence": 2,
+        "clockSample": {
+          "utc": "2026-11-08T16:23:07.285192+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 134650374045822,
+          "boottimeNs": 137470729140094
+        },
+        "atUTC": "2026-11-08T16:23:07.285192+00:00"
+      },
+      {
+        "eventId": "ux023-owned-keyboard-focus-build-1700-candidate",
+        "kind": "candidate",
+        "candidate": {
+          "id": "ux023-owned-keyboard-focus-three-target-build-20261108-1700-v2",
+          "scope": "native",
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+            "--",
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/tools/run_ux003_dom_allocation_build.py",
+            "--sha256",
+            "5d75cba7d0de7d27bfb0d9bbf23207accf1a1c8b1ed9e5fc1b7937d1703b7f3e"
+          ],
+          "manifest": {
+            "sources": {
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "ebd7e8f0787ca7dfe86e2bb0a210046bf74c372f9413b57ff521022f0e2d9a3e",
+              "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "61058dcef5b7e5e959b31bedec1af9d8069a464a12d70b0aea6edffdf076a960"
+            },
+            "fixtures": {
+              "tools/test_ux003_dom_allocation_build.py": "a149cb7086d90b450f43d5435fe5aaadc808c9255df4971e5a67a87848ef2d09"
+            },
+            "runners": {
+              "plugins/warlock-contributor/scripts/warlock.py": "ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd",
+              "tools/run_ux003_dom_allocation_build.py": "ec6899809d46250332b03151bcd3e662c95f448a09be30d3812244edb6d6e482",
+              "tools/arm64_toolchain.py": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796",
+              "tools/provider_callback_build.py": "d2b3021866b0f6ce8403358df9fa41dc6a0a59e7d7e597a34262aada6450d7e5",
+              "tools/haskell_test_wrapper.py": "1b4f9961630a750fd154dd0df6525e02fe4216510c26b8c39d81a64fb207136b",
+              "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+              "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+            },
+            "profiles": {
+              ".warlock-contributor/evidence/nextloop-20261106/ux003-dom-allocation-build-20261108/fixed-build-review.json": "8bb2d57e27d982bea605d772b56c01ebee69aed676aa7ba79e75d89df5764ab0",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux003-complete-preflight-20261108/cache-correspondence.json": "00e085387c005253e1eea2c8d8e3e96419a6170c982fa9d57fd338a444345d73",
+              "tools/arm64-toolchain.json": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+              ".warlock-contributor/evidence/nextloop-20261106/ux023-keyboard-focus-build-1700-20261108/focus-source-manifest.json": "201799ce87596861f75b51ae56425cd26a0f4ac2b65c2bab61fb0c48e4b1d678",
+              ".warlock-contributor/evidence/nextloop-20261106/ux023-keyboard-focus-build-1700-20261108/focus-source-review.json": "de0fce27b79522bc24e129cf6a109c1782efdaff0c6c5b204bc5b483b2b3e6eb",
+              ".warlock-contributor/evidence/nextloop-20261106/ux003-dom-allocation-build-20261108/packet.json": "5d75cba7d0de7d27bfb0d9bbf23207accf1a1c8b1ed9e5fc1b7937d1703b7f3e"
+            }
+          },
+          "expectedObservation": "One fixed offline owner/unchanged-observer/ui-webkit-controls compile and list3; ONLY existing --allocation-only pure branch, now including eleven source-first keyboard-focus contracts plus unchanged prior controls; nine unchanged collector mocks. Scope is current UX023 selected3/gen20/current17.12 coreab78d94f with actual17:00 canonical renewal. Full265 transitive source map changes only three reviewed Haskell posts plus independently tested/adopted coreab78d94f; no provider/defaultsuite/GUI/keyboard/native/original acceptance executed. Closed existing collector and900+2 clipped authorization unchanged. Original21/44 remains fixed; actualkeyboard-only ELM-UX-023 proof remains future.",
+          "nativePrerequisites": [
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/ux003-dom-allocation-build-20261108/fixed-build-review.json",
+              "sha256": "8bb2d57e27d982bea605d772b56c01ebee69aed676aa7ba79e75d89df5764ab0"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/ux023-keyboard-focus-build-1700-20261108/focus-source-review.json",
+              "sha256": "de0fce27b79522bc24e129cf6a109c1782efdaff0c6c5b204bc5b483b2b3e6eb"
+            }
+          ]
+        },
+        "candidateSha256": "d05e2b85ae20a130e3596c92c0909a3b26da62519af70df6d5e5ebbb4459013b",
+        "sequence": 3,
+        "clockSample": {
+          "utc": "2026-11-08T16:32:11.270660+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 135194359426402,
+          "boottimeNs": 138014714520354
+        },
+        "atUTC": "2026-11-08T16:32:11.270660+00:00"
+      },
+      {
+        "eventId": "ux023-focus-build1700-current-review",
+        "kind": "review",
+        "candidateSha256": "d05e2b85ae20a130e3596c92c0909a3b26da62519af70df6d5e5ebbb4459013b",
+        "review": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/ux023-keyboard-focus-build-1700-20261108/actual-current-source-review.json",
+          "sha256": "0defd6e57f4b3334b49d096a5ee07674a456f6109e9032f7e5e2604a203e8e8d"
+        },
+        "sequence": 4,
+        "clockSample": {
+          "utc": "2026-11-08T16:32:25.146486+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 135208235278145,
+          "boottimeNs": 138028590372369
+        },
+        "atUTC": "2026-11-08T16:32:25.146486+00:00"
+      },
+      {
+        "eventId": "ux023-focus-build1700-started",
+        "kind": "execution-started",
+        "candidateSha256": "d05e2b85ae20a130e3596c92c0909a3b26da62519af70df6d5e5ebbb4459013b",
+        "jobId": "pid3698388-start13803124",
+        "outerHandle": "76133",
+        "sequence": 5,
+        "clockSample": {
+          "utc": "2026-11-08T16:35:09.276416+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 135372365187969,
+          "boottimeNs": 138192720281793
+        },
+        "atUTC": "2026-11-08T16:35:09.276416+00:00"
+      },
+      {
+        "eventId": "ux023-owned-keyboard-focus-d05e-build-finished",
+        "kind": "execution-finished",
+        "candidateSha256": "d05e2b85ae20a130e3596c92c0909a3b26da62519af70df6d5e5ebbb4459013b",
+        "jobId": "pid3698388-start13803124",
+        "outerHandleConsumed": true,
+        "report": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/ux023-keyboard-focus-build-1700-20261108/actual-d05e-terminal.json",
+          "sha256": "3ecd03e056c5534f91ea8288f7ecdb7373d30f97019033bef5103294008031ca"
+        },
+        "sequence": 6,
+        "clockSample": {
+          "utc": "2026-11-08T16:43:13.562179+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 135856650938933,
+          "boottimeNs": 138677006032821
+        },
+        "atUTC": "2026-11-08T16:43:13.562179+00:00"
+      },
+      {
+        "eventId": "opus-native-first-final-exception-window-20261108T1730",
+        "kind": "authorization-renewed",
+        "authorizationExpiresUTC": "2026-11-08T17:30:00Z",
+        "evidence": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/native-first-final-window-1730-20261108/actual-delegated-renewal-evidence.json",
+          "sha256": "b61a9be833516ea25226dc25ede225cdb454b9164f845823b0d6f4f6988cd24d"
+        },
+        "sequence": 7,
+        "clockSample": {
+          "utc": "2026-11-08T17:08:49.864247+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 137392953016080,
+          "boottimeNs": 140213308109952
+        },
+        "atUTC": "2026-11-08T17:08:49.864247+00:00"
+      },
+      {
+        "eventId": "ux023-final1730-native-first-data-correction-plan",
+        "kind": "plan-changed",
+        "reason": "Retain the actual d05e product compile and 48 keyboard fixture/helper controls. Prior ee932 never launched: complete preflight refused only empty nonCompiledToolDeltas list versus required empty map, with effectsStarted and clockStarted false. Actual same Opus selected one final native-first exception through17:30 while explicitly acknowledging the unmet previous native-attempt criterion. Correct only the proof data type, current typed authorization and dependent metadata hashes; preserve all failures and progress clocks.",
+        "owner": "root-agentbus",
+        "nextAction": "Root stages the eight independently reviewed metadata CAS copies for candidate387cf895b5c2380b1491a4d19c75e3b34966a1d2f9f3234a316f38da1bcde2fb after validating current same19 scopes/custody; runs complete read-only preflight, admits exact candidate and independent CURRENT review, then makes ONE original UX023 keyboard-only native28+2 attempt before17:30. No further exception if no native launch before17:30, no source edits, rebuild, extra input, diagnostic round or acceptance inference.",
+        "sequence": 8,
+        "clockSample": {
+          "utc": "2026-11-08T17:12:52.711951+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 137635800753901,
+          "boottimeNs": 140456155847997
+        },
+        "atUTC": "2026-11-08T17:12:52.711951+00:00"
+      },
+      {
+        "eventId": "ux023-keyboard-native-first-final1730-candidate",
+        "kind": "candidate",
+        "candidate": {
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+            "--",
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux023_keyboard_journey.py",
+            "--sha256",
+            "920930d0ec035da9796d3849e2bafb4517897d399104831d30addfcb054a12df"
+          ],
+          "expectedObservation": "ONE originalELM-UX-023/keyboard-launcher native28+2. Actual3c5owner/1f16observer/21784noninputkeyboard image, current3/gen20/coreab78/canonical17:30 finalnative-first exception. One keyboard seat existsBEFOREGTK via keymap+sync0only and staysalive throughclose; wtype ONLYphysicalkeys. No virtualpointer/extra input/replay/sleep/newtimer. RealinitialTab\u2192focuswitness\u2192Return; query/traverse/Escape dismiss, restoredopener/reopen/traverse/ONElaunch/AltF4. Exact sourceKEY_STEPS, liveownership/980x680/strict720/namespace/normalcleanup unchanged. Actual11focuspure+18fixture+17auth+13compilercontrols/staticC andcompiled3tuple qualified; no nativepass inferred. Independent actualpixels/recordedkeyboardfocus/no-pointer/operation/dismissal adjudication required; original21/44 unchangeduntilaccepted.",
+          "id": "ux023-keyboard-only-original-native-first-final1730-20261108",
+          "manifest": {
+            "fixtures": {
+              "tools/test_current_arm_ux003_generated_journey.py": "d1e254ca1fd3e52d29d83ddda51977e8ce7cb2c9d81a240c268b1f70a6848662",
+              "tools/test_ux003_attempt_authorization.py": "8119b3aabc9757353644caa34652771019d69da1b80324be6ff187b3d6a844b7",
+              "tools/test_ux003_dom_observation_build.py": "6b8d4c10c3d77467070100ccec0f4e3e68e9f7af54160128a2d5fde04c10a9aa",
+              "tools/test_ux003_dom_allocation_build.py": "a149cb7086d90b450f43d5435fe5aaadc808c9255df4971e5a67a87848ef2d09",
+              "tools/test_ux023_attempt_authorization.py": "3ea0a89b9b4f2da597e7c9b9b76f46298fdfb46ed514bed71cd3369694fd7e23",
+              "tools/test_ux023_keyboard_fixture.py": "37e14d86fe9db648eefee57f60b8b02d3f1b1da7a377a060adf0831d5df5f329",
+              "tools/test_ux023_keyboard_build.py": "78721b116d4bd930e953c18bfd8a7fe0c98a4dd9d1c364ecf5d05c217d8b4b64"
+            },
+            "profiles": {
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/nestedInput.json": "2fdba6db6f668494452ba01f6bdd44abb1fd4ef2efcab992f7d5d6c37bdb6347",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/providerAndABI.json": "8bffaf4f66e6d40b643a58812762b4cb21a681ab118b3adfe7a6d5d930527d11",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/sourceAndImages.json": "958fb6ba6c089f8a409b7a00fec9af4ac39ad6d7a399b9022ad7e51cc9f3636b",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/build-source-correspondence.json": "3c26a75d778859768a4dfdeabdd1a5be8eb35eeb3520af93e6d26c3214a2cc3d",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/packet.json": "920930d0ec035da9796d3849e2bafb4517897d399104831d30addfcb054a12df"
+            },
+            "runners": {
+              "tools/omarchy_ui_mvp.py": "3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc",
+              "tools/run_arm_gl_foundation_renewed_20261107.py": "1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b",
+              "tools/run_arm_gl_foundation_renewed_20261108_0623.py": "769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2",
+              "tools/run_current_arm_ux003_generated_journey.py": "9e95a687d8cf63e656be69571192930167e2579ae7ac281e35261ecfa78ce09f",
+              "tools/run_labwc_gl_foundation_ipc_20261108.py": "f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69",
+              "tools/run_webkit_provider_probe.py": "49cce4b4e0a427473ced4357367d766d964454d0de08329a5608d919ae3c8a60",
+              "tools/ux003_cleanup_evidence.py": "9d6cf16d041a47a6a76d3aef0a4e1a50d4f06f4eed4f01355dee004257da9cda",
+              "tools/ux003_input_geometry.py": "0a10632dccea9e73fce89f082586257a126d2597ca545e9d028b5923a33be930",
+              "tools/ux003_pointer_completion.py": "f3e72b4c4fcdc4166f141bb68c77714d4095bd78836723b83c6db1725b4dc1d2",
+              "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+              "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+              "tools/ux003_input_geometry_720.py": "e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0",
+              "tools/ux003_owned_fonts.py": "b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3",
+              "tools/ux003_attempt_authorization.py": "a76b44fa5ff9f6136fb87702835ad81a651ebd187feffcdf6fd0614af77af2b7",
+              "plugins/warlock-contributor/scripts/warlock.py": "ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd",
+              "tools/run_labwc_gl_foundation_window_rule_20261108.py": "1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad",
+              "tools/run_ux003_dom_observation_build.py": "7c9c0808e9b21054db3cc9952f443e76d168a25cbe1671734547cfd4313905eb",
+              "tools/run_ux003_dom_allocation_build.py": "ec6899809d46250332b03151bcd3e662c95f448a09be30d3812244edb6d6e482",
+              "tools/ux003_opener_readiness.py": "e269c938dccc67f4de64b11f80ac928d6890ee122a59435e14985fc4b9bab2d5",
+              "tools/run_current_arm_ux023_keyboard_journey.py": "acaa1a4b7e94d2449b458c56f95ea32d53bab36dd2c1ae34f5be51b5123c224f",
+              "tools/ux023_attempt_authorization.py": "986a979d048cb58fb22ca8116248d80d373fe91fff7f3419f7b15aea77661433",
+              "tools/ux023_keyboard_fixture.py": "7a1c935638b16e314008b413e76116d7c836210fa374db9758be3eb98d8a534e",
+              "tools/ux023-keyboard-helper/keyboard_keepalive.c": "b4b9eaf4584e21688ed4e4a735188a72f1d2c95ef0bbf05f1518468c5670def2",
+              "tools/ux023-keyboard-helper/virtual-keyboard-unstable-v1.xml": "7ad7870003ecd592cae47dc19d277a609b7f18fd7b7be012623cf3225a7294f5",
+              "tools/run_ux023_keyboard_build.py": "f549db9b860a1ad89c2a1c2684fa04c7995c20a5f093aa7ad9807da801b17835"
+            },
+            "sources": {
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "ebd7e8f0787ca7dfe86e2bb0a210046bf74c372f9413b57ff521022f0e2d9a3e",
+              "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "61058dcef5b7e5e959b31bedec1af9d8069a464a12d70b0aea6edffdf076a960"
+            }
+          },
+          "nativePrerequisites": [
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/nestedInput.json",
+              "sha256": "2fdba6db6f668494452ba01f6bdd44abb1fd4ef2efcab992f7d5d6c37bdb6347"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/providerAndABI.json",
+              "sha256": "8bffaf4f66e6d40b643a58812762b4cb21a681ab118b3adfe7a6d5d930527d11"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/sourceAndImages.json",
+              "sha256": "958fb6ba6c089f8a409b7a00fec9af4ac39ad6d7a399b9022ad7e51cc9f3636b"
+            }
+          ],
+          "scope": "native"
+        },
+        "candidateSha256": "387cf895b5c2380b1491a4d19c75e3b34966a1d2f9f3234a316f38da1bcde2fb",
+        "sequence": 9,
+        "clockSample": {
+          "utc": "2026-11-08T17:14:50.556566+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 137753645338809,
+          "boottimeNs": 140574000432761
+        },
+        "atUTC": "2026-11-08T17:14:50.556566+00:00"
+      },
+      {
+        "eventId": "ux023-keyboard-final1730-current-review",
+        "kind": "review",
+        "candidateSha256": "387cf895b5c2380b1491a4d19c75e3b34966a1d2f9f3234a316f38da1bcde2fb",
+        "review": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/independent-current-candidate-review-astra.json",
+          "sha256": "7928a0a8bdfe35cad0c23464edf2e79216ca5f977f5d769e1bd3b1289b29f572"
+        },
+        "sequence": 10,
+        "clockSample": {
+          "utc": "2026-11-08T17:15:02.650022+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 137765738830386,
+          "boottimeNs": 140586093924674
+        },
+        "atUTC": "2026-11-08T17:15:02.650022+00:00"
+      },
+      {
+        "eventId": "ux023-387cf895-native-started",
+        "kind": "execution-started",
+        "candidateSha256": "387cf895b5c2380b1491a4d19c75e3b34966a1d2f9f3234a316f38da1bcde2fb",
+        "jobId": "pid4093025-start14058791",
+        "outerHandle": "54712",
+        "sequence": 11,
+        "clockSample": {
+          "utc": "2026-11-08T17:21:55.248387+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 138178337153258,
+          "boottimeNs": 140998692247242
+        },
+        "atUTC": "2026-11-08T17:21:55.248387+00:00"
+      },
+      {
+        "eventId": "ux023-387cf895-native-finished",
+        "kind": "execution-finished",
+        "candidateSha256": "387cf895b5c2380b1491a4d19c75e3b34966a1d2f9f3234a316f38da1bcde2fb",
+        "jobId": "pid4093025-start14058791",
+        "outerHandleConsumed": true,
+        "report": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-keyboard-journey-20261108/actual-387cf895-terminal.json",
+          "sha256": "076e0caa4e2e339eb96f5e66c46861767d59f7ff89d16f06128d90615621b2ca"
+        },
+        "failureSignature": "ux023-keyboard-operation-launch-not-observed",
+        "sequence": 12,
+        "clockSample": {
+          "utc": "2026-11-08T17:22:08.582171+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 138191670934124,
+          "boottimeNs": 141012026028156
+        },
+        "atUTC": "2026-11-08T17:22:08.582171+00:00"
+      },
+      {
+        "eventId": "opus-post-actual-ux023-native-window-20261108T1915",
+        "kind": "authorization-renewed",
+        "authorizationExpiresUTC": "2026-11-08T19:15:00Z",
+        "evidence": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/post-actual-ux023-native-window-1915-20261108/actual-delegated-renewal-evidence.json",
+          "sha256": "31c05a357d39950d04018daae4f02cc40554e180f058a15ca77a70a53dacaacd"
+        },
+        "sequence": 13,
+        "clockSample": {
+          "utc": "2026-11-08T17:27:52.288387+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 138535377156928,
+          "boottimeNs": 141355732250768
+        },
+        "atUTC": "2026-11-08T17:27:52.288387+00:00"
+      },
+      {
+        "eventId": "ux023-post-actual-failure-phase-completion-correction-plan",
+        "kind": "plan-changed",
+        "reason": "Actual native387cf895 ran and failed with no application launch; keyboard route and normal no-pointer cleanup were observed, but independent screenshots showed incomplete query, no entry focus and no completed dismissal/restoration. Source review establishes that sender completion does not observe asynchronous DOM focus and confirmed query publication. Existing /events dequeues renderer delivery and cannot be polled as passive telemetry. Retain the failure and original acceptance counts.",
+        "owner": "root-agentbus",
+        "nextAction": "Within the existing UX023 source scope and 19:15 authorization, add fixed bounded read-only snapshots through existing owned Bar/Popup backing and callbacks, then make the existing keyboard fixture wait for completed current phases under its unchanged original28+2 and frame16 caps. No input replay, arbitrary sleep, extra timer, /events consumer, pointer input, new role or acceptance oracle. Independent source/API/custody review precedes exact two-source adoption; Root serially compiles owner/observer/allocation controls while Sol finishes the disjoint three-file QA caller. Run proportional fixture controls and full current preflight, then one original keyboard-only journey with independent actual-pixel adjudication. Snapshot data schedules inputs only and cannot accept focus/native/original behavior.",
+        "sequence": 14,
+        "clockSample": {
+          "utc": "2026-11-08T17:41:50.178727+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 139373267491530,
+          "boottimeNs": 142193622585370
+        },
+        "atUTC": "2026-11-08T17:41:50.178727+00:00"
+      },
+      {
+        "eventId": "ux023-phase-snapshot-build-candidate-20261108-1915-v1",
+        "kind": "candidate",
+        "candidate": {
+          "id": "ux023-phase-snapshot-three-target-build-20261108-1915-v1",
+          "scope": "native",
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+            "--",
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/tools/run_ux003_dom_allocation_build.py",
+            "--sha256",
+            "bb75465afffac1c58500c2f37d5648d0bdb5603aa3ea88cd3ec187b182f52f9e"
+          ],
+          "manifest": {
+            "sources": {
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+              "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "ea4e879f9dce27e95a8f8e2c627d19732ce4508ec65e938fe058c240a0deda4e"
+            },
+            "fixtures": {
+              "tools/test_ux003_dom_allocation_build.py": "a149cb7086d90b450f43d5435fe5aaadc808c9255df4971e5a67a87848ef2d09"
+            },
+            "runners": {
+              "plugins/warlock-contributor/scripts/warlock.py": "ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd",
+              "tools/run_ux003_dom_allocation_build.py": "ec6899809d46250332b03151bcd3e662c95f448a09be30d3812244edb6d6e482",
+              "tools/arm64_toolchain.py": "71e687c9d7b24c2296a8a3061473a15190d770f05cff7864b63e3aeb51906796",
+              "tools/provider_callback_build.py": "d2b3021866b0f6ce8403358df9fa41dc6a0a59e7d7e597a34262aada6450d7e5",
+              "tools/haskell_test_wrapper.py": "1b4f9961630a750fd154dd0df6525e02fe4216510c26b8c39d81a64fb207136b",
+              "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+              "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+            },
+            "profiles": {
+              ".warlock-contributor/evidence/nextloop-20261106/ux003-dom-allocation-build-20261108/fixed-build-review.json": "8bb2d57e27d982bea605d772b56c01ebee69aed676aa7ba79e75d89df5764ab0",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux003-complete-preflight-20261108/cache-correspondence.json": "00e085387c005253e1eea2c8d8e3e96419a6170c982fa9d57fd338a444345d73",
+              "tools/arm64-toolchain.json": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb",
+              ".warlock-contributor/evidence/nextloop-20261106/ux003-dom-allocation-build-20261108/packet.json": "bb75465afffac1c58500c2f37d5648d0bdb5603aa3ea88cd3ec187b182f52f9e",
+              ".warlock-contributor/evidence/nextloop-20261106/ux023-phase-snapshot-build1915-20261108/phase-source-manifest.json": "e27c1aa4d8ce8b29fe2149df117f8599333ea2a1b320fe2e6b547d6244c5c75f",
+              ".warlock-contributor/evidence/nextloop-20261106/ux023-phase-snapshot-build1915-20261108/phase-source-review.json": "076961b7ce0b0d6f8d8b59615c2c3a20755129ca53ec26b5b30f3db61d966039",
+              ".warlock-contributor/evidence/nextloop-20261106/ux023-keyboard-focus-build-1700-20261108/focus-source-manifest.json": "201799ce87596861f75b51ae56425cd26a0f4ac2b65c2bab61fb0c48e4b1d678",
+              ".warlock-contributor/evidence/nextloop-20261106/ux023-keyboard-focus-build-1700-20261108/focus-source-review.json": "de0fce27b79522bc24e129cf6a109c1782efdaff0c6c5b204bc5b483b2b3e6eb"
+            }
+          },
+          "expectedObservation": "Same fixed offline owner/observer/ui-webkit-controls three-target compile/list and ONLY existing --allocation-only pure branch. New bounded live read-only phase snapshot contracts, actual ARM nofollow flags, late-write/no-publication negative and passive near-deadline controls; nine unchanged collector mocks. Full265/source255 Haskell maps differ from actual d05e only in the two independently reviewed WebKit/test posts; current ab78/gen20 and actual canonical19:15. No helper image execution, GUI/input/provider/default-suite/original acceptance. Existing900+2 build budget clipped to authorization; future native original28+2 unchanged.",
+          "nativePrerequisites": [
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/ux003-dom-allocation-build-20261108/fixed-build-review.json",
+              "sha256": "8bb2d57e27d982bea605d772b56c01ebee69aed676aa7ba79e75d89df5764ab0"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/ux023-keyboard-focus-build-1700-20261108/focus-source-review.json",
+              "sha256": "de0fce27b79522bc24e129cf6a109c1782efdaff0c6c5b204bc5b483b2b3e6eb"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/ux023-phase-snapshot-build1915-20261108/phase-source-review.json",
+              "sha256": "076961b7ce0b0d6f8d8b59615c2c3a20755129ca53ec26b5b30f3db61d966039"
+            }
+          ]
+        },
+        "candidateSha256": "45b15fe4bf87b198e532e53ec886b5709eddf546429c99d99e5d99e851c547ee",
+        "sequence": 15,
+        "clockSample": {
+          "utc": "2026-11-08T18:00:30.916360+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 140494005129715,
+          "boottimeNs": 143314360223811
+        },
+        "atUTC": "2026-11-08T18:00:30.916360+00:00"
+      },
+      {
+        "eventId": "ux023-phase-snapshot-build1915-current-review",
+        "kind": "review",
+        "candidateSha256": "45b15fe4bf87b198e532e53ec886b5709eddf546429c99d99e5d99e851c547ee",
+        "review": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/ux023-phase-snapshot-build1915-20261108/independent-current-candidate-review-astra.json",
+          "sha256": "15cf491133292ad4a8ff464beb5b6b80893f0adb6b322f61f9e3cff39963e056"
+        },
+        "sequence": 16,
+        "clockSample": {
+          "utc": "2026-11-08T18:01:43.314536+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 140566403310934,
+          "boottimeNs": 143386758405046
+        },
+        "atUTC": "2026-11-08T18:01:43.314536+00:00"
+      },
+      {
+        "eventId": "ux023-phase-build-45b15-actual-started",
+        "kind": "execution-started",
+        "candidateSha256": "45b15fe4bf87b198e532e53ec886b5709eddf546429c99d99e5d99e851c547ee",
+        "jobId": "pid506417-start14343548",
+        "outerHandle": "67914",
+        "sequence": 17,
+        "clockSample": {
+          "utc": "2026-11-08T18:07:04.103727+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 140887192492162,
+          "boottimeNs": 143707547586050
+        },
+        "atUTC": "2026-11-08T18:07:04.103727+00:00"
+      },
+      {
+        "eventId": "ux023-phase-build-45b15-actual-finished",
+        "kind": "execution-finished",
+        "candidateSha256": "45b15fe4bf87b198e532e53ec886b5709eddf546429c99d99e5d99e851c547ee",
+        "jobId": "pid506417-start14343548",
+        "outerHandleConsumed": true,
+        "report": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/ux023-phase-snapshot-build1915-20261108/actual-phase-build-terminal.json",
+          "sha256": "d125e7bca81c20fc42551f4d41b3323cdc0577ba92f3c07c040fd65c78e1a390"
+        },
+        "sequence": 18,
+        "clockSample": {
+          "utc": "2026-11-08T18:12:32.925319+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 141216014088575,
+          "boottimeNs": 144036369182447
+        },
+        "atUTC": "2026-11-08T18:12:32.925319+00:00"
+      },
+      {
+        "eventId": "ux023-phase-complete-keyboard-original-native-isolated-candidate",
+        "kind": "candidate",
+        "candidate": {
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+            "--",
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux023_keyboard_journey.py",
+            "--sha256",
+            "4f35236e6733d7622393183e5948a94399b66889e5b2f8acb31559f23963614f"
+          ],
+          "expectedObservation": "ONE original ELM-UX-023 keyboard-launcher native journey, original28+2 and zero pointer input. Actual protected45b15 product build8bca/newowner996b/freshobserver1f16 passed, source/API acceptedAstra076; changed49 standalone fixture controls passed, unchanged17auth historical only (unsupported66module invocation remains failed). Same exact9KEY_STEPS/one noninput keyboard held beforeGTK throughnormalexit. New bounded live owner-context read-only pairedDOM snapshots from actual parent-held backingroot gate the next key and focused screenshots; fixed16pairs, exactfresh nonce/request/process/root/publication/expectedlease, initialclosed0/open-reopen+1/query-close stable, atomicno-clobber request publication and boundednonblockingresponse. No events dequeue, syntheticinput, sleep, newclock, provider campaign or changed original oracle. Machine phase completion is scheduling evidence only; actualpixels must independently prove open/traverse/operate/dismiss, recorded focus and no pointer. Original21/44 unchanged until accepted. This successor uses a NEW immutable metadata namespace; previous387 files and refused oldd05e metadata remain retained. Only the fixed PACKET path scalar differs in Main; no runtime function or original input changes.",
+          "id": "ux023-phase-complete-keyboard-original-native-isolated-20261108-v1",
+          "manifest": {
+            "fixtures": {
+              "tools/test_current_arm_ux003_generated_journey.py": "d1e254ca1fd3e52d29d83ddda51977e8ce7cb2c9d81a240c268b1f70a6848662",
+              "tools/test_ux003_attempt_authorization.py": "8119b3aabc9757353644caa34652771019d69da1b80324be6ff187b3d6a844b7",
+              "tools/test_ux003_dom_observation_build.py": "6b8d4c10c3d77467070100ccec0f4e3e68e9f7af54160128a2d5fde04c10a9aa",
+              "tools/test_ux003_dom_allocation_build.py": "a149cb7086d90b450f43d5435fe5aaadc808c9255df4971e5a67a87848ef2d09",
+              "tools/test_ux023_attempt_authorization.py": "3ea0a89b9b4f2da597e7c9b9b76f46298fdfb46ed514bed71cd3369694fd7e23",
+              "tools/test_ux023_keyboard_fixture.py": "05b72c0638e9ce9353b3ccd22d4117116c97c37e57a8aa5c05420d5d74152f79",
+              "tools/test_ux023_keyboard_build.py": "78721b116d4bd930e953c18bfd8a7fe0c98a4dd9d1c364ecf5d05c217d8b4b64"
+            },
+            "profiles": {
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/nestedInput.json": "68b03efb2de464e594434687719a0fd700de57ea4e56a2381d3a16cb66b0e1ce",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/providerAndABI.json": "41eb0cd12018d3a175f48943adc79a580c4931ad61910d994ce7c0b07cfba762",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/sourceAndImages.json": "3a6e91f646cc85a5fea584a462b4d8118b6867ee66788dad2174e0c59edea40e",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/build-source-correspondence.json": "6bd3f01fc783344b9597054b740aaec8dde57a32acff95ca0e052945ffe314ce",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/packet.json": "4f35236e6733d7622393183e5948a94399b66889e5b2f8acb31559f23963614f"
+            },
+            "runners": {
+              "tools/omarchy_ui_mvp.py": "3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc",
+              "tools/run_arm_gl_foundation_renewed_20261107.py": "1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b",
+              "tools/run_arm_gl_foundation_renewed_20261108_0623.py": "769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2",
+              "tools/run_current_arm_ux003_generated_journey.py": "9e95a687d8cf63e656be69571192930167e2579ae7ac281e35261ecfa78ce09f",
+              "tools/run_labwc_gl_foundation_ipc_20261108.py": "f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69",
+              "tools/run_webkit_provider_probe.py": "49cce4b4e0a427473ced4357367d766d964454d0de08329a5608d919ae3c8a60",
+              "tools/ux003_cleanup_evidence.py": "9d6cf16d041a47a6a76d3aef0a4e1a50d4f06f4eed4f01355dee004257da9cda",
+              "tools/ux003_input_geometry.py": "0a10632dccea9e73fce89f082586257a126d2597ca545e9d028b5923a33be930",
+              "tools/ux003_pointer_completion.py": "f3e72b4c4fcdc4166f141bb68c77714d4095bd78836723b83c6db1725b4dc1d2",
+              "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+              "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+              "tools/ux003_input_geometry_720.py": "e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0",
+              "tools/ux003_owned_fonts.py": "b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3",
+              "tools/ux003_attempt_authorization.py": "a76b44fa5ff9f6136fb87702835ad81a651ebd187feffcdf6fd0614af77af2b7",
+              "plugins/warlock-contributor/scripts/warlock.py": "ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd",
+              "tools/run_labwc_gl_foundation_window_rule_20261108.py": "1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad",
+              "tools/run_ux003_dom_observation_build.py": "7c9c0808e9b21054db3cc9952f443e76d168a25cbe1671734547cfd4313905eb",
+              "tools/run_ux003_dom_allocation_build.py": "ec6899809d46250332b03151bcd3e662c95f448a09be30d3812244edb6d6e482",
+              "tools/ux003_opener_readiness.py": "e269c938dccc67f4de64b11f80ac928d6890ee122a59435e14985fc4b9bab2d5",
+              "tools/run_current_arm_ux023_keyboard_journey.py": "a7a395e218acd80ad303cae1abdd9ecacc0b0d6783297ee2519695079b3ca01d",
+              "tools/ux023_attempt_authorization.py": "986a979d048cb58fb22ca8116248d80d373fe91fff7f3419f7b15aea77661433",
+              "tools/ux023_keyboard_fixture.py": "a2b3b9fc6199346ed37461cd46b9d51088aecdfa53fc3de3d9eb767da946c8ba",
+              "tools/ux023-keyboard-helper/keyboard_keepalive.c": "b4b9eaf4584e21688ed4e4a735188a72f1d2c95ef0bbf05f1518468c5670def2",
+              "tools/ux023-keyboard-helper/virtual-keyboard-unstable-v1.xml": "7ad7870003ecd592cae47dc19d277a609b7f18fd7b7be012623cf3225a7294f5",
+              "tools/run_ux023_keyboard_build.py": "f549db9b860a1ad89c2a1c2684fa04c7995c20a5f093aa7ad9807da801b17835"
+            },
+            "sources": {
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+              "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "ea4e879f9dce27e95a8f8e2c627d19732ce4508ec65e938fe058c240a0deda4e"
+            }
+          },
+          "nativePrerequisites": [
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/nestedInput.json",
+              "sha256": "68b03efb2de464e594434687719a0fd700de57ea4e56a2381d3a16cb66b0e1ce"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/providerAndABI.json",
+              "sha256": "41eb0cd12018d3a175f48943adc79a580c4931ad61910d994ce7c0b07cfba762"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/sourceAndImages.json",
+              "sha256": "3a6e91f646cc85a5fea584a462b4d8118b6867ee66788dad2174e0c59edea40e"
+            }
+          ],
+          "scope": "native"
+        },
+        "candidateSha256": "4852d3519aa3d425a76541e6380f441c3c95d671e20f5e08023dad1648bf16ae",
+        "sequence": 19,
+        "clockSample": {
+          "utc": "2026-11-08T19:11:25.727138+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 144748815911640,
+          "boottimeNs": 147569171005928
+        },
+        "atUTC": "2026-11-08T19:11:25.727138+00:00"
+      },
+      {
+        "eventId": "ux023-isolated-phase-native-current-review",
+        "kind": "review",
+        "candidateSha256": "4852d3519aa3d425a76541e6380f441c3c95d671e20f5e08023dad1648bf16ae",
+        "review": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/independent-current-candidate-review-astra.json",
+          "sha256": "d3cfd6c8553369ed79acc9cdcedb78bfec194870aab96916abfdb395074fce9d"
+        },
+        "sequence": 20,
+        "clockSample": {
+          "utc": "2026-11-08T19:13:02.369747+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 144845458514254,
+          "boottimeNs": 147665813608382
+        },
+        "atUTC": "2026-11-08T19:13:02.369747+00:00"
+      },
+      {
+        "eventId": "opus-post-phase-ux023-native-window-20261108T2100",
+        "kind": "authorization-renewed",
+        "authorizationExpiresUTC": "2026-11-08T21:00:00Z",
+        "evidence": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/post-phase-ux023-native-window-2100-20261108/actual-delegated-renewal-evidence.json",
+          "sha256": "80348521c4f920d6cb7ef14d720f98ca6ebad3f96cdb884c780b6fef80998d1b"
+        },
+        "sequence": 21,
+        "clockSample": {
+          "utc": "2026-11-08T19:38:13.189379+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 146356452083205,
+          "boottimeNs": 149176807177253
+        },
+        "atUTC": "2026-11-08T19:38:13.189379+00:00"
+      },
+      {
+        "eventId": "ux023-isolated4852-native-started",
+        "kind": "execution-started",
+        "candidateSha256": "4852d3519aa3d425a76541e6380f441c3c95d671e20f5e08023dad1648bf16ae",
+        "jobId": "pid1286611-start14766752",
+        "outerHandle": "23262",
+        "sequence": 22,
+        "clockSample": {
+          "utc": "2026-11-08T19:45:10.661773+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 146773924469896,
+          "boottimeNs": 149594279563880
+        },
+        "atUTC": "2026-11-08T19:45:10.661773+00:00"
+      },
+      {
+        "eventId": "ux023-isolated4852-native-finished",
+        "kind": "execution-finished",
+        "candidateSha256": "4852d3519aa3d425a76541e6380f441c3c95d671e20f5e08023dad1648bf16ae",
+        "jobId": "pid1286611-start14766752",
+        "outerHandleConsumed": true,
+        "report": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-phase-complete-native-20261108-v1/actual-4852-terminal.json",
+          "sha256": "168fa6a65622c864a4ca84cc541fc769f0d3be900a468f1aaa0fa01ba7cb33c3"
+        },
+        "failureSignature": "ux023-phase-query-witness-budget-exhausted",
+        "sequence": 23,
+        "clockSample": {
+          "utc": "2026-11-08T19:45:23.843442+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 146787106140674,
+          "boottimeNs": 149607461234594
+        },
+        "atUTC": "2026-11-08T19:45:23.843442+00:00"
+      },
+      {
+        "eventId": "ux023-healthy-phase-keyboard-original-native-candidate",
+        "kind": "candidate",
+        "candidate": {
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+            "--",
+            "/usr/bin/python3",
+            "-B",
+            "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux023_keyboard_journey.py",
+            "--sha256",
+            "5e7ddb62b8051cc752a4408f17cb75f7c2b907671282f88c42885bb006a76e34"
+          ],
+          "expectedObservation": "ONE originalUX023keyboard-launcher native, original28+2/zero pointer/exact9KEY_STEPS. Source-backed QA predicate correction accepts healthy retained=null, requires actual fullquery+enabledentry toexclude pending-query overlay; stopped-onlyretained data refuses. Actual4852failure40a6 remainsfailed/forcedunknown/globalrestorefalse; subsequentexternalpositivecensus doesnotretroacceptit. Actualprotected52fixture+17authPASS, unchangedactual8bca265build/owner996b/observer1f16/12assets. Runtimefunctions/budget16/frame16/Haskell/Elm/provider unchanged. All8metadata refs in NEWimmutablehealthy namespace, neveroverwritehistorical387/4852. Scheduling snapshots are not originalacceptance; actualfocus/open/traverse/operation/dismiss andzero-pointer evidence require independentpixels. CurrentRootrecord20/abcore/actualcanonical21; original21/44 staysuntilaccepted.",
+          "id": "ux023-healthy-phase-keyboard-original-native-20261108-v1",
+          "manifest": {
+            "fixtures": {
+              "tools/test_current_arm_ux003_generated_journey.py": "d1e254ca1fd3e52d29d83ddda51977e8ce7cb2c9d81a240c268b1f70a6848662",
+              "tools/test_ux003_attempt_authorization.py": "8119b3aabc9757353644caa34652771019d69da1b80324be6ff187b3d6a844b7",
+              "tools/test_ux003_dom_observation_build.py": "6b8d4c10c3d77467070100ccec0f4e3e68e9f7af54160128a2d5fde04c10a9aa",
+              "tools/test_ux003_dom_allocation_build.py": "a149cb7086d90b450f43d5435fe5aaadc808c9255df4971e5a67a87848ef2d09",
+              "tools/test_ux023_attempt_authorization.py": "3ea0a89b9b4f2da597e7c9b9b76f46298fdfb46ed514bed71cd3369694fd7e23",
+              "tools/test_ux023_keyboard_fixture.py": "b37dcd7960306cf0d348508a67586e07dcb7a4460f372994d4bdc04208a37b18",
+              "tools/test_ux023_keyboard_build.py": "78721b116d4bd930e953c18bfd8a7fe0c98a4dd9d1c364ecf5d05c217d8b4b64"
+            },
+            "profiles": {
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/nestedInput.json": "d6079dcf3c4cc09748a1a1850249c35a835c3e38365ce4012eea06988b88dd3d",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/providerAndABI.json": "6c827b6a6d7029c854d22ef51b82c5d741d45c08d1e2e6bcfe89550ee92e1f2f",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/sourceAndImages.json": "9a7bee2a0ab6d54edfc0198f6de741795f068f122621918b910b8c427c0a5a14",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/build-source-correspondence.json": "a61927489c73716b3213ca036a4a746420e281845c1787c9896d9d8c899e9c4a",
+              ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/packet.json": "5e7ddb62b8051cc752a4408f17cb75f7c2b907671282f88c42885bb006a76e34"
+            },
+            "runners": {
+              "tools/omarchy_ui_mvp.py": "3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc",
+              "tools/run_arm_gl_foundation_renewed_20261107.py": "1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b",
+              "tools/run_arm_gl_foundation_renewed_20261108_0623.py": "769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2",
+              "tools/run_current_arm_ux003_generated_journey.py": "9e95a687d8cf63e656be69571192930167e2579ae7ac281e35261ecfa78ce09f",
+              "tools/run_labwc_gl_foundation_ipc_20261108.py": "f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69",
+              "tools/run_webkit_provider_probe.py": "49cce4b4e0a427473ced4357367d766d964454d0de08329a5608d919ae3c8a60",
+              "tools/ux003_cleanup_evidence.py": "9d6cf16d041a47a6a76d3aef0a4e1a50d4f06f4eed4f01355dee004257da9cda",
+              "tools/ux003_input_geometry.py": "0a10632dccea9e73fce89f082586257a126d2597ca545e9d028b5923a33be930",
+              "tools/ux003_pointer_completion.py": "f3e72b4c4fcdc4166f141bb68c77714d4095bd78836723b83c6db1725b4dc1d2",
+              "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23",
+              "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+              "tools/ux003_input_geometry_720.py": "e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0",
+              "tools/ux003_owned_fonts.py": "b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3",
+              "tools/ux003_attempt_authorization.py": "a76b44fa5ff9f6136fb87702835ad81a651ebd187feffcdf6fd0614af77af2b7",
+              "plugins/warlock-contributor/scripts/warlock.py": "ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd",
+              "tools/run_labwc_gl_foundation_window_rule_20261108.py": "1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad",
+              "tools/run_ux003_dom_observation_build.py": "7c9c0808e9b21054db3cc9952f443e76d168a25cbe1671734547cfd4313905eb",
+              "tools/run_ux003_dom_allocation_build.py": "ec6899809d46250332b03151bcd3e662c95f448a09be30d3812244edb6d6e482",
+              "tools/ux003_opener_readiness.py": "e269c938dccc67f4de64b11f80ac928d6890ee122a59435e14985fc4b9bab2d5",
+              "tools/run_current_arm_ux023_keyboard_journey.py": "c91068f061f203aed36ef926f901aa4cce8806e8e38e086d8adecaaeb40454c6",
+              "tools/ux023_attempt_authorization.py": "986a979d048cb58fb22ca8116248d80d373fe91fff7f3419f7b15aea77661433",
+              "tools/ux023_keyboard_fixture.py": "d564c58afe31b95688ec17520c6e62eb537dfa8b476c371e93fa603ef83aed2f",
+              "tools/ux023-keyboard-helper/keyboard_keepalive.c": "b4b9eaf4584e21688ed4e4a735188a72f1d2c95ef0bbf05f1518468c5670def2",
+              "tools/ux023-keyboard-helper/virtual-keyboard-unstable-v1.xml": "7ad7870003ecd592cae47dc19d277a609b7f18fd7b7be012623cf3225a7294f5",
+              "tools/run_ux023_keyboard_build.py": "f549db9b860a1ad89c2a1c2684fa04c7995c20a5f093aa7ad9807da801b17835"
+            },
+            "sources": {
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "d6b8b2166fef26b872d98959cde161f262865405782bf9672c6790d9b8f08d40",
+              "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846",
+              "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "ea4e879f9dce27e95a8f8e2c627d19732ce4508ec65e938fe058c240a0deda4e"
+            }
+          },
+          "nativePrerequisites": [
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/nestedInput.json",
+              "sha256": "d6079dcf3c4cc09748a1a1850249c35a835c3e38365ce4012eea06988b88dd3d"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/providerAndABI.json",
+              "sha256": "6c827b6a6d7029c854d22ef51b82c5d741d45c08d1e2e6bcfe89550ee92e1f2f"
+            },
+            {
+              "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/sourceAndImages.json",
+              "sha256": "9a7bee2a0ab6d54edfc0198f6de741795f068f122621918b910b8c427c0a5a14"
+            }
+          ],
+          "scope": "native"
+        },
+        "candidateSha256": "7c8caed3927894b0628c07d989a5ce30ca0489f113ed515b9ac83edf50e2cb2e",
+        "sequence": 24,
+        "clockSample": {
+          "utc": "2026-11-08T20:52:49.478258+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 150833057626066,
+          "boottimeNs": 153653412720034
+        },
+        "atUTC": "2026-11-08T20:52:49.478258+00:00"
+      },
+      {
+        "eventId": "ux023-healthy-phase-native-current-review-astra-20261108-v1",
+        "kind": "review",
+        "candidateSha256": "7c8caed3927894b0628c07d989a5ce30ca0489f113ed515b9ac83edf50e2cb2e",
+        "review": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/independent-current-candidate-review-astra.json",
+          "sha256": "b1b0412ff645e9bae297dc25793d667f5ffb1f34d22946ef64c76aa9ca5f0a26"
+        },
+        "sequence": 25,
+        "clockSample": {
+          "utc": "2026-11-08T20:55:43.262275+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 151006245159742,
+          "boottimeNs": 153826600254078
+        },
+        "atUTC": "2026-11-08T20:55:43.262275+00:00"
+      },
+      {
+        "eventId": "ux023-one-time-prospective-gap-recovery-20261109T030511",
+        "kind": "authorization-renewed",
+        "authorizationExpiresUTC": "2026-11-09T03:05:11.575988+00:00",
+        "evidence": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/ux023-qualified-gap-audit-20261109/actual-delegated-renewal-evidence.json",
+          "sha256": "e5a066c0aa52b6261d8128b0a36df925acb431428200a4357398977f54b81035"
+        },
+        "sequence": 26,
+        "clockSample": {
+          "utc": "2026-11-09T02:30:50.415483+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 170026711388650,
+          "boottimeNs": 173938735073706
+        },
+        "atUTC": "2026-11-09T02:30:50.415483+00:00"
+      },
+      {
+        "eventId": "ux023-healthy7c8-native-started",
+        "kind": "execution-started",
+        "candidateSha256": "7c8caed3927894b0628c07d989a5ce30ca0489f113ed515b9ac83edf50e2cb2e",
+        "jobId": "pid2561971-start15382849",
+        "outerHandle": "55475",
+        "sequence": 27,
+        "clockSample": {
+          "utc": "2026-11-09T02:31:09.692308+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 170045988209277,
+          "boottimeNs": 173958011894269
+        },
+        "atUTC": "2026-11-09T02:31:09.692308+00:00"
+      },
+      {
+        "eventId": "ux023-healthy7c8-native-finished",
+        "kind": "execution-finished",
+        "candidateSha256": "7c8caed3927894b0628c07d989a5ce30ca0489f113ed515b9ac83edf50e2cb2e",
+        "jobId": "pid2561971-start15382849",
+        "outerHandleConsumed": true,
+        "report": {
+          "path": ".warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-healthy-phase-native-20261108-v1/actual-7c8-terminal.json",
+          "sha256": "0c33f603ad36b6df08edf6ba68517c538dfe8878aa173a109ce824f10ae256b2"
+        },
+        "sequence": 28,
+        "clockSample": {
+          "utc": "2026-11-09T02:31:25.991766+00:00",
+          "bootId": "e1c28773-1120-4b6a-b554-f1c17d5db076",
+          "monotonicNs": 170062287697895,
+          "boottimeNs": 173974311383047
+        },
+        "atUTC": "2026-11-09T02:31:25.991766+00:00"
+      }
+    ],
+    "guardHashes": {
+      "docs/elm-roadmap/requirements.json": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff",
+      "docs/elm-roadmap/baselines/requirements-pre-language-20261030.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+      "docs/elm-roadmap/language-revision.json": "d405ed8b8fd7e47420f108ed5692970734e341913a029a894b971397849b216c",
+      "docs/elm-roadmap/tools/language_revision.py": "a792ed03d3bc7eeed978b387ee5dda8474af0738844c29caaa39cafe1d5c7e4a",
+      "implementation/elm-build-loop-v1/loop.py": "13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6",
+      "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+      "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+    }
+  }
+}

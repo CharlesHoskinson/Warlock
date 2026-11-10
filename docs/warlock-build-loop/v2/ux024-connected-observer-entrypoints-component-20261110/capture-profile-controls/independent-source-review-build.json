@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/manifest.json",
+    "sha256": "c579fe185ff6697db93780f1bbedbd497a06b0be936ab1d3265793e5ca427e81"
+  },
+  "changes": [
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "baselineSha256": "9f19ed61009083ff853bf51b4af27d6d9da32f01ab4f7e7510dc4881eaadecf5",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/run_current_arm_ux024_foreign_toplevel_observer.py",
+        "sha256": "53564afcfb520d10d590d7318d8a85705c0b0debdc117fe1de3997e5c18b51b8"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_foreign_toplevel_observer.py",
+      "baselineSha256": "c911d52ea70be9c941b1b4230951415ba7af11b8559fe3e68c910519f798f5f9",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/test_ux024_foreign_toplevel_observer.py",
+        "sha256": "c8ae4ce75e7de8b337465c733e0ab2565b97673c3c1f586dc031f531bf0baed0"
+      }
+    },
+    {
+      "destination": "/home/hoskinson/Projects/Warlock/tools/test_ux024_named_mapping_diagnostics.py",
+      "baselineSha256": "169b2b1958ed196a87c7200090b27bac8381bfd90a4b03110f367ad919849fb2",
+      "postimage": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/test_ux024_named_mapping_diagnostics.py",
+        "sha256": "f6764e358deafae9b87f64aa8c11be2628bb33b6784fe6c0d5c176f694c7eeaf"
+      }
+    }
+  ],
+  "findings": [],
+  "checked": [
+    "Only exact pinnedgrim executable with exactowned actual-owned-window.png argv receives finite32MiB RLIMIT_FSIZE; alternategrimargv refuses. checked_spawn still hashes selectedbinary.",
+    "Every noncapturechild receives exactbase.bound_output64KiB; base/qa_run/globalguards untouched.",
+    "Existing32MiBPNGreadcap retained; finitecaptureprofile bounds backingfiles and output, no deadline/frame/input extension.",
+    "Old22testbodies retained plus8controls/32seeds; three fixed5s OSmemfd subprocess tests check oldlimitrefusal/newsizepass/newcap+1refusal.",
+    "OnlyPACKETv6/profiledispatch/newtests/diagnosticnamespace scalar change; Main/images/ABI/provider/SDK/map/auth unchanged."
+  ],
+  "notes": [
+    "Newmemfd tests are bounded CPU process/FD IO, not purely mocked tests; Root protected execution required.",
+    "ActualV5 failing syscall remains unobserved; successfulmodelmemfd control would demonstrate limit compatibility, not retroactively prove syscall."
+  ],
+  "limits": [
+    "No reviewer imports/tests/subprocess/nativeexecution.",
+    "Root actualcontrols/tuple/candidate/native result pending; no connected/native/original acceptance."
+  ]
+}

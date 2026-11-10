@@ -21,6 +21,17 @@ module Warlock.Ui.Mvp
   , leasePopupOpen
   , parseProjectionLease
   , readProjectedLease
+  , MvpFocusRole(..)
+  , MvpFocusIntent
+  , parseMvpFocusIntent
+  , mvpFocusTransition
+  , stepMvpKeyboardFocus
+  , MvpKeyHandoff
+  , initialMvpKeyHandoff
+  , mvpKeyPressed
+  , mvpKeyReleased
+  , mvpKeyHandoffReady
+  , mvpKeyHandoffAllows
   , isStaleOwnerProjection
   , ViewObservation(..)
   , MvpStepState
@@ -38,21 +49,23 @@ module Warlock.Ui.Mvp
 
 #include <glib-object.h>
 
-import Control.Exception (SomeAsyncException, SomeException, bracket, fromException, mask, mask_, onException, throwIO, try)
-import Control.Monad (unless)
+import Control.Exception (SomeAsyncException, SomeException, bracket, catch, evaluate, fromException, mask, mask_, onException, throwIO, try)
+import Control.Monad (unless, when)
 import Data.Int (Int32)
 import Data.IORef (IORef, atomicModifyIORef', modifyIORef', newIORef, readIORef, writeIORef)
 import Data.Text (Text)
 import qualified Data.Text as T
-import Foreign.C.String (CString, withCString)
+import Foreign.C.String (CString, peekCString, withCString)
 import Foreign.C.Types (CDouble(..), CInt(..), CUInt(..), CULong(..))
 import Foreign.Marshal.Array (allocaArray)
 import Foreign.Marshal.Utils (fillBytes)
-import Foreign.Ptr (FunPtr, Ptr, castFunPtr, castPtr, freeHaskellFunPtr, nullPtr, plusPtr)
+import Foreign.Ptr (FunPtr, Ptr, castPtr, nullPtr, plusPtr)
 import Foreign.Storable (peek, peekElemOff)
 import Warlock.Protocol.Identity (Counter, addCounter, isZero, parseCounter, renderCounter)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Ui.Owner (TrustedOwnerEvent(..))
+import Warlock.Ui.ProcessSignalOwner (connectProcessSignal, disconnectProcessSignal)
+import Warlock.Ui.DefaultContextOwner (PhysicalDefaultContextOwner, requirePhysicalDefaultContextOwner)
 
 int32MinInteger :: Integer
 int32MinInteger = -2147483648
@@ -233,6 +246,69 @@ parseProjectionLease projection = do
       either (Left . T.pack . show) Right (parseCounter False txt)
     parseNonNegative txt =
       either (Left . T.pack . show) Right (parseCounter True txt)
+
+-- Renderer identity is distinct from focusOwner, which identifies a view scope.
+-- DOM focus stays with the existing validated Elm focus messages. This bridge
+-- transfers physical GTK keyboard focus only when the launcher role changes.
+data MvpFocusRole = MvpFocusBar | MvpFocusPopup
+  deriving (Eq, Show)
+
+data MvpFocusIntent = MvpFocusIntent !SurfaceLease !MvpFocusRole !Text
+  deriving (Eq, Show)
+
+parseMvpFocusIntent :: J.Json -> Either Text (Maybe MvpFocusIntent)
+parseMvpFocusIntent projection = do
+  lease <- parseProjectionLease projection
+  case leaseScope lease of
+    Nothing -> Right Nothing
+    Just _ -> do
+      outer <- object projection
+      focused <- field "focusOwner" outer
+      if focused == J.JNull then Right Nothing else selectedIntent lease outer
+  where
+    selectedIntent lease outer = do
+      frame <- field "frame" outer >>= object
+      version <- field "surfaceProtocol" frame
+      unless (version == J.JNumber "2") (Left "keyboard focus requires surfaceProtocol 2")
+      mode <- field "mode" frame >>= string
+      bar <- field "bar" frame >>= rows
+      popup <- field "popup" frame >>= rows
+      let destination
+            | not (leasePopupOpen lease) = Just (MvpFocusBar, "bar:applications", bar)
+            | mode == "applications" = Just (MvpFocusPopup, "control:search", popup)
+            | mode == "notifications" = Just (MvpFocusPopup, "control:close", popup)
+            | mode == "menu" && lookup "keyboardParent" frame == Just (J.JBool True) = Just (MvpFocusPopup, "control:menu-close", popup)
+            | otherwise = Nothing
+      case destination of
+        Nothing -> Right Nothing
+        Just (role, ident, controls) ->
+          case filter ((== Just (J.JString ident)) . lookup "id") controls of
+            [] -> Right Nothing
+            [control]
+              | eligible control -> do
+                  dom <- field "domId" control >>= string
+                  unless (not (T.null dom)) (Left "empty keyboard focus DOM target")
+                  let matches = filter (\row -> lookup "domId" row == Just (J.JString dom) && eligible row) (bar ++ popup)
+                  unless (length matches == 1) (Left "ambiguous keyboard focus DOM target")
+                  Right (Just (MvpFocusIntent lease role dom))
+              | otherwise -> Right Nothing
+            _ -> Left "ambiguous keyboard focus control"
+    object (J.JObject fields) = Right fields
+    object _ = Left "keyboard focus expected object"
+    field key fields = maybe (Left ("keyboard focus missing " <> key)) Right (lookup key fields)
+    string (J.JString value) = Right value
+    string _ = Left "keyboard focus expected string"
+    rows (J.JArray values) = traverse object values
+    rows _ = Left "keyboard focus expected controls array"
+    eligible fields = lookup "enabled" fields == Just (J.JBool True) || lookup "focusOnly" fields == Just (J.JBool True)
+
+-- Publications and query updates do not steal focus back from traversed items.
+mvpFocusTransition :: Maybe MvpFocusIntent -> MvpFocusIntent -> Maybe MvpFocusRole
+mvpFocusTransition previous current@(MvpFocusIntent _ role _)
+  | fmap key previous == Just (key current) = Nothing
+  | otherwise = Just role
+  where
+    key (MvpFocusIntent lease target _) = (leaseScope lease, target, leaseToken lease)
 
 -- | Read and validate 'UiEndpoints.uiLastProjection' into a 'SurfaceLease',
 -- failing closed on malformed JSON if present.
@@ -524,12 +600,45 @@ advanceMvpState obs closeNow escapePressed mLease st
 -- GTK4 / GDK4 single-window host bridge (libgtk-4.so.1 + libgobject-2.0.so.0)
 -- ---------------------------------------------------------------------------
 
+-- Explicit GTK handoff waits for observed nonmodifier key releases. This is
+-- bounded host custody, not an input filter or a renderer repeat override.
+-- Unknown key identity/capacity remains conservative until owner retirement.
+data MvpKeyHandoff = MvpKeyHandoff ![CUInt] !Bool
+  deriving (Eq, Show)
+
+initialMvpKeyHandoff :: MvpKeyHandoff
+initialMvpKeyHandoff = MvpKeyHandoff [] False
+
+mvpKeyPressed :: Bool -> CUInt -> MvpKeyHandoff -> MvpKeyHandoff
+mvpKeyPressed modifier keycode current@(MvpKeyHandoff held uncertain)
+  | modifier = current
+  | uncertain = current
+  | keycode == 0 = MvpKeyHandoff held True
+  | keycode `elem` held = current
+  | length held >= 16 = MvpKeyHandoff held True
+  | otherwise = MvpKeyHandoff (keycode : held) False
+
+mvpKeyReleased :: CUInt -> MvpKeyHandoff -> MvpKeyHandoff
+mvpKeyReleased keycode (MvpKeyHandoff held uncertain) =
+  MvpKeyHandoff (filter (/= keycode) held) uncertain
+
+mvpKeyHandoffReady :: MvpKeyHandoff -> Bool
+mvpKeyHandoffReady (MvpKeyHandoff held uncertain) = null held && not uncertain
+
+-- The release witness protects opening a Popup. Closing returns to the Bar
+-- under the existing selected-scope, projection and widget checks even when a
+-- replayed capture press or uncertain key state cannot certify a release.
+mvpKeyHandoffAllows :: MvpFocusRole -> MvpKeyHandoff -> Bool
+mvpKeyHandoffAllows MvpFocusBar _ = True
+mvpKeyHandoffAllows MvpFocusPopup state = mvpKeyHandoffReady state
+
 data MvpObject
 
 type GType = CULong
-type ClosureNotifyCallback = Ptr () -> Ptr () -> IO ()
 type CloseRequestCallback = Ptr MvpObject -> Ptr () -> IO CInt
 type KeyPressedCallback = Ptr MvpObject -> CUInt -> CUInt -> CInt -> Ptr () -> IO CInt
+type KeyReleasedCallback = Ptr MvpObject -> CUInt -> CUInt -> CInt -> Ptr () -> IO ()
+type ContextMenuCallback = Ptr MvpObject -> Ptr MvpObject -> Ptr MvpObject -> Ptr () -> IO CInt
 
 gdkKeyEscape :: CUInt
 gdkKeyEscape = 0xff1b
@@ -541,13 +650,16 @@ cIntByteSize :: Int
 cIntByteSize = #{size int}
 
 foreign import ccall "wrapper"
-  wrapClosureNotify :: ClosureNotifyCallback -> IO (FunPtr ClosureNotifyCallback)
-
-foreign import ccall "wrapper"
   wrapCloseRequest :: CloseRequestCallback -> IO (FunPtr CloseRequestCallback)
 
 foreign import ccall "wrapper"
   wrapKeyPressed :: KeyPressedCallback -> IO (FunPtr KeyPressedCallback)
+
+foreign import ccall "wrapper"
+  wrapKeyReleased :: KeyReleasedCallback -> IO (FunPtr KeyReleasedCallback)
+
+foreign import ccall "wrapper"
+  wrapContextMenu :: ContextMenuCallback -> IO (FunPtr ContextMenuCallback)
 
 foreign import ccall unsafe "g_object_ref"
   gObjectRef :: Ptr MvpObject -> IO (Ptr MvpObject)
@@ -566,19 +678,6 @@ foreign import ccall unsafe "g_type_class_unref"
 
 foreign import ccall unsafe "g_enum_get_value_by_name"
   gEnumByName :: Ptr MvpObject -> CString -> IO (Ptr MvpObject)
-
-foreign import ccall safe "g_signal_connect_data"
-  gSignalConnectData
-    :: Ptr MvpObject
-    -> CString
-    -> FunPtr ()
-    -> Ptr ()
-    -> FunPtr ClosureNotifyCallback
-    -> CInt
-    -> IO CULong
-
-foreign import ccall safe "g_signal_handler_disconnect"
-  gSignalDisconnect :: Ptr MvpObject -> CULong -> IO ()
 
 foreign import ccall unsafe "gtk_orientation_get_type"
   gtkOrientationGetType :: IO GType
@@ -655,6 +754,12 @@ foreign import ccall safe "gtk_event_controller_key_new"
 foreign import ccall safe "gtk_event_controller_set_propagation_phase"
   gtkEventControllerSetPropagationPhase :: Ptr MvpObject -> CInt -> IO ()
 
+foreign import ccall unsafe "gtk_event_controller_get_current_event"
+  gtkEventControllerGetCurrentEvent :: Ptr MvpObject -> IO (Ptr MvpObject)
+
+foreign import ccall unsafe "gdk_key_event_is_modifier"
+  gdkKeyEventIsModifier :: Ptr MvpObject -> IO CInt
+
 foreign import ccall unsafe "gdk_surface_get_mapped"
   gdkSurfaceGetMapped :: Ptr MvpObject -> IO CInt
 
@@ -676,6 +781,67 @@ foreign import ccall unsafe "gdk_monitor_is_valid"
 foreign import ccall unsafe "gdk_monitor_get_geometry"
   gdkMonitorGetGeometry :: Ptr MvpObject -> Ptr CInt -> IO ()
 
+foreign import ccall unsafe "gtk_widget_get_root"
+  gtkWidgetGetRoot :: Ptr MvpObject -> IO (Ptr MvpObject)
+
+foreign import ccall unsafe "gtk_widget_get_width"
+  gtkWidgetGetWidth :: Ptr MvpObject -> IO CInt
+
+foreign import ccall unsafe "gtk_widget_get_height"
+  gtkWidgetGetHeight :: Ptr MvpObject -> IO CInt
+
+foreign import ccall safe "gtk_widget_grab_focus"
+  gtkWidgetGrabFocus :: Ptr MvpObject -> IO CInt
+
+-- The qualified WebKit GTK4 translator is a direct GtkTextView child.
+-- Its native menu action runs during key translation before DOM dispatch.
+foreign import ccall unsafe "gtk_widget_get_first_child"
+  gtkWidgetGetFirstChild :: Ptr MvpObject -> IO (Ptr MvpObject)
+foreign import ccall unsafe "gtk_widget_get_next_sibling"
+  gtkWidgetGetNextSibling :: Ptr MvpObject -> IO (Ptr MvpObject)
+foreign import ccall unsafe "gtk_widget_get_parent"
+  gtkWidgetGetParent :: Ptr MvpObject -> IO (Ptr MvpObject)
+foreign import ccall unsafe "g_type_name_from_instance"
+  gTypeNameFromInstance :: Ptr MvpObject -> IO CString
+foreign import ccall safe "gtk_widget_action_set_enabled"
+  gtkWidgetActionSetEnabled :: Ptr MvpObject -> CString -> CInt -> IO ()
+
+-- All GUI menus belong to Elm. Disable only the translator's native popup
+-- action, leaving editor commands, IME handling and key forwarding untouched.
+-- Borrowed children are used synchronously and never retained by this host.
+suppressTranslatorPopup :: PhysicalDefaultContextOwner -> Ptr MvpObject -> Ptr MvpObject -> IO ()
+suppressTranslatorPopup owner window view = do
+  requirePhysicalDefaultContextOwner owner
+  root <- gtkWidgetGetRoot view
+  unless (root == window) (ioError (userError "translator outside owned window"))
+  first <- gtkWidgetGetFirstChild view
+  matches <- translatorChildren 32 first []
+  case matches of
+    [translator] -> do
+      requirePhysicalDefaultContextOwner owner
+      parent <- gtkWidgetGetParent translator
+      unless (parent == view) (ioError (userError "translator parent changed"))
+      withCString "menu.popup" $ \action -> gtkWidgetActionSetEnabled translator action 0
+      requirePhysicalDefaultContextOwner owner
+      afterParent <- gtkWidgetGetParent translator
+      afterRoot <- gtkWidgetGetRoot view
+      unless (afterParent == view && afterRoot == window)
+        (ioError (userError "translator ownership changed during action update"))
+    _ -> ioError (userError "expected exactly one owned GTK4 key translator")
+  where
+    translatorChildren :: Int -> Ptr MvpObject -> [Ptr MvpObject] -> IO [Ptr MvpObject]
+    translatorChildren remaining child found
+      | child == nullPtr = pure found
+      | remaining <= 0 = ioError (userError "key translator child bound")
+      | otherwise = do
+          requirePhysicalDefaultContextOwner owner
+          parent <- gtkWidgetGetParent child
+          unless (parent == view) (ioError (userError "translator child ancestry changed"))
+          namePtr <- gTypeNameFromInstance child
+          name <- if namePtr == nullPtr then pure "" else peekCString namePtr
+          next <- gtkWidgetGetNextSibling child
+          translatorChildren (remaining - 1) next (if name == "GtkTextView" then child : found else found)
+
 -- | Three distinct WebKitWebView widget pointers owned by the caller.
 data MvpViews view = MvpViews
   { mvpControllerView :: !(Ptr view)
@@ -685,7 +851,13 @@ data MvpViews view = MvpViews
 
 -- | Live single-window GTK4 container and signal/state cells.
 data MvpWindow = MvpWindow
-  { mvpGtkWindow :: !(Ptr MvpObject)
+  { mvpContextOwner :: !PhysicalDefaultContextOwner
+  , mvpContextFaultRef :: !(IORef Bool)
+  , mvpGtkWindow :: !(Ptr MvpObject)
+  , mvpBarWidget :: !(Ptr MvpObject)
+  , mvpPopupWidget :: !(Ptr MvpObject)
+  , mvpKeyHandoffRef :: !(IORef MvpKeyHandoff)
+  , mvpKeyboardFocusRef :: !(IORef (Maybe MvpFocusIntent))
   , mvpCloseRef :: !(IORef Bool)
   , mvpEscapeRef :: !(IORef Bool)
   , mvpStateRef :: !(IORef MvpStepState)
@@ -708,48 +880,29 @@ resolveEnumValue getType valueName = do
       entry <- gEnumByName cls cname >>= (`mustPtr` "MVP GEnumValue")
       peek (plusPtr entry enumValueByteOffset)
 
--- | Connect a GObject signal whose Haskell FunPtr is freed ONLY when GLib's
--- GClosureNotify confirms the closure is disconnected and no longer executing.
--- The notifier FunPtr itself is intentionally retained for process lifetime.
+-- Production callbacks use NULL native destroy-notifiers and remain pinned.
+-- Disconnect return does not authorize callback/object retirement.
 connectOwnedMvpSignal
-  :: Ptr MvpObject
+  :: PhysicalDefaultContextOwner
+  -> Ptr MvpObject
   -> String
   -> IO (FunPtr a)
-  -> (FunPtr a -> IO ())
   -> IO (IO ())
-connectOwnedMvpSignal obj signalName makeHandler releaseHandler = mask_ $ do
-  retired <- newIORef False
-  requested <- newIORef False
+connectOwnedMvpSignal owner obj signalName makeHandler = mask_ $ do
   handler <- makeHandler
-  notifier <-
-    wrapClosureNotify
-      ( \_ _ -> mask_ $ do
-          outcome <- try (releaseHandler handler) :: IO (Either SomeException ())
-          case outcome of
-            Right () -> writeIORef retired True
-            Left _ -> pure ()
-      )
-      `onException` releaseHandler handler
-  ident <- withCString signalName $ \sig ->
-    gSignalConnectData obj sig (castFunPtr handler) nullPtr notifier 0
-  -- If g_signal_connect_data returns 0, retain handler and notifier rather than
-  -- guessing whether GLib already referenced the closure.
-  if ident == 0
-    then ioError (userError ("MVP signal connection failed: " ++ signalName))
-    else pure $ mask_ $ do
-      already <- atomicModifyIORef' requested (\old -> (True, old))
-      unless already (gSignalDisconnect obj ident)
-      done <- readIORef retired
-      unless done (ioError (userError ("MVP signal retirement uncertain: " ++ signalName)))
+  signal <- connectProcessSignal owner obj signalName handler
+  pure $ do
+    _ <- disconnectProcessSignal signal
+    ioError (userError ("MVP signal callback retained until owner process exit: " ++ signalName))
 
 runCleanupSequence :: IORef [IO ()] -> IORef [IO ()] -> IO [SomeException]
 runCleanupSequence sigRelRef objRelRef = mask_ $ do
   sigActions <- atomicModifyIORef' sigRelRef (\old -> ([], old))
   sigOutcomes <- mapM (\act -> try act :: IO (Either SomeException ())) sigActions
   let sigErrors = [err | Left err <- sigOutcomes]
-  -- Only destroy/unref GTK objects once every connected signal closure has
-  -- confirmed retirement via GClosureNotify; otherwise quarantine the objects
-  -- and report the cleanup failure upward.
+  -- Pinned production callbacks have no in-process retirement receipt.
+  -- Their disconnect actions report retention, so dependent GTK objects remain
+  -- quarantined for actual owner-process death, never a child self-report.
   if not (null sigErrors)
     then pure sigErrors
     else do
@@ -760,8 +913,10 @@ runCleanupSequence sigRelRef objRelRef = mask_ $ do
 -- | Pack the three role WebKitWebViews into one undecorated GTK4 window
 -- (zero GTK headerbar, title text, or buttons; all GUI is rendered in Elm).
 -- Runs masked so no async exception can separate acquisition from release registration.
-attachMvpWindow :: MvpViews view -> IO MvpWindow
-attachMvpWindow views = mask $ \_ -> do
+attachMvpWindow :: PhysicalDefaultContextOwner -> MvpViews view -> IO MvpWindow
+attachMvpWindow contextOwner views = mask $ \_ -> do
+  requirePhysicalDefaultContextOwner contextOwner
+  contextFault <- newIORef False
   let cView = castPtr (mvpControllerView views) :: Ptr MvpObject
       bView = castPtr (mvpBarView views) :: Ptr MvpObject
       pView = castPtr (mvpPopupView views) :: Ptr MvpObject
@@ -779,15 +934,28 @@ attachMvpWindow views = mask $ \_ -> do
   closeRef <- newIORef False
   escapeRef <- newIORef False
   stateRef <- newIORef initialMvpState
+  keyboardFocusRef <- newIORef Nothing
+  keyHandoffRef <- newIORef initialMvpKeyHandoff
   retiredRef <- newIORef False
-  let acquireObj acquire release = mask_ $ do
+  let checkContext = do
+        requirePhysicalDefaultContextOwner contextOwner
+        fault <- readIORef contextFault
+        unless (not fault) (ioError (userError "MVP callback context uncertain"))
+      callback fallback action = mask_ $
+        (checkContext >> action >>= evaluate) `catch` (\(_ :: SomeException) -> do
+          atomicModifyIORef' contextFault (\_ -> (True, ()))
+          pure fallback)
+      acquireObj acquire release = mask_ $ do
+        checkContext
         val <- acquire
-        modifyIORef' objReleases (release val :)
+        modifyIORef' objReleases ((checkContext >> release val) :)
         pure val
-      acquireSignal obj sigName mkCb freeCb = mask_ $ do
-        disconnect <- connectOwnedMvpSignal obj sigName mkCb freeCb
-        modifyIORef' sigReleases (disconnect :)
+      acquireSignal obj sigName mkCb = mask_ $ do
+        checkContext
+        disconnect <- connectOwnedMvpSignal contextOwner obj sigName mkCb
+        modifyIORef' sigReleases ((checkContext >> disconnect) :)
       abortAttach = mask_ $ do
+        checkContext
         writeIORef retiredRef True
         errs <- runCleanupSequence sigReleases objReleases
         case [e | e <- errs, Just _ <- [fromException e :: Maybe SomeAsyncException]] of
@@ -810,8 +978,13 @@ attachMvpWindow views = mask $ \_ -> do
       acquireSignal
         window
         "close-request"
-        (wrapCloseRequest $ \_ _ -> mask_ (writeIORef closeRef True >> pure 1))
-        freeHaskellFunPtr
+        (wrapCloseRequest $ \_ _ -> callback 1 (writeIORef closeRef True >> pure 1))
+
+      -- WebKit's stock browser menu is not shell policy. The borrowed menu and
+      -- hit-test objects are valid only during emission; neither is retained.
+      -- TRUE suppresses the stock popover, including on a context fault.
+      mapM_ (\visibleView -> acquireSignal visibleView "context-menu"
+        (wrapContextMenu $ \_ _ _ _ -> callback 1 (pure 1))) [bView, pView]
 
       -- Capture-phase key observation sees physical Escape before WebKit can
       -- consume it, while returning 0 (GDK_EVENT_PROPAGATE) so normal typing
@@ -821,13 +994,24 @@ attachMvpWindow views = mask $ \_ -> do
       acquireSignal
         keyCtrl
         "key-pressed"
-        ( wrapKeyPressed $ \_ keyval _ _ _ -> mask_ $ do
+        ( wrapKeyPressed $ \controller keyval keycode _ _ -> callback 0 $ do
+            event <- gtkEventControllerGetCurrentEvent controller
+            if event == nullPtr
+              then modifyIORef' keyHandoffRef (mvpKeyPressed False 0)
+              else do
+                modifier <- gdkKeyEventIsModifier event
+                modifyIORef' keyHandoffRef (mvpKeyPressed (modifier /= 0) keycode)
             if keyval == gdkKeyEscape
               then writeIORef escapeRef True
               else pure ()
             pure 0
         )
-        freeHaskellFunPtr
+
+      -- Void key-released observes the same raw keycode without consuming it.
+      -- The entire callback remains inside the existing owner/fault boundary.
+      acquireSignal keyCtrl "key-released"
+        (wrapKeyReleased $ \_ _ keycode _ _ -> callback () $
+          modifyIORef' keyHandoffRef (mvpKeyReleased keycode))
 
       -- gtk_widget_add_controller is [transfer full]; pass an extra ref inside
       -- this masked region so objReleases retains ownership until signal retirement.
@@ -859,11 +1043,20 @@ attachMvpWindow views = mask $ \_ -> do
       gtkBoxAppend box cView
 
       gtkWindowSetChild window box
+      checkContext
+      mapM_ (suppressTranslatorPopup contextOwner window) [bView, pView]
+      checkContext
       gtkWindowPresent window
 
       pure
         MvpWindow
-          { mvpGtkWindow = window
+          { mvpContextOwner = contextOwner
+          , mvpContextFaultRef = contextFault
+          , mvpGtkWindow = window
+          , mvpBarWidget = bView
+          , mvpPopupWidget = pView
+          , mvpKeyboardFocusRef = keyboardFocusRef
+          , mvpKeyHandoffRef = keyHandoffRef
           , mvpCloseRef = closeRef
           , mvpEscapeRef = escapeRef
           , mvpStateRef = stateRef
@@ -878,6 +1071,7 @@ attachMvpWindow views = mask $ \_ -> do
 -- Never falls back to requested widget dimensions when GdkSurface lacks a positive allocation.
 observeGtkWindow :: MvpWindow -> IO ViewObservation
 observeGtkWindow mvp = do
+  requireMvpContext mvp
   retired <- readIORef (mvpRetiredRef mvp)
   if retired
     then pure ViewUnmapped
@@ -946,7 +1140,7 @@ observeSurfaceMonitor surfacePtr = do
 
 -- | Poll whether the user/compositor requested closing the MVP window.
 mvpCloseRequested :: MvpWindow -> IO Bool
-mvpCloseRequested = readIORef . mvpCloseRef
+mvpCloseRequested mvp = requireMvpContext mvp >> readIORef (mvpCloseRef mvp)
 
 -- | Observe the GTK window once and dispatch resulting 'TrustedOwnerEvent' values
 -- transactionally. State fields advance ONLY for events actually accepted by 'emit':
@@ -962,6 +1156,7 @@ stepMvpWindow
   -> (TrustedOwnerEvent -> IO (Either Text ()))
   -> IO (Either Text Int)
 stepMvpWindow mvp readLease emit = do
+  requireMvpContext mvp
   escapeFlag <- atomicModifyIORef' (mvpEscapeRef mvp) (\old -> (False, old))
   closeFlag <- readIORef (mvpCloseRef mvp)
   obs <- observeGtkWindow mvp
@@ -1140,17 +1335,82 @@ stepMvpWindow mvp readLease emit = do
                         Left fatal ->
                           pure (Left fatal)
 
--- | Disconnect MVP window signals (requiring GClosureNotify receipts) and destroy
--- the GTK container in LIFO order. Quarantines objects if any signal retirement
--- is uncertain. Never alters WebKit filter-store or provider cleanup status.
+-- | Synchronous focus transfer on the existing owner context and deadline.
+-- Widget pointers remain borrowed from the retained window hierarchy; no new
+-- callback or independent lifetime is introduced. Other popup modes are inert.
+stepMvpKeyboardFocus :: MvpWindow -> IO (Maybe J.Json) -> IO Int -> IO ()
+stepMvpKeyboardFocus mvp fetchProjection remainingMicros = do
+  requireMvpContext mvp
+  live <- stillLive
+  when live $ do
+    original <- fetchProjection
+    intent <- traverse (either (ioError . userError . T.unpack) pure . parseMvpFocusIntent) original
+    case intent of
+      Just (Just current@(MvpFocusIntent lease _ _)) -> do
+        prior <- readIORef (mvpKeyboardFocusRef mvp)
+        state <- readIORef (mvpStateRef mvp)
+        let matches = case stateTopology state of
+              TopologyMapped scopeId gen _ -> matchingScopeLease scopeId gen (stateRevision state) (Just lease) == Just lease
+              _ -> False
+        case mvpFocusTransition prior current of
+          Just role | matches -> do
+            let widget = case role of MvpFocusBar -> mvpBarWidget mvp; MvpFocusPopup -> mvpPopupWidget mvp
+            active <- checked (gtkWindowIsActive (mvpGtkWindow mvp))
+            mapped <- checked (gtkWidgetGetMapped widget)
+            root <- checked (gtkWidgetGetRoot widget)
+            width <- checked (gtkWidgetGetWidth widget)
+            height <- checked (gtkWidgetGetHeight widget)
+            when (active /= 0 && mapped /= 0 && root == mvpGtkWindow mvp && width > 0 && height > 0) $ do
+              latest <- fetchProjection
+              allowed <- stillLive
+              -- Wait for release only when opening Popup. A validated closed
+              -- Bar return must not wait on stale/replayed capture state.
+              -- No state is cleared and all current owner/widget gates remain.
+              handoffAllowed <- mvpKeyHandoffAllows role <$> readIORef (mvpKeyHandoffRef mvp)
+              when (allowed && latest == original && handoffAllowed) $ do
+                focused <- checked (gtkWidgetGrabFocus widget)
+                unless (focused /= 0) (ioError (userError "owned renderer refused keyboard focus"))
+                after <- fetchProjection
+                remains <- stillLive
+                -- A synchronous GTK callback may change projection or close the
+                -- window. Never certify a transition against that stale frame.
+                unless (remains && after == original) (ioError (userError "keyboard focus projection changed during handoff"))
+                writeIORef (mvpKeyboardFocusRef mvp) (Just current)
+          _ -> pure ()
+      _ -> pure ()
+  where
+    stillLive = do
+      requireMvpContext mvp
+      retired <- readIORef (mvpRetiredRef mvp)
+      closed <- readIORef (mvpCloseRef mvp)
+      remaining <- remainingMicros
+      pure (not retired && not closed && remaining > 500000)
+    checked action = do
+      allowed <- stillLive
+      unless allowed (ioError (userError "keyboard focus outside live owner deadline"))
+      action
+
+-- | Request owner-context disconnection, retaining callbacks and dependent
+-- GTK objects until actual owner-process death. This cannot return a complete
+-- in-process retirement receipt or alter provider cleanup status.
 retireMvpWindow :: MvpWindow -> IO ()
 retireMvpWindow mvp = mask_ $ do
+  requireMvpContext mvp
   already <- atomicModifyIORef' (mvpRetiredRef mvp) (\old -> (True, old))
-  unless already $ do
-    errs <- runCleanupSequence (mvpSignalReleasesRef mvp) (mvpObjectReleasesRef mvp)
-    case [e | e <- errs, Just _ <- [fromException e :: Maybe SomeAsyncException]] of
-      asyncErr : _ -> throwIO asyncErr
-      [] ->
-        case errs of
-          firstErr : _ -> ioError (userError (show firstErr))
-          [] -> pure ()
+  if already
+    then ioError (userError "MVP signal custody remains retained until owner process exit")
+    else do
+      errs <- runCleanupSequence (mvpSignalReleasesRef mvp) (mvpObjectReleasesRef mvp)
+      case [e | e <- errs, Just _ <- [fromException e :: Maybe SomeAsyncException]] of
+        asyncErr : _ -> throwIO asyncErr
+        [] ->
+          case errs of
+            firstErr : _ -> ioError (userError (show firstErr))
+            [] -> pure ()
+
+-- Faulted callbacks quarantine affine resources instead of claiming retirement.
+requireMvpContext :: MvpWindow -> IO ()
+requireMvpContext mvp = do
+  requirePhysicalDefaultContextOwner (mvpContextOwner mvp)
+  fault <- readIORef (mvpContextFaultRef mvp)
+  unless (not fault) (ioError (userError "MVP callback context uncertain"))

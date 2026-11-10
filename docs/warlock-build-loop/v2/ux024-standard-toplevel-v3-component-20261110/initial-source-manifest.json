@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "kind": "foreign-toplevel-v3-private-production-candidate",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate/postimages/implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs",
+      "sha256": "9747ccc1ff0b601bbcc9988095b4efe3d8c8f34eb09c767a45c314d5e642acf6"
+    },
+    {
+      "path": "implementation/warlock/haskell/protocol/protocol.cabal",
+      "beforeSha256": "faf6a3bd3826b17d87e1cc95413b5eda106e510da9a283b1a6ba4ed00cccf2e6",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate/postimages/implementation/warlock/haskell/protocol/protocol.cabal",
+      "sha256": "3050e7db1b2d1c1c5f4b7089a16cffd3d72c4d96c520a81e3de279706f4c02e4"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "9be7ef93c55b408a42088c6cae192f0d9c4b56da589e1de46cfda88e4c970fb1",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "67b42959060ed6e62809d8498f1540a01dbac863200cf5bbc39f6599ff27a8af"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/candidate/candidate.patch",
+    "sha256": "daa520aea373cf5dbd000642819496deda2274b92295888d513a146ec3b5773d"
+  },
+  "plan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/next-slice-plan.json",
+    "sha256": "7052e7ef2e094e731d0d830926b7f95ab799da22f71afe1466696a89b3879649"
+  },
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/foreign-toplevel-v3/tests-first-revision2-polymorphic-helper/manifest.json",
+    "sha256": "a829abe92b6a998e532a0f4c39303cca3506748cbafdda657ebda0319b05d9e9"
+  },
+  "sourcePins": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Identity.hs": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+    "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+    "implementation/warlock/src/Shell.elm": "4ef1ceaf83a5d306d8d51fc0af4e56877eefdfa66f076fef6acf18d46b23bf73",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "08f72cbb79c60b05cd39b4c45ff66e16cbaf64016c9866b089b2f2d3147bf7b4"
+  },
+  "checks": {
+    "onlyThreePaths": true,
+    "oldTestBodiesByteExact": true,
+    "controlsUnexecuted": 34,
+    "seedSamplesUnexecuted": 32
+  },
+  "boundedness": {
+    "activeHandles": 256,
+    "outputs": 64,
+    "textUtf16": 256,
+    "stateValues": 4,
+    "serial": "checked unsigned64 increment; no wrap",
+    "parentWalk": "at most256 committed handles, cycle detection"
+  },
+  "limits": [
+    "Pure data module, not authenticated owner or native capability.",
+    "Protocol global observed in retained actual report; callback/FFI behavior not executed.",
+    "No primary writes/compiler/tests/target imports/native/bus/service calls.",
+    "Legacy JSON draft preserved unadopted; existing Backend and profiles unchanged."
+  ],
+  "nativeAcceptance": false,
+  "originalAccepted": false,
+  "executedByAuthor": false
+}

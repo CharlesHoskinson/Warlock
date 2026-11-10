@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "disposition": "accepted",
+  "reviewer": "build_audit",
+  "tupleSha256": "cd78403c625039f92c73d5a451ae022a57574e3725fadb14c633b663cb6da945",
+  "roles": [
+    "sourceAndImages",
+    "providerAndABI",
+    "nestedInput"
+  ],
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/metadata-preparation-v6/prepared/packet.TUPLE.json",
+      "sha256": "ca9684db9f7108c5d9ab826144b5b0b86731572f2ede79ca5726c57ffc8d6271"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/metadata-preparation-v6/prepared/preparation.json",
+      "sha256": "b441a67d3382e68e0d41a256fe926cefc710aa6064ceb7f21dc6a4eb2a64ec9c"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/metadata-preparation-v6/prepared/qualified-data-inputs.json",
+      "sha256": "84a46aab648b344df648921797a2f9718f3c24615bd1134bfd72a2d03de00b92"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-capture-output-correction/independent-source-review-build.json",
+      "sha256": "99d24a2e5a19d02e9b273e6eb8a464ecc5bbed8507ad0cc6e1c46463eea95bb0"
+    }
+  ],
+  "verified": {
+    "currentSourcePins": 301,
+    "processInventory": 14732,
+    "retainedQualifiedDataInputs": 12
+  },
+  "basis": [
+    "ExactV5comparison: only3reviewedsupportpins/newV6roles differ.",
+    "All301current source/guardpins and12assets independentlyhashed; entire14732map/12data/images/Main/ABI/provider/boot/auth/input tuple unchanged.",
+    "Captureprofile exactpinnedgrim/ownedfilename finite32MiB only; allotherbase64KiB, original28+2/16frames retained. Root30+7controls separateactualexecution evidence."
+  ],
+  "limits": [
+    "Scopedreadiness only, no connectedDone/Closed/Retired/wholecleanup success inferred.",
+    "Rootfinalcopies/currentcandidate/preflight/freshgoal/stops/admission required.",
+    "No reviewer imports/tests/nativeeffects or originalUX024 acceptance."
+  ]
+}

@@ -1,5 +1,5 @@
 module MenuBridge exposing
-    ( observeReservationUnknown, releaseReservationUnknown, retireChoices, blockedFor, Model, UpdateResult, connectionLost, currentProvider, guardedAct, initial, menuEvent
+    ( ObservedContext, observedContext, openObservation, observeReservationUnknown, releaseReservationUnknown, retireChoices, blockedFor, Model, UpdateResult, connectionLost, currentProvider, guardedAct, initial, menuEvent
     , locallyRefuseUnsent, menuSnapshot, nativeFrame, open, receiptCount, reconcileWithShell, preparedSnapshot, expirePrepared, advancePrepared, cancelSelection
     )
 
@@ -17,6 +17,7 @@ Shell's current transaction processing. Every controller Shell.Act route,
 including taskbar actions, must use guardedAct so Unknown cannot be bypassed.
 -}
 
+import WindowObservation
 import ActionProjection
 import Binding as NativeBinding
 import Effects
@@ -38,7 +39,8 @@ type alias CapturedProvider =
 
 type Model
     = Model
-        { menu : Menu.Model
+        { observed : Maybe ObservedContext
+        , menu : Menu.Model
         , router : ReceiptRouter.Model
         , provider : Maybe CapturedProvider
         , prepared : Maybe Prepared
@@ -81,7 +83,7 @@ answer bridge shell effects error =
 
 initial : Model
 initial =
-    Model { menu = Menu.init, router = ReceiptRouter.empty, provider = Nothing, prepared = Nothing, preparedSerial = UInt64.zero }
+    Model { observed=Nothing, menu = Menu.init, router = ReceiptRouter.empty, provider = Nothing, prepared = Nothing, preparedSerial = UInt64.zero }
 
 
 menuSnapshot : Model -> Menu.Snapshot
@@ -127,7 +129,7 @@ open provider ((Model state) as model) =
             if (Menu.snapshot menu).menu == before.menu then
                 model
             else
-                Model { state | menu = menu, provider = Just { snapshot = provider, stamp = stamp } }
+                Model { state | observed=Nothing, menu = menu, provider = Just { snapshot = provider, stamp = stamp } }
 
 
 refuse : Menu.IntentId -> Menu.Binding -> String -> Model -> Model
@@ -263,7 +265,7 @@ connectionLost (Model state) =
                 Nothing -> uncertain
                 Just view -> Tuple.first (Menu.update (Menu.Dismiss view.id) uncertain)
     in
-    Model { state | menu = closed, prepared = Nothing }
+    Model { state | observed=Nothing, menu = closed, prepared = Nothing }
 
 
 nativeFrame : String -> Model -> ( Model, Maybe String )
@@ -292,6 +294,15 @@ reconcileWithShell : Shell.Model -> Model -> Model
 reconcileWithShell shell ((Model state) as model) =
     if shell.phase == Shell.Detached then
         connectionLost model
+    else if state.observed/=Nothing then
+        case state.observed of
+            Nothing -> model
+            Just captured ->
+                let current = Shell.inspectionAvailable shell && shell.binding==Just captured.binding
+                        && Shell.capture shell==Just captured.stamp
+                        && (shell.windowObservation |> Maybe.map (WindowObservation.fingerprint captured.group))==Just captured.fingerprint
+                in if current then model else
+                    Model {state|menu=Tuple.first (Menu.update (Menu.Invalidate captured.menuBinding) state.menu),observed=Nothing}
     else if state.prepared/=Nothing then model
     else
         case state.provider of
@@ -462,3 +473,32 @@ retireChoices (Model state) =
             Just view -> Tuple.first (Menu.update (Menu.Dismiss view.id) menu)
             Nothing -> menu
     in Model {state|menu=closed,prepared=Nothing}
+
+-- Read-only context, separate from every native Provider.Snapshot. There are no
+-- Menu.Item actions here: Refresh and Close are local Surface policy controls.
+type alias ObservedContext =
+    { binding : NativeBinding.Binding, stamp : Shell.Stamp, owner : Counter
+    , group : String, fingerprint : String, rows : List WindowObservation.Row
+    , presentation : {outputId : Counter,providerId : Counter}, menuBinding : Menu.Binding }
+observedContext : Model -> Maybe ObservedContext
+observedContext (Model state) = state.observed
+openObservation : {outputId : Counter,providerId : Counter} -> Counter -> Shell.Model -> Model -> Model
+openObservation presentation incarnation shell ((Model state) as model) =
+    if not (Shell.inspectionAvailable shell) || state.prepared/=Nothing then model else
+    if (Menu.snapshot state.menu).menu/=Nothing && (state.observed |> Maybe.map (\current -> Shell.capture shell==Just current.stamp && List.any (\row -> row.id==incarnation) current.rows) |> Maybe.withDefault False) then model else
+    case (shell.binding,Shell.capture shell,shell.windowObservation) of
+        (Just binding,Just stamp,Just snapshot) ->
+            case WindowObservation.groups snapshot |> List.filter (\group -> List.any (\family -> family.root==incarnation) group.families) |> List.head of
+                Nothing -> model
+                Just group ->
+                    let rows=WindowObservation.rowsFor group.key snapshot
+                        fingerprint=WindowObservation.fingerprint group.key snapshot
+                        menuBinding=Menu.binding
+                            {authority=E.encode 0 (NativeBinding.encode binding),revision=UInt64.string snapshot.revision
+                            ,output=Menu.outputId (UInt64.string presentation.outputId)
+                            ,outputGeneration="presentation:"++UInt64.string presentation.providerId
+                            ,target=Menu.ProviderSelection (Menu.providerId (UInt64.string presentation.providerId)) ("observation:"++UInt64.string snapshot.owner) (List.map (.id >> UInt64.string) rows)}
+                        (menu,_)=Menu.update (Menu.Open menuBinding []) state.menu
+                    in if (Menu.snapshot menu).menu==(Menu.snapshot state.menu).menu then model else
+                        Model {state|menu=menu,provider=Nothing,observed=Just {binding=binding,stamp=stamp,owner=snapshot.owner,group=group.key,fingerprint=fingerprint,rows=rows,presentation=presentation,menuBinding=menuBinding}}
+        _ -> model

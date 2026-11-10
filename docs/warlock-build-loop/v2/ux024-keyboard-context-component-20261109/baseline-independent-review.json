@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "verified-actual-rendered-context-key-semantic-red",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263409567048734/report.json",
+    "sha256": "f6e72e89c082c3cb6a9d65056b2bdc878660c612b1e9c2cb458b6ec37355aa31"
+  },
+  "contextResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263409567048734/menu-bar-context.json",
+    "sha256": "8eab0fe202183a9c3bc7cff544dc3e3b31c8cc73d792f1860778a3e6773213e2"
+  },
+  "oldTabResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263409567048734/menu-tab-dom.json",
+    "sha256": "1068dc9d9a80499e2f9cdde62c85f172b086c7d07961d6521a03f2bfa154c817"
+  },
+  "oldEscapeResult": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794263409567048734/menu-escape.json",
+    "sha256": "de029404c0c32f6b8557d4a270131624a5f55b17293020ad590a189fce170ae6"
+  },
+  "commandExits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "currentSources": 120,
+  "allLiveHashesMatched": true,
+  "setupFailures": 0,
+  "cases": 34,
+  "failedCases": 11,
+  "passedCases": 23,
+  "failedAssertions": 38,
+  "seededSamples": 32,
+  "allowedSamples": 5,
+  "refusedSamples": 27,
+  "failedCaseNames": [
+    "group-context-menu",
+    "group-shift-f10",
+    "pin-context-menu",
+    "pin-shift-f10",
+    "nested-label-bubbles-to-group",
+    "current-publication-wire",
+    "current-lease-wire",
+    "closed-bar-zero-lease",
+    "full-width-counter-wire",
+    "post-failure-never-replays-context",
+    "seeded-keyboard-admission-property"
+  ],
+  "assessment": "Missing keyboard emitter produces no expected context POST/default handling in positives; ordinary-click and preservation/refusal cases pass. Fixed POST-error case cannot exercise error path without first positive POST and is correctly failed, not counted as proven no-replay.",
+  "limits": [
+    "No reviewer tests/imports/compilers.",
+    "Controlled compiled component, no native provider/window/backend effects or originalUX024 acceptance."
+  ]
+}

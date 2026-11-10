@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "nonce": "a7a99988e8c0c1cb1688688b8b66af2ab0adb7a20fb02d9bd65941a348a02254",
+  "binding": {
+    "lifetime": "9007199254740993",
+    "session": "9007199254740995",
+    "frontend": "9007199254740997"
+  },
+  "deadlineMonotonicNs": "45082969191921",
+  "endpoint": {
+    "bootId": "f84d5d2d-b562-4b70-b8fb-93a7a4fcd1c5",
+    "ancestors": [
+      {
+        "path": "/",
+        "device": "36",
+        "inode": "256",
+        "uid": "0",
+        "mode": "365"
+      },
+      {
+        "path": "/run",
+        "device": "30",
+        "inode": "1",
+        "uid": "0",
+        "mode": "493"
+      },
+      {
+        "path": "/run/user",
+        "device": "30",
+        "inode": "3967",
+        "uid": "0",
+        "mode": "493"
+      },
+      {
+        "path": "/run/user/1000",
+        "device": "82",
+        "inode": "1",
+        "uid": "1000",
+        "mode": "448"
+      },
+      {
+        "path": "/run/user/1000/wqa",
+        "device": "82",
+        "inode": "3562",
+        "uid": "1000",
+        "mode": "448"
+      },
+      {
+        "path": "/run/user/1000/wqa/1d49",
+        "device": "82",
+        "inode": "21928",
+        "uid": "1000",
+        "mode": "448"
+      }
+    ],
+    "name": "wayland-1",
+    "socket": {
+      "device": "82",
+      "inode": "21940",
+      "uid": "1000",
+      "mode": "493"
+    },
+    "processes": [
+      {
+        "pid": "1672960",
+        "birth": "4507719",
+        "parent": "1671247",
+        "uid": "1000",
+        "gid": "1000"
+      },
+      {
+        "pid": "1671247",
+        "birth": "4506848",
+        "parent": "1669374",
+        "uid": "1000",
+        "gid": "1000"
+      }
+    ],
+    "executable": {
+      "root": {
+        "device": "36",
+        "inode": "256"
+      },
+      "pins": [
+        {
+          "path": "/usr",
+          "device": "36",
+          "inode": "280",
+          "kind": "directory"
+        },
+        {
+          "path": "/usr/bin",
+          "device": "36",
+          "inode": "1335",
+          "kind": "directory"
+        },
+        {
+          "path": "/usr/bin/Hyprland",
+          "device": "36",
+          "inode": "307372",
+          "kind": "regular"
+        }
+      ],
+      "path": "usr/bin/Hyprland",
+      "size": "16356640",
+      "sha256": "d40e2edab24c2032a7a77b4d44c3d738e5003256d7d4199950dc7001fee9b6ba"
+    },
+    "generation": "9007199254740997"
+  }
+}

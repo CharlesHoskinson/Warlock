@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "scope": "ux024-digest-regression-fixture-writer-retirement-only",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "b6bae926a99b2f029dadd796e873b016b4d812edd2b7799fc87b686e89be847f",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/revision2-retired-fixture-writer/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "1698d4aaf3d016f2b4cae709984e97318412c92706995c8c0293a0039e8e74dd"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/revision2-retired-fixture-writer/change.patch",
+    "sha256": "7bd8443b0c1178a58f7d4ed78f9cbfb61c56d07a0e830395fd356a744d5748fc"
+  },
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/digest-adapter-correction/manifest.json",
+    "sha256": "04db110f4693946f08544b37591e32f5ad54860ae384abe865a4a9d1c699a2fd"
+  },
+  "actualFailure": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794280489380883549/report.json",
+    "sha256": "424cb99edb3c883054156af8898f1cea2723d199111ef7d9cc83012e74237fc8"
+  },
+  "changes": [
+    "Close and retire the owned temporary-file writer after flush, before obtaining file/root pins or public Resolver reads.",
+    "Acquisition failure closes the writer and removes its file; after successful acquisition the outer bracket always removes the closed fixture file.",
+    "On the existing failed Either-shape assertion append at most1024 characters of actual show observed; no assertion is removed or relaxed."
+  ],
+  "preserved": [
+    "Production caller adapter still validates lowerhex and supplies ASCII64.",
+    "Config SHA remains raw32; allocation branch and native config15 unchanged.",
+    "All seven regression predicates/known vector/public Resolver route unchanged.",
+    "Existing17refusals/32seeds/exactstdout/same inherited CPUdeadline unchanged.",
+    "Runtimec38/Cabalc1/collector/flags/nativeinputs/providerproof unchanged.",
+    "ConditionalV3 helper remains frozen and must refuse actual b78 failure."
+  ],
+  "causality": "The actual report establishes failure at the generic public-resolver pair assertion after the ASCII64 assertion passed. Same-process writable-handle locking is a hypothesis, not a proven cause; the successor makes reader ownership coherent and retains exact actual Either diagnostics.",
+  "authorValidation": {
+    "exactTwoSpanDeltaVerified": true,
+    "targetImports": false,
+    "compilerExecuted": false,
+    "testsExecuted": false,
+    "primaryEdited": false
+  },
+  "rootNext": "Close/consume actual job22 before CAS; execute existing proportional fixed2target qualification, preserving failed b78 report. No native acceptance inferred."
+}

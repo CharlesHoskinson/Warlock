@@ -4,7 +4,7 @@
 module Warlock.Backend.Store
  (DirectoryPin(..),StoreOwner,newStoreOwner,runOwned,retireStoreOwner,retireStoreOwnerIfSettled,
   withPinnedDirectory,withChildDirectory,listNames,entryDirectory,directoryStamp,readRegular,withPinLock,
-  replacePins,readStartupFile) where
+  replacePins,readStartupFile,provisionNotificationSlot,reserveNotificationSlot,NotificationLifetime,acquireNotificationLifetime,checkNotificationLifetime) where
 #define _GNU_SOURCE 1
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -325,3 +325,163 @@ readStartupFile owner path = runOwned owner $ do
   walk _ [] = ioError (userError "startup file missing")
   walk fd [name] = readRegular owner True fd name 131072 >>= maybe (ioError (userError "startup file missing")) pure
   walk fd (name:rest) = withChildDirectory owner fd name (\child -> walk child rest)
+
+-- Proposed fixed notification issuer slot. Every path below is native-selected;
+-- normal reservation requires the installer-created lock and initial slot.
+notificationEpochName, notificationLockName, notificationTempName, notificationMarkerName, notificationWitnessName, notificationReadyName, notificationLifetimeName :: B.ByteString
+notificationEpochName = C.pack "notification-epoch"
+notificationLockName = C.pack "notification-epoch.lock"
+notificationTempName = C.pack ".notification-epoch-next"
+notificationMarkerName = C.pack ".notification-provisioning"
+notificationWitnessName = C.pack "notification-deployment"
+notificationReadyName = C.pack "notification-ready"
+notificationLifetimeName = C.pack "notification-issuer.owner"
+
+notificationWithLock :: StoreOwner -> Fd -> Bool -> IO a -> IO a
+notificationWithLock owner parent create action =
+ let flags = #{const O_RDWR} .|. #{const O_NONBLOCK} .|. #{const O_NOFOLLOW} .|. #{const O_CLOEXEC}
+             .|. (if create then #{const O_CREAT} .|. #{const O_EXCL} else 0)
+ in tracked owner (openAt parent notificationLockName flags 0o600) closeFdOnce $ \fd -> do
+  privateFile =<< getFdStatus fd
+  throwErrnoIfMinus1_ "notification lock" (c_flock (number fd) (#{const LOCK_EX} .|. #{const LOCK_NB}))
+  notificationSameNamed owner parent notificationLockName fd
+  value <- action
+  notificationSameNamed owner parent notificationLockName fd
+  pure value
+
+notificationSameNamed :: StoreOwner -> Fd -> B.ByteString -> Fd -> IO ()
+notificationSameNamed owner parent name selected =
+ tracked owner (openAt parent name fileFlags 0) closeFdOnce $ \current -> do
+  a <- getFdStatus selected
+  b <- getFdStatus current
+  privateFile b
+  require (deviceID a==deviceID b && fileID a==fileID b) "notification file identity changed"
+
+notificationWrite :: Fd -> B.ByteString -> IO ()
+notificationWrite fd bytes = B.useAsCStringLen bytes $ \(pointer,size) -> loop (castPtr pointer) size
+ where
+  loop _ 0 = pure ()
+  loop pointer remaining = do
+   amount <- throwErrnoIfMinus1 "notification write" (c_write (number fd) pointer (fromIntegral remaining))
+   require (amount>0 && toInteger amount<=toInteger remaining) "notification write progress"
+   let used=fromIntegral amount
+   loop (pointer `plusPtr` used) (remaining-used)
+
+notificationCreate :: StoreOwner -> Fd -> B.ByteString -> B.ByteString -> IO ()
+notificationCreate owner parent name bytes =
+ tracked owner (openAt parent name (#{const O_RDWR} .|. #{const O_CREAT} .|. #{const O_EXCL} .|. #{const O_NOFOLLOW} .|. #{const O_CLOEXEC}) 0o600) closeFdOnce $ \fd -> do
+  privateFile =<< getFdStatus fd
+  notificationWrite fd bytes
+  throwErrnoIfMinus1_ "notification file fsync" (c_fsync (number fd))
+  actual <- readFd fd 128
+  require (actual==bytes) "notification staged bytes differ"
+  notificationSameNamed owner parent name fd
+
+notificationHeader :: B.ByteString
+notificationHeader = C.pack "warlock-notification-epoch-v1\n"
+
+notificationDecode :: B.ByteString -> IO Word64
+notificationDecode bytes = do
+ require (notificationHeader `B.isPrefixOf` bytes && B.last bytes==10) "notification epoch format"
+ let raw=B.init (B.drop (B.length notificationHeader) bytes)
+ require (not (B.null raw) && B.length raw<=20 && B.all (\x -> x>=48 && x<=57) raw && (B.length raw==1 || B.head raw/=48)) "notification epoch canonical"
+ let value=C.foldl' (\acc c -> acc*10+toInteger (fromEnum c-fromEnum '0')) 0 raw
+ require (value<=toInteger (maxBound :: Word64)) "notification epoch range"
+ pure (fromInteger value)
+
+notificationBytes :: Word64 -> B.ByteString
+notificationBytes value = notificationHeader <> C.pack (show value) <> C.pack "\n"
+
+notificationExpected :: StoreOwner -> Fd -> B.ByteString -> B.ByteString -> IO ()
+notificationExpected owner parent name expected = do
+ bytes <- readRegular owner True parent name 128
+ require (bytes==Just expected) "notification deployment record unavailable"
+
+notificationBarrier :: StoreOwner -> Fd -> B.ByteString -> B.ByteString -> IO ()
+notificationBarrier owner parent name expected =
+ tracked owner (openAt parent name fileFlags 0) closeFdOnce $ \fd -> do
+  privateFile =<< getFdStatus fd
+  actual <- readFd fd 128
+  require (actual==expected) "notification barrier bytes differ"
+  notificationSameNamed owner parent name fd
+  throwErrnoIfMinus1_ "notification barrier fsync" (c_fsync (number fd))
+
+provisionNotificationSlot :: StoreOwner -> DirectoryPin -> IO ()
+provisionNotificationSlot owner pin = runOwned owner $
+ withPinnedDirectory owner True pin $ \parent -> do
+  -- Permanent witness is created first; EEXIST never means a fresh deployment.
+  notificationCreate owner parent notificationWitnessName (C.pack "warlock-notification-deployment-v1\n")
+  throwErrnoIfMinus1_ "notification witness directory fsync" (c_fsync (number parent))
+  notificationCreate owner parent notificationLifetimeName (C.pack "warlock-notification-owner-v1\n")
+  throwErrnoIfMinus1_ "notification lifetime file fsync" (c_fsync (number parent))
+  notificationWithLock owner parent True $ do
+   notificationCreate owner parent notificationMarkerName (C.pack "provisioning\n")
+   throwErrnoIfMinus1_ "notification marker directory fsync" (c_fsync (number parent))
+   notificationCreate owner parent notificationEpochName (notificationBytes 0)
+   throwErrnoIfMinus1_ "notification initial directory fsync" (c_fsync (number parent))
+   notificationCreate owner parent notificationReadyName (C.pack "warlock-notification-ready-v1\n")
+   throwErrnoIfMinus1_ "notification ready directory fsync" (c_fsync (number parent))
+   B.useAsCString notificationMarkerName $ \name -> throwErrnoIfMinus1_ "notification marker unlink" (c_unlinkat (number parent) name 0)
+   throwErrnoIfMinus1_ "notification final directory fsync" (c_fsync (number parent))
+
+reserveNotificationSlot :: StoreOwner -> DirectoryPin -> IO Word64
+reserveNotificationSlot owner pin = runOwned owner $
+ withPinnedDirectory owner True pin $ \parent -> notificationWithLock owner parent False $ do
+  notificationExpected owner parent notificationWitnessName (C.pack "warlock-notification-deployment-v1\n")
+  notificationExpected owner parent notificationReadyName (C.pack "warlock-notification-ready-v1\n")
+  marker <- readRegular owner True parent notificationMarkerName 128
+  require (marker==Nothing) "notification provision incomplete"
+  stale <- readRegular owner True parent notificationTempName 128
+  require (stale==Nothing) "notification staged transaction requires reconciliation"
+  prior <- readRegular owner True parent notificationEpochName 128 >>= maybe (ioError (userError "notification epoch missing")) pure
+  value <- notificationDecode prior
+  require (value<maxBound) "notification epoch exhausted"
+  -- Establish durability of the previously committed records under this lock.
+  notificationBarrier owner parent notificationWitnessName (C.pack "warlock-notification-deployment-v1\n")
+  notificationBarrier owner parent notificationReadyName (C.pack "warlock-notification-ready-v1\n")
+  notificationBarrier owner parent notificationEpochName prior
+  throwErrnoIfMinus1_ "notification startup directory barrier" (c_fsync (number parent))
+  let next=value+1; bytes=notificationBytes next
+  notificationCreate owner parent notificationTempName bytes
+  B.useAsCString notificationTempName $ \from -> B.useAsCString notificationEpochName $ \to ->
+   throwErrnoIfMinus1_ "notification epoch rename" (c_renameat (number parent) from (number parent) to)
+  throwErrnoIfMinus1_ "notification epoch directory fsync" (c_fsync (number parent))
+  notificationBarrier owner parent notificationEpochName bytes
+  pure next
+
+-- This owner is dedicated to the lifetime lock and cannot be used for a
+-- transaction. Its retained descriptor is closed only by retireStoreOwner.
+data NotificationLifetime = NotificationLifetime Fd
+
+acquireNotificationLifetime :: StoreOwner -> DirectoryPin -> IO NotificationLifetime
+acquireNotificationLifetime owner@(StoreOwner _ resources) pin = NotificationLifetime <$> (runOwned owner $
+ withPinnedDirectory owner True pin $ \parent -> mask_ $ do
+  cell <- newIORef Acquiring
+  valueCell <- newIORef Nothing
+  let release = do
+       selected <- readIORef valueCell
+       maybe (ioError (userError "notification lease acquisition unconfirmed")) closeFdOnce selected
+      resource = Resource cell release
+  modifyIORef' resources (resource:)
+  acquired <- openAt parent notificationLifetimeName (#{const O_RDWR} .|. #{const O_NONBLOCK} .|. #{const O_NOFOLLOW} .|. #{const O_CLOEXEC}) 0
+  fd <- case acquired of
+   NotAcquired problem -> writeIORef cell Closed >> ioError problem
+   Acquired selected -> do
+    writeIORef valueCell (Just selected)
+    writeIORef cell Open
+    pure selected
+  result <- try $ do
+   privateFile =<< getFdStatus fd
+   throwErrnoIfMinus1_ "notification lifetime lock" (c_flock (number fd) (#{const LOCK_EX} .|. #{const LOCK_NB}))
+   notificationSameNamed owner parent notificationLifetimeName fd
+  case result of
+   Right () -> pure fd
+   Left (problem :: SomeException) -> do
+    cleanup <- try (closeResource resource)
+    case cleanup of
+     Left (other :: SomeException) -> throwIO other
+     Right () -> throwIO problem)
+
+checkNotificationLifetime :: StoreOwner -> DirectoryPin -> NotificationLifetime -> IO ()
+checkNotificationLifetime checker pin (NotificationLifetime fd) = runOwned checker $
+ withPinnedDirectory checker True pin $ \parent -> notificationSameNamed checker parent notificationLifetimeName fd

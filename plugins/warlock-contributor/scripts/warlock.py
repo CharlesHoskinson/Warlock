@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Offline contribution checks and explicit plugin regressions; no GUI acceptance/builds."""
 import argparse
+import copy
+from contextlib import contextmanager
 import base64
 import fcntl
 import os
@@ -17,6 +19,7 @@ import stat
 import subprocess
 import sys
 import tarfile
+import time
 
 BASE = 'docs/elm-roadmap/requirements.json'
 STATE = 'docs/warlock-build-loop/v2/STATE.json'
@@ -696,6 +699,145 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
 # reconciliation are deliberately outside this operation.
 SUPPORT_CUSTODY_PATHS = frozenset((STATE, 'docs/HANDOFF.md',
     'wiki/warlock/log.md', 'wiki/warlock/wiki/topics/current-status.md'))
+ROOT_PLUGIN_REPAIR_RECORD = '.warlock-contributor/ux023-keyboard-launcher-root.json'
+ROOT_PLUGIN_REPAIR_IDENTITY = 'f5322281044c01ad184d341de2a09d361294da0e8db49a860483b05799a9b3bc'
+ROOT_PLUGIN_REPAIR_ACTOR = 'root-nextloop-20261106'
+ROOT_PLUGIN_REPAIR_BASELINE = {
+    'plugins/warlock-contributor/scripts/warlock.py': '97a9f4ef4c5fd3ac130ceda8840472b945fd28b00b78af64f21ee07b8cf836c9',
+    'plugins/warlock-contributor/qa/test_delivery.py': '2624ff6304f9d2d07195fb7500dd12ad2cba9f2ae9794eec94a484bab74e2193',
+}
+ROOT_PLUGIN_REPAIR_PATHS = frozenset(ROOT_PLUGIN_REPAIR_BASELINE)
+
+
+def workflow_package_path(name):
+    """Workflow package or its two operative entry documents, never product/guards."""
+    if (not isinstance(name, str) or not name or name.startswith('/')
+            or any(part in ('', '.', '..', '.git', '__pycache__') for part in name.split('/'))
+            or name in DELIVERY_GUARDS):
+        return False
+    return (name.startswith('plugins/warlock-contributor/')
+            or name in ('AGENTS.md', 'docs/warlock-build-loop/v2/INSTRUCTIONS.md'))
+
+
+def support_workflow_evidence(root, record, proof, at):
+    """Validate retained explicit human/package evidence; no runtime authority."""
+    binding = proof['actorBinding']
+    evidence = {}
+    for key in ('humanAuthorization', 'sourceManifest'):
+        ref = binding.get(key)
+        if (not isinstance(ref, dict) or set(ref) != {'path', 'sha256'}
+                or not isinstance(ref['path'], str) or not ref['path'].startswith(SUPPORT_EVIDENCE)
+                or git_run(root, 'check-ignore', '-q', '--', ref['path']).returncode
+                or not isinstance(ref['sha256'], str)
+                or not re.fullmatch('[0-9a-f]{64}', ref['sha256'])):
+            raise ValueError('Workflow binding requires exact ignored authorization/source references')
+        raw = regular_bytes(safe(root, ref['path']))
+        if hashlib.sha256(raw).hexdigest() != ref['sha256']:
+            raise ValueError('Workflow authorization or source manifest bytes changed')
+        evidence[key] = json.loads(raw)
+    auth = evidence['humanAuthorization']
+    if (not isinstance(auth, dict) or type(auth.get('schema')) is not int or auth['schema'] != 1
+            or auth.get('source') != 'Actual human message in existing root thread'
+            or not all(isinstance(auth.get(key), str) and auth[key].strip()
+                       for key in ('thread', 'instruction', 'scope'))
+            or auth.get('instructionSha256') != hashlib.sha256(auth['instruction'].encode()).hexdigest()
+            or any(auth.get(key) is not True for key in
+                   ('oldWindowsNotExtended', 'oldHistoryNotReset', 'noAcceptanceInferred'))):
+        raise ValueError('Workflow package needs actual human instruction evidence, not delegated runtime authority')
+    observed = dt.datetime.fromisoformat(auth['observedUTC'])
+    if observed.tzinfo is None or observed > at:
+        raise ValueError('Workflow authorization must precede its transition')
+    source = evidence['sourceManifest']
+    if (not isinstance(source, dict) or set(source) != {'schema', 'purpose', 'files'}
+            or type(source['schema']) is not int or source['schema'] != 1
+            or source['purpose'] != 'workflow-package' or not isinstance(source['files'], dict)
+            or not source['files']
+            or {'file:' + str(root / n) for n in source['files']} != set(binding['resources'])):
+        raise ValueError('Workflow source manifest must cover the exact bound batch')
+    for name, pins in source['files'].items():
+        if (not workflow_package_path(name) or name not in record['foreignDirty']
+                or not isinstance(pins, dict) or set(pins) != {'capturedSha256', 'previousSha256', 'currentSha256'}
+                or any(not isinstance(h, str) or not re.fullmatch('[0-9a-f]{64}', h)
+                       for h in pins.values()) or pins['previousSha256'] == pins['currentSha256']
+                or pins['capturedSha256'] != record['foreignDirty'][name]):
+            raise ValueError('Workflow source manifest has unsupported path or before/after hashes')
+    return source
+
+
+def support_actor_binding(root, record, proof):
+    """Replay a reviewed exact-support binding; live custody is checked at admission.
+
+    The proof is retained by the existing support event, whose independent
+    review binds its bytes. This does not rename the participant or grant paths.
+    """
+    binding = proof.get('actorBinding')
+    fields = {'schema', 'recordPath', 'recordIdentitySha256', 'logicalOwner',
+              'actor', 'run', 'did', 'resources'}
+    workflow = isinstance(binding, dict) and binding.get('purpose') == 'workflow-package'
+    if workflow:
+        fields |= {'purpose', 'humanAuthorization', 'sourceManifest'}
+    path = record.get('_recordPath')
+    actor = proof.get('claimOwner')
+    claims = proof.get('claims')
+    if (not isinstance(binding, dict) or set(binding) != fields
+            or type(binding.get('schema')) is not int or binding['schema'] != 1
+            or not isinstance(path, str) or participant_record_location_error(path)
+            or binding['recordPath'] != path
+            or binding['recordIdentitySha256'] != record_identity(record, path)
+            or binding['logicalOwner'] != record['owner']
+            or not isinstance(actor, str) or not actor.strip() or actor != actor.strip()
+            or (actor == record['owner'] and not workflow) or binding['actor'] != actor
+            or not isinstance(proof.get('run'), str) or not proof['run'].strip()
+            or binding['run'] != proof['run']
+            or not isinstance(binding['did'], str)
+            or not re.fullmatch(r'did:key:z[1-9A-HJ-NP-Za-km-z]+', binding['did'])
+            or not isinstance(claims, list) or not claims
+            or any(not isinstance(row, dict) for row in claims)):
+        raise ValueError('Invalid reviewed support actor binding')
+    resources = [row.get('resource') for row in claims]
+    allowed_names = ({name for name in record.get('foreignDirty', {}) if workflow_package_path(name)}
+                     if workflow else SUPPORT_CUSTODY_PATHS)
+    allowed = {'file:' + str(root / name) for name in allowed_names
+               if name in record.get('foreignDirty', {})
+               and name not in record['slice']['paths']
+               and name not in record.get('adoptedDirty', {}).get('paths', [])}
+    if (any(not isinstance(value, str) or value not in allowed for value in resources)
+            or len(set(resources)) != len(resources)
+            or binding['resources'] != sorted(resources)
+            or any(row.get('holder') != actor or row.get('holder_did') != binding['did']
+                   for row in claims)):
+        raise ValueError('Actor binding must cover exact captured support paths and one real DID')
+    return binding
+
+
+def require_new_delivery_owner(owner):
+    """Reject ambiguous new live records; historical/ordinary records are unchanged."""
+    actor, run = os.environ.get('AGENTBUS_AGENT'), os.environ.get('AGENTBUS_RUN')
+    if (not isinstance(actor, str) or not actor.strip() or actor != actor.strip()
+            or not isinstance(run, str) or not run.strip() or owner != actor):
+        raise ValueError('New policy-2 owner must equal the assigned AgentBus actor; '
+                         'retain historical logical owners and use reviewed support bindings')
+
+
+def support_claim_owner(root, record, proof):
+    """One closed Root logical-label binding, never an AgentBus alias."""
+    if 'actorBinding' in proof:
+        return support_actor_binding(root, record, proof)['actor']
+    owner = record['owner']
+    actor = proof.get('claimOwner', owner)
+    names = {row.get('resource', '').removeprefix('file:' + str(root) + '/')
+             for row in proof.get('claims', []) if isinstance(row, dict)}
+    if actor == owner and not names.intersection(ROOT_PLUGIN_REPAIR_PATHS):
+        return owner
+    if (record.get('_recordPath') != ROOT_PLUGIN_REPAIR_RECORD or owner != 'root-agentbus'
+            or record_identity(record, ROOT_PLUGIN_REPAIR_RECORD) != ROOT_PLUGIN_REPAIR_IDENTITY
+            or actor != ROOT_PLUGIN_REPAIR_ACTOR or names != ROOT_PLUGIN_REPAIR_PATHS
+            or any(record.get('foreignDirty', {}).get(name) != sha
+                   for name, sha in ROOT_PLUGIN_REPAIR_BASELINE.items())):
+        raise ValueError('Plugin support proof is outside the exact Root repair binding')
+    return actor
+
+
 SUPPORT_EVIDENCE = '.warlock-contributor/evidence/support-custody/'
 
 
@@ -735,7 +877,7 @@ def support_live_claims(owner, run):
     return rows
 
 
-def support_proof_rows(root, proof, owner, at):
+def support_proof_rows(root, proof, owner, at, claim_owner=None, record=None):
     if (type(proof.get('schema')) is not int or proof['schema'] != 1 or proof.get('owner') != owner
             or not isinstance(proof.get('run'), str)
             or not isinstance(proof.get('claims'), list) or not proof['claims']):
@@ -743,12 +885,24 @@ def support_proof_rows(root, proof, owner, at):
     observed = dt.datetime.fromisoformat(proof['observedUTC'])
     if observed.tzinfo is None or observed > at:
         raise ValueError('Claim proof observation is invalid or in the future')
+    holder = owner if claim_owner is None else claim_owner
+    if proof.get('claimOwner', owner) != holder:
+        raise ValueError('Frozen support claim actor differs')
+    allowed_paths = SUPPORT_CUSTODY_PATHS
+    if record is not None and proof.get('actorBinding', {}).get('purpose') == 'workflow-package':
+        support_actor_binding(root, record, proof)
+        allowed_paths = {name for name in record['foreignDirty'] if workflow_package_path(name)}
+    if record is not None and holder != owner:
+        if support_claim_owner(root, record, proof) != holder:
+            raise ValueError('Closed plugin claim actor differs')
+        if 'actorBinding' not in proof:
+            allowed_paths = allowed_paths | ROOT_PLUGIN_REPAIR_PATHS
     rows = {}
     for row in proof['claims']:
         resource = row.get('resource', '') if isinstance(row, dict) else ''
         name = resource.removeprefix('file:' + str(root) + '/')
-        if (resource != 'file:' + str(root / name) or name not in SUPPORT_CUSTODY_PATHS
-                or name in rows or row.get('holder') != owner
+        if (resource != 'file:' + str(root / name) or name not in allowed_paths
+                or name in rows or row.get('holder') != holder
                 or not isinstance(row.get('holder_did'), str)
                 or not re.fullmatch(r'did:key:z[1-9A-HJ-NP-Za-km-z]+', row['holder_did'])):
             raise ValueError('Claim proof does not bind one exact same-owner support resource')
@@ -780,7 +934,10 @@ def support_reconciliations(root, record, override=None, check_current=True):
                 raise ValueError('Support event hash chain differs')
             previous = event['eventSha256']
             name = event['path']
-            if (name not in SUPPORT_CUSTODY_PATHS or name not in record['foreignDirty']
+            if ((name not in SUPPORT_CUSTODY_PATHS and not workflow_package_path(name) and not (name in ROOT_PLUGIN_REPAIR_PATHS
+                    and record.get('_recordPath') == ROOT_PLUGIN_REPAIR_RECORD
+                    and record_identity(record, ROOT_PLUGIN_REPAIR_RECORD) == ROOT_PLUGIN_REPAIR_IDENTITY))
+                    or name not in record['foreignDirty']
                     or name in record['slice']['paths']
                     or name in record.get('adoptedDirty', {}).get('paths', [])):
                 raise ValueError('Support event cannot change source/adoption ownership')
@@ -809,7 +966,25 @@ def support_reconciliations(root, record, override=None, check_current=True):
                 raise ValueError('Frozen current support bytes differ')
             at = dt.datetime.fromisoformat(event['atUTC'])
             proof = json.loads(evidence['claimProof'])
-            rows = support_proof_rows(root, proof, record['owner'], at)
+            claim_record = snapshot if 'actorBinding' in proof else record
+            claim_owner = support_claim_owner(root, claim_record, proof)
+            rows = support_proof_rows(root, proof, record['owner'], at, claim_owner=claim_owner, record=claim_record)
+            workflow = proof.get('actorBinding', {}).get('purpose') == 'workflow-package'
+            if name not in SUPPORT_CUSTODY_PATHS and not workflow and 'actorBinding' in proof:
+                raise ValueError('Metadata actor binding cannot authorize workflow-package source')
+            if workflow:
+                source = support_workflow_evidence(root, snapshot, proof, at)
+                if source['files'].get(name) != dict(capturedSha256=snapshot['foreignDirty'].get(name),
+                                                    previousSha256=event['fromSha256'],
+                                                    currentSha256=event['toSha256']):
+                    raise ValueError('Independent workflow transition differs from exact source manifest')
+            if name in ROOT_PLUGIN_REPAIR_PATHS and claim_owner == record['owner'] and not workflow:
+                raise ValueError('Plugin support path needs closed actual Root claim owner')
+            if (name not in SUPPORT_CUSTODY_PATHS and not workflow
+                    and not (name in ROOT_PLUGIN_REPAIR_PATHS
+                             and record.get('_recordPath') == ROOT_PLUGIN_REPAIR_RECORD
+                             and record_identity(record, ROOT_PLUGIN_REPAIR_RECORD) == ROOT_PLUGIN_REPAIR_IDENTITY)):
+                raise ValueError('Workflow source requires its explicit authorized binding purpose')
             if name not in rows:
                 raise ValueError('Claim proof does not cover support path')
             review = json.loads(evidence['reviewFile'])
@@ -818,6 +993,21 @@ def support_reconciliations(root, record, override=None, check_current=True):
                 recordIdentitySha256=identity, recordPath=record['_recordPath'],
                 path=name, previousSha256=event['fromSha256'], currentSha256=event['toSha256'],
                 sourceOwner=record['owner'], reason=event['reason'])
+            if claim_owner != record['owner']:
+                expected.update(claimOwner=claim_owner, claimHolderDid=rows[name]['holder_did'])
+            if workflow:
+                expected.update(bindingPurpose='workflow-package', workflowPackageAuthorized=True,
+                                runtimeAuthorization=False,
+                                humanAuthorization=proof['actorBinding']['humanAuthorization'],
+                                sourceManifest=proof['actorBinding']['sourceManifest'])
+                if (review.get('workflowPackageAuthorized') is not True
+                        or review.get('runtimeAuthorization') is not False):
+                    raise ValueError('Workflow review must affirm package authority and deny runtime authority')
+            if 'actorBinding' in proof:
+                expected['actorBindingSha256'] = json_sha256(proof['actorBinding'])
+                if str(review.get('reviewer', '')).strip().casefold() in {
+                        claim_owner.casefold(), rows[name]['holder_did'].casefold()}:
+                    raise ValueError('Support actor cannot independently review its own binding')
             for key in ('recordSnapshot', 'currentSnapshot', 'claimProof'):
                 expected[key] = event[key]
                 expected[key + 'Sha256'] = event[key + 'Sha256']
@@ -1072,6 +1262,134 @@ def reconcile_tea004_recovery(root, record, reqs, state, args):
         os.close(parent)
 
 
+def selection_scope_versions(record):
+    """Read-only scope/custody versions justified by existing extension events.
+
+    A selected old scope remains provenance, never permission to execute the
+    extended scope: current_selection still requires explicit delivery-select.
+    """
+    started = delivery_time(record['startedUTC'])
+    extensions = record.get('pathExtensions', [])
+    if not isinstance(extensions, list):
+        raise ValueError('Invalid extension history')
+    known = set(record.get('sourceHashes', {}))
+    previous_time, previous_position = started, 0
+    times = []
+    for event in extensions:
+        hashes, adopted = event.get('sourceHashes'), event.get('adoptedDirty', {}).get('paths')
+        position = event.get('afterIteration')
+        at = delivery_time(event['atUTC'])
+        if (not isinstance(hashes, dict) or not hashes or known.intersection(hashes)
+                or any(not isinstance(n, str) or not n or
+                       (h is not None and (not isinstance(h, str) or re.fullmatch('[0-9a-f]{64}', h) is None))
+                       for n, h in hashes.items())
+                or not isinstance(adopted, list) or len(set(adopted)) != len(adopted)
+                or any(n not in hashes for n in adopted)
+                or type(position) is not int or not previous_position <= position <= len(record.get('iterations', []))
+                or at < previous_time or not isinstance(event.get('reason'), str) or not event['reason'].strip()):
+            raise ValueError('Invalid scope extension correspondence')
+        foreign = event.get('foreignHashes', {})
+        if (not isinstance(foreign, dict) or any(n not in adopted or h != hashes[n] or h is None
+                                                for n, h in foreign.items())):
+            raise ValueError('Extension custody preimage differs')
+        known.update(hashes); times.append(at)
+        previous_time, previous_position = at, position
+    version, versions, upper, identity_known = copy.deepcopy(record), [], None, True
+    for index in range(len(extensions), -1, -1):
+        lower = times[index - 1] if index else started
+        identity = record_identity(version, record['_recordPath']) if identity_known else None
+        versions.append((copy.deepcopy(version['slice']), identity, lower, upper))
+        if not index:
+            break
+        event = extensions[index - 1]
+        names = list(event['sourceHashes'])
+        paths = version['slice']['paths']
+        if len(names) > len(paths) or paths[-len(names):] != names:
+            raise ValueError('Extension must append its exact ordered new paths')
+        version['slice']['paths'] = paths[:-len(names)]
+        # New extension events retain only the foreign entries actually removed.
+        # Legacy dirty events without that evidence cannot justify older identity.
+        if event['adoptedDirty']['paths'] and 'foreignHashes' not in event:
+            identity_known = False
+        for name, value in event.get('foreignHashes', {}).items():
+            if name in version['foreignDirty']:
+                raise ValueError('Extension custody restoration overlaps retained custody')
+            version['foreignDirty'][name] = value
+        upper = times[index - 1]
+    return versions
+
+
+def canonical_selection_state_provenance(root, record):
+    """Undo only canonical same-participant selections to the captured full SHA.
+
+    Extension history can explain the slice as it stood at selection time.
+    This predicate writes nothing and does not relax current_selection.
+    """
+    try:
+        captured = record.get('foreignDirty', {}).get(STATE)
+        record_path = record.get('_recordPath')
+        if (record.get('workflowPolicy') != 2 or not isinstance(captured, str)
+                or re.fullmatch('[0-9a-f]{64}', captured) is None
+                or not isinstance(record_path, str) or participant_record_location_error(record_path)):
+            return {}
+        raw = regular_bytes(safe(root, STATE))
+        state = json.loads(raw)
+        encoded = lambda value: (json.dumps(value, indent=2) + '\n').encode()
+        if raw != encoded(state):
+            return {}
+        versions = selection_scope_versions(record)
+        original_sha = hashlib.sha256(raw).hexdigest()
+        keys = ('activeContributorRecord', 'activeSlice', 'activeSelection')
+        while True:
+            selected, history = state['activeSelection'], state['sliceSelectionHistory']
+            if (state['activeContributorRecord'] != record_path or not isinstance(selected, dict)
+                    or set(selected) != {'generation', 'recordIdentitySha256', 'selectedUTC'}
+                    or type(selected['generation']) is not int or selected['generation'] < 1
+                    or not isinstance(history, list) or not history):
+                return {}
+            selected_time = delivery_time(selected['selectedUTC'])
+            if not any(identity is not None and state['activeSlice'] == scope and selected['recordIdentitySha256'] == identity
+                       and lower <= selected_time and (upper is None or selected_time <= upper)
+                       for scope, identity, lower, upper in versions):
+                return {}
+            last = history[-1]
+            if not isinstance(last, dict) or set(last) != {'atUTC', *keys}:
+                return {}
+            previous = last['activeSelection']
+            if previous is None or previous == {}:
+                generation = 0
+            elif (isinstance(previous, dict)
+                    and set(previous) == {'generation', 'recordIdentitySha256', 'selectedUTC'}
+                    and type(previous['generation']) is int and previous['generation'] >= 0):
+                generation = previous['generation']
+                if delivery_time(previous['selectedUTC']) > delivery_time(last['atUTC']):
+                    return {}
+            else:
+                return {}
+            if (selected['generation'] != generation + 1
+                    or not delivery_time(record['startedUTC']) <= delivery_time(last['atUTC']) <= selected_time
+                    or delivery_time(record['delivery']['clockOrigin']['utc']) > delivery_time(last['atUTC'])):
+                return {}
+            prior = dict(state, sliceSelectionHistory=history[:-1])
+            prior.update({key: last[key] for key in keys})
+            optional = [key for key in keys if last[key] is None]
+            if len(history) == 1:
+                optional.append('sliceSelectionHistory')
+            for mask in range(1 << len(optional)):
+                restored = dict(prior)
+                for bit, key in enumerate(optional):
+                    if mask & (1 << bit):
+                        restored.pop(key, None)
+                if hashlib.sha256(encoded(restored)).hexdigest() == captured:
+                    return {STATE: original_sha}
+            # Only another exact selection of this participant may be undone.
+            # Switching participants or any unrelated STATE edit remains refused.
+            state = prior
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+        pass
+    return {}
+
+
 def protected_reconciliations(root, record):
     foreign, errors, data = foreign_reconciliations(root, record)
     support, support_errors, _ = support_reconciliations(root, record)
@@ -1080,7 +1398,42 @@ def protected_reconciliations(root, record):
     errors += recovery_errors
     if (set(foreign) & set(support) or set(recovery) & (set(foreign) | set(support))):
         errors.append('A path cannot have conflicting provenance reconciliations')
-    return dict(foreign, **support, **recovery), errors, data
+    combined = dict(foreign, **support, **recovery)
+    selection = canonical_selection_state_provenance(root, record)
+    if STATE in selection:
+        if STATE in combined and combined[STATE] != selection[STATE]:
+            errors.append('Canonical selection conflicts with existing STATE provenance')
+        else:
+            combined.update(selection)
+    return combined, errors, data
+
+
+def confirm_support_claims(root, record, proof, names):
+    """Keep the existing frozen/live lease checks on the real assigned actor."""
+    claim_owner = support_claim_owner(root, record, proof)
+    frozen = support_proof_rows(root, proof, record['owner'], dt.datetime.now(dt.timezone.utc),
+                                claim_owner=claim_owner, record=record)
+    if proof.get('actorBinding', {}).get('purpose') == 'workflow-package':
+        support_workflow_evidence(root, record, proof, dt.datetime.now(dt.timezone.utc))
+    if 'actorBinding' in proof:
+        if (os.environ.get('AGENTBUS_AGENT') != claim_owner
+                or os.environ.get('AGENTBUS_RUN') != proof['run']
+                or set(names) != set(frozen)):
+            raise ValueError('Support binding requires assigned actor/run and exact transition batch')
+    if (proof.get('actorBinding', {}).get('purpose') != 'workflow-package'
+            and set(names).intersection(ROOT_PLUGIN_REPAIR_PATHS) and set(names) != ROOT_PLUGIN_REPAIR_PATHS):
+        raise ValueError('Plugin repair requires the exact atomic two-path batch')
+    live = support_live_claims(claim_owner, proof['run'])
+    for name in names:
+        if name not in frozen:
+            continue
+        row = frozen[name]
+        matching = [x for x in live if x.get('resource') == row['resource']]
+        if (len(matching) != 1 or any(matching[0].get(k) != row[k]
+                for k in ('resource', 'holder', 'holder_did'))
+                or dt.datetime.fromisoformat(matching[0]['lease_end'])
+                   <= dt.datetime.now(dt.timezone.utc) + dt.timedelta(seconds=5)):
+            raise ValueError('Same-owner support claim is not currently confirmed by AgentBus')
 
 
 def reconcile_support(root, record, reqs, state, args):
@@ -1094,8 +1447,12 @@ def reconcile_support(root, record, reqs, state, args):
             or any(not isinstance(x, dict) or set(x) != fields for x in entries)):
         raise ValueError('Support transition requires exact snapshot/proof/review fields')
     names = [x['path'] for x in entries]
-    if len(set(names)) != len(names) or any(n not in SUPPORT_CUSTODY_PATHS for n in names):
-        raise ValueError('Only unique fixed allowed support docs may be reconciled')
+    closed_plugin_pair = (set(names) == ROOT_PLUGIN_REPAIR_PATHS
+                          and record.get('_recordPath') == ROOT_PLUGIN_REPAIR_RECORD
+                          and record_identity(record, ROOT_PLUGIN_REPAIR_RECORD) == ROOT_PLUGIN_REPAIR_IDENTITY)
+    if len(set(names)) != len(names) or (any(n not in SUPPORT_CUSTODY_PATHS and not workflow_package_path(n) for n in names)
+                                       and not closed_plugin_pair):
+        raise ValueError('Only unique fixed allowed support docs or the closed Root plugin pair may be reconciled')
     sidecar = support_sidecar(root, record)
     parent, leaf = open_parent(sidecar, create=True)
     try:
@@ -1132,19 +1489,9 @@ def reconcile_support(root, record, reqs, state, args):
         overlay, errors, _ = support_reconciliations(root, record, override=candidate)
         if errors:
             raise ValueError('; '.join(errors))
-        for proof in proofs.values():
-            frozen = support_proof_rows(root, proof, record['owner'], dt.datetime.now(dt.timezone.utc))
-            live = support_live_claims(record['owner'], proof['run'])
-            for name in names:
-                if name not in frozen:
-                    continue
-                row = frozen[name]
-                matching = [x for x in live if x.get('resource') == row['resource']]
-                if (len(matching) != 1 or any(matching[0].get(k) != row[k]
-                        for k in ('resource', 'holder', 'holder_did'))
-                        or dt.datetime.fromisoformat(matching[0]['lease_end'])
-                           <= dt.datetime.now(dt.timezone.utc) + dt.timedelta(seconds=5)):
-                    raise ValueError('Same-owner support claim is not currently confirmed by AgentBus')
+        for proof_path, proof in proofs.items():
+            proof_names = [item['path'] for item in entries if item['claimProof'] == proof_path]
+            confirm_support_claims(root, record, proof, proof_names)
         # Re-read all four frozen artifacts (including review/proof), historical
         # chain and current support bytes after the potentially slow live probe.
         # A pre-probe digest is not a post-probe provenance receipt.
@@ -1640,6 +1987,15 @@ def extension_baseline(record, previous, position):
 
 
 def extend_paths(root, record, reqs, state, args):
+    """Validate a private record copy; publish no partial extension on refusal."""
+    candidate = copy.deepcopy(record)
+    result = _extend_paths(root, candidate, reqs, state, args)
+    record.clear()
+    record.update(candidate)
+    return result
+
+
+def _extend_paths(root, record, reqs, state, args):
     """Explicitly add dependencies to the same behavior, retaining its delivery history."""
     if getattr(args, 'correct_support_ghost', None):
         return correct_support_ghosts(root, record, reqs, state, args)
@@ -1689,7 +2045,8 @@ def extend_paths(root, record, reqs, state, args):
     hashes = {n: digest(safe(root, n)) for n in requested}
     event = {'atUTC': now(), 'afterIteration': len(record['iterations']),
              'reason': args.reason, 'sourceHashes': hashes,
-             'adoptedDirty': {'paths': adopted, 'ownershipNote': args.ownership_note}}
+             'adoptedDirty': {'paths': adopted, 'ownershipNote': args.ownership_note},
+             'foreignHashes': {n: record['foreignDirty'][n] for n in adopted if n in record['foreignDirty']}}
     record['slice']['paths'] = old['paths'] + requested
     record.setdefault('pathExtensions', []).append(event)
     for n in adopted:
@@ -1806,8 +2163,1280 @@ def handoff(root, record, reqs, state):
             'Follow any no-progress warning; do not rerun unchanged qualification by default.'}
 
 
+def delivery_text(value, label):
+    if not isinstance(value, str) or not value.strip() or len(value) > 16384:
+        raise ValueError('Invalid delivery ' + label)
+    return value
+
+
+def delivery_time(value):
+    parsed = dt.datetime.fromisoformat(delivery_text(value, 'timestamp').replace('Z', '+00:00'))
+    if parsed.tzinfo is None:
+        raise ValueError('Delivery timestamp needs timezone')
+    return parsed
+
+
+def clock_sample():
+    """Local scheduler clocks, never a substitute for original scenario clocks."""
+    return {'utc': now(), 'bootId': pathlib.Path('/proc/sys/kernel/random/boot_id').read_text().strip(),
+            'monotonicNs': time.monotonic_ns(), 'boottimeNs': time.clock_gettime_ns(time.CLOCK_BOOTTIME)}
+
+
+def validate_clock_sample(sample):
+    if not isinstance(sample, dict) or set(sample) != {'utc', 'bootId', 'monotonicNs', 'boottimeNs'}:
+        raise ValueError('Invalid delivery clock sample')
+    delivery_time(sample['utc'])
+    delivery_text(sample['bootId'], 'boot identity')
+    for key in ('monotonicNs', 'boottimeNs'):
+        if type(sample[key]) is not int or sample[key] < 0:
+            raise ValueError('Invalid delivery clock counter')
+    if sample['boottimeNs'] < sample['monotonicNs']:
+        raise ValueError('Delivery boot clock precedes monotonic clock')
+
+
+def delivery_identity(record):
+    if record.get('workflowPolicy') != 2 or type(record['workflowPolicy']) is not int:
+        raise ValueError('Unknown delivery workflow policy')
+    delivery = record.get('delivery', {})
+    return {key: delivery[key] for key in ('schema', 'journey', 'clockOrigin', 'authorizationExpiresUTC', 'guardHashes')}
+
+
+def effective_delivery_authorization(record):
+    """Recorded expiry only; a later human pause or inactive goal still vetoes execution."""
+    if record.get('workflowPolicy') != 2 or type(record['workflowPolicy']) is not int:
+        raise ValueError('Authorization renewal requires an existing policy2 record')
+    expiry = record['delivery']['authorizationExpiresUTC']
+    for event in record['delivery']['events']:
+        if event.get('kind') == 'authorization-renewed':
+            renewed = event['authorizationExpiresUTC']
+            if (delivery_time(renewed) <= delivery_time(expiry) or
+                    delivery_time(renewed) <= delivery_time(event['atUTC'])):
+                raise ValueError('Renewed authorization must extend the prior deadline prospectively')
+            expiry = renewed
+    return expiry
+
+
+# One actual prospective recovery ruling; not a general late-renewal policy.
+UX023_PROSPECTIVE_GAP_RECOVERY = {'recordPath': '.warlock-contributor/ux023-keyboard-launcher-root.json', 'recordIdentitySha256': 'f5322281044c01ad184d341de2a09d361294da0e8db49a860483b05799a9b3bc', 'previousExpiresUTC': '2026-11-08T21:00:00Z', 'authorizationExpiresUTC': '2026-11-09T03:05:11.575988+00:00', 'notAfterUTC': '2026-11-09T06:11:00Z', 'humanDelegationSha256': 'e097915f493e9d72792c623e6cffdf9f0c9aef85cef4c497d6965589dc27b553', 'requestSha256': '10d48c1b4aacd45e1fc25d6371191c5745f29e041811227f57a7229367afecbc', 'answerSha256': '79f11be28007d6231def835818d7e34de1075267c8ca4c6cb1930fd146c39ac5', 'terminalSha256': '21e6885183a47393b6f2a8bfbe9f9a644d154fad8df95a8f4b58cfe19b73eff7'}
+
+
+# Fixed provenance receipt for this versioned audit-only adoption, never a CLI override.
+UX023_QUALIFIED_ADOPTION = '.warlock-contributor/evidence/ux023-gap-qualified-version-adoption.json'
+UX023_QUALIFIED_BASE_CORE = 'ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd'
+UX023_CLOSED_NATIVE = ('7c8caed3927894b0628c07d989a5ce30ca0489f113ed515b9ac83edf50e2cb2e',
+                       'pid2561971-start15382849')
+
+
+def validate_ux023_qualified_audit_entry(root, record, args, checker_sha, repository_sha):
+    """Validate one qualified version under the existing participant lock; no effects."""
+    case = UX023_PROSPECTIVE_GAP_RECOVERY
+    if (repository_sha != UX023_QUALIFIED_BASE_CORE
+            or args.record != case['recordPath'] or record.get('_recordPath') != args.record
+            or record_identity(record, args.record) != case['recordIdentitySha256']
+            or args.expect_selection != 20 or args.command not in ('delivery-event', 'delivery-edit-precheck')):
+        raise ValueError('Qualified audit entry differs from the closed record/base/operation')
+    descriptor = read(safe(root, UX023_QUALIFIED_ADOPTION))
+    if (not isinstance(descriptor, dict) or descriptor.get('schema') != 1
+            or descriptor.get('checkerSha256') != checker_sha
+            or descriptor.get('baselineCoreSha256') != repository_sha
+            or re.fullmatch('[0-9a-f]{64}', descriptor.get('testDeliverySha256') or '') is None
+            or descriptor.get('recordIdentitySha256') != case['recordIdentitySha256']
+            or descriptor.get('rulingAnswerSha256') != case['answerSha256']):
+        raise ValueError('Qualified audit descriptor differs from this reviewed version/ruling')
+    def retained(key):
+        return bootstrap_json(delivery_ref(root, descriptor[key]))
+    review = retained('independentReview')
+    receipt = retained('qualificationReceipt')
+    inputs = retained('qualificationInputs')
+    report = retained('qualificationReport')
+    if (review.get('scope') != 'ux023-qualified-audit-entry'
+            or review.get('disposition') != 'accepted' or review.get('reviewer') not in ('workflow_astra', 'build_audit')
+            or review.get('checkerSha256') != checker_sha
+            or review.get('qualificationReportSha256') != descriptor['qualificationReport']['sha256']
+            or review.get('qualificationReceiptSha256') != descriptor['qualificationReceipt']['sha256']
+            or review.get('qualificationInputsSha256') != descriptor['qualificationInputs']['sha256']
+            or review.get('auditEventsSha256') != json_sha256(descriptor.get('auditEvents'))):
+        raise ValueError('Independent qualified-version correspondence required')
+    if (receipt.get('schema') != 1 or receipt.get('completed') is not True
+            or receipt.get('exit') != 0 or receipt.get('outerHandleConsumed') is not True
+            or not isinstance(receipt.get('outerHandle'), str) or not receipt['outerHandle']
+            or not isinstance(receipt.get('protectedScope'), str)
+            or not receipt['protectedScope'].startswith('qa-harness-')
+            or receipt.get('report') != descriptor['qualificationReport']
+            or receipt.get('inputs') != descriptor['qualificationInputs']
+            or receipt.get('checkerSha256') != checker_sha
+            or report.get('passed') is not True or report.get('exit') != 0
+            or report.get('primarySourceUnchanged') is not True
+            or report.get('fullRegressionTests') != 557 or report.get('comparisonTestExecutions') != 16
+            or report.get('candidatePluginSha256') != inputs.get('candidatePlugin', {}).get('sha256')
+            or inputs.get('candidatePlugin', {}).get('files', {}).get('plugins/warlock-contributor/scripts/warlock.py') != checker_sha
+            or inputs.get('candidatePlugin', {}).get('files', {}).get('plugins/warlock-contributor/qa/test_delivery.py') != descriptor.get('testDeliverySha256')
+            or not isinstance(report.get('commands'), list) or len(report['commands']) != 4
+            or any(row.get('exit') != 0 for row in report['commands'])):
+        raise ValueError('Actual consumed protected full-version qualification required')
+    goal = retained('goalObservation')
+    at = dt.datetime.now(dt.timezone.utc)
+    observed = delivery_time(goal.get('observedUTC'))
+    if (goal.get('schema') != 1 or goal.get('status') != 'active'
+            or goal.get('goalDefinition') != {'threadId': '01a1ad00-8273-7e90-84cd-e8528d5a99c3',
+                'createdAt': 1794094624, 'objectiveSha256': '53689bf07ab5d5c8a603e828651dc7c63f52496ccf2eacacd0848ca320a8947a'}
+            or any(goal.get(key) is not False for key in ('humanPaused', 'humanHandoff', 'stopRequested'))
+            or not dt.timedelta(0) <= at - observed <= dt.timedelta(seconds=60)
+            or at >= delivery_time(case['authorizationExpiresUTC'])):
+        raise ValueError('Fresh same-goal/no-stop observation within the exact proposed window required')
+    proof = retained('claimProof')
+    resources = {row.get('resource') for row in proof.get('claims', []) if isinstance(row, dict)}
+    if resources != {'file:' + str(root / name) for name in ROOT_PLUGIN_REPAIR_PATHS}:
+        raise ValueError('Qualified audit requires both exact current plugin repair claims')
+    confirm_support_claims(root, record, proof, ROOT_PLUGIN_REPAIR_PATHS)
+    if args.command == 'delivery-edit-precheck':
+        if (set(args.path) != ROOT_PLUGIN_REPAIR_PATHS or len(args.path) != 2
+                or UX023_CLOSED_NATIVE not in _delivery_closed_launch_jobs(record)):
+            raise ValueError('Qualified edit check requires exact consumed native closure and two plugin paths')
+        return
+    event = read(safe(root, args.event_file))
+    allowed = descriptor.get('auditEvents')
+    if (not isinstance(allowed, dict) or set(allowed) != {'authorization-renewed', 'execution-started', 'execution-finished'}
+            or event.get('kind') not in allowed or json_sha256(event) != allowed[event['kind']]):
+        raise ValueError('Only the three exact reviewed canonical audit payloads are allowed')
+    if event['kind'] == 'authorization-renewed':
+        evidence = bootstrap_json(delivery_ref(root, event['evidence']))
+        request = bootstrap_json(delivery_ref(root, evidence['decisionRequest']))
+        decision = bootstrap_json(delivery_ref(root, evidence['delegateDecision']))
+        if (event.get('authorizationExpiresUTC') != case['authorizationExpiresUTC']
+                or evidence.get('previousExpiresUTC') != case['previousExpiresUTC']
+                or json_sha256(request) != case['requestSha256']
+                or decision.get('requestSha256') != case['requestSha256']):
+            raise ValueError('Qualified renewal differs from the one-time exact ruling')
+    elif ((event.get('candidateSha256'), event.get('jobId')) != UX023_CLOSED_NATIVE
+            or (event['kind'] == 'execution-started' and event.get('outerHandle') != '55475')
+            or (event['kind'] == 'execution-finished' and (event.get('outerHandleConsumed') is not True
+                or event.get('report', {}).get('sha256') != '0c33f603ad36b6df08edf6ba68517c538dfe8878aa173a109ce824f10ae256b2'))):
+        raise ValueError('Qualified audit closure differs from actual native 7c8/job/consumption')
+    return event
+
+
+def validate_delegated_authorization_renewal(root, record, event, previous_expiry, previous_authorized, evidence):
+    """Validate a human standing grant and actual model decision; perform no effects."""
+    fields = {'schema', 'kind', 'recordPath', 'owner', 'startedUTC', 'deliveryIdentitySha256',
+              'previousExpiresUTC', 'authorizationExpiresUTC', 'authorizedUTC', 'humanDelegation',
+              'operatingPolicy', 'policyReview', 'decisionRequest', 'delegateDecision',
+              'goalObservation', 'identityScopes'}
+    identity = delivery_identity(record)
+    if (set(evidence) != fields or type(evidence['schema']) is not int or evidence['schema'] != 1
+            or evidence['recordPath'] != record.get('_recordPath') or evidence['owner'] != record['owner']
+            or evidence['startedUTC'] != record['startedUTC']
+            or evidence['deliveryIdentitySha256'] != json_sha256(identity)
+            or evidence['previousExpiresUTC'] != previous_expiry
+            or evidence['authorizationExpiresUTC'] != event['authorizationExpiresUTC']):
+        raise ValueError('Delegated renewal differs from the same record, scope or prior deadline')
+    authorized = delivery_time(evidence['authorizedUTC'])
+    observed = delivery_time(event['atUTC'])
+    expiry = delivery_time(event['authorizationExpiresUTC'])
+    previous = delivery_time(previous_expiry)
+    if (authorized < delivery_time(identity['clockOrigin']['utc']) or authorized > observed
+            or (previous_authorized is not None and authorized <= delivery_time(previous_authorized))
+            or expiry <= observed or expiry <= previous):
+        raise ValueError('Delegated renewal chronology differs')
+
+    def retained(reference):
+        return bootstrap_json(delivery_ref(root, reference))
+
+    human = retained(evidence['humanDelegation'])
+    policy = retained(evidence['operatingPolicy'])
+    review = retained(evidence['policyReview'])
+    policy_fields = {'schema', 'kind', 'attribution', 'humanDelegation', 'maxExtensionSeconds',
+                     'noAttemptWindowsLimit', 'notAfterUTC', 'delegateSession', 'delegateModel',
+                     'goalDefinition', 'identityScopeBaseline', 'actualPolicyDecision', 'rootDisposition'}
+    if (not isinstance(human, dict) or type(human.get('schema')) is not int or human['schema'] != 1
+            or human.get('kind') != 'actual-human-standing-orchestration-delegation'):
+        raise ValueError('Actual human standing delegation required, not a model or queued message')
+    delivery_text(human.get('actualHumanText'), 'actual standing human instruction')
+    granted = delivery_time(human.get('observedAfterApprovalUTC'))
+    if (not isinstance(policy, dict) or set(policy) != policy_fields
+            or type(policy['schema']) is not int or policy['schema'] != 1
+            or policy['kind'] != 'delegate-operating-renewal-policy'
+            or policy['attribution'] != 'model-operating-policy-not-human-terms'
+            or policy['humanDelegation'] != evidence['humanDelegation']
+            or type(policy['maxExtensionSeconds']) is not int or policy['maxExtensionSeconds'] != 7200
+            or type(policy['noAttemptWindowsLimit']) is not int or policy['noAttemptWindowsLimit'] != 2
+            or policy['delegateModel'] != 'claude-opus-5-5'):
+        raise ValueError('Exact bounded delegate operating policy required')
+    delivery_text(policy['delegateSession'], 'existing delegate session')
+    cap = delivery_time(policy['notAfterUTC'])
+    if (not granted <= authorized < cap or cap > granted + dt.timedelta(hours=24)
+            or expiry > cap or expiry > authorized + dt.timedelta(seconds=7200)):
+        raise ValueError('Delegated renewal exceeds the model operating window or cumulative cap')
+    if (not isinstance(review, dict) or review.get('schema') != 1
+            or review.get('scope') != 'standing-delegated-renewal-policy'
+            or review.get('disposition') != 'accepted'
+            or review.get('reviewer') == record['owner']
+            or review.get('policySha256') != evidence['operatingPolicy']['sha256']
+            or review.get('humanDelegationSha256') != evidence['humanDelegation']['sha256']):
+        raise ValueError('Independent correspondence of typed policy to actual grant/decision required')
+    delivery_text(review.get('reviewer'), 'independent policy reviewer')
+    # These retained originals support the separately reviewed policy projection.
+    # The projection is explicitly not presented as verbatim human terms.
+    retained(policy['actualPolicyDecision'])
+    retained(policy['rootDisposition'])
+
+    request = retained(evidence['decisionRequest'])
+    decision = retained(evidence['delegateDecision'])
+    request_fields = {'schema', 'requestId', 'decisionKind', 'humanDelegationSha256', 'question', 'choices'}
+    answer_fields = {'schema', 'requestId', 'requestSha256', 'humanDelegationSha256',
+                     'decisionKind', 'choiceId', 'rationale'}
+    if (not isinstance(request, dict) or set(request) != request_fields or request['schema'] != 1
+            or request['decisionKind'] != 'window-selection'
+            or request['humanDelegationSha256'] != evidence['humanDelegation']['sha256']
+            or not isinstance(request['choices'], list) or not 1 <= len(request['choices']) <= 16
+            or not isinstance(decision, dict) or not answer_fields <= set(decision)
+            or decision.get('requestSha256') != json_sha256(request)
+            or decision.get('requestId') != request['requestId'] or decision.get('decisionKind') != 'window-selection'
+            or decision.get('humanDelegationSha256') != evidence['humanDelegation']['sha256']
+            or decision.get('session') != policy['delegateSession']
+            or decision.get('operatingAuthorizationExpiresUTC') != previous_expiry
+            or decision.get('nativeAuthorized') is not False or decision.get('changesAuthority') is not False
+            or decision.get('rootMustValidateAuthority') is not True or decision.get('rootSoleExecutor') is not True):
+        raise ValueError('Actual delegated decision differs from the frozen same-window request')
+    choices = request['choices']
+    if (any(not isinstance(choice, dict) or set(choice) != {'id', 'payload'}
+            or not isinstance(choice['id'], str) or not isinstance(choice['payload'], dict)
+            or set(choice['payload']) != {'proposedUntilUTC'} for choice in choices)
+            or len({choice['id'] for choice in choices}) != len(choices)):
+        raise ValueError('Exact distinct declared window choices required')
+    selected = [choice for choice in choices if choice['id'] == decision.get('choiceId')]
+    if (len(selected) != 1 or decision.get('selectedChoice') != selected[0]
+            or selected[0]['payload']['proposedUntilUTC'] != event['authorizationExpiresUTC']):
+        raise ValueError('Delegated renewal must equal the actual selected declared window')
+    terminal = retained(decision['actualTerminal'])
+    result = terminal.get('actualResult') if isinstance(terminal, dict) else None
+    if (not isinstance(terminal, dict) or terminal.get('completed') is not True
+            or type(terminal.get('exit')) is not int or terminal['exit'] != 0
+            or terminal.get('failure') is not None or terminal.get('cleanupErrors') != []
+            or terminal.get('timedOut') is not False or terminal.get('resolvedModels') != [policy['delegateModel']]
+            or not isinstance(result, dict) or result.get('is_error') is not False
+            or result.get('session_id') != policy['delegateSession']
+            or not isinstance(result.get('result'), str) or len(result['result'].encode('utf-8')) > 65536):
+        raise ValueError('Actual normal completed same-session delegate response required')
+    answer = bootstrap_json(result['result'])
+    if not isinstance(answer, dict) or set(answer) != answer_fields or answer != {key: decision[key] for key in answer_fields}:
+        raise ValueError('Retained actual model response differs from the typed decision')
+    delivery_text(answer['rationale'], 'actual delegate rationale')
+    # All ordinary request, actual-result and authority checks above still apply.
+    # This exact one-time ruling repairs only the previous-expiry ratchet.
+    gap_case = UX023_PROSPECTIVE_GAP_RECOVERY
+    prospective_gap = (
+        record.get('_recordPath') == gap_case.get('recordPath')
+        and record_identity(record, record['_recordPath']) == gap_case.get('recordIdentitySha256')
+        and previous_expiry == gap_case.get('previousExpiresUTC')
+        and event['authorizationExpiresUTC'] == gap_case.get('authorizationExpiresUTC')
+        and policy['notAfterUTC'] == gap_case.get('notAfterUTC')
+        and evidence['humanDelegation']['sha256'] == gap_case.get('humanDelegationSha256')
+        and json_sha256(request) == gap_case.get('requestSha256')
+        and json_sha256(answer) == gap_case.get('answerSha256')
+        and decision['actualTerminal']['sha256'] == gap_case.get('terminalSha256'))
+    if expiry > previous + dt.timedelta(seconds=7200) and not prospective_gap:
+        raise ValueError('Delegated renewal exceeds the model operating window or cumulative cap')
+
+    goal = retained(evidence['goalObservation'])
+    definition = policy['goalDefinition']
+    if (not isinstance(definition, dict) or set(definition) != {'threadId', 'createdAt', 'objectiveSha256'}
+            or definition['threadId'] != human.get('threadId') or type(definition['createdAt']) is not int
+            or re.fullmatch('[0-9a-f]{64}', definition['objectiveSha256'] or '') is None
+            or not isinstance(goal, dict) or goal.get('schema') != 1 or goal.get('status') != 'active'
+            or goal.get('goalDefinition') != definition
+            or any(goal.get(key) is not False for key in ('humanPaused', 'humanHandoff', 'stopRequested'))
+            or not authorized <= delivery_time(goal.get('observedUTC')) <= observed):
+        raise ValueError('Fresh active same-goal and no-stop/handoff observation required')
+    baseline = retained(policy['identityScopeBaseline'])
+    scopes = retained(evidence['identityScopes'])
+    scope_fields = {'did', 'run', 'agent', 'role', 'pair', 'channels', 'claims', 'standing'}
+    if (not isinstance(baseline, dict) or not baseline or scopes != baseline
+            or any(not isinstance(row, dict) or set(row) != scope_fields for row in baseline.values())):
+        raise ValueError('Delegated renewal must retain all existing identities and scopes')
+
+    # Replay only prior canonical windows. Later events cannot qualify an earlier renewal.
+    sequence = event.get('sequence')
+    if type(sequence) is not int or sequence < 1:
+        raise ValueError('Canonical delegated renewal sequence required')
+    prefix = record['delivery']['events'][:sequence - 1]
+    windows = [[]]
+    for prior in prefix:
+        if prior.get('kind') == 'authorization-renewed':
+            windows.append([])
+        else:
+            windows[-1].append(prior)
+    attempts = [any(row.get('kind') == 'execution-started' for row in window) for window in windows]
+    current = windows[-1]
+    blocker = any(row.get('kind') in ('execution-refused', 'deferred')
+                  or (row.get('kind') == 'execution-finished' and row.get('failureSignature')) for row in current)
+    if not attempts[-1] and not blocker:
+        raise ValueError('Expiring window has neither a protected attempt nor a recorded blocker')
+    if len(attempts) >= 2 and not any(attempts[-2:]):
+        raise ValueError('Two consecutive windows without a protected attempt refuse delegated renewal')
+    return evidence['authorizedUTC']
+
+
+def validate_authorization_renewal(root, record, event, previous_expiry, previous_authorized):
+    """Validate retained human/goal receipts without granting execution authority."""
+    identity = delivery_identity(record)
+    evidence = json.loads(delivery_ref(root, event['evidence']))
+    if isinstance(evidence, dict) and evidence.get('kind') == 'human-delegated-authorization-renewal':
+        return validate_delegated_authorization_renewal(
+            root, record, event, previous_expiry, previous_authorized, evidence)
+    fields = {'schema', 'kind', 'recordPath', 'owner', 'startedUTC', 'deliveryIdentitySha256',
+              'previousExpiresUTC', 'authorizationExpiresUTC', 'authorizedUTC', 'humanRequest', 'goalObservation'}
+    if (not isinstance(evidence, dict) or set(evidence) != fields or
+            type(evidence['schema']) is not int or evidence['schema'] != 1 or
+            evidence['kind'] != 'explicit-human-authorization-renewal' or
+            evidence['recordPath'] != record.get('_recordPath') or evidence['owner'] != record['owner'] or
+            evidence['startedUTC'] != record['startedUTC'] or
+            evidence['deliveryIdentitySha256'] != json_sha256(identity) or
+            evidence['previousExpiresUTC'] != previous_expiry or
+            evidence['authorizationExpiresUTC'] != event['authorizationExpiresUTC']):
+        raise ValueError('Authorization renewal evidence differs from the same record, scope or prior deadline')
+    authorized = delivery_time(evidence['authorizedUTC'])
+    observed = delivery_time(event['atUTC'])
+    expiry = delivery_time(event['authorizationExpiresUTC'])
+    if (authorized < delivery_time(identity['clockOrigin']['utc']) or
+            (previous_authorized is not None and authorized <= delivery_time(previous_authorized)) or
+            authorized > observed or expiry <= observed or expiry <= delivery_time(previous_expiry)):
+        raise ValueError('Authorization renewal chronology is backdated, future-dated or contracting')
+    human = json.loads(delivery_ref(root, evidence['humanRequest']))
+    goal = json.loads(delivery_ref(root, evidence['goalObservation']))
+    if (not isinstance(human, dict) or type(human.get('schema')) is not int or human['schema'] != 1 or
+            human.get('kind') != 'human-authorization' or human.get('action') != 'renew-same-record' or
+            human.get('authorizedUTC') != evidence['authorizedUTC'] or
+            human.get('authorizationExpiresUTC') != event['authorizationExpiresUTC']):
+        raise ValueError('Renewal requires an exact explicit human request, not a queued agent message')
+    delivery_text(human.get('text'), 'explicit human authorization request')
+    if (not isinstance(goal, dict) or type(goal.get('schema')) is not int or goal['schema'] != 1 or
+            goal.get('status') != 'active' or
+            not authorized <= delivery_time(goal.get('observedUTC')) <= observed):
+        raise ValueError('Renewal requires an active goal observation after the human request')
+    return evidence['authorizedUTC']
+
+
+DELIVERY_GUARDS = (BASE, LANGUAGE_BASELINE, LANGUAGE_REVISION, LANGUAGE_HELPER,
+                   'implementation/elm-build-loop-v1/loop.py', 'window-integration-qa/qa_run.py',
+                   'window-integration-qa/qa_launch.py')
+DELIVERY_RESTORABLE_GUARD = 'implementation/elm-build-loop-v1/loop.py'
+DELIVERY_RESTORABLE_SHA256 = '13216f4226f4fdb2e439604459e860763ce351fa77cec0f6082c30195372dbd6'
+
+
+def restored_delivery_guards(guards, event):
+    if 'guardRestorations' not in event:
+        return dict(guards)
+    restoration = {DELIVERY_RESTORABLE_GUARD: DELIVERY_RESTORABLE_SHA256}
+    if (event.get('kind') != 'authorization-renewed' or event['guardRestorations'] != restoration or
+            DELIVERY_RESTORABLE_GUARD not in guards or guards[DELIVERY_RESTORABLE_GUARD] is not None):
+        raise ValueError('Invalid canonical archived guard restoration transition')
+    return dict(guards, **restoration)
+
+
+def effective_delivery_guards(record):
+    guards = dict(delivery_identity(record)['guardHashes'])
+    for event in record['delivery']['events']:
+        guards = restored_delivery_guards(guards, event)
+    return guards
+
+
+def validate_canonical_guard_blob(root, record):
+    name = DELIVERY_RESTORABLE_GUARD
+    entries = git(root, 'ls-tree', '-z', record['sourceRevision'], '--', name).split(b'\0')
+    if len(entries) != 2 or entries[-1] != b'' or b'\t' not in entries[0]:
+        raise ValueError('Canonical archived guard is absent from the original revision')
+    metadata, path = entries[0].split(b'\t', 1)
+    fields = metadata.split()
+    if (len(fields) != 3 or fields[0] not in (b'100644', b'100755') or fields[1] != b'blob' or
+            path.decode() != name or
+            hashlib.sha256(git(root, 'show', record['sourceRevision'] + ':' + name)).hexdigest() != DELIVERY_RESTORABLE_SHA256):
+        raise ValueError('Original revision does not contain the pinned regular archived guard')
+
+
+def renewal_guard_restorations(root, record):
+    restorations = {}
+    for name, expected in effective_delivery_guards(record).items():
+        actual = fingerprint(root, name)
+        if actual == expected:
+            continue
+        if name != DELIVERY_RESTORABLE_GUARD or expected is not None or actual != DELIVERY_RESTORABLE_SHA256:
+            raise ValueError('Authorization renewal cannot change immutable original/native guards')
+        if hashlib.sha256(regular_bytes(safe(root, name))).hexdigest() != DELIVERY_RESTORABLE_SHA256:
+            raise ValueError('Restored archived guard is not the pinned regular file')
+        validate_canonical_guard_blob(root, record)
+        restorations[name] = actual
+    return restorations
+
+
+def snapshot_sha256(value):
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode()).hexdigest()
+
+
+def plugin_snapshot(root):
+    names = git(root, 'ls-files', '--cached', '--others', '--exclude-standard', '-z', '--', 'plugins/warlock-contributor').decode().split('\0')
+    files = {name: digest(safe(root, name)) for name in sorted(set(names)) if name}
+    if not files or any(value is None for value in files.values()):
+        raise ValueError('Plugin snapshot has missing files')
+    return {'files': files, 'sha256': snapshot_sha256(files)}
+
+
+def plugin_snapshot_ref(root, reference):
+    value = json.loads(delivery_ref(root, reference))
+    if (not isinstance(value, dict) or set(value) != {'files', 'sha256'} or not isinstance(value['files'], dict) or
+            not value['files'] or value['sha256'] != snapshot_sha256(value['files'])):
+        raise ValueError('Invalid canonical plugin snapshot')
+    for name, sha in value['files'].items():
+        safe(root, name)
+        if not name.startswith('plugins/warlock-contributor/') or not isinstance(sha, str) or re.fullmatch('[0-9a-f]{64}', sha) is None:
+            raise ValueError('Invalid plugin snapshot file')
+    return value
+
+
+def validate_rsi(root, record, state, event, current=False, authorization_expires=None, guard_hashes=None):
+    """One bounded post-slice improvement receipt; no authority or oracle changes."""
+    integrated = state['integrated']
+    if (not integrated or not integrated.get('sliceCompleted') or state.get('rsi') or
+            event.get('candidateSha256') != state['candidateSha256'] or
+            event.get('integrationRevision') != integrated['revision']):
+        raise ValueError('RSI does not match one completed tested slice')
+    evidence = json.loads(delivery_ref(root, event['evidence']))
+    disposition = event.get('disposition')
+    if (evidence.get('schema') != 1 or disposition not in ('adopted', 'no-change', 'deferred-blocker') or
+            evidence.get('disposition') != disposition or evidence.get('candidateSha256') != state['candidateSha256'] or
+            evidence.get('integrationRevision') != integrated['revision']):
+        raise ValueError('RSI evidence binding differs')
+    for field in ('proposedChange', 'refutationCase', 'reason'):
+        delivery_text(evidence.get(field), 'RSI ' + field)
+    baseline_plugin = plugin_snapshot_ref(root, evidence['baselinePlugin'])
+    json.loads(delivery_ref(root, evidence['baselineHarness']))
+    authorization_expires = authorization_expires or effective_delivery_authorization(record)
+    guard_hashes = effective_delivery_guards(record) if guard_hashes is None else guard_hashes
+    if evidence.get('authorizationExpiresUTC') != authorization_expires:
+        raise ValueError('RSI authorization binding differs')
+    if baseline_plugin['sha256'] != integrated['pluginBaselineSha256']:
+        raise ValueError('RSI plugin baseline differs from completed slice')
+    if disposition == 'deferred-blocker':
+        blocker = json.loads(delivery_ref(root, evidence['blocker']))
+        for field in ('dependency', 'owner', 'nextAction'):
+            delivery_text(blocker.get(field), 'RSI blocker ' + field)
+        if blocker.get('candidateSha256') != state['candidateSha256']:
+            raise ValueError('RSI blocker belongs to another completed slice')
+    else:
+        result_plugin = plugin_snapshot_ref(root, evidence['resultPlugin'])
+        before = json.loads(delivery_ref(root, evidence['baselineHarness']))
+        after = json.loads(delivery_ref(root, evidence['candidateHarness']))
+        comparison = json.loads(delivery_ref(root, evidence['comparison']))
+        regression = json.loads(delivery_ref(root, evidence['regression']))
+        baseline, candidate = baseline_plugin['sha256'], result_plugin['sha256']
+        if (comparison.get('schema') != 1 or comparison.get('kind') != 'same-task-harness-comparison' or
+                comparison.get('completedCandidateSha256') != state['candidateSha256'] or
+                comparison.get('baselinePluginSha256') != baseline or
+                comparison.get('baselineSnapshotSha256') != snapshot_sha256(before) or
+                comparison.get('candidateSnapshotSha256') != snapshot_sha256(after) or
+                evidence.get('authorizationExpiresUTC') != authorization_expires):
+            raise ValueError('RSI comparison is not bound to the same task, plugin, harness and refutation case')
+        roles = {'taskFiles', 'sourceFiles', 'oracleFiles', 'guardFiles', 'authorizationFiles', 'pluginBaselineFiles'}
+        fixed = before.get('fixedInputs')
+        if not isinstance(fixed, dict) or set(fixed) != roles or fixed != after.get('fixedInputs'):
+            raise ValueError('RSI immutable snapshot inputs differ')
+        maps = {}
+        for role, bindings in fixed.items():
+            if not isinstance(bindings, dict):
+                raise ValueError('RSI immutable input map malformed')
+            maps[role] = {}
+            for name, binding in bindings.items():
+                safe(root, name)
+                sha = binding.get('sha256') if isinstance(binding, dict) else None
+                if not isinstance(sha, str) or re.fullmatch('[0-9a-f]{64}', sha) is None:
+                    raise ValueError('Invalid RSI immutable input hash')
+                maps[role][name] = sha
+        if (maps['sourceFiles'] != state['candidate']['manifest']['sources'] or
+                maps['pluginBaselineFiles'] != baseline_plugin['files'] or
+                comparison.get('immutableHashes') != {role: snapshot_sha256(values) for role, values in maps.items()}):
+            raise ValueError('RSI immutable hashes differ from completed source and plugin')
+        protected = dict(maps['oracleFiles'], **maps['guardFiles'])
+        if any(sha is not None and protected.get(name) != sha for name, sha in guard_hashes.items()):
+            raise ValueError('RSI snapshot omits or changes original/native guards')
+        names = before.get('checkNames')
+        checks = comparison.get('checks')
+        if (not isinstance(names, list) or not names or len(set(names)) != len(names) or names != after.get('checkNames') or
+                not isinstance(checks, list) or len(checks) != len(names) or
+                any(not isinstance(row, dict) or set(row) != {'name', 'baselinePassed', 'candidatePassed'} or
+                    type(row['baselinePassed']) is not bool or type(row['candidatePassed']) is not bool for row in checks) or
+                [row['name'] for row in checks] != names):
+            raise ValueError('RSI comparison needs exact ordered baseline/candidate observations')
+        compared_regression = dict(comparison.get('regression', {}))
+        if isinstance(compared_regression.get('path'), str) and pathlib.Path(compared_regression['path']).is_absolute():
+            compared_regression['path'] = str(pathlib.Path(compared_regression['path']).relative_to(root))
+        if compared_regression != evidence['regression']:
+            raise ValueError('RSI comparison regression binding differs')
+        delivery_ref(root, compared_regression)
+        if (regression.get('schema') != 1 or regression.get('pluginSha256') != candidate or
+                regression.get('terminal') is not True or regression.get('exit') != 0 or
+                type(regression.get('testsRun')) is not int or regression['testsRun'] < 1 or
+                regression.get('failures') != 0):
+            raise ValueError('RSI result lacks a passing bound regression report')
+        if disposition == 'no-change' and candidate != baseline:
+            raise ValueError('RSI no-change cannot adopt different plugin bytes')
+        if disposition == 'adopted':
+            review = json.loads(delivery_ref(root, evidence['rootReview']))
+            if (candidate == baseline or not all(row['candidatePassed'] for row in checks) or
+                    review.get('disposition') != 'accepted' or review.get('role') != 'Root' or
+                    review.get('candidateSha256') != state['candidateSha256'] or
+                    review.get('integrationRevision') != integrated['revision'] or
+                    review.get('baselinePluginSha256') != baseline or review.get('resultPluginSha256') != candidate):
+                raise ValueError('RSI adoption requires actual changed tested bytes and bound Root review')
+            delivery_text(review.get('reviewer'), 'RSI Root reviewer')
+            delivery_ref(root, review['diff'])
+            if current and plugin_snapshot(root)['sha256'] != candidate:
+                raise ValueError('RSI adopted result is not the actual current checker')
+        elif current and plugin_snapshot(root)['sha256'] != baseline:
+            raise ValueError('RSI no-change differs from actual installed plugin snapshot')
+    if current and any(fingerprint(root, name) != sha for name, sha in guard_hashes.items()):
+        raise ValueError('RSI cannot change immutable original/native guards')
+    return evidence
+
+
+def validate_delivery_plan(plan, selected, reqs):
+    if not isinstance(plan, dict) or set(plan) != {'schema', 'journey', 'authorizationExpiresUTC'} or plan['schema'] != 1:
+        raise ValueError('Invalid delivery plan schema')
+    journey = plan['journey']
+    fields = {'userOutcome', 'originalPairs', 'inputSteps', 'expectedObservation'}
+    if not isinstance(journey, dict) or set(journey) != fields:
+        raise ValueError('Invalid delivery journey fields')
+    delivery_text(journey['userOutcome'], 'user outcome')
+    delivery_text(journey['expectedObservation'], 'expected observation')
+    if not isinstance(journey['inputSteps'], list) or not 1 <= len(journey['inputSteps']) <= 32:
+        raise ValueError('Delivery journey needs bounded input steps')
+    for step in journey['inputSteps']:
+        delivery_text(step, 'input step')
+    pairs = journey['originalPairs']
+    if not isinstance(pairs, list) or not pairs or any(not isinstance(p, dict) or set(p) != {'requirement', 'scenario'} for p in pairs):
+        raise ValueError('Invalid delivery original pairs')
+    actual = [(p['requirement'], p['scenario']) for p in pairs]
+    if any(not isinstance(a, str) or not isinstance(b, str) for a, b in actual):
+        raise ValueError('Invalid delivery original pair identity')
+    if len(set(actual)) != len(actual) or set(actual) != slice_scenario_pairs(selected, reqs):
+        raise ValueError('Delivery journey original pairs differ from selected originals')
+    delivery_time(plan['authorizationExpiresUTC'])
+
+
+def delivery_clock_reconciliation_fields(record, events, sample):
+    """Bind a locally sampled bridge to the exact immutable history prefix."""
+    validate_clock_sample(sample)
+    origin = record['delivery']['clockOrigin']
+    previous = events[-1]['clockSample'] if events else origin
+    stamps = [origin['utc']] + [event['clockSample']['utc'] for event in events]
+    if delivery_time(sample['utc']) < max(delivery_time(stamp) for stamp in stamps):
+        raise ValueError('Clock reconciliation cannot move UTC backward')
+    return {'historySha256': json_sha256(events),
+            'previousSampleSha256': json_sha256(previous),
+            'currentSampleSha256': json_sha256(sample)}
+
+
+def delivery_clock_interval(previous, observed):
+    """Uncertain intervals receive no suspend exclusion; UTC is a bound, not a clock proof."""
+    wall = delivery_time(observed['utc']) - delivery_time(previous['utc'])
+    wall_ns = (wall.days * 86400 + wall.seconds) * 1000000000 + wall.microseconds * 1000
+    mono = observed['monotonicNs'] - previous['monotonicNs']
+    boot = observed['boottimeNs'] - previous['boottimeNs']
+    same_boot = observed['bootId'] == previous['bootId']
+    certain = (same_boot and wall_ns >= 0 and mono >= 0 and boot >= 0 and
+               boot // 1000000000 >= mono // 1000000000)
+    if certain:
+        # Preserve the existing whole-second boot-versus-awake check. Sequential
+        # clock-read skew within a second never earns negative suspend credit.
+        return mono, max(mono, boot), False
+    # Never subtract counters from unrelated boots. For regression on one boot,
+    # retain any observed positive counter span as an additional lower bound.
+    charged = max(0, wall_ns, mono if same_boot else 0, boot if same_boot else 0)
+    return charged, charged, True
+
+
+def validate_clock_reconciliation(root, record, events, event, expiry, job, current=False):
+    """Evidence is retained context; only the existing Root admission writes a bridge."""
+    fields = {'eventId', 'kind', 'evidence', 'sequence', 'atUTC', 'clockSample', 'reconciliation'}
+    if set(event) != fields or event['kind'] != 'clock-reconciled':
+        raise ValueError('Invalid clock reconciliation event fields')
+    identity = delivery_identity(record)
+    if job and not job.get('consumed'):
+        raise ValueError('Consume protected job before clock reconciliation')
+    sample = event['clockSample']
+    bridge = delivery_clock_reconciliation_fields(record, events, sample)
+    if event['reconciliation'] != bridge:
+        raise ValueError('Clock reconciliation prefix or sample differs')
+    prefix = dict(record, delivery=dict(record['delivery'], events=events))
+    if not delivery_progress_status(prefix, sample=sample)['reconciliationRequired']:
+        raise ValueError('Clock reconciliation requires an unresolved discontinuity')
+    observed = delivery_time(sample['utc'])
+    if observed >= delivery_time(expiry):
+        raise ValueError('Clock reconciliation requires unexpired authorization')
+    evidence = json.loads(delivery_ref(root, event['evidence']))
+    required = {'schema', 'kind', 'recordPath', 'deliveryIdentitySha256', 'historySha256',
+                'previousSampleSha256', 'observedBootId', 'observedUTC', 'goalObservation'}
+    if (not isinstance(evidence, dict) or set(evidence) != required or
+            type(evidence['schema']) is not int or evidence['schema'] != 1 or
+            evidence['kind'] != 'same-history-clock-reconciliation' or
+            evidence['recordPath'] != record.get('_recordPath') or
+            evidence['deliveryIdentitySha256'] != json_sha256(identity) or
+            evidence['historySha256'] != bridge['historySha256'] or
+            evidence['previousSampleSha256'] != bridge['previousSampleSha256'] or
+            evidence['observedBootId'] != sample['bootId']):
+        raise ValueError('Clock evidence differs from record, history or current boot')
+    evidence_at = delivery_time(evidence['observedUTC'])
+    previous = events[-1]['clockSample'] if events else identity['clockOrigin']
+    if not delivery_time(previous['utc']) <= evidence_at <= observed:
+        raise ValueError('Clock evidence chronology differs')
+    goal = json.loads(delivery_ref(root, evidence['goalObservation']))
+    if (not isinstance(goal, dict) or type(goal.get('schema')) is not int or goal['schema'] != 1 or
+            goal.get('status') != 'active'):
+        raise ValueError('Clock reconciliation requires an active goal observation')
+    goal_at = delivery_time(goal.get('observedUTC'))
+    if not evidence_at <= goal_at <= observed:
+        raise ValueError('Clock goal observation chronology differs')
+    if current and ((observed - evidence_at).total_seconds() > 120 or
+                    (observed - goal_at).total_seconds() > 120):
+        raise ValueError('Clock reconciliation evidence is stale')
+
+
+def delivery_progress_status(record, clock=None, sample=None):
+    """Prospective management observations; source edits do not reset this clock."""
+    delivery = record['delivery']
+    origin = delivery['clockOrigin']
+    current = sample or clock_sample()
+    if clock is not None:
+        current = dict(current, utc=clock.isoformat())
+    validate_clock_sample(origin)
+    validate_clock_sample(current)
+    baseline = origin
+    last = origin
+    unknown = False
+    failed = []
+    advances = set()
+    awake_ns = boot_ns = 0
+    for index, event in enumerate(delivery['events']):
+        observed = event['clockSample']
+        validate_clock_sample(observed)
+        awake_delta, boot_delta, discontinuity = delivery_clock_interval(last, observed)
+        awake_ns += awake_delta
+        boot_ns += boot_delta
+        unknown = unknown or discontinuity
+        if event['kind'] == 'clock-reconciled':
+            if (not unknown or 'deliveryAdvance' in event or event.get('reconciliation') !=
+                    delivery_clock_reconciliation_fields(record, delivery['events'][:index], observed)):
+                raise ValueError('Invalid clock reconciliation bridge')
+            unknown = False
+        if event.get('deliveryAdvance') and event['deliveryAdvance'] not in advances:
+            advances.add(event['deliveryAdvance'])
+            baseline = observed
+            awake_ns = boot_ns = 0
+            failed = []
+        if event['kind'] == 'execution-finished' and event.get('failureSignature'):
+            failed.append(event['failureSignature'])
+        last = observed
+    awake_delta, boot_delta, discontinuity = delivery_clock_interval(last, current)
+    unknown = unknown or discontinuity
+    awake = (awake_ns + awake_delta) // 1000000000
+    boot = (boot_ns + boot_delta) // 1000000000
+    if boot < awake:
+        unknown = True
+    repeated = len(failed) >= 2 and failed[-1] == failed[-2]
+    reasons = (['45-awake-minutes-without-tested-integration'] if awake >= 2700 else [])
+    if repeated:
+        reasons.append('two-experiments-with-same-failure')
+    authorization_expires = effective_delivery_authorization(record)
+    expired = delivery_time(current['utc']) >= delivery_time(authorization_expires)
+    return {'workflowPolicy': 2, 'iterationsWithoutProgress': 0,
+            'lastRecordedProgressUTC': baseline['utc'], 'secondsSinceRecordedProgress': None if unknown else awake,
+            'suspendedSeconds': None if unknown else max(0, boot - awake),
+            'limits': {'iterations': 2, 'seconds': 2700, 'sameFailureExperiments': 2},
+            'investigationNeedsChange': False, 'planChangeRequired': bool(reasons),
+            'reconciliationRequired': unknown, 'authorizationExpired': expired, 'reasons': reasons,
+            'effectiveAuthorizationExpiresUTC': authorization_expires,
+            'action': 'Reconcile clocks and environment.' if unknown else 'Authorization expired; no dispatch.' if expired else
+                      'Change the next action or defer in this same history.' if reasons else 'Continue the selected delivery action.',
+            'basis': 'Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.'}
+
+
+def delivery_ref(root, value):
+    if not isinstance(value, dict) or set(value) != {'path', 'sha256'}:
+        raise ValueError('Delivery reference requires path and sha256')
+    body = regular_bytes(safe(root, value['path']))
+    if hashlib.sha256(body).hexdigest() != value['sha256']:
+        raise ValueError('Delivery evidence changed: ' + value['path'])
+    return body
+
+
+def validate_delivery_candidate(root, record, candidate, current=False):
+    fields = {'id', 'manifest', 'scope', 'argv', 'expectedObservation', 'nativePrerequisites'}
+    if not isinstance(candidate, dict) or not fields <= set(candidate) or set(candidate) - fields - {'baselineCandidateSha256'}:
+        raise ValueError('Invalid delivery candidate fields')
+    delivery_text(candidate['id'], 'candidate id')
+    delivery_text(candidate['expectedObservation'], 'expected observation')
+    if candidate['scope'] not in ('cpu', 'native'):
+        raise ValueError('Invalid delivery execution scope')
+    if not isinstance(candidate['argv'], list) or not 1 <= len(candidate['argv']) <= 128:
+        raise ValueError('Delivery candidate requires bounded argv')
+    for argument in candidate['argv']:
+        delivery_text(argument, 'argv')
+        if '\0' in argument:
+            raise ValueError('NUL in delivery argv')
+    manifest = candidate['manifest']
+    if not isinstance(manifest, dict) or set(manifest) != {'sources', 'fixtures', 'runners', 'profiles'}:
+        raise ValueError('Invalid delivery manifest roles')
+    for role, paths in manifest.items():
+        if not isinstance(paths, dict) or not 1 <= len(paths) <= 4096:
+            raise ValueError('Delivery manifest role needs actual files: ' + role)
+        for name, sha in paths.items():
+            safe(root, name)
+            absent_product = sha is None and role == 'sources' and authored_v6(name)
+            if not absent_product and (not isinstance(sha, str) or re.fullmatch('[0-9a-f]{64}', sha) is None):
+                raise ValueError('Invalid delivery manifest hash')
+            if current and digest(safe(root, name)) != sha:
+                raise ValueError('Delivery candidate input changed: ' + name)
+    sources, owned = set(manifest['sources']), set(record['slice']['paths'])
+    if not sources <= owned:
+        raise ValueError('Delivery candidate sources must remain within owned paths')
+    # Later dependency extensions preserve old candidates, but a live candidate
+    # must bind the complete current declaration before append or execution.
+    if current and sources != owned:
+        raise ValueError('Delivery candidate must bind every declared source')
+    prerequisites = candidate['nativePrerequisites']
+    if not isinstance(prerequisites, list) or len(prerequisites) > 64:
+        raise ValueError('Invalid native prerequisite references')
+    for reference in prerequisites:
+        delivery_ref(root, reference)
+    if candidate['scope'] == 'native' and not prerequisites:
+        raise ValueError('Native candidate requires scoped readiness evidence')
+
+
+UX023_CLOSED_INTEGRATION = {'recordPath': '.warlock-contributor/ux023-keyboard-launcher-root.json', 'recordIdentitySha256': 'f5322281044c01ad184d341de2a09d361294da0e8db49a860483b05799a9b3bc', 'candidateSha256': '7c8caed3927894b0628c07d989a5ce30ca0489f113ed515b9ac83edf50e2cb2e', 'jobId': 'pid2561971-start15382849', 'outerHandle': '55475', 'terminalSha256': '0c33f603ad36b6df08edf6ba68517c538dfe8878aa173a109ce824f10ae256b2', 'revision': '0267dc94ac76cca1b01cf0897b7a068835c20165', 'oldCore': 'ab78d94fb9a8623b67e562a6f8d272964631a6ed940e4f36c477144cbe4df3dd', 'recoveredCore': '0c017a29cba5a064458422657ebceed0e5e3abd44e68e54f2f6bbd95e4c031de', 'recoveredTest': '4ab6e507fbe5755f17b9e098199aae6b91de4744ef821dbda7413e585a299f4f', 'qualificationReportSha256': 'c7822a668640a715605e30e503b4201917b9628b5cc617c93c5997e25051272a', 'authorizationExpiresUTC': '2026-11-09T04:45:00Z'}
+
+
+def validate_ux023_closed_historical_integration(root, record, state, event):
+    """Exact historical integration audit only; never changes execution eligibility."""
+    case = UX023_CLOSED_INTEGRATION
+    if (event.get('kind') != 'integrated' or record.get('_recordPath') != case['recordPath']
+            or record_identity(record, case['recordPath']) != case['recordIdentitySha256']
+            or event.get('candidateSha256') != case['candidateSha256']
+            or event.get('revision') != case['revision'] or state.get('candidateSha256') != case['candidateSha256']):
+        return False
+    candidate = state['candidate']
+    validate_delivery_candidate(root, record, candidate)
+    if (json_sha256(candidate) != case['candidateSha256'] or candidate['scope'] != 'native'
+            or set(candidate['manifest']['sources']) != set(record['slice']['paths'])
+            or effective_delivery_authorization(record) != case['authorizationExpiresUTC']
+            or not state.get('terminal') or state['terminal'].get('classification') != 'pass'
+            or state['terminal'].get('exit') != 0 or not state.get('job')
+            or state['job'].get('jobId') != case['jobId'] or state['job'].get('outerHandle') != case['outerHandle']
+            or state['job'].get('consumed') is not True or state.get('integrated')):
+        raise ValueError('Historical integration requires the exact consumed passing native job/current source scope')
+    finished = [row for row in record['delivery']['events'] if row.get('kind') == 'execution-finished'
+                and row.get('candidateSha256') == case['candidateSha256'] and row.get('jobId') == case['jobId']
+                and row.get('outerHandleConsumed') is True and row.get('report', {}).get('sha256') == case['terminalSha256']]
+    if len(finished) != 1:
+        raise ValueError('Exact retained native terminal required for historical integration')
+    core_path, test_path = 'plugins/warlock-contributor/scripts/warlock.py', 'plugins/warlock-contributor/qa/test_delivery.py'
+    current_core, current_test = digest(safe(root, core_path)), digest(safe(root, test_path))
+    if current_core != digest(pathlib.Path(__file__)) or candidate['manifest']['runners'].get(core_path) != case['oldCore']:
+        raise ValueError('Historical integration checker differs from the reviewed installed version/native runner')
+    overlay, errors, chain = support_reconciliations(root, record)
+    required = {(core_path, case['oldCore'], case['recoveredCore']),
+                (core_path, case['recoveredCore'], current_core), (test_path, case['recoveredTest'], current_test)}
+    transitions = {(row['path'], row['fromSha256'], row['toSha256']) for row in (chain or {}).get('events', [])}
+    if (errors or overlay.get(core_path) != current_core or overlay.get(test_path) != current_test
+            or not required <= transitions):
+        raise ValueError('Exact replay-validated qualified recovery and current repair support chain required')
+    descriptor = read(safe(root, UX023_QUALIFIED_ADOPTION))
+    report = bootstrap_json(delivery_ref(root, descriptor['qualificationReport']))
+    receipt = bootstrap_json(delivery_ref(root, descriptor['qualificationReceipt']))
+    review = bootstrap_json(delivery_ref(root, descriptor['independentReview']))
+    if (descriptor.get('checkerSha256') != case['recoveredCore']
+            or descriptor.get('testDeliverySha256') != case['recoveredTest']
+            or descriptor.get('recordIdentitySha256') != case['recordIdentitySha256']
+            or descriptor['qualificationReport']['sha256'] != case['qualificationReportSha256']
+            or report.get('passed') is not True or report.get('exit') != 0
+            or report.get('fullRegressionTests') != 557 or report.get('comparisonTestExecutions') != 16
+            or report.get('primarySourceUnchanged') is not True or len(report.get('commands', [])) != 4
+            or any(row.get('exit') != 0 for row in report['commands'])
+            or receipt.get('completed') is not True or receipt.get('exit') != 0
+            or receipt.get('outerHandleConsumed') is not True or receipt.get('checkerSha256') != case['recoveredCore']
+            or review.get('scope') != 'ux023-qualified-audit-entry' or review.get('disposition') != 'accepted'
+            or review.get('reviewer') not in ('workflow_astra', 'build_audit')
+            or review.get('checkerSha256') != case['recoveredCore']
+            or review.get('qualificationReportSha256') != case['qualificationReportSha256']
+            or review.get('qualificationReceiptSha256') != descriptor['qualificationReceipt']['sha256']):
+        raise ValueError('Actual independent qualified R5 recovery evidence required')
+    skipped = 0
+    for role, paths in candidate['manifest'].items():
+        for name, expected in paths.items():
+            if role == 'runners' and name == core_path and expected == case['oldCore']:
+                skipped += 1
+            elif digest(safe(root, name)) != expected:
+                raise ValueError('Historical integration input changed outside exact checker runner: ' + name)
+    if skipped != 1:
+        raise ValueError('Historical integration must differ at exactly the one original checker runner')
+    for name, expected in candidate['manifest']['sources'].items():
+        rows = git(root, 'ls-tree', case['revision'], '--', name).decode().strip().split('\t', 1)
+        if len(rows) != 2:
+            raise ValueError('Historical product commit file is missing')
+        mode, kind, blob = rows[0].split()
+        if (mode not in ('100644', '100755') or kind != 'blob'
+                or hashlib.sha256(git(root, 'cat-file', 'blob', blob)).hexdigest() != expected):
+            raise ValueError('Historical product commit differs from the actual tested regular source')
+    return True
+
+
+def delivery_product_identity(hashes):
+    return json_sha256({name: sha for name, sha in hashes.items() if authored_v6(name)})
+
+
+def validate_execution_refusal(root, record, state, event, reviewed_at):
+    """Close only an independently reviewed pre-spawn refusal, never a real job."""
+    if set(event) != {'eventId', 'kind', 'candidateSha256', 'outerHandle', 'report', 'review',
+                      'sequence', 'clockSample', 'atUTC'}:
+        raise ValueError('Invalid pre-spawn refusal event fields')
+    if (not state['candidate'] or event['candidateSha256'] != state['candidateSha256'] or
+            not state['review'] or state['review']['disposition'] != 'accepted' or
+            state['job'] or state['terminal'] or state.get('refusal')):
+        raise ValueError('Pre-spawn refusal requires an accepted candidate with no job')
+    handle = delivery_text(event['outerHandle'], 'refused outer tool handle')
+    report = json.loads(delivery_ref(root, event['report']))
+    fields = {'schema', 'classification', 'candidateSha256', 'scope', 'manifestSha256',
+              'fixtureSha256', 'outerHandle', 'outerHandleConsumed', 'exit',
+              'actualLaunch', 'jobId', 'observedUTC', 'rawEvidence'}
+    if (not isinstance(report, dict) or set(report) != fields or
+            type(report['schema']) is not int or report['schema'] != 1 or
+            report['classification'] != 'pre-spawn-refused' or
+            report['candidateSha256'] != state['candidateSha256'] or
+            report['scope'] != state['candidate']['scope'] or
+            report['manifestSha256'] != json_sha256(state['candidate']['manifest']) or
+            report['fixtureSha256'] != json_sha256(state['candidate']['manifest']['fixtures']) or
+            report['outerHandle'] != handle or report['outerHandleConsumed'] is not True or
+            type(report['exit']) is not int or report['exit'] == 0 or
+            report['actualLaunch'] is not None or report['jobId'] is not None):
+        raise ValueError('Pre-spawn refusal report identity, consumption or outcome differs')
+    if not delivery_ref(root, report['rawEvidence']).strip():
+        raise ValueError('Pre-spawn refusal requires retained raw evidence')
+    review = json.loads(delivery_ref(root, event['review']))
+    fields = {'schema', 'reviewer', 'disposition', 'candidateSha256', 'scope', 'report',
+              'conclusion', 'observedUTC'}
+    if (not isinstance(review, dict) or set(review) != fields or
+            type(review['schema']) is not int or review['schema'] != 1 or
+            review['disposition'] != 'accepted' or review['conclusion'] != 'no-process-started' or
+            review['candidateSha256'] != state['candidateSha256'] or
+            review['scope'] != state['candidate']['scope'] or review['report'] != event['report'] or
+            delivery_text(review['reviewer'], 'refusal reviewer').strip().casefold() == record['owner'].strip().casefold()):
+        raise ValueError('Pre-spawn refusal requires an independent bound review')
+    if not (delivery_time(reviewed_at) <= delivery_time(report['observedUTC']) <=
+            delivery_time(review['observedUTC']) <= delivery_time(event['atUTC'])):
+        raise ValueError('Pre-spawn refusal evidence chronology differs')
+    return report
+
+
+def delivery_state(root, record, reqs):
+    """Replay typed facts. Retained evidence is structural, not independently true."""
+    identity = delivery_identity(record)
+    if identity['schema'] != 1:
+        raise ValueError('Invalid delivery schema')
+    validate_delivery_plan({'schema': 1, 'journey': identity['journey'],
+                            'authorizationExpiresUTC': identity['authorizationExpiresUTC']}, record['slice'], reqs)
+    validate_clock_sample(identity['clockOrigin'])
+    if not isinstance(identity['guardHashes'], dict) or set(identity['guardHashes']) != set(DELIVERY_GUARDS):
+        raise ValueError('Delivery immutable guard inventory differs')
+    events = record['delivery'].get('events')
+    if not isinstance(events, list) or len(events) > 4096:
+        raise ValueError('Invalid delivery event history')
+    state = {'candidate': None, 'candidateSha256': None, 'review': None, 'job': None,
+             'terminal': None, 'integrated': None, 'journey': None, 'deferred': None, 'rsi': None, 'refusal': None}
+    seen, candidates, jobs = set(), set(), set()
+    outer_handles, refused_handles = set(), set()
+    advances = {delivery_product_identity(record['sourceHashes'])}
+    authorization_expires = identity['authorizationExpiresUTC']
+    authorization_issued = None
+    guard_hashes = dict(identity['guardHashes'])
+    for index, event in enumerate(events):
+        if not isinstance(event, dict) or event.get('sequence') != index + 1:
+            raise ValueError('Delivery event sequence differs')
+        event_id = delivery_text(event.get('eventId'), 'event id')
+        if event_id in seen:
+            raise ValueError('Duplicate delivery event id')
+        seen.add(event_id)
+        validate_clock_sample(event['clockSample'])
+        if event.get('atUTC') != event['clockSample']['utc']:
+            raise ValueError('Delivery event timestamp differs from sample')
+        kind = event.get('kind')
+        if 'guardRestorations' in event:
+            guard_hashes = restored_delivery_guards(guard_hashes, event)
+            validate_canonical_guard_blob(root, record)
+        if kind == 'clock-reconciled':
+            validate_clock_reconciliation(root, record, events[:index], event,
+                                          authorization_expires, state['job'])
+        elif kind == 'authorization-renewed':
+            authorization_issued = validate_authorization_renewal(
+                root, record, event, authorization_expires, authorization_issued)
+            authorization_expires = event['authorizationExpiresUTC']
+        elif kind == 'candidate':
+            if state['integrated'] and state['integrated'].get('sliceCompleted') and not state['rsi']:
+                raise ValueError('Complete bounded RSI before the next slice candidate')
+            candidate = event['candidate']
+            validate_delivery_candidate(root, record, candidate)
+            sha = json_sha256(candidate)
+            baseline = candidate.get('baselineCandidateSha256')
+            if baseline is not None and (baseline != state['candidateSha256'] or not state['terminal'] or
+                    state['terminal']['classification'] != 'expected-red' or not state['job']['consumed'] or
+                    candidate['manifest']['fixtures'] != state['candidate']['manifest']['fixtures']):
+                raise ValueError('RED/GREEN baseline or frozen fixture identity differs')
+            if event.get('candidateSha256') != sha or candidate['id'] in candidates:
+                raise ValueError('Duplicate or changed delivery candidate identity')
+            if state['job'] and not state['job'].get('consumed'):
+                raise ValueError('Protected job still occupies delivery slot')
+            if state['candidate'] and not state['terminal'] and not state.get('refusal') and state['review'] and state['review']['disposition'] == 'accepted':
+                raise ValueError('Consume the ready candidate before producing another')
+            candidates.add(candidate['id'])
+            state = dict(candidate=candidate, candidateSha256=sha, review=None, job=None,
+                         terminal=None, integrated=None, journey=None, deferred=None, rsi=None, refusal=None)
+        elif kind == 'review':
+            if not state['candidate'] or event.get('candidateSha256') != state['candidateSha256']:
+                raise ValueError('Review refers to another delivery candidate')
+            review = json.loads(delivery_ref(root, event['review']))
+            if (review.get('candidateSha256') != state['candidateSha256'] or
+                    review.get('scope') != state['candidate']['scope'] or
+                    review.get('disposition') not in ('accepted', 'changes-required') or
+                    delivery_text(review.get('reviewer'), 'reviewer').strip().casefold() == record['owner'].strip().casefold()):
+                raise ValueError('Delivery review identity, scope or disposition differs')
+            if state['job'] or state['review']:
+                raise ValueError('Duplicate review or execution already began')
+            state['review'] = review
+        elif kind == 'execution-refused':
+            reviewed_at = next((prior['atUTC'] for prior in reversed(events[:index])
+                                if prior['kind'] == 'review' and
+                                prior.get('candidateSha256') == state['candidateSha256']), None)
+            report = validate_execution_refusal(root, record, state, event, reviewed_at)
+            handle = event['outerHandle']
+            if handle in outer_handles:
+                raise ValueError('Pre-spawn refusal outer handle reused')
+            outer_handles.add(handle)
+            refused_handles.add(handle)
+            state['refusal'] = report
+        elif kind == 'execution-started':
+            if (event.get('candidateSha256') != state['candidateSha256'] or not state['review'] or
+                    state['review']['disposition'] != 'accepted' or state['job'] or state['deferred'] or state.get('refusal')):
+                raise ValueError('Delivery candidate is not ready for a new job')
+            job = delivery_text(event.get('jobId'), 'job id')
+            handle = delivery_text(event.get('outerHandle'), 'outer tool handle')
+            if handle in refused_handles:
+                raise ValueError('Consumed refusal handle cannot start a job')
+            outer_handles.add(handle)
+            if job in jobs:
+                raise ValueError('Delivery job identity reused')
+            jobs.add(job)
+            state['job'] = dict(event, consumed=False)
+        elif kind == 'execution-finished':
+            job = state['job']
+            if not job or event.get('jobId') != job['jobId'] or event.get('candidateSha256') != state['candidateSha256'] or state['terminal']:
+                raise ValueError('Delivery terminal does not match running job')
+            report = json.loads(delivery_ref(root, event['report']))
+            if (report.get('terminal') is not True or report.get('jobId') != job['jobId'] or
+                    report.get('candidateSha256') != state['candidateSha256'] or
+                    report.get('scope') != state['candidate']['scope'] or
+                    report.get('manifestSha256') != json_sha256(state['candidate']['manifest']) or
+                    report.get('fixtureSha256') != json_sha256(state['candidate']['manifest']['fixtures']) or
+                    type(report.get('exit')) is not int or report.get('classification') not in ('pass', 'failed', 'expected-red', 'unknown')):
+                raise ValueError('Delivery terminal manifest, fixture, job or outcome differs')
+            if report['classification'] == 'pass' and report['exit'] != 0:
+                raise ValueError('Passing delivery report has nonzero exit')
+            if type(event.get('outerHandleConsumed')) is not bool:
+                raise ValueError('Delivery terminal needs outer-handle consumption observation')
+            state['terminal'] = report
+            state['job']['consumed'] = event['outerHandleConsumed']
+        elif kind == 'execution-consumed':
+            job = state['job']
+            if not job or not state['terminal'] or job['consumed'] or event.get('jobId') != job['jobId'] or event.get('outerHandle') != job['outerHandle']:
+                raise ValueError('Consumed handle does not match terminal delivery job')
+            job['consumed'] = True
+        elif kind == 'integrated':
+            if (not state['terminal'] or state['terminal']['classification'] != 'pass' or not state['job']['consumed'] or
+                    event.get('candidateSha256') != state['candidateSha256'] or state['integrated']):
+                raise ValueError('Only a consumed passing candidate can be integrated')
+            revision = delivery_text(event.get('revision'), 'integration revision')
+            if re.fullmatch('[0-9a-f]{40}', revision) is None:
+                raise ValueError('Integration requires full commit identity')
+            for name, sha in state['candidate']['manifest']['sources'].items():
+                blob = git(root, 'show', revision + ':' + name)
+                if hashlib.sha256(blob).hexdigest() != sha:
+                    raise ValueError('Integrated revision source differs: ' + name)
+            product = delivery_product_identity(state['candidate']['manifest']['sources'])
+            expected = product if product not in advances else None
+            if event.get('deliveryAdvance') != expected:
+                raise ValueError('Integration advance does not match tested sources')
+            completed = any(authored_v6(name) and sha is not None for name, sha in state['candidate']['manifest']['sources'].items())
+            if type(event.get('sliceCompleted')) is not bool or event['sliceCompleted'] != completed:
+                raise ValueError('Slice completion differs from tested authored source')
+            if not isinstance(event.get('pluginBaselineSha256'), str) or re.fullmatch('[0-9a-f]{64}', event['pluginBaselineSha256']) is None:
+                raise ValueError('Integration lacks exact plugin baseline for RSI')
+            snapshot = event.get('pluginBaseline', {})
+            if (not isinstance(snapshot, dict) or not isinstance(snapshot.get('files'), dict) or
+                    snapshot.get('sha256') != event['pluginBaselineSha256'] or
+                    snapshot_sha256(snapshot['files']) != event['pluginBaselineSha256']):
+                raise ValueError('Integrated plugin baseline map differs')
+            advances.add(product)
+            state['integrated'] = event
+        elif kind == 'rsi':
+            state['rsi'] = validate_rsi(root, record, state, event,
+                                       authorization_expires=authorization_expires, guard_hashes=guard_hashes)
+        elif kind == 'journey-observed':
+            if not state['integrated'] or event.get('candidateSha256') != state['candidateSha256'] or state['journey']:
+                raise ValueError('Journey observation needs the integrated candidate')
+            observation = json.loads(delivery_ref(root, event['observation']))
+            if (observation.get('candidateSha256') != state['candidateSha256'] or
+                    observation.get('revision') != state['integrated']['revision'] or
+                    observation.get('outcome') not in ('pass', 'failed', 'partial', 'unknown') or
+                    not isinstance(observation.get('missingObligations'), list)):
+                raise ValueError('Journey observation differs from integrated source')
+            delivery_text(observation.get('inputRoute'), 'actual input route')
+            delivery_text(observation.get('observedBehavior'), 'observed behavior')
+            if observation['outcome'] == 'pass':
+                plan = record['delivery']['journey']
+                steps = observation.get('steps')
+                if (observation.get('journeyPlanSha256') != json_sha256(plan) or
+                        observation['missingObligations'] or not isinstance(steps, list) or
+                        len(steps) != len(plan['inputSteps'])):
+                    raise ValueError('Journey pass requires the exact plan and every planned step without missing obligations')
+                for index, (step, planned) in enumerate(zip(steps, plan['inputSteps'])):
+                    if (not isinstance(step, dict) or
+                            set(step) != {'stepIndex', 'inputStep', 'outcome', 'evidence'} or
+                            type(step['stepIndex']) is not int or step['stepIndex'] != index or
+                            step['inputStep'] != planned or step['outcome'] != 'pass'):
+                        raise ValueError('Journey pass requires ordered passing evidence for every planned step')
+                    delivery_ref(root, step['evidence'])
+                cleanup = json.loads(delivery_ref(root, observation.get('cleanup')))
+                if (not isinstance(cleanup, dict) or cleanup.get('candidateSha256') != state['candidateSha256'] or
+                        cleanup.get('revision') != state['integrated']['revision'] or
+                        cleanup.get('terminal') is not True or cleanup.get('classification') != 'normal' or
+                        type(cleanup.get('exit')) is not int or cleanup['exit'] != 0 or
+                        cleanup.get('timedOut') is not False or cleanup.get('forcedCleanup') is not False):
+                    raise ValueError('Journey pass requires a bound terminal normal cleanup without timeout or force')
+            state['journey'] = observation
+        elif kind in ('deferred', 'plan-changed'):
+            for field in ('reason', 'owner', 'nextAction'):
+                delivery_text(event.get(field), field)
+            if state['job'] and not state['job']['consumed']:
+                raise ValueError('Consume protected job before changing delivery plan')
+            state['deferred'] = event if kind == 'deferred' else None
+        else:
+            raise ValueError('Unknown delivery event kind')
+    return state
+
+
+def current_selection(record, state, expected):
+    selection = state.get('activeSelection', {})
+    if (type(expected) is not int or expected < 1 or selection.get('generation') != expected or
+            state.get('activeContributorRecord') != record.get('_recordPath') or
+            state.get('activeSlice') != record['slice'] or
+            selection.get('recordIdentitySha256') != record_identity(record, record['_recordPath'])):
+        raise ValueError('Canonical delivery selection differs; reconcile STATE and expected generation')
+    delivery_time(selection['selectedUTC'])
+    return selection
+
+
+# A bounded per-participant receipt journal, not a canonical event or authority.
+DELIVERY_LAUNCH_JOURNAL_LIMIT = 16 * 1024 * 1024
+
+
+@contextmanager
+def delivery_edit_lock(root, record_path):
+    """Same global-then-participant lock order used by canonical delivery-event."""
+    held=[]
+    try:
+        for name in ('.warlock-contributor/.records.lock',record_path+'.lock'):
+            parent,leaf=open_parent(safe(root,name),create=True)
+            try:fd=os.open(leaf,os.O_WRONLY|os.O_CREAT|os.O_NOFOLLOW|os.O_CLOEXEC,0o600,dir_fd=parent)
+            finally:os.close(parent)
+            held.append(fd);fcntl.flock(fd,fcntl.LOCK_EX)
+        yield
+    finally:
+        for fd in reversed(held):os.close(fd)
+
+
+def delivery_launch_journal(root, record):
+    return safe(root,record['_recordPath']+'.launches.jsonl')
+
+
+def read_delivery_launches(root, record):
+    path=delivery_launch_journal(root,record)
+    if not path.exists():return []
+    parent,leaf=open_parent(path)
+    try:body=regular_bytes_at(parent,leaf)
+    finally:os.close(parent)
+    if len(body)>DELIVERY_LAUNCH_JOURNAL_LIMIT:raise ValueError('Delivery launch journal exceeds bounded size')
+    entries=[];seen=set()
+    fields={'schema','record','recordIdentitySha256','candidateSha256','selection','scope','pid','startTicks','jobId','manifest','argv'}
+    candidates={e['candidateSha256']:e['candidate']for e in record['delivery']['events']if e['kind']=='candidate'}
+    for line in body.splitlines():
+        row=json.loads(line)
+        if (not isinstance(row,dict)or set(row)!=fields or row['schema']!=1
+                or row['record']!=record['_recordPath']or row['recordIdentitySha256']!=record_identity(record,record['_recordPath'])
+                or type(row['selection'])is not int or row['selection']<1 or type(row['pid'])is not int or row['pid']<=0
+                or not isinstance(row['startTicks'],str)or re.fullmatch('[1-9][0-9]*',row['startTicks'])is None
+                or row['jobId']!='pid'+str(row['pid'])+'-start'+row['startTicks']or row['jobId']in seen):
+            raise ValueError('Invalid or conflicting delivery launch journal receipt')
+        candidate=candidates.get(row['candidateSha256'])
+        if (not candidate or row['manifest']!=candidate['manifest']or row['scope']!=candidate['scope']or row['argv']!=candidate['argv']):
+            raise ValueError('Delivery launch journal candidate differs')
+        seen.add(row['jobId']);entries.append(row)
+    if len(entries)>4096:raise ValueError('Delivery launch journal entry bound exceeded')
+    return entries
+
+
+def record_delivery_launch(root, record, reqs, actual):
+    """Caller holds delivery_edit_lock through real spawn and durable receipt."""
+    state=delivery_state(root,record,reqs);candidate=state['candidate']
+    if (not candidate or actual['record']!=record['_recordPath']or actual['candidateSha256']!=state['candidateSha256']
+            or actual['scope']!=candidate['scope']or actual['argv']!=candidate['argv']):
+        raise ValueError('Actual launched command differs from current candidate')
+    row={k:actual[k]for k in ('record','candidateSha256','selection','scope','pid','startTicks','argv')}
+    row.update(schema=1,recordIdentitySha256=record_identity(record,record['_recordPath']),
+               jobId='pid'+str(actual['pid'])+'-start'+actual['startTicks'],manifest=candidate['manifest'])
+    entries=read_delivery_launches(root,record)
+    for old in entries:
+        if old['jobId']==row['jobId']:
+            if old!=row:raise ValueError('Conflicting actual launch journal job')
+            return old
+    data=(json.dumps(row,sort_keys=True,separators=(',',':'),ensure_ascii=False)+'\n').encode()
+    path=delivery_launch_journal(root,record);parent,leaf=open_parent(path,create=True)
+    fd=None
+    try:
+        fd=os.open(leaf,os.O_WRONLY|os.O_APPEND|os.O_CREAT|os.O_NOFOLLOW|os.O_CLOEXEC,0o600,dir_fd=parent)
+        info=os.fstat(fd)
+        if not stat.S_ISREG(info.st_mode)or info.st_size+len(data)>DELIVERY_LAUNCH_JOURNAL_LIMIT or len(entries)>=4096:
+            raise ValueError('Bounded regular launch journal required')
+        with os.fdopen(os.dup(fd),'ab')as stream:stream.write(data);stream.flush();os.fsync(stream.fileno())
+        os.fsync(parent)
+    finally:
+        if fd is not None:os.close(fd)
+        os.close(parent)
+    return row
+
+
+def _delivery_closed_launch_jobs(record):
+    started={};finished={}
+    # delivery_state has already validated the canonical sequence and terminal refs.
+    for event in record['delivery']['events']:
+        kind=event['kind'];job=event.get('jobId')
+        if kind=='execution-started':started[job]=event
+        elif kind=='execution-finished':
+            finished[job]=(event['candidateSha256'],event['outerHandleConsumed'])
+        elif kind=='execution-consumed'and job in finished and job in started:
+            if event['outerHandle']==started[job]['outerHandle']:
+                finished[job]=(finished[job][0],True)
+    return {(sha,job)for job,(sha,consumed)in finished.items()if consumed is True}
+
+
+def validate_delivery_edit_precheck(root, record, reqs, state, expected_selection, changed_paths):
+    """Read-only edit observation; caller must keep delivery_edit_lock through CAS."""
+    current_selection(record,state,expected_selection)
+    delivery=delivery_state(root,record,reqs)
+    if not isinstance(changed_paths,list)or any(not isinstance(x,str)or not x for x in changed_paths):
+        raise ValueError('Exact changed destination path list required')
+    changed=set()
+    for name in changed_paths:
+        path=pathlib.Path(name)
+        if '..'in path.parts:raise ValueError('Changed path traversal refused')
+        changed.add(str(path if path.is_absolute()else safe(root,name)))
+    # Readiness references are replayed for every retained candidate, including
+    # consumed jobs. Source edits may resume after closure; these evidence paths
+    # must instead use a new versioned destination, never overwrite history.
+    retained = sorted({str(safe(root, reference['path']))
+                       for event in record['delivery']['events'] if event['kind'] == 'candidate'
+                       for reference in event['candidate'].get('nativePrerequisites', [])})
+    immutable = sorted(changed.intersection(retained))
+    if immutable:
+        raise ValueError('Retained native prerequisite edit refused; use new versioned evidence paths: '
+                         + json.dumps(immutable))
+    def overlap(manifest):
+        return sorted(changed.intersection(str(safe(root,name))for paths in manifest.values()for name in paths))
+    blocked=[];job=delivery['job']
+    if job and (not delivery['terminal']or not job['consumed']):
+        paths=overlap(delivery['candidate']['manifest'])
+        if paths:blocked.append({'jobId':job['jobId'],'candidateSha256':delivery['candidateSha256'],'paths':paths,'reason':'unclosed canonical job'})
+    if changed:
+        closed=_delivery_closed_launch_jobs(record)
+        for launch in read_delivery_launches(root,record):
+            paths=overlap(launch['manifest'])
+            if paths and (launch['candidateSha256'],launch['jobId'])not in closed:
+                blocked.append({'jobId':launch['jobId'],'candidateSha256':launch['candidateSha256'],'paths':paths,'reason':'unclosed launched job'})
+    if blocked:
+        raise ValueError('Delivery input edit refused; record matching canonical terminal and consumption first: '+json.dumps(blocked,sort_keys=True))
+    return {'structuralPrecheckPassed':True,'changedPaths':sorted(changed),'expectedSelection':expected_selection,
+            'effectsPerformed':False,'executionAuthorized':False,'acceptanceInferred':False,
+            'scope':'Same participant lock must remain held through actual CAS; arbitrary external shell edits are not fenced.'}
+
+
+def delivery_next_action(root, record, reqs):
+    state = delivery_state(root, record, reqs)
+    progress = delivery_progress_status(record)
+    job = state['job']
+    if job and not job['consumed']:
+        kind = 'consume' if state['terminal'] else 'wait-terminal'
+    elif progress['authorizationExpired']:
+        kind = 'authorization-expired'
+    elif progress['reconciliationRequired']:
+        kind = 'reconcile-clock'
+    elif state['integrated'] and state['integrated'].get('sliceCompleted') and not state['rsi']:
+        kind = 'rsi'
+    elif state['deferred']:
+        kind = 'deferred'
+    elif state['review'] and state['review']['disposition'] == 'accepted' and not state['terminal'] and not state.get('refusal'):
+        # An awake Root queue delay calls for execution, not another writer hypothesis.
+        kind = 'execute'
+    elif progress['planChangeRequired'] and (not record['delivery']['events'] or record['delivery']['events'][-1]['kind'] != 'plan-changed'):
+        kind = 'change-plan'
+    elif state.get('refusal'):
+        kind = 'correct'
+    elif not state['candidate']:
+        kind = 'assemble'
+    elif not state['review']:
+        kind = 'review'
+    elif state['review']['disposition'] != 'accepted':
+        kind = 'correct'
+    elif not state['terminal']:
+        kind = 'execute'
+    elif state['terminal']['classification'] != 'pass':
+        kind = 'correct'
+    elif not state['integrated']:
+        kind = 'integrate'
+    elif not state['journey']:
+        kind = 'exercise-journey'
+    else:
+        kind = 'adjudicate' if state['journey']['outcome'] == 'pass' else 'correct'
+    return {'kind': kind, 'executor': 'Root', 'candidateId': state['candidate']['id'] if state['candidate'] else None,
+            'candidateSha256': state['candidateSha256'], 'jobId': job['jobId'] if job else None,
+            'argv': state['candidate']['argv'] if state['candidate'] else [],
+            'expectedObservation': state['candidate']['expectedObservation'] if state['candidate'] else record['delivery']['journey']['expectedObservation'],
+            'executionAuthorized': False, 'acceptanceInferred': False, 'progress': progress}
+
+
+def validate_execution_precheck(root, record, reqs, state, candidate_id, scope, expected):
+    current_selection(record, state, expected)
+    errors, _ = validate(root, record, reqs, state)
+    if errors:
+        raise ValueError('; '.join(errors))
+    action = delivery_next_action(root, record, reqs)
+    delivery = delivery_state(root, record, reqs)
+    if action['kind'] != 'execute' or not delivery['candidate'] or candidate_id != delivery['candidate']['id'] or scope != delivery['candidate']['scope']:
+        raise ValueError('Delivery execution precheck refused: ' + action['kind'])
+    validate_delivery_candidate(root, record, delivery['candidate'], current=True)
+    return {'nextRootAction': action, 'executionAuthorized': False, 'executionPerformed': False,
+            'acceptanceInferred': False, 'structuralPrecheckPassed': True}
+
+
 def progress_status(record, clock=None):
     """Recorded progress is a self-attestation, never an observed feature count."""
+    if 'workflowPolicy' in record:
+        delivery_identity(record)
+        return delivery_progress_status(record, clock)
     iterations = record.get('iterations', [])
     qualifying = 0
     for item in reversed(iterations):
@@ -2361,7 +3990,7 @@ def stopped_record_overlaps(root, candidate_slice, reqs, exclude_record=None, in
             progress = {'investigationNeedsChange': True,
                         'reasons': ['participant-record-progress-unreadable'],
                         'lastRecordedProgressUTC': None, 'secondsSinceRecordedProgress': None}
-        if not progress['investigationNeedsChange']:
+        if not progress['investigationNeedsChange'] and data.get('workflowPolicy') != 2:
             continue
         blocked.append({'record': relative, 'recordSha256': source_hash,
                         'owner': data['owner'], 'sliceId': data['slice'].get('id'),
@@ -2633,6 +4262,60 @@ def contribution_report(root, record, reqs, state):
                         if sha != initial.get(name) or name in selected_dirty],
         reportBoundary='Contributor self-attestation for review. Intended behavior is not an observation; '
                        'matching hashes do not establish oracle truth, independent review or release acceptance.')
+    return packet
+
+
+def progress_audit(root, record, reqs, state, expected_slice, expected_selection=None):
+    """Read canonical progress without selecting work or granting execution."""
+    if record['slice']['id'] != expected_slice:
+        raise ValueError('Selected participant slice differs from --expect-slice')
+    if record.get('workflowPolicy') == 2:
+        current_selection(record, state, expected_selection)
+    packet = contribution_report(root, record, reqs, state)
+    inventory = participant_inventory(root)
+    packet['errors'].extend(inventory['errors'])
+    packet['warnings'].extend(inventory['warnings'])
+    stopped = []
+    for name, prior in sorted(inventory['records'].items()):
+        progress = progress_status(prior)
+        if progress['investigationNeedsChange']:
+            stopped.append({'record': name, 'recordSha256': digest(safe(root, name)),
+                            'owner': prior['owner'], 'sliceId': prior['slice']['id'],
+                            'progress': progress})
+    needs_change = packet['progress']['investigationNeedsChange']
+    if needs_change:
+        packet['errors'].append('Selected participant investigation needs change; preserve its stopped history and clock')
+    ledger = read(safe(root, LEDGER))
+    rows = ledger['requirements']
+    scenarios = [scenario for row in rows for scenario in row['scenarios']]
+    statuses = {}
+    for scenario in scenarios:
+        statuses[scenario['status']] = statuses.get(scenario['status'], 0) + 1
+    if needs_change:
+        action = 'Preserve this stopped investigation and select another bounded original scenario; do not reset its clock.'
+    elif packet['errors']:
+        action = 'Resolve the reported participant/source/history errors before dependent claims or execution.'
+    else:
+        action = ('Root should review the selected candidate readiness and exact claims, then perform the next '
+                  'proportional protected check or product integration. Do not substitute an unchanged review for execution.')
+    packet.update(progressAuditSchema=1,
+        selectedParticipant={'record': record['_recordPath'], 'recordSha256': digest(safe(root, record['_recordPath'])),
+                             'owner': record['owner'], 'sliceId': record['slice']['id'],
+                             'expectedSliceId': expected_slice},
+        originalAcceptanceCounts={'requirements': len(rows),
+            'acceptedRequirements': sum(row.get('requirementAccepted') is True for row in rows),
+            'scenarios': len(scenarios), 'acceptedScenarios': statuses.get('accepted', 0),
+            'scenarioCountsByRecordedStatus': statuses, 'ledgerSha256': digest(safe(root, LEDGER)),
+            'basis': 'Canonical requirement ledger only; no participant/component pass is promoted to original acceptance.'},
+        participantIterationCounts={outcome: sum(item['outcome'] == outcome for item in record.get('iterations', []))
+                                    for outcome in ('qualification', 'production-fix', 'scenario-verdict')},
+        stoppedRecords=stopped,
+        nextRootAction={'executor': 'Root', 'suggestionOnly': True, 'readinessVerified': False,
+                        'executionAuthorized': False, 'action': action},
+        executionPerformed=False, acceptanceInferred=False, nativeAcceptance=False,
+        originalAcceptance=False, releaseAccepted=False)
+    if record.get('workflowPolicy') == 2:
+        packet['nextRootAction'] = delivery_next_action(root, record, reqs)
     return packet
 
 
@@ -2937,6 +4620,8 @@ def validate(root, record, reqs, state):
     if record.get('schema') != 1 or not record.get('owner'):
         raise ValueError('Invalid record schema/owner')
     s = normalize_slice(root, record['slice'], reqs)
+    if 'workflowPolicy' in record:
+        delivery_state(root, record, reqs)
     adoption = record.get('adoptedDirty', {'paths': [], 'ownershipNote': None})
     if not isinstance(adoption, dict) or not isinstance(adoption.get('paths'), list):
         raise ValueError('Invalid dirty adoption metadata')
@@ -3069,6 +4754,22 @@ def main():
     preview = subs.add_parser('preflight', help='Read-only saved-plan and prospective-record checks; no ownership or writes')
     preview.add_argument('--slice-file', required=True)
     subs.add_parser('handoff')
+    audit = subs.add_parser('progress-audit', help='Read-only explicit participant progress and canonical acceptance counts')
+    audit.add_argument('--expect-slice', required=True, help='Expected selected slice ID; mismatches fail closed')
+    audit.add_argument('--expect-selection', type=int)
+    delivery_select = subs.add_parser('delivery-select', help='Atomically select a new-policy participant in canonical STATE')
+    delivery_select.add_argument('--expect-state-sha', required=True)
+    delivery_event = subs.add_parser('delivery-event', help='Append source-bound workflow facts to the existing participant')
+    delivery_event.add_argument('--event-file', required=True)
+    delivery_event.add_argument('--expect-record-sha', required=True)
+    delivery_event.add_argument('--expect-selection', type=int, required=True)
+    edit_precheck = subs.add_parser('delivery-edit-precheck', help='Read-only launched-job/selection edit check; not a durable mutation permission')
+    edit_precheck.add_argument('--expect-selection',required=True,type=int)
+    edit_precheck.add_argument('--path',action='append',default=[])
+    delivery_precheck = subs.add_parser('delivery-precheck', help='Read-only scoped structural check; never executes or authorizes QA')
+    delivery_precheck.add_argument('--candidate', required=True)
+    delivery_precheck.add_argument('--scope', choices=('cpu', 'native'), required=True)
+    delivery_precheck.add_argument('--expect-selection', type=int, required=True)
     reconciliation = subs.add_parser('reconcile-foreign', help='Append reviewed foreign provenance without adopting files or changing participant history')
     reconciliation.add_argument('--transition-file', required=True, help='Ignored scratch JSON array of exact reviewed foreign-path transitions')
     support = subs.add_parser('reconcile-support', help='Append independently reviewed same-owner support-doc provenance without changing participant history')
@@ -3117,6 +4818,8 @@ def main():
     check.add_argument('--require-record', action='store_true', help='Fail if the participant slice record is absent')
     check.add_argument('--base-ref', help='Check changed implementation paths since this Git revision')
     start = subs.add_parser('start')
+    start.add_argument('--workflow-policy', type=int, choices=(2,))
+    start.add_argument('--delivery-plan-file')
     start.add_argument('--owner', required=True); start.add_argument('--slice-file')
     start.add_argument('--adopt-dirty', action='append', default=[], metavar='PATH', help='Explicitly assert ownership of an already dirty declared product path')
     start.add_argument('--ownership-note', help='Explain authorization/ownership for adopting dirty product paths')
@@ -3132,8 +4835,14 @@ def main():
     history_inventory = None
     try:
         root = pathlib.Path(args.repo or discover_repo()).resolve()
+        if args.command in ('progress-audit', 'delivery-select', 'delivery-event', 'delivery-precheck', 'delivery-edit-precheck') and not any(
+                item == '--record' or item.startswith('--record=') for item in sys.argv[1:]):
+            raise ValueError(args.command + ' requires explicit --record selection')
         owned_checker = safe(root, 'plugins/warlock-contributor/scripts/warlock.py')
-        if digest(owned_checker) != result['checkerSha256']:
+        repository_checker_sha = digest(owned_checker)
+        qualified_audit = repository_checker_sha != result['checkerSha256']
+        if qualified_audit and (args.command not in ('delivery-event', 'delivery-edit-precheck')
+                or args.record != UX023_PROSPECTIVE_GAP_RECOVERY['recordPath']):
             raise ValueError('Installed checker differs from repository-owned checker; use the reviewed repository copy')
         if args.command == 'check' and args.project_only and args.require_record:
             raise ValueError('--project-only is incompatible with --require-record')
@@ -3152,7 +4861,7 @@ def main():
             record = json.loads(regular_bytes_at(lock_parent, path.name)) if lock_parent is not None else read(path)
             record['_recordPath'] = args.record
             return record
-        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery', 'index-participants', 'owner-census'):
+        if args.command in ('start', 'record', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery', 'index-participants', 'owner-census', 'delivery-select', 'delivery-event'):
             records_parent, records_name = open_parent(safe(root, '.warlock-contributor/.records.lock'), create=True)
             records_lock = os.fdopen(os.open(records_name, os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_CLOEXEC,
                                              0o600, dir_fd=records_parent), 'w')
@@ -3173,7 +4882,133 @@ def main():
             lock_parent, lock_name = open_parent(lock_path, create=True)
             lock = os.fdopen(os.open(lock_name, os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_CLOEXEC, 0o600, dir_fd=lock_parent), 'w')
             fcntl.flock(lock, fcntl.LOCK_EX)
-        if args.command == 'doctor':
+        if args.command == 'delivery-select':
+            record = read_target()
+            delivery_state(root, record, reqs)
+            errors, _ = validate(root, record, reqs, state)
+            if errors:
+                raise ValueError('; '.join(errors))
+            progress = delivery_progress_status(record)
+            if progress['authorizationExpired'] or progress['reconciliationRequired']:
+                raise ValueError('Delivery authorization expired or clocks require reconciliation')
+            state_path = safe(root, STATE)
+            current, state_sha = json_snapshot(state_path)
+            if state_sha != args.expect_state_sha:
+                raise ValueError('Canonical STATE changed before selection')
+            for existing_path, existing in history_inventory['records'].items():
+                if existing.get('workflowPolicy') == 2:
+                    previous_delivery = delivery_state(root, dict(existing, _recordPath=existing_path), reqs)
+                    previous_job = previous_delivery['job']
+                    if previous_job and not previous_job['consumed']:
+                        raise ValueError('Consume the occupied protected slot before changing selection')
+                    if previous_delivery['integrated'] and previous_delivery['integrated'].get('sliceCompleted') and not previous_delivery['rsi']:
+                        raise ValueError('Complete bounded RSI before selecting the next slice')
+            previous = current.get('activeSelection', {})
+            generation = previous.get('generation', 0)
+            if type(generation) is not int or generation < 0:
+                raise ValueError('Invalid canonical selection generation')
+            current.setdefault('sliceSelectionHistory', []).append({
+                'atUTC': now(), 'activeContributorRecord': current.get('activeContributorRecord'),
+                'activeSlice': current.get('activeSlice'), 'activeSelection': current.get('activeSelection')})
+            current['activeContributorRecord'] = args.record
+            current['activeSlice'] = record['slice']
+            current['activeSelection'] = {'generation': generation + 1,
+                'recordIdentitySha256': record_identity(record, args.record), 'selectedUTC': now()}
+            write_record(state_path, current, expected_sha=state_sha)
+            result.update(activeSelection=current['activeSelection'], record=args.record, acceptanceInferred=False)
+        elif args.command == 'delivery-event':
+            record = read_target()
+            before_sha = hashlib.sha256(regular_bytes_at(lock_parent, path.name)).hexdigest()
+            if before_sha != args.expect_record_sha:
+                raise ValueError('Delivery record changed before append')
+            current_selection(record, state, args.expect_selection)
+            qualified_event = None
+            if qualified_audit:
+                qualified_event = validate_ux023_qualified_audit_entry(root, record, args, result['checkerSha256'], digest(owned_checker))
+            errors, _ = validate(root, record, reqs, state)
+            if errors:
+                raise ValueError('; '.join(errors))
+            if record.get('workflowPolicy') != 2:
+                raise ValueError('Delivery events require explicit new-start opt-in')
+            event = qualified_event if qualified_audit else read(safe(root, args.event_file))
+            fields = {
+                'authorization-renewed': {'authorizationExpiresUTC', 'evidence'},
+                'clock-reconciled': {'evidence'},
+                'candidate': {'candidate'}, 'review': {'candidateSha256', 'review'},
+                'execution-refused': {'candidateSha256', 'outerHandle', 'report', 'review'},
+                'execution-started': {'candidateSha256', 'jobId', 'outerHandle'},
+                'execution-finished': {'candidateSha256', 'jobId', 'outerHandleConsumed', 'report'},
+                'execution-consumed': {'jobId', 'outerHandle'},
+                'integrated': {'candidateSha256', 'revision'},
+                'rsi': {'candidateSha256', 'integrationRevision', 'disposition', 'evidence'},
+                'journey-observed': {'candidateSha256', 'observation'},
+                'deferred': {'reason', 'owner', 'nextAction'}, 'plan-changed': {'reason', 'owner', 'nextAction'}}
+            if not isinstance(event, dict) or event.get('kind') not in fields or set(event) != fields[event['kind']] | {'eventId', 'kind'}:
+                raise ValueError('Invalid delivery event input fields')
+            progress = delivery_progress_status(record)
+            closing = event['kind'] in ('execution-finished', 'execution-consumed', 'execution-refused', 'deferred')
+            renewal = event['kind'] == 'authorization-renewed'
+            reconcile_clock = event['kind'] == 'clock-reconciled'
+            if not closing and ((progress['reconciliationRequired'] and not (reconcile_clock or renewal)) or
+                                (progress['authorizationExpired'] and not renewal)):
+                raise ValueError('Delivery authorization expired or clocks require reconciliation')
+            if renewal:
+                restorations = renewal_guard_restorations(root, record)
+                if restorations:
+                    event['guardRestorations'] = restorations
+            actual = delivery_state(root, record, reqs)
+            if event['kind'] == 'candidate':
+                validate_delivery_candidate(root, record, event['candidate'], current=True)
+                event['candidateSha256'] = json_sha256(event['candidate'])
+            elif event['kind'] == 'execution-started':
+                candidate = actual['candidate']
+                validate_execution_precheck(root, record, reqs, state,
+                    candidate['id'] if candidate else '', candidate['scope'] if candidate else '', args.expect_selection)
+            elif event['kind'] in ('review', 'integrated', 'journey-observed'):
+                if not actual['candidate']:
+                    raise ValueError('No delivery candidate')
+                if not (event['kind'] == 'integrated' and validate_ux023_closed_historical_integration(root, record, actual, event)):
+                    validate_delivery_candidate(root, record, actual['candidate'], current=True)
+            if event['kind'] == 'integrated' and actual['candidate']:
+                event['pluginBaseline'] = plugin_snapshot(root)
+                event['pluginBaselineSha256'] = event['pluginBaseline']['sha256']
+                event['sliceCompleted'] = any(authored_v6(name) and sha is not None
+                    for name, sha in actual['candidate']['manifest']['sources'].items())
+                product = delivery_product_identity(actual['candidate']['manifest']['sources'])
+                prior = {delivery_product_identity(record['sourceHashes'])}
+                prior.update(e['deliveryAdvance'] for e in record['delivery']['events'] if e.get('deliveryAdvance'))
+                if product not in prior:
+                    event['deliveryAdvance'] = product
+            if event['kind'] == 'rsi':
+                validate_rsi(root, record, actual, event, current=True)
+            if event['kind'] == 'execution-finished':
+                terminal = json.loads(delivery_ref(root, event['report']))
+                if terminal.get('classification') in ('failed', 'unknown'):
+                    event['failureSignature'] = delivery_text(terminal.get('failureSignature'), 'failure signature')
+            sample = clock_sample()
+            event.update(sequence=len(record['delivery']['events']) + 1, clockSample=sample, atUTC=sample['utc'])
+            if reconcile_clock:
+                event['reconciliation'] = delivery_clock_reconciliation_fields(
+                    record, record['delivery']['events'], sample)
+                validate_clock_reconciliation(root, record, record['delivery']['events'], event,
+                                              effective_delivery_authorization(record), actual['job'], current=True)
+            record['delivery']['events'].append(event)
+            delivery_state(root, record, reqs)
+            write_record(path, record, parent_fd=lock_parent, expected_sha=before_sha)
+            write_participant_index(root, history_inventory, args.record, record, records_parent)
+            result.update(record=args.record, nextRootAction=delivery_next_action(root, record, reqs),
+                          recordSha256=digest(path), acceptanceInferred=False)
+        elif args.command == 'delivery-edit-precheck':
+            with delivery_edit_lock(root,args.record):
+                reqs,state=context(root)
+                record=read_target()
+                if qualified_audit:
+                    validate_ux023_qualified_audit_entry(root, record, args, result['checkerSha256'], digest(owned_checker))
+                result.update(validate_delivery_edit_precheck(root,record,reqs,state,args.expect_selection,args.path))
+        elif args.command == 'delivery-precheck':
+            record = read_target()
+            result.update(validate_execution_precheck(root, record, reqs, state, args.candidate, args.scope, args.expect_selection))
+        elif args.command == 'doctor':
             result.update(doctor(root, args.record))
         elif args.command == 'self-test':
             result.update(self_test(root))
@@ -3222,7 +5057,7 @@ def main():
             result.update(planSchema=1, slice=s, originals=slice_originals(s, reqs))
         elif args.command == 'preflight':
             result.update(preflight(root, args.record, args.slice_file, reqs))
-        elif args.command in ('handoff', 'claim', 'review', 'report', 'verify-plan', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery'):
+        elif args.command in ('handoff', 'claim', 'review', 'report', 'progress-audit', 'verify-plan', 'extend', 'reconcile-foreign', 'reconcile-support', 'reconcile-tea004-recovery'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
             if args.command == 'reconcile-tea004-recovery':
@@ -3245,6 +5080,8 @@ def main():
                 result.update(scaffold_claim(root, read_target(), reqs, state, args))
             elif args.command == 'review':
                 result.update(review(root, read_target(), reqs, state, args.include))
+            elif args.command == 'progress-audit':
+                result.update(progress_audit(root, read_target(), reqs, state, args.expect_slice, args.expect_selection))
             elif args.command == 'report':
                 result.update(contribution_report(root, read_target(), reqs, state))
             else:
@@ -3258,6 +5095,8 @@ def main():
                 errors, warnings = validate(root, record, reqs, state)
                 result.update(errors=errors, warnings=warnings, progress=progress_status(record))
         elif args.command == 'start':
+            if args.workflow_policy == 2:
+                require_new_delivery_owner(args.owner)
             if path.exists():
                 raise ValueError('Record already exists; retain it and choose a new --record for a new slice')
             s = load_slice(root, args.slice_file, reqs) if args.slice_file else normalize_slice(root, state['activeSlice'], reqs)
@@ -3276,6 +5115,16 @@ def main():
             if any(n not in dirty_snapshot for n in adopted):
                 raise ValueError('Adopted path is not currently dirty')
             record = {'schema': 1, 'owner': args.owner, 'slice': s, 'explicitSliceOverride': bool(args.slice_file), 'baseline': EXPECTED, 'startedUTC': now(), 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip(), 'sourceHashes': {n: digest(safe(root,n)) for n in s['paths']}, 'foreignDirty': {n: h for n, h in dirty_snapshot.items() if n not in adopted}, 'adoptedDirty': {'paths': adopted, 'ownershipNote': args.ownership_note}, 'iterations': []}
+            if bool(args.workflow_policy) != bool(args.delivery_plan_file):
+                raise ValueError('New delivery start requires both --workflow-policy 2 and --delivery-plan-file')
+            if args.workflow_policy == 2:
+                plan = read(safe(root, args.delivery_plan_file))
+                validate_delivery_plan(plan, s, reqs)
+                if delivery_time(plan['authorizationExpiresUTC']) <= dt.datetime.now(dt.timezone.utc):
+                    raise ValueError('Delivery authorization already expired')
+                record['workflowPolicy'] = 2
+                record['delivery'] = dict(plan, clockOrigin=clock_sample(), events=[],
+                                         guardHashes={name: fingerprint(root, name) for name in DELIVERY_GUARDS})
             # Reserve the exact participant identity in the index first. If
             # record creation is interrupted, later starts fail closed on the
             # missing indexed record instead of overlooking its history.
@@ -3324,6 +5173,10 @@ def main():
         if args.command == 'check' and args.base_ref and path.exists() and not args.project_only:
             names = git(root, 'diff', '--no-renames', '--name-only', '-z', args.base_ref, '--').decode().split('\0')
             result.setdefault('errors', []).extend('Archival implementation change: ' + n for n in names if n.startswith('implementation/') and not n.startswith('implementation/warlock/'))
+        if args.command in ('handoff', 'report', 'status', 'check') and path.exists() and not (args.command == 'check' and args.project_only):
+            current_record = read_target()
+            if current_record.get('workflowPolicy') == 2:
+                result['nextRootAction'] = delivery_next_action(root, current_record, reqs)
         result['ok'] = not result.get('errors')
         code = 0 if result['ok'] else 1
     except (ValueError, OSError, KeyError, TypeError, AttributeError, IndexError) as exc:

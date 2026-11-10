@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-private-elm-only-support-and-metadata",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision3-observed-gesture-source-v3/manifest.json",
+    "sha256": "df305e057e7da78b2aaea84083b714e9b17d83f35174e05fa0e6d12917dd22f3"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision3-observed-gesture-source-v3/metadata-assembly/manifest.json",
+      "sha256": "e419b152d1993092478dcd7ec8626280e184f37e98b59c8c32d2af09bcba08cd"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision3-observed-gesture-source-v3/metadata-assembly/prepare_component_qualification.py",
+      "sha256": "9b56dec3029e8b06f740f9f9f28eb9cf8fb7a594b1a9b490e0c2188b38f8114d"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision3-observed-gesture-source-v3/root-evidence-copy-plan.json",
+      "sha256": "420f7b3949de070b25f958f161750cf3e6f997ce82628c324c0b8a78baa85d79"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-observation-component-qualification-v2/haskell-candidate-b985832b9db8/actual-terminal.json",
+      "sha256": "91845a3fecd0dd56e5f28485a4004206240091a259613a1f86de7536b226896f"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/qualification-preparation/revision2-graceful-batch-source-v2/actual-haskell-candidate-result-review-build.json",
+      "sha256": "7c7af8c2657ba7cd024bf0216bd849f56d2afc8b71c7c27bc1cd18f6829b4d12"
+    }
+  ],
+  "verified": [
+    "Only OQ source-v3 prefix/manifest/Desktop constants change; all OQ functions/classes AST-identical. Four other support files/current qa_cpu unchanged.",
+    "Sixteen exact new source-v3 evidence copies plus one OQ CAS; v1/v2 historical namespaces retained.",
+    "Helper exposes only support and elm-candidate. Actual consumed job32 pass terminal91845, canonical matching finished event and independent actual result7c7 required before output.",
+    "R4 qualified Haskell post map exactly equals R5 Haskell map; no Haskell reexecution or new Haskell success claimed.",
+    "Current record/selection/latest terminal consumption, original authorization expiry and installed normal edit precheck/journal preserved. Source preimages must remain live baseline.",
+    "Elm route retains exact30checks/3setup/32seeds and old18/16/34/17 campaigns, fixed budget and private-only overlay. No native flags or fabricated new qa_cpu correspondence requirement."
+  ],
+  "limits": [
+    "Static review only; Root executes protected controls/metadata and normal claims/lockedCAS.",
+    "R5 Elm behavior remains unexecuted/unqualified; no production adoption/native/original acceptance."
+  ]
+}
