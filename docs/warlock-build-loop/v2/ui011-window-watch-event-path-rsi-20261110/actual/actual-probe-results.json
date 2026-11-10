@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "candidateSha256": "9d8df72a08ab96ae96021ae2981dea66d1a2bd925f9629fd5fd6ad5c9f6ddd56",
+  "integrationRevision": "b42253c4521825ef768e9be21491e473b64af2f4",
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-5f0c87a0302644c388a38758ba5051de.scope",
+    "coreLimit": 1
+  },
+  "controllerSha256": "3a7b2a9515476f29fabb4c437b8fc87dd4b25f4fe7fb5b80eeae1b31823c0600",
+  "results": [
+    {
+      "phase": "baseline",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_delivery_flow.DeliveryFlowTests.test_stale_hash_duplicate_and_self_review_refuse_without_write",
+        "test_delivery_flow.DeliveryFlowTests.test_fixture_drift_and_wrong_scope_block_execution",
+        "test_delivery_flow.DeliveryFlowTests.test_second_job_and_wrong_job_terminal_refuse",
+        "test_delivery_flow.DeliveryFlowTests.test_rsi_changed_immutable_guard_refuses",
+        "test_delivery_flow.DeliveryFlowTests.test_rsi_wrong_candidate_and_untested_adoption_refuse"
+      ],
+      "exit": 0,
+      "methodNames": [
+        "test_stale_hash_duplicate_and_self_review_refuse_without_write",
+        "test_fixture_drift_and_wrong_scope_block_execution",
+        "test_second_job_and_wrong_job_terminal_refuse",
+        "test_rsi_changed_immutable_guard_refuses",
+        "test_rsi_wrong_candidate_and_untested_adoption_refuse"
+      ],
+      "artifactChecks": [
+        {
+          "name": "relative-valid-event-path",
+          "passed": true
+        },
+        {
+          "name": "absolute-inside-repo-refuses",
+          "passed": true
+        },
+        {
+          "name": "absolute-outside-repo-refuses",
+          "passed": true
+        },
+        {
+          "name": "parent-traversal-refuses",
+          "passed": true
+        },
+        {
+          "name": "empty-path-refuses",
+          "passed": true
+        },
+        {
+          "name": "documentation-explicit-relative-guidance",
+          "passed": false
+        }
+      ],
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/baseline.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/baseline.stderr",
+        "sha256": "6fba3b0567d839d77bfc44b72d60ef52c0495d74a6471e80f6096f1e24359298"
+      }
+    },
+    {
+      "phase": "candidate",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_delivery_flow.DeliveryFlowTests.test_stale_hash_duplicate_and_self_review_refuse_without_write",
+        "test_delivery_flow.DeliveryFlowTests.test_fixture_drift_and_wrong_scope_block_execution",
+        "test_delivery_flow.DeliveryFlowTests.test_second_job_and_wrong_job_terminal_refuse",
+        "test_delivery_flow.DeliveryFlowTests.test_rsi_changed_immutable_guard_refuses",
+        "test_delivery_flow.DeliveryFlowTests.test_rsi_wrong_candidate_and_untested_adoption_refuse"
+      ],
+      "exit": 0,
+      "methodNames": [
+        "test_stale_hash_duplicate_and_self_review_refuse_without_write",
+        "test_fixture_drift_and_wrong_scope_block_execution",
+        "test_second_job_and_wrong_job_terminal_refuse",
+        "test_rsi_changed_immutable_guard_refuses",
+        "test_rsi_wrong_candidate_and_untested_adoption_refuse"
+      ],
+      "artifactChecks": [
+        {
+          "name": "relative-valid-event-path",
+          "passed": true
+        },
+        {
+          "name": "absolute-inside-repo-refuses",
+          "passed": true
+        },
+        {
+          "name": "absolute-outside-repo-refuses",
+          "passed": true
+        },
+        {
+          "name": "parent-traversal-refuses",
+          "passed": true
+        },
+        {
+          "name": "empty-path-refuses",
+          "passed": true
+        },
+        {
+          "name": "documentation-explicit-relative-guidance",
+          "passed": true
+        }
+      ],
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/candidate.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/candidate.stderr",
+        "sha256": "d611275bdb2da3b805977c07234802ee6cb6c65a295e4ddb897fdf7ca6ed3806"
+      }
+    }
+  ],
+  "passed": true,
+  "comparisonScope": "Doc-only comparison. Both phases execute identical installed core and five regression methods. Candidate phase reads proposed private document bytes. No different runtime code or latency outcome is claimed.",
+  "observedUTC": "2026-11-10T18:53:46.971373+00:00"
+}

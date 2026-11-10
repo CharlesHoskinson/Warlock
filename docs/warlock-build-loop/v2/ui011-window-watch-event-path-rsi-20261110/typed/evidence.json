@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "disposition": "adopted",
+  "candidateSha256": "9d8df72a08ab96ae96021ae2981dea66d1a2bd925f9629fd5fd6ad5c9f6ddd56",
+  "integrationRevision": "b42253c4521825ef768e9be21491e473b64af2f4",
+  "authorizationExpiresUTC": "2026-11-11T15:30:00Z",
+  "proposedChange": "Clarify that delivery-event --event-file requires a repository-relative path, including when the file is inside the repository. Change only the existing delivery-events.md reference.",
+  "refutationCase": "If absolute-inside, absolute-outside, traversal or empty paths are accepted, or the existing five refusal/RSI regressions fail, refuse adoption. Baseline guidance must be absent and proposed guidance present. Runtime code is identical in both phases.",
+  "reason": "Actual absolute event-path invocation returned exit2; the identical relative-path correction returned exit0. The document change makes the existing argument boundary explicit without changing a guard, deadline, authority or acceptance rule. No latency claim.",
+  "baselinePlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/baseline-plugin.json",
+    "sha256": "37b53978e7282b978d8678b31322dbda79dee2243e6304dff1d67d89c774757e"
+  },
+  "baselineHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/baseline-harness.json",
+    "sha256": "7a3564df1904d689eef46a31a5f9cd0f87a2dab87bad63f20eecf0149760dc5f"
+  },
+  "resultPlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/result-plugin.json",
+    "sha256": "5f028b8d2b9d429778070493e369952c8673926e3aaeecde8ef6a4695c3e2448"
+  },
+  "candidateHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/candidate-harness.json",
+    "sha256": "eb05cd11b5d1f7a22563e48fd3bbb0e5cfbf1d524e33b90971d238939c2afeb0"
+  },
+  "comparison": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/comparison.json",
+    "sha256": "e73da20c8a9d236f144a7e51e5be60674610d80709f697d399d644b300995265"
+  },
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/regression.json",
+    "sha256": "915588c3ee2ab739ba8e24a4b6bd0a050f266947c010d871a06918bc8c59f381"
+  },
+  "rootReview": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-event-file-relative-doc-v1/root-review.json",
+    "sha256": "b6ab3e26d03a62bc4bc95fe79e7f9ef33d326bb4b7e903537aa9eb654409dbf0"
+  }
+}

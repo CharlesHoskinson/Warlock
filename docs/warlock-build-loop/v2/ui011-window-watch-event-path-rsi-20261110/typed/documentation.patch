@@ -1,0 +1,13 @@
+--- plugins/warlock-contributor/references/delivery-events.md
++++ plugins/warlock-contributor/references/delivery-events.md
+@@ -1,6 +1,10 @@
+ # Delivery event inputs and terminal reports
+ 
+ Use `delivery-event --event-file` with the selected record and current CAS values.
++Pass a repository-relative path to `--event-file`, such as
++`.warlock-contributor/evidence/current/candidate-event.json`. An absolute path
++is refused, including a path inside this repository. Keep absolute paths for
++ordinary file reads separate from this CLI argument.
+ The checker adds audit fields after validation. Input JSON accepts exact fields.
+ 
+ ## Candidate identity
