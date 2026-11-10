@@ -1,0 +1,136 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-10T01:33:39.540693+00:00",
+    "secondsSinceRecordedProgress": 1312,
+    "suspendedSeconds": 0,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": false,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [],
+    "effectiveAuthorizationExpiresUTC": "2026-11-10T14:40:00Z",
+    "action": "Continue the selected delivery action.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "execute",
+    "executor": "Root",
+    "candidateId": "ux024-connected-owner-entrypoints-cpu-20261110",
+    "candidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa",
+    "jobId": null,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "--review",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/runtime-foreign-toplevel-connected-entrypoints-cpu/review-packet.json",
+      "--sha256",
+      "afd84f661290f671bcd9794e1bb29ffc8916ce597f8c939b0818e1e76dfc8909"
+    ],
+    "expectedObservation": "Compile only the two existingtargets against reviewed Main1f51 containing fixed connectednative entrypoints. Execute ONLY the unchanged pureallocation and metadata/FD-only pre-connect branches through the sameclosed two-suite CPU mode. Neither new connectedflag is admitted or executed here. Config15, actualcallbacks, actualownedwindow and normalconnectedretirement remain pending source-bound nativequalification. No provider/native/original acceptance inferred.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-10T01:33:39.540693+00:00",
+      "secondsSinceRecordedProgress": 1313,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": false,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [],
+      "effectiveAuthorizationExpiresUTC": "2026-11-10T14:40:00Z",
+      "action": "Continue the selected delivery action.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}
+{"deliveryLaunch": {"record": ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json", "candidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa", "selection": 29, "scope": "cpu", "pid": 1194029, "startTicks": "4145483", "argv": ["/usr/bin/python3", "-B", "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py", "--review", "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/runtime-foreign-toplevel-connected-entrypoints-cpu/review-packet.json", "--sha256", "afd84f661290f671bcd9794e1bb29ffc8916ce597f8c939b0818e1e76dfc8909"], "acceptanceInferred": false}}
+{"passed": true, "report": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794275742328804070/report.json", "sha256": "e986cbcd2d0abb9f394c7e0b967fc4199fbcc1282f8889c493d27ee38aca58fb"}
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-10T01:33:39.540693+00:00",
+    "secondsSinceRecordedProgress": 1389,
+    "suspendedSeconds": 0,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": false,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [],
+    "effectiveAuthorizationExpiresUTC": "2026-11-10T14:40:00Z",
+    "action": "Continue the selected delivery action.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "wait-terminal",
+    "executor": "Root",
+    "candidateId": "ux024-connected-owner-entrypoints-cpu-20261110",
+    "candidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa",
+    "jobId": "pid1194029-start4145483",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "--review",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/runtime-foreign-toplevel-connected-entrypoints-cpu/review-packet.json",
+      "--sha256",
+      "afd84f661290f671bcd9794e1bb29ffc8916ce597f8c939b0818e1e76dfc8909"
+    ],
+    "expectedObservation": "Compile only the two existingtargets against reviewed Main1f51 containing fixed connectednative entrypoints. Execute ONLY the unchanged pureallocation and metadata/FD-only pre-connect branches through the sameclosed two-suite CPU mode. Neither new connectedflag is admitted or executed here. Config15, actualcallbacks, actualownedwindow and normalconnectedretirement remain pending source-bound nativequalification. No provider/native/original acceptance inferred.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-10T01:33:39.540693+00:00",
+      "secondsSinceRecordedProgress": 1390,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": false,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [],
+      "effectiveAuthorizationExpiresUTC": "2026-11-10T14:40:00Z",
+      "action": "Continue the selected delivery action.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}

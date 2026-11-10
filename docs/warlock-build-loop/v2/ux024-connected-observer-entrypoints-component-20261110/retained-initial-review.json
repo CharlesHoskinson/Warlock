@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "changes-required",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/manifest.json",
+    "sha256": "b52ba0c1a840c41cbc713f2b5c36943f30b9339d07fbf58879b0aee8d176f02d"
+  },
+  "findings": [
+    {
+      "id": "CONNECTED-OPEN-ARM64-01",
+      "severity": "blocking",
+      "symbol": "connectedReadConfig/connectedOpen",
+      "counterexample": "Flags657408 use generic NOFOLLOW131072; actual AArch64 asm/fcntl.h defines NOFOLLOW32768 and LARGEFILE131072. Open can follow final symlink before later named-stat refusal, contrary to required nofollow custody.",
+      "minimumCorrection": "Use actual pinned ARM NOFOLLOW32768+CLOEXEC524288+NONBLOCK2048=559104, or exported symbolic ABI binding; pin actual asm header and add exact flag counterexample."
+    }
+  ],
+  "checked": [
+    "Strict config exact fields, SHA/size/mode/link/stability checks; full Binding frontend joins endpoint generation.",
+    "Four literal ordered commands, initial empty/single current handle/closed checks, finite1+16+16 snapshots under original<=28s deadline.",
+    "Retired vs RetainedUnknown comes from actual owner result; no synthesized retirement.",
+    "Producer uses real loadBackendConfig/runBackend and incumbent receipt shape, no fake projection or Backend mutation.",
+    "Old allocation/refusal/ordinary source bodies preserved per explicit byte artifact."
+  ],
+  "diagnosticRecommendation": "Terminal currently drops Left SomeException reason. A bounded QA-only error string would retain causal failure evidence without new probes or altered oracles; absence does not create acceptance.",
+  "evidence": {
+    "actualArmHeader": {
+      "path": "/usr/include/asm/fcntl.h",
+      "sha256": "67f89387e4e4aee86afadf2b9f0ac96117a9aa6af94c7d19baefbfe0b2a14206"
+    }
+  },
+  "limits": [
+    "No imports, compiler, tests, service, socket or native execution performed.",
+    "No connected-provider/native acceptance."
+  ]
+}

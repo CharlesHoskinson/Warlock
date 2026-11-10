@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/revision2-arm64-open-flags/manifest.json",
+    "sha256": "d2acde141b753354c4e66b82dc769a06258c375d0806d12ce79b0c340d5471d9"
+  },
+  "reviewedPosts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "beforeSha256": "e8b5581842aa4b1f94d9fd37b8b2b532a7b6d5f1cf3711813cd78cd4c185e0c5",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/revision2-arm64-open-flags/postimages/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "1f51f7f4affcd6a1b78765bd91f5da94bb4cf9c6781d50d4dc1b8631e17a282e"
+    }
+  ],
+  "resolved": [
+    "CONNECTED-OPEN-ARM64-01: actual ARM64 NOFOLLOW32768 with CLOEXEC/NONBLOCK yields559104; actual asm/bits headers hash-verified.",
+    "Positive exact flags and negative old657408 predicates added before connection;13 prior config controls retained, count15.",
+    "Actual Left exception text bounded1024 in existing terminal, null on Right; no synthetic result."
+  ],
+  "preserved": [
+    "Runtime c38d, Cabal c1c and producer/command/deadline/phase behavior unchanged.",
+    "Old allocation/refusal/ordinary bodies unchanged; connected path remains native-only."
+  ],
+  "findings": [],
+  "limits": [
+    "No reviewer imports, tests, compiler, endpoint or native execution.",
+    "Source acceptance does not establish connected callback/retirement correctness, provider readiness or original UX024 acceptance."
+  ],
+  "parentReviewSha256": "5043267b659601030c3ccdd6c23108b98fd89e09222fc6de1af0b3e13d174cf7"
+}

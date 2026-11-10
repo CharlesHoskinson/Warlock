@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "candidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa",
+  "scope": "cpu",
+  "disposition": "accepted",
+  "reviewer": "build_audit",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/prepared-connected-entrypoints-cpu/assembly.json",
+      "sha256": "e3fc45340fce5aee8cfe934c8556eafa4550f54cd3e781c2c1035ee29a1e0e73"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/metadata-preparation/prepared-connected-entrypoints-cpu/root-copy-plan.json",
+      "sha256": "a55fb0800fd97b0f7f8fb0b7bd238ec2e0db3e9e0db8bc2d8f6cf3b69eba60b7"
+    }
+  ],
+  "limits": [
+    "Exact five Root copies are now materialized and hash verified;272 current inputs/259 Haskell source map verified.",
+    "Only fixed allocation-only and pre-connect FD/metadata suites execute; connected/producer entrypoints compile only.",
+    "No reviewer execution or provider/native/original acceptance."
+  ]
+}

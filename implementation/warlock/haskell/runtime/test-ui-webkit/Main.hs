@@ -5,7 +5,7 @@
 -- display, WebKit page, original-scenario or GUI acceptance.
 module Main (main) where
 
-import Control.Exception (IOException, SomeException, displayException, try, finally)
+import Control.Exception (IOException, SomeException, displayException, try, finally, bracket, onException)
 import Control.Concurrent (threadDelay)
 import Control.Monad (foldM, forM_, unless)
 import Data.IORef
@@ -19,6 +19,19 @@ import qualified System.Posix.Files as EndpointFiles
 import Data.Bits ((.&.))
 import qualified Data.Text as T
 import qualified Data.ByteString.Char8 as BS
+import qualified Data.ByteString as B
+import qualified Data.Text.Encoding as TE
+import qualified Crypto.Hash.SHA256 as SHA256
+import qualified Warlock.Platform.Resolver as Resolver
+import qualified System.Posix.IO as PosixIO
+import System.Posix.Types (Fd(..))
+import System.Posix.User (getEffectiveUserID)
+import System.Timeout (timeout)
+import qualified Warlock.Backend as ConnectedBackend
+import qualified Warlock.Bootstrap as ConnectedBootstrap
+import qualified Warlock.Capture.Process.Bootstrap as ConnectedProcess
+import qualified Warlock.Protocol.Desktop as ConnectedDesktop
+import Numeric (showHex)
 import Warlock.Ui.Owner (retainRequestTrace)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Protocol.Identity (renderCounter)
@@ -28,11 +41,11 @@ import Foreign.C.Types (CInt(..))
 import Foreign.Ptr (FunPtr, Ptr, castFunPtr, freeHaskellFunPtr, nullPtr)
 import System.Exit (ExitCode(..))
 import System.Environment (getArgs, getEnv)
-import System.IO (hFlush, stdout)
+import System.IO (hFlush, stdout, stdin, hClose, hGetChar, hIsEOF)
 import System.IO.Error (ioeGetErrorString)
 import System.Posix.Process (ProcessStatus(..), exitImmediately, forkProcess, getProcessStatus)
 import System.Posix.Signals (sigKILL, signalProcess)
-import Warlock.Capture.Process.Bootstrap (deadlineAfter, deadlineFromAbsoluteNs, remainingMicros)
+import Warlock.Capture.Process.Bootstrap (AdmissionDeadline, deadlineAfter, deadlineFromAbsoluteNs, remainingMicros)
 import Warlock.Ui.EngineCustody (startCustody, stopCustody, abandonCustody)
 import Warlock.Ui.PrivateNetwork (enterPrivateNetwork)
 import Warlock.Ui.WebKit (rendererPhaseFlags, rendererPhasePolling, rendererPhasePublication, rendererPhaseRequest, rendererPhaseLeaf, rendererPhaseSnapshotScript, firstMouseupDiagnosticScript, finiteDpiFallbackSetting, rendererAllocationReady, rendererDiagnosticEnvelope, providerVersionQualified, connectOwnedSignal, withOwnedDefaultContext, retireInOrder, readMvpLease, handleMvpDispatch, requireThreadCompatibleNamespace)
@@ -510,8 +523,10 @@ main = do
  case args of
   ["--allocation-only"] -> allocationControls
   ["--foreign-endpoint-refusal-only"] -> foreignEndpointAdmissionControls
+  ["--foreign-endpoint-observe-only",path,digest] -> foreignEndpointObservationControls path digest
+  ["--foreign-endpoint-window-producer",path,digest] -> foreignEndpointWindowProducer path digest
   [] -> ordinaryControls
-  _ -> ioError (userError "expected no arguments, --allocation-only or --foreign-endpoint-refusal-only")
+  _ -> ioError (userError "expected fixed ordinary, allocation, endpoint-refusal, connected-observer or window-producer arguments")
 
 ordinaryControls :: IO ()
 ordinaryControls = do
@@ -697,3 +712,343 @@ foreignEndpointAdmissionControls = do
    check "expired retained owner refuses observation reuse" (isLeft retried)
   _ -> check "expired deadline cannot claim confirmed retirement" False
  putStrLn "foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect"
+
+
+-- Fixed native qualification entrypoint. These operations connect to the one
+-- parent-selected private compositor; they are NOT allocation/CPU controls.
+-- The pipe carries only a four-step schedule, never observation data or code.
+data ConnectedConfiguration = ConnectedConfiguration T.Text Identity.Binding String ForeignOwner.EndpointSelection
+
+connectedObject :: [T.Text] -> J.Json -> Either String [(T.Text,J.Json)]
+connectedObject keys = either (Left . show) Right . J.exactObject keys
+connectedField :: T.Text -> [(T.Text,J.Json)] -> Either String J.Json
+connectedField key fields = maybe (Left "missing connected field") Right (lookup key fields)
+connectedText :: J.Json -> Either String T.Text
+connectedText (J.JString value) = Right value
+connectedText _ = Left "connected string required"
+connectedNatural :: J.Json -> Either String Integer
+connectedNatural value = do
+ text <- connectedText value
+ _ <- either (Left . show) Right (Identity.parseCounter True text)
+ pure (read (T.unpack text))
+connectedCounter :: J.Json -> Either String Identity.Counter
+connectedCounter value = connectedText value >>= either (Left . show) Right . Identity.parseCounter False
+connectedList :: Int -> (J.Json -> Either String a) -> J.Json -> Either String [a]
+connectedList limit decode (J.JArray values)
+ | length values<=limit = mapM decode values
+ | otherwise = Left "connected array bound"
+connectedList _ _ _ = Left "connected array required"
+connectedCheck :: Bool -> String -> Either String ()
+connectedCheck good label = if good then Right () else Left label
+connectedDigest :: T.Text -> Either String BS.ByteString
+connectedDigest value = do
+ connectedCheck (T.length value==64 && T.all (\c -> c>='0' && c<='9' || c>='a' && c<='f') value) "canonical SHA256 required"
+ let digit c=if c<='9' then fromEnum c-fromEnum '0' else 10+fromEnum c-fromEnum 'a'
+     pairs []=[]
+     pairs (a:b:rest)=fromIntegral (digit a*16+digit b):pairs rest
+     pairs _=[]
+ pure (B.pack (pairs (T.unpack value)))
+connectedBinding :: J.Json -> Either String Identity.Binding
+connectedBinding value = do
+ fields <- connectedObject ["lifetime","session","frontend"] value
+ life <- connectedField "lifetime" fields >>= connectedCounter
+ sess <- connectedField "session" fields >>= connectedCounter
+ front <- connectedField "frontend" fields >>= connectedCounter
+ either (Left . show) Right (Identity.binding life sess front)
+connectedIdentity :: J.Json -> Either String Identity
+connectedIdentity value = do
+ fields <- connectedObject ["device","inode"] value
+ Identity <$> (connectedField "device" fields >>= connectedNatural) <*> (connectedField "inode" fields >>= connectedNatural)
+connectedAncestor :: J.Json -> Either String ForeignOwner.AncestorPin
+connectedAncestor value = do
+ fields <- connectedObject ["path","device","inode","uid","mode"] value
+ path <- connectedField "path" fields >>= connectedText
+ dev <- connectedField "device" fields >>= connectedNatural
+ ino <- connectedField "inode" fields >>= connectedNatural
+ uid <- connectedField "uid" fields >>= connectedNatural
+ mode <- connectedField "mode" fields >>= connectedNatural
+ connectedCheck (T.length path<=4096 && T.isPrefixOf "/" path && not (T.any (=='\0') path) && mode<=4095) "ancestor syntax"
+ pure (ForeignOwner.AncestorPin (DirectoryPin (T.unpack path) dev ino) uid mode)
+connectedProcess :: J.Json -> Either String ForeignOwner.ProcessPin
+connectedProcess value = do
+ fields <- connectedObject ["pid","birth","parent","uid","gid"] value
+ pid <- connectedField "pid" fields >>= connectedNatural
+ birth <- connectedField "birth" fields >>= connectedNatural
+ parent <- connectedField "parent" fields >>= connectedNatural
+ uid <- connectedField "uid" fields >>= connectedNatural
+ gid <- connectedField "gid" fields >>= connectedNatural
+ connectedCheck (pid>0 && birth>0) "process identity required"
+ pure (ForeignOwner.ProcessPin pid birth parent uid gid)
+connectedPin :: J.Json -> Either String Resolver.Pin
+connectedPin value = do
+ fields <- connectedObject ["path","device","inode","kind"] value
+ path <- connectedField "path" fields >>= connectedText
+ dev <- connectedField "device" fields >>= connectedNatural
+ ino <- connectedField "inode" fields >>= connectedNatural
+ kind <- connectedField "kind" fields >>= connectedText
+ selected <- case kind of
+  "directory" -> Right Resolver.Directory
+  "regular" -> Right Resolver.Regular
+  _ -> Left "no executable symlink or unknown kind admitted"
+ connectedCheck (T.length path<=4096 && T.isPrefixOf "/" path && not (T.any (=='\0') path)) "executable pin path"
+ pure (Resolver.Pin (TE.encodeUtf8 path) (Identity dev ino) selected)
+connectedExecutable :: J.Json -> Either String ForeignOwner.ExecutablePin
+connectedExecutable value = do
+ fields <- connectedObject ["root","pins","path","size","sha256"] value
+ root <- connectedField "root" fields >>= connectedIdentity
+ pins <- connectedField "pins" fields >>= connectedList 64 connectedPin
+ path <- connectedField "path" fields >>= connectedText
+ size <- connectedField "size" fields >>= connectedNatural
+ digest <- connectedField "sha256" fields >>= connectedText >>= connectedDigest
+ connectedCheck (not (null pins) && size>0 && size<=67108864 && not (T.null path) && T.length path<=4096 && not (T.isPrefixOf "/" path) && not (T.any (=='\0') path) && all (\part -> part/="" && part/="." && part/="..") (T.splitOn "/" path)) "selected executable bounds"
+ pure (ForeignOwner.ExecutablePin root pins (TE.encodeUtf8 path) [] size digest)
+connectedConfiguration :: String -> J.Json -> Either String ConnectedConfiguration
+connectedConfiguration inherited value = do
+ fields <- connectedObject ["schema","nonce","binding","deadlineMonotonicNs","endpoint"] value
+ version <- connectedField "schema" fields
+ connectedCheck (version==J.JNumber "1") "connected schema"
+ nonce <- connectedField "nonce" fields >>= connectedText
+ _ <- connectedDigest nonce
+ bound <- connectedField "binding" fields >>= connectedBinding
+ deadline <- connectedField "deadlineMonotonicNs" fields >>= connectedText
+ _ <- either (Left . show) Right (Identity.parseCounter False deadline)
+ connectedCheck (T.unpack deadline==inherited) "original absolute deadline differs"
+ endpoint <- connectedField "endpoint" fields >>= connectedObject ["bootId","ancestors","name","socket","processes","executable","generation"]
+ boot <- connectedField "bootId" endpoint >>= connectedText
+ connectedCheck (T.length boot==36 && all (\i -> T.index boot i=='-') [8,13,18,23] && T.all (\c -> c=='-' || c>='0' && c<='9' || c>='a' && c<='f') boot) "boot UUID"
+ ancestors <- connectedField "ancestors" endpoint >>= connectedList 64 connectedAncestor
+ name <- connectedField "name" endpoint >>= connectedText
+ connectedCheck (not (null ancestors) && not (T.null name) && T.length name<=64 && name/="." && name/=".." && T.all (\c -> c>='a' && c<='z' || c>='A' && c<='Z' || c>='0' && c<='9' || c=='-' || c=='_' || c=='.') name) "selected socket name"
+ socket <- connectedField "socket" endpoint >>= connectedObject ["device","inode","uid","mode"]
+ dev <- connectedField "device" socket >>= connectedNatural
+ ino <- connectedField "inode" socket >>= connectedNatural
+ uid <- connectedField "uid" socket >>= connectedNatural
+ mode <- connectedField "mode" socket >>= connectedNatural
+ connectedCheck (ino>0 && mode<=4095) "selected socket identity"
+ processes <- connectedField "processes" endpoint >>= connectedList 32 connectedProcess
+ connectedCheck (not (null processes)) "selected peer process required"
+ executable <- connectedField "executable" endpoint >>= connectedExecutable
+ generation <- connectedField "generation" endpoint >>= connectedCounter
+ connectedCheck (generation==Identity.frontend bound) "owner generation must match actual full binding frontend"
+ pure (ConnectedConfiguration nonce bound (T.unpack deadline) (ForeignOwner.EndpointSelection (TE.encodeUtf8 boot) ancestors (T.unpack name) (Identity dev ino) uid mode processes executable generation))
+
+-- Installed AArch64 asm/fcntl.h overrides asm-generic O_NOFOLLOW to1<<15;
+-- bits/fcntl.h independently declares0100000. Preserve NONBLOCK/CLOEXEC too.
+-- The generic1<<17 value is LARGEFILE here and must not substitute NOFOLLOW.
+foreign import ccall unsafe "open" connectedOpen :: CString -> CInt -> IO CInt
+connectedOpenFlags :: CInt
+connectedOpenFlags = 559104
+connectedSafeConfigFlags :: CInt -> Bool
+connectedSafeConfigFlags flags = flags .&. 32768==32768 && flags .&. 2048==2048
+ && flags .&. 524288==524288 && flags .&. 131072==0
+connectedWithin :: AdmissionDeadline -> IO a -> IO a
+connectedWithin deadline operation = do
+ left <- remainingMicros deadline
+ check "connected original deadline exhausted" (left>0)
+ outcome <- timeout left operation
+ case outcome of
+  Nothing -> ioError (userError "connected original deadline exhausted")
+  Just value -> do
+   after <- remainingMicros deadline
+   check "connected operation crossed original deadline" (after>0)
+   pure value
+connectedReadConfig :: AdmissionDeadline -> FilePath -> T.Text -> IO J.Json
+connectedReadConfig deadline path expected = connectedWithin deadline $ do
+ digest <- either (ioError . userError) pure (connectedDigest expected)
+ check "connected config path" (not (null path) && head path=='/' && length path<=4096 && '\0' `notElem` path)
+ bracket (do
+  raw <- withCString path (\name -> connectedOpen name connectedOpenFlags)
+  check "connected config nofollow open" (raw>=0)
+  pure (Fd raw)) PosixIO.closeFd $ \fd -> do
+   before <- EndpointFiles.getFdStatus fd
+   uid <- getEffectiveUserID
+   check "connected config private regular bound" (EndpointFiles.isRegularFile before && EndpointFiles.fileOwner before==uid && EndpointFiles.fileMode before .&. 0o7777==0o600 && EndpointFiles.linkCount before==1 && EndpointFiles.fileSize before>0 && EndpointFiles.fileSize before<=65536)
+   -- dup transfers only the duplicate into Handle ownership; original stays held.
+   duplicate <- PosixIO.dup fd
+   bracket (PosixIO.fdToHandle duplicate `onException` PosixIO.closeFd duplicate) hClose $ \handle -> do
+    raw <- BS.hGet handle (fromIntegral (EndpointFiles.fileSize before)+1)
+    after <- EndpointFiles.getFdStatus fd
+    named <- EndpointFiles.getSymbolicLinkStatus path
+    let stamp status=(EndpointFiles.deviceID status,EndpointFiles.fileID status,EndpointFiles.fileOwner status,EndpointFiles.fileMode status,EndpointFiles.fileSize status,EndpointFiles.linkCount status,EndpointFiles.modificationTimeHiRes status,EndpointFiles.statusChangeTimeHiRes status)
+    check "connected config changed or SHA differs" (stamp before==stamp after && stamp after==stamp named && B.length raw==fromIntegral (EndpointFiles.fileSize before) && SHA256.hash raw==digest)
+    limits <- either (ioError . userError . show) pure (J.bounds 65536 12)
+    either (ioError . userError . show) pure (J.decodeStrict limits raw)
+connectedReadCommand :: AdmissionDeadline -> String -> IO ()
+connectedReadCommand deadline expected = connectedWithin deadline $ do
+ let loop count reversed = do
+      check "connected command byte bound" (count<13)
+      char <- hGetChar stdin
+      if char=='\n' then pure (reverse reversed) else do
+       check "connected command ASCII" (char>='A' && char<='Z' || char=='_')
+       loop (count+1) (char:reversed)
+ actual <- loop (0::Int) []
+ check "connected fixed phase order" (actual==expected)
+connectedWrite :: AdmissionDeadline -> J.Json -> IO ()
+connectedWrite deadline value = connectedWithin deadline $ do
+ let bytes=TE.encodeUtf8 (J.renderJson value)<>"\n"
+ check "connected response bound" (B.length bytes<=262144)
+ BS.hPut stdout bytes
+ hFlush stdout
+connectedBindingJson :: Identity.Binding -> J.Json
+connectedBindingJson bound = J.JObject [("lifetime",J.JString (Identity.renderCounter (Identity.lifetime bound))),("session",J.JString (Identity.renderCounter (Identity.session bound))),("frontend",J.JString (Identity.renderCounter (Identity.frontend bound)))]
+connectedConfigControls :: String -> J.Json -> IO Int
+connectedConfigControls deadline original = do
+ check "actual ARM64 nofollow nonblock cloexec flags" (connectedSafeConfigFlags connectedOpenFlags)
+ check "generic NOFOLLOW bit is not ARM64 NOFOLLOW" (not (connectedSafeConfigFlags 657408))
+ let set key value (J.JObject fields)=J.JObject (map (\(name,old)->(name,if name==key then value else old)) fields)
+     set _ _ other=other
+     alterEndpoint fn (J.JObject fields)=J.JObject (map (\(name,value)->(name,if name=="endpoint" then fn value else value)) fields)
+     alterEndpoint _ other=other
+     cases=[set "schema" (J.JNumber "2") original,set "nonce" (J.JString "not-a-nonce") original
+       ,set "deadlineMonotonicNs" (J.JString "1") original,set "binding" (J.JObject []) original
+       ,alterEndpoint (set "generation" (J.JString "0")) original
+       ,alterEndpoint (set "name" (J.JString "../wayland")) original
+       ,alterEndpoint (set "ancestors" (J.JArray [])) original
+       ,alterEndpoint (set "processes" (J.JArray [])) original
+       ,alterEndpoint (set "socket" (J.JObject [])) original
+       ,alterEndpoint (set "executable" (J.JObject [])) original
+       ,alterEndpoint (set "bootId" (J.JString "bad")) original
+       ,case original of J.JObject fields->J.JObject (fields++[("command",J.JString "forbidden")]);other->other]
+ check "actual connected config decodes" (case connectedConfiguration deadline original of Right _->True;Left _->False)
+ forM_ (zip [0::Int ..] cases) $ \(index,value) -> check ("connected config negative "++show index) (isLeft (connectedConfiguration deadline value))
+ pure (length cases+3)
+
+foreignEndpointObservationControls :: FilePath -> String -> IO ()
+foreignEndpointObservationControls path suppliedSha = do
+ inherited <- getEnv "WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS"
+ deadline <- deadlineFromAbsoluteNs inherited >>= either (ioError . userError . show) pure
+ initialRemaining <- remainingMicros deadline
+ check "connected deadline must be inherited native28s" (initialRemaining>0 && initialRemaining<=28000000)
+ raw <- connectedReadConfig deadline path (T.pack suppliedSha)
+ configChecks <- connectedConfigControls inherited raw
+ ConnectedConfiguration nonce bound _ selection <- either (ioError . userError) pure (connectedConfiguration inherited raw)
+ completed <- newIORef (0::Int)
+ outputTokens <- newIORef ([]::[FT.Output])
+ let base sequenceNo phase = [("schema",J.JNumber "1"),("nonce",J.JString nonce),("sequence",J.JNumber (T.pack (show (sequenceNo::Int)))),("phase",J.JString phase),("binding",connectedBindingJson bound),("configChecks",J.JNumber (T.pack (show configChecks))),("nativeAcceptance",J.JBool False)]
+     outputOrdinal token = do
+      known <- readIORef outputTokens
+      case lookup token (zip known [1::Int ..]) of
+       Just ordinal -> pure ordinal
+       Nothing -> do
+        check "connected cumulative output report bound" (length known<4096)
+        writeIORef outputTokens (known++[token])
+        pure (length known+1)
+     rowJson row = do
+      outputs <- mapM outputOrdinal (FT.toplevelOutputs row)
+      check "singleton has no external parent" (FT.toplevelParent row==Nothing)
+      let state value=case value of FT.Maximized->"maximized";FT.Minimized->"minimized";FT.Activated->"activated";FT.Fullscreen->"fullscreen"
+      pure (J.JObject [("handleOrdinal",J.JString "1"),("identityScope",J.JString "same-owner-QA-label-not-protocol-wire-id")
+        ,("title",J.JString (FT.toplevelTitle row)),("appId",J.JString (FT.toplevelAppId row))
+        ,("states",J.JArray (map (J.JString . state) (FT.toplevelStates row)))
+        ,("outputOrdinals",J.JArray (map (J.JString . T.pack . show) outputs)),("parentOrdinal",J.JNull)])
+     publish sequenceNo phase attempts rows = do
+      values <- mapM rowJson rows
+      connectedWrite deadline (J.JObject (base sequenceNo phase++[("readsPerformed",J.JNumber (T.pack (show (attempts::Int)))),("rows",J.JArray values)]))
+      writeIORef completed sequenceNo
+ result <- ForeignOwner.withForeignToplevelOwner selection deadline $ \owner -> do
+  connectedReadCommand deadline "READ_INITIAL"
+  initial <- ForeignOwner.readToplevelSnapshot owner
+  check "actual initial committed snapshot not empty" (null (FT.toplevels initial))
+  publish 1 "READ_INITIAL" 1 []
+  connectedReadCommand deadline "READ_WINDOW"
+  let awaitWindow count = do
+       check "connected mapped snapshot read bound" (count<=16)
+       observed <- ForeignOwner.readToplevelSnapshot owner
+       case FT.toplevels observed of
+        [row] -> pure (row,count)
+        [] -> awaitWindow (count+1)
+        _ -> ioError (userError "more than one actual committed window")
+  (window,windowReads) <- awaitWindow (1::Int)
+  publish 2 "READ_WINDOW" windowReads [window]
+  connectedReadCommand deadline "READ_CLOSED"
+  let awaitClosed count = do
+       check "connected closed snapshot read bound" (count<=16)
+       observed <- ForeignOwner.readToplevelSnapshot owner
+       case FT.toplevels observed of
+        [] -> pure count
+        [row] | FT.toplevelHandle row==FT.toplevelHandle window -> awaitClosed (count+1)
+        _ -> ioError (userError "observed window replaced during close")
+  closedReads <- awaitClosed (1::Int)
+  publish 3 "READ_CLOSED" closedReads []
+  connectedReadCommand deadline "RETIRE"
+  ended <- connectedWithin deadline (hIsEOF stdin)
+  check "connected no fifth command" ended
+  writeIORef completed 4
+ actualCompleted <- readIORef completed
+ let actionPassed=case result of
+      ForeignOwner.ObservationResult (Right ()) _ -> True
+      _ -> False
+     retired=case result of
+      ForeignOwner.ObservationResult _ ForeignOwner.Retired -> True
+      _ -> False
+     status=if retired then "Retired" else "RetainedUnknown"
+     failure=case result of
+      ForeignOwner.ObservationResult (Left problem) _ -> J.JString (T.pack (take 1024 (displayException problem)))
+      _ -> J.JNull
+ connectedWrite deadline (J.JObject (base 4 "RETIRE"++[("completedPhases",J.JNumber (T.pack (show actualCompleted))),("actionPassed",J.JBool actionPassed),("error",failure),("status",J.JString status),("passed",J.JBool (actionPassed && retired && actualCompleted==4))]))
+ check "connected qualification incomplete or retained Unknown" (actionPassed && retired && actualCompleted==4)
+
+-- Same public real Backend observer as fixture-ux003-native-observer/Main.hs,
+-- linked into this fresh threaded test image. No fake GUI or attachment route.
+connectedHex :: B.ByteString -> T.Text
+connectedHex = T.pack . concatMap (\n -> let encoded=showHex n "" in if length encoded==1 then '0':encoded else encoded) . B.unpack
+connectedJsonValue :: B.ByteString -> J.Json
+connectedJsonValue raw = case J.bounds 1048576 20 of
+ Left _ -> J.JNull
+ Right limits -> either (const J.JNull) id (J.decodeStrict limits raw)
+connectedDesktopJson :: ConnectedDesktop.DesktopReply -> J.Json
+connectedDesktopJson reply = either (const J.JNull) connectedJsonValue (ConnectedDesktop.encodeDesktopReply reply)
+connectedSelected :: ConnectedProcess.SelectedOutcome -> J.Json
+connectedSelected result = J.JObject
+ ([("exit",maybe J.JNull (J.JNumber . T.pack . show) (ConnectedProcess.selectedObservedExit result))
+  ,("custody",J.JString (T.pack (show (ConnectedProcess.selectedCustody result))))
+  ,("containment",J.JString (T.pack (show (ConnectedProcess.selectedContainment result))))]
+  ++ case ConnectedProcess.selectedOperation result of
+   Left _ -> [("stdoutHex",J.JNull),("stderrHex",J.JNull),("operationSucceeded",J.JBool False)]
+   Right captured -> [("stdoutHex",J.JString (connectedHex (ConnectedProcess.output captured)))
+                    ,("stderrHex",J.JString (connectedHex (ConnectedProcess.diagnostics captured)))
+                    ,("operationSucceeded",J.JBool True)])
+foreignEndpointWindowProducer :: FilePath -> String -> IO ()
+foreignEndpointWindowProducer path suppliedSha = do
+ inherited <- getEnv "WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS"
+ deadline <- deadlineFromAbsoluteNs inherited >>= either (ioError . userError . show) pure
+ left <- remainingMicros deadline
+ check "producer inherits original native28s" (left>0 && left<=28000000)
+ before <- connectedReadConfig deadline path (T.pack suppliedSha)
+ let fields=case before of J.JObject values->values;_->[]
+ check "producer config original deadline" (lookup "deadlineMonotonicNs" fields==Just (J.JString (T.pack inherited)))
+ configured <- connectedWithin deadline (ConnectedBackend.loadBackendConfig path)
+ after <- connectedReadConfig deadline path (T.pack suppliedSha)
+ check "producer startup bytes changed across trusted decoder" (before==after)
+ config <- either (const (ioError (userError "QA producer trusted startup refused"))) pure configured
+ result <- ConnectedBackend.runBackend config
+ let owner=case ConnectedBackend.backendBootstrap result of
+      Right (ConnectedBootstrap.Executed outcome) -> case ConnectedProcess.selectedOperation outcome of
+       Right captured | B.null (ConnectedProcess.diagnostics captured) -> connectedJsonValue (ConnectedProcess.output captured)
+       _ -> J.JNull
+      _ -> J.JNull
+     app=case ConnectedBackend.backendApplicationReceipt result of
+      Nothing -> J.JNull
+      Just (request,outcome) -> case connectedSelected outcome of
+       J.JObject values -> J.JObject (("request",J.JString (renderCounter request)):values)
+       _ -> J.JNull
+     published=maybe J.JNull connectedDesktopJson (ConnectedBackend.backendCatalogObservation result)
+     launch=case ConnectedBackend.backendApplicationObservation result of
+      Nothing -> J.JNull
+      Just (intent,snapshot) -> J.JObject
+       [("request",J.JString (renderCounter (ConnectedDesktop.launchRequest intent)))
+       ,("lifetime",J.JString (renderCounter (ConnectedDesktop.launchLifetime intent)))
+       ,("generation",J.JString (renderCounter (ConnectedDesktop.launchGeneration intent)))
+       ,("entry",J.JString (ConnectedDesktop.launchEntry intent)),("catalog",maybe J.JNull connectedDesktopJson snapshot)]
+     failure=case ConnectedBackend.backendBootstrap result of
+      Left problem -> J.JString (T.take 4096 problem)
+      Right _ -> J.JNull
+     receipt=J.JObject
+      [("schema",J.JNumber "1"),("kind",J.JString "ux003-backend-observation")
+      ,("backend",connectedJsonValue (ConnectedBackend.backendResultJson result)),("bootstrapFailure",failure),("owner",owner)
+      ,("application",app),("publishedCatalog",published),("publishedLaunch",launch)
+      ,("nativeAcceptance",J.JBool False),("originalAcceptance",J.JBool False)]
+ -- Preserve the incumbent observer's terminal reporting after Backend cleanup;
+ -- parent custody bounds that cleanup/report by its existing originalD+2s.
+ BS.putStrLn (TE.encodeUtf8 (J.renderJson receipt))
+ check "actual Backend producer did not pass" (ConnectedBackend.backendPassed result)
