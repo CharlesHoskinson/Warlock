@@ -12,7 +12,7 @@ sys.dont_write_bytecode=True
 attempt_auth=boot_correspondence=owned_fonts=keyboard_fixture=geometry=None
 ROOT=Path('/home/hoskinson/Projects/Warlock')
 SELF=ROOT/'tools/run_current_arm_ux024_foreign_toplevel_observer.py'
-PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v1/packet.json'
+PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v2/packet.json'
 RECORD='.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
 IDENTITY='60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
 LOG_LIMIT=4*1024*1024
@@ -28,7 +28,7 @@ CLOSE_ARGV=['-M','alt','-k','F4','-m','alt']
 DEADLINE_ENV='WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'
 PHASE_LIBC={'path':'/usr/lib/libc.so.6','sha256':'6ab264fb4e8df9942b0fb75b48fcd5c30b2f081d8dfaa6c25d7be1d3fce5b2ab'}
 CONTRACT_SHA='6490c0202f7377f9a768cce6a6e558b01bd32dae92eb40dc04ddd2f021dbecf5'
-HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'f4be1482ecbf50844a255bd1c736a45cd02b39af79d1469c3e9e968f42275a3b', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ux024_foreign_toplevel_attempt_authorization.py': '3bbcde1e912209751c9e443349b92d98c944886a15fdee7f8953b8a4fca4a898'}
+HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'c1e5a7bd231530e68df2c56ee13cbc6c3b844cfed673257abc09a7451898de22', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ux024_foreign_toplevel_attempt_authorization.py': '3bbcde1e912209751c9e443349b92d98c944886a15fdee7f8953b8a4fca4a898'}
 
 def validate_generated_foundation_basis(foundation, report):
     sources=foundation.get('sourceInputs',{})
@@ -262,9 +262,9 @@ def require_live_stack(stack,deadline):
 
 class _OwnedStack:
     """Private QA custody: actual retained Popen objects, never minted from a report."""
-    def __init__(self,foundation,qa,collector,base,clock,output,nested_config,current_boot):
+    def __init__(self,foundation,qa,collector,base,clock,output,nested_config,current_boot,provider_source_correspondence):
         self.key=_STACK_KEY;self.p=foundation;self.qa=qa;self.c=collector;self.base=base;self.clock=clock
-        self.nested_config=nested_config;self.current_boot=current_boot
+        self.nested_config=nested_config;self.current_boot=current_boot;self.provider_source_correspondence=provider_source_correspondence
         self.output=output;self.deadline=clock['deadline'];self.closed=False;self.children=[];self.logs=[]
         self.host=None;self.nested=None;self.runtime=None;self.facts={};self.instance=None;self.env=None
         self.font_layout=None;self.nested_inventory=None
@@ -312,11 +312,11 @@ class _OwnedStack:
             h=self.p['host'];image=self.p['hostInputs'][h['labwc']]
             inventory=dict(self.p['hostInputs'],**{str(self.output/'font/LiberationSans-Regular.ttf'):self.c.FONT_SHA})
             return boot_correspondence.generated_context_mapped(self.current_boot,self.c,self.base,self.host,self.host_birth,'host',image,inventory,
-                [h['labwc'],h['wlroots'],str(Path('/usr/lib/libEGL_nvidia.so.0').resolve()),'/usr/lib/libnvidia-eglcore.so.615.78.08'],self.clock,self.p)
+                [h['labwc'],h['wlroots'],str(Path('/usr/lib/libEGL_nvidia.so.0').resolve()),'/usr/lib/libnvidia-eglcore.so.615.78.08'],self.clock,self.p,self.provider_source_correspondence)
         if role=='nested':
             n=self.p['nested'];image=n['inputs'][n['compositor']]
             return boot_correspondence.generated_context_mapped(self.current_boot,self.c,self.base,self.nested,self.nested_birth,'nested',image,self.nested_inventory,
-                [n['compositor'],n['backend']],self.clock,self.p)
+                [n['compositor'],n['backend']],self.clock,self.p,self.provider_source_correspondence)
         raise ValueError('generated mapping classification is only for fixed owned host/nested roles')
 
     def start(self):
@@ -349,7 +349,7 @@ class _OwnedStack:
         self.facts['hostMappings']=self.facts['hostGeneratedRuntime']['staticMappingsAfter']
         self.facts['hostGraphicsFDs']=boot_correspondence.graphics_fds(self.current_boot,base,p['graphics'],self.host,self.host_birth,p['hostInputs'][h['labwc']])
         boot_correspondence.verify_graphics(self.current_boot,base,p['graphics'],p['hostInputs']);self.host_live();left(clock)
-        nested=p['nested'];boot_correspondence.verify_private_provider(self.current_boot,c,base,nested)
+        nested=p['nested'];boot_correspondence.verify_private_provider(self.current_boot,c,base,nested,self.provider_source_correspondence)
         self.font_layout=owned_fonts.prepare(output,lambda:left(clock))
         self.nested_inventory=dict(nested['inputs'],**owned_fonts.mapping_inputs(self.font_layout))
         nenv=owned_fonts.environment(c.apply_private_glib_environment(base.graphics_environment(runtime,output)),self.font_layout);nenv['WAYLAND_DISPLAY']=str(self.host_socket);nenv['LD_LIBRARY_PATH']=nested['libraryDir']
@@ -763,7 +763,7 @@ def preflight(expected):
         for path,pin in inventory.items():base.regular(path,pin)
     boot_correspondence.verify_graphics(current,base,foundation['graphics'],foundation['hostInputs'])
     boot_correspondence.verify_build(current,collector,base,foundation)
-    boot_correspondence.verify_private_provider(current,collector,base,foundation['nested'])
+    boot_correspondence.verify_private_provider(current,collector,base,foundation['nested'],packet['reuse']['providerSourceCorrespondence'])
     require(digest(pinned(packet['assets']['nestedConfig']))==collector.NESTED_LUA_SHA,'fixed nested config differs')
     qa=load_helper('window-integration-qa/qa_launch.py','connected_scope')
     stage=load_helper('tools/omarchy_ui_mvp.py','connected_stage')
@@ -908,7 +908,7 @@ def execute(context,packet_sha):
     before=global_snapshot();stack=None;lease=None;keyboard=None;observer=None;producer=None;reader=None;phase_channel=None;wire_path=output/'observer-wire.jsonl';logs=[];nonce=os.urandom(32).hex()
     try:
         stack_output=output/'owned-stack';stack_output.mkdir(mode=0o700)
-        stack=_OwnedStack(context['foundation'],qa,context['collector'],context['base'],clock,stack_output,pinned(assets['nestedConfig']),context['current'])
+        stack=_OwnedStack(context['foundation'],qa,context['collector'],context['base'],clock,stack_output,pinned(assets['nestedConfig']),context['current'],packet['reuse']['providerSourceCorrespondence'])
         stack.start();receipt['liveStack']={'hostPid':stack.host.pid,'hostBirth':stack.host_birth,'nestedPid':stack.nested.pid,'nestedBirth':stack.nested_birth,'facts':stack.facts}
         env=dict(stack.env,HOME=str(output/'home'),XDG_CONFIG_HOME=str(output/'config'),XDG_CACHE_HOME=str(output/'cache'),XDG_DATA_HOME=str(output/'data'))
         env['XDG_DATA_HOME']=str(output/'data');env[DEADLINE_ENV]=str(clock['deadline'])
