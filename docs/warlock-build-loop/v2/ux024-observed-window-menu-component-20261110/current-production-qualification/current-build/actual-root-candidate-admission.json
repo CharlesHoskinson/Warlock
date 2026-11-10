@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "plugins/warlock-contributor/scripts/warlock.py",
+    "--record",
+    ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "--json",
+    "delivery-event",
+    "--event-file",
+    ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/observed-production-current-build-cpu/candidate-event.json",
+    "--expect-record-sha",
+    "c21f447ad16bf84babc8e91213f1045cb5d31a1ec7dc4a163cb190f18da9c3a3",
+    "--expect-selection",
+    "30"
+  ],
+  "exit": 2,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"ok\": false,\n  \"errors\": [\n    \"Invalid delivery event input fields\"\n  ]\n}\n",
+  "stderr": ""
+}

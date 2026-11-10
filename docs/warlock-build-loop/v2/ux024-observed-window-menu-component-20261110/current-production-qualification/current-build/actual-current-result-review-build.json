@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-current-production-build-and-bounded-cpu-controls",
+  "candidateSha256": "bd3f64ed0433d84703b92063b9788a943a7a5d473c72032e4c51e4a3dd9e3926",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/report.json",
+    "sha256": "bc8a28db81f08db6ed59de8a437e426188f5ce9c2d9a2177ba1d7b37e23013e2"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-build-preparation/candidate.json",
+      "sha256": "8487e37883bd6cf3eab2f99956c89cd0407db024a64df87c15d8f233d52c1bea"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-build-preparation/review-packet.json",
+      "sha256": "863f2e8e51ddc51c40616494be93c99eab55436d8b453bed85c4d6c32eba19df"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/build.stderr",
+      "sha256": "edbf6887857e24363c02573a0cece0b1084ad1aab8ca056a1b4386845060d3c5"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/build.stdout",
+      "sha256": "9e6dc1063b7d3108c9a4a56a9def4245596154537db5a01312f96d9fd02973a9"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/cpu-foreign-endpoint-refusal-controls.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/cpu-foreign-endpoint-refusal-controls.stdout",
+      "sha256": "f3c72cf35b99432f6903b9eacaa190e31ba1c47f86288e955d99fbbf64475cea"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/cpu-ui-webkit-controls.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/cpu-ui-webkit-controls.stdout",
+      "sha256": "d9c76485e7c20ca1f2692b9b7a0015752b5c5db1306cf0fc810ea16a7e167d9f"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/fixed-builder-controls.stderr",
+      "sha256": "dc93e1ad8c71598c3eb66567fa8d82decd8763a2bb977499ab18ee5efdb2ed29"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/fixed-builder-controls.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/list-ui-webkit-controls.stderr",
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/list-ui-webkit-controls.stdout",
+      "sha256": "28427209f99c77fcb42658dcf697dcefe24a8ebbaf8547e0c5d43e636f024447"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/list-warlock-ui-owner.stderr",
+      "sha256": "8384ce1e0e4580d028aabcde6aec13a8d571cb297ecf8b4fd070eed23bddc3e6"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/logs/list-warlock-ui-owner.stdout",
+      "sha256": "294ed82c4371c8c28ba5572e8853b3fc0608b1cd0d8de2c832980ae8fe97613b"
+    }
+  ],
+  "observations": {
+    "selectionGeneration": 30,
+    "allSixCommandsExit0": true,
+    "forcedCleanup": false,
+    "managedCpuInputsChecked": 273,
+    "rawSourceHashesChecked": 271,
+    "rawSourceComposition": "260 Haskell +11support; two managed metadata refs make273, not273 raw sources.",
+    "liveHaskellTreeChecked": 260,
+    "stageChecked": 260,
+    "generatedProjectCheckedAgainstExactOfflineTransform": true,
+    "committedSourceBlobsChecked": 31,
+    "revision": "69c7837691e6a9eea4432e892cdb43266b586302",
+    "compiledImages": {
+      "warlock-ui-owner": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+        "device": "57",
+        "inode": "6984663",
+        "size": "37740696",
+        "sha256": "8046f67fc7b9a9db6cfc97d90c58bc901058b58320359f12d7a70a907e0b5840",
+        "executed": false,
+        "mode": 493,
+        "elfClass": "ELF64",
+        "endianness": "little",
+        "machine": "AArch64"
+      },
+      "ui-webkit-controls": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794293105269610575/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+        "device": "57",
+        "inode": "6984694",
+        "size": "41163488",
+        "sha256": "4aa54acfd478ea63d894bccb8a4da0ec73f1f01ba29a5b05faac6ad3a74c2652",
+        "executed": true,
+        "mode": 493,
+        "elfClass": "ELF64",
+        "endianness": "little",
+        "machine": "AArch64"
+      }
+    },
+    "actualSentinels": [
+      "allocation-controls: PASS",
+      "foreign-endpoint-admission-cpu:17-refusals;32-seeds;expired-retained;no-connect"
+    ],
+    "rawCleanupQualified": false
+  },
+  "limits": [
+    "Only current two-target build and two bounded CPU suites qualified; warlock-ui-owner is compiled only, not executed. Connected observer/producer flags not executed.",
+    "ELF class/machine and actual content/stat identities verified; source/library ABI closure remains exact pinned build inputs, no connected native ABI success inferred.",
+    "Prior private R4 Haskell and R5 Elm passes remain separate actual executions. No protocol/MVP/Elm campaign repeated here.",
+    "Raw cleanupQualified=false preserved. No current HTML asset qualification, provider correspondence, native/original UX024 or release acceptance.",
+    "No reviewer target imports/tests/compilation/native effects or primary edits."
+  ]
+}

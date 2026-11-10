@@ -1,0 +1,25 @@
+{
+  "phase": "baseline",
+  "label": "admission",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+    "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+    "/home/hoskinson/Projects/Warlock",
+    "-v"
+  ],
+  "exit": 0,
+  "stdout": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-observed-production-no-change-v1/baseline-admission.stdout",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-observed-production-no-change-v1/baseline-admission.stderr",
+    "sha256": "94d7ae7bd87c6b9e63bfc4bc683536ac50ef5a08a5439db1245cce3b4a8e8e61"
+  }
+}

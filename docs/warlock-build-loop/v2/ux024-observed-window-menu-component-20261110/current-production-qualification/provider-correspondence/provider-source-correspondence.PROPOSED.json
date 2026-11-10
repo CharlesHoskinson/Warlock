@@ -1,0 +1,28 @@
+{
+  "schema": 2,
+  "disposition": "pending-independent-review",
+  "scope": "ux024-provider-qa-dispatch-source-correspondence",
+  "reviewer": null,
+  "buildReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/aq-log-provider-build-1794102851345544241/report.json",
+    "sha256": "e9ced42313e67a46c1e5f9fa0058b6661b82d2ef3c47ab81925815a9acf23938"
+  },
+  "historicalSource": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/provider-current-source-correspondence/qa_cpu-02e1739d.py",
+    "sha256": "02e1739d85a75210b70702ed269d11a84c498755e8fc0b567bfe42492a656804"
+  },
+  "currentSource": {
+    "path": "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+    "sha256": "33c8c99c9810542fda561f883d11fc038c990790ceb123168466c0aeac582ee7"
+  },
+  "correspondenceEvidence": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-documents-provider-preparation/actual-provider-correspondence/actual-source-artifact-correspondence.json",
+    "sha256": "85c9c40f04db031354ce0c5fc1877772700b32fff785e146222e5d4816ad504a"
+  },
+  "limits": {
+    "providerRebuilt": false,
+    "nativeExecuted": false,
+    "originalAcceptance": false,
+    "onlyCurrentSourceDelta": "tools/qa_cpu.py"
+  }
+}

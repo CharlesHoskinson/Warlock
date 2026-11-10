@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "status": "prepared-current-production-metadata-no-execution",
+  "recordIdentitySha256": "60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4",
+  "actualSelectionGeneration": 30,
+  "sourceCount": 31,
+  "haskellFileCount": 260,
+  "supportCount": 11,
+  "cpuInputCount": 273,
+  "oldFixedBuildPacket": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ux024-menu-focus-build-v1-20261109/packet.json",
+    "sha256": "18a67bab6fdec28b0e3bfbb88d6a48fc74e93c423eb914cac020649251084102"
+  },
+  "buildPacket": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-build-preparation/build-packet.json",
+    "sha256": "a42a9db2c444d4b930bf6320ae3be8967089b6aef779d8f75839cc63905e1748"
+  },
+  "reviewPacket": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-build-preparation/review-packet.json",
+    "sha256": "863f2e8e51ddc51c40616494be93c99eab55436d8b453bed85c4d6c32eba19df"
+  },
+  "candidate": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-build-preparation/candidate.json",
+    "sha256": "8487e37883bd6cf3eab2f99956c89cd0407db024a64df87c15d8f233d52c1bea"
+  },
+  "canonicalCandidateSha256": "bd3f64ed0433d84703b92063b9788a943a7a5d473c72032e4c51e4a3dd9e3926",
+  "copyPlan": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/current-production-build-preparation/root-copy-plan.json",
+    "sha256": "f0802d35a0bdd80a65473bbbc34f8eaaa91044c54be3a8fde1432a8e1425f761"
+  },
+  "normalCoreEvidence": [
+    "warlock.py2871 validate_delivery_candidate current complete owned sources",
+    "warlock.py3140 terminal exact job/candidate/manifest/fixtures",
+    "warlock.py3159 integrated consumed pass and exact committed blobs"
+  ],
+  "privatePassesReusedByCorrespondenceOnly": true,
+  "requiredFreshExecution": "Existing ordinary two-target build plus unchanged allocation/endpoint suites",
+  "nativeExecuted": false,
+  "originalAccepted": false
+}

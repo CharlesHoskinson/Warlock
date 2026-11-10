@@ -361,6 +361,28 @@ def run_menu_tab_dom(observation_variant=None):
             validate_elm_result(json.loads(observation_result.read_text()),observation_sha,observation_fixture_sha)
             if source_hash(observation_image)!=observation_sha or source_hash(observation_fixture)!=observation_fixture_sha:raise RuntimeError('Observation tested artifact changed')
             report.update(observedWindowMenuCaseCount=30,observedWindowMenuSeedCount=32,observedWindowMenuResultSha256=source_hash(observation_result),observedWindowMenuImageSha256=observation_sha)
+        if observation_variant is None or observation_variant=='candidate':
+            documents={}
+            for role,entry in (('controller','HttpMain'),('bar','HttpBar'),('popup','HttpPopup')):
+                document=output/(entry+'.html')
+                run('compile-current-'+entry,[pinned['elm'],'make','src/'+entry+'.elm','--optimize','--output='+str(document)])
+                body_sha=source_hash(document);before=document.stat()
+                if document.resolve()!=document or before.st_size<=0:raise RuntimeError('Current document must be nonempty canonical regular file')
+                parents=list(reversed(document.parents))
+                if any(parent.is_symlink() or not parent.is_dir() for parent in parents):raise RuntimeError('Current document ancestor differs')
+                row={'path':str(document),'sha256':body_sha,'device':str(before.st_dev),'inode':str(before.st_ino),
+                     'size':str(before.st_size),'mode':before.st_mode & 0o7777,
+                     'ancestors':[{'path':str(parent),'device':str(parent.stat().st_dev),'inode':str(parent.stat().st_ino)} for parent in parents if parent!=parent.parent]}
+                after=document.stat()
+                if (before.st_dev,before.st_ino,before.st_size,before.st_mtime_ns,before.st_ctime_ns)!=(after.st_dev,after.st_ino,after.st_size,after.st_mtime_ns,after.st_ctime_ns) or source_hash(document)!=body_sha:raise RuntimeError('Current document changed while pinning')
+                documents[role]=row
+            for row in documents.values():
+                document=Path(row['path']);status=document.stat()
+                if source_hash(document)!=row['sha256'] or (str(status.st_dev),str(status.st_ino),str(status.st_size),status.st_mode & 0o7777)!=(row['device'],row['inode'],row['size'],row['mode']):raise RuntimeError('Current document changed after compilation')
+            report.update(currentHttpDocuments=documents,currentDocumentSourceHashes=projected_elm,documentFixtureOnly=False)
+            if observation_variant is None:
+                report.update(currentDocumentProvenance='installed-current-source',candidateOnly=False,liveSourcesAdopted=True,qualificationVariant=None)
+
         actual_elm={str(path.relative_to(work/'src')):source_hash(path) for path in (work/'src').rglob('*.elm')}
         if actual_elm!=projected_elm:raise RuntimeError('Staged Elm membership or bytes changed')
         unchanged()

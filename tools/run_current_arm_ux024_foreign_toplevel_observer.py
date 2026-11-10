@@ -12,7 +12,7 @@ sys.dont_write_bytecode=True
 attempt_auth=boot_correspondence=owned_fonts=keyboard_fixture=geometry=None
 ROOT=Path('/home/hoskinson/Projects/Warlock')
 SELF=ROOT/'tools/run_current_arm_ux024_foreign_toplevel_observer.py'
-PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-connected-foreign-toplevel-observer-v6/packet.json'
+PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v1/packet.json'
 RECORD='.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
 IDENTITY='60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
 LOG_LIMIT=4*1024*1024
@@ -28,7 +28,7 @@ CLOSE_ARGV=['-M','alt','-k','F4','-m','alt']
 DEADLINE_ENV='WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'
 PHASE_LIBC={'path':'/usr/lib/libc.so.6','sha256':'6ab264fb4e8df9942b0fb75b48fcd5c30b2f081d8dfaa6c25d7be1d3fce5b2ab'}
 CONTRACT_SHA='6490c0202f7377f9a768cce6a6e558b01bd32dae92eb40dc04ddd2f021dbecf5'
-HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'c1e5a7bd231530e68df2c56ee13cbc6c3b844cfed673257abc09a7451898de22', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ux024_foreign_toplevel_attempt_authorization.py': '3bbcde1e912209751c9e443349b92d98c944886a15fdee7f8953b8a4fca4a898'}
+HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'e23e8a4e8ba4e001868818584b70445a134288d12215f2d31a1964f1c000846d', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ux024_foreign_toplevel_attempt_authorization.py': '3bbcde1e912209751c9e443349b92d98c944886a15fdee7f8953b8a4fca4a898'}
 
 def validate_generated_foundation_basis(foundation, report):
     sources=foundation.get('sourceInputs',{})
@@ -472,9 +472,105 @@ def close_ready_matches(pair,binding,runtime_binding):
     except (KeyError,TypeError,ValueError,OverflowError):return False
 
 
+MENU_STEPS = [
+    {'name':'current-group','argv':['-k','Tab']},
+    {'name':'open-menu','argv':['-M','shift','-k','F10','-m','shift']},
+    {'name':'tab-forward','argv':['-k','Tab']},
+    {'name':'tab-wrap','argv':['-k','Tab']},
+    {'name':'tab-reverse-wrap','argv':['-M','shift','-k','Tab','-m','shift']},
+    {'name':'dismiss','argv':['-k','Escape']},
+    {'name':'reopen','argv':['-M','shift','-k','F10','-m','shift']},
+    {'name':'dismiss-again','argv':['-k','Escape']},
+    {'name':'close-owned-gui','argv':['-M','alt','-k','F4','-m','alt']},
+]
+
+
+def menu_journey_mode(packet):
+    if 'journey' not in packet:return False
+    require(packet['journey']=='ux024-taskbar-menu-focus' and observed_producer_mode(packet),
+            'fixed original menu journey requires actual configured observation producer')
+    return True
+
+
+def menu_journey_witness(step,pair,binding,runtime_binding,window,origin):
+    """Scheduling only. Pixels and source-bound live lifecycle remain separate evidence."""
+    try:
+        names=[row['name'] for row in MENU_STEPS]
+        if step not in names:return None
+        index=names.index(step)
+        if (index==0 and origin is not None) or (index>0 and (not isinstance(origin,dict) or origin['stepIndex']!=index-1)):return None
+        keyboard_fixture.validate_phase_pair(pair,binding)
+        bar,popup=(pair[role]['snapshot'] for role in ('bar','popup'))
+        if any(snap['root'] is None or snap['retained'] is not None or snap['query'] is not None or snap['root']['loading']!='false' for snap in (bar,popup)):return None
+        lease=(0,0,1,1,1,1,1,2,2)[index]
+        if binding['expectedLease']!=lease or any(int(snap['root']['lease'])!=lease for snap in (bar,popup)):return None
+        if bar['root']['mode'] is not None or bar['root']['pub']!=popup['root']['pub']:return None
+        publication=int(bar['root']['pub'])
+        if origin is not None and index in (2,6,7,8) and publication<=origin['publication']:return None
+        counters={key:runtime_binding[key] for key in ('lifetime','session','frontend')}
+        for value in counters.values():keyboard_fixture._phase_decimal(value,1)
+        host=json.dumps(counters,separators=(',',':'))
+        app_id=window.get('class')
+        if not isinstance(app_id,str) or not app_id or len(app_id)>256:return None
+        group_key='observed:application:'+app_id
+        identity='bar:group:'+group_key
+        controls=bar['controls']
+        if len({row['control']for row in controls})!=len(controls):return None
+        groups=[row for row in controls if row['control'].startswith('bar:group:')]
+        if len(groups)!=1 or groups[0]['control']!=identity:return None
+        group=groups[0]
+        def eligible(row):
+            return row['tag']=='BUTTON' and row['disabled'] is False and row['ariaDisabled']=='false' and row['focusOnly']=='false'
+        if not eligible(group):return None
+        matched=re.fullmatch(re.escape('group:observed:'+host+':')+r'([1-9][0-9]{0,19}):([1-9][0-9]{0,19}):'+re.escape(group_key),group['id'])
+        if matched is None:return None
+        owner,revision=matched.groups();keyboard_fixture._phase_decimal(owner,1);keyboard_fixture._phase_decimal(revision,1)
+        if owner!=counters['frontend']:return None
+        opener=[row for row in controls if row['control']=='bar:applications']
+        if len(opener)!=1:return None
+        presentation_match=re.fullmatch(re.escape('applications:'+host+':')+r'([1-9][0-9]{0,19}):control:opener',opener[0]['id'])
+        if presentation_match is None:return None
+        presentation=presentation_match.group(1);keyboard_fixture._phase_decimal(presentation,1)
+        if origin is not None:
+            if origin['identity']!=identity or origin['owner']!=owner or origin['presentation']!=presentation:return None
+            expected_revision=origin['revision']+(1 if index in (6,8) else 0)
+            if int(revision)!=expected_revision:return None
+        def focused(snap,row):
+            return snap['documentFocused'] is True and snap['active']=={key:row[key] for key in ('tag','id','control')}
+        opened=index in (2,3,4,5,7)
+        menu_id=None if origin is None else origin['menuId']
+        if opened:
+            if popup['root']['mode']!='menu' or bar['documentFocused'] is not False:return None
+            rows=popup['controls'];ready=[row for row in rows if eligible(row)]
+            if [row['control'] for row in ready]!=['control:menu-close','control:observation-refresh']:return None
+            if len({row['control']for row in rows})!=len(rows):return None
+            if any(row['focusOnly']!='false' for row in rows):return None
+            if any(row not in ready and (row['disabled'] is not True or row['ariaDisabled']!='true') for row in rows):return None
+            close_match=re.fullmatch(r'menu:([1-9][0-9]{0,9}):close',ready[0]['id'])
+            if close_match is None:return None
+            current_menu=int(close_match.group(1))
+            if current_menu>2147483647 or ready[1]['id']!='menu:'+str(current_menu)+':refresh':return None
+            if index==2:menu_id=current_menu
+            elif current_menu!=menu_id+(1 if index==7 else 0):return None
+            menu_id=current_menu
+            if not focused(popup,ready[1 if index in (3,5) else 0]):return None
+        else:
+            if popup['root']['mode']!='closed' or popup['controls']!=[] or popup['documentFocused'] is not False:return None
+            if index==0:
+                ready=[row for row in controls if eligible(row)]
+                if not ready or ready[0]!=group:return None
+                if any(eligible(row) and (row['control'].startswith('bar:pin:') or row['control'] in ('bar:recovery-refresh','bar:workspace-refresh','bar:reconnect','bar:refresh-windows','bar:pins-summary')) for row in controls):return None
+                if bar['documentFocused'] is not True or bar['active']!={'tag':'BODY','id':'','control':None}:return None
+            elif not focused(bar,group):return None
+        return {'stepIndex':index,'identity':identity,'owner':owner,'presentation':presentation,
+                'revision':int(revision),'publication':publication,'menuId':menu_id,
+                'groupDomId':group['id'],'phaseSchedulingOnly':True}
+    except (KeyError,TypeError,ValueError,OverflowError):return None
+
+
 class _ObserverCloseSnapshots:
     """Finite scheduling evidence from the exact live owner's held backing root."""
-    def __init__(self,backend,backend_birth,window,window_birth,assets,clock,current,same_window,held,receipt,runtime_binding):
+    def __init__(self,backend,backend_birth,window,window_birth,assets,clock,current,same_window,held,receipt,runtime_binding,journey=False):
         if not isinstance(backend,subprocess.Popen)or backend.poll()is not None:
             raise ValueError('retained live backend Popen required for phase discovery')
         self.backend=backend;self.backend_birth=backend_birth;self.window=window
@@ -482,6 +578,7 @@ class _ObserverCloseSnapshots:
         self.current=current;self.same_window=same_window;self.held=held;self.receipt=receipt
         self.root_fd=None;self.role_fds={};self.role_pins={};self.sequence=0;self.ready=None
         self.runtime_binding=runtime_binding
+        self.journey=journey;self.journey_origin=None;self.journey_step=0
         self.minimum_publication={'bar':1,'popup':1}
         self.application_lease=0  # SurfaceController.initial; opening notifications increments, DND updates and dismissal do not.
         try:
@@ -585,7 +682,8 @@ class _ObserverCloseSnapshots:
             return value,{'role':role,'file':name,'sha256':digest(raw),'device':str(before.st_dev),'inode':str(before.st_ino)}
         finally:os.close(fd)
     def await_phase(self,step):
-        if step!='close-gui' or self.ready is not None:raise ValueError('invalid or unconsumed phase request')
+        expected=MENU_STEPS[self.journey_step]['name'] if self.journey and self.journey_step<len(MENU_STEPS) else ('close-gui' if not self.journey else None)
+        if step!=expected or self.ready is not None:raise ValueError('invalid or unconsumed phase request')
         while self.sequence<keyboard_fixture.PHASE_LIMIT:
             self.attest();self.sequence+=1;sequence=self.sequence;nonce=os.getrandom(32,os.GRND_NONBLOCK).hex()
             if len(nonce)!=64:raise ValueError('complete nonblocking phase nonce required')
@@ -622,19 +720,22 @@ class _ObserverCloseSnapshots:
                 'requests':requests,'ownerPid':self.owner_pid,'issuedNs':issued,
                 'deadlineNs':self.clock['deadline'],'nowNs':time.monotonic_ns(),
                 'minimumPublication':dict(self.minimum_publication),
-                'expectedLease':self.application_lease+(1 if step in ('traverse-dnd','dismiss-again')else 0)}
+                'expectedLease':((0,0,1,1,1,1,1,2,2)[self.journey_step] if self.journey else self.application_lease+(1 if step in ('traverse-dnd','dismiss-again')else 0))}
             keyboard_fixture.validate_phase_pair(pair,binding)
-            matched=close_ready_matches(pair,binding,self.runtime_binding)
+            observed=menu_journey_witness(step,pair,binding,self.runtime_binding,self.window,self.journey_origin) if self.journey else None
+            matched=(observed is not None) if self.journey else close_ready_matches(pair,binding,self.runtime_binding)
             self.receipt['phaseObservations'].append({'beforeStep':step,'binding':binding,'responses':pair,
                 'files':files,'phaseComplete':matched,'originalAcceptance':False})
             if matched:
                 self.minimum_publication={role:int(pair[role]['snapshot']['root']['pub'])for role in ('bar','popup')}
                 self.application_lease=binding['expectedLease']
+                if self.journey:self.journey_origin=observed
                 self.ready=step;return
         raise ValueError('finite phase snapshot budget exhausted before '+step)
     def consume(self,step):
         if self.ready!=step:raise ValueError('fresh phase completion required before next key')
         self.ready=None;self.attest();left(self.clock)
+        if self.journey:self.journey_step+=1
     def close(self):
         errors=[]
         for fd in list(self.role_fds.values())+([self.root_fd]if self.root_fd is not None else []):
@@ -664,20 +765,71 @@ def canonical(value):
     return digest(json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())
 
 
+def observed_producer_mode(packet):
+    if 'producerMode' not in packet:return False
+    require(packet['producerMode']=='observed-window-read','only explicit read-only observed producer mode')
+    return True
+
+
+def observed_producer_config(original,endpoint,binding,clock):
+    # Metadata adapter only. Actual SO_PEERCRED/ancestry/executable validation is
+    # performed by EndpointLease.capture and again by the production owner.
+    require(isinstance(original,dict) and original.get('binding')==binding
+        and original.get('deadlineMonotonicNs')==str(clock['deadline'])
+        and original.get('applicationAttachment') is True
+        and 'compositorObservation' not in original,'exact original producer binding/deadline/attachment required')
+    require(isinstance(endpoint,dict) and set(endpoint)=={'bootId','ancestors','name','socket','processes','executable','generation'}
+        and endpoint['generation']==binding['frontend'],'selected endpoint must match actual full binding')
+    result=copy.deepcopy(original)
+    # Production derives generation from binding.frontend; no caller counter.
+    result['compositorObservation']={name:copy.deepcopy(value) for name,value in endpoint.items() if name!='generation'}
+    require(len((json.dumps(result,indent=2)+'\n').encode())<=65536,'producer configuration bound')
+    return result
+
+
+def require_current_documents(packet,report,current_sources):
+    require(report.get('passed') is True and report.get('nativeAcceptance') is False,
+            'actual successful source-bound document build required')
+    if report.get('currentDocumentProvenance')=='installed-current-source':
+        require(report.get('candidateOnly') is False and report.get('liveSourcesAdopted') is True
+            and report.get('qualificationVariant') is None,'installed-source provenance cannot relabel private candidate')
+        prefix='implementation/warlock/src/'
+        compiled={name[len(prefix):]:pin for name,pin in report.get('sources',{}).items() if name.startswith(prefix)}
+        require(compiled==current_sources,'actual installed-source compilation map differs')
+    else:
+        require(report.get('qualificationVariant')=='candidate' and report.get('candidateOnly') is True
+            and report.get('candidateElmSources')==current_sources,'actual private candidate document compilation map differs')
+    require(report.get('currentDocumentSourceHashes')==current_sources,
+            'all current Elm sources must match actual compiled documents')
+    documents=report.get('currentHttpDocuments',{})
+    require(set(documents)=={'controller','bar','popup'},'exact current HttpMain/HttpBar/HttpPopup documents required')
+    for role in ('controller','bar','popup'):
+        selected=documents[role];origin=packet['assetSources'][role]
+        require(origin['report']==packet['documentBuildReport'] and origin['selector']==['currentHttpDocuments',role],
+            'document selector must refer to actual current compilation')
+        require(packet['assets'][role]=={'path':selected['path'],'sha256':selected['sha256']}
+            and origin['mode']==selected['mode'],'current document asset differs')
+
+
 def parse_packet(value):
     fields={'schema','kind','armed','recordPath','recordIdentitySha256','selectionGeneration','authorization',
       'sourceHashes','guardHashes','assets','assetSources','buildReport','foundationPacket','foundationReport',
       'reuse','reviews','input','binding','contract','processInventory','abi','keyboardBuildReport','documentBuildReport','documentFixtureOnly'}
+    if isinstance(value,dict) and 'producerMode' in value:fields.add('producerMode')
+    if isinstance(value,dict) and 'journey' in value:fields.add('journey')
     require(isinstance(value,dict) and set(value)==fields,'exact fixed packet fields required')
+    observed=observed_producer_mode(value);journey=menu_journey_mode(value)
     require(type(value['schema']) is int and value['schema']==1 and value['kind']=='ux024-connected-foreign-toplevel-observer' and value['armed'] is True,'unarmed or wrong fixed packet')
     require(value['recordPath']==RECORD and value['recordIdentitySha256']==IDENTITY and type(value['selectionGeneration']) is int and value['selectionGeneration']>0,'current participant required')
     require(isinstance(value['sourceHashes'],dict) and set(HELPERS)<=set(value['sourceHashes']) and str(SELF.relative_to(ROOT)) in value['sourceHashes'],'complete helper/source membership required')
     require(all(value['sourceHashes'].get(name)==pin for name,pin in HELPERS.items()),'static helper pin differs from packet')
     require(set(value['assets'])==ASSETS and set(value['assetSources'])==ASSETS-{'nestedConfig'},'exact fixed assets required')
     require(set(value['reviews'])==REVIEWS,'three existing scoped readiness roles required')
-    require(value['documentFixtureOnly'] is True,'historical documents are fixture-only, not current Elm product qualification')
+    require(value['documentFixtureOnly'] is (not observed),'historical and current-document modes must remain distinct')
     require(isinstance(value['processInventory'],dict) and 1<=len(value['processInventory'])<=20000,'bounded reviewed process mapping inventory required')
-    require(value['input']=={'monitorSize':[1280,720],'windowSize':[980,680],'closeArgv':CLOSE_ARGV,'pointer':False,'frameLimit':16},'fixed geometry/close/input bounds required')
+    fixed_input={'monitorSize':[1280,720],'windowSize':[980,680],'closeArgv':CLOSE_ARGV,'pointer':False,'frameLimit':16}
+    if journey:fixed_input['transactions']=MENU_STEPS
+    require(value['input']==fixed_input,'fixed geometry/close/input bounds required')
     bound=value['binding'];require(isinstance(bound,dict) and set(bound)=={'lifetime','session','frontend'},'fixed binding required')
     require(all(isinstance(v,str) and re.fullmatch('[1-9][0-9]{0,19}',v) and int(v)<=2**64-1 for v in bound.values()),'positive UInt64 binding required')
     return value
@@ -747,6 +899,8 @@ def preflight(expected):
         review=json_ref(reference)
         require(review.get('schema')==1 and review.get('disposition')=='accepted' and review.get('scope')=='ux024-connected-foreign-toplevel-observer' and review.get('role')==role,'scoped readiness missing')
         require(all(review.get(key)==packet[key] for key in ('recordPath','recordIdentitySha256','selectionGeneration','sourceHashes','guardHashes','assets','assetSources','input','binding','foundationPacket','foundationReport','reuse','buildReport','documentBuildReport','keyboardBuildReport','abi','contract','processInventory','documentFixtureOnly','authorization')) and review.get('componentOnly') is True,'readiness does not bind actual component tuple')
+        require(review.get('producerMode')==packet.get('producerMode'),'readiness must bind explicit producer mode')
+        require(review.get('journey')==packet.get('journey'),'readiness must bind original journey mode')
         require(canonical_prerequisite(reference) in candidate['nativePrerequisites'],'readiness not canonical prerequisite')
     authority=attempt_auth.resolve_authorization(packet['authorization'],record,IDENTITY,packet['selectionGeneration'],core)
     current=boot_correspondence.CurrentBoot(packet['reuse']['currentBootCorrespondence'],pinned)
@@ -760,7 +914,13 @@ def preflight(expected):
     require(packet['assetSources']['keyboardSeat']['report']==packet['keyboardBuildReport'],'keyboard image source report differs')
     keyboard_fixture.keyboard_build_binding(packet,current.keyboard_view(packet,keyboard_build))
     documents=json_ref(packet['documentBuildReport']);require(documents.get('passed') is True,'document fixture build not qualified')
-    require(all(packet['assetSources'][role]['report']==packet['documentBuildReport'] for role in ('controller','bar','popup','recorder')),'document fixture source reports differ')
+    if observed_producer_mode(packet):
+        source_root=ROOT/'implementation/warlock/src'
+        current_sources={str(path.relative_to(source_root)):digest(regular(path)) for path in source_root.rglob('*.elm')}
+        require_current_documents(packet,documents,current_sources)
+        require(json_ref(packet['assetSources']['recorder']['report']).get('passed') is True,'retained recorder build qualification required')
+    else:
+        require(all(packet['assetSources'][role]['report']==packet['documentBuildReport'] for role in ('controller','bar','popup','recorder')),'document fixture source reports differ')
     abi=json_ref(packet['abi']);pinned(abi['library'],64*1024*1024)
     for path,pin in abi['headers'].items():require(digest(regular(path))==pin,'compiled ABI header drift')
     require(packet['processInventory'].get(abi['library']['path'])==abi['library']['sha256'],'selected libwayland mapping absent')
@@ -928,14 +1088,15 @@ def bound_capture_output():
 
 def command_output_bound(base, argv, assets, output):
     if argv and argv[0] == assets['grim']['path']:
-        require(argv == [assets['grim']['path'],str(Path(output)/'actual-owned-window.png')],
+        names=['actual-owned-window.png']+['menu-%02d-%s.png'%(index,row['name']) for index,row in enumerate(MENU_STEPS)]
+        require(len(argv)==2 and argv[1] in [str(Path(output)/name) for name in names],
                 'only exact fixed grim capture may use graphics output profile')
         return bound_capture_output
     return base.bound_output
 
 
 def execute(context,packet_sha):
-    packet=context['packet'];assets=packet['assets'];qa=context['qa'];stage=context['stage']
+    packet=context['packet'];assets=packet['assets'];qa=context['qa'];stage=context['stage'];journey=menu_journey_mode(packet)
     scope=qa.require_qa_scope();authority=context['authority']
     require(time.time_ns()+JOURNEY_NS+CLEANUP_NS<attempt_auth.authorization_deadline_ns(authority),'insufficient actual authorization for original28+cleanup2')
     output=ROOT/'.warlock-contributor'/('ux024-connected-observer-'+str(time.time_ns()));output.mkdir(mode=0o700)
@@ -952,6 +1113,7 @@ def execute(context,packet_sha):
       'scope':scope,'clock':dict(clock),'commands':[],'snapshots':[],'frames':[],'forcedCleanup':False,'cleanupUnknown':True,
       'nativeAcceptance':False,'originalAcceptance':False,'fullJourneyAccepted':False,'requirementsCredit':0,'scenariosCredit':0,
       'pointerInputIssued':False,'inputScope':'Only actual-owned active-window close-gui Alt+F4; no keyboard-menu acceptance.'}
+    if journey:receipt.update(inputScope='Nine fixed owned keyboard menu transactions; phase JSON schedules only, actual pixels require independent review.',journey='ux024-taskbar-menu-focus',keyboardTransactions=[])
     before=global_snapshot();stack=None;lease=None;keyboard=None;observer=None;producer=None;reader=None;phase_channel=None;wire_path=output/'observer-wire.jsonl';logs=[];nonce=os.urandom(32).hex()
     try:
         stack_output=output/'owned-stack';stack_output.mkdir(mode=0o700)
@@ -1004,6 +1166,20 @@ def execute(context,packet_sha):
         initial=reader.command('READ_INITIAL');require(initial['rows']==[],'actual initial snapshot not empty');receipt['snapshots'].append(initial)
         receipt['observerMappings']=process_maps('observer',observer,observer_birth,[assets['controls']['path'],context['abi']['library']['path']])
         config_path=output/'run/backend.json'
+        if observed_producer_mode(packet):
+            current()
+            original_body=regular(config_path,65536)
+            original=json.loads(original_body,object_pairs_hook=unique)
+            selected_config=observed_producer_config(original,endpoint,bound,clock)
+            selected_path=output/'run/backend-observation.json'
+            write_json(selected_path,selected_config)
+            current()
+            require(regular(config_path,65536)==original_body,'staged original config changed')
+            receipt['observationProducerConfig']={'originalPath':str(config_path),'originalSha256':digest(original_body),
+                'selectedPath':str(selected_path),'selectedSha256':digest(regular(selected_path,65536)),
+                'endpointSha256':canonical(endpoint),'binding':bound,'deadlineMonotonicNs':str(clock['deadline']),
+                'capabilityGrantedByConfiguration':False}
+            config_path=selected_path
         producer,producer_birth,producer_out,producer_err=spawn('window-producer',[assets['controls']['path'],'--foreign-endpoint-window-producer',str(config_path),digest(regular(config_path))])
         window=None
         while window is None:
@@ -1029,13 +1205,31 @@ def execute(context,packet_sha):
             active=json.loads(command('hyprctl',['-i',stack.instance['signature'],'activewindow','-j']),object_pairs_hook=unique)
             require(active.get('address')==window['address'] and active.get('pid')==window['pid'],'owned window is not actual active keyboard target')
         same_window()
-        phase_channel=_ObserverCloseSnapshots(producer,producer_birth,window,window_birth,assets,clock,current,same_window,keyboard,receipt,bound)
-        phase_channel.await_phase('close-gui')
-        receipt['closeReadyScope']='actual mapped window geometry plus current binding/publication and closed DOM roles; no fabricated widget allocation numbers or Notifications-step completion'
-        frame=output/'actual-owned-window.png';command('grim',[str(frame)]);geometry.require_frame(regular(frame,32*1024*1024),(1280,720))
-        receipt['frames'].append({'path':str(frame),'sha256':digest(regular(frame,32*1024*1024)),'interpretation':'unreviewed pixels; no menu/focus acceptance'})
-        # Source-equivalent close-gui phase: exact owned active target, then literal existing key transaction.
-        same_window();keyboard.attest();phase_channel.consume('close-gui');command('wtype',CLOSE_ARGV);receipt['closeKeyboardTransaction']={'argv':CLOSE_ARGV,'issued':True,'originalDeadlineNs':clock['deadline']}
+        phase_channel=_ObserverCloseSnapshots(producer,producer_birth,window,window_birth,assets,clock,current,same_window,keyboard,receipt,bound,journey=journey)
+        if journey:
+            for index,transaction in enumerate(MENU_STEPS):
+                step=transaction['name'];phase_channel.await_phase(step)
+                require(len(receipt['frames'])<packet['input']['frameLimit'],'original frame ceiling reached')
+                frame=output/('menu-%02d-%s.png'%(index,step))
+                command('grim',[str(frame)]);geometry.require_frame(regular(frame,32*1024*1024),(1280,720))
+                receipt['frames'].append({'path':str(frame),'sha256':digest(regular(frame,32*1024*1024)),
+                    'beforeTransaction':step,'interpretation':'unreviewed actual pixels; no automatic physical focus acceptance'})
+                same_window();keyboard.attest();phase_channel.consume(step)
+                # Record the attempt before sending. Any failure stops; no input retry.
+                sent={'index':index,'name':step,'argv':list(transaction['argv']),
+                      'originalDeadlineNs':clock['deadline'],'attempted':True,'completed':False}
+                receipt['keyboardTransactions'].append(sent)
+                command('wtype',transaction['argv']);sent['completed']=True
+            require(phase_channel.journey_step==9,'all fixed transactions required')
+            receipt['menuSchedulingComplete']=True
+            receipt['menuSchedulingWitness']=phase_channel.journey_origin
+        else:
+            phase_channel.await_phase('close-gui')
+            receipt['closeReadyScope']='actual mapped window geometry plus current binding/publication and closed DOM roles; no fabricated widget allocation numbers or Notifications-step completion'
+            frame=output/'actual-owned-window.png';command('grim',[str(frame)]);geometry.require_frame(regular(frame,32*1024*1024),(1280,720))
+            receipt['frames'].append({'path':str(frame),'sha256':digest(regular(frame,32*1024*1024)),'interpretation':'unreviewed pixels; no menu/focus acceptance'})
+            # Source-equivalent close-gui phase: exact owned active target, then literal existing key transaction.
+            same_window();keyboard.attest();phase_channel.consume('close-gui');command('wtype',CLOSE_ARGV);receipt['closeKeyboardTransaction']={'argv':CLOSE_ARGV,'issued':True,'originalDeadlineNs':clock['deadline']}
         wait_normal(producer,clock);require(not regular(producer_err),'actual producer diagnostics nonempty')
         require(clients()==[],'independent owned client disappearance absent')
         receipt['producer']=producer_observation(regular(producer_out),clock,window,window_birth,namespace,assets['owner']['sha256'])

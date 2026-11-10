@@ -136,22 +136,22 @@ def verify_build(current,collector,base,p):
     base.regular(source['mainSource']['path'],source['mainSource']['sha256']);collector.regular_ref(base,source['signedPackageReceipt']);current.regular(image,h['buildReport']);return report
 
 
-def provider_qa_ast_correspondence(old_body, new_body):
+def provider_qa_ast_correspondence(old_body, new_body, observation=False):
     """Prove the entire old dispatch AST survives exact disjoint menu additions."""
     import ast
     class RemoveMenuAdditions(ast.NodeTransformer):
         def visit_FunctionDef(self, node):
-            if node.name in {'menu_tab_dom_mode', 'menu_tab_dom_inputs', 'menu_focus_build_mode', 'menu_focus_build_spec'}:
+            if node.name in {'menu_tab_dom_mode', 'menu_tab_dom_inputs', 'menu_focus_build_mode', 'menu_focus_build_spec'} or (observation and node.name in {'observation_elm_variant','observation_inputs'}):
                 return None
             return self.generic_visit(node)
         def visit_Assign(self, node):
-            if any(isinstance(target, ast.Name) and (target.id.startswith('MENU_FOCUS_BUILD_') or target.id in {'menu_focus_build', 'menu_focus_spec'}) for target in node.targets):
+            if any(isinstance(target, ast.Name) and (target.id.startswith('MENU_FOCUS_BUILD_') or target.id in {'menu_focus_build', 'menu_focus_spec'} or (observation and target.id in {'OBSERVATION_SUPPORT','OBSERVATION_TARGETS'})) for target in node.targets):
                 return None
             return self.generic_visit(node)
         def visit_If(self, node):
             if isinstance(node.test, ast.Name) and node.test.id == 'menu_focus_build':
                 return None
-            if isinstance(node.test, ast.Call) and isinstance(node.test.func, ast.Name) and node.test.func.id == 'menu_tab_dom_mode':
+            if isinstance(node.test, ast.Call) and isinstance(node.test.func, ast.Name) and (node.test.func.id == 'menu_tab_dom_mode' or (observation and node.test.func.id == 'observation_elm_variant')):
                 return None
             return self.generic_visit(node)
         def visit_BoolOp(self, node):
@@ -176,7 +176,8 @@ def provider_source_pin(current, reference, build_report, relative, historical_s
     if reference is None or str(relative) != fixed_path:
         return historical_sha
     proof = json.loads(current.pinned(reference, 4*1024*1024))
-    if (proof.get('schema') != 1 or proof.get('disposition') != 'accepted'
+    if proof.get('schema')==2:new_sha='33c8c99c9810542fda561f883d11fc038c990790ceb123168466c0aeac582ee7'
+    if (type(proof.get('schema')) is not int or proof.get('schema') not in (1,2) or proof.get('disposition') != 'accepted'
             or proof.get('scope') != 'ux024-provider-qa-dispatch-source-correspondence'
             or proof.get('reviewer') != 'build_audit'
             or proof.get('buildReport') != build_report
@@ -189,7 +190,7 @@ def provider_source_pin(current, reference, build_report, relative, historical_s
     new_body = current.pinned(proof['currentSource'], 4*1024*1024)
     if hashlib.sha256(old_body).hexdigest() != old_sha or hashlib.sha256(new_body).hexdigest() != new_sha:
         raise ValueError('actual provider QA source bytes differ')
-    provider_qa_ast_correspondence(old_body, new_body)
+    provider_qa_ast_correspondence(old_body, new_body, observation=proof['schema']==2)
     current.pinned(proof['correspondenceEvidence'], 4*1024*1024)
     return new_sha
 
