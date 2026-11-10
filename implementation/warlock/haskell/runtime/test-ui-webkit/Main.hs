@@ -35,7 +35,7 @@ import Numeric (showHex)
 import Warlock.Ui.Owner (retainRequestTrace)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Protocol.Identity (renderCounter)
-import Warlock.Ui.Mvp (MvpFocusRole(..), parseMvpFocusIntent, mvpFocusTransition, leaseScope, leaseRevision, leasePublication, leaseToken, leasePopupOpen)
+import Warlock.Ui.Mvp (MvpFocusRole(..), initialMvpKeyHandoff, mvpKeyPressed, mvpKeyReleased, mvpKeyHandoffReady, parseMvpFocusIntent, mvpFocusTransition, leaseScope, leaseRevision, leasePublication, leaseToken, leasePopupOpen)
 import Foreign.C.String (CString, withCString)
 import Foreign.C.Types (CInt(..))
 import Foreign.Ptr (FunPtr, Ptr, castFunPtr, freeHaskellFunPtr, nullPtr)
@@ -472,12 +472,47 @@ menuKeyboardFocusControls = do
        Right intent -> if variant==0 then goesPopup intent else variant/=3 && intent==Nothing
   check ("menu physical-focus seeded case " ++ show seed) accepted
 
+-- Pure owned-key state only: no GTK, socket, time, or additional output.
+keyboardHandoffControls :: IO ()
+keyboardHandoffControls = do
+ let empty = initialMvpKeyHandoff
+     press = mvpKeyPressed False
+     modifier = mvpKeyPressed True
+     held = press 76 empty
+     repeated = press 76 held
+     pair = press 23 held
+     full = foldl (flip press) empty [1..16]
+     overflow = press 17 full
+     releaseAll state = foldl (flip mvpKeyReleased) state [1..17]
+ check "handoff initial state permits transfer" (mvpKeyHandoffReady empty)
+ check "F10 held defers explicit handoff" (not (mvpKeyHandoffReady held))
+ check "repeated F10 does not allocate another held key" (repeated==held)
+ check "observed F10 release permits next loop transfer" (mvpKeyHandoffReady (mvpKeyReleased 76 repeated))
+ check "modifier-only hold does not block focus" (mvpKeyHandoffReady (modifier 50 empty))
+ check "modifier does not clear held nonmodifier" (modifier 50 held==held)
+ check "unmatched release cannot unlock F10" (mvpKeyReleased 99 held==held)
+ check "multiple held keys require every release" (not (mvpKeyHandoffReady (mvpKeyReleased 76 pair)) && mvpKeyHandoffReady (mvpKeyReleased 23 (mvpKeyReleased 76 pair)))
+ check "exact key capacity can retire normally" (mvpKeyHandoffReady (releaseAll full))
+ check "overflow is sticky conservative unknown" (not (mvpKeyHandoffReady overflow) && not (mvpKeyHandoffReady (releaseAll overflow)))
+ check "missing keycode cannot certify release" (not (mvpKeyHandoffReady (mvpKeyReleased 0 (press 0 empty))))
+ check "fresh same F10 press after release is held again" (not (mvpKeyHandoffReady (press 76 (mvpKeyReleased 76 held))))
+ forM_ [0..31 :: Int] $ \seed -> do
+  let first = fromIntegral (seed+8)
+      second = fromIntegral (seed+80)
+      two = press second (press first empty)
+      one = mvpKeyReleased first two
+      done = mvpKeyReleased second one
+  check ("handoff seeded paired release " ++ show seed)
+    (not (mvpKeyHandoffReady two) && not (mvpKeyHandoffReady one) && mvpKeyHandoffReady done
+      && mvpKeyReleased 250 two==two && modifier 50 two==two)
+
 allocationControls :: IO ()
 allocationControls = do
  rendererPhaseControls
  keyboardFocusControls
  notificationKeyboardFocusControls
  menuKeyboardFocusControls
+ keyboardHandoffControls
  foreignToplevelControls
  -- Fixed passive observation cannot generate or suppress the real input.
  let script = firstMouseupDiagnosticScript

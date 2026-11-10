@@ -26,6 +26,11 @@ module Warlock.Ui.Mvp
   , parseMvpFocusIntent
   , mvpFocusTransition
   , stepMvpKeyboardFocus
+  , MvpKeyHandoff
+  , initialMvpKeyHandoff
+  , mvpKeyPressed
+  , mvpKeyReleased
+  , mvpKeyHandoffReady
   , isStaleOwnerProjection
   , ViewObservation(..)
   , MvpStepState
@@ -594,11 +599,37 @@ advanceMvpState obs closeNow escapePressed mLease st
 -- GTK4 / GDK4 single-window host bridge (libgtk-4.so.1 + libgobject-2.0.so.0)
 -- ---------------------------------------------------------------------------
 
+-- Explicit GTK handoff waits for observed nonmodifier key releases. This is
+-- bounded host custody, not an input filter or a renderer repeat override.
+-- Unknown key identity/capacity remains conservative until owner retirement.
+data MvpKeyHandoff = MvpKeyHandoff ![CUInt] !Bool
+  deriving (Eq, Show)
+
+initialMvpKeyHandoff :: MvpKeyHandoff
+initialMvpKeyHandoff = MvpKeyHandoff [] False
+
+mvpKeyPressed :: Bool -> CUInt -> MvpKeyHandoff -> MvpKeyHandoff
+mvpKeyPressed modifier keycode current@(MvpKeyHandoff held uncertain)
+  | modifier = current
+  | uncertain = current
+  | keycode == 0 = MvpKeyHandoff held True
+  | keycode `elem` held = current
+  | length held >= 16 = MvpKeyHandoff held True
+  | otherwise = MvpKeyHandoff (keycode : held) False
+
+mvpKeyReleased :: CUInt -> MvpKeyHandoff -> MvpKeyHandoff
+mvpKeyReleased keycode (MvpKeyHandoff held uncertain) =
+  MvpKeyHandoff (filter (/= keycode) held) uncertain
+
+mvpKeyHandoffReady :: MvpKeyHandoff -> Bool
+mvpKeyHandoffReady (MvpKeyHandoff held uncertain) = null held && not uncertain
+
 data MvpObject
 
 type GType = CULong
 type CloseRequestCallback = Ptr MvpObject -> Ptr () -> IO CInt
 type KeyPressedCallback = Ptr MvpObject -> CUInt -> CUInt -> CInt -> Ptr () -> IO CInt
+type KeyReleasedCallback = Ptr MvpObject -> CUInt -> CUInt -> CInt -> Ptr () -> IO ()
 type ContextMenuCallback = Ptr MvpObject -> Ptr MvpObject -> Ptr MvpObject -> Ptr () -> IO CInt
 
 gdkKeyEscape :: CUInt
@@ -615,6 +646,9 @@ foreign import ccall "wrapper"
 
 foreign import ccall "wrapper"
   wrapKeyPressed :: KeyPressedCallback -> IO (FunPtr KeyPressedCallback)
+
+foreign import ccall "wrapper"
+  wrapKeyReleased :: KeyReleasedCallback -> IO (FunPtr KeyReleasedCallback)
 
 foreign import ccall "wrapper"
   wrapContextMenu :: ContextMenuCallback -> IO (FunPtr ContextMenuCallback)
@@ -712,6 +746,12 @@ foreign import ccall safe "gtk_event_controller_key_new"
 foreign import ccall safe "gtk_event_controller_set_propagation_phase"
   gtkEventControllerSetPropagationPhase :: Ptr MvpObject -> CInt -> IO ()
 
+foreign import ccall unsafe "gtk_event_controller_get_current_event"
+  gtkEventControllerGetCurrentEvent :: Ptr MvpObject -> IO (Ptr MvpObject)
+
+foreign import ccall unsafe "gdk_key_event_is_modifier"
+  gdkKeyEventIsModifier :: Ptr MvpObject -> IO CInt
+
 foreign import ccall unsafe "gdk_surface_get_mapped"
   gdkSurfaceGetMapped :: Ptr MvpObject -> IO CInt
 
@@ -808,6 +848,7 @@ data MvpWindow = MvpWindow
   , mvpGtkWindow :: !(Ptr MvpObject)
   , mvpBarWidget :: !(Ptr MvpObject)
   , mvpPopupWidget :: !(Ptr MvpObject)
+  , mvpKeyHandoffRef :: !(IORef MvpKeyHandoff)
   , mvpKeyboardFocusRef :: !(IORef (Maybe MvpFocusIntent))
   , mvpCloseRef :: !(IORef Bool)
   , mvpEscapeRef :: !(IORef Bool)
@@ -886,6 +927,7 @@ attachMvpWindow contextOwner views = mask $ \_ -> do
   escapeRef <- newIORef False
   stateRef <- newIORef initialMvpState
   keyboardFocusRef <- newIORef Nothing
+  keyHandoffRef <- newIORef initialMvpKeyHandoff
   retiredRef <- newIORef False
   let checkContext = do
         requirePhysicalDefaultContextOwner contextOwner
@@ -944,12 +986,24 @@ attachMvpWindow contextOwner views = mask $ \_ -> do
       acquireSignal
         keyCtrl
         "key-pressed"
-        ( wrapKeyPressed $ \_ keyval _ _ _ -> callback 0 $ do
+        ( wrapKeyPressed $ \controller keyval keycode _ _ -> callback 0 $ do
+            event <- gtkEventControllerGetCurrentEvent controller
+            if event == nullPtr
+              then modifyIORef' keyHandoffRef (mvpKeyPressed False 0)
+              else do
+                modifier <- gdkKeyEventIsModifier event
+                modifyIORef' keyHandoffRef (mvpKeyPressed (modifier /= 0) keycode)
             if keyval == gdkKeyEscape
               then writeIORef escapeRef True
               else pure ()
             pure 0
         )
+
+      -- Void key-released observes the same raw keycode without consuming it.
+      -- The entire callback remains inside the existing owner/fault boundary.
+      acquireSignal keyCtrl "key-released"
+        (wrapKeyReleased $ \_ _ keycode _ _ -> callback () $
+          modifyIORef' keyHandoffRef (mvpKeyReleased keycode))
 
       -- gtk_widget_add_controller is [transfer full]; pass an extra ref inside
       -- this masked region so objReleases retains ownership until signal retirement.
@@ -994,6 +1048,7 @@ attachMvpWindow contextOwner views = mask $ \_ -> do
           , mvpBarWidget = bView
           , mvpPopupWidget = pView
           , mvpKeyboardFocusRef = keyboardFocusRef
+          , mvpKeyHandoffRef = keyHandoffRef
           , mvpCloseRef = closeRef
           , mvpEscapeRef = escapeRef
           , mvpStateRef = stateRef
@@ -1300,7 +1355,11 @@ stepMvpKeyboardFocus mvp fetchProjection remainingMicros = do
             when (active /= 0 && mapped /= 0 && root == mvpGtkWindow mvp && width > 0 && height > 0) $ do
               latest <- fetchProjection
               allowed <- stillLive
-              when (allowed && latest == original) $ do
+              -- Keep a key's release on its originating WebView. The intent
+              -- stays uncommitted; the existing loop retries after release.
+              -- Close/unmap handling is independent and is never delayed here.
+              released <- mvpKeyHandoffReady <$> readIORef (mvpKeyHandoffRef mvp)
+              when (allowed && latest == original && released) $ do
                 focused <- checked (gtkWidgetGrabFocus widget)
                 unless (focused /= 0) (ioError (userError "owned renderer refused keyboard focus"))
                 after <- fetchProjection

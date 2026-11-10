@@ -12,7 +12,7 @@ sys.dont_write_bytecode=True
 attempt_auth=boot_correspondence=owned_fonts=keyboard_fixture=geometry=None
 ROOT=Path('/home/hoskinson/Projects/Warlock')
 SELF=ROOT/'tools/run_current_arm_ux024_foreign_toplevel_observer.py'
-PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v4-action-fix/packet.json'
+PACKET=ROOT/'.warlock-contributor/evidence/nextloop-20261106/ux024-original-menu-focus-v5-key-release/packet.json'
 RECORD='.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
 IDENTITY='60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
 LOG_LIMIT=4*1024*1024
