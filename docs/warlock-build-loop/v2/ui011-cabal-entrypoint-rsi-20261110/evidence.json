@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "disposition": "adopted",
+  "candidateSha256": "bfbd93f91329c51d146bfb0bd0f8248e5ce23904abb4cb1071692022c6926898",
+  "integrationRevision": "dfdf9f949cbfe9686014c517ee3dc0e759f41796",
+  "authorizationExpiresUTC": "2026-11-11T15:30:00Z",
+  "proposedChange": "Document generated Main.hs entrypoints, isolated test/native roots and actual changed-module compiler target reachability in one existing build-reference paragraph.",
+  "refutationCase": "The retained Cabal failures and actual corrected22/32 admission refute a claim that declaring a stanza or building three other components qualifies the changed entrypoint/module. Require actual4target product GREEN and source-bound results. Baseline guidance is absent, proposed guidance present. Both phases run identical runtime code.",
+  "reason": "One documentation paragraph addresses concrete observed compiler-entrypoint mistakes. Existing core/native guards, sources, fixtures, authorization and failed history remain unchanged. No new runtime framework, compiler rerun or runtime-performance claim.",
+  "baselinePlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/baseline-plugin.json",
+    "sha256": "5f028b8d2b9d429778070493e369952c8673926e3aaeecde8ef6a4695c3e2448"
+  },
+  "baselineHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/baseline-harness.json",
+    "sha256": "1d8a1ba03909e0293e9ce79e1975aaa766c59438c85540f3e5e176d76a2a5ce4"
+  },
+  "resultPlugin": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/result-plugin.json",
+    "sha256": "b9bab72ffc09f4c0d5093eaa1c24e73ddd979514afd90a11d9eea398d01ac2db"
+  },
+  "candidateHarness": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/candidate-harness.json",
+    "sha256": "5a9f8e22005310c001626425edbab1f4205c8c6f7c93513a91eba930187bb60e"
+  },
+  "comparison": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/comparison.json",
+    "sha256": "c7dbeae6b1a39a8d1c3a80d04858b14d57b76e1425a09ab01b27449dc9828325"
+  },
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/regression.json",
+    "sha256": "02c0eb59c3d53cc411545082fa53205b23273fe7ddbb774e220ec87b8c9bd0e5"
+  },
+  "rootReview": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/root-review.json",
+    "sha256": "39fd857aefc5bae7ab68dc008b33f048784993d32a7f69bf9cde95622259a4e0"
+  }
+}

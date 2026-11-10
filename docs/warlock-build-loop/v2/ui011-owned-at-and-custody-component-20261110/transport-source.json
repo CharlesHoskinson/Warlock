@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "kind": "ui011-owned-at-transport-product",
+  "disposition": "private-source-only-after-actual-semantic-red",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/owned-at-transport-preparation/production-implementation/postimages/implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
+      "beforeSha256": "976f459aeda27a4a6320d9207c300532d904c6a44567816d818ade00d186519c",
+      "sha256": "4aea5886d6d63f1e613e4073c835f51751d8d690df08b6d7ac89fb1b12f5af5e"
+    },
+    {
+      "path": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/owned-at-transport-preparation/production-implementation/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+      "beforeSha256": "5e7175ba4d90cfe622b0b382c37440bbe51496dc3b550c59fde20f840a833f8f",
+      "sha256": "5655f6ba02834a5b26dae876b1eb384af60f834fbf38a6051c5aa342270254e4"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/owned-at-transport-preparation/production-implementation/product.patch",
+    "sha256": "7a2c579b1ab9cf243325131462d3c910293dcd3bafa7be89d3f9085576e8f6fb"
+  },
+  "frozenTests": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/owned-at-transport-preparation/manifest.json",
+    "sha256": "f0c7dca89d6d9afb867abc1d7875b3150f091f460067ad94a112df7e73423c54"
+  },
+  "contract": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/owned-at-transport-preparation/transport-contract.json",
+    "sha256": "ee136456013d7d5a2826ea2bff518457b7101dc502a27732a461c51c534ef532"
+  },
+  "testsFirstActual": {
+    "report": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-at-cpu-runs/opener-at-1794338904982539182/report.json",
+      "sha256": "874e72ce35a694b2e0418d313b668e4744a94d0cd13bac1aac29de84f7587584"
+    },
+    "classification": "at-transport-semantic-red",
+    "openerAdmission": {
+      "passed": true,
+      "contractCount": 22,
+      "seedCount": 32,
+      "evidence": "exit0 plus exact terminal sentinel after all frozen assertions"
+    },
+    "atCaseCount": 18,
+    "atSeedCount": 32,
+    "sourceInputsUnchanged": true,
+    "cleanupQualified": true
+  },
+  "behavior": [
+    "Absent AT preserves existing public explicit display resolution and startup pairs. Ambient session/system DBus variables are never read or copied.",
+    "Present AT requires exact unix:path=<validated owned0700 runtime descendant>/a11y-bus. lstat rejects aliases/non-sockets/foreign owners; existing before/after ancestor and Wayland identity checks include AT socket identity.",
+    "Existing opaque DisplayEnvironment carries selected AT through Backend\u2192UI owner. Final engine environment allows only this optional key plus old four; duplicates/NUL/empty values and inconsistent runtime/address are refused.",
+    "No namespace, descriptor, deadline, broker, GUI policy, effect capability or provider authority changes."
+  ],
+  "qualification": [
+    "Root reruns unchanged frozen18/32 and all old Display controls in existing isolated CPU profile; admission22/32 stays unchanged.",
+    "The three-target opener/AT profile compiles runtime library and exercises Display, but does not compile EngineCustody. Existing fixed owner/ui-webkit build is required for that module before native use.",
+    "Peer credentials, provider startup, WebKit proxy/mapping, actual focus and cleanup remain native/AT qualification obligations. Capturing a stable pathname does not authenticate a later bus peer."
+  ],
+  "primaryMutation": false,
+  "authorExecution": false,
+  "nativeAcceptance": false,
+  "atAcceptance": false
+}

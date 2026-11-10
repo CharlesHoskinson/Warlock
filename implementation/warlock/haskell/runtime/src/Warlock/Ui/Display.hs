@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
--- Only the owning Wayland transport crosses startup, not arbitrary env.
+-- Only selected private Wayland and optional AT transports cross startup.
 -- This transport selection does not authenticate compositor effects.
 module Warlock.Ui.Display
  (DisplayEnvironment, captureDisplayEnvironment, captureDisplayTransport,
@@ -26,7 +26,8 @@ captureDisplayEnvironment :: IO (Either Text DisplayEnvironment)
 captureDisplayEnvironment = do
  runtime <- lookupEnv "XDG_RUNTIME_DIR"
  display <- lookupEnv "WAYLAND_DISPLAY"
- captureDisplayTransport runtime display
+ accessibility <- lookupEnv "AT_SPI_BUS_ADDRESS"
+ fmap (fmap DisplayEnvironment) (resolveSelectedTransports runtime display accessibility)
 
 captureDisplayTransport :: Maybe FilePath -> Maybe String -> IO (Either Text DisplayEnvironment)
 captureDisplayTransport runtime display = fmap (fmap DisplayEnvironment) (resolveDisplayEnvironment runtime display)
@@ -35,8 +36,13 @@ readDisplayEnvironment :: IO (Either Text [(String,String)])
 readDisplayEnvironment = fmap (fmap displayEnvironmentPairs) captureDisplayEnvironment
 
 resolveDisplayEnvironment :: Maybe FilePath -> Maybe String -> IO (Either Text [(String,String)])
-resolveDisplayEnvironment Nothing Nothing = pure (Right [])
-resolveDisplayEnvironment (Just runtime) (Just display) = do
+resolveDisplayEnvironment runtime display = resolveSelectedTransports runtime display Nothing
+
+-- The optional address selects a transport, not an authenticated AT provider.
+-- Both socket and ancestor identities must stay stable during this capture.
+resolveSelectedTransports :: Maybe FilePath -> Maybe String -> Maybe String -> IO (Either Text [(String,String)])
+resolveSelectedTransports Nothing Nothing Nothing = pure (Right [])
+resolveSelectedTransports (Just runtime) (Just display) accessibility = do
  observed <- try $ do
   uid <- getRealUserID
   effective <- getEffectiveUserID
@@ -58,19 +64,27 @@ resolveDisplayEnvironment (Just runtime) (Just display) = do
        status <- getSymbolicLinkStatus path
        require (isDirectory status && fileOwner status == uid && fileMode status .&. 0o777 == 0o700)
        pure (deviceID status,fileID status)
-      inspectSocket = do
-       status <- getSymbolicLinkStatus (runtime ++ "/" ++ display)
+      inspectSocket leaf = do
+       status <- getSymbolicLinkStatus (runtime ++ "/" ++ leaf)
        require (isSocket status && fileOwner status == uid)
        pure (deviceID status,fileID status)
+      inspectAccessibility = case accessibility of
+       Nothing -> pure Nothing
+       Just address -> do
+        require (runtime /= base && address == "unix:path=" ++ runtime ++ "/a11y-bus")
+        Just <$> inspectSocket "a11y-bus"
   require (uid /= 0 && uid == effective && validRuntime && validName)
   mapM_ (\path -> do
     status <- getSymbolicLinkStatus path
     require (isDirectory status && fileOwner status `elem` [0,uid] && fileMode status .&. 0o022 == 0)) ["/run", "/run/user"]
   before <- mapM inspectPrivate privatePaths
-  endpoint <- inspectSocket
+  endpoint <- inspectSocket display
+  accessibilityEndpoint <- inspectAccessibility
   after <- mapM inspectPrivate privatePaths
-  endpointAfter <- inspectSocket
-  require (before == after && endpoint == endpointAfter)
-  pure [("XDG_RUNTIME_DIR",runtime),("WAYLAND_DISPLAY",display)]
+  endpointAfter <- inspectSocket display
+  accessibilityAfter <- inspectAccessibility
+  require (before == after && endpoint == endpointAfter && accessibilityEndpoint == accessibilityAfter)
+  pure ([("XDG_RUNTIME_DIR",runtime),("WAYLAND_DISPLAY",display)]
+    ++ maybe [] (\address -> [("AT_SPI_BUS_ADDRESS",address)]) accessibility)
  pure (either (const (Left "private UI display transport unavailable")) Right (observed :: Either IOException [(String,String)]))
-resolveDisplayEnvironment _ _ = pure (Left "incomplete private UI display transport")
+resolveSelectedTransports _ _ _ = pure (Left "incomplete private UI display transport")

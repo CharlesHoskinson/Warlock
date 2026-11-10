@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "kind": "ui011-owned-custody-fallback-budget-correction",
+  "disposition": "private-source-only-after-actual-public-custody-red",
+  "posts": [
+    {
+      "path": "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/owned-at-transport-preparation/production-revision2-custody-budget/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+      "beforeSha256": "5655f6ba02834a5b26dae876b1eb384af60f834fbf38a6051c5aa342270254e4",
+      "sha256": "db965d55b0a8df65c5418d12f0e91b8bb3b0cab4a2ca7191d7d82fd033d9acca"
+    }
+  ],
+  "patch": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/owned-at-transport-preparation/production-revision2-custody-budget/product.patch",
+    "sha256": "ba64fd19c7208c632ab7fb92634bcaa74e8b78a694bc4f55860f7b1c362b6d6f"
+  },
+  "predecessorATProduct": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/owned-at-transport-preparation/production-implementation/manifest.json",
+    "sha256": "309594e428c27939de296e1d433ae44f01a847c272bc7b732ba0dfa26a771c8d"
+  },
+  "actualRed": {
+    "report": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-at-cpu-runs/opener-at-1794340239474095619/report.json",
+      "sha256": "6f2d6d7f0ad0b699c855775e76e3750104faf6efed614506dc068a00a04247db"
+    },
+    "stderr": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-at-cpu-runs/opener-at-1794340239474095619/logs/ui-engine-controls.stderr",
+      "sha256": "5fbd93068b0f1a8048f411500d5be3eeb864b54a9f60652d69e7621f1b9891a3"
+    },
+    "classification": "overall-failed; AT18/32 and admission22/32 pass, existing custody test fails",
+    "oracle": "owned PID1 exit observed within deadline",
+    "cleanupQualified": false
+  },
+  "unchangedOracle": {
+    "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-engine/Main.hs",
+    "sha256": "4773df5cf63c135a317738ff322bd0087de8d66674dae750e971968f63edd455"
+  },
+  "budgetCorrespondence": {
+    "originalRemaining": "same inherited IO Int, never deadlineAfter/reset",
+    "ownerReserveMicros": 200000,
+    "naturalStopFloor": "200000 + (availableAtNaturalStart-200000) div 2, only when availableAtNaturalStart>200000",
+    "fallbackStopFloor": 200000,
+    "example8000000": {
+      "naturalFloor": 4100000,
+      "naturalMaximumMicros": 3900000,
+      "fallbackMaximumMicros": 3900000
+    },
+    "example800000": {
+      "naturalFloor": 500000,
+      "naturalMaximumMicros": 300000,
+      "fallbackMaximumMicros": 300000
+    },
+    "atOrBelowReserve": "false without signal; closeLife remains idempotent",
+    "missingOwnershipOrSignalFailure": "false",
+    "exception": "IOException false; existing async propagation remains",
+    "normalReceipt": "unchanged; old Bool means observed reap only"
+  },
+  "limits": [
+    "No new PID/signal/process-group authority; fresh direct-child pidfd verification remains immediately before guarded signal.",
+    "No fixture/body/deadline/budget/namespace/AT transport changes.",
+    "Existing frozen ui-engine-controls remains the actual regression; new natural/fallback division must pass it under Root protected qualification.",
+    "All other EngineCustody bytes outside stopCustody unchanged, including AT allowlist4aea/5655 behavior."
+  ],
+  "primaryMutation": false,
+  "authorExecution": false,
+  "nativeAcceptance": false,
+  "atAcceptance": false
+}

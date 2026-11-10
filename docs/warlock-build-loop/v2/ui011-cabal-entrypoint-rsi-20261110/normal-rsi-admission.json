@@ -1,0 +1,48 @@
+Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "nextRootAction": {
+    "kind": "exercise-journey",
+    "executor": "Root",
+    "candidateId": "ui011-opener-at-transport-green-v7-20261110",
+    "candidateSha256": "bfbd93f91329c51d146bfb0bd0f8248e5ce23904abb4cb1071692022c6926898",
+    "jobId": "pid1056785-start807909",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "--review",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/opener-at-prerequisite-v7-cpu/review-packet.json",
+      "--sha256",
+      "35945682de6594ada5b5395f3f74d3bcf9c1d498bf57b8dbec939edee94f4829"
+    ],
+    "expectedObservation": "Build the real GTK opener and three fixed test targets, including changed EngineCustody via existing ui-engine-controls. Never execute the opener. Require all22 admission contracts/32 triples and all18 AT transport controls/32 seeds PASS, plus unchanged public engine custody controls exit0. Current host/cache/source/group guards and300s/120s/2s retained; any semantic failure remains exit1. No provider/native/original/AT credit.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-10T20:09:04.261926+00:00",
+      "secondsSinceRecordedProgress": 364,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": false,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Continue the selected delivery action.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "recordSha256": "11c05af49e69b4ac88625b3b697d4414f1e3deb018da8f2320c8f1c1eec68e43",
+  "acceptanceInferred": false,
+  "ok": true
+}

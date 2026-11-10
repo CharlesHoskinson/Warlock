@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "candidateSha256": "bfbd93f91329c51d146bfb0bd0f8248e5ce23904abb4cb1071692022c6926898",
+  "integrationRevision": "dfdf9f949cbfe9686014c517ee3dc0e759f41796",
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7437566cc563456fbf2535de723a1137.scope",
+    "coreLimit": 1
+  },
+  "controllerSha256": "3f9f5ee5e66c7ce339d96639c4d567e8a3a3120039c2e4f5c1a9372955136de9",
+  "results": [
+    {
+      "phase": "baseline",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_delivery_flow.DeliveryFlowTests.test_stale_hash_duplicate_and_self_review_refuse_without_write",
+        "test_delivery_flow.DeliveryFlowTests.test_fixture_drift_and_wrong_scope_block_execution",
+        "test_delivery_flow.DeliveryFlowTests.test_second_job_and_wrong_job_terminal_refuse",
+        "test_delivery_flow.DeliveryFlowTests.test_rsi_changed_immutable_guard_refuses",
+        "test_delivery_flow.DeliveryFlowTests.test_rsi_wrong_candidate_and_untested_adoption_refuse"
+      ],
+      "exit": 0,
+      "methodNames": [
+        "test_stale_hash_duplicate_and_self_review_refuse_without_write",
+        "test_fixture_drift_and_wrong_scope_block_execution",
+        "test_second_job_and_wrong_job_terminal_refuse",
+        "test_rsi_changed_immutable_guard_refuses",
+        "test_rsi_wrong_candidate_and_untested_adoption_refuse"
+      ],
+      "artifactChecks": [
+        {
+          "name": "retained-generated-main-entrypoint-failure",
+          "passed": true
+        },
+        {
+          "name": "retained-overlapping-main-source-root-failure",
+          "passed": true
+        },
+        {
+          "name": "actual-isolated-admission22-32-with-honest-at-red",
+          "passed": true
+        },
+        {
+          "name": "actual-changed-engine-target-reachability",
+          "passed": true
+        },
+        {
+          "name": "one-doc-overlay-keeps-runtime-core-and-plugin-membership",
+          "passed": true
+        },
+        {
+          "name": "documentation-explicit-haskell-component-guidance",
+          "passed": false
+        }
+      ],
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/baseline.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/baseline.stderr",
+        "sha256": "b09e80687f1cdd6b3022935f46c86e25641be39f9f00cc12f81cc5e3f7232d69"
+      }
+    },
+    {
+      "phase": "candidate",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_delivery_flow.DeliveryFlowTests.test_stale_hash_duplicate_and_self_review_refuse_without_write",
+        "test_delivery_flow.DeliveryFlowTests.test_fixture_drift_and_wrong_scope_block_execution",
+        "test_delivery_flow.DeliveryFlowTests.test_second_job_and_wrong_job_terminal_refuse",
+        "test_delivery_flow.DeliveryFlowTests.test_rsi_changed_immutable_guard_refuses",
+        "test_delivery_flow.DeliveryFlowTests.test_rsi_wrong_candidate_and_untested_adoption_refuse"
+      ],
+      "exit": 0,
+      "methodNames": [
+        "test_stale_hash_duplicate_and_self_review_refuse_without_write",
+        "test_fixture_drift_and_wrong_scope_block_execution",
+        "test_second_job_and_wrong_job_terminal_refuse",
+        "test_rsi_changed_immutable_guard_refuses",
+        "test_rsi_wrong_candidate_and_untested_adoption_refuse"
+      ],
+      "artifactChecks": [
+        {
+          "name": "retained-generated-main-entrypoint-failure",
+          "passed": true
+        },
+        {
+          "name": "retained-overlapping-main-source-root-failure",
+          "passed": true
+        },
+        {
+          "name": "actual-isolated-admission22-32-with-honest-at-red",
+          "passed": true
+        },
+        {
+          "name": "actual-changed-engine-target-reachability",
+          "passed": true
+        },
+        {
+          "name": "one-doc-overlay-keeps-runtime-core-and-plugin-membership",
+          "passed": true
+        },
+        {
+          "name": "documentation-explicit-haskell-component-guidance",
+          "passed": true
+        }
+      ],
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/candidate.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/rsi-cabal-entrypoint-doc-v3/candidate.stderr",
+        "sha256": "8e54921e6ae61c2710feba2aab8aeefdacac7584618ed4f7349a8dfef15c7fab"
+      }
+    }
+  ],
+  "passed": true,
+  "comparisonScope": "Doc-only compiler-entrypoint guidance comparison. Both phases execute identical installed core and five regression methods. Candidate phase reads proposed private document bytes. No different runtime code or latency outcome is claimed.",
+  "observedUTC": "2026-11-10T20:11:16.638932+00:00"
+}
