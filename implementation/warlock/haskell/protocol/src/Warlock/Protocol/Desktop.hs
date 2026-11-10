@@ -9,6 +9,7 @@ module Warlock.Protocol.Desktop
   , PinSnapshot, pinSnapshot, pinRevision, pinIdentities, decodePinSnapshot, encodePinSnapshot
   , CatalogEntry, catalogEntry, CatalogSnapshot, catalogSnapshot
   , WindowSnapshot, windowSnapshot, windowObservationReply, applicationAttachedWithWindowObservation
+  , windowWatchRevision, windowWatchReply, applicationAttachedWithWindowWatch
   , notificationSnapshotReply, notificationOutcomeReply, applicationAttachedWithNotificationService
   , DesktopReply, PinStatus(..), ApplicationAvailability(..), applicationAttached, applicationAttachedWithAvailability, applicationAttachedWithLocalNotifications, applicationAvailability, catalogReply, pinsReply, replyBinding
   , decodeDesktopReply, encodeDesktopReply, decodeDesktopGateway, encodeDesktopGateway, popupControl ) where
@@ -23,7 +24,7 @@ import Warlock.Protocol.Identity
 import Warlock.Protocol.StrictJson
 import Warlock.Protocol.Wire (parseBinding)
 
-data RequestKind = CatalogRead | PinsWrite | ApplicationLaunch | NotificationRead | NotificationEffect | WindowRead deriving (Eq, Show)
+data RequestKind = CatalogRead | PinsWrite | ApplicationLaunch | NotificationRead | NotificationEffect | WindowRead | WindowWatch deriving (Eq, Show)
 data NotificationVerb = NotificationInvoke | NotificationDismiss deriving (Eq, Show)
 -- Checked wire data only; actual service ownership and current producer custody
 -- must still be established by the backend before any effect.
@@ -34,6 +35,7 @@ data LaunchStatus = LaunchSubmitted | LaunchUnknown | LaunchRefused LaunchRefusa
 data PinSnapshot = PinSnapshot Counter [Text] deriving (Eq, Show)
 data DesktopRequest = CatalogRequest Binding Counter | PinsRequest Binding Counter PinSnapshot | LaunchRequest Binding LaunchIntent
                     | WindowReadRequest Binding Counter
+                    | WindowWatchRequest Binding Counter Counter
                     | NotificationHistoryRequest Binding Counter
                     | NotificationActionRequest Binding Counter NotificationTarget deriving (Eq, Show)
 newtype WindowSnapshot = WindowSnapshot Json deriving (Eq, Show)
@@ -51,6 +53,8 @@ data DesktopReply = CatalogReply Binding Counter (Maybe CatalogSnapshot) (Maybe 
                   | NotificationCapabilitiesAttached Binding ApplicationAvailability Bool Bool
                   | WindowObservationAttached Binding ApplicationAvailability Bool (Maybe Bool) Bool
                   | WindowObservationReply Binding Counter Text (Maybe WindowSnapshot)
+                  | WindowWatchAttached Binding ApplicationAvailability Bool (Maybe Bool)
+                  | WindowWatchReply Binding Counter Counter Text (Maybe WindowSnapshot)
                   | NotificationSnapshotReply Binding Counter Json
                   | NotificationOutcomeReply Binding Counter Text Json (Maybe Text)
                   | PreviewGrant Binding Counter Int
@@ -128,6 +132,7 @@ requestKind (CatalogRequest _ _) = CatalogRead
 requestKind (PinsRequest _ _ _) = PinsWrite
 requestKind (LaunchRequest _ _) = ApplicationLaunch
 requestKind (WindowReadRequest _ _) = WindowRead
+requestKind (WindowWatchRequest _ _ _) = WindowWatch
 requestKind (NotificationHistoryRequest _ _) = NotificationRead
 requestKind (NotificationActionRequest _ _ _) = NotificationEffect
 requestBinding :: DesktopRequest -> Binding
@@ -135,6 +140,7 @@ requestBinding (CatalogRequest owner _) = owner
 requestBinding (PinsRequest owner _ _) = owner
 requestBinding (LaunchRequest owner _) = owner
 requestBinding (WindowReadRequest owner _) = owner
+requestBinding (WindowWatchRequest owner _ _) = owner
 requestBinding (NotificationHistoryRequest owner _) = owner
 requestBinding (NotificationActionRequest owner _ _) = owner
 requestId :: DesktopRequest -> Counter
@@ -142,6 +148,7 @@ requestId (CatalogRequest _ request) = request
 requestId (PinsRequest _ request _) = request
 requestId (LaunchRequest _ intent) = launchRequest intent
 requestId (WindowReadRequest _ request) = request
+requestId (WindowWatchRequest _ request _) = request
 requestId (NotificationHistoryRequest _ request) = request
 requestId (NotificationActionRequest _ request _) = request
 pinProposal :: DesktopRequest -> Maybe PinSnapshot
@@ -149,6 +156,7 @@ pinProposal (CatalogRequest _ _) = Nothing
 pinProposal (PinsRequest _ _ proposal) = Just proposal
 pinProposal (LaunchRequest _ _) = Nothing
 pinProposal (WindowReadRequest _ _) = Nothing
+pinProposal (WindowWatchRequest _ _ _) = Nothing
 pinProposal (NotificationHistoryRequest _ _) = Nothing
 pinProposal (NotificationActionRequest _ _ _) = Nothing
 launchIntent :: DesktopRequest -> Maybe LaunchIntent
@@ -230,6 +238,14 @@ parseRequest value = do
       owner <- field "binding" exact >>= parseBinding
       request <- field "requestId" exact >>= counter
       PinsRequest owner request <$> (field "proposal" exact >>= parsePins)
+    "window-watch" -> do
+      exact <- object ["protocolVersion","kind","binding","requestId","observedRevision"] value
+      owner <- field "binding" exact >>= parseBinding
+      request <- field "requestId" exact >>= counter
+      observed <- field "observedRevision" exact >>= counter
+      positive request
+      positive observed
+      pure (WindowWatchRequest owner request observed)
     "window-read" -> do
       exact <- object ["protocolVersion","kind","binding","requestId"] value
       owner <- field "binding" exact >>= parseBinding
@@ -324,6 +340,8 @@ replyBinding (LocalNotificationsAttached owner _) = owner
 replyBinding (NotificationCapabilitiesAttached owner _ _ _) = owner
 replyBinding (WindowObservationAttached owner _ _ _ _) = owner
 replyBinding (WindowObservationReply owner _ _ _) = owner
+replyBinding (WindowWatchAttached owner _ _ _) = owner
+replyBinding (WindowWatchReply owner _ _ _ _) = owner
 replyBinding (NotificationSnapshotReply owner _ _) = owner
 replyBinding (NotificationOutcomeReply owner _ _ _ _) = owner
 replyBinding (PreviewGrant owner _ _) = owner
@@ -359,6 +377,12 @@ replyJson reply = JObject $ [("protocolVersion",JNumber "3"),("binding",bindingJ
     ++ (if local then [("localOperations",JArray [JString "notification-policy"])] else [])
     ++ maybe [] (\supported -> [("notificationOperations",JArray (if supported then [JString "notification-read",JString "notification-action"] else []))]) notifications
     ++ [("windowObservationOperations",JArray (if ready then [JString "window-read"] else []))]
+  WindowWatchAttached _ availability local notifications ->
+    [("kind",JString "application-attached"),("nativeOperations",JArray []),("applicationOperations",JArray (case availability of ApplicationUnavailable -> []; ApplicationLaunchAvailable -> [JString "application-launch"]))]
+    ++ (if local then [("localOperations",JArray [JString "notification-policy"])] else [])
+    ++ maybe [] (\ready -> [("notificationOperations",JArray (if ready then [JString "notification-read",JString "notification-action"] else []))]) notifications
+    ++ [("windowObservationOperations",JArray [JString "window-read",JString "window-watch"])]
+  WindowWatchReply _ request observedRevision status observed -> [("kind",JString "window-watch-result"),("requestId",JString (renderCounter request)),("observedRevision",JString (renderCounter observedRevision)),("status",JString status),("snapshot",nullable (\(WindowSnapshot value) -> value) observed)]
   WindowObservationReply _ request status observed -> [("kind",JString "window-observation"),("requestId",JString (renderCounter request)),("status",JString status),("snapshot",nullable (\(WindowSnapshot value) -> value) observed)]
   NotificationSnapshotReply _ request snapshot -> [("kind",JString "notification-snapshot"),("requestId",JString (renderCounter request)),("snapshot",snapshot)]
   NotificationOutcomeReply _ request status snapshot reason -> [("kind",JString "notification-outcome"),("requestId",JString (renderCounter request)),("status",JString status),("snapshot",snapshot)]
@@ -435,6 +459,7 @@ applicationAvailability :: DesktopReply -> Maybe ApplicationAvailability
 applicationAvailability (ApplicationAttached _ selected) = Just (maybe ApplicationUnavailable id selected)
 applicationAvailability (LocalNotificationsAttached _ selected) = Just selected
 applicationAvailability (WindowObservationAttached _ selected _ _ _) = Just selected
+applicationAvailability (WindowWatchAttached _ selected _ _) = Just selected
 applicationAvailability (NotificationCapabilitiesAttached _ selected _ _) = Just selected
 applicationAvailability _ = Nothing
 -- Notification wire values remain application DATA. A capability field does not
@@ -566,6 +591,7 @@ decodeDesktopReply raw = do
         ready <- case operations of
           JArray [] -> Right False
           JArray [JString "window-read"] -> Right True
+          JArray [JString "window-read",JString "window-watch"] -> Right True
           _ -> Left "unsupported window observation operations"
         available <- maybe (Left "explicit application operations required") Right availability
         localPolicy <- case local of
@@ -577,7 +603,7 @@ decodeDesktopReply raw = do
           Just (JArray []) -> Right (Just False)
           Just (JArray [JString "notification-read",JString "notification-action"]) -> Right (Just True)
           _ -> Left "unsupported notification operations"
-        pure (WindowObservationAttached owner available localPolicy service ready)
+        pure (if operations==JArray [JString "window-read",JString "window-watch"] then WindowWatchAttached owner available localPolicy service else WindowObservationAttached owner available localPolicy service ready)
        Nothing ->
         case (notifications,local,availability) of
          (Nothing,Nothing,Nothing) -> applicationAttached owner
@@ -594,6 +620,14 @@ decodeDesktopReply raw = do
             _ -> Left "unsupported local operations"
           pure (NotificationCapabilitiesAttached owner available localPolicy ready)
          _ -> Left "unsupported local or notification operations"
+    "window-watch-result" -> do
+      exact <- object ["protocolVersion","kind","binding","requestId","observedRevision","status","snapshot"] value
+      owner <- field "binding" exact >>= parseBinding
+      request <- field "requestId" exact >>= counter
+      observedRevision <- field "observedRevision" exact >>= counter
+      status <- field "status" exact >>= textValue
+      snapshot <- field "snapshot" exact >>= optional (windowSnapshot owner)
+      windowWatchReply owner request observedRevision status snapshot
     "window-observation" -> do
       exact <- object ["protocolVersion","kind","binding","requestId","status","snapshot"] value
       owner <- field "binding" exact >>= parseBinding
@@ -725,5 +759,31 @@ windowObservationReply bound request status observed = do
 applicationAttachedWithWindowObservation :: Binding -> ApplicationAvailability -> Either Text DesktopReply
 applicationAttachedWithWindowObservation owner available = do
   let reply = WindowObservationAttached owner available True Nothing True
+  _ <- encodeDesktopReply reply
+  pure reply
+
+windowWatchRevision :: DesktopRequest -> Maybe Counter
+windowWatchRevision (WindowWatchRequest _ _ revision) = Just revision
+windowWatchRevision _ = Nothing
+
+windowWatchReply :: Binding -> Counter -> Counter -> Text -> Maybe WindowSnapshot -> Either Text DesktopReply
+windowWatchReply bound request observedRevision status observed = do
+  positive request
+  positive observedRevision
+  require (case (status,observed) of ("Changed",Just _) -> True; ("Unchanged",Nothing) -> True; ("Unknown",Nothing) -> True; ("Unavailable",Nothing) -> True; _ -> False) "window watch status/snapshot"
+  case observed of
+    Nothing -> pure ()
+    Just (WindowSnapshot raw) -> do
+      _ <- windowSnapshot bound raw
+      fields <- object ["owner","revision","view","outputs","windows"] raw
+      revision <- field "revision" fields >>= counter
+      require (revision>observedRevision) "window watch revision did not advance"
+  let reply = WindowWatchReply bound request observedRevision status observed
+  _ <- encodeDesktopReply reply
+  pure reply
+
+applicationAttachedWithWindowWatch :: Binding -> ApplicationAvailability -> Either Text DesktopReply
+applicationAttachedWithWindowWatch bound available = do
+  let reply = WindowWatchAttached bound available True Nothing
   _ <- encodeDesktopReply reply
   pure reply

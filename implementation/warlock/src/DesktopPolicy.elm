@@ -46,6 +46,7 @@ effectsFor : Maybe E.Value -> List Controller.Effect -> List Effect
 effectsFor packet effects =
     let timers = List.filterMap (\effect -> case effect of
             Controller.DesktopEffect (Desktop.WindowEffect (Shell.ArmPrepared token)) -> Just (Delay 2000 (Desktop.Window (TaskbarShell.ExpirePrepared token)))
+            Controller.DesktopEffect (Desktop.ArmWindowWatch token) -> Just (Delay 100 (Desktop.WindowWatchDue token))
             Controller.DesktopEffect (Desktop.ArmWorkspaceNavigation intent) -> Just (Delay 2000 (Desktop.WorkspaceNavigationDeadline intent))
             Controller.DesktopEffect (Desktop.ArmChoice token) -> Just (Delay 2000 (Desktop.ChoiceDeadline token))
             Controller.DesktopEffect (Desktop.Arm token) -> Just (Delay 10000 (Desktop.Deadline token))
@@ -62,6 +63,13 @@ update message model =
         Nothing -> (model,[])
         Just value ->
             let (updated,effects) = Outputs.update value model.controller
-                (next,packet) = Outputs.register effects updated
+                watchOnly = case value of
+                    Outputs.Interaction (Desktop.WindowWatchDue _) -> True
+                    Outputs.Interaction (Desktop.Incoming raw) -> D.decodeValue (D.field "kind" D.string) raw==Ok "window-watch-result"
+                    _ -> False
+                (next,packet) =
+                    if (watchOnly || not (List.isEmpty effects)) && List.all (\effect -> case effect of
+                        Controller.DesktopEffect (Desktop.ArmWindowWatch _) -> True
+                        _ -> False) effects then (updated,Nothing) else Outputs.register effects updated
             in ({model | controller=next},effectsFor packet effects)
 

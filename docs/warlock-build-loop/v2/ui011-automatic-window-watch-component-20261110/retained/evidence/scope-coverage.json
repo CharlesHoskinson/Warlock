@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "originalRequirement": "ELM-UI-011",
+  "originalScenario": "focus-scope-opener closure",
+  "originalOracleUnchanged": true,
+  "thisIncrement": "Automatic authenticated observed-window watch for current keyboard observed-menu origin closure, with no manual Refresh. It is a production increment, not a narrowed replacement of the original scenario.",
+  "scopes": [
+    {
+      "scope": "Observed taskbar inspection menu",
+      "paths": [
+        "src/Desktop.elm:openObservedWindow/observedRetirementTarget/restoreObservedFocus",
+        "src/MenuBridge.elm:openObservation/reconcileWithShell",
+        "src/Shell.elm:incoming/refreshWindows"
+      ],
+      "current": "Manual actual Refresh retirement and fallback component passed 24+5+32.",
+      "planned": "Automatic current WindowWatch; unchanged/harmless changes keep menu. Closed/replaced origin retires and restores distinct current Applications fallback once.",
+      "nativeAT": "Independent opener close and physical+AT focus remain unobserved."
+    },
+    {
+      "scope": "Legacy native window menu / picker",
+      "paths": [
+        "src/Desktop.elm:window/OpenWindowMenu",
+        "src/MenuBridge.elm:reconcileWithShell",
+        "src/Menu.elm:rebindReady"
+      ],
+      "current": "Separate legacy native projection/capabilities and pending native-operation guards.",
+      "planned": "No watch capability inferred; existing route untouched.",
+      "gap": "Literal opener closure with native legacy provider and its eligible fallback requires its own exact authority/lifecycle fixture."
+    },
+    {
+      "scope": "Applications launcher",
+      "paths": [
+        "src/Desktop.elm:OpenApplications/CloseApplications/capture/key",
+        "src/Surface.elm:barControls"
+      ],
+      "current": "Opener is the current Applications bar control, not a compositor window inferred from appId.",
+      "planned": "Serves only as declared eligible fallback of the observed menu. No blanket new launcher restoration policy.",
+      "gap": "Launcher opener destruction/binding retirement/presentation replacement and physical+AT restoration require distinct source/oracle correspondence; not covered by this menu sample."
+    },
+    {
+      "scope": "Notifications",
+      "paths": [
+        "src/Desktop.elm:OpenNotifications/CloseNotifications",
+        "src/Surface.elm:barControls"
+      ],
+      "current": "Separate local-policy/service capabilities; original service investigation stopped.",
+      "planned": "No service resume or capability change.",
+      "gap": "Notifications scope opener closure, live native/AT and security supersession not proved here."
+    },
+    {
+      "scope": "Switcher / Task View",
+      "paths": [
+        "src/Desktop.elm:OpenSwitcher/CommitSwitcher/CloseSwitcher/OpenOverview",
+        "src/Switcher.elm"
+      ],
+      "current": "Legacy native availability and distinct scope/history rules.",
+      "planned": "No fabricated availability from observed appId; watch is not a native action grant.",
+      "gap": "Opener closure while switcher/overview open and exact physical/AT destination remain outside this component."
+    },
+    {
+      "scope": "Nested menus / application actions / settings / files / system panels",
+      "paths": [
+        "src/Desktop.elm:jumpBack/CloseJumpList/CloseFiles/CloseSettings/CloseSystemMenu",
+        "src/MenuBridge.elm",
+        "src/Surface.elm:controls"
+      ],
+      "current": "Several explicit return-to-parent/control paths exist, not a universally qualified closure stack.",
+      "planned": "No shared fallback-stack rewrite.",
+      "gap": "Surviving parent restoration, MRU/desktop fallback and original nested-dismissal scenario require separate evidence; stopped historical nested participant is preserved."
+    },
+    {
+      "scope": "Lock/security supersession",
+      "paths": [
+        "src/Desktop.elm:owner/binding retirement",
+        "src/OutputController.elm:topology/assignOwner"
+      ],
+      "current": "Existing identity/refusal gates remain necessary but are not a complete lock-policy witness.",
+      "planned": "No watch result after retired/superseded scope can focus.",
+      "gap": "Literal lock-supersedes-restoration and AT security behavior are not established by this fixture."
+    }
+  ],
+  "otherUI011Scenarios": "Nested dismissal, workspace change, minimize, renderer restart and address reuse retain their original obligations and history. This work adds no original counts."
+}

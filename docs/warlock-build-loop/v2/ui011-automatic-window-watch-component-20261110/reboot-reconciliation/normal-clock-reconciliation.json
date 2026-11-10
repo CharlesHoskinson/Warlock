@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+    "--repo",
+    "/home/hoskinson/Projects/Warlock",
+    "--record",
+    ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+    "delivery-event",
+    "--event-file",
+    ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/reboot-clock-reconciliation-20261110T1753/clock-event.json",
+    "--expect-record-sha",
+    "9b0c2b36f8814c6b68335ccd0d9c102f6cbc9bf22a7640b48a89960f2673f188",
+    "--expect-selection",
+    "33"
+  ],
+  "exit": 0,
+  "stdout": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\n{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"record\": \".warlock-contributor/ui011-observed-opener-closure-root-20261110.json\",\n  \"nextRootAction\": {\n    \"kind\": \"change-plan\",\n    \"executor\": \"Root\",\n    \"candidateId\": \"ui011-window-watch-elm-current-20261110\",\n    \"candidateSha256\": \"78e256ffd37a33714608161f6b8673d72febb2d2a36feafa60bb96ac5bcdefb8\",\n    \"jobId\": \"pid2131079-start9653437\",\n    \"argv\": [\n      \"/usr/bin/python3\",\n      \"-B\",\n      \"/home/hoskinson/Projects/Warlock/tools/qa_cpu.py\",\n      \"--review\",\n      \"/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/window-watch-elm-green-cpu/review-packet.json\",\n      \"--sha256\",\n      \"2d47420ad47aebc40b93affa5b4fd4a1ecab557f1237628141a3e7237f875a90\"\n    ],\n    \"expectedObservation\": \"Fixed current WindowWatch public Elm27cases/3setup/32sequences plus preserved18DOM/16Escape/34context/17initial-focus/24manual-retirement and fresh3HTML compiles, same240/120 CPU bounds. Current12declared source pins include3Haskell files for integrity only; their protocol/runtime GREEN remains a separate following qualification. Actual private RED/model reports retained, no fabricated managed expected-red pointer or native/AT acceptance.\",\n    \"executionAuthorized\": false,\n    \"acceptanceInferred\": false,\n    \"progress\": {\n      \"workflowPolicy\": 2,\n      \"iterationsWithoutProgress\": 0,\n      \"lastRecordedProgressUTC\": \"2026-11-10T14:37:18.377336+00:00\",\n      \"secondsSinceRecordedProgress\": 11848,\n      \"suspendedSeconds\": 9,\n      \"limits\": {\n        \"iterations\": 2,\n        \"seconds\": 2700,\n        \"sameFailureExperiments\": 2\n      },\n      \"investigationNeedsChange\": false,\n      \"planChangeRequired\": true,\n      \"reconciliationRequired\": false,\n      \"authorizationExpired\": false,\n      \"reasons\": [\n        \"45-awake-minutes-without-tested-integration\"\n      ],\n      \"effectiveAuthorizationExpiresUTC\": \"2026-11-11T15:30:00Z\",\n      \"action\": \"Change the next action or defer in this same history.\",\n      \"basis\": \"Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred.\"\n    }\n  },\n  \"recordSha256\": \"3eee03f1f84641437ad57e63c483f646f074169c7e5611f2eea3476c5ffe35f7\",\n  \"acceptanceInferred\": false,\n  \"ok\": true\n}\n",
+  "stderr": ""
+}

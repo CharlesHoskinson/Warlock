@@ -1,0 +1,29 @@
+{
+  "terminal": true,
+  "jobId": "pid108248-start61327",
+  "candidateSha256": "9fbe3567b3fa27d08de9736276196c60cd3e6a7053494a2746fd35a4b25377c0",
+  "scope": "cpu",
+  "manifestSha256": "9b44e4014846168aa0443f70327a19a93af5ed3bdf71d2f2e9d2d25c87b80da7",
+  "fixtureSha256": "e2a4bd2673f715e405d25f05d6c7c9f66d3f96606494932f60379a79d6bf24b3",
+  "exit": 1,
+  "classification": "failed",
+  "failureSignature": "setup-loader-cache-changed-f9fae360-to-85f1d0ec-before-compiler",
+  "actualOuterHandle": "1577",
+  "actualOuterHandleConsumed": true,
+  "stdout": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/normal-protocol-runtime-green-preparation-revision2/actual-root-green/stdout.log",
+    "sha256": "59c6021733088582c008778711cec817ba503fbf6907a367735b6116af6e1bf5"
+  },
+  "stderr": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/normal-protocol-runtime-green-preparation-revision2/actual-root-green/stderr.log",
+    "sha256": "8950b95198c6ab9739feecdd970db72eee0d98bf9b0fa65829af10bcc1af0134"
+  },
+  "observedCacheSha256": "85f1d0ec7186f21e65d355a7e0d1b9746b57e3beef652ff9532676faa89ae582",
+  "expectedCurrentCacheSha256": "f9fae360aefce8d20a3de53ad67651934b7a2d7d3b01800c9f6f29278e6261ab",
+  "commandsAttempted": 0,
+  "compilerResultObserved": false,
+  "productVerdict": "unobserved",
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "assistiveTechnologyAcceptance": false
+}

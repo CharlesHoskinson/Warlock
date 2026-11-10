@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-and-bounded-data-proposal",
+  "manifestSha256": "2e1448e2279a6c990b3cd74dbb3cd18c5f3d25862887f4bb87b45ba6a78be3a7",
+  "verified": [
+    "Inventory exact15851 membership and249 package-entry membership retained; exactly five declared file rows and two corresponding package versions change; unreadable helper field exact.",
+    "All five installed regular file bodies/modes/sizes independently match both derived rows and actual local package archive members; both full archive hashes match frozen provenance. This review does not independently verify distribution archive signatures.",
+    "Original inventory33b9 and descriptor0b21 hashes remain exact; derived descriptor changes only systemInputs reference. Compiler/dependency trees, ABI and other descriptor fields exact.",
+    "Scanner entire module AST exact after removing only OUT/INVENTORY/INV_SHA assignments. Existing full selected800/9/10, aliases/nodes/before-after/zero-mismatch and120s checks retained."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "This is a new host inventory proposal, not qualification of old bytes or acceptance of failed85f1 scan. Full protected scan must succeed against newly copied inventory before correspondence acceptance.",
+    "No target execution, package install/rollback, scanner run, primary mutation, SDK compiler tree repin or guard waiver by reviewer.",
+    "No product compiler/runtime verdict, native/AT/original acceptance."
+  ]
+}

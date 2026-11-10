@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifestSha256": "b8515ad96510acbb8eb8543d1c62aad3e17e5727f9fd902c26af605959685087",
+  "verified": [
+    "Both exact source hashes match frozen manifest. Entire module AST is identical after removing only OUT and EXPECTED assignments; all functions/classes and remaining constants unchanged.",
+    "Append-only output location and expected current cache85f1 replace prior f9fa; historical SDK cache pin remains unchanged.",
+    "Existing full15851 system entries,800 selected library edges,9 interpreter edges,10 required-absent checks, alias/node checks, before/after cache identity, zero-mismatch requirement and120-second protected CPU bound retained."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "No scanner execution or actual correspondence proof in this receipt.",
+    "Actual prior Haskell attempt failed setup before compiler; no product verdict or source regression inferred.",
+    "No SDK repin, guard waiver, ABI/native/AT/original acceptance."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "contract": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/contract.json",
+    "sha256": "7549fd9efe9b42f146bd855ec1c6e8efc8f07cd2404481cce367fa2ea90ba8c6"
+  },
+  "formalSource": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/tests-first/window-watch-retirement.qnt",
+    "sha256": "07284c4ded4dc944a4fdf6c6af53d1747407be2479ab5e9672dff46c66f13e8a"
+  },
+  "scopeCoverage": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/scope-coverage.json",
+    "sha256": "a8c7a91639c3fb7bdb6339d5a37aa37f240058a7bab834805ed085fb5756f471"
+  },
+  "correspondence": [
+    {
+      "model": "tick / duplicateTickOneRequestTest",
+      "production": "Desktop.scheduleWindowWatch / dueWindowWatch; Shell.watchWindows; DesktopPolicy.Delay100",
+      "invariant": "One Scheduled or Pending token per live observed keyboard scope; duplicate/stale timer cannot issue another request."
+    },
+    {
+      "model": "deliverCurrent unchanged / unchangedKeepsScopeTest",
+      "production": "Backend.WindowObservation.readWindowWatchReply cached FT.Snapshot Eq; Shell.watchReplyDecoder; Desktop.receiveWindowWatch Unchanged; SurfaceController.watchBookkeeping; DesktopPolicy timers-only branch",
+      "invariant": "No published revision increment or snapshot for equal full owner data; no GUI publication, menu stamp, lease or focus change; one successor timer."
+    },
+    {
+      "model": "harmlessMetadata / harmlessMetadataPreservesMenuTest",
+      "production": "WindowObservation.sameContent; MenuBridge.reconcileWatch -> Menu.rebindReady; Desktop.menuOrigin update",
+      "invariant": "Semantic Changed is distinct from closure. Same current full fingerprint keeps MenuId/items/lease/focus across same-origin metadata or unrelated-window changes."
+    },
+    {
+      "model": "closeOrigin / replaceOrigin / closureReturnsFallbackOnceTest / replacementNeverReceivesOldFocusTest",
+      "production": "Desktop.observedRetirementTarget -> MenuBridge.reconcileWatch retirement -> restoreObservedFocus; exact current Applications identity",
+      "invariant": "Known absent/replaced full origin retires once; no focus to replacement, no mutation."
+    },
+    {
+      "model": "unknown / expire / supersede / scopeClose",
+      "production": "Original Owner deadline/current Scope/PeerCredential; Desktop.watchScopeCurrent and WatchStopped; Shell dedicated windowWatchExpected; OutputController observation classification",
+      "invariant": "Unknown, stale/foreign/current-scope loss cannot restore or resurrect; no reconnect/worker/deadline refresh."
+    },
+    {
+      "model": "pointer / absentCapability named traces",
+      "production": "Strict exact optional capability tuple; Desktop.watchScopeCurrent requires KeyboardEntry and live observation capability",
+      "invariant": "Legacy read-only or pointer scopes do not arm watch."
+    }
+  ],
+  "semanticData": "FT.Snapshot contains actual committed opaque Handle/Output incarnations, title, appId, sorted states/output memberships, and parent. No callback/reply counter used as content witness. Elm ignores revision and normalizes order for semantic equality.",
+  "sourceOwnership": "Only10 pinned existing production files; Root independent opener fixture and Cabal fragment remain disjoint.",
+  "limits": [
+    "Formal result is sampled safety plus13 named traces, not exhaustive proof.",
+    "Observed-menu automatic delivery is an incremental component; scope-coverage.json retains launcher/notification/switcher/nested and physical+AT obligations.",
+    "No configured native owner/independent-window closure/AT acceptance inferred from codec/reducer qualification.",
+    "No new native effect or catalog identity grant from appId; unconfigured Backend whole-batch rejection remains before effects."
+  ]
+}

@@ -339,7 +339,7 @@ refuseCatalogs capturedLease requests current =
 observation : D.Value -> Maybe (String,Counter)
 observation raw =
     case D.decodeValue (D.map2 Tuple.pair (D.field "kind" D.string) (D.field "requestId" UInt64.decoder)) raw of
-        Ok ((kind,_) as value) -> if List.member kind ["projection-request","geometry-attach","geometry-facts-request","window-read"] then Just value else Nothing
+        Ok ((kind,_) as value) -> if List.member kind ["projection-request","geometry-attach","geometry-facts-request","window-read","window-watch"] then Just value else Nothing
         Err _ -> Nothing
 
 receiveDisposition : D.Value -> Model -> (Model,List Controller.Effect)

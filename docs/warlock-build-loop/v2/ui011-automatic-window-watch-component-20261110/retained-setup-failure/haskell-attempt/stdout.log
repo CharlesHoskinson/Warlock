@@ -1,0 +1,143 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-10T14:37:18.377336+00:00",
+    "secondsSinceRecordedProgress": 11942,
+    "suspendedSeconds": 10,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": true,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [
+      "45-awake-minutes-without-tested-integration"
+    ],
+    "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+    "action": "Change the next action or defer in this same history.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "execute",
+    "executor": "Root",
+    "candidateId": "ui011-window-watch-protocol-runtime-current-20261110",
+    "candidateSha256": "9fbe3567b3fa27d08de9736276196c60cd3e6a7053494a2746fd35a4b25377c0",
+    "jobId": null,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "--review",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/window-watch-protocol-runtime-green-cpu/review-packet.json",
+      "--sha256",
+      "f5e3afbc448e707b8adfe23ad0e826f7b2815a29fae67740cbf0d32166529536"
+    ],
+    "expectedObservation": "Compile exact current protocol29 test and runtime library, then all29 ordered public protocol controls PASS. Existing current-cache/SDK/inventory/source/group checks, protocol300s/command120s/cleanup2s retained. No owner image, native, original or AT credit. Private RED/model evidence preserved; no managed expected-red pointer.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-10T14:37:18.377336+00:00",
+      "secondsSinceRecordedProgress": 11942,
+      "suspendedSeconds": 10,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}
+{"deliveryLaunch": {"record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json", "candidateSha256": "9fbe3567b3fa27d08de9736276196c60cd3e6a7053494a2746fd35a4b25377c0", "selection": 33, "scope": "cpu", "pid": 108248, "startTicks": "61327", "argv": ["/usr/bin/python3", "-B", "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py", "--review", "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/window-watch-protocol-runtime-green-cpu/review-packet.json", "--sha256", "f5e3afbc448e707b8adfe23ad0e826f7b2815a29fae67740cbf0d32166529536"], "acceptanceInferred": false}}
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-10T14:37:18.377336+00:00",
+    "secondsSinceRecordedProgress": 11945,
+    "suspendedSeconds": 9,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": true,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [
+      "45-awake-minutes-without-tested-integration"
+    ],
+    "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+    "action": "Change the next action or defer in this same history.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "execute",
+    "executor": "Root",
+    "candidateId": "ui011-window-watch-protocol-runtime-current-20261110",
+    "candidateSha256": "9fbe3567b3fa27d08de9736276196c60cd3e6a7053494a2746fd35a4b25377c0",
+    "jobId": null,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "--review",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/window-watch-protocol-runtime-green-cpu/review-packet.json",
+      "--sha256",
+      "f5e3afbc448e707b8adfe23ad0e826f7b2815a29fae67740cbf0d32166529536"
+    ],
+    "expectedObservation": "Compile exact current protocol29 test and runtime library, then all29 ordered public protocol controls PASS. Existing current-cache/SDK/inventory/source/group checks, protocol300s/command120s/cleanup2s retained. No owner image, native, original or AT credit. Private RED/model evidence preserved; no managed expected-red pointer.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-10T14:37:18.377336+00:00",
+      "secondsSinceRecordedProgress": 11945,
+      "suspendedSeconds": 9,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}

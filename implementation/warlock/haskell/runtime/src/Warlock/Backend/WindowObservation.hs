@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 -- One lexical, authenticated observation owner; no native action authority.
-module Warlock.Backend.WindowObservation (decodeSelection,Reader,newReader,admitReader,readWindowReply) where
+module Warlock.Backend.WindowObservation (decodeSelection,Reader,newReader,admitReader,readWindowReply,readWindowWatchReply) where
 import Control.Exception (SomeException,SomeAsyncException,try,throwIO,fromException)
 import Control.Monad (unless)
 import Data.IORef
@@ -114,13 +114,13 @@ decodeSelection bound raw = do
  executable <- selectedField "executable" endpoint >>= selectedExecutable
  pure (Owner.EndpointSelection (TE.encodeUtf8 boot) ancestors (T.unpack name) (Identity dev ino) uid mode processes executable (frontend bound))
 
-data Ledger = Ledger Counter Counter [(FT.Handle,Counter)] [(FT.Output,Counter)] Counter
+data Ledger = Ledger Counter Counter [(FT.Handle,Counter)] [(FT.Output,Counter)] Counter (Maybe FT.Snapshot)
 data Reader = Reader Binding AdmissionDeadline Owner.ForeignToplevelOwner
  (IORef Ledger) (IORef (Maybe (StableName Scope,PeerCredential))) (IORef Bool)
 newReader :: Binding -> AdmissionDeadline -> Owner.ForeignToplevelOwner -> IO Reader
 newReader bound deadline owner = do
  zero <- either (ioError . userError . show) pure (parseCounter True "0")
- Reader bound deadline owner <$> newIORef (Ledger zero zero [] [] zero) <*> newIORef Nothing <*> newIORef False
+ Reader bound deadline owner <$> newIORef (Ledger zero zero [] [] zero Nothing) <*> newIORef Nothing <*> newIORef False
 
 validateReaderScope :: Reader -> Scope -> PeerCredential -> IO ()
 validateReaderScope (Reader bound deadline _ _ admitted failed) scope credential = do
@@ -151,10 +151,10 @@ readWindowReply reader@(Reader bound deadline owner ledger _ failed) scope crede
  unless (D.requestBinding request==bound && D.requestKind request==D.WindowRead) (ioError (userError "window request binding differs"))
  result <- withCurrentAdmission scope credential $ do
   validateReaderScope reader scope credential
-  Ledger revision serial handles outputs lastRequest <- readIORef ledger
+  Ledger revision serial handles outputs lastRequest cached <- readIORef ledger
   unless (D.requestId request>lastRequest) (ioError (userError "window observation replay refused"))
   -- Consume before IO. Neither an uncertain read nor its response is replayed.
-  writeIORef ledger (Ledger revision serial handles outputs (D.requestId request))
+  writeIORef ledger (Ledger revision serial handles outputs (D.requestId request) cached)
   attempted <- try $ do
    left <- remainingMicros deadline
    unless (left>0) (ioError (userError "window observation deadline"))
@@ -165,7 +165,7 @@ readWindowReply reader@(Reader bound deadline owner ledger _ failed) scope crede
    unless (after>0) (ioError (userError "window observation deadline"))
    let (serialNext,handlesNext,outputsNext)=issued
    reply <- either (ioError . userError . T.unpack) pure (D.windowSnapshot bound raw >>= \value -> D.windowObservationReply bound (D.requestId request) "Observed" (Just value))
-   writeIORef ledger (Ledger next serialNext handlesNext outputsNext (D.requestId request))
+   writeIORef ledger (Ledger next serialNext handlesNext outputsNext (D.requestId request) (Just snapshot))
    pure reply
   case attempted of
    Right reply -> pure reply
@@ -203,3 +203,42 @@ encodeObserved bound revision serial handles outputs snapshot = do
  encoded <- mapM row rows
  currentOutputs <- mapM (ident knownOutputs) memberships
  pure ((afterOutputs,knownHandles,knownOutputs),JObject [("owner",JString (renderCounter (frontend bound))),("revision",JString (renderCounter revision)),("view",JString "global"),("outputs",JArray currentOutputs),("windows",JArray encoded)])
+
+-- This is a bounded authenticated read on the same lexical owner thread. It
+-- never starts a worker, reconnects, grants effects, or refreshes the deadline.
+readWindowWatchReply :: Reader -> Scope -> PeerCredential -> D.DesktopRequest -> IO D.DesktopReply
+readWindowWatchReply reader@(Reader bound deadline owner ledger _ failed) scope credential request = do
+ unless (D.requestBinding request==bound && D.requestKind request==D.WindowWatch) (ioError (userError "window watch binding differs"))
+ base <- maybe (ioError (userError "window watch revision absent")) pure (D.windowWatchRevision request)
+ let reply status snapshot = either (ioError . userError . T.unpack) pure (D.windowWatchReply bound (D.requestId request) base status snapshot)
+ result <- withCurrentAdmission scope credential $ do
+  validateReaderScope reader scope credential
+  Ledger revision serial handles outputs lastRequest cached <- readIORef ledger
+  unless (D.requestId request>lastRequest) (ioError (userError "window observation replay refused"))
+  writeIORef ledger (Ledger revision serial handles outputs (D.requestId request) cached)
+  -- A stale base consumes its request but performs no owner IO.
+  if base/=revision || cached==Nothing then reply "Unavailable" Nothing else do
+   attempted <- try $ do
+    left <- remainingMicros deadline
+    unless (left>0) (ioError (userError "window observation deadline"))
+    snapshot <- Owner.readToplevelSnapshot owner
+    after <- remainingMicros deadline
+    unless (after>0) (ioError (userError "window observation deadline"))
+    if cached==Just snapshot then reply "Unchanged" Nothing else do
+     next <- either (ioError . userError . show) pure (addCounter revision 1)
+     (issued,raw) <- either (ioError . userError . T.unpack) pure (encodeObserved bound next serial handles outputs snapshot)
+     value <- either (ioError . userError . T.unpack) pure (D.windowSnapshot bound raw)
+     changed <- reply "Changed" (Just value)
+     final <- remainingMicros deadline
+     unless (final>0) (ioError (userError "window observation deadline"))
+     let (serialNext,handlesNext,outputsNext)=issued
+     writeIORef ledger (Ledger next serialNext handlesNext outputsNext (D.requestId request) (Just snapshot))
+     pure changed
+   case attempted of
+    Right value -> pure value
+    Left (problem :: SomeException) -> do
+     writeIORef failed True
+     case fromException problem :: Maybe SomeAsyncException of
+      Just _ -> throwIO problem
+      Nothing -> reply "Unknown" Nothing
+ either (ioError . userError . show) pure result

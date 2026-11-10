@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "status": "PRIVATE-PROPOSED-NOT-ADOPTED-NOT-QUALIFIED",
+  "observedUTC": "2026-11-10T18:12:42.803848+00:00",
+  "originalInventory": {
+    "path": "/home/hoskinson/.local/share/warlock-toolchain/system-build-inputs.json",
+    "sha256": "33b9ed73bd1d249225d228a35c8f40ae941f690bca8f3626fb2e6f5e267ac7b4"
+  },
+  "originalToolchain": {
+    "path": "/home/hoskinson/Projects/Warlock/tools/arm64-toolchain.json",
+    "sha256": "0b21e24222813897a29f268b73625bc428ce24038ddcbe7f18337ef3a6b17edb"
+  },
+  "derivedInventory": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/system-build-inputs.json",
+    "sha256": "9984660710cec4b197733e953f00dc850b3876e77c977684e4c9605348e81f8f",
+    "destination": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/host-inventory-85f1-20261110/system-build-inputs.json"
+  },
+  "derivedToolchain": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/arm64-toolchain-host85.json",
+    "sha256": "3c1d2a31b3678b2cb8bedfd5b040af56a15ec44ebc43986a5a01b3567e4958c5",
+    "destination": ".warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/host-inventory-85f1-20261110/arm64-toolchain-host85.json"
+  },
+  "fileChanges": [
+    {
+      "path": "/usr/bin/desktop-file-install",
+      "before": {
+        "mode": 493,
+        "sha256": "0a026f038dac009b0b3befd9f3216d95f318d820f1a93c5b260b5274d87b934b"
+      },
+      "after": {
+        "mode": 493,
+        "sha256": "387030f333753b5168c2ea632de631be934e40996ab3e6f02396fee15e2e4dbb"
+      }
+    },
+    {
+      "path": "/usr/bin/desktop-file-validate",
+      "before": {
+        "mode": 493,
+        "sha256": "dc3eabe2df0950aa20fd0095abdcb754ae668e4efaa2ca8c4f756b8d4fb05779"
+      },
+      "after": {
+        "mode": 493,
+        "sha256": "8f2c835d6b42c0675015a127b0f6b69c32030b2c1efd951648f4e246886a085a"
+      }
+    },
+    {
+      "path": "/usr/bin/update-desktop-database",
+      "before": {
+        "mode": 493,
+        "sha256": "6d4104b0ec8ae5fd9ee3f947765e51d7fe00f22bda6ce720d3a074d3d1383cd7"
+      },
+      "after": {
+        "mode": 493,
+        "sha256": "3ea244385b968201fe4a17f850fe4d1799c72808400a79270f0e833b16d83f4b"
+      }
+    },
+    {
+      "path": "/usr/include/libstemmer.h",
+      "before": {
+        "mode": 420,
+        "sha256": "98f054ea78d1606e88305e792cc44af951cd4409db550170b8101a0cb1ff2535"
+      },
+      "after": {
+        "mode": 420,
+        "sha256": "37c200cbfa27cdb26cfcbc8a981002c53b054a32fddf3bc6d961bd6b8298a22a"
+      }
+    },
+    {
+      "path": "/usr/lib/libstemmer.so.0.0.0",
+      "before": {
+        "mode": 420,
+        "sha256": "34c396854602a89261a08db48a62780fa17ea0c69faf67bb495b676bc80c82a7"
+      },
+      "after": {
+        "mode": 420,
+        "sha256": "9bc486a3bcbbb0fb5b621aa9209b693ddaa198bc04977d785d053abf3b2d1ffd"
+      }
+    }
+  ],
+  "packageMetadataDeltas": [
+    {
+      "package": "desktop-file-utils",
+      "before": "desktop-file-utils 0.28-1",
+      "after": "desktop-file-utils 0.29-1"
+    },
+    {
+      "package": "libstemmer",
+      "before": "libstemmer 3.1.1-1",
+      "after": "libstemmer 3.2.0-1"
+    }
+  ],
+  "entryMembershipUnchanged": true,
+  "entryCount": 15851,
+  "onlyToolchainFieldChanged": "systemInputs",
+  "allCompilerCabalDependenciesTreesFilesABIPinsUnchanged": true,
+  "oldInventoryAndToolchainUnmodified": true,
+  "selected800LibraryAnd9InterpreterAnd10AbsentPreviousAudit": "zero mismatches in actual failed oldinventory scan; newinventory/fullcorrespondence stillneedsprotectedverification",
+  "executionPerformed": false,
+  "primaryWrites": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "actualAffectedPackages": {
+    "desktop-file-utils": "desktop-file-utils 0.29-1",
+    "libstemmer": "libstemmer 3.2.0-1"
+  },
+  "priorOverbroadPrivateDraftNotAdopted": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/derivation.json",
+    "sha256": "516b8c7ef1e2aff6e9dfc678fda52cd1c016e93d0367717d7b15f5c386dc6a77",
+    "correction": "Preserve original package membership; only corresponding two old entries may update. No primarywrites/qualification occurred."
+  }
+}

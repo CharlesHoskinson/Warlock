@@ -1,4 +1,4 @@
-module WindowObservation exposing (Snapshot, Row, replyDecoder, groups, fingerprint, rowsFor)
+module WindowObservation exposing (Snapshot, Row, WatchReply, watchReplyDecoder, sameContent, replyDecoder, groups, fingerprint, rowsFor)
 
 import Binding exposing (Binding)
 import Char
@@ -63,3 +63,26 @@ rowsFor key snapshot =
     in List.filter (\row -> root snapshot.windows [] row.id |> Maybe.map (\ident -> List.member ident roots) |> Maybe.withDefault False) snapshot.windows
 fingerprint : String -> Snapshot -> String
 fingerprint key snapshot = E.encode 0 (E.object [("owner",E.string (UInt64.string snapshot.owner)),("handles",rowsFor key snapshot |> List.map (.id >> UInt64.string) |> List.sort |> E.list E.string)])
+
+-- Watch correlation is distinct from ordinary observations. A revision alone
+-- cannot establish a content change or authorize retirement.
+type alias WatchReply = { binding : Binding, request : Counter, observedRevision : Counter, status : String, snapshot : Maybe Snapshot }
+watchReplyDecoder : D.Decoder WatchReply
+watchReplyDecoder = strict ["protocolVersion","kind","binding","requestId","observedRevision","status","snapshot"]
+    (D.map7 (\_ _ binding request observedRevision status snapshot -> {binding=binding,request=request,observedRevision=observedRevision,status=status,snapshot=snapshot})
+        (D.field "protocolVersion" (D.int |> D.andThen (\v -> if v==3 then D.succeed () else D.fail "Watch protocol")))
+        (D.field "kind" (D.string |> D.andThen (\v -> if v=="window-watch-result" then D.succeed () else D.fail "Watch kind")))
+        (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "observedRevision" positive)
+        (D.field "status" D.string) (D.field "snapshot" (D.nullable snapshotDecoder)))
+    |> D.andThen (\reply ->
+        let owner = D.decodeValue (D.field "frontend" positive) (Binding.encode reply.binding) |> Result.toMaybe
+        in case reply.snapshot of
+            Just snapshot ->
+                if reply.status=="Changed" && Just snapshot.owner==owner && UInt64.compare snapshot.revision reply.observedRevision==GT then D.succeed reply else D.fail "Watch changed snapshot"
+            Nothing -> if List.member reply.status ["Unchanged","Unknown","Unavailable"] then D.succeed reply else D.fail "Watch disposition")
+sameContent : Snapshot -> Snapshot -> Bool
+sameContent previous current =
+    let canonical snapshot =
+            {snapshot|revision=UInt64.zero,outputs=List.sortWith UInt64.compare snapshot.outputs
+                ,windows=snapshot.windows |> List.map (\row -> {row|states=List.sort row.states,outputs=List.sortWith UInt64.compare row.outputs}) |> List.sortWith (\a b -> UInt64.compare a.id b.id)}
+    in canonical previous==canonical current
