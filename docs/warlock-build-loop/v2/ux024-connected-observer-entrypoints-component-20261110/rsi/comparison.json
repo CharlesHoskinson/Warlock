@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "4a5ddc83e3845adb5835e11d9b7a30c2b6cf33c4f8ff7eb3b988bf65685d45aa",
+  "baselinePluginSha256": "2e4f6057d0dceb584569481fe433377118a76df792f9a41790c122eaf4533430",
+  "baselineSnapshotSha256": "2965e3ff233def6d6fd5ce08ee639988352a60de5eb04d5338c43eb8112253b3",
+  "candidateSnapshotSha256": "493af8b0496edbc9cca2c97b723e3db0535e9b0cde6abbbfcb91bea85a402e0f",
+  "immutableHashes": {
+    "taskFiles": "207754f33eb4b0946be19e25aeb39ab6a0c910be89edec15c1e2fc4459081d6c",
+    "sourceFiles": "6d8bc6ae2ebf6d9ebc144ce7fdcbf076a1523d1621e23c1739a97164d77c3899",
+    "oracleFiles": "566ce61a4d4257ce0a7560f450c84ed8babd440b7eab931d97773cc9142aa75c",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "ae09ad60374e6b4b275dd904b3ac9ce266b9c86cc84343b015673d8fbe99b6a6",
+    "pluginBaselineFiles": "2e4f6057d0dceb584569481fe433377118a76df792f9a41790c122eaf4533430"
+  },
+  "checks": [
+    {
+      "name": "builder:test_only_two_closed_build_targets_and_no_cabal_execution",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_only_fixed_pure_allocation_branch_executes",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_source_tree_rejects_symlink_and_extra_membership",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_source_tree_rejects_actual_changed_body",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_sandbox_hides_host_run_and_binds_source_readonly",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_external_system_inventory_is_mounted_readonly",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_pinned_standard_inventory_alias_precedes_callback_import",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_reaped_leader_is_never_signalled",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_live_leader_timeout_is_explicit_forced_failure",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_deadline_clips_to_authorization_and_never_extends",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_retained_group_after_leader_reap_refuses_without_signalling",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_exact_endpoint_suite_pair_and_old_default_preserved",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_endpoint_uses_only_same_control_image_and_exact_receipt",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_endpoint_inherits_parent_authorization_and_five_second_limit",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_main_dispatches_only_validated_suites_before_build_or_spawn",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_exact_hash_argument_and_literal_runner_only",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_complete_fixed_closure_and_metadata",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_scope_targets_unknown_fields_and_actor_record_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_incomplete_extra_haskell_or_support_hashes_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_reference_escape_symlink_and_oversize_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_old_elm_mode_unchanged",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_exact_endpoint_cpu_pair_admitted_with_same_closed_inputs",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_endpoint_single_reverse_duplicate_extra_and_command_fields_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-connected-owner-entrypoints-no-change-v1/regression.json",
+    "sha256": "c269540cebd9b08aa87bbe0819724a7b148839a374018f4146d7e6a467f60a85"
+  }
+}

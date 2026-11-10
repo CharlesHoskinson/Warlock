@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "kind": "fixed-source-only-connected-native-observer-runner",
+  "posts": [
+    {
+      "path": "tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "52b9eed460c56461bf574f3e9703835e576fe931e89420bd3b7b2ddf1e37e15a"
+    },
+    {
+      "path": "tools/ux024_foreign_toplevel_attempt_authorization.py",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/postimages/tools/ux024_foreign_toplevel_attempt_authorization.py",
+      "sha256": "1a9d76785b64ee1d43fd44319da490a370aa0a913142695a832334f9b6b46f8c"
+    },
+    {
+      "path": "tools/test_ux024_foreign_toplevel_observer.py",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/postimages/tools/test_ux024_foreign_toplevel_observer.py",
+      "sha256": "020b596066cac2de350cda509370a8be1d9675fb7cfce5c9bd79fbcf173334cf"
+    },
+    {
+      "path": "tools/test_ux024_foreign_toplevel_attempt_authorization.py",
+      "beforeSha256": null,
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/postimages/tools/test_ux024_foreign_toplevel_attempt_authorization.py",
+      "sha256": "b1fa832a90669c446412b35d91f9f068ef5fc95010a61fbedaf96f52436edd3b"
+    }
+  ],
+  "template": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/packet.UNARMED.json",
+    "sha256": "0fc3ea18b842bfe0e94e18bf21af09647ddb2e9a0d37add6ba62aae8f7a23965",
+    "armed": false
+  },
+  "inherited": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-native-runner/inherited-source-blocks.json",
+    "sha256": "85441dac2dd1e9fecb2cc8c7d84ce9f0f87f84df4a1df8d1a489c89323edb421"
+  },
+  "contract": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/connected-observer-implementation/revision2-arm64-open-flags/contract.json",
+    "sha256": "6490c0202f7377f9a768cce6a6e558b01bd32dae92eb40dc04ddd2f021dbecf5"
+  },
+  "freshTwoTargetBuild": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794275742328804070/report.json",
+    "sha256": "e986cbcd2d0abb9f394c7e0b967fc4199fbcc1282f8889c493d27ee38aca58fb",
+    "ownerSha256": "de2500e7e626ccab3334fe18e1f206f2d802e6e5e325ad61a2bb3ae5fe37d165",
+    "controlsSha256": "6cdbe73d0bdac410a322ca3d52b6deb9b435d5ae074c7fd4010b4e3ca38bef3c"
+  },
+  "tests": {
+    "newPureMockControls": 14,
+    "seedSamples": 32,
+    "existingAuthorizationControls": 27,
+    "authorExecuted": false,
+    "ASTParsedOnly": true
+  },
+  "authorizationDerivative": "Exact incumbent authorizationmodule with only RECORDliteral\u2192currentUX024, same original28+2/seals/goal/canonicalrenewal checks; same oldtests with importtarget-only change.",
+  "fixedNativeScope": {
+    "commands": [
+      "READ_INITIAL",
+      "READ_WINDOW",
+      "READ_CLOSED",
+      "RETIRE+EOF"
+    ],
+    "snapshotReadsMax": 33,
+    "frameLimit": 16,
+    "actualFramesIssued": 1,
+    "input": [
+      "existing close-gui Alt+F4 only after current closed DOM gate +sameownedactivePID/image/IPC"
+    ],
+    "ordinaryCpuFlagsNeverExecutedByNativeRunner": true,
+    "nativeFlagsNeverAdmittedByQaCpu": true,
+    "requirementsCredit": 0,
+    "scenariosCredit": 0
+  },
+  "closeReadyPredicate": "Sourcebound initial Desktop.openFalse/Surface.closed; actualrole/PID/heldroot/request/time/pub/lease validated via copiedsameWebKitphasechannel. Require bar/currentbinding+view DOMopener identity, popupclosed/no controls/no query/loading, lease0, no popupfocus. Independent exact980x680ownedwindow+activeIPC proof. No fabricated Gtk allocation telemetry or Notifications9step alias.",
+  "requiredBeforeExecution": [
+    "Root independent source review +protected14puremock controls and exact27authorization tests; no newquorum.",
+    "Finish/consume actual current compiledMain job and bind its freshowner/control images; current report1794275742328804070 is already actualpassed.",
+    "NormalRoot supportclaims/precheck/lockedCAS for4newtools; no primary source edits by author.",
+    "Root/Build complete actual assetSources selectors from existing reports/systeminventory, exact processmappinginventory+ABI, current attemptauthorization under actualrecord29/latestcanonicalgoal, and refreshed metadata-only keyboardcurrentSourcePins correspondence if oldcore metadata differs.",
+    "Three existing scoped readiness roles bind exact freshcomponent metadata; normal sourcebound nativecandidate/review/prereqs under unchangedqa_run.",
+    "Same actualcurrentboot/provider/source/docs/schema receipts reused immutably. Olddocs are declared fixture-only, not current Elm/native acceptance. No synthetic childPID/ack/constructor proof."
+  ],
+  "limits": [
+    "Source only; no author imports of targetmodules, tests, build, GUI/native/socket/broker execution or primarywrites.",
+    "Actual Done must match independently mapped ownedwindowtitle/appID; samelexicalowner Closedabsence and actual Retired plus normal0/reap/groups/runtime/backingabsence. RetainedUnknown, forcedcleanup or missingwitness remain failure/unknown.",
+    "Currentrecord/start/history/sourceclock/auth14:40 preserved. No serviceexpansion/coreplugin/launcher/timeout/GPUguard changes."
+  ]
+}
