@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "scope": "same23mockedbuilder/admissioncontrols twice, no compiler/runtime/native/fullsuite",
+  "observedUTC": "2026-11-10T01:36:28.054452+00:00",
+  "results": [
+    {
+      "phase": "baseline",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-endpoint-admission-no-change-v1/baseline-builder.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-endpoint-admission-no-change-v1/baseline-builder.stderr",
+        "sha256": "e81a27ee71b13a8133df39b4bcff6f29c1ecdf41ced1d401c6dcc75fdc53c26a"
+      }
+    },
+    {
+      "phase": "baseline",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-endpoint-admission-no-change-v1/baseline-admission.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-endpoint-admission-no-change-v1/baseline-admission.stderr",
+        "sha256": "b440043f85ee561300cedc065409a0f719f75ba22eaef6ae01902033f3c91dd1"
+      }
+    },
+    {
+      "phase": "candidate",
+      "label": "builder",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-endpoint-admission-no-change-v1/candidate-builder.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-endpoint-admission-no-change-v1/candidate-builder.stderr",
+        "sha256": "fed497b51372f72f9fe6b8e8787c9972bd114dcd55f1c803010f6e3b61a71a16"
+      }
+    },
+    {
+      "phase": "candidate",
+      "label": "admission",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_admission.py",
+        "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+        "/home/hoskinson/Projects/Warlock",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-endpoint-admission-no-change-v1/candidate-admission.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-runtime-endpoint-admission-no-change-v1/candidate-admission.stderr",
+        "sha256": "c037d21f3ef052e7f62de735ca46014711b78d031548765cbf51f76cd05bbf5c"
+      }
+    }
+  ]
+}
