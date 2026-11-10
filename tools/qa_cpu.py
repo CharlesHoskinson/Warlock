@@ -342,6 +342,52 @@ def window_watch_protocol_spec(root):
         immutable.add(relative)
     return {'manifestSha256':msha,'names':names|immutable|{WINDOW_WATCH_PROTOCOL_CONFIG+'/manifest.json',WINDOW_WATCH_PROTOCOL_CONFIG+'/inputs.json'}}
 
+OPENER_AT_CPU_RUNNER = 'tools/run_ui011_opener_at_cpu.py'
+OPENER_AT_CPU_CONFIG = '.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-opener-at-prerequisite-v7'
+OPENER_AT_CPU_SUPPORT = (WINDOW_WATCH_PROTOCOL_SUPPORT - {'tools/run_ui011_window_watch_protocol_cpu.py', 'tools/test_ui011_window_watch_protocol_cpu.py'}) | {'tools/run_ui011_opener_at_cpu.py', 'tools/test_ui011_opener_at_cpu.py'}
+OPENER_AT_FIXTURES = {'OpenerMain.hsc': '539d641a8343b08828ef362a6047c366dfeabe15048a80f015f71f36417811bf', 'OpenerAdmission.hs': '93ec5e0403840b6288f490bbdcfd666f5429d62f73370a9e8f1fb095d89ac578', 'runtime.cabal.fragment': '8b7015e13c2c36453dc068e08b861774d213edaa24a26e3d56401850e8aa7f89', 'OpenerAdmissionControls.hs': 'd3f41b24160f79e3707c2d527a09d3240f9e926b238932e6aa489a71d7795974', 'ATTransportControls.hs': '621cb504694d6d0001c1819abf2855ab612d510e9151b1d47bc3593b2c8d27c9'}
+
+def opener_at_cpu_mode(runner, arguments, manifest_sha):
+    return runner == REPO / OPENER_AT_CPU_RUNNER and arguments == ['opener-at','--manifest-sha256',manifest_sha]
+
+def opener_at_cpu_spec(root):
+    base = root / OPENER_AT_CPU_CONFIG
+    def fixed_json(path):
+        if path.is_symlink() or not path.is_file() or path.resolve() != path or path.stat().st_size > 4*1024*1024:
+            raise RuntimeError('Fixed opener/AT metadata must be canonical bounded regular JSON')
+        body=path.read_bytes();return json.loads(body),hashlib.sha256(body).hexdigest()
+    manifest,msha=fixed_json(base/'manifest.json');data,dsha=fixed_json(base/'inputs.json')
+    expected_files=[{'path':str(base/'inputs.json'),'sha256':dsha},{'path':str(root/OPENER_AT_CPU_RUNNER),'sha256':data['sourceHashes'].get(OPENER_AT_CPU_RUNNER)}]
+    if (set(manifest)!={'schema','kind','profiles','files','inputs'} or manifest['schema']!=1
+        or manifest['kind']!='ui011-fixed-opener-at-prerequisite' or manifest['profiles']!={'opener-at':300}
+        or manifest['files']!=expected_files or manifest['inputs']!={'path':str(base/'inputs.json'),'sha256':dsha}
+        or data['record']!='.warlock-contributor/ui011-observed-opener-closure-root-20261110.json'
+        or data['recordIdentitySha256']!='92c1b16592f13f61b89310cd071b2a48554bf6caf7effa4d395ca78ccb9096ad'
+        or data['profiles']!={'opener-at':300} or data['fixtures']!=OPENER_AT_FIXTURES):
+        raise RuntimeError('Closed current opener/admission/AT profile differs')
+    bundle=root/'.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/fixed-opener-at-fixtures-v6'
+    if any(data['immutableFiles'].get(str(bundle/name))!=pin for name,pin in OPENER_AT_FIXTURES.items()):
+        raise RuntimeError('Exact five frozen staged fixture paths required')
+    names=set(OPENER_AT_CPU_SUPPORT)
+    for folder,key in [('haskell','haskellFiles'),('src','elmFiles')]:
+        top=root/'implementation/warlock'/folder;actual={}
+        for p in top.rglob('*'):
+            if any(part in ('dist-newstyle','__pycache__')for part in p.relative_to(top).parts):continue
+            if p.is_symlink()or(not p.is_dir()and not p.is_file()):raise RuntimeError('Source alias/special file')
+            if p.is_file():actual[str(p.relative_to(top))]=digest(p)
+        if actual!=data[key]:raise RuntimeError('Current complete source tree differs')
+        names.update('implementation/warlock/'+folder+'/'+n for n in actual)
+    if set(data['sourceHashes'])!=names or any(digest(root/n)!=h for n,h in data['sourceHashes'].items()):
+        raise RuntimeError('Fixed opener/AT complete source/support closure differs')
+    immutable=set()
+    for name,h in data['immutableFiles'].items():
+        p=Path(name)
+        try:relative=str(p.relative_to(root))
+        except ValueError:raise RuntimeError('Fixed opener/AT evidence outside repo')from None
+        if p.resolve()!=p or p.is_symlink()or not p.is_file()or digest(p)!=h:raise RuntimeError('Fixed opener/AT immutable input differs')
+        immutable.add(relative)
+    return {'manifestSha256':msha,'names':names|immutable|{OPENER_AT_CPU_CONFIG+'/manifest.json',OPENER_AT_CPU_CONFIG+'/inputs.json'}}
+
 MENU_FOCUS_BUILD_PACKET = '.warlock-contributor/evidence/nextloop-20261106/ux024-menu-focus-build-v1-20261109/packet.json'
 MENU_FOCUS_BUILD_RECORD = '.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
 MENU_FOCUS_BUILD_IDENTITY = '60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
@@ -461,6 +507,8 @@ def main():
     if set(packet) != {'schema', 'runner', 'arguments', 'inputs'} or packet['schema'] != 1:
         raise RuntimeError('Unknown CPU review shape')
     runner = Path(packet['runner'])
+    opener_at = runner == REPO / OPENER_AT_CPU_RUNNER
+    opener_at_spec = opener_at_cpu_spec(REPO) if opener_at else None
     window_watch_protocol = runner == REPO / WINDOW_WATCH_PROTOCOL_RUNNER
     window_watch_spec = window_watch_protocol_spec(REPO) if window_watch_protocol else None
     registry = runner == REPO / 'tools/check_registry_cpu.py'
@@ -478,6 +526,8 @@ def main():
         allowed=[packet['arguments']]
     if menu_tab_dom_mode(runner, packet['arguments']):
         allowed = [['--menu-tab-dom', '--arm64']]
+    if opener_at:
+        allowed = [['opener-at','--manifest-sha256',opener_at_spec['manifestSha256']]]
     if window_watch_protocol:
         allowed = [['protocol','--manifest-sha256',window_watch_spec['manifestSha256']]]
     if menu_focus_build:
@@ -494,7 +544,7 @@ def main():
                    for tail in ([], ['--tests-only'])]
     if capi_controls:
         allowed = [[]]
-    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and not capi_controls and not menu_focus_build and not window_watch_protocol and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+    if (not registry and not haskell and not tea and not continuity and not arm64 and not team_quint and not capi_controls and not menu_focus_build and not window_watch_protocol and not opener_at and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
@@ -613,6 +663,8 @@ def main():
         mandatory = capi_invocation_controls_inputs(REPO)
     if menu_tab_dom_mode(runner, packet['arguments']):
         mandatory = menu_tab_dom_inputs(REPO)
+    if opener_at:
+        mandatory = opener_at_spec['names']
     if window_watch_protocol:
         mandatory = window_watch_spec['names']
     if observation_elm_variant(runner,packet['arguments']):
@@ -650,7 +702,7 @@ def main():
         reviewed_inputs(packet)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
-            return child.wait(timeout=302 if window_watch_protocol else (902 if menu_focus_build else (3600 if haskell or arm64 or team_quint else (600 if tea else 240))))
+            return child.wait(timeout=302 if window_watch_protocol else 302 if opener_at else (902 if menu_focus_build else (3600 if haskell or arm64 or team_quint else (600 if tea else 240))))
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             os.killpg(child.pid, signal.SIGTERM)
             try:

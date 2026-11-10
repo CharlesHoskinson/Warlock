@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "candidateSha256": "bfbd93f91329c51d146bfb0bd0f8248e5ce23904abb4cb1071692022c6926898",
+  "jobId": "pid1056785-start807909",
+  "outerHandleConsumed": true,
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "6bb4324cf993765fb1bc0c811d825c48d82ee89346badc7af511092942f7473a",
+    "implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm": "ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273",
+    "implementation/warlock/qa/ui011-observed-scope-retirement.cjs": "ca51900ed2edc6b0a74403e98e0cff33cffae6b18a924f96ce5216b21342206b",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "78b46c625bdfb4e0781938f9fb59bd35f60df0d95bb7d1c5f48305ecbfc52b65",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "3b8f13574f28112f6aed316c778bf132e6e431be7de6a0ab36549b254083aad5",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs": "01648a3ce02bc033b4e7c682979f863240b79db95cccfb6997a636cd78b19fd0",
+    "implementation/warlock/src/WindowObservation.elm": "c14c481ae42b197847194c880a4de80146943158cfd21cd56c7ab6b01e839840",
+    "implementation/warlock/src/Shell.elm": "89e00985854126b005cbb9be12d1d6afe97d402f3753f6f86544540017895baf",
+    "implementation/warlock/src/MenuBridge.elm": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544",
+    "implementation/warlock/src/DesktopPolicy.elm": "e8e547e2678c97bd3e4c494bd7a8a5521ef3b0cab82bdcf406f1709d3ea084c4",
+    "implementation/warlock/src/SurfaceController.elm": "e0a7a0861e9266e41ef3b5705f4bb42e3ec11536f69ca6a25928bf0f5ec5b6a9",
+    "implementation/warlock/src/OutputController.elm": "1ccce8b97a4f770a4f1f7f2446b9eafdc07062fc099e51506bcd35268bafb614",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs": "4aea5886d6d63f1e613e4073c835f51751d8d690df08b6d7ac89fb1b12f5af5e",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": "db965d55b0a8df65c5418d12f0e91b8bb3b0cab4a2ca7191d7d82fd033d9acca"
+  },
+  "rawResultSha256": "4da6c61552527cfcbb99dbb28f54173e4a1dc8f35f55c37ab4d3f2af037ceacc",
+  "independentResultReviewSha256": "b0f7f117526eef925869330c2acb3bdddb9d35d0331277deac0ff29e39f9884c",
+  "fourTargetsCompiled": true,
+  "allEightCommandsPassed": true,
+  "openerAdmission": {
+    "contracts": 22,
+    "seeds": 32
+  },
+  "atTransport": {
+    "cases": 18,
+    "seeds": 32
+  },
+  "engineCustodyControlsPassed": true,
+  "fixtureMapEqualsCustodyRED": true,
+  "historicalATREDUsesDifferentSetupBytes": true,
+  "sourceInputsUnchanged": true,
+  "cleanupQualified": true,
+  "openerExecuted": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "scope": "CPU transport and owned custody controls. Full original242/417 goal remains incomplete. Original ledger21/47 unchanged."
+}

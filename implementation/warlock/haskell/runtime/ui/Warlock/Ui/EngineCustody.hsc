@@ -35,7 +35,7 @@ import Control.Exception (IOException, SomeException, SomeAsyncException, fromEx
 import Control.Monad (unless, when)
 import Data.Bits ((.|.), (.&.), complement)
 import Data.Word (Word32, Word64)
-import Data.List (elemIndices)
+import Data.List (elemIndices, isPrefixOf)
 import GHC.Clock (getMonotonicTimeNSec)
 import qualified Data.ByteString as B
 import qualified Data.Text as T
@@ -252,23 +252,33 @@ stopCustody remaining custody@(Custody _ pidfdCell) = mask $ \_ -> do
   Just pidfd -> do
    owned <- verifyChild pidfd
    if not owned then pure False else do
-    let loop = do
+    let ownerReserve = 200000
+        loop reserve = do
          left <- remaining
-         if left <= 200000 then pure False else do
+         if left <= reserve then pure False else do
           flags <- pollFlags pidfd
           if flags .&. #{const POLLIN} /= 0 then reapChild pidfd else
-           if flags /= 0 then pure False else threadDelay (min 1000 (left-200000)) >> loop
-    -- A normal lifeline EOF must be allowed to retire PID1 first. This old
-    -- Bool reports only observed reap, NEVER the new normal-exit receipt.
-    natural <- try loop :: IO (Either IOException Bool)
+           if flags /= 0 then pure False else threadDelay (min 1000 (left-reserve)) >> loop reserve
+    -- Divide only the time still available above the original owner reserve.
+    -- Natural EOF gets the first half; an owned kill and observed reap retain
+    -- the second half under the SAME remaining action, never a new deadline.
+    -- This Bool reports observed reap, NEVER the new normal-exit receipt.
+    natural <- try (do
+      available <- remaining
+      if available <= ownerReserve then pure False
+       else loop (ownerReserve + (available-ownerReserve) `div` 2)) :: IO (Either IOException Bool)
     case natural of
      Right True -> pure True
      _ -> do
-      direct <- verifyChild pidfd
-      if not direct then pure False else do
-       _ <- c_pidfdSignal #{const SYS_pidfd_send_signal} pidfd #{const SIGKILL} nullPtr 0
-       fallback <- try loop :: IO (Either IOException Bool)
-       pure (either (const False) id fallback)
+      fallback <- try (do
+       left <- remaining
+       if left <= ownerReserve then pure False else do
+        direct <- verifyChild pidfd
+        stillLeft <- remaining
+        if not direct || stillLeft <= ownerReserve then pure False else do
+         signalled <- c_pidfdSignal #{const SYS_pidfd_send_signal} pidfd #{const SIGKILL} nullPtr 0
+         if signalled /= 0 then pure False else loop ownerReserve) :: IO (Either IOException Bool)
+      pure (either (const False) id fallback)
 
 -- Safe even if called repeatedly. No wait/reap here.
 abandonCustody :: Custody -> IO ()
@@ -977,15 +987,27 @@ requireProcfs = bracket (openFd "/proc" ReadOnly defaultFileFlags) closeFd $ \(F
 
 -- Trusted config only: do not pass an inherited environment wholesale. The
 -- separately reviewed Display validation must establish the runtime directory
--- and Wayland socket first. Duplicate, NUL and unexpected names are fatal.
+-- and selected sockets first. Duplicate, NUL and unexpected names are fatal.
+-- Namespace entry preserves numeric UID, but captured outer ancestor ownership
+-- must not be reinterpreted here. This optional address grants no AT authority.
 engineEnvironment :: [(String,String)] -> IO [String]
 engineEnvironment pairs = do
   let keys = map fst pairs
-      valid (key,value) = key `elem` ["LANG","LC_ALL","XDG_RUNTIME_DIR","WAYLAND_DISPLAY"]
+      valid (key,value) = key `elem` ["LANG","LC_ALL","XDG_RUNTIME_DIR","WAYLAND_DISPLAY","AT_SPI_BUS_ADDRESS"]
                        && '\0' `notElem` value && not (null value)
       unique [] = True
       unique (x:xs) = x `notElem` xs && unique xs
   require (all valid pairs && unique keys) "engine environment invalid"
+  case lookup "AT_SPI_BUS_ADDRESS" pairs of
+    Nothing -> pure ()
+    Just address -> do
+      uid <- getEffectiveUserID
+      let base = "/run/user/" ++ show uid
+      case (lookup "XDG_RUNTIME_DIR" pairs, lookup "WAYLAND_DISPLAY" pairs) of
+        (Just runtime, Just _) ->
+          require ((base ++ "/") `isPrefixOf` runtime
+            && address == "unix:path=" ++ runtime ++ "/a11y-bus") "engine AT transport invalid"
+        _ -> ioError (userError "engine AT transport requires selected display")
   pure [key ++ "=" ++ value | (key,value) <- pairs]
 
 -- START PHASE ONLY. Called after native adoption and binding all origins, but

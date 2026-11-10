@@ -1,0 +1,19 @@
+-- QA fixture only. The release package allowlist must not include this target.
+executable ui011-opener-fixture
+  hs-source-dirs: fixture-ui011-opener, ui
+  main-is: Main.hs
+  other-modules: OpenerAdmission, Warlock.Ui.DefaultContextOwner
+  pkgconfig-depends: gobject-2.0, gio-2.0
+  extra-libraries: gtk-4, gobject-2.0, gio-2.0, glib-2.0
+  build-depends: base >=4.18 && <5, bytestring, text, unix, cryptohash-sha256 ==0.11.102.1, warlock-protocol, warlock-process-custody, warlock-runtime
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+test-suite ui011-opener-admission-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-ui011-opener
+  main-is: Main.hs
+  other-modules: OpenerAdmission
+  build-depends: base >=4.18 && <5, bytestring, text, warlock-protocol
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates

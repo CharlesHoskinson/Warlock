@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifestSha256": "309594e428c27939de296e1d433ae44f01a847c272bc7b732ba0dfa26a771c8d",
+  "verified": [
+    "Exactly Display.hs and EngineCustody.hsc change after actual frozen AT18/32 semanticRED; tests/source preimages and manifest refs exact.",
+    "captureDisplayEnvironment reads only explicit optional AT_SPI_BUS_ADDRESS; absence preserves old capture, explicit captureDisplayTransport/resolveDisplayEnvironment still select noAT. Ambient session/system bus variables never forwarded.",
+    "Present selection requires exact unix:path=<validated owned0700 private runtime descendant>/a11y-bus; lstat rejects symlinks/non-sockets/foreign owners; before/after private ancestors and both socket identities must match.",
+    "Existing opaque DisplayEnvironment forwards optional selected value. Engine final environment permits only original4keys plusAT, rejects duplicate/empty/NUL, requires selected runtime/Wayland and exact address relation. No wholesale ambient environment, FDs/namespace/deadline/action authority changes."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "Transport pathname selection does not authenticate future bus peer; actual SO_PEERCRED/unique-owner/process genealogy/focus/native cleanup remain unqualified.",
+    "Static type/source review only, no compiler/tests/imports/primary edits. Unchanged18/32 needs actualGREEN and existing ui-engine-controls must compile/execute changed EngineCustody before native use, per Root qualification scope.",
+    "No AT/native/original acceptance."
+  ]
+}

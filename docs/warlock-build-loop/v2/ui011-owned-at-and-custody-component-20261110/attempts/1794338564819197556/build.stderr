@@ -1,0 +1,91 @@
+Warning: Specifying an absolute path to the project file is deprecated. Use
+--project-dir to set the project's directory.
+Warning: No remote package servers have been specified. Usually you would have
+one specified in the config file.
+
+src/Crypto/Hash/SHA256.hs:144:19: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+144 | copyCtx dst src = memcpy (castPtr dst) (castPtr src) (fromIntegral sizeCtx)
+    |                   ^^^^^^
+
+src/Crypto/Hash/SHA256.hs:336:53: warning: [GHC-68441] [-Wdeprecations]
+    In the use of ‘memcpy’
+    (imported from Data.ByteString.Internal, but defined in Data.ByteString.Internal.Type):
+    Deprecated: "Use Foreign.Marshal.Utils.copyBytes instead"
+    |
+336 |                    withByteStringPtr t' $ \tptr' -> memcpy p tptr' 32
+    |                                                     ^^^^^^
+configure: WARNING: unrecognized options: --with-compiler
+configure: WARNING: unrecognized options: --with-compiler
+
+fixture-ui011-opener/Main.hsc:12:1: error:
+    Could not load module ‘Crypto.Hash.SHA256’
+    It is a member of the hidden package ‘cryptohash-sha256-0.11.102.1’.
+    Perhaps you need to add ‘cryptohash-sha256’ to the build-depends in your .cabal file.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+12 | import qualified Crypto.Hash.SHA256 as SHA256
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+fixture-ui011-opener/Main.hsc:26:1: error:
+    Could not load module ‘System.Posix.Files’
+    It is a member of the hidden package ‘unix-2.8.6.0’.
+    Perhaps you need to add ‘unix’ to the build-depends in your .cabal file.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+26 | import System.Posix.Files
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^...
+
+fixture-ui011-opener/Main.hsc:29:1: error:
+    Could not load module ‘System.Posix.IO’
+    It is a member of the hidden package ‘unix-2.8.6.0’.
+    Perhaps you need to add ‘unix’ to the build-depends in your .cabal file.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+29 | import System.Posix.IO (fdToHandle, closeFd)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+fixture-ui011-opener/Main.hsc:30:1: error:
+    Could not load module ‘System.Posix.Process’
+    It is a member of the hidden package ‘unix-2.8.6.0’.
+    Perhaps you need to add ‘unix’ to the build-depends in your .cabal file.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+30 | import System.Posix.Process (getProcessID)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+fixture-ui011-opener/Main.hsc:32:1: error:
+    Could not load module ‘System.Posix.User’
+    It is a member of the hidden package ‘unix-2.8.6.0’.
+    Perhaps you need to add ‘unix’ to the build-depends in your .cabal file.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+32 | import System.Posix.User (getRealUserID)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+fixture-ui011-opener/Main.hsc:35:1: error:
+    Could not find module ‘Warlock.Ui.DefaultContextOwner’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+35 | import Warlock.Ui.DefaultContextOwner
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...
+
+fixture-ui011-opener/Main.hsc:37:1: error:
+    Could not find module ‘Warlock.Ui.Display’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+37 | import Warlock.Ui.Display (captureDisplayEnvironment)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+fixture-ui011-opener/Main.hsc:38:1: error:
+    Could not find module ‘Warlock.Ui.PrivateNetwork’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+38 | import Warlock.Ui.PrivateNetwork (enterPrivateNetwork)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: [Cabal-7125]
+Failed to build test:ui011-opener-admission-controls from warlock-runtime-0.1.0.0.
+
