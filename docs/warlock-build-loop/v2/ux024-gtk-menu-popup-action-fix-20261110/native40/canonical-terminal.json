@@ -1,0 +1,38 @@
+{
+  "terminal": true,
+  "jobId": "pid1015261-start6692523",
+  "candidateSha256": "46a4a085f1778ea1be4e4b58f169b22b2c2301583888fd6defc38365fa45b092",
+  "scope": "native",
+  "manifestSha256": "ef51e48648bee81017da7b45c0a90d2d9a3edebda0e23ea1d22bfda04d27c737",
+  "fixtureSha256": "b968b1f425aa7ce97cbed5a88ee08d97aa52c4d1df5ccd8ec09f8f67c9d1e380",
+  "exit": 1,
+  "classification": "failed",
+  "failureSignature": "tab-focus-remains-close-native-context-menu-visible",
+  "actualOuterHandle": "63480",
+  "actualOuterHandleConsumed": true,
+  "rawReport": {
+    "path": ".warlock-contributor/ux024-connected-observer-1794301216374250807/report.json",
+    "sha256": "a01b1ecc7c01fcc3467e8e2f2a0b695534bf1f276a50a5b750c65f95c24670ea"
+  },
+  "sourcePinsUnchanged": true,
+  "diagnosticOnly": true,
+  "diagnosticRaw": {
+    "path": ".warlock-contributor/ux024-connected-observer-1794301216374250807/mvp-diagnostic.raw",
+    "sha256": "7965c9fe2c88f90f0b00bfeb31e19d531d789b82f850904c46a9a13e4f0dfb96"
+  },
+  "diagnosticCapture": {
+    "status": "live-or-unstable-prefix-unknown",
+    "writerLiveOrUnknown": true,
+    "stableDuringRead": true,
+    "complete": false,
+    "bytes": 284,
+    "acceptanceAuthority": false,
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794301216374250807/mvp-diagnostic.raw",
+    "sha256": "7965c9fe2c88f90f0b00bfeb31e19d531d789b82f850904c46a9a13e4f0dfb96"
+  },
+  "forcedCleanup": false,
+  "cleanupUnknown": true,
+  "globalRestoration": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

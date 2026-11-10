@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "actualTrace": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794301216374250807/mvp-diagnostic.raw",
+    "sha256": "7965c9fe2c88f90f0b00bfeb31e19d531d789b82f850904c46a9a13e4f0dfb96"
+  },
+  "actualFailedReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794301216374250807/report.json",
+    "sha256": "a01b1ecc7c01fcc3467e8e2f2a0b695534bf1f276a50a5b750c65f95c24670ea"
+  },
+  "traceInterpretation": "Captured six records show registered visible roles and Bar WebView focus before F10, then focus other/bar plus GtkPopoverMenu/bar. GtkTextView type is source-derived inference, not an actual trace type identification; absence of callback records applies only to retained prefix.",
+  "sourceChain": [
+    {
+      "source": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/WebKitWebViewBase.cpp.response",
+        "sha256": "208fcce5a570221147dcda99967c835d3672b4913b10b13d88f3117247f6a2e3"
+      },
+      "lines": "1290-1291,2365",
+      "fact": "GTK4 key handler obtains translated commands before WebProcess handling; translator widget is parented directly under WebView."
+    },
+    {
+      "source": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/KeyBindingTranslator.cpp.response",
+        "sha256": "2d4a7a163f1d7c51caad05d8528c690efda5a3f592ce6505ffce18240fb96524"
+      },
+      "lines": "160-177,231-235",
+      "fact": "Translator owns GtkTextView; forwards key event into it; GTK3 popup-menu suppression is excluded under GTK4."
+    },
+    {
+      "source": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/gtktextview.c.response",
+        "sha256": "85b2e589c6368acf044b500c69ccbfbdace0aeaa83ab7aaf73cfbe8f5e561024"
+      },
+      "lines": "1682-1695,9420-9424",
+      "fact": "GtkTextView installs menu.popup and menu shortcut; action invokes native popup."
+    },
+    {
+      "source": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/gtkwidget.c.response",
+        "sha256": "fecb88cbe6d529542876485b2158e641fec7a6feafc915c3f940738eefae0e32"
+      },
+      "lines": "13218-13238",
+      "fact": "Public per-instance action_set_enabled toggles installed action through its action muxer."
+    },
+    {
+      "source": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/gtkactionmuxer.c.response",
+        "sha256": "f7e055b568ff2bfc337b5f783a64766fe5488718048971fd33a10f09c405922c"
+      },
+      "lines": "1005 onward",
+      "fact": "Disabled widget action is not activated."
+    }
+  ],
+  "retrievals": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/retrieval-gtkactionmuxer.json",
+      "sha256": "1b533cc0c86629e5aba310c51f86c4e35355d0d93690433b0c9123bd30c3488f"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/retrieval-gtktextview.c.json",
+      "sha256": "e083ec8a24b0a34d070209a22acbbbaeffe5b2e481969e956a459eefbcfe1338"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/retrieval-gtkwidget.c.json",
+      "sha256": "b5453a8a8f7c3c0fb6d67977e898f3393dd36f4a32f9ad1884439143b05073d2"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/retrieval-keybinding.json",
+      "sha256": "98c50f7ac218ac7237fc2fc5dfa6251b5aa6ca6d579de4253ad1ef323d5e7e56"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/source-evidence/retrieval-webviewbase.json",
+      "sha256": "f1a1fc1fa47155d1b309a272a16a25789c7028531ae48bb7e6e063477e12e59b"
+    }
+  ],
+  "versionEvidence": [
+    {
+      "path": "/usr/include/webkitgtk-6.0/webkit/WebKitVersion.h",
+      "sha256": "e12b84002a038d3a9a9d86fe537c66fda595bf1e23c8ef5a4ef4fcf0865d867a"
+    },
+    {
+      "path": "/usr/include/gtk-4.0/gtk/gtkversion.h",
+      "sha256": "0ffb735a2c6f43a5ee91bd6ca228d8e6221a3fd8fde93446c2ce4b034b3d1ee0"
+    }
+  ],
+  "limit": "Fetched upstream tags match installed version macros (WebKit2.54.2/GTK4.24.1). Distribution patch-to-binary equivalence is not established by this fetch. Actual current library pins and native qualification remain required.",
+  "smallestFix": "Disable only menu.popup on exactly one direct GtkTextView child of each owned visible WebView before window presentation; preserve translator, other actions, IME, key forwarding and Elm policy."
+}

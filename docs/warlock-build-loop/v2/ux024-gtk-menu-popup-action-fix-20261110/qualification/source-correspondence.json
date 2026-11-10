@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "candidateSha256": "d15066a121a0bd2fe0a2d78d3f5333bc9d448a4ff1f9bea9c73d49a0cedb38a2",
+  "selectionGeneration": 31,
+  "recordIdentitySha256": "60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4",
+  "sourceFiles": {
+    "implementation/warlock/src/HttpPopup.elm": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133",
+    "implementation/warlock/src/SurfaceRenderer.elm": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672",
+    "implementation/warlock/qa/ux024-menu-dom.cjs": "cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f",
+    "implementation/warlock/src/SurfaceController.elm": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+    "implementation/warlock/qa/MenuEscapeReplay.elm": "d85c653ecab26f3d7f18d90fd54e67e2e88d688027554f0d7acd7e4e586aa982",
+    "implementation/warlock/qa/menu-escape.cjs": "a70cacd14fb4c48066f2b2e18859f67d56da359cf2cf86227774d1cc1dd4de58",
+    "implementation/warlock/src/CapturedAction.elm": "08efe9eacd78e9edf86ed13a5b13108d29face6ef1edf264ad711dc6c720664b",
+    "implementation/warlock/src/Presentation.elm": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851",
+    "implementation/warlock/qa/ux024-bar-context-dom.cjs": "0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131",
+    "implementation/warlock/src/Desktop.elm": "23b5ef3c0224754ffac5bf884ace75b922b3e76dc8c03b95f251bbe401225b0d",
+    "implementation/warlock/qa/MenuInitialFocusReplay.elm": "600a0f18055b1c6e222ff61f75f63d37d0135aa4afc1a997e25c5476cd5e4c64",
+    "implementation/warlock/qa/menu-initial-focus.cjs": "aa138698454a0d16bea9467c01b94cca72faf8fe4c2d7cbf3f5dbd06bf8dce0b",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "f00f74e72151e8863121be563c934e1251d67a2e27ba7e51258f5fccd0902a92",
+    "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "1698d4aaf3d016f2b4cae709984e97318412c92706995c8c0293a0039e8e74dd",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "3050e7db1b2d1c1c5f4b7089a16cffd3d72c4d96c520a81e3de279706f4c02e4",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "d82311075cb8ad80284fde52d3293a1dfbaa9a71b5819e23f762bae0a3882645",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "8182a5532aae6dd252a3c02c74d0e86b40969ac4bffb335b2c43e793cb1e4c54",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs": "bc812f057b7573558b491dceae9c97f5cc4a31d8c98ea1dfc45ca3950a38eb7c",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "f079377b94ae56ddfd7b67d3f72f94bcf708fa87029fdb064082d9bf460c87ed",
+    "implementation/warlock/src/MenuBridge.elm": "0aca150c48310e712bc67a2bd2d3977c03ba3934666e10848b57e7c7ae3b3424",
+    "implementation/warlock/src/OutputController.elm": "bfd7a7087abcd8456dac3793fba21708386b63171a6a6deaac306ab75bccf808",
+    "implementation/warlock/src/Shell.elm": "58c0f888f890841d77f8068f50baf1024040987e2129eecbbc7c0660ac030aea",
+    "implementation/warlock/src/Surface.elm": "2b7f117be337b7f169413f897c82049dd765ca08b472c5ee44c3fa1b84c74a6d",
+    "implementation/warlock/src/TaskbarShell.elm": "4085ed27b18358331b7a3e74e51ffa6c6f66daaa9dab48f16dc570365ce58612",
+    "implementation/warlock/src/WindowObservation.elm": "428c78de7dc136969594e6a5f32cb5b985d69563bbdc91df964b82d4abb89b23",
+    "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "4a541243aa88166c97b6373b07b480a3b8e65b0e51e371d6361a22418a15bc02",
+    "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": "6aedbbb534d37f3214bbe6328682e6e7b688c09ee07d9e53e36c1b9a7cb57e49",
+    "implementation/warlock/qa/Ux024ObservedWindowMenuReplay.elm": "98fd760afe5abd770577d509ee2e4f3871a09afe7bc66762f67b5ad713c29ec1",
+    "implementation/warlock/qa/ux024-observed-window-menu.cjs": "5839bff7dd5626fbbc21da75d29aa5f8493e8043b2d0689446a9afa76dee9966",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846"
+  },
+  "actualJob": {
+    "eventId": "ux024-gtk-menu-popup-action-product-build-selection31-20261110-actual-started",
+    "kind": "execution-started",
+    "candidateSha256": "d15066a121a0bd2fe0a2d78d3f5333bc9d448a4ff1f9bea9c73d49a0cedb38a2",
+    "jobId": "pid1150632-start6785476",
+    "outerHandle": "70190",
+    "sequence": 196,
+    "clockSample": {
+      "utc": "2026-11-10T09:18:15.620210+00:00",
+      "bootId": "f84d5d2d-b562-4b70-b8fb-93a7a4fcd1c5",
+      "monotonicNs": 67992455393358,
+      "boottimeNs": 68011164473662
+    },
+    "atUTC": "2026-11-10T09:18:15.620210+00:00",
+    "consumed": true
+  },
+  "actualTerminal": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/gtk-menu-popup-action-product-build-cpu/actual-terminal.json",
+    "sha256": "8ed50243e0cec38e5c8fd8a7783fbebc56ac3bd30814052ff5e689dd693ec4dd"
+  },
+  "actualRawReport": {
+    "path": ".warlock-contributor/ux024-menu-focus-build-1794302142535578143/report.json",
+    "sha256": "27c99d8a8f87615319f56489c1d8e1c888b8aeec787d3ce571d3c74fc27f68a0"
+  },
+  "actualResultReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-keyboard-popup-route/production-fix/current-build-preparation/prepared/actual-current-result-review-build.json",
+    "sha256": "0f2221e626f03d06be46a00e0d625e7df0bdf597fad05eaa1d2878d0b2427a27"
+  },
+  "compiledImages": {
+    "warlock-ui-owner": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+      "device": "57",
+      "inode": "7390175",
+      "size": "37744904",
+      "sha256": "07ae50844934260cb697fa65ce4bc653a0e8e70804630bfc3139612bb41b0706",
+      "executed": false
+    },
+    "ui-webkit-controls": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+      "device": "57",
+      "inode": "7390192",
+      "size": "41167704",
+      "sha256": "c718d03750447571debea41e879738f88965d59af4d9804396c2d11d608fa13a",
+      "executed": true
+    }
+  },
+  "buildCommands": [
+    {
+      "label": "fixed-builder-controls",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/Projects/Warlock/tools/test_ux024_menu_focus_build.py",
+        "--module",
+        "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py"
+      ],
+      "exitCode": 0,
+      "forcedCleanup": false
+    },
+    {
+      "label": "build",
+      "argv": [
+        "/home/hoskinson/.local/share/warlock-toolchain/cabal-3.12.1.0/cabal",
+        "--config-file=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/cabal.config",
+        "build",
+        "--offline",
+        "--project-file=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/haskell/cabal.project",
+        "--builddir=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/dist",
+        "--with-compiler=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/ghc",
+        "--with-hc-pkg=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/ghc-pkg",
+        "--with-hsc2hs=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/hsc2hs",
+        "--with-gcc=/usr/bin/gcc",
+        "--with-ar=/usr/bin/ar",
+        "--with-ld=/usr/bin/ld",
+        "--with-pkg-config=/usr/bin/pkg-config",
+        "--jobs=2",
+        "warlock-runtime:exe:warlock-ui-owner",
+        "warlock-runtime:test:ui-webkit-controls"
+      ],
+      "exitCode": 0,
+      "forcedCleanup": false
+    },
+    {
+      "label": "list-warlock-ui-owner",
+      "argv": [
+        "/home/hoskinson/.local/share/warlock-toolchain/cabal-3.12.1.0/cabal",
+        "--config-file=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/cabal.config",
+        "list-bin",
+        "--offline",
+        "--project-file=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/haskell/cabal.project",
+        "--builddir=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/dist",
+        "--with-compiler=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/ghc",
+        "--with-hc-pkg=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/ghc-pkg",
+        "--with-hsc2hs=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/hsc2hs",
+        "--with-gcc=/usr/bin/gcc",
+        "--with-ar=/usr/bin/ar",
+        "--with-ld=/usr/bin/ld",
+        "--with-pkg-config=/usr/bin/pkg-config",
+        "--jobs=2",
+        "warlock-runtime:exe:warlock-ui-owner"
+      ],
+      "exitCode": 0,
+      "forcedCleanup": false
+    },
+    {
+      "label": "list-ui-webkit-controls",
+      "argv": [
+        "/home/hoskinson/.local/share/warlock-toolchain/cabal-3.12.1.0/cabal",
+        "--config-file=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/cabal.config",
+        "list-bin",
+        "--offline",
+        "--project-file=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/haskell/cabal.project",
+        "--builddir=/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/dist",
+        "--with-compiler=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/ghc",
+        "--with-hc-pkg=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/ghc-pkg",
+        "--with-hsc2hs=/home/hoskinson/.local/share/warlock-toolchain/ghc-9.6.7/bin/hsc2hs",
+        "--with-gcc=/usr/bin/gcc",
+        "--with-ar=/usr/bin/ar",
+        "--with-ld=/usr/bin/ld",
+        "--with-pkg-config=/usr/bin/pkg-config",
+        "--jobs=2",
+        "warlock-runtime:test:ui-webkit-controls"
+      ],
+      "exitCode": 0,
+      "forcedCleanup": false
+    },
+    {
+      "label": "cpu-ui-webkit-controls",
+      "argv": [
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+        "--allocation-only"
+      ],
+      "exitCode": 0,
+      "forcedCleanup": false
+    },
+    {
+      "label": "cpu-foreign-endpoint-refusal-controls",
+      "argv": [
+        "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794302142535578143/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+        "--foreign-endpoint-refusal-only"
+      ],
+      "exitCode": 0,
+      "forcedCleanup": false
+    }
+  ],
+  "sourceInputsUnchanged": "Exact qualified manifest matched current source at preparation; actual report retains before/after builder checks.",
+  "nativeQualificationPending": true,
+  "originalAccepted": false
+}
