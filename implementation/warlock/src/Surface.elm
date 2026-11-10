@@ -366,7 +366,12 @@ controls model =
                     applicationActions = Desktop.menuApplication model |> Maybe.map (\entry ->
                         {id="jump:open:"++Catalog.id entry.identity,domId=prefix++"application-actions",label="Application actions",ariaLabel="Actions for "++entry.name,detail="Declared actions and recent files",enabled=ready,message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity)) else Nothing})
                     newInstance = Desktop.menuApplication model |> Maybe.map (newInstanceControl model (prefix++"new-instance"))
-                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (newInstance |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (applicationActions |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
+                    inspection = MenuBridge.observedContext model.windows.menus |> Maybe.map (\current ->
+                        let fact index observed =
+                                {id=prefix++"fact:"++String.fromInt index,domId=prefix++"fact:"++String.fromInt index,label=observed.title++" · "++observed.appId,ariaLabel=observed.title++" · "++observed.appId,detail=String.join ", " observed.states,enabled=False,message=Nothing}
+                            refresh={id="control:observation-refresh",domId=prefix++"refresh",label="Refresh",ariaLabel="Refresh observed windows",detail="Read only; native actions unavailable",enabled=Shell.inspectionAvailable model.windows.shell,message=if Shell.inspectionAvailable model.windows.shell then Just (Desktop.Window (TaskbarShell.Native Shell.Refresh)) else Nothing}
+                        in List.indexedMap fact current.rows++[refresh]) |> Maybe.withDefault []
+                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: inspection ++ List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (newInstance |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (applicationActions |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
     else
         case model.windows.picker of
             Just picker ->
@@ -389,8 +394,9 @@ barControls model =
                 blocked = case Taskbar.primary False group.families of
                     Taskbar.Apply _ incarnation -> familyBlocked model incarnation
                     _ -> False
-                ready = Shell.available model.windows.shell && Taskbar.primary False group.families/=Taskbar.Unavailable && not blocked
-                operation = case Taskbar.primary False group.families of
+                inspect = Shell.inspectionAvailable model.windows.shell && String.startsWith "observed:" group.key
+                ready = inspect || (Shell.available model.windows.shell && Taskbar.primary False group.families/=Taskbar.Unavailable && not blocked)
+                operation = if inspect then "Inspect " else case Taskbar.primary False group.families of
                     Taskbar.Apply Effects.Minimize _ -> "Minimize "
                     Taskbar.Apply Effects.Restore _ -> "Restore "
                     Taskbar.Apply Effects.Activate _ -> "Activate "
@@ -405,7 +411,7 @@ barControls model =
                         else "Open"
                     _ -> (if List.any .active group.families then "Active; " else "") ++ String.fromInt (List.length group.families) ++ " windows"
                 observedState = if attention then "Attention; "++state else state
-            in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label ++ "; " ++ observedState ++ (if blocked then "; awaiting native confirmation" else ""),detail=if blocked then "Awaiting native confirmation; " ++ observedState else observedState,enabled=ready,message=if ready then scoped |> Maybe.map (\stamp -> Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing}
+            in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label ++ "; " ++ observedState ++ (if blocked then "; awaiting native confirmation" else ""),detail=if blocked then "Awaiting native confirmation; " ++ observedState else observedState,enabled=ready,message=if ready then scoped |> Maybe.andThen (\stamp -> if inspect then List.head group.families |> Maybe.map (\family -> Desktop.OpenWindowMenu stamp family.root) else Just (Desktop.Window (TaskbarShell.Primary stamp group.key))) else Nothing}
         pinIds = Desktop.pinIdentities model
         owners group = pinIds |> List.filter (\identity -> Desktop.pinnedGroup identity model |> Maybe.map (\matched -> matched.key==group.key) |> Maybe.withDefault False)
         pinControl identity =
@@ -595,6 +601,7 @@ resolveBase publication lease raw model =
                                 in if List.member entryId (Desktop.pinIdentities model) && List.isEmpty (Desktop.pinGroups entryId model) then model.applications |> Maybe.andThen (Catalog.lookup entryId) |> Maybe.andThen (\_ -> Desktop.capture model |> Maybe.map (\current -> Desktop.OpenJumpList current entryId)) else Nothing
                                 else Nothing
                         in if group==Nothing then emptyPin else (if enabled then group else Nothing) |> Maybe.andThen (\current ->
+                            if Shell.inspectionAvailable model.windows.shell && String.startsWith "observed:" current.key then List.head current.families |> Maybe.map (\family -> Desktop.OpenWindowMenu stamp family.root) else
                             case current.families of
                                 [family] -> if family.available then Just (Desktop.OpenWindowMenu stamp family.root) else Nothing
                                 _ -> if Taskbar.primary False current.families==Taskbar.Picker then Just (Desktop.Window (TaskbarShell.Primary stamp current.key)) else Nothing)

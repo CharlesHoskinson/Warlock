@@ -23,6 +23,9 @@ TARGETS=(('warlock-ui-owner','warlock-runtime:exe:warlock-ui-owner'),
  ('ui-webkit-controls','warlock-runtime:test:ui-webkit-controls'))
 BEHAVIOR=('ui-webkit-controls',)
 ENDPOINT_BEHAVIOR=('ui-webkit-controls','foreign-endpoint-refusal-controls')
+OBSERVATION_TARGETS=(('desktop-boundary-controls','warlock-protocol:test:desktop-boundary-controls'),
+ ('ui-mvp-controls','warlock-runtime:test:ui-mvp-controls'),('ui-stream-child','warlock-runtime:exe:ui-stream-child'))
+OBSERVATION_BEHAVIOR=('desktop-boundary-controls','ui-mvp-controls')
 ENDPOINT_DEADLINE_ENV='WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'
 
 
@@ -86,14 +89,41 @@ def require_group_absent(child):
     raise ValueError('retained process group after leader reap; Root cgroup cleanup required')
 
 
-def command_plan(packet,output,stage):
+def command_plan(packet,output,stage,targets=TARGETS):
     ghc=Path(packet['ghcPrefix'])/'bin'
     common=[packet['cabal'],'--config-file='+str(output/'cabal.config')]
     flags=['--offline','--project-file='+str(stage/'cabal.project'),'--builddir='+str(output/'dist'),
       '--with-compiler='+str(ghc/'ghc'),'--with-hc-pkg='+str(ghc/'ghc-pkg'),'--with-hsc2hs='+str(ghc/'hsc2hs'),
       '--with-gcc=/usr/bin/gcc','--with-ar=/usr/bin/ar','--with-ld=/usr/bin/ld','--with-pkg-config=/usr/bin/pkg-config','--jobs=2']
-    return [('build',common+['build']+flags+[target for _,target in TARGETS]),
-      *[('list-'+name,common+['list-bin']+flags+[target]) for name,target in TARGETS]]
+    return [('build',common+['build']+flags+[target for _,target in targets]),
+      *[('list-'+name,common+['list-bin']+flags+[target]) for name,target in targets]]
+
+
+def observation_profile(packet):
+    variant=packet.get('observationQualification')
+    if variant is None:return None,TARGETS
+    from ux024_observation_qualification import load
+    if packet['targets']!=[target for _,target in OBSERVATION_TARGETS] or packet['behaviorSuites']!=list(OBSERVATION_BEHAVIOR):
+        raise ValueError('closed observation component targets and suites required')
+    return load(ROOT,variant),OBSERVATION_TARGETS
+
+
+def observation_command(suite,images,output):
+    if suite=='desktop-boundary-controls':return [images[suite]['path']]
+    if suite!='ui-mvp-controls':raise ValueError('only fixed observation component suites')
+    child=images['ui-stream-child'];storage=output/'mvp-storage';storage.mkdir(mode=0o700)
+    return [images[suite]['path'],child['path'],str(child['device']),str(child['inode']),str(child['size']),child['sha256'],str(storage)]
+
+
+def observation_receipt(suite,observed):
+    if suite=='ui-mvp-controls':
+        if observed!='ui-mvp authenticated attachment controls passed\n':raise ValueError('actual MVP receipt differs')
+    elif suite=='desktop-boundary-controls':
+        value=json.loads(observed)
+        if (value.get('schema')!=1 or value.get('suite')!=suite or value.get('passed') is not True
+            or type(value.get('checks')) is not int or value['checks']<=0 or value.get('nativeAcceptance') is not False
+            or value.get('generatedCases')!=256 or value.get('mutationClasses')!=16):raise ValueError('actual protocol receipt differs')
+    else:raise ValueError('unknown observation component suite')
 
 
 def behavior_suites(value):
@@ -136,6 +166,7 @@ def sandbox_command(toolchain,output,sha):
 
 
 def verify_inputs(packet):
+    observation_profile(packet)
     for relative,sha in packet['sourceHashes'].items():
         path=ROOT/relative
         if not path.is_relative_to(ROOT) or digest(path)!=sha:raise ValueError('source input differs: '+relative)
@@ -182,8 +213,9 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--sha256',required=True);parser.add_argument('--inside-private',type=Path);args=parser.parse_args()
     if digest(PACKET)!=args.sha256:raise ValueError('fixed build packet differs')
     packet=json.loads(PACKET.read_text())
-    if packet['schema']!=1 or packet['kind']!='ux024-fixed-menu-focus-build' or packet['targets']!=[t for _,t in TARGETS]:raise ValueError('closed build scope required')
-    suites=behavior_suites(packet['behaviorSuites'])
+    qualification,targets=observation_profile(packet)
+    if packet['schema']!=1 or packet['kind']!='ux024-fixed-menu-focus-build' or packet['targets']!=[t for _,t in targets]:raise ValueError('closed build scope required')
+    suites=tuple(packet['behaviorSuites']) if qualification else behavior_suites(packet['behaviorSuites'])
     qa=load_module('fixed_build_scope',ROOT/'window-integration-qa/qa_launch.py',packet['sourceHashes']['window-integration-qa/qa_launch.py']);scope=qa.require_qa_scope()
     expires=authorization(packet)
     if args.inside_private is None:
@@ -223,7 +255,14 @@ def main():
         return (logs/(label+'.stdout')).read_text()
     try:
         run('fixed-builder-controls',['/usr/bin/python3','-B',ROOT/'tools/test_ux024_menu_focus_build.py','--module',SELF])
+        if qualification:
+            run('fixed-observation-controls',['/usr/bin/python3','-B',ROOT/'tools/test_ux024_observation_qualification.py','--module',ROOT/'tools/ux024_observation_qualification.py'])
         stage=output/'haskell';shutil.copytree(HASKELL,stage,ignore=shutil.ignore_patterns('dist-newstyle','__pycache__'));require_source_tree(stage,packet['haskellFiles'])
+        if qualification:
+            from ux024_observation_qualification import stage_rows,projected
+            stage_rows(qualification,stage,'implementation/warlock/haskell/')
+            require_source_tree(stage,projected(qualification,packet['haskellFiles'],'implementation/warlock/haskell/'))
+            report.update(candidateOnly=True,liveSourcesAdopted=False,integrationClaimed=False,qualificationVariant=qualification['variant'],sourceManifestSha256=qualification['sourceManifestSha256'],candidateHaskellFiles=source_tree(stage))
         dependencies=output/'dependencies';shutil.copytree(toolchain['dependencies'],dependencies)
         arm=sys.modules['fixed_arm_inventory']
         if arm.inventory(dependencies)!=toolchain['trees'][toolchain['dependencies']]:raise ValueError('dependency staging differs')
@@ -232,23 +271,25 @@ def main():
             if digest(dependencies/dependency['directory']/(dependency['name']+'.cabal'))!=dependency['metadataSHA256']:raise ValueError('dependency metadata differs')
         project=stage/'cabal.project';project.write_text(project.read_text()+'\npackages: '+' '.join(str(dependencies/p['directory']) for p in manifest['packages'])+'\nactive-repositories: :none\n')
         (output/'cabal.config').write_text('active-repositories: :none\nstore-dir: '+str(output/'store')+'\nremote-repo-cache: '+str(output/'repo-cache')+'\n')
-        plan=command_plan(toolchain,output,stage);run(*plan[0],cwd=stage)
+        plan=command_plan(toolchain,output,stage,targets);run(*plan[0],cwd=stage)
         sys.modules['arm64_toolchain']=arm
         callback=load_module('fixed_build_elf_pin',ROOT/'tools/provider_callback_build.py',packet['sourceHashes']['tools/provider_callback_build.py'])
         images={}
-        for (name,_),(label,argv) in zip(TARGETS,plan[1:],strict=True):
+        for (name,_),(label,argv) in zip(targets,plan[1:],strict=True):
             lines=run(label,argv,cwd=stage).strip().splitlines()
             if len(lines)!=1:raise ValueError('single actual image path required')
             images[name]=callback.pin_image(Path(lines[0]),output/'dist',name)
         for suite in suites:
-            child_env=behavior_environment(suite,env,deadline,expires)
-            observed=run('cpu-'+suite,behavior_command(suite,images),cwd=stage,extra=child_env)
-            require_behavior_receipt(suite,observed)
+            child_env=dict(env) if qualification else behavior_environment(suite,env,deadline,expires)
+            argv=observation_command(suite,images,output) if qualification else behavior_command(suite,images)
+            observed=run('cpu-'+suite,argv,cwd=stage,extra=child_env)
+            if qualification:observation_receipt(suite,observed)
+            else:require_behavior_receipt(suite,observed)
         for name,pin in images.items():
             if callback.pin_image(Path(pin['path']),output/'dist',name)!=pin:raise ValueError('compiled image changed')
         verify_inputs(packet);left(deadline,expires)
-        qualified={name:dict(pin,executed=(name in BEHAVIOR)) for name,pin in images.items()}
-        component={'targets':[t for _,t in TARGETS],'compiledImages':qualified,'behaviorSuites':list(suites),'ordinaryCpuFixturesPassed':True}
+        qualified={name:dict(pin,executed=(name in OBSERVATION_BEHAVIOR or name=='ui-stream-child') if qualification else (name in BEHAVIOR)) for name,pin in images.items()}
+        component={'targets':[t for _,t in targets],'compiledImages':qualified,'behaviorSuites':list(suites),'ordinaryCpuFixturesPassed':True}
         report.update(passed=True,compiledImages=qualified,physicalContextBuild=component,targets=component['targets'],behaviorSuites=list(suites),ordinaryCpuFixturesPassed=True)
     except Exception as error:report['error']=str(error);raise
     finally:save(output/'report.json',report)

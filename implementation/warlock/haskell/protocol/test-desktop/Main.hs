@@ -120,6 +120,74 @@ generatedCorpus check = forM_ (zip [0 :: Int ..] fuzzStates) $ \(index,state) ->
   check (label++" generated catalog/pins gateway roundtrip") (decodeServerCheckedWith desktopProfile gateway==Right reply)
   check (label++" generated server unknown field rejects") (isLeft (decodeServerCheckedWith desktopProfile (B.init gateway<>",\"unexpected\":true}")))
 
+
+-- Read-only compositor observations use a separate literal wire vocabulary.
+-- These controls enter the public Desktop/Codec routes; they grant no endpoint.
+windowObservationControls :: (String -> Bool -> IO ()) -> IO ()
+windowObservationControls check = do
+  let bytes = TE.encodeUtf8 . J.renderJson
+      ownerJson = either (error . show) id (J.bounds 1024 8 >>= \limit -> J.decodeStrict limit bound)
+      attachmentValue ops = J.JObject
+        [("protocolVersion",J.JNumber "3"),("kind",J.JString "application-attached"),("binding",ownerJson)
+        ,("nativeOperations",J.JArray []),("applicationOperations",J.JArray [])
+        ,("localOperations",J.JArray [J.JString "notification-policy"]),("windowObservationOperations",ops)]
+      row ident parent = J.JObject [("id",J.JString ident),("title",J.JString "Document α😀"),("appId",J.JString "org.example.Editor")
+        ,("states",J.JArray [J.JString "activated"]),("outputs",J.JArray [J.JString "41"]),("parent",parent)]
+      snapshotValue rows = J.JObject [("owner",J.JString "9007199254740997"),("revision",J.JString "7"),("view",J.JString "global")
+        ,("outputs",J.JArray [J.JString "41"]),("windows",J.JArray rows)]
+      goodSnapshot=snapshotValue [row "11" J.JNull,row "12" (J.JString "11")]
+      replyValue status body=J.JObject [("protocolVersion",J.JNumber "3"),("kind",J.JString "window-observation")
+        ,("binding",ownerJson),("requestId",J.JString "9"),("status",J.JString status),("snapshot",body)]
+      replace key value (J.JObject fields)=J.JObject (map (\(name,old)->(name,if name==key then value else old)) fields)
+      replace _ _ value=value
+      accepts value=isRight (D.decodeDesktopReply (bytes value))
+      rejects value=isLeft (D.decodeDesktopReply (bytes value))
+      readRequest=rawRequest "\"window-read\"" bound "\"9\"" ""
+      goodWire=commit "{}" [readRequest]
+      expect label value=check ("window observation: "++label) value
+  expect "strict read-only capability attaches" (accepts (attachmentValue (J.JArray [J.JString "window-read"])))
+  expect "empty capability is explicitly unavailable" (accepts (attachmentValue (J.JArray [])))
+  expect "checked public client accepts bound read" (isRight (decodeClientCheckedWith desktopProfile goodWire))
+  expect "default native client never borrows observation read" (isLeft (decodeClientChecked goodWire))
+  expect "unknown effect suffix rejects complete batch" (isLeft (D.decodeDesktopCommit (commit "{}" [readRequest,rawRequest "\"window-activate\"" bound "\"10\"" ""])))
+  expect "read rejects path selector" (isLeft (D.decodeDesktopCommit (commit "{}" [rawRequest "\"window-read\"" bound "\"9\"" ",\"path\":\"/tmp/socket\""])))
+  expect "read refuses zero request" (isLeft (D.decodeDesktopCommit (commit "{}" [rawRequest "\"window-read\"" bound "\"0\"" ""])))
+  expect "bound observed snapshot accepted" (accepts (replyValue "Observed" goodSnapshot))
+  expect "public profiled server accepts observed gateway" (isRight (decodeServerCheckedWith desktopProfile (gatewayOf (bytes (replyValue "Observed" goodSnapshot)))))
+  expect "default native server rejects observation gateway" (isLeft (decodeServerChecked (gatewayOf (bytes (replyValue "Observed" goodSnapshot)))))
+  expect "unavailable has no fabricated snapshot" (accepts (replyValue "Unavailable" J.JNull))
+  expect "unknown has no fabricated snapshot" (accepts (replyValue "Unknown" J.JNull))
+  expect "observed cannot omit snapshot" (rejects (replyValue "Observed" J.JNull))
+  expect "unknown cannot publish partial snapshot" (rejects (replyValue "Unknown" goodSnapshot))
+  expect "unavailable cannot publish old snapshot" (rejects (replyValue "Unavailable" goodSnapshot))
+  expect "unknown status refused" (rejects (replyValue "Ready" goodSnapshot))
+  expect "duplicate handles refused" (rejects (replyValue "Observed" (snapshotValue [row "11" J.JNull,row "11" J.JNull])))
+  expect "stale parent refused" (rejects (replyValue "Observed" (snapshotValue [row "11" (J.JString "12")])))
+  expect "parent cycle refused" (rejects (replyValue "Observed" (snapshotValue [row "11" (J.JString "12"),row "12" (J.JString "11")])))
+  expect "self parent refused" (rejects (replyValue "Observed" (snapshotValue [row "11" (J.JString "11")])))
+  expect "unknown state refused" (rejects (replyValue "Observed" (snapshotValue [replace "states" (J.JArray [J.JString "hidden"]) (row "11" J.JNull)])))
+  expect "duplicate state refused" (rejects (replyValue "Observed" (snapshotValue [replace "states" (J.JArray [J.JString "activated",J.JString "activated"]) (row "11" J.JNull)])))
+  expect "unannounced output refused" (rejects (replyValue "Observed" (snapshotValue [replace "outputs" (J.JArray [J.JString "42"]) (row "11" J.JNull)])))
+  expect "duplicate output refused" (rejects (replyValue "Observed" (replace "outputs" (J.JArray [J.JString "41",J.JString "41"]) goodSnapshot)))
+  expect "zero owner refused" (rejects (replyValue "Observed" (replace "owner" (J.JString "0") goodSnapshot)))
+  expect "owner must match full binding frontend" (rejects (replyValue "Observed" (replace "owner" (J.JString "2") goodSnapshot)))
+  expect "numeric identity refused" (rejects (replyValue "Observed" (snapshotValue [replace "id" (J.JNumber "11") (row "11" J.JNull)])))
+  expect "invented workspace refused" (rejects (replyValue "Observed" (case goodSnapshot of J.JObject fields->J.JObject (fields++[("workspace",J.JString "1")]); other->other)))
+  expect "global scope is explicit not UI output" (rejects (replyValue "Observed" (replace "view" (J.JString "1") goodSnapshot)))
+  expect "control character refused" (rejects (replyValue "Observed" (snapshotValue [replace "title" (J.JString "bad\ntext") (row "11" J.JNull)])))
+  expect "UTF16 title bound refused" (rejects (replyValue "Observed" (snapshotValue [replace "title" (J.JString (T.replicate 129 "😀")) (row "11" J.JNull)])))
+  expect "handle capacity refuses first excess" (rejects (replyValue "Observed" (snapshotValue [row (T.pack (show n)) J.JNull | n<-[1..257::Int]])))
+  forM_ [J.JArray [J.JString "window-read",J.JString "window-read"],J.JArray [J.JString "window-effect"],J.JBool True] $ \bad ->
+    expect "malformed capability rejected without grant" (rejects (attachmentValue bad))
+  -- Literal seeds, alternating valid observations and one independently chosen
+  -- forbidden field. No random generator and no decoder-derived oracle.
+  forM_ [0..31::Int] $ \seed -> do
+    let ident=T.pack (show (9007199254740993+toInteger seed))
+        observed=replyValue "Observed" (snapshotValue [row ident J.JNull])
+        invalid=replace "requestId" (J.JString "0") observed
+    expect ("literal seed "++show seed++" wide identity") (accepts observed)
+    expect ("literal seed "++show seed++" zero correlation") (rejects invalid)
+
 main :: IO ()
 main = do
   checked <- newIORef (0 :: Int)
@@ -244,6 +312,7 @@ main = do
          control "native-preview-unknown" "",
          control "native-preview-grant" ""] $ \wire ->
     check "preview controls refuse unknown duplicate and mismatched fields" (isLeft (D.decodeDesktopGateway wire))
+  windowObservationControls check
   generatedCorpus check
   count <- readIORef checked
   putStrLn ("{\"schema\":1,\"suite\":\"desktop-boundary-controls\",\"passed\":true,\"checks\":" ++ show count ++ ",\"seed\":20261101,\"generatedCases\":256,\"mutationClasses\":16,\"nativeAcceptance\":false}")

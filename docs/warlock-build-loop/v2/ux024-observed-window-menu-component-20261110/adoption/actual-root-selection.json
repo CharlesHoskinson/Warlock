@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+    "--repo",
+    "/home/hoskinson/Projects/Warlock",
+    "--record",
+    ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "--json",
+    "delivery-select",
+    "--expect-state-sha",
+    "54f3b2d6ba0d651883101c64c320a01a0da1bfefa5fd9371d59f2b43b8f7afd0"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"acceptanceBoundary\": \"Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.\",\n  \"checkerSha256\": \"6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78\",\n  \"activeSelection\": {\n    \"generation\": 30,\n    \"recordIdentitySha256\": \"60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4\",\n    \"selectedUTC\": \"2026-11-10T06:35:51.230681+00:00\"\n  },\n  \"record\": \".warlock-contributor/ux024-menu-tab-focus-root-20261109.json\",\n  \"acceptanceInferred\": false,\n  \"ok\": true\n}\n",
+  "stderr": ""
+}

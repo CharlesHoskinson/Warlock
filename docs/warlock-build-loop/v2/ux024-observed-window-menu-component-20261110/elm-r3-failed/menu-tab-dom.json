@@ -1,0 +1,821 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "UX024 live menu popup DOM component",
+  "nativeAcceptance": false,
+  "originalAccepted": false,
+  "checks": [
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Tab follows menu DOM order and skips disabled prevents browser escape",
+      "passed": true
+    },
+    {
+      "name": "Tab follows menu DOM order and skips disabled actual DOM focus target",
+      "passed": true
+    },
+    {
+      "name": "Tab follows menu DOM order and skips disabled sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Tab moves to next menu control prevents browser escape",
+      "passed": true
+    },
+    {
+      "name": "Tab moves to next menu control actual DOM focus target",
+      "passed": true
+    },
+    {
+      "name": "Tab moves to next menu control sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Tab wraps last to first prevents browser escape",
+      "passed": true
+    },
+    {
+      "name": "Tab wraps last to first actual DOM focus target",
+      "passed": true
+    },
+    {
+      "name": "Tab wraps last to first sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab wraps first to last prevents browser escape",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab wraps first to last actual DOM focus target",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab wraps first to last sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab skips disabled prevents browser escape",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab skips disabled actual DOM focus target",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab skips disabled sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "One enabled control contains Tab prevents browser escape",
+      "passed": true
+    },
+    {
+      "name": "One enabled control contains Tab actual DOM focus target",
+      "passed": true
+    },
+    {
+      "name": "One enabled control contains Tab sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "One enabled control contains Shift Tab prevents browser escape",
+      "passed": true
+    },
+    {
+      "name": "One enabled control contains Shift Tab actual DOM focus target",
+      "passed": true
+    },
+    {
+      "name": "One enabled control contains Shift Tab sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Escaped DOM identity uses existing mapping prevents browser escape",
+      "passed": true
+    },
+    {
+      "name": "Escaped DOM identity uses existing mapping actual DOM focus target",
+      "passed": true
+    },
+    {
+      "name": "Escaped DOM identity uses existing mapping sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "composition is not consumed",
+      "passed": true
+    },
+    {
+      "name": "composition has no local focus change",
+      "passed": true
+    },
+    {
+      "name": "composition sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "IME229 is not consumed",
+      "passed": true
+    },
+    {
+      "name": "IME229 has no local focus change",
+      "passed": true
+    },
+    {
+      "name": "IME229 sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Control Tab is not consumed",
+      "passed": true
+    },
+    {
+      "name": "Control Tab has no local focus change",
+      "passed": true
+    },
+    {
+      "name": "Control Tab sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Alt Tab is not consumed",
+      "passed": true
+    },
+    {
+      "name": "Alt Tab has no local focus change",
+      "passed": true
+    },
+    {
+      "name": "Alt Tab sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Meta Tab is not consumed",
+      "passed": true
+    },
+    {
+      "name": "Meta Tab has no local focus change",
+      "passed": true
+    },
+    {
+      "name": "Meta Tab sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "Escape native route is not consumed",
+      "passed": true
+    },
+    {
+      "name": "Escape native route has no local focus change",
+      "passed": true
+    },
+    {
+      "name": "Escape native route sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "empty focus remains absent",
+      "passed": true
+    },
+    {
+      "name": "empty sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "disabled focus remains absent",
+      "passed": true
+    },
+    {
+      "name": "disabled sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "stale publication cannot move focus from old callback",
+      "passed": true
+    },
+    {
+      "name": "stale publication sends no HTTP mutation",
+      "passed": true
+    },
+    {
+      "name": "HttpPopup actual pending GET before controlled event",
+      "passed": true
+    },
+    {
+      "name": "real menu root rendered",
+      "passed": true
+    },
+    {
+      "name": "retired lease cannot move focus from old callback",
+      "passed": true
+    },
+    {
+      "name": "retired lease sends no HTTP mutation",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "trace": [
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HttpPopup",
+      "method": "GET",
+      "url": "/events",
+      "headers": {
+        "X-Warlock-Api": "1"
+      },
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "cases": [
+    {
+      "name": "Tab follows menu DOM order and skips disabled",
+      "passed": true
+    },
+    {
+      "name": "Tab moves to next menu control",
+      "passed": true
+    },
+    {
+      "name": "Tab wraps last to first",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab wraps first to last",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab skips disabled",
+      "passed": true
+    },
+    {
+      "name": "One enabled control contains Tab",
+      "passed": true
+    },
+    {
+      "name": "One enabled control contains Shift Tab",
+      "passed": true
+    },
+    {
+      "name": "Escaped DOM identity uses existing mapping",
+      "passed": true
+    },
+    {
+      "name": "composition preserved",
+      "passed": true
+    },
+    {
+      "name": "IME229 preserved",
+      "passed": true
+    },
+    {
+      "name": "Control Tab preserved",
+      "passed": true
+    },
+    {
+      "name": "Alt Tab preserved",
+      "passed": true
+    },
+    {
+      "name": "Meta Tab preserved",
+      "passed": true
+    },
+    {
+      "name": "Escape native route preserved",
+      "passed": true
+    },
+    {
+      "name": "Empty menu invents no focus target",
+      "passed": true
+    },
+    {
+      "name": "All-disabled menu invents no focus target",
+      "passed": true
+    },
+    {
+      "name": "stale publication old DOM callback refused",
+      "passed": true
+    },
+    {
+      "name": "retired lease old DOM callback refused",
+      "passed": true
+    }
+  ],
+  "artifactHashes": {
+    "image": "637d58ea8095337220b25df448ea3a9f01a718342492784e289e17f7870b3a2a",
+    "harness": "cb3e1ada7485a5bc13b9988ce167ced3ec43b987944beb91d1f0737deeeebe3f"
+  },
+  "limits": [
+    "Controlled DOM/XHR and synthetic keyboard events, not actual WebKit or native input.",
+    "No browser-default Tab policy is implemented by the harness.",
+    "Only live menu order is the proposed behavior; no generic popup traversal assertion.",
+    "Escape is passed through only; actual eligible opener return is not established.",
+    "No service, backend effect, original scenario or release acceptance."
+  ]
+}

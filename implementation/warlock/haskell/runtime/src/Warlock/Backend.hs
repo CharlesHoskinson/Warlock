@@ -17,6 +17,8 @@ import qualified Warlock.Backend.ApplicationExecutable as App
 import Warlock.Backend.ApplicationPlanConfig (decodeApplicationPlans)
 import Warlock.Protocol.PeerCredential (PeerCredential)
 import Warlock.Bootstrap.Aggregate (runBootstrapWithArgumentsContext)
+import qualified Warlock.Backend.ForeignToplevelOwner as ForeignOwner
+import qualified Warlock.Backend.WindowObservation as WindowObservation
 import Warlock.Backend.Catalog
 import Warlock.Backend.NotificationIssuer (NotificationGeneration,NotificationIssuer,IssuerFailure,issuerFailureCustody,IssuerInterrupted(..),newIssuer,provisionIssuer,reserveGeneration,retireIssuer,generationText)
 import Warlock.Backend.PinStore
@@ -33,12 +35,12 @@ import Warlock.Protocol.Ingress (Direction(..),Priority(..),ingressBinding)
 import Warlock.Protocol.StrictJson
 
 data UiImage = UiImage FilePath Integer Integer Integer B.ByteString [String] [DirectoryPin]
-data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool (Maybe Text) [App.ApplicationPlan]
+data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool (Maybe Text) [App.ApplicationPlan] (Maybe ForeignOwner.EndpointSelection)
 
 -- Selected startup data only. Actual bus authentication, ownership, deadline
 -- and lifecycle checks remain necessary before any notification operation.
 configuredNotificationBusAddress :: BackendConfig -> Maybe Text
-configuredNotificationBusAddress (BackendConfig _ _ _ _ _ _ _ address _) = address
+configuredNotificationBusAddress (BackendConfig _ _ _ _ _ _ _ address _ _) = address
 
 notificationAddress :: Text -> Either Text Text
 notificationAddress raw = do
@@ -75,7 +77,7 @@ instance Show BackendApplicationCustodyFailure where show _ = "backend failed wi
 instance Exception BackendApplicationCustodyFailure
 
 newNotificationIssuer :: BackendConfig -> IO NotificationIssuer
-newNotificationIssuer (BackendConfig _ deadlineText _ _ pin _ _ _ _) = newIssuer pin deadlineText
+newNotificationIssuer (BackendConfig _ deadlineText _ _ pin _ _ _ _ _) = newIssuer pin deadlineText
 provisionNotificationIssuer :: NotificationIssuer -> IO (Either IssuerFailure ())
 provisionNotificationIssuer = provisionIssuer
 reserveNotificationGeneration :: NotificationIssuer -> IO (Either IssuerFailure NotificationGeneration)
@@ -121,7 +123,7 @@ decodeConfig bytes = do
  raw <- failure (decodeStrict limits bytes)
  let names=["schema","binding","deadlineMonotonicNs","ui","catalogRoots","pinsRoot","locale"]
  let optionalNames = case raw of
-      JObject pairs -> [name | name <- ["applicationAttachment","notificationBusAddress","applicationPlans"], any ((==name) . fst) pairs]
+      JObject pairs -> [name | name <- ["applicationAttachment","notificationBusAddress","applicationPlans","compositorObservation"], any ((==name) . fst) pairs]
       _ -> []
  fields <- object (names++optionalNames) raw
  attachment <- case lookup "applicationAttachment" fields of
@@ -135,6 +137,11 @@ decodeConfig bytes = do
  plans <- decodeApplicationPlans (lookup "applicationPlans" fields)
  require (lookup "schema" fields==Just (JNumber "1")) "unsupported startup schema"
  bound <- key "binding" fields >>= bindingConfig
+ observation <- case lookup "compositorObservation" fields of
+  Nothing -> Right Nothing
+  Just selected -> do
+   require attachment "window observation requires application attachment"
+   Just <$> WindowObservation.decodeSelection bound selected
  deadline <- key "deadlineMonotonicNs" fields >>= string
  _ <- failure (parseCounter False deadline)
  image <- key "ui" fields >>= imageConfig
@@ -143,7 +150,7 @@ decodeConfig bytes = do
  pins <- key "pinsRoot" fields >>= directoryConfig
  locale <- key "locale" fields >>= string
  require (T.length locale<=128 && not (T.any (< ' ') locale)) "invalid trusted locale"
- pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment notificationBus plans)
+ pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment notificationBus plans observation)
  where
   bindingConfig raw = do
    fields <- object ["lifetime","session","frontend"] raw
@@ -242,13 +249,29 @@ applyDesktopRequest bound catalog pins operations lastWrite catalogObservation s
       writeIORef lastWrite (Just (D.requestId request,proposal,reply))
       sendReply reply
   D.ApplicationLaunch -> ioError (userError "application launch requires current admitted context")
+  D.WindowRead -> ioError (userError "window observation unavailable")
   D.NotificationRead -> ioError (userError "notification service unavailable")
   D.NotificationEffect -> ioError (userError "notification service unavailable")
  where
   construct = either (ioError . userError . T.unpack) pure
 
 runBackend :: BackendConfig -> IO BackendResult
-runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled _ applicationPlans) = mask $ \restore -> do
+runBackend config@(BackendConfig bound deadlineText _ _ _ _ _ _ _ observation) = case observation of
+ Nothing -> runBackendWithObservation config Nothing
+ Just selected -> do
+  deadline <- deadlineFromAbsoluteNs deadlineText >>= either (ioError . userError . show) pure
+  result <- ForeignOwner.withForeignToplevelOwner selected deadline $ \owner -> do
+   reader <- WindowObservation.newReader bound deadline owner
+   runBackendWithObservation config (Just reader)
+  case result of
+   ForeignOwner.ObservationResult (Left problem) _ -> throwIO problem
+   ForeignOwner.ObservationResult (Right value) ForeignOwner.Retired -> pure value
+   ForeignOwner.ObservationResult (Right value) (ForeignOwner.Retained _) ->
+    -- The owner's stable reference retains uncertain callback resources.
+    pure value {backendPassed=False,backendCleanup=False}
+
+runBackendWithObservation :: BackendConfig -> Maybe WindowObservation.Reader -> IO BackendResult
+runBackendWithObservation (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled _ applicationPlans _) observation = mask $ \restore -> do
  catalog <- newCatalog roots locale (lifetime bound)
  pins <- newPinStore pinsRoot
  notificationIssuer <- newIssuer pinsRoot deadlineText
@@ -284,6 +307,11 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
       unless (sent==Right ()) (ioError (userError "backend reply delivery unconfirmed"))
      construct = either (ioError . userError . T.unpack) pure
      handle request = case D.requestKind request of
+      D.WindowRead -> case observation of
+       Nothing -> ioError (userError "window observation unavailable")
+       Just reader -> do
+        (scope,credential) <- readIORef admittedContext >>= maybe (ioError (userError "window read outside admission")) pure
+        WindowObservation.readWindowReply reader scope credential request >>= sendReply
       D.ApplicationLaunch -> handleApplication request
       _ -> applyDesktopRequest bound catalog pins operations lastWrite catalogObservation sendReply request
      issuerInCurrentAdmission = do
@@ -330,23 +358,41 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
        -- The pure codec knows notification wire data. This producer has not
        -- acquired a service and advertises no service capability. Reject the
        -- entire batch before attachment or any earlier request can take effect.
-       unless (all ((`elem` [D.CatalogRead,D.PinsWrite,D.ApplicationLaunch]) . D.requestKind) requests)
-         (ioError (userError "notification service unavailable"))
-       modifyIORef' callbacks (+1)
-       unless (all ((==bound) . D.requestBinding) requests) (ioError (userError "checked commit binding mismatch"))
-       -- Reserve the one attempt before enqueue/delivery. Any exception ends
-       -- this authenticated session; an uncertain send is never replayed.
-       firstAttempt <- if attachmentEnabled
-        then atomicModifyIORef' attachmentAttempted (\attempted -> (True,not attempted))
-        else pure False
-       if firstAttempt then do
-        producer <- issuerInCurrentAdmission
-        let available = case producer of Right _ -> D.ApplicationLaunchAvailable; Left _ -> D.ApplicationUnavailable
-        construct (D.applicationAttachedWithLocalNotifications bound available) >>= sendReply
-       else pure ()
-       -- The shared codec/gate has validated ALL requests before this point.
-       -- Presentation-only commits run this empty loop, with zero domain IO.
-       forM_ requests handle
+       if not (all (\request -> D.requestKind request `elem` [D.CatalogRead,D.PinsWrite,D.ApplicationLaunch]
+         || (D.requestKind request==D.WindowRead && case observation of Just _ -> True; Nothing -> False)) requests)
+        then do
+         ingress <- readIORef slot >>= maybe (ioError (userError "backend ingress not activated")) pure
+         -- The in-flight Gate becomes Draining and retains the endpoint. After
+         -- this callback unwinds, Aggregate observes CredentialNotLive and uses
+         -- its original-deadline refuseAfterExit/awaitLeader path. No domain
+         -- callback, attachment or earlier request in this batch is performed.
+         _ <- retireCredentialIngress ingress
+         pure ()
+        else do
+         unless (all ((==bound) . D.requestBinding) requests) (ioError (userError "checked commit binding mismatch"))
+         announced <- readIORef attachmentAttempted
+         case observation of
+          Just reader | attachmentEnabled && not announced -> do
+           (scope,credential) <- readIORef admittedContext >>= maybe (ioError (userError "window attachment outside admission")) pure
+           WindowObservation.admitReader reader scope credential
+          _ -> pure ()
+         modifyIORef' callbacks (+1)
+         -- Reserve the one attempt before enqueue/delivery. Any exception ends
+         -- this authenticated session; an uncertain send is never replayed.
+         firstAttempt <- if attachmentEnabled
+          then atomicModifyIORef' attachmentAttempted (\attempted -> (True,not attempted))
+          else pure False
+         if firstAttempt then do
+          producer <- issuerInCurrentAdmission
+          let available = case producer of Right _ -> D.ApplicationLaunchAvailable; Left _ -> D.ApplicationUnavailable
+          construct (case observation of
+           Nothing -> D.applicationAttachedWithLocalNotifications bound available
+           Just _ -> D.applicationAttachedWithWindowObservation bound available) >>= sendReply
+         else pure ()
+         -- The shared codec/gate has validated ALL requests before this point.
+         -- After any first attachment validation, presentation-only commits run
+         -- this empty loop with zero domain operations.
+         forM_ requests handle
  ingress <- newDesktopCredentialIngress ingressBound FromElm handler (\_ -> ioError (userError "unexpected server input"))
  writeIORef slot (Just ingress)
  attempted <- try $ restore $ do

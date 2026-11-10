@@ -1,4 +1,5 @@
 module TaskbarShell exposing (Model, Msg(..), Picker, initial, update, groups)
+import WindowObservation
 import Shell
 import Json.Encode as E
 import Json.Decode as D
@@ -13,7 +14,9 @@ type alias Model = { shell : Shell.Model, picker : Maybe Picker, generation : Co
 type Msg = Native Shell.Msg | Primary Shell.Stamp String | Choose Shell.Stamp Counter Counter | Close Shell.Stamp Counter | OpenMenu Provider.Snapshot | MenuEvent Menu.Msg | ExpirePrepared Counter | CancelPrepared Counter
 initial : Model
 initial = { shell = Shell.initial, picker = Nothing, generation = UInt64.zero, menus = MenuBridge.initial }
-groups model = model.shell.effects.observed |> Maybe.map (.scene >> Taskbar.groups) |> Maybe.withDefault []
+groups model =
+    if model.shell.windowObservationOperations then model.shell.windowObservation |> Maybe.map WindowObservation.groups |> Maybe.withDefault []
+    else model.shell.effects.observed |> Maybe.map (.scene >> Taskbar.groups) |> Maybe.withDefault []
 valid scope model = MenuBridge.preparedSnapshot model.menus==Nothing && Shell.capture model.shell == Just scope && Shell.available model.shell
 native message model =
     let

@@ -27,6 +27,7 @@ import Launch
 import Shell
 import Taskbar
 import Effects
+import WindowObservation
 import TaskbarShell
 import WorkspaceNavigation
 import WorkspaceInventory
@@ -105,7 +106,7 @@ type alias Model =
 type PopupOrigin = PointerEntry | KeyboardEntry
 
 type FocusDestination = TaskbarGroup String | OverviewOpener
-type alias FocusTarget = {binding : Binding.Binding, destination : FocusDestination, output : Maybe Counter}
+type alias FocusTarget = {binding : Binding.Binding, destination : FocusDestination, output : Maybe Counter, observed : Maybe MenuBridge.ObservedContext}
 
 type alias NativeChord = {generation : Counter, roots : List Counter, history : List Counter, origin : Maybe Counter, steps : List Switcher.Direction, released : Bool, cancelled : Bool, consumed : Bool}
 
@@ -525,7 +526,7 @@ window message model =
                     let (closed,effects)=windowBase message model
                     in if closed.windows.picker/=Nothing || picker.scope/=scope || picker.generation/=generation then (closed,effects) else
                         let (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) closed
-                        in ({refreshing | returnFocus=if model.popupOrigin==KeyboardEntry then Just {binding=binding,destination=TaskbarGroup picker.key,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)} else Nothing},List.filter (\effect -> case effect of
+                        in ({refreshing | returnFocus=if model.popupOrigin==KeyboardEntry then Just {binding=binding,observed=Nothing,destination=TaskbarGroup picker.key,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)} else Nothing},List.filter (\effect -> case effect of
                             Focus _ -> False
                             _ -> True) effects ++ commands)
                 _ -> windowBase message model
@@ -560,6 +561,10 @@ window message model =
                                 && (updated.windows.shell.geometry |> Maybe.map .request)==Just request
                                 && updated.windows.shell.geometry/=model.windows.shell.geometry) |> Result.withDefault False
                     _ -> False
+                matchingWindow = case message of
+                    TaskbarShell.Native (Shell.Incoming raw) ->
+                        D.decodeValue WindowObservation.replyDecoder raw |> Result.map (\reply -> model.windows.shell.windowExpected==Just reply.request && updated.windows.shell.windowExpected==Nothing && model.windows.shell.binding==Just reply.binding) |> Result.withDefault False
+                    _ -> False
                 matchingObservation = matchingProjection || matchingGeometry
                 geometryOutput =
                     if updated.windows.shell.geometryCaps |> Maybe.map .effects |> Maybe.withDefault False then
@@ -567,6 +572,7 @@ window message model =
                     else updated.windows.shell.effects.observed |> Maybe.map (.context >> .output)
                 (next,effects)=case updated.returnFocus of
                     Just target ->
+                        if target.observed/=Nothing then restoreObservedFocus matchingWindow target updated ordinaryEffects else
                         let blocked=case target.destination of
                                 TaskbarGroup groupKey -> TaskbarShell.groups updated.windows |> List.filter (\group -> group.key==groupKey) |> List.concatMap .families |> List.any (\family -> MenuBridge.blockedFor family.root updated.windows.shell updated.windows.menus)
                                 OverviewOpener -> False
@@ -751,6 +757,22 @@ applicationGesture model message =
         NotificationAction _ _ -> Shell.notificationServiceAvailable model.windows.shell
         ConfigureNotificationPolicy _ _ -> Shell.localNotificationPolicyAvailable model.windows.shell
         Start _ -> Shell.applicationLaunchAvailable model.windows.shell
+        OpenWindowMenu inspectionStamp inspectionRoot ->
+            Shell.inspectionAvailable model.windows.shell
+                && Shell.capture model.windows.shell==Just inspectionStamp
+                && model.ownerScope/=Nothing && not model.ownerExhausted && model.choice==Nothing
+                && (TaskbarShell.groups model.windows |> List.concatMap .families |> List.any (\inspectionFamily -> inspectionFamily.root==inspectionRoot))
+        Window (TaskbarShell.MenuEvent (Menu.Dismiss inspectionMenuId)) ->
+            case (MenuBridge.observedContext model.windows.menus,(MenuBridge.menuSnapshot model.windows.menus).menu) of
+                (Just capturedInspection,Just currentInspectionMenu) ->
+                    Shell.inspectionAvailable model.windows.shell
+                        && model.windows.shell.binding==Just capturedInspection.binding
+                        && Shell.capture model.windows.shell==Just capturedInspection.stamp
+                        && model.ownerScope==Just capturedInspection.presentation && not model.ownerExhausted
+                        && currentInspectionMenu.id==inspectionMenuId
+                        && currentInspectionMenu.binding==capturedInspection.menuBinding
+                        && (model.windows.shell.windowObservation |> Maybe.map (WindowObservation.fingerprint capturedInspection.group))==Just capturedInspection.fingerprint
+                _ -> False
         _ -> False
 
 gestureAction message =
@@ -848,6 +870,7 @@ updateAvailable message model =
                             in (retireSwitcher {retired | snap=Nothing,ownerScope=Nothing,ownerExhausted=True,menuOrigin=Nothing,returnFocus=Nothing},[])
                 _ -> (model,[])
         OpenWindowMenu stamp root ->
+            if model.windows.shell.windowObservationOperations then openObservedWindow stamp root model else
             if model.ownerExhausted || model.choice/=Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing || Shell.capture model.windows.shell/=Just stamp || not (Shell.available model.windows.shell) then (model,[]) else
             case model.windows.shell.effects.observed of
                 Nothing -> (model,[])
@@ -866,7 +889,7 @@ updateAvailable message model =
                                                     |> Maybe.withDefault []
                                             else []
                                     in if (MenuBridge.menuSnapshot next.windows.menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
-                                        (retireSwitcher {next | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects++initialMenuFocus)
+                                        (retireSwitcher {next | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=model.windows.shell.binding |> Maybe.andThen (\binding -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.root==root) group.families) |> List.head |> Maybe.map (\group -> {binding=binding,observed=Nothing,destination=TaskbarGroup group.key,output=Just observed.context.output}))},effects++initialMenuFocus)
         OpenSwitcher stamp direction ->
             if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             case UInt64.next (Switcher.generation model.switcher) of
@@ -1335,7 +1358,7 @@ updateAvailable message model =
             if capture model/=Just stamp || not model.overview then (model,[]) else
                 let next=advance {model | overview=False,overviewWorkspace=Nothing,overviewTransfer=Nothing}
                     (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) next
-                    target=model.windows.shell.binding |> Maybe.map (\binding -> {binding=binding,destination=OverviewOpener,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)})
+                    target=model.windows.shell.binding |> Maybe.map (\binding -> {binding=binding,observed=Nothing,destination=OverviewOpener,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)})
                 in ({refreshing | returnFocus=target},commands)
         OverviewNavigateWorkspace stamp destination ->
             if capture model/=Just stamp || not model.overview then (model,[]) else
@@ -1584,3 +1607,35 @@ readJumpList model =
     case (model.windows.shell.binding,UInt64.next model.request,model.jumpEntry) of
         (Just binding,Just request,Just entry) -> (advance {model | request=request,jumpExpected=Just request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "jump-list-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("entry",E.string entry)])])
         _ -> (model,[])
+
+-- Observation-only inspection uses the current presentation owner, not a
+-- compositor output token and not a fabricated legacy native context.
+openObservedWindow : Shell.Stamp -> Counter -> Model -> (Model,List Effect)
+openObservedWindow stamp root model =
+    if model.ownerExhausted || model.choice/=Nothing || Shell.capture model.windows.shell/=Just stamp
+        || not (Shell.inspectionAvailable model.windows.shell) then (model,[]) else
+    case model.ownerScope of
+        Nothing -> (model,[])
+        Just presentation ->
+            let menus=MenuBridge.openObservation presentation root model.windows.shell model.windows.menus
+                windows=model.windows
+                origin=MenuBridge.observedContext menus
+                focus=if model.popupOrigin==KeyboardEntry then (MenuBridge.menuSnapshot menus).menu |> Maybe.map (\menu -> [Focus ("menu:"++String.fromInt (Menu.menuNumber menu.id)++":close")]) |> Maybe.withDefault [] else []
+                target=origin |> Maybe.map (\current -> {binding=current.binding,destination=TaskbarGroup current.group,output=Nothing,observed=Just current})
+            in if (MenuBridge.menuSnapshot menus).menu==(MenuBridge.menuSnapshot model.windows.menus).menu then (model,[]) else
+                (retireSwitcher {model|windows={windows|menus=menus,picker=Nothing},open=False,overview=False,snap=Nothing,expected=Nothing,returnFocus=Nothing,menuOrigin=target,jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False},focus)
+
+restoreObservedFocus : Bool -> FocusTarget -> Model -> List Effect -> (Model,List Effect)
+restoreObservedFocus matching target model effects =
+    if not matching then (model,effects) else
+    let retired={model|returnFocus=Nothing}
+    in case (target.observed,model.windows.shell.windowObservation,Shell.capture model.windows.shell) of
+        (Just original,Just snapshot,Just stamp) ->
+            let exists=WindowObservation.groups snapshot |> List.any (\group -> group.key==original.group)
+                same=Shell.inspectionAvailable model.windows.shell && model.windows.shell.binding==Just original.binding
+                    && model.ownerScope==Just original.presentation && snapshot.owner==original.owner
+                    && WindowObservation.fingerprint original.group snapshot==original.fingerprint
+                    && exists && not model.ownerExhausted && not model.open && not model.overview
+                    && model.windows.picker==Nothing && (MenuBridge.menuSnapshot model.windows.menus).menu==Nothing
+            in if same then (retired,effects++[Focus ("group:"++Shell.stampKey stamp++":"++original.group)]) else (retired,effects)
+        _ -> (retired,effects)

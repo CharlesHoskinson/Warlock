@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-private-source-for-qualification-only",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision4-graceful-unavailable-batch/manifest.json",
+    "sha256": "f09759951f5c7a554c8874ab80fc07c3141aba9c6f0f165c2eb180e904dac250"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "sha256": "8182a5532aae6dd252a3c02c74d0e86b40969ac4bffb335b2c43e793cb1e4c54"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/haskell/runtime/runtime.cabal",
+      "sha256": "d82311075cb8ad80284fde52d3293a1dfbaa9a71b5819e23f762bae0a3882645"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision3-reserve-before-read/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs",
+      "sha256": "bc812f057b7573558b491dceae9c97f5cc4a31d8c98ea1dfc45ca3950a38eb7c"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision4-graceful-unavailable-batch/postimages/implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "sha256": "f079377b94ae56ddfd7b67d3f72f94bcf708fa87029fdb064082d9bf460c87ed"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/src/Desktop.elm",
+      "sha256": "5cf733a7d91126c4066f599962e8cf391cff9cd5b8ba461f752d5a3b3e763eb6"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/src/MenuBridge.elm",
+      "sha256": "0aca150c48310e712bc67a2bd2d3977c03ba3934666e10848b57e7c7ae3b3424"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/src/OutputController.elm",
+      "sha256": "bfd7a7087abcd8456dac3793fba21708386b63171a6a6deaac306ab75bccf808"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/src/Shell.elm",
+      "sha256": "58c0f888f890841d77f8068f50baf1024040987e2129eecbbc7c0660ac030aea"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/src/Surface.elm",
+      "sha256": "2b7f117be337b7f169413f897c82049dd765ca08b472c5ee44c3fa1b84c74a6d"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/src/TaskbarShell.elm",
+      "sha256": "4085ed27b18358331b7a3e74e51ffa6c6f66daaa9dab48f16dc570365ce58612"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/postimages/implementation/warlock/src/WindowObservation.elm",
+      "sha256": "428c78de7dc136969594e6a5f32cb5b985d69563bbdc91df964b82d4abb89b23"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/tests-first/implementation/warlock/haskell/protocol/test-desktop/Main.hs",
+      "sha256": "4a541243aa88166c97b6373b07b480a3b8e65b0e51e371d6361a22418a15bc02"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/tests-first/implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs",
+      "sha256": "6aedbbb534d37f3214bbe6328682e6e7b688c09ee07d9e53e36c1b9a7cb57e49"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/tests-first/implementation/warlock/qa/Ux024ObservedWindowMenuReplay.elm",
+      "sha256": "98fd760afe5abd770577d509ee2e4f3871a09afe7bc66762f67b5ad713c29ec1"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/revision2-live-owner-observation/tests-first/implementation/warlock/qa/ux024-observed-window-menu.cjs",
+      "sha256": "5839bff7dd5626fbbc21da75d29aa5f8493e8043b2d0689446a9afa76dee9966"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "sha256": "0f47279eb62eed7ed573c305228dac19023446a09164528258194ed7c52013d9"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+      "sha256": "610152133509243a6521ea2dc55cb497476eedb62fbfb3cbb75b4cf6bd9f1c9a"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+      "sha256": "694e878829fcbb35fee6e42293db5f1486da214ce512bb1345cdef09927290fa"
+    }
+  ],
+  "verifiedDelta": {
+    "changedPosts": [
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs"
+    ],
+    "otherPostsByteIdentical": 14,
+    "fixtureAssertionsAndFiveSecondDeadlineUnchanged": true
+  },
+  "callbackRetirementTrace": [
+    "Unsupported whole batch branches before attachment/callback/domain operation and requests retirement using existing ingress in slot; it returns without throwing or sending a reply.",
+    "retireIngress marks Running\u2192Stopped under state lock; releases state lock before G.retire. While callback is in flight G.retire sets Draining1. Close action is deliberately not executed until Retired. It does not acquire receive serial lock or await its own callback.",
+    "ingressStatus reads independently released state/shared/gate locks and reports retiring; this is not treated as completed endpoint cleanup.",
+    "Gate dispatch returns from callback and decrements Draining1\u2192Retired. Credential receive returns Delivered and releases its serial lock.",
+    "Aggregate pump next sees liveChannel Nothing from Stopped, gets CredentialNotLive and chooses False; then refuseAfterExit retires ingress again, now closes Retired endpoint and awaits original selected child under original deadline.",
+    "Right(RightFalse) is mapped through refuseAfterExit to BadArguments even if child exits normally: backend cannot report success merely because callback returned. Trusted child receipt remains required."
+  ],
+  "preserved": [
+    "Whole batch refuses before earlier catalog request, attachment or domain effects.",
+    "Configured allowed requests retain prior body, binding checks, ID reservation/read Unknown semantics and owner thread/deadline.",
+    "Unexpected/synchronous retirement failures and async exceptions still propagate; no generic catch, protocol API change, deadline extension or fixture weakening."
+  ],
+  "limits": [
+    "Static source/custody trace only; actual original five-second fixture must prove full send/refusal/receipt and cleanup.",
+    "No configured owner/connected native/original UX024 acceptance or live production adoption. Historical c32 failure remains retained.",
+    "Existing ingress may record the first callback as Delivered before next NotLive; receipt verdict must rely on final backend failure and zero domain effects, not fabricated typed rejection reason. No target QA executed."
+  ]
+}

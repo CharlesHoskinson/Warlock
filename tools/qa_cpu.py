@@ -301,6 +301,19 @@ MENU_FOCUS_BUILD_PACKET = '.warlock-contributor/evidence/nextloop-20261106/ux024
 MENU_FOCUS_BUILD_RECORD = '.warlock-contributor/ux024-menu-tab-focus-root-20261109.json'
 MENU_FOCUS_BUILD_IDENTITY = '60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4'
 MENU_FOCUS_BUILD_TARGETS = ('warlock-runtime:exe:warlock-ui-owner', 'warlock-runtime:test:ui-webkit-controls')
+OBSERVATION_SUPPORT={'tools/ux024_observation_qualification.py','tools/test_ux024_observation_qualification.py'}
+OBSERVATION_TARGETS=('warlock-protocol:test:desktop-boundary-controls','warlock-runtime:test:ui-mvp-controls','warlock-runtime:exe:ui-stream-child')
+
+def observation_elm_variant(runner,arguments):
+    if runner!=REPO/'tools/check_elm_cpu.py':return None
+    for variant in ('baseline','candidate'):
+        if arguments==['--observed-window-menu-'+variant,'--arm64']:return variant
+    return None
+
+def observation_inputs(root,variant):
+    from ux024_observation_qualification import load
+    return load(root,variant)
+
 MENU_FOCUS_BUILD_SUPPORT = {'tools/qa_cpu.py', 'tools/run_ux024_menu_focus_build.py',
     'tools/test_ux024_menu_focus_build.py', 'plugins/warlock-contributor/scripts/warlock.py',
     'tools/arm64-toolchain.json', 'tools/arm64_toolchain.py', 'tools/haskell-dependencies.json',
@@ -329,12 +342,16 @@ def menu_focus_build_spec(root):
     fields = {'schema', 'kind', 'recordPath', 'recordIdentitySha256', 'selectionGeneration',
               'authorizationExpiresUTC', 'coreSha256', 'targets', 'behaviorSuites',
               'sourceHashes', 'haskellFiles', 'toolchainManifest', 'cacheCorrespondence'}
+    observation = observation_inputs(root,packet['observationQualification']) if isinstance(packet,dict) and 'observationQualification' in packet else None
+    if observation:fields.add('observationQualification')
+    expected_targets=OBSERVATION_TARGETS if observation else MENU_FOCUS_BUILD_TARGETS
+    expected_suites=(['desktop-boundary-controls','ui-mvp-controls'],) if observation else (['ui-webkit-controls'], ['ui-webkit-controls','foreign-endpoint-refusal-controls'])
     if (not isinstance(packet, dict) or set(packet) != fields or packet['schema'] != 1
             or packet['kind'] != 'ux024-fixed-menu-focus-build'
             or packet['recordPath'] != MENU_FOCUS_BUILD_RECORD
             or packet['recordIdentitySha256'] != MENU_FOCUS_BUILD_IDENTITY
             or type(packet['selectionGeneration']) is not int or packet['selectionGeneration'] < 1
-            or packet['targets'] != list(MENU_FOCUS_BUILD_TARGETS) or packet['behaviorSuites'] not in (['ui-webkit-controls'], ['ui-webkit-controls', 'foreign-endpoint-refusal-controls'])):
+            or packet['targets'] != list(expected_targets) or packet['behaviorSuites'] not in expected_suites):
         raise RuntimeError('Fixed menu focus build scope differs')
     hs = root / 'implementation/warlock/haskell'
     current = set()
@@ -348,12 +365,14 @@ def menu_focus_build_spec(root):
         elif not p.is_dir():
             raise RuntimeError('Haskell build source special file refused')
     files, sources = packet['haskellFiles'], packet['sourceHashes']
+    additional=(OBSERVATION_SUPPORT | set(observation['inputs'])) if observation else set()
     if (not isinstance(files, dict) or not isinstance(sources, dict) or set(files) != current
-            or set(sources) != MENU_FOCUS_BUILD_SUPPORT | {'implementation/warlock/haskell/' + n for n in current}
+            or set(sources) != MENU_FOCUS_BUILD_SUPPORT | additional | {'implementation/warlock/haskell/' + n for n in current}
             or any(not isinstance(h, str) or re.fullmatch('[0-9a-f]{64}', h) is None for h in sources.values())
             or any(sources['implementation/warlock/haskell/' + n] != h for n, h in files.items())
             or packet['coreSha256'] != sources['plugins/warlock-contributor/scripts/warlock.py']):
         raise RuntimeError('Fixed menu focus build source closure differs')
+    if observation and any(sources.get(name)!=sha for name,sha in observation['inputs'].items()):raise RuntimeError('Frozen observation source pin differs')
     names = set(sources) | {MENU_FOCUS_BUILD_PACKET}
     for key in ('toolchainManifest', 'cacheCorrespondence'):
         ref = packet[key]
@@ -408,6 +427,8 @@ def main():
     menu_focus_spec = menu_focus_build_spec(REPO) if menu_focus_build else None
     allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site'], ['--custody'], ['--backend'], ['--persistent']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract'], ['--subscriptions']])))
+    if observation_elm_variant(runner,packet['arguments']):
+        allowed=[packet['arguments']]
     if menu_tab_dom_mode(runner, packet['arguments']):
         allowed = [['--menu-tab-dom', '--arm64']]
     if menu_focus_build:
@@ -543,6 +564,8 @@ def main():
         mandatory = capi_invocation_controls_inputs(REPO)
     if menu_tab_dom_mode(runner, packet['arguments']):
         mandatory = menu_tab_dom_inputs(REPO)
+    if observation_elm_variant(runner,packet['arguments']):
+        mandatory=menu_tab_dom_inputs(REPO) | OBSERVATION_SUPPORT | set(observation_inputs(REPO,observation_elm_variant(runner,packet['arguments']))['inputs'])
     if menu_focus_build:
         mandatory = menu_focus_spec['inputs']
     if set(packet['inputs']) != mandatory:

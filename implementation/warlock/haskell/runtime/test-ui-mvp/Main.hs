@@ -157,4 +157,12 @@ main = do
  forM_ [0..19 :: Int] $ \n -> do
   (bad, observed) <- run ("hostile-20261101-"++show n) enabled [(malformed n,0,True)]
   check ("whole frame refuses before attachment and domain IO seed 20261101 case "++show n) (not (backendPassed bad) && backendCleanup bad && backendCallbackCount bad==0 && backendOperationCount bad==0 && null observed)
+ -- A syntactically valid window read still has no authority without an actual
+ -- configured owner. The whole batch must refuse before catalog I/O/attachment.
+ let observedRead boundValue= obj [("protocolVersion",J.JNumber "3"),("kind",txt "window-read"),("binding",boundValue),("requestId",txt "77")]
+ forM_ [("observation-unconfigured",commit [observedRead owner]),
+        ("observation-unconfigured-after-catalog",commit [request owner,observedRead owner])] $ \(label,wire) -> do
+  (unconfigured,unconfiguredReplies) <- run label enabled [(wire,0,True)]
+  check (label ++ " refuses complete batch without endpoint authority")
+   (not (backendPassed unconfigured) && backendCleanup unconfigured && backendOperationCount unconfigured==0 && null unconfiguredReplies)
  putStrLn "ui-mvp authenticated attachment controls passed"

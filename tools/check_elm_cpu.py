@@ -199,7 +199,7 @@ def validate_menu_initial_focus_result(result, image_sha, fixture_sha):
             or any(row.get('passed') is not True for row in samples)):
         raise RuntimeError('Fixed17 initial menu focus cases/setup/32sequences/artifacts missing, changed or failed')
 
-def run_menu_tab_dom():
+def run_menu_tab_dom(observation_variant=None):
     import arm64_toolchain as toolchain
     from qa_cpu import menu_tab_dom_inputs
     scope = require_qa_scope()
@@ -211,12 +211,21 @@ def run_menu_tab_dom():
     report = {'schema': 1, 'passed': False, 'scope': 'Fixed live-menu DOM component',
               'nativeAcceptance': False, 'originalAccepted': False, 'protectedScope': scope, 'commands': []}
     sources = {}
+    qualification = None
+    if observation_variant is not None:
+        from ux024_observation_qualification import load,stage_rows,validate_elm_result
+        qualification=load(REPO,observation_variant)
+        report.update(candidateOnly=True,liveSourcesAdopted=False,integrationClaimed=False,qualificationVariant=observation_variant,sourceManifestSha256=qualification['sourceManifestSha256'])
+    def input_names():
+        names=menu_tab_dom_inputs(REPO)
+        if qualification:names |= {'tools/ux024_observation_qualification.py','tools/test_ux024_observation_qualification.py'} | set(load(REPO,observation_variant)['inputs'])
+        return names
     def source_hash(path):
         if path.is_symlink() or not path.is_file():
             raise RuntimeError('Nonregular menu CPU input: ' + str(path))
         return sha(path)
     def unchanged():
-        if set(sources) != menu_tab_dom_inputs(REPO):
+        if set(sources) != input_names():
             raise RuntimeError('Menu CPU source membership changed')
         for name, digest in sources.items():
             if source_hash(REPO / name) != digest:
@@ -236,7 +245,7 @@ def run_menu_tab_dom():
         if completed.returncode:
             raise RuntimeError(name + ': exit ' + str(completed.returncode))
     try:
-        sources = {name: source_hash(REPO / name) for name in sorted(menu_tab_dom_inputs(REPO))}
+        sources = {name: source_hash(REPO / name) for name in sorted(input_names())}
         report['sources'] = sources
         pinned = verify_menu_tab_toolchain()
         report['menuElmToolchain'] = pinned
@@ -249,6 +258,12 @@ def run_menu_tab_dom():
                 shutil.copyfile(REPO / name, target)
                 if source_hash(target) != digest:
                     raise RuntimeError('Staged Elm input differs')
+        projected_elm={name[len('implementation/warlock/src/'):]:sha for name,sha in sources.items() if name.startswith('implementation/warlock/src/')}
+        if qualification:
+            from ux024_observation_qualification import projected
+            stage_rows(qualification,work/'src','implementation/warlock/src/')
+            projected_elm=projected(qualification,projected_elm,'implementation/warlock/src/')
+            report['candidateElmSources']=projected_elm
         config = json.loads((REPO / 'implementation/warlock/elm.json').read_text())
         config['source-directories'] = ['src', 'qa']
         (work / 'elm.json').write_text(json.dumps(config))
@@ -278,6 +293,9 @@ def run_menu_tab_dom():
             shutil.copyfile(REPO / key, target)
             if source_hash(target) != expected:
                 raise RuntimeError('Staged initial focus fixture differs: ' + key)
+        if qualification:
+            # Only the two new observation fixtures are absent from live qa/.
+            stage_rows(qualification,work/'qa','implementation/warlock/qa/')
         shutil.copytree(pinned['elmHome'], output / 'elm-home')
         if toolchain.inventory(output / 'elm-home') != pinned['trees'][pinned['elmHome']]:
             raise RuntimeError('Staged ARM Elm cache differs')
@@ -332,10 +350,19 @@ def run_menu_tab_dom():
             if source_hash(work / 'qa' / Path(key).name) != expected:
                 raise RuntimeError('Staged initial focus fixture changed: ' + key)
         report.update(menuInitialFocusCaseCount=17, menuInitialFocusSeedCount=32, menuInitialFocusResultSha256=source_hash(initial_focus_result_path), menuInitialFocusImageSha256=initial_focus_image_sha)
-        for name, digest in sources.items():
-            prefix = 'implementation/warlock/src/'
-            if name.startswith(prefix) and source_hash(work / 'src' / name[len(prefix):]) != digest:
-                raise RuntimeError('Staged Elm input changed')
+        if qualification:
+            observation_image=output/'Ux024ObservedWindowMenuReplay.js'
+            run('compile-Ux024ObservedWindowMenuReplay',[pinned['elm'],'make','qa/Ux024ObservedWindowMenuReplay.elm','--optimize','--output='+str(observation_image)])
+            observation_sha=source_hash(observation_image)
+            observation_fixture=work/'qa/ux024-observed-window-menu.cjs'
+            observation_fixture_sha=source_hash(observation_fixture)
+            observation_result=output/'observed-window-menu.json'
+            run('observed-window-menu',[pinned['node'],str(observation_fixture),str(observation_image),str(observation_result)])
+            validate_elm_result(json.loads(observation_result.read_text()),observation_sha,observation_fixture_sha)
+            if source_hash(observation_image)!=observation_sha or source_hash(observation_fixture)!=observation_fixture_sha:raise RuntimeError('Observation tested artifact changed')
+            report.update(observedWindowMenuCaseCount=30,observedWindowMenuSeedCount=32,observedWindowMenuResultSha256=source_hash(observation_result),observedWindowMenuImageSha256=observation_sha)
+        actual_elm={str(path.relative_to(work/'src')):source_hash(path) for path in (work/'src').rglob('*.elm')}
+        if actual_elm!=projected_elm:raise RuntimeError('Staged Elm membership or bytes changed')
         unchanged()
         report.update(passed=True, caseCount=18, resultSha256=source_hash(result_path), imageSha256=image_hash)
     except Exception as error:
@@ -354,6 +381,8 @@ def run_menu_tab_dom():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group()
+    modes.add_argument('--observed-window-menu-baseline',action='store_true',help='Fixed private observation fixtures against unchanged live source')
+    modes.add_argument('--observed-window-menu-candidate',action='store_true',help='Fixed reviewed private observation source and fixtures')
     modes.add_argument('--menu-tab-dom', action='store_true', help='Fixed UX024 menu DOM containment component only')
     modes.add_argument('--browser', action='store_true', help='Separately reviewed private-network browser component checks')
     modes.add_argument('--authority', action='store_true', help='Original ARC005 owning-route authority tuple bridge checks')
@@ -366,6 +395,10 @@ def main():
     parser.add_argument('--arm64', action='store_true', help='Separately reviewed local ARM compiler, subscriptions mode only')
     parser.add_argument('--arm64-output', type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    for variant,selected in (('baseline',args.observed_window_menu_baseline),('candidate',args.observed_window_menu_candidate)):
+        if selected:
+            if sys.argv[1:]!=['--observed-window-menu-'+variant,'--arm64']:raise RuntimeError('Exact closed observation mode required')
+            return run_menu_tab_dom(variant)
     if args.menu_tab_dom:
         if sys.argv[1:] != ['--menu-tab-dom', '--arm64']:
             raise RuntimeError('Menu DOM mode requires exact --menu-tab-dom --arm64')

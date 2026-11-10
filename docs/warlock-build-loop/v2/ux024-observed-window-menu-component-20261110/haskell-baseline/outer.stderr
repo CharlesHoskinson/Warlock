@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py", line 298, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py", line 285, in main
+    observed=run('cpu-'+suite,argv,cwd=stage,extra=child_env)
+  File "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py", line 254, in run
+    if code:raise ValueError('fixed command failed: '+label)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: fixed command failed: cpu-desktop-boundary-controls
