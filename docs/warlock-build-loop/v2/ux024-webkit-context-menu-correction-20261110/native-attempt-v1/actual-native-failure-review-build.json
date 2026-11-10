@@ -1,0 +1,357 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "actual-native-failure-no-original-acceptance",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794295454105325314/report.json",
+    "sha256": "cc4c11ca9b91e0bf6d3e4b140dbdfa35273d9de8d82c867a9a3e30e1ed13ffdb"
+  },
+  "candidateSha256": "7285e3dfd988f16c08da4152133da0a6bd69c47461c6693456f51bac04a4aef9",
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/original-native-metadata-preparation/prepared/final/packet.json",
+      "sha256": "04e48d5cd29fcc92eca13e6a698d994f966b2f7b2ab1a7b8f45298cec48fc116"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "sha256": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+    },
+    {
+      "path": "/usr/share/gir-1.0/WebKit-6.0.gir",
+      "sha256": "b9b52e80b392004248b36bb47e522ce7e5fbbedd95a3e72c05f362a27285f9d0"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794295454105325314/menu-00-current-group.png",
+      "sha256": "8bcf554a90d56638014b899c7c6d3bb51f90a884511f55425b63539bcd616f8f"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794295454105325314/menu-01-open-menu.png",
+      "sha256": "f2d9e19fc1c1f55909d592355cf8bfc523d1de307145b4db16b21861d169c7c9"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-connected-observer-1794295454105325314/menu-02-tab-forward.png",
+      "sha256": "1c4a05ba6410a8cdcae31c4bea77141713a6c7d8401a11495c9220cc040319e8"
+    }
+  ],
+  "observations": {
+    "sourcePinsChecked": 411,
+    "rawSourceInputsUnchanged": true,
+    "keyboardTransactions": [
+      {
+        "index": 0,
+        "name": "current-group",
+        "argv": [
+          "-k",
+          "Tab"
+        ],
+        "originalDeadlineNs": 61179004166602,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 1,
+        "name": "open-menu",
+        "argv": [
+          "-M",
+          "shift",
+          "-k",
+          "F10",
+          "-m",
+          "shift"
+        ],
+        "originalDeadlineNs": 61179004166602,
+        "attempted": true,
+        "completed": true
+      },
+      {
+        "index": 2,
+        "name": "tab-forward",
+        "argv": [
+          "-k",
+          "Tab"
+        ],
+        "originalDeadlineNs": 61179004166602,
+        "attempted": true,
+        "completed": true
+      }
+    ],
+    "frameCount": 3,
+    "phaseObservationCount": 16,
+    "phaseSummary": [
+      {
+        "step": "current-group",
+        "complete": true,
+        "barActive": {
+          "tag": "BODY",
+          "id": "",
+          "control": null
+        },
+        "popupActive": {
+          "tag": "BODY",
+          "id": "",
+          "control": null
+        }
+      },
+      {
+        "step": "open-menu",
+        "complete": true,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BODY",
+          "id": "",
+          "control": null
+        }
+      },
+      {
+        "step": "tab-forward",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BODY",
+          "id": "",
+          "control": null
+        }
+      },
+      {
+        "step": "tab-forward",
+        "complete": true,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      },
+      {
+        "step": "tab-wrap",
+        "complete": false,
+        "barActive": {
+          "tag": "BUTTON",
+          "id": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:GTK Application",
+          "control": "bar:group:observed:application:GTK Application"
+        },
+        "popupActive": {
+          "tag": "BUTTON",
+          "id": "menu:1:close",
+          "control": "control:menu-close"
+        }
+      }
+    ],
+    "error": {
+      "type": "ValueError",
+      "message": "finite phase snapshot budget exhausted before tab-wrap"
+    },
+    "rawCleanupUnknown": true,
+    "rawGlobalRestoration": false,
+    "rawForcedCleanup": false,
+    "originalAcceptance": false,
+    "requirementsCredit": 0,
+    "scenariosCredit": 0
+  },
+  "pixelReview": {
+    "reviewedFrames": [
+      "menu-01-open-menu.png",
+      "menu-02-tab-forward.png"
+    ],
+    "facts": [
+      "Before ShiftF10, actual observed taskbar group has visible blue focus outline.",
+      "After ShiftF10/before first menu Tab, genuine Elm observation popup is visible, with Close focus; a separate stock editing popover overlays it, showing Cut/Copy/Paste/Delete/Undo/Redo/SelectAll.",
+      "After issued Tab, all12remaining tab-wrap phase observations retain popup active menu:1:close; no Refresh readiness, no fourth key sent."
+    ],
+    "limit": "Screenshot plus DOM establishes competing menu UI and failed traversal, not exact internal event delivery order."
+  },
+  "sourceDiagnosis": {
+    "host": {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+      "lines": "960-974 and complete signal setup",
+      "fact": "No context-menu handler exists; navigation decide-policy/load handling does not suppress WebKit stock context menu."
+    },
+    "primaryContract": {
+      "path": "/usr/share/gir-1.0/WebKit-6.0.gir",
+      "lines": "28801-28824",
+      "fact": "WebKitWebView context-menu defaults to showing proposed menu when no handler connected; returning TRUE suppresses it."
+    },
+    "elm": {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "lines": "404-417,490-496",
+      "fact": "Eligible group ShiftF10 already enters preventDefaultOn keydown with decoder returning preventDefault True; genuine Elm menu opens. Missing Elm key handler is not this observed fault."
+    },
+    "conclusion": "Host WebKit stock context-menu path remains unsuppressed while Elm opens its own menu; observed competing stock popup is a concrete host boundary gap. Exact keydown/keyup/default GTK action sequence and which handler consumed Tab were not instrumented and remain unknown.",
+    "minimumCorrection": "If Root authorizes, suppress only stock WebKit context-menu on these owned shell WebViews using exact installed signal ABI and existing callback owner/deadline/retirement machinery; retain Elm scoped menu action/IME/default handling and original native bounds. No input/oracle relaxation or blind retry."
+  },
+  "limits": [
+    "Only3of9keys completed; Tabwrap/reverse/Escape/reopen/fresh eligible return and finalnormalretirement not qualified.",
+    "cleanupUnknown=true/globalRestoration=false preserved; no full native/UX024/EARS/release credit.",
+    "No reviewer target imports/tests/native or primary edits. Actual failed report and screenshots unchanged."
+  ]
+}

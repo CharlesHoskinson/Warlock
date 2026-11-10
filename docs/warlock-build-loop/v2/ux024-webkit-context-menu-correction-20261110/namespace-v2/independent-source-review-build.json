@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-one-scalar-append-only-namespace",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/original-menu-native-runner/revision2-packet-namespace/manifest.json",
+    "sha256": "404ba6f8d8bf17b15ba264effd85434a66d8999f7f9bdc7c720e11bc8012855b"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "0c0c5ed2429ec8f41f24594b4b5e8a2d8d3a1e59f7ef191af080fe4f351e9341"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/original-menu-native-runner/revision2-packet-namespace/postimages/tools/run_current_arm_ux024_foreign_toplevel_observer.py",
+      "sha256": "d14aaaa242ab19416ddde1516e9f302c3e0e990f12d5b32f4acb84a3b3dcedce"
+    }
+  ],
+  "verified": [
+    "Exact single PACKET literal v1\u2192v2; reverse replacement byte-identical. All88functions/classes AST unchanged.",
+    "All nine-key/28+2/16frame/phase/auth/map/cleanup predicates unchanged; historical admitted v1 paths untouched."
+  ],
+  "limits": [
+    "Future actualfreshbuild/integration/RSI/currenttuple remain separate prerequisites; no outputs or pass predicted. No tests/imports/effects by reviewer."
+  ]
+}

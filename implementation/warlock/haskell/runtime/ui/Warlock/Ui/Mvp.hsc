@@ -599,6 +599,7 @@ data MvpObject
 type GType = CULong
 type CloseRequestCallback = Ptr MvpObject -> Ptr () -> IO CInt
 type KeyPressedCallback = Ptr MvpObject -> CUInt -> CUInt -> CInt -> Ptr () -> IO CInt
+type ContextMenuCallback = Ptr MvpObject -> Ptr MvpObject -> Ptr MvpObject -> Ptr () -> IO CInt
 
 gdkKeyEscape :: CUInt
 gdkKeyEscape = 0xff1b
@@ -614,6 +615,9 @@ foreign import ccall "wrapper"
 
 foreign import ccall "wrapper"
   wrapKeyPressed :: KeyPressedCallback -> IO (FunPtr KeyPressedCallback)
+
+foreign import ccall "wrapper"
+  wrapContextMenu :: ContextMenuCallback -> IO (FunPtr ContextMenuCallback)
 
 foreign import ccall unsafe "g_object_ref"
   gObjectRef :: Ptr MvpObject -> IO (Ptr MvpObject)
@@ -876,6 +880,12 @@ attachMvpWindow contextOwner views = mask $ \_ -> do
         window
         "close-request"
         (wrapCloseRequest $ \_ _ -> callback 1 (writeIORef closeRef True >> pure 1))
+
+      -- WebKit's stock browser menu is not shell policy. The borrowed menu and
+      -- hit-test objects are valid only during emission; neither is retained.
+      -- TRUE suppresses the stock popover, including on a context fault.
+      mapM_ (\visibleView -> acquireSignal visibleView "context-menu"
+        (wrapContextMenu $ \_ _ _ _ -> callback 1 (pure 1))) [bView, pView]
 
       -- Capture-phase key observation sees physical Escape before WebKit can
       -- consume it, while returning 0 (GDK_EVENT_PROPAGATE) so normal typing

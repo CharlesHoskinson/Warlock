@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-private-mvp-source-for-protected-qualification",
+  "manifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/manifest.json",
+    "sha256": "d23c1833f609fccd2d1ee0e88c5fc93314bcbfb92db37096ae309520117fab58"
+  },
+  "evidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/preimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "737fe6ccebccfbbf43ca6dc926fa028bdda6102cb98f38a504b84b74866ac860"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/postimages/implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "sha256": "bcc6c6f9f750fa8bd7ca254762208f2147697a5238ccb63ff29f4364712f7242"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/webkit-context-menu-correction/installed-signal-contract.json",
+      "sha256": "3c240f857fb1c326c1d5543eebc3cd37c2d3fa6bd480fbd7c7637128855f9bdb"
+    },
+    {
+      "path": "/usr/share/gir-1.0/WebKit-6.0.gir",
+      "sha256": "b9b52e80b392004248b36bb47e522ce7e5fbbedd95a3e72c05f362a27285f9d0"
+    },
+    {
+      "path": "/usr/include/webkitgtk-6.0/webkit/WebKitWebView.h",
+      "sha256": "86ca10a63de9d8c0830635508f3cb7dc5218f3ab963cc1910ad45e30cfb03749"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/ui/Warlock/Ui/ProcessSignalOwner.hs",
+      "sha256": "01378b006b4de137fd1bd14ec172585e5559139af653280de6c145ddbde30170"
+    }
+  ],
+  "verified": [
+    "Exact installed WebKit6 context-menu native arguments WebView*,ContextMenu*,HitTestResult* plus GObject userdata\u2192gboolean/CInt. No GTK3GdkEvent argument; four opaque pointers correct.",
+    "Both visible owned Bar/Popup views connect before presentation through existing acquireSignal/connectOwnedMvpSignal, under masked attach/context owner. Controller hidden view untouched.",
+    "Callback ignores borrowed pointers, dereferences/retains none; normal returns1 and existing sticky-context-fault catch fallback1 suppress default stock menu without exceptions crossing FFI.",
+    "Existing ProcessSignalOwner allocates process-lifetime StablePtr before native registration; callbacks remain pinned after disconnect; no new free/quiescence claim or changed dependent cleanup.",
+    "Removing exactly three additions yields byte-identical baseline Mvp. Main/Desktop/Elm, native Escape propagation, keyboard IME/default handling, deadlines/9keys/16frames and navigation policy unchanged."
+  ],
+  "limits": [
+    "Source/installedABI only. Root source controls, ordinary fresh owner/controls compile and actual native observation still needed.",
+    "Actual failure proves competing stock menu pixels; exact keydown/keyup/signal ordering remains unobserved. No claim suppression already fixes physical Tab traversal.",
+    "Stock context menus on owned shell bar/popup intentionally suppressed for pointer and keyboard origins; Elm shell menu policy remains authoritative.",
+    "No reviewer imports/tests/compiler/native effects or primary changes; no original UX024/EARS/release acceptance."
+  ]
+}
