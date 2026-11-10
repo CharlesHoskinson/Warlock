@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "kind": "same-task-harness-comparison",
+  "completedCandidateSha256": "78ec06caa70f7b646612f5c0d1695d5522109b33e916e1d298aae68b5c87e4a5",
+  "baselinePluginSha256": "2e4f6057d0dceb584569481fe433377118a76df792f9a41790c122eaf4533430",
+  "baselineSnapshotSha256": "a0fef756e936effb6d83670e20b4795b3e0321c96ff630271ae2b3b371df28e4",
+  "candidateSnapshotSha256": "f075b70ff6c517c9f25fdea496692785a7cf445ff82c6552c144c789a97fcbc5",
+  "immutableHashes": {
+    "taskFiles": "2f1b5da8f16c26ddc29c8d49738d5e54c026ddf64fdc7c4ea781ee44a762b302",
+    "sourceFiles": "60e6be5487e795e3af800cbc0aea3a606510e5e7e7f7c976f15cc6e939409a1c",
+    "oracleFiles": "e322f52834531bde0fb9a613fbbd0aa8268e239fc79080b04775c86d2db100c9",
+    "guardFiles": "baf9d4985cc133a319ceacd05ed77ba3dbdc09efb952b09f2d1f63122240b032",
+    "authorizationFiles": "5ce04edcef1f08c46bdfcac0f97584a49dfb8db1a3d6ab3638d2b1e6f04454ef",
+    "pluginBaselineFiles": "2e4f6057d0dceb584569481fe433377118a76df792f9a41790c122eaf4533430"
+  },
+  "checks": [
+    {
+      "name": "builder:test_only_two_closed_build_targets_and_no_cabal_execution",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_only_fixed_pure_allocation_branch_executes",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_source_tree_rejects_symlink_and_extra_membership",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_source_tree_rejects_actual_changed_body",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_sandbox_hides_host_run_and_binds_source_readonly",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_external_system_inventory_is_mounted_readonly",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_pinned_standard_inventory_alias_precedes_callback_import",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_reaped_leader_is_never_signalled",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_live_leader_timeout_is_explicit_forced_failure",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_deadline_clips_to_authorization_and_never_extends",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "builder:test_retained_group_after_leader_reap_refuses_without_signalling",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_exact_hash_argument_and_literal_runner_only",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_complete_fixed_closure_and_metadata",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_scope_targets_unknown_fields_and_actor_record_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_incomplete_extra_haskell_or_support_hashes_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_reference_escape_symlink_and_oversize_refuse",
+      "baselinePassed": true,
+      "candidatePassed": true
+    },
+    {
+      "name": "admission:test_old_elm_mode_unchanged",
+      "baselinePassed": true,
+      "candidatePassed": true
+    }
+  ],
+  "regression": {
+    "path": ".warlock-contributor/evidence/nextloop-20261106/ux024-menu-tab-focus-plan-20261109/rsi-foreign-toplevel-v3-no-change-v1/regression.json",
+    "sha256": "61bd880728066c18e6c5a847ef4f1869a08b3e33572d46d5b9c356dc408f474f"
+  }
+}
