@@ -17335,17 +17335,91 @@
         {
           "name": "ux-024",
           "oracle": "focus follows menu order and returns to original eligible target",
-          "status": "partial",
+          "status": "accepted",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/manifest.json",
               "sha256": "561e5f87e031d777a8f16ed2ec0f24838eebc4b969ba667622ffacc16cec2f51"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/adjudication-evidence.json",
+              "sha256": "fc3896ccda0440ce570e8bc04c99f4e4e6dbb3c79579a27753c6ad039cd3294d"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/reviews/independent-clean-native54-original-case-review-build.json",
+              "sha256": "bd627bdb365ceca85f7feae7fa51d9b7c428d9b04e379bd7114f82c44bd0b9a9"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/native/report.json",
+              "sha256": "3e25904f416c27b8abce766d47a58b98f2a1213f30c6606cc6689c7f3584a839"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/clean-haskell-report.json",
+              "sha256": "d075020ff981989f014bbbceb1cbc3272dba1c44aad45f4c428c9849b0136c18"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ux024-menu-return-escape-component-20261110/elm-document-report.json",
+              "sha256": "62e48d24355a360c60e3c6c4a0d765231f8ee1836f4afffc364acddcb447d0c4"
             }
           ],
-          "missingObservation": "Independent original UX-024 and UI-011 scenario review; no full original-oracle acceptance inferred; Native AT focus return and full nested scope stack, opener retirement/replacement/workspace/minimize/restart, protected-input/output races; Full original GUI journeys, toolkit/hardware/resource gates, reproducible package and reversible deployment/rollback",
-          "observation": "Captured pointer/keyboard entry controls native parent lease before popup teardown. Original taskbar Escape now restores actual GTK key delivery; all nine keyboard surfaces pass with no injected pointer events. Modal/draft and fullscreen regressions pass normal exits. Additive Quint model and eleven actual Elm checks pass; historical failure preserved."
+          "missingObservation": null,
+          "observation": "Independent original named ux-024 review accepts the actual clean keyboard-only taskbar-menu recording: Close/Refresh traversal and forward/reverse containment, disabled-row exclusion, Escape and fresh exact eligible original-group return, repeated opening/dismissal, and normal owned cleanup. Only this named case is accepted.",
+          "reviewerDisposition": {
+            "name": "build_audit",
+            "independent": true,
+            "disposition": "accepted",
+            "evidence": {
+              "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/reviews/independent-clean-native54-original-case-review-build.json",
+              "sha256": "bd627bdb365ceca85f7feae7fa51d9b7c428d9b04e379bd7114f82c44bd0b9a9"
+            }
+          },
+          "sourceTuple": {
+            "sourceRevision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+            "core": "Current Elm taskbar observation menu and Haskell owned compositor observation bridge; physical GTK/WebKit keyboard handoff, owned Escape consumption and fresh eligible return. All32 declared sources are pinned to this immutable source commit.",
+            "plugin": "Unchanged native guards and owned nested compositor/provider ABI; actual clean CPU53 owner and controls images. Read-only observation does not grant window mutation authority.",
+            "toolchain": "Pinned ARM64 SDK/cache, compiler and source inventories bound by the actual clean Haskell report and current109-Elm three-document report. Exact image/header/library/system custody remains bound by native54 packet476337 and its admitted independent roles."
+          },
+          "sourceHashes": {
+            "implementation/warlock/src/HttpPopup.elm": "e3b20ed07ce33d23dfebb7d9ba368d210ec01597920f819fc061421f80d24589",
+            "implementation/warlock/src/SurfaceRenderer.elm": "747442fed21f81309b7b67640b9300468db4dfcbaaf5901f137e6d0e0a642672",
+            "implementation/warlock/qa/ux024-menu-dom.cjs": "d6b4983292ca45c94f4de56d4ebe6943c9d9e649661e08a0aa98e9c9ea2eb6a9",
+            "implementation/warlock/src/SurfaceController.elm": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+            "implementation/warlock/qa/MenuEscapeReplay.elm": "d85c653ecab26f3d7f18d90fd54e67e2e88d688027554f0d7acd7e4e586aa982",
+            "implementation/warlock/qa/menu-escape.cjs": "a70cacd14fb4c48066f2b2e18859f67d56da359cf2cf86227774d1cc1dd4de58",
+            "implementation/warlock/src/CapturedAction.elm": "08efe9eacd78e9edf86ed13a5b13108d29face6ef1edf264ad711dc6c720664b",
+            "implementation/warlock/src/Presentation.elm": "e78986f840a0c8deeed8f0b959e13f34b5c58ffbe74fe278ea46f1b9fbf89851",
+            "implementation/warlock/qa/ux024-bar-context-dom.cjs": "0c34f8f48673ecae06d09dc9af15db73e5dd5229c08557b33fba0da7de7a3131",
+            "implementation/warlock/src/Desktop.elm": "23b5ef3c0224754ffac5bf884ace75b922b3e76dc8c03b95f251bbe401225b0d",
+            "implementation/warlock/qa/MenuInitialFocusReplay.elm": "600a0f18055b1c6e222ff61f75f63d37d0135aa4afc1a997e25c5476cd5e4c64",
+            "implementation/warlock/qa/menu-initial-focus.cjs": "aa138698454a0d16bea9467c01b94cca72faf8fe4c2d7cbf3f5dbd06bf8dce0b",
+            "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "6e09d795f8c88e69a922ec92c7ea5116ab7aebb1c9d64be57f4af5ba589a56e3",
+            "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs": "8d5fdc55ce3f2f996c110de1a54f648bbac33d18681e1c1c4dc095cce76c5b58",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f",
+            "implementation/warlock/haskell/protocol/protocol.cabal": "3050e7db1b2d1c1c5f4b7089a16cffd3d72c4d96c520a81e3de279706f4c02e4",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55",
+            "implementation/warlock/haskell/runtime/runtime.cabal": "d82311075cb8ad80284fde52d3293a1dfbaa9a71b5819e23f762bae0a3882645",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "8182a5532aae6dd252a3c02c74d0e86b40969ac4bffb335b2c43e793cb1e4c54",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs": "bc812f057b7573558b491dceae9c97f5cc4a31d8c98ea1dfc45ca3950a38eb7c",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "f079377b94ae56ddfd7b67d3f72f94bcf708fa87029fdb064082d9bf460c87ed",
+            "implementation/warlock/src/MenuBridge.elm": "0aca150c48310e712bc67a2bd2d3977c03ba3934666e10848b57e7c7ae3b3424",
+            "implementation/warlock/src/OutputController.elm": "bfd7a7087abcd8456dac3793fba21708386b63171a6a6deaac306ab75bccf808",
+            "implementation/warlock/src/Shell.elm": "58c0f888f890841d77f8068f50baf1024040987e2129eecbbc7c0660ac030aea",
+            "implementation/warlock/src/Surface.elm": "2b7f117be337b7f169413f897c82049dd765ca08b472c5ee44c3fa1b84c74a6d",
+            "implementation/warlock/src/TaskbarShell.elm": "4085ed27b18358331b7a3e74e51ffa6c6f66daaa9dab48f16dc570365ce58612",
+            "implementation/warlock/src/WindowObservation.elm": "428c78de7dc136969594e6a5f32cb5b985d69563bbdc91df964b82d4abb89b23",
+            "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "4a541243aa88166c97b6373b07b480a3b8e65b0e51e371d6361a22418a15bc02",
+            "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs": "6aedbbb534d37f3214bbe6328682e6e7b688c09ee07d9e53e36c1b9a7cb57e49",
+            "implementation/warlock/qa/Ux024ObservedWindowMenuReplay.elm": "98fd760afe5abd770577d509ee2e4f3871a09afe7bc66762f67b5ad713c29ec1",
+            "implementation/warlock/qa/ux024-observed-window-menu.cjs": "5839bff7dd5626fbbc21da75d29aa5f8493e8043b2d0689446a9afa76dee9966",
+            "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "dde4680e8d984c6231d23a2092828127111f818b6e544decb4c6b51e95928846"
+          },
+          "previousLedgerObservation": {
+            "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/previous-ux024-ledger-row.json",
+            "sha256": "bf67ed8af01d8583a957f7b15609c9988c574ab7343d10e2c1d1e9c5ac5dca33"
+          }
         }
-      ]
+      ],
+      "missingObservation": "The broader shell-popup clause remains unadjudicated beyond this taskbar-menu named case. Evidence for other reachable popup focus scopes and separate applicable obligations remains independent; no whole requirement acceptance follows from this scenario."
     },
     {
       "id": "ELM-UX-025",
@@ -18309,5 +18383,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-09T18:27:06.770783+00:00"
+  "updatedUTC": "2026-11-10T13:22:49.523091+00:00"
 }

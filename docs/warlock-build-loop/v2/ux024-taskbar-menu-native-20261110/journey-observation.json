@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "candidateSha256": "545480cb26581fdcb660dd52865f67bff0f5dff379a68d8d75658454577cb679",
+  "revision": "a8e4781a0b9c2002aa60f815b47eedfde7e8a728",
+  "journeyPlanSha256": "438fe6517b37e95aae50e53c0b6b8b2c11084948749b5a704b0c1a269e3aecbf",
+  "outcome": "pass",
+  "missingObligations": [],
+  "inputRoute": "Actual owned nested Wayland compositor, fixed keyboard-only nine transactions: Tab, Shift-F10, Tab, Tab, Shift-Tab, Escape, Shift-F10, Escape, Alt-F4. No pointer input. Original28+2/16-frame/phase and all source/ABI/process/input gates retained.",
+  "observedBehavior": "The genuine taskbar menu follows Close/Refresh order, skips the disabled fact row, contains forward and reverse endpoint traversal, closes on Escape and returns focus to the exact eligible original observed group after a fresh read. Reopening and second dismissal restore the same group again. Normal unforced owned close and observer retirement complete. Independent Build review accepts only original ux-024.",
+  "steps": [
+    {
+      "stepIndex": 0,
+      "inputStep": "Given a taskbar menu has focus, use Tab and Shift-Tab to traverse its documented eligible controls.",
+      "outcome": "pass",
+      "evidence": {
+        "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/steps/step-0.json",
+        "sha256": "e0bc5dcf33439989b2934a690ceb78e2aa3d3fc586e9211cb0a1fdba78ad1439"
+      }
+    },
+    {
+      "stepIndex": 1,
+      "inputStep": "Continue traversal at both endpoints and remain within the current menu; disabled rows do not become actionable.",
+      "outcome": "pass",
+      "evidence": {
+        "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/steps/step-1.json",
+        "sha256": "9ab58400432ebb6e9eccb6a3251740ae8591df20233720f8e9d54f01d97b845f"
+      }
+    },
+    {
+      "stepIndex": 2,
+      "inputStep": "Press Escape to dismiss and restore the original eligible focus target.",
+      "outcome": "pass",
+      "evidence": {
+        "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/steps/step-2.json",
+        "sha256": "ea514e733b929759a2a4e8c99a48f7e27f32bec46d52724c3ec4ede13d3b9723"
+      }
+    }
+  ],
+  "cleanup": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/normal-cleanup.json",
+    "sha256": "1382b916860db4325e7acd09b4a2fcfc4ec0c01f387c78b1d923faea37e1c734"
+  },
+  "independentReview": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/reviews/independent-clean-native54-original-case-review-build.json",
+    "sha256": "bd627bdb365ceca85f7feae7fa51d9b7c428d9b04e379bd7114f82c44bd0b9a9"
+  },
+  "report": {
+    "path": "docs/warlock-build-loop/v2/ux024-taskbar-menu-native-20261110/native/report.json",
+    "sha256": "3e25904f416c27b8abce766d47a58b98f2a1213f30c6606cc6689c7f3584a839"
+  },
+  "wholeRequirementAccepted": false
+}

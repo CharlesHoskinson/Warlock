@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "status": "conditional-guidance-only-no-adjudication",
+  "author": "sol_supervisor",
+  "originalDocument": {
+    "path": "/home/hoskinson/Projects/Warlock/docs/elm-roadmap/requirements.json",
+    "sha256": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff"
+  },
+  "originalRequirement": {
+    "id": "ELM-UX-024",
+    "capability": "elm-accessibility",
+    "pattern": "state-driven",
+    "ears": "WHILE a shell popup owns keyboard focus, the Elm desktop SHALL constrain traversal to its documented focus order and restore the previous eligible focus target on dismissal.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: focus follows menu order and returns to original eligible target.",
+    "legacyEvidence": "window-behavior-spec/accessibility.qnt",
+    "task": "Implement focus scopes and native focus return.",
+    "scenarios": [
+      {
+        "name": "ux-024",
+        "given": "taskbar menu has focus",
+        "when": "Tab traversal then Escape occurs",
+        "then": "focus follows menu order and returns to original eligible target"
+      }
+    ],
+    "source": "docs/elm-roadmap/contributions/experience.json",
+    "status": "proposed",
+    "taskId": "P5-ELM-UX-024",
+    "accountableOwnerRole": "Accessibility lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "originalScenarioCount": 1,
+  "ledgerAtCapture": {
+    "path": "/home/hoskinson/Projects/Warlock/docs/warlock-build-loop/v2/requirement-ledger.json",
+    "sha256": "c86d4ec2f781b669487e7c3c3c1fa0721051ca68c540f8dd5082f313306b327b"
+  },
+  "currentLedgerRow": {
+    "id": "ELM-UX-024",
+    "phase": "P5",
+    "priority": "must",
+    "capability": "elm-accessibility",
+    "owner": "Accessibility lead",
+    "verifier": "Independent acceptance reviewer",
+    "requirementAccepted": false,
+    "status": "partial",
+    "scenarios": [
+      {
+        "name": "ux-024",
+        "oracle": "focus follows menu order and returns to original eligible target",
+        "status": "partial",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/manifest.json",
+            "sha256": "561e5f87e031d777a8f16ed2ec0f24838eebc4b969ba667622ffacc16cec2f51"
+          }
+        ],
+        "missingObservation": "Independent original UX-024 and UI-011 scenario review; no full original-oracle acceptance inferred; Native AT focus return and full nested scope stack, opener retirement/replacement/workspace/minimize/restart, protected-input/output races; Full original GUI journeys, toolkit/hardware/resource gates, reproducible package and reversible deployment/rollback",
+        "observation": "Captured pointer/keyboard entry controls native parent lease before popup teardown. Original taskbar Escape now restores actual GTK key delivery; all nine keyboard surfaces pass with no injected pointer events. Modal/draft and fullscreen regressions pass normal exits. Additive Quint model and eleven actual Elm checks pass; historical failure preserved."
+      }
+    ]
+  },
+  "currentRecordedCounts": {
+    "acceptedRequirements": 21,
+    "acceptedScenarios": 46
+  },
+  "recordAtCapture": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "sha256": "288639222f00cec57c5063b47bf541ebafe1c7e95e676940308429214ea6e0fb"
+  },
+  "recordIdentitySha256": "60fc89b0b68fd5f48614e08c0b203a765442483ac57d5e2c59a1771ace553fa4",
+  "currentSourceBindings": {
+    "implementation/warlock/src/Surface.elm": "2b7f117be337b7f169413f897c82049dd765ca08b472c5ee44c3fa1b84c74a6d",
+    "implementation/warlock/src/HttpPopup.elm": "b8f8159266ceb339dd65355aef71c5e837c43df30df35d03b7463ea004904133",
+    "implementation/warlock/src/SurfaceSnapshot.elm": "9c85362ec27496438eb5a159e2c162704ef2922ba41df172a17e81787203913a",
+    "implementation/warlock/src/SurfaceController.elm": "c9e5eb01e1555194071d0e5fb8308fb50c0ad5fefc3f99dd477bdc646f0e12a6",
+    "implementation/warlock/src/Desktop.elm": "23b5ef3c0224754ffac5bf884ace75b922b3e76dc8c03b95f251bbe401225b0d",
+    "implementation/warlock/src/MenuBridge.elm": "0aca150c48310e712bc67a2bd2d3977c03ba3934666e10848b57e7c7ae3b3424",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc": "737fe6ccebccfbbf43ca6dc926fa028bdda6102cb98f38a504b84b74866ac860",
+    "plugins/warlock-contributor/scripts/warlock.py": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78"
+  },
+  "literalAdjudication": {
+    "scenario": "Only ux-024: Given taskbar menu has focus; Tab traversal then Escape; focus follows menu order and returns to original eligible target. A genuine current observed-window taskbar menu is within that literal case. Read-only menu content does not invalidate a focus case.",
+    "requirement": "The EARS clause says a shell popup, without restricting popup mode. A pass for the named taskbar-menu scenario does not demonstrate every other reachable shell-popup focus policy. The single scenario count is not a logical expansion of its evidence scope.",
+    "conditionalScenarioDisposition": "accepted only after the actual protected native pass/normal cleanup and independent current-source phase/pixel/original-oracle review have no missing named-case observations",
+    "conditionalWholeRequirementDisposition": "Keep requirementAccepted=false/status=partial for this bounded taskbar-only adjudication. A later independent whole-clause review may use coherent current evidence for remaining popup modes; this guide does not require unrelated window actions/SystemMenu implementation/AT/release completion before accepting ux-024.",
+    "maximumCreditFromThisCase": {
+      "scenarios": 1,
+      "requirements": 0
+    },
+    "conditionalTotalsIfAccepted": {
+      "acceptedRequirements": 21,
+      "acceptedScenarios": 47
+    },
+    "notANativeLaunchPrecondition": true
+  },
+  "existingParserSemantics": {
+    "context": "warlock.py context() preserves exactly242 requirement IDs and417 exact scenario names/oracles. It does not derive requirementAccepted from scenario status.",
+    "counts": "progress_audit() counts requirementAccepted==true independently from accepted scenario statuses. One accepted scenario must not silently set the whole flag.",
+    "ledgerMutation": "Neither candidate review, passing terminal, integration nor normal record claim automatically updates the original ledger. Root uses the existing reviewed ledger proposal/preimage/CAS pattern. Retain the old ledger bytes, old evidence and prior partial observations. Append the new reviewed evidence only to ux-024; preserve its exact name/oracle.",
+    "reportFlags": "Keep raw nativeAcceptance/originalAcceptance/fullJourneyAccepted flags unchanged. Independent acceptance is an external verdict over actual source-bound evidence."
+  },
+  "currentFocusPolicyCoverage": [
+    {
+      "modes": [
+        "menu"
+      ],
+      "source": "HttpPopup.elm198\u2013237 wraps only mode menu and composition Idle. It cycles the current enabled popup controls under current publication/lease and refuses modified/composing keys; SurfaceSnapshot permits focusOnly only for notifications, so menu enabled-order is the relevant order.",
+      "return": "R5 Desktop/MenuBridge observed context preserves current owner/full binding/group handle fingerprint/presentation scope. Dismiss schedules a correlated fresh WindowRead and emits the still-eligible group Focus once. Existing Mvp menu keyboard-parent route supplies Popup/menu-close physical focus.",
+      "scope": "Actual named-case native observation still required; CPU replay/phase ACK alone is insufficient."
+    },
+    {
+      "modes": [
+        "applications",
+        "files"
+      ],
+      "source": "Surface.mode selects these independently; HttpPopup has search/query controls and does not apply its menu-only Tab handler. Desktop uses separate open/close Focus routes.",
+      "scope": "No whole-mode native containment/eligible-return conclusion follows from a taskbar menu pass."
+    },
+    {
+      "modes": [
+        "notifications",
+        "settings",
+        "system"
+      ],
+      "source": "Separate Desktop open/close routes and opener targets; notifications has a special focusOnly control policy. Surface.mode and SurfaceController route current-lease dismissal.",
+      "scope": "The current taskbar trial does not adjudicate these routes. Missing global SystemMenu service is not an extra prerequisite for ux-024."
+    },
+    {
+      "modes": [
+        "snap",
+        "switcher",
+        "overview",
+        "picker"
+      ],
+      "source": "Separate model/selection and native popup lifecycles exist. Current SurfaceController mode-specific dismissal/retirement does not make all such paths equivalent to the observed MenuBridge route.",
+      "scope": "No source-only or old-ABI evidence is promoted to current native coverage."
+    },
+    {
+      "modes": [
+        "jump"
+      ],
+      "source": "Separate jump-list entry/open/close policy and identity bindings.",
+      "scope": "Not exercised by the current nine transactions."
+    }
+  ],
+  "nativeReviewChecklist": [
+    "Actual current R5 Backend/Elm and compiled owner/controller/bar/popup correspond to this packet; no old fixture-only HTML or constructor-only observation.",
+    "Real owned mapped window produces the current taskbar group and the exact keyboard context route opens its genuine MenuBridge popup.",
+    "Actual physical keyboard focus is in the current popup; Tab forward/wrap and Shift-Tab reverse follow declared Close/Refresh order, skip disabled facts and stay in the menu.",
+    "Escape dismisses; a fresh correlated WindowRead verifies the same owner and complete handle fingerprint, current presentation and still-eligible origin; actual DOM/physical focus returns once. Repeated Escape/reopen sequence does not replay a stale return.",
+    "All nine fixed transactions completed without pointer input or retry, within the original28+2 and16-frame ceiling; actual phase evidence and PNGs are independently inspected.",
+    "Actual owner Closed/Retired/whole normal cleanup and global restoration are present; no timeout/force/unknown cleanup.",
+    "Any missing observation yields partial/unknown/changes-required. No future pass or acceptance is presumed."
+  ],
+  "plannedStepMapping": {
+    "journeyPlanSha256": "438fe6517b37e95aae50e53c0b6b8b2c11084948749b5a704b0c1a269e3aecbf",
+    "exactOriginalInputSteps": [
+      "Given a taskbar menu has focus, use Tab and Shift-Tab to traverse its documented eligible controls.",
+      "Continue traversal at both endpoints and remain within the current menu; disabled rows do not become actionable.",
+      "Press Escape to dismiss and restore the original eligible focus target."
+    ],
+    "note": "Canonical journey-observed pass has exactly three semantic steps from the unchanged plan. The nine physical transactions are evidence for those steps, not nine replacement plan entries.",
+    "semanticSteps": [
+      {
+        "stepIndex": 0,
+        "inputStep": "Given a taskbar menu has focus, use Tab and Shift-Tab to traverse its documented eligible controls.",
+        "physicalEvidence": "Current-group/open-menu then Tab forward and Shift-Tab reverse; actual phase/pixel observations before transactions3,4,5 show current focus."
+      },
+      {
+        "stepIndex": 1,
+        "inputStep": "Continue traversal at both endpoints and remain within the current menu; disabled rows do not become actionable.",
+        "physicalEvidence": "Forward wrap and reverse wrap remain Close/Refresh; actual disabled fact rows are skipped and no action is emitted."
+      },
+      {
+        "stepIndex": 2,
+        "inputStep": "Press Escape to dismiss and restore the original eligible focus target.",
+        "physicalEvidence": "After Escape transactions5 and7, phases/frames before6 and8 show a new read revision and exact eligible original group focus once."
+      }
+    ]
+  },
+  "normalRootSequence": [
+    "Close and consume the actual native job before any relevant source/evidence mutation. Preserve every raw report/frame/log and failure.",
+    "If the actual result passes, freeze the independent original-case review and real artifact hashes. Commit the actual source/evidence revision; never invent a job, revision or terminal.",
+    "Use ordinary integrated and journey-observed events on that actual current native candidate. The journey observation must bind the actual revision, the unchanged plan SHA, all three ordered semantic steps and an actual candidate/revision-bound normal cleanup receipt. Do this before any support edit that would stale its input pins.",
+    "Use the normal same-participant scenario-verdict claim with the exact oracle/verification and independent reviewer. No new participant, owner, scenario name, plan, source clock or authorization window.",
+    "Use the existing reviewed original-ledger CAS pattern. If and only if named-case observations are complete, set ux-024 status accepted and append actual evidence/review. Keep whole requirement partial/false for the bounded case and retain all other originals/counts.",
+    "Run existing check/progress-audit for actual recorded results. Do not use those structural checks as acceptance evidence."
+  ],
+  "normalRecordArgvTemplate": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+    "--repo",
+    "/home/hoskinson/Projects/Warlock",
+    "--record",
+    ".warlock-contributor/ux024-menu-tab-focus-root-20261109.json",
+    "--json",
+    "record",
+    "--outcome",
+    "scenario-verdict",
+    "--summary",
+    "ACTUAL_REVIEWED_UX024_NAMED_CASE_VERDICT",
+    "--claim-file",
+    "ACTUAL_REVIEWED_CLAIM_FILE"
+  ],
+  "separateObligations": [
+    "UI011 window effects/actions and its own scenario matrix remain separate; no mutation is required for this focus case.",
+    "Accessibility/AT requirements apply where their own literal clauses require them. ARIA/DOM focus or the keyboard recording does not establish speech/braille/device acceptance. Their absence is not silently added to ux-024 given/when/then.",
+    "Release/toolkit/hardware/resource/package/deployment gates and full242/417 goal remain open under their original requirements.",
+    "Broader shell-popup focus eligibility, retirement/replacement/nested-scope behavior must retain their own current evidence and missing observations. Do not erase them when accepting this named case."
+  ],
+  "effects": {
+    "qaExecuted": false,
+    "nativeExecuted": false,
+    "primaryWrites": false,
+    "ledgerChanged": false,
+    "acceptanceClaimed": false
+  }
+}
