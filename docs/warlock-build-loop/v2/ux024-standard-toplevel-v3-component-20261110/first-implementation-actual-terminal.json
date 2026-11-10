@@ -1,0 +1,27 @@
+{
+  "terminal": true,
+  "jobId": "pid401756-start3502923",
+  "candidateSha256": "9318d85d465e8eab3e173c8bab1f76c68e52a7533ac6a207f68d09a8f0f3c4cc",
+  "scope": "cpu",
+  "manifestSha256": "2977c181435ac1a0fa7b87d8c67474399a31ac1fe10ba966779b95ba41f917b0",
+  "fixtureSha256": "fb29eeab996f3901a4b3c705900609b86e79056a37c08714acb58ae3ff9d5a96",
+  "exit": 1,
+  "classification": "failed",
+  "failureSignature": "foreign-toplevel-ghc-overlapping-managerfinished-case",
+  "actualOuterHandle": "87856",
+  "actualOuterHandleConsumed": true,
+  "rawReport": {
+    "path": ".warlock-contributor/ux024-menu-focus-build-1794269316726004398/report.json",
+    "sha256": "0f363a709cb776f797c8c9bbe83f0822833b9fb089ec124f42bfad8112076bf5"
+  },
+  "actualBuildStderr": {
+    "path": ".warlock-contributor/ux024-menu-focus-build-1794269316726004398/logs/build.stderr",
+    "sha256": "db3de317058944581f3af1af97b7b730ad509c2f622cae7d158b052bd5fd4cc5"
+  },
+  "semanticControlsExecuted": false,
+  "guiOwnerExecuted": false,
+  "strictOuterGroupAbsenceCheckPassed": true,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "cleanupQualified": false
+}

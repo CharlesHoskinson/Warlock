@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-pure-standard-v3-accumulator-component-only",
+  "greenReport": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794269974439288975/report.json",
+    "sha256": "7576543fc9bdc40308e336388e690d18616795faeab601625a5ced93edec4c42"
+  },
+  "allocationStdout": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794269974439288975/logs/cpu-ui-webkit-controls.stdout",
+    "sha256": "d9c76485e7c20ca1f2692b9b7a0015752b5c5db1306cf0fc810ea16a7e167d9f"
+  },
+  "allocationStderr": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794269974439288975/logs/cpu-ui-webkit-controls.stderr",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "buildStdout": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794269974439288975/logs/build.stdout",
+    "sha256": "8be8b6fb11fc05f399f7ba3ad73a836a0b7db1d5cbb4d8190b1cd8856a874c13"
+  },
+  "preservedAPIBaseline": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794268842126799857/report.json",
+    "sha256": "4fe5abd34059066045cfd76eabcbb3f8dcb7d727ee69ad6d73437ea3480a579a"
+  },
+  "preservedWerrorFailure": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794269316726004398/report.json",
+    "sha256": "0f363a709cb776f797c8c9bbe83f0822833b9fb089ec124f42bfad8112076bf5"
+  },
+  "commandCount": 5,
+  "allExit0": true,
+  "allReportedForcedCleanupFalse": true,
+  "sourceHashes": 269,
+  "exactHaskellTreeFiles": 258,
+  "allLiveHashesAndTreeMatched": true,
+  "sourceDeltaFromV1CompileFailure": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/ForeignToplevel.hs": {
+      "v1": "9747ccc1ff0b601bbcc9988095b4efe3d8c8f34eb09c767a45c314d5e642acf6",
+      "v2": "8d528b410346300e83bb40684c8517a5a92ec6d05b5dddc6ade3ba9637661d1f"
+    }
+  },
+  "images": {
+    "warlock-ui-owner": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794269974439288975/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+      "device": "57",
+      "inode": "6231955",
+      "size": "37644232",
+      "sha256": "a04cec78517edcd8983167c913af3a711cd9fd9049949597fbb5055f8868dc9a",
+      "executed": false
+    },
+    "ui-webkit-controls": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-focus-build-1794269974439288975/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+      "device": "57",
+      "inode": "6231954",
+      "size": "37601056",
+      "sha256": "d4ee899607ef498543dcfd6c652757d2b5eeb493c7f7dfdde0c743202c540548",
+      "executed": true
+    }
+  },
+  "allImageBodyAndStatTuplesMatched": true,
+  "actualSentinel": "allocation-controls: PASS\n",
+  "controlAccounting": "Unmodified Main67b allocation-only flow includes34 fixed ForeignToplevel assertions and32literal seeds with2checks each, plus existing parser controls. Final sentinel reached; no per-control stdout counts invented.",
+  "rootExecution": {
+    "outer": 58767,
+    "consumedExit": 0
+  },
+  "independence": "Collector authored by reviewer, independently reviewed by Sol8173e607. This receipt verifies nonauthor protocol/test actual results, not collector self-approval.",
+  "limits": [
+    "No owner executable/native/provider/window/backend effect executed; owner compiled only.",
+    "Pure data generation/Done/Closed/Finished invariants do not authenticate endpoint or prove callback retirement.",
+    "Raw cleanupQualifiedfalse preserved; no clean native/global restoration acceptance.",
+    "APIabsence+retainedgroup refusal and first9747Werror report remainfailed; not relabeled semanticRED or erased.",
+    "No reviewer tests/imports/compiler/primary writes or originalUX024 acceptance."
+  ]
+}

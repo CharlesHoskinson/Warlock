@@ -7,8 +7,11 @@ module Main (main) where
 
 import Control.Exception (IOException, SomeException, displayException, try, finally)
 import Control.Concurrent (threadDelay)
-import Control.Monad (forM_, unless)
+import Control.Monad (foldM, forM_, unless)
 import Data.IORef
+import Data.Either (isLeft)
+import qualified Warlock.Protocol.Identity as Identity
+import qualified Warlock.Protocol.ForeignToplevel as FT
 import qualified Data.Text as T
 import qualified Data.ByteString.Char8 as BS
 import Warlock.Ui.Owner (retainRequestTrace)
@@ -455,6 +458,7 @@ allocationControls = do
  keyboardFocusControls
  notificationKeyboardFocusControls
  menuKeyboardFocusControls
+ foreignToplevelControls
  -- Fixed passive observation cannot generate or suppress the real input.
  let script = firstMouseupDiagnosticScript
  forM_ ["new Promise", "'mouseup'", "capture:true", "passive:true", "once:true", "isTrusted", "data-surface-control", "data-publication", "data-lease"] $ \literal ->
@@ -520,3 +524,85 @@ ordinaryControls = do
  leaseSequenceProperties
  staleDispatch
  contextOwnership
+
+-- Standard v3 protocol events only; no display, IPC, backend or native effect.
+foreignToplevelControls :: IO ()
+foreignToplevelControls = do
+ let checked value = either (ioError . userError . show) pure value
+ generation <- checked (Identity.parseCounter False "1")
+ otherGeneration <- checked (Identity.parseCounter False "2")
+ empty <- checked (FT.newOwner generation)
+ (withOutput,output) <- checked (FT.addOutput 10 empty)
+ (created,handle) <- checked (FT.addToplevel 20 withOutput)
+ let apply events state = foldM (flip FT.applyEvent) state events
+     initial = [FT.Title handle "Document",FT.AppId handle "documents",FT.States handle [2],FT.OutputEnter handle output]
+     onlyRow state = FT.snapshot state >>= \view -> case FT.toplevels view of
+       [value] -> Right value
+       _ -> Left FT.Incomplete
+ staged <- checked (apply initial created)
+ committed <- checked (FT.applyEvent (FT.Done handle) staged)
+ row <- checked (onlyRow committed)
+ check "foreign toplevel remains absent before done" (fmap FT.toplevels (FT.snapshot staged)==Right [])
+ check "foreign toplevel done publishes exact title/app/state/output" (FT.toplevelTitle row=="Document" && FT.toplevelAppId row=="documents" && FT.toplevelStates row==[FT.Activated] && FT.toplevelOutputs row==[output] && FT.toplevelParent row==Nothing)
+ check "foreign toplevel incomplete initial done refuses" (isLeft (FT.applyEvent (FT.Done handle) created))
+ pending <- checked (FT.applyEvent (FT.Title handle "Renamed") committed)
+ check "foreign toplevel later pending title is not published" (fmap FT.toplevelTitle (onlyRow pending)==Right "Document")
+ renamed <- checked (FT.applyEvent (FT.Done handle) pending)
+ check "foreign toplevel later done publishes new title" (fmap FT.toplevelTitle (onlyRow renamed)==Right "Renamed")
+ check "foreign toplevel duplicate active wire id refuses" (isLeft (FT.addToplevel 20 committed))
+ check "foreign toplevel zero wire id refuses" (isLeft (FT.addToplevel 0 committed))
+ check "foreign toplevel unknown state refuses" (isLeft (FT.applyEvent (FT.States handle [4]) committed))
+ check "foreign toplevel duplicate state refuses" (isLeft (FT.applyEvent (FT.States handle [1,1]) committed))
+ check "foreign toplevel UTF16 bound refuses astral overflow" (isLeft (FT.applyEvent (FT.Title handle (T.replicate 129 "😀")) committed))
+ check "foreign toplevel C0 text refuses" (isLeft (FT.applyEvent (FT.AppId handle "bad\n") committed))
+ check "foreign toplevel empty title remains truthful" (not (isLeft (FT.applyEvent (FT.Title handle "") committed)))
+ check "foreign toplevel duplicate output enter refuses" (isLeft (FT.applyEvent (FT.OutputEnter handle output) committed))
+ left <- checked (FT.applyEvent (FT.OutputLeave handle output) committed)
+ check "foreign toplevel output leave waits for done" (fmap FT.toplevelOutputs (onlyRow left)==Right [output])
+ leftDone <- checked (FT.applyEvent (FT.Done handle) left)
+ check "foreign toplevel no outputs does not fabricate visibility" (fmap FT.toplevelOutputs (onlyRow leftDone)==Right [])
+ check "foreign toplevel unmatched output leave refuses" (isLeft (FT.applyEvent (FT.OutputLeave handle output) leftDone))
+ other <- checked (FT.newOwner otherGeneration)
+ (_,foreignHandle) <- checked (FT.addToplevel 20 other)
+ (_,foreignOutput) <- checked (FT.addOutput 10 other)
+ check "foreign toplevel wrong owner event refuses" (isLeft (FT.applyEvent (FT.Title foreignHandle "Other") committed))
+ check "foreign toplevel wrong owner output refuses" (isLeft (FT.applyEvent (FT.OutputEnter handle foreignOutput) committed))
+ check "foreign toplevel wrong owner parent refuses" (isLeft (FT.applyEvent (FT.Parent handle (Just foreignHandle)) committed))
+ closed <- checked (FT.applyEvent (FT.Closed handle) committed)
+ check "foreign toplevel closed removes committed row" (fmap FT.toplevels (FT.snapshot closed)==Right [])
+ check "foreign toplevel closed callback refuses" (isLeft (FT.applyEvent (FT.Title handle "Late") closed))
+ (reused,replacement) <- checked (FT.addToplevel 20 closed)
+ check "foreign toplevel reused wire gets new incarnation" (replacement/=handle)
+ check "foreign toplevel old token cannot mutate replacement" (isLeft (FT.applyEvent (FT.Done handle) reused))
+ removed <- checked (FT.removeOutput output committed)
+ check "foreign toplevel retired output removed from snapshots" (fmap FT.toplevelOutputs (onlyRow removed)==Right [])
+ (outputReused,newOutput) <- checked (FT.addOutput 10 removed)
+ check "foreign toplevel output reuse changes identity" (newOutput/=output)
+ check "foreign toplevel stale output token refuses" (isLeft (FT.applyEvent (FT.OutputEnter handle output) outputReused))
+ (two,child) <- checked (FT.addToplevel 21 committed)
+ childPending <- checked (apply [FT.Title child "Child",FT.AppId child "documents",FT.States child [],FT.Parent child (Just handle)] two)
+ childDone <- checked (FT.applyEvent (FT.Done child) childPending)
+ check "foreign toplevel current parent survives commit" (fmap (map FT.toplevelParent . FT.toplevels) (FT.snapshot childDone)==Right [Nothing,Just handle])
+ cyclePending <- checked (FT.applyEvent (FT.Parent handle (Just child)) childDone)
+ cycleDone <- checked (FT.applyEvent (FT.Done handle) cyclePending)
+ check "foreign toplevel parent cycle cannot publish snapshot" (isLeft (FT.snapshot cycleDone))
+ parentClosed <- checked (FT.applyEvent (FT.Closed handle) childDone)
+ check "foreign toplevel stale committed parent cannot publish snapshot" (isLeft (FT.snapshot parentClosed))
+ repaired <- checked (apply [FT.Parent child Nothing,FT.Done child] parentClosed)
+ check "foreign toplevel actual parent-null event repairs current graph" (fmap (map FT.toplevelParent . FT.toplevels) (FT.snapshot repaired)==Right [Nothing])
+ finished <- checked (FT.applyEvent FT.ManagerFinished committed)
+ check "foreign toplevel manager finished prevents publication" (isLeft (FT.snapshot finished))
+ check "foreign toplevel manager finished prevents new handles" (isLeft (FT.addToplevel 30 finished))
+ check "foreign toplevel manager finished prevents callbacks" (isLeft (FT.applyEvent (FT.Done handle) finished))
+ full <- checked (foldM (\state wire -> fmap fst (FT.addToplevel wire state)) empty [1..256])
+ check "foreign toplevel live row bound refuses 257th" (isLeft (FT.addToplevel 257 full))
+ forM_ [0..31 :: Int] $ \seed -> do
+   let label="Seed "<>T.pack (show seed)
+   draft <- checked (FT.applyEvent (FT.Title handle label) committed)
+   check ("foreign toplevel seed pending "<>show seed) (fmap FT.toplevelTitle (onlyRow draft)==Right "Document")
+   if even seed then do
+     done <- checked (FT.applyEvent (FT.Done handle) draft)
+     check ("foreign toplevel seed done "<>show seed) (fmap FT.toplevelTitle (onlyRow done)==Right label)
+   else do
+     retired <- checked (FT.applyEvent (FT.Closed handle) draft)
+     check ("foreign toplevel seed closed "<>show seed) (isLeft (FT.applyEvent (FT.Done handle) retired) && fmap FT.toplevels (FT.snapshot retired)==Right [])
