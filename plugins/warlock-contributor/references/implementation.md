@@ -39,6 +39,13 @@ callback must not become a second policy or synthesize a successful native resul
 Connect the feature to the runnable integration root; an isolated replay or new
 module alone is not delivery.
 
+For recurring work with bounded outstanding bookkeeping, test more completion
+cycles than its capacity through the public production route. Include request
+registration and correlated completion. Preserve the quota and admission rules.
+Verify that stale, foreign, duplicate or malformed replies cannot release unrelated
+work. Retain refusal checks for mixed batches and focus payloads. Short domain
+traces can miss bookkeeping that accumulates across valid completions.
+
 For error handling, retain the transaction context needed to distinguish Pending,
 Refused and Unknown. Show the actual status and available action in the affected
 surface. Retry only when the existing policy proves an effect was unsent; reconcile
