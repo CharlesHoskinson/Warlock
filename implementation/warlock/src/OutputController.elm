@@ -163,6 +163,7 @@ updateCore event ((Model model) as current) =
                         let survives = model.selected |> Maybe.map (\priorSelected -> List.member priorSelected table.scopes) |> Maybe.withDefault False
                             selected = if survives then model.selected else List.head table.scopes
                             retired = not survives && owner current/=Nothing
+                            rendererReturn = if retired then Desktop.captureRendererRestoration (Controller.desktop model.controller) else Nothing
                             (next,effects) = if retired then lease model.controller |> Maybe.map (\token -> Controller.update (Controller.NativeDismiss token) model.controller) |> Maybe.withDefault (model.controller,[]) else (model.controller,[])
                             (assigned,ownerEffects) = assignOwner selected next
                             highest = List.foldl (\scope maximum -> if UInt64.compare (identity scope) maximum==GT then identity scope else maximum) model.highest table.scopes
@@ -172,12 +173,18 @@ updateCore event ((Model model) as current) =
                                 Nothing -> (assigned,[])
                             (unblocked,_) = if model.capacityRefused then (cancelled,[]) else Controller.update (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.RegistrationAvailable False)))) cancelled
                             (refreshed,readEffects)=Controller.update (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.SupersedeObservations (selected/=Nothing))))) unblocked
-                            result = Model {model | revision=table.revision,highest=highest,views=table.scopes,locations=table.locations,selected=selected,controller=refreshed,batchExhausted=if model.capacityRefused then model.batchExhausted else False}
+                            -- Capture precedes dismissal. Arm only after the existing
+                            -- owner assignment and observation supersession. The
+                            -- opaque proof creates no request or focus effect here.
+                            handed = case rendererReturn of
+                                Just proof -> Controller.update (Controller.Interaction (Desktop.ArmRendererRestoration proof)) refreshed |> Tuple.first
+                                Nothing -> refreshed
+                            result = Model {model | revision=table.revision,highest=highest,views=table.scopes,locations=table.locations,selected=selected,controller=handed,batchExhausted=if model.capacityRefused then model.batchExhausted else False}
                             -- These reads were allocated in this same unsent update,
                             -- before the supersession above. Never forward obsolete
                             -- observations; retain every operation/local effect.
                             prior = List.filter (not << observationEffect) (effects++ownerEffects++cancelEffects)
-                        in (result,Controller.Publish (Controller.frame refreshed)::(prior++readEffects))
+                        in (result,Controller.Publish (Controller.frame handed)::(prior++readEffects))
                 Err _ -> (current,[])
         Renderer raw ->
             let decoder = strict ["viewProtocol","kind","scope","action"]

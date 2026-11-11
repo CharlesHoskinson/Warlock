@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-current-elm-qualification",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794409810074501744/report.json",
+    "sha256": "082c2da06410404f205561e2aa5e9ac274d1febcd6a4c47c8dd30126136ed614"
+  },
+  "verified": {
+    "commandsExitZero": 15,
+    "currentElmSources": 109,
+    "currentHtmlPhysicalTuplesAndHashes": 3,
+    "allReportedSourceHashesMatch": true,
+    "sourceProvenance": "installed-current-source",
+    "liveSourcesAdopted": true
+  },
+  "limits": [
+    "CPU Elm/component regression qualification only; no native renderer callback/recovery/AT/original acceptance.",
+    "Report has no named cleanupQualified or sourceInputsUnchanged fields; neither is invented."
+  ]
+}
