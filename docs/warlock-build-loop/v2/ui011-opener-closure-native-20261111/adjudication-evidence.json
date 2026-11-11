@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-011",
+  "scenario": "focus-scope-opener closure",
+  "oracle": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "candidateSha256": "8bcb967a22e4b595c92bad8f59ed49d856b02d091a3b19a2b9b28e8b2a4b5678",
+  "sourceRevision": "e8321897104cbe8ba45a9f9123457c63c9a6b5af",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "84dbc4a4db37c79777213547366cf1ca17e74e780e17c29cae4b604d4e6694c3",
+    "implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm": "ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273",
+    "implementation/warlock/qa/ui011-observed-scope-retirement.cjs": "ca51900ed2edc6b0a74403e98e0cff33cffae6b18a924f96ce5216b21342206b",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "78b46c625bdfb4e0781938f9fb59bd35f60df0d95bb7d1c5f48305ecbfc52b65",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "3b8f13574f28112f6aed316c778bf132e6e431be7de6a0ab36549b254083aad5",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs": "01648a3ce02bc033b4e7c682979f863240b79db95cccfb6997a636cd78b19fd0",
+    "implementation/warlock/src/WindowObservation.elm": "c14c481ae42b197847194c880a4de80146943158cfd21cd56c7ab6b01e839840",
+    "implementation/warlock/src/Shell.elm": "503fcf5bbcfead01eaddcea2fd024e071bedfdde3d9260336455632838144a63",
+    "implementation/warlock/src/MenuBridge.elm": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544",
+    "implementation/warlock/src/DesktopPolicy.elm": "e8e547e2678c97bd3e4c494bd7a8a5521ef3b0cab82bdcf406f1709d3ea084c4",
+    "implementation/warlock/src/SurfaceController.elm": "d577b4fa232a568f80351e26a69c7b8a8c9d40f4521d4b64577d5bb4b900296c",
+    "implementation/warlock/src/OutputController.elm": "59de16446debfe82eb71eece55e24aab6807467c29916a694ca0926a8242283d",
+    "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs": "4aea5886d6d63f1e613e4073c835f51751d8d690df08b6d7ac89fb1b12f5af5e",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": "db965d55b0a8df65c5418d12f0e91b8bb3b0cab4a2ca7191d7d82fd033d9acca"
+  },
+  "currentImageCandidateSha256": "b7d480aef08e92111ef0897b7846553c4fc048aab146fa1e9620eab0ebcf8509",
+  "sourceClosure": {
+    "count": 437,
+    "guardCount": 7,
+    "processInventoryCount": 14761,
+    "providerSha256": "7f10ce76bfe92c194ae31ded9bc56c74cf62d647ade81fecb228e44b6ea17b28",
+    "launcherSha256": "3be45673148d4fc76e275d8f586f4f1779b7e46bc922af30f946a58b32b91ee7"
+  },
+  "actualNativeReport": {
+    "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/native/report.json",
+    "sha256": "b4e02344ed2a3d25987ddc9a06a307ed580cb27a606b7a8dd2c1ec343a6e1a21"
+  },
+  "actualProtectedTerminal": {
+    "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/native/actual-protected-terminal.json",
+    "sha256": "c5b981b204495d30a7d00d1b1ed38fc3eb8cac52066a217128d2f980239e3b37"
+  },
+  "independentNamedCaseReview": {
+    "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/reviews/independent-original-case-review-build.json",
+    "sha256": "97b5691e3a386078593b6aa0e27bb4abe431fdf99c870a4abb5356f1c3c61a1c"
+  },
+  "currentPacket": {
+    "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/native/packet.json",
+    "sha256": "23798b42ad580ffa67d5347cbf1cd2cf350e1c52a2ff36b224ada95bb6dc51e5"
+  },
+  "actualImageReport": {
+    "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/native/image-report.json",
+    "sha256": "7b822c8ee1189ee7896e54aa019a31576c35568477d598cac7c86ad8c4c9e7ea"
+  },
+  "actualImageReview": {
+    "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/reviews/independent-image-review-build.json",
+    "sha256": "78b2251171a02b01778e739f5eada2ff900ab9fa4e9fabf349b2982d0d469061"
+  },
+  "currentElmDocuments": {
+    "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/native/elm-document-report.json",
+    "sha256": "9e2823efc378fc3ee8721a5ba090785928bc1cab0dc35246b0111097e5d8b394"
+  },
+  "observedCase": {
+    "requirementId": "ELM-UI-011",
+    "scenario": "focus-scope-opener closure",
+    "verdict": "accepted",
+    "given": "A real identity-bound independent GTK opener has an open current shell focus scope.",
+    "when": "The same opener closes through its fixed nonce CLOSE/closed protocol.",
+    "then": "The dead opener group disappears, the scope closes automatically, and native shell focus plus credential-bound AT focus resolve to the current eligible Applications fallback; no dead or replacement target activates.",
+    "scope": "This named case only; no nested/minimize/workspace/lock scenarios, complete ELM-UI-011 requirement, ordered journey or release acceptance."
+  },
+  "authenticatedFocusEvidence": [
+    {
+      "phase": "menu",
+      "expectedDomId": "menu:1:close",
+      "nodeCount": 40,
+      "snapshotCalls": 178,
+      "confirmationCalls": 331,
+      "confirmationEndMonotonicNs": "64157950914701",
+      "focus": {
+        "owner": ":1.6",
+        "path": "/org/a11y/atspi/accessible/c25ed3c1_212a_4080_8f46_c9dfdd68f5bd",
+        "domId": "menu:1:close",
+        "process": {
+          "owner": ":1.6",
+          "pid": 3195070,
+          "birth": "6429778",
+          "sha256": "03881440c8ba43700cb449330e4b9737b2d89e5ebc514c96281230dc8a4b8ffb"
+        },
+        "webArea": [
+          ":1.6",
+          "/org/a11y/atspi/accessible/7cd75c72_b7db_47e0_a5f5_6f4bcc387c3e"
+        ]
+      }
+    },
+    {
+      "phase": "fallback",
+      "expectedDomId": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+      "nodeCount": 36,
+      "snapshotCalls": 479,
+      "confirmationCalls": 623,
+      "confirmationEndMonotonicNs": "64162539629903",
+      "focus": {
+        "owner": ":1.5",
+        "path": "/org/a11y/atspi/accessible/ee4ae44c_e0f2_48e6_83d4_23b5565b4846",
+        "domId": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+        "process": {
+          "owner": ":1.5",
+          "pid": 3195043,
+          "birth": "6429774",
+          "sha256": "03881440c8ba43700cb449330e4b9737b2d89e5ebc514c96281230dc8a4b8ffb"
+        },
+        "webArea": [
+          ":1.5",
+          "/org/a11y/atspi/accessible/3ce7c88c_f80d_4ead_b5a4_e04ef05065b5"
+        ]
+      }
+    }
+  ],
+  "originalBounds": {
+    "originalDeadlineNs": 64167317656295,
+    "originMonotonicNs": 64139317656295,
+    "durationNs": 28000000000,
+    "cleanupCeilingNs": 64169317656295,
+    "keyTransactions": 3,
+    "maximumKeyTransactions": 4,
+    "frames": 5,
+    "maximumFrames": 16,
+    "maximumPhases": 16,
+    "maximumATCalls": 640,
+    "maximumATNodes": 128,
+    "maximumATDepth": 16
+  },
+  "normalCleanup": {
+    "stackNormal": true,
+    "reportedBirthCount": 81,
+    "allReportedBirthsCurrentlyAbsent": true,
+    "independentOpenerBirthCurrentlyAbsent": true,
+    "allReportedExitsZeroReapedGroupsAbsent": true,
+    "openerNormalClosed": true,
+    "openerTracerExit": 0,
+    "atRetirement": {
+      "retired": true,
+      "retainedUnknown": false,
+      "services": [
+        {
+          "pid": 3194823,
+          "birth": "6429617",
+          "exit": 0,
+          "requestedStop": "owned unicast SessionOver",
+          "normalExit": true,
+          "reaped": true,
+          "groupAbsent": true
+        },
+        {
+          "pid": 3194806,
+          "birth": "6429601",
+          "exit": 0,
+          "requestedStop": "SIGTERM",
+          "normalExit": true,
+          "reaped": true,
+          "groupAbsent": true
+        }
+      ],
+      "nativeAcceptance": false
+    },
+    "observerRetirement": {
+      "schema": 1,
+      "nonce": "3eda0f30191bc90e8d8e46e7c4c4e2a25001c59441fef1b92736081909d84070",
+      "sequence": 4,
+      "phase": "RETIRE",
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "configChecks": 15,
+      "nativeAcceptance": false,
+      "completedPhases": 4,
+      "actionPassed": true,
+      "error": null,
+      "status": "Retired",
+      "passed": true
+    },
+    "keyboardRetirement": {
+      "pid": 3194441,
+      "startTicks": "6429233",
+      "exit": 0,
+      "normal": true,
+      "groupAbsent": true,
+      "stdoutTailHex": "",
+      "monotonicNs": 64166912273127
+    },
+    "endpointDescriptorRetirement": {
+      "closed": true,
+      "errors": []
+    },
+    "phaseChannelRetirement": {
+      "status": "closed",
+      "errors": [],
+      "cleanupAuthority": false
+    },
+    "globalRestoration": true,
+    "sourceInputsUnchanged": true,
+    "forcedCleanup": false,
+    "cleanupUnknown": false
+  },
+  "creditScope": {
+    "namedCaseAcceptedByIndependentReview": true,
+    "maximumRequirementDelta": 0,
+    "maximumScenarioDelta": 1,
+    "requirementAccepted": false,
+    "releaseAccepted": false,
+    "otherUI011CasesAccepted": false
+  },
+  "orderedJourney": {
+    "outcome": "partial",
+    "manualRefreshIssued": false,
+    "missingObligations": [
+      "Immutable first input step explicitly requests Refresh; current automatic observation route issues no Refresh."
+    ],
+    "originalPlan": {
+      "userOutcome": "When an open observed taskbar-menu scope retires because a fresh authenticated observation finds its opener closed, keyboard focus has one current eligible destination and never targets a dead or replacement incarnation.",
+      "originalPairs": [
+        {
+          "requirement": "ELM-UI-011",
+          "scenario": "focus-scope-opener closure"
+        }
+      ],
+      "inputSteps": [
+        "Open the actual keyboard observed-window menu with its full current origin identity, then request its existing Refresh without changing the binding or owner.",
+        "Admit the matching successful newer Observed reply that reports the origin closed or replaced while preserving the same current shell scope.",
+        "Observe one new identity-bound focus to the exact eligible original group or declared current Applications desktop fallback; reject stale/replaced targets and all authority-changing side effects."
+      ],
+      "expectedObservation": "The actual Surface Applications control under the same live binding/presentation is the declared desktop fallback. It receives a new distinct bar focus only after the one matching successful current reply when the original full handle fingerprint is ineligible. Current original identity is restored otherwise. Unknown/unavailable and ineligible/stale identities yield no focus; duplicate receipts cannot replay. Explicit Escape replacement/removal behavior stays unchanged. CPU observation proves this component only; literal native and applicable accessibility scenario observations remain required."
+    }
+  },
+  "rawAcceptanceFlagsRemainUnchanged": true,
+  "historicalFailedRunsRemainFailed": true
+}
