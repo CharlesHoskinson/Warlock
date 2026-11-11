@@ -1,0 +1,79 @@
+Running as unit: qa-harness-081f6632aa874ca2b872a92ca8c40bae.scope; invocation ID: 247be573a79b483fb852a14460cd7928
+test_changed_current_snapshot_refuses (__main__.QASupportCustody.test_changed_current_snapshot_refuses) ... ok
+test_changed_frozen_proof_refuses (__main__.QASupportCustody.test_changed_frozen_proof_refuses) ... ok
+test_changed_record_snapshot_refuses (__main__.QASupportCustody.test_changed_record_snapshot_refuses) ... ok
+test_current_path_drift_refuses (__main__.QASupportCustody.test_current_path_drift_refuses) ... ok
+test_duplicate_transition_refuses (__main__.QASupportCustody.test_duplicate_transition_refuses) ... ok
+test_exact_boot_helper_reconciles_with_real_api (__main__.QASupportCustody.test_exact_boot_helper_reconciles_with_real_api) ... ERROR
+test_exact_qa_cpu_reconciles_with_real_api (__main__.QASupportCustody.test_exact_qa_cpu_reconciles_with_real_api) ... ERROR
+test_exact_ui011_collector_reconciles_with_real_api (__main__.QASupportCustody.test_exact_ui011_collector_reconciles_with_real_api) ... ERROR
+test_expired_live_claim_refuses (__main__.QASupportCustody.test_expired_live_claim_refuses) ... ok
+test_generic_tools_product_and_seven_guard_classes_refuse (__main__.QASupportCustody.test_generic_tools_product_and_seven_guard_classes_refuse) ... ok
+test_missing_live_claim_refuses (__main__.QASupportCustody.test_missing_live_claim_refuses) ... ok
+test_self_review_refuses (__main__.QASupportCustody.test_self_review_refuses) ... ok
+test_unrelated_foreign_drift_refuses (__main__.QASupportCustody.test_unrelated_foreign_drift_refuses) ... ok
+test_wrong_actor_and_run_refuse (__main__.QASupportCustody.test_wrong_actor_and_run_refuse) ... ok
+test_wrong_binding_identity_refuses (__main__.QASupportCustody.test_wrong_binding_identity_refuses) ... ok
+test_wrong_live_owner_refuses (__main__.QASupportCustody.test_wrong_live_owner_refuses) ... ok
+
+======================================================================
+ERROR: test_exact_boot_helper_reconciles_with_real_api (__main__.QASupportCustody.test_exact_boot_helper_reconciles_with_real_api)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/test_qa_support_custody.py", line 69, in test_exact_boot_helper_reconciles_with_real_api
+    def test_exact_boot_helper_reconciles_with_real_api(self):self.success(NAMES[2])
+                                                              ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/test_qa_support_custody.py", line 44, in success
+    result=self.actor.apply(arguments)
+  File "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/qa/test_support_actor_binding.py", line 50, in apply
+    return self.case.apply(args)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/qa/test_support_custody.py", line 101, in apply
+    return policy.reconcile_support(self.repo, self.record, self.reqs, self.state, args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/preimages/warlock.py", line 1455, in reconcile_support
+    raise ValueError('Only unique fixed allowed support docs or the closed Root plugin pair may be reconciled')
+ValueError: Only unique fixed allowed support docs or the closed Root plugin pair may be reconciled
+
+======================================================================
+ERROR: test_exact_qa_cpu_reconciles_with_real_api (__main__.QASupportCustody.test_exact_qa_cpu_reconciles_with_real_api)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/test_qa_support_custody.py", line 67, in test_exact_qa_cpu_reconciles_with_real_api
+    def test_exact_qa_cpu_reconciles_with_real_api(self):self.success(NAMES[0])
+                                                         ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/test_qa_support_custody.py", line 44, in success
+    result=self.actor.apply(arguments)
+  File "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/qa/test_support_actor_binding.py", line 50, in apply
+    return self.case.apply(args)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/qa/test_support_custody.py", line 101, in apply
+    return policy.reconcile_support(self.repo, self.record, self.reqs, self.state, args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/preimages/warlock.py", line 1455, in reconcile_support
+    raise ValueError('Only unique fixed allowed support docs or the closed Root plugin pair may be reconciled')
+ValueError: Only unique fixed allowed support docs or the closed Root plugin pair may be reconciled
+
+======================================================================
+ERROR: test_exact_ui011_collector_reconciles_with_real_api (__main__.QASupportCustody.test_exact_ui011_collector_reconciles_with_real_api)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/test_qa_support_custody.py", line 68, in test_exact_ui011_collector_reconciles_with_real_api
+    def test_exact_ui011_collector_reconciles_with_real_api(self):self.success(NAMES[1])
+                                                                  ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/test_qa_support_custody.py", line 44, in success
+    result=self.actor.apply(arguments)
+  File "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/qa/test_support_actor_binding.py", line 50, in apply
+    return self.case.apply(args)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/qa/test_support_custody.py", line 101, in apply
+    return policy.reconcile_support(self.repo, self.record, self.reqs, self.state, args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/preimages/warlock.py", line 1455, in reconcile_support
+    raise ValueError('Only unique fixed allowed support docs or the closed Root plugin pair may be reconciled')
+ValueError: Only unique fixed allowed support docs or the closed Root plugin pair may be reconciled
+
+----------------------------------------------------------------------
+Ran 16 tests in 3.695s
+
+FAILED (errors=3)

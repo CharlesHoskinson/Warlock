@@ -1,0 +1,29 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "89687e4212f1aa394f14a3771687bd6b030293a06d7934b850a84219398ed74d",
+  "ok": false,
+  "errors": [
+    "Continuation requires a participant slice record; run start first"
+  ]
+}
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "89687e4212f1aa394f14a3771687bd6b030293a06d7934b850a84219398ed74d",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/slice.json",
+  "progress": {
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-11T13:16:57.974139+00:00",
+    "secondsSinceRecordedProgress": 0,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700
+    },
+    "investigationNeedsChange": false,
+    "reasons": [],
+    "action": "Continue the selected behavior with proportional verification.",
+    "basis": "Participant record; unrecorded work and oracle truth are not inferred."
+  },
+  "ok": true
+}

@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/qa",
+    "-p",
+    "test_*.py"
+  ],
+  "exit": 0,
+  "stdoutSha256": "1cc27439a142cadcb76e53d0646edb7a04ad890c172500c3f8b6db8e5cf21bf7",
+  "stderrSha256": "8a18d1503cd27e3ccb4efc7f7fbbafdba29da7d9016d60e72e4ad4336862b076"
+}

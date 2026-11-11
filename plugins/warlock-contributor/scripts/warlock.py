@@ -698,7 +698,9 @@ def reconcile_foreign_at(root, record, reqs, state, args, parent_fd, prior_data,
 # Exact initial support scope. Product, tools, arbitrary docs and foreign-owner
 # reconciliation are deliberately outside this operation.
 SUPPORT_CUSTODY_PATHS = frozenset((STATE, 'docs/HANDOFF.md',
-    'wiki/warlock/log.md', 'wiki/warlock/wiki/topics/current-status.md'))
+    'wiki/warlock/log.md', 'wiki/warlock/wiki/topics/current-status.md',
+    'tools/qa_cpu.py', 'tools/run_current_arm_ui011_opener_closure.py',
+    'tools/ux023_current_boot_correspondence.py'))
 ROOT_PLUGIN_REPAIR_RECORD = '.warlock-contributor/ux023-keyboard-launcher-root.json'
 ROOT_PLUGIN_REPAIR_IDENTITY = 'f5322281044c01ad184d341de2a09d361294da0e8db49a860483b05799a9b3bc'
 ROOT_PLUGIN_REPAIR_ACTOR = 'root-nextloop-20261106'

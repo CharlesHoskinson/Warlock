@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifestSha256": "d018fe65466f6fca48b69587e8ab7e66b4c804bd0b74ac74139aadee5f6cb30e",
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "plugins/warlock-contributor/scripts/warlock.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/postimages/plugins/warlock-contributor/scripts/warlock.py",
+        "beforeSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+        "sha256": "89687e4212f1aa394f14a3771687bd6b030293a06d7934b850a84219398ed74d",
+        "mode": "0o644",
+        "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/preimages/plugins/warlock-contributor/scripts/warlock.py"
+      },
+      {
+        "path": "plugins/warlock-contributor/qa/test_support_custody.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/postimages/plugins/warlock-contributor/qa/test_support_custody.py",
+        "beforeSha256": "cdd45484704681f28bf3f45b18e67faa9935cd805b216cc7508135d8766eabdd",
+        "sha256": "0c221c59c2b263e01f29329127bc0ead4a44bfaf152d1d04e3c2fb2a2325767b",
+        "mode": "0o644",
+        "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/preimages/plugins/warlock-contributor/qa/test_support_custody.py"
+      }
+    ]
+  },
+  "requiredChanges": [],
+  "verified": [
+    "Core683 to89687 changes only exact three SUPPORT_CUSTODY_PATHS entries:qa_cpu/UI011launcher/boothelper. All function/class ASTs exact; no generic tools allowlist or altered guard/source/claim verification.",
+    "Inherited custody fixture explicitly selects original STATE/HANDOFF/wiki log/current-status four-path scenario; event-count/hashchain/foreign custody assertions unchanged, new QA positives remain separate16-case suite.",
+    "Private related/full runner pins inputs, selects candidate core via existing fixtures.CHECKER before test imports, preloads exact candidate custody module under canonical module name, then discovers complete existing test modules. Before-after input verification prevents changed source claim.",
+    "Actual3whitelist-errors semanticRED retained; focused16/related/full Root commands qualify privatecandidate only, no primary mutation or live actor claim inferred."
+  ],
+  "limits": [
+    "Source review only; actualGREEN/regression/fullsuite outcomes pending. Core adoption changes source hash and must use reviewed normal workflow, never silently rewrite frozen guard references."
+  ]
+}
