@@ -1,0 +1,61 @@
+Running as unit: qa-harness-f7ea782222c640918936174c980c291e.scope; invocation ID: d81d0658ee1e43f7924caa45e269e5d6
+..........E....EFEE..
+======================================================================
+ERROR: test_missing_pre_snapshot_identity_never_grants_fd_reads (__main__.DiagnosticPriority.test_missing_pre_snapshot_identity_never_grants_fd_reads)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_diagnostic_priority.py", line 93, in test_missing_pre_snapshot_identity_never_grants_fd_reads
+    self.assertEqual(Path(item['originalSnapshot']['raw']['path']).read_bytes(), prior.RAW)
+                          ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'raw'
+
+======================================================================
+ERROR: test_preparatory_census_cannot_change_successful_classifier_route (__main__.DiagnosticPriority.test_preparatory_census_cannot_change_successful_classifier_route)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_diagnostic_priority.py", line 59, in test_preparatory_census_cannot_change_successful_classifier_route
+    result = process('opener', self.proc, 42, ['/owned/opener'], asset_role='opener')
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/preimages/run_current_arm_ui011_opener_closure.py", line 1547, in process_maps
+    before_snapshot = context['collector'].failure_census_context(
+        context['base'], proc, born, assets[asset_role]['sha256'], clock)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+ValueError: diagnostic census mismatch
+
+======================================================================
+ERROR: test_raw_file_retained_when_diagnostic_deadline_check_fails (__main__.DiagnosticPriority.test_raw_file_retained_when_diagnostic_deadline_check_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_diagnostic_priority.py", line 80, in test_raw_file_retained_when_diagnostic_deadline_check_fails
+    self.assertEqual(Path(item['originalSnapshot']['raw']['path']).read_bytes(), prior.RAW)
+                          ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'raw'
+
+======================================================================
+ERROR: test_raw_file_retained_when_strict_diagnostic_identity_fails (__main__.DiagnosticPriority.test_raw_file_retained_when_strict_diagnostic_identity_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_diagnostic_priority.py", line 70, in test_raw_file_retained_when_strict_diagnostic_identity_fails
+    self.assertEqual(Path(item['originalSnapshot']['raw']['path']).read_bytes(), prior.RAW)
+                          ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'raw'
+
+======================================================================
+FAIL: test_preparatory_census_cannot_mask_classifier_exception (__main__.DiagnosticPriority.test_preparatory_census_cannot_mask_classifier_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_diagnostic_priority.py", line 46, in test_preparatory_census_cannot_mask_classifier_exception
+    self.assertIs(caught.exception, self.original)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError('diagnostic census mismatch') is not ValueError('original classifier refusal')
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.108s
+
+FAILED (failures=1, errors=4)

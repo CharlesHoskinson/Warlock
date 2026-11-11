@@ -354,17 +354,22 @@ def capture_opener_classifier_refusal(collector, base, proc, born, image, clock,
                                  'rows': copy.deepcopy(rows), 'links': copy.deepcopy(links)},
             'laterFdDiagnostics': {'complete': False, 'origin': 'unknown', 'entries': []}}
     receipt['openerClassifierRefusal'] = item
+    if 'openerDiagnosticPreparation' in receipt:
+        item['preparatoryIdentityDiagnostic'] = copy.deepcopy(receipt['openerDiagnosticPreparation'])
     try:
-        base.left(clock)
-        after_snapshot = collector.failure_census_context(base, proc, born, image, clock)
-        item['identityAfterSnapshot'] = after_snapshot
-        require(after_snapshot == before, 'opener ownership changed across refused snapshot')
+        # Retain already-read classifier input before optional diagnostic checks.
+        # This bounded file write is not a new process observation or a grant.
         require(len(raw) <= collector.MAPS_CAP, 'original refused map input exceeds bound')
         path = output / 'opener-classifier-refusal.maps'
         descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_CLOEXEC | os.O_NOFOLLOW, 0o600)
         with os.fdopen(descriptor, 'wb') as stream:
             stream.write(raw)
         item['originalSnapshot']['raw'] = {'path': str(path), 'sha256': digest(raw)}
+        base.left(clock)
+        require(isinstance(before, dict), 'pre-snapshot diagnostic identity unavailable')
+        after_snapshot = collector.failure_census_context(base, proc, born, image, clock)
+        item['identityAfterSnapshot'] = after_snapshot
+        require(after_snapshot == before, 'opener ownership changed across refused snapshot')
         item['laterFdDiagnostics'] = opener_refusal_fd_diagnostics(base, proc, clock, rows)
         base.left(clock)
         after = collector.failure_census_context(base, proc, born, image, clock)
@@ -1544,8 +1549,14 @@ def execute(context,packet_sha):
             current();context['base'].check_process(proc,born,assets[asset_role]['sha256'])
             on_refusal = None
             if role == 'opener':
-                before_snapshot = context['collector'].failure_census_context(
-                    context['base'], proc, born, assets[asset_role]['sha256'], clock)
+                before_snapshot = None
+                try:
+                    before_snapshot = context['collector'].failure_census_context(
+                        context['base'], proc, born, assets[asset_role]['sha256'], clock)
+                except Exception as problem:
+                    receipt['openerDiagnosticPreparation'] = {
+                        'diagnosticOnly': True, 'qualification': False, 'identity': None,
+                        'error': type(problem).__name__ + ': ' + str(problem)[:512]}
                 def on_refusal(raw, rows, links, error):
                     capture_opener_classifier_refusal(
                         context['collector'], context['base'], proc, born,

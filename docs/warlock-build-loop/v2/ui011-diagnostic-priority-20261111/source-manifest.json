@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "kind": "ui011-opener-diagnostic-priority-repair",
+  "posts": [
+    {
+      "path": "tools/run_current_arm_ui011_opener_closure.py",
+      "beforeSha256": "5ca58d9bcfa8a9281456f6c79dc1f7158cebd35bfa2cff35611de3dab13f0ed6",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/source-implementation/postimages/tools/run_current_arm_ui011_opener_closure.py",
+      "sha256": "921540da433b068b04b748ff02db4f4e53bb3a8a7248893f4945a221c7e0d79a",
+      "mode": 384
+    }
+  ],
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/red-manifest.json",
+    "sha256": "60d3be9910a6a4c1b79e0578e42f42995d06f4129f21edfa2746bfe79ea2d0e8"
+  },
+  "actualRed": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/actual-root-red/terminal.json",
+    "sha256": "960bd9897adb93c962f0040bc31022cb4233e76b3a9152b891d21f26c719aa22"
+  },
+  "fixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_diagnostic_priority.py",
+    "sha256": "bd86abb3425c64074992ed59ff616a9c21215b3036816fcb25ba0d7c131c3367"
+  },
+  "unchangedOriginalFixture": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_classifier_refusal.py",
+    "sha256": "563cc28477cbceb929cce153451198f65142f995553eba9afbdc2aab3523ce63"
+  },
+  "caseCount": 21,
+  "retainedOriginalCases": 16,
+  "newCases": 5,
+  "seedSampleCount": 0,
+  "files": {
+    "source.patch": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/source-implementation/source.patch",
+      "sha256": "d685b0c1d129c0be110d9c5415296b71d62e1c85b759ec8efdf6cdffc750a0b5"
+    },
+    "root-green-argv.json": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/source-implementation/root-green-argv.json",
+      "sha256": "b4859ca75367ea3fb12882dae5c4cbe05b517474b8bb586d7c50d850388d1584"
+    },
+    "root-copy-plan.json": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/source-implementation/root-copy-plan.json",
+      "sha256": "7155e7170be524541ba1dd63ff0aa244f8e942eb994f905c2631d1c569c48f44"
+    },
+    "source-correspondence.json": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/source-implementation/source-correspondence.json",
+      "sha256": "aa45d86c516ced14871da2e394640fa21ac79dda08ec259355894c5e9949aebd"
+    },
+    "postimages/tools/run_current_arm_ui011_opener_closure.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/source-implementation/postimages/tools/run_current_arm_ui011_opener_closure.py",
+      "sha256": "921540da433b068b04b748ff02db4f4e53bb3a8a7248893f4945a221c7e0d79a"
+    }
+  },
+  "qaProfile": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/qa_profile.json",
+    "sha256": "bf1993c3cc887aa048d9fb9f02544539891db6654cf698566129bb295e281496"
+  },
+  "limits": {
+    "sharedCollectorChanged": false,
+    "primaryWrites": false,
+    "authorExecution": false,
+    "nativeAcceptance": false,
+    "mappingAllowanceAdded": false,
+    "namespaceOrCgroupExceptionAdded": false,
+    "originalDeadlineChanged": false
+  },
+  "status": "private-source-awaiting-independent-review-and-protected-GREEN"
+}
