@@ -246,6 +246,7 @@ type Effect
     | Send E.Value
     | Arm Launch.PendingToken
     | ArmWindowWatch WindowWatchToken
+    | WindowWatchBookkeeping WindowObservation.WatchReply
     | ArmChoice ChoiceToken
     | ArmWorkspaceNavigation WorkspaceNavigation.Intent
     | Focus String
@@ -1746,23 +1747,22 @@ receiveWindowWatch raw model =
     case model.windowWatch of
         Just pending ->
             if pending.phase/=WatchPending || not (watchScopeCurrent pending.token model) then (model,[]) else
-            let (shell,_)=Shell.update (Shell.Incoming raw) model.windows.shell
-                windows=model.windows
-            in if shell.windowWatchExpected/=Nothing || model.windows.shell.windowWatchExpected==Nothing then (model,[]) else
-                case D.decodeValue WindowObservation.watchReplyDecoder raw of
-                    Err _ -> (model,[])
-                    Ok receipt ->
-                        if List.member receipt.status ["Unknown","Unavailable"] then
-                            ({model|windows={windows|shell=shell},windowWatch=Just {pending|phase=WatchStopped}},[])
-                        else if receipt.status=="Unchanged" then
-                            ({model|windows={windows|shell=shell},windowWatch=Nothing},[])
-                        else
-                            let menus=MenuBridge.reconcileWatch shell windows.menus
-                                origin=MenuBridge.observedContext menus
-                                next={model|windows={windows|shell=shell,menus=menus},windowWatch=Nothing
-                                    ,menuOrigin=Maybe.map (\current -> {binding=current.binding,destination=TaskbarGroup current.group,output=Nothing,observed=Just current}) origin}
-                            in if (MenuBridge.menuSnapshot menus).menu/=Nothing then (next,[]) else
-                                case observedRetirementTarget model of
-                                    Nothing -> (next,[])
-                                    Just target -> restoreObservedFocus True target {next|returnFocus=Just target} []
+            case Shell.receiveWindowWatch raw model.windows.shell of
+                Nothing -> (model,[])
+                Just (shell,receipt) ->
+                    let windows=model.windows
+                        bookkeeping=[WindowWatchBookkeeping receipt]
+                    in if List.member receipt.status ["Unknown","Unavailable"] then
+                        ({model|windows={windows|shell=shell},windowWatch=Just {pending|phase=WatchStopped}},bookkeeping)
+                    else if receipt.status=="Unchanged" then
+                        ({model|windows={windows|shell=shell},windowWatch=Nothing},bookkeeping)
+                    else
+                        let menus=MenuBridge.reconcileWatch shell windows.menus
+                            origin=MenuBridge.observedContext menus
+                            next={model|windows={windows|shell=shell,menus=menus},windowWatch=Nothing
+                                ,menuOrigin=Maybe.map (\current -> {binding=current.binding,destination=TaskbarGroup current.group,output=Nothing,observed=Just current}) origin}
+                        in if (MenuBridge.menuSnapshot menus).menu/=Nothing then (next,bookkeeping) else
+                            case observedRetirementTarget model of
+                                Nothing -> (next,bookkeeping)
+                                Just target -> restoreObservedFocus True target {next|returnFocus=Just target} bookkeeping
         Nothing -> (model,[])

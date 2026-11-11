@@ -1,6 +1,7 @@
 module OutputController exposing (Model, Event(..), Scope, initial, update, frame, controller, owner, views, scopeDecoder, encodeScope, register, pendingBatches)
 
 import Binding
+import WindowObservation
 import Shortcuts
 import PointerOwnership
 import Pins
@@ -93,7 +94,13 @@ assignOwner scope controllerModel =
 update : Event -> Model -> (Model,List Controller.Effect)
 update event current =
     let (next,effects) = updateCore event current
-    in (track current next,effects)
+        settle effect state = case effect of
+            Controller.DesktopEffect (Desktop.WindowWatchBookkeeping receipt) -> settleWindowWatch receipt current state
+            _ -> state
+        outward effect = case effect of
+            Controller.DesktopEffect (Desktop.WindowWatchBookkeeping _) -> False
+            _ -> True
+    in (track current (List.foldl settle next effects),List.filter outward effects)
 
 track : Model -> Model -> Model
 track (Model before) ((Model after) as result) =
@@ -384,3 +391,39 @@ observationEffect : Controller.Effect -> Bool
 observationEffect effect = case effect of
     Controller.DesktopEffect (Desktop.WindowEffect (Shell.Send wire)) -> observation wire/=Nothing
     _ -> False
+
+-- Completion releases one exact read-only bookkeeping row. It is not a native
+-- admission/rendering certificate and does not recover a refused transport.
+-- Match the scope admitted before the transition, then remove that identical
+-- retained row from the result; Changed may already have retired the menu.
+settleWindowWatch : WindowObservation.WatchReply -> Model -> Model -> Model
+settleWindowWatch receipt (Model admitted) ((Model model) as current) =
+    let requestDecoder = strict ["protocolVersion","kind","binding","requestId","observedRevision"]
+            (D.map5 (\version kind binding request revision -> {version=version,kind=kind,binding=binding,request=request,revision=revision})
+                (D.field "protocolVersion" D.int) (D.field "kind" D.string)
+                (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder)
+                (D.field "observedRevision" UInt64.decoder))
+        packetDecoder = strict ["viewProtocol","kind","projection","requests","focus"]
+            (D.map5 (\version kind _ requests focus -> {version=version,kind=kind,requests=requests,focus=focus})
+                (D.field "viewProtocol" D.int) (D.field "kind" D.string) (D.field "projection" D.value)
+                (D.field "requests" (D.list requestDecoder)) (D.field "focus" (D.list D.value)))
+        exactWire batch =
+            case D.decodeString packetDecoder batch.wire of
+                Ok packet ->
+                    case packet.requests of
+                        [request] -> packet.version==1 && packet.kind=="view-commit" && List.isEmpty packet.focus
+                            && request.version==3 && request.kind=="window-watch" && request.binding==receipt.binding
+                            && request.request==receipt.request && request.revision==receipt.observedRevision
+                        _ -> False
+                _ -> False
+        matches batch =
+            batch.binding==receipt.binding && (Controller.desktop admitted.controller).windows.shell.binding==Just receipt.binding
+                && (Controller.desktop model.controller).windows.shell.binding==Just receipt.binding
+                && admitted.selected==Just batch.scope && List.member batch.scope admitted.views && batch.revision==admitted.revision
+                && lease admitted.controller==Just batch.lease && List.isEmpty batch.operations && List.isEmpty batch.catalogs
+                && batch.observations==[("window-watch",receipt.request)] && exactWire batch
+    in case List.filter matches admitted.batches of
+        [batch] ->
+            if List.member batch model.batches then Model {model|batches=List.filter ((/=) batch) model.batches}
+            else current
+        _ -> current
