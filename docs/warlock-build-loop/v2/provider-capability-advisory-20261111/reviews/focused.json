@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-advisory-component-red-green",
+  "manifestSha256": "62c11d03e673cea493dc5d9214d45a7a6673b87377dc829c8bf6301094dbc51c",
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+        "beforeSha256": null,
+        "sha256": "273131c356ad9f503f56bbc2cbb32aa734c40e2aa22ab6822201414755eb426e",
+        "mode": "0o644"
+      },
+      {
+        "path": "plugins/warlock-contributor/references/implementation.md",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/references/implementation.md",
+        "beforeSha256": "79af0f40f837a0b8b4dede0587015c6efee93c561ae52d87148d16f0cb388157",
+        "sha256": "1da07359dab90c840d08baf39ac2c9463c034f49e1f247da70d5c478cbf092e9",
+        "mode": "0o644"
+      },
+      {
+        "path": "plugins/warlock-contributor/references/provider-capabilities.json",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/references/provider-capabilities.json",
+        "beforeSha256": null,
+        "sha256": "e52ab057172db57e5f6672a5118717c80cd80853dd23aa9132bb5a00760cb2fb",
+        "mode": "0o644"
+      },
+      {
+        "path": "plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+        "beforeSha256": null,
+        "sha256": "6235028d371302c29751a103f1f74e74f35fa708eaf226ea02fd3bddf291cd2d",
+        "mode": "0o644"
+      }
+    ]
+  },
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green-report.json",
+    "sha256": "29873b9c0f1df7de6547dcb0f8c724923b900a3283b3c9fb8b3c4867560a1da4"
+  },
+  "priorModeledRed": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/actual-root-red-report.json",
+    "sha256": "ffca8bf89ea0ec058106677f3fed2d17c8569764f021dce9d52ee97f4355f46a"
+  },
+  "actualProtectedTerminals": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green/sameFrozen18And64-terminal.json",
+      "sha256": "7ad0e6ed1e97c8008a0f3969ecc05d4968b589426a74b66915e700aef4ffa731"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green/privateDiscoveryRegistration-terminal.json",
+      "sha256": "22cc44d5fdc66e56185c1cb7c6e552b659cb30abe42a0a4e9fbf0b930cd5d6a9"
+    }
+  ],
+  "actualLogs": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green/sameFrozen18And64.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green/sameFrozen18And64.stderr",
+      "sha256": "2e9415f29802c3c8f13bea4f6b72fc40cd2aa3ad7cef31929c4bf8b6cabd5e1a"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green/sameFrozen18And64-terminal.json",
+      "sha256": "7ad0e6ed1e97c8008a0f3969ecc05d4968b589426a74b66915e700aef4ffa731"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green/privateDiscoveryRegistration.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green/privateDiscoveryRegistration.stderr",
+      "sha256": "ee9c2affb6124f9ada5b099d5b0ed4a0f1d4936cedfeec90ad2e50cde15bb42a"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-green/privateDiscoveryRegistration-terminal.json",
+      "sha256": "22cc44d5fdc66e56185c1cb7c6e552b659cb30abe42a0a4e9fbf0b930cd5d6a9"
+    }
+  ],
+  "verified": [
+    "Same frozen18/64 modeled-absent baseline17pass/one expected known-limitation assertion failure; candidate18pass/zero errors.",
+    "Private unittest discovery registration independently ran18 tests and passed; no installed-full-suite claim.",
+    "All three finite registry public evidence paths now match exact retained findings/review/native-failure hashes."
+  ],
+  "limits": {
+    "modeledBaselineNotNativeRed": true,
+    "providerExecuted": false,
+    "executionAuthorized": false,
+    "nativeAcceptance": false,
+    "primaryMutationByReviewer": false
+  }
+}

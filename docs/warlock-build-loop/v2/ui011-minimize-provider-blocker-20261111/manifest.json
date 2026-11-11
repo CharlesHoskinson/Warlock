@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "kind": "original-ui011-minimize-provider-blocker",
+  "requirement": "ELM-UI-011",
+  "scenario": "focus-scope-opener minimize",
+  "provider": {
+    "path": "/usr/bin/Hyprland",
+    "sha256": "d40e2edab24c2032a7a77b4d44c3d738e5003256d7d4199950dc7001fee9b6ba"
+  },
+  "disposition": "deferred-external-provider-publication",
+  "originalRequirements": 242,
+  "originalScenarios": 417,
+  "acceptedRequirements": 21,
+  "acceptedScenarios": 48,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "releaseAccepted": false,
+  "record": ".warlock-contributor/ui011-opener-minimize-root-20261111.json",
+  "selectionGeneration": 36,
+  "recordSha256": "ff8c39c60e4368e2186756df01fc141ed590825696bd2d05f3e9cc81b45639e7",
+  "limitsPreserved": {
+    "seconds": 28,
+    "cleanupSeconds": 2,
+    "reads": 16,
+    "keys": 4,
+    "phases": 16,
+    "atCalls": 640
+  },
+  "cleanup": {
+    "forced": false,
+    "unknown": true,
+    "globalRestoration": false
+  },
+  "nextAction": "Keep this original case deferred until a source-qualified provider publishes actual committed Minimized; continue independently supported original EARS without substituting unmap or scratchpad.",
+  "files": [
+    {
+      "path": "findings.json",
+      "sha256": "3e6373bff1ef21488aef305ffea38dc05f5d425e8c197a4ca86022ac657f178f"
+    },
+    {
+      "path": "reviews/independent-analysis-review-build.json",
+      "sha256": "8d8a73930fe69f7e5655a5b0455b5af56c01d1b1a2cb3712ccade5291bf3f84a"
+    },
+    {
+      "path": "reviews/independent-actual-native-review-build.json",
+      "sha256": "5b632e236212c17529de6e10e7ab3b4644c9e17b8a27dfd171dca47ca94bace5"
+    },
+    {
+      "path": "reviews/actual-native-diagnosis-sol.json",
+      "sha256": "ce4550472d0b2c852c0771852386a21b1c99a84897ffb635124cfd5d052d26fb"
+    },
+    {
+      "path": "native/report.json",
+      "sha256": "680364a4f4b3909223a138896e76fbdf224f3ede2f42f700f37d6e903ca7e263"
+    },
+    {
+      "path": "native/observer-wire.jsonl",
+      "sha256": "c5004a06a0e3e65b5002a3d3ede8dbbfd6ff2e26dc29e25616669deac10e651e"
+    },
+    {
+      "path": "native/connected-observer.stderr",
+      "sha256": "fc302b959e40752e403f42b3a6fc5f80157f2ebac0322fb6062b79ecbdaf2e3c"
+    },
+    {
+      "path": "native/actual-protected-terminal.json",
+      "sha256": "3e66272de59673e8c80b2c670b3fd9c2118874b5826246489f470cc368fae92c"
+    },
+    {
+      "path": "native/previous-preflight-packet.ARCHIVE.json",
+      "sha256": "b3d5d63654714344d1f8bb94e7139485e62d1a491e1d191807caf444e2483101"
+    },
+    {
+      "path": "native/packet.json",
+      "sha256": "4b96adbe1a180bf216ece4103fcf83e6e97c35339ab22d34d6ef31c557aa9116"
+    },
+    {
+      "path": "native/candidate.json",
+      "sha256": "11d125466268ec947d17df35ba3ad190d10bcf182717bdabbbd97d1f0e2a9d0f"
+    },
+    {
+      "path": "native/actual-normal-terminal.json",
+      "sha256": "64d2d45a1f43f873826206b90ed0eec1e7f0f5c1f522cd9bb95821bbd71e4a61"
+    },
+    {
+      "path": "deferred-record.json",
+      "sha256": "ff8c39c60e4368e2186756df01fc141ed590825696bd2d05f3e9cc81b45639e7"
+    },
+    {
+      "path": "native/frames/ui011-initial.png",
+      "sha256": "1dcb1d660edea6bdb295c2a632d77b62fc0dbf7b7d61f3b4775b3dfa6b8ce184"
+    },
+    {
+      "path": "native/frames/ui011-opener-focused.png",
+      "sha256": "45f3bfe08801ed7dccdf5cbe16c1934448639c19a088d69b5c168492ae370cf4"
+    },
+    {
+      "path": "native/frames/ui011-menu.png",
+      "sha256": "f184e6b5c6abc849d38e1fc998b35077efad21cfd455998004ad4c227f8cc02a"
+    }
+  ]
+}

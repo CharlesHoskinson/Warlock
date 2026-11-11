@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/docs/warlock-build-loop/v2/loop.py",
+    "--repo",
+    "/home/hoskinson/Projects/Warlock",
+    "--record",
+    ".warlock-contributor/ui011-opener-minimize-root-20261111.json",
+    "native",
+    "--runner",
+    "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py",
+    "--candidate",
+    "ui011-opener-minimize-native-v2-20261111",
+    "--expect-selection",
+    "36",
+    "--",
+    "--sha256",
+    "4b96adbe1a180bf216ece4103fcf83e6e97c35339ab22d34d6ef31c557aa9116"
+  ],
+  "exit": 1,
+  "finishedUTC": "2026-11-11T14:24:57.817085+00:00"
+}

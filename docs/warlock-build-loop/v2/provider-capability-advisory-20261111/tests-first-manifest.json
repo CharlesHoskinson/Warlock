@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "kind": "provider-capability-advisory-tests-first",
+  "files": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/test_provider_capability_preflight.py",
+      "sha256": "20d38880b9a5e5d34adfbaf6fd727f1057aa7c975587ea1f4c7e920c5d881d0f"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/root-red-argv.json",
+      "sha256": "c1eaa5ad7449d87f0d84d8eccc4af48f928b9218e6d89af4506ebe82286469d7"
+    }
+  ],
+  "coreUnchanged": {
+    "path": "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+    "sha256": "89687e4212f1aa394f14a3771687bd6b030293a06d7934b850a84219398ed74d"
+  },
+  "caseCount": 18,
+  "seedSamples": 64,
+  "implementationWritten": false,
+  "primaryChanged": false,
+  "authorExecuted": false,
+  "scope": "Additive script/finite registry/reference paragraph/discovery-safe test; no core or admission changes.",
+  "baselineLimit": "Absent capability advisor is modeled as unknown. This is not an existing API or native behavior RED."
+}

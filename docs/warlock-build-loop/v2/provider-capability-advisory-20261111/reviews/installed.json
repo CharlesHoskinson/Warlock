@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-installed-advisory-qualification",
+  "manifestSha256": "62c11d03e673cea493dc5d9214d45a7a6673b87377dc829c8bf6301094dbc51c",
+  "sourceAdoption": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-adoption/receipt.json",
+    "sha256": "ab83f62ea9ec2776647ecef2067a01d6a62732b424f5948f6e83ef29cd8bf5b5"
+  },
+  "installedEvidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-installed/actualEvidenceAfterRootPublicArchiveAndSourceAdoption-terminal.json",
+      "sha256": "8796ea7fcf7eb82e97f586e4ebc1040a82c16a172a82ebaaab0e7a121f18c113"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-installed/actualEvidenceAfterRootPublicArchiveAndSourceAdoption.stderr",
+      "sha256": "fa9e6f795ee917d4c6fb7188fd9c7fe3c2b6053f8ef27535e4ec875236822012"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-installed/actualEvidenceAfterRootPublicArchiveAndSourceAdoption.stdout",
+      "sha256": "a8b01a3241da8744b2ae5740d37110d9ec2a49d5f9bae7c5e9ac9d786ad1f9ed"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-installed/afterRootAdoptionFullPlugin-terminal.json",
+      "sha256": "33b929ddfffcd1fa0e2c76dc9e38e227963f7bb21f30c85ce7caca7ef32b3c57"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-installed/afterRootAdoptionFullPlugin.stderr",
+      "sha256": "a8b52ed4831d1b3da2d4247cdf05cd843499039163aafa36f445455409d7deef"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/actual-root-installed/afterRootAdoptionFullPlugin.stdout",
+      "sha256": "7366420b671a0b6b2e3cc424d7f19c1f3e349e73d620f660512b2c618796a754"
+    }
+  ],
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+        "beforeSha256": null,
+        "sha256": "273131c356ad9f503f56bbc2cbb32aa734c40e2aa22ab6822201414755eb426e",
+        "mode": "0o644"
+      },
+      {
+        "path": "plugins/warlock-contributor/references/implementation.md",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/references/implementation.md",
+        "beforeSha256": "79af0f40f837a0b8b4dede0587015c6efee93c561ae52d87148d16f0cb388157",
+        "sha256": "1da07359dab90c840d08baf39ac2c9463c034f49e1f247da70d5c478cbf092e9",
+        "mode": "0o644"
+      },
+      {
+        "path": "plugins/warlock-contributor/references/provider-capabilities.json",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/references/provider-capabilities.json",
+        "beforeSha256": null,
+        "sha256": "e52ab057172db57e5f6672a5118717c80cd80853dd23aa9132bb5a00760cb2fb",
+        "mode": "0o644"
+      },
+      {
+        "path": "plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+        "beforeSha256": null,
+        "sha256": "6235028d371302c29751a103f1f74e74f35fa708eaf226ea02fd3bddf291cd2d",
+        "mode": "0o644"
+      }
+    ]
+  },
+  "verified": {
+    "allFourInstalledPostsMatch": true,
+    "core896Unchanged": true,
+    "fullInstalledTests": 631,
+    "failures": 0,
+    "errors": 0,
+    "elapsedSeconds": 239.403,
+    "actualInstalledBinarySha256": "d40e2edab24c2032a7a77b4d44c3d738e5003256d7d4199950dc7001fee9b6ba",
+    "actualCliStatus": "unsupported",
+    "allThreePublicEvidenceHashesMatch": true,
+    "authorityAndReadinessFieldsFalse": true
+  },
+  "limits": [
+    "Intentional missing-record fixture stdout is not a test failure; authoritative unittest result is631 OK.",
+    "Installed planning advisory qualification only; no provider runtime execution, native scenario acceptance, release or ledger credit."
+  ]
+}

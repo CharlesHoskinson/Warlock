@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-negative-fact-ledger-annotation-only",
+  "ledgerSha256": "1d24b245c9fc6542139538a346681a222605ead2a931fd151e9857fd44ad77c9",
+  "annotation": {
+    "path": "/home/hoskinson/Projects/Warlock/docs/warlock-build-loop/v2/ui011-minimize-provider-blocker-20261111/ledger-annotation.json",
+    "sha256": "46f3000fd76e7d38617e30503b3836c7bf9a5e88d3a3d3282abe9c57990c8aa1"
+  },
+  "verified": [
+    "Compared whole prior6ec412 ledger to current1d24 ledger: exact only changes requirements[196].scenarios[3].providerBlocker and evidence.",
+    "All requirement/scenario statuses, literal oracles, releaseAccepted and21/48 counts unchanged.",
+    "Minimize negative provider fact adds no named case acceptance."
+  ],
+  "limits": {
+    "nativeAcceptance": false,
+    "scenarioCredit": 0,
+    "primaryMutation": false
+  }
+}
