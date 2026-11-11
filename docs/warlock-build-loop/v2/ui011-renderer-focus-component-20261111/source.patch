@@ -1,0 +1,164 @@
+--- a/implementation/warlock/src/Desktop.elm
++++ b/implementation/warlock/src/Desktop.elm
+@@ -1,4 +1,4 @@
+-module Desktop exposing (Effect(..), WindowWatchToken, ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities, menuApplication, newInstanceAvailable, applicationPageSize, applicationPageCount)
++module Desktop exposing (RendererRestoration, captureRendererRestoration, Effect(..), WindowWatchToken, ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities, menuApplication, newInstanceAvailable, applicationPageSize, applicationPageCount)
+ 
+ import Menu
+ import GeometryProjection
+@@ -109,7 +109,11 @@
+ type WatchPhase = WatchScheduled | WatchPending | WatchStopped
+ type WindowWatchToken = WindowWatchToken {context : MenuBridge.ObservedContext, menu : Menu.MenuId, presentation : Counter, request : Counter}
+ 
+-type FocusDestination = TaskbarGroup String | OverviewOpener | ObservedScopeRetirement String
++type FocusDestination = TaskbarGroup String | OverviewOpener | ObservedScopeRetirement String | RendererScopeRetirement {owner : {outputId : Counter, providerId : Counter}, request : Counter}
++
++-- Only the current open keyboard scope can create this handoff. There is no
++-- JSON decoder or public constructor for a renderer restoration proof.
++type RendererRestoration = RendererRestoration FocusTarget
+ type alias FocusTarget = {binding : Binding.Binding, destination : FocusDestination, output : Maybe Counter, observed : Maybe MenuBridge.ObservedContext}
+ 
+ type alias NativeChord = {generation : Counter, roots : List Counter, history : List Counter, origin : Maybe Counter, steps : List Switcher.Direction, released : Bool, cancelled : Bool, consumed : Bool}
+@@ -173,6 +177,7 @@
+     | OwnerScope D.Value
+     | ScopedShortcut Shortcuts.Snapshot Bool
+     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
++    | ArmRendererRestoration RendererRestoration
+     | Incoming D.Value
+     | OpenApplications ViewStamp
+     | RefreshApplications ViewStamp
+@@ -586,21 +591,29 @@
+                     else updated.windows.shell.effects.observed |> Maybe.map (.context >> .output)
+                 (next,effects)=case updated.returnFocus of
+                     Just target ->
+-                        if target.observed/=Nothing then restoreObservedFocus matchingWindow target updated ordinaryEffects else
++                        if target.observed/=Nothing then
++                            let requestMatches=case target.destination of
++                                    RendererScopeRetirement handoff -> model.windows.shell.windowExpected==Just handoff.request
++                                    _ -> True
++                            in restoreObservedFocus (matchingWindow && requestMatches) target updated ordinaryEffects
++                        else
+                         let blocked=case target.destination of
+                                 TaskbarGroup groupKey -> TaskbarShell.groups updated.windows |> List.filter (\group -> group.key==groupKey) |> List.concatMap .families |> List.any (\family -> MenuBridge.blockedFor family.root updated.windows.shell updated.windows.menus)
+                                 OverviewOpener -> False
+                                 ObservedScopeRetirement _ -> True
++                                RendererScopeRetirement _ -> True
+                         in if not matchingObservation || not (Shell.available updated.windows.shell) || blocked then (updated,ordinaryEffects) else
+                             let retired={updated | returnFocus=Nothing}
+                                 exists=case target.destination of
+                                     TaskbarGroup groupKey -> TaskbarShell.groups retired.windows |> List.any (\group -> group.key==groupKey && List.any .available group.families)
+                                     OverviewOpener -> retired.choice==Nothing
+                                     ObservedScopeRetirement _ -> False
++                                    RendererScopeRetirement _ -> False
+                                 focus=case target.destination of
+                                     TaskbarGroup groupKey -> Shell.capture retired.windows.shell |> Maybe.map (\scope -> "group:" ++ Shell.stampKey scope ++ ":" ++ groupKey)
+                                     OverviewOpener -> Just (key retired "control:overview-opener")
+                                     ObservedScopeRetirement _ -> Nothing
++                                    RendererScopeRetirement _ -> Nothing
+                             in if retired.open || retired.overview || retired.windows.picker/=Nothing || (MenuBridge.menuSnapshot retired.windows.menus).menu/=Nothing || retired.windows.shell.binding/=Just target.binding || target.output==Nothing || (retired.windows.shell.effects.observed |> Maybe.map (.context >> .output))/=target.output || geometryOutput/=target.output || not exists then (retired,ordinaryEffects) else
+                                 (retired,ordinaryEffects++(focus |> Maybe.map (Focus >> List.singleton) |> Maybe.withDefault []))
+                     Nothing -> (updated,ordinaryEffects)
+@@ -810,6 +823,7 @@
+         ScopedShortcut _ _ -> False
+         OwnerScope _ -> False
+         PresentationOwner _ -> False
++        ArmRendererRestoration _ -> False
+         InvalidateSnap -> False
+         Deadline _ -> False
+         ChoiceDeadline _ -> False
+@@ -873,6 +887,19 @@
+                 (Just Shortcuts.System,Just stamp) -> update (OpenSystemMenu stamp) next
+                 (Just Shortcuts.Notifications,Just stamp) -> update (OpenNotifications stamp) next
+                 _ -> (next,[])
++        ArmRendererRestoration (RendererRestoration target) ->
++            case (target.observed,model.ownerScope,model.windows.shell.windowExpected) of
++                (Just original,Just currentOwner,Just request) ->
++                    if currentOwner.outputId/=original.presentation.outputId
++                        || UInt64.compare currentOwner.providerId original.presentation.providerId/=GT
++                        || model.windows.shell.binding/=Just original.binding || target.binding/=original.binding
++                        || not (Shell.observationAvailable model.windows.shell) || model.ownerExhausted
++                        || model.presentation==Nothing || model.returnFocus/=Nothing
++                        || model.open || model.overview || model.choice/=Nothing
++                        || model.filesOpen || model.systemMenuOpen || model.notificationsOpen || model.settingsOpen
++                        || model.windows.picker/=Nothing || (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then (model,[])
++                    else ({model|returnFocus=Just {target|destination=RendererScopeRetirement {owner=currentOwner,request=request}}},[])
++                _ -> (model,[])
+         PresentationOwner scope ->
+             if scope==model.ownerScope then (model,[]) else
+             let (retired,effects) =
+@@ -1668,6 +1695,10 @@
+             else Nothing
+         _ -> Nothing
+ 
++captureRendererRestoration : Model -> Maybe RendererRestoration
++captureRendererRestoration model =
++    observedRetirementTarget model |> Maybe.map RendererRestoration
++
+ restoreObservedFocus : Bool -> FocusTarget -> Model -> List Effect -> (Model,List Effect)
+ restoreObservedFocus matching target model effects =
+     if not matching then (model,effects) else
+@@ -1675,14 +1706,19 @@
+     in case (target.observed,model.windows.shell.windowObservation,Shell.capture model.windows.shell) of
+         (Just original,Just snapshot,Just stamp) ->
+             let exists=WindowObservation.groups snapshot |> List.any (\group -> group.key==original.group)
++                ownerMatches=case target.destination of
++                    RendererScopeRetirement handoff ->
++                        model.ownerScope==Just handoff.owner && handoff.owner.outputId==original.presentation.outputId
++                            && UInt64.compare handoff.owner.providerId original.presentation.providerId==GT
++                    _ -> model.ownerScope==Just original.presentation
+                 same=Shell.inspectionAvailable model.windows.shell && model.windows.shell.binding==Just original.binding
+-                    && model.ownerScope==Just original.presentation && snapshot.owner==original.owner
++                    && ownerMatches && snapshot.owner==original.owner
+                     && WindowObservation.fingerprint original.group snapshot==original.fingerprint
+                     && exists && not model.ownerExhausted && not model.open && not model.overview
+                     && model.windows.picker==Nothing && (MenuBridge.menuSnapshot model.windows.menus).menu==Nothing
+                 automaticCurrent capturedFallback =
+                     Shell.inspectionAvailable model.windows.shell && model.windows.shell.binding==Just original.binding
+-                        && model.ownerScope==Just original.presentation && snapshot.owner==original.owner
++                        && ownerMatches && snapshot.owner==original.owner
+                         && not model.ownerExhausted && model.presentation/=Nothing
+                         && capturedFallback==key model "control:opener"
+                         && not model.open && not model.overview && model.choice==Nothing
+@@ -1693,6 +1729,11 @@
+                     if not (automaticCurrent capturedFallback) then (retired,effects)
+                     else if same then (retired,effects++[Focus ("group:"++Shell.stampKey stamp++":"++original.group)])
+                     else (retired,effects++[Focus capturedFallback])
++                RendererScopeRetirement _ ->
++                    let currentFallback=key model "control:opener"
++                    in if not (automaticCurrent currentFallback) then (retired,effects)
++                    else if same then (retired,effects++[Focus ("group:"++Shell.stampKey stamp++":"++original.group)])
++                    else (retired,effects++[Focus currentFallback])
+                 _ -> if same then (retired,effects++[Focus ("group:"++Shell.stampKey stamp++":"++original.group)]) else (retired,effects)
+         _ -> (retired,effects)
+ 
+--- a/implementation/warlock/src/OutputController.elm
++++ b/implementation/warlock/src/OutputController.elm
+@@ -163,6 +163,7 @@
+                         let survives = model.selected |> Maybe.map (\priorSelected -> List.member priorSelected table.scopes) |> Maybe.withDefault False
+                             selected = if survives then model.selected else List.head table.scopes
+                             retired = not survives && owner current/=Nothing
++                            rendererReturn = if retired then Desktop.captureRendererRestoration (Controller.desktop model.controller) else Nothing
+                             (next,effects) = if retired then lease model.controller |> Maybe.map (\token -> Controller.update (Controller.NativeDismiss token) model.controller) |> Maybe.withDefault (model.controller,[]) else (model.controller,[])
+                             (assigned,ownerEffects) = assignOwner selected next
+                             highest = List.foldl (\scope maximum -> if UInt64.compare (identity scope) maximum==GT then identity scope else maximum) model.highest table.scopes
+@@ -172,12 +173,18 @@
+                                 Nothing -> (assigned,[])
+                             (unblocked,_) = if model.capacityRefused then (cancelled,[]) else Controller.update (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.RegistrationAvailable False)))) cancelled
+                             (refreshed,readEffects)=Controller.update (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.SupersedeObservations (selected/=Nothing))))) unblocked
+-                            result = Model {model | revision=table.revision,highest=highest,views=table.scopes,locations=table.locations,selected=selected,controller=refreshed,batchExhausted=if model.capacityRefused then model.batchExhausted else False}
++                            -- Capture precedes dismissal. Arm only after the existing
++                            -- owner assignment and observation supersession. The
++                            -- opaque proof creates no request or focus effect here.
++                            handed = case rendererReturn of
++                                Just proof -> Controller.update (Controller.Interaction (Desktop.ArmRendererRestoration proof)) refreshed |> Tuple.first
++                                Nothing -> refreshed
++                            result = Model {model | revision=table.revision,highest=highest,views=table.scopes,locations=table.locations,selected=selected,controller=handed,batchExhausted=if model.capacityRefused then model.batchExhausted else False}
+                             -- These reads were allocated in this same unsent update,
+                             -- before the supersession above. Never forward obsolete
+                             -- observations; retain every operation/local effect.
+                             prior = List.filter (not << observationEffect) (effects++ownerEffects++cancelEffects)
+-                        in (result,Controller.Publish (Controller.frame refreshed)::(prior++readEffects))
++                        in (result,Controller.Publish (Controller.frame handed)::(prior++readEffects))
+                 Err _ -> (current,[])
+         Renderer raw ->
+             let decoder = strict ["viewProtocol","kind","scope","action"]

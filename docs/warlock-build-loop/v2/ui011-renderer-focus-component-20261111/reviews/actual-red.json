@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-semantic-red",
+  "manifestSha256": "da2b98570306cf6e60b417b23fd58158c04b980c90e110ebff4afea5052411c8",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/revision2-valid-foreign-observation/actual-root-probe-1794409267869408325/report.json",
+    "sha256": "bb0eba2d4de1f2c6c441cdb255ed577b0eb58482f5559ef981846bb88658df70"
+  },
+  "verified": {
+    "compileExit": 0,
+    "allSevenSetupPassed": true,
+    "checks": 17,
+    "passedChecks": 14,
+    "failedChecks": [
+      "current-logical-opener-restored",
+      "missing-opener-current-fallback",
+      "replacement-incarnation-current-fallback"
+    ],
+    "validForeignNegativePassed": true,
+    "seedSamples": 32,
+    "sourceInputsUnchanged": true,
+    "cleanupQualified": true
+  },
+  "preservedPriorFailure": {
+    "reportSha256": "c5592ab3fcd8316ce9f80800a4572c63aee55a27d2256a242c591aa41949fa08",
+    "classification": "three genuine positive failures plus overbroad diagnostic equality premise; not equivalent fixture"
+  },
+  "limits": {
+    "nativeAcceptance": false,
+    "originalAcceptance": false,
+    "modeledTopologyIngress": true,
+    "primaryMutation": false
+  }
+}

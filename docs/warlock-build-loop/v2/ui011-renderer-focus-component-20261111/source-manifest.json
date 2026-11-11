@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "kind": "ui011-renderer-restoration-elm-component",
+  "requirement": "ELM-UI-011",
+  "scenario": "focus-scope-renderer restart",
+  "posts": [
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "beforeSha256": "84dbc4a4db37c79777213547366cf1ca17e74e780e17c29cae4b604d4e6694c3",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/postimages/implementation/warlock/src/Desktop.elm",
+      "sha256": "5d690b543b8b0aaa2bf42a86ecd4bec45569c89df10bc82c627ec98bbb5983ab",
+      "mode": "0o644"
+    },
+    {
+      "path": "implementation/warlock/src/OutputController.elm",
+      "beforeSha256": "59de16446debfe82eb71eece55e24aab6807467c29916a694ca0926a8242283d",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/postimages/implementation/warlock/src/OutputController.elm",
+      "sha256": "05b75a443e17db538b7f77e7fcef0acad0f65f971c9c598b134b05304ae9452d",
+      "mode": "0o644"
+    }
+  ],
+  "files": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/changes.patch",
+      "sha256": "a61f4aa33e8565bfd70155a86637fc00c8a40c141ff4dce27b0b1293ed712b7b"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/green-qualification/manifest.json",
+      "sha256": "e8bccd979bca8aa38c6de71bf66ae697362343ecf3f1eded59b5c72395309f3b"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/green-qualification/root-protected-argv.json",
+      "sha256": "26cd1941c741cd1310ad8f798591ffe46dd2f4371366e89ec62140957f8fc538"
+    }
+  ],
+  "actualRed": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/revision2-valid-foreign-observation/actual-root-probe-1794409267869408325/report.json",
+    "sha256": "bb0eba2d4de1f2c6c441cdb255ed577b0eb58482f5559ef981846bb88658df70"
+  },
+  "fixtureManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/revision2-valid-foreign-observation/manifest.json",
+    "sha256": "da2b98570306cf6e60b417b23fd58158c04b980c90e110ebff4afea5052411c8"
+  },
+  "originalFailedFixtureAndReceiptRetained": true,
+  "caseCount": 17,
+  "setupCount": 7,
+  "seedSamples": 32,
+  "primaryChanged": false,
+  "authorExecuted": false,
+  "sourceContract": [
+    "Only the actual validated keyboard observed menu creates opaque RendererRestoration. No JSON decoder or exposed constructor.",
+    "Outputs captures before existing retirement, arms after existing ownerassignment and request supersession. The arm produces no focus/request/mutation and binds sameoutput/highergeneration/currentbinding/currentread.",
+    "Original logical owner/incarnation/fingerprint is retained; current observed reply and new presentation encode the target. Replacement or missing root chooses only current declared eligible fallback.",
+    "Incoming wrongscope/binding, stale generation/read or Unknown cannot focus. Existing invalidation and original explicit dismissal policy preserved.",
+    "Controller draft and Unknown action reservations stay in existing model; no mutation resend/recovery/admission certificate."
+  ],
+  "nativeBoundaryRemaining": [
+    "WebKit termination still exits host; this patch does not claim it delivers topology replacement.",
+    "Mvp remains sole trusted generation authority; future actual renderer lifecycle callback must update it under same custody.",
+    "No native/AT acceptance or current renderer recovery implementation claimed."
+  ],
+  "nativeAcceptance": false,
+  "originalAcceptance": false
+}

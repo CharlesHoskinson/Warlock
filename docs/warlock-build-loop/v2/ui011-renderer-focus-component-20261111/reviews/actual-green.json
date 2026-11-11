@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-renderer-component-red-green",
+  "manifestSha256": "d9f862b5b0be913a323abf4dd9970ab32030895a7f719733215bcad313e61224",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/green-qualification/actual-root-probe-1794409596489988038/report.json",
+    "sha256": "fbef2262920369908ada9d9396a98215a4e6fcfd9cd80dce5dca6138b18c527f"
+  },
+  "priorRedReport": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/revision2-valid-foreign-observation/actual-root-probe-1794409267869408325/report.json",
+    "sha256": "bb0eba2d4de1f2c6c441cdb255ed577b0eb58482f5559ef981846bb88658df70"
+  },
+  "sourceAdoption": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/actual-root/source-copy-receipt.json",
+    "sha256": "68c52d8ba94befe34bcc17f98ed0dfa137614e5fbe3d1ee1f8be9d18e3d7d0a2"
+  },
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "implementation/warlock/src/Desktop.elm",
+        "beforeSha256": "84dbc4a4db37c79777213547366cf1ca17e74e780e17c29cae4b604d4e6694c3",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/postimages/implementation/warlock/src/Desktop.elm",
+        "sha256": "5d690b543b8b0aaa2bf42a86ecd4bec45569c89df10bc82c627ec98bbb5983ab",
+        "mode": "0o644"
+      },
+      {
+        "path": "implementation/warlock/src/OutputController.elm",
+        "beforeSha256": "59de16446debfe82eb71eece55e24aab6807467c29916a694ca0926a8242283d",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/postimages/implementation/warlock/src/OutputController.elm",
+        "sha256": "05b75a443e17db538b7f77e7fcef0acad0f65f971c9c598b134b05304ae9452d",
+        "mode": "0o644"
+      }
+    ]
+  },
+  "verified": {
+    "sameR2Fixture": true,
+    "compileExit": 0,
+    "reducerExit": 0,
+    "checksPassed": 17,
+    "setupPassed": 7,
+    "seedSamples": 32,
+    "currentTwoInstalledPostsMatch": true,
+    "allReportedCurrentSourceHashesMatch": true,
+    "sourceInputsUnchanged": true,
+    "cleanupQualified": true
+  },
+  "limits": {
+    "modeledTopologyIngress": true,
+    "actualHostRecoveryImplemented": false,
+    "nativeCallbackGenerationProven": false,
+    "nativeAcceptance": false,
+    "originalAcceptance": false,
+    "minimizedCaseCredit": 0
+  }
+}

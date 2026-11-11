@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-compiled-semantic-red",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-host-compiled-red-preparation/revision2-actual-selection38/actual-root-runs/protocol-1794410360186228285/report.json",
+    "sha256": "f736cbf04589a3cf8fe3b317d21f004fad85d22ed80ecd848aa73169b6ba3709"
+  },
+  "manifestSha256": "206858f0ead3c7a85f0d1def077cc87547e77649efd64360ace3c266da45981c",
+  "verified": {
+    "buildExit": 0,
+    "listExits": [
+      0,
+      0
+    ],
+    "actualAllocationControlExit": 1,
+    "expectedFailures": [
+      "renderer Popup retirement keeps Controller host available",
+      "renderer Bar retirement keeps Controller host available"
+    ],
+    "newControlCount": 14,
+    "inheritedAllocationControlsRetained": true,
+    "sourceInputsUnchanged": true,
+    "cleanupQualified": true
+  },
+  "limits": {
+    "liveSourcesAdopted": false,
+    "gtkExecuted": false,
+    "nativeExecuted": false,
+    "rendererRecoveryImplemented": false,
+    "originalAcceptance": false
+  }
+}

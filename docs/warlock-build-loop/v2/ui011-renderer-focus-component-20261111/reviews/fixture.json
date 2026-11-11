@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifestSha256": "da2b98570306cf6e60b417b23fd58158c04b980c90e110ebff4afea5052411c8",
+  "requiredChanges": [],
+  "verified": [
+    "Foreign observation now has matching snapshot.owner/binding.frontend2, including seeded variants; production authority still bound to frontend1.",
+    "Negative checks retain nofocus/no mutation and exact binding/pending observation/snapshot/issued state, while allowing independent decoder diagnostics; no Shell change.",
+    "Node17/7/32 checker and runner bytes exact; three positive restoration/fallback assertions unchanged; old malformed fixture/report preserved."
+  ],
+  "limits": {
+    "productionChanged": false,
+    "testsExecuted": false,
+    "nativeAcceptance": false
+  }
+}

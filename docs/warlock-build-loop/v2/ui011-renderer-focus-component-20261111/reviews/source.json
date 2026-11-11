@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifestSha256": "d9f862b5b0be913a323abf4dd9970ab32030895a7f719733215bcad313e61224",
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "implementation/warlock/src/Desktop.elm",
+        "beforeSha256": "84dbc4a4db37c79777213547366cf1ca17e74e780e17c29cae4b604d4e6694c3",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/postimages/implementation/warlock/src/Desktop.elm",
+        "sha256": "5d690b543b8b0aaa2bf42a86ecd4bec45569c89df10bc82c627ec98bbb5983ab",
+        "mode": "0o644"
+      },
+      {
+        "path": "implementation/warlock/src/OutputController.elm",
+        "beforeSha256": "59de16446debfe82eb71eece55e24aab6807467c29916a694ca0926a8242283d",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-renderer-restart-tests-first/production-implementation/postimages/implementation/warlock/src/OutputController.elm",
+        "sha256": "05b75a443e17db538b7f77e7fcef0acad0f65f971c9c598b134b05304ae9452d",
+        "mode": "0o644"
+      }
+    ]
+  },
+  "requiredChanges": [],
+  "verified": [
+    "Two existing Elm modules only; opaque RendererRestoration constructor not exported/no JSON decoder/new native effect. Capture uses existing validated open keyboard observed-retirement target before dismissal.",
+    "Arm follows same-output higher renderer generation/current binding/available observation/pending fresh read, no other active scope or existing restoration; arming emits no effect.",
+    "Settlement binds saved fresh request and exact current owner scope while retaining original observed owner/fingerprint; fresh eligible group or current declared fallback only, no old DOM reuse.",
+    "Existing unknown/foreign/stale handling, draft and Unknown transaction data paths unchanged; no action replay or native authority introduced."
+  ],
+  "limits": [
+    "Component source scope only; real WebKit/Mvp restart event delivery, EngineCustody and native+AT original oracle remain outstanding.",
+    "Same R2 fixture actual GREEN still requires Root execution; no acceptance from source review."
+  ]
+}
