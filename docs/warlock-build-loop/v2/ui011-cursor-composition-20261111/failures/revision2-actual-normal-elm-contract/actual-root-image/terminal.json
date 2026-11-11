@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/docs/warlock-build-loop/v2/loop.py",
+    "--repo",
+    "/home/hoskinson/Projects/Warlock",
+    "--record",
+    ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+    "cpu",
+    "--candidate",
+    "ui011-watch-bookkeeping-images-v1-20261111",
+    "--expect-selection",
+    "34"
+  ],
+  "actualExit": 1,
+  "observedUTC": "2026-11-11T04:30:41.768575+00:00",
+  "stdoutSha256": "894b232173aa48afe8c1da34f0d7956c9a6af7e31aedf3da1cb2788ef53d2b0b",
+  "stderrSha256": "e7f578ee2435e135281497176261a0b014b3f0370fff0b2b03bf1d171b6dda19"
+}

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "recordSha256": "cafb6db0bc87e613b14118319dee81824727bd7458ca2014114c968189df44dd",
+  "selectionGeneration": 34,
+  "copies": [
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/postimages/tools/ux023_current_boot_correspondence.py",
+      "destination": "/home/hoskinson/Projects/Warlock/tools/ux023_current_boot_correspondence.py",
+      "sha256": "e4cee72fcf5c6bf3a0b41a869edd7dbb5ed629c27d72cf88123e8e905c10eba0",
+      "expectedPreimage": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050",
+      "mode": 420
+    },
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/postimages/tools/run_current_arm_ui011_opener_closure.py",
+      "destination": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py",
+      "sha256": "740882b0f2126638b575a7cbb7a292d62019e0717b4f4e62624def7f14b5e049",
+      "expectedPreimage": "119f2f54c9e6eb6475e26e0c3f551d2c7d68cd0bdd4a39a43ba710d5578f96af",
+      "mode": 384
+    }
+  ],
+  "requiredClaims": [
+    "tools/ux023_current_boot_correspondence.py",
+    "tools/run_current_arm_ui011_opener_closure.py"
+  ],
+  "existingClaimReceipts": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/root-claims.jsonl",
+    "sha256": "79be5a8de43db1d0a73326ba6e954636eaba2efcac764d30eeb1e9d36f895e85"
+  },
+  "immutablePreimageInventory": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/preimages.json",
+    "sha256": "75df89ecad2df1cba65578dfd7a9515ffb914e4e7b031bf3404998516775f24a"
+  },
+  "sourceManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/manifest.json",
+    "sha256": "cbcc021698224e42dee1395fa1ffb70559e3c2bee9993672fc5bf25d03dfb53c"
+  },
+  "sourceReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/independent-source-review-build.json",
+    "sha256": "8b438da310862c1c8a5e40502f56d1daa7a878758b87807342a1ccb363c4c459"
+  },
+  "actualGreenTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/actual-root-green/terminal.json",
+    "sha256": "b58872ba1b7f03a562fe978deffefac8d43c15c0976d96ac3ddedbccfb1da5f3"
+  },
+  "primaryWrites": false,
+  "executionPerformed": false,
+  "ordering": "Root normal current participant/global precheck, verify same live claims and exact preimages, checked two-file CAS. All immutable preimage bytes stay retained."
+}

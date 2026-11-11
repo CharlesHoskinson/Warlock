@@ -1,0 +1,148 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-11T04:11:00.127396+00:00",
+    "secondsSinceRecordedProgress": 7954,
+    "suspendedSeconds": 0,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": true,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [
+      "45-awake-minutes-without-tested-integration"
+    ],
+    "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+    "action": "Change the next action or defer in this same history.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "execute",
+    "executor": "Root",
+    "candidateId": "ui011-cursor-schema-native-v1-20261111",
+    "candidateSha256": "d75ad52ae420fc45d1c305e7a5e7e3aae1984d296c6285ebdb908e266c6a1649",
+    "jobId": null,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py",
+      "--sha256",
+      "75b3a55c6a73dd0ade56c183fb9aa668924d6bcc18dd5f749b6bed027ddcf8f1"
+    ],
+    "expectedObservation": "Original ELM-UI-011 focus-scope-opener closure only: independent real owned GTK opener Done and menu, fixed nonce CLOSE, automatic current eligible Applications fallback with native/credential-bound real AT focus, no Refresh/Escape/window action grant. At most4literal keyboard transactions,28+2/16frames and unchanged owned provider/source/ABI/normal-cleanup gates. Registry realSIGTERM -15 still fails unchanged stack exit0 gate. Components/readiness/report flags grant no original acceptance. All otherUI011scenarios remain unqualified.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-11T04:11:00.127396+00:00",
+      "secondsSinceRecordedProgress": 7956,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}
+{"deliveryLaunch": {"record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json", "candidateSha256": "d75ad52ae420fc45d1c305e7a5e7e3aae1984d296c6285ebdb908e266c6a1649", "selection": 34, "scope": "native", "pid": 1182851, "startTicks": "4544281", "argv": ["/usr/bin/python3", "-B", "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py", "--", "/usr/bin/python3", "-B", "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py", "--sha256", "75b3a55c6a73dd0ade56c183fb9aa668924d6bcc18dd5f749b6bed027ddcf8f1"], "acceptanceInferred": false}}
+{"passed": false, "report": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794378226225517565/report.json", "sha256": "a6413797b5f47c2ed0540dbfe1965cc6eda613319021ab19fe884351a42d8d77", "nativeAcceptance": false, "originalAcceptance": false}
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-11T04:11:00.127396+00:00",
+    "secondsSinceRecordedProgress": 7973,
+    "suspendedSeconds": 0,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": true,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [
+      "45-awake-minutes-without-tested-integration"
+    ],
+    "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+    "action": "Change the next action or defer in this same history.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "execute",
+    "executor": "Root",
+    "candidateId": "ui011-cursor-schema-native-v1-20261111",
+    "candidateSha256": "d75ad52ae420fc45d1c305e7a5e7e3aae1984d296c6285ebdb908e266c6a1649",
+    "jobId": null,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py",
+      "--sha256",
+      "75b3a55c6a73dd0ade56c183fb9aa668924d6bcc18dd5f749b6bed027ddcf8f1"
+    ],
+    "expectedObservation": "Original ELM-UI-011 focus-scope-opener closure only: independent real owned GTK opener Done and menu, fixed nonce CLOSE, automatic current eligible Applications fallback with native/credential-bound real AT focus, no Refresh/Escape/window action grant. At most4literal keyboard transactions,28+2/16frames and unchanged owned provider/source/ABI/normal-cleanup gates. Registry realSIGTERM -15 still fails unchanged stack exit0 gate. Components/readiness/report flags grant no original acceptance. All otherUI011scenarios remain unqualified.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-11T04:11:00.127396+00:00",
+      "secondsSinceRecordedProgress": 7975,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}

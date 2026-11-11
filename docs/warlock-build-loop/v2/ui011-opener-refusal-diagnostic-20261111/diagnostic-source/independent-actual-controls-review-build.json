@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-diagnostic-controls",
+  "manifestSha256": "25d2ef93ef72a4b808c7ca0247b48b95e3c1b04c9e4348fb5f6c63529841de9f",
+  "actualProtectedTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-classifier-refusal-diagnostic-v1/actual-root-controls/terminal.json",
+    "sha256": "b3ec420f53c2301b6bb3866d82d102598756646db59ea037ed495fd9211d9875"
+  },
+  "stderr": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-classifier-refusal-diagnostic-v1/actual-root-controls/stderr",
+    "sha256": "cfcb53626f5fc91be0a6327b8ecead55a5c8770d34310f7fdd2ea1aed6382334"
+  },
+  "sourceReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-classifier-refusal-diagnostic-v1/independent-source-review-build.json",
+    "sha256": "45dcf290239b058f85d1dae85cf95b2b591466c5793e9ec2bd771ce9b75a528f"
+  },
+  "orderedControls": [
+    "test_exact_original_raw_rows_links_reach_callback",
+    "test_callback_failure_does_not_replace_original",
+    "test_no_callback_on_success",
+    "test_parse_error_is_not_mislabeled_classifier_input",
+    "test_timeout_before_classifier_has_no_capture",
+    "test_capture_retains_exact_raw_and_private_mode",
+    "test_foreign_birth_blocks_later_fd_reads",
+    "test_timeout_is_recorded_without_replacing_original",
+    "test_inaccessible_fd_evidence_remains_unknown",
+    "test_changed_after_identity_is_not_attested",
+    "test_existing_capture_file_is_not_overwritten",
+    "test_fd_directory_refusal_is_bounded_unknown",
+    "test_no_fd_body_read_or_process_mutation",
+    "test_original_limits_and_classifier_unchanged",
+    "test_callback_issued_only_for_opener",
+    "test_exact_rows_not_later_maps_reread"
+  ],
+  "verified": [
+    "Actual protected16 tests OK,exit0,exact stdout/stderr hashes and frozen source post hashes.",
+    "Controls cover exact original classifier raw/rows/links callback, original exception preserved after callback failure, no callback on success/parse failure/deadline refusal, exact private raw retention and no overwrite.",
+    "Custody/timeout/inaccessible-FD/changed-after-identity cases remain unknown, source-level no FD body reads/process mutation, classifier/parser/strict mapping AST equality and original28+2 limits retained.",
+    "Opener-only wiring and no later maps reread label original snapshot separately from later bounded FD diagnostics."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "CPU control qualification only,0seed samples. No actual offending FD observed, origin proven, mapping admitted, native/original accepted or primary source mutated by reviewer."
+  ]
+}

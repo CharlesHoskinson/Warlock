@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "author": "sol_supervisor",
+  "scope": "Read-only full current loader-cache correspondence against existing exact accepted inventory and recipe",
+  "status": "source-only-awaiting-independent-review-and-Root-protected-scan",
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/correspondence-source/read_current_correspondence.py",
+    "sha256": "59b272939ac9c787775692d7253310dafc099b9bc322bc1d619a1aacd78e3295"
+  },
+  "retainedAcceptedProof": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/current-loader-cache-20261110T1800/cache-correspondence.json",
+    "sha256": "9c123a13775698f1665412a3853c4ac6b1b7d7d9a714159a74c5f0eb7c3e8f1e"
+  },
+  "expectedCurrentCacheSha256": "313aa3c8a1af5041f82e32299d1c18b0bce6b6130e5fd805c6ca3eef2679423f",
+  "delta": [
+    "Only scanner OUT directory and EXPECTED currentcache hash differ"
+  ],
+  "unchanged": {
+    "inventorySha256": "9984660710cec4b197733e953f00dc850b3876e77c977684e4c9605348e81f8f",
+    "selectedRecipeSha256": "b3c9f30dcedc626f603fc963239108fae64639ccfd03a7dc292550beb1e9aa60",
+    "inventoryEntries": 15851,
+    "selectedResolutionEdges": 800,
+    "interpreterEdges": 9,
+    "requiredAbsent": 10,
+    "deadlineSeconds": 120
+  },
+  "files": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/read_current_correspondence.py",
+      "sha256": "0c622a8e671a66400b7df78573f423b3a59a60f65fec0d415cf1bd8b5392c1be"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/root-argv.json",
+      "sha256": "73056d57a527f2120f52442d88aaedeea16fbf0579a5e3154337d1d5ec0cdd29"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/scanner.patch",
+      "sha256": "547fd055ddabffafca1eb48b43fb86c7244fa7d2526e177eebe4cf722649a956"
+    }
+  ],
+  "sourceChanges": false,
+  "primaryWrites": false,
+  "executionPerformed": false,
+  "actualCorrespondenceProved": false
+}

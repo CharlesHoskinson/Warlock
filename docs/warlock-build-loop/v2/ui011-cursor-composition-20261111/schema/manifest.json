@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "author": "sol_supervisor",
+  "scope": "Exact current GLib schema source membership and private compilation with existing trusted generator",
+  "status": "source-only-awaiting-Root-protected-run-and-independent-data-review",
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/schema-reproduction/revalidation-runtimefix2/reproduce_current_schema.py",
+    "sha256": "2d30df4ee527299ff41cd6961a7cd23afcce1fddaf4fb4156455b5ee1ee627cf"
+  },
+  "priorSourceManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/schema-reproduction/inputs.json",
+    "sha256": "2fdb8745f9131074ef683683c76e9c3a283a8f68079442a894013afe56ddd931"
+  },
+  "priorQualification": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/schema-reproduction/current-foundation-schema-qualification.ACCEPTED.json",
+    "sha256": "f46dfbe61a38cc49716025cb9c257ab32f1671c3efe2b3141dffb485931c1c46"
+  },
+  "files": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/inputs.json",
+      "sha256": "8bd0109564d850826246cf9a62369f70e6fe880f474c965717c3269229f5cb6f"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/reproduce_current_schema.py",
+      "sha256": "398721a1a96af13847da5db9ce07411ed3b8997a97f43e566df65ece08f3bb4d"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/root-argv.json",
+      "sha256": "bbba349be5bfe8907ed9b464f6a2ef59dff042e9bacebbb66dab5ba2de81aac4"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/scanner.patch",
+      "sha256": "db2cb2a1df7f97a94ece224af443009825c459b343d59da07e28f2c2302a6ad7"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/source-delta.json",
+      "sha256": "f522963f1825fe747b835c519e51cd51a3df8f27a3c350fa176227a043cbb7b2"
+    }
+  ],
+  "currentSourceCount": 48,
+  "compiler": {
+    "path": "/usr/bin/glib-compile-schemas",
+    "sha256": "f21183727d93c168daecfc6490d8a28f129eaa001f658603d78a29bac4aec6dc"
+  },
+  "target": {
+    "path": "/usr/share/glib-2.0/schemas/gschemas.compiled",
+    "sha256": "5c04f28c16da15dbbb1ab64f859ad638203ecda3aa762ec62e76574e98876f63"
+  },
+  "existingMechanism": "ux023_current_boot_correspondence.derive_schema370-419; new typed qualification/provider/correspondence data required, original foundation and oldproof untouched.",
+  "runtimeSourceChanges": false,
+  "primaryWrites": false,
+  "executionPerformed": false,
+  "nativeExecuted": false,
+  "originalAcceptance": false
+}

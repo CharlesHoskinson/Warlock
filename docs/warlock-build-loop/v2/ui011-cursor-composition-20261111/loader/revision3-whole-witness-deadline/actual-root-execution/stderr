@@ -1,0 +1,9 @@
+Running as unit: qa-harness-c51fafb32a8e4898913e364452f45486.scope; invocation ID: 1e5c43c9c09a4105ba393eec47f1224e
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/qualify_current_loader.py", line 76, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/qualify_current_loader.py", line 52, in main
+    for key in ('hyprland','privateAquamarine','loader','current'):require(before[prior[key]['path']]['sha256']==prior[key]['sha256'],'owning image differs')
+                                                                           ~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: '/usr/bin/Hyprland'

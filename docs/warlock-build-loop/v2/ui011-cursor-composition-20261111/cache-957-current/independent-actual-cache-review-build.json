@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/cache-correspondence.PROPOSED.json",
+    "sha256": "1668cbe38384c2a18103e929e4f8109da317c860d5bddc484f5c59affdbb1f39"
+  },
+  "outerTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-root-execution/terminal.json",
+    "sha256": "f2b127c559a55ea7b6f4ad021ea42b060e2d35fc841349a1ac69036d70abf347"
+  },
+  "allowedAcceptedProofBody": {
+    "schema": 1,
+    "disposition": "accepted",
+    "scope": "ux003-current-loader-cache-correspondence",
+    "expectedCacheSha256": "e26846bd2ef0d774afeb7f995b1dea790ca0037f13bb64df5694ee74b414d7b6",
+    "currentCacheSha256": "957d0bb07b95e03a5ea03e5373678ed7ca467db33fac05a06e273f35ae8ee2c5",
+    "systemInventorySha256": "9984660710cec4b197733e953f00dc850b3876e77c977684e4c9605348e81f8f",
+    "selectedResolutionManifest": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/arm64-cpu-1794037285027049547/native-build-stage-manifest.json",
+      "sha256": "b3c9f30dcedc626f603fc963239108fae64639ccfd03a7dc292550beb1e9aa60"
+    },
+    "edgeCount": 800,
+    "selectedResolutionMismatches": 0,
+    "requiredAbsentCandidateCount": 10,
+    "requiredAbsentNowPresent": [],
+    "systemEntryCount": 15851,
+    "systemEntryMismatches": 0,
+    "systemAudit": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/complete-system-inventory-audit.json",
+      "sha256": "8b0f75ed7b5fc2fcc44ae97605a4e248c9c412cb881b353a6fa0e62b1046889d"
+    },
+    "cacheEntryAudit": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/actual-loader-cache-entries.json",
+      "sha256": "d3cb37f9117c206ae200bdeaaa32a11d549bc38daca40717c95af9f98ad4500a"
+    },
+    "selectedResolutionAudit": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/selected-loader-resolution-correspondence.json",
+      "sha256": "01c7edd4b48cf8c1956c54bbde0d2358bbd804eda847b8f1370ec596bf6e94fb"
+    },
+    "currentCacheSnapshot": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/actual-ld.so.cache",
+      "sha256": "957d0bb07b95e03a5ea03e5373678ed7ca467db33fac05a06e273f35ae8ee2c5"
+    },
+    "nativeExecuted": false,
+    "passed": true,
+    "protectedScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-066235c186f848acb0582f84d94ddbc2.scope",
+      "coreLimit": 1
+    },
+    "sourceStatus": "reconstructed from reviewed retained schema; first execution only after independent review",
+    "reviewer": "build_audit"
+  },
+  "verified": [
+    "Actualprotectedouterexit0/streamhashes/audithashes verified;current957dcache snapshot/livehashstablebeforeafter.",
+    "Full15851inventory998matchedbody/mode/links0mismatches;800oldselectedrecipeedges/9interpreters/10requiredabsent0resolution/alias/node/absenceerrors.",
+    "AcceptedbodyexactlyPROPOSEDwithonlydispositionaccepted/reviewerbuild_audit;allactualauditrefsretained. No arbitraryinventory/SDK/ABI/source repin.",
+    "Prior313/74cedqualification retained;externalpackage/cachechangeanddispatchshapeattemptremainseparatehistoricalevents,notrelabeledactualscannerfailure."
+  ],
+  "limits": [
+    "FullretainedSDKloadercorrespondenceonly;doesnotqualifyspecial147cursorloaderor native/AT/originaljourney.",
+    "No reviewerexecution/primarychanges."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-semantic-red",
+  "manifestSha256": "6d2dc7ea27cb2cdd6b0556808f0b20b6a58b89ef9707779bda06cbbd751308bc",
+  "actualProtectedTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/actual-root-red/terminal.json",
+    "sha256": "9c0ed050fd45e6897598e414282d144232e878f483dacb0ec30790d395daf76f"
+  },
+  "stderr": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/actual-root-red/stderr",
+    "sha256": "969ccc9e57b753a9a795f412466395f850c0d39ff1449f30f60981afb9a8af49"
+  },
+  "verified": [
+    "Actual protected exit1; stdout/stderr hashes match terminal.",
+    "Unchanged frozen 23-case/32-sample fixture and baseline1d52 module hashes verified.",
+    "All pre-test actual accepted loader/schema/provider/cache pin and correspondence setup completed; tests ran23, only current composition positive errored.",
+    "Positive calls actual cursor_inputs at fixture101/108 and baseline245 raises exact independently reviewed cursor dependency correspondence required. This is semantic refusal of requested current composition, not setup failure.",
+    "Other22 controls, including fixed32 refusal samples, pass; negative success does not establish missing positive implementation."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "No reviewer target execution or primary mutation. No native/original acceptance; preserve failed baseline and use same fixture for subsequent GREEN."
+  ]
+}

@@ -1,0 +1,14 @@
+Running as unit: qa-harness-456800f3db4c4a1cbc1001331c384a0f.scope; invocation ID: b002ec44e4dd40bbbe04d0924777d520
+Traceback (most recent call last):
+  File "/home/hoskinson/Projects/Warlock/tools/run_ui011_native_images_cpu.py", line 300, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/hoskinson/Projects/Warlock/tools/run_ui011_native_images_cpu.py", line 152, in main
+    selected = tools_for(args.profile, data, arm, build, elm)
+  File "/home/hoskinson/Projects/Warlock/tools/run_ui011_native_images_cpu.py", line 85, in tools_for
+    return build.verify_inputs(data)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hoskinson/Projects/Warlock/tools/run_ux024_menu_focus_build.py", line 182, in verify_inputs
+    or proof['selectedResolutionMismatches']!=0 or proof['requiredAbsentNowPresent']!=[]):raise ValueError('exact current cache correspondence required')
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: exact current cache correspondence required

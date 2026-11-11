@@ -1,0 +1,52 @@
+Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "nextRootAction": {
+    "kind": "wait-terminal",
+    "executor": "Root",
+    "candidateId": "ui011-cursor-schema-native-v1-20261111",
+    "candidateSha256": "d75ad52ae420fc45d1c305e7a5e7e3aae1984d296c6285ebdb908e266c6a1649",
+    "jobId": "pid1182851-start4544281",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py",
+      "--sha256",
+      "75b3a55c6a73dd0ade56c183fb9aa668924d6bcc18dd5f749b6bed027ddcf8f1"
+    ],
+    "expectedObservation": "Original ELM-UI-011 focus-scope-opener closure only: independent real owned GTK opener Done and menu, fixed nonce CLOSE, automatic current eligible Applications fallback with native/credential-bound real AT focus, no Refresh/Escape/window action grant. At most4literal keyboard transactions,28+2/16frames and unchanged owned provider/source/ABI/normal-cleanup gates. Registry realSIGTERM -15 still fails unchanged stack exit0 gate. Components/readiness/report flags grant no original acceptance. All otherUI011scenarios remain unqualified.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-11T04:11:00.127396+00:00",
+      "secondsSinceRecordedProgress": 8241,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "recordSha256": "fcd45f5f3de3575673899c186a2f0f04c2f82dfd597188a4d8c15c4bfd30aa0d",
+  "acceptanceInferred": false,
+  "ok": true
+}

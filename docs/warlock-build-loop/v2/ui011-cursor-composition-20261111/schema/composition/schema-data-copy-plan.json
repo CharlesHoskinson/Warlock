@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "recordSha256": "e9aa60d6e16b8a17af29e22b513a8f2ca0bd944d76af0f0082712cc328cd340e",
+  "selectionGeneration": 34,
+  "copies": [
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/current-schema-qualification.json",
+      "destination": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-original-opener-closure-v2/current-schema5c04-qualification.json",
+      "sha256": "9249e0acd0bd667ef15b37ab2d07d37e16fcc7413733fe71c34b4009915154db",
+      "expectedPreimage": null,
+      "mode": 384
+    },
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/current-schema-inputs205.json",
+      "destination": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-original-opener-closure-v2/current-schema5c04-inputs205.json",
+      "sha256": "2614eca3a7feaf22df29e5ac59a5723c5793c3c7c39d9900b034b441d34a4d52",
+      "expectedPreimage": null,
+      "mode": 384
+    },
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/current-schema-provider-readiness.json",
+      "destination": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-original-opener-closure-v2/current-schema5c04-provider-readiness.json",
+      "sha256": "dbd56e43101657e84bd36f251292ec74339b857863b5a22eb41d23c5dab7a898",
+      "expectedPreimage": null,
+      "mode": 384
+    },
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/current-schema-correspondence.json",
+      "destination": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-original-opener-closure-v2/current-schema5c04-correspondence.json",
+      "sha256": "5ed3d58808c8ced0d8267a823108464d0ccd0af2b00bb74cd950bcedb87864b8",
+      "expectedPreimage": null,
+      "mode": 384
+    }
+  ],
+  "requiredClaims": [
+    ".warlock-contributor/evidence/nextloop-20261106/ui011-original-opener-closure-v2/current-schema5c04-qualification.json",
+    ".warlock-contributor/evidence/nextloop-20261106/ui011-original-opener-closure-v2/current-schema5c04-inputs205.json",
+    ".warlock-contributor/evidence/nextloop-20261106/ui011-original-opener-closure-v2/current-schema5c04-provider-readiness.json",
+    ".warlock-contributor/evidence/nextloop-20261106/ui011-original-opener-closure-v2/current-schema5c04-correspondence.json"
+  ],
+  "sourceChanges": false,
+  "primaryWrites": false,
+  "ordering": "Root checked copies exact four immutable typed data projections before R5 tuple preparation; old schema/foundation data remain unchanged."
+}

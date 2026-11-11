@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "fixture": "component/revision2-current-957-cache/test_cursor_composition.py",
+  "fixtureSha256": "8bb85515719d9fb3687e3aa711c851fc6c03ae1f5521dff82fe17d4e82e2f46c",
+  "inputs": "component/revision2-current-957-cache/inputs.json",
+  "redArgv": "component/revision2-current-957-cache/root-argv.json",
+  "greenArgv": "component/production-implementation/root-green-argv.json",
+  "caseCount": 23,
+  "fixedRefusalSamples": 32,
+  "actualRedTerminal": "component/revision2-current-957-cache/actual-root-red/terminal.json",
+  "actualGreenTerminal": "component/production-implementation/actual-root-green/terminal.json",
+  "sourcePosts": [
+    {
+      "path": "tools/ux023_current_boot_correspondence.py",
+      "beforeSha256": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/postimages/tools/ux023_current_boot_correspondence.py",
+      "sha256": "e4cee72fcf5c6bf3a0b41a869edd7dbb5ed629c27d72cf88123e8e905c10eba0",
+      "mode": 420
+    },
+    {
+      "path": "tools/run_current_arm_ui011_opener_closure.py",
+      "beforeSha256": "119f2f54c9e6eb6475e26e0c3f551d2c7d68cd0bdd4a39a43ba710d5578f96af",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/postimages/tools/run_current_arm_ui011_opener_closure.py",
+      "sha256": "740882b0f2126638b575a7cbb7a292d62019e0717b4f4e62624def7f14b5e049",
+      "mode": 384
+    }
+  ],
+  "legacy": "Original16/32 historical controls are retained as source only here. No actual current85 cache PASS is claimed. The actual current suite covers no-proof identity return and oldschema1 refusal on changed nested data.",
+  "externalInputs": "Retained JSON references preserve full source/ref hashes. Large SDK/compiler/package inputs are intentionally not copied. Resolve only exact matching bodies. Do not substitute current mutable host files for old pinned inputs.",
+  "setupLimit": "R2 inputs.source pins LIVE old1d52. Actual GREEN ran against private postimage before primary CAS. Direct post-adoption replay fails setup; that is not semantic RED.",
+  "protection": "Only Root runs the unchanged qa_run route under actual current authorization. Historical argv describes completed runs and is not a new execution grant.",
+  "nativeExecutedByThisPackage": false,
+  "nativeAcceptance": false,
+  "clockClaim": false
+}

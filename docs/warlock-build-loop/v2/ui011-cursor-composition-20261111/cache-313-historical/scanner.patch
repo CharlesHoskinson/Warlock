@@ -1,0 +1,17 @@
+--- accepted85f1/scanner.py
++++ current313a/scanner.py
+@@ -3,12 +3,12 @@
+ from pathlib import Path
+ import hashlib,json,os,signal,stat,struct,sys,time
+ ROOT=Path('/home/hoskinson/Projects/Warlock')
+-OUT=Path('/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/automatic-retirement-delivery-preparation/host-inventory-85f1-derivation/revision2-bounded-package-membership/correspondence-source/cache-scan-actual')
++OUT=Path('/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-scan')
+ INVENTORY=Path('/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/host-inventory-85f1-20261110/system-build-inputs.json')
+ INV_SHA='9984660710cec4b197733e953f00dc850b3876e77c977684e4c9605348e81f8f'
+ STAGE=ROOT/'.warlock-contributor/arm64-cpu-1794037285027049547/native-build-stage-manifest.json'
+ STAGE_SHA='b3c9f30dcedc626f603fc963239108fae64639ccfd03a7dc292550beb1e9aa60'
+-EXPECTED='85f1d0ec7186f21e65d355a7e0d1b9746b57e3beef652ff9532676faa89ae582'
++EXPECTED='313aa3c8a1af5041f82e32299d1c18b0bce6b6130e5fd805c6ca3eef2679423f'
+ QA_SHA='6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23'
+ 
+ def regular(path,cap=None):

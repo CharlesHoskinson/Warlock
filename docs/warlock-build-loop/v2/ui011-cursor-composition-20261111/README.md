@@ -1,0 +1,11 @@
+The cursor composition helper checks current schema and loader evidence without changing the historical cursor qualification. Schema 2 requires the original cursor proof, current schema proof, provider readiness and an independently reviewed current loader witness. The collector changes only its helper hash.
+
+The baseline rejects the current composition after valid fixture setup. The same fixture then passes all 23 controls and 32 fixed refusal samples against the corrected helper. The retained RED terminal starts with `9c0ed050`. The GREEN terminal starts with `b58872ba`. Independent reviews bind both results and their exact source hashes.
+
+The loader witness verifies the same 147 dependency paths and hashes under cache `957d0bb0`. Four separate identities cover Hyprland, the private Aquamarine image, the loader and cursor. The schema evidence reproduces the current compiled schema from 48 source files. The old cache, schema, signed package, symbols and cursor proof remain historical evidence. Schema 1 retains its old cache check. An absent proof still returns the exact original input map.
+
+`manifest.json` hashes every retained file and records its original path. The package includes preimages, two postimages, the source diff, fixed tests, protected commands, reports, logs and reviews. SDK trees, compilers, package archives and full historical build trees remain external hash-bound inputs.
+
+`reproduction.json` identifies the exact historical commands and dependency limits. The R2 fixture pins the live helper at its old `1d52c4b7` hash during setup. Root ran GREEN before adoption. Running that command against the adopted live helper will fail setup and does not repeat the behavioral test. Historical absolute paths are evidence references, not portable launch commands. A new protected run requires exact staged inputs and current authorization.
+
+Failed preflights and loader attempts remain in the package. The R3 loader attempt failed before its command because the main executable is absent from the dependency list. R4 failed before its command after another cache change. The Root activation observation is a self-attestation with no exact past timestamp. The dispatch-shape error launched no loader or native process. These records grant no semantic, native, AT, acceptance or clock credit.

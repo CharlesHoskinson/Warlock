@@ -1,0 +1,24 @@
+--- retained-failed-r3/scanner.py
++++ fixed-owner-identities/scanner.py
+@@ -49,7 +49,8 @@
+  aliases();require(not os.path.lexists(prior['old']['path']),'historical cursor13 unexpectedly present')
+  before={name:stable(name)for name in contract['resolvedFiles']}
+  require(all(before[name]['sha256']==pin for name,pin in contract['resolvedFiles'].items()),'retained147 file body differs')
+- for key in ('hyprland','privateAquamarine','loader','current'):require(before[prior[key]['path']]['sha256']==prior[key]['sha256'],'owning image differs')
++ owning_before={key:stable(prior[key]['path'])for key in ('hyprland','privateAquamarine','loader','current')}
++ require(all(owning_before[key]['sha256']==prior[key]['sha256']for key in owning_before),'owning image differs')
+  current_cache=stable('/etc/ld.so.cache');require(current_cache['sha256']==contract['expectedCurrentCacheSha256'],'actual current cache differs')
+  argv=[prior['loader']['path'],'--list','--library-path',contract['fixedLibraryDir'],prior['hyprland']['path']]
+  require(argv==contract['loaderArgv']==prior['commands'][-1]['argv']and contract['fixedLibraryDir']==prior['libraryDir'],'exact historical loader command/private search directory required')
+@@ -66,9 +67,9 @@
+    if name:require(name not in sonames,'duplicate loader SONAME');sonames[name]=real
+   require(resolved==contract['resolvedFiles']and len(resolved)==147,'actual current147 selections differ')
+   require(sonames.get('libhyprcursor.so.0')==prior['current']['path']and sonames.get('libaquamarine.so.15')==prior['privateAquamarine']['path'],'owning cursor/privateAQ selections differ')
+-  require(all(stable(name)==row for name,row in before.items())and stable('/etc/ld.so.cache')==current_cache and boot()==contract['expectedBootId'],'selected bodies/cache/boot changed during witness')
++  require(all(stable(name)==row for name,row in before.items())and all(stable(prior[key]['path'])==row for key,row in owning_before.items())and stable('/etc/ld.so.cache')==current_cache and boot()==contract['expectedBootId'],'selected bodies/cache/boot changed during witness')
+   aliases();require(not os.path.lexists(prior['old']['path']),'historical cursor13 appeared')
+-  report.update(passed=True,resolvedFiles=resolved,resolvedCount=147,selectedIdentities=before,cacheIdentity=current_cache,inputsUnchanged=True)
++  report.update(passed=True,resolvedFiles=resolved,resolvedCount=147,selectedIdentities=before,owningIdentities=owning_before,cacheIdentity=current_cache,inputsUnchanged=True)
+  except Exception as error:report['error']=dict(type=type(error).__name__,message=str(error));raise
+  finally:
+   p=OUT/'report.json';p.write_text(json.dumps(report,indent=2)+'\n');signal.alarm(0);print(json.dumps({'passed':report['passed'],'report':reference(p)}))

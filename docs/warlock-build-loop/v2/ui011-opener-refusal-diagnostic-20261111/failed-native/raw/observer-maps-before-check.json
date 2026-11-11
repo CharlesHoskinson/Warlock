@@ -1,0 +1,5544 @@
+{
+  "schema": 1,
+  "role": "observer",
+  "pid": 1183949,
+  "birth": "4545224",
+  "rows": [
+    {
+      "address": "00400000-017d3000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 9213316,
+      "pathname": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794376792748722909/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls"
+    },
+    {
+      "address": "017ec000-017f0000",
+      "permissions": "r--p",
+      "offset": "013dc000",
+      "device": "00:22",
+      "inode": 9213316,
+      "pathname": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794376792748722909/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls"
+    },
+    {
+      "address": "017f0000-01a96000",
+      "permissions": "rw-p",
+      "offset": "013e0000",
+      "device": "00:22",
+      "inode": 9213316,
+      "pathname": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794376792748722909/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls"
+    },
+    {
+      "address": "01a96000-01a99000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "1f1ce000-1f200000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": "[heap]"
+    },
+    {
+      "address": "1f200000-1f400000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": "[heap]"
+    },
+    {
+      "address": "4200000000-4203900000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "4203900000-8200100000",
+      "permissions": "---p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a32c000000-f6a32c200000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a32c200000-f6a330000000",
+      "permissions": "---p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a330000000-f6a330200000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a330200000-f6a334000000",
+      "permissions": "---p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a334000000-f6a334200000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a334200000-f6a338000000",
+      "permissions": "---p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a3397ce000-f6a33affe000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33affe000-f6a33b400000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33b400000-f6a33b6ed000",
+      "permissions": "r--p",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 239281,
+      "pathname": "/usr/lib/locale/locale-archive"
+    },
+    {
+      "address": "f6a33b705000-f6a33b760000",
+      "permissions": "r--p",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 3426,
+      "pathname": "/usr/lib/locale/C.utf8/LC_CTYPE"
+    },
+    {
+      "address": "f6a33b760000-f6a33b7b1000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 26561,
+      "pathname": "/usr/lib/libnettle.so.9.0"
+    },
+    {
+      "address": "f6a33b7b1000-f6a33b7ce000",
+      "permissions": "---p",
+      "offset": "00051000",
+      "device": "00:22",
+      "inode": 26561,
+      "pathname": "/usr/lib/libnettle.so.9.0"
+    },
+    {
+      "address": "f6a33b7ce000-f6a33b7d0000",
+      "permissions": "r--p",
+      "offset": "0005e000",
+      "device": "00:22",
+      "inode": 26561,
+      "pathname": "/usr/lib/libnettle.so.9.0"
+    },
+    {
+      "address": "f6a33b7d0000-f6a33b7d1000",
+      "permissions": "rw-p",
+      "offset": "00060000",
+      "device": "00:22",
+      "inode": 26561,
+      "pathname": "/usr/lib/libnettle.so.9.0"
+    },
+    {
+      "address": "f6a33b7e0000-f6a33b827000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 26558,
+      "pathname": "/usr/lib/libhogweed.so.7.0"
+    },
+    {
+      "address": "f6a33b827000-f6a33b83e000",
+      "permissions": "---p",
+      "offset": "00047000",
+      "device": "00:22",
+      "inode": 26558,
+      "pathname": "/usr/lib/libhogweed.so.7.0"
+    },
+    {
+      "address": "f6a33b83e000-f6a33b840000",
+      "permissions": "r--p",
+      "offset": "0004e000",
+      "device": "00:22",
+      "inode": 26558,
+      "pathname": "/usr/lib/libhogweed.so.7.0"
+    },
+    {
+      "address": "f6a33b840000-f6a33b841000",
+      "permissions": "rw-p",
+      "offset": "00050000",
+      "device": "00:22",
+      "inode": 26558,
+      "pathname": "/usr/lib/libhogweed.so.7.0"
+    },
+    {
+      "address": "f6a33b850000-f6a33ba17000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 26172,
+      "pathname": "/usr/lib/libp11-kit.so.0.4.11"
+    },
+    {
+      "address": "f6a33ba17000-f6a33ba2f000",
+      "permissions": "---p",
+      "offset": "001c7000",
+      "device": "00:22",
+      "inode": 26172,
+      "pathname": "/usr/lib/libp11-kit.so.0.4.11"
+    },
+    {
+      "address": "f6a33ba2f000-f6a33ba40000",
+      "permissions": "r--p",
+      "offset": "001cf000",
+      "device": "00:22",
+      "inode": 26172,
+      "pathname": "/usr/lib/libp11-kit.so.0.4.11"
+    },
+    {
+      "address": "f6a33ba40000-f6a33ba4f000",
+      "permissions": "rw-p",
+      "offset": "001e0000",
+      "device": "00:22",
+      "inode": 26172,
+      "pathname": "/usr/lib/libp11-kit.so.0.4.11"
+    },
+    {
+      "address": "f6a33ba50000-f6a33bc7b000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 26682,
+      "pathname": "/usr/lib/libleancrypto.so.1.9.1"
+    },
+    {
+      "address": "f6a33bc7b000-f6a33bc80000",
+      "permissions": "---p",
+      "offset": "0022b000",
+      "device": "00:22",
+      "inode": 26682,
+      "pathname": "/usr/lib/libleancrypto.so.1.9.1"
+    },
+    {
+      "address": "f6a33bc80000-f6a33bc90000",
+      "permissions": "r--p",
+      "offset": "00230000",
+      "device": "00:22",
+      "inode": 26682,
+      "pathname": "/usr/lib/libleancrypto.so.1.9.1"
+    },
+    {
+      "address": "f6a33bc90000-f6a33bc91000",
+      "permissions": "rw-p",
+      "offset": "00240000",
+      "device": "00:22",
+      "inode": 26682,
+      "pathname": "/usr/lib/libleancrypto.so.1.9.1"
+    },
+    {
+      "address": "f6a33bca0000-f6a33bcfc000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 16864,
+      "pathname": "/usr/lib/libdbus-1.so.3.38.3"
+    },
+    {
+      "address": "f6a33bcfc000-f6a33bd0e000",
+      "permissions": "---p",
+      "offset": "0005c000",
+      "device": "00:22",
+      "inode": 16864,
+      "pathname": "/usr/lib/libdbus-1.so.3.38.3"
+    },
+    {
+      "address": "f6a33bd0e000-f6a33bd10000",
+      "permissions": "r--p",
+      "offset": "0005e000",
+      "device": "00:22",
+      "inode": 16864,
+      "pathname": "/usr/lib/libdbus-1.so.3.38.3"
+    },
+    {
+      "address": "f6a33bd10000-f6a33bd11000",
+      "permissions": "rw-p",
+      "offset": "00060000",
+      "device": "00:22",
+      "inode": 16864,
+      "pathname": "/usr/lib/libdbus-1.so.3.38.3"
+    },
+    {
+      "address": "f6a33bd20000-f6a33bd42000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42104,
+      "pathname": "/usr/lib/libtss2-sys.so.1.0.1"
+    },
+    {
+      "address": "f6a33bd42000-f6a33bd5f000",
+      "permissions": "---p",
+      "offset": "00022000",
+      "device": "00:22",
+      "inode": 42104,
+      "pathname": "/usr/lib/libtss2-sys.so.1.0.1"
+    },
+    {
+      "address": "f6a33bd5f000-f6a33bd60000",
+      "permissions": "r--p",
+      "offset": "0002f000",
+      "device": "00:22",
+      "inode": 42104,
+      "pathname": "/usr/lib/libtss2-sys.so.1.0.1"
+    },
+    {
+      "address": "f6a33bd60000-f6a33bd61000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 42104,
+      "pathname": "/usr/lib/libtss2-sys.so.1.0.1"
+    },
+    {
+      "address": "f6a33bd70000-f6a33c32a000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 8419,
+      "pathname": "/usr/lib/libcrypto.so.3"
+    },
+    {
+      "address": "f6a33c32a000-f6a33c33f000",
+      "permissions": "---p",
+      "offset": "005ba000",
+      "device": "00:22",
+      "inode": 8419,
+      "pathname": "/usr/lib/libcrypto.so.3"
+    },
+    {
+      "address": "f6a33c33f000-f6a33c3c0000",
+      "permissions": "r--p",
+      "offset": "005bf000",
+      "device": "00:22",
+      "inode": 8419,
+      "pathname": "/usr/lib/libcrypto.so.3"
+    },
+    {
+      "address": "f6a33c3c0000-f6a33c3c3000",
+      "permissions": "rw-p",
+      "offset": "00640000",
+      "device": "00:22",
+      "inode": 8419,
+      "pathname": "/usr/lib/libcrypto.so.3"
+    },
+    {
+      "address": "f6a33c3c3000-f6a33c3c6000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33c3d0000-f6a33c526000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31188,
+      "pathname": "/usr/lib/libGLdispatch.so.0.0.0"
+    },
+    {
+      "address": "f6a33c526000-f6a33c534000",
+      "permissions": "---p",
+      "offset": "00156000",
+      "device": "00:22",
+      "inode": 31188,
+      "pathname": "/usr/lib/libGLdispatch.so.0.0.0"
+    },
+    {
+      "address": "f6a33c534000-f6a33c550000",
+      "permissions": "r--p",
+      "offset": "00164000",
+      "device": "00:22",
+      "inode": 31188,
+      "pathname": "/usr/lib/libGLdispatch.so.0.0.0"
+    },
+    {
+      "address": "f6a33c550000-f6a33c551000",
+      "permissions": "rw-p",
+      "offset": "00180000",
+      "device": "00:22",
+      "inode": 31188,
+      "pathname": "/usr/lib/libGLdispatch.so.0.0.0"
+    },
+    {
+      "address": "f6a33c551000-f6a33c559000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33c560000-f6a33c57b000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 28879,
+      "pathname": "/usr/lib/libelf-0.197.so"
+    },
+    {
+      "address": "f6a33c57b000-f6a33c58f000",
+      "permissions": "---p",
+      "offset": "0001b000",
+      "device": "00:22",
+      "inode": 28879,
+      "pathname": "/usr/lib/libelf-0.197.so"
+    },
+    {
+      "address": "f6a33c58f000-f6a33c590000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 28879,
+      "pathname": "/usr/lib/libelf-0.197.so"
+    },
+    {
+      "address": "f6a33c590000-f6a33c591000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 28879,
+      "pathname": "/usr/lib/libelf-0.197.so"
+    },
+    {
+      "address": "f6a33c5a0000-f6a33c5a5000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 18337,
+      "pathname": "/usr/lib/libXdmcp.so.6.0.0"
+    },
+    {
+      "address": "f6a33c5a5000-f6a33c5bf000",
+      "permissions": "---p",
+      "offset": "00005000",
+      "device": "00:22",
+      "inode": 18337,
+      "pathname": "/usr/lib/libXdmcp.so.6.0.0"
+    },
+    {
+      "address": "f6a33c5bf000-f6a33c5c0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 18337,
+      "pathname": "/usr/lib/libXdmcp.so.6.0.0"
+    },
+    {
+      "address": "f6a33c5c0000-f6a33c5c1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 18337,
+      "pathname": "/usr/lib/libXdmcp.so.6.0.0"
+    },
+    {
+      "address": "f6a33c5d0000-f6a33c5d3000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 18350,
+      "pathname": "/usr/lib/libXau.so.6.0.0"
+    },
+    {
+      "address": "f6a33c5d3000-f6a33c5ef000",
+      "permissions": "---p",
+      "offset": "00003000",
+      "device": "00:22",
+      "inode": 18350,
+      "pathname": "/usr/lib/libXau.so.6.0.0"
+    },
+    {
+      "address": "f6a33c5ef000-f6a33c5f0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 18350,
+      "pathname": "/usr/lib/libXau.so.6.0.0"
+    },
+    {
+      "address": "f6a33c5f0000-f6a33c5f1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 18350,
+      "pathname": "/usr/lib/libXau.so.6.0.0"
+    },
+    {
+      "address": "f6a33c600000-f6a33c608000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24901,
+      "pathname": "/usr/lib/libdatrie.so.1.4.1"
+    },
+    {
+      "address": "f6a33c608000-f6a33c61f000",
+      "permissions": "---p",
+      "offset": "00008000",
+      "device": "00:22",
+      "inode": 24901,
+      "pathname": "/usr/lib/libdatrie.so.1.4.1"
+    },
+    {
+      "address": "f6a33c61f000-f6a33c620000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 24901,
+      "pathname": "/usr/lib/libdatrie.so.1.4.1"
+    },
+    {
+      "address": "f6a33c620000-f6a33c621000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 24901,
+      "pathname": "/usr/lib/libdatrie.so.1.4.1"
+    },
+    {
+      "address": "f6a33c630000-f6a33c63d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 3415,
+      "pathname": "/usr/lib/libresolv.so.2"
+    },
+    {
+      "address": "f6a33c63d000-f6a33c64f000",
+      "permissions": "---p",
+      "offset": "0000d000",
+      "device": "00:22",
+      "inode": 3415,
+      "pathname": "/usr/lib/libresolv.so.2"
+    },
+    {
+      "address": "f6a33c64f000-f6a33c650000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 3415,
+      "pathname": "/usr/lib/libresolv.so.2"
+    },
+    {
+      "address": "f6a33c650000-f6a33c651000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 3415,
+      "pathname": "/usr/lib/libresolv.so.2"
+    },
+    {
+      "address": "f6a33c651000-f6a33c653000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33c660000-f6a33c664000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7645,
+      "pathname": "/usr/lib/libkeyutils.so.1.10"
+    },
+    {
+      "address": "f6a33c664000-f6a33c67f000",
+      "permissions": "---p",
+      "offset": "00004000",
+      "device": "00:22",
+      "inode": 7645,
+      "pathname": "/usr/lib/libkeyutils.so.1.10"
+    },
+    {
+      "address": "f6a33c67f000-f6a33c680000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 7645,
+      "pathname": "/usr/lib/libkeyutils.so.1.10"
+    },
+    {
+      "address": "f6a33c680000-f6a33c681000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 7645,
+      "pathname": "/usr/lib/libkeyutils.so.1.10"
+    },
+    {
+      "address": "f6a33c690000-f6a33c69d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 15481,
+      "pathname": "/usr/lib/libkrb5support.so.0.1"
+    },
+    {
+      "address": "f6a33c69d000-f6a33c6af000",
+      "permissions": "---p",
+      "offset": "0000d000",
+      "device": "00:22",
+      "inode": 15481,
+      "pathname": "/usr/lib/libkrb5support.so.0.1"
+    },
+    {
+      "address": "f6a33c6af000-f6a33c6b0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 15481,
+      "pathname": "/usr/lib/libkrb5support.so.0.1"
+    },
+    {
+      "address": "f6a33c6b0000-f6a33c6b1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 15481,
+      "pathname": "/usr/lib/libkrb5support.so.0.1"
+    },
+    {
+      "address": "f6a33c6c0000-f6a33c6c3000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7546,
+      "pathname": "/usr/lib/libcom_err.so.2.1"
+    },
+    {
+      "address": "f6a33c6c3000-f6a33c6df000",
+      "permissions": "---p",
+      "offset": "00003000",
+      "device": "00:22",
+      "inode": 7546,
+      "pathname": "/usr/lib/libcom_err.so.2.1"
+    },
+    {
+      "address": "f6a33c6df000-f6a33c6e0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 7546,
+      "pathname": "/usr/lib/libcom_err.so.2.1"
+    },
+    {
+      "address": "f6a33c6e0000-f6a33c6e1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 7546,
+      "pathname": "/usr/lib/libcom_err.so.2.1"
+    },
+    {
+      "address": "f6a33c6f0000-f6a33c71e000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 15458,
+      "pathname": "/usr/lib/libk5crypto.so.3.1"
+    },
+    {
+      "address": "f6a33c71e000-f6a33c72e000",
+      "permissions": "---p",
+      "offset": "0002e000",
+      "device": "00:22",
+      "inode": 15458,
+      "pathname": "/usr/lib/libk5crypto.so.3.1"
+    },
+    {
+      "address": "f6a33c72e000-f6a33c730000",
+      "permissions": "r--p",
+      "offset": "0002e000",
+      "device": "00:22",
+      "inode": 15458,
+      "pathname": "/usr/lib/libk5crypto.so.3.1"
+    },
+    {
+      "address": "f6a33c730000-f6a33c731000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 15458,
+      "pathname": "/usr/lib/libk5crypto.so.3.1"
+    },
+    {
+      "address": "f6a33c740000-f6a33c828000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 15478,
+      "pathname": "/usr/lib/libkrb5.so.3.3"
+    },
+    {
+      "address": "f6a33c828000-f6a33c833000",
+      "permissions": "---p",
+      "offset": "000e8000",
+      "device": "00:22",
+      "inode": 15478,
+      "pathname": "/usr/lib/libkrb5.so.3.3"
+    },
+    {
+      "address": "f6a33c833000-f6a33c840000",
+      "permissions": "r--p",
+      "offset": "000f3000",
+      "device": "00:22",
+      "inode": 15478,
+      "pathname": "/usr/lib/libkrb5.so.3.3"
+    },
+    {
+      "address": "f6a33c840000-f6a33c841000",
+      "permissions": "rw-p",
+      "offset": "00100000",
+      "device": "00:22",
+      "inode": 15478,
+      "pathname": "/usr/lib/libkrb5.so.3.3"
+    },
+    {
+      "address": "f6a33c841000-f6a33c842000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33c850000-f6a33c871000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7753,
+      "pathname": "/usr/lib/libbrotlicommon.so.1.2.1"
+    },
+    {
+      "address": "f6a33c871000-f6a33c88f000",
+      "permissions": "---p",
+      "offset": "00021000",
+      "device": "00:22",
+      "inode": 7753,
+      "pathname": "/usr/lib/libbrotlicommon.so.1.2.1"
+    },
+    {
+      "address": "f6a33c88f000-f6a33c890000",
+      "permissions": "r--p",
+      "offset": "0002f000",
+      "device": "00:22",
+      "inode": 7753,
+      "pathname": "/usr/lib/libbrotlicommon.so.1.2.1"
+    },
+    {
+      "address": "f6a33c890000-f6a33c891000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 7753,
+      "pathname": "/usr/lib/libbrotlicommon.so.1.2.1"
+    },
+    {
+      "address": "f6a33c8a0000-f6a33c8d0000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 26382,
+      "pathname": "/usr/lib/libidn2.so.0.4.0"
+    },
+    {
+      "address": "f6a33c8d0000-f6a33c8df000",
+      "permissions": "---p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 26382,
+      "pathname": "/usr/lib/libidn2.so.0.4.0"
+    },
+    {
+      "address": "f6a33c8df000-f6a33c8e0000",
+      "permissions": "r--p",
+      "offset": "0002f000",
+      "device": "00:22",
+      "inode": 26382,
+      "pathname": "/usr/lib/libidn2.so.0.4.0"
+    },
+    {
+      "address": "f6a33c8e0000-f6a33c8e1000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 26382,
+      "pathname": "/usr/lib/libidn2.so.0.4.0"
+    },
+    {
+      "address": "f6a33c8f0000-f6a33cad7000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 26345,
+      "pathname": "/usr/lib/libunistring.so.5.2.1"
+    },
+    {
+      "address": "f6a33cad7000-f6a33caec000",
+      "permissions": "---p",
+      "offset": "001e7000",
+      "device": "00:22",
+      "inode": 26345,
+      "pathname": "/usr/lib/libunistring.so.5.2.1"
+    },
+    {
+      "address": "f6a33caec000-f6a33caf0000",
+      "permissions": "r--p",
+      "offset": "001ec000",
+      "device": "00:22",
+      "inode": 26345,
+      "pathname": "/usr/lib/libunistring.so.5.2.1"
+    },
+    {
+      "address": "f6a33caf0000-f6a33caf1000",
+      "permissions": "rw-p",
+      "offset": "001f0000",
+      "device": "00:22",
+      "inode": 26345,
+      "pathname": "/usr/lib/libunistring.so.5.2.1"
+    },
+    {
+      "address": "f6a33cb00000-f6a33cb5c000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7436,
+      "pathname": "/usr/lib/libblkid.so.1.1.0"
+    },
+    {
+      "address": "f6a33cb5c000-f6a33cb6a000",
+      "permissions": "---p",
+      "offset": "0005c000",
+      "device": "00:22",
+      "inode": 7436,
+      "pathname": "/usr/lib/libblkid.so.1.1.0"
+    },
+    {
+      "address": "f6a33cb6a000-f6a33cb70000",
+      "permissions": "r--p",
+      "offset": "0006a000",
+      "device": "00:22",
+      "inode": 7436,
+      "pathname": "/usr/lib/libblkid.so.1.1.0"
+    },
+    {
+      "address": "f6a33cb70000-f6a33cb71000",
+      "permissions": "rw-p",
+      "offset": "00070000",
+      "device": "00:22",
+      "inode": 7436,
+      "pathname": "/usr/lib/libblkid.so.1.1.0"
+    },
+    {
+      "address": "f6a33cb80000-f6a33cbed000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 15924,
+      "pathname": "/usr/lib/libudev.so.1.7.15"
+    },
+    {
+      "address": "f6a33cbed000-f6a33cbfa000",
+      "permissions": "---p",
+      "offset": "0006d000",
+      "device": "00:22",
+      "inode": 15924,
+      "pathname": "/usr/lib/libudev.so.1.7.15"
+    },
+    {
+      "address": "f6a33cbfa000-f6a33cc00000",
+      "permissions": "r--p",
+      "offset": "0007a000",
+      "device": "00:22",
+      "inode": 15924,
+      "pathname": "/usr/lib/libudev.so.1.7.15"
+    },
+    {
+      "address": "f6a33cc00000-f6a33cc01000",
+      "permissions": "rw-p",
+      "offset": "00080000",
+      "device": "00:22",
+      "inode": 15924,
+      "pathname": "/usr/lib/libudev.so.1.7.15"
+    },
+    {
+      "address": "f6a33cc10000-f6a33ce5d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 26728,
+      "pathname": "/usr/lib/libgnutls.so.30.42.0"
+    },
+    {
+      "address": "f6a33ce5d000-f6a33ce6c000",
+      "permissions": "---p",
+      "offset": "0024d000",
+      "device": "00:22",
+      "inode": 26728,
+      "pathname": "/usr/lib/libgnutls.so.30.42.0"
+    },
+    {
+      "address": "f6a33ce6c000-f6a33ce80000",
+      "permissions": "r--p",
+      "offset": "0024c000",
+      "device": "00:22",
+      "inode": 26728,
+      "pathname": "/usr/lib/libgnutls.so.30.42.0"
+    },
+    {
+      "address": "f6a33ce80000-f6a33ce83000",
+      "permissions": "rw-p",
+      "offset": "00260000",
+      "device": "00:22",
+      "inode": 26728,
+      "pathname": "/usr/lib/libgnutls.so.30.42.0"
+    },
+    {
+      "address": "f6a33ce83000-f6a33ce87000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33ce90000-f6a33cea2000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37244,
+      "pathname": "/usr/lib/libavahi-client.so.3.2.9"
+    },
+    {
+      "address": "f6a33cea2000-f6a33cebf000",
+      "permissions": "---p",
+      "offset": "00012000",
+      "device": "00:22",
+      "inode": 37244,
+      "pathname": "/usr/lib/libavahi-client.so.3.2.9"
+    },
+    {
+      "address": "f6a33cebf000-f6a33cec0000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 37244,
+      "pathname": "/usr/lib/libavahi-client.so.3.2.9"
+    },
+    {
+      "address": "f6a33cec0000-f6a33cec1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 37244,
+      "pathname": "/usr/lib/libavahi-client.so.3.2.9"
+    },
+    {
+      "address": "f6a33ced0000-f6a33cedc000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37247,
+      "pathname": "/usr/lib/libavahi-common.so.3.5.4"
+    },
+    {
+      "address": "f6a33cedc000-f6a33ceef000",
+      "permissions": "---p",
+      "offset": "0000c000",
+      "device": "00:22",
+      "inode": 37247,
+      "pathname": "/usr/lib/libavahi-common.so.3.5.4"
+    },
+    {
+      "address": "f6a33ceef000-f6a33cef0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 37247,
+      "pathname": "/usr/lib/libavahi-common.so.3.5.4"
+    },
+    {
+      "address": "f6a33cef0000-f6a33cef1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 37247,
+      "pathname": "/usr/lib/libavahi-common.so.3.5.4"
+    },
+    {
+      "address": "f6a33cf00000-f6a33cf1d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23641,
+      "pathname": "/usr/lib/liblzo2.so.2.0.0"
+    },
+    {
+      "address": "f6a33cf1d000-f6a33cf2c000",
+      "permissions": "---p",
+      "offset": "0001d000",
+      "device": "00:22",
+      "inode": 23641,
+      "pathname": "/usr/lib/liblzo2.so.2.0.0"
+    },
+    {
+      "address": "f6a33cf2c000-f6a33cf2d000",
+      "permissions": "r--p",
+      "offset": "0001c000",
+      "device": "00:22",
+      "inode": 23641,
+      "pathname": "/usr/lib/liblzo2.so.2.0.0"
+    },
+    {
+      "address": "f6a33cf2d000-f6a33cf2e000",
+      "permissions": "rw-p",
+      "offset": "0001d000",
+      "device": "00:22",
+      "inode": 23641,
+      "pathname": "/usr/lib/liblzo2.so.2.0.0"
+    },
+    {
+      "address": "f6a33cf30000-f6a33cf5d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7815,
+      "pathname": "/usr/lib/liblzma.so.5.8.4"
+    },
+    {
+      "address": "f6a33cf5d000-f6a33cf6f000",
+      "permissions": "---p",
+      "offset": "0002d000",
+      "device": "00:22",
+      "inode": 7815,
+      "pathname": "/usr/lib/liblzma.so.5.8.4"
+    },
+    {
+      "address": "f6a33cf6f000-f6a33cf70000",
+      "permissions": "r--p",
+      "offset": "0002f000",
+      "device": "00:22",
+      "inode": 7815,
+      "pathname": "/usr/lib/liblzma.so.5.8.4"
+    },
+    {
+      "address": "f6a33cf70000-f6a33cf71000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 7815,
+      "pathname": "/usr/lib/liblzma.so.5.8.4"
+    },
+    {
+      "address": "f6a33cf80000-f6a33cf89000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23803,
+      "pathname": "/usr/lib/libjbig.so.2.2"
+    },
+    {
+      "address": "f6a33cf89000-f6a33cf9f000",
+      "permissions": "---p",
+      "offset": "00009000",
+      "device": "00:22",
+      "inode": 23803,
+      "pathname": "/usr/lib/libjbig.so.2.2"
+    },
+    {
+      "address": "f6a33cf9f000-f6a33cfa0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 23803,
+      "pathname": "/usr/lib/libjbig.so.2.2"
+    },
+    {
+      "address": "f6a33cfa0000-f6a33cfa3000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 23803,
+      "pathname": "/usr/lib/libjbig.so.2.2"
+    },
+    {
+      "address": "f6a33cfb0000-f6a33cfc1000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23820,
+      "pathname": "/usr/lib/libdeflate.so.0"
+    },
+    {
+      "address": "f6a33cfc1000-f6a33cfdf000",
+      "permissions": "---p",
+      "offset": "00011000",
+      "device": "00:22",
+      "inode": 23820,
+      "pathname": "/usr/lib/libdeflate.so.0"
+    },
+    {
+      "address": "f6a33cfdf000-f6a33cfe0000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 23820,
+      "pathname": "/usr/lib/libdeflate.so.0"
+    },
+    {
+      "address": "f6a33cfe0000-f6a33cfe1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 23820,
+      "pathname": "/usr/lib/libdeflate.so.0"
+    },
+    {
+      "address": "f6a33cff0000-f6a33d01e000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37586,
+      "pathname": "/usr/lib/libjson-glib-1.0.so.0.1000.8"
+    },
+    {
+      "address": "f6a33d01e000-f6a33d02e000",
+      "permissions": "---p",
+      "offset": "0002e000",
+      "device": "00:22",
+      "inode": 37586,
+      "pathname": "/usr/lib/libjson-glib-1.0.so.0.1000.8"
+    },
+    {
+      "address": "f6a33d02e000-f6a33d030000",
+      "permissions": "r--p",
+      "offset": "0002e000",
+      "device": "00:22",
+      "inode": 37586,
+      "pathname": "/usr/lib/libjson-glib-1.0.so.0.1000.8"
+    },
+    {
+      "address": "f6a33d030000-f6a33d031000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 37586,
+      "pathname": "/usr/lib/libjson-glib-1.0.so.0.1000.8"
+    },
+    {
+      "address": "f6a33d040000-f6a33d046000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42134,
+      "pathname": "/usr/lib/libtss2-tctildr.so.0.0.0"
+    },
+    {
+      "address": "f6a33d046000-f6a33d05f000",
+      "permissions": "---p",
+      "offset": "00006000",
+      "device": "00:22",
+      "inode": 42134,
+      "pathname": "/usr/lib/libtss2-tctildr.so.0.0.0"
+    },
+    {
+      "address": "f6a33d05f000-f6a33d060000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 42134,
+      "pathname": "/usr/lib/libtss2-tctildr.so.0.0.0"
+    },
+    {
+      "address": "f6a33d060000-f6a33d061000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 42134,
+      "pathname": "/usr/lib/libtss2-tctildr.so.0.0.0"
+    },
+    {
+      "address": "f6a33d070000-f6a33d075000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42101,
+      "pathname": "/usr/lib/libtss2-rc.so.0.0.0"
+    },
+    {
+      "address": "f6a33d075000-f6a33d08f000",
+      "permissions": "---p",
+      "offset": "00005000",
+      "device": "00:22",
+      "inode": 42101,
+      "pathname": "/usr/lib/libtss2-rc.so.0.0.0"
+    },
+    {
+      "address": "f6a33d08f000-f6a33d090000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 42101,
+      "pathname": "/usr/lib/libtss2-rc.so.0.0.0"
+    },
+    {
+      "address": "f6a33d090000-f6a33d093000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 42101,
+      "pathname": "/usr/lib/libtss2-rc.so.0.0.0"
+    },
+    {
+      "address": "f6a33d0a0000-f6a33d0e4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42095,
+      "pathname": "/usr/lib/libtss2-mu.so.0.0.1"
+    },
+    {
+      "address": "f6a33d0e4000-f6a33d0ff000",
+      "permissions": "---p",
+      "offset": "00044000",
+      "device": "00:22",
+      "inode": 42095,
+      "pathname": "/usr/lib/libtss2-mu.so.0.0.1"
+    },
+    {
+      "address": "f6a33d0ff000-f6a33d100000",
+      "permissions": "r--p",
+      "offset": "0004f000",
+      "device": "00:22",
+      "inode": 42095,
+      "pathname": "/usr/lib/libtss2-mu.so.0.0.1"
+    },
+    {
+      "address": "f6a33d100000-f6a33d101000",
+      "permissions": "rw-p",
+      "offset": "00050000",
+      "device": "00:22",
+      "inode": 42095,
+      "pathname": "/usr/lib/libtss2-mu.so.0.0.1"
+    },
+    {
+      "address": "f6a33d110000-f6a33d1a2000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42089,
+      "pathname": "/usr/lib/libtss2-esys.so.0.0.1"
+    },
+    {
+      "address": "f6a33d1a2000-f6a33d1be000",
+      "permissions": "---p",
+      "offset": "00092000",
+      "device": "00:22",
+      "inode": 42089,
+      "pathname": "/usr/lib/libtss2-esys.so.0.0.1"
+    },
+    {
+      "address": "f6a33d1be000-f6a33d1c0000",
+      "permissions": "r--p",
+      "offset": "0009e000",
+      "device": "00:22",
+      "inode": 42089,
+      "pathname": "/usr/lib/libtss2-esys.so.0.0.1"
+    },
+    {
+      "address": "f6a33d1c0000-f6a33d1c1000",
+      "permissions": "rw-p",
+      "offset": "000a0000",
+      "device": "00:22",
+      "inode": 42089,
+      "pathname": "/usr/lib/libtss2-esys.so.0.0.1"
+    },
+    {
+      "address": "f6a33d1d0000-f6a33d1e8000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42022,
+      "pathname": "/usr/lib/libevdev.so.2.3.0"
+    },
+    {
+      "address": "f6a33d1e8000-f6a33d1fa000",
+      "permissions": "---p",
+      "offset": "00018000",
+      "device": "00:22",
+      "inode": 42022,
+      "pathname": "/usr/lib/libevdev.so.2.3.0"
+    },
+    {
+      "address": "f6a33d1fa000-f6a33d200000",
+      "permissions": "r--p",
+      "offset": "0001a000",
+      "device": "00:22",
+      "inode": 42022,
+      "pathname": "/usr/lib/libevdev.so.2.3.0"
+    },
+    {
+      "address": "f6a33d200000-f6a33d201000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 42022,
+      "pathname": "/usr/lib/libevdev.so.2.3.0"
+    },
+    {
+      "address": "f6a33d210000-f6a33d216000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 41998,
+      "pathname": "/usr/lib/libhidapi-hidraw.so.0.15.0"
+    },
+    {
+      "address": "f6a33d216000-f6a33d22f000",
+      "permissions": "---p",
+      "offset": "00006000",
+      "device": "00:22",
+      "inode": 41998,
+      "pathname": "/usr/lib/libhidapi-hidraw.so.0.15.0"
+    },
+    {
+      "address": "f6a33d22f000-f6a33d230000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 41998,
+      "pathname": "/usr/lib/libhidapi-hidraw.so.0.15.0"
+    },
+    {
+      "address": "f6a33d230000-f6a33d231000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 41998,
+      "pathname": "/usr/lib/libhidapi-hidraw.so.0.15.0"
+    },
+    {
+      "address": "f6a33d240000-f6a33d8d3000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 300749,
+      "pathname": "/usr/lib/libaom.so.3.15.3"
+    },
+    {
+      "address": "f6a33d8d3000-f6a33d8ea000",
+      "permissions": "---p",
+      "offset": "00693000",
+      "device": "00:22",
+      "inode": 300749,
+      "pathname": "/usr/lib/libaom.so.3.15.3"
+    },
+    {
+      "address": "f6a33d8ea000-f6a33d900000",
+      "permissions": "r--p",
+      "offset": "0069a000",
+      "device": "00:22",
+      "inode": 300749,
+      "pathname": "/usr/lib/libaom.so.3.15.3"
+    },
+    {
+      "address": "f6a33d900000-f6a33d903000",
+      "permissions": "rw-p",
+      "offset": "006b0000",
+      "device": "00:22",
+      "inode": 300749,
+      "pathname": "/usr/lib/libaom.so.3.15.3"
+    },
+    {
+      "address": "f6a33d903000-f6a33d915000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33d920000-f6a33d997000",
+      "permissions": "r--p",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 41959,
+      "pathname": "/usr/lib/librav1e.so.0.8.1"
+    },
+    {
+      "address": "f6a33d997000-f6a33d9a6000",
+      "permissions": "---p",
+      "offset": "00077000",
+      "device": "00:22",
+      "inode": 41959,
+      "pathname": "/usr/lib/librav1e.so.0.8.1"
+    },
+    {
+      "address": "f6a33d9a6000-f6a33db3b000",
+      "permissions": "r-xp",
+      "offset": "00076000",
+      "device": "00:22",
+      "inode": 41959,
+      "pathname": "/usr/lib/librav1e.so.0.8.1"
+    },
+    {
+      "address": "f6a33db3b000-f6a33db4a000",
+      "permissions": "---p",
+      "offset": "0021b000",
+      "device": "00:22",
+      "inode": 41959,
+      "pathname": "/usr/lib/librav1e.so.0.8.1"
+    },
+    {
+      "address": "f6a33db4a000-f6a33db5d000",
+      "permissions": "r--p",
+      "offset": "0020a000",
+      "device": "00:22",
+      "inode": 41959,
+      "pathname": "/usr/lib/librav1e.so.0.8.1"
+    },
+    {
+      "address": "f6a33db5d000-f6a33db6c000",
+      "permissions": "---p",
+      "offset": "0023d000",
+      "device": "00:22",
+      "inode": 41959,
+      "pathname": "/usr/lib/librav1e.so.0.8.1"
+    },
+    {
+      "address": "f6a33db6c000-f6a33db6e000",
+      "permissions": "rw-p",
+      "offset": "0021c000",
+      "device": "00:22",
+      "inode": 41959,
+      "pathname": "/usr/lib/librav1e.so.0.8.1"
+    },
+    {
+      "address": "f6a33db70000-f6a33dc3e000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24362,
+      "pathname": "/usr/lib/libdav1d.so.7.0.0"
+    },
+    {
+      "address": "f6a33dc3e000-f6a33dc4e000",
+      "permissions": "---p",
+      "offset": "000ce000",
+      "device": "00:22",
+      "inode": 24362,
+      "pathname": "/usr/lib/libdav1d.so.7.0.0"
+    },
+    {
+      "address": "f6a33dc4e000-f6a33dc50000",
+      "permissions": "r--p",
+      "offset": "000ce000",
+      "device": "00:22",
+      "inode": 24362,
+      "pathname": "/usr/lib/libdav1d.so.7.0.0"
+    },
+    {
+      "address": "f6a33dc50000-f6a33dc51000",
+      "permissions": "rw-p",
+      "offset": "000d0000",
+      "device": "00:22",
+      "inode": 24362,
+      "pathname": "/usr/lib/libdav1d.so.7.0.0"
+    },
+    {
+      "address": "f6a33dc51000-f6a33dc75000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33dc80000-f6a33dcdd000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 41947,
+      "pathname": "/usr/lib/libyuv.so"
+    },
+    {
+      "address": "f6a33dcdd000-f6a33dcee000",
+      "permissions": "---p",
+      "offset": "0005d000",
+      "device": "00:22",
+      "inode": 41947,
+      "pathname": "/usr/lib/libyuv.so"
+    },
+    {
+      "address": "f6a33dcee000-f6a33dcf0000",
+      "permissions": "r--p",
+      "offset": "0005e000",
+      "device": "00:22",
+      "inode": 41947,
+      "pathname": "/usr/lib/libyuv.so"
+    },
+    {
+      "address": "f6a33dcf0000-f6a33dcf1000",
+      "permissions": "rw-p",
+      "offset": "00060000",
+      "device": "00:22",
+      "inode": 41947,
+      "pathname": "/usr/lib/libyuv.so"
+    },
+    {
+      "address": "f6a33dd00000-f6a33ddc3000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7759,
+      "pathname": "/usr/lib/libbrotlienc.so.1.2.1"
+    },
+    {
+      "address": "f6a33ddc3000-f6a33dddf000",
+      "permissions": "---p",
+      "offset": "000c3000",
+      "device": "00:22",
+      "inode": 7759,
+      "pathname": "/usr/lib/libbrotlienc.so.1.2.1"
+    },
+    {
+      "address": "f6a33dddf000-f6a33dde0000",
+      "permissions": "r--p",
+      "offset": "000cf000",
+      "device": "00:22",
+      "inode": 7759,
+      "pathname": "/usr/lib/libbrotlienc.so.1.2.1"
+    },
+    {
+      "address": "f6a33dde0000-f6a33dde1000",
+      "permissions": "rw-p",
+      "offset": "000d0000",
+      "device": "00:22",
+      "inode": 7759,
+      "pathname": "/usr/lib/libbrotlienc.so.1.2.1"
+    },
+    {
+      "address": "f6a33ddf0000-f6a33ddfb000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24284,
+      "pathname": "/usr/lib/libhwy.so.1.4.0"
+    },
+    {
+      "address": "f6a33ddfb000-f6a33de0f000",
+      "permissions": "---p",
+      "offset": "0000b000",
+      "device": "00:22",
+      "inode": 24284,
+      "pathname": "/usr/lib/libhwy.so.1.4.0"
+    },
+    {
+      "address": "f6a33de0f000-f6a33de10000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 24284,
+      "pathname": "/usr/lib/libhwy.so.1.4.0"
+    },
+    {
+      "address": "f6a33de10000-f6a33de11000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 24284,
+      "pathname": "/usr/lib/libhwy.so.1.4.0"
+    },
+    {
+      "address": "f6a33de20000-f6a33de3f000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24332,
+      "pathname": "/usr/lib/libjxl_cms.so.0.12.0"
+    },
+    {
+      "address": "f6a33de3f000-f6a33de4f000",
+      "permissions": "---p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 24332,
+      "pathname": "/usr/lib/libjxl_cms.so.0.12.0"
+    },
+    {
+      "address": "f6a33de4f000-f6a33de50000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 24332,
+      "pathname": "/usr/lib/libjxl_cms.so.0.12.0"
+    },
+    {
+      "address": "f6a33de50000-f6a33de51000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 24332,
+      "pathname": "/usr/lib/libjxl_cms.so.0.12.0"
+    },
+    {
+      "address": "f6a33de60000-f6a33de64000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23840,
+      "pathname": "/usr/lib/libsharpyuv.so.0.1.2"
+    },
+    {
+      "address": "f6a33de64000-f6a33de7f000",
+      "permissions": "---p",
+      "offset": "00004000",
+      "device": "00:22",
+      "inode": 23840,
+      "pathname": "/usr/lib/libsharpyuv.so.0.1.2"
+    },
+    {
+      "address": "f6a33de7f000-f6a33de80000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 23840,
+      "pathname": "/usr/lib/libsharpyuv.so.0.1.2"
+    },
+    {
+      "address": "f6a33de80000-f6a33de81000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 23840,
+      "pathname": "/usr/lib/libsharpyuv.so.0.1.2"
+    },
+    {
+      "address": "f6a33de81000-f6a33de82000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33de90000-f6a33de9b000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31216,
+      "pathname": "/usr/lib/libgudev-1.0.so.0.3.0"
+    },
+    {
+      "address": "f6a33de9b000-f6a33deaf000",
+      "permissions": "---p",
+      "offset": "0000b000",
+      "device": "00:22",
+      "inode": 31216,
+      "pathname": "/usr/lib/libgudev-1.0.so.0.3.0"
+    },
+    {
+      "address": "f6a33deaf000-f6a33deb0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 31216,
+      "pathname": "/usr/lib/libgudev-1.0.so.0.3.0"
+    },
+    {
+      "address": "f6a33deb0000-f6a33deb1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 31216,
+      "pathname": "/usr/lib/libgudev-1.0.so.0.3.0"
+    },
+    {
+      "address": "f6a33dec0000-f6a33dec1000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 20837,
+      "pathname": "/usr/lib/libX11-xcb.so.1.0.0"
+    },
+    {
+      "address": "f6a33dec1000-f6a33dedf000",
+      "permissions": "---p",
+      "offset": "00001000",
+      "device": "00:22",
+      "inode": 20837,
+      "pathname": "/usr/lib/libX11-xcb.so.1.0.0"
+    },
+    {
+      "address": "f6a33dedf000-f6a33dee0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 20837,
+      "pathname": "/usr/lib/libX11-xcb.so.1.0.0"
+    },
+    {
+      "address": "f6a33dee0000-f6a33dee1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 20837,
+      "pathname": "/usr/lib/libX11-xcb.so.1.0.0"
+    },
+    {
+      "address": "f6a33def0000-f6a33def4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31002,
+      "pathname": "/usr/lib/libwayland-cursor.so.0.26.0"
+    },
+    {
+      "address": "f6a33def4000-f6a33df0f000",
+      "permissions": "---p",
+      "offset": "00004000",
+      "device": "00:22",
+      "inode": 31002,
+      "pathname": "/usr/lib/libwayland-cursor.so.0.26.0"
+    },
+    {
+      "address": "f6a33df0f000-f6a33df10000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 31002,
+      "pathname": "/usr/lib/libwayland-cursor.so.0.26.0"
+    },
+    {
+      "address": "f6a33df10000-f6a33df14000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 31002,
+      "pathname": "/usr/lib/libwayland-cursor.so.0.26.0"
+    },
+    {
+      "address": "f6a33df20000-f6a33df42000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31185,
+      "pathname": "/usr/lib/libGLX.so.0.0.0"
+    },
+    {
+      "address": "f6a33df42000-f6a33df5f000",
+      "permissions": "---p",
+      "offset": "00022000",
+      "device": "00:22",
+      "inode": 31185,
+      "pathname": "/usr/lib/libGLX.so.0.0.0"
+    },
+    {
+      "address": "f6a33df5f000-f6a33df60000",
+      "permissions": "r--p",
+      "offset": "0002f000",
+      "device": "00:22",
+      "inode": 31185,
+      "pathname": "/usr/lib/libGLX.so.0.0.0"
+    },
+    {
+      "address": "f6a33df60000-f6a33df61000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 31185,
+      "pathname": "/usr/lib/libGLX.so.0.0.0"
+    },
+    {
+      "address": "f6a33df61000-f6a33df71000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33df80000-f6a33df95000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31176,
+      "pathname": "/usr/lib/libEGL.so.1.1.0"
+    },
+    {
+      "address": "f6a33df95000-f6a33dfaf000",
+      "permissions": "---p",
+      "offset": "00015000",
+      "device": "00:22",
+      "inode": 31176,
+      "pathname": "/usr/lib/libEGL.so.1.1.0"
+    },
+    {
+      "address": "f6a33dfaf000-f6a33dfb0000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 31176,
+      "pathname": "/usr/lib/libEGL.so.1.1.0"
+    },
+    {
+      "address": "f6a33dfb0000-f6a33dfb1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 31176,
+      "pathname": "/usr/lib/libEGL.so.1.1.0"
+    },
+    {
+      "address": "f6a33dfc0000-f6a33e0e4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31313,
+      "pathname": "/usr/lib/liborc-0.4.so.0.44.0"
+    },
+    {
+      "address": "f6a33e0e4000-f6a33e0f9000",
+      "permissions": "---p",
+      "offset": "00124000",
+      "device": "00:22",
+      "inode": 31313,
+      "pathname": "/usr/lib/liborc-0.4.so.0.44.0"
+    },
+    {
+      "address": "f6a33e0f9000-f6a33e100000",
+      "permissions": "r--p",
+      "offset": "00129000",
+      "device": "00:22",
+      "inode": 31313,
+      "pathname": "/usr/lib/liborc-0.4.so.0.44.0"
+    },
+    {
+      "address": "f6a33e100000-f6a33e110000",
+      "permissions": "rw-p",
+      "offset": "00130000",
+      "device": "00:22",
+      "inode": 31313,
+      "pathname": "/usr/lib/liborc-0.4.so.0.44.0"
+    },
+    {
+      "address": "f6a33e110000-f6a33e111000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33e120000-f6a33e1c8000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 28875,
+      "pathname": "/usr/lib/libdw-0.197.so"
+    },
+    {
+      "address": "f6a33e1c8000-f6a33e1d6000",
+      "permissions": "---p",
+      "offset": "000a8000",
+      "device": "00:22",
+      "inode": 28875,
+      "pathname": "/usr/lib/libdw-0.197.so"
+    },
+    {
+      "address": "f6a33e1d6000-f6a33e1e0000",
+      "permissions": "r--p",
+      "offset": "000b6000",
+      "device": "00:22",
+      "inode": 28875,
+      "pathname": "/usr/lib/libdw-0.197.so"
+    },
+    {
+      "address": "f6a33e1e0000-f6a33e1e1000",
+      "permissions": "rw-p",
+      "offset": "000c0000",
+      "device": "00:22",
+      "inode": 28875,
+      "pathname": "/usr/lib/libdw-0.197.so"
+    },
+    {
+      "address": "f6a33e1f0000-f6a33e200000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24004,
+      "pathname": "/usr/lib/libunwind.so.8.2.0"
+    },
+    {
+      "address": "f6a33e200000-f6a33e20f000",
+      "permissions": "---p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 24004,
+      "pathname": "/usr/lib/libunwind.so.8.2.0"
+    },
+    {
+      "address": "f6a33e20f000-f6a33e210000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 24004,
+      "pathname": "/usr/lib/libunwind.so.8.2.0"
+    },
+    {
+      "address": "f6a33e210000-f6a33e211000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 24004,
+      "pathname": "/usr/lib/libunwind.so.8.2.0"
+    },
+    {
+      "address": "f6a33e211000-f6a33e232000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a33e240000-f6a33e26c000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 15832,
+      "pathname": "/usr/lib/libgpg-error.so.0.42.1"
+    },
+    {
+      "address": "f6a33e26c000-f6a33e27f000",
+      "permissions": "---p",
+      "offset": "0002c000",
+      "device": "00:22",
+      "inode": 15832,
+      "pathname": "/usr/lib/libgpg-error.so.0.42.1"
+    },
+    {
+      "address": "f6a33e27f000-f6a33e280000",
+      "permissions": "r--p",
+      "offset": "0002f000",
+      "device": "00:22",
+      "inode": 15832,
+      "pathname": "/usr/lib/libgpg-error.so.0.42.1"
+    },
+    {
+      "address": "f6a33e280000-f6a33e281000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 15832,
+      "pathname": "/usr/lib/libgpg-error.so.0.42.1"
+    },
+    {
+      "address": "f6a33e290000-f6a340224000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24706,
+      "pathname": "/usr/lib/libicudata.so.78.3"
+    },
+    {
+      "address": "f6a340224000-f6a34023f000",
+      "permissions": "---p",
+      "offset": "01f94000",
+      "device": "00:22",
+      "inode": 24706,
+      "pathname": "/usr/lib/libicudata.so.78.3"
+    },
+    {
+      "address": "f6a34023f000-f6a340240000",
+      "permissions": "r--p",
+      "offset": "01f9f000",
+      "device": "00:22",
+      "inode": 24706,
+      "pathname": "/usr/lib/libicudata.so.78.3"
+    },
+    {
+      "address": "f6a340240000-f6a340241000",
+      "permissions": "rw-p",
+      "offset": "01fa0000",
+      "device": "00:22",
+      "inode": 24706,
+      "pathname": "/usr/lib/libicudata.so.78.3"
+    },
+    {
+      "address": "f6a340250000-f6a340260000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 16961,
+      "pathname": "/usr/lib/libbz2.so.1.0.8"
+    },
+    {
+      "address": "f6a340260000-f6a34026f000",
+      "permissions": "---p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 16961,
+      "pathname": "/usr/lib/libbz2.so.1.0.8"
+    },
+    {
+      "address": "f6a34026f000-f6a340270000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 16961,
+      "pathname": "/usr/lib/libbz2.so.1.0.8"
+    },
+    {
+      "address": "f6a340270000-f6a340271000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 16961,
+      "pathname": "/usr/lib/libbz2.so.1.0.8"
+    },
+    {
+      "address": "f6a340280000-f6a340317000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23662,
+      "pathname": "/usr/lib/libpixman-1.so.0.46.4"
+    },
+    {
+      "address": "f6a340317000-f6a340329000",
+      "permissions": "---p",
+      "offset": "00097000",
+      "device": "00:22",
+      "inode": 23662,
+      "pathname": "/usr/lib/libpixman-1.so.0.46.4"
+    },
+    {
+      "address": "f6a340329000-f6a340330000",
+      "permissions": "r--p",
+      "offset": "00099000",
+      "device": "00:22",
+      "inode": 23662,
+      "pathname": "/usr/lib/libpixman-1.so.0.46.4"
+    },
+    {
+      "address": "f6a340330000-f6a340331000",
+      "permissions": "rw-p",
+      "offset": "000a0000",
+      "device": "00:22",
+      "inode": 23662,
+      "pathname": "/usr/lib/libpixman-1.so.0.46.4"
+    },
+    {
+      "address": "f6a340340000-f6a340342000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 18445,
+      "pathname": "/usr/lib/libxcb-shm.so.0.0.0"
+    },
+    {
+      "address": "f6a340342000-f6a340352000",
+      "permissions": "---p",
+      "offset": "00002000",
+      "device": "00:22",
+      "inode": 18445,
+      "pathname": "/usr/lib/libxcb-shm.so.0.0.0"
+    },
+    {
+      "address": "f6a340352000-f6a340353000",
+      "permissions": "r--p",
+      "offset": "00002000",
+      "device": "00:22",
+      "inode": 18445,
+      "pathname": "/usr/lib/libxcb-shm.so.0.0.0"
+    },
+    {
+      "address": "f6a340353000-f6a340354000",
+      "permissions": "rw-p",
+      "offset": "00003000",
+      "device": "00:22",
+      "inode": 18445,
+      "pathname": "/usr/lib/libxcb-shm.so.0.0.0"
+    },
+    {
+      "address": "f6a340360000-f6a34036c000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 18433,
+      "pathname": "/usr/lib/libxcb-render.so.0.0.0"
+    },
+    {
+      "address": "f6a34036c000-f6a34037c000",
+      "permissions": "---p",
+      "offset": "0000c000",
+      "device": "00:22",
+      "inode": 18433,
+      "pathname": "/usr/lib/libxcb-render.so.0.0.0"
+    },
+    {
+      "address": "f6a34037c000-f6a34037d000",
+      "permissions": "r--p",
+      "offset": "0000c000",
+      "device": "00:22",
+      "inode": 18433,
+      "pathname": "/usr/lib/libxcb-render.so.0.0.0"
+    },
+    {
+      "address": "f6a34037d000-f6a34037e000",
+      "permissions": "rw-p",
+      "offset": "0000d000",
+      "device": "00:22",
+      "inode": 18433,
+      "pathname": "/usr/lib/libxcb-render.so.0.0.0"
+    },
+    {
+      "address": "f6a340380000-f6a3403a9000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 18475,
+      "pathname": "/usr/lib/libxcb.so.1.1.0"
+    },
+    {
+      "address": "f6a3403a9000-f6a3403b8000",
+      "permissions": "---p",
+      "offset": "00029000",
+      "device": "00:22",
+      "inode": 18475,
+      "pathname": "/usr/lib/libxcb.so.1.1.0"
+    },
+    {
+      "address": "f6a3403b8000-f6a3403b9000",
+      "permissions": "r--p",
+      "offset": "00028000",
+      "device": "00:22",
+      "inode": 18475,
+      "pathname": "/usr/lib/libxcb.so.1.1.0"
+    },
+    {
+      "address": "f6a3403b9000-f6a3403ba000",
+      "permissions": "rw-p",
+      "offset": "00029000",
+      "device": "00:22",
+      "inode": 18475,
+      "pathname": "/usr/lib/libxcb.so.1.1.0"
+    },
+    {
+      "address": "f6a3403c0000-f6a3403ca000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23614,
+      "pathname": "/usr/lib/libXrender.so.1.3.0"
+    },
+    {
+      "address": "f6a3403ca000-f6a3403df000",
+      "permissions": "---p",
+      "offset": "0000a000",
+      "device": "00:22",
+      "inode": 23614,
+      "pathname": "/usr/lib/libXrender.so.1.3.0"
+    },
+    {
+      "address": "f6a3403df000-f6a3403e0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 23614,
+      "pathname": "/usr/lib/libXrender.so.1.3.0"
+    },
+    {
+      "address": "f6a3403e0000-f6a3403e1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 23614,
+      "pathname": "/usr/lib/libXrender.so.1.3.0"
+    },
+    {
+      "address": "f6a3403f0000-f6a3404eb000",
+      "permissions": "r--p",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 302710,
+      "pathname": "/usr/lib/libglycin-2.so.0"
+    },
+    {
+      "address": "f6a3404eb000-f6a3404fa000",
+      "permissions": "---p",
+      "offset": "000fb000",
+      "device": "00:22",
+      "inode": 302710,
+      "pathname": "/usr/lib/libglycin-2.so.0"
+    },
+    {
+      "address": "f6a3404fa000-f6a3407dd000",
+      "permissions": "r-xp",
+      "offset": "000fa000",
+      "device": "00:22",
+      "inode": 302710,
+      "pathname": "/usr/lib/libglycin-2.so.0"
+    },
+    {
+      "address": "f6a3407dd000-f6a3407ec000",
+      "permissions": "---p",
+      "offset": "003ed000",
+      "device": "00:22",
+      "inode": 302710,
+      "pathname": "/usr/lib/libglycin-2.so.0"
+    },
+    {
+      "address": "f6a3407ec000-f6a340806000",
+      "permissions": "r--p",
+      "offset": "003dc000",
+      "device": "00:22",
+      "inode": 302710,
+      "pathname": "/usr/lib/libglycin-2.so.0"
+    },
+    {
+      "address": "f6a340806000-f6a340815000",
+      "permissions": "---p",
+      "offset": "00416000",
+      "device": "00:22",
+      "inode": 302710,
+      "pathname": "/usr/lib/libglycin-2.so.0"
+    },
+    {
+      "address": "f6a340815000-f6a340819000",
+      "permissions": "rw-p",
+      "offset": "003f5000",
+      "device": "00:22",
+      "inode": 302710,
+      "pathname": "/usr/lib/libglycin-2.so.0"
+    },
+    {
+      "address": "f6a340820000-f6a340840000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24382,
+      "pathname": "/usr/lib/libgraphite2.so.3.3.1"
+    },
+    {
+      "address": "f6a340840000-f6a34084e000",
+      "permissions": "---p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 24382,
+      "pathname": "/usr/lib/libgraphite2.so.3.3.1"
+    },
+    {
+      "address": "f6a34084e000-f6a340850000",
+      "permissions": "r--p",
+      "offset": "0002e000",
+      "device": "00:22",
+      "inode": 24382,
+      "pathname": "/usr/lib/libgraphite2.so.3.3.1"
+    },
+    {
+      "address": "f6a340850000-f6a340851000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 24382,
+      "pathname": "/usr/lib/libgraphite2.so.3.3.1"
+    },
+    {
+      "address": "f6a340860000-f6a340869000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24958,
+      "pathname": "/usr/lib/libthai.so.0.3.2"
+    },
+    {
+      "address": "f6a340869000-f6a34087f000",
+      "permissions": "---p",
+      "offset": "00009000",
+      "device": "00:22",
+      "inode": 24958,
+      "pathname": "/usr/lib/libthai.so.0.3.2"
+    },
+    {
+      "address": "f6a34087f000-f6a340880000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 24958,
+      "pathname": "/usr/lib/libthai.so.0.3.2"
+    },
+    {
+      "address": "f6a340880000-f6a340881000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 24958,
+      "pathname": "/usr/lib/libthai.so.0.3.2"
+    },
+    {
+      "address": "f6a340890000-f6a3408bd000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 300932,
+      "pathname": "/usr/lib/libnghttp2.so.14.30.0"
+    },
+    {
+      "address": "f6a3408bd000-f6a3408cd000",
+      "permissions": "---p",
+      "offset": "0002d000",
+      "device": "00:22",
+      "inode": 300932,
+      "pathname": "/usr/lib/libnghttp2.so.14.30.0"
+    },
+    {
+      "address": "f6a3408cd000-f6a3408d0000",
+      "permissions": "r--p",
+      "offset": "0002d000",
+      "device": "00:22",
+      "inode": 300932,
+      "pathname": "/usr/lib/libnghttp2.so.14.30.0"
+    },
+    {
+      "address": "f6a3408d0000-f6a3408d1000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 300932,
+      "pathname": "/usr/lib/libnghttp2.so.14.30.0"
+    },
+    {
+      "address": "f6a3408e0000-f6a340936000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 15452,
+      "pathname": "/usr/lib/libgssapi_krb5.so.2.2"
+    },
+    {
+      "address": "f6a340936000-f6a34094d000",
+      "permissions": "---p",
+      "offset": "00056000",
+      "device": "00:22",
+      "inode": 15452,
+      "pathname": "/usr/lib/libgssapi_krb5.so.2.2"
+    },
+    {
+      "address": "f6a34094d000-f6a340950000",
+      "permissions": "r--p",
+      "offset": "0005d000",
+      "device": "00:22",
+      "inode": 15452,
+      "pathname": "/usr/lib/libgssapi_krb5.so.2.2"
+    },
+    {
+      "address": "f6a340950000-f6a340951000",
+      "permissions": "rw-p",
+      "offset": "00060000",
+      "device": "00:22",
+      "inode": 15452,
+      "pathname": "/usr/lib/libgssapi_krb5.so.2.2"
+    },
+    {
+      "address": "f6a340960000-f6a340a23000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 8240,
+      "pathname": "/usr/lib/libzstd.so.1.5.7"
+    },
+    {
+      "address": "f6a340a23000-f6a340a3f000",
+      "permissions": "---p",
+      "offset": "000c3000",
+      "device": "00:22",
+      "inode": 8240,
+      "pathname": "/usr/lib/libzstd.so.1.5.7"
+    },
+    {
+      "address": "f6a340a3f000-f6a340a40000",
+      "permissions": "r--p",
+      "offset": "000cf000",
+      "device": "00:22",
+      "inode": 8240,
+      "pathname": "/usr/lib/libzstd.so.1.5.7"
+    },
+    {
+      "address": "f6a340a40000-f6a340a41000",
+      "permissions": "rw-p",
+      "offset": "000d0000",
+      "device": "00:22",
+      "inode": 8240,
+      "pathname": "/usr/lib/libzstd.so.1.5.7"
+    },
+    {
+      "address": "f6a340a50000-f6a340a5c000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7756,
+      "pathname": "/usr/lib/libbrotlidec.so.1.2.1"
+    },
+    {
+      "address": "f6a340a5c000-f6a340a6f000",
+      "permissions": "---p",
+      "offset": "0000c000",
+      "device": "00:22",
+      "inode": 7756,
+      "pathname": "/usr/lib/libbrotlidec.so.1.2.1"
+    },
+    {
+      "address": "f6a340a6f000-f6a340a70000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 7756,
+      "pathname": "/usr/lib/libbrotlidec.so.1.2.1"
+    },
+    {
+      "address": "f6a340a70000-f6a340a71000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 7756,
+      "pathname": "/usr/lib/libbrotlidec.so.1.2.1"
+    },
+    {
+      "address": "f6a340a80000-f6a340a91000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 28036,
+      "pathname": "/usr/lib/libpsl.so.5.3.5"
+    },
+    {
+      "address": "f6a340a91000-f6a340aaf000",
+      "permissions": "---p",
+      "offset": "00011000",
+      "device": "00:22",
+      "inode": 28036,
+      "pathname": "/usr/lib/libpsl.so.5.3.5"
+    },
+    {
+      "address": "f6a340aaf000-f6a340ab0000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 28036,
+      "pathname": "/usr/lib/libpsl.so.5.3.5"
+    },
+    {
+      "address": "f6a340ab0000-f6a340ab1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 28036,
+      "pathname": "/usr/lib/libpsl.so.5.3.5"
+    },
+    {
+      "address": "f6a340ac0000-f6a340b58000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 16989,
+      "pathname": "/usr/lib/libpcre2-8.so.0.16.1"
+    },
+    {
+      "address": "f6a340b58000-f6a340b6f000",
+      "permissions": "---p",
+      "offset": "00098000",
+      "device": "00:22",
+      "inode": 16989,
+      "pathname": "/usr/lib/libpcre2-8.so.0.16.1"
+    },
+    {
+      "address": "f6a340b6f000-f6a340b70000",
+      "permissions": "r--p",
+      "offset": "0009f000",
+      "device": "00:22",
+      "inode": 16989,
+      "pathname": "/usr/lib/libpcre2-8.so.0.16.1"
+    },
+    {
+      "address": "f6a340b70000-f6a340b71000",
+      "permissions": "rw-p",
+      "offset": "000a0000",
+      "device": "00:22",
+      "inode": 16989,
+      "pathname": "/usr/lib/libpcre2-8.so.0.16.1"
+    },
+    {
+      "address": "f6a340b80000-f6a340bfd000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7445,
+      "pathname": "/usr/lib/libmount.so.1.1.0"
+    },
+    {
+      "address": "f6a340bfd000-f6a340c0d000",
+      "permissions": "---p",
+      "offset": "0007d000",
+      "device": "00:22",
+      "inode": 7445,
+      "pathname": "/usr/lib/libmount.so.1.1.0"
+    },
+    {
+      "address": "f6a340c0d000-f6a340c10000",
+      "permissions": "r--p",
+      "offset": "0007d000",
+      "device": "00:22",
+      "inode": 7445,
+      "pathname": "/usr/lib/libmount.so.1.1.0"
+    },
+    {
+      "address": "f6a340c10000-f6a340c11000",
+      "permissions": "rw-p",
+      "offset": "00080000",
+      "device": "00:22",
+      "inode": 7445,
+      "pathname": "/usr/lib/libmount.so.1.1.0"
+    },
+    {
+      "address": "f6a340c20000-f6a340c2a000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 16913,
+      "pathname": "/usr/lib/libffi.so.8.5.0"
+    },
+    {
+      "address": "f6a340c2a000-f6a340c3f000",
+      "permissions": "---p",
+      "offset": "0000a000",
+      "device": "00:22",
+      "inode": 16913,
+      "pathname": "/usr/lib/libffi.so.8.5.0"
+    },
+    {
+      "address": "f6a340c3f000-f6a340c40000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 16913,
+      "pathname": "/usr/lib/libffi.so.8.5.0"
+    },
+    {
+      "address": "f6a340c40000-f6a340c41000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 16913,
+      "pathname": "/usr/lib/libffi.so.8.5.0"
+    },
+    {
+      "address": "f6a340c50000-f6a340ca9000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37153,
+      "pathname": "/usr/lib/libcolord.so.2.0.5"
+    },
+    {
+      "address": "f6a340ca9000-f6a340cbe000",
+      "permissions": "---p",
+      "offset": "00059000",
+      "device": "00:22",
+      "inode": 37153,
+      "pathname": "/usr/lib/libcolord.so.2.0.5"
+    },
+    {
+      "address": "f6a340cbe000-f6a340cc0000",
+      "permissions": "r--p",
+      "offset": "0005e000",
+      "device": "00:22",
+      "inode": 37153,
+      "pathname": "/usr/lib/libcolord.so.2.0.5"
+    },
+    {
+      "address": "f6a340cc0000-f6a340cc1000",
+      "permissions": "rw-p",
+      "offset": "00060000",
+      "device": "00:22",
+      "inode": 37153,
+      "pathname": "/usr/lib/libcolord.so.2.0.5"
+    },
+    {
+      "address": "f6a340cd0000-f6a340d6e000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37389,
+      "pathname": "/usr/lib/libcups.so.2"
+    },
+    {
+      "address": "f6a340d6e000-f6a340d76000",
+      "permissions": "---p",
+      "offset": "0009e000",
+      "device": "00:22",
+      "inode": 37389,
+      "pathname": "/usr/lib/libcups.so.2"
+    },
+    {
+      "address": "f6a340d76000-f6a340d80000",
+      "permissions": "r--p",
+      "offset": "000a6000",
+      "device": "00:22",
+      "inode": 37389,
+      "pathname": "/usr/lib/libcups.so.2"
+    },
+    {
+      "address": "f6a340d80000-f6a340d81000",
+      "permissions": "rw-p",
+      "offset": "000b0000",
+      "device": "00:22",
+      "inode": 37389,
+      "pathname": "/usr/lib/libcups.so.2"
+    },
+    {
+      "address": "f6a340d90000-f6a340db4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23695,
+      "pathname": "/usr/lib/libcairo-script-interpreter.so.2.11806.6"
+    },
+    {
+      "address": "f6a340db4000-f6a340dce000",
+      "permissions": "---p",
+      "offset": "00024000",
+      "device": "00:22",
+      "inode": 23695,
+      "pathname": "/usr/lib/libcairo-script-interpreter.so.2.11806.6"
+    },
+    {
+      "address": "f6a340dce000-f6a340dd0000",
+      "permissions": "r--p",
+      "offset": "0002e000",
+      "device": "00:22",
+      "inode": 23695,
+      "pathname": "/usr/lib/libcairo-script-interpreter.so.2.11806.6"
+    },
+    {
+      "address": "f6a340dd0000-f6a340dd1000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 23695,
+      "pathname": "/usr/lib/libcairo-script-interpreter.so.2.11806.6"
+    },
+    {
+      "address": "f6a340de0000-f6a340de2000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37527,
+      "pathname": "/usr/lib/libXinerama.so.1.0.0"
+    },
+    {
+      "address": "f6a340de2000-f6a340dff000",
+      "permissions": "---p",
+      "offset": "00002000",
+      "device": "00:22",
+      "inode": 37527,
+      "pathname": "/usr/lib/libXinerama.so.1.0.0"
+    },
+    {
+      "address": "f6a340dff000-f6a340e00000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 37527,
+      "pathname": "/usr/lib/libXinerama.so.1.0.0"
+    },
+    {
+      "address": "f6a340e00000-f6a340e01000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 37527,
+      "pathname": "/usr/lib/libXinerama.so.1.0.0"
+    },
+    {
+      "address": "f6a340e10000-f6a340e1b000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37543,
+      "pathname": "/usr/lib/libXrandr.so.2.2.0"
+    },
+    {
+      "address": "f6a340e1b000-f6a340e2f000",
+      "permissions": "---p",
+      "offset": "0000b000",
+      "device": "00:22",
+      "inode": 37543,
+      "pathname": "/usr/lib/libXrandr.so.2.2.0"
+    },
+    {
+      "address": "f6a340e2f000-f6a340e30000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 37543,
+      "pathname": "/usr/lib/libXrandr.so.2.2.0"
+    },
+    {
+      "address": "f6a340e30000-f6a340e31000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 37543,
+      "pathname": "/usr/lib/libXrandr.so.2.2.0"
+    },
+    {
+      "address": "f6a340e40000-f6a340e46000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 22162,
+      "pathname": "/usr/lib/libXfixes.so.3.1.0"
+    },
+    {
+      "address": "f6a340e46000-f6a340e5f000",
+      "permissions": "---p",
+      "offset": "00006000",
+      "device": "00:22",
+      "inode": 22162,
+      "pathname": "/usr/lib/libXfixes.so.3.1.0"
+    },
+    {
+      "address": "f6a340e5f000-f6a340e60000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 22162,
+      "pathname": "/usr/lib/libXfixes.so.3.1.0"
+    },
+    {
+      "address": "f6a340e60000-f6a340e61000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 22162,
+      "pathname": "/usr/lib/libXfixes.so.3.1.0"
+    },
+    {
+      "address": "f6a340e70000-f6a340e72000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37515,
+      "pathname": "/usr/lib/libXdamage.so.1.1.0"
+    },
+    {
+      "address": "f6a340e72000-f6a340e8f000",
+      "permissions": "---p",
+      "offset": "00002000",
+      "device": "00:22",
+      "inode": 37515,
+      "pathname": "/usr/lib/libXdamage.so.1.1.0"
+    },
+    {
+      "address": "f6a340e8f000-f6a340e90000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 37515,
+      "pathname": "/usr/lib/libXdamage.so.1.1.0"
+    },
+    {
+      "address": "f6a340e90000-f6a340e91000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 37515,
+      "pathname": "/usr/lib/libXdamage.so.1.1.0"
+    },
+    {
+      "address": "f6a340ea0000-f6a340eac000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37444,
+      "pathname": "/usr/lib/libXcursor.so.1.0.2"
+    },
+    {
+      "address": "f6a340eac000-f6a340ebf000",
+      "permissions": "---p",
+      "offset": "0000c000",
+      "device": "00:22",
+      "inode": 37444,
+      "pathname": "/usr/lib/libXcursor.so.1.0.2"
+    },
+    {
+      "address": "f6a340ebf000-f6a340ec0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 37444,
+      "pathname": "/usr/lib/libXcursor.so.1.0.2"
+    },
+    {
+      "address": "f6a340ec0000-f6a340ec1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 37444,
+      "pathname": "/usr/lib/libXcursor.so.1.0.2"
+    },
+    {
+      "address": "f6a340ed0000-f6a340ee2000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 22084,
+      "pathname": "/usr/lib/libXext.so.6.4.0"
+    },
+    {
+      "address": "f6a340ee2000-f6a340eff000",
+      "permissions": "---p",
+      "offset": "00012000",
+      "device": "00:22",
+      "inode": 22084,
+      "pathname": "/usr/lib/libXext.so.6.4.0"
+    },
+    {
+      "address": "f6a340eff000-f6a340f00000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 22084,
+      "pathname": "/usr/lib/libXext.so.6.4.0"
+    },
+    {
+      "address": "f6a340f00000-f6a340f01000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 22084,
+      "pathname": "/usr/lib/libXext.so.6.4.0"
+    },
+    {
+      "address": "f6a340f10000-f6a340f11000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31005,
+      "pathname": "/usr/lib/libwayland-egl.so.1.26.0"
+    },
+    {
+      "address": "f6a340f11000-f6a340f2f000",
+      "permissions": "---p",
+      "offset": "00001000",
+      "device": "00:22",
+      "inode": 31005,
+      "pathname": "/usr/lib/libwayland-egl.so.1.26.0"
+    },
+    {
+      "address": "f6a340f2f000-f6a340f30000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 31005,
+      "pathname": "/usr/lib/libwayland-egl.so.1.26.0"
+    },
+    {
+      "address": "f6a340f30000-f6a340f31000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 31005,
+      "pathname": "/usr/lib/libwayland-egl.so.1.26.0"
+    },
+    {
+      "address": "f6a340f40000-f6a340f9d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 32707,
+      "pathname": "/usr/lib/libxkbcommon.so.0.13.2"
+    },
+    {
+      "address": "f6a340f9d000-f6a340fae000",
+      "permissions": "---p",
+      "offset": "0005d000",
+      "device": "00:22",
+      "inode": 32707,
+      "pathname": "/usr/lib/libxkbcommon.so.0.13.2"
+    },
+    {
+      "address": "f6a340fae000-f6a340fb0000",
+      "permissions": "r--p",
+      "offset": "0005e000",
+      "device": "00:22",
+      "inode": 32707,
+      "pathname": "/usr/lib/libxkbcommon.so.0.13.2"
+    },
+    {
+      "address": "f6a340fb0000-f6a340fb1000",
+      "permissions": "rw-p",
+      "offset": "00060000",
+      "device": "00:22",
+      "inode": 32707,
+      "pathname": "/usr/lib/libxkbcommon.so.0.13.2"
+    },
+    {
+      "address": "f6a340fc0000-f6a34104e000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23907,
+      "pathname": "/usr/lib/libtiff.so.6.3.0"
+    },
+    {
+      "address": "f6a34104e000-f6a34105c000",
+      "permissions": "---p",
+      "offset": "0008e000",
+      "device": "00:22",
+      "inode": 23907,
+      "pathname": "/usr/lib/libtiff.so.6.3.0"
+    },
+    {
+      "address": "f6a34105c000-f6a341060000",
+      "permissions": "r--p",
+      "offset": "0009c000",
+      "device": "00:22",
+      "inode": 23907,
+      "pathname": "/usr/lib/libtiff.so.6.3.0"
+    },
+    {
+      "address": "f6a341060000-f6a341061000",
+      "permissions": "rw-p",
+      "offset": "000a0000",
+      "device": "00:22",
+      "inode": 23907,
+      "pathname": "/usr/lib/libtiff.so.6.3.0"
+    },
+    {
+      "address": "f6a341070000-f6a341121000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 32761,
+      "pathname": "/usr/lib/libvulkan.so.1.4.363"
+    },
+    {
+      "address": "f6a341121000-f6a34113d000",
+      "permissions": "---p",
+      "offset": "000b1000",
+      "device": "00:22",
+      "inode": 32761,
+      "pathname": "/usr/lib/libvulkan.so.1.4.363"
+    },
+    {
+      "address": "f6a34113d000-f6a341140000",
+      "permissions": "r--p",
+      "offset": "000bd000",
+      "device": "00:22",
+      "inode": 32761,
+      "pathname": "/usr/lib/libvulkan.so.1.4.363"
+    },
+    {
+      "address": "f6a341140000-f6a341141000",
+      "permissions": "rw-p",
+      "offset": "000c0000",
+      "device": "00:22",
+      "inode": 32761,
+      "pathname": "/usr/lib/libvulkan.so.1.4.363"
+    },
+    {
+      "address": "f6a341150000-f6a34122c000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37694,
+      "pathname": "/usr/lib/libtinysparql-3.0.so.0.1200.0"
+    },
+    {
+      "address": "f6a34122c000-f6a341233000",
+      "permissions": "---p",
+      "offset": "000dc000",
+      "device": "00:22",
+      "inode": 37694,
+      "pathname": "/usr/lib/libtinysparql-3.0.so.0.1200.0"
+    },
+    {
+      "address": "f6a341233000-f6a341240000",
+      "permissions": "r--p",
+      "offset": "000e3000",
+      "device": "00:22",
+      "inode": 37694,
+      "pathname": "/usr/lib/libtinysparql-3.0.so.0.1200.0"
+    },
+    {
+      "address": "f6a341240000-f6a341241000",
+      "permissions": "rw-p",
+      "offset": "000f0000",
+      "device": "00:22",
+      "inode": 37694,
+      "pathname": "/usr/lib/libtinysparql-3.0.so.0.1200.0"
+    },
+    {
+      "address": "f6a341250000-f6a341267000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 302156,
+      "pathname": "/usr/lib/libcloudproviders.so.0.4.2"
+    },
+    {
+      "address": "f6a341267000-f6a34127f000",
+      "permissions": "---p",
+      "offset": "00017000",
+      "device": "00:22",
+      "inode": 302156,
+      "pathname": "/usr/lib/libcloudproviders.so.0.4.2"
+    },
+    {
+      "address": "f6a34127f000-f6a341280000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 302156,
+      "pathname": "/usr/lib/libcloudproviders.so.0.4.2"
+    },
+    {
+      "address": "f6a341280000-f6a341281000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 302156,
+      "pathname": "/usr/lib/libcloudproviders.so.0.4.2"
+    },
+    {
+      "address": "f6a341290000-f6a3412ae000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 25171,
+      "pathname": "/usr/lib/libpangoft2-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a3412ae000-f6a3412bf000",
+      "permissions": "---p",
+      "offset": "0001e000",
+      "device": "00:22",
+      "inode": 25171,
+      "pathname": "/usr/lib/libpangoft2-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a3412bf000-f6a3412c0000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 25171,
+      "pathname": "/usr/lib/libpangoft2-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a3412c0000-f6a3412c1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 25171,
+      "pathname": "/usr/lib/libpangoft2-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a3412d0000-f6a3412e2000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 22175,
+      "pathname": "/usr/lib/libXi.so.6.1.0"
+    },
+    {
+      "address": "f6a3412e2000-f6a3412ff000",
+      "permissions": "---p",
+      "offset": "00012000",
+      "device": "00:22",
+      "inode": 22175,
+      "pathname": "/usr/lib/libXi.so.6.1.0"
+    },
+    {
+      "address": "f6a3412ff000-f6a341300000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 22175,
+      "pathname": "/usr/lib/libXi.so.6.1.0"
+    },
+    {
+      "address": "f6a341300000-f6a341301000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 22175,
+      "pathname": "/usr/lib/libXi.so.6.1.0"
+    },
+    {
+      "address": "f6a341310000-f6a34132c000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 29285,
+      "pathname": "/usr/lib/libgraphene-1.0.so.0.1000.8"
+    },
+    {
+      "address": "f6a34132c000-f6a34133f000",
+      "permissions": "---p",
+      "offset": "0001c000",
+      "device": "00:22",
+      "inode": 29285,
+      "pathname": "/usr/lib/libgraphene-1.0.so.0.1000.8"
+    },
+    {
+      "address": "f6a34133f000-f6a341340000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 29285,
+      "pathname": "/usr/lib/libgraphene-1.0.so.0.1000.8"
+    },
+    {
+      "address": "f6a341340000-f6a341341000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 29285,
+      "pathname": "/usr/lib/libgraphene-1.0.so.0.1000.8"
+    },
+    {
+      "address": "f6a341350000-f6a341374000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 33364,
+      "pathname": "/usr/lib/libgstplay-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a341374000-f6a34138f000",
+      "permissions": "---p",
+      "offset": "00024000",
+      "device": "00:22",
+      "inode": 33364,
+      "pathname": "/usr/lib/libgstplay-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a34138f000-f6a341390000",
+      "permissions": "r--p",
+      "offset": "0002f000",
+      "device": "00:22",
+      "inode": 33364,
+      "pathname": "/usr/lib/libgstplay-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a341390000-f6a341391000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 33364,
+      "pathname": "/usr/lib/libgstplay-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a3413a0000-f6a3413a8000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23692,
+      "pathname": "/usr/lib/libcairo-gobject.so.2.11806.6"
+    },
+    {
+      "address": "f6a3413a8000-f6a3413be000",
+      "permissions": "---p",
+      "offset": "00008000",
+      "device": "00:22",
+      "inode": 23692,
+      "pathname": "/usr/lib/libcairo-gobject.so.2.11806.6"
+    },
+    {
+      "address": "f6a3413be000-f6a3413c0000",
+      "permissions": "r--p",
+      "offset": "0000e000",
+      "device": "00:22",
+      "inode": 23692,
+      "pathname": "/usr/lib/libcairo-gobject.so.2.11806.6"
+    },
+    {
+      "address": "f6a3413c0000-f6a3413c1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 23692,
+      "pathname": "/usr/lib/libcairo-gobject.so.2.11806.6"
+    },
+    {
+      "address": "f6a3413d0000-f6a3413ef000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 302108,
+      "pathname": "/usr/lib/libfribidi.so.0.4.0"
+    },
+    {
+      "address": "f6a3413ef000-f6a3413ff000",
+      "permissions": "---p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 302108,
+      "pathname": "/usr/lib/libfribidi.so.0.4.0"
+    },
+    {
+      "address": "f6a3413ff000-f6a341400000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 302108,
+      "pathname": "/usr/lib/libfribidi.so.0.4.0"
+    },
+    {
+      "address": "f6a341400000-f6a341401000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 302108,
+      "pathname": "/usr/lib/libfribidi.so.0.4.0"
+    },
+    {
+      "address": "f6a341410000-f6a341638000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 302064,
+      "pathname": "/usr/lib/libharfbuzz-subset.so.0.61510.0"
+    },
+    {
+      "address": "f6a341638000-f6a34164f000",
+      "permissions": "---p",
+      "offset": "00228000",
+      "device": "00:22",
+      "inode": 302064,
+      "pathname": "/usr/lib/libharfbuzz-subset.so.0.61510.0"
+    },
+    {
+      "address": "f6a34164f000-f6a341650000",
+      "permissions": "r--p",
+      "offset": "0022f000",
+      "device": "00:22",
+      "inode": 302064,
+      "pathname": "/usr/lib/libharfbuzz-subset.so.0.61510.0"
+    },
+    {
+      "address": "f6a341650000-f6a341651000",
+      "permissions": "rw-p",
+      "offset": "00230000",
+      "device": "00:22",
+      "inode": 302064,
+      "pathname": "/usr/lib/libharfbuzz-subset.so.0.61510.0"
+    },
+    {
+      "address": "f6a341660000-f6a341670000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 25168,
+      "pathname": "/usr/lib/libpangocairo-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a341670000-f6a34167f000",
+      "permissions": "---p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 25168,
+      "pathname": "/usr/lib/libpangocairo-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a34167f000-f6a341680000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 25168,
+      "pathname": "/usr/lib/libpangocairo-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a341680000-f6a341681000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 25168,
+      "pathname": "/usr/lib/libpangocairo-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a341690000-f6a341699000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31734,
+      "pathname": "/usr/lib/libatomic.so.1.2.0"
+    },
+    {
+      "address": "f6a341699000-f6a3416af000",
+      "permissions": "---p",
+      "offset": "00009000",
+      "device": "00:22",
+      "inode": 31734,
+      "pathname": "/usr/lib/libatomic.so.1.2.0"
+    },
+    {
+      "address": "f6a3416af000-f6a3416b0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 31734,
+      "pathname": "/usr/lib/libatomic.so.1.2.0"
+    },
+    {
+      "address": "f6a3416b0000-f6a3416b1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 31734,
+      "pathname": "/usr/lib/libatomic.so.1.2.0"
+    },
+    {
+      "address": "f6a3416b1000-f6a3416b2000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a3416c0000-f6a3416df000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 4196,
+      "pathname": "/usr/lib/libgcc_s.so.1"
+    },
+    {
+      "address": "f6a3416df000-f6a3416ef000",
+      "permissions": "---p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 4196,
+      "pathname": "/usr/lib/libgcc_s.so.1"
+    },
+    {
+      "address": "f6a3416ef000-f6a3416f0000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 4196,
+      "pathname": "/usr/lib/libgcc_s.so.1"
+    },
+    {
+      "address": "f6a3416f0000-f6a3416f1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 4196,
+      "pathname": "/usr/lib/libgcc_s.so.1"
+    },
+    {
+      "address": "f6a341700000-f6a3419c4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 4206,
+      "pathname": "/usr/lib/libstdc++.so.6.0.35"
+    },
+    {
+      "address": "f6a3419c4000-f6a3419de000",
+      "permissions": "---p",
+      "offset": "002c4000",
+      "device": "00:22",
+      "inode": 4206,
+      "pathname": "/usr/lib/libstdc++.so.6.0.35"
+    },
+    {
+      "address": "f6a3419de000-f6a3419f0000",
+      "permissions": "r--p",
+      "offset": "002ce000",
+      "device": "00:22",
+      "inode": 4206,
+      "pathname": "/usr/lib/libstdc++.so.6.0.35"
+    },
+    {
+      "address": "f6a3419f0000-f6a3419f1000",
+      "permissions": "rw-p",
+      "offset": "002e0000",
+      "device": "00:22",
+      "inode": 4206,
+      "pathname": "/usr/lib/libstdc++.so.6.0.35"
+    },
+    {
+      "address": "f6a3419f1000-f6a3419f5000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a341a00000-f6a341a62000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42371,
+      "pathname": "/usr/lib/libsecret-1.so.0.0.0"
+    },
+    {
+      "address": "f6a341a62000-f6a341a7c000",
+      "permissions": "---p",
+      "offset": "00062000",
+      "device": "00:22",
+      "inode": 42371,
+      "pathname": "/usr/lib/libsecret-1.so.0.0.0"
+    },
+    {
+      "address": "f6a341a7c000-f6a341a80000",
+      "permissions": "r--p",
+      "offset": "0006c000",
+      "device": "00:22",
+      "inode": 42371,
+      "pathname": "/usr/lib/libsecret-1.so.0.0.0"
+    },
+    {
+      "address": "f6a341a80000-f6a341a81000",
+      "permissions": "rw-p",
+      "offset": "00070000",
+      "device": "00:22",
+      "inode": 42371,
+      "pathname": "/usr/lib/libsecret-1.so.0.0.0"
+    },
+    {
+      "address": "f6a341a90000-f6a341a95000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 307291,
+      "pathname": "/usr/lib/libhyphen.so.0.4.1"
+    },
+    {
+      "address": "f6a341a95000-f6a341aaf000",
+      "permissions": "---p",
+      "offset": "00005000",
+      "device": "00:22",
+      "inode": 307291,
+      "pathname": "/usr/lib/libhyphen.so.0.4.1"
+    },
+    {
+      "address": "f6a341aaf000-f6a341ab0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 307291,
+      "pathname": "/usr/lib/libhyphen.so.0.4.1"
+    },
+    {
+      "address": "f6a341ab0000-f6a341ab1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 307291,
+      "pathname": "/usr/lib/libhyphen.so.0.4.1"
+    },
+    {
+      "address": "f6a341ac0000-f6a341ad4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 26091,
+      "pathname": "/usr/lib/libtasn1.so.6.6.5"
+    },
+    {
+      "address": "f6a341ad4000-f6a341aef000",
+      "permissions": "---p",
+      "offset": "00014000",
+      "device": "00:22",
+      "inode": 26091,
+      "pathname": "/usr/lib/libtasn1.so.6.6.5"
+    },
+    {
+      "address": "f6a341aef000-f6a341af0000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 26091,
+      "pathname": "/usr/lib/libtasn1.so.6.6.5"
+    },
+    {
+      "address": "f6a341af0000-f6a341af1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 26091,
+      "pathname": "/usr/lib/libtasn1.so.6.6.5"
+    },
+    {
+      "address": "f6a341b00000-f6a341b16000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 7387,
+      "pathname": "/usr/lib/libz.so.1.3.2"
+    },
+    {
+      "address": "f6a341b16000-f6a341b2f000",
+      "permissions": "---p",
+      "offset": "00016000",
+      "device": "00:22",
+      "inode": 7387,
+      "pathname": "/usr/lib/libz.so.1.3.2"
+    },
+    {
+      "address": "f6a341b2f000-f6a341b30000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 7387,
+      "pathname": "/usr/lib/libz.so.1.3.2"
+    },
+    {
+      "address": "f6a341b30000-f6a341b31000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 7387,
+      "pathname": "/usr/lib/libz.so.1.3.2"
+    },
+    {
+      "address": "f6a341b40000-f6a341b56000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 30711,
+      "pathname": "/usr/lib/libdrm.so.2.134.0"
+    },
+    {
+      "address": "f6a341b56000-f6a341b6f000",
+      "permissions": "---p",
+      "offset": "00016000",
+      "device": "00:22",
+      "inode": 30711,
+      "pathname": "/usr/lib/libdrm.so.2.134.0"
+    },
+    {
+      "address": "f6a341b6f000-f6a341b70000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 30711,
+      "pathname": "/usr/lib/libdrm.so.2.134.0"
+    },
+    {
+      "address": "f6a341b70000-f6a341b71000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 30711,
+      "pathname": "/usr/lib/libdrm.so.2.134.0"
+    },
+    {
+      "address": "f6a341b80000-f6a341b83000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 257666,
+      "pathname": "/usr/lib/libgbm.so.1.0.0"
+    },
+    {
+      "address": "f6a341b83000-f6a341b9f000",
+      "permissions": "---p",
+      "offset": "00003000",
+      "device": "00:22",
+      "inode": 257666,
+      "pathname": "/usr/lib/libgbm.so.1.0.0"
+    },
+    {
+      "address": "f6a341b9f000-f6a341ba0000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 257666,
+      "pathname": "/usr/lib/libgbm.so.1.0.0"
+    },
+    {
+      "address": "f6a341ba0000-f6a341ba1000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 257666,
+      "pathname": "/usr/lib/libgbm.so.1.0.0"
+    },
+    {
+      "address": "f6a341bb0000-f6a341bc4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23731,
+      "pathname": "/usr/lib/libenchant-2.so.2.8.21"
+    },
+    {
+      "address": "f6a341bc4000-f6a341bdf000",
+      "permissions": "---p",
+      "offset": "00014000",
+      "device": "00:22",
+      "inode": 23731,
+      "pathname": "/usr/lib/libenchant-2.so.2.8.21"
+    },
+    {
+      "address": "f6a341bdf000-f6a341be0000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 23731,
+      "pathname": "/usr/lib/libenchant-2.so.2.8.21"
+    },
+    {
+      "address": "f6a341be0000-f6a341be1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 23731,
+      "pathname": "/usr/lib/libenchant-2.so.2.8.21"
+    },
+    {
+      "address": "f6a341bf0000-f6a341c1a000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 25220,
+      "pathname": "/usr/lib/libseccomp.so.2.6.0"
+    },
+    {
+      "address": "f6a341c1a000-f6a341c2f000",
+      "permissions": "---p",
+      "offset": "0002a000",
+      "device": "00:22",
+      "inode": 25220,
+      "pathname": "/usr/lib/libseccomp.so.2.6.0"
+    },
+    {
+      "address": "f6a341c2f000-f6a341c30000",
+      "permissions": "r--p",
+      "offset": "0002f000",
+      "device": "00:22",
+      "inode": 25220,
+      "pathname": "/usr/lib/libseccomp.so.2.6.0"
+    },
+    {
+      "address": "f6a341c30000-f6a341c31000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 25220,
+      "pathname": "/usr/lib/libseccomp.so.2.6.0"
+    },
+    {
+      "address": "f6a341c40000-f6a341c90000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42045,
+      "pathname": "/usr/lib/libmanette-0.2.so.0"
+    },
+    {
+      "address": "f6a341c90000-f6a341c9f000",
+      "permissions": "---p",
+      "offset": "00050000",
+      "device": "00:22",
+      "inode": 42045,
+      "pathname": "/usr/lib/libmanette-0.2.so.0"
+    },
+    {
+      "address": "f6a341c9f000-f6a341ca0000",
+      "permissions": "r--p",
+      "offset": "0005f000",
+      "device": "00:22",
+      "inode": 42045,
+      "pathname": "/usr/lib/libmanette-0.2.so.0"
+    },
+    {
+      "address": "f6a341ca0000-f6a341ca1000",
+      "permissions": "rw-p",
+      "offset": "00060000",
+      "device": "00:22",
+      "inode": 42045,
+      "pathname": "/usr/lib/libmanette-0.2.so.0"
+    },
+    {
+      "address": "f6a341cb0000-f6a341cc6000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31008,
+      "pathname": "/usr/lib/libwayland-server.so.0.26.0"
+    },
+    {
+      "address": "f6a341cc6000-f6a341cde000",
+      "permissions": "---p",
+      "offset": "00016000",
+      "device": "00:22",
+      "inode": 31008,
+      "pathname": "/usr/lib/libwayland-server.so.0.26.0"
+    },
+    {
+      "address": "f6a341cde000-f6a341ce0000",
+      "permissions": "r--p",
+      "offset": "0001e000",
+      "device": "00:22",
+      "inode": 31008,
+      "pathname": "/usr/lib/libwayland-server.so.0.26.0"
+    },
+    {
+      "address": "f6a341ce0000-f6a341ce1000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 31008,
+      "pathname": "/usr/lib/libwayland-server.so.0.26.0"
+    },
+    {
+      "address": "f6a341cf0000-f6a341e33000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 20840,
+      "pathname": "/usr/lib/libX11.so.6.4.0"
+    },
+    {
+      "address": "f6a341e33000-f6a341e4d000",
+      "permissions": "---p",
+      "offset": "00143000",
+      "device": "00:22",
+      "inode": 20840,
+      "pathname": "/usr/lib/libX11.so.6.4.0"
+    },
+    {
+      "address": "f6a341e4d000-f6a341e50000",
+      "permissions": "r--p",
+      "offset": "0014d000",
+      "device": "00:22",
+      "inode": 20840,
+      "pathname": "/usr/lib/libX11.so.6.4.0"
+    },
+    {
+      "address": "f6a341e50000-f6a341e53000",
+      "permissions": "rw-p",
+      "offset": "00150000",
+      "device": "00:22",
+      "inode": 20840,
+      "pathname": "/usr/lib/libX11.so.6.4.0"
+    },
+    {
+      "address": "f6a341e53000-f6a341e54000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a341e60000-f6a341e62000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 307168,
+      "pathname": "/usr/lib/libharfbuzz-icu.so.0.61510.0"
+    },
+    {
+      "address": "f6a341e62000-f6a341e7f000",
+      "permissions": "---p",
+      "offset": "00002000",
+      "device": "00:22",
+      "inode": 307168,
+      "pathname": "/usr/lib/libharfbuzz-icu.so.0.61510.0"
+    },
+    {
+      "address": "f6a341e7f000-f6a341e80000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 307168,
+      "pathname": "/usr/lib/libharfbuzz-icu.so.0.61510.0"
+    },
+    {
+      "address": "f6a341e80000-f6a341e81000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 307168,
+      "pathname": "/usr/lib/libharfbuzz-icu.so.0.61510.0"
+    },
+    {
+      "address": "f6a341e90000-f6a341ece000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 41980,
+      "pathname": "/usr/lib/libavif.so.16.4.2"
+    },
+    {
+      "address": "f6a341ece000-f6a341edd000",
+      "permissions": "---p",
+      "offset": "0003e000",
+      "device": "00:22",
+      "inode": 41980,
+      "pathname": "/usr/lib/libavif.so.16.4.2"
+    },
+    {
+      "address": "f6a341edd000-f6a341ee0000",
+      "permissions": "r--p",
+      "offset": "0004d000",
+      "device": "00:22",
+      "inode": 41980,
+      "pathname": "/usr/lib/libavif.so.16.4.2"
+    },
+    {
+      "address": "f6a341ee0000-f6a341ee1000",
+      "permissions": "rw-p",
+      "offset": "00050000",
+      "device": "00:22",
+      "inode": 41980,
+      "pathname": "/usr/lib/libavif.so.16.4.2"
+    },
+    {
+      "address": "f6a341ef0000-f6a3423bf000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24329,
+      "pathname": "/usr/lib/libjxl.so.0.12.0"
+    },
+    {
+      "address": "f6a3423bf000-f6a3423c7000",
+      "permissions": "---p",
+      "offset": "004cf000",
+      "device": "00:22",
+      "inode": 24329,
+      "pathname": "/usr/lib/libjxl.so.0.12.0"
+    },
+    {
+      "address": "f6a3423c7000-f6a3423d0000",
+      "permissions": "r--p",
+      "offset": "004d7000",
+      "device": "00:22",
+      "inode": 24329,
+      "pathname": "/usr/lib/libjxl.so.0.12.0"
+    },
+    {
+      "address": "f6a3423d0000-f6a3423d1000",
+      "permissions": "rw-p",
+      "offset": "004e0000",
+      "device": "00:22",
+      "inode": 24329,
+      "pathname": "/usr/lib/libjxl.so.0.12.0"
+    },
+    {
+      "address": "f6a3423d1000-f6a342451000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a342460000-f6a3424b6000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23843,
+      "pathname": "/usr/lib/libwebp.so.7.2.0"
+    },
+    {
+      "address": "f6a3424b6000-f6a3424cf000",
+      "permissions": "---p",
+      "offset": "00056000",
+      "device": "00:22",
+      "inode": 23843,
+      "pathname": "/usr/lib/libwebp.so.7.2.0"
+    },
+    {
+      "address": "f6a3424cf000-f6a3424d0000",
+      "permissions": "r--p",
+      "offset": "0005f000",
+      "device": "00:22",
+      "inode": 23843,
+      "pathname": "/usr/lib/libwebp.so.7.2.0"
+    },
+    {
+      "address": "f6a3424d0000-f6a3424d1000",
+      "permissions": "rw-p",
+      "offset": "00060000",
+      "device": "00:22",
+      "inode": 23843,
+      "pathname": "/usr/lib/libwebp.so.7.2.0"
+    },
+    {
+      "address": "f6a3424d1000-f6a3424d2000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a3424e0000-f6a3424e4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23849,
+      "pathname": "/usr/lib/libwebpdemux.so.2.0.17"
+    },
+    {
+      "address": "f6a3424e4000-f6a3424ff000",
+      "permissions": "---p",
+      "offset": "00004000",
+      "device": "00:22",
+      "inode": 23849,
+      "pathname": "/usr/lib/libwebpdemux.so.2.0.17"
+    },
+    {
+      "address": "f6a3424ff000-f6a342500000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 23849,
+      "pathname": "/usr/lib/libwebpdemux.so.2.0.17"
+    },
+    {
+      "address": "f6a342500000-f6a342501000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 23849,
+      "pathname": "/usr/lib/libwebpdemux.so.2.0.17"
+    },
+    {
+      "address": "f6a342510000-f6a342519000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31601,
+      "pathname": "/usr/lib/libgstfft-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342519000-f6a34252f000",
+      "permissions": "---p",
+      "offset": "00009000",
+      "device": "00:22",
+      "inode": 31601,
+      "pathname": "/usr/lib/libgstfft-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a34252f000-f6a342530000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 31601,
+      "pathname": "/usr/lib/libgstfft-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342530000-f6a342531000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 31601,
+      "pathname": "/usr/lib/libgstfft-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342540000-f6a3425df000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31604,
+      "pathname": "/usr/lib/libgstgl-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a3425df000-f6a3425ea000",
+      "permissions": "---p",
+      "offset": "0009f000",
+      "device": "00:22",
+      "inode": 31604,
+      "pathname": "/usr/lib/libgstgl-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a3425ea000-f6a3425f0000",
+      "permissions": "r--p",
+      "offset": "000aa000",
+      "device": "00:22",
+      "inode": 31604,
+      "pathname": "/usr/lib/libgstgl-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a3425f0000-f6a3425f1000",
+      "permissions": "rw-p",
+      "offset": "000b0000",
+      "device": "00:22",
+      "inode": 31604,
+      "pathname": "/usr/lib/libgstgl-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342600000-f6a3426d2000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31625,
+      "pathname": "/usr/lib/libgstvideo-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a3426d2000-f6a3426ec000",
+      "permissions": "---p",
+      "offset": "000d2000",
+      "device": "00:22",
+      "inode": 31625,
+      "pathname": "/usr/lib/libgstvideo-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a3426ec000-f6a342700000",
+      "permissions": "r--p",
+      "offset": "000dc000",
+      "device": "00:22",
+      "inode": 31625,
+      "pathname": "/usr/lib/libgstvideo-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342700000-f6a342701000",
+      "permissions": "rw-p",
+      "offset": "000f0000",
+      "device": "00:22",
+      "inode": 31625,
+      "pathname": "/usr/lib/libgstvideo-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342701000-f6a342702000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a342710000-f6a342750000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31622,
+      "pathname": "/usr/lib/libgsttag-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342750000-f6a34275d000",
+      "permissions": "---p",
+      "offset": "00040000",
+      "device": "00:22",
+      "inode": 31622,
+      "pathname": "/usr/lib/libgsttag-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a34275d000-f6a342760000",
+      "permissions": "r--p",
+      "offset": "0004d000",
+      "device": "00:22",
+      "inode": 31622,
+      "pathname": "/usr/lib/libgsttag-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342760000-f6a342761000",
+      "permissions": "rw-p",
+      "offset": "00050000",
+      "device": "00:22",
+      "inode": 31622,
+      "pathname": "/usr/lib/libgsttag-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342770000-f6a3427f6000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31598,
+      "pathname": "/usr/lib/libgstaudio-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a3427f6000-f6a34280c000",
+      "permissions": "---p",
+      "offset": "00086000",
+      "device": "00:22",
+      "inode": 31598,
+      "pathname": "/usr/lib/libgstaudio-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a34280c000-f6a342810000",
+      "permissions": "r--p",
+      "offset": "0008c000",
+      "device": "00:22",
+      "inode": 31598,
+      "pathname": "/usr/lib/libgstaudio-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342810000-f6a342811000",
+      "permissions": "rw-p",
+      "offset": "00090000",
+      "device": "00:22",
+      "inode": 31598,
+      "pathname": "/usr/lib/libgstaudio-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342820000-f6a342866000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31607,
+      "pathname": "/usr/lib/libgstpbutils-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342866000-f6a34287c000",
+      "permissions": "---p",
+      "offset": "00046000",
+      "device": "00:22",
+      "inode": 31607,
+      "pathname": "/usr/lib/libgstpbutils-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a34287c000-f6a342880000",
+      "permissions": "r--p",
+      "offset": "0004c000",
+      "device": "00:22",
+      "inode": 31607,
+      "pathname": "/usr/lib/libgstpbutils-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342880000-f6a342881000",
+      "permissions": "rw-p",
+      "offset": "00050000",
+      "device": "00:22",
+      "inode": 31607,
+      "pathname": "/usr/lib/libgstpbutils-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342890000-f6a342a20000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 29172,
+      "pathname": "/usr/lib/libgstreamer-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342a20000-f6a342a27000",
+      "permissions": "---p",
+      "offset": "00190000",
+      "device": "00:22",
+      "inode": 29172,
+      "pathname": "/usr/lib/libgstreamer-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342a27000-f6a342a30000",
+      "permissions": "r--p",
+      "offset": "00197000",
+      "device": "00:22",
+      "inode": 29172,
+      "pathname": "/usr/lib/libgstreamer-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342a30000-f6a342a32000",
+      "permissions": "rw-p",
+      "offset": "001a0000",
+      "device": "00:22",
+      "inode": 29172,
+      "pathname": "/usr/lib/libgstreamer-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342a32000-f6a342a33000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a342a40000-f6a342ac7000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 29160,
+      "pathname": "/usr/lib/libgstbase-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342ac7000-f6a342ade000",
+      "permissions": "---p",
+      "offset": "00087000",
+      "device": "00:22",
+      "inode": 29160,
+      "pathname": "/usr/lib/libgstbase-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342ade000-f6a342ae0000",
+      "permissions": "r--p",
+      "offset": "0008e000",
+      "device": "00:22",
+      "inode": 29160,
+      "pathname": "/usr/lib/libgstbase-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342ae0000-f6a342ae1000",
+      "permissions": "rw-p",
+      "offset": "00090000",
+      "device": "00:22",
+      "inode": 29160,
+      "pathname": "/usr/lib/libgstbase-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342af0000-f6a342b08000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31595,
+      "pathname": "/usr/lib/libgstapp-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342b08000-f6a342b1f000",
+      "permissions": "---p",
+      "offset": "00018000",
+      "device": "00:22",
+      "inode": 31595,
+      "pathname": "/usr/lib/libgstapp-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342b1f000-f6a342b20000",
+      "permissions": "r--p",
+      "offset": "0001f000",
+      "device": "00:22",
+      "inode": 31595,
+      "pathname": "/usr/lib/libgstapp-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342b20000-f6a342b21000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 31595,
+      "pathname": "/usr/lib/libgstapp-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342b30000-f6a342b38000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31592,
+      "pathname": "/usr/lib/libgstallocators-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342b38000-f6a342b4f000",
+      "permissions": "---p",
+      "offset": "00008000",
+      "device": "00:22",
+      "inode": 31592,
+      "pathname": "/usr/lib/libgstallocators-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342b4f000-f6a342b50000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 31592,
+      "pathname": "/usr/lib/libgstallocators-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342b50000-f6a342b51000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 31592,
+      "pathname": "/usr/lib/libgstallocators-1.0.so.0.2808.0"
+    },
+    {
+      "address": "f6a342b60000-f6a342c8d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 15881,
+      "pathname": "/usr/lib/libgcrypt.so.20.8.9"
+    },
+    {
+      "address": "f6a342c8d000-f6a342c9a000",
+      "permissions": "---p",
+      "offset": "0012d000",
+      "device": "00:22",
+      "inode": 15881,
+      "pathname": "/usr/lib/libgcrypt.so.20.8.9"
+    },
+    {
+      "address": "f6a342c9a000-f6a342ca0000",
+      "permissions": "r--p",
+      "offset": "0013a000",
+      "device": "00:22",
+      "inode": 15881,
+      "pathname": "/usr/lib/libgcrypt.so.20.8.9"
+    },
+    {
+      "address": "f6a342ca0000-f6a342ca5000",
+      "permissions": "rw-p",
+      "offset": "00140000",
+      "device": "00:22",
+      "inode": 15881,
+      "pathname": "/usr/lib/libgcrypt.so.20.8.9"
+    },
+    {
+      "address": "f6a342ca5000-f6a342ca6000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a342cb0000-f6a342d15000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 302622,
+      "pathname": "/usr/lib/liblcms2.so.2.0.20"
+    },
+    {
+      "address": "f6a342d15000-f6a342d2d000",
+      "permissions": "---p",
+      "offset": "00065000",
+      "device": "00:22",
+      "inode": 302622,
+      "pathname": "/usr/lib/liblcms2.so.2.0.20"
+    },
+    {
+      "address": "f6a342d2d000-f6a342d30000",
+      "permissions": "r--p",
+      "offset": "0006d000",
+      "device": "00:22",
+      "inode": 302622,
+      "pathname": "/usr/lib/liblcms2.so.2.0.20"
+    },
+    {
+      "address": "f6a342d30000-f6a342d33000",
+      "permissions": "rw-p",
+      "offset": "00070000",
+      "device": "00:22",
+      "inode": 302622,
+      "pathname": "/usr/lib/liblcms2.so.2.0.20"
+    },
+    {
+      "address": "f6a342d33000-f6a342d34000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a342d40000-f6a342d7d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 42487,
+      "pathname": "/usr/lib/libxslt.so.1.1.45"
+    },
+    {
+      "address": "f6a342d7d000-f6a342d8e000",
+      "permissions": "---p",
+      "offset": "0003d000",
+      "device": "00:22",
+      "inode": 42487,
+      "pathname": "/usr/lib/libxslt.so.1.1.45"
+    },
+    {
+      "address": "f6a342d8e000-f6a342d90000",
+      "permissions": "r--p",
+      "offset": "0003e000",
+      "device": "00:22",
+      "inode": 42487,
+      "pathname": "/usr/lib/libxslt.so.1.1.45"
+    },
+    {
+      "address": "f6a342d90000-f6a342d91000",
+      "permissions": "rw-p",
+      "offset": "00040000",
+      "device": "00:22",
+      "inode": 42487,
+      "pathname": "/usr/lib/libxslt.so.1.1.45"
+    },
+    {
+      "address": "f6a342da0000-f6a342f28000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 300991,
+      "pathname": "/usr/lib/libsqlite3.so.3.54.1"
+    },
+    {
+      "address": "f6a342f28000-f6a342f3c000",
+      "permissions": "---p",
+      "offset": "00188000",
+      "device": "00:22",
+      "inode": 300991,
+      "pathname": "/usr/lib/libsqlite3.so.3.54.1"
+    },
+    {
+      "address": "f6a342f3c000-f6a342f40000",
+      "permissions": "r--p",
+      "offset": "0018c000",
+      "device": "00:22",
+      "inode": 300991,
+      "pathname": "/usr/lib/libsqlite3.so.3.54.1"
+    },
+    {
+      "address": "f6a342f40000-f6a342f45000",
+      "permissions": "rw-p",
+      "offset": "00190000",
+      "device": "00:22",
+      "inode": 300991,
+      "pathname": "/usr/lib/libsqlite3.so.3.54.1"
+    },
+    {
+      "address": "f6a342f50000-f6a34308d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24808,
+      "pathname": "/usr/lib/libxml2.so.16.1.4"
+    },
+    {
+      "address": "f6a34308d000-f6a343097000",
+      "permissions": "---p",
+      "offset": "0013d000",
+      "device": "00:22",
+      "inode": 24808,
+      "pathname": "/usr/lib/libxml2.so.16.1.4"
+    },
+    {
+      "address": "f6a343097000-f6a3430a0000",
+      "permissions": "r--p",
+      "offset": "00147000",
+      "device": "00:22",
+      "inode": 24808,
+      "pathname": "/usr/lib/libxml2.so.16.1.4"
+    },
+    {
+      "address": "f6a3430a0000-f6a3430a1000",
+      "permissions": "rw-p",
+      "offset": "00150000",
+      "device": "00:22",
+      "inode": 24808,
+      "pathname": "/usr/lib/libxml2.so.16.1.4"
+    },
+    {
+      "address": "f6a3430a1000-f6a3430a2000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a3430b0000-f6a3432df000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24721,
+      "pathname": "/usr/lib/libicuuc.so.78.3"
+    },
+    {
+      "address": "f6a3432df000-f6a3432e9000",
+      "permissions": "---p",
+      "offset": "0022f000",
+      "device": "00:22",
+      "inode": 24721,
+      "pathname": "/usr/lib/libicuuc.so.78.3"
+    },
+    {
+      "address": "f6a3432e9000-f6a343300000",
+      "permissions": "r--p",
+      "offset": "00239000",
+      "device": "00:22",
+      "inode": 24721,
+      "pathname": "/usr/lib/libicuuc.so.78.3"
+    },
+    {
+      "address": "f6a343300000-f6a343301000",
+      "permissions": "rw-p",
+      "offset": "00250000",
+      "device": "00:22",
+      "inode": 24721,
+      "pathname": "/usr/lib/libicuuc.so.78.3"
+    },
+    {
+      "address": "f6a343301000-f6a343303000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a343310000-f6a343346000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23153,
+      "pathname": "/usr/lib/libpng16.so.16.59.0"
+    },
+    {
+      "address": "f6a343346000-f6a34335f000",
+      "permissions": "---p",
+      "offset": "00036000",
+      "device": "00:22",
+      "inode": 23153,
+      "pathname": "/usr/lib/libpng16.so.16.59.0"
+    },
+    {
+      "address": "f6a34335f000-f6a343360000",
+      "permissions": "r--p",
+      "offset": "0003f000",
+      "device": "00:22",
+      "inode": 23153,
+      "pathname": "/usr/lib/libpng16.so.16.59.0"
+    },
+    {
+      "address": "f6a343360000-f6a343361000",
+      "permissions": "rw-p",
+      "offset": "00040000",
+      "device": "00:22",
+      "inode": 23153,
+      "pathname": "/usr/lib/libpng16.so.16.59.0"
+    },
+    {
+      "address": "f6a343370000-f6a3433ed000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 302585,
+      "pathname": "/usr/lib/libjpeg.so.8.3.2"
+    },
+    {
+      "address": "f6a3433ed000-f6a3433ff000",
+      "permissions": "---p",
+      "offset": "0007d000",
+      "device": "00:22",
+      "inode": 302585,
+      "pathname": "/usr/lib/libjpeg.so.8.3.2"
+    },
+    {
+      "address": "f6a3433ff000-f6a343400000",
+      "permissions": "r--p",
+      "offset": "0007f000",
+      "device": "00:22",
+      "inode": 302585,
+      "pathname": "/usr/lib/libjpeg.so.8.3.2"
+    },
+    {
+      "address": "f6a343400000-f6a343401000",
+      "permissions": "rw-p",
+      "offset": "00080000",
+      "device": "00:22",
+      "inode": 302585,
+      "pathname": "/usr/lib/libjpeg.so.8.3.2"
+    },
+    {
+      "address": "f6a343410000-f6a34359d000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 15921,
+      "pathname": "/usr/lib/libsystemd.so.0.45.0"
+    },
+    {
+      "address": "f6a34359d000-f6a3435a4000",
+      "permissions": "---p",
+      "offset": "0018d000",
+      "device": "00:22",
+      "inode": 15921,
+      "pathname": "/usr/lib/libsystemd.so.0.45.0"
+    },
+    {
+      "address": "f6a3435a4000-f6a3435b0000",
+      "permissions": "r--p",
+      "offset": "00194000",
+      "device": "00:22",
+      "inode": 15921,
+      "pathname": "/usr/lib/libsystemd.so.0.45.0"
+    },
+    {
+      "address": "f6a3435b0000-f6a3435b2000",
+      "permissions": "rw-p",
+      "offset": "001a0000",
+      "device": "00:22",
+      "inode": 15921,
+      "pathname": "/usr/lib/libsystemd.so.0.45.0"
+    },
+    {
+      "address": "f6a3435c0000-f6a34398e000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 24709,
+      "pathname": "/usr/lib/libicui18n.so.78.3"
+    },
+    {
+      "address": "f6a34398e000-f6a343994000",
+      "permissions": "---p",
+      "offset": "003ce000",
+      "device": "00:22",
+      "inode": 24709,
+      "pathname": "/usr/lib/libicui18n.so.78.3"
+    },
+    {
+      "address": "f6a343994000-f6a3439b0000",
+      "permissions": "r--p",
+      "offset": "003d4000",
+      "device": "00:22",
+      "inode": 24709,
+      "pathname": "/usr/lib/libicui18n.so.78.3"
+    },
+    {
+      "address": "f6a3439b0000-f6a3439b1000",
+      "permissions": "rw-p",
+      "offset": "003f0000",
+      "device": "00:22",
+      "inode": 24709,
+      "pathname": "/usr/lib/libicui18n.so.78.3"
+    },
+    {
+      "address": "f6a3439b1000-f6a3439b2000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a3439c0000-f6a3439e8000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 300898,
+      "pathname": "/usr/lib/libexpat.so.1.13.1"
+    },
+    {
+      "address": "f6a3439e8000-f6a3439fe000",
+      "permissions": "---p",
+      "offset": "00028000",
+      "device": "00:22",
+      "inode": 300898,
+      "pathname": "/usr/lib/libexpat.so.1.13.1"
+    },
+    {
+      "address": "f6a3439fe000-f6a343a00000",
+      "permissions": "r--p",
+      "offset": "0002e000",
+      "device": "00:22",
+      "inode": 300898,
+      "pathname": "/usr/lib/libexpat.so.1.13.1"
+    },
+    {
+      "address": "f6a343a00000-f6a343a01000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 300898,
+      "pathname": "/usr/lib/libexpat.so.1.13.1"
+    },
+    {
+      "address": "f6a343a10000-f6a343a19000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23852,
+      "pathname": "/usr/lib/libwebpmux.so.3.1.2"
+    },
+    {
+      "address": "f6a343a19000-f6a343a2f000",
+      "permissions": "---p",
+      "offset": "00009000",
+      "device": "00:22",
+      "inode": 23852,
+      "pathname": "/usr/lib/libwebpmux.so.3.1.2"
+    },
+    {
+      "address": "f6a343a2f000-f6a343a30000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 23852,
+      "pathname": "/usr/lib/libwebpmux.so.3.1.2"
+    },
+    {
+      "address": "f6a343a30000-f6a343a31000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 23852,
+      "pathname": "/usr/lib/libwebpmux.so.3.1.2"
+    },
+    {
+      "address": "f6a343a40000-f6a343aaf000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23256,
+      "pathname": "/usr/lib/libfontconfig.so.1.17.0"
+    },
+    {
+      "address": "f6a343aaf000-f6a343ab7000",
+      "permissions": "---p",
+      "offset": "0006f000",
+      "device": "00:22",
+      "inode": 23256,
+      "pathname": "/usr/lib/libfontconfig.so.1.17.0"
+    },
+    {
+      "address": "f6a343ab7000-f6a343ac0000",
+      "permissions": "r--p",
+      "offset": "00077000",
+      "device": "00:22",
+      "inode": 23256,
+      "pathname": "/usr/lib/libfontconfig.so.1.17.0"
+    },
+    {
+      "address": "f6a343ac0000-f6a343ac1000",
+      "permissions": "rw-p",
+      "offset": "00080000",
+      "device": "00:22",
+      "inode": 23256,
+      "pathname": "/usr/lib/libfontconfig.so.1.17.0"
+    },
+    {
+      "address": "f6a343ad0000-f6a343b94000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23226,
+      "pathname": "/usr/lib/libfreetype.so.6.20.7"
+    },
+    {
+      "address": "f6a343b94000-f6a343ba9000",
+      "permissions": "---p",
+      "offset": "000c4000",
+      "device": "00:22",
+      "inode": 23226,
+      "pathname": "/usr/lib/libfreetype.so.6.20.7"
+    },
+    {
+      "address": "f6a343ba9000-f6a343bb0000",
+      "permissions": "r--p",
+      "offset": "000c9000",
+      "device": "00:22",
+      "inode": 23226,
+      "pathname": "/usr/lib/libfreetype.so.6.20.7"
+    },
+    {
+      "address": "f6a343bb0000-f6a343bb1000",
+      "permissions": "rw-p",
+      "offset": "000d0000",
+      "device": "00:22",
+      "inode": 23226,
+      "pathname": "/usr/lib/libfreetype.so.6.20.7"
+    },
+    {
+      "address": "f6a343bc0000-f6a343cf4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 23698,
+      "pathname": "/usr/lib/libcairo.so.2.11806.6"
+    },
+    {
+      "address": "f6a343cf4000-f6a343d0c000",
+      "permissions": "---p",
+      "offset": "00134000",
+      "device": "00:22",
+      "inode": 23698,
+      "pathname": "/usr/lib/libcairo.so.2.11806.6"
+    },
+    {
+      "address": "f6a343d0c000-f6a343d10000",
+      "permissions": "r--p",
+      "offset": "0013c000",
+      "device": "00:22",
+      "inode": 23698,
+      "pathname": "/usr/lib/libcairo.so.2.11806.6"
+    },
+    {
+      "address": "f6a343d10000-f6a343d12000",
+      "permissions": "rw-p",
+      "offset": "00140000",
+      "device": "00:22",
+      "inode": 23698,
+      "pathname": "/usr/lib/libcairo.so.2.11806.6"
+    },
+    {
+      "address": "f6a343d12000-f6a343d13000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a343d20000-f6a343d56000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 25412,
+      "pathname": "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8"
+    },
+    {
+      "address": "f6a343d56000-f6a343d6e000",
+      "permissions": "---p",
+      "offset": "00036000",
+      "device": "00:22",
+      "inode": 25412,
+      "pathname": "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8"
+    },
+    {
+      "address": "f6a343d6e000-f6a343d70000",
+      "permissions": "r--p",
+      "offset": "0003e000",
+      "device": "00:22",
+      "inode": 25412,
+      "pathname": "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8"
+    },
+    {
+      "address": "f6a343d70000-f6a343d71000",
+      "permissions": "rw-p",
+      "offset": "00040000",
+      "device": "00:22",
+      "inode": 25412,
+      "pathname": "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.8"
+    },
+    {
+      "address": "f6a343d80000-f6a343f17000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 302070,
+      "pathname": "/usr/lib/libharfbuzz.so.0.61510.0"
+    },
+    {
+      "address": "f6a343f17000-f6a343f2e000",
+      "permissions": "---p",
+      "offset": "00197000",
+      "device": "00:22",
+      "inode": 302070,
+      "pathname": "/usr/lib/libharfbuzz.so.0.61510.0"
+    },
+    {
+      "address": "f6a343f2e000-f6a343f30000",
+      "permissions": "r--p",
+      "offset": "0019e000",
+      "device": "00:22",
+      "inode": 302070,
+      "pathname": "/usr/lib/libharfbuzz.so.0.61510.0"
+    },
+    {
+      "address": "f6a343f30000-f6a343f31000",
+      "permissions": "rw-p",
+      "offset": "001a0000",
+      "device": "00:22",
+      "inode": 302070,
+      "pathname": "/usr/lib/libharfbuzz.so.0.61510.0"
+    },
+    {
+      "address": "f6a343f40000-f6a343fb4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 25165,
+      "pathname": "/usr/lib/libpango-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a343fb4000-f6a343fcc000",
+      "permissions": "---p",
+      "offset": "00074000",
+      "device": "00:22",
+      "inode": 25165,
+      "pathname": "/usr/lib/libpango-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a343fcc000-f6a343fd0000",
+      "permissions": "r--p",
+      "offset": "0007c000",
+      "device": "00:22",
+      "inode": 25165,
+      "pathname": "/usr/lib/libpango-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a343fd0000-f6a343fd1000",
+      "permissions": "rw-p",
+      "offset": "00080000",
+      "device": "00:22",
+      "inode": 25165,
+      "pathname": "/usr/lib/libpango-1.0.so.0.5800.2"
+    },
+    {
+      "address": "f6a343fe0000-f6a34411c000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 37409,
+      "pathname": "/usr/lib/libepoxy.so.0.0.0"
+    },
+    {
+      "address": "f6a34411c000-f6a344128000",
+      "permissions": "---p",
+      "offset": "0013c000",
+      "device": "00:22",
+      "inode": 37409,
+      "pathname": "/usr/lib/libepoxy.so.0.0.0"
+    },
+    {
+      "address": "f6a344128000-f6a344130000",
+      "permissions": "r--p",
+      "offset": "00148000",
+      "device": "00:22",
+      "inode": 37409,
+      "pathname": "/usr/lib/libepoxy.so.0.0.0"
+    },
+    {
+      "address": "f6a344130000-f6a344137000",
+      "permissions": "rw-p",
+      "offset": "00150000",
+      "device": "00:22",
+      "inode": 37409,
+      "pathname": "/usr/lib/libepoxy.so.0.0.0"
+    },
+    {
+      "address": "f6a344140000-f6a344143000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 17581,
+      "pathname": "/usr/lib/libgmodule-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344143000-f6a34415f000",
+      "permissions": "---p",
+      "offset": "00003000",
+      "device": "00:22",
+      "inode": 17581,
+      "pathname": "/usr/lib/libgmodule-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a34415f000-f6a344160000",
+      "permissions": "r--p",
+      "offset": "0000f000",
+      "device": "00:22",
+      "inode": 17581,
+      "pathname": "/usr/lib/libgmodule-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344160000-f6a344161000",
+      "permissions": "rw-p",
+      "offset": "00010000",
+      "device": "00:22",
+      "inode": 17581,
+      "pathname": "/usr/lib/libgmodule-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344170000-f6a34431f000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 3385,
+      "pathname": "/usr/lib/libc.so.6"
+    },
+    {
+      "address": "f6a34431f000-f6a34432d000",
+      "permissions": "---p",
+      "offset": "001af000",
+      "device": "00:22",
+      "inode": 3385,
+      "pathname": "/usr/lib/libc.so.6"
+    },
+    {
+      "address": "f6a34432d000-f6a344330000",
+      "permissions": "r--p",
+      "offset": "001bd000",
+      "device": "00:22",
+      "inode": 3385,
+      "pathname": "/usr/lib/libc.so.6"
+    },
+    {
+      "address": "f6a344330000-f6a344332000",
+      "permissions": "rw-p",
+      "offset": "001c0000",
+      "device": "00:22",
+      "inode": 3385,
+      "pathname": "/usr/lib/libc.so.6"
+    },
+    {
+      "address": "f6a344332000-f6a344339000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a344340000-f6a3443ba000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 25671,
+      "pathname": "/usr/lib/libgmp.so.10.5.0"
+    },
+    {
+      "address": "f6a3443ba000-f6a3443ce000",
+      "permissions": "---p",
+      "offset": "0007a000",
+      "device": "00:22",
+      "inode": 25671,
+      "pathname": "/usr/lib/libgmp.so.10.5.0"
+    },
+    {
+      "address": "f6a3443ce000-f6a3443d0000",
+      "permissions": "r--p",
+      "offset": "0007e000",
+      "device": "00:22",
+      "inode": 25671,
+      "pathname": "/usr/lib/libgmp.so.10.5.0"
+    },
+    {
+      "address": "f6a3443d0000-f6a3443d1000",
+      "permissions": "rw-p",
+      "offset": "00080000",
+      "device": "00:22",
+      "inode": 25671,
+      "pathname": "/usr/lib/libgmp.so.10.5.0"
+    },
+    {
+      "address": "f6a3443e0000-f6a3443f1000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 30999,
+      "pathname": "/usr/lib/libwayland-client.so.0.26.0"
+    },
+    {
+      "address": "f6a3443f1000-f6a34440e000",
+      "permissions": "---p",
+      "offset": "00011000",
+      "device": "00:22",
+      "inode": 30999,
+      "pathname": "/usr/lib/libwayland-client.so.0.26.0"
+    },
+    {
+      "address": "f6a34440e000-f6a344410000",
+      "permissions": "r--p",
+      "offset": "0001e000",
+      "device": "00:22",
+      "inode": 30999,
+      "pathname": "/usr/lib/libwayland-client.so.0.26.0"
+    },
+    {
+      "address": "f6a344410000-f6a344411000",
+      "permissions": "rw-p",
+      "offset": "00020000",
+      "device": "00:22",
+      "inode": 30999,
+      "pathname": "/usr/lib/libwayland-client.so.0.26.0"
+    },
+    {
+      "address": "f6a344420000-f6a3444d4000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 31958,
+      "pathname": "/usr/lib/libsoup-3.0.so.0.8.1"
+    },
+    {
+      "address": "f6a3444d4000-f6a3444eb000",
+      "permissions": "---p",
+      "offset": "000b4000",
+      "device": "00:22",
+      "inode": 31958,
+      "pathname": "/usr/lib/libsoup-3.0.so.0.8.1"
+    },
+    {
+      "address": "f6a3444eb000-f6a3444f0000",
+      "permissions": "r--p",
+      "offset": "000bb000",
+      "device": "00:22",
+      "inode": 31958,
+      "pathname": "/usr/lib/libsoup-3.0.so.0.8.1"
+    },
+    {
+      "address": "f6a3444f0000-f6a3444f1000",
+      "permissions": "rw-p",
+      "offset": "000c0000",
+      "device": "00:22",
+      "inode": 31958,
+      "pathname": "/usr/lib/libsoup-3.0.so.0.8.1"
+    },
+    {
+      "address": "f6a3444fd000-f6a344500000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a344500000-f6a344673000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 17577,
+      "pathname": "/usr/lib/libglib-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344673000-f6a34468d000",
+      "permissions": "---p",
+      "offset": "00173000",
+      "device": "00:22",
+      "inode": 17577,
+      "pathname": "/usr/lib/libglib-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a34468d000-f6a344690000",
+      "permissions": "r--p",
+      "offset": "0017d000",
+      "device": "00:22",
+      "inode": 17577,
+      "pathname": "/usr/lib/libglib-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344690000-f6a344691000",
+      "permissions": "rw-p",
+      "offset": "00180000",
+      "device": "00:22",
+      "inode": 17577,
+      "pathname": "/usr/lib/libglib-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344691000-f6a344692000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a344693000-f6a3446a0000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a3446a0000-f6a3448df000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 17569,
+      "pathname": "/usr/lib/libgio-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a3448df000-f6a3448e5000",
+      "permissions": "---p",
+      "offset": "0023f000",
+      "device": "00:22",
+      "inode": 17569,
+      "pathname": "/usr/lib/libgio-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a3448e5000-f6a3448f0000",
+      "permissions": "r--p",
+      "offset": "00245000",
+      "device": "00:22",
+      "inode": 17569,
+      "pathname": "/usr/lib/libgio-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a3448f0000-f6a3448f1000",
+      "permissions": "rw-p",
+      "offset": "00250000",
+      "device": "00:22",
+      "inode": 17569,
+      "pathname": "/usr/lib/libgio-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a3448f1000-f6a3448f3000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a3448f4000-f6a344900000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a344900000-f6a344968000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 17585,
+      "pathname": "/usr/lib/libgobject-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344968000-f6a34497c000",
+      "permissions": "---p",
+      "offset": "00068000",
+      "device": "00:22",
+      "inode": 17585,
+      "pathname": "/usr/lib/libgobject-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a34497c000-f6a344980000",
+      "permissions": "r--p",
+      "offset": "0006c000",
+      "device": "00:22",
+      "inode": 17585,
+      "pathname": "/usr/lib/libgobject-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344980000-f6a344981000",
+      "permissions": "rw-p",
+      "offset": "00070000",
+      "device": "00:22",
+      "inode": 17585,
+      "pathname": "/usr/lib/libgobject-2.0.so.0.9000.1"
+    },
+    {
+      "address": "f6a344981000-f6a344990000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a344990000-f6a345755000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 104198,
+      "pathname": "/usr/lib/libgtk-4.so.1.2400.1"
+    },
+    {
+      "address": "f6a345755000-f6a345761000",
+      "permissions": "---p",
+      "offset": "00dc5000",
+      "device": "00:22",
+      "inode": 104198,
+      "pathname": "/usr/lib/libgtk-4.so.1.2400.1"
+    },
+    {
+      "address": "f6a345761000-f6a3457a0000",
+      "permissions": "r--p",
+      "offset": "00dd1000",
+      "device": "00:22",
+      "inode": 104198,
+      "pathname": "/usr/lib/libgtk-4.so.1.2400.1"
+    },
+    {
+      "address": "f6a3457a0000-f6a3457ad000",
+      "permissions": "rw-p",
+      "offset": "00e10000",
+      "device": "00:22",
+      "inode": 104198,
+      "pathname": "/usr/lib/libgtk-4.so.1.2400.1"
+    },
+    {
+      "address": "f6a3457ad000-f6a3457c0000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a3457c0000-f6a347f02000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 469463,
+      "pathname": "/usr/lib/libjavascriptcoregtk-6.0.so.1.8.9"
+    },
+    {
+      "address": "f6a347f02000-f6a347f1d000",
+      "permissions": "---p",
+      "offset": "02742000",
+      "device": "00:22",
+      "inode": 469463,
+      "pathname": "/usr/lib/libjavascriptcoregtk-6.0.so.1.8.9"
+    },
+    {
+      "address": "f6a347f1d000-f6a347f80000",
+      "permissions": "r--p",
+      "offset": "0274d000",
+      "device": "00:22",
+      "inode": 469463,
+      "pathname": "/usr/lib/libjavascriptcoregtk-6.0.so.1.8.9"
+    },
+    {
+      "address": "f6a347f80000-f6a347fa8000",
+      "permissions": "rw-p",
+      "offset": "027b0000",
+      "device": "00:22",
+      "inode": 469463,
+      "pathname": "/usr/lib/libjavascriptcoregtk-6.0.so.1.8.9"
+    },
+    {
+      "address": "f6a347fa8000-f6a347fc9000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a347fca000-f6a347fd0000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a347fd0000-f6a34e937000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 469466,
+      "pathname": "/usr/lib/libwebkitgtk-6.0.so.4.19.5"
+    },
+    {
+      "address": "f6a34e937000-f6a34e94d000",
+      "permissions": "---p",
+      "offset": "06967000",
+      "device": "00:22",
+      "inode": 469466,
+      "pathname": "/usr/lib/libwebkitgtk-6.0.so.4.19.5"
+    },
+    {
+      "address": "f6a34e94d000-f6a34ec80000",
+      "permissions": "r--p",
+      "offset": "0696d000",
+      "device": "00:22",
+      "inode": 469466,
+      "pathname": "/usr/lib/libwebkitgtk-6.0.so.4.19.5"
+    },
+    {
+      "address": "f6a34ec80000-f6a34ecd2000",
+      "permissions": "rw-p",
+      "offset": "06ca0000",
+      "device": "00:22",
+      "inode": 469466,
+      "pathname": "/usr/lib/libwebkitgtk-6.0.so.4.19.5"
+    },
+    {
+      "address": "f6a34ecd2000-f6a34ed10000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a34ed10000-f6a34edcc000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 3395,
+      "pathname": "/usr/lib/libm.so.6"
+    },
+    {
+      "address": "f6a34edcc000-f6a34eddf000",
+      "permissions": "---p",
+      "offset": "000bc000",
+      "device": "00:22",
+      "inode": 3395,
+      "pathname": "/usr/lib/libm.so.6"
+    },
+    {
+      "address": "f6a34eddf000-f6a34ede0000",
+      "permissions": "r--p",
+      "offset": "000bf000",
+      "device": "00:22",
+      "inode": 3395,
+      "pathname": "/usr/lib/libm.so.6"
+    },
+    {
+      "address": "f6a34ede0000-f6a34ede1000",
+      "permissions": "rw-p",
+      "offset": "000c0000",
+      "device": "00:22",
+      "inode": 3395,
+      "pathname": "/usr/lib/libm.so.6"
+    },
+    {
+      "address": "f6a34ede2000-f6a34ede4000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a34edfc000-f6a34edfd000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a34edfd000-f6a34ee01000",
+      "permissions": "r-xp",
+      "offset": "0124c000",
+      "device": "00:22",
+      "inode": 9213316,
+      "pathname": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794376792748722909/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls"
+    },
+    {
+      "address": "f6a34ee01000-f6a34ee06000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a34ee06000-f6a34ee31000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:22",
+      "inode": 3376,
+      "pathname": "/usr/lib/ld-linux-aarch64.so.1"
+    },
+    {
+      "address": "f6a34ee31000-f6a34ee32000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a34ee32000-f6a34ee3e000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "f6a34ee3e000-f6a34ee42000",
+      "permissions": "r--p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": "[vvar]"
+    },
+    {
+      "address": "f6a34ee42000-f6a34ee44000",
+      "permissions": "r-xp",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": "[vdso]"
+    },
+    {
+      "address": "f6a34ee44000-f6a34ee46000",
+      "permissions": "r--p",
+      "offset": "0002e000",
+      "device": "00:22",
+      "inode": 3376,
+      "pathname": "/usr/lib/ld-linux-aarch64.so.1"
+    },
+    {
+      "address": "f6a34ee46000-f6a34ee47000",
+      "permissions": "rw-p",
+      "offset": "00030000",
+      "device": "00:22",
+      "inode": 3376,
+      "pathname": "/usr/lib/ld-linux-aarch64.so.1"
+    },
+    {
+      "address": "f6a34ee47000-f6a34ee48000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": null
+    },
+    {
+      "address": "ffffc5990000-ffffc59b1000",
+      "permissions": "rw-p",
+      "offset": "00000000",
+      "device": "00:00",
+      "inode": 0,
+      "pathname": "[stack]"
+    }
+  ]
+}

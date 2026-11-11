@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-current-schema-reproducibility",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root/report.json",
+    "sha256": "8d851fe15a5d852be9e3394d2a91ee376daefc4881a98bf264e0c30874e1ad32"
+  },
+  "outerTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root-execution/terminal.json",
+    "sha256": "073f0422db0fb0f5613e258a1ccfed8ca65acd3af2f78df4f1094bf690275b68"
+  },
+  "inputManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/inputs.json",
+    "sha256": "8bd0109564d850826246cf9a62369f70e6fe880f474c965717c3269229f5cb6f"
+  },
+  "verified": [
+    "Actualprotectedouterexit0/streams andstrictcompilerexit0;48currentinputs/compilerf211 matchfrozenhashes.",
+    "Private--stricttargetdir outputexactlyreproducescurrent5c04installedbytes;inputsUnchangedtrue/source/compiler/cachebeforeafterguardspassed.",
+    "Actualcompileelapsed5.611552ms,within20scommand;nohostwrites/nativeexecution.",
+    "Current48membershipqualificationisnew,notold54semantic-equivalence. ReporthistoricalCompiled21b remainshistorical; packetpreviousd4bfbody isaseparateexistingderivedbasis,notrewritten."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "Approveactualreproducibilitydataonly;separatetypedqualification/provider/schema-correspondence compositionthroughunchangedderive_schema stillrequired.",
+    "No historicalsemanticequivalence,SDK/sourcechange,native/AT/originalacceptance orreviewerexecution/primarymutation."
+  ]
+}

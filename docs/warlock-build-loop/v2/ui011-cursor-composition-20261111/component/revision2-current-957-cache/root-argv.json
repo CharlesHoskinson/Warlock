@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "rootOnly": true,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/test_cursor_composition.py",
+    "--module",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/helper-preimage.py",
+    "--inputs",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/inputs.json",
+    "--inputs-sha256",
+    "a32a3820f24d25cc022d69962909da09d12f7d5cad067ea2b25f06b3cb53b89e",
+    "--loader-proof",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/loader-correspondence.ACCEPTED.json",
+    "--loader-proof-sha256",
+    "954d1af29de89071628004417a74bbaa5f50ae0fb6eeb03c4f057798926bd42d"
+  ],
+  "requiredRuntimeInputs": [],
+  "redExpected": "After actual setup succeeds, exact current composition positive is rejected by old schema1-only helper; compiler/setup failure is not semantic RED.",
+  "green": "Same fixture bytes and actual input refs; replace only --module with independently reviewed postimage after observed RED.",
+  "caseCount": 23,
+  "seedSampleCount": 32,
+  "executionPerformed": false,
+  "actualLoaderCorrespondence": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/loader-correspondence.ACCEPTED.json",
+    "sha256": "954d1af29de89071628004417a74bbaa5f50ae0fb6eeb03c4f057798926bd42d"
+  }
+}

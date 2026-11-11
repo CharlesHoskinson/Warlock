@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "scope": "single qualified cursor13-to14 nested dependency correspondence; QA only",
+  "posts": [
+    {
+      "path": "tools/run_current_arm_ui011_opener_closure.py",
+      "beforeSha256": "90db38f96a4283165f9981a65f7171c6785976ff475a0e7e83ecdd95a70a418d",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/postimages/tools/run_current_arm_ui011_opener_closure.py",
+      "sha256": "37946fb589baf9c99e89f6909b5b3836c637623f8101bc587fcd53fd0272417a"
+    },
+    {
+      "path": "tools/ux023_current_boot_correspondence.py",
+      "beforeSha256": "1a7d3793537bad8b6e3adfb7d2bea55354d751f17e9c9f323cba798570ec7ccd",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/postimages/tools/ux023_current_boot_correspondence.py",
+      "sha256": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050"
+    }
+  ],
+  "files": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/contract.json",
+      "sha256": "a4364a0654bca2e5b4c43303c170904f8ed7ac9d5fc8d2c005f73b311819e730"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/test_cursor_correspondence.py",
+      "sha256": "1eb1651e6c22e25f7c1e83bb7fc3f27db861a606d63fe72d892d6bec4f83032d"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/source.patch",
+      "sha256": "cad6b1f41bb8e7f7bcae48a68afb3d7c42d9a2b6387c52283cb5df57cf7284c7"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/root-argv-pending-proof.json",
+      "sha256": "5dcebeba75dcef7f70c0d6a50655220fde130b4d5019af12935e9a74dfdb5a59"
+    }
+  ],
+  "decision": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/decision.json",
+    "sha256": "11e927215807b5f4ff05d40b791b1f4305f756bc08df75653bd5203ec5bb5684"
+  },
+  "actualQualification": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/actual-root-qualification-v2-configured-keyring/report.json",
+    "sha256": "b74e52615b2c9b9a9c805f3071f9e6f4053cd6940e33bc868677fbf07f274526"
+  },
+  "rootCopyPlan": [
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/postimages/tools/run_current_arm_ui011_opener_closure.py",
+      "destination": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py",
+      "expectedPreimage": "90db38f96a4283165f9981a65f7171c6785976ff475a0e7e83ecdd95a70a418d",
+      "sha256": "37946fb589baf9c99e89f6909b5b3836c637623f8101bc587fcd53fd0272417a"
+    },
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/postimages/tools/ux023_current_boot_correspondence.py",
+      "destination": "/home/hoskinson/Projects/Warlock/tools/ux023_current_boot_correspondence.py",
+      "expectedPreimage": "1a7d3793537bad8b6e3adfb7d2bea55354d751f17e9c9f323cba798570ec7ccd",
+      "sha256": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050"
+    }
+  ],
+  "requiredClaims": [
+    "tools/run_current_arm_ui011_opener_closure.py",
+    "tools/ux023_current_boot_correspondence.py"
+  ],
+  "caseCount": 16,
+  "seedSampleCount": 32,
+  "unchangedSources": {
+    "tools/qa_cpu.py": "b78fb2323d32f8cdcc76041f2cb486782f8c1feb30545583a3b6d5a7bbd5d60a",
+    "tools/run_ui011_native_images_cpu.py": "5ba37887dd6697af85e34c9eeb52f19574f581ac580668b641f239d9ca949307"
+  },
+  "preserved": [
+    "historical foundation nested.inputs and provider-readiness equality",
+    "currentBoot and all4255/32 provider/source guards",
+    "full post-font/schema205 basis except separate live single replacement",
+    "actual required new cursor mapping in both nested snapshots",
+    "legacy absent-proof behavior",
+    "28+2 seconds/four fixed input transactions/16 frames",
+    "all original native/AT acceptance oracles"
+  ],
+  "runtimeEffects": false,
+  "primaryWrites": false,
+  "executionPerformed": false,
+  "nativeAcceptance": false,
+  "freshCoherentImageBuildRequired": true
+}

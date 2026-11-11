@@ -1,0 +1,14 @@
+Running as unit: qa-harness-ef67d8b624f5452bbe0b10eecb3bc27b.scope; invocation ID: 09cf2f969da94188b5ef34d279f615a3
+Traceback (most recent call last):
+  File "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py", line 1553, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py", line 1546, in main
+    context=preflight(args.sha256)
+  File "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py", line 972, in preflight
+    require(digest(regular(path,256*1024*1024))==pin,'mapping inventory drift')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py", line 781, in require
+    if not value:raise ValueError(message)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: mapping inventory drift
