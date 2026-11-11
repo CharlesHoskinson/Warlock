@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "kind": "ui011-opener-diagnostic-priority-tests-first",
+  "status": "private-tests-first-not-executed",
+  "testsFirst": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/tests-first.json",
+    "sha256": "9a733f078cbb5359d61d6931e39fe05e439686ede8abccf880a292b2dacec747"
+  },
+  "files": {
+    "test_classifier_refusal.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_classifier_refusal.py",
+      "sha256": "563cc28477cbceb929cce153451198f65142f995553eba9afbdc2aab3523ce63"
+    },
+    "test_diagnostic_priority.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/test_diagnostic_priority.py",
+      "sha256": "bd86abb3425c64074992ed59ff616a9c21215b3036816fcb25ba0d7c131c3367"
+    },
+    "tests-first.json": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/tests-first.json",
+      "sha256": "9a733f078cbb5359d61d6931e39fe05e439686ede8abccf880a292b2dacec747"
+    },
+    "root-red-argv.json": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/root-red-argv.json",
+      "sha256": "d8916485a2ce990405afc9c9f79a7097fba3a1f03cb484c746d7543f7e84a81e"
+    },
+    "qa_profile.json": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/qa_profile.json",
+      "sha256": "bf1993c3cc887aa048d9fb9f02544539891db6654cf698566129bb295e281496"
+    },
+    "preimages/run_current_arm_ui011_opener_closure.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/preimages/run_current_arm_ui011_opener_closure.py",
+      "sha256": "5ca58d9bcfa8a9281456f6c79dc1f7158cebd35bfa2cff35611de3dab13f0ed6"
+    },
+    "preimages/run_labwc_gl_foundation_window_rule_20261108.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/preimages/run_labwc_gl_foundation_window_rule_20261108.py",
+      "sha256": "1c6da945d4bee49b11ee32f9df02129c8715b17d066e2a01cfb093bef02c82bf"
+    },
+    "legacy-preimages/run_labwc_gl_foundation_window_rule_20261108.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/legacy-preimages/run_labwc_gl_foundation_window_rule_20261108.py",
+      "sha256": "1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad"
+    },
+    "legacy-preimages/run_current_arm_ui011_opener_closure.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/legacy-preimages/run_current_arm_ui011_opener_closure.py",
+      "sha256": "740882b0f2126638b575a7cbb7a292d62019e0717b4f4e62624def7f14b5e049"
+    }
+  },
+  "caseCount": 21,
+  "originalCases": 16,
+  "newCases": 5,
+  "sourceBaseline": {
+    "launcher": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/preimages/run_current_arm_ui011_opener_closure.py",
+      "sha256": "5ca58d9bcfa8a9281456f6c79dc1f7158cebd35bfa2cff35611de3dab13f0ed6"
+    },
+    "sharedCollector": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-refusal-diagnostic-priority-repair/preimages/run_labwc_gl_foundation_window_rule_20261108.py",
+      "sha256": "1c6da945d4bee49b11ee32f9df02129c8715b17d066e2a01cfb093bef02c82bf"
+    }
+  },
+  "legacyPreimages": "legacy-preimages retains original7408/1930 for provenance; controls use current5ca/1c6 preimages and unchanged classifier AST. Original16fixture body byte-identical.",
+  "productionPosts": [],
+  "authorExecution": false,
+  "primaryWrites": false
+}

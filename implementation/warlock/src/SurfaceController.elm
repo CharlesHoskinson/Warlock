@@ -45,6 +45,7 @@ applyOrdinary message ((Model model) as current) =
     if not changed && List.isEmpty effects then (current,[]) else
         let stableSurface = model.publication/=UInt64.zero && not newLease && List.all (\effect -> case effect of
                     Desktop.ArmWindowWatch _ -> True
+                    Desktop.WindowWatchBookkeeping _ -> True
                     Desktop.WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-watch"
                     _ -> False) effects
                     && E.encode 0 (Surface.packet model.publication model.lease next)==E.encode 0 (frame current)

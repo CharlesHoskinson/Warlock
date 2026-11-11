@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-component-green",
+  "manifestSha256": "b436ac5be92e1bb76e702e759a9462570aa2e25971200d694ab33f045141ba7c",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/report.json",
+    "sha256": "cae0c28ddbf13c0e4e7a57d1c013ab251a3a09c176cf64b2a78d747860a81b87"
+  },
+  "outerTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-execution/terminal.json",
+    "sha256": "204b5e3e7a6a4f3f94e0c971d405988fd27486b8847fc00a7d8dfa95926ff11e"
+  },
+  "sourcePosts": [
+    {
+      "path": "implementation/warlock/src/Shell.elm",
+      "beforeSha256": "89e00985854126b005cbb9be12d1d6afe97d402f3753f6f86544540017895baf",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/postimages/implementation/warlock/src/Shell.elm",
+      "sha256": "503fcf5bbcfead01eaddcea2fd024e071bedfdde3d9260336455632838144a63"
+    },
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "beforeSha256": "6bb4324cf993765fb1bc0c811d825c48d82ee89346badc7af511092942f7473a",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/postimages/implementation/warlock/src/Desktop.elm",
+      "sha256": "84dbc4a4db37c79777213547366cf1ca17e74e780e17c29cae4b604d4e6694c3"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceController.elm",
+      "beforeSha256": "e0a7a0861e9266e41ef3b5705f4bb42e3ec11536f69ca6a25928bf0f5ec5b6a9",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/postimages/implementation/warlock/src/SurfaceController.elm",
+      "sha256": "d577b4fa232a568f80351e26a69c7b8a8c9d40f4521d4b64577d5bb4b900296c"
+    },
+    {
+      "path": "implementation/warlock/src/OutputController.elm",
+      "beforeSha256": "1ccce8b97a4f770a4f1f7f2446b9eafdc07062fc099e51506bcd35268bafb614",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/postimages/implementation/warlock/src/OutputController.elm",
+      "sha256": "59de16446debfe82eb71eece55e24aab6807467c29916a694ca0926a8242283d"
+    }
+  ],
+  "redReport": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-probe-1794368045623296261/report.json",
+    "sha256": "b50c89ebabf37bb61375aff1b91a56380a5648a55eb5f59ce214427e58f79c13"
+  },
+  "observed": {
+    "caseCount": 44,
+    "setupCount": 6,
+    "seedSampleCount": 64,
+    "boundaryCaseCount": 18,
+    "boundarySetupCount": 2,
+    "witness": {
+      "issued": 40,
+      "completed": 40,
+      "maximumPending": 2,
+      "remaining": 1,
+      "unrelatedBaseline": 1,
+      "frame": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "6",
+          "lease": "1",
+          "mode": "menu",
+          "status": "Window actions",
+          "bar": [
+            {
+              "id": "bar:group:observed:application:org.example.Editor",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:observed:application:org.example.Editor",
+              "label": "Document \u03b1\ud83d\ude00",
+              "ariaLabel": "Inspect Document \u03b1\ud83d\ude00; Active",
+              "detail": "Active",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:group:observed:application:org.example.Other",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:observed:application:org.example.Other",
+              "label": "Before",
+              "ariaLabel": "Inspect Before; Open",
+              "detail": "Open",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:menu-close",
+              "domId": "menu:1:close",
+              "label": "Close",
+              "ariaLabel": "Close window actions",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "menu:1:fact:0",
+              "domId": "menu:1:fact:0",
+              "label": "Document \u03b1\ud83d\ude00 \u00b7 org.example.Editor",
+              "ariaLabel": "Document \u03b1\ud83d\ude00 \u00b7 org.example.Editor",
+              "detail": "activated",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "control:observation-refresh",
+              "domId": "menu:1:refresh",
+              "label": "Refresh",
+              "ariaLabel": "Refresh observed windows",
+              "detail": "Read only; native actions unavailable",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "announcer": {
+          "scope": {
+            "id": "1",
+            "generation": "1"
+          },
+          "surface": "popup"
+        },
+        "announcement": null
+      },
+      "refusals": [
+        {
+          "variant": 0,
+          "prepared": true,
+          "preserved": true,
+          "currentSettles": true,
+          "before": 2,
+          "afterInvalid": 2,
+          "afterValid": 1
+        },
+        {
+          "variant": 1,
+          "prepared": true,
+          "preserved": true,
+          "currentSettles": true,
+          "before": 2,
+          "afterInvalid": 2,
+          "afterValid": 1
+        },
+        {
+          "variant": 2,
+          "prepared": true,
+          "preserved": true,
+          "currentSettles": true,
+          "before": 2,
+          "afterInvalid": 2,
+          "afterValid": 1
+        },
+        {
+          "variant": 3,
+          "prepared": true,
+          "preserved": true,
+          "currentSettles": true,
+          "before": 2,
+          "afterInvalid": 2,
+          "afterValid": 1
+        },
+        {
+          "variant": 4,
+          "prepared": true,
+          "preserved": true,
+          "currentSettles": true,
+          "before": 2,
+          "afterInvalid": 2,
+          "afterValid": 1
+        },
+        {
+          "variant": 5,
+          "prepared": true,
+          "preserved": true,
+          "currentSettles": true,
+          "before": 2,
+          "afterInvalid": 2,
+          "afterValid": 1
+        },
+        {
+          "variant": 6,
+          "prepared": true,
+          "preserved": true,
+          "currentSettles": true,
+          "before": 2,
+          "afterInvalid": 2,
+          "afterValid": 1
+        }
+      ]
+    }
+  },
+  "verified": [
+    "All4commands0/overallpassedtrue/component-pass;117currentinputs andall4installedproductionposts match exact frozenhashes,sourceInputsUnchanged/cleanupQualifiedtrue.",
+    "Original44/6/64 fixturebytes identical toactualb50RED;allchecks/seedsnowPASS. Witness40correlatedrequests/replies,maximum2pending,remaining1unchangedbaseline vsRED15/16/16. Menu remainscurrent andpost40closure/replacementfallbackoncepass.",
+    "Supplemental18/2publiccontrolsallPASS: exactsingletonremoval,Changedoldlease,Unknown/Unavailable,mixedhiddenrequests/focus/wrongbase/latecert/duplicate/forgedJSON/directregisterboundaries.",
+    "FirstpartialGREEN5109/f18 remainsfailed;binder-onlyfixturecorrection didnotalter assertions orproductionbytes.",
+    "Scopedreadbookkeepingonly,quota16unchanged,nosyntheticdisposition/globalrecovery/admissioncertificate."
+  ],
+  "limits": [
+    "Purecomponentqualification doesnotqualifycurrentHTML,image/runtime/native/AT/originaljourney orfullHaskelldispositionroute.",
+    "No reviewerexecution/primarychanges."
+  ]
+}

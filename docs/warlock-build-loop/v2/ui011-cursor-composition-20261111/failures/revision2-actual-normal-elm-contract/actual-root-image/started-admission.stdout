@@ -1,0 +1,48 @@
+Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "nextRootAction": {
+    "kind": "wait-terminal",
+    "executor": "Root",
+    "candidateId": "ui011-watch-bookkeeping-images-v1-20261111",
+    "candidateSha256": "ebbe63804f721e551903e7fafe348c4d3d5d0edc60ef3455192354be714e2d1a",
+    "jobId": "pid370111-start3865858",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "--review",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-wbi-v1/review-packet.json",
+      "--sha256",
+      "2bf82b9179788e69a88eca272b22f155f8e0bed442d8cdb31dab4f400489a3df"
+    ],
+    "expectedObservation": "Build exactly current warlock-ui-owner, ui-webkit-controls and independent opener plus the two frozen CPU test targets. Execute only opener admission22/32 and Display AT18/32, never owner/observer/producer/opener. One current source-bound report supplies allthree image selectors and both CPU results. Original300/120/2 and SDK/cache/source/group guards retained. Image-build evidence only: no new product integration/progress/RSI, native/AT/original acceptance or provider authority.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-11T04:11:00.127396+00:00",
+      "secondsSinceRecordedProgress": 1620,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": false,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Continue the selected delivery action.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "recordSha256": "5ce73254130b39b1fa6fdf90e451cda268729abd71c1cc80774aa59d52e9501d",
+  "acceptanceInferred": false,
+  "ok": true
+}

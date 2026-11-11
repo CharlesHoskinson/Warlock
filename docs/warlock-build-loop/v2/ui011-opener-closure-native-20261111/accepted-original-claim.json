@@ -1,0 +1,69 @@
+{
+  "claimSchema": 1,
+  "claims": [
+    {
+      "requirement": "ELM-UI-011",
+      "scenario": "focus-scope-opener closure",
+      "oracle": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
+      "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "scope": "Only the original focus-scope-opener closure case: real nonce-bound independent GTK opener closes; exact dead opener group retires; current eligible Applications fallback receives native and credential-bound accessibility focus, with no dead or replacement activation and normal owned exit0 cleanup. Other UI011 cases, full requirement, ordered Refresh journey and release remain unaccepted.",
+      "evidence": [
+        {
+          "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/adjudication-evidence.json",
+          "sha256": "3a9c887cde6f7e7d42dbd5ccc3904c4dd11255fb71570b2d3c84279380701c85"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/reviews/independent-original-case-review-build.json",
+          "sha256": "97b5691e3a386078593b6aa0e27bb4abe431fdf99c870a4abb5356f1c3c61a1c"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/native/report.json",
+          "sha256": "b4e02344ed2a3d25987ddc9a06a307ed580cb27a606b7a8dd2c1ec343a6e1a21"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/native/image-report.json",
+          "sha256": "7b822c8ee1189ee7896e54aa019a31576c35568477d598cac7c86ad8c4c9e7ea"
+        },
+        {
+          "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/native/elm-document-report.json",
+          "sha256": "9e2823efc378fc3ee8721a5ba090785928bc1cab0dc35246b0111097e5d8b394"
+        }
+      ],
+      "sourceHashes": {
+        "implementation/warlock/src/Desktop.elm": "84dbc4a4db37c79777213547366cf1ca17e74e780e17c29cae4b604d4e6694c3",
+        "implementation/warlock/qa/Ui011ObservedScopeRetirementReplay.elm": "ace920e658715969e3b0d836a14b6b377e94d18a743757930ce2bec5db7ca273",
+        "implementation/warlock/qa/ui011-observed-scope-retirement.cjs": "ca51900ed2edc6b0a74403e98e0cff33cffae6b18a924f96ce5216b21342206b",
+        "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "78b46c625bdfb4e0781938f9fb59bd35f60df0d95bb7d1c5f48305ecbfc52b65",
+        "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "3b8f13574f28112f6aed316c778bf132e6e431be7de6a0ab36549b254083aad5",
+        "implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs": "01648a3ce02bc033b4e7c682979f863240b79db95cccfb6997a636cd78b19fd0",
+        "implementation/warlock/src/WindowObservation.elm": "c14c481ae42b197847194c880a4de80146943158cfd21cd56c7ab6b01e839840",
+        "implementation/warlock/src/Shell.elm": "503fcf5bbcfead01eaddcea2fd024e071bedfdde3d9260336455632838144a63",
+        "implementation/warlock/src/MenuBridge.elm": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544",
+        "implementation/warlock/src/DesktopPolicy.elm": "e8e547e2678c97bd3e4c494bd7a8a5521ef3b0cab82bdcf406f1709d3ea084c4",
+        "implementation/warlock/src/SurfaceController.elm": "d577b4fa232a568f80351e26a69c7b8a8c9d40f4521d4b64577d5bb4b900296c",
+        "implementation/warlock/src/OutputController.elm": "59de16446debfe82eb71eece55e24aab6807467c29916a694ca0926a8242283d",
+        "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs": "4aea5886d6d63f1e613e4073c835f51751d8d690df08b6d7ac89fb1b12f5af5e",
+        "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc": "db965d55b0a8df65c5418d12f0e91b8bb3b0cab4a2ca7191d7d82fd033d9acca"
+      },
+      "reviewer": {
+        "name": "build_audit",
+        "independent": true,
+        "disposition": "accepted",
+        "evidence": {
+          "path": "docs/warlock-build-loop/v2/ui011-opener-closure-native-20261111/reviews/independent-original-case-review-build.json",
+          "sha256": "97b5691e3a386078593b6aa0e27bb4abe431fdf99c870a4abb5356f1c3c61a1c"
+        }
+      },
+      "disposition": "accepted",
+      "missingObservations": [],
+      "sourceTuple": {
+        "sourceRevision": "e8321897104cbe8ba45a9f9123457c63c9a6b5af",
+        "core": "Exact fourteen selected Elm/Haskell product sources at e8321897; current native packet23798 source437 and seven unchanged guards. The scoped WindowWatch bookkeeping correction retains quota16 and the separate full Haskell batch-disposition obligation.",
+        "plugin": "Actual current provider7f10 and launcher3be4 with final fresh credential/current birth/image/FD/genealogy checks and active-document whole-graph focus proof. Actual native85224 has both AT confirmations and normal owned registry/bus/stack exit0; raw collector acceptance flags remain false.",
+        "toolchain": "Actual five-target/eight-command b7d image qualification and current109-Elm/three-HTML report9e2823, accepted SDK/cache957/owningABI/private runtime and exact14761 process inventory including qualified four-library overlay. Original28+2,4key,16phase/frame and640 AT-call caps unchanged."
+      }
+    }
+  ],
+  "sourceRevision": "e8321897104cbe8ba45a9f9123457c63c9a6b5af",
+  "scopeLimit": "The literal named-case verdict does not convert the Refresh-missing ordered journey to pass or accept the full requirement/release."
+}

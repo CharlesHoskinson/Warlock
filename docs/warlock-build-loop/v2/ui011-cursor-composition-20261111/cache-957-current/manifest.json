@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "author": "sol_supervisor",
+  "scope": "Read-only full current loader-cache correspondence against existing exact accepted inventory and recipe",
+  "status": "source-only-awaiting-independent-review-and-Root-protected-scan",
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/read_current_correspondence.py",
+    "sha256": "0c622a8e671a66400b7df78573f423b3a59a60f65fec0d415cf1bd8b5392c1be"
+  },
+  "retainedAcceptedProof": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-observed-opener-closure-plan-20261110/current-loader-cache-20261110T1800/cache-correspondence.json",
+    "sha256": "9c123a13775698f1665412a3853c4ac6b1b7d7d9a714159a74c5f0eb7c3e8f1e"
+  },
+  "expectedCurrentCacheSha256": "957d0bb07b95e03a5ea03e5373678ed7ca467db33fac05a06e273f35ae8ee2c5",
+  "delta": [
+    "Only OUT and EXPECTED assignments differ from accepted313a scanner; same15851/800/9/10/120s guards."
+  ],
+  "unchanged": {
+    "inventorySha256": "9984660710cec4b197733e953f00dc850b3876e77c977684e4c9605348e81f8f",
+    "selectedRecipeSha256": "b3c9f30dcedc626f603fc963239108fae64639ccfd03a7dc292550beb1e9aa60",
+    "inventoryEntries": 15851,
+    "selectedResolutionEdges": 800,
+    "interpreterEdges": 9,
+    "requiredAbsent": 10,
+    "deadlineSeconds": 120
+  },
+  "files": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/read_current_correspondence.py",
+      "sha256": "64a6cae11e15d015e42a28d7d39095f690747af4239035235925558f6bc9ce63"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/root-argv.json",
+      "sha256": "bd84212a96257743c2305a3910d2cf56a0564ed351aa71d34677a427ab002f3a"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/scanner.patch",
+      "sha256": "ae0d9108875def475c5c5cd445417286ae1e9bc4e49b8ebadb6fbc5063cb73b0"
+    }
+  ],
+  "sourceChanges": false,
+  "primaryWrites": false,
+  "executionPerformed": false,
+  "actualCorrespondenceProved": false,
+  "retained313ScannerManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/manifest.json",
+    "sha256": "4fdacf0d1ffd25a437b02132b6a415fea2a451305c8ac95e63b2c07f4e553c1e"
+  }
+}

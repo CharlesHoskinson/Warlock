@@ -136,30 +136,45 @@ def verify_build(current,collector,base,p):
     base.regular(source['mainSource']['path'],source['mainSource']['sha256']);collector.regular_ref(base,source['signedPackageReceipt']);current.regular(image,h['buildReport']);return report
 
 
-def provider_qa_ast_correspondence(old_body, new_body, observation=False):
+def provider_qa_ast_correspondence(old_body, new_body, observation=False, ui011=False):
     """Prove the entire old dispatch AST survives exact disjoint menu additions."""
     import ast
+    ui011_functions = {'window_watch_protocol_mode', 'window_watch_protocol_spec',
+                       'opener_at_cpu_mode', 'opener_at_cpu_spec',
+                       'native_images_cpu_mode', 'native_images_cpu_spec'}
+    ui011_assignments = {'WINDOW_WATCH_PROTOCOL_RUNNER', 'WINDOW_WATCH_PROTOCOL_CONFIG',
+                        'WINDOW_WATCH_PROTOCOL_SUPPORT', 'OPENER_AT_CPU_RUNNER',
+                        'OPENER_AT_CPU_CONFIG', 'OPENER_AT_CPU_SUPPORT', 'OPENER_AT_FIXTURES',
+                        'NATIVE_IMAGES_CPU_RUNNER', 'NATIVE_IMAGES_CPU_CONFIG',
+                        'NATIVE_IMAGES_CPU_SUPPORT', 'NATIVE_IMAGES_FIXTURES',
+                        'window_watch_protocol', 'window_watch_spec', 'opener_at',
+                        'opener_at_spec', 'native_images', 'native_images_spec'}
+    ui011_modes = {'window_watch_protocol', 'opener_at', 'native_images'}
     class RemoveMenuAdditions(ast.NodeTransformer):
         def visit_FunctionDef(self, node):
+            if ui011 and node.name in ui011_functions:
+                return None
             if node.name in {'menu_tab_dom_mode', 'menu_tab_dom_inputs', 'menu_focus_build_mode', 'menu_focus_build_spec'} or (observation and node.name in {'observation_elm_variant','observation_inputs'}):
                 return None
             return self.generic_visit(node)
         def visit_Assign(self, node):
+            if ui011 and any(isinstance(target, ast.Name) and target.id in ui011_assignments for target in node.targets):
+                return None
             if any(isinstance(target, ast.Name) and (target.id.startswith('MENU_FOCUS_BUILD_') or target.id in {'menu_focus_build', 'menu_focus_spec'} or (observation and target.id in {'OBSERVATION_SUPPORT','OBSERVATION_TARGETS'})) for target in node.targets):
                 return None
             return self.generic_visit(node)
         def visit_If(self, node):
-            if isinstance(node.test, ast.Name) and node.test.id == 'menu_focus_build':
+            if isinstance(node.test, ast.Name) and (node.test.id == 'menu_focus_build' or (ui011 and node.test.id in ui011_modes)):
                 return None
             if isinstance(node.test, ast.Call) and isinstance(node.test.func, ast.Name) and (node.test.func.id == 'menu_tab_dom_mode' or (observation and node.test.func.id == 'observation_elm_variant')):
                 return None
             return self.generic_visit(node)
         def visit_BoolOp(self, node):
             node = self.generic_visit(node)
-            node.values = [value for value in node.values if not (isinstance(value, ast.UnaryOp) and isinstance(value.op, ast.Not) and isinstance(value.operand, ast.Name) and value.operand.id == 'menu_focus_build')]
+            node.values = [value for value in node.values if not (isinstance(value, ast.UnaryOp) and isinstance(value.op, ast.Not) and isinstance(value.operand, ast.Name) and (value.operand.id == 'menu_focus_build' or (ui011 and value.operand.id in ui011_modes)))]
             return node
         def visit_IfExp(self, node):
-            if isinstance(node.test, ast.Name) and node.test.id == 'menu_focus_build':
+            if isinstance(node.test, ast.Name) and (node.test.id == 'menu_focus_build' or (ui011 and node.test.id in ui011_modes)):
                 return self.visit(node.orelse)
             return self.generic_visit(node)
     old_tree = ast.parse(old_body)
@@ -177,7 +192,9 @@ def provider_source_pin(current, reference, build_report, relative, historical_s
         return historical_sha
     proof = json.loads(current.pinned(reference, 4*1024*1024))
     if proof.get('schema')==2:new_sha='33c8c99c9810542fda561f883d11fc038c990790ceb123168466c0aeac582ee7'
-    if (type(proof.get('schema')) is not int or proof.get('schema') not in (1,2) or proof.get('disposition') != 'accepted'
+    if proof.get('schema')==3:new_sha='1683dcaeb0d0d7beb611fe5bdc1da26a045021406c17e962576943a23e737cbb'
+    if proof.get('schema')==4:new_sha='b78fb2323d32f8cdcc76041f2cb486782f8c1feb30545583a3b6d5a7bbd5d60a'
+    if (type(proof.get('schema')) is not int or proof.get('schema') not in (1,2,3,4) or proof.get('disposition') != 'accepted'
             or proof.get('scope') != 'ux024-provider-qa-dispatch-source-correspondence'
             or proof.get('reviewer') != 'build_audit'
             or proof.get('buildReport') != build_report
@@ -190,12 +207,261 @@ def provider_source_pin(current, reference, build_report, relative, historical_s
     new_body = current.pinned(proof['currentSource'], 4*1024*1024)
     if hashlib.sha256(old_body).hexdigest() != old_sha or hashlib.sha256(new_body).hexdigest() != new_sha:
         raise ValueError('actual provider QA source bytes differ')
-    provider_qa_ast_correspondence(old_body, new_body, observation=proof['schema']==2)
+    provider_qa_ast_correspondence(old_body, new_body, observation=proof['schema'] in (2,3,4), ui011=proof['schema'] in (3,4))
     current.pinned(proof['correspondenceEvidence'], 4*1024*1024)
     return new_sha
 
 
-def verify_private_provider(current, collector, base, nested, source_correspondence=None):
+
+# One qualified runtime dependency edge; historical provider inputs remain immutable.
+CURSOR_OLD = {'path': '/usr/lib/libhyprcursor.so.0.1.13', 'sha256': 'a066d5ea8403ea833a97a3056728829cea12462518c1642871744416335d66bc'}
+CURSOR_NEW = {'path': '/usr/lib/libhyprcursor.so.0.1.14', 'sha256': '0ffe7c5717e55a286d97c96a3b71c94fb8811f0744fe6f7bf0dc7e09e40ff368'}
+CURSOR_FOUNDATION = {'path': '/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/labwc-warn-ipc-foundation-20261108/packet.json', 'sha256': 'ca01a96db54ecfa664c314e13cbc963e1d1a02d70729e9ea4bca93e7eb8997b0'}
+CURSOR_FOUNDATION_REPORT = {'path': '/home/hoskinson/Projects/Warlock/.warlock-contributor/labwc-gl-foundation-1794107788999797655/report.json', 'sha256': '56c70d4e8cc0f6d52bfa1bc76230134a17fc3ce0066ee44ded181fc2593826f4'}
+CURSOR_PROVIDER = {'path': '/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/current-arm-ux023-notifications-keyboard-native-20261109-current22/current-schema-provider-readiness.json', 'sha256': '1c113a9b9d8095ff34f6e986c582efefe233bf31cb98e37d66fbee673047036f'}
+CURSOR_HYPRLAND = {'path': '/usr/bin/Hyprland', 'sha256': 'd40e2edab24c2032a7a77b4d44c3d738e5003256d7d4199950dc7001fee9b6ba'}
+CURSOR_AQUAMARINE = {'path': '/home/hoskinson/Projects/Warlock/.warlock-contributor/aq-log-provider-build-1794102851345544241/build/libaquamarine.so.0.16.0', 'sha256': '6972e666dadccb94ec0913be1068e8265e8b4f4291aaa51576c5dfe0694374d9'}
+CURSOR_ALIASES = [{'path': '/usr/lib/libhyprcursor.so', 'target': 'libhyprcursor.so.0'}, {'path': '/usr/lib/libhyprcursor.so.0', 'target': 'libhyprcursor.so.0.1.14'}]
+CURSOR_SYMBOLS = ['_ZN10Hyprcursor15SManagerOptionsC1Ev', '_ZN10Hyprcursor18CHyprcursorManager10getShapesCERiPKcRKNS_16SCursorStyleInfoE', '_ZN10Hyprcursor18CHyprcursorManager14loadThemeStyleERKNS_16SCursorStyleInfoE', '_ZN10Hyprcursor18CHyprcursorManager22cursorSurfaceStyleDoneERKNS_16SCursorStyleInfoE', '_ZN10Hyprcursor18CHyprcursorManager5validEv', '_ZN10Hyprcursor18CHyprcursorManagerC1EPKcNS_15SManagerOptionsE', '_ZN10Hyprcursor18CHyprcursorManagerC1EPKcPFv19eHyprcursorLogLevelPcE', '_ZN10Hyprcursor18CHyprcursorManagerD1Ev']
+CURSOR_PACKAGE_HASHES = {'archive': '243e14559e2c59bb39b60703c7514056815eca054e106d9f88bd927673e49f88', 'signature': 'e50c5215ba5f88d85b173545138933f53374169da429ac9213dd3e1ea64ac93a', 'keyring': '5211cf45111a1d2759f17faec043ade564e3c2d26cadd899e609c974e3005fa4', 'member': '0ffe7c5717e55a286d97c96a3b71c94fb8811f0744fe6f7bf0dc7e09e40ff368'}
+CURSOR_LOADER = {'path': '/usr/lib/ld-linux-aarch64.so.1', 'sha256': 'b1f2738bdb51e6419d7062f96c8a44bd68853698dc5ac624fa6ca9f9b03d456d'}
+CURSOR_CACHE = {'path': '/etc/ld.so.cache', 'sha256': '85f1d0ec7186f21e65d355a7e0d1b9746b57e3beef652ff9532676faa89ae582'}
+CURSOR_BASIS_SHA = '91f37b768c404b41f33f20e2db9fb54f8463ec7a54742b73903a53b57065076b'
+CURSOR_QUALIFICATION_SHA = 'b74e52615b2c9b9a9c805f3071f9e6f4053cd6940e33bc868677fbf07f274526'
+
+def _cursor_inputs_v1(current, nested, reference=None, *, current_cache=None):
+    """Derive one separately qualified live map; never rewrite the provider review basis."""
+    if reference is None:
+        return nested['inputs']
+    proof = json.loads(current.pinned(reference, 4*1024*1024))
+    fields = {'schema','disposition','reviewer','scope','foundationPacket','foundationReport',
+              'providerReadiness','basisSha256','historicalNested','currentBootId','old','current','qualification'}
+    if (not isinstance(proof,dict) or set(proof)!=fields or type(proof['schema']) is not int
+            or proof['schema']!=1 or proof['disposition']!='accepted' or proof['reviewer']!='build_audit'
+            or proof['scope']!='ui011-cursor13-to14-dependency-correspondence'
+            or proof['foundationPacket']!=CURSOR_FOUNDATION or proof['foundationReport']!=CURSOR_FOUNDATION_REPORT
+            or proof['providerReadiness']!=CURSOR_PROVIDER or proof['old']!=CURSOR_OLD or proof['current']!=CURSOR_NEW
+            or proof['historicalNested']!=nested or nested['sourceReview']!=CURSOR_PROVIDER):
+        raise ValueError('exact independently reviewed cursor dependency correspondence required')
+    basis = nested['inputs']
+    basis_sha = hashlib.sha256(json.dumps(basis,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+    if (len(basis)!=205 or proof['basisSha256']!=CURSOR_BASIS_SHA or basis_sha!=CURSOR_BASIS_SHA
+            or basis.get(CURSOR_OLD['path'])!=CURSOR_OLD['sha256'] or CURSOR_NEW['path'] in basis
+            or nested['compositor']!=CURSOR_HYPRLAND['path'] or nested['backend']!=CURSOR_AQUAMARINE['path']
+            or basis.get(nested['compositor'])!=CURSOR_HYPRLAND['sha256']
+            or basis.get(nested['backend'])!=CURSOR_AQUAMARINE['sha256']):
+        raise ValueError('historical cursor205/provider owning image basis differs')
+    current.check()
+    same_boot(proof['currentBootId'],BOOT.read_text().strip())
+    if proof['qualification'].get('sha256')!=CURSOR_QUALIFICATION_SHA:
+        raise ValueError('exact actual cursor qualification required')
+    report = json.loads(current.pinned(proof['qualification'],4*1024*1024))
+    report_fields = {'schema','kind','passed','currentBootId','foundationPacket','foundationReport',
+                     'providerReadiness','basisSha256','old','current','hyprland','privateAquamarine','loader',
+                     'loaderCache','libraryDir','package','aliasChain','soname','requiredSymbols','resolvedFiles',
+                     'commands','nativeExecuted','sourceChanged'}
+    if (set(report)!=report_fields or type(report['schema']) is not int or report['schema']!=1
+            or report['kind']!='ui011-current-nested-cursor-loader-qualification' or report['passed'] is not True
+            or report['nativeExecuted'] is not False or report['sourceChanged'] is not False
+            or any(report[k]!=proof[k] for k in ('currentBootId','foundationPacket','foundationReport','providerReadiness','basisSha256','old','current'))
+            or report['hyprland']!=CURSOR_HYPRLAND or report['privateAquamarine']!=CURSOR_AQUAMARINE
+            or report['loader']!=CURSOR_LOADER or report['loaderCache']!=CURSOR_CACHE
+            or report['libraryDir']!=nested['libraryDir'] or report['aliasChain']!=CURSOR_ALIASES
+            or report['soname']!='libhyprcursor.so.0' or report['requiredSymbols']!=CURSOR_SYMBOLS):
+        raise ValueError('actual cursor signature/loader qualification binding differs')
+    live = dict(basis)
+    del live[CURSOR_OLD['path']]
+    live[CURSOR_NEW['path']] = CURSOR_NEW['sha256']
+    resolved = report['resolvedFiles']
+    if (not isinstance(resolved,dict) or len(resolved)!=147
+            or any(live.get(path)!=pin for path,pin in resolved.items())
+            or resolved.get(CURSOR_NEW['path'])!=CURSOR_NEW['sha256']
+            or resolved.get(CURSOR_AQUAMARINE['path'])!=CURSOR_AQUAMARINE['sha256']):
+        raise ValueError('qualified loader map differs beyond the single cursor replacement')
+    package = report['package']
+    if (not isinstance(package,dict) or set(package)!=set(CURSOR_PACKAGE_HASHES)
+            or any(not isinstance(package[k],dict) or set(package[k])!={'path','sha256'} or package[k].get('sha256')!=pin for k,pin in CURSOR_PACKAGE_HASHES.items())):
+        raise ValueError('actual signed package/member/keyring differs')
+    for ref in [CURSOR_FOUNDATION,CURSOR_FOUNDATION_REPORT,CURSOR_PROVIDER,CURSOR_HYPRLAND,CURSOR_AQUAMARINE,CURSOR_LOADER,(CURSOR_CACHE if current_cache is None else current_cache),*package.values()]:
+        current.pinned(ref,256*1024*1024)
+    body = current.pinned(CURSOR_NEW,64*1024*1024)
+    if hashlib.sha256(body).hexdigest()!=CURSOR_NEW['sha256'] or body[:7]!=b'\x7fELF\x02\x01\x01' or body[18:20]!=b'\xb7\x00':
+        raise ValueError('actual selected cursor is not the qualified AArch64 ELF')
+    for alias in CURSOR_ALIASES:
+        path=Path(alias['path'])
+        if not path.is_symlink() or os.readlink(path)!=alias['target'] or str(path.resolve(strict=True))!=CURSOR_NEW['path']:
+            raise ValueError('fixed cursor SONAME alias differs')
+    commands=report['commands'];names=['signature','package-member','hyprland-elf','cursor-elf','aquamarine-elf','loader']
+    if not isinstance(commands,list) or [c.get('name')for c in commands]!=names:
+        raise ValueError('six actual fixed cursor qualification commands required')
+    outputs={}
+    for command in commands:
+        if set(command)!={'name','argv','exit','stdout','stderr'} or type(command['exit']) is not int or command['exit']!=0:
+            raise ValueError('actual cursor qualification command failed')
+        outputs[command['name']]=current.pinned(command['stdout'],32*1024*1024)
+        current.pinned(command['stderr'],4*1024*1024)
+    signature=commands[0]['argv']
+    if (len(signature)!=9 or signature[:2]!=['/usr/bin/gpgv','--homedir'] or signature[3:7]!=['--keyring',package['keyring']['path'],'--status-fd','1']
+            or signature[7:]!=[package['signature']['path'],package['archive']['path']]
+            or b'[GNUPG:] VALIDSIG ' not in outputs['signature']
+            or commands[1]['argv']!=['/usr/bin/bsdtar','-xOf',package['archive']['path'],'usr/lib/libhyprcursor.so.0.1.14']
+            or commands[1]['stdout']!=package['member'] or outputs['package-member']!=body):
+        raise ValueError('actual package signature/member correspondence differs')
+    for index,ref in [(2,CURSOR_HYPRLAND),(3,CURSOR_NEW),(4,CURSOR_AQUAMARINE)]:
+        if commands[index]['argv']!=['/usr/bin/readelf','-h','-d','--dyn-syms','--wide',ref['path']]:
+            raise ValueError('actual fixed ELF inspection differs')
+    cursor_text=outputs['cursor-elf'].decode('utf-8');hyprland_text=outputs['hyprland-elf'].decode('utf-8')
+    exports={p[7].split('@')[0] for line in cursor_text.splitlines() if len(p:=line.split())>=8 and p[0].endswith(':') and p[6]!='UND'}
+    imports={p[7].split('@')[0] for line in hyprland_text.splitlines() if len(p:=line.split())>=8 and p[0].endswith(':') and p[6]=='UND'}
+    if (not set(CURSOR_SYMBOLS)<=exports or not set(CURSOR_SYMBOLS)<=imports
+            or 'Library soname: [libhyprcursor.so.0]' not in cursor_text
+            or 'Shared library: [libhyprcursor.so.0]' not in hyprland_text
+            or 'Library soname: [libaquamarine.so.15]' not in outputs['aquamarine-elf'].decode('utf-8')
+            or commands[5]['argv']!=[CURSOR_LOADER['path'],'--list','--library-path',nested['libraryDir'],CURSOR_HYPRLAND['path']]):
+        raise ValueError('qualified owning imports/exports/SONAME/loader command differs')
+    current.check()
+    return live
+
+def _cursor_loader_identity(reference, identity):
+    """Recheck the immutable witness's current canonical inode without a loader run."""
+    fields = {'sha256', 'device', 'inode', 'size', 'mode', 'owner', 'group', 'mtimeNs', 'ctimeNs'}
+    path = Path(reference['path'])
+    if (set(identity) != fields or identity['sha256'] != reference['sha256']
+            or path.resolve(strict=True) != path):
+        raise ValueError('current loader canonical identity differs')
+    value = path.lstat()
+    actual = {'sha256': reference['sha256'], 'device': value.st_dev, 'inode': value.st_ino,
+              'size': value.st_size, 'mode': value.st_mode, 'owner': value.st_uid,
+              'group': value.st_gid, 'mtimeNs': value.st_mtime_ns, 'ctimeNs': value.st_ctime_ns}
+    if not stat.S_ISREG(value.st_mode) or actual != identity:
+        raise ValueError('current loader witnessed inode changed')
+
+
+def _cursor_current_loader(current, reference, historical_ref, historical, report):
+    proof = json.loads(current.pinned(reference, 4 * 1024 * 1024))
+    fields = {'schema', 'disposition', 'reviewer', 'scope', 'actualReport',
+              'actualProtectedTerminal', 'independentReview'}
+    if (set(proof) != fields or type(proof['schema']) is not int or proof['schema'] != 1
+            or proof['disposition'] != 'accepted' or proof['reviewer'] != 'build_audit'
+            or proof['scope'] != 'ui011-cursor-current-loader-correspondence'):
+        raise ValueError('exact current cursor loader correspondence required')
+    actual = json.loads(current.pinned(proof['actualReport'], 4 * 1024 * 1024))
+    terminal = json.loads(current.pinned(proof['actualProtectedTerminal'], 4 * 1024 * 1024))
+    review = json.loads(current.pinned(proof['independentReview'], 4 * 1024 * 1024))
+    if (review.get('schema') != 1 or review.get('reviewer') != 'build_audit'
+            or review.get('disposition') != 'accepted-exact-current-cursor-loader-correspondence'
+            or review.get('actualReport') != proof['actualReport']
+            or review.get('actualProtectedTerminal') != proof['actualProtectedTerminal']
+            or review.get('requiredChanges') != []
+            or type(terminal.get('actualExit')) is not int or terminal['actualExit'] != 0
+            or terminal.get('nativeExecuted') is not False):
+        raise ValueError('actual loader execution and independent review do not join')
+    if (actual.get('schema') != 1 or actual.get('kind') != 'ui011-current-cursor-loader-correspondence'
+            or actual.get('passed') is not True or actual.get('inputsUnchanged') is not True
+            or any(actual.get(key) is not False for key in ('nativeExecuted', 'sourceChanged', 'systemWrites'))
+            or actual.get('historicalCursorCorrespondence', {}).get('sha256') != historical_ref['sha256']
+            or actual.get('historicalQualification') != historical['qualification']
+            or actual.get('historicalBasisSha256') != CURSOR_BASIS_SHA
+            or actual.get('hyprland') != CURSOR_HYPRLAND or actual.get('privateAquamarine') != CURSOR_AQUAMARINE
+            or actual.get('loader') != CURSOR_LOADER or actual.get('currentCursor') != CURSOR_NEW
+            or actual.get('libraryDir') != historical['historicalNested']['libraryDir']
+            or actual.get('aliasChain') != CURSOR_ALIASES or actual.get('requiredSymbols') != CURSOR_SYMBOLS
+            or actual.get('packageProof') != report['package']
+            or actual.get('resolvedFiles') != report['resolvedFiles'] or actual.get('resolvedCount') != 147):
+        raise ValueError('current loader differs from exact historical cursor qualification')
+    current.pinned(actual['historicalCursorCorrespondence'], 4 * 1024 * 1024)
+    same_boot(actual['currentBootId'], BOOT.read_text().strip())
+    if actual['currentBootId'] != historical['currentBootId']:
+        raise ValueError('cursor current and historical boot differ')
+    cache = json.loads(current.pinned(actual['currentLoaderCacheCorrespondence'], 4 * 1024 * 1024))
+    if (cache.get('schema') != 1 or cache.get('reviewer') != 'build_audit'
+            or cache.get('disposition') != 'accepted' or cache.get('passed') is not True
+            or cache.get('scope') != 'ux003-current-loader-cache-correspondence'
+            or cache.get('selectedResolutionMismatches') != 0 or cache.get('systemEntryMismatches') != 0
+            or cache.get('edgeCount') != 800 or cache.get('systemEntryCount') != 15851
+            or cache.get('requiredAbsentCandidateCount') != 10 or cache.get('requiredAbsentNowPresent') != []
+            or actual.get('loaderCache') != {'path': '/etc/ld.so.cache', 'sha256': cache.get('currentCacheSha256')}):
+        raise ValueError('actual current loader cache qualification differs')
+    for key in ('systemAudit', 'cacheEntryAudit', 'selectedResolutionAudit', 'currentCacheSnapshot'):
+        current.pinned(cache[key], 32 * 1024 * 1024)
+    current.pinned(actual['loaderCache'], 4 * 1024 * 1024)
+    _cursor_loader_identity(actual['loaderCache'], actual['cacheIdentity'])
+    commands = actual.get('commands')
+    expected_argv = [CURSOR_LOADER['path'], '--list', '--library-path', actual['libraryDir'], CURSOR_HYPRLAND['path']]
+    if (not isinstance(commands, list) or len(commands) != 1
+            or set(commands[0]) != {'name', 'argv', 'exit', 'stdout', 'stderr'}
+            or commands[0]['name'] != 'loader' or commands[0]['argv'] != expected_argv
+            or type(commands[0]['exit']) is not int or commands[0]['exit'] != 0):
+        raise ValueError('one exact successful current loader command required')
+    output = current.pinned(commands[0]['stdout'], 4 * 1024 * 1024).decode('utf-8')
+    if current.pinned(commands[0]['stderr'], 4 * 1024 * 1024) != b'':
+        raise ValueError('current loader stderr is not empty')
+    resolved = {}
+    for line in output.splitlines():
+        text = line.strip()
+        match = re.fullmatch(r'(?:(\S+) => )?(/\S+) \(0x[0-9a-fA-F]+\)', text)
+        if match is None:
+            if not re.fullmatch(r'linux-vdso\.so\.1 \(0x[0-9a-fA-F]+\)', text):
+                raise ValueError('current loader output is not the qualified listing')
+            continue
+        path = str(Path(match.group(2)).resolve(strict=True))
+        if path not in report['resolvedFiles']:
+            raise ValueError('current loader selected an unqualified object')
+        resolved[path] = report['resolvedFiles'][path]
+    if resolved != report['resolvedFiles'] or set(actual['selectedIdentities']) != set(resolved):
+        raise ValueError('current loader listing or selected identity membership differs')
+    for path, pin in resolved.items():
+        _cursor_loader_identity({'path': path, 'sha256': pin}, actual['selectedIdentities'][path])
+    owning = {'hyprland': CURSOR_HYPRLAND, 'privateAquamarine': CURSOR_AQUAMARINE,
+              'loader': CURSOR_LOADER, 'current': CURSOR_NEW}
+    if set(actual['owningIdentities']) != set(owning):
+        raise ValueError('current loader owning image membership differs')
+    for name, image in owning.items():
+        current.pinned(image, 256 * 1024 * 1024)
+        _cursor_loader_identity(image, actual['owningIdentities'][name])
+    return actual['loaderCache']
+
+
+def _cursor_composed_inputs(current, nested, proof):
+    fields = {'schema', 'disposition', 'reviewer', 'scope', 'historicalCorrespondence',
+              'currentSchemaCorrespondence', 'currentProviderReadiness', 'currentLoaderCorrespondence'}
+    if (set(proof) != fields or type(proof['schema']) is not int or proof['schema'] != 2
+            or proof['disposition'] != 'accepted' or proof['reviewer'] != 'build_audit'
+            or proof['scope'] != 'ui011-cursor-current-schema-loader-composition'
+            or proof['historicalCorrespondence'].get('sha256') != '9619d41ba273058ea258d7d7adc35522a654c2d5388101a49d9f6b3430e935d7'):
+        raise ValueError('exact cursor schema/loader composition required')
+    historical = json.loads(current.pinned(proof['historicalCorrespondence'], 4 * 1024 * 1024))
+    report = json.loads(current.pinned(historical['qualification'], 4 * 1024 * 1024))
+    current_cache = _cursor_current_loader(current, proof['currentLoaderCorrespondence'],
+                                          proof['historicalCorrespondence'], historical, report)
+    # The v1 signature/ELF/alias/147-map checks remain intact. Only its historical
+    # cache pathname check is replaced after the current loader chain was verified.
+    old_live = _cursor_inputs_v1(current, historical['historicalNested'],
+                                proof['historicalCorrespondence'], current_cache=current_cache)
+    foundation = json.loads(current.pinned(CURSOR_FOUNDATION, 4 * 1024 * 1024))
+    derived = derive_schema({'foundationPacket': CURSOR_FOUNDATION}, foundation,
+                            {'nested': historical['historicalNested']},
+                            {'currentSchemaCorrespondence': proof['currentSchemaCorrespondence']}, current.pinned)
+    if (derived['nested'] != nested or nested['sourceReview'] != proof['currentProviderReadiness']):
+        raise ValueError('current nested differs beyond qualified schema/provider composition')
+    live = dict(nested['inputs'])
+    del live[CURSOR_OLD['path']]
+    live[CURSOR_NEW['path']] = old_live[CURSOR_NEW['path']]
+    current.pinned(current_cache, 4 * 1024 * 1024)
+    current.check()
+    return live
+
+
+def cursor_inputs(current, nested, reference=None):
+    if reference is None:
+        return nested['inputs']
+    proof = json.loads(current.pinned(reference, 4 * 1024 * 1024))
+    if isinstance(proof, dict) and type(proof.get('schema')) is int and proof['schema'] == 2:
+        return _cursor_composed_inputs(current, nested, proof)
+    return _cursor_inputs_v1(current, nested, reference)
+
+
+def verify_private_provider(current, collector, base, nested, source_correspondence=None, cursor_correspondence=None):
     report = collector.regular_ref(base, nested['buildReport'])
     review = collector.regular_ref(base, nested['sourceReview'])
     baseline = collector.regular_ref(base, {'path': str(collector.OVERLAY_BASE_REPORT), 'sha256': collector.OVERLAY_BASE_REPORT_SHA})
@@ -213,7 +479,7 @@ def verify_private_provider(current, collector, base, nested, source_corresponde
             raise ValueError('overlay build input must be absolute')
         base.regular(name, pin_sha)
     base.regular(collector.OVERLAY_ACTIVE, collector.OVERLAY_SHA)
-    for name, pin_sha in nested['inputs'].items():
+    for name, pin_sha in cursor_inputs(current, nested, cursor_correspondence).items():
         base.regular(name, pin_sha)
     image = base.regular(pin['path'], pin['sha256'])
     current.regular(pin,nested['buildReport'])
@@ -289,11 +555,16 @@ def derive_schema(packet,historical,live,reuse,pinned):
     return result
 
 
-def generated_context_mapped(current, collector, base, proc, birth, role, image, inventory, required, clock, packet, source_correspondence=None):
+def generated_context_mapped(current, collector, base, proc, birth, role, image, inventory, required, clock, packet, source_correspondence=None, cursor_correspondence=None):
     collector.require_generated_role(role, image)
     verify_graphics(current, base, packet['graphics'], packet['hostInputs'])
     if role == 'nested':
-        verify_private_provider(current, collector, base, packet['nested'], source_correspondence)
+        verify_private_provider(current, collector, base, packet['nested'], source_correspondence, cursor_correspondence)
+        if cursor_correspondence is not None:
+            live = cursor_inputs(current, packet['nested'], cursor_correspondence)
+            if CURSOR_OLD['path'] in inventory or any(inventory.get(path)!=pin for path,pin in live.items()):
+                raise ValueError('nested runtime inventory differs from qualified cursor map')
+            required = list(required) + [CURSOR_NEW['path']]
     context_before = collector.owned_context(base, proc, birth, image, clock)
     before, first, first_sha = collector.generated_snapshot(base, proc, clock)
     seen = strict_snapshot_files(current, base, packet['graphics'], before, inventory, required, first, clock)

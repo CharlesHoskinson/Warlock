@@ -1,0 +1,996 @@
+{
+  "schema": 1,
+  "kind": "ui011-cursor-composition-component-evidence",
+  "sourceManifestSha256": "cbcc021698224e42dee1395fa1ffb70559e3c2bee9993672fc5bf25d03dfb53c",
+  "scope": "QA helper composition only",
+  "files": {
+    "component/contract.json": {
+      "sha256": "aef18f197cec2d1923c92a262601ab7d20ffd2726e97ab68ef711ab9f149e4d4",
+      "size": 2035,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/contract.json"
+    },
+    "component/helper-preimage.py": {
+      "sha256": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050",
+      "size": 37301,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/helper-preimage.py"
+    },
+    "component/independent-tests-first-review-build.json": {
+      "sha256": "c38f92b66b490bc84efb5eafc27c0bd9b1bbff0cff1bf2b714baccb031544089",
+      "size": 1362,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/independent-tests-first-review-build.json"
+    },
+    "component/inputs.json": {
+      "sha256": "b9ac6b3fa0297699784f56af1e3edcaf50dad8480e0b81b949e6a5681da02f0f",
+      "size": 5306,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/inputs.json"
+    },
+    "component/manifest.json": {
+      "sha256": "4fa5c76e7bdb2ba8f2badc139a8970c49ec29283c65968b02ec7659d27ea1368",
+      "size": 4366,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/manifest.json"
+    },
+    "component/production-implementation/actual-root-green/stderr": {
+      "sha256": "5f5805c9864d00e9e7d8dfc7a4cfa7fddf5326302de676a4ff62808b8e4b6a01",
+      "size": 238,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/actual-root-green/stderr"
+    },
+    "component/production-implementation/actual-root-green/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/actual-root-green/stdout"
+    },
+    "component/production-implementation/actual-root-green/terminal.json": {
+      "sha256": "b58872ba1b7f03a562fe978deffefac8d43c15c0976d96ac3ddedbccfb1da5f3",
+      "size": 573,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/actual-root-green/terminal.json"
+    },
+    "component/production-implementation/collector-preimage.py": {
+      "sha256": "119f2f54c9e6eb6475e26e0c3f551d2c7d68cd0bdd4a39a43ba710d5578f96af",
+      "size": 118713,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/collector-preimage.py"
+    },
+    "component/production-implementation/independent-actual-green-review-build.json": {
+      "sha256": "e67314fdd08140abe9b92891a808a1654f2ac86c45dcd5fd784a49f4f2ea7888",
+      "size": 2974,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/independent-actual-green-review-build.json"
+    },
+    "component/production-implementation/independent-source-review-build.json": {
+      "sha256": "8b438da310862c1c8a5e40502f56d1daa7a878758b87807342a1ccb363c4c459",
+      "size": 1458,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/independent-source-review-build.json"
+    },
+    "component/production-implementation/manifest.json": {
+      "sha256": "cbcc021698224e42dee1395fa1ffb70559e3c2bee9993672fc5bf25d03dfb53c",
+      "size": 6975,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/manifest.json"
+    },
+    "component/production-implementation/postimages/tools/run_current_arm_ui011_opener_closure.py": {
+      "sha256": "740882b0f2126638b575a7cbb7a292d62019e0717b4f4e62624def7f14b5e049",
+      "size": 118713,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/postimages/tools/run_current_arm_ui011_opener_closure.py"
+    },
+    "component/production-implementation/postimages/tools/ux023_current_boot_correspondence.py": {
+      "sha256": "e4cee72fcf5c6bf3a0b41a869edd7dbb5ed629c27d72cf88123e8e905c10eba0",
+      "size": 47187,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/postimages/tools/ux023_current_boot_correspondence.py"
+    },
+    "component/production-implementation/root-copy-plan.json": {
+      "sha256": "073c47c9df6183fadc5365f410b123c84d2ae97c93dbf6e4243849f49588d420",
+      "size": 1713,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/root-copy-plan.json"
+    },
+    "component/production-implementation/root-green-argv.json": {
+      "sha256": "e1533c638dadd5b958777a84ac7c2c9b8dc48e01bf2edafebdadbf6a0c4b3de0",
+      "size": 2880,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/root-green-argv.json"
+    },
+    "component/production-implementation/source-correspondence.json": {
+      "sha256": "2fbe0dd339f43399cb0ef99985b4ed055dcfe3e1fb33314cee54b47007da5ebf",
+      "size": 1098,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/source-correspondence.json"
+    },
+    "component/production-implementation/source.patch": {
+      "sha256": "f12cf5735caf4f0de616ba85fea42e9a35e0f059740dc58918886a452a253de9",
+      "size": 15449,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/source.patch"
+    },
+    "component/revision2-current-957-cache/actual-root-red/stderr": {
+      "sha256": "969ccc9e57b753a9a795f412466395f850c0d39ff1449f30f60981afb9a8af49",
+      "size": 2066,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/actual-root-red/stderr"
+    },
+    "component/revision2-current-957-cache/actual-root-red/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/actual-root-red/stdout"
+    },
+    "component/revision2-current-957-cache/actual-root-red/terminal.json": {
+      "sha256": "9c0ed050fd45e6897598e414282d144232e878f483dacb0ec30790d395daf76f",
+      "size": 311,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/actual-root-red/terminal.json"
+    },
+    "component/revision2-current-957-cache/helper-preimage.py": {
+      "sha256": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050",
+      "size": 37301,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/helper-preimage.py"
+    },
+    "component/revision2-current-957-cache/independent-actual-red-review-build.json": {
+      "sha256": "50bf6c587cf56ecd1b434e9e974b7fface58ff3ba45e5d82f7ab4a15253b30a3",
+      "size": 2006,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/independent-actual-red-review-build.json"
+    },
+    "component/revision2-current-957-cache/independent-tests-first-review-build.json": {
+      "sha256": "7d5bdb8b0e597e875582cfa87e2c3d7884314e7ec01fc8f7d71af3cd1f47f989",
+      "size": 913,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/independent-tests-first-review-build.json"
+    },
+    "component/revision2-current-957-cache/inputs.json": {
+      "sha256": "a32a3820f24d25cc022d69962909da09d12f7d5cad067ea2b25f06b3cb53b89e",
+      "size": 5306,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/inputs.json"
+    },
+    "component/revision2-current-957-cache/manifest.json": {
+      "sha256": "6d2dc7ea27cb2cdd6b0556808f0b20b6a58b89ef9707779bda06cbbd751308bc",
+      "size": 5680,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/manifest.json"
+    },
+    "component/revision2-current-957-cache/root-argv.json": {
+      "sha256": "9c4aa2d2173aa75c13e9fd47537dec4d2008b6ff160676479a7d68d0be5b88bc",
+      "size": 2698,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/root-argv.json"
+    },
+    "component/revision2-current-957-cache/test_cursor_composition.py": {
+      "sha256": "8bb85515719d9fb3687e3aa711c851fc6c03ae1f5521dff82fe17d4e82e2f46c",
+      "size": 10325,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/test_cursor_composition.py"
+    },
+    "component/root-argv.json": {
+      "sha256": "c62b641e60a368fc2157d2331d69ec4df81eb2df14613ef86a11b37802ead357",
+      "size": 1928,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/root-argv.json"
+    },
+    "component/test_cursor_composition.py": {
+      "sha256": "8bb85515719d9fb3687e3aa711c851fc6c03ae1f5521dff82fe17d4e82e2f46c",
+      "size": 10325,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/test_cursor_composition.py"
+    },
+    "loader/independent-source-review-build.json": {
+      "sha256": "57a7bc6b19db4fbd8a854d2d7904102082ca268320af15c13d742d01b111e5ce",
+      "size": 892,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/independent-source-review-build.json"
+    },
+    "loader/inputs.json": {
+      "sha256": "9c8e201da20e42414d4e32ee7911c4dad53374baca35e998b02ea38a1a07888d",
+      "size": 17762,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/inputs.json"
+    },
+    "loader/manifest.json": {
+      "sha256": "dddc1f2af1885d56f6de02c9b259a06322aaf0e7e7cfdf3b632f2ddc47b050b3",
+      "size": 3656,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/manifest.json"
+    },
+    "loader/qualify_current_loader.py": {
+      "sha256": "4e43c76866db1f50390243f2a3cc39f0780f2b73d8681a84bb591129c9822451",
+      "size": 8092,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/qualify_current_loader.py"
+    },
+    "loader/revision2-retained-output-parser/inputs.json": {
+      "sha256": "9c8e201da20e42414d4e32ee7911c4dad53374baca35e998b02ea38a1a07888d",
+      "size": 17762,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision2-retained-output-parser/inputs.json"
+    },
+    "loader/revision2-retained-output-parser/manifest.json": {
+      "sha256": "200fa39d6d0480484fbe69795c77106d69c2946ec972d894e28da4bf734716ca",
+      "size": 4770,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision2-retained-output-parser/manifest.json"
+    },
+    "loader/revision2-retained-output-parser/no-byte-delta-observation.json": {
+      "sha256": "e1f9a9b7a146ee2bab21f1fd0f7b3c6779fcd5f3d672ae2def00ed10fa9c0357",
+      "size": 524,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision2-retained-output-parser/no-byte-delta-observation.json"
+    },
+    "loader/revision2-retained-output-parser/parser.patch": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision2-retained-output-parser/parser.patch"
+    },
+    "loader/revision2-retained-output-parser/qualify_current_loader.py": {
+      "sha256": "4e43c76866db1f50390243f2a3cc39f0780f2b73d8681a84bb591129c9822451",
+      "size": 8092,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision2-retained-output-parser/qualify_current_loader.py"
+    },
+    "loader/revision2-retained-output-parser/root-argv.json": {
+      "sha256": "7f60555bb7ae724f4d0052484dcf99affa68c781d22d87f58236a2f9988e2dc7",
+      "size": 871,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision2-retained-output-parser/root-argv.json"
+    },
+    "loader/revision3-whole-witness-deadline/actual-root-execution/stderr": {
+      "sha256": "738f27d04a0de7f91037a860d585d081d0261494eb74089c656251ccd3a747d9",
+      "size": 1286,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/actual-root-execution/stderr"
+    },
+    "loader/revision3-whole-witness-deadline/actual-root-execution/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/actual-root-execution/stdout"
+    },
+    "loader/revision3-whole-witness-deadline/actual-root-execution/terminal.json": {
+      "sha256": "5c952d29ef03bdb6606a5838b74d4fea263e80182163c3d4995507431537a78f",
+      "size": 274,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/actual-root-execution/terminal.json"
+    },
+    "loader/revision3-whole-witness-deadline/deadline.patch": {
+      "sha256": "f555dd35fceb8099be0bb19bd6554bc8bdc8f213cf210ec96009c16c345fff82",
+      "size": 3359,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/deadline.patch"
+    },
+    "loader/revision3-whole-witness-deadline/independent-source-review-build.json": {
+      "sha256": "bb519d871d6c46812f856cd5f8452f75cf29199c8b87b1b4df6f10b2789fc465",
+      "size": 1354,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/independent-source-review-build.json"
+    },
+    "loader/revision3-whole-witness-deadline/inputs.json": {
+      "sha256": "9c8e201da20e42414d4e32ee7911c4dad53374baca35e998b02ea38a1a07888d",
+      "size": 17762,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/inputs.json"
+    },
+    "loader/revision3-whole-witness-deadline/manifest.json": {
+      "sha256": "dbaa0f92795f082e9d99f0df0e9de0df914f8f8ed9da070a73b431215af23eaf",
+      "size": 4919,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/manifest.json"
+    },
+    "loader/revision3-whole-witness-deadline/qualify_current_loader.py": {
+      "sha256": "3b8e09acc8b4e9e847b22a11b58f1fb022df55b1baf73b2e8b984d180d5f3667",
+      "size": 8091,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/qualify_current_loader.py"
+    },
+    "loader/revision3-whole-witness-deadline/root-argv.json": {
+      "sha256": "fa050c3ac460df5d50a29fe807b334ee23e7c0443ca86347f863c3a8403e0799",
+      "size": 871,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision3-whole-witness-deadline/root-argv.json"
+    },
+    "loader/revision4-owning-image-identities/actual-root-execution/host-cache-observation.json": {
+      "sha256": "eaf3abe8468ae96dfbc11d12204133c2487e26f4c736b0ccc80fabd9a69eec7d",
+      "size": 2063,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/actual-root-execution/host-cache-observation.json"
+    },
+    "loader/revision4-owning-image-identities/actual-root-execution/stderr": {
+      "sha256": "4802b4aae21408a99e3aad7cccef9caec11bbe27a55c2510bdefd6f14a6f9800",
+      "size": 1789,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/actual-root-execution/stderr"
+    },
+    "loader/revision4-owning-image-identities/actual-root-execution/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/actual-root-execution/stdout"
+    },
+    "loader/revision4-owning-image-identities/actual-root-execution/terminal.json": {
+      "sha256": "a40ba5288408e414a8fdcc741b4370380364c79c2f6c8f0db05b456e5c5ded2c",
+      "size": 274,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/actual-root-execution/terminal.json"
+    },
+    "loader/revision4-owning-image-identities/independent-source-review-build.json": {
+      "sha256": "6c42c4a0592626813ee7242716d748ce3d27d6602d45d96141f3a6524e993d9f",
+      "size": 963,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/independent-source-review-build.json"
+    },
+    "loader/revision4-owning-image-identities/inputs.json": {
+      "sha256": "9c8e201da20e42414d4e32ee7911c4dad53374baca35e998b02ea38a1a07888d",
+      "size": 17762,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/inputs.json"
+    },
+    "loader/revision4-owning-image-identities/manifest.json": {
+      "sha256": "b13fe76bee702f5ae9d9064aa7c0c9f7a0d7ae635938b6075c0cb0c452999db4",
+      "size": 4867,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/manifest.json"
+    },
+    "loader/revision4-owning-image-identities/owning-image.patch": {
+      "sha256": "b3b6dd8ded89178e43cde462456579c00f116522aadb5e3df4228f55249dc4fc",
+      "size": 2788,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/owning-image.patch"
+    },
+    "loader/revision4-owning-image-identities/qualify_current_loader.py": {
+      "sha256": "e5a9330b9d432d805387a46e2237a18e22a107b6e16245d0b6fde278e6aca53d",
+      "size": 8267,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/qualify_current_loader.py"
+    },
+    "loader/revision4-owning-image-identities/retained-precommand-failure.json": {
+      "sha256": "dcfd988e8c07025a4b41e2c49d05c2f84dc23bfd0911c70cf84c3cba23d0e137",
+      "size": 1164,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/retained-precommand-failure.json"
+    },
+    "loader/revision4-owning-image-identities/root-argv.json": {
+      "sha256": "d040525d67d58d7762ca0377b9676ea231002016374aae0210d249cde327d7d4",
+      "size": 872,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/root-argv.json"
+    },
+    "loader/revision5-current-957-cache/accepted-cache-copy-plan.json": {
+      "sha256": "138ba66ad1f6eb5d32751933888acf8c0922a2cdb512d4fa7e68607d6c35f421",
+      "size": 1389,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/accepted-cache-copy-plan.json"
+    },
+    "loader/revision5-current-957-cache/actual-root/loader.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/actual-root/loader.stderr"
+    },
+    "loader/revision5-current-957-cache/actual-root/loader.stdout": {
+      "sha256": "27a43bc22d6d52ac55d526061b75c77854c41d0f48ba36053d2fa6cca2c8c257",
+      "size": 11374,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/actual-root/loader.stdout"
+    },
+    "loader/revision5-current-957-cache/actual-root/report.json": {
+      "sha256": "aa178472d6f2e103ab7d5cddb3623dc43f9a9c2395f32f0754f78289cf946f4f",
+      "size": 72625,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/actual-root/report.json"
+    },
+    "loader/revision5-current-957-cache/actual-root-execution/stderr": {
+      "sha256": "8c70cd868f3b8461e16ba68430674e24a847a8d7399d9ebf1df308e73af7e4ea",
+      "size": 116,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/actual-root-execution/stderr"
+    },
+    "loader/revision5-current-957-cache/actual-root-execution/stdout": {
+      "sha256": "9ea56ca28b39bcace16f5c6c965f9c70b7cce5fe1c209084faea841509e38608",
+      "size": 452,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/actual-root-execution/stdout"
+    },
+    "loader/revision5-current-957-cache/actual-root-execution/terminal.json": {
+      "sha256": "695fb07be7402ad103f71ef8c0291408a3d06cd133d9e970cf36a34a339c0d22",
+      "size": 274,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/actual-root-execution/terminal.json"
+    },
+    "loader/revision5-current-957-cache/cache-correspondence.ACCEPTED.json": {
+      "sha256": "4dc35d6cbff5bd39499afc8fa6bd61bd25c5a9df3378816c811e359a6d68747e",
+      "size": 2998,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/cache-correspondence.ACCEPTED.json"
+    },
+    "loader/revision5-current-957-cache/cache-input.patch": {
+      "sha256": "ca3d8c2647784ef049e7faac104b8a0d359329801230293c2e3f8fa731ac7fa7",
+      "size": 471,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/cache-input.patch"
+    },
+    "loader/revision5-current-957-cache/independent-actual-review-build.json": {
+      "sha256": "a3e40408c59fb3c3bf25c955930e848676de52a6e8f6bf52af5fef0ebe24d7c4",
+      "size": 1929,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/independent-actual-review-build.json"
+    },
+    "loader/revision5-current-957-cache/independent-source-review-build.json": {
+      "sha256": "94f8ac21ca4d020f109f5579d6fc1b9f07f070054499d21a8c448003f3d851b0",
+      "size": 809,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/independent-source-review-build.json"
+    },
+    "loader/revision5-current-957-cache/inputs.json": {
+      "sha256": "ec6a721ffb925cd73a74258c87c6f73060eae7e497747332241a14730c06087b",
+      "size": 17762,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/inputs.json"
+    },
+    "loader/revision5-current-957-cache/inputs.pending.json": {
+      "sha256": "9e411bf24bec42c3921c4d271912059debe24a10277a24f267c1c3ffa990bacf",
+      "size": 17700,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/inputs.pending.json"
+    },
+    "loader/revision5-current-957-cache/loader-correspondence.ACCEPTED.json": {
+      "sha256": "954d1af29de89071628004417a74bbaa5f50ae0fb6eeb03c4f057798926bd42d",
+      "size": 1539,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/loader-correspondence.ACCEPTED.json"
+    },
+    "loader/revision5-current-957-cache/loader-correspondence.PENDING.json": {
+      "sha256": "2c6e1ff4d5480ef212e9da9b268631dc6a18678c229e4ae071cb4f1598bb658a",
+      "size": 1504,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/loader-correspondence.PENDING.json"
+    },
+    "loader/revision5-current-957-cache/manifest.json": {
+      "sha256": "b9930ed256e112ce7927ca5914086e41a1684cfad81b890650ae2d01a9f2bd26",
+      "size": 6201,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/manifest.json"
+    },
+    "loader/revision5-current-957-cache/manifest.pending.json": {
+      "sha256": "a7b5606461c02b6c39ced8e17c546ee52475053b4db2135bd3b81f3018e6c2dc",
+      "size": 2331,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/manifest.pending.json"
+    },
+    "loader/revision5-current-957-cache/qualify_current_loader.py": {
+      "sha256": "23e6c46438a1b6f8ad783a20e011b09a301fb34d238ebe65c30c880f03d50b31",
+      "size": 8267,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/qualify_current_loader.py"
+    },
+    "loader/revision5-current-957-cache/root-argv.json": {
+      "sha256": "7415019b627147a14d4ef0506b4914f49dcbc05d2350da4779ddc0c9a27ed242",
+      "size": 866,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/root-argv.json"
+    },
+    "loader/root-argv.json": {
+      "sha256": "afb7a89f5d6d71286ce2e53ad77c4143d645ef3ce06d710ed9adb7df89e371a1",
+      "size": 838,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/root-argv.json"
+    },
+    "schema/actual-root/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root/compile.stderr"
+    },
+    "schema/actual-root/compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root/compile.stdout"
+    },
+    "schema/actual-root/recompiled/gschemas.compiled": {
+      "sha256": "5c04f28c16da15dbbb1ab64f859ad638203ecda3aa762ec62e76574e98876f63",
+      "size": 51016,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root/recompiled/gschemas.compiled"
+    },
+    "schema/actual-root/report.json": {
+      "sha256": "8d851fe15a5d852be9e3394d2a91ee376daefc4881a98bf264e0c30874e1ad32",
+      "size": 1238,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root/report.json"
+    },
+    "schema/actual-root-execution/stderr": {
+      "sha256": "412982f42e85819ae442669b1d7a1b3578dc13a2105f7728841bffee013baac9",
+      "size": 116,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root-execution/stderr"
+    },
+    "schema/actual-root-execution/stdout": {
+      "sha256": "4b491b7195ac1d7c03a185a8800853071060e314b279c90eab2792cf36a5847a",
+      "size": 1172,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root-execution/stdout"
+    },
+    "schema/actual-root-execution/terminal.json": {
+      "sha256": "073f0422db0fb0f5613e258a1ccfed8ca65acd3af2f78df4f1094bf690275b68",
+      "size": 274,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root-execution/terminal.json"
+    },
+    "schema/independent-actual-review-build.json": {
+      "sha256": "6bb70c20fd0d8f7bd6a0b49f6e58da833a6ce7589b4344e8c1e853478ea1149b",
+      "size": 2240,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/independent-actual-review-build.json"
+    },
+    "schema/independent-source-review-build.json": {
+      "sha256": "5b4f38da8687f79a7b9f97a900be061aaeff154be7fb729119d137db11651c1b",
+      "size": 1014,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/independent-source-review-build.json"
+    },
+    "schema/inputs.json": {
+      "sha256": "8bd0109564d850826246cf9a62369f70e6fe880f474c965717c3269229f5cb6f",
+      "size": 7644,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/inputs.json"
+    },
+    "schema/manifest.json": {
+      "sha256": "f8317a5656e1c6d036842d95fa1e70362ed832f5ee27e8d568a2c54efe7f0098",
+      "size": 3762,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/manifest.json"
+    },
+    "schema/reproduce_current_schema.py": {
+      "sha256": "398721a1a96af13847da5db9ce07411ed3b8997a97f43e566df65ece08f3bb4d",
+      "size": 2964,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/reproduce_current_schema.py"
+    },
+    "schema/root-argv.json": {
+      "sha256": "bbba349be5bfe8907ed9b464f6a2ef59dff042e9bacebbb66dab5ba2de81aac4",
+      "size": 1172,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/root-argv.json"
+    },
+    "schema/scanner.patch": {
+      "sha256": "db2cb2a1df7f97a94ece224af443009825c459b343d59da07e28f2c2302a6ad7",
+      "size": 1420,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/scanner.patch"
+    },
+    "schema/source-delta.json": {
+      "sha256": "f522963f1825fe747b835c519e51cd51a3df8f27a3c350fa176227a043cbb7b2",
+      "size": 1277,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/source-delta.json"
+    },
+    "cache-313-historical/actual-root-adoption/accepted-cache-correspondence.json": {
+      "sha256": "74cedbb2b3e0501ea2146ce2a27ef5df8e46e1a8c6bbd102c042262aa7de3bf5",
+      "size": 2998,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-adoption/accepted-cache-correspondence.json"
+    },
+    "cache-313-historical/actual-root-adoption/admission.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-adoption/admission.stderr"
+    },
+    "cache-313-historical/actual-root-adoption/admission.stdout": {
+      "sha256": "413f83610d93ee056c6089610a2661f2b84a64f615955e45274e37362139b180",
+      "size": 2479,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-adoption/admission.stdout"
+    },
+    "cache-313-historical/actual-root-adoption/claims.jsonl": {
+      "sha256": "0f39dac42830e613f2069065d1d6be44620716b76303f3111d71aabecb9ca357",
+      "size": 780,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-adoption/claims.jsonl"
+    },
+    "cache-313-historical/actual-root-adoption/copy-receipt.json": {
+      "sha256": "6d432750e868b7fd0a8de99ba35164c4f3270a1b291f3c4808f3db9fa154858e",
+      "size": 1602,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-adoption/copy-receipt.json"
+    },
+    "cache-313-historical/actual-root-adoption/plan-event.json": {
+      "sha256": "3ed095eb9af9cc7586429dbeaae9313cb2007ecfe653a54a1cc228b8616981a1",
+      "size": 1229,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-adoption/plan-event.json"
+    },
+    "cache-313-historical/actual-root-adoption/root-copy-plan.json": {
+      "sha256": "de7fdf325b8ec50ccb240587c03ae1676f5e9ef65a407cbe958898846c224843",
+      "size": 1490,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-adoption/root-copy-plan.json"
+    },
+    "cache-313-historical/actual-root-execution/stderr": {
+      "sha256": "b327eaaa195ad70c87d1a9814d44e41474fa2a7863d0270b5f1c1df743cdaec1",
+      "size": 116,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-execution/stderr"
+    },
+    "cache-313-historical/actual-root-execution/stdout": {
+      "sha256": "f6dae2c6d83e8d7a4c1e809282ca67d4fb6c5e90780172fa116f7849393f69ae",
+      "size": 448,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-execution/stdout"
+    },
+    "cache-313-historical/actual-root-execution/terminal.json": {
+      "sha256": "014912a96471ae2a289189c37df0939f4f91eb7d9c48188bb9d98f5c64045881",
+      "size": 844,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-root-execution/terminal.json"
+    },
+    "cache-313-historical/actual-scan/actual-loader-cache-entries.json": {
+      "sha256": "e99499940dfbe7553725043631b2a444f2e2529b294df99b814f116b7a074b22",
+      "size": 463756,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-scan/actual-loader-cache-entries.json"
+    },
+    "cache-313-historical/actual-scan/cache-correspondence.PROPOSED.json": {
+      "sha256": "7389b4377f97973f0f9fe09e55216457f1c7a976ab201ce0d9bc318881408608",
+      "size": 2996,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-scan/cache-correspondence.PROPOSED.json"
+    },
+    "cache-313-historical/actual-scan/complete-system-inventory-audit.json": {
+      "sha256": "20f0da78c17643ca07a84aa981680dd43c36c60057a995045fc1dee3ee0933c2",
+      "size": 527,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-scan/complete-system-inventory-audit.json"
+    },
+    "cache-313-historical/actual-scan/selected-loader-resolution-correspondence.json": {
+      "sha256": "97958acd5f53ca39a5f3852e3484fa2ecdeba725857a5403d9e540f6a6e6066e",
+      "size": 347077,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/actual-scan/selected-loader-resolution-correspondence.json"
+    },
+    "cache-313-historical/independent-actual-cache-review-build.json": {
+      "sha256": "83ed80da7f043bd54ce9347b51c7de26e0082fa7daeaf0a6b7d08aa66c38dc97",
+      "size": 4784,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/independent-actual-cache-review-build.json"
+    },
+    "cache-313-historical/independent-source-review-build.json": {
+      "sha256": "38b664aac54e8e103dff98c43ba4090bd5bbc2d73e48d87d6f21d12a38e4e81d",
+      "size": 857,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/independent-source-review-build.json"
+    },
+    "cache-313-historical/manifest.json": {
+      "sha256": "4fdacf0d1ffd25a437b02132b6a415fea2a451305c8ac95e63b2c07f4e553c1e",
+      "size": 2957,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/manifest.json"
+    },
+    "cache-313-historical/read_current_correspondence.py": {
+      "sha256": "0c622a8e671a66400b7df78573f423b3a59a60f65fec0d415cf1bd8b5392c1be",
+      "size": 8901,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/read_current_correspondence.py"
+    },
+    "cache-313-historical/root-argv.json": {
+      "sha256": "73056d57a527f2120f52442d88aaedeea16fbf0579a5e3154337d1d5ec0cdd29",
+      "size": 1157,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/root-argv.json"
+    },
+    "cache-313-historical/scanner.patch": {
+      "sha256": "547fd055ddabffafca1eb48b43fb86c7244fa7d2526e177eebe4cf722649a956",
+      "size": 1570,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-313a-preparation/scanner.patch"
+    },
+    "cache-957-current/actual-root-execution/stderr": {
+      "sha256": "9e5eef939fdf863efae01dc469c10bfc5425adacbf656b0494acf335d9295b27",
+      "size": 116,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-root-execution/stderr"
+    },
+    "cache-957-current/actual-root-execution/stdout": {
+      "sha256": "f2845f8554f16c83d1f0ca18f65e3854ea9c34dd7ad678126f105d5af347fa78",
+      "size": 448,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-root-execution/stdout"
+    },
+    "cache-957-current/actual-root-execution/terminal.json": {
+      "sha256": "f2b127c559a55ea7b6f4ad021ea42b060e2d35fc841349a1ac69036d70abf347",
+      "size": 274,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-root-execution/terminal.json"
+    },
+    "cache-957-current/actual-scan/actual-loader-cache-entries.json": {
+      "sha256": "d3cb37f9117c206ae200bdeaaa32a11d549bc38daca40717c95af9f98ad4500a",
+      "size": 464329,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/actual-loader-cache-entries.json"
+    },
+    "cache-957-current/actual-scan/cache-correspondence.PROPOSED.json": {
+      "sha256": "1668cbe38384c2a18103e929e4f8109da317c860d5bddc484f5c59affdbb1f39",
+      "size": 2996,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/cache-correspondence.PROPOSED.json"
+    },
+    "cache-957-current/actual-scan/complete-system-inventory-audit.json": {
+      "sha256": "8b0f75ed7b5fc2fcc44ae97605a4e248c9c412cb881b353a6fa0e62b1046889d",
+      "size": 527,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/complete-system-inventory-audit.json"
+    },
+    "cache-957-current/actual-scan/selected-loader-resolution-correspondence.json": {
+      "sha256": "01c7edd4b48cf8c1956c54bbde0d2358bbd804eda847b8f1370ec596bf6e94fb",
+      "size": 347077,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/selected-loader-resolution-correspondence.json"
+    },
+    "cache-957-current/cache-correspondence.ACCEPTED.json": {
+      "sha256": "4dc35d6cbff5bd39499afc8fa6bd61bd25c5a9df3378816c811e359a6d68747e",
+      "size": 2998,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/cache-correspondence.ACCEPTED.json"
+    },
+    "cache-957-current/independent-actual-cache-review-build.json": {
+      "sha256": "d47abc8e57181232bb104e13a502f4b957f70ffb7f77775a08dda9a5119c2674",
+      "size": 4847,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/independent-actual-cache-review-build.json"
+    },
+    "cache-957-current/independent-source-review-build.json": {
+      "sha256": "6ee2b723fc94308afb200ee439ecf518708cce845286d0a9b486761f86b9fc9d",
+      "size": 812,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/independent-source-review-build.json"
+    },
+    "cache-957-current/manifest.json": {
+      "sha256": "af0a026737659316026adbe9d7d35a66b7f3ac92f88bcf41dd04844f49ee394e",
+      "size": 3369,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/manifest.json"
+    },
+    "cache-957-current/read_current_correspondence.py": {
+      "sha256": "64a6cae11e15d015e42a28d7d39095f690747af4239035235925558f6bc9ce63",
+      "size": 8901,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/read_current_correspondence.py"
+    },
+    "cache-957-current/root-accepted-claims.jsonl": {
+      "sha256": "cb47beefd121e2debf81466ddc77cf0d25b5024c8f919dfc8d46003b607f8e92",
+      "size": 421,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/root-accepted-claims.jsonl"
+    },
+    "cache-957-current/root-accepted-copy-plan.json": {
+      "sha256": "c4c3801f9ec7c3c61d5a7b17c0ece6194ec3d76ab365479118cccac21f3d0e6b",
+      "size": 840,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/root-accepted-copy-plan.json"
+    },
+    "cache-957-current/root-accepted-copy-receipt.json": {
+      "sha256": "0d7072eac8e105d2f937e7a62ee666b99e152d5a9fc055682f82cb4b3a2d9d31",
+      "size": 952,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/root-accepted-copy-receipt.json"
+    },
+    "cache-957-current/root-argv.json": {
+      "sha256": "bd84212a96257743c2305a3910d2cf56a0564ed351aa71d34677a427ab002f3a",
+      "size": 1157,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/root-argv.json"
+    },
+    "cache-957-current/root-dispatch-shape-failure/observation.json": {
+      "sha256": "19377eaa7dceea3440ed7750ba4593da75b77e79593e4088abe169aae36a6f8d",
+      "size": 193,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/root-dispatch-shape-failure/observation.json"
+    },
+    "cache-957-current/root-dispatch-shape-failure/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/root-dispatch-shape-failure/stderr"
+    },
+    "cache-957-current/root-dispatch-shape-failure/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/root-dispatch-shape-failure/stdout"
+    },
+    "cache-957-current/scanner.patch": {
+      "sha256": "ae0d9108875def475c5c5cd445417286ae1e9bc4e49b8ebadb6fbc5063cb73b0",
+      "size": 1514,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/scanner.patch"
+    },
+    "adoption/after-adoption-check.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/after-adoption-check.stderr"
+    },
+    "adoption/after-adoption-check.stdout": {
+      "sha256": "14497826c0c82bdc38c22be261fcf7fc669bd1f65c7589c7fee1531cab86446f",
+      "size": 3344,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/after-adoption-check.stdout"
+    },
+    "adoption/preimage-run_current_arm_ui011_opener_closure.py": {
+      "sha256": "119f2f54c9e6eb6475e26e0c3f551d2c7d68cd0bdd4a39a43ba710d5578f96af",
+      "size": 118713,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/preimage-run_current_arm_ui011_opener_closure.py"
+    },
+    "adoption/preimage-ux023_current_boot_correspondence.py": {
+      "sha256": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050",
+      "size": 37301,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/preimage-ux023_current_boot_correspondence.py"
+    },
+    "adoption/preimages.json": {
+      "sha256": "75df89ecad2df1cba65578dfd7a9515ffb914e4e7b031bf3404998516775f24a",
+      "size": 1233,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/preimages.json"
+    },
+    "adoption/root-claims.jsonl": {
+      "sha256": "79be5a8de43db1d0a73326ba6e954636eaba2efcac764d30eeb1e9d36f895e85",
+      "size": 625,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/root-claims.jsonl"
+    },
+    "adoption/root-copy-plan.json": {
+      "sha256": "414b8a47b4622156a0f49195accba231d545233e45a329e886f3ccf180efd6ea",
+      "size": 4128,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/root-copy-plan.json"
+    },
+    "adoption/root-copy-receipt.json": {
+      "sha256": "e0438d49969abb0926fada764a8e8ad684abf63829288ebc1e45b8a865b99736",
+      "size": 1643,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-source-adoption/root-copy-receipt.json"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/closure-adapter-provenance.json": {
+      "sha256": "04b52769850633efca3f85138f9ebb62660d311d38f356b04c280100cb680de1",
+      "size": 697,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/closure-adapter-provenance.json"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/closure-adapter.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/closure-adapter.stderr"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/closure-adapter.stdout": {
+      "sha256": "9439c169af5108a2aab83142315bc166c17653988ae70cf6316a1d4f3c624c58",
+      "size": 194,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/closure-adapter.stdout"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/closure-claims.jsonl": {
+      "sha256": "cef66c44fb1f785a65377b3f389b5f7ad0c659072fa70b2503a3b49b996bdcc0",
+      "size": 1100,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/closure-claims.jsonl"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/finished-admission.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/finished-admission.stderr"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/finished-admission.stdout": {
+      "sha256": "9b2fc4150f8b79c09df30e17431ba355b724bd6b848b5149cd00d54f06b1d5be",
+      "size": 2634,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/finished-admission.stdout"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/launch.json": {
+      "sha256": "cc71da64163d0ff30b40beb053f3bb2e682ab90323c9b0d349264a311ce8cd64",
+      "size": 58960,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/launch.json"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/outer-evidence-claim.jsonl": {
+      "sha256": "996b03ed60776147e9779b3f067635365aca21188be21832d924d6fbcbd6b541",
+      "size": 365,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/outer-evidence-claim.jsonl"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/outer-evidence-copy-plan.json": {
+      "sha256": "46bad86ebd5a79d1ae3e27a83f1d9ae4ef3389cd1e74999bfd4b4faebe4dcc36",
+      "size": 813,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/outer-evidence-copy-plan.json"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/outer-evidence-copy-receipt.json": {
+      "sha256": "577d42180ce9ad08d164f73bb0625f7cff0a3d61449192eb9357ae17fc086ed3",
+      "size": 925,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/outer-evidence-copy-receipt.json"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/root-close-actual-prebuild-failure-v1.py": {
+      "sha256": "cbf1cac6443bc0c63fc063433bba06c397282f8cd18f964bca25ad4298d50079",
+      "size": 5884,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/root-close-actual-prebuild-failure-v1.py"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/started-admission.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/started-admission.stderr"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/started-admission.stdout": {
+      "sha256": "4f4ebaaf72bea2694b70885e606f172647baf45d027ae9422b8c686bd23282e7",
+      "size": 2640,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/started-admission.stdout"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/stderr": {
+      "sha256": "e7f578ee2435e135281497176261a0b014b3f0370fff0b2b03bf1d171b6dda19",
+      "size": 1116,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/stderr"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/stdout": {
+      "sha256": "894b232173aa48afe8c1da34f0d7956c9a6af7e31aedf3da1cb2788ef53d2b0b",
+      "size": 6847,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/stdout"
+    },
+    "failures/revision2-actual-normal-elm-contract/actual-root-image/terminal.json": {
+      "sha256": "b5e8c9eb1d3337435adb3c7390925c12d1500e0e94c2e35f8b137be73293cc24",
+      "size": 635,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision2-actual-normal-elm-contract/actual-root-image/terminal.json"
+    },
+    "failures/revision3-current-loader-cache/actual-root-native-preparation/inventory-diagnosis.json": {
+      "sha256": "c6297e095f99e464106d53b58722016a7c2e945df89584de7136c4cdfc2e9d06",
+      "size": 458,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/actual-root-native-preparation/inventory-diagnosis.json"
+    },
+    "failures/revision3-current-loader-cache/actual-root-native-preparation/inventory-presence-diagnosis.json": {
+      "sha256": "98613f6eeefdc3ddc6115a8c84b2541a3bdd048d43424337cc520b24d701de6b",
+      "size": 164,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/actual-root-native-preparation/inventory-presence-diagnosis.json"
+    },
+    "failures/revision3-current-loader-cache/actual-root-native-preparation/stderr": {
+      "sha256": "0b9f86a57235df72f2fbff2c3150f3671ef7291ff6635a5246397f773d4b95da",
+      "size": 2683,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/actual-root-native-preparation/stderr"
+    },
+    "failures/revision3-current-loader-cache/actual-root-native-preparation/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/actual-root-native-preparation/stdout"
+    },
+    "failures/revision3-current-loader-cache/actual-root-native-preparation/terminal.json": {
+      "sha256": "0fc2dc6b7ca57cb771742632a746ce9bb8c3183bda7b8a0ee9eb9046b5c789b7",
+      "size": 358,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/actual-root-native-preparation/terminal.json"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/inventory-diagnosis.json": {
+      "sha256": "e2113985a0989ee0f114e37acbc32778037028a9a62cdb60cb51c45df3e52773",
+      "size": 529,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/inventory-diagnosis.json"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/admission.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/admission.stderr"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/admission.stdout": {
+      "sha256": "00735a775791205a645be2bdbd053f144a298617f2d3417bd375644242a30b17",
+      "size": 2762,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/admission.stdout"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/event.json": {
+      "sha256": "4849d9d697b6bbfdc0b4ab9cb6d92a6ca50f473259d3595fbab1b568d291aabd",
+      "size": 696,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/event.json"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/manifest.json": {
+      "sha256": "57c086bb9ec529054e1930780c5c3e1a01dc63061d9d2cb2be68f2481de08a14",
+      "size": 2528,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/manifest.json"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/refusal-review.json": {
+      "sha256": "b8777836f27de5ef550c284fbd5b97f513ee22f4434029f758179632c57a373f",
+      "size": 507,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/refusal-review.json"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/report.json": {
+      "sha256": "89a2165634583d0ded5c112dfe8fac8825f12b75cd091274fd4977336523bd4e",
+      "size": 745,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/report.json"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/root-claims.jsonl": {
+      "sha256": "3bd48908a86ea8c34f3b836dbf5d35e8c13de9f5248306e81f0858dcb11edbfc",
+      "size": 1553,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/root-claims.jsonl"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/root-copy-plan.json": {
+      "sha256": "bfc35a0fe22f7f5270e5f36e56caab1c9b729363fc29fdfc55284dcf7c9ff36a",
+      "size": 2966,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/root-copy-plan.json"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/root-copy-receipt.json": {
+      "sha256": "8ce4e3e55f75fed5cfa4cfcea4a44a41ddf41179ad58a4834383c26aa2fc3e68",
+      "size": 3078,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/root-copy-receipt.json"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/stderr": {
+      "sha256": "5e8496b4ac802f49eea64898f10a621a3bdb65f5a28d0f960d32a142c6b1eaff",
+      "size": 1015,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/refusal-preparation/stderr"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/stderr": {
+      "sha256": "5e8496b4ac802f49eea64898f10a621a3bdb65f5a28d0f960d32a142c6b1eaff",
+      "size": 1015,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/stderr"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/stdout"
+    },
+    "failures/revision4-hicolor-correspondence/actual-root-preflight/terminal.json": {
+      "sha256": "0be039f10dcabf8f04faf539ebeebdfa4d798bed81f38c160e3618ba41ed18ee",
+      "size": 611,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision4-hicolor-correspondence/actual-root-preflight/terminal.json"
+    },
+    "schema/composition/source-coherence-blocker.json": {
+      "sha256": "63f88e4b47365d917370856e0dc82e278459bee0f9424cc3429edf8b8ae390f0",
+      "size": 482,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/source-coherence-blocker.json"
+    },
+    "schema/composition/current-schema-correspondence.json": {
+      "sha256": "5ed3d58808c8ced0d8267a823108464d0ccd0af2b00bb74cd950bcedb87864b8",
+      "size": 1704,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/current-schema-correspondence.json"
+    },
+    "schema/composition/current-schema-provider-readiness.json": {
+      "sha256": "dbd56e43101657e84bd36f251292ec74339b857863b5a22eb41d23c5dab7a898",
+      "size": 34607,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/current-schema-provider-readiness.json"
+    },
+    "schema/composition/current-schema-inputs205.json": {
+      "sha256": "2614eca3a7feaf22df29e5ac59a5723c5793c3c7c39d9900b034b441d34a4d52",
+      "size": 22751,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/current-schema-inputs205.json"
+    },
+    "schema/composition/current-schema-qualification.json": {
+      "sha256": "9249e0acd0bd667ef15b37ab2d07d37e16fcc7413733fe71c34b4009915154db",
+      "size": 3687,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/current-schema-qualification.json"
+    },
+    "schema/composition/schema-data-copy-plan.json": {
+      "sha256": "319bfcd64ce1e02b402be00483fadaf063f1a62c5271997dfc53bfa8c77d24d6",
+      "size": 3610,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision5-current-glib-schema/schema-data-copy-plan.json"
+    },
+    "historical-cursor/current-cursor-dependency-correspondence.accepted-build.json": {
+      "sha256": "9619d41ba273058ea258d7d7adc35522a654c2d5388101a49d9f6b3430e935d7",
+      "size": 26301,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/current-cursor-dependency-correspondence.accepted-build.json"
+    },
+    "historical-cursor/actual-root-qualification-v2-configured-keyring/report.json": {
+      "sha256": "b74e52615b2c9b9a9c805f3071f9e6f4053cd6940e33bc868677fbf07f274526",
+      "size": 29795,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/actual-root-qualification-v2-configured-keyring/report.json"
+    },
+    "historical-cursor/source-preparation/test_cursor_correspondence.py": {
+      "sha256": "1eb1651e6c22e25f7c1e83bb7fc3f27db861a606d63fe72d892d6bec4f83032d",
+      "size": 6461,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/test_cursor_correspondence.py"
+    },
+    "historical-cursor/source-preparation/manifest.json": {
+      "sha256": "452537cbf827c66cc82f82ed95ed1c616692ebbdf14dec80f41c2323ea9bd45c",
+      "size": 6277,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/manifest.json"
+    },
+    "historical-cursor/source-preparation/independent-source-review-build.json": {
+      "sha256": "6f1f22ba64657aa0e8e1d27d1cb2b6bef7c1a6f59074979c398ae0fd123c442a",
+      "size": 1597,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/foundation-cursor-dependency-intervention/source-preparation/independent-source-review-build.json"
+    },
+    "cache-957-current/actual-ld.so.cache": {
+      "sha256": "957d0bb07b95e03a5ea03e5373678ed7ca467db33fac05a06e273f35ae8ee2c5",
+      "size": 137435,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-loader-cache-957d-preparation/actual-scan/actual-ld.so.cache"
+    },
+    "root-observations/activation-reconciliation.json": {
+      "sha256": "8044a8f78f6ef5d77611ce7be5572fae997f69ab74bd958304fcfc0756d28299",
+      "size": 946,
+      "originalPath": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/root-activation-reconciliation-observation.json"
+    },
+    "README.md": {
+      "sha256": "2ff653a516352f06e162d6599f73d9b3f4c4afa1fc51c8087947bcad59d75999",
+      "size": 2326,
+      "originalPath": null
+    },
+    "reproduction.json": {
+      "sha256": "dd8f2dd829c05c1a1e3d654be87e2d8f22c2b627274f78cd18464ff8507b990f",
+      "size": 2882,
+      "originalPath": null
+    }
+  },
+  "recordedResults": {
+    "red": "23 executed, sole current-composition positive rejected; 22 other controls and32 refusal samples passed",
+    "green": "Same23controls/32samples passed",
+    "loader": "Actual exact147 dependency selections plus4owningimages under957cache passed",
+    "schema": "Actual48source current schema reproduction passed"
+  },
+  "rootAdoption": "adoption/root-copy-receipt.json",
+  "limits": {
+    "nativeAcceptance": false,
+    "atAcceptance": false,
+    "earAcceptance": false,
+    "productClockAdvanceClaimed": false,
+    "newRsi": false,
+    "primaryWritesByAuthor": false,
+    "authorTestsExecuted": false,
+    "portableLauncher": false
+  },
+  "failureClassification": {
+    "root-observations/activation-reconciliation.json": "Root self-attestation only; exact past UTC null; no birth/progress proof",
+    "cache-957-current/root-dispatch-shape-failure": "Dispatch argument-shape failure; no loader/native/semantic run",
+    "loader/revision3-whole-witness-deadline/actual-root-execution": "Before-command owning-image/dependency-map assumption failure",
+    "loader/revision4-owning-image-identities/actual-root-execution": "Before-command stale cache refusal after external host change"
+  }
+}

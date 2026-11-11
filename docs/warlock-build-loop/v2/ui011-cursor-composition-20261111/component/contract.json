@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "historicalProofPreserved": "9619d41ba273058ea258d7d7adc35522a654c2d5388101a49d9f6b3430e935d7",
+  "wrapperFields": [
+    "schema",
+    "disposition",
+    "reviewer",
+    "scope",
+    "historicalCorrespondence",
+    "currentSchemaCorrespondence",
+    "currentProviderReadiness",
+    "currentLoaderCorrespondence"
+  ],
+  "wrapperSchema": 2,
+  "wrapperScope": "ui011-cursor-current-schema-loader-composition",
+  "loaderCorrespondenceFields": [
+    "schema",
+    "disposition",
+    "reviewer",
+    "scope",
+    "actualReport",
+    "actualProtectedTerminal",
+    "independentReview"
+  ],
+  "loaderScope": "ui011-cursor-current-loader-correspondence",
+  "reviewBindings": [
+    "actualReport",
+    "actualProtectedTerminal"
+  ],
+  "rules": [
+    "Preserve all original signed package/member/8 symbol/alias/owning-image/147 loader evidence checks against immutable historical basis.",
+    "Current nested differs from historical nested only at qualified schema input and sourceReview; derive the schema using the existing actual reproducibility verifier, then require exact full nested equality.",
+    "Current loader proof must bind actual protected success and independent exact report+terminal review; same boot/current cache313/exact original147 paths and hashes/libraryDir/loader/Hyprland/privateAQ/cursor, exact loader argv and zero exit. Runtime does not invoke loader.",
+    "Old historical cache85f1 is a historical qualification field; current path cannot be required to still contain old bytes. New path must verify actual cache313 and actual current loader witness.",
+    "No proof retains exact legacy map behavior. Old schema1 proof remains fail-closed on incompatible current nested/cache. No public callable signature or provider/collector propagation change needed."
+  ],
+  "missingEvidence": "Actual current147 loader report/terminal/independent review must exist before the positive test can execute; accepted800 SDK edges do not include owning Hyprland/cursor/privateAQ.",
+  "nativeAcceptance": false
+}

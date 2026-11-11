@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "sourceRecord": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+    "sha256": "685361405eabf7177c46bacb6e11655adae29b3c2440d55ebc17eee192f7e4de"
+  },
+  "selector": "delivery.events where sequence in [223,224,225]",
+  "events": [
+    {
+      "candidateSha256": "d75ad52ae420fc45d1c305e7a5e7e3aae1984d296c6285ebdb908e266c6a1649",
+      "jobId": "pid1182851-start4544281",
+      "eventId": "ui011-keymap-native-started-5170",
+      "kind": "execution-started",
+      "outerHandle": "5170",
+      "sequence": 223,
+      "clockSample": {
+        "utc": "2026-11-11T06:28:18.883073+00:00",
+        "bootId": "8e8e20ca-9a01-44c4-97b0-eae708e96f34",
+        "monotonicNs": 45571688775060,
+        "boottimeNs": 45720313511076
+      },
+      "atUTC": "2026-11-11T06:28:18.883073+00:00"
+    },
+    {
+      "candidateSha256": "d75ad52ae420fc45d1c305e7a5e7e3aae1984d296c6285ebdb908e266c6a1649",
+      "jobId": "pid1182851-start4544281",
+      "eventId": "ui011-keymap-native-finished-5170",
+      "kind": "execution-finished",
+      "outerHandleConsumed": true,
+      "report": {
+        "path": ".warlock-contributor/evidence/nextloop-20261106/ui011-csc-v1/native-terminal.json",
+        "sha256": "c3594179ae1f96b62ee3fcbd978fe82be78c467c6b28c2667f059770bc8ffc54"
+      },
+      "failureSignature": "observer-unqualified-memfd-before-focus",
+      "sequence": 224,
+      "clockSample": {
+        "utc": "2026-11-11T06:28:37.986798+00:00",
+        "bootId": "8e8e20ca-9a01-44c4-97b0-eae708e96f34",
+        "monotonicNs": 45590792496054,
+        "boottimeNs": 45739417232230
+      },
+      "atUTC": "2026-11-11T06:28:37.986798+00:00"
+    },
+    {
+      "kind": "plan-changed",
+      "eventId": "ui011-opener-classifier-refusal-diagnostic-20261111",
+      "owner": "root-workflow-20261109",
+      "reason": "Actual native d75ad52 report a6413797 failed before frames, input, READ_WINDOW and AT on an unqualified memfd at the generated RAM classifier. The observer mapping check passed; the failure occurred in opener process_maps initial generated_snapshot before the opener snapshot file could be retained. Event224 and terminal c359 keep their historical incorrect observer failure label; this plan appends the corrected OPENER stage without rewriting them. The actual offending kernel rows and origin remain unknown, so no memfd admission is justified.",
+      "nextAction": "Adopt only the reviewed optional failure callback in the existing shared snapshot helper and its owned-opener launcher binding after actual16-control PASS. Retain exact original raw rows and links at the classifier exception, label later descriptor observations separately, and always rethrow the original refusal without new admission or input. Refresh the existing image profile for the launcher hash only, while explicitly binding the shared helper hash in the native source tuple, then execute one diagnostic original-route candidate after actual fresh image PASS and independent reviews. Preserve e832 product14, current frontend, schema/cursor/cache proofs,14757 mappings, original28+2/4keys/16phase/640calls and all failures. No tested-product clock reset, diagnostic integration or original acceptance is claimed.",
+      "sequence": 225,
+      "clockSample": {
+        "utc": "2026-11-11T06:48:51.858028+00:00",
+        "bootId": "8e8e20ca-9a01-44c4-97b0-eae708e96f34",
+        "monotonicNs": 46804663730466,
+        "boottimeNs": 46953288466722
+      },
+      "atUTC": "2026-11-11T06:48:51.858028+00:00"
+    }
+  ],
+  "kind": "read-only exact structured projection; no event application or authority grant"
+}

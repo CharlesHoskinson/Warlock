@@ -1,0 +1,12 @@
+Running as unit: qa-harness-1a2d4d4f709048d0a8c5da7095973a1f.scope; invocation ID: 5d3abecdc1904fa2b06a1abebe6c5da8
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/qualify_current_loader.py", line 77, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/qualify_current_loader.py", line 54, in main
+    current_cache=stable('/etc/ld.so.cache');require(current_cache['sha256']==contract['expectedCurrentCacheSha256'],'actual current cache differs')
+                                             ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision4-owning-image-identities/qualify_current_loader.py", line 12, in require
+    if not ok:raise ValueError(message)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: actual current cache differs

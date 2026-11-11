@@ -1,0 +1,73 @@
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "errors": [],
+  "warnings": [],
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "progress": {
+    "workflowPolicy": 2,
+    "iterationsWithoutProgress": 0,
+    "lastRecordedProgressUTC": "2026-11-11T04:11:00.127396+00:00",
+    "secondsSinceRecordedProgress": 6130,
+    "suspendedSeconds": 0,
+    "limits": {
+      "iterations": 2,
+      "seconds": 2700,
+      "sameFailureExperiments": 2
+    },
+    "investigationNeedsChange": false,
+    "planChangeRequired": true,
+    "reconciliationRequired": false,
+    "authorizationExpired": false,
+    "reasons": [
+      "45-awake-minutes-without-tested-integration"
+    ],
+    "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+    "action": "Change the next action or defer in this same history.",
+    "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+  },
+  "nextRootAction": {
+    "kind": "correct",
+    "executor": "Root",
+    "candidateId": "ui011-watch-bookkeeping-native-v2-20261111",
+    "candidateSha256": "68fcc8d00a8535e9581bafb3c640231f207bef79535d92909d391ce62b037a30",
+    "jobId": null,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py",
+      "--sha256",
+      "7fb9cdbaf6a0b22c7940a5d4284f699c0980336e6d2a487a30875a8d437755d8"
+    ],
+    "expectedObservation": "Original ELM-UI-011 focus-scope-opener closure only: independent real owned GTK opener Done and menu, fixed nonce CLOSE, automatic current eligible Applications fallback with native/credential-bound real AT focus, no Refresh/Escape/window action grant. At most4literal keyboard transactions,28+2/16frames and unchanged owned provider/source/ABI/normal-cleanup gates. Registry realSIGTERM -15 still fails unchanged stack exit0 gate. Components/readiness/report flags grant no original acceptance. All otherUI011scenarios remain unqualified.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-11T04:11:00.127396+00:00",
+      "secondsSinceRecordedProgress": 6131,
+      "suspendedSeconds": 0,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "ok": true
+}

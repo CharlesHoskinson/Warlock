@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifestSha256": "6d2dc7ea27cb2cdd6b0556808f0b20b6a58b89ef9707779bda06cbbd751308bc",
+  "verified": [
+    "Exact script and helper preimage bytes unchanged from independently reviewed predecessor c38f92b66b490bc84efb5eafc27c0bd9b1bbff0cff1bf2b714baccb031544089; 23 cases and 32 samples unchanged.",
+    "Only inputs key delta is cacheCorrespondence from accepted313 to accepted957 hash4dc35d6cbff5bd39499afc8fa6bd61bd25c5a9df3378816c811e359a6d68747e.",
+    "Root argv binds exact inputs a32a3820 and accepted loader wrapper954d1af2; wrapper actual report aa178472, protected terminal695fb07b and independent reviewa3e40408 all hash verified."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "Source and data delta review only; no reviewer target execution, actual RED claim, production adoption or native acceptance."
+  ]
+}

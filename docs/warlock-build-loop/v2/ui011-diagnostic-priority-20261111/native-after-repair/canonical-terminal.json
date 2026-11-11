@@ -1,0 +1,20 @@
+{
+  "terminal": true,
+  "jobId": "pid1798161-start5088237",
+  "candidateSha256": "0bbf4f19b6a1ec69225a7e44796c6bad4ee5e1f44c8eb9ff0525eb7698e085d3",
+  "scope": "native",
+  "manifestSha256": "a0f0c09930b1ed0a62ea5e265f4dd77825bae040ccf3858973d9adaad2698ab5",
+  "fixtureSha256": "d606a55dd151f0a48266063a442942c6e9b34254fc4a30a8e9c87d8d10d14c16",
+  "exit": 1,
+  "classification": "failed",
+  "actualOuterHandle": "31828",
+  "actualOuterHandleConsumed": true,
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "rawReport": {
+    "path": ".warlock-contributor/ui011-opener-closure-1794383665825919564/report.json",
+    "sha256": "f0869425bddd800ce9e3c8779e6974cb7eda159c0fa2dab760a332c009cb0174"
+  },
+  "failureSignature": "opener-unqualified-lp-dma-buf-4096-rw-shared-before-focus",
+  "nativeExecuteReached": true
+}

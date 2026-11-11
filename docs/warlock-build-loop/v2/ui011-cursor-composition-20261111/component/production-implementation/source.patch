@@ -1,0 +1,177 @@
+--- a/tools/ux023_current_boot_correspondence.py
++++ b/tools/ux023_current_boot_correspondence.py
+@@ -229,7 +229,7 @@
+ CURSOR_BASIS_SHA = '91f37b768c404b41f33f20e2db9fb54f8463ec7a54742b73903a53b57065076b'
+ CURSOR_QUALIFICATION_SHA = 'b74e52615b2c9b9a9c805f3071f9e6f4053cd6940e33bc868677fbf07f274526'
+ 
+-def cursor_inputs(current, nested, reference=None):
++def _cursor_inputs_v1(current, nested, reference=None, *, current_cache=None):
+     """Derive one separately qualified live map; never rewrite the provider review basis."""
+     if reference is None:
+         return nested['inputs']
+@@ -282,7 +282,7 @@
+     if (not isinstance(package,dict) or set(package)!=set(CURSOR_PACKAGE_HASHES)
+             or any(not isinstance(package[k],dict) or set(package[k])!={'path','sha256'} or package[k].get('sha256')!=pin for k,pin in CURSOR_PACKAGE_HASHES.items())):
+         raise ValueError('actual signed package/member/keyring differs')
+-    for ref in [CURSOR_FOUNDATION,CURSOR_FOUNDATION_REPORT,CURSOR_PROVIDER,CURSOR_HYPRLAND,CURSOR_AQUAMARINE,CURSOR_LOADER,CURSOR_CACHE,*package.values()]:
++    for ref in [CURSOR_FOUNDATION,CURSOR_FOUNDATION_REPORT,CURSOR_PROVIDER,CURSOR_HYPRLAND,CURSOR_AQUAMARINE,CURSOR_LOADER,(CURSOR_CACHE if current_cache is None else current_cache),*package.values()]:
+         current.pinned(ref,256*1024*1024)
+     body = current.pinned(CURSOR_NEW,64*1024*1024)
+     if hashlib.sha256(body).hexdigest()!=CURSOR_NEW['sha256'] or body[:7]!=b'\x7fELF\x02\x01\x01' or body[18:20]!=b'\xb7\x00':
+@@ -321,6 +321,145 @@
+         raise ValueError('qualified owning imports/exports/SONAME/loader command differs')
+     current.check()
+     return live
++
++def _cursor_loader_identity(reference, identity):
++    """Recheck the immutable witness's current canonical inode without a loader run."""
++    fields = {'sha256', 'device', 'inode', 'size', 'mode', 'owner', 'group', 'mtimeNs', 'ctimeNs'}
++    path = Path(reference['path'])
++    if (set(identity) != fields or identity['sha256'] != reference['sha256']
++            or path.resolve(strict=True) != path):
++        raise ValueError('current loader canonical identity differs')
++    value = path.lstat()
++    actual = {'sha256': reference['sha256'], 'device': value.st_dev, 'inode': value.st_ino,
++              'size': value.st_size, 'mode': value.st_mode, 'owner': value.st_uid,
++              'group': value.st_gid, 'mtimeNs': value.st_mtime_ns, 'ctimeNs': value.st_ctime_ns}
++    if not stat.S_ISREG(value.st_mode) or actual != identity:
++        raise ValueError('current loader witnessed inode changed')
++
++
++def _cursor_current_loader(current, reference, historical_ref, historical, report):
++    proof = json.loads(current.pinned(reference, 4 * 1024 * 1024))
++    fields = {'schema', 'disposition', 'reviewer', 'scope', 'actualReport',
++              'actualProtectedTerminal', 'independentReview'}
++    if (set(proof) != fields or type(proof['schema']) is not int or proof['schema'] != 1
++            or proof['disposition'] != 'accepted' or proof['reviewer'] != 'build_audit'
++            or proof['scope'] != 'ui011-cursor-current-loader-correspondence'):
++        raise ValueError('exact current cursor loader correspondence required')
++    actual = json.loads(current.pinned(proof['actualReport'], 4 * 1024 * 1024))
++    terminal = json.loads(current.pinned(proof['actualProtectedTerminal'], 4 * 1024 * 1024))
++    review = json.loads(current.pinned(proof['independentReview'], 4 * 1024 * 1024))
++    if (review.get('schema') != 1 or review.get('reviewer') != 'build_audit'
++            or review.get('disposition') != 'accepted-exact-current-cursor-loader-correspondence'
++            or review.get('actualReport') != proof['actualReport']
++            or review.get('actualProtectedTerminal') != proof['actualProtectedTerminal']
++            or review.get('requiredChanges') != []
++            or type(terminal.get('actualExit')) is not int or terminal['actualExit'] != 0
++            or terminal.get('nativeExecuted') is not False):
++        raise ValueError('actual loader execution and independent review do not join')
++    if (actual.get('schema') != 1 or actual.get('kind') != 'ui011-current-cursor-loader-correspondence'
++            or actual.get('passed') is not True or actual.get('inputsUnchanged') is not True
++            or any(actual.get(key) is not False for key in ('nativeExecuted', 'sourceChanged', 'systemWrites'))
++            or actual.get('historicalCursorCorrespondence', {}).get('sha256') != historical_ref['sha256']
++            or actual.get('historicalQualification') != historical['qualification']
++            or actual.get('historicalBasisSha256') != CURSOR_BASIS_SHA
++            or actual.get('hyprland') != CURSOR_HYPRLAND or actual.get('privateAquamarine') != CURSOR_AQUAMARINE
++            or actual.get('loader') != CURSOR_LOADER or actual.get('currentCursor') != CURSOR_NEW
++            or actual.get('libraryDir') != historical['historicalNested']['libraryDir']
++            or actual.get('aliasChain') != CURSOR_ALIASES or actual.get('requiredSymbols') != CURSOR_SYMBOLS
++            or actual.get('packageProof') != report['package']
++            or actual.get('resolvedFiles') != report['resolvedFiles'] or actual.get('resolvedCount') != 147):
++        raise ValueError('current loader differs from exact historical cursor qualification')
++    current.pinned(actual['historicalCursorCorrespondence'], 4 * 1024 * 1024)
++    same_boot(actual['currentBootId'], BOOT.read_text().strip())
++    if actual['currentBootId'] != historical['currentBootId']:
++        raise ValueError('cursor current and historical boot differ')
++    cache = json.loads(current.pinned(actual['currentLoaderCacheCorrespondence'], 4 * 1024 * 1024))
++    if (cache.get('schema') != 1 or cache.get('reviewer') != 'build_audit'
++            or cache.get('disposition') != 'accepted' or cache.get('passed') is not True
++            or cache.get('scope') != 'ux003-current-loader-cache-correspondence'
++            or cache.get('selectedResolutionMismatches') != 0 or cache.get('systemEntryMismatches') != 0
++            or cache.get('edgeCount') != 800 or cache.get('systemEntryCount') != 15851
++            or cache.get('requiredAbsentCandidateCount') != 10 or cache.get('requiredAbsentNowPresent') != []
++            or actual.get('loaderCache') != {'path': '/etc/ld.so.cache', 'sha256': cache.get('currentCacheSha256')}):
++        raise ValueError('actual current loader cache qualification differs')
++    for key in ('systemAudit', 'cacheEntryAudit', 'selectedResolutionAudit', 'currentCacheSnapshot'):
++        current.pinned(cache[key], 32 * 1024 * 1024)
++    current.pinned(actual['loaderCache'], 4 * 1024 * 1024)
++    _cursor_loader_identity(actual['loaderCache'], actual['cacheIdentity'])
++    commands = actual.get('commands')
++    expected_argv = [CURSOR_LOADER['path'], '--list', '--library-path', actual['libraryDir'], CURSOR_HYPRLAND['path']]
++    if (not isinstance(commands, list) or len(commands) != 1
++            or set(commands[0]) != {'name', 'argv', 'exit', 'stdout', 'stderr'}
++            or commands[0]['name'] != 'loader' or commands[0]['argv'] != expected_argv
++            or type(commands[0]['exit']) is not int or commands[0]['exit'] != 0):
++        raise ValueError('one exact successful current loader command required')
++    output = current.pinned(commands[0]['stdout'], 4 * 1024 * 1024).decode('utf-8')
++    if current.pinned(commands[0]['stderr'], 4 * 1024 * 1024) != b'':
++        raise ValueError('current loader stderr is not empty')
++    resolved = {}
++    for line in output.splitlines():
++        text = line.strip()
++        match = re.fullmatch(r'(?:(\S+) => )?(/\S+) \(0x[0-9a-fA-F]+\)', text)
++        if match is None:
++            if not re.fullmatch(r'linux-vdso\.so\.1 \(0x[0-9a-fA-F]+\)', text):
++                raise ValueError('current loader output is not the qualified listing')
++            continue
++        path = str(Path(match.group(2)).resolve(strict=True))
++        if path not in report['resolvedFiles']:
++            raise ValueError('current loader selected an unqualified object')
++        resolved[path] = report['resolvedFiles'][path]
++    if resolved != report['resolvedFiles'] or set(actual['selectedIdentities']) != set(resolved):
++        raise ValueError('current loader listing or selected identity membership differs')
++    for path, pin in resolved.items():
++        _cursor_loader_identity({'path': path, 'sha256': pin}, actual['selectedIdentities'][path])
++    owning = {'hyprland': CURSOR_HYPRLAND, 'privateAquamarine': CURSOR_AQUAMARINE,
++              'loader': CURSOR_LOADER, 'current': CURSOR_NEW}
++    if set(actual['owningIdentities']) != set(owning):
++        raise ValueError('current loader owning image membership differs')
++    for name, image in owning.items():
++        current.pinned(image, 256 * 1024 * 1024)
++        _cursor_loader_identity(image, actual['owningIdentities'][name])
++    return actual['loaderCache']
++
++
++def _cursor_composed_inputs(current, nested, proof):
++    fields = {'schema', 'disposition', 'reviewer', 'scope', 'historicalCorrespondence',
++              'currentSchemaCorrespondence', 'currentProviderReadiness', 'currentLoaderCorrespondence'}
++    if (set(proof) != fields or type(proof['schema']) is not int or proof['schema'] != 2
++            or proof['disposition'] != 'accepted' or proof['reviewer'] != 'build_audit'
++            or proof['scope'] != 'ui011-cursor-current-schema-loader-composition'
++            or proof['historicalCorrespondence'].get('sha256') != '9619d41ba273058ea258d7d7adc35522a654c2d5388101a49d9f6b3430e935d7'):
++        raise ValueError('exact cursor schema/loader composition required')
++    historical = json.loads(current.pinned(proof['historicalCorrespondence'], 4 * 1024 * 1024))
++    report = json.loads(current.pinned(historical['qualification'], 4 * 1024 * 1024))
++    current_cache = _cursor_current_loader(current, proof['currentLoaderCorrespondence'],
++                                          proof['historicalCorrespondence'], historical, report)
++    # The v1 signature/ELF/alias/147-map checks remain intact. Only its historical
++    # cache pathname check is replaced after the current loader chain was verified.
++    old_live = _cursor_inputs_v1(current, historical['historicalNested'],
++                                proof['historicalCorrespondence'], current_cache=current_cache)
++    foundation = json.loads(current.pinned(CURSOR_FOUNDATION, 4 * 1024 * 1024))
++    derived = derive_schema({'foundationPacket': CURSOR_FOUNDATION}, foundation,
++                            {'nested': historical['historicalNested']},
++                            {'currentSchemaCorrespondence': proof['currentSchemaCorrespondence']}, current.pinned)
++    if (derived['nested'] != nested or nested['sourceReview'] != proof['currentProviderReadiness']):
++        raise ValueError('current nested differs beyond qualified schema/provider composition')
++    live = dict(nested['inputs'])
++    del live[CURSOR_OLD['path']]
++    live[CURSOR_NEW['path']] = old_live[CURSOR_NEW['path']]
++    current.pinned(current_cache, 4 * 1024 * 1024)
++    current.check()
++    return live
++
++
++def cursor_inputs(current, nested, reference=None):
++    if reference is None:
++        return nested['inputs']
++    proof = json.loads(current.pinned(reference, 4 * 1024 * 1024))
++    if isinstance(proof, dict) and type(proof.get('schema')) is int and proof['schema'] == 2:
++        return _cursor_composed_inputs(current, nested, proof)
++    return _cursor_inputs_v1(current, nested, reference)
++
+ 
+ def verify_private_provider(current, collector, base, nested, source_correspondence=None, cursor_correspondence=None):
+     report = collector.regular_ref(base, nested['buildReport'])
+--- a/tools/run_current_arm_ui011_opener_closure.py
++++ b/tools/run_current_arm_ui011_opener_closure.py
+@@ -28,7 +28,7 @@
+ DEADLINE_ENV='WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'
+ PHASE_LIBC={'path':'/usr/lib/libc.so.6','sha256':'6ab264fb4e8df9942b0fb75b48fcd5c30b2f081d8dfaa6c25d7be1d3fce5b2ab'}
+ CONTRACT_SHA='6490c0202f7377f9a768cce6a6e558b01bd32dae92eb40dc04ddd2f021dbecf5'
+-HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': '1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ui011_foreign_toplevel_attempt_authorization.py': 'fa005ec6e4cdb4acb27ffff54d5a55690c6a32b4190a066b6064da5cebd6130c', 'tools/ui011_opener_journey.py': '4b8b7caeab6cafcf1d9192e01c7ab9e043de1ba27eefdccf85973b909db7fc13', 'tools/ui011_owned_at_provider.py': 'd9d02854b6213eaca3109f522d3b8497b3d9eff8f1192c2ba27b13e94b1c6b11'}
++HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'e4cee72fcf5c6bf3a0b41a869edd7dbb5ed629c27d72cf88123e8e905c10eba0', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ui011_foreign_toplevel_attempt_authorization.py': 'fa005ec6e4cdb4acb27ffff54d5a55690c6a32b4190a066b6064da5cebd6130c', 'tools/ui011_opener_journey.py': '4b8b7caeab6cafcf1d9192e01c7ab9e043de1ba27eefdccf85973b909db7fc13', 'tools/ui011_owned_at_provider.py': 'd9d02854b6213eaca3109f522d3b8497b3d9eff8f1192c2ba27b13e94b1c6b11'}
+ 
+ def validate_generated_foundation_basis(foundation, report):
+     sources=foundation.get('sourceInputs',{})

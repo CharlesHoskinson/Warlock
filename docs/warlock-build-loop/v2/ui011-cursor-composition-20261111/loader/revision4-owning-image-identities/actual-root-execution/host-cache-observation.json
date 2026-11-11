@@ -1,0 +1,23 @@
+{
+  "observedUTC": "2026-11-11T05:26:25.827769+00:00",
+  "files": {
+    "/etc/ld.so.cache": {
+      "sha256": "957d0bb07b95e03a5ea03e5373678ed7ca467db33fac05a06e273f35ae8ee2c5",
+      "size": 137435,
+      "mtimeNs": 1794374540151062459
+    },
+    "/usr/share/icons/hicolor/icon-theme.cache": {
+      "sha256": "e8b0ea25ceee9b7fd8d3d7f205a214d00f52bf62d648c84b681ef24511e61486",
+      "size": 21848,
+      "mtimeNs": 1794370857921819482
+    },
+    "/usr/share/glib-2.0/schemas/gschemas.compiled": {
+      "sha256": "5c04f28c16da15dbbb1ab64f859ad638203ecda3aa762ec62e76574e98876f63",
+      "size": 51016,
+      "mtimeNs": 1794370857827493370
+    }
+  },
+  "pacmanLogTail": "[2026-11-10T21:20:57-0700] [ALPM] removed gexiv2 (0.16.2-2)\n[2026-11-10T21:20:57-0700] [ALPM] removed gexiv2-common (0.16.2-2)\n[2026-11-10T21:20:57-0700] [ALPM] removed exiv2 (0.28.9-1)\n[2026-11-10T21:20:57-0700] [ALPM] transaction completed\n[2026-11-10T21:20:57-0700] [ALPM] running '30-systemd-daemon-reload-user.hook'...\n[2026-11-10T21:20:57-0700] [ALPM] running '35-systemd-update.hook'...\n[2026-11-10T21:20:57-0700] [ALPM] running '40-fontconfig-config.hook'...\n[2026-11-10T21:20:57-0700] [ALPM] running 'fontconfig.hook'...\n[2026-11-10T21:20:57-0700] [ALPM] running 'glib-compile-schemas.hook'...\n[2026-11-10T21:20:57-0700] [ALPM] running 'gtk-update-icon-cache.hook'...\n[2026-11-10T21:20:57-0700] [ALPM] running 'update-desktop-database.hook'...\n[2026-11-10T22:22:17-0700] [PACMAN] Running 'pacman -S --needed vulkan-swrast'\n[2026-11-10T22:22:19-0700] [ALPM] running '10-limine-snapper-lock.hook'...\n[2026-11-10T22:22:19-0700] [ALPM] transaction started\n[2026-11-10T22:22:19-0700] [ALPM] installed vulkan-mesa-implicit-layers (1:26.2.6-1)\n[2026-11-10T22:22:20-0700] [ALPM] installed vulkan-swrast (1:26.2.6-1)\n[2026-11-10T22:22:20-0700] [ALPM] transaction completed\n[2026-11-10T22:22:20-0700] [ALPM] running '35-systemd-update.hook'...\n",
+  "nativeExecuted": false,
+  "scope": "Observation of external completed package transaction; Root ran no package mutation."
+}

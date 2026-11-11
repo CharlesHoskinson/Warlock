@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/prepare_native.py", line 426, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/prepare_native.py", line 417, in main
+    prepare_tuple(args, contract, record_sha, history, events, old, core, record)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/prepare_native.py", line 252, in prepare_tuple
+    require(reviewed_inventory['reviewer'] == 'build_audit'
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and reviewed_inventory['disposition'] == 'accepted-exact-regular-inventory-delta'
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and len(retained) == 22 and len(packet['processInventory']) == contract['baseInventoryCount'] == 14757
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and all(packet['processInventory'].get(name) == pin and digest(name) == pin
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    for name, pin in retained.items()), 'Exact existing 14757-entry inventory required')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-candidate-preparation-v1/revision3-current-loader-cache/prepare_native.py", line 40, in require
+    raise ValueError(message)
+ValueError: Exact existing 14757-entry inventory required

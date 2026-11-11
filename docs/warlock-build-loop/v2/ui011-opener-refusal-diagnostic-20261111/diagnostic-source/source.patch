@@ -1,0 +1,179 @@
+--- a/tools/run_labwc_gl_foundation_window_rule_20261108.py
++++ b/tools/run_labwc_gl_foundation_window_rule_20261108.py
+@@ -246,7 +246,7 @@
+     return value
+ 
+ 
+-def generated_snapshot(base, proc, clock):
++def generated_snapshot(base, proc, clock, *, on_classifier_refusal=None):
+     base.left(clock)
+     root = Path('/proc', str(proc.pid))
+     with (root/'maps').open('rb') as stream:
+@@ -267,7 +267,16 @@
+             item['backingError'] = type(error).__name__+': '+str(error)
+         links[row['address']] = item
+     base.left(clock)
+-    return rows, classify_generated_snapshot(rows,links), hashlib.sha256(raw).hexdigest()
++    try:
++        generated = classify_generated_snapshot(rows, links)
++    except Exception as error:
++        if on_classifier_refusal is not None:
++            try:
++                on_classifier_refusal(raw, rows, links, error)
++            except Exception:
++                pass  # Diagnostic failure cannot replace the original mapping refusal.
++        raise
++    return rows, generated, hashlib.sha256(raw).hexdigest()
+ 
+ 
+ def strict_snapshot_files(base, rows, inventory, required, generated, clock):
+--- a/tools/run_current_arm_ui011_opener_closure.py
++++ b/tools/run_current_arm_ui011_opener_closure.py
+@@ -28,7 +28,7 @@
+ DEADLINE_ENV='WARLOCK_FOREIGN_ENDPOINT_DEADLINE_NS'
+ PHASE_LIBC={'path':'/usr/lib/libc.so.6','sha256':'6ab264fb4e8df9942b0fb75b48fcd5c30b2f081d8dfaa6c25d7be1d3fce5b2ab'}
+ CONTRACT_SHA='6490c0202f7377f9a768cce6a6e558b01bd32dae92eb40dc04ddd2f021dbecf5'
+-HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1930bc749aed250b1fed2e4ab884e8c4e1c94b4c1036eea118075b5fec2270ad', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'e4cee72fcf5c6bf3a0b41a869edd7dbb5ed629c27d72cf88123e8e905c10eba0', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ui011_foreign_toplevel_attempt_authorization.py': 'fa005ec6e4cdb4acb27ffff54d5a55690c6a32b4190a066b6064da5cebd6130c', 'tools/ui011_opener_journey.py': '4b8b7caeab6cafcf1d9192e01c7ab9e043de1ba27eefdccf85973b909db7fc13', 'tools/ui011_owned_at_provider.py': 'd9d02854b6213eaca3109f522d3b8497b3d9eff8f1192c2ba27b13e94b1c6b11'}
++HELPERS={'plugins/warlock-contributor/scripts/warlock.py': '6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78', 'window-integration-qa/qa_launch.py': '6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23', 'tools/omarchy_ui_mvp.py': '3ec7be274604e485b52b3c15c07ac57f3d7b24384dc1465ed109e47d063239cc', 'tools/run_labwc_gl_foundation_window_rule_20261108.py': '1c6da945d4bee49b11ee32f9df02129c8715b17d066e2a01cfb093bef02c82bf', 'tools/run_labwc_gl_foundation_ipc_20261108.py': 'f313c21d4e47adf8b3d37a3abd9ac9b5901b397901260cf71970e4abf47a1f69', 'tools/run_arm_gl_foundation_renewed_20261107.py': '1587fee27cc8521700cfbf46e759a53f6a987cd95eab67b81588b680b033761b', 'tools/run_arm_gl_foundation_renewed_20261108_0623.py': '769f48e13990909a88b588e3e145775b5ee16571a81817fac17eede1252bcdd2', 'tools/ux023_current_boot_correspondence.py': 'e4cee72fcf5c6bf3a0b41a869edd7dbb5ed629c27d72cf88123e8e905c10eba0', 'tools/ux003_owned_fonts.py': 'b9d7956e8a934ba5f4db4523114e732b673927ece04afb0c0525fd9501a6bbf3', 'tools/ux023_notifications_keyboard_fixture.py': '47ef863f8e0e0486f1ba12e5d8f537d35987f3bdc64f66a3a342a9ed0083b6a3', 'tools/ux003_input_geometry_720.py': 'e879f98eb419cc53e7a371f06384ae0e776b66d7d46847bca3a2e6039df174b0', 'tools/ui011_foreign_toplevel_attempt_authorization.py': 'fa005ec6e4cdb4acb27ffff54d5a55690c6a32b4190a066b6064da5cebd6130c', 'tools/ui011_opener_journey.py': '4b8b7caeab6cafcf1d9192e01c7ab9e043de1ba27eefdccf85973b909db7fc13', 'tools/ui011_owned_at_provider.py': 'd9d02854b6213eaca3109f522d3b8497b3d9eff8f1192c2ba27b13e94b1c6b11'}
+ 
+ def validate_generated_foundation_basis(foundation, report):
+     sources=foundation.get('sourceInputs',{})
+@@ -265,6 +265,119 @@
+         os.chmod(path, 0o600)
+         json.dump(value, stream, indent=2)
+         stream.write('\n')
++
++def opener_refusal_fd_diagnostics(base, proc, clock, rows):
++    """Later metadata only; no content reads, creator proof, or mapping allowance."""
++    import fcntl
++    result = {'complete': False, 'origin': 'unknown', 'creatorAttested': False,
++              'phase': 'after-original-classifier-refusal', 'fdLimit': 256, 'entries': []}
++    keys = {(os.makedev(*(int(part, 16) for part in row['device'].split(':'))), row['inode'])
++            for row in rows if (row['pathname'] or '').startswith('/memfd:')}
++    root = Path('/proc', str(proc.pid), 'fd')
++    try:
++        base.left(clock)
++        names = []
++        with os.scandir(root) as entries:
++            for entry in entries:
++                base.left(clock)
++                if entry.name.isdigit():
++                    names.append(entry.name)
++                    if len(names) > 256:
++                        raise ValueError('diagnostic FD enumeration exceeds256')
++        for name in sorted(names, key=int):
++            base.left(clock)
++            path = root / name
++            item = {'fd': int(name), 'origin': 'unknown'}
++            try:
++                info = path.stat()
++                if (info.st_dev, info.st_ino) not in keys:
++                    continue
++                result['entries'].append(item)
++                link = os.readlink(path)
++                if len(link) > 512:
++                    raise ValueError('diagnostic descriptor link exceeds bound')
++                item['linkBefore'] = link
++                descriptor = os.open(path, os.O_RDONLY | os.O_CLOEXEC | os.O_NONBLOCK)
++                try:
++                    held = os.fstat(descriptor)
++                    if (held.st_dev, held.st_ino) != (info.st_dev, info.st_ino):
++                        raise ValueError('diagnostic descriptor changed during acquisition')
++                    item['heldStat'] = {'device': held.st_dev, 'inode': held.st_ino,
++                                        'size': held.st_size, 'mode': held.st_mode,
++                                        'uid': held.st_uid, 'gid': held.st_gid, 'links': held.st_nlink}
++                    if not stat.S_ISREG(held.st_mode):
++                        raise ValueError('diagnostic backing is not regular')
++                    base.left(clock)
++                    with (Path('/proc', str(proc.pid), 'fdinfo') / name).open('r', encoding='ascii') as stream:
++                        text = stream.read(4097)
++                    if len(text) > 4096:
++                        raise ValueError('diagnostic fdinfo exceeds bound')
++                    fields = dict(line.split(':', 1) for line in text.splitlines() if ':' in line)
++                    item['originalFlags'] = int(fields['flags'].strip(), 8)
++                    item['originalPosition'] = int(fields['pos'].strip())
++                    item['originalMountId'] = int(fields['mnt_id'].strip())
++                    try:
++                        item['seals'] = fcntl.fcntl(descriptor, fcntl.F_GET_SEALS)
++                    except OSError as error:
++                        item['sealsUnknown'] = type(error).__name__ + ': ' + str(error)[:256]
++                    base.left(clock)
++                    after = path.stat()
++                    item['linkAfter'] = os.readlink(path)
++                    if ((after.st_dev, after.st_ino, after.st_size) != (held.st_dev, held.st_ino, held.st_size)
++                            or item['linkAfter'] != link):
++                        raise ValueError('diagnostic descriptor changed after observation')
++                    item['sameBackingAtObservation'] = True
++                finally:
++                    os.close(descriptor)
++            except (OSError, ValueError, KeyError) as error:
++                if item not in result['entries']:
++                    result['entries'].append(item)
++                item['unknown'] = type(error).__name__ + ': ' + str(error)[:256]
++        base.left(clock)
++        result['enumerationComplete'] = True
++        result['complete'] = all('unknown' not in item for item in result['entries'])
++    except Exception as error:
++        result['error'] = type(error).__name__ + ': ' + str(error)[:512]
++    return result
++
++
++def capture_opener_classifier_refusal(collector, base, proc, born, image, clock,
++                                      output, receipt, before, raw, rows, links, error):
++    """Retain the classifier's original input, then separate later owned FD metadata."""
++    item = {'schema': 1, 'diagnosticOnly': True, 'qualification': False,
++            'creatorAttested': False, 'ownedAcrossCapture': False,
++            'pid': proc.pid, 'birth': born, 'image': image,
++            'originalDeadline': clock['deadline'], 'identityBeforeSnapshot': before,
++            'originalError': {'type': type(error).__name__, 'message': str(error)[:512]},
++            'originalSnapshot': {'rawSha256': digest(raw), 'rawByteCount': len(raw),
++                                 'rawUtf8': raw.decode('utf-8', errors='surrogateescape'),
++                                 'rows': copy.deepcopy(rows), 'links': copy.deepcopy(links)},
++            'laterFdDiagnostics': {'complete': False, 'origin': 'unknown', 'entries': []}}
++    receipt['openerClassifierRefusal'] = item
++    try:
++        base.left(clock)
++        after_snapshot = collector.failure_census_context(base, proc, born, image, clock)
++        item['identityAfterSnapshot'] = after_snapshot
++        require(after_snapshot == before, 'opener ownership changed across refused snapshot')
++        require(len(raw) <= collector.MAPS_CAP, 'original refused map input exceeds bound')
++        path = output / 'opener-classifier-refusal.maps'
++        descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_CLOEXEC | os.O_NOFOLLOW, 0o600)
++        with os.fdopen(descriptor, 'wb') as stream:
++            stream.write(raw)
++        item['originalSnapshot']['raw'] = {'path': str(path), 'sha256': digest(raw)}
++        item['laterFdDiagnostics'] = opener_refusal_fd_diagnostics(base, proc, clock, rows)
++        base.left(clock)
++        after = collector.failure_census_context(base, proc, born, image, clock)
++        item['identityAfterDiagnostics'] = after
++        require(after == before, 'opener ownership changed during refusal diagnostics')
++        item['ownedAcrossCapture'] = True
++    except Exception as problem:
++        item['captureError'] = type(problem).__name__ + ': ' + str(problem)[:512]
++    try:
++        write_json(output / 'opener-classifier-refusal.json', item)
++    except Exception as problem:
++        item['retentionError'] = type(problem).__name__ + ': ' + str(problem)[:512]
++
+ 
+ def staging_clock(staged,boot):
+     origin=int(staged['generatedMonotonicNs']);deadline=int(staged['deadlineMonotonicNs'])
+@@ -1429,7 +1542,17 @@
+         observer,observer_birth,_,observer_err=spawn('connected-observer',[assets['controls']['path'],'--foreign-endpoint-observe-only',str(config_path),digest(regular(config_path))],True)
+         def process_maps(role,proc,born,required,asset_role='controls'):
+             current();context['base'].check_process(proc,born,assets[asset_role]['sha256'])
+-            rows,generated,_=context['collector'].generated_snapshot(context['base'],proc,clock)
++            on_refusal = None
++            if role == 'opener':
++                before_snapshot = context['collector'].failure_census_context(
++                    context['base'], proc, born, assets[asset_role]['sha256'], clock)
++                def on_refusal(raw, rows, links, error):
++                    capture_opener_classifier_refusal(
++                        context['collector'], context['base'], proc, born,
++                        assets[asset_role]['sha256'], clock, output, receipt,
++                        before_snapshot, raw, rows, links, error)
++            rows,generated,_=context['collector'].generated_snapshot(
++                context['base'],proc,clock,on_classifier_refusal=on_refusal)
+             require(generated is None,'observer/producer has unexpected generated mappings')
+             snapshot_path=output/(role+'-maps-before-check.json')
+             write_json(snapshot_path,{'schema':1,'role':role,'pid':proc.pid,'birth':born,'rows':rows})

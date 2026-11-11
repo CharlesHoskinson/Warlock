@@ -1,0 +1,19 @@
+Running as unit: qa-harness-2614f3979aa74dc5b7714e33134678d0.scope; invocation ID: 9311f30bcdf84672a337862e90cdbf61
+..E....................
+======================================================================
+ERROR: test_actual_current_schema_and_loader_compose_exactly (__main__.CursorComposition.test_actual_current_schema_and_loader_compose_exactly)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/test_cursor_composition.py", line 108, in test_actual_current_schema_and_loader_compose_exactly
+    actual = self.run_case()
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/test_cursor_composition.py", line 101, in run_case
+    return m.cursor_inputs(self.current, self.nested, self.wrapper_ref)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/helper-preimage.py", line 245, in cursor_inputs
+    raise ValueError('exact independently reviewed cursor dependency correspondence required')
+ValueError: exact independently reviewed cursor dependency correspondence required
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.037s
+
+FAILED (errors=1)

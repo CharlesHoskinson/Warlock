@@ -1,0 +1,2250 @@
+{
+  "schema": 1,
+  "passed": true,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "providerAcceptance": false,
+  "classification": "component-pass",
+  "imageSha256": "728f13c7f5dc13e976aeea99d5eeb6df0b60c17e5762934e6c28d6782be7a1b2",
+  "fixtureSha256": "a72816b731182d35b9cb73c12cb270210c090e1ff5e1d0f504f873ae321d9af1",
+  "observed": {
+    "legacy": {
+      "checks": {
+        "explicit-watch-capability-is-admitted": true,
+        "legacy-read-only-menu-does-not-watch": true,
+        "keyboard-scope-arms-one-backpressure-timer": true,
+        "timer-sends-one-bound-watch-with-base": true,
+        "duplicate-timer-cannot-issue-second-watch": true,
+        "pending-watch-preserves-open-menu-frame": true,
+        "unchanged-preserves-frame-stamp-and-focus": true,
+        "unchanged-only-rearms-no-publication": true,
+        "successor-watch-request-is-distinct": true,
+        "closed-origin-automatically-restores-fallback": true,
+        "replacement-never-receives-old-focus": true,
+        "same-origin-title-change-preserves-menu": true,
+        "other-window-change-preserves-menu": true,
+        "counter-only-changed-cannot-retire": true,
+        "changed-reply-settles-once": true,
+        "unknown-stops-watch-no-fallback": true,
+        "unavailable-stops-watch-no-fallback": true,
+        "wrong-request-cannot-restore": true,
+        "wrong-base-cannot-restore": true,
+        "foreign-binding-cannot-restore": true,
+        "foreign-owner-cannot-restore": true,
+        "closed-scope-ignores-late-watch": true,
+        "closed-scope-ignores-old-timer": true,
+        "superseded-presentation-ignores-watch": true,
+        "detached-scope-ignores-watch": true,
+        "pointer-scope-does-not-arm": true,
+        "watch-never-issues-native-mutation": true
+      },
+      "preconditions": {
+        "existing-read-route-admitted": true,
+        "existing-menu-route-opens": true,
+        "actual-view-one": true
+      },
+      "contractReady": true,
+      "seeded": {
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "samples": [
+          {
+            "seed": 0,
+            "variant": 0,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 1,
+            "variant": 1,
+            "contractReady": true,
+            "actualFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 2,
+            "variant": 2,
+            "contractReady": true,
+            "actualFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 3,
+            "variant": 3,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 4,
+            "variant": 4,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 5,
+            "variant": 5,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 6,
+            "variant": 6,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 7,
+            "variant": 7,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 8,
+            "variant": 0,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 9,
+            "variant": 1,
+            "contractReady": true,
+            "actualFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 10,
+            "variant": 2,
+            "contractReady": true,
+            "actualFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 11,
+            "variant": 3,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 12,
+            "variant": 4,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 13,
+            "variant": 5,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 14,
+            "variant": 6,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 15,
+            "variant": 7,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 16,
+            "variant": 0,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 17,
+            "variant": 1,
+            "contractReady": true,
+            "actualFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 18,
+            "variant": 2,
+            "contractReady": true,
+            "actualFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 19,
+            "variant": 3,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 20,
+            "variant": 4,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 21,
+            "variant": 5,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 22,
+            "variant": 6,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 23,
+            "variant": 7,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 24,
+            "variant": 0,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 25,
+            "variant": 1,
+            "contractReady": true,
+            "actualFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 26,
+            "variant": 2,
+            "contractReady": true,
+            "actualFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedFocus": [
+              "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+            ],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 27,
+            "variant": 3,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 28,
+            "variant": 4,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 29,
+            "variant": 5,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 30,
+            "variant": 6,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          },
+          {
+            "seed": 31,
+            "variant": 7,
+            "contractReady": true,
+            "actualFocus": [],
+            "expectedFocus": [],
+            "expectedEligible": true,
+            "preservedScope": true,
+            "once": true,
+            "noMutation": true
+          }
+        ]
+      },
+      "openedFrame": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "6",
+          "lease": "1",
+          "mode": "menu",
+          "status": "Window actions",
+          "bar": [
+            {
+              "id": "bar:group:observed:application:org.example.Editor",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:observed:application:org.example.Editor",
+              "label": "Document α😀",
+              "ariaLabel": "Inspect Document α😀; Active",
+              "detail": "Active",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:group:observed:application:org.example.Other",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:observed:application:org.example.Other",
+              "label": "Before",
+              "ariaLabel": "Inspect Before; Open",
+              "detail": "Open",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:menu-close",
+              "domId": "menu:1:close",
+              "label": "Close",
+              "ariaLabel": "Close window actions",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "menu:1:fact:0",
+              "domId": "menu:1:fact:0",
+              "label": "Document α😀 · org.example.Editor",
+              "ariaLabel": "Document α😀 · org.example.Editor",
+              "detail": "activated",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "control:observation-refresh",
+              "domId": "menu:1:refresh",
+              "label": "Refresh",
+              "ariaLabel": "Refresh observed windows",
+              "detail": "Read only; native actions unavailable",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "announcer": {
+          "scope": {
+            "id": "1",
+            "generation": "1"
+          },
+          "surface": "popup"
+        },
+        "announcement": null
+      },
+      "unchangedFrame": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "6",
+          "lease": "1",
+          "mode": "menu",
+          "status": "Window actions",
+          "bar": [
+            {
+              "id": "bar:group:observed:application:org.example.Editor",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:observed:application:org.example.Editor",
+              "label": "Document α😀",
+              "ariaLabel": "Inspect Document α😀; Active",
+              "detail": "Active",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:group:observed:application:org.example.Other",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:observed:application:org.example.Other",
+              "label": "Before",
+              "ariaLabel": "Inspect Before; Open",
+              "detail": "Open",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:menu-close",
+              "domId": "menu:1:close",
+              "label": "Close",
+              "ariaLabel": "Close window actions",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "menu:1:fact:0",
+              "domId": "menu:1:fact:0",
+              "label": "Document α😀 · org.example.Editor",
+              "ariaLabel": "Document α😀 · org.example.Editor",
+              "detail": "activated",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "control:observation-refresh",
+              "domId": "menu:1:refresh",
+              "label": "Refresh",
+              "ariaLabel": "Refresh observed windows",
+              "detail": "Read only; native actions unavailable",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "announcer": {
+          "scope": {
+            "id": "1",
+            "generation": "1"
+          },
+          "surface": "popup"
+        },
+        "announcement": null
+      },
+      "removedFrame": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "7",
+          "lease": "1",
+          "mode": "closed",
+          "status": "Window observations connected. Native actions unavailable.",
+          "bar": [
+            {
+              "id": "bar:group:observed:application:org.example.Other",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Other",
+              "label": "Before",
+              "ariaLabel": "Inspect Before; Open",
+              "detail": "Open",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ],
+          "popup": []
+        },
+        "announcer": {
+          "scope": {
+            "id": "1",
+            "generation": "1"
+          },
+          "surface": "bar"
+        },
+        "announcement": null
+      },
+      "metadataFrame": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "7",
+          "lease": "1",
+          "mode": "menu",
+          "status": "Window actions",
+          "bar": [
+            {
+              "id": "bar:group:observed:application:org.example.Editor",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor",
+              "label": "Changed document title",
+              "ariaLabel": "Inspect Changed document title; Active",
+              "detail": "Active",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:group:observed:application:org.example.Other",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Other",
+              "label": "Before",
+              "ariaLabel": "Inspect Before; Open",
+              "detail": "Open",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:menu-close",
+              "domId": "menu:1:close",
+              "label": "Close",
+              "ariaLabel": "Close window actions",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "menu:1:fact:0",
+              "domId": "menu:1:fact:0",
+              "label": "Changed document title · org.example.Editor",
+              "ariaLabel": "Changed document title · org.example.Editor",
+              "detail": "activated",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "control:observation-refresh",
+              "domId": "menu:1:refresh",
+              "label": "Refresh",
+              "ariaLabel": "Refresh observed windows",
+              "detail": "Read only; native actions unavailable",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "announcer": {
+          "scope": {
+            "id": "1",
+            "generation": "1"
+          },
+          "surface": "popup"
+        },
+        "announcement": null
+      },
+      "unrelatedFrame": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "frame": {
+          "surfaceProtocol": 2,
+          "keyboardParent": true,
+          "motion": "reduced",
+          "appearance": {
+            "theme": "night",
+            "textScale": 100,
+            "effectsOff": false,
+            "reducedTransparency": false
+          },
+          "publication": "7",
+          "lease": "1",
+          "mode": "menu",
+          "status": "Window actions",
+          "bar": [
+            {
+              "id": "bar:group:observed:application:org.example.Editor",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor",
+              "label": "Document α😀",
+              "ariaLabel": "Inspect Document α😀; Active",
+              "detail": "Active",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:group:observed:application:org.example.Other",
+              "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Other",
+              "label": "After",
+              "ariaLabel": "Inspect After; Open",
+              "detail": "Open",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:overview",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:overview-opener",
+              "label": "Task View",
+              "ariaLabel": "Open Task View",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:switcher",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:switcher-opener",
+              "label": "Switch windows",
+              "ariaLabel": "Open window switcher",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:notifications",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:notifications:opener",
+              "label": "Notifications",
+              "ariaLabel": "Open notifications",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:files",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:files:opener",
+              "label": "Files",
+              "ariaLabel": "Open Files menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:system",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:system:opener",
+              "label": "System",
+              "ariaLabel": "Open system menu",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "bar:settings",
+              "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:settings:opener",
+              "label": "Settings",
+              "ariaLabel": "Open settings",
+              "detail": "",
+              "enabled": false,
+              "focusOnly": false
+            }
+          ],
+          "popup": [
+            {
+              "id": "control:menu-close",
+              "domId": "menu:1:close",
+              "label": "Close",
+              "ariaLabel": "Close window actions",
+              "detail": "",
+              "enabled": true,
+              "focusOnly": false
+            },
+            {
+              "id": "menu:1:fact:0",
+              "domId": "menu:1:fact:0",
+              "label": "Document α😀 · org.example.Editor",
+              "ariaLabel": "Document α😀 · org.example.Editor",
+              "detail": "activated",
+              "enabled": false,
+              "focusOnly": false
+            },
+            {
+              "id": "control:observation-refresh",
+              "domId": "menu:1:refresh",
+              "label": "Refresh",
+              "ariaLabel": "Refresh observed windows",
+              "detail": "Read only; native actions unavailable",
+              "enabled": true,
+              "focusOnly": false
+            }
+          ]
+        },
+        "announcer": {
+          "scope": {
+            "id": "1",
+            "generation": "1"
+          },
+          "surface": "popup"
+        },
+        "announcement": null
+      }
+    },
+    "quota": {
+      "preconditions": {
+        "public-watch-route-ready": true,
+        "initial-read-batch-is-retained": true,
+        "public-menu-opens": true
+      },
+      "checks": {
+        "forty-correlated-watch-requests-issued": true,
+        "forty-correlated-watch-replies-rearm": true,
+        "unchanged-quota-sixteen-never-exceeded": true,
+        "menu-and-group-remain-current-after-forty": true,
+        "unchanged-replies-do-not-publish-or-focus": true,
+        "read-only-watch-never-mutates": true,
+        "request-ids-never-replayed": true,
+        "closed-opener-after-forty-restores-current-fallback": true,
+        "replacement-after-forty-never-inherits-old-focus": true,
+        "closure-reply-cannot-replay-focus": true,
+        "foreign-binding-does-not-retire-current-batch": true,
+        "foreign-request-does-not-retire-current-batch": true,
+        "stale-base-does-not-retire-current-batch": true,
+        "foreign-owner-does-not-retire-current-batch": true,
+        "duplicate-prior-result-does-not-retire-next-batch": true,
+        "malformed-result-does-not-retire-current-batch": true,
+        "invalid-unchanged-payload-does-not-retire-current-batch": true
+      },
+      "witness": {
+        "issued": 40,
+        "completed": 40,
+        "maximumPending": 2,
+        "remaining": 1,
+        "unrelatedBaseline": 1,
+        "frame": {
+          "viewProtocol": 1,
+          "kind": "view-frame",
+          "revision": "1",
+          "views": [
+            {
+              "id": "1",
+              "generation": "1"
+            }
+          ],
+          "focusOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "popupOwner": {
+            "id": "1",
+            "generation": "1"
+          },
+          "frame": {
+            "surfaceProtocol": 2,
+            "keyboardParent": true,
+            "motion": "reduced",
+            "appearance": {
+              "theme": "night",
+              "textScale": 100,
+              "effectsOff": false,
+              "reducedTransparency": false
+            },
+            "publication": "6",
+            "lease": "1",
+            "mode": "menu",
+            "status": "Window actions",
+            "bar": [
+              {
+                "id": "bar:group:observed:application:org.example.Editor",
+                "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:observed:application:org.example.Editor",
+                "label": "Document α😀",
+                "ariaLabel": "Inspect Document α😀; Active",
+                "detail": "Active",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:group:observed:application:org.example.Other",
+                "domId": "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:observed:application:org.example.Other",
+                "label": "Before",
+                "ariaLabel": "Inspect Before; Open",
+                "detail": "Open",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener",
+                "label": "Applications",
+                "ariaLabel": "Open applications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:overview",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:overview-opener",
+                "label": "Task View",
+                "ariaLabel": "Open Task View",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:switcher",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:switcher-opener",
+                "label": "Switch windows",
+                "ariaLabel": "Open window switcher",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:notifications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:notifications:opener",
+                "label": "Notifications",
+                "ariaLabel": "Open notifications",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:files",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:files:opener",
+                "label": "Files",
+                "ariaLabel": "Open Files menu",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:system",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:system:opener",
+                "label": "System",
+                "ariaLabel": "Open system menu",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "bar:settings",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:settings:opener",
+                "label": "Settings",
+                "ariaLabel": "Open settings",
+                "detail": "",
+                "enabled": false,
+                "focusOnly": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:menu-close",
+                "domId": "menu:1:close",
+                "label": "Close",
+                "ariaLabel": "Close window actions",
+                "detail": "",
+                "enabled": true,
+                "focusOnly": false
+              },
+              {
+                "id": "menu:1:fact:0",
+                "domId": "menu:1:fact:0",
+                "label": "Document α😀 · org.example.Editor",
+                "ariaLabel": "Document α😀 · org.example.Editor",
+                "detail": "activated",
+                "enabled": false,
+                "focusOnly": false
+              },
+              {
+                "id": "control:observation-refresh",
+                "domId": "menu:1:refresh",
+                "label": "Refresh",
+                "ariaLabel": "Refresh observed windows",
+                "detail": "Read only; native actions unavailable",
+                "enabled": true,
+                "focusOnly": false
+              }
+            ]
+          },
+          "announcer": {
+            "scope": {
+              "id": "1",
+              "generation": "1"
+            },
+            "surface": "popup"
+          },
+          "announcement": null
+        },
+        "refusals": [
+          {
+            "variant": 0,
+            "prepared": true,
+            "preserved": true,
+            "currentSettles": true,
+            "before": 2,
+            "afterInvalid": 2,
+            "afterValid": 1
+          },
+          {
+            "variant": 1,
+            "prepared": true,
+            "preserved": true,
+            "currentSettles": true,
+            "before": 2,
+            "afterInvalid": 2,
+            "afterValid": 1
+          },
+          {
+            "variant": 2,
+            "prepared": true,
+            "preserved": true,
+            "currentSettles": true,
+            "before": 2,
+            "afterInvalid": 2,
+            "afterValid": 1
+          },
+          {
+            "variant": 3,
+            "prepared": true,
+            "preserved": true,
+            "currentSettles": true,
+            "before": 2,
+            "afterInvalid": 2,
+            "afterValid": 1
+          },
+          {
+            "variant": 4,
+            "prepared": true,
+            "preserved": true,
+            "currentSettles": true,
+            "before": 2,
+            "afterInvalid": 2,
+            "afterValid": 1
+          },
+          {
+            "variant": 5,
+            "prepared": true,
+            "preserved": true,
+            "currentSettles": true,
+            "before": 2,
+            "afterInvalid": 2,
+            "afterValid": 1
+          },
+          {
+            "variant": 6,
+            "prepared": true,
+            "preserved": true,
+            "currentSettles": true,
+            "before": 2,
+            "afterInvalid": 2,
+            "afterValid": 1
+          }
+        ]
+      },
+      "seeded": [
+        {
+          "seed": 0,
+          "cycles": 17,
+          "issued": 17,
+          "completed": 17,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 1,
+          "cycles": 18,
+          "issued": 18,
+          "completed": 18,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 2,
+          "cycles": 19,
+          "issued": 19,
+          "completed": 19,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 3,
+          "cycles": 20,
+          "issued": 20,
+          "completed": 20,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 4,
+          "cycles": 21,
+          "issued": 21,
+          "completed": 21,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 5,
+          "cycles": 22,
+          "issued": 22,
+          "completed": 22,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 6,
+          "cycles": 23,
+          "issued": 23,
+          "completed": 23,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 7,
+          "cycles": 24,
+          "issued": 24,
+          "completed": 24,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 8,
+          "cycles": 25,
+          "issued": 25,
+          "completed": 25,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 9,
+          "cycles": 26,
+          "issued": 26,
+          "completed": 26,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 10,
+          "cycles": 27,
+          "issued": 27,
+          "completed": 27,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 11,
+          "cycles": 28,
+          "issued": 28,
+          "completed": 28,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 12,
+          "cycles": 29,
+          "issued": 29,
+          "completed": 29,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 13,
+          "cycles": 30,
+          "issued": 30,
+          "completed": 30,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 14,
+          "cycles": 31,
+          "issued": 31,
+          "completed": 31,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 15,
+          "cycles": 32,
+          "issued": 32,
+          "completed": 32,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 16,
+          "cycles": 33,
+          "issued": 33,
+          "completed": 33,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 17,
+          "cycles": 34,
+          "issued": 34,
+          "completed": 34,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 18,
+          "cycles": 35,
+          "issued": 35,
+          "completed": 35,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 19,
+          "cycles": 36,
+          "issued": 36,
+          "completed": 36,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 20,
+          "cycles": 37,
+          "issued": 37,
+          "completed": 37,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 21,
+          "cycles": 38,
+          "issued": 38,
+          "completed": 38,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 22,
+          "cycles": 39,
+          "issued": 39,
+          "completed": 39,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 23,
+          "cycles": 40,
+          "issued": 40,
+          "completed": 40,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 24,
+          "cycles": 41,
+          "issued": 41,
+          "completed": 41,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 25,
+          "cycles": 42,
+          "issued": 42,
+          "completed": 42,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 26,
+          "cycles": 43,
+          "issued": 43,
+          "completed": 43,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 27,
+          "cycles": 44,
+          "issued": 44,
+          "completed": 44,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 28,
+          "cycles": 45,
+          "issued": 45,
+          "completed": 45,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 29,
+          "cycles": 46,
+          "issued": 46,
+          "completed": 46,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 30,
+          "cycles": 47,
+          "issued": 47,
+          "completed": 47,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        },
+        {
+          "seed": 31,
+          "cycles": 48,
+          "issued": 48,
+          "completed": 48,
+          "preserved": true,
+          "maximumPending": 2,
+          "remaining": 1,
+          "unrelatedBaseline": 1,
+          "noMutation": true,
+          "closed": true,
+          "actualFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "expectedFocus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:3:control:opener"
+          ],
+          "once": true
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "explicit-watch-capability-is-admitted",
+      "passed": true
+    },
+    {
+      "name": "legacy-read-only-menu-does-not-watch",
+      "passed": true
+    },
+    {
+      "name": "keyboard-scope-arms-one-backpressure-timer",
+      "passed": true
+    },
+    {
+      "name": "timer-sends-one-bound-watch-with-base",
+      "passed": true
+    },
+    {
+      "name": "duplicate-timer-cannot-issue-second-watch",
+      "passed": true
+    },
+    {
+      "name": "pending-watch-preserves-open-menu-frame",
+      "passed": true
+    },
+    {
+      "name": "unchanged-preserves-frame-stamp-and-focus",
+      "passed": true
+    },
+    {
+      "name": "unchanged-only-rearms-no-publication",
+      "passed": true
+    },
+    {
+      "name": "successor-watch-request-is-distinct",
+      "passed": true
+    },
+    {
+      "name": "closed-origin-automatically-restores-fallback",
+      "passed": true
+    },
+    {
+      "name": "replacement-never-receives-old-focus",
+      "passed": true
+    },
+    {
+      "name": "same-origin-title-change-preserves-menu",
+      "passed": true
+    },
+    {
+      "name": "other-window-change-preserves-menu",
+      "passed": true
+    },
+    {
+      "name": "counter-only-changed-cannot-retire",
+      "passed": true
+    },
+    {
+      "name": "changed-reply-settles-once",
+      "passed": true
+    },
+    {
+      "name": "unknown-stops-watch-no-fallback",
+      "passed": true
+    },
+    {
+      "name": "unavailable-stops-watch-no-fallback",
+      "passed": true
+    },
+    {
+      "name": "wrong-request-cannot-restore",
+      "passed": true
+    },
+    {
+      "name": "wrong-base-cannot-restore",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding-cannot-restore",
+      "passed": true
+    },
+    {
+      "name": "foreign-owner-cannot-restore",
+      "passed": true
+    },
+    {
+      "name": "closed-scope-ignores-late-watch",
+      "passed": true
+    },
+    {
+      "name": "closed-scope-ignores-old-timer",
+      "passed": true
+    },
+    {
+      "name": "superseded-presentation-ignores-watch",
+      "passed": true
+    },
+    {
+      "name": "detached-scope-ignores-watch",
+      "passed": true
+    },
+    {
+      "name": "pointer-scope-does-not-arm",
+      "passed": true
+    },
+    {
+      "name": "watch-never-issues-native-mutation",
+      "passed": true
+    },
+    {
+      "name": "forty-correlated-watch-requests-issued",
+      "passed": true
+    },
+    {
+      "name": "forty-correlated-watch-replies-rearm",
+      "passed": true
+    },
+    {
+      "name": "unchanged-quota-sixteen-never-exceeded",
+      "passed": true
+    },
+    {
+      "name": "menu-and-group-remain-current-after-forty",
+      "passed": true
+    },
+    {
+      "name": "unchanged-replies-do-not-publish-or-focus",
+      "passed": true
+    },
+    {
+      "name": "read-only-watch-never-mutates",
+      "passed": true
+    },
+    {
+      "name": "request-ids-never-replayed",
+      "passed": true
+    },
+    {
+      "name": "closed-opener-after-forty-restores-current-fallback",
+      "passed": true
+    },
+    {
+      "name": "replacement-after-forty-never-inherits-old-focus",
+      "passed": true
+    },
+    {
+      "name": "closure-reply-cannot-replay-focus",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding-does-not-retire-current-batch",
+      "passed": true
+    },
+    {
+      "name": "foreign-request-does-not-retire-current-batch",
+      "passed": true
+    },
+    {
+      "name": "stale-base-does-not-retire-current-batch",
+      "passed": true
+    },
+    {
+      "name": "foreign-owner-does-not-retire-current-batch",
+      "passed": true
+    },
+    {
+      "name": "duplicate-prior-result-does-not-retire-next-batch",
+      "passed": true
+    },
+    {
+      "name": "malformed-result-does-not-retire-current-batch",
+      "passed": true
+    },
+    {
+      "name": "invalid-unchanged-payload-does-not-retire-current-batch",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "seedFailures": [],
+  "legacyCaseCount": 27,
+  "legacySeedFailures": [],
+  "quotaSeedFailures": [],
+  "caseCount": 44,
+  "seedSampleCount": 64,
+  "setupCount": 6
+}

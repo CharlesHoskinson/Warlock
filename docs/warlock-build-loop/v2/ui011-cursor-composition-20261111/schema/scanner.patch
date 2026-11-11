@@ -1,0 +1,15 @@
+--- retained-schema/scanner.py
++++ current-schema/scanner.py
+@@ -2,9 +2,9 @@
+ """Fixed CPU-only current schema reproducibility. No action on import."""
+ from pathlib import Path
+ import hashlib,json,os,stat,subprocess,tempfile,time
+-MANIFEST=Path('/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/schema-reproduction/inputs.json')
+-MANIFEST_SHA='2fdb8745f9131074ef683683c76e9c3a283a8f68079442a894013afe56ddd931'
+-OUTPUT=Path('/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/current-route/schema-reproduction/revalidation-runtimefix2/actual-root')
++MANIFEST=Path('/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/inputs.json')
++MANIFEST_SHA='8bd0109564d850826246cf9a62369f70e6fe880f474c965717c3269229f5cb6f'
++OUTPUT=Path('/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root')
+ def digest(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ def verify(m):
+     source=Path(m['sourceDirectory'])

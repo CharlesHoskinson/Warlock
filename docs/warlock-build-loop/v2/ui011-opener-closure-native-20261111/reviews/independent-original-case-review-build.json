@@ -1,0 +1,331 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-original-named-case",
+  "candidateSha256": "8bcb967a22e4b595c92bad8f59ed49d856b02d091a3b19a2b9b28e8b2a4b5678",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794397066439784703/report.json",
+    "sha256": "b4e02344ed2a3d25987ddc9a06a307ed580cb27a606b7a8dd2c1ec343a6e1a21"
+  },
+  "actualProtectedTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/at-sender-native-preparation-v1/revision2-actual-at-source-review/actual-root-native/terminal.json",
+    "sha256": "c5b981b204495d30a7d00d1b1ed38fc3eb8cac52066a217128d2f980239e3b37"
+  },
+  "packet": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/at-sender-native-preparation-v1/revision2-actual-at-source-review/native-v1/final/packet.json",
+    "sha256": "23798b42ad580ffa67d5347cbf1cd2cf350e1c52a2ff36b224ada95bb6dc51e5"
+  },
+  "namedCaseVerdict": {
+    "requirementId": "ELM-UI-011",
+    "scenario": "focus-scope-opener closure",
+    "verdict": "accepted",
+    "given": "A real identity-bound independent GTK opener has an open current shell focus scope.",
+    "when": "The same opener closes through its fixed nonce CLOSE/closed protocol.",
+    "then": "The dead opener group disappears, the scope closes automatically, and native shell focus plus credential-bound AT focus resolve to the current eligible Applications fallback; no dead or replacement target activates.",
+    "scope": "This named case only; no nested/minimize/workspace/lock scenarios, complete ELM-UI-011 requirement, ordered journey or release acceptance."
+  },
+  "sourceBinding": {
+    "sourceCount": 437,
+    "guardCount": 7,
+    "inventoryCount": 14761,
+    "currentProvider": "7f10ce76bfe92c194ae31ded9bc56c74cf62d647ade81fecb228e44b6ea17b28",
+    "currentLauncher": "3be45673148d4fc76e275d8f586f4f1779b7e46bc922af30f946a58b32b91ee7",
+    "actualImageReview": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/at-sender-image-preparation-v1/independent-actual-image-review-build.json",
+      "sha256": "78b2251171a02b01778e739f5eada2ff900ab9fa4e9fabf349b2982d0d469061"
+    }
+  },
+  "visualReview": {
+    "reviewedAllFiveFrames": true,
+    "frames": [
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794397066439784703/ui011-initial.png",
+        "sha256": "6359c24ea3817aa9a507bf348bc042992c09f976542ce1e9f45a42919004c167",
+        "phase": "initial",
+        "interpretation": "Actual unreviewed pixels. No automatic native or original acceptance."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794397066439784703/ui011-opener-focused.png",
+        "sha256": "35575235884b67b927975b6517ef12d3e8686f67fac7e950369a9542e56b38f6",
+        "phase": "opener-focused",
+        "interpretation": "Actual unreviewed pixels. No automatic native or original acceptance."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794397066439784703/ui011-menu.png",
+        "sha256": "4a66ca36c19be5ca8502557bb9fdd58ee5094d7860d009e3021afea6517c9a23",
+        "phase": "menu",
+        "interpretation": "Actual unreviewed pixels. No automatic native or original acceptance."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794397066439784703/ui011-fallback.png",
+        "sha256": "861961c846c67158d01e00696dac16384b81c0eee5886a7a6edb39e4602e7d68",
+        "phase": "fallback",
+        "interpretation": "Actual unreviewed pixels. No automatic native or original acceptance."
+      },
+      {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794397066439784703/ui011-settled.png",
+        "sha256": "861961c846c67158d01e00696dac16384b81c0eee5886a7a6edb39e4602e7d68",
+        "phase": "settled",
+        "interpretation": "Actual unreviewed pixels. No automatic native or original acceptance."
+      }
+    ],
+    "observations": [
+      "Initial bar has current opener group; Tab frame shows its visible focus ring.",
+      "Menu frame shows Close focused and the independent opener identity below it; Refresh visible but never issued.",
+      "Fallback and settled frames show opener group removed, menu closed and Applications visibly focused; no replacement window appears."
+    ]
+  },
+  "authenticatedFocusEvidence": [
+    {
+      "phase": "menu",
+      "expectedDomId": "menu:1:close",
+      "nodeCount": 40,
+      "snapshotCalls": 178,
+      "confirmationCalls": 331,
+      "confirmationEndMonotonicNs": "64157950914701",
+      "focus": {
+        "owner": ":1.6",
+        "path": "/org/a11y/atspi/accessible/c25ed3c1_212a_4080_8f46_c9dfdd68f5bd",
+        "domId": "menu:1:close",
+        "process": {
+          "owner": ":1.6",
+          "pid": 3195070,
+          "birth": "6429778",
+          "sha256": "03881440c8ba43700cb449330e4b9737b2d89e5ebc514c96281230dc8a4b8ffb"
+        },
+        "webArea": [
+          ":1.6",
+          "/org/a11y/atspi/accessible/7cd75c72_b7db_47e0_a5f5_6f4bcc387c3e"
+        ]
+      }
+    },
+    {
+      "phase": "fallback",
+      "expectedDomId": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+      "nodeCount": 36,
+      "snapshotCalls": 479,
+      "confirmationCalls": 623,
+      "confirmationEndMonotonicNs": "64162539629903",
+      "focus": {
+        "owner": ":1.5",
+        "path": "/org/a11y/atspi/accessible/ee4ae44c_e0f2_48e6_83d4_23b5565b4846",
+        "domId": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+        "process": {
+          "owner": ":1.5",
+          "pid": 3195043,
+          "birth": "6429774",
+          "sha256": "03881440c8ba43700cb449330e4b9737b2d89e5ebc514c96281230dc8a4b8ffb"
+        },
+        "webArea": [
+          ":1.5",
+          "/org/a11y/atspi/accessible/3ce7c88c_f80d_4ead_b5a4_e04ef05065b5"
+        ]
+      }
+    }
+  ],
+  "phaseEvidence": {
+    "closedReceipt": {
+      "schema": 1,
+      "kind": "closed",
+      "nonce": "60ad050e3f15c50f90fbe16803f92ff5a9c5ec779366b554d1b60da9ad904bee",
+      "pid": "3194524",
+      "monotonicNs": "64158397651361",
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "nativeAcceptance": false
+    },
+    "schedulingWitness": {
+      "origin": {
+        "owner": "9007199254740997",
+        "presentation": "4",
+        "revision": 1,
+        "publication": 6,
+        "groupDomId": "group:observed:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:9007199254740997:1:observed:application:org.warlock.Ui011Opener",
+        "control": "bar:group:observed:application:org.warlock.Ui011Opener"
+      },
+      "fallbackId": "applications:{\"lifetime\":\"9007199254740993\",\"session\":\"9007199254740995\",\"frontend\":\"9007199254740997\"}:4:control:opener",
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "sameLexicalObserverRetained": true,
+      "manualRefreshIssued": false,
+      "escapeIssued": false,
+      "windowActionsGranted": false,
+      "phaseSchedulingOnly": true
+    },
+    "phaseCount": 6,
+    "settledBinding": {
+      "seq": 6,
+      "nonce": "a2964f709904f904ccb33edc4a9fc5206d36914bffadf5c484933db3ef42985f",
+      "root": {
+        "device": "61",
+        "inode": "845684",
+        "owner": "1000"
+      },
+      "requests": {
+        "bar": {
+          "device": "61",
+          "inode": "845724"
+        },
+        "popup": {
+          "device": "61",
+          "inode": "845725"
+        }
+      },
+      "ownerPid": "1",
+      "issuedNs": 64162979656064,
+      "deadlineNs": 64167317656295,
+      "nowNs": 64163294545467,
+      "minimumPublication": {
+        "bar": 8,
+        "popup": 8
+      },
+      "expectedLease": 1
+    },
+    "keyboardTransactions": [
+      {
+        "name": "tab-opener-1",
+        "argv": [
+          "-k",
+          "Tab"
+        ],
+        "attempted": true,
+        "completed": true,
+        "originalDeadlineNs": 64167317656295
+      },
+      {
+        "name": "open-opener-menu",
+        "argv": [
+          "-M",
+          "shift",
+          "-k",
+          "F10",
+          "-m",
+          "shift"
+        ],
+        "attempted": true,
+        "completed": true,
+        "originalDeadlineNs": 64167317656295
+      },
+      {
+        "name": "close-shell",
+        "argv": [
+          "-M",
+          "alt",
+          "-k",
+          "F4",
+          "-m",
+          "alt"
+        ],
+        "attempted": true,
+        "completed": true,
+        "originalDeadlineNs": 64167317656295
+      }
+    ],
+    "pointerInputIssued": false
+  },
+  "retirement": {
+    "stackNormal": true,
+    "reportedBirthCount": 81,
+    "allReportedBirthsCurrentlyAbsent": true,
+    "independentOpenerBirthCurrentlyAbsent": true,
+    "allReportedExitsZeroReapedGroupsAbsent": true,
+    "openerNormalClosed": true,
+    "openerTracerExit": 0,
+    "atRetirement": {
+      "retired": true,
+      "retainedUnknown": false,
+      "services": [
+        {
+          "pid": 3194823,
+          "birth": "6429617",
+          "exit": 0,
+          "requestedStop": "owned unicast SessionOver",
+          "normalExit": true,
+          "reaped": true,
+          "groupAbsent": true
+        },
+        {
+          "pid": 3194806,
+          "birth": "6429601",
+          "exit": 0,
+          "requestedStop": "SIGTERM",
+          "normalExit": true,
+          "reaped": true,
+          "groupAbsent": true
+        }
+      ],
+      "nativeAcceptance": false
+    },
+    "observerRetirement": {
+      "schema": 1,
+      "nonce": "3eda0f30191bc90e8d8e46e7c4c4e2a25001c59441fef1b92736081909d84070",
+      "sequence": 4,
+      "phase": "RETIRE",
+      "binding": {
+        "lifetime": "9007199254740993",
+        "session": "9007199254740995",
+        "frontend": "9007199254740997"
+      },
+      "configChecks": 15,
+      "nativeAcceptance": false,
+      "completedPhases": 4,
+      "actionPassed": true,
+      "error": null,
+      "status": "Retired",
+      "passed": true
+    },
+    "keyboardRetirement": {
+      "pid": 3194441,
+      "startTicks": "6429233",
+      "exit": 0,
+      "normal": true,
+      "groupAbsent": true,
+      "stdoutTailHex": "",
+      "monotonicNs": 64166912273127
+    },
+    "endpointDescriptorRetirement": {
+      "closed": true,
+      "errors": []
+    },
+    "phaseChannelRetirement": {
+      "status": "closed",
+      "errors": [],
+      "cleanupAuthority": false
+    },
+    "globalRestoration": true,
+    "sourceInputsUnchanged": true,
+    "forcedCleanup": false,
+    "cleanupUnknown": false
+  },
+  "originalBounds": {
+    "originalDeadlineNs": 64167317656295,
+    "originMonotonicNs": 64139317656295,
+    "durationNs": 28000000000,
+    "cleanupCeilingNs": 64169317656295,
+    "keyTransactions": 3,
+    "maximumKeyTransactions": 4,
+    "frames": 5,
+    "maximumFrames": 16,
+    "maximumPhases": 16,
+    "maximumATCalls": 640,
+    "maximumATNodes": 128,
+    "maximumATDepth": 16
+  },
+  "limits": [
+    "Raw collector flags nativeAcceptance/originalAcceptance/atAcceptance remain false by design; this is the independent observed named-case verdict, not a rewrite of the raw report.",
+    "Full ordered journey remains incomplete because Refresh is absent; requirements count stays21, only this previously unaccepted named scenario can support case-only21/48 through Root normal ledger route.",
+    "No ledger, canonical claim, source or runtime mutation performed by reviewer. Prior failed samples/abnormal cleanup remain failed."
+  ],
+  "requiredChanges": [],
+  "supersedesPrivateDraft": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/at-sender-native-preparation-v1/revision2-actual-at-source-review/independent-actual-native85224-review-build.json",
+    "sha256": "2c2ac58c4f2d6e6965e0b0939339bfddbd061f044a6c806478046e700d2844fa",
+    "reason": "Correct sourceBinding.actualImageReview label to independent image review rather than raw build report; verdict/evidence unchanged."
+  }
+}

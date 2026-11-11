@@ -1,0 +1,23 @@
+--- retained-r1/scanner.py
++++ whole-deadline/scanner.py
+@@ -30,7 +30,10 @@
+  require(len(sys.argv)==1 and digest(HERE/'inputs.json')==INPUT_SHA,'fixed no-argument source-bound witness required')
+  require(digest(ROOT/'window-integration-qa/qa_launch.py')==QA_SHA,'protected launcher differs')
+  sys.path.insert(0,str(ROOT/'window-integration-qa'));from qa_launch import require_qa_scope
+- scope=require_qa_scope();contract=json.loads((HERE/'inputs.json').read_bytes())
++ scope=require_qa_scope()
++ def expired(*_):raise TimeoutError('fixed120s loader witness deadline')
++ signal.signal(signal.SIGALRM,expired);signal.alarm(120)
++ contract=json.loads((HERE/'inputs.json').read_bytes())
+  historical=json.loads(pinned(contract['historicalCursorCorrespondence']).read_bytes());prior=json.loads(pinned(contract['historicalQualification']).read_bytes());cache_proof=json.loads(pinned(contract['currentLoaderCacheCorrespondence']).read_bytes())
+  require(historical['reviewer']=='build_audit'and historical['disposition']=='accepted'and historical['qualification']==contract['historicalQualification']and prior['passed']is True and prior['nativeExecuted']is False and prior['sourceChanged']is False,'exact accepted historical cursor qualification required')
+  require(cache_proof['reviewer']=='build_audit'and cache_proof['disposition']=='accepted'and cache_proof['passed']is True and cache_proof['scope']=='ux003-current-loader-cache-correspondence'and cache_proof['currentCacheSha256']==contract['expectedCurrentCacheSha256']and cache_proof['systemEntryMismatches']==cache_proof['selectedResolutionMismatches']==0 and cache_proof['requiredAbsentNowPresent']==[],'exact accepted current cache proof required')
+@@ -52,8 +55,6 @@
+  require(argv==contract['loaderArgv']==prior['commands'][-1]['argv']and contract['fixedLibraryDir']==prior['libraryDir'],'exact historical loader command/private search directory required')
+  OUT.mkdir(mode=0o700);report=dict(schema=1,kind='ui011-current-cursor-loader-correspondence',passed=False,historicalCursorCorrespondence=contract['historicalCursorCorrespondence'],historicalQualification=contract['historicalQualification'],currentLoaderCacheCorrespondence=contract['currentLoaderCacheCorrespondence'],currentBootId=boot(),historicalBasisSha256=historical['basisSha256'],loaderCache={'path':'/etc/ld.so.cache','sha256':contract['expectedCurrentCacheSha256']},hyprland=prior['hyprland'],privateAquamarine=prior['privateAquamarine'],loader=prior['loader'],currentCursor=prior['current'],libraryDir=prior['libraryDir'],aliasChain=prior['aliasChain'],requiredSymbols=prior['requiredSymbols'],packageProof=prior['package'],commands=[],nativeExecuted=False,sourceChanged=False,systemWrites=False,protectedScope=scope)
+  try:
+-  def expired(*_):raise TimeoutError('fixed120s loader witness deadline')
+-  signal.signal(signal.SIGALRM,expired);signal.alarm(120)
+   result=subprocess.run(argv,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env={'PATH':'/usr/bin','LANG':'C','LC_ALL':'C'},timeout=15,check=False)
+   out=OUT/'loader.stdout';err=OUT/'loader.stderr';out.write_bytes(result.stdout);err.write_bytes(result.stderr)
+   report['commands']=[dict(name='loader',argv=argv,exit=result.returncode,stdout=reference(out),stderr=reference(err))];require(result.returncode==0,'actual current loader-list failed')

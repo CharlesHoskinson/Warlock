@@ -1,0 +1,50 @@
+Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.
+{
+  "acceptanceBoundary": "Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.",
+  "checkerSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+  "record": ".warlock-contributor/ui011-observed-opener-closure-root-20261110.json",
+  "nextRootAction": {
+    "kind": "wait-terminal",
+    "executor": "Root",
+    "candidateId": "ui011-watch-batch-elm-current-20261111",
+    "candidateSha256": "8732d6e9f646250292cc08f7fc1d0c94f5ffe9271c076810c8a1d9dd37f8d38d",
+    "jobId": "pid143936-start3700124",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/Projects/Warlock/tools/qa_cpu.py",
+      "--review",
+      "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-wbc-elm-v1/review-packet.json",
+      "--sha256",
+      "3cdc8995b24dd21113d91d0ca5d9935463f9b82f43878d3937553fa693acea06"
+    ],
+    "expectedObservation": "Current installed four-module watch bookkeeping fix: existing127input/109Elm profile, preserved18DOM/16Escape/34context/17initial-focus/24manual-retirement/27automatic-watch cases and seeds, freshHttpMain/HttpBar/HttpPopup HTML compiled from all currentElm. Same240/120 CPU bounds. Actual44/6/64 and18/2 componentGREEN retained separately. Fourteen product source paths are pinned. Haskell compilation and native/AT/original acceptance remain separate actual qualifications.",
+    "executionAuthorized": false,
+    "acceptanceInferred": false,
+    "progress": {
+      "workflowPolicy": 2,
+      "iterationsWithoutProgress": 0,
+      "lastRecordedProgressUTC": "2026-11-10T20:09:04.261926+00:00",
+      "secondsSinceRecordedProgress": 28417,
+      "suspendedSeconds": 149,
+      "limits": {
+        "iterations": 2,
+        "seconds": 2700,
+        "sameFailureExperiments": 2
+      },
+      "investigationNeedsChange": false,
+      "planChangeRequired": true,
+      "reconciliationRequired": false,
+      "authorizationExpired": false,
+      "reasons": [
+        "45-awake-minutes-without-tested-integration"
+      ],
+      "effectiveAuthorizationExpiresUTC": "2026-11-11T15:30:00Z",
+      "action": "Change the next action or defer in this same history.",
+      "basis": "Local management clocks; reconciled uncertain intervals count UTC elapsed without suspend exclusion. No original acceptance inferred."
+    }
+  },
+  "recordSha256": "f43b9240e1fd17d5a9a6198b23f3d9c6af7635aa784c05daa7a1cc60312270f3",
+  "acceptanceInferred": false,
+  "ok": true
+}

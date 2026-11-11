@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-failed-native-observation",
+  "candidateSha256": "0bbf4f19b6a1ec69225a7e44796c6bad4ee5e1f44c8eb9ff0525eb7698e085d3",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794383665825919564/report.json",
+    "sha256": "f0869425bddd800ce9e3c8779e6974cb7eda159c0fa2dab760a332c009cb0174"
+  },
+  "actualProtectedTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/opener-classifier-diagnostic-native-preparation/revision3-priority-image646/actual-root-native/terminal.json",
+    "sha256": "99f39ff23aae43850afd36bd4cff810d0667ae883e5172f349d771a8083c1497"
+  },
+  "originalRawSnapshot": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794383665825919564/opener-classifier-refusal.maps",
+    "sha256": "8b22c08c6229bc05d61544098db809d82a7b4b9e140cbdd0aa56c520eab4d1c2"
+  },
+  "specialRows": [
+    {
+      "address": "f046e87ed000-f046e87f0000",
+      "permissions": "r--p",
+      "offset": "00000000",
+      "device": "00:25",
+      "inode": 1461,
+      "pathname": "/dev/shm/2616740e-21a1-4316-bf0b-00809beb3400 (deleted)"
+    },
+    {
+      "address": "f046e8a95000-f046e8a96000",
+      "permissions": "rw-s",
+      "offset": "00000000",
+      "device": "00:01",
+      "inode": 696822,
+      "pathname": "/memfd:lp_dma_buf (deleted)"
+    },
+    {
+      "address": "f046e9e54000-f046e9e57000",
+      "permissions": "r--p",
+      "offset": "00000000",
+      "device": "00:25",
+      "inode": 1461,
+      "pathname": "/dev/shm/2616740e-21a1-4316-bf0b-00809beb3400 (deleted)"
+    }
+  ],
+  "verified": [
+    "Actualexit1/report/terminalstream hashes exact;original sharedclassifier ValueError remains terminal.",
+    "Originalclassifier input retained verbatim8b22 hash,772rows;two r--p12288-byte deletedshm mappings share00:25/inode1461;one rw-s4096-byte memfd lp_dma_buf has00:01/inode696822. These are mapping lengths,not backing object size.",
+    "Preparatorystrictcontextcomposite failed beforeproof;identityBeforeNone/ownedAcrossCapturefalse/creatorAttestedfalse/qualificationfalse;laterFDdiagnostics empty with pre-snapshot identity unavailable. No ownership mismatch field/FDorigin/content established.",
+    "Failure occurs actualopener generated_snapshot classifier, before READ_WINDOW/AT/input/frames;zero keys/frames/AT and noopenerclose/fallback.",
+    "All12reported births reaped/groupAbsent and exactbirths currentlyabsent;opener-15/observer1 normalcleanupfalse,forcedfalse/cleanupUnknowntrue retained. Globalrestoration/sourceunchangedtrue;original28+2deadline unchanged and staleclocklastdoesnot timestampfailure."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "Name lp_dma_buf alone doesnot prove creator,protocol,driver or admission;deletedshm rows likewise unqualified in this run. No mappingexception/native/original/ATacceptance or cleanupwaiver;no reviewerexecution/primarymutation."
+  ]
+}

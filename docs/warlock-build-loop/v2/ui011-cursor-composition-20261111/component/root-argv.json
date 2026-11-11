@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "rootOnly": true,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/Projects/Warlock/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/test_cursor_composition.py",
+    "--module",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/helper-preimage.py",
+    "--inputs",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/inputs.json",
+    "--inputs-sha256",
+    "b9ac6b3fa0297699784f56af1e3edcaf50dad8480e0b81b949e6a5681da02f0f",
+    "--loader-proof",
+    "ACTUAL_ACCEPTED_LOADER_CORRESPONDENCE_PATH",
+    "--loader-proof-sha256",
+    "ACTUAL_ACCEPTED_LOADER_CORRESPONDENCE_SHA256"
+  ],
+  "requiredRuntimeInputs": [
+    "actual accepted loader correspondence path and SHA256, after actual protected scanner and independent review"
+  ],
+  "redExpected": "After actual setup succeeds, exact current composition positive is rejected by old schema1-only helper; compiler/setup failure is not semantic RED.",
+  "green": "Same fixture bytes and actual input refs; replace only --module with independently reviewed postimage after observed RED.",
+  "caseCount": 23,
+  "seedSampleCount": 32,
+  "executionPerformed": false
+}

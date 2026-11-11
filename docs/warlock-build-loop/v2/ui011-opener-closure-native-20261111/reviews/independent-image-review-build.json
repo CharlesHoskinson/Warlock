@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-coherent-image-qualification",
+  "candidateSha256": "b7d480aef08e92111ef0897b7846553c4fc048aab146fa1e9620eab0ebcf8509",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794396066306334196/report.json",
+    "sha256": "7b822c8ee1189ee7896e54aa019a31576c35568477d598cac7c86ad8c4c9e7ea"
+  },
+  "actualProtectedTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/at-sender-image-preparation-v1/actual-root-image/terminal.json",
+    "sha256": "79c80c4ee264183d949ac895a192d7ef4057f23a6d7e505dde64f96e6dfd8aa0"
+  },
+  "compiledImages": {
+    "warlock-ui-owner": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794396066306334196/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/warlock-ui-owner/build/warlock-ui-owner/warlock-ui-owner",
+      "sha256": "a2b6c460bb52814ca2de5c2dee27ffd511efd605f9a6d9e4689b13616b1fcd39",
+      "device": "56",
+      "inode": "9577430",
+      "size": "37776080"
+    },
+    "ui-webkit-controls": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794396066306334196/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-webkit-controls/build/ui-webkit-controls/ui-webkit-controls",
+      "sha256": "6e51167114833d84bb0d80edafae978121161769fd39ceef94e25d72d8a20645",
+      "device": "56",
+      "inode": "9577461",
+      "size": "41287040"
+    },
+    "ui011-opener-fixture": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794396066306334196/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/ui011-opener-fixture/build/ui011-opener-fixture/ui011-opener-fixture",
+      "sha256": "22a2d72c2e13b4bf7ddbf1a500f5bdc1bf686e3dc9dd80c13d93827c2a9e69b9",
+      "device": "56",
+      "inode": "9577294",
+      "size": "32260496"
+    },
+    "ui011-opener-admission-controls": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794396066306334196/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui011-opener-admission-controls/build/ui011-opener-admission-controls/ui011-opener-admission-controls",
+      "sha256": "138b14e3b2f2240add81fac5c13a9eb026e55958437b948402ee3523292ffc95",
+      "device": "56",
+      "inode": "9577051",
+      "size": "28184536"
+    },
+    "ui-display-controls": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-native-images-cpu-runs/native-images-1794396066306334196/dist/build/aarch64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/ui-display-controls/build/ui-display-controls/ui-display-controls",
+      "sha256": "b5187f6571980fae70db96fc09ff2f94b2a6295a6590fe3ffe0d66d723b61562",
+      "device": "56",
+      "inode": "9577456",
+      "size": "24310264"
+    }
+  },
+  "verified": [
+    "Exact current395 source hashes including provider7f10/launcher3be4 match admitted recipe; current408 candidate406review closure retained.",
+    "Eight commands exit0: build fixedfive targets, five list-bin commands and only admission/Display control executables. All five current physical AArch64 ELF hashes/device/inode/size verified.",
+    "Admission22contracts/32seeds and AT18checks/32seeds pass; sourceInputsUnchanged and cleanupQualified true.",
+    "Main772/qa1fedd/runner9b75/boot4dd and retained toolchain/current957 guards unchanged."
+  ],
+  "limits": [
+    "CPU-only image qualification; owner/observer/opener/producer not executed. No live fallback AT focus, normal native retirement, product integration or original acceptance."
+  ]
+}

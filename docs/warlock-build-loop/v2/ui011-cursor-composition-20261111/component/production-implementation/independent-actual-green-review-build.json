@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-same-fixture-green",
+  "manifestSha256": "cbcc021698224e42dee1395fa1ffb70559e3c2bee9993672fc5bf25d03dfb53c",
+  "actualProtectedTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/actual-root-green/terminal.json",
+    "sha256": "b58872ba1b7f03a562fe978deffefac8d43c15c0976d96ac3ddedbccfb1da5f3"
+  },
+  "stderr": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/actual-root-green/stderr",
+    "sha256": "5f5805c9864d00e9e7d8dfc7a4cfa7fddf5326302de676a4ff62808b8e4b6a01"
+  },
+  "actualRedTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/actual-root-red/terminal.json",
+    "sha256": "9c0ed050fd45e6897598e414282d144232e878f483dacb0ec30790d395daf76f"
+  },
+  "sourceReview": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/production-implementation/independent-source-review-build.json",
+    "sha256": "8b438da310862c1c8a5e40502f56d1daa7a878758b87807342a1ccb363c4c459"
+  },
+  "verified": [
+    "Protected exit0 with exact terminal stream hashes; all23 tests OK including32 fixed refusal samples.",
+    "Exact unchanged R2 fixture8bb855 and inputs a32a3820 retained; actual accepted loader954d and current957 correspondence remain same RED/GREEN inputs.",
+    "Only subject module changes from frozen baseline1d52 to independently reviewed e4cee; collector7408 pin update is separately source reviewed. Both frozen postimage hashes equal terminal recorded sourcePostHashes.",
+    "Actual baseline9c0ed setup succeeded then current-composition positive alone failed; same positive and all22 other controls now pass without oracle changes."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "QA helper composition qualification only; no native execution, original acceptance, product progress-clock credit or primary source adoption by reviewer. Root source adoption and coherent image qualification remain separate."
+  ]
+}

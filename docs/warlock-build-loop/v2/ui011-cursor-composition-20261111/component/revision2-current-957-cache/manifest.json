@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "kind": "ui011-cursor-schema-loader-composition-tests-first-cache957",
+  "disposition": "private-tests-first-not-executed",
+  "files": {
+    "test_cursor_composition.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/test_cursor_composition.py",
+      "sha256": "8bb85515719d9fb3687e3aa711c851fc6c03ae1f5521dff82fe17d4e82e2f46c"
+    },
+    "helper-preimage.py": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/helper-preimage.py",
+      "sha256": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050"
+    },
+    "inputs.json": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/inputs.json",
+      "sha256": "a32a3820f24d25cc022d69962909da09d12f7d5cad067ea2b25f06b3cb53b89e"
+    },
+    "root-argv.json": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/revision2-current-957-cache/root-argv.json",
+      "sha256": "9c4aa2d2173aa75c13e9fd47537dec4d2008b6ff160676479a7d68d0be5b88bc"
+    }
+  },
+  "sourcePreimages": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/ux023_current_boot_correspondence.py",
+      "sha256": "1d52c4b7e68529d892f9cc8c7442e8dd839b39d465883d4e96b89e97bc117050"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/tools/run_current_arm_ui011_opener_closure.py",
+      "sha256": "119f2f54c9e6eb6475e26e0c3f551d2c7d68cd0bdd4a39a43ba710d5578f96af"
+    }
+  ],
+  "caseCount": 23,
+  "orderedCases": [
+    "test_actual_current_schema_and_loader_compose_exactly",
+    "test_absent_proof_preserves_legacy_exact_map_without_reads",
+    "test_historical_v1_cannot_silently_accept_current_schema",
+    "test_missing_current_schema_proof_refused",
+    "test_missing_current_loader_proof_refused",
+    "test_foreign_schema_refused",
+    "test_foreign_provider_refused",
+    "test_provider_other_input_delta_refused",
+    "test_unqualified_schema_hash_refused",
+    "test_historical_basis_tampered_refused",
+    "test_foreign_loader_cache_refused",
+    "test_foreign_loader_image_refused",
+    "test_loader_missing_cursor_selection_refused",
+    "test_loader_changed_selection_refused",
+    "test_foreign_reviewer_refused",
+    "test_stale_loader_boot_refused",
+    "test_changed_library_directory_refused",
+    "test_schema_qualification_false_refused",
+    "test_missing_actual_loader_terminal_refused",
+    "test_missing_independent_loader_review_refused",
+    "test_wrong_loader_review_report_binding_refused",
+    "test_loader_execution_failure_refused",
+    "test_32_fixed_correspondence_refusals"
+  ],
+  "seedSampleCount": 32,
+  "productionPosts": [],
+  "expectedChangedPaths": [
+    "tools/ux023_current_boot_correspondence.py",
+    "tools/run_current_arm_ui011_opener_closure.py"
+  ],
+  "limits": {
+    "sourceScope": "QA helper plus collector HELPERS scalar only after actual RED",
+    "nativeSeconds": 28,
+    "cleanupSeconds": 2,
+    "inputs": 4,
+    "frames": 16,
+    "qaCpuUnchanged": true,
+    "profileUnchanged": true,
+    "authorExecution": false,
+    "primaryWrites": false,
+    "nativeAcceptance": false
+  },
+  "predecessor": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/manifest.json",
+    "sha256": "4fa5c76e7bdb2ba8f2badc139a8970c49ec29283c65968b02ec7659d27ea1368"
+  },
+  "contract": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-cursor-composition-tests-first/contract.json",
+    "sha256": "aef18f197cec2d1923c92a262601ab7d20ffd2726e97ab68ef711ab9f149e4d4"
+  },
+  "actualLoaderCorrespondence": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-current-cursor-loader-preparation/revision5-current-957-cache/loader-correspondence.ACCEPTED.json",
+    "sha256": "954d1af29de89071628004417a74bbaa5f50ae0fb6eeb03c4f057798926bd42d"
+  },
+  "delta": "Only cacheCorrespondence input ref313 to actual957; exact script, 23 cases/32 seeds and1d52 preimage unchanged. Root argv binds actual accepted loader chain954d. Prior contract313 references describe predecessor; current wrapper joins exact accepted current957 witness, no cache blanket exemption."
+}

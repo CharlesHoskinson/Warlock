@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-semantic-red",
+  "manifestSha256": "e2b6bd8068eb88fc04db502d47d40b36ad09ece8765344ffb56dd84f92de91c5",
+  "report": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/actual-root-probe-1794399002387022933/report.json",
+    "sha256": "db51a3861adfb5bb8b8d78983f837e49e12048e4fb9b05b3a3b72acaeb6d28d6"
+  },
+  "result": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/actual-root-probe-1794399002387022933/opener-minimize.json",
+    "sha256": "8a5bacb98f18a84fbf61f45e9efb029c498aa0fced1da59e1d823beb62a232f7"
+  },
+  "verified": [
+    "Actual compile0/reducer1 with all5 setup true; modeled authenticated current minimized observation accepted and current same-group target remains eligible.",
+    "Exactly3 semantic failures: scope retirement/current group focus/no-watch-rearm. Eight positive minimize sequence variants fail; all24negative variants and other11literal checks pass.",
+    "Witness minimizedtrue/scopeClosedfalse/actualFocusempty explains identity-only reconcileWatch preserving menu; no setup/import or detached-binding premise involved.",
+    "Exact14/5/32 frozen fixture/current109 source map retained, sourceInputsUnchanged and cleanupQualified true."
+  ],
+  "failureWitness": {
+    "minimized": true,
+    "scopeClosed": false,
+    "eligibleGroupTargets": [
+      "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+    ],
+    "actualFocus": []
+  },
+  "requiredChanges": [],
+  "limits": [
+    "CPU modeled observation only; no native minimizing/owner Done/AT/original acceptance.",
+    "Future production change must bind selected captured root, not just whole app group; sibling same-group minimize must preserve scope. Original fixture/failed evidence remains immutable."
+  ]
+}

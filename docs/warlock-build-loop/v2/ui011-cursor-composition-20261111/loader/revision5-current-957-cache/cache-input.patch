@@ -1,0 +1,11 @@
+--- retained-failed-r4/scanner.py
++++ actual957/scanner.py
+@@ -4,7 +4,7 @@
+ import hashlib,json,os,re,signal,stat,subprocess,sys
+ ROOT=Path('/home/hoskinson/Projects/Warlock')
+ HERE=Path(__file__).resolve().parent
+-INPUT_SHA='9c8e201da20e42414d4e32ee7911c4dad53374baca35e998b02ea38a1a07888d'
++INPUT_SHA='ec6a721ffb925cd73a74258c87c6f73060eae7e497747332241a14730c06087b'
+ QA_SHA='6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23'
+ OUT=HERE/'actual-root'
+ 

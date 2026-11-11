@@ -1,4 +1,4 @@
-module Shell exposing (watchWindows, watchAvailable, inspectionAvailable, observationAvailable, canProveUnsent, Model, Msg(..), Phase(..), Effect(..), Stamp, stampKey, capture, stampDecoder, initial, update, encode, status, available, applicationLaunchAvailable, localNotificationPolicyAvailable, notificationServiceAvailable, captureGeometry, resumeNotifications, matchesUnsent)
+module Shell exposing (receiveWindowWatch, watchWindows, watchAvailable, inspectionAvailable, observationAvailable, canProveUnsent, Model, Msg(..), Phase(..), Effect(..), Stamp, stampKey, capture, stampDecoder, initial, update, encode, status, available, applicationLaunchAvailable, localNotificationPolicyAvailable, notificationServiceAvailable, captureGeometry, resumeNotifications, matchesUnsent)
 
 import WindowObservation
 import UnsentOperation
@@ -260,19 +260,9 @@ update msg model =
                                 in refresh { detached | binding = Just binding, phase = Reconciling, reconnecting = False, recoveryFailure=Nothing, notice = "Updating window information…" }
                         Err _ -> rejectEnvelope raw model
                 Ok "window-watch-result" ->
-                    case D.decodeValue WindowObservation.watchReplyDecoder raw of
-                        Err _ -> (model,[])
-                        Ok receipt ->
-                            case (model.windowWatchExpected,model.windowObservation) of
-                                (Just pending,Just previous) ->
-                                    if not (watchAvailable model) || model.binding/=Just receipt.binding || pending.request/=receipt.request
-                                        || pending.revision/=receipt.observedRevision || previous.revision/=pending.revision then (model,[]) else
-                                    case receipt.snapshot of
-                                        Nothing -> ({model|windowWatchExpected=Nothing},[])
-                                        Just current ->
-                                            if previous.owner/=current.owner || WindowObservation.sameContent previous current then (model,[]) else
-                                                ({model|windowWatchExpected=Nothing,windowObservation=Just current},[])
-                                _ -> (model,[])
+                    case receiveWindowWatch raw model of
+                        Nothing -> (model,[])
+                        Just (next,_) -> (next,[])
                 Ok "window-observation" ->
                     case D.decodeValue WindowObservation.replyDecoder raw of
                         Err _ -> rejectEnvelope raw model
@@ -477,3 +467,21 @@ watchWindows revision model =
         (Just binding,Just request) ->
             ({model|request=request,windowWatchExpected=Just {request=request,revision=revision}},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "window-watch"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("observedRevision",E.string (UInt64.string revision))])])
         _ -> ({model|phase=Exhausted,windowWatchExpected=Nothing},[])
+
+-- The same accepted transition serves ordinary Shell ingress and the current
+-- Desktop watch scope. A receipt proves only this read's completion.
+receiveWindowWatch : D.Value -> Model -> Maybe (Model,WindowObservation.WatchReply)
+receiveWindowWatch raw model =
+    case D.decodeValue WindowObservation.watchReplyDecoder raw of
+        Err _ -> Nothing
+        Ok receipt ->
+            case (model.windowWatchExpected,model.windowObservation) of
+                (Just pending,Just previous) ->
+                    if not (watchAvailable model) || model.binding/=Just receipt.binding || pending.request/=receipt.request
+                        || pending.revision/=receipt.observedRevision || previous.revision/=pending.revision then Nothing else
+                    case receipt.snapshot of
+                        Nothing -> Just ({model|windowWatchExpected=Nothing},receipt)
+                        Just current ->
+                            if previous.owner/=current.owner || WindowObservation.sameContent previous current then Nothing else
+                                Just ({model|windowWatchExpected=Nothing,windowObservation=Just current},receipt)
+                _ -> Nothing

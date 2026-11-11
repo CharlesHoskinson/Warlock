@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "passed": true,
+  "kind": "current-glib-schema-reproducibility",
+  "inputManifestSha256": "8bd0109564d850826246cf9a62369f70e6fe880f474c965717c3269229f5cb6f",
+  "compiler": {
+    "path": "/usr/bin/glib-compile-schemas",
+    "sha256": "f21183727d93c168daecfc6490d8a28f129eaa001f658603d78a29bac4aec6dc"
+  },
+  "sourceFileCount": 48,
+  "command": [
+    "/usr/bin/glib-compile-schemas",
+    "--strict",
+    "--targetdir=/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/watch-bookkeeping-glib-schema-preparation/actual-root/recompiled",
+    "/usr/share/glib-2.0/schemas"
+  ],
+  "exitCode": 0,
+  "elapsedNs": 5611552,
+  "historicalCompiledSha256": "21b7cc04f63d314eb00152097e9d3646f7c2ccfeda63ac2718680577399bafc4",
+  "currentInstalledSha256": "5c04f28c16da15dbbb1ab64f859ad638203ecda3aa762ec62e76574e98876f63",
+  "reproducedSha256": "5c04f28c16da15dbbb1ab64f859ad638203ecda3aa762ec62e76574e98876f63",
+  "exactCurrentBytesReproduced": true,
+  "inputsUnchanged": true,
+  "nativeExecuted": false,
+  "historicalSemanticEquivalenceClaimed": false
+}

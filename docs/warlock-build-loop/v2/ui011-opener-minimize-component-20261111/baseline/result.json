@@ -1,0 +1,475 @@
+{
+  "schema": 1,
+  "passed": false,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "providerAcceptance": false,
+  "imageSha256": "3509da28f5799ee510fff1d2fab7860bfeaa91697eaed697a00d2f7008088791",
+  "fixtureSha256": "1b9940a84148ec3ab197b3ccc38b6a29191e2d5787e4b74b8a083086e15674a9",
+  "observed": {
+    "preconditions": {
+      "current-group-eligible": true,
+      "keyboard-menu-open": true,
+      "one-correlated-watch": true,
+      "actual-reducer-minimized-state": true,
+      "same-group-current-eligible": true
+    },
+    "checks": {
+      "minimize-retires-current-scope": false,
+      "minimize-restores-current-eligible-group": false,
+      "minimize-does-not-select-applications-fallback": true,
+      "current-incarnation-remains-observed": true,
+      "duplicate-reply-cannot-refocus": true,
+      "foreign-binding-cannot-retire": true,
+      "wrong-base-cannot-retire": true,
+      "unknown-cannot-retire-or-focus": true,
+      "unrelated-minimize-preserves-scope": true,
+      "title-change-preserves-scope": true,
+      "already-minimized-is-not-new-minimize": true,
+      "replacement-never-restores-old-group": true,
+      "no-restore-activate-or-mutation": true,
+      "no-watch-rearm-after-retirement": false
+    },
+    "witness": {
+      "minimized": true,
+      "scopeClosed": false,
+      "eligibleGroupTargets": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "actualFocus": []
+    },
+    "seeded": [
+      {
+        "seed": 0,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [
+          "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+        ],
+        "scopeMatches": false,
+        "noMutation": true
+      },
+      {
+        "seed": 1,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 2,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 3,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 4,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [
+          "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+        ],
+        "scopeMatches": false,
+        "noMutation": true
+      },
+      {
+        "seed": 5,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 6,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 7,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 8,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [
+          "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+        ],
+        "scopeMatches": false,
+        "noMutation": true
+      },
+      {
+        "seed": 9,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 10,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 11,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 12,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [
+          "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+        ],
+        "scopeMatches": false,
+        "noMutation": true
+      },
+      {
+        "seed": 13,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 14,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 15,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 16,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [
+          "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+        ],
+        "scopeMatches": false,
+        "noMutation": true
+      },
+      {
+        "seed": 17,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 18,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 19,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 20,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [
+          "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+        ],
+        "scopeMatches": false,
+        "noMutation": true
+      },
+      {
+        "seed": 21,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 22,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 23,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 24,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [
+          "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+        ],
+        "scopeMatches": false,
+        "noMutation": true
+      },
+      {
+        "seed": 25,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 26,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 27,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 28,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [
+          "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+        ],
+        "scopeMatches": false,
+        "noMutation": true
+      },
+      {
+        "seed": 29,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 30,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      },
+      {
+        "seed": 31,
+        "prepared": true,
+        "actualFocus": [],
+        "expectedFocus": [],
+        "scopeMatches": true,
+        "noMutation": true
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "minimize-retires-current-scope",
+      "passed": false
+    },
+    {
+      "name": "minimize-restores-current-eligible-group",
+      "passed": false
+    },
+    {
+      "name": "minimize-does-not-select-applications-fallback",
+      "passed": true
+    },
+    {
+      "name": "current-incarnation-remains-observed",
+      "passed": true
+    },
+    {
+      "name": "duplicate-reply-cannot-refocus",
+      "passed": true
+    },
+    {
+      "name": "foreign-binding-cannot-retire",
+      "passed": true
+    },
+    {
+      "name": "wrong-base-cannot-retire",
+      "passed": true
+    },
+    {
+      "name": "unknown-cannot-retire-or-focus",
+      "passed": true
+    },
+    {
+      "name": "unrelated-minimize-preserves-scope",
+      "passed": true
+    },
+    {
+      "name": "title-change-preserves-scope",
+      "passed": true
+    },
+    {
+      "name": "already-minimized-is-not-new-minimize",
+      "passed": true
+    },
+    {
+      "name": "replacement-never-restores-old-group",
+      "passed": true
+    },
+    {
+      "name": "no-restore-activate-or-mutation",
+      "passed": true
+    },
+    {
+      "name": "no-watch-rearm-after-retirement",
+      "passed": false
+    }
+  ],
+  "failures": [
+    {
+      "name": "minimize-retires-current-scope",
+      "passed": false
+    },
+    {
+      "name": "minimize-restores-current-eligible-group",
+      "passed": false
+    },
+    {
+      "name": "no-watch-rearm-after-retirement",
+      "passed": false
+    }
+  ],
+  "seedFailures": [
+    {
+      "seed": 0,
+      "prepared": true,
+      "actualFocus": [],
+      "expectedFocus": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "scopeMatches": false,
+      "noMutation": true
+    },
+    {
+      "seed": 4,
+      "prepared": true,
+      "actualFocus": [],
+      "expectedFocus": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "scopeMatches": false,
+      "noMutation": true
+    },
+    {
+      "seed": 8,
+      "prepared": true,
+      "actualFocus": [],
+      "expectedFocus": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "scopeMatches": false,
+      "noMutation": true
+    },
+    {
+      "seed": 12,
+      "prepared": true,
+      "actualFocus": [],
+      "expectedFocus": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "scopeMatches": false,
+      "noMutation": true
+    },
+    {
+      "seed": 16,
+      "prepared": true,
+      "actualFocus": [],
+      "expectedFocus": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "scopeMatches": false,
+      "noMutation": true
+    },
+    {
+      "seed": 20,
+      "prepared": true,
+      "actualFocus": [],
+      "expectedFocus": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "scopeMatches": false,
+      "noMutation": true
+    },
+    {
+      "seed": 24,
+      "prepared": true,
+      "actualFocus": [],
+      "expectedFocus": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "scopeMatches": false,
+      "noMutation": true
+    },
+    {
+      "seed": 28,
+      "prepared": true,
+      "actualFocus": [],
+      "expectedFocus": [
+        "group:observed:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:2:observed:application:org.example.Editor"
+      ],
+      "scopeMatches": false,
+      "noMutation": true
+    }
+  ],
+  "caseCount": 14,
+  "setupCount": 5,
+  "seedSampleCount": 32,
+  "classification": "semantic-red"
+}
