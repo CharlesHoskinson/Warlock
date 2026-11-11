@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "kind": "actual-minimize-native-failure-source-bound-diagnosis",
+  "reviewerRole": "existing_sol_coordinator",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/report.json",
+    "sha256": "680364a4f4b3909223a138896e76fbdf224f3ede2f42f700f37d6e903ca7e263"
+  },
+  "observerWire": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/observer-wire.jsonl",
+    "sha256": "c5004a06a0e3e65b5002a3d3ede8dbbfd6ff2e26dc29e25616669deac10e651e"
+  },
+  "producerMinimizeRequest": {
+    "schema": 1,
+    "kind": "minimize-requested",
+    "nonce": "47c9000170efc471f6d21c3254e6e7fcc553629f3a981dea99917d7d23e315de",
+    "pid": "4191062",
+    "monotonicNs": "74166405678563",
+    "binding": {
+      "lifetime": "9007199254740993",
+      "session": "9007199254740995",
+      "frontend": "9007199254740997"
+    },
+    "nativeAcceptance": false
+  },
+  "requestElapsedNs": 18904888685,
+  "requestOriginalDeadlineRemainingNs": 9095111315,
+  "ipcOpenerSamples": [
+    {
+      "command": 51,
+      "stdout": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/command-51.stdout",
+        "sha256": "be9af7c4a23654b82f0f97b33dcbab8c34a01119d4605d74349d62fcc946702b"
+      },
+      "opener": {
+        "address": "0xc524501f04b0",
+        "pid": 4191062,
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "workspace": {
+          "address": "1",
+          "id": 1,
+          "type": "normal",
+          "name": "1"
+        }
+      }
+    },
+    {
+      "command": 52,
+      "stdout": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/command-52.stdout",
+        "sha256": "be9af7c4a23654b82f0f97b33dcbab8c34a01119d4605d74349d62fcc946702b"
+      },
+      "opener": {
+        "address": "0xc524501f04b0",
+        "pid": 4191062,
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "workspace": {
+          "address": "1",
+          "id": 1,
+          "type": "normal",
+          "name": "1"
+        }
+      }
+    },
+    {
+      "command": 54,
+      "stdout": {
+        "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/command-54.stdout",
+        "sha256": "be9af7c4a23654b82f0f97b33dcbab8c34a01119d4605d74349d62fcc946702b"
+      },
+      "opener": {
+        "address": "0xc524501f04b0",
+        "pid": 4191062,
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "workspace": {
+          "address": "1",
+          "id": 1,
+          "type": "normal",
+          "name": "1"
+        }
+      }
+    }
+  ],
+  "ipcTimingLimit": "Per-command receipt has PID/birth but no retained monotonic completion timestamp; these samples do not prove every command followed MINIMIZE.",
+  "observerPublishedPhases": [
+    {
+      "sequence": 1,
+      "phase": "READ_INITIAL",
+      "readsPerformed": 1,
+      "completedPhases": null,
+      "status": null,
+      "error": null
+    },
+    {
+      "sequence": 2,
+      "phase": "READ_WINDOW",
+      "readsPerformed": 1,
+      "completedPhases": null,
+      "status": null,
+      "error": null
+    },
+    {
+      "sequence": 5,
+      "phase": "RETIRE",
+      "readsPerformed": null,
+      "completedPhases": 2,
+      "status": "RetainedUnknown",
+      "error": "user error (connected minimized snapshot read bound)"
+    }
+  ],
+  "observation": "No committed Minimized row or READ_MINIMIZED response exists. Current GTK request receipt is request-only; initial/menu proof and one AT confirmation do not accept minimize.",
+  "sourceFindings": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-owned-minimize-driver-tests-first/functional-source/read-minimized-failure-analysis/findings.json",
+    "sha256": "3e6373bff1ef21488aef305ffea38dc05f5d425e8c197a4ca86022ac657f178f"
+  },
+  "sourceConclusion": "Pinned Hyprland source+installed d40e ELF ignores requested.minimized; wlr publisher emits only enum0/2/3 and cannot emit Minimized1. Fresh barrier16 cannot establish unavailable state. Do not patch timing/read count or substitute unmap/scratchpad/compositor.",
+  "retirement": {
+    "atServicesNormal": true,
+    "keyboardNormal": true,
+    "abnormalStack": [
+      {
+        "role": "window-producer",
+        "pid": 4191421,
+        "startTicks": "7430475",
+        "exit": -15,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": false
+      },
+      {
+        "role": "opener-tracer",
+        "pid": 4191059,
+        "startTicks": "7430120",
+        "exit": -15,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": false
+      },
+      {
+        "role": "connected-observer",
+        "pid": 4190991,
+        "startTicks": "7430054",
+        "exit": 1,
+        "groupAbsent": true,
+        "forced": false,
+        "normal": false
+      }
+    ],
+    "forcedCleanup": false,
+    "cleanupUnknown": true,
+    "globalRestoration": false
+  },
+  "disposition": "failed-original-observation; source-backed external-provider capability blocker",
+  "nextAction": "Root normal terminal remains failed; ordinary same-record deferred evidence for unavailable actual provider state, preserve all stops/clocks/history; then choose an independently eligible original case. No unchanged native retry.",
+  "counts": {
+    "requirements": 21,
+    "scenarios": 48,
+    "requirementTotal": 242,
+    "scenarioTotal": 417,
+    "minimizeCaseAccepted": false,
+    "proposed49NotAuthorized": true,
+    "wholeUI011Accepted": false,
+    "releaseAccepted": false
+  },
+  "unresolvedObligations": [
+    "Broader typed Haskell batch-disposition obligation33 remains open.",
+    "Stopped nested-dismissal history34 remains stopped; no label/record reset.",
+    "Original prior closure ordered Refresh obligation remains partial.",
+    "Bounded RSI obligation35 remains pending appropriate completed-slice boundary; no RSI from this failed native result."
+  ],
+  "authorEffects": false,
+  "primaryWrites": false
+}

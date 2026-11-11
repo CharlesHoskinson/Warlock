@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-backed-provider-limitation-analysis",
+  "findings": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-owned-minimize-driver-tests-first/functional-source/read-minimized-failure-analysis/findings.json",
+    "sha256": "3e6373bff1ef21488aef305ffea38dc05f5d425e8c197a4ca86022ac657f178f"
+  },
+  "verified": [
+    "Retained failure, installed compositor d40e, local observer/owner source, upstream source copies and bounded disassembly hashes verified.",
+    "Source onUpdateState forwards fullscreen/maximized only; foreign-toplevel sendState appends Activated/Fullscreen/Maximized, no Minimized. Retained installed binary handler/publisher and no-op setter evidence corroborate this route limitation.",
+    "Actual minimized request receipt is not a committed observation; observer Unknown/read-bound and abnormal cleanup remain failed evidence."
+  ],
+  "conclusion": "Current owned compositor route has a source/binary-backed inability to publish required Minimized state; increasing polling bounds, cache changes, or substituting unmap/request receipt does not satisfy the original oracle.",
+  "limits": [
+    "No per-read state log or exact scheduling cause established; tagged-source/binary correspondence is not full reproducible-build proof.",
+    "No provider patch, native rerun, original acceptance, ledger advance or deferral event performed by reviewer."
+  ]
+}

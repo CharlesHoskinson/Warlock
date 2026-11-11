@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "path": "plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+      "beforeSha256": null,
+      "sha256": "273131c356ad9f503f56bbc2cbb32aa734c40e2aa22ab6822201414755eb426e",
+      "mode": "0o644"
+    },
+    {
+      "path": "plugins/warlock-contributor/references/implementation.md",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/references/implementation.md",
+      "beforeSha256": "79af0f40f837a0b8b4dede0587015c6efee93c561ae52d87148d16f0cb388157",
+      "sha256": "1da07359dab90c840d08baf39ac2c9463c034f49e1f247da70d5c478cbf092e9",
+      "mode": "0o644"
+    },
+    {
+      "path": "plugins/warlock-contributor/references/provider-capabilities.json",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/references/provider-capabilities.json",
+      "beforeSha256": null,
+      "sha256": "e52ab057172db57e5f6672a5118717c80cd80853dd23aa9132bb5a00760cb2fb",
+      "mode": "0o644"
+    },
+    {
+      "path": "plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+      "beforeSha256": null,
+      "sha256": "6235028d371302c29751a103f1f74e74f35fa708eaf226ea02fd3bddf291cd2d",
+      "mode": "0o644"
+    }
+  ],
+  "claims": [
+    {
+      "kind": "grant",
+      "request": "01M75H72QM7PKYK3ZJQM0GD47W",
+      "resource": "file:/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+      "holder": "did:key:z6MkkQ9PpSiPLzYgiR2Gk7HowfMMGH7j8EKWK6VCzNRV6unc",
+      "hold": "01M75H72QM7PKYK3ZJQM0GD47W",
+      "lease_s": 1800,
+      "lease_end": "2026-11-11T15:16:58.056674Z"
+    },
+    {
+      "kind": "grant",
+      "request": "01M75H72WPF4ZWJNQ1JYF29RGM",
+      "resource": "file:/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/references/implementation.md",
+      "holder": "did:key:z6MkkQ9PpSiPLzYgiR2Gk7HowfMMGH7j8EKWK6VCzNRV6unc",
+      "hold": "01M75H72WPF4ZWJNQ1JYF29RGM",
+      "lease_s": 1800,
+      "lease_end": "2026-11-11T15:16:58.220555Z"
+    },
+    {
+      "kind": "grant",
+      "request": "01M75H732M2PY9MRWMQY9FDC5E",
+      "resource": "file:/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/references/provider-capabilities.json",
+      "holder": "did:key:z6MkkQ9PpSiPLzYgiR2Gk7HowfMMGH7j8EKWK6VCzNRV6unc",
+      "hold": "01M75H732M2PY9MRWMQY9FDC5E",
+      "lease_s": 1800,
+      "lease_end": "2026-11-11T15:16:58.457177Z"
+    },
+    {
+      "kind": "grant",
+      "request": "01M75H739WMY1PDEAFM9B5F3KM",
+      "resource": "file:/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+      "holder": "did:key:z6MkkQ9PpSiPLzYgiR2Gk7HowfMMGH7j8EKWK6VCzNRV6unc",
+      "hold": "01M75H739WMY1PDEAFM9B5F3KM",
+      "lease_s": 1800,
+      "lease_end": "2026-11-11T15:16:58.634937Z"
+    }
+  ],
+  "sourceReview": "ef204cb75fa138d3c38ff4c87c50176eca45eeb99525ad70e7a2b04beed3fcf0",
+  "actualReview": "0782b8d3cede09ecbff84af88289882746d092d460a2e715949e6095d9787b99",
+  "coreUnchanged": "89687e4212f1aa394f14a3771687bd6b030293a06d7934b850a84219398ed74d",
+  "wholeGoalWorkflowSupportOnly": true,
+  "deferredProductCaseNotResumed": true,
+  "adoptedUTC": "2026-11-11T14:46:58.980270+00:00"
+}

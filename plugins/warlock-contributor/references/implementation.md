@@ -31,6 +31,22 @@ Do not infer a current runnable core/plugin pair from filenames or historical pa
 
 Pin terminology: persistent taskbar application pins (UX-004), running-pin context menus and window Always on top (UX-016) are separate routes. Native Always on top needs observed checked semantics, not an optimistic taskbar preference. Additional rows identify manual check choices; they do not expand `verify-plan`'s implemented coverage.
 
+Before a native candidate review, check the actual provider binary and original
+scenario for known capability limits. Read the request handler and the state
+publication path early. A request receipt does not prove that the provider changes
+state or publishes the required observation. Use the read-only advisory lookup:
+
+```sh
+python3 plugins/warlock-contributor/scripts/provider_capability_preflight.py --root "$PWD" --binary /usr/bin/Hyprland --requirement ELM-UI-011 --scenario 'focus-scope-opener minimize'
+```
+
+The registry matches the exact binary SHA256 and original scenario. It reports
+`unsupported` only with the retained evidence. All other results are `unknown`.
+Absence of a limitation does not establish support, permission or acceptance.
+Run applicable pure metadata and command preflights before the final candidate
+review. These checks add no approval gate and do not replace protected execution,
+current ownership checks or the original native and AT oracles.
+
 For an Elm behavior change, follow the existing route: decode the boundary event,
 update immutable policy through typed messages, emit its existing effect type,
 then project the resulting state into the view. Keep native checks of current

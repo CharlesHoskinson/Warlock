@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-failed-native-observation",
+  "candidateSha256": "3423b90838164ad5863a17916286abc20cb9c61213b269bd7b533f7a85cd8eba",
+  "report": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/report.json",
+    "sha256": "680364a4f4b3909223a138896e76fbdf224f3ede2f42f700f37d6e903ca7e263"
+  },
+  "actualProtectedTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-native-preparation-v1/revision2-keyboard-data-refresh/actual-root/native-terminal.json",
+    "sha256": "3e66272de59673e8c80b2c670b3fd9c2118874b5826246489f470cc368fae92c"
+  },
+  "actualObserverWire": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/observer-wire.jsonl",
+    "sha256": "c5004a06a0e3e65b5002a3d3ede8dbbfd6ff2e26dc29e25616669deac10e651e"
+  },
+  "verified": {
+    "failureStage": "READ_MINIMIZED did not produce a committed snapshot within fixed read bound; subsequent expected phase check received RETIRE RetainedUnknown and raised fixed phase response differs",
+    "completedObserverPhases": [
+      "READ_INITIAL",
+      "READ_WINDOW"
+    ],
+    "minimizeRequestReceiptPresent": true,
+    "committedMinimizedObserved": false,
+    "menuATConfirmed": true,
+    "finalFocusObserved": false,
+    "frames": 3,
+    "keyboardTransactions": 2,
+    "sourceInputsUnchanged": true,
+    "current438SourcesAnd7GuardsMatch": true,
+    "retirementRows": 66,
+    "allReportedBirthsAbsentAtReview": true,
+    "allReportedGroupsAbsentAndReaped": true,
+    "managedJobPidAbsent": 4190211,
+    "abnormalExits": [
+      [
+        "window-producer",
+        -15
+      ],
+      [
+        "opener-tracer",
+        -15
+      ],
+      [
+        "connected-observer",
+        1
+      ]
+    ],
+    "normalStackCleanup": false,
+    "forcedCleanup": false,
+    "cleanupUnknown": true,
+    "globalRestoration": false
+  },
+  "normalFinishContract": {
+    "classification": "failed",
+    "exit": 1,
+    "terminal": true,
+    "outerHandle": "17359",
+    "actualOuterHandleConsumed": true,
+    "jobId": "pid4190211-start7429269",
+    "rawReport": {
+      "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/report.json",
+      "sha256": "680364a4f4b3909223a138896e76fbdf224f3ede2f42f700f37d6e903ca7e263"
+    },
+    "cleanupQualified": false
+  },
+  "limits": {
+    "actualGUIExecuted": true,
+    "preSpawnRefusal": false,
+    "nativeAcceptance": false,
+    "originalAcceptance": false,
+    "scenarioCredit": 0,
+    "ledgerAdvancePermitted": false,
+    "minimizeRequestIsNotCommittedMinimizedProof": true
+  }
+}

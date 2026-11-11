@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "kind": "ui011-minimize-native-provider-boundary-analysis",
+  "disposition": "source-backed-external-provider-limitation-no-local-patch",
+  "actualFailure": {
+    "path": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ui011-opener-closure-1794407074623085739/report.json",
+    "sha256": "680364a4f4b3909223a138896e76fbdf224f3ede2f42f700f37d6e903ca7e263"
+  },
+  "owningCompositor": {
+    "path": "/usr/bin/Hyprland",
+    "sha256": "d40e2edab24c2032a7a77b4d44c3d738e5003256d7d4199950dc7001fee9b6ba"
+  },
+  "upstreamSources": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-owned-minimize-driver-tests-first/functional-source/read-minimized-failure-analysis/upstream-sources.json",
+    "sha256": "e277ba67a6c8d184d18839cdb1960b6bc0bf45d4c3114e19a8d994f30984baab"
+  },
+  "installedSourceInputs": [
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+      "sha256": "58461810d44fa39a7bd3246975b40c92e790b4fc43d4a2b7214208685c5b9ad5"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend/ForeignToplevelOwner.hsc",
+      "sha256": "c38d36fcb20a691e92599032c3173bbd4f7538e25e88161e6041dd44be218d55"
+    },
+    {
+      "path": "/home/hoskinson/Projects/Warlock/implementation/warlock/haskell/runtime/src/Warlock/Backend/WindowObservation.hs",
+      "sha256": "01648a3ce02bc033b4e7c682979f863240b79db95cccfb6997a636cd78b19fd0"
+    }
+  ],
+  "inspectionEvidence": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-owned-minimize-driver-tests-first/functional-source/read-minimized-failure-analysis/hyprland-symbols.txt",
+      "sha256": "a51a5496e97e2c2c6e490a5437d61cde5e2f6d0464a5de7876d764e5bd9e50d6",
+      "argv": [
+        "nm",
+        "-D",
+        "-C",
+        "/usr/bin/Hyprland"
+      ],
+      "exit": 0,
+      "kind": "read-only-source-or-binary-inspection"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-owned-minimize-driver-tests-first/functional-source/read-minimized-failure-analysis/hyprland-state-handler-disassembly.txt",
+      "sha256": "ad8d9f959b6f0bdf4ca0e65782b903490b70fd4911a8bacd0c0a958b0a66398d",
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0x4684a0",
+        "--stop-address=0x46851c",
+        "/usr/bin/Hyprland"
+      ],
+      "exit": 0,
+      "kind": "read-only-source-or-binary-inspection"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-owned-minimize-driver-tests-first/functional-source/read-minimized-failure-analysis/hyprland-state-publisher-disassembly.txt",
+      "sha256": "dc2fb50175ee53a915414813335f4a6316984fe8085bc4b07dc01e67a6de6df5",
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0x74aae4",
+        "--stop-address=0x74ae30",
+        "/usr/bin/Hyprland"
+      ],
+      "exit": 0,
+      "kind": "read-only-source-or-binary-inspection"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-owned-minimize-driver-tests-first/functional-source/read-minimized-failure-analysis/hyprland-noop-minimized-disassembly.txt",
+      "sha256": "25f9d0d0f4775fd64883c8f87cea2e101e22908e6b8ce2ee748ef198cb556a0d",
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xb34c20",
+        "--stop-address=0xb34c30",
+        "/usr/bin/Hyprland"
+      ],
+      "exit": 0,
+      "kind": "read-only-source-or-binary-inspection"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-owned-minimize-driver-tests-first/functional-source/read-minimized-failure-analysis/installed-packages.txt",
+      "sha256": "f6bc1cf3e7e508b4ba86fd48043e8649514d00e25fd4b78eabb71ed42ecb3fb9",
+      "argv": [
+        "pacman",
+        "-Q",
+        "hyprland",
+        "gtk4"
+      ],
+      "exit": 0,
+      "kind": "read-only-source-or-binary-inspection"
+    }
+  ],
+  "observations": [
+    "Actual driver receipt proves a minimize request only; observer exhausted16 and retained Unknown, not committed Minimized.",
+    "ForeignToplevelOwner.readToplevelSnapshot159-174 performs a fresh sync barrier each read. WindowObservation cached comparison does not supply the observer reads.",
+    "GTK4.24.1 gdk_wayland_toplevel_minimize sends xdg_toplevel.set_minimized and explicitly lacks minimized state notification through xdg.",
+    "Hyprland0.57.1 XDGShell.cpp301-305 emits requestsMinimize; WaylandBackend.cpp183-188 forwards minimized; Window.cpp841-848 discards that member and calls only requestClientFullscreen.",
+    "Hyprland ForeignToplevelWlr.cpp162-187 publishes only Activated2, Fullscreen3 or Maximized0, never Minimized1. Its set_minimized85-96 emits IPC/event notifications without implementing minimized state publication.",
+    "Installed d40e ELF onUpdateState0x4684a0-0x46851c calls only requestClientFullscreen; sendState0x74aae4-0x74ae30 stores state constants2 and3-or0, with no Minimized1 state append. setMinimized and setMaximized alias at0xb34c20, a no-op return."
+  ],
+  "conclusion": "The current owned compositor cannot satisfy the required real committed foreign-toplevel Minimized observation through this route. No polling-limit, cache, unmap substitution, or local fabricated state fix is justified.",
+  "limits": [
+    "Tagged upstream source plus installed ELF correspondence; no full binary reproducible-build identity claim.",
+    "No per-read actual state log; no claim about how many reads occurred before compositor processed the request. This does not remove the independent publisher limitation.",
+    "No native rerun, protected test execution, primary mutation, source correction, compositor change or acceptance credit.",
+    "Normal cleanup failure and Unknown remain failed evidence."
+  ],
+  "nextAction": "Preserve failed native evidence and report external provider limitation to Root for ordinary deferral. Retain tested MenuBridge behavior without claiming native minimize acceptance.",
+  "nativeAcceptance": false,
+  "sourceChanged": false
+}

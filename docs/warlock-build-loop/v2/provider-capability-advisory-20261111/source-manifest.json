@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "kind": "provider-capability-advisory-source",
+  "posts": [
+    {
+      "path": "plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/qa/test_provider_capability_preflight.py",
+      "beforeSha256": null,
+      "sha256": "273131c356ad9f503f56bbc2cbb32aa734c40e2aa22ab6822201414755eb426e",
+      "mode": "0o644"
+    },
+    {
+      "path": "plugins/warlock-contributor/references/implementation.md",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/references/implementation.md",
+      "beforeSha256": "79af0f40f837a0b8b4dede0587015c6efee93c561ae52d87148d16f0cb388157",
+      "sha256": "1da07359dab90c840d08baf39ac2c9463c034f49e1f247da70d5c478cbf092e9",
+      "mode": "0o644"
+    },
+    {
+      "path": "plugins/warlock-contributor/references/provider-capabilities.json",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/references/provider-capabilities.json",
+      "beforeSha256": null,
+      "sha256": "e52ab057172db57e5f6672a5118717c80cd80853dd23aa9132bb5a00760cb2fb",
+      "mode": "0o644"
+    },
+    {
+      "path": "plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+      "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/postimages/plugins/warlock-contributor/scripts/provider_capability_preflight.py",
+      "beforeSha256": null,
+      "sha256": "6235028d371302c29751a103f1f74e74f35fa708eaf226ea02fd3bddf291cd2d",
+      "mode": "0o644"
+    }
+  ],
+  "files": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/changes.patch",
+      "sha256": "b476f503241ae09a441d9ef2b327eb2ae4d9c660d1b49c2ba639e90363fde5bf"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/source-implementation/root-green-argv.json",
+      "sha256": "1953270fc26dc1a111194d94ba3f5302a307879b18b65275ad06d4f309a0e1e8"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/test_provider_capability_preflight.py",
+      "sha256": "20d38880b9a5e5d34adfbaf6fd727f1057aa7c975587ea1f4c7e920c5d881d0f"
+    }
+  ],
+  "testsFirstManifest": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/manifest.json",
+    "sha256": "8f9e925f37b2cce33a895b25f6519ad88773af9d28c56036d6c9426dba115d0a"
+  },
+  "actualModeledBaseline": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/actual-root-red-report.json",
+    "sha256": "ffca8bf89ea0ec058106677f3fed2d17c8569764f021dce9d52ee97f4355f46a"
+  },
+  "actualModeledTerminal": {
+    "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/provider-capability-advisory-tests-first/actual-root-red/terminal.json",
+    "sha256": "7f141d24d02a26e90ac9f188d7357c377e391fc7b3cff7ff79069b925506c7aa"
+  },
+  "testClassAstUnchanged": true,
+  "coreUnchanged": {
+    "path": "/home/hoskinson/Projects/Warlock/plugins/warlock-contributor/scripts/warlock.py",
+    "sha256": "89687e4212f1aa394f14a3771687bd6b030293a06d7934b850a84219398ed74d"
+  },
+  "caseCount": 18,
+  "seedSamples": 64,
+  "primaryChanged": false,
+  "authorExecuted": false,
+  "claims": [
+    "Exact binary/scenario advisory lookup only. Registry absence or invalid evidence yields unknown, never supported.",
+    "No core/runtime/admission/approval/clocks changed. Provider binary is read and hashed, never launched.",
+    "Known limitation is bound to reviewed source/ELF finding and failed native report. Public archive installation remains Root-owned.",
+    "Modeled RED is not a native or existing production API regression."
+  ]
+}
