@@ -26,7 +26,8 @@ class SupportCustodyTests(unittest.TestCase):
         self.fixture.setUp()
         self.addCleanup(self.fixture.doCleanups)
         self.repo = self.fixture.repo
-        self.names = sorted(policy.SUPPORT_CUSTODY_PATHS)
+        self.names = sorted((policy.STATE, 'docs/HANDOFF.md',
+                             'wiki/warlock/log.md', 'wiki/warlock/wiki/topics/current-status.md'))
         # Real canonical support docs are tracked before their owner changes
         # them. The base fixture only tracks STATE; untracked docs elsewhere
         # are intentionally outside dirty_names' product/plugin census.

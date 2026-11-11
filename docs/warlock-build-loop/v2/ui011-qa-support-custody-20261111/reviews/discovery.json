@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifestSha256": "92168ec95cd6cb0496e7d1d06719244e1822c9e3c610db6bf6be50a76c76f75b",
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "plugins/warlock-contributor/qa/test_qa_support_custody.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/discovery-safe-regression/postimages/plugins/warlock-contributor/qa/test_qa_support_custody.py",
+        "beforeSha256": "absent",
+        "sha256": "ac6abe1d593144936c36b69376d017bfc4cc2022c7a147d4c19a63bd3898fb60",
+        "mode": "0o644"
+      }
+    ]
+  },
+  "requiredChanges": [],
+  "verified": [
+    "All16 QASupportCustody class/method ASTs byte-independent identical to frozen real API fixture; only discovery wrapper/imports/main entry changed.",
+    "Normal test_support_actor_binding policy/defaultCHECKER reused; no top-level private argv parsing, private path or core override. unittest.main only main guard.",
+    "Core89687 and original4document fixture0c221 unchanged; additive discovery path only."
+  ],
+  "limits": [
+    "Installedfull613 actual execution pending; no live custody/native acceptance or source adoption inferred."
+  ]
+}

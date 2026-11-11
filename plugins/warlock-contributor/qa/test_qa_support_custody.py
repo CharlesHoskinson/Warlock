@@ -1,0 +1,114 @@
+"""Exact same-owner QA support reconciliation through isolated real APIs.
+
+Only external live claims are mocked. This module is safe for unittest discovery.
+"""
+import copy
+import json
+import os
+import unittest
+from unittest import mock
+
+import test_support_actor_binding as actors
+
+policy = actors.policy
+NAMES=('tools/qa_cpu.py','tools/run_current_arm_ui011_opener_closure.py','tools/ux023_current_boot_correspondence.py')
+
+class QASupportCustody(unittest.TestCase):
+    def setUp(self):
+        self.actor=actors.GenericSupportActorBindingTests('test_generic_binding_keeps_record_identity_and_actual_actor')
+        self.actor.setUp();self.addCleanup(self.actor.doCleanups)
+        self.case=self.actor.case;self.repo=self.case.repo
+        # The existing fixture captures canonical support work. Restore it so
+        # each candidate has one exact changed QA path and no unrelated drift.
+        for name in self.case.names:
+            if name==policy.STATE:
+                state=json.loads((self.repo/name).read_text());state['supportNote']='captured owner work'
+                self.case.fixture.write(name,state)
+            else:self.case.fixture.write(name,'captured owner work\n')
+        record=json.loads(self.case.original)
+        for name in NAMES:
+            self.case.fixture.write(name,'captured QA support bytes\n')
+            record['foreignDirty'][name]=policy.fingerprint(self.repo,name)
+        self.case.fixture.write(self.case.path,record)
+        self.case.fixture.refresh_fixture_participant_index()
+        self.case.original=(self.repo/self.case.path).read_bytes()
+        self.case.record=dict(record,_recordPath=self.case.path)
+        self.case.names=[NAMES[0]]
+        self.case.reqs,self.case.state=policy.context(self.repo)
+
+    def prepare(self,name=NAMES[0]):
+        self.case.names=[name];self.case.fixture.write(name,'current reviewed QA support bytes\n')
+        return self.actor.prepare()
+
+    def success(self,name):
+        entries,arguments,proof=self.prepare(name)
+        before=copy.deepcopy(self.case.record)
+        result=self.actor.apply(arguments)
+        self.assertTrue(result['participantBytesUnchanged']);self.assertTrue(result['foreignOwnershipRetained'])
+        self.assertFalse(result['scenarioAcceptanceInferred']);self.case.assert_unchanged()
+        self.assertEqual(self.case.record,before)
+        with mock.patch.object(policy,'support_live_claims',side_effect=AssertionError('offline replay')):
+            overlay,errors,data=policy.support_reconciliations(self.repo,self.case.record)
+        self.assertEqual(errors,[]);self.assertEqual(overlay,{name:policy.fingerprint(self.repo,name)})
+        self.assertEqual(len(data['events']),1)
+        self.assertEqual(data['custodyBaseline']['foreignDirty'],before['foreignDirty'])
+        self.assertEqual(data['events'][0]['fromSha256'],before['foreignDirty'][name])
+        self.assertEqual(data['events'][0]['claimProofSha256'],policy.digest(self.repo/entries[0]['claimProof']))
+        # A later exact reviewed successor must append, not rewrite this event.
+        previous=copy.deepcopy(data['events'])
+        self.case.fixture.write(name,'second reviewed QA support bytes\n')
+        _,later,_=self.actor.prepare();self.actor.apply(later)
+        data=policy.read(policy.support_sidecar(self.repo,self.case.record))
+        self.assertEqual(data['events'][:1],previous);self.assertEqual(len(data['events']),2)
+        self.case.assert_unchanged()
+
+    def refuse(self,arguments):
+        with self.assertRaises((ValueError,OSError,KeyError)):self.actor.apply(arguments)
+        self.assertFalse(policy.support_sidecar(self.repo,self.case.record).exists());self.case.assert_unchanged()
+
+    def test_exact_qa_cpu_reconciles_with_real_api(self):self.success(NAMES[0])
+    def test_exact_ui011_collector_reconciles_with_real_api(self):self.success(NAMES[1])
+    def test_exact_boot_helper_reconciles_with_real_api(self):self.success(NAMES[2])
+    def test_wrong_live_owner_refuses(self):
+        _,arguments,_=self.prepare();self.case.live=[dict(row,holder='foreign') for row in self.case.live];self.refuse(arguments)
+    def test_missing_live_claim_refuses(self):
+        _,arguments,_=self.prepare();self.case.live=[];self.refuse(arguments)
+    def test_expired_live_claim_refuses(self):
+        _,arguments,_=self.prepare();self.case.live=[dict(row,lease_end='2000-01-01T00:00:00+00:00') for row in self.case.live];self.refuse(arguments)
+    def test_wrong_actor_and_run_refuse(self):
+        _,arguments,_=self.prepare()
+        for actor,run in [('foreign','fixture-run'),(self.actor.actor,'foreign-run')]:
+            with mock.patch.dict(os.environ,AGENTBUS_AGENT=actor,AGENTBUS_RUN=run),mock.patch.object(policy,'support_live_claims') as live:
+                with self.assertRaises(ValueError):policy.reconcile_support(self.repo,self.case.record,self.case.reqs,self.case.state,arguments)
+                live.assert_not_called()
+        self.case.assert_unchanged()
+    def test_self_review_refuses(self):
+        entries,arguments,_=self.prepare();review=policy.read(self.repo/entries[0]['reviewFile']);review['reviewer']=self.actor.actor;self.case.fixture.write(entries[0]['reviewFile'],review);self.refuse(arguments)
+    def test_changed_frozen_proof_refuses(self):
+        entries,arguments,_=self.prepare();path=self.repo/entries[0]['claimProof'];path.write_bytes(path.read_bytes()+b' ');self.refuse(arguments)
+    def test_changed_current_snapshot_refuses(self):
+        entries,arguments,_=self.prepare();(self.repo/entries[0]['currentSnapshot']).write_bytes(b'foreign');self.refuse(arguments)
+    def test_changed_record_snapshot_refuses(self):
+        entries,arguments,_=self.prepare();path=self.repo/entries[0]['recordSnapshot'];path.write_bytes(path.read_bytes()+b' ');self.refuse(arguments)
+    def test_current_path_drift_refuses(self):
+        _,arguments,_=self.prepare();self.case.fixture.write(NAMES[0],'post-review drift');self.refuse(arguments)
+    def test_unrelated_foreign_drift_refuses(self):
+        _,arguments,_=self.prepare();self.case.fixture.write('implementation/warlock/src/Unowned.elm','foreign changed');self.refuse(arguments)
+    def test_wrong_binding_identity_refuses(self):
+        entries,arguments,proof=self.prepare();proof['actorBinding']['recordIdentitySha256']='0'*64;self.case.fixture.write(entries[0]['claimProof'],proof);self.refuse(arguments)
+    def test_generic_tools_product_and_seven_guard_classes_refuse(self):
+        entries,arguments,_=self.prepare()
+        for name in ['tools/arbitrary.py','implementation/warlock/src/Desktop.elm',policy.BASE,
+                     'docs/elm-roadmap/TRACEABILITY.md','openspec/changes/elm-desktop-pivot/tasks.md',
+                     'docs/elm-roadmap/tools/language_revision.py','docs/warlock-build-loop/v2/loop.py',
+                     'window-integration-qa/qa_run.py','window-integration-qa/qa_launch.py']:
+            changed=copy.deepcopy(entries);changed[0]['path']=name;self.case.fixture.write(arguments.transition_file,changed)
+            with mock.patch.object(policy,'support_live_claims') as live:
+                with self.assertRaises(ValueError):policy.reconcile_support(self.repo,self.case.record,self.case.reqs,self.case.state,arguments)
+                live.assert_not_called()
+        self.case.assert_unchanged()
+    def test_duplicate_transition_refuses(self):
+        entries,arguments,_=self.prepare();self.case.fixture.write(arguments.transition_file,entries+entries);self.refuse(arguments)
+
+if __name__ == '__main__':
+    unittest.main()

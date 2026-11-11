@@ -1,0 +1,25 @@
+--- a/plugins/warlock-contributor/scripts/warlock.py
++++ b/plugins/warlock-contributor/scripts/warlock.py
+@@ -698,7 +698,9 @@
+ # Exact initial support scope. Product, tools, arbitrary docs and foreign-owner
+ # reconciliation are deliberately outside this operation.
+ SUPPORT_CUSTODY_PATHS = frozenset((STATE, 'docs/HANDOFF.md',
+-    'wiki/warlock/log.md', 'wiki/warlock/wiki/topics/current-status.md'))
++    'wiki/warlock/log.md', 'wiki/warlock/wiki/topics/current-status.md',
++    'tools/qa_cpu.py', 'tools/run_current_arm_ui011_opener_closure.py',
++    'tools/ux023_current_boot_correspondence.py'))
+ ROOT_PLUGIN_REPAIR_RECORD = '.warlock-contributor/ux023-keyboard-launcher-root.json'
+ ROOT_PLUGIN_REPAIR_IDENTITY = 'f5322281044c01ad184d341de2a09d361294da0e8db49a860483b05799a9b3bc'
+ ROOT_PLUGIN_REPAIR_ACTOR = 'root-nextloop-20261106'
+--- a/plugins/warlock-contributor/qa/test_support_custody.py
++++ b/plugins/warlock-contributor/qa/test_support_custody.py
+@@ -26,7 +26,8 @@
+         self.fixture.setUp()
+         self.addCleanup(self.fixture.doCleanups)
+         self.repo = self.fixture.repo
+-        self.names = sorted(policy.SUPPORT_CUSTODY_PATHS)
++        self.names = sorted((policy.STATE, 'docs/HANDOFF.md',
++                             'wiki/warlock/log.md', 'wiki/warlock/wiki/topics/current-status.md'))
+         # Real canonical support docs are tracked before their owner changes
+         # them. The base fixture only tracks STATE; untracked docs elsewhere
+         # are intentionally outside dirty_names' product/plugin census.

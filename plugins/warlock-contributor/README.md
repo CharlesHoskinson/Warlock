@@ -642,10 +642,10 @@ so captured status text is not confused with another participant record.
 
 ### Same-owner canonical support updates
 
-If `start` captured the accountable owner's already-dirty canonical support docs as
+If `start` captured the accountable owner's already-dirty canonical support files as
 foreign, later updates need exact provenance; do not overwrite participant pins or
 pretend a second owner exists. `reconcile-support --transition-file <ignored-json>`
-The default metadata purpose recognizes only HANDOFF, v2 STATE, wiki log and current-status. The explicit workflow-package purpose uses the stronger package transition described above. It requires frozen
+The default support purpose recognizes HANDOFF, v2 STATE, the two wiki status files, and exactly three QA paths: `tools/qa_cpu.py`, `tools/run_current_arm_ui011_opener_closure.py`, and `tools/ux023_current_boot_correspondence.py`. The explicit workflow-package purpose uses the stronger package transition described above. It requires frozen
 participant/current-file snapshots, current authenticated assigned-run AgentBus
 claims and an independent accepted review of each exact transition. Evidence lives
 under `.warlock-contributor/evidence/support-custody/`; the separate sidecar retains
@@ -657,7 +657,7 @@ hashes, participant identity, same owner, accepted disposition and provenance-on
 scope. The command rechecks the live claim and all evidence before its atomic write.
 Existing foreign-owner reconciliation and product adoption rules remain unchanged.
 For publication, explicitly pass `review --include <exact-support-path>`; its
-accepted current receipt must match both working and staged bytes. Product source, root tools, arbitrary docs and genuine foreign drafts cannot use the default metadata exception. Explicit workflow-package updates require the separate human-bound package proof. Provenance
+accepted current receipt must match both working and staged bytes. Product source, other root tools, arbitrary docs and genuine foreign drafts cannot use the default support exception. Explicit workflow-package updates require the separate human-bound package proof. Provenance
 recognition is neither production progress nor scenario acceptance.
 
 For a newly authorized work window, use the same-record renewal event in [the delivery flow](references/redesign-flow.md#renew-an-explicitly-authorized-work-window). Preserve elapsed history and source-bound reviews. A queued continuity message grants no authorization.

@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-private-core-regressions",
+  "manifestSha256": "d018fe65466f6fca48b69587e8ab7e66b4c804bd0b74ac74139aadee5f6cb30e",
+  "actualResults": [
+    {
+      "phase": "focused",
+      "report": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/actual-root-focused/report.json",
+        "sha256": "d012c7d94dac5de5929bdb68a39e64af2d3ed0acc62d7c42861e6e6790e49b73"
+      },
+      "terminal": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/actual-root/focused-terminal.json",
+        "sha256": "5802c758b6ad88008ea9e4975b0fbaf236ec8f6cf2ed2a93f9917106504a4220"
+      },
+      "testsRun": 16
+    },
+    {
+      "phase": "related",
+      "report": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/actual-root-related/report.json",
+        "sha256": "e4724069501939e93044f5ff68294639f3ae3883a570db3c5f00db42b739908a"
+      },
+      "terminal": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/actual-root/related-terminal.json",
+        "sha256": "2a57502bda1ca32bfae2fbf4c296628f82976338faadfb6ab648095a4f78a550"
+      },
+      "testsRun": 77
+    },
+    {
+      "phase": "full",
+      "report": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/actual-root-full/report.json",
+        "sha256": "acb078b176759c684046bed391da00fb66ad1186f3a0c39260442f25db7de607"
+      },
+      "terminal": {
+        "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/actual-root/full-terminal.json",
+        "sha256": "659b6e3d64cbb2aa9d6e4a920941b9fbeb3cc8e28e1f9cf1800ab0edb7ae0b8d"
+      },
+      "testsRun": 597
+    }
+  ],
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "plugins/warlock-contributor/scripts/warlock.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/postimages/plugins/warlock-contributor/scripts/warlock.py",
+        "beforeSha256": "6835bb428154d23d7e89e85b17c971c2db30c293a2a8ee1f5b3ddf9ef721ff78",
+        "sha256": "89687e4212f1aa394f14a3771687bd6b030293a06d7934b850a84219398ed74d",
+        "mode": "0o644",
+        "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/preimages/plugins/warlock-contributor/scripts/warlock.py"
+      },
+      {
+        "path": "plugins/warlock-contributor/qa/test_support_custody.py",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/postimages/plugins/warlock-contributor/qa/test_support_custody.py",
+        "beforeSha256": "cdd45484704681f28bf3f45b18e67faa9935cd805b216cc7508135d8766eabdd",
+        "sha256": "0c221c59c2b263e01f29329127bc0ead4a44bfaf152d1d04e3c2fb2a2325767b",
+        "mode": "0o644",
+        "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-minimize-qa-support-custody-tests-first/production-implementation/preimages/plugins/warlock-contributor/qa/test_support_custody.py"
+      }
+    ]
+  },
+  "verified": [
+    "Actualfocused16 nowallpass againstcore89687 afterbaseline3whitelisterrors; all13refusal groups retained.",
+    "Related77 and full existing597 privatecandidate tests run and pass zero failures/errors; exactterminalstreamhashes and unittest inventories checked.",
+    "Candidatecore89687 and four-document fixture0c221 match prior source review; no source re-audit or new claims."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "Focused report has no explicit sourceInputsUnchanged field; related/full report verification is recorded as emitted, not invented.",
+    "Privatecandidate suites only; discoverable new16 wrapper and installed613 run remain separate pendingqualification. No live support reconciliation/native/scenario acceptance."
+  ]
+}
