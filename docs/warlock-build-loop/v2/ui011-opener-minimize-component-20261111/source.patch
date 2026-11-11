@@ -1,0 +1,36 @@
+--- a/implementation/warlock/src/MenuBridge.elm
++++ b/implementation/warlock/src/MenuBridge.elm
+@@ -478,7 +478,7 @@
+ -- Menu.Item actions here: Refresh and Close are local Surface policy controls.
+ type alias ObservedContext =
+     { binding : NativeBinding.Binding, stamp : Shell.Stamp, owner : Counter
+-    , group : String, fingerprint : String, rows : List WindowObservation.Row
++    , group : String, root : Counter, fingerprint : String, rows : List WindowObservation.Row
+     , presentation : {outputId : Counter,providerId : Counter}, menuBinding : Menu.Binding }
+ observedContext : Model -> Maybe ObservedContext
+ observedContext (Model state) = state.observed
+@@ -500,7 +500,7 @@
+                             ,target=Menu.ProviderSelection (Menu.providerId (UInt64.string presentation.providerId)) ("observation:"++UInt64.string snapshot.owner) (List.map (.id >> UInt64.string) rows)}
+                         (menu,_)=Menu.update (Menu.Open menuBinding []) state.menu
+                     in if (Menu.snapshot menu).menu==(Menu.snapshot state.menu).menu then model else
+-                        Model {state|menu=menu,provider=Nothing,observed=Just {binding=binding,stamp=stamp,owner=snapshot.owner,group=group.key,fingerprint=fingerprint,rows=rows,presentation=presentation,menuBinding=menuBinding}}
++                        Model {state|menu=menu,provider=Nothing,observed=Just {binding=binding,stamp=stamp,owner=snapshot.owner,group=group.key,root=incarnation,fingerprint=fingerprint,rows=rows,presentation=presentation,menuBinding=menuBinding}}
+         _ -> model
+ 
+ -- Only the Desktop's correlated watch path uses this reconciliation. Ordinary
+@@ -509,7 +509,14 @@
+ reconcileWatch shell ((Model state) as model) =
+     case (state.observed,(Menu.snapshot state.menu).menu,shell.windowObservation) of
+         (Just captured,Just menu,Just snapshot) ->
+-            if not (Shell.inspectionAvailable shell) || shell.binding/=Just captured.binding || snapshot.owner/=captured.owner
++            let rootRows rows = List.filter (\row -> row.id==captured.root) rows
++                newlyMinimized =
++                    case (rootRows captured.rows,rootRows snapshot.windows) of
++                        ([before],[after]) ->
++                            not (List.member "minimized" before.states) && List.member "minimized" after.states
++                        _ -> False
++            in if not (Shell.inspectionAvailable shell) || shell.binding/=Just captured.binding || snapshot.owner/=captured.owner
++                || newlyMinimized
+                 || WindowObservation.fingerprint captured.group snapshot/=captured.fingerprint
+                 || List.isEmpty (WindowObservation.rowsFor captured.group snapshot) then reconcileWithShell shell model else
+             case Shell.capture shell of

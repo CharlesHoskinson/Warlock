@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-actual-component-red-green",
+  "manifestSha256": "09c70e4f58a905ead3c446dc3b8a0b9cbca7898094447cb95fb368471adc1cbe",
+  "reports": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/green-baseline/actual-root-probe-1794399437927760274/report.json",
+      "sha256": "3bebddd4ea80b70ac6169d81adfd681f26f08ca6dc5406bc653b88f7e69e76fb"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/green-captured-root/actual-root-probe-1794399439415885722/report.json",
+      "sha256": "db3eed7e49e000f1d276bf39263f7e7a18e7e0e312c18a00b2d2758f86457467"
+    }
+  ],
+  "actualProtectedTerminals": [
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/actual-root/green-baseline-terminal.json",
+      "sha256": "11689ebf6d99590fa31bda01b3974f65eef958fe7717702b7d5b95d0f9f7a95f"
+    },
+    {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/actual-root/green-captured-root-terminal.json",
+      "sha256": "7fbfbe349f6d7f3b77c0164ad93c2b3ac86cc422e3dfdd20b224db14bfdf7ae4"
+    }
+  ],
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "implementation/warlock/src/MenuBridge.elm",
+        "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/preimages/MenuBridge.elm",
+        "beforeSha256": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/postimages/MenuBridge.elm",
+        "sha256": "39cf6a3b9f35fd2f2f159900f6cd983ba10c8d1048e2405270509c0fcb8e130a",
+        "mode": "0o644"
+      }
+    ]
+  },
+  "verified": [
+    "Exact original14/5/32 fixture passes after prior actualdb51 semanticRED; all3 prior lifecycle failures and8positive samples now pass, all negative assertions retained.",
+    "Supplement7/2/32 passes including same-group sibling minimize preservation, capturedroot minimize retirement/currentgroupfocus, already-minimized preservation and readonly/no-repeat/removal conditions.",
+    "Actual compile/reducer commands all0; both result byte hashes and currentsource maps exact; sourceInputsUnchanged/cleanupQualified true; adopted MenuBridge39cf bytes exact."
+  ],
+  "requiredChanges": [],
+  "limits": [
+    "Component CPU/model replies only; no actual native minimizing, ownerDone, credential-boundAT minimize focus or original case acceptance.",
+    "Quint/runtime full shared qualifications are separate actual evidence; this receipt does not infer their outcome."
+  ]
+}

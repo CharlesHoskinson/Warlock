@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "record": ".warlock-contributor/ui011-opener-minimize-root-20261111.json",
+  "selection": 35,
+  "recordSha256": "cb4086b8a2d099ff33192d4992331996880c010075d94359e964be6f4867bf08",
+  "sourceReviewSha256": "b7046615245642f6e638452477c7f5596f475ed06f11df231594ef30dd9a0a74",
+  "copies": [
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/postimages/MenuBridge.elm",
+      "destination": "/home/hoskinson/Projects/Warlock/implementation/warlock/src/MenuBridge.elm",
+      "sha256": "39cf6a3b9f35fd2f2f159900f6cd983ba10c8d1048e2405270509c0fcb8e130a",
+      "expectedPreimage": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544",
+      "mode": 420
+    },
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/Ui011OpenerMinimizeReplay.elm",
+      "destination": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/Ui011OpenerMinimizeReplay.elm",
+      "sha256": "83e315f0fffcf10df90da0dee8a2eab57f25e3097c328ee6581daaee8eb04857",
+      "expectedPreimage": null,
+      "mode": 420
+    },
+    {
+      "source": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/ui011-opener-minimize.cjs",
+      "destination": "/home/hoskinson/Projects/Warlock/implementation/warlock/qa/ui011-opener-minimize.cjs",
+      "sha256": "1b9940a84148ec3ab197b3ccc38b6a29191e2d5787e4b74b8a083086e15674a9",
+      "expectedPreimage": null,
+      "mode": 420
+    }
+  ],
+  "adoptedForTesting": true,
+  "qualified": false,
+  "nativeAcceptance": false
+}

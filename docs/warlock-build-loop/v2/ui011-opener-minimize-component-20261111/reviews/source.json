@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "reviewer": "build_audit",
+  "disposition": "accepted-source-only",
+  "manifestSha256": "09c70e4f58a905ead3c446dc3b8a0b9cbca7898094447cb95fb368471adc1cbe",
+  "acceptedBody": {
+    "posts": [
+      {
+        "path": "implementation/warlock/src/MenuBridge.elm",
+        "preimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/preimages/MenuBridge.elm",
+        "beforeSha256": "20a22e7c1cebe2cb716e5b720c6aec1bf54e0f3f7d3dbf5ca559c5615f150544",
+        "postimage": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/ui011-opener-minimize-tests-first/production-implementation/postimages/MenuBridge.elm",
+        "sha256": "39cf6a3b9f35fd2f2f159900f6cd983ba10c8d1048e2405270509c0fcb8e130a",
+        "mode": "0o644"
+      }
+    ]
+  },
+  "requiredChanges": [],
+  "verified": [
+    "Sole MenuBridge post captures original openObservation incarnation as typed Counter and compares exactly that row before/after for false-to-true minimized transition. Same-group sibling minimize and already-minimized origin do not trigger.",
+    "Only correlated watch reconciliation uses new transition; binding/owner/inspection/fingerprint/nonempty checks preserved. Newly minimized branch delegates existing invalidation: accepted Changed snapshot advances Shell observed stamp, so prior stamp becomes ineligible and menu retires; existing Desktop restores current eligible group without native Restore/Activate.",
+    "Identity fingerprint and all Desktop focus/authority rules unchanged; unrelated/title/state changes preserve menu via existing rebindReady.",
+    "Original14/5/32 fixtures byte-exact; supplemental7/2/32 public route cases exercise capturedroot versus same-group sibling, duplicate/removal/readonly effects.",
+    "Private Quint successor retains exact13 prior named run bodies and adds6 explicit minimize traces; state record gains minimized dimension and target distinction. Whole state updates remain explicit, safety includes once-only delivery; source-only correspondence does not establish runtime results."
+  ],
+  "modelReview": {
+    "structural": "bounded successor correspondence accepted",
+    "runtime": "not executed by reviewer; Root typecheck/19 traces/sampled invariant remain pending",
+    "limitations": [
+      "Existing bounded model uses no-op refusal actions and abstract content counters; sibling event abstracts same-app membership, not concrete serialization or renderer/AT behavior.",
+      "Graph/ABI/native minimizing and focus/normalcleanup not modeled; no liveness proof or exhaustive checking claim."
+    ]
+  },
+  "limits": [
+    "Source-only product review after actualREDdb51; actual installed compile/GREEN/supplement/model qualification still required.",
+    "No native/original minimize acceptance; must observe same live incarnation minimized through authenticated owner stream and native+AT restoration under original bounds."
+  ]
+}
