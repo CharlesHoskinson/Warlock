@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/run_green_probe.py",
+    "--manifest-sha256",
+    "ACTUAL_MANIFEST_SHA256"
+  ],
+  "requires": "Root protected existing qa_run; actual installed four reviewed postimages must match sourcePins before compilation; no private overlay or admission bypass.",
+  "unchangedFixedProfile": "verify_menu_tab_toolchain",
+  "budgetSeconds": 120,
+  "perCommandMaximumSeconds": 90,
+  "cleanupSeconds": 2,
+  "targets": [
+    "Ui011WindowWatchBatchReplay",
+    "Ui011WatchBookkeepingBoundaryReplay"
+  ],
+  "expectedChecks": [
+    44,
+    18
+  ],
+  "expectedSetup": [
+    6,
+    2
+  ],
+  "expectedSeeds": [
+    64,
+    0
+  ],
+  "actualResult": null,
+  "nativeExecuted": false
+}

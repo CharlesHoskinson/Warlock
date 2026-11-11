@@ -1,0 +1,16 @@
+-- SHADOWING ------------------------ qa/Ui011WatchBookkeepingBoundaryReplay.elm
+
+The name `packet` is first defined here:
+
+42| packet model = Surface.packet UInt64.zero UInt64.zero (Fixture.desktop model)
+    ^^^^^^
+But then it is defined AGAIN over here:
+
+342|         packet = Maybe.withDefault E.null packetValue
+             ^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

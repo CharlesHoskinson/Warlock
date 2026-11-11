@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "passed": true,
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "classification": "component-pass",
+  "imageSha256": "8669ae239dcedc0e67b5eed7b921400b31becaaaf09c3c1a916a2474a5bee1ab",
+  "fixtureSha256": "282a159dc68a12d6b5a846e19e339788de16e902653b2452d61a1202bcc49675",
+  "observed": {
+    "preconditions": {
+      "real-public-watch-pending": true,
+      "unrelated-read-batch-retained": true
+    },
+    "checks": {
+      "exact-singleton-completion-removes-only-one-row": true,
+      "unchanged-completion-preserves-frame": true,
+      "bookkeeping-proof-does-not-leave-output-boundary": true,
+      "focus-payload-is-not-domain-receipt-authority": true,
+      "mixed-catalog-batch-is-not-settled": true,
+      "hidden-pin-batch-is-not-settled": true,
+      "unknown-mixed-request-is-not-settled": true,
+      "duplicate-request-batch-is-not-settled": true,
+      "stored-request-base-must-match-completion": true,
+      "late-preflight-unsent-disposition-is-inert": true,
+      "duplicate-domain-reply-is-inert": true,
+      "unknown-read-completion-grants-no-focus": true,
+      "accepted-closure-removes-exact-pretransition-row": true,
+      "accepted-replacement-removes-exact-pretransition-row": true,
+      "unavailable-completion-grants-no-focus": true,
+      "closed-scope-result-cannot-release-row": true,
+      "incoming-json-cannot-create-bookkeeping-proof": true,
+      "registering-an-effect-cannot-create-settlement": true
+    },
+    "witness": [
+      {
+        "variant": 0,
+        "prepared": true,
+        "before": 2,
+        "after": 1,
+        "base": 1
+      },
+      {
+        "variant": 1,
+        "prepared": true,
+        "before": 2,
+        "after": 2,
+        "base": 1
+      },
+      {
+        "variant": 2,
+        "prepared": true,
+        "before": 2,
+        "after": 2,
+        "base": 1
+      },
+      {
+        "variant": 3,
+        "prepared": true,
+        "before": 2,
+        "after": 2,
+        "base": 1
+      },
+      {
+        "variant": 4,
+        "prepared": true,
+        "before": 2,
+        "after": 2,
+        "base": 1
+      },
+      {
+        "variant": 5,
+        "prepared": true,
+        "before": 2,
+        "after": 2,
+        "base": 1
+      },
+      {
+        "variant": 6,
+        "prepared": true,
+        "before": 2,
+        "after": 2,
+        "base": 1
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "exact-singleton-completion-removes-only-one-row",
+      "passed": true
+    },
+    {
+      "name": "unchanged-completion-preserves-frame",
+      "passed": true
+    },
+    {
+      "name": "bookkeeping-proof-does-not-leave-output-boundary",
+      "passed": true
+    },
+    {
+      "name": "focus-payload-is-not-domain-receipt-authority",
+      "passed": true
+    },
+    {
+      "name": "mixed-catalog-batch-is-not-settled",
+      "passed": true
+    },
+    {
+      "name": "hidden-pin-batch-is-not-settled",
+      "passed": true
+    },
+    {
+      "name": "unknown-mixed-request-is-not-settled",
+      "passed": true
+    },
+    {
+      "name": "duplicate-request-batch-is-not-settled",
+      "passed": true
+    },
+    {
+      "name": "stored-request-base-must-match-completion",
+      "passed": true
+    },
+    {
+      "name": "late-preflight-unsent-disposition-is-inert",
+      "passed": true
+    },
+    {
+      "name": "duplicate-domain-reply-is-inert",
+      "passed": true
+    },
+    {
+      "name": "unknown-read-completion-grants-no-focus",
+      "passed": true
+    },
+    {
+      "name": "accepted-closure-removes-exact-pretransition-row",
+      "passed": true
+    },
+    {
+      "name": "accepted-replacement-removes-exact-pretransition-row",
+      "passed": true
+    },
+    {
+      "name": "unavailable-completion-grants-no-focus",
+      "passed": true
+    },
+    {
+      "name": "closed-scope-result-cannot-release-row",
+      "passed": true
+    },
+    {
+      "name": "incoming-json-cannot-create-bookkeeping-proof",
+      "passed": true
+    },
+    {
+      "name": "registering-an-effect-cannot-create-settlement",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "caseCount": 18,
+  "setupCount": 2,
+  "seedSampleCount": 0
+}

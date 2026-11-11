@@ -1,0 +1,1117 @@
+{
+  "schema": 1,
+  "sourceCommit": "e8321897104cbe8ba45a9f9123457c63c9a6b5af",
+  "candidateSha256": "8732d6e9f646250292cc08f7fc1d0c94f5ffe9271c076810c8a1d9dd37f8d38d",
+  "integrationSequence": 200,
+  "sourcePosts": [
+    {
+      "path": "implementation/warlock/src/Shell.elm",
+      "beforeSha256": "89e00985854126b005cbb9be12d1d6afe97d402f3753f6f86544540017895baf",
+      "sha256": "503fcf5bbcfead01eaddcea2fd024e071bedfdde3d9260336455632838144a63"
+    },
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "beforeSha256": "6bb4324cf993765fb1bc0c811d825c48d82ee89346badc7af511092942f7473a",
+      "sha256": "84dbc4a4db37c79777213547366cf1ca17e74e780e17c29cae4b604d4e6694c3"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceController.elm",
+      "beforeSha256": "e0a7a0861e9266e41ef3b5705f4bb42e3ec11536f69ca6a25928bf0f5ec5b6a9",
+      "sha256": "d577b4fa232a568f80351e26a69c7b8a8c9d40f4521d4b64577d5bb4b900296c"
+    },
+    {
+      "path": "implementation/warlock/src/OutputController.elm",
+      "beforeSha256": "1ccce8b97a4f770a4f1f7f2446b9eafdc07062fc099e51506bcd35268bafb614",
+      "sha256": "59de16446debfe82eb71eece55e24aab6807467c29916a694ca0926a8242283d"
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "8ac901b62206b809bcf46faf06f25afa693d51982e5f67b8d4ed7cd85cd308c5",
+      "bytes": 2970
+    },
+    {
+      "path": "fixtures/Ui011WatchBookkeepingBoundaryReplay.elm",
+      "sha256": "6ebae226b07f3eb108e72399bcb75a001e72e8ce0822a4a94e94c9ebcbfd33cc",
+      "bytes": 34074
+    },
+    {
+      "path": "fixtures/Ui011WindowWatchBatchReplay.elm",
+      "sha256": "bbc80938c90210ddccfa35479d6cfb6543a6c218b097d9d89516a11d5ab99b3f",
+      "bytes": 25956
+    },
+    {
+      "path": "fixtures/ui011-watch-bookkeeping-boundary.cjs",
+      "sha256": "282a159dc68a12d6b5a846e19e339788de16e902653b2452d61a1202bcc49675",
+      "bytes": 3056
+    },
+    {
+      "path": "fixtures/ui011-window-watch-batch.cjs",
+      "sha256": "a72816b731182d35b9cb73c12cb270210c090e1ff5e1d0f504f873ae321d9af1",
+      "bytes": 6619
+    },
+    {
+      "path": "inputs/contract.json",
+      "sha256": "2b837ced7583d427dde871f18fb718ed5c8b528fca08c38791a07007a3f6ff31",
+      "bytes": 2637
+    },
+    {
+      "path": "inputs/current-elm/candidate.json",
+      "sha256": "47594dc68f076fd1890eb1856a5cca8b3db51aa73a0b626ddc9d2a9b01333958",
+      "bytes": 17901
+    },
+    {
+      "path": "inputs/current-elm/current-elm-finished-event.json",
+      "sha256": "a6b0e8ae84983a6ea63c52e14b7e683ee3aa54bd77b80a53ff6db75d01ec528a",
+      "bytes": 446
+    },
+    {
+      "path": "inputs/current-elm/current-elm-terminal.json",
+      "sha256": "f79b55bd7cb50eeee8ffa1a7084b1e31a1cedef2d5a3b0c2b6e9607e24998354",
+      "bytes": 762
+    },
+    {
+      "path": "inputs/current-elm/integrated-event.json",
+      "sha256": "369c92746f9b49be0599c6868e6df1f7a6ebb2a56946a74c35dbb8ffadcd7800",
+      "bytes": 243
+    },
+    {
+      "path": "inputs/current-elm/review-packet.json",
+      "sha256": "3cdc8995b24dd21113d91d0ca5d9935463f9b82f43878d3937553fa693acea06",
+      "bytes": 15741
+    },
+    {
+      "path": "inputs/menu-tab-elm-toolchain.json",
+      "sha256": "0012df8f3c18c0f4851d2d36c97f790a5f5b990de2d9a8e88df03844bb6843c6",
+      "bytes": 809
+    },
+    {
+      "path": "inputs/model-correspondence.json",
+      "sha256": "155908133df00e22b0183de426840f82ca21acb27aeb0aee1f0ac23276cefb1a",
+      "bytes": 1138
+    },
+    {
+      "path": "inputs/production-r1-manifest.json",
+      "sha256": "4682c112a3a74fd8a31a786cdd7c1669208eba54a8f018f5dc575800fd99cb52",
+      "bytes": 30529
+    },
+    {
+      "path": "inputs/production-r2-manifest.json",
+      "sha256": "b436ac5be92e1bb76e702e759a9462570aa2e25971200d694ab33f045141ba7c",
+      "bytes": 31800
+    },
+    {
+      "path": "inputs/production.patch",
+      "sha256": "14d70d2a91b6d39b6142accc39a55f3ebd51105904ebb7cc8a4af0d756741f81",
+      "bytes": 12768
+    },
+    {
+      "path": "inputs/root-green-argv.json",
+      "sha256": "f17ca6f978b9884fd3c855274ac3ccdcccababdcd2519c66c684183487b245a7",
+      "bytes": 1059
+    },
+    {
+      "path": "inputs/root-red-argv.json",
+      "sha256": "c9e140f7291c4b1af27d5298d624158d863743fc67a9c8b44089a262c0a21243",
+      "bytes": 931
+    },
+    {
+      "path": "inputs/run_green_probe.py",
+      "sha256": "c7489a0e2ac67a8687c71633c715ae7740169ed54e1c4c6ecaa3f8c742b12ab3",
+      "bytes": 5530
+    },
+    {
+      "path": "inputs/run_watch_batch_probe.py",
+      "sha256": "6ad86ada1b0eae4e8a5d6099c618cfb8b980dec2677641eadb3c2d0d22a98c25",
+      "bytes": 4730
+    },
+    {
+      "path": "inputs/tests-first-manifest.json",
+      "sha256": "7880feae09b23cc77c30cdb2db7fa2f91535cedb7bac48e895831c1cd226070e",
+      "bytes": 23248
+    },
+    {
+      "path": "reproduction.json",
+      "sha256": "a44e035b69f8e8b6beea18333b5a5bc5f5dbc282dcd260b2d43d553d6d5f85e5",
+      "bytes": 37001
+    },
+    {
+      "path": "reviews/actual-current-elm.json",
+      "sha256": "8503138206f9e2f4a9c61465f1d48eb85a614932ba55743796878cda54d65ebb",
+      "bytes": 5384
+    },
+    {
+      "path": "reviews/actual-green.json",
+      "sha256": "1db71af259a28bd287d231527f5ce1f1b0d9d45227d5243f8cb3a8d0a439a880",
+      "bytes": 12569
+    },
+    {
+      "path": "reviews/actual-red.json",
+      "sha256": "f773027ea892f28b5ad4101d05401e55daf102e2134ea41e26de03fc1698e450",
+      "bytes": 9300
+    },
+    {
+      "path": "reviews/fixture-r2-source.json",
+      "sha256": "b6e2df4520134451d9d3c789420b70070de76a635425a625de4a6c05957bf92a",
+      "bytes": 1459
+    },
+    {
+      "path": "reviews/production-source.json",
+      "sha256": "29b05939e69abde263338fc16e5e6d76036427f05edf86eb0cdf0d6e0f374b98",
+      "bytes": 4431
+    },
+    {
+      "path": "reviews/tests-first.json",
+      "sha256": "6d1e9e0959fc693f4e2a562838090b64b09bf592ac49085a6e89655ec3cdcd47",
+      "bytes": 1419
+    },
+    {
+      "path": "runs/current-elm/compile-HttpBar.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-HttpBar.stdout",
+      "sha256": "348498abd77f3a865e5fcafec38accd7174d9f75dcfe8df59a56296bff09a59e",
+      "bytes": 196
+    },
+    {
+      "path": "runs/current-elm/compile-HttpPopup.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-HttpPopup.stdout",
+      "sha256": "2d96266e1972c2719f59db0ae5a0acd1fa7cca24da0523b9bee11f8076c8833b",
+      "bytes": 922
+    },
+    {
+      "path": "runs/current-elm/compile-MenuEscapeReplay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-MenuEscapeReplay.stdout",
+      "sha256": "a8a5b7795e4502969618c981947fd73258d054fc0034d3e565ce3147ae24ec29",
+      "bytes": 868
+    },
+    {
+      "path": "runs/current-elm/compile-MenuInitialFocusReplay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-MenuInitialFocusReplay.stdout",
+      "sha256": "6e4e6e9dbc063215118a737c2a57ec10b6d9f0a15dbeb863b6ca0db2123034a7",
+      "bytes": 211
+    },
+    {
+      "path": "runs/current-elm/compile-Ui011AutomaticWindowWatchReplay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-Ui011AutomaticWindowWatchReplay.stdout",
+      "sha256": "89377a65ab65c960e7adac9da9a98f065e97ecca53e7c3a9dad2cc9f828f2dc5",
+      "bytes": 244
+    },
+    {
+      "path": "runs/current-elm/compile-Ui011ObservedScopeRetirementReplay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-Ui011ObservedScopeRetirementReplay.stdout",
+      "sha256": "0ad810999c00cdaad989968a6d6b8e90b1f66ad4093af2f2c97edf7b0b41b50c",
+      "bytes": 235
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpBar.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpBar.stdout",
+      "sha256": "0d3b8ba8cc0c29640c465ccd9a475e85190b20ea68ef18fc44f8e0d38a95def1",
+      "bytes": 164
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpMain.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpMain.stdout",
+      "sha256": "739d1aa8e5702af85a863486e79972f94d15e10c070074cd5c11bb46bdcea248",
+      "bytes": 185
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpPopup.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpPopup.stdout",
+      "sha256": "04cfd98f8c86cc66f83b4f214a9f130bbea914e8a3667a81d71962c2d20e69f3",
+      "bytes": 168
+    },
+    {
+      "path": "runs/current-elm/menu-bar-context.json",
+      "sha256": "0dad791546997593590d3a85e84d5b9be2d327bf62e92aeef83d1e6a7610f398",
+      "bytes": 104869
+    },
+    {
+      "path": "runs/current-elm/menu-bar-context.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/menu-bar-context.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/menu-escape.json",
+      "sha256": "77d5392247f6245071ccc8a63005485d77a6fdb56e51dd4a038c8211fc191608",
+      "bytes": 20860
+    },
+    {
+      "path": "runs/current-elm/menu-escape.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/menu-escape.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/menu-initial-focus.json",
+      "sha256": "f2b7b6c2466e5cd150ea66aa563ef4090fb032f56b9e18e714a52c4e15cf0c4a",
+      "bytes": 412395
+    },
+    {
+      "path": "runs/current-elm/menu-initial-focus.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/menu-initial-focus.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/menu-tab-dom.json",
+      "sha256": "70d2ceb6215a5e51322becc45be77a40b9dd4ac88e212199ac763e603a0161a1",
+      "bytes": 19761
+    },
+    {
+      "path": "runs/current-elm/menu-tab-dom.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/menu-tab-dom.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/outer/closure-claims.jsonl",
+      "sha256": "367d03eb348a33723093fb9e4992a22c1ee30924f77a51ed74905e26cfdcdede",
+      "bytes": 1088
+    },
+    {
+      "path": "runs/current-elm/outer/finished-admission.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/outer/finished-admission.stdout",
+      "sha256": "bed8ca672e433f4d05715516d088c3a7dc88c18fd52543e816b51634f10798de",
+      "bytes": 2706
+    },
+    {
+      "path": "runs/current-elm/outer/launch.json",
+      "sha256": "e327210a39ec8fe03b3d3e0f1adc13e43a4605fd6084cce490ef4cd3a02e074f",
+      "bytes": 17702
+    },
+    {
+      "path": "runs/current-elm/outer/started-admission.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/outer/started-admission.stdout",
+      "sha256": "8d6052221dbadd35aae522bf01d6003ece95001d5357652a7dcf0d18df1349a8",
+      "bytes": 2708
+    },
+    {
+      "path": "runs/current-elm/outer/stderr",
+      "sha256": "826105e8cfe25418d7a419795212aa0fd148d603504795811975cb6df852b657",
+      "bytes": 116
+    },
+    {
+      "path": "runs/current-elm/outer/stdout",
+      "sha256": "c89ab77496f9ad692ad3d0efca42c0a5536edbd7d1e47b19afd35ad8f2e9af36",
+      "bytes": 7266
+    },
+    {
+      "path": "runs/current-elm/outer/terminal.json",
+      "sha256": "51e11cc7aa93638aede314fa006d9b729122f5cf676e3c292b38f15834f976ee",
+      "bytes": 631
+    },
+    {
+      "path": "runs/current-elm/report.json",
+      "sha256": "9e2823efc378fc3ee8721a5ba090785928bc1cab0dc35246b0111097e5d8b394",
+      "bytes": 39111
+    },
+    {
+      "path": "runs/current-elm/ui011-automatic-window-watch.json",
+      "sha256": "6c73a67d067e727bf99fb8a3e4f3ae630de922b224306a8280578f342b3811ca",
+      "bytes": 39802
+    },
+    {
+      "path": "runs/current-elm/ui011-automatic-window-watch.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/ui011-automatic-window-watch.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/ui011-observed-scope-retirement.json",
+      "sha256": "de7e629e6c359bf917dd32876b1190cea6b812f5f9d4081ef54833fff112d44b",
+      "bytes": 26770
+    },
+    {
+      "path": "runs/current-elm/ui011-observed-scope-retirement.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/current-elm/ui011-observed-scope-retirement.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/first-green-failed/Ui011WatchBookkeepingBoundaryReplay.elm",
+      "sha256": "e315685979e57d9c02e725084ec9ac20d180e9171c897a9f3b6aab48338648a3",
+      "bytes": 34054
+    },
+    {
+      "path": "runs/first-green-failed/compile-boundary.stderr",
+      "sha256": "ffd6c249399345756bd614d70eab382f1e87d1b3806416b78561dec9c29d2e60",
+      "bytes": 576
+    },
+    {
+      "path": "runs/first-green-failed/compile-boundary.stdout",
+      "sha256": "5d0c31df7fd896da59457173a45d6b06283f9712f5489b1cbde596be0ba1a2eb",
+      "bytes": 45
+    },
+    {
+      "path": "runs/first-green-failed/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/first-green-failed/compile.stdout",
+      "sha256": "e8a1e9c3745891c7115626f035b43b6d11b05158b9b638514b58acac494b776e",
+      "bytes": 1565
+    },
+    {
+      "path": "runs/first-green-failed/outer/stderr",
+      "sha256": "2167b639cd81fab68f4b7fe82709c5a0cddf72514c4c774fa493a68096202fdc",
+      "bytes": 116
+    },
+    {
+      "path": "runs/first-green-failed/outer/stdout",
+      "sha256": "b7c80a863005391ba060427961c9f9e821f44cb569d472e855bdffbe3872d763",
+      "bytes": 455
+    },
+    {
+      "path": "runs/first-green-failed/outer/terminal.json",
+      "sha256": "f18ad9f861998f8a8f8e596a8727bc8f47404b094e72229ebeabdf313cd3a951",
+      "bytes": 949
+    },
+    {
+      "path": "runs/first-green-failed/public-reducer.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/first-green-failed/public-reducer.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/first-green-failed/report.json",
+      "sha256": "5109b1ad512a1f885155e3bdb0bb118274e775e1227535225d9141dd867c8ff0",
+      "bytes": 94241
+    },
+    {
+      "path": "runs/first-green-failed/window-watch-batch.json",
+      "sha256": "002d8c046307d8a2c900b26996915f6648ab06bea4aee5b0e20cf797fdd0418d",
+      "bytes": 71926
+    },
+    {
+      "path": "runs/green/compile-boundary.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/green/compile-boundary.stdout",
+      "sha256": "a51f29d96e771f9cd93e268624a0577cead0e5171c4d4b1a547e782a292c7fe7",
+      "bytes": 517
+    },
+    {
+      "path": "runs/green/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/green/compile.stdout",
+      "sha256": "6ce31abf03dc6f5cf3fbd6b3076bcb926b37d754976f8703870961c4e6c99956",
+      "bytes": 1628
+    },
+    {
+      "path": "runs/green/outer/stderr",
+      "sha256": "23c3cd943e0f1dd2f2c9d3485271e6895632def0446588cb2e5d6b78c54fcde2",
+      "bytes": 116
+    },
+    {
+      "path": "runs/green/outer/stdout",
+      "sha256": "60081888ee54af14e0493631b069daafba540f795d81224c48e212513d566587",
+      "bytes": 487
+    },
+    {
+      "path": "runs/green/outer/terminal.json",
+      "sha256": "204b5e3e7a6a4f3f94e0c971d405988fd27486b8847fc00a7d8dfa95926ff11e",
+      "bytes": 982
+    },
+    {
+      "path": "runs/green/public-boundary.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/green/public-boundary.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/green/public-reducer.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/green/public-reducer.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/green/report.json",
+      "sha256": "cae0c28ddbf13c0e4e7a57d1c013ab251a3a09c176cf64b2a78d747860a81b87",
+      "bytes": 100921
+    },
+    {
+      "path": "runs/green/watch-bookkeeping-boundary.json",
+      "sha256": "3fbdbb63d2e84ab29769ce27eea48522f7e4679f9cfc2b14872ae2c7c81b23fc",
+      "bytes": 4188
+    },
+    {
+      "path": "runs/green/window-watch-batch.json",
+      "sha256": "002d8c046307d8a2c900b26996915f6648ab06bea4aee5b0e20cf797fdd0418d",
+      "bytes": 71926
+    },
+    {
+      "path": "runs/red/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/red/compile.stdout",
+      "sha256": "145611c2f3f23fdb8ee7183bd0b483f6cc8a538a76703a19e4047a717adbf2f8",
+      "bytes": 1539
+    },
+    {
+      "path": "runs/red/outer/stderr",
+      "sha256": "0dd7a7d60bb90439b9e0da5e32085eaed4106a3a88b4b9a49d5b6d95d29be733",
+      "bytes": 116
+    },
+    {
+      "path": "runs/red/outer/stdout",
+      "sha256": "1bbfddf03d5ba6ce28c4e1081090bcabee42156ae637553444febe2ed32567f2",
+      "bytes": 429
+    },
+    {
+      "path": "runs/red/outer/terminal.json",
+      "sha256": "1a4b2c7e05f9924b1b1e8dc010b9d4349a96f7d91454b249f7518722887bfbda",
+      "bytes": 929
+    },
+    {
+      "path": "runs/red/public-reducer.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/red/public-reducer.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/red/report.json",
+      "sha256": "b50c89ebabf37bb61375aff1b91a56380a5648a55eb5f59ce214427e58f79c13",
+      "bytes": 118894
+    },
+    {
+      "path": "runs/red/window-watch-batch.json",
+      "sha256": "39d667cee5dd0abbc4b20ecfb5d839d1de9e4b633a65b5fbc283b2ff5935dae8",
+      "bytes": 95354
+    }
+  ],
+  "origins": [
+    {
+      "path": "fixtures/Ui011WindowWatchBatchReplay.elm",
+      "sha256": "bbc80938c90210ddccfa35479d6cfb6543a6c218b097d9d89516a11d5ab99b3f",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/Ui011WindowWatchBatchReplay.elm"
+    },
+    {
+      "path": "fixtures/ui011-window-watch-batch.cjs",
+      "sha256": "a72816b731182d35b9cb73c12cb270210c090e1ff5e1d0f504f873ae321d9af1",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/ui011-window-watch-batch.cjs"
+    },
+    {
+      "path": "fixtures/Ui011WatchBookkeepingBoundaryReplay.elm",
+      "sha256": "6ebae226b07f3eb108e72399bcb75a001e72e8ce0822a4a94e94c9ebcbfd33cc",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/Ui011WatchBookkeepingBoundaryReplay.elm"
+    },
+    {
+      "path": "fixtures/ui011-watch-bookkeeping-boundary.cjs",
+      "sha256": "282a159dc68a12d6b5a846e19e339788de16e902653b2452d61a1202bcc49675",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/ui011-watch-bookkeeping-boundary.cjs"
+    },
+    {
+      "path": "runs/red/compile.stdout",
+      "sha256": "145611c2f3f23fdb8ee7183bd0b483f6cc8a538a76703a19e4047a717adbf2f8",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-probe-1794368045623296261/compile.stdout"
+    },
+    {
+      "path": "runs/red/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-probe-1794368045623296261/compile.stderr"
+    },
+    {
+      "path": "runs/red/public-reducer.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-probe-1794368045623296261/public-reducer.stdout"
+    },
+    {
+      "path": "runs/red/public-reducer.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-probe-1794368045623296261/public-reducer.stderr"
+    },
+    {
+      "path": "runs/red/window-watch-batch.json",
+      "sha256": "39d667cee5dd0abbc4b20ecfb5d839d1de9e4b633a65b5fbc283b2ff5935dae8",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-probe-1794368045623296261/window-watch-batch.json"
+    },
+    {
+      "path": "runs/red/report.json",
+      "sha256": "b50c89ebabf37bb61375aff1b91a56380a5648a55eb5f59ce214427e58f79c13",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-probe-1794368045623296261/report.json"
+    },
+    {
+      "path": "runs/red/outer/stdout",
+      "sha256": "1bbfddf03d5ba6ce28c4e1081090bcabee42156ae637553444febe2ed32567f2",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-execution/stdout"
+    },
+    {
+      "path": "runs/red/outer/stderr",
+      "sha256": "0dd7a7d60bb90439b9e0da5e32085eaed4106a3a88b4b9a49d5b6d95d29be733",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-execution/stderr"
+    },
+    {
+      "path": "runs/red/outer/terminal.json",
+      "sha256": "1a4b2c7e05f9924b1b1e8dc010b9d4349a96f7d91454b249f7518722887bfbda",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-execution/terminal.json"
+    },
+    {
+      "path": "runs/first-green-failed/compile.stdout",
+      "sha256": "e8a1e9c3745891c7115626f035b43b6d11b05158b9b638514b58acac494b776e",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-probe-1794368653868401083/compile.stdout"
+    },
+    {
+      "path": "runs/first-green-failed/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-probe-1794368653868401083/compile.stderr"
+    },
+    {
+      "path": "runs/first-green-failed/public-reducer.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-probe-1794368653868401083/public-reducer.stdout"
+    },
+    {
+      "path": "runs/first-green-failed/public-reducer.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-probe-1794368653868401083/public-reducer.stderr"
+    },
+    {
+      "path": "runs/first-green-failed/window-watch-batch.json",
+      "sha256": "002d8c046307d8a2c900b26996915f6648ab06bea4aee5b0e20cf797fdd0418d",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-probe-1794368653868401083/window-watch-batch.json"
+    },
+    {
+      "path": "runs/first-green-failed/compile-boundary.stdout",
+      "sha256": "5d0c31df7fd896da59457173a45d6b06283f9712f5489b1cbde596be0ba1a2eb",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-probe-1794368653868401083/compile-boundary.stdout"
+    },
+    {
+      "path": "runs/first-green-failed/compile-boundary.stderr",
+      "sha256": "ffd6c249399345756bd614d70eab382f1e87d1b3806416b78561dec9c29d2e60",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-probe-1794368653868401083/compile-boundary.stderr"
+    },
+    {
+      "path": "runs/first-green-failed/report.json",
+      "sha256": "5109b1ad512a1f885155e3bdb0bb118274e775e1227535225d9141dd867c8ff0",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-probe-1794368653868401083/report.json"
+    },
+    {
+      "path": "runs/first-green-failed/outer/stdout",
+      "sha256": "b7c80a863005391ba060427961c9f9e821f44cb569d472e855bdffbe3872d763",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-execution/stdout"
+    },
+    {
+      "path": "runs/first-green-failed/outer/stderr",
+      "sha256": "2167b639cd81fab68f4b7fe82709c5a0cddf72514c4c774fa493a68096202fdc",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-execution/stderr"
+    },
+    {
+      "path": "runs/first-green-failed/outer/terminal.json",
+      "sha256": "f18ad9f861998f8a8f8e596a8727bc8f47404b094e72229ebeabdf313cd3a951",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/actual-root-execution/terminal.json"
+    },
+    {
+      "path": "runs/green/compile.stdout",
+      "sha256": "6ce31abf03dc6f5cf3fbd6b3076bcb926b37d754976f8703870961c4e6c99956",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/compile.stdout"
+    },
+    {
+      "path": "runs/green/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/compile.stderr"
+    },
+    {
+      "path": "runs/green/public-reducer.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/public-reducer.stdout"
+    },
+    {
+      "path": "runs/green/public-reducer.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/public-reducer.stderr"
+    },
+    {
+      "path": "runs/green/window-watch-batch.json",
+      "sha256": "002d8c046307d8a2c900b26996915f6648ab06bea4aee5b0e20cf797fdd0418d",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/window-watch-batch.json"
+    },
+    {
+      "path": "runs/green/compile-boundary.stdout",
+      "sha256": "a51f29d96e771f9cd93e268624a0577cead0e5171c4d4b1a547e782a292c7fe7",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/compile-boundary.stdout"
+    },
+    {
+      "path": "runs/green/compile-boundary.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/compile-boundary.stderr"
+    },
+    {
+      "path": "runs/green/public-boundary.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/public-boundary.stdout"
+    },
+    {
+      "path": "runs/green/public-boundary.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/public-boundary.stderr"
+    },
+    {
+      "path": "runs/green/watch-bookkeeping-boundary.json",
+      "sha256": "3fbdbb63d2e84ab29769ce27eea48522f7e4679f9cfc2b14872ae2c7c81b23fc",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/watch-bookkeeping-boundary.json"
+    },
+    {
+      "path": "runs/green/report.json",
+      "sha256": "cae0c28ddbf13c0e4e7a57d1c013ab251a3a09c176cf64b2a78d747860a81b87",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-probe-1794368815461135561/report.json"
+    },
+    {
+      "path": "runs/green/outer/stdout",
+      "sha256": "60081888ee54af14e0493631b069daafba540f795d81224c48e212513d566587",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-execution/stdout"
+    },
+    {
+      "path": "runs/green/outer/stderr",
+      "sha256": "23c3cd943e0f1dd2f2c9d3485271e6895632def0446588cb2e5d6b78c54fcde2",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-execution/stderr"
+    },
+    {
+      "path": "runs/green/outer/terminal.json",
+      "sha256": "204b5e3e7a6a4f3f94e0c971d405988fd27486b8847fc00a7d8dfa95926ff11e",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/actual-root-execution/terminal.json"
+    },
+    {
+      "path": "runs/first-green-failed/Ui011WatchBookkeepingBoundaryReplay.elm",
+      "sha256": "e315685979e57d9c02e725084ec9ac20d180e9171c897a9f3b6aab48338648a3",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/Ui011WatchBookkeepingBoundaryReplay.elm"
+    },
+    {
+      "path": "reviews/tests-first.json",
+      "sha256": "6d1e9e0959fc693f4e2a562838090b64b09bf592ac49085a6e89655ec3cdcd47",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/independent-tests-first-review-build.json"
+    },
+    {
+      "path": "reviews/actual-red.json",
+      "sha256": "f773027ea892f28b5ad4101d05401e55daf102e2134ea41e26de03fc1698e450",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/independent-actual-red-review-build.json"
+    },
+    {
+      "path": "reviews/production-source.json",
+      "sha256": "29b05939e69abde263338fc16e5e6d76036427f05edf86eb0cdf0d6e0f374b98",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/independent-source-review-build.json"
+    },
+    {
+      "path": "reviews/fixture-r2-source.json",
+      "sha256": "b6e2df4520134451d9d3c789420b70070de76a635425a625de4a6c05957bf92a",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/independent-source-review-build.json"
+    },
+    {
+      "path": "reviews/actual-green.json",
+      "sha256": "1db71af259a28bd287d231527f5ce1f1b0d9d45227d5243f8cb3a8d0a439a880",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/independent-actual-green-review-build.json"
+    },
+    {
+      "path": "inputs/tests-first-manifest.json",
+      "sha256": "7880feae09b23cc77c30cdb2db7fa2f91535cedb7bac48e895831c1cd226070e",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/manifest.json"
+    },
+    {
+      "path": "inputs/production-r1-manifest.json",
+      "sha256": "4682c112a3a74fd8a31a786cdd7c1669208eba54a8f018f5dc575800fd99cb52",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/manifest.json"
+    },
+    {
+      "path": "inputs/production-r2-manifest.json",
+      "sha256": "b436ac5be92e1bb76e702e759a9462570aa2e25971200d694ab33f045141ba7c",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/manifest.json"
+    },
+    {
+      "path": "inputs/production.patch",
+      "sha256": "14d70d2a91b6d39b6142accc39a55f3ebd51105904ebb7cc8a4af0d756741f81",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/source.patch"
+    },
+    {
+      "path": "inputs/contract.json",
+      "sha256": "2b837ced7583d427dde871f18fb718ed5c8b528fca08c38791a07007a3f6ff31",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/contract.json"
+    },
+    {
+      "path": "inputs/model-correspondence.json",
+      "sha256": "155908133df00e22b0183de426840f82ca21acb27aeb0aee1f0ac23276cefb1a",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/model-correspondence.json"
+    },
+    {
+      "path": "inputs/run_watch_batch_probe.py",
+      "sha256": "6ad86ada1b0eae4e8a5d6099c618cfb8b980dec2677641eadb3c2d0d22a98c25",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/run_watch_batch_probe.py"
+    },
+    {
+      "path": "inputs/run_green_probe.py",
+      "sha256": "c7489a0e2ac67a8687c71633c715ae7740169ed54e1c4c6ecaa3f8c742b12ab3",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/run_green_probe.py"
+    },
+    {
+      "path": "inputs/root-green-argv.json",
+      "sha256": "f17ca6f978b9884fd3c855274ac3ccdcccababdcd2519c66c684183487b245a7",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/revision2-fixture-packet-binding/root-green-argv.json"
+    },
+    {
+      "path": "inputs/root-red-argv.json",
+      "sha256": "c9e140f7291c4b1af27d5298d624158d863743fc67a9c8b44089a262c0a21243",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/root-protected-argv.json"
+    },
+    {
+      "path": "inputs/menu-tab-elm-toolchain.json",
+      "sha256": "0012df8f3c18c0f4851d2d36c97f790a5f5b990de2d9a8e88df03844bb6843c6",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/tools/menu-tab-elm-toolchain.json"
+    },
+    {
+      "path": "runs/current-elm/compile-HttpPopup.stdout",
+      "sha256": "2d96266e1972c2719f59db0ae5a0acd1fa7cca24da0523b9bee11f8076c8833b",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-HttpPopup.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-HttpPopup.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-HttpPopup.stderr"
+    },
+    {
+      "path": "runs/current-elm/menu-tab-dom.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-tab-dom.stdout"
+    },
+    {
+      "path": "runs/current-elm/menu-tab-dom.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-tab-dom.stderr"
+    },
+    {
+      "path": "runs/current-elm/menu-tab-dom.json",
+      "sha256": "70d2ceb6215a5e51322becc45be77a40b9dd4ac88e212199ac763e603a0161a1",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-tab-dom.json"
+    },
+    {
+      "path": "runs/current-elm/compile-MenuEscapeReplay.stdout",
+      "sha256": "a8a5b7795e4502969618c981947fd73258d054fc0034d3e565ce3147ae24ec29",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-MenuEscapeReplay.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-MenuEscapeReplay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-MenuEscapeReplay.stderr"
+    },
+    {
+      "path": "runs/current-elm/menu-escape.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-escape.stdout"
+    },
+    {
+      "path": "runs/current-elm/menu-escape.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-escape.stderr"
+    },
+    {
+      "path": "runs/current-elm/menu-escape.json",
+      "sha256": "77d5392247f6245071ccc8a63005485d77a6fdb56e51dd4a038c8211fc191608",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-escape.json"
+    },
+    {
+      "path": "runs/current-elm/compile-HttpBar.stdout",
+      "sha256": "348498abd77f3a865e5fcafec38accd7174d9f75dcfe8df59a56296bff09a59e",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-HttpBar.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-HttpBar.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-HttpBar.stderr"
+    },
+    {
+      "path": "runs/current-elm/menu-bar-context.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-bar-context.stdout"
+    },
+    {
+      "path": "runs/current-elm/menu-bar-context.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-bar-context.stderr"
+    },
+    {
+      "path": "runs/current-elm/menu-bar-context.json",
+      "sha256": "0dad791546997593590d3a85e84d5b9be2d327bf62e92aeef83d1e6a7610f398",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-bar-context.json"
+    },
+    {
+      "path": "runs/current-elm/compile-MenuInitialFocusReplay.stdout",
+      "sha256": "6e4e6e9dbc063215118a737c2a57ec10b6d9f0a15dbeb863b6ca0db2123034a7",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-MenuInitialFocusReplay.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-MenuInitialFocusReplay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-MenuInitialFocusReplay.stderr"
+    },
+    {
+      "path": "runs/current-elm/menu-initial-focus.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-initial-focus.stdout"
+    },
+    {
+      "path": "runs/current-elm/menu-initial-focus.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-initial-focus.stderr"
+    },
+    {
+      "path": "runs/current-elm/menu-initial-focus.json",
+      "sha256": "f2b7b6c2466e5cd150ea66aa563ef4090fb032f56b9e18e714a52c4e15cf0c4a",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/menu-initial-focus.json"
+    },
+    {
+      "path": "runs/current-elm/compile-Ui011ObservedScopeRetirementReplay.stdout",
+      "sha256": "0ad810999c00cdaad989968a6d6b8e90b1f66ad4093af2f2c97edf7b0b41b50c",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-Ui011ObservedScopeRetirementReplay.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-Ui011ObservedScopeRetirementReplay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-Ui011ObservedScopeRetirementReplay.stderr"
+    },
+    {
+      "path": "runs/current-elm/ui011-observed-scope-retirement.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/ui011-observed-scope-retirement.stdout"
+    },
+    {
+      "path": "runs/current-elm/ui011-observed-scope-retirement.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/ui011-observed-scope-retirement.stderr"
+    },
+    {
+      "path": "runs/current-elm/ui011-observed-scope-retirement.json",
+      "sha256": "de7e629e6c359bf917dd32876b1190cea6b812f5f9d4081ef54833fff112d44b",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/ui011-observed-scope-retirement.json"
+    },
+    {
+      "path": "runs/current-elm/compile-Ui011AutomaticWindowWatchReplay.stdout",
+      "sha256": "89377a65ab65c960e7adac9da9a98f065e97ecca53e7c3a9dad2cc9f828f2dc5",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-Ui011AutomaticWindowWatchReplay.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-Ui011AutomaticWindowWatchReplay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-Ui011AutomaticWindowWatchReplay.stderr"
+    },
+    {
+      "path": "runs/current-elm/ui011-automatic-window-watch.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/ui011-automatic-window-watch.stdout"
+    },
+    {
+      "path": "runs/current-elm/ui011-automatic-window-watch.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/ui011-automatic-window-watch.stderr"
+    },
+    {
+      "path": "runs/current-elm/ui011-automatic-window-watch.json",
+      "sha256": "6c73a67d067e727bf99fb8a3e4f3ae630de922b224306a8280578f342b3811ca",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/ui011-automatic-window-watch.json"
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpMain.stdout",
+      "sha256": "739d1aa8e5702af85a863486e79972f94d15e10c070074cd5c11bb46bdcea248",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-current-HttpMain.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpMain.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-current-HttpMain.stderr"
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpBar.stdout",
+      "sha256": "0d3b8ba8cc0c29640c465ccd9a475e85190b20ea68ef18fc44f8e0d38a95def1",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-current-HttpBar.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpBar.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-current-HttpBar.stderr"
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpPopup.stdout",
+      "sha256": "04cfd98f8c86cc66f83b4f214a9f130bbea914e8a3667a81d71962c2d20e69f3",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-current-HttpPopup.stdout"
+    },
+    {
+      "path": "runs/current-elm/compile-current-HttpPopup.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/compile-current-HttpPopup.stderr"
+    },
+    {
+      "path": "runs/current-elm/report.json",
+      "sha256": "9e2823efc378fc3ee8721a5ba090785928bc1cab0dc35246b0111097e5d8b394",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/ux024-menu-dom-1794369779982605761/report.json"
+    },
+    {
+      "path": "runs/current-elm/outer/stdout",
+      "sha256": "c89ab77496f9ad692ad3d0efca42c0a5536edbd7d1e47b19afd35ad8f2e9af36",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/stdout"
+    },
+    {
+      "path": "runs/current-elm/outer/stderr",
+      "sha256": "826105e8cfe25418d7a419795212aa0fd148d603504795811975cb6df852b657",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/stderr"
+    },
+    {
+      "path": "runs/current-elm/outer/terminal.json",
+      "sha256": "51e11cc7aa93638aede314fa006d9b729122f5cf676e3c292b38f15834f976ee",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/terminal.json"
+    },
+    {
+      "path": "runs/current-elm/outer/launch.json",
+      "sha256": "e327210a39ec8fe03b3d3e0f1adc13e43a4605fd6084cce490ef4cd3a02e074f",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/launch.json"
+    },
+    {
+      "path": "runs/current-elm/outer/closure-claims.jsonl",
+      "sha256": "367d03eb348a33723093fb9e4992a22c1ee30924f77a51ed74905e26cfdcdede",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/closure-claims.jsonl"
+    },
+    {
+      "path": "runs/current-elm/outer/started-admission.stdout",
+      "sha256": "8d6052221dbadd35aae522bf01d6003ece95001d5357652a7dcf0d18df1349a8",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/started-admission.stdout"
+    },
+    {
+      "path": "runs/current-elm/outer/started-admission.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/started-admission.stderr"
+    },
+    {
+      "path": "runs/current-elm/outer/finished-admission.stdout",
+      "sha256": "bed8ca672e433f4d05715516d088c3a7dc88c18fd52543e816b51634f10798de",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/finished-admission.stdout"
+    },
+    {
+      "path": "runs/current-elm/outer/finished-admission.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/actual-root-elm/finished-admission.stderr"
+    },
+    {
+      "path": "reviews/actual-current-elm.json",
+      "sha256": "8503138206f9e2f4a9c61465f1d48eb85a614932ba55743796878cda54d65ebb",
+      "retainedFrom": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/production-implementation/current-elm-qualification-preparation/revision2-current-failed-journey-context/prepared-watch-batch-current-elm/independent-actual-current-elm-review-build.json"
+    },
+    {
+      "path": "inputs/current-elm/candidate.json",
+      "sha256": "47594dc68f076fd1890eb1856a5cca8b3db51aa73a0b626ddc9d2a9b01333958",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-wbc-elm-v1/candidate.json"
+    },
+    {
+      "path": "inputs/current-elm/review-packet.json",
+      "sha256": "3cdc8995b24dd21113d91d0ca5d9935463f9b82f43878d3937553fa693acea06",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-wbc-elm-v1/review-packet.json"
+    },
+    {
+      "path": "inputs/current-elm/current-elm-terminal.json",
+      "sha256": "f79b55bd7cb50eeee8ffa1a7084b1e31a1cedef2d5a3b0c2b6e9607e24998354",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-wbc-elm-v1/current-elm-terminal.json"
+    },
+    {
+      "path": "inputs/current-elm/current-elm-finished-event.json",
+      "sha256": "a6b0e8ae84983a6ea63c52e14b7e683ee3aa54bd77b80a53ff6db75d01ec528a",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-wbc-elm-v1/current-elm-finished-event.json"
+    },
+    {
+      "path": "inputs/current-elm/integrated-event.json",
+      "sha256": "369c92746f9b49be0599c6868e6df1f7a6ebb2a56946a74c35dbb8ffadcd7800",
+      "retainedFrom": "/home/hoskinson/Projects/Warlock/.warlock-contributor/evidence/nextloop-20261106/ui011-wbc-elm-v1/integrated-event.json"
+    }
+  ],
+  "scope": "Public watch bookkeeping component and current Elm documents only",
+  "nativeAcceptance": false,
+  "atAcceptance": false,
+  "originalAcceptance": false,
+  "newRsi": false
+}

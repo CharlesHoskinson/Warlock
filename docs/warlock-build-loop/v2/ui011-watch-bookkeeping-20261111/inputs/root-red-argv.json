@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/run_watch_batch_probe.py",
+    "--manifest-sha256",
+    "ACTUAL_MANIFEST_SHA256"
+  ],
+  "requires": "Existing Root qa_run scope, authorization and one-job protection; private component evidence only",
+  "profile": "verify_menu_tab_toolchain unchanged current qualified compiler/Node/cache",
+  "originalBudgetSeconds": 120,
+  "commandTimeoutMaximumSeconds": 90,
+  "cleanupSeconds": 2,
+  "compileTarget": "qa/Ui011WindowWatchBatchReplay.elm",
+  "expected": {
+    "compileExit": 0,
+    "setupCount": 6,
+    "semanticResult": "observed actual only; not guessed"
+  },
+  "nativeExecuted": false
+}

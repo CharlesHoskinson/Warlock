@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "decision": "Distinct read-only bookkeeping completion; no native batch admission certificate",
+  "authoritativeTransition": "Shell.receiveWindowWatch is extracted from the exact existing Shell watch acceptance branch and used by both Shell and Desktop. Desktop requires current pending token/scope before calling it. Only its Just result emits WindowWatchBookkeeping. No pending-cleared-delta inference.",
+  "internalOnly": "OutputController.update consumes and filters the internal effect. It has no JSON decoder, native request, focus action, timer or disposition representation. SurfaceController permits it as stable-surface bookkeeping. DesktopPolicy is unchanged.",
+  "settlement": [
+    "Match exactly one row from the pre-transition model by current binding/scope/revision/lease and received request/base.",
+    "Decode complete retained view-commit wire using closed schemas; require singleton window-watch and focus[].",
+    "Require no operations or catalogs and exact one window-watch observation key. Extra pins/requests/focus forbid settlement.",
+    "Remove only that identical row if still retained in the post-transition model with the same binding.",
+    "Keep batchExhausted, capacityRefused, quota16, recovery behavior and all remaining rows unchanged. No RegistrationAvailable or admitted certificate."
+  ],
+  "evidence": {
+    "actualRed": {
+      "path": "/home/hoskinson/warlock-loop-review-20261109T142956Z/next-product-action/ux024-popup-focus-containment/real-window-producer/runtime-producer/backend-integration/next-ui011-observed-opener-closure/native-opener-closure-preparation/window-watch-batch-retirement-tests-first/actual-root-probe-1794368045623296261/report.json",
+      "sha256": "b50c89ebabf37bb61375aff1b91a56380a5648a55eb5f59ce214427e58f79c13"
+    },
+    "meaning": "15 cycles complete; retained count16; this is the public liveness RED. No repeated request ID was observed; the40-ID assertion also fails on insufficient count."
+  },
+  "qualification": {
+    "unchangedBaseline": {
+      "checks": 44,
+      "setup": 6,
+      "seeds": 64
+    },
+    "supplemental": {
+      "checks": 18,
+      "setup": 2,
+      "seeds": 0
+    },
+    "supplementalOldSourceMeaning": "New internal constructor is part of the product change; supplemental old-source compilation is not a claimed semantic RED."
+  },
+  "deferred": "Missing broad Haskell owner typed batch-disposition remains obligation33. This change does not certify mixed batches or projection/render admission.",
+  "nativeAcceptance": false,
+  "atAcceptance": false,
+  "originalAcceptance": false,
+  "authorExecution": false
+}
