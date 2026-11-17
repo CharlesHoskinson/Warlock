@@ -497,7 +497,7 @@ Use `/skills` to inspect/invoke `warlock-contribute`, and `/hooks` to inspect lo
 
 Codex uses `.codex-plugin/plugin.json` and shared `skills/`. This repository includes `.agents/plugins/marketplace.json`, exposing `./plugins/warlock-contributor`. Register the repository marketplace with `codex plugin marketplace add .`, then install through the desktop Plugins Directory. The official packaging page documents marketplace shape and cache refresh. This repository's contributor instructions also permit reading the skill and invoking the CLI directly without installation. No fabricated Codex validate command or universal CLI hook activation is assumed.
 
-Installed plugins may be cached copies; prefer the repository checker with explicit `--repo` for contributions. A cached checker whose bytes differ from the repository checker reports an error; refresh the installed package and inspect its skill/manifest before use. Merely seeing this source folder does not prove it is enabled. No installation, trust decision, global configuration change, remote service, secret or new dependency is performed by checker commands.
+Installed plugins may be cached copies; prefer the repository checker with explicit `--repo` for contributions. A cached checker whose bytes differ from the repository checker reports an error; refresh the installed package and inspect its skill/manifest before use. A checker launched through a symbolic link or a `..` path hashes itself at its resolved location, so such a launch gets the same byte comparison. Merely seeing this source folder does not prove it is enabled. No installation, trust decision, global configuration change, remote service, secret or new dependency is performed by checker commands.
 
 ## Hook scope and limits
 
