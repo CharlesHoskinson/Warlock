@@ -110,6 +110,11 @@ def digest(path):
         return None
 
 
+def running_checker_sha256():
+    """Hash this checker at its resolved path; digest refuses a linked or `..` component."""
+    return digest(pathlib.Path(__file__).resolve())
+
+
 def read(path):
     return json.loads(regular_bytes(path))
 
@@ -2941,7 +2946,7 @@ def validate_ux023_closed_historical_integration(root, record, state, event):
         raise ValueError('Exact retained native terminal required for historical integration')
     core_path, test_path = 'plugins/warlock-contributor/scripts/warlock.py', 'plugins/warlock-contributor/qa/test_delivery.py'
     current_core, current_test = digest(safe(root, core_path)), digest(safe(root, test_path))
-    if current_core != digest(pathlib.Path(__file__)) or candidate['manifest']['runners'].get(core_path) != case['oldCore']:
+    if current_core != running_checker_sha256() or candidate['manifest']['runners'].get(core_path) != case['oldCore']:
         raise ValueError('Historical integration checker differs from the reviewed installed version/native runner')
     overlay, errors, chain = support_reconciliations(root, record)
     required = {(core_path, case['oldCore'], case['recoveredCore']),
@@ -4829,7 +4834,7 @@ def main():
     rec.add_argument('--outcome', choices=['qualification', 'production-fix', 'scenario-verdict'], required=True)
     rec.add_argument('--summary', required=True); rec.add_argument('--claim-file')
     args = parser.parse_args()
-    result = {'acceptanceBoundary': BOUNDARY, 'checkerSha256': digest(pathlib.Path(__file__))}
+    result = {'acceptanceBoundary': BOUNDARY, 'checkerSha256': running_checker_sha256()}
     lock = None
     lock_parent = None
     records_lock = None

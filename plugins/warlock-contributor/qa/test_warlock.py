@@ -414,6 +414,42 @@ class ContributionPolicyTests(unittest.TestCase):
                               cwd=self.repo, env=self.env, capture_output=True, text=True)
         self.assertNotEqual(proc.returncode, 0)
 
+    def unresolved_checker_launches(self):
+        """Cached checker and launch paths reaching it through a linked directory, a linked file and a `..` component."""
+        cached = self.repo/'.plugin-cache/scripts/warlock.py'
+        cached.parent.mkdir(parents=True)
+        shutil.copyfile(CHECKER, cached)
+        directory = self.repo/'.plugin-link'
+        directory.symlink_to(cached.parents[1], target_is_directory=True)
+        leaf = self.repo/'.checker-link.py'
+        leaf.symlink_to(cached)
+        return cached, (directory/'scripts/warlock.py', leaf, self.repo/'docs/../.plugin-cache/scripts/warlock.py')
+
+    def test_cached_checker_runs_through_unresolved_launch_path(self):
+        _, launches = self.unresolved_checker_launches()
+        for launch in launches:
+            with self.subTest(launch=str(launch.relative_to(self.repo))):
+                proc = subprocess.run([sys.executable, '-B', str(launch), '--json', 'status'],
+                                      cwd=self.repo, env=self.env, capture_output=True, text=True)
+                self.assertEqual(proc.returncode, 0, proc.stdout+proc.stderr)
+                result = json.loads(proc.stdout)
+                self.assertEqual(result['checkerSha256'], digest(CHECKER))
+                self.assertEqual(result['activeSlice']['id'], self.slice['id'])
+
+    def test_unresolved_launch_path_keeps_modified_cached_checker_rejected(self):
+        cached, launches = self.unresolved_checker_launches()
+        with cached.open('a') as stream:
+            stream.write('\n# modified cached copy\n')
+        for launch in launches:
+            with self.subTest(launch=str(launch.relative_to(self.repo))):
+                proc = subprocess.run([sys.executable, '-B', str(launch), '--json', 'status'],
+                                      cwd=self.repo, env=self.env, capture_output=True, text=True)
+                self.assertEqual(proc.returncode, 2, proc.stdout+proc.stderr)
+                result = json.loads(proc.stdout)
+                self.assertEqual(result['checkerSha256'], digest(cached))
+                self.assertEqual(result['errors'], [
+                    'Installed checker differs from repository-owned checker; use the reviewed repository copy'])
+
     def test_archive_rename_endpoint_base_ref_rejected_with_record(self):
         self.start()
         base = self.run_git('rev-parse', 'HEAD')
